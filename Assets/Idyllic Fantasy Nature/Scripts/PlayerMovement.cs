@@ -4,6 +4,7 @@ namespace IdyllicFantasyNature
 {
     public class PlayerMovement : MonoBehaviour
     {
+        [SerializeField] private Joystick _joystick;
         [Range(1f, 20f)]
         [SerializeField] private float _movementSpeed;
         [Tooltip("run multiplier of the movement speed")]
@@ -20,6 +21,10 @@ namespace IdyllicFantasyNature
         void Start()
         {
             characterController = GetComponent<CharacterController>();
+            if (_joystick == null)
+            {
+                _joystick = FindObjectOfType<Joystick>();
+            }
         }
 
         // Update is called once per frame
@@ -31,9 +36,20 @@ namespace IdyllicFantasyNature
                 _controllerVelocity.y = 0;
             }
 
-            // get the movement input
-            float moveX = Input.GetAxis("Horizontal");
-            float moveZ = Input.GetAxis("Vertical");
+            // get the movement input (joystick with keyboard fallback)
+            float moveX = 0f;
+            float moveZ = 0f;
+
+            if (_joystick != null && _joystick.Direction != Vector2.zero)
+            {
+                moveX = _joystick.Horizontal;
+                moveZ = _joystick.Vertical;
+            }
+            else
+            {
+                moveX = Input.GetAxis("Horizontal");
+                moveZ = Input.GetAxis("Vertical");
+            }
 
             // moves the controller in the desired direction on the x- and z-axis
             Vector3 movement = transform.right * moveX + transform.forward * moveZ;
