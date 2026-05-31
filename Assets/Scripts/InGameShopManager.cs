@@ -14,6 +14,10 @@ public class InGameShopManager : MonoBehaviour
     public float scrollDuration = 0.3f;
     public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
+    [Header("Scale Transition Settings")]
+    [Tooltip("The vertical distance threshold (in local viewport pixels) over which the scale transitions from 1.0 to 0.7.")]
+    public float transitionRange = 200f;
+
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
 
@@ -30,7 +34,10 @@ public class InGameShopManager : MonoBehaviour
             {
                 if (item != null)
                 {
-                    item.OnSelected += HandleItemSelection;
+                    if (item.OnSelected != null)
+                    {
+                        item.OnSelected.AddListener(HandleItemSelection);
+                    }
 
                     // Fallback: If no Button is configured on ShopItemUI, add one dynamically
                     Button btn = item.GetComponent<Button>();
@@ -77,6 +84,12 @@ public class InGameShopManager : MonoBehaviour
             trigger.triggers.Add(endDragEntry);
         }
 
+        // Auto-detect a reasonable transition range if it's unassigned or tiny
+        if (transitionRange <= 0.1f && shopItemUIs != null && shopItemUIs.Length > 0 && shopItemUIs[0] != null)
+        {
+            transitionRange = shopItemUIs[0].GetComponent<RectTransform>().rect.height;
+        }
+
         // Determine the initial selected item based on proximity to selectedItemUIRef on start
         UpdateClosestSelection();
 
@@ -85,6 +98,9 @@ public class InGameShopManager : MonoBehaviour
         {
             FocusOnItem(selectedShopItem, smooth: false);
         }
+
+        // Apply scale calculations immediately on the first frame
+        UpdateItemScales();
     }
 
     private void OnDestroy()
@@ -95,7 +111,10 @@ public class InGameShopManager : MonoBehaviour
             {
                 if (item != null)
                 {
-                    item.OnSelected -= HandleItemSelection;
+                    if (item.OnSelected != null)
+                    {
+                        item.OnSelected.RemoveListener(HandleItemSelection);
+                    }
                 }
             }
         }
@@ -108,6 +127,9 @@ public class InGameShopManager : MonoBehaviour
 
     private void Update()
     {
+        // Continuously update the local scale of the items to match scroll updates
+        UpdateItemScales();
+
         if (scrollRect == null || selectedShopItem == null || isDragging || isSnapping) return;
 
         // If the scroll view is moving slowly (or has stopped) and we are not dragging, snap to closest item
@@ -167,6 +189,38 @@ public class InGameShopManager : MonoBehaviour
         if (closestItem != null && closestItem != selectedShopItem)
         {
             selectedShopItem = closestItem;
+        }
+    }
+
+    /// <summary>
+    /// Updates the local scale and CanvasGroup alpha of all shop items based on their distance to selectedItemUIRef along the Y axis.
+    /// </summary>
+    private void UpdateItemScales()
+    {
+        if (shopItemUIs == null || selectedItemUIRef == null || scrollRect == null) return;
+
+        RectTransform viewport = scrollRect.viewport != null ? scrollRect.viewport : (RectTransform)scrollRect.transform;
+        float refLocalY = viewport.InverseTransformPoint(selectedItemUIRef.position).y;
+
+        foreach (var item in shopItemUIs)
+        {
+            if (item == null) continue;
+
+            RectTransform itemRect = item.GetComponent<RectTransform>();
+            float itemLocalY = viewport.InverseTransformPoint(itemRect.position).y;
+            float distance = Mathf.Abs(itemLocalY - refLocalY);
+
+            // Interpolate scale and alpha from 1.0 (at center reference) to 0.7 (at or beyond transitionRange)
+            float normalizedDist = Mathf.Clamp01(distance / Mathf.Max(transitionRange, 0.0001f));
+            float scale = Mathf.Lerp(1.0f, 0.7f, normalizedDist);
+            float alpha = Mathf.Lerp(1.0f, 0.7f, normalizedDist);
+
+            itemRect.localScale = new Vector3(scale, scale, 1f);
+
+            if (item.CanvasGroup != null)
+            {
+                item.CanvasGroup.alpha = alpha;
+            }
         }
     }
 
