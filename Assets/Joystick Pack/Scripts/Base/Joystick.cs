@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -39,6 +39,10 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private Camera cam;
 
     private Vector2 input = Vector2.zero;
+    private Vector2 initialBackgroundPosition;
+    private bool wasBackgroundActiveBeforeKeyboard = true;
+    private bool isKeyboardActive = false;
+    private bool isDragging = false;
 
     protected virtual void Start()
     {
@@ -55,10 +59,12 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
+        initialBackgroundPosition = background.anchoredPosition;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+        isDragging = true;
         OnDrag(eventData);
     }
 
@@ -131,8 +137,61 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        isDragging = false;
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
+    }
+
+    protected virtual void Update()
+    {
+        if (!isDragging)
+        {
+            float keyboardX = Input.GetAxis("Horizontal");
+            float keyboardY = Input.GetAxis("Vertical");
+            Vector2 keyboardInput = new Vector2(keyboardX, keyboardY);
+            
+            if (keyboardInput.magnitude > 1f)
+            {
+                keyboardInput.Normalize();
+            }
+            else if (keyboardInput.magnitude < 0.01f)
+            {
+                keyboardInput = Vector2.zero;
+            }
+
+            input = keyboardInput;
+
+            if (keyboardInput != Vector2.zero)
+            {
+                if (!isKeyboardActive)
+                {
+                    isKeyboardActive = true;
+                    wasBackgroundActiveBeforeKeyboard = background.gameObject.activeSelf;
+                    if (!wasBackgroundActiveBeforeKeyboard)
+                    {
+                        background.gameObject.SetActive(true);
+                        background.anchoredPosition = initialBackgroundPosition;
+                    }
+                }
+            }
+            else
+            {
+                if (isKeyboardActive)
+                {
+                    isKeyboardActive = false;
+                    if (!wasBackgroundActiveBeforeKeyboard)
+                    {
+                        background.gameObject.SetActive(false);
+                    }
+                }
+            }
+
+            if (background != null && handle != null)
+            {
+                Vector2 radius = background.sizeDelta / 2;
+                handle.anchoredPosition = input * radius * handleRange;
+            }
+        }
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
