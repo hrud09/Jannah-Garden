@@ -33,19 +33,19 @@ Material:
     m_Floats:
     - _BlurAmount: 50
     - _BlurMode: 0
-    - _BlurSamples: 24
-    - _BlurSigma: 1.21
+    - _BlurSamples: 4
+    - _BlurSigma: 1.54
     - _BlurType: 0
     - _ColorMask: 15
-    - _Stencil: 0
+    - _Stencil: 0.71
     - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
+    - _StencilOp: 9
+    - _StencilReadMask: 254.92
+    - _StencilWriteMask: 247
     - _UseUIAlphaClip: 0
     m_Colors:
-    - _BlurCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _BlurDir: {r: 1, g: 1, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BlurCenter: {r: 2.25, g: 2.33, b: 1.3, a: 0}
+    - _BlurDir: {r: 2.21, g: 1, b: 0, a: 0}
+    - _Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

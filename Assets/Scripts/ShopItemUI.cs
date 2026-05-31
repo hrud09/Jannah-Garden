@@ -1,16 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class ShopItemUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Tooltip("Optional button reference. If not assigned, will look for a Button component on this GameObject.")]
+    public Button selectButton; 
+
+    public event Action<ShopItemUI> OnSelected;
+
+    private void Awake()
     {
-        
+        if (selectButton == null)
+        {
+            selectButton = GetComponent<Button>();
+        }
+
+        if (selectButton != null)
+        {
+            selectButton.onClick.AddListener(HandleClick);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleClick()
     {
-        
+        OnSelected?.Invoke(this);
     }
 }
