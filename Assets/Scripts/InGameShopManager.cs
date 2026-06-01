@@ -21,12 +21,36 @@ public class InGameShopManager : MonoBehaviour
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
 
+    [Header("Shop Panel Navigation")]
+    public RectTransform shopPanel;
+    public Button openCloseButton;
+    public GameObject openArrow;
+    public GameObject closeArrow;
+    public float closedPositionX;
+    public float panelTransitionDuration = 0.3f;
+
+    private float openPositionX;
+    private bool isOpen = true;
+    private Coroutine panelTransitionCoroutine;
+
     private Coroutine scrollCoroutine;
     private bool isDragging = false;
     private bool isSnapping = false;
 
     private void Start()
     {
+        // Save initial X position as the open state position
+        if (shopPanel != null)
+        {
+            openPositionX = shopPanel.anchoredPosition.x;
+        }
+
+        // Hook up open/close button click listener
+        if (openCloseButton != null)
+        {
+            openCloseButton.onClick.AddListener(ToggleShop);
+        }
+
         // Automatically hook up listener events for selection focus
         if (shopItemUIs != null)
         {
@@ -99,12 +123,20 @@ public class InGameShopManager : MonoBehaviour
             FocusOnItem(selectedShopItem, smooth: false);
         }
 
+        // Initialize default arrow state and panel position (Open by default)
+        SetShopOpen(true, smooth: false);
+
         // Apply scale calculations immediately on the first frame
         UpdateItemScales();
     }
 
     private void OnDestroy()
     {
+        if (openCloseButton != null)
+        {
+            openCloseButton.onClick.RemoveListener(ToggleShop);
+        }
+
         if (shopItemUIs != null)
         {
             foreach (var item in shopItemUIs)
@@ -153,6 +185,70 @@ public class InGameShopManager : MonoBehaviour
                 StartSnapToClosest();
             }
         }
+    }
+
+    /// <summary>
+    /// Public method to toggle the open/closed state of the shop.
+    /// </summary>
+    public void ToggleShop()
+    {
+        SetShopOpen(!isOpen, smooth: true);
+    }
+
+    /// <summary>
+    /// Explicitly sets the shop open/closed state, updates the arrow UI states, and slides the panel.
+    /// </summary>
+    public void SetShopOpen(bool open, bool smooth)
+    {
+        isOpen = open;
+
+        // Toggle visibility of the arrows
+        if (openArrow != null) openArrow.SetActive(!isOpen);
+        if (closeArrow != null) closeArrow.SetActive(isOpen);
+
+        float targetX = isOpen ? openPositionX : closedPositionX;
+
+        if (panelTransitionCoroutine != null)
+        {
+            StopCoroutine(panelTransitionCoroutine);
+        }
+
+        if (smooth && gameObject.activeInHierarchy)
+        {
+            panelTransitionCoroutine = StartCoroutine(TransitionPanel(targetX));
+        }
+        else
+        {
+            if (shopPanel != null)
+            {
+                Vector2 pos = shopPanel.anchoredPosition;
+                pos.x = targetX;
+                shopPanel.anchoredPosition = pos;
+            }
+        }
+    }
+
+    private IEnumerator TransitionPanel(float targetX)
+    {
+        if (shopPanel == null) yield break;
+
+        Vector2 startPos = shopPanel.anchoredPosition;
+        float elapsed = 0f;
+
+        while (elapsed < panelTransitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / panelTransitionDuration);
+            float curveT = scrollCurve != null ? scrollCurve.Evaluate(t) : t;
+            Vector2 currentPos = shopPanel.anchoredPosition;
+            currentPos.x = Mathf.Lerp(startPos.x, targetX, curveT);
+            shopPanel.anchoredPosition = currentPos;
+            yield return null;
+        }
+
+        Vector2 finalPos = shopPanel.anchoredPosition;
+        finalPos.x = targetX;
+        shopPanel.anchoredPosition = finalPos;
     }
 
     private void OnScrollValueChanged(Vector2 value)
