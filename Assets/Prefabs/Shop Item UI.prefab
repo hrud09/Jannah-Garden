@@ -419,7 +419,7 @@ MonoBehaviour:
   itemIcon: {fileID: 1732033102080825041}
   itemNameText: {fileID: 6447299924161120958}
   itemDescriptionText: {fileID: 0}
-  itemPriceText: {fileID: 0}
+  itemPriceText: {fileID: 4490188754044558611}
   itemBackgroundImg: {fileID: 6150119605767190637}
   itemIconBackgroundImg: {fileID: 9137901029120366804}
 --- !u!225 &4078596483887000632
@@ -677,12 +677,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 50
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 60
-  m_fontSizeMax: 70
+  m_fontSizeMin: 50
+  m_fontSizeMax: 60
   m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

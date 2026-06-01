@@ -427,6 +427,10 @@ MonoBehaviour:
   closeArrow: {fileID: 8698593709230522260}
   closedPositionX: 380
   panelTransitionDuration: 0.3
+  itemTypeVisuals:
+  - itemType: 0
+    itemBackground: {fileID: 0}
+    itemIconBackground: {fileID: 0}
   shopItemDatas:
   - {fileID: 11400000, guid: 1351701ecc5b6434580875033e16b925, type: 2}
   - {fileID: 11400000, guid: dc152d1b43af9c044835829ec2fd6df2, type: 2}

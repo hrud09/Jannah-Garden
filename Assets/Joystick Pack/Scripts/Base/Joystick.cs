@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
@@ -146,8 +149,27 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         if (!isDragging)
         {
+#if ENABLE_INPUT_SYSTEM
+            float keyboardX = 0f;
+            float keyboardY = 0f;
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) keyboardX = -1f;
+                else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) keyboardX = 1f;
+
+                if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) keyboardY = -1f;
+                else if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) keyboardY = 1f;
+            }
+            if (Gamepad.current != null && keyboardX == 0f && keyboardY == 0f)
+            {
+                Vector2 stick = Gamepad.current.leftStick.ReadValue();
+                keyboardX = stick.x;
+                keyboardY = stick.y;
+            }
+#else
             float keyboardX = Input.GetAxis("Horizontal");
             float keyboardY = Input.GetAxis("Vertical");
+#endif
             Vector2 keyboardInput = new Vector2(keyboardX, keyboardY);
             
             if (keyboardInput.magnitude > 1f)

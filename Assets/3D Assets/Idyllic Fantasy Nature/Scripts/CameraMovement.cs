@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace IdyllicFantasyNature
 {
@@ -46,6 +49,77 @@ namespace IdyllicFantasyNature
             float rotateX = 0f;
             float rotateY = 0f;
 
+#if ENABLE_INPUT_SYSTEM
+            if (Touchscreen.current != null && Touchscreen.current.touches.Count > 0)
+            {
+                // Touch Input (Mobile)
+                foreach (var touch in Touchscreen.current.touches)
+                {
+                    if (!touch.press.isPressed && !touch.isInProgress)
+                        continue;
+
+                    var phase = touch.phase.ReadValue();
+                    int fingerId = touch.touchId.ReadValue();
+                    Vector2 deltaPosition = touch.delta.ReadValue();
+
+                    if (phase == UnityEngine.InputSystem.TouchPhase.Began)
+                    {
+                        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(fingerId))
+                        {
+                            // Touched UI (like joystick), ignore this finger for rotation
+                            continue;
+                        }
+                        _activeTouchId = fingerId;
+                        _isDraggingRotation = true;
+                    }
+                    else if (fingerId == _activeTouchId)
+                    {
+                        if (phase == UnityEngine.InputSystem.TouchPhase.Moved)
+                        {
+                            rotateX += deltaPosition.x * _touchDragSensitivity;
+                            rotateY += deltaPosition.y * _touchDragSensitivity;
+                        }
+                        else if (phase == UnityEngine.InputSystem.TouchPhase.Ended || phase == UnityEngine.InputSystem.TouchPhase.Canceled)
+                        {
+                            _activeTouchId = -1;
+                            _isDraggingRotation = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Mouse Input (PC / Editor / WebGL)
+                if (Mouse.current != null)
+                {
+                    if (Mouse.current.leftButton.wasPressedThisFrame)
+                    {
+                        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                        {
+                            // Clicked UI (like joystick), ignore for rotation
+                            _isDraggingRotation = false;
+                        }
+                        else
+                        {
+                            _isDraggingRotation = true;
+                        }
+                    }
+
+                    if (_isDraggingRotation && Mouse.current.leftButton.isPressed)
+                    {
+                        Vector2 delta = Mouse.current.delta.ReadValue();
+                        // Scale to match normal mouse looking behavior
+                        rotateX += delta.x * _mouseSensity * 0.1f;
+                        rotateY += delta.y * _mouseSensity * 0.1f;
+                    }
+
+                    if (Mouse.current.leftButton.wasReleasedThisFrame)
+                    {
+                        _isDraggingRotation = false;
+                    }
+                }
+            }
+#else
             if (Input.touchSupported && Input.touchCount > 0)
             {
                 // Touch Input (Mobile)
@@ -105,6 +179,7 @@ namespace IdyllicFantasyNature
                     _isDraggingRotation = false;
                 }
             }
+#endif
 
             _yRotation += rotateX;
             _xRotation -= rotateY;

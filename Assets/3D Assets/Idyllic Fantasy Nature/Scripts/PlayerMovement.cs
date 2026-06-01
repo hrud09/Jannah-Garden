@@ -1,4 +1,7 @@
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace IdyllicFantasyNature
 {
@@ -47,8 +50,25 @@ namespace IdyllicFantasyNature
             }
             else
             {
+#if ENABLE_INPUT_SYSTEM
+                if (Keyboard.current != null)
+                {
+                    if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveX = -1f;
+                    else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveX = 1f;
+
+                    if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveZ = -1f;
+                    else if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveZ = 1f;
+                }
+                if (Gamepad.current != null && moveX == 0f && moveZ == 0f)
+                {
+                    Vector2 stick = Gamepad.current.leftStick.ReadValue();
+                    moveX = stick.x;
+                    moveZ = stick.y;
+                }
+#else
                 moveX = Input.GetAxis("Horizontal");
                 moveZ = Input.GetAxis("Vertical");
+#endif
             }
 
             // moves the controller in the desired direction on the x- and z-axis
@@ -62,13 +82,37 @@ namespace IdyllicFantasyNature
             characterController.Move(_controllerVelocity * Time.deltaTime);
 
             // the controller is able to jump when on the ground
-            if (Input.GetButton("Jump") && characterController.isGrounded)
+            bool jumpPressed = false;
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
+            {
+                jumpPressed = true;
+            }
+            else if (Gamepad.current != null && Gamepad.current.buttonSouth.isPressed)
+            {
+                jumpPressed = true;
+            }
+#else
+            jumpPressed = Input.GetButton("Jump");
+#endif
+
+            if (jumpPressed && characterController.isGrounded)
             {
                 _controllerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
             }
 
             // the controller is able to run
-            if (Input.GetKey(KeyCode.LeftShift))
+            bool runPressed = false;
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed)
+            {
+                runPressed = true;
+            }
+#else
+            runPressed = Input.GetKey(KeyCode.LeftShift);
+#endif
+
+            if (runPressed)
             {
                 characterController.Move(movement * Time.deltaTime * _runMultiplier);
             }

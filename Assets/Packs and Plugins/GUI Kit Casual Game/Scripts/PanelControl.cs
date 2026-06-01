@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 
 namespace LayerLab
@@ -40,9 +43,22 @@ namespace LayerLab
         {
             if (panels.Count <= 0 || !isReady) return;
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            bool leftPressed = false;
+            bool rightPressed = false;
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                leftPressed = Keyboard.current.leftArrowKey.wasPressedThisFrame;
+                rightPressed = Keyboard.current.rightArrowKey.wasPressedThisFrame;
+            }
+#else
+            leftPressed = Input.GetKeyDown(KeyCode.LeftArrow);
+            rightPressed = Input.GetKeyDown(KeyCode.RightArrow);
+#endif
+
+            if (leftPressed)
                 Click_Prev();
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (rightPressed)
                 Click_Next();
         }
 
