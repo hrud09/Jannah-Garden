@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -33, y: 0}
-  m_SizeDelta: {x: 322.2308, y: 0}
+  m_SizeDelta: {x: 383.1316, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &2572351100580289726
 CanvasRenderer:
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427484985333857727}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01e1819cb70344a41b5bc8385b250552, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 73d8983007ddd4830baf7ecba1debd74, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -78,6 +78,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.34
+--- !u!1 &986339430312237359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2813957950667959285}
+  m_Layer: 5
+  m_Name: Empty Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2813957950667959285
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986339430312237359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5039120380673568826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2363004326868784570
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,9 +183,9 @@ RectTransform:
   - {fileID: 2962413608737513942}
   m_Father: {fileID: 6820253150125418131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -377.23, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -55.23001, y: -209}
   m_SizeDelta: {x: 110, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &929708185930818661
@@ -390,8 +425,9 @@ MonoBehaviour:
   openCloseButton: {fileID: 4012112557012363073}
   openArrow: {fileID: 8698010369625094411}
   closeArrow: {fileID: 8698593709230522260}
-  closedPositionX: 315
+  closedPositionX: 380
   panelTransitionDuration: 0.3
+  shopItemDatas: []
 --- !u!1 &5736267550141164560
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +534,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2813957950667959285}
   - {fileID: 7599476010334393716}
   - {fileID: 7974747608341410903}
   - {fileID: 8558761739898344350}
@@ -528,7 +565,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -50
+  m_Spacing: -70
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -798,17 +835,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5039120380673568826}
     m_Modifications:
-    - target: {fileID: 344698784930675294, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4485355072612195236, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Name
       value: Shop Item UI (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6409013733332826999, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456203897629867136, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Pivot.x
@@ -919,17 +948,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5039120380673568826}
     m_Modifications:
-    - target: {fileID: 344698784930675294, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4485355072612195236, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Name
       value: Shop Item UI (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6409013733332826999, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456203897629867136, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Pivot.x
@@ -1040,17 +1061,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5039120380673568826}
     m_Modifications:
-    - target: {fileID: 344698784930675294, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4485355072612195236, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Name
       value: Shop Item UI (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6409013733332826999, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456203897629867136, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Pivot.x
@@ -1274,17 +1287,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5039120380673568826}
     m_Modifications:
-    - target: {fileID: 344698784930675294, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4485355072612195236, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Name
       value: Shop Item UI (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6409013733332826999, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456203897629867136, guid: 8f9d85eda49ae2546aa1858af2c6a63f, type: 3}
       propertyPath: m_Pivot.x

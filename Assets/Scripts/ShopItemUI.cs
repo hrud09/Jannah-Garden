@@ -1,17 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
-
-[System.Serializable]
-public class ShopItemSelectEvent : UnityEvent<ShopItemUI> { }
+using TMPro;
 
 public class ShopItemUI : MonoBehaviour
 {
-    [Tooltip("Optional button reference. If not assigned, will look for a Button component on this GameObject.")]
-    public Button selectButton; 
-
-    [Tooltip("Event invoked when this shop item is clicked or selected.")]
-    public ShopItemSelectEvent OnSelected = new ShopItemSelectEvent();
+    [Header("UI Component References")]
+    public Image itemIcon;
+    public TMP_Text itemNameText;
+    public TMP_Text itemDescriptionText;
+    public TMP_Text itemPriceText;
+    public Image itemBackgroundImg;
+    public Image itemIconBackgroundImg;
 
     private CanvasGroup canvasGroup;
 
@@ -34,27 +33,41 @@ public class ShopItemUI : MonoBehaviour
         }
     }
 
-    private void Awake()
+    /// <summary>
+    /// Initializes the UI components with the values from a ShopItemData asset.
+    /// </summary>
+    public void Initialize(ShopItemData data)
     {
-        if (selectButton == null)
+        if (data == null) return;
+
+        if (itemIcon != null && data.itemIcon != null)
         {
-            selectButton = GetComponent<Button>();
+            itemIcon.sprite = data.itemIcon;
         }
 
-        if (selectButton != null)
+        if (itemNameText != null && !string.IsNullOrEmpty(data.itemName))
         {
-            selectButton.onClick.AddListener(HandleClick);
+            itemNameText.text = data.itemName;
         }
-        
-        // Ensure CanvasGroup is initialized early
-        if (CanvasGroup != null) { }
-    }
 
-    private void HandleClick()
-    {
-        if (OnSelected != null)
+        if (itemDescriptionText != null && !string.IsNullOrEmpty(data.itemDescription))
         {
-            OnSelected.Invoke(this);
+            itemDescriptionText.text = data.itemDescription;
+        }
+
+        if (itemPriceText != null && !string.IsNullOrEmpty(data.itemPrice))
+        {
+            itemPriceText.text = data.itemPrice;
+        }
+
+        if (itemBackgroundImg != null && data.itemBackground != null)
+        {
+            itemBackgroundImg.sprite = data.itemBackground;
+        }
+
+        if (itemIconBackgroundImg != null && data.itemIconBackground != null)
+        {
+            itemIconBackgroundImg.sprite = data.itemIconBackground;
         }
     }
 }

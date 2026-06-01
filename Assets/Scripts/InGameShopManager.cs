@@ -51,25 +51,14 @@ public class InGameShopManager : MonoBehaviour
             openCloseButton.onClick.AddListener(ToggleShop);
         }
 
-        // Automatically hook up listener events for selection focus
-        if (shopItemUIs != null)
+        // Initialize shop items with data from ScriptableObjects
+        if (shopItemUIs != null && shopItemDatas != null)
         {
-            foreach (var item in shopItemUIs)
+            for (int i = 0; i < shopItemUIs.Length; i++)
             {
-                if (item != null)
+                if (shopItemUIs[i] != null && i < shopItemDatas.Length && shopItemDatas[i] != null)
                 {
-                    if (item.OnSelected != null)
-                    {
-                        item.OnSelected.AddListener(HandleItemSelection);
-                    }
-
-                    // Fallback: If no Button is configured on ShopItemUI, add one dynamically
-                    Button btn = item.GetComponent<Button>();
-                    if (btn == null)
-                    {
-                        btn = item.gameObject.AddComponent<Button>();
-                        btn.onClick.AddListener(() => HandleItemSelection(item));
-                    }
+                    shopItemUIs[i].Initialize(shopItemDatas[i]);
                 }
             }
         }
@@ -135,20 +124,6 @@ public class InGameShopManager : MonoBehaviour
         if (openCloseButton != null)
         {
             openCloseButton.onClick.RemoveListener(ToggleShop);
-        }
-
-        if (shopItemUIs != null)
-        {
-            foreach (var item in shopItemUIs)
-            {
-                if (item != null)
-                {
-                    if (item.OnSelected != null)
-                    {
-                        item.OnSelected.RemoveListener(HandleItemSelection);
-                    }
-                }
-            }
         }
 
         if (scrollRect != null)
@@ -327,12 +302,6 @@ public class InGameShopManager : MonoBehaviour
         FocusOnItem(selectedShopItem, smoothScroll);
     }
 
-    private void HandleItemSelection(ShopItemUI selectedItem)
-    {
-        selectedShopItem = selectedItem;
-        FocusOnItem(selectedItem, smoothScroll);
-    }
-
     /// <summary>
     /// Scrolls the ScrollRect to align the target ShopItemUI with selectedItemUIRef.
     /// </summary>
@@ -476,4 +445,7 @@ public class InGameShopManager : MonoBehaviour
         content.anchoredPosition = originalPosition; // Revert temporary position assignment
         return targetAnchoredPosition + shift;
     }
+
+    [Header("Shop Item Data Source")]
+    public ShopItemData[] shopItemDatas; // Data assets for each shop item
 }
