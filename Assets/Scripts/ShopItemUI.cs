@@ -34,9 +34,9 @@ public class ShopItemUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Initializes the UI components with the values from a ShopItemData asset.
+    /// Initializes the UI components with the values from a ShopItemData asset and background overrides.
     /// </summary>
-    public void Initialize(ShopItemData data)
+    public void Initialize(ShopItemData data, Sprite customBackground = null, Sprite customIconBackground = null)
     {
         if (data == null) return;
 
@@ -60,14 +60,14 @@ public class ShopItemUI : MonoBehaviour
             itemPriceText.text = data.itemPrice;
         }
 
-        if (itemBackgroundImg != null && data.itemBackground != null)
+        if (itemBackgroundImg != null && customBackground != null)
         {
-            itemBackgroundImg.sprite = data.itemBackground;
+            itemBackgroundImg.sprite = customBackground;
         }
 
-        if (itemIconBackgroundImg != null && data.itemIconBackground != null)
+        if (itemIconBackgroundImg != null && customIconBackground != null)
         {
-            itemIconBackgroundImg.sprite = data.itemIconBackground;
+            itemIconBackgroundImg.sprite = customIconBackground;
         }
     }
 }

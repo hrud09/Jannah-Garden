@@ -2,6 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class ShopItemVisuals
+{
+    public ShopItemType itemType;
+    [Header("Item Visual Backgrounds")]
+    public Sprite itemBackground;
+    public Sprite itemIconBackground;
+}
 
 public class InGameShopManager : MonoBehaviour
 {
@@ -29,6 +39,9 @@ public class InGameShopManager : MonoBehaviour
     public float closedPositionX;
     public float panelTransitionDuration = 0.3f;
 
+    [Header("Item Type Visual Overrides")]
+    public List<ShopItemVisuals> itemTypeVisuals; // Configured list in Inspector
+
     private float openPositionX;
     private bool isOpen = true;
     private Coroutine panelTransitionCoroutine;
@@ -51,14 +64,26 @@ public class InGameShopManager : MonoBehaviour
             openCloseButton.onClick.AddListener(ToggleShop);
         }
 
-        // Initialize shop items with data from ScriptableObjects
+        // Initialize shop items with data from ScriptableObjects and visual overrides
         if (shopItemUIs != null && shopItemDatas != null)
         {
             for (int i = 0; i < shopItemUIs.Length; i++)
             {
                 if (shopItemUIs[i] != null && i < shopItemDatas.Length && shopItemDatas[i] != null)
                 {
-                    shopItemUIs[i].Initialize(shopItemDatas[i]);
+                    ShopItemData data = shopItemDatas[i];
+                    Sprite bg = null;
+                    Sprite iconBg = null;
+
+                    // Match visuals from the global category override settings
+                    ShopItemVisuals visuals = GetVisualsForType(data.shopItemType);
+                    if (visuals != null)
+                    {
+                        bg = visuals.itemBackground;
+                        iconBg = visuals.itemIconBackground;
+                    }
+
+                    shopItemUIs[i].Initialize(data, bg, iconBg);
                 }
             }
         }
@@ -261,6 +286,24 @@ public class InGameShopManager : MonoBehaviour
         {
             selectedShopItem = closestItem;
         }
+    }
+
+    /// <summary>
+    /// Helper method to retrieve visual background settings for a specific ShopItemType.
+    /// </summary>
+    public ShopItemVisuals GetVisualsForType(ShopItemType type)
+    {
+        if (itemTypeVisuals != null)
+        {
+            foreach (var visuals in itemTypeVisuals)
+            {
+                if (visuals != null && visuals.itemType == type)
+                {
+                    return visuals;
+                }
+            }
+        }
+        return null;
     }
 
     /// <summary>

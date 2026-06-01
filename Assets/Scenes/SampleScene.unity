@@ -88145,33 +88145,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: shopItemDatas.Array.size
-      value: 5
+      propertyPath: itemTypeVisuals.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: 'shopItemDatas.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 1351701ecc5b6434580875033e16b925, type: 2}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: 'shopItemDatas.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: dc152d1b43af9c044835829ec2fd6df2, type: 2}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: 'shopItemDatas.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: be724c60524686b418ae746f88d0947e, type: 2}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: 'shopItemDatas.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 651f11d8a31efda45b96f07e85139368, type: 2}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: 'shopItemDatas.Array.data[4]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 0f081ddad8cb12f429d7ac609e46cc48, type: 2}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: 'shopItemDatas.Array.data[5]'
-      value: 
-      objectReference: {fileID: 11400000, guid: d6f26dab8da7c2d46b04234f13f38dbd, type: 2}
     - target: {fileID: 4315790496343351525, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: m_Name
       value: In-Game Shop
