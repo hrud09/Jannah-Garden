@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Tree 4
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemType: 0
   itemIcon: {fileID: 21300000, guid: 00045fa5eef822c479e292fe743be48a, type: 3}
   itemName: Green Tree
   itemDescription: 
   itemPrice: 100
-  itemBackground: {fileID: 0}
-  itemIconBackground: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  shopItemType: 0
+  itemPrefab: {fileID: 5595323473854503343, guid: fe1355f542edd5b4daf82db242afca7d, type: 3}
+  itemState: 0

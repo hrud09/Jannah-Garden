@@ -18,5 +18,5 @@ MonoBehaviour:
   itemDescription: 
   itemPrice: 100
   shopItemType: 0
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 7755859256941194996, guid: ff9a53b575ceb964887a7787bce9c9fe, type: 3}
   itemState: 1

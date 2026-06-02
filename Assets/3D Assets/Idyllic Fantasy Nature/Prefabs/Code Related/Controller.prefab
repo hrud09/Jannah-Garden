@@ -148,7 +148,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mouseSensity: 1
+  _touchDragSensitivity: 0.1
   _controller: {fileID: 2531667859275332621}
 --- !u!1 &2531667859275332615
 GameObject:
@@ -195,6 +196,7 @@ GameObject:
   - component: {fileID: 2531667859275332616}
   - component: {fileID: 2531667859275332622}
   - component: {fileID: 1895128501}
+  - component: {fileID: 269081357664727164}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -257,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050d43ced377b8649b46a5e630bf4a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joystick: {fileID: 0}
   _movementSpeed: 4
   _runMultiplier: 4
   _gravity: -9.81
@@ -273,6 +276,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54f25c7d8be2c541975149df34ad000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &269081357664727164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531667859275332615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4b1fe26c44f4e4cba97fc053e56221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPlacementManager
 --- !u!1 &8114015898775887059
 GameObject:
   m_ObjectHideFlags: 0

@@ -600,7 +600,7 @@ MonoBehaviour:
   itemPriceText: {fileID: 4490188754044558611}
   itemBackgroundImg: {fileID: 6150119605767190637}
   itemIconBackgroundImg: {fileID: 9137901029120366804}
-  purchaseButton: {fileID: 0}
+  purchaseButton: {fileID: 6387661725429029381}
   lockedVisuals:
   - {fileID: 4555837219905805088}
   unlockedVisuals:

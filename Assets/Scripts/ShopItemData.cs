@@ -4,7 +4,6 @@ using UnityEngine;
 public class ShopItemData : ScriptableObject
 {
     [Header("Item Metadata")]
-    public ShopItemType itemType; // Enum to categorize item types (e.g., Tree, House)
     public Sprite itemIcon;
     
     [TextArea(1, 3)]

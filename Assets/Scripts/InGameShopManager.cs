@@ -24,26 +24,29 @@ public class InGameShopManager : MonoBehaviour
     public Button openCloseButton;
     public GameObject openArrow;
     public GameObject closeArrow;
-    public float closedPositionX;
+    public float openedPositionX = 0f;
     public float panelTransitionDuration = 0.3f;
     public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Item Type Visual Overrides")]
     public List<ShopItemVisuals> itemTypeVisuals; // Configured list in Inspector
 
-    private float openPositionX;
-    private bool isOpen = true;
+    private float closedPositionX;
+    private bool isOpen = false;
     private Coroutine panelTransitionCoroutine;
 
     [Header("Shop Item Data Source")]
     public ShopItemData[] shopItemDatas; // Data assets for each shop item
 
+    [Header("Placement Reference")]
+    public ItemPlacementManager placementManager;
+
     private void Start()
     {
-        // Save initial X position as the open state position
+        // Save initial X position as the closed state position
         if (shopPanel != null)
         {
-            openPositionX = shopPanel.anchoredPosition.x;
+            closedPositionX = shopPanel.anchoredPosition.x;
         }
 
         // Hook up open/close button click listener
@@ -99,8 +102,8 @@ public class InGameShopManager : MonoBehaviour
             SelectAndUseItem(shopItemUIs[0]);
         }
 
-        // Initialize default arrow state and panel position (Open by default)
-        SetShopOpen(true, smooth: false);
+        // Initialize default arrow state and panel position (Closed by default)
+        SetShopOpen(false, smooth: false);
     }
 
     private void OnDestroy()
@@ -130,7 +133,7 @@ public class InGameShopManager : MonoBehaviour
         if (openArrow != null) openArrow.SetActive(!isOpen);
         if (closeArrow != null) closeArrow.SetActive(isOpen);
 
-        float targetX = isOpen ? openPositionX : closedPositionX;
+        float targetX = isOpen ? openedPositionX : closedPositionX;
 
         if (panelTransitionCoroutine != null)
         {
@@ -176,12 +179,22 @@ public class InGameShopManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Selects the given item and logs the selection/use event.
+    /// Selects the given item, closes the shop, starts placement, and logs the selection/use event.
     /// </summary>
     public void SelectAndUseItem(ShopItemUI item)
     {
         if (item == null) return;
         selectedShopItem = item;
+
+        // Close the shop panel
+        SetShopOpen(false, smooth: true);
+
+        // Notify placement manager to start placing the item
+        if (placementManager != null && item.ItemData != null)
+        {
+            placementManager.StartPlacement(item.ItemData);
+        }
+
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
     }
 

@@ -18,6 +18,8 @@ public class ShopItemUI : MonoBehaviour
     public GameObject[] unlockedVisuals;
 
 
+    public ShopItemData ItemData { get; private set; }
+
     private CanvasGroup canvasGroup;
 
     /// <summary>
@@ -45,6 +47,7 @@ public class ShopItemUI : MonoBehaviour
     public void Initialize(ShopItemData data, Sprite customBackground = null, Sprite customIconBackground = null)
     {
         if (data == null) return;
+        ItemData = data;
 
         if (itemIcon != null && data.itemIcon != null)
         {
