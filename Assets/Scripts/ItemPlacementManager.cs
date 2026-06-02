@@ -32,6 +32,7 @@ public class ItemPlacementManager : MonoBehaviour
     public GameObject[] placeablePrefabs;
 
     private GameObject currentPlacedObject;
+    private ShopItemData pendingItemData;
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
@@ -39,7 +40,7 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (placeButton != null)
         {
-            placeButton.onClick.AddListener(PlaceItem);
+            placeButton.onClick.AddListener(HandlePlaceButtonClick);
             placeButton.gameObject.SetActive(false); // Hide the place button by default
         }
 
@@ -69,35 +70,65 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Spawns the specified item prefab and prepares it for placement.
+    /// Prepares placement for an item but does not spawn it yet.
+    /// Activates the Place button and sets its label to "Place".
     /// </summary>
-    public void StartPlacement(ShopItemData itemData)
+    public void PreparePlacement(ShopItemData itemData)
     {
         if (itemData == null || itemData.itemPrefab == null) return;
 
-        // If there's an existing object being previewed, destroy it
+        // If there's an existing preview being placed, destroy it
         if (currentPlacedObject != null)
         {
             Destroy(currentPlacedObject);
+            currentPlacedObject = null;
         }
 
-        // Spawn the item preview
-        currentPlacedObject = Instantiate(itemData.itemPrefab);
+        pendingItemData = itemData;
 
-        // Temporarily disable the PlaceableItem component on preview so it doesn't count down while dragging
-        PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
-        if (placeable != null)
-        {
-            placeable.enabled = false;
-        }
-
-        // Position it initially
-        UpdatePlacementPosition();
-
-        // Activate the placement confirmation button
+        // Activate the placement button
         if (placeButton != null)
         {
             placeButton.gameObject.SetActive(true);
+            var btnText = placeButton.GetComponentInChildren<TMPro.TMP_Text>();
+            if (btnText != null) btnText.text = "Place";
+        }
+    }
+
+    /// <summary>
+    /// Handles the placeButton click.
+    /// If no item is currently being previewed (following the crosshair), starts placement.
+    /// If an item is being previewed, finalizes its placement.
+    /// </summary>
+    public void HandlePlaceButtonClick()
+    {
+        if (currentPlacedObject == null)
+        {
+            // Start placement: spawn the item and let it follow the crosshair
+            if (pendingItemData != null && pendingItemData.itemPrefab != null)
+            {
+                currentPlacedObject = Instantiate(pendingItemData.itemPrefab);
+
+                PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
+                if (placeable != null)
+                {
+                    placeable.enabled = false;
+                }
+
+                UpdatePlacementPosition();
+
+                // Change button text to "Confirm"
+                if (placeButton != null)
+                {
+                    var btnText = placeButton.GetComponentInChildren<TMPro.TMP_Text>();
+                    if (btnText != null) btnText.text = "Confirm";
+                }
+            }
+        }
+        else
+        {
+            // Finalize placement
+            PlaceItem();
         }
     }
 
@@ -153,6 +184,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         // Clear preview control references and hide placement button
         currentPlacedObject = null;
+        pendingItemData = null; // Reset pending state
         if (placeButton != null)
         {
             placeButton.gameObject.SetActive(false);

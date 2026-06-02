@@ -92,14 +92,14 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        // Select the default selected item or first item on start
+        // Select the default selected item or first item on start (set selection only)
         if (selectedShopItem != null)
         {
-            SelectAndUseItem(selectedShopItem);
+            selectedShopItem = selectedShopItem;
         }
         else if (shopItemUIs != null && shopItemUIs.Length > 0 && shopItemUIs[0] != null)
         {
-            SelectAndUseItem(shopItemUIs[0]);
+            selectedShopItem = shopItemUIs[0];
         }
 
         // Initialize default arrow state and panel position (Closed by default)
@@ -179,7 +179,7 @@ public class InGameShopManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Selects the given item, closes the shop, starts placement, and logs the selection/use event.
+    /// Selects the given item, closes the shop, prepares placement, and logs the selection/use event.
     /// </summary>
     public void SelectAndUseItem(ShopItemUI item)
     {
@@ -189,10 +189,10 @@ public class InGameShopManager : MonoBehaviour
         // Close the shop panel
         SetShopOpen(false, smooth: true);
 
-        // Notify placement manager to start placing the item
+        // Notify placement manager to prepare placing the item
         if (placementManager != null && item.ItemData != null)
         {
-            placementManager.StartPlacement(item.ItemData);
+            placementManager.PreparePlacement(item.ItemData);
         }
 
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
