@@ -20,6 +20,15 @@ public class ShopItemData : ScriptableObject
 
     [Header("Asset References")]
     public GameObject itemPrefab; // Optional prefab reference for instantiating the item in the shop or inventory
+
+    [Header("Item State")]
+    public ShopItemState itemState = ShopItemState.Locked;
+}
+
+public enum ShopItemState
+{
+    Locked,
+    Unlocked
 }
 
 public enum ShopItemType

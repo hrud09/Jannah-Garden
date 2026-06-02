@@ -11,6 +11,12 @@ public class ShopItemUI : MonoBehaviour
     public TMP_Text itemPriceText;
     public Image itemBackgroundImg;
     public Image itemIconBackgroundImg;
+    public Button purchaseButton;
+
+    [Header("State Visual References")]
+    public GameObject[] lockedVisuals;
+    public GameObject[] unlockedVisuals;
+
 
     private CanvasGroup canvasGroup;
 
@@ -69,5 +75,25 @@ public class ShopItemUI : MonoBehaviour
         {
             itemIconBackgroundImg.sprite = customIconBackground;
         }
+
+        // Keep locked visuals active when locked, inactive otherwise
+        bool isLocked = data.itemState == ShopItemState.Locked;
+        if (lockedVisuals != null)
+        {
+            foreach (var go in lockedVisuals)
+            {
+                if (go != null) go.SetActive(isLocked);
+            }
+        }
+        // Keep unlocked visuals active when unlocked, inactive otherwise
+        bool isUnlocked = !isLocked;
+        if (unlockedVisuals != null)
+        {
+            foreach (var go in unlockedVisuals)
+            {
+                if (go != null) go.SetActive(isUnlocked);
+            }
+        }
+   
     }
 }

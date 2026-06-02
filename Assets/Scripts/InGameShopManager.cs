@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,18 +14,7 @@ public class ShopItemVisuals
 
 public class InGameShopManager : MonoBehaviour
 {
-    public ScrollRect scrollRect; // Reference to the ScrollRect component
-    public RectTransform selectedItemUIRef;
     public ShopItemUI[] shopItemUIs; // Array of ShopItemUI components
-
-    [Header("Scroll Behavior Settings")]
-    public bool smoothScroll = true;
-    public float scrollDuration = 0.3f;
-    public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-
-    [Header("Scale Transition Settings")]
-    [Tooltip("The vertical distance threshold (in local viewport pixels) over which the scale transitions from 1.0 to 0.7.")]
-    public float transitionRange = 200f;
 
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
@@ -38,6 +26,7 @@ public class InGameShopManager : MonoBehaviour
     public GameObject closeArrow;
     public float closedPositionX;
     public float panelTransitionDuration = 0.3f;
+    public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Item Type Visual Overrides")]
     public List<ShopItemVisuals> itemTypeVisuals; // Configured list in Inspector
@@ -46,9 +35,8 @@ public class InGameShopManager : MonoBehaviour
     private bool isOpen = true;
     private Coroutine panelTransitionCoroutine;
 
-    private Coroutine scrollCoroutine;
-    private bool isDragging = false;
-    private bool isSnapping = false;
+    [Header("Shop Item Data Source")]
+    public ShopItemData[] shopItemDatas; // Data assets for each shop item
 
     private void Start()
     {
@@ -88,60 +76,31 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        // Setup ScrollRect event listeners
-        if (scrollRect != null)
+        // Register click listeners for purchase buttons to select and use items
+        if (shopItemUIs != null)
         {
-            scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
-
-            // Hook drag events dynamically using EventTrigger to prevent snap conflict
-            EventTrigger trigger = scrollRect.GetComponent<EventTrigger>();
-            if (trigger == null)
+            foreach (var itemUI in shopItemUIs)
             {
-                trigger = scrollRect.gameObject.AddComponent<EventTrigger>();
-            }
-
-            // Hook Begin Drag
-            EventTrigger.Entry beginDragEntry = new EventTrigger.Entry { eventID = EventTriggerType.BeginDrag };
-            beginDragEntry.callback.AddListener((data) =>
-            {
-                isDragging = true;
-                isSnapping = false;
-                if (scrollCoroutine != null)
+                if (itemUI != null && itemUI.purchaseButton != null)
                 {
-                    StopCoroutine(scrollCoroutine);
+                    ShopItemUI currentItem = itemUI;
+                    itemUI.purchaseButton.onClick.AddListener(() => SelectAndUseItem(currentItem));
                 }
-            });
-            trigger.triggers.Add(beginDragEntry);
-
-            // Hook End Drag
-            EventTrigger.Entry endDragEntry = new EventTrigger.Entry { eventID = EventTriggerType.EndDrag };
-            endDragEntry.callback.AddListener((data) =>
-            {
-                isDragging = false;
-            });
-            trigger.triggers.Add(endDragEntry);
+            }
         }
 
-        // Auto-detect a reasonable transition range if it's unassigned or tiny
-        if (transitionRange <= 0.1f && shopItemUIs != null && shopItemUIs.Length > 0 && shopItemUIs[0] != null)
-        {
-            transitionRange = shopItemUIs[0].GetComponent<RectTransform>().rect.height;
-        }
-
-        // Determine the initial selected item based on proximity to selectedItemUIRef on start
-        UpdateClosestSelection();
-
-        // Snap to the default selected item on start if one is found/assigned
+        // Select the default selected item or first item on start
         if (selectedShopItem != null)
         {
-            FocusOnItem(selectedShopItem, smooth: false);
+            SelectAndUseItem(selectedShopItem);
+        }
+        else if (shopItemUIs != null && shopItemUIs.Length > 0 && shopItemUIs[0] != null)
+        {
+            SelectAndUseItem(shopItemUIs[0]);
         }
 
         // Initialize default arrow state and panel position (Open by default)
         SetShopOpen(true, smooth: false);
-
-        // Apply scale calculations immediately on the first frame
-        UpdateItemScales();
     }
 
     private void OnDestroy()
@@ -149,41 +108,6 @@ public class InGameShopManager : MonoBehaviour
         if (openCloseButton != null)
         {
             openCloseButton.onClick.RemoveListener(ToggleShop);
-        }
-
-        if (scrollRect != null)
-        {
-            scrollRect.onValueChanged.RemoveListener(OnScrollValueChanged);
-        }
-    }
-
-    private void Update()
-    {
-        // Continuously update the local scale of the items to match scroll updates
-        UpdateItemScales();
-
-        if (scrollRect == null || selectedShopItem == null || isDragging || isSnapping) return;
-
-        // If the scroll view is moving slowly (or has stopped) and we are not dragging, snap to closest item
-        float velocityThreshold = 150f;
-        float speed = scrollRect.velocity.magnitude;
-
-        if (speed < velocityThreshold && speed > 0.01f)
-        {
-            StartSnapToClosest();
-        }
-        else if (speed <= 0.01f)
-        {
-            // It has completely stopped, double check if we need to align
-            float refY = selectedItemUIRef.position.y;
-            float itemY = selectedShopItem.GetComponent<RectTransform>().position.y;
-            float distance = Mathf.Abs(itemY - refY);
-
-            // If it is not aligned (more than 0.1 units off in world space), start alignment snap
-            if (distance > 0.1f)
-            {
-                StartSnapToClosest();
-            }
         }
     }
 
@@ -251,41 +175,14 @@ public class InGameShopManager : MonoBehaviour
         shopPanel.anchoredPosition = finalPos;
     }
 
-    private void OnScrollValueChanged(Vector2 value)
-    {
-        UpdateClosestSelection();
-    }
-
     /// <summary>
-    /// Evaluates the distance of all shop items to selectedItemUIRef along the Y axis
-    /// and assigns the closest item to selectedShopItem.
+    /// Selects the given item and logs the selection/use event.
     /// </summary>
-    private void UpdateClosestSelection()
+    public void SelectAndUseItem(ShopItemUI item)
     {
-        if (shopItemUIs == null || shopItemUIs.Length == 0 || selectedItemUIRef == null) return;
-
-        float refY = selectedItemUIRef.position.y;
-        ShopItemUI closestItem = null;
-        float minDistance = float.MaxValue;
-
-        foreach (var item in shopItemUIs)
-        {
-            if (item == null) continue;
-
-            float itemY = item.GetComponent<RectTransform>().position.y;
-            float distance = Mathf.Abs(itemY - refY);
-
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                closestItem = item;
-            }
-        }
-
-        if (closestItem != null && closestItem != selectedShopItem)
-        {
-            selectedShopItem = closestItem;
-        }
+        if (item == null) return;
+        selectedShopItem = item;
+        Debug.Log($"Selected and used item: {item.itemNameText?.text}");
     }
 
     /// <summary>
@@ -305,190 +202,4 @@ public class InGameShopManager : MonoBehaviour
         }
         return null;
     }
-
-    /// <summary>
-    /// Updates the local scale and CanvasGroup alpha of all shop items based on their distance to selectedItemUIRef along the Y axis.
-    /// </summary>
-    private void UpdateItemScales()
-    {
-        if (shopItemUIs == null || selectedItemUIRef == null || scrollRect == null) return;
-
-        RectTransform viewport = scrollRect.viewport != null ? scrollRect.viewport : (RectTransform)scrollRect.transform;
-        float refLocalY = viewport.InverseTransformPoint(selectedItemUIRef.position).y;
-
-        foreach (var item in shopItemUIs)
-        {
-            if (item == null) continue;
-
-            RectTransform itemRect = item.GetComponent<RectTransform>();
-            float itemLocalY = viewport.InverseTransformPoint(itemRect.position).y;
-            float distance = Mathf.Abs(itemLocalY - refLocalY);
-
-            // Interpolate scale and alpha from 1.0 (at center reference) to 0.7 (at or beyond transitionRange)
-            float normalizedDist = Mathf.Clamp01(distance / Mathf.Max(transitionRange, 0.0001f));
-            float scale = Mathf.Lerp(1.0f, 0.7f, normalizedDist);
-            float alpha = Mathf.Lerp(1.0f, 0.7f, normalizedDist);
-
-            itemRect.localScale = new Vector3(scale, scale, 1f);
-
-            if (item.CanvasGroup != null)
-            {
-                item.CanvasGroup.alpha = alpha;
-            }
-        }
-    }
-
-    private void StartSnapToClosest()
-    {
-        isSnapping = true;
-        scrollRect.velocity = Vector2.zero;
-        FocusOnItem(selectedShopItem, smoothScroll);
-    }
-
-    /// <summary>
-    /// Scrolls the ScrollRect to align the target ShopItemUI with selectedItemUIRef.
-    /// </summary>
-    public void FocusOnItem(ShopItemUI targetItem, bool smooth = true)
-    {
-        if (scrollRect == null || selectedItemUIRef == null || targetItem == null) return;
-
-        RectTransform content = scrollRect.content;
-        if (content == null) return;
-
-        RectTransform viewport = scrollRect.viewport != null ? scrollRect.viewport : (RectTransform)scrollRect.transform;
-        RectTransform targetRect = targetItem.GetComponent<RectTransform>();
-
-        // Get positions relative to the scroll viewport
-        Vector3 targetLocalPos = viewport.InverseTransformPoint(targetRect.position);
-        Vector3 refLocalPos = viewport.InverseTransformPoint(selectedItemUIRef.position);
-
-        // Difference vector to offset content position
-        Vector3 localDiff = refLocalPos - targetLocalPos;
-        Vector2 targetAnchoredPos = content.anchoredPosition;
-
-        if (scrollRect.horizontal)
-        {
-            targetAnchoredPos.x += localDiff.x;
-        }
-        if (scrollRect.vertical)
-        {
-            targetAnchoredPos.y += localDiff.y;
-        }
-
-        // Clamp to avoid scrolling past content boundaries
-        targetAnchoredPos = ClampAnchoredPosition(targetAnchoredPos);
-
-        if (scrollCoroutine != null)
-        {
-            StopCoroutine(scrollCoroutine);
-        }
-
-        if (smooth && gameObject.activeInHierarchy)
-        {
-            scrollCoroutine = StartCoroutine(SmoothScrollTo(targetAnchoredPos));
-        }
-        else
-        {
-            content.anchoredPosition = targetAnchoredPos;
-            scrollRect.velocity = Vector2.zero;
-            isSnapping = false;
-        }
-    }
-
-    private IEnumerator SmoothScrollTo(Vector2 targetPos)
-    {
-        RectTransform content = scrollRect.content;
-        Vector2 startPos = content.anchoredPosition;
-        float elapsed = 0f;
-
-        scrollRect.StopMovement(); // Reset velocity and drag
-
-        while (elapsed < scrollDuration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / scrollDuration);
-            float curveT = scrollCurve.Evaluate(t);
-            content.anchoredPosition = Vector2.Lerp(startPos, targetPos, curveT);
-            yield return null;
-        }
-
-        content.anchoredPosition = targetPos;
-        isSnapping = false;
-    }
-
-    private Vector2 ClampAnchoredPosition(Vector2 targetAnchoredPosition)
-    {
-        if (scrollRect == null || scrollRect.content == null) return targetAnchoredPosition;
-
-        RectTransform content = scrollRect.content;
-        RectTransform viewport = scrollRect.viewport != null ? scrollRect.viewport : (RectTransform)scrollRect.transform;
-
-        // Temporarily set position to compute accurate UI bounds
-        Vector2 originalPosition = content.anchoredPosition;
-        content.anchoredPosition = targetAnchoredPosition;
-
-        Canvas.ForceUpdateCanvases();
-
-        Vector3[] viewportCorners = new Vector3[4];
-        Vector3[] contentCorners = new Vector3[4];
-        viewport.GetWorldCorners(viewportCorners);
-        content.GetWorldCorners(contentCorners);
-
-        Vector2 viewportMin = viewport.InverseTransformPoint(viewportCorners[0]);
-        Vector2 viewportMax = viewport.InverseTransformPoint(viewportCorners[2]);
-        Vector2 contentMin = viewport.InverseTransformPoint(contentCorners[0]);
-        Vector2 contentMax = viewport.InverseTransformPoint(contentCorners[2]);
-
-        Vector2 shift = Vector2.zero;
-
-        if (scrollRect.horizontal)
-        {
-            float contentWidth = contentMax.x - contentMin.x;
-            float viewportWidth = viewportMax.x - viewportMin.x;
-
-            if (contentWidth <= viewportWidth)
-            {
-                shift.x = (viewportMin.x + viewportWidth * 0.5f) - (contentMin.x + contentWidth * 0.5f);
-            }
-            else
-            {
-                if (contentMin.x > viewportMin.x)
-                {
-                    shift.x = viewportMin.x - contentMin.x;
-                }
-                else if (contentMax.x < viewportMax.x)
-                {
-                    shift.x = viewportMax.x - contentMax.x;
-                }
-            }
-        }
-
-        if (scrollRect.vertical)
-        {
-            float contentHeight = contentMax.y - contentMin.y;
-            float viewportHeight = viewportMax.y - viewportMin.y;
-
-            if (contentHeight <= viewportHeight)
-            {
-                shift.y = (viewportMin.y + viewportHeight * 0.5f) - (contentMin.y + contentHeight * 0.5f);
-            }
-            else
-            {
-                if (contentMin.y > viewportMin.y)
-                {
-                    shift.y = viewportMin.y - contentMin.y;
-                }
-                else if (contentMax.y < viewportMax.y)
-                {
-                    shift.y = viewportMax.y - contentMax.y;
-                }
-            }
-        }
-
-        content.anchoredPosition = originalPosition; // Revert temporary position assignment
-        return targetAnchoredPosition + shift;
-    }
-
-    [Header("Shop Item Data Source")]
-    public ShopItemData[] shopItemDatas; // Data assets for each shop item
 }
