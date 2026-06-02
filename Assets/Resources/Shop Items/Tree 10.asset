@@ -16,6 +16,7 @@ MonoBehaviour:
   itemName: Green Tree
   itemDescription: 
   itemPrice: 100
-  itemBackground: {fileID: 0}
-  itemIconBackground: {fileID: 0}
+  shopItemType: 0
   itemPrefab: {fileID: 0}
+  itemState: 1
+  placementTimerDuration: 360
