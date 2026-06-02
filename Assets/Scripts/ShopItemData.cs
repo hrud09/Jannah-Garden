@@ -22,6 +22,9 @@ public class ShopItemData : ScriptableObject
 
     [Header("Item State")]
     public ShopItemState itemState = ShopItemState.Locked;
+
+    [Header("Placement Settings")]
+    public float placementTimerDuration = 360f; // Required time to fully place the item in the game world in seconds
 }
 
 public enum ShopItemState

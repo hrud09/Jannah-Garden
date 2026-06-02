@@ -1,5 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class PlacedItemSaveData
+{
+    public string uniqueId;
+    public string prefabName;
+    public Vector3 position;
+    public Quaternion rotation;
+    public float remainingDuration;
+    public float totalDuration;
+}
+
+[System.Serializable]
+public class SaveStateCollection
+{
+    public double gameClosedTimeUnix;
+    public List<PlacedItemSaveData> items = new List<PlacedItemSaveData>();
+}
 
 public class ItemPlacementManager : MonoBehaviour
 {
@@ -7,7 +26,14 @@ public class ItemPlacementManager : MonoBehaviour
     public TerrainCollider terrainCollider;
     public Button placeButton;
 
+    [Header("Shop/Prefab References")]
+    public InGameShopManager shopManager;
+    [Tooltip("Explicit array of prefabs for quick loading. Fallback searches shopManager.")]
+    public GameObject[] placeablePrefabs;
+
     private GameObject currentPlacedObject;
+    private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
+    private const string SAVE_KEY = "PlacedItemsData";
 
     private void Start()
     {
@@ -16,6 +42,9 @@ public class ItemPlacementManager : MonoBehaviour
             placeButton.onClick.AddListener(PlaceItem);
             placeButton.gameObject.SetActive(false); // Hide the place button by default
         }
+
+        // Load previously placed items on startup
+        LoadPlacedItems();
     }
 
     private void Update()
@@ -23,6 +52,19 @@ public class ItemPlacementManager : MonoBehaviour
         if (currentPlacedObject != null)
         {
             UpdatePlacementPosition();
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        SavePlacedItems();
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            SavePlacedItems();
         }
     }
 
@@ -41,6 +83,13 @@ public class ItemPlacementManager : MonoBehaviour
 
         // Spawn the item preview
         currentPlacedObject = Instantiate(itemData.itemPrefab);
+
+        // Temporarily disable the PlaceableItem component on preview so it doesn't count down while dragging
+        PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
+        if (placeable != null)
+        {
+            placeable.enabled = false;
+        }
 
         // Position it initially
         UpdatePlacementPosition();
@@ -75,19 +124,153 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Confirms placement of the current item, detaching it from the placement controls.
+    /// Confirms placement of the current item, sets up placement time tracking, and saves the game state.
     /// </summary>
     public void PlaceItem()
     {
         if (currentPlacedObject == null) return;
 
-        // Finalize placement at current position
-        currentPlacedObject = null;
+        // Enable and initialize the PlaceableItem component on the placed object
+        PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
+        if (placeable == null)
+        {
+            placeable = currentPlacedObject.AddComponent<PlaceableItem>();
+        }
 
-        // Deactivate placement confirmation button
+        placeable.enabled = true;
+
+        // Initialize tracking with unique ID and total duration
+        string uniqueId = System.Guid.NewGuid().ToString();
+        placeable.Initialize(uniqueId, placeable.placementDuration, placeable.placementDuration);
+
+        // Strip "(Clone)" suffix from the spawned gameobject name to find it when loading
+        string prefabName = currentPlacedObject.name.Replace("(Clone)", "").Trim();
+        placeable.prefabName = prefabName;
+
+        // Add to tracking list and save state
+        activePlacedItems.Add(placeable);
+        SavePlacedItems();
+
+        // Clear preview control references and hide placement button
+        currentPlacedObject = null;
         if (placeButton != null)
         {
             placeButton.gameObject.SetActive(false);
         }
+    }
+
+    /// <summary>
+    /// Saves the current list of placed items and the shutdown timestamp to PlayerPrefs.
+    /// </summary>
+    public void SavePlacedItems()
+    {
+        SaveStateCollection state = new SaveStateCollection();
+        state.gameClosedTimeUnix = System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+        // Remove any deleted items from active tracking list
+        activePlacedItems.RemoveAll(item => item == null);
+
+        foreach (var item in activePlacedItems)
+        {
+            PlacedItemSaveData data = new PlacedItemSaveData
+            {
+                uniqueId = item.uniqueId,
+                prefabName = item.prefabName,
+                position = item.transform.position,
+                rotation = item.transform.rotation,
+                remainingDuration = item.remainingDuration,
+                totalDuration = item.placementDuration
+            };
+            state.items.Add(data);
+        }
+
+        string json = JsonUtility.ToJson(state);
+        PlayerPrefs.SetString(SAVE_KEY, json);
+        PlayerPrefs.Save();
+        Debug.Log("Placed items successfully saved to PlayerPrefs.");
+    }
+
+    /// <summary>
+    /// Loads placed items from PlayerPrefs and offsets remaining times by offline elapsed duration.
+    /// </summary>
+    private void LoadPlacedItems()
+    {
+        if (!PlayerPrefs.HasKey(SAVE_KEY)) return;
+
+        string json = PlayerPrefs.GetString(SAVE_KEY);
+        SaveStateCollection state = JsonUtility.FromJson<SaveStateCollection>(json);
+        if (state == null || state.items == null) return;
+
+        double currentUnix = System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        double elapsedOffline = 0;
+
+        if (state.gameClosedTimeUnix > 0)
+        {
+            elapsedOffline = currentUnix - state.gameClosedTimeUnix;
+        }
+
+        // Clean existing active items list
+        activePlacedItems.Clear();
+
+        foreach (var itemData in state.items)
+        {
+            GameObject prefab = GetPrefabByName(itemData.prefabName);
+            if (prefab != null)
+            {
+                GameObject spawned = Instantiate(prefab, itemData.position, itemData.rotation);
+                
+                PlaceableItem placeable = spawned.GetComponent<PlaceableItem>();
+                if (placeable == null)
+                {
+                    placeable = spawned.AddComponent<PlaceableItem>();
+                }
+                
+                placeable.enabled = true;
+                placeable.prefabName = itemData.prefabName;
+
+                // Deduct the elapsed offline time from the remaining duration
+                float newRemaining = itemData.remainingDuration - (float)elapsedOffline;
+                if (newRemaining < 0) newRemaining = 0;
+
+                placeable.Initialize(itemData.uniqueId, itemData.totalDuration, newRemaining);
+                activePlacedItems.Add(placeable);
+            }
+            else
+            {
+                Debug.LogWarning("Failed to find placeable prefab named: " + itemData.prefabName);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Searches for a placeable prefab matching the provided name.
+    /// </summary>
+    private GameObject GetPrefabByName(string prefabName)
+    {
+        // 1. Search custom prefabs list
+        if (placeablePrefabs != null)
+        {
+            foreach (var prefab in placeablePrefabs)
+            {
+                if (prefab != null && prefab.name == prefabName)
+                {
+                    return prefab;
+                }
+            }
+        }
+
+        // 2. Search shop manager's data sources
+        if (shopManager != null && shopManager.shopItemDatas != null)
+        {
+            foreach (var data in shopManager.shopItemDatas)
+            {
+                if (data != null && data.itemPrefab != null && data.itemPrefab.name == prefabName)
+                {
+                    return data.itemPrefab;
+                }
+            }
+        }
+
+        return null;
     }
 }

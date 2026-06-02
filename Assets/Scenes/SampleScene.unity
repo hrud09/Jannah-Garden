@@ -9583,6 +9583,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 155560312399036359, guid: c255a97f0f00f934fade030c353aff54, type: 3}
   m_PrefabInstance: {fileID: 224358880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &226927532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
+  m_PrefabInstance: {fileID: 6798256572239768189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069ef33f700257945b85e3bb6a8006eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InGameShopManager
 --- !u!1001 &226997311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23677,6 +23688,10 @@ PrefabInstance:
       propertyPath: placeButton
       value: 
       objectReference: {fileID: 328864480}
+    - target: {fileID: 269081357664727164, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 226927532}
     - target: {fileID: 269081357664727164, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: crosshairRect
       value: 
@@ -106627,7 +106642,6 @@ GameObject:
   - component: {fileID: 5210177393799889154}
   - component: {fileID: 7032205609825041155}
   - component: {fileID: 1230987672797655297}
-  - component: {fileID: 3429655091540385477}
   m_Layer: 5
   m_Name: Item Placement Canvas
   m_TagString: Untagged
@@ -106635,83 +106649,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3429655091540385477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799241611266707109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069ef33f700257945b85e3bb6a8006eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InGameShopManager
-  shopItemUIs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  selectedShopItem: {fileID: 0}
-  shopPanel: {fileID: 0}
-  openCloseButton: {fileID: 0}
-  openArrow: {fileID: 0}
-  closeArrow: {fileID: 0}
-  openedPositionX: 0
-  panelTransitionDuration: 0.3
-  scrollCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  itemTypeVisuals: []
-  shopItemDatas:
-  - {fileID: 11400000, guid: 1351701ecc5b6434580875033e16b925, type: 2}
-  - {fileID: 11400000, guid: dc152d1b43af9c044835829ec2fd6df2, type: 2}
-  - {fileID: 11400000, guid: be724c60524686b418ae746f88d0947e, type: 2}
-  - {fileID: 11400000, guid: 651f11d8a31efda45b96f07e85139368, type: 2}
-  - {fileID: 11400000, guid: 0f081ddad8cb12f429d7ac609e46cc48, type: 2}
-  - {fileID: 11400000, guid: d6f26dab8da7c2d46b04234f13f38dbd, type: 2}
-  - {fileID: 11400000, guid: e8a989e66ee406943a88595731ff1818, type: 2}
-  - {fileID: 11400000, guid: 1baf3aa1988362c47b2d375e158eb7b6, type: 2}
-  - {fileID: 11400000, guid: 2e3bcd32decc6914498fc3798289b389, type: 2}
-  - {fileID: 11400000, guid: a2111d775d7cecb4fb2d50cf042c41d2, type: 2}
-  - {fileID: 11400000, guid: 3d470933992440e40aadd62285723ab3, type: 2}
-  - {fileID: 11400000, guid: 7324df785a374d741859d63ecf276665, type: 2}
-  - {fileID: 11400000, guid: 8b889b09bb6d8334abee1cc7322001b5, type: 2}
-  - {fileID: 11400000, guid: 759f1a0cedaee924a84279e008e0618d, type: 2}
-  - {fileID: 11400000, guid: d28e46d8e88833a4f82fcae0d371b2d0, type: 2}
-  placementManager: {fileID: 0}
 --- !u!1001 &3843282435989136145
 PrefabInstance:
   m_ObjectHideFlags: 0
