@@ -15,6 +15,7 @@ public class PlaceableItem : MonoBehaviour
 
     [Header("UI References (Optional)")]
     public TMP_Text timerText;
+    public GameObject timerHolder;
 
     private bool isTracking = false;
 
@@ -31,6 +32,12 @@ public class PlaceableItem : MonoBehaviour
 
     private void Start()
     {
+        // Make the timerHolder face the camera
+        if (timerHolder != null && timerHolder.GetComponent<Billboard>() == null)
+        {
+            timerHolder.AddComponent<Billboard>();
+        }
+
         // Auto-detect a Text Mesh Pro text field in children if not assigned
         if (timerText == null)
         {

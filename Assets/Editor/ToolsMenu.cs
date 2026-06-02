@@ -6,9 +6,8 @@ public static class ToolsMenu
     [MenuItem("Tools/Clear All Saved Data")]
     public static void ClearAllSavedData()
     {
-        // Delete all PlayerPrefs keys
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        // Clear all binary save files and PlayerPrefs
+        SaveSystem.ClearAll();
 
         // Show editor confirmation popup
         EditorUtility.DisplayDialog(

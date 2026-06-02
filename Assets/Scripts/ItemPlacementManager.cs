@@ -7,8 +7,8 @@ public class PlacedItemSaveData
 {
     public string uniqueId;
     public string prefabName;
-    public Vector3 position;
-    public Quaternion rotation;
+    public SerializableVector3 position;
+    public SerializableQuaternion rotation;
     public float remainingDuration;
     public float totalDuration;
 }
@@ -192,7 +192,7 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Saves the current list of placed items and the shutdown timestamp to PlayerPrefs.
+    /// Saves the current list of placed items and the shutdown timestamp to binary save file.
     /// </summary>
     public void SavePlacedItems()
     {
@@ -216,21 +216,18 @@ public class ItemPlacementManager : MonoBehaviour
             state.items.Add(data);
         }
 
-        string json = JsonUtility.ToJson(state);
-        PlayerPrefs.SetString(SAVE_KEY, json);
-        PlayerPrefs.Save();
-        Debug.Log("Placed items successfully saved to PlayerPrefs.");
+        SaveSystem.Save(SAVE_KEY, state);
+        Debug.Log("Placed items successfully saved to binary using SaveSystem.");
     }
 
     /// <summary>
-    /// Loads placed items from PlayerPrefs and offsets remaining times by offline elapsed duration.
+    /// Loads placed items from binary save file and offsets remaining times by offline elapsed duration.
     /// </summary>
     private void LoadPlacedItems()
     {
-        if (!PlayerPrefs.HasKey(SAVE_KEY)) return;
+        if (!SaveSystem.Exists(SAVE_KEY)) return;
 
-        string json = PlayerPrefs.GetString(SAVE_KEY);
-        SaveStateCollection state = JsonUtility.FromJson<SaveStateCollection>(json);
+        SaveStateCollection state = SaveSystem.Load<SaveStateCollection>(SAVE_KEY);
         if (state == null || state.items == null) return;
 
         double currentUnix = System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
