@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 2531667859275332622}
   - component: {fileID: 1895128501}
   - component: {fileID: 269081357664727164}
+  - component: {fileID: 5509489776399048857}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Player
@@ -288,6 +289,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4b1fe26c44f4e4cba97fc053e56221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPlacementManager
+  crosshairRect: {fileID: 0}
+  terrainCollider: {fileID: 0}
+  placeButton: {fileID: 0}
+  shopManager: {fileID: 0}
+  placeablePrefabs: []
+--- !u!114 &5509489776399048857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531667859275332615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c770eab1d783c3346bcdf06dec4e8c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayersInteractionManager
 --- !u!1 &8114015898775887059
 GameObject:
   m_ObjectHideFlags: 0
