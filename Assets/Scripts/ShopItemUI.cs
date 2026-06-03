@@ -17,6 +17,12 @@ public class ShopItemUI : MonoBehaviour
     public GameObject[] lockedVisuals;
     public GameObject[] unlockedVisuals;
 
+    [Header("Economy Visuals")]
+    [Tooltip("Colour of the price label when the player CAN afford the item.")]
+    public Color affordableColor = new Color(1f, 0.85f, 0.1f); // gold
+    [Tooltip("Colour of the price label when the player CANNOT afford the item.")]
+    public Color unaffordableColor = new Color(0.9f, 0.2f, 0.2f); // red
+
 
     public ShopItemData ItemData { get; private set; }
 
@@ -64,9 +70,12 @@ public class ShopItemUI : MonoBehaviour
             itemDescriptionText.text = data.itemDescription;
         }
 
-        if (itemPriceText != null && !string.IsNullOrEmpty(data.itemPrice))
+        // ── Economy: display Noor Coin cost ──────────────────────────────────
+        if (itemPriceText != null)
         {
-            itemPriceText.text = data.itemPrice;
+            itemPriceText.text = data.noorCoinCost == 0
+                ? "Free"
+                : $"{data.noorCoinCost} \u29DF"; // ⟟ coin glyph (fallback: ⟡)
         }
 
         if (itemBackgroundImg != null && customBackground != null)
@@ -97,6 +106,46 @@ public class ShopItemUI : MonoBehaviour
                 if (go != null) go.SetActive(isUnlocked);
             }
         }
-   
+
+        // Initial affordability tint
+        RefreshAffordabilityVisual();
+    }
+
+    // ─── Affordability Visuals ────────────────────────────────────────────────
+
+    private void OnEnable()
+    {
+        NoorCoinManager.OnBalanceChanged += OnBalanceChanged;
+    }
+
+    private void OnDisable()
+    {
+        NoorCoinManager.OnBalanceChanged -= OnBalanceChanged;
+    }
+
+    private void OnBalanceChanged(int _) => RefreshAffordabilityVisual();
+
+    /// <summary>
+    /// Tints the price text gold if the player can afford it, red if they cannot.
+    /// Only applied for items with a real cost (> 0) that are not locked.
+    /// </summary>
+    public void RefreshAffordabilityVisual()
+    {
+        if (itemPriceText == null || ItemData == null) return;
+
+        // Locked items don't need affordability tinting
+        if (ItemData.itemState == ShopItemState.Locked) return;
+
+        // Free items are always "affordable"
+        if (ItemData.noorCoinCost <= 0)
+        {
+            itemPriceText.color = affordableColor;
+            return;
+        }
+
+        bool canAfford = NoorCoinManager.Instance != null &&
+                         NoorCoinManager.Instance.CanAfford(ItemData.noorCoinCost);
+
+        itemPriceText.color = canAfford ? affordableColor : unaffordableColor;
     }
 }

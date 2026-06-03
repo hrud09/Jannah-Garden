@@ -36,6 +36,7 @@ public class ItemPlacementManager : MonoBehaviour
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
+
     private void Start()
     {
         if (placeButton != null)
@@ -104,15 +105,25 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (currentPlacedObject == null)
         {
-            // Start placement: spawn the item and let it follow the crosshair
+            // Start placement: spawn the ghost/preview model and let it follow the crosshair.
+            // Use itemPlacementModelPrefab if assigned; fall back to itemPrefab.
             if (pendingItemData != null && pendingItemData.itemPrefab != null)
             {
-                currentPlacedObject = Instantiate(pendingItemData.itemPrefab);
+                GameObject previewPrefab = pendingItemData.itemPlacementModelPrefab != null
+                    ? pendingItemData.itemPlacementModelPrefab
+                    : pendingItemData.itemPrefab;
 
+                currentPlacedObject = Instantiate(previewPrefab);
+
+                // Disable PlaceableItem on the ghost so the countdown doesn't start yet
                 PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
                 if (placeable != null)
                 {
                     placeable.enabled = false;
+
+                    // Show the timer label immediately so the player can see the
+                    // duration before confirming placement.
+                    placeable.PreviewTimer(pendingItemData.placementTimerDuration);
                 }
 
                 UpdatePlacementPosition();
@@ -161,21 +172,42 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (currentPlacedObject == null) return;
 
-        // Enable and initialize the PlaceableItem component on the placed object
-        PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
+        // ── Swap ghost → real prefab ──────────────────────────────────────────
+        // Record where the ghost ended up, then destroy it.
+        Vector3 confirmedPosition = currentPlacedObject.transform.position;
+        Quaternion confirmedRotation = currentPlacedObject.transform.rotation;
+        Destroy(currentPlacedObject);
+        currentPlacedObject = null;
+
+        // Spawn the real item prefab at the confirmed position.
+        if (pendingItemData == null || pendingItemData.itemPrefab == null)
+        {
+            Debug.LogWarning("[ItemPlacementManager] PlaceItem: no itemPrefab on pendingItemData.");
+            pendingItemData = null;
+            if (placeButton != null) placeButton.gameObject.SetActive(false);
+            return;
+        }
+
+        GameObject realObject = Instantiate(pendingItemData.itemPrefab, confirmedPosition, confirmedRotation);
+        // ─────────────────────────────────────────────────────────────────────
+
+        // Enable and initialize the PlaceableItem component on the real object
+        PlaceableItem placeable = realObject.GetComponent<PlaceableItem>();
         if (placeable == null)
         {
-            placeable = currentPlacedObject.AddComponent<PlaceableItem>();
+            placeable = realObject.AddComponent<PlaceableItem>();
         }
 
         placeable.enabled = true;
 
-        // Initialize tracking with unique ID and total duration
-        string uniqueId = System.Guid.NewGuid().ToString();
-        placeable.Initialize(uniqueId, placeable.placementDuration, placeable.placementDuration);
+        // Use the duration defined in the ShopItemData asset as the authoritative source.
+        float totalDuration = pendingItemData.placementTimerDuration;
 
-        // Strip "(Clone)" suffix from the spawned gameobject name to find it when loading
-        string prefabName = currentPlacedObject.name.Replace("(Clone)", "").Trim();
+        string uniqueId = System.Guid.NewGuid().ToString();
+        placeable.Initialize(uniqueId, totalDuration, totalDuration);
+
+        // Strip "(Clone)" suffix so we can find the prefab by name when loading
+        string prefabName = realObject.name.Replace("(Clone)", "").Trim();
         placeable.prefabName = prefabName;
 
         // Add to tracking list and save state

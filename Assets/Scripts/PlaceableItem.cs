@@ -30,6 +30,34 @@ public class PlaceableItem : MonoBehaviour
         this.isTracking = true;
     }
 
+    /// <summary>
+    /// Writes the formatted duration to the timer label without starting the countdown.
+    /// Call this during the preview / pre-confirmation phase so the player can see
+    /// how long the item will take before they commit to placing it.
+    /// </summary>
+    public void PreviewTimer(float duration)
+    {
+        // The floating timer UI is created in Start(), which hasn't run yet
+        // when this is called on a freshly instantiated object, so we need to
+        // bootstrap the text reference ourselves if it's missing.
+        if (timerText == null)
+        {
+            timerText = GetComponentInChildren<TMPro.TMP_Text>();
+        }
+
+        if (timerText == null)
+        {
+            CreateFloatingTimerUI();
+        }
+
+        if (timerText != null)
+        {
+            int minutes = Mathf.FloorToInt(duration / 60f);
+            int seconds = Mathf.FloorToInt(duration % 60f);
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+    }
+
     private void Start()
     {
         // Make the timerHolder face the camera

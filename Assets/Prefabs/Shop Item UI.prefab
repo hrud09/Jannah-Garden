@@ -605,6 +605,8 @@ MonoBehaviour:
   - {fileID: 4555837219905805088}
   unlockedVisuals:
   - {fileID: 3742483132195107422}
+  affordableColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  unaffordableColor: {r: 0.9, g: 0.2, b: 0.2, a: 1}
 --- !u!225 &4078596483887000632
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1415,7 +1417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 34de67889e1774dafaab8cd0c99c2084, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e007681ffe10f47cfbc74fe58564b2a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

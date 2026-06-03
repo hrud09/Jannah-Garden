@@ -11,14 +11,23 @@ public class ShopItemData : ScriptableObject
     
     [TextArea(3, 10)]
     public string itemDescription;
-    
-    public string itemPrice; // String format supports diverse pricing (e.g., "$10", "100 Coins", "Free")
+
+    [Header("Economy")]
+    [Tooltip("Cost of this item in Noor Coins. 0 = free.")]
+    public int noorCoinCost = 0;
+
+    [HideInInspector]
+    [Tooltip("Legacy string price field. Kept for backwards compatibility only. Use noorCoinCost instead.")]
+    public string itemPrice; // Deprecated — use noorCoinCost
 
     [Header("Item Visual Category")]
     public ShopItemType shopItemType;
 
     [Header("Asset References")]
-    public GameObject itemPrefab; // Optional prefab reference for instantiating the item in the shop or inventory
+    public GameObject itemPrefab; // The real item prefab spawned after placement is confirmed
+    [Tooltip("Lightweight ghost/preview prefab shown while the player is positioning the item. " +
+             "Falls back to itemPrefab if left empty.")]
+    public GameObject itemPlacementModelPrefab; // Temporary preview shown during placement
 
     [Header("Item State")]
     public ShopItemState itemState = ShopItemState.Locked;
