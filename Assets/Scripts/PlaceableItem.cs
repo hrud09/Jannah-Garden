@@ -18,6 +18,7 @@ public class PlaceableItem : MonoBehaviour
     public GameObject timerHolder;
 
     private bool isTracking = false;
+    private bool alreadyCompletedOnStart = false;
 
     /// <summary>
     /// Initializes tracking values for this item.
@@ -28,6 +29,11 @@ public class PlaceableItem : MonoBehaviour
         this.placementDuration = totalDur;
         this.remainingDuration = remainingDur;
         this.isTracking = true;
+
+        if (remainingDur <= 0f)
+        {
+            alreadyCompletedOnStart = true;
+        }
     }
 
     /// <summary>
@@ -77,6 +83,17 @@ public class PlaceableItem : MonoBehaviour
         {
             CreateFloatingTimerUI();
         }
+
+        // If it was already completed on start/load, disable the timer holder immediately
+        if (alreadyCompletedOnStart)
+        {
+            isTracking = false;
+            remainingDuration = 0f;
+            if (timerHolder != null)
+            {
+                timerHolder.SetActive(false);
+            }
+        }
     }
 
     private void CreateFloatingTimerUI()
@@ -109,6 +126,9 @@ public class PlaceableItem : MonoBehaviour
 
         // Apply a Billboard effect to rotate towards the camera
         textGo.AddComponent<Billboard>();
+
+        // Store the canvas in timerHolder so it can be disabled later
+        timerHolder = canvasGo;
     }
 
     private void Update()
@@ -120,10 +140,15 @@ public class PlaceableItem : MonoBehaviour
         if (remainingDuration <= 0f)
         {
             remainingDuration = 0f;
+            isTracking = false; // Stop tracking so we don't repeatedly trigger this
+
             if (timerText != null)
             {
                 timerText.text = "Completed!";
             }
+
+            // Start coroutine to hide the timer holder after 5 seconds
+            StartCoroutine(DisableTimerHolderAfterDelay(5f));
         }
         else
         {
@@ -133,6 +158,16 @@ public class PlaceableItem : MonoBehaviour
                 int seconds = Mathf.FloorToInt(remainingDuration % 60f);
                 timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
+        }
+    }
+
+    private System.Collections.IEnumerator DisableTimerHolderAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (timerHolder != null)
+        {
+            timerHolder.SetActive(false);
         }
     }
 }

@@ -71,8 +71,8 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Prepares placement for an item but does not spawn it yet.
-    /// Activates the Place button and sets its label to "Place".
+    /// Prepares placement for an item by instantly spawning the preview model,
+    /// letting it follow the crosshair, and activating the Place button.
     /// </summary>
     public void PreparePlacement(ShopItemData itemData)
     {
@@ -87,6 +87,27 @@ public class ItemPlacementManager : MonoBehaviour
 
         pendingItemData = itemData;
 
+        // Spawn the ghost/preview model and let it follow the crosshair immediately.
+        // Use itemPlacementModelPrefab if assigned; fall back to itemPrefab.
+        GameObject previewPrefab = pendingItemData.itemPlacementModelPrefab != null
+            ? pendingItemData.itemPlacementModelPrefab
+            : pendingItemData.itemPrefab;
+
+        currentPlacedObject = Instantiate(previewPrefab);
+
+        // Disable PlaceableItem on the ghost so the countdown doesn't start yet
+        PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
+        if (placeable != null)
+        {
+            placeable.enabled = false;
+
+            // Show the timer label immediately so the player can see the
+            // duration before confirming placement.
+            placeable.PreviewTimer(pendingItemData.placementTimerDuration);
+        }
+
+        UpdatePlacementPosition();
+
         // Activate the placement button
         if (placeButton != null)
         {
@@ -98,47 +119,13 @@ public class ItemPlacementManager : MonoBehaviour
 
     /// <summary>
     /// Handles the placeButton click.
-    /// If no item is currently being previewed (following the crosshair), starts placement.
-    /// If an item is being previewed, finalizes its placement.
+    /// Immediately confirms and finalizes placement.
     /// </summary>
     public void HandlePlaceButtonClick()
     {
-        if (currentPlacedObject == null)
+        if (currentPlacedObject != null)
         {
-            // Start placement: spawn the ghost/preview model and let it follow the crosshair.
-            // Use itemPlacementModelPrefab if assigned; fall back to itemPrefab.
-            if (pendingItemData != null && pendingItemData.itemPrefab != null)
-            {
-                GameObject previewPrefab = pendingItemData.itemPlacementModelPrefab != null
-                    ? pendingItemData.itemPlacementModelPrefab
-                    : pendingItemData.itemPrefab;
-
-                currentPlacedObject = Instantiate(previewPrefab);
-
-                // Disable PlaceableItem on the ghost so the countdown doesn't start yet
-                PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
-                if (placeable != null)
-                {
-                    placeable.enabled = false;
-
-                    // Show the timer label immediately so the player can see the
-                    // duration before confirming placement.
-                    placeable.PreviewTimer(pendingItemData.placementTimerDuration);
-                }
-
-                UpdatePlacementPosition();
-
-                // Change button text to "Confirm"
-                if (placeButton != null)
-                {
-                    var btnText = placeButton.GetComponentInChildren<TMPro.TMP_Text>();
-                    if (btnText != null) btnText.text = "Confirm";
-                }
-            }
-        }
-        else
-        {
-            // Finalize placement
+            // Finalize placement immediately
             PlaceItem();
         }
     }
