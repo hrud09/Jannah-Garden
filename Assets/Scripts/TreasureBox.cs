@@ -1,13 +1,22 @@
+using TMPro;
 using UnityEngine;
 
 public class TreasureBox : MonoBehaviour
 {
+
+    public TreasureBoxRewardData rewardData;
     [Header("Meshes to Outline")]
     public Renderer[] meshes;
 
     private Material[] instancedMaterials;
     private bool isOutlineEnabled = false;
 
+
+    [Header("UI References")]
+    public TMP_Text nameText;
+    public TMP_Text timerText;
+    [HideInInspector] public TreasureBoxTier tier;
+    [HideInInspector] public int slotIndex;
     private void Start()
     {
         // Cache instanced materials to avoid cloning materials repeatedly at runtime.

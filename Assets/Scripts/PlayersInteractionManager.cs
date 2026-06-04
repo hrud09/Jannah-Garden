@@ -31,6 +31,15 @@ public class PlayersInteractionManager : MonoBehaviour
         if (itemInteractButton != null)
         {
             itemInteractButton.gameObject.SetActive(false);
+            itemInteractButton.onClick.AddListener(OnInteractButtonClicked);
+        }
+    }
+
+    private void OnInteractButtonClicked()
+    {
+        if (currentTargetBox != null && TreasureBoxManager.Instance != null)
+        {
+            TreasureBoxManager.Instance.TryOpenBox(currentTargetBox.tier, currentTargetBox.slotIndex);
         }
     }
 

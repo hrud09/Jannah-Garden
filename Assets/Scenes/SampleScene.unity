@@ -6760,6 +6760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasure Box (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12258,6 +12262,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
   m_PrefabInstance: {fileID: 6509895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &274885507 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2531667858752797858, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+  m_PrefabInstance: {fileID: 520649522}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &276203771
 PrefabInstance:
@@ -81251,6 +81260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasure Box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -104865,6 +104878,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3767358828197824251, guid: 7df3af01473dd7841ae339df250b9cd8, type: 3}
   m_PrefabInstance: {fileID: 32900056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2090118977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090118979}
+  - component: {fileID: 2090118978}
+  m_Layer: 0
+  m_Name: Treasure Box Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2090118978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090118977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f175c717a2605e944b02d3e7c27a4118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxManager
+  silverRewardData: {fileID: 11400000, guid: bdc6e556e3949d94c9665ea3dda51c33, type: 2}
+  goldRewardData: {fileID: 11400000, guid: 7dd2867608290934ba8eaf3ab74d10aa, type: 2}
+  platinumRewardData: {fileID: 11400000, guid: 0ae62cbe89d8b0f438b4ecbc2d7b3888, type: 2}
+  diamondRewardData: {fileID: 11400000, guid: 6aa46fa171c4c3a45acf0dd61b07bac0, type: 2}
+  isSubscriber: 0
+  silverTimers:
+  - 
+  - 
+  - 
+  goldTimers:
+  - 
+  - 
+  - 
+  platinumTimers:
+  - 
+  - 
+  - 
+  diamondTimers:
+  - 
+  - 
+  - 
+  spawnTerrain: {fileID: 320240521}
+--- !u!4 &2090118979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090118977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2090705236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107069,6 +107148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasure Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107612,6 +107695,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1429859273}
     m_Modifications:
+    - target: {fileID: 140315368696664501, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 274885507}
     - target: {fileID: 467252429517818482, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 150.854
@@ -107655,6 +107742,10 @@ PrefabInstance:
     - target: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
       propertyPath: m_Name
       value: Treasure Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -108398,3 +108489,4 @@ SceneRoots:
   - {fileID: 7632075742017940631}
   - {fileID: 350008107}
   - {fileID: 1429859273}
+  - {fileID: 2090118979}

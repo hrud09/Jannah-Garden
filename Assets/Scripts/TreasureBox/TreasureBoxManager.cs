@@ -1,0 +1,719 @@
+using UnityEngine;
+using System;
+using System.Collections.Generic;
+
+/// <summary>
+/// Singleton manager for the Jannah Garden Treasure Box daily-reward system.
+///
+/// Responsibilities:
+///   • Tracks 4 tiers × 3 slots = 12 boxes per 24-hour cycle.
+///   • Enforces strict tier progression (Silver → Gold → Platinum → Diamond).
+///   • Manages 2-hour per-slot respawn cooldowns.
+///   • Gates free-user opens behind a rewarded ad.
+///   • Fires events for the UI layer to react to.
+///   • Persists all state via <see cref="SaveSystem"/>.
+/// </summary>
+public class TreasureBoxManager : MonoBehaviour
+{
+    // ─── Constants ────────────────────────────────────────────────────────────
+
+    public const int  SLOTS_PER_TIER      = 3;
+    public const string SAVE_KEY          = "TreasureBoxState";
+
+    /// <summary>
+    /// Fallback spawn cooldown in hours when no reward data is available.
+    /// The per-tier value from <see cref="TreasureBoxRewardData.spawnCooldownHours"/> is used preferentially.
+    /// </summary>
+    public const double DEFAULT_SPAWN_COOLDOWN_HOURS = 2.0;
+
+    /// <summary>
+    /// Fallback cycle duration in hours when no reward data is available.
+    /// The per-tier value from <see cref="TreasureBoxRewardData.cycleDurationHours"/> is used preferentially.
+    /// </summary>
+    public const double DEFAULT_CYCLE_DURATION_HOURS = 24.0;
+
+    // ─── Singleton ────────────────────────────────────────────────────────────
+
+    public static TreasureBoxManager Instance { get; private set; }
+
+    // ─── Events ───────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Fired after a single box is successfully opened.
+    /// Parameters: (tier, slotIndex, rewardData).
+    /// </summary>
+    public static event Action<TreasureBoxTier, int, TreasureBoxRewardData> OnBoxOpened;
+
+    /// <summary>
+    /// Fired when all 3 boxes of a tier have been opened (set complete).
+    /// Parameters: (tier, rewardData).
+    /// </summary>
+    public static event Action<TreasureBoxTier, TreasureBoxRewardData> OnSetCompleted;
+
+    /// <summary>
+    /// Fired whenever the overall state changes so the UI can refresh timers,
+    /// button states, lock overlays, etc.
+    /// </summary>
+    public static event Action OnStateChanged;
+
+    // ─── Inspector Fields ─────────────────────────────────────────────────────
+
+    [Header("Reward Data Assets")]
+    [Tooltip("Drag the TreasureBoxRewardData SO for each tier here, in order.")]
+    public TreasureBoxRewardData silverRewardData;
+    public TreasureBoxRewardData goldRewardData;
+    public TreasureBoxRewardData platinumRewardData;
+    public TreasureBoxRewardData diamondRewardData;
+
+    [Header("Subscriber Setting")]
+    [Tooltip("Subscribers bypass rewarded ads and open all available boxes instantly.")]
+    public bool isSubscriber = false;
+
+    [Header("Debug Timers (Live Updates)")]
+    [SerializeField] private string[] silverTimers = new string[3];
+    [SerializeField] private string[] goldTimers = new string[3];
+    [SerializeField] private string[] platinumTimers = new string[3];
+    [SerializeField] private string[] diamondTimers = new string[3];
+
+    // ─── Service Injection ────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Rewarded-ad service. Defaults to <see cref="NullAdService"/> so the
+    /// system works without an ad SDK. Assign a real implementation at runtime
+    /// (e.g., from your ad initialisation flow) before any box is opened.
+    /// </summary>
+    public IAdService AdService { get; set; } = new NullAdService();
+
+    /// <summary>
+    /// IAP service for the "unlock all 3 at once" purchase flow.
+    /// Defaults to <see cref="NullIAPService"/>.
+    /// </summary>
+    public IIAPService IAPService { get; set; } = new NullIAPService();
+
+    // ─── Private State ────────────────────────────────────────────────────────
+
+    private TreasureBoxSaveData _saveData;
+
+    [Header("Spawning")]
+    [Tooltip("Terrain reference to spawn boxes randomly within its bounds.")]
+    public Terrain spawnTerrain;
+
+    private class SpawnedBoxInfo
+    {
+        public TreasureBox boxScript;
+        public TreasureBoxTier tier;
+        public int slotIndex;
+        public GameObject gameObject;
+    }
+    private List<SpawnedBoxInfo> _spawnedBoxes = new List<SpawnedBoxInfo>();
+
+    // ─── Unity Lifecycle ──────────────────────────────────────────────────────
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        LoadState();
+        TickCycleResets();
+        OnStateChanged += CheckAndSpawnNewBoxes;
+    }
+
+    private void Start()
+    {
+        CheckAndSpawnNewBoxes();
+    }
+
+    private void Update()
+    {
+#if UNITY_EDITOR
+        if (_saveData != null)
+        {
+            UpdateDebugTimers(TreasureBoxTier.Silver, silverTimers);
+            UpdateDebugTimers(TreasureBoxTier.Gold, goldTimers);
+            UpdateDebugTimers(TreasureBoxTier.Platinum, platinumTimers);
+            UpdateDebugTimers(TreasureBoxTier.Diamond, diamondTimers);
+        }
+#endif
+        UpdateSpawnedBoxTimers();
+    }
+
+    private void UpdateSpawnedBoxTimers()
+    {
+        for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
+        {
+            SpawnedBoxInfo info = _spawnedBoxes[i];
+            if (info.gameObject == null)
+            {
+                _spawnedBoxes.RemoveAt(i);
+                continue;
+            }
+
+            if (info.boxScript != null && info.boxScript.timerText != null)
+            {
+                if (IsSlotAvailable(info.tier, info.slotIndex))
+                {
+                    info.boxScript.timerText.text = "Available";
+                }
+                else
+                {
+                    DateTime readyAt = GetSlotAvailableAt(info.tier, info.slotIndex);
+                    if (readyAt != DateTime.MinValue)
+                    {
+                        TimeSpan span = readyAt - DateTime.Now;
+                        info.boxScript.timerText.text = FormatTimeSpan(span);
+                    }
+                    else
+                    {
+                        info.boxScript.timerText.text = "Waiting...";
+                    }
+                }
+            }
+        }
+    }
+
+    private void OnApplicationQuit()  => SaveState();
+    private void OnApplicationPause(bool paused) { if (paused) SaveState(); }
+
+    // ─── Public Query API ─────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Returns the <see cref="TreasureBoxRewardData"/> associated with a tier.
+    /// </summary>
+    public TreasureBoxRewardData GetRewardData(TreasureBoxTier tier)
+    {
+        switch (tier)
+        {
+            case TreasureBoxTier.Silver:   return silverRewardData;
+            case TreasureBoxTier.Gold:     return goldRewardData;
+            case TreasureBoxTier.Platinum: return platinumRewardData;
+            case TreasureBoxTier.Diamond:  return diamondRewardData;
+            default: return null;
+        }
+    }
+
+    /// <summary>
+    /// Returns the saved state struct for a given tier.
+    /// </summary>
+    public TreasureBoxTierState GetTierState(TreasureBoxTier tier)
+        => _saveData.GetTierState(tier);
+
+    /// <summary>
+    /// Returns true if the given tier is unlocked for opening.
+    ///
+    /// Progression rule: a tier is unlocked only when all lower tiers have
+    /// completed their set of 3 in the current cycle — OR when it is Silver
+    /// (always accessible).
+    ///
+    /// IAP note: PurchaseTierUnlock calls bypass this check internally; do not
+    /// call this before calling that flow.
+    /// </summary>
+    public bool IsTierUnlocked(TreasureBoxTier tier)
+    {
+        return true; // All tiers unlock based on time of day now
+    }
+
+    /// <summary>
+    /// Returns true if a specific slot is ready to be opened right now:
+    ///   • The slot has not already been opened this cycle.
+    ///   • The current UTC time is at or past the slot's spawn timestamp
+    ///     (or the slot has never been used, meaning it is immediately available).
+    /// </summary>
+    public bool IsSlotAvailable(TreasureBoxTier tier, int slotIndex)
+    {
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+
+        if (slotIndex < 0 || slotIndex >= SLOTS_PER_TIER) return false;
+        if (state.slotOpened[slotIndex]) return false;
+
+        int overallIndex = (int)tier * SLOTS_PER_TIER + slotIndex;
+        int hoursOffset = overallIndex * 2;
+        DateTime readyAt = DateTime.Today.AddHours(hoursOffset);
+
+        return DateTime.Now >= readyAt;
+    }
+
+    /// <summary>
+    /// Returns the UTC DateTime at which the given slot will become available.
+    /// Returns <c>DateTime.MinValue</c> if the slot is already available or opened.
+    /// </summary>
+    public DateTime GetSlotAvailableAt(TreasureBoxTier tier, int slotIndex)
+    {
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        if (slotIndex < 0 || slotIndex >= SLOTS_PER_TIER) return DateTime.MinValue;
+        if (state.slotOpened[slotIndex]) return DateTime.MinValue;
+
+        int overallIndex = (int)tier * SLOTS_PER_TIER + slotIndex;
+        int hoursOffset = overallIndex * 2;
+        
+        return DateTime.Today.AddHours(hoursOffset);
+    }
+
+    /// <summary>
+    /// Returns how many boxes across all tiers are currently available to open
+    /// (i.e., unlocked, slot spawned, not yet opened).
+    /// </summary>
+    public int GetTotalAvailableBoxCount()
+    {
+        int count = 0;
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            if (!IsTierUnlocked(tier)) continue;
+            for (int i = 0; i < SLOTS_PER_TIER; i++)
+            {
+                if (IsSlotAvailable(tier, i)) count++;
+            }
+        }
+        return count;
+    }
+
+    // ─── Open Flow ────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Attempts to open the specified box slot.
+    ///
+    /// For free users this will trigger a rewarded ad before completing the
+    /// open. For subscribers the open happens immediately.
+    ///
+    /// <param name="onResult">
+    ///   Callback when the attempt resolves.
+    ///   bool = success; string = human-readable failure reason (or null on success).
+    /// </param>
+    /// </summary>
+    public void TryOpenBox(TreasureBoxTier tier, int slotIndex, Action<bool, string> onResult = null)
+    {
+        // ── Progression gate ──────────────────────────────────────────────────
+        if (!IsTierUnlocked(tier))
+        {
+            string msg = $"Complete all {GetPreviousTierName(tier)} boxes first.";
+            Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
+            onResult?.Invoke(false, msg);
+            return;
+        }
+
+        // ── Slot availability gate ────────────────────────────────────────────
+        if (!IsSlotAvailable(tier, slotIndex))
+        {
+            DateTime readyAt = GetSlotAvailableAt(tier, slotIndex);
+            string msg = readyAt == DateTime.MinValue
+                ? $"{tier} slot {slotIndex} is already opened."
+                : $"Ready in {FormatTimeSpan(readyAt - DateTime.Now)}.";
+
+            Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
+            onResult?.Invoke(false, msg);
+            return;
+        }
+
+        // ── Subscriber fast-path ──────────────────────────────────────────────
+        if (isSubscriber)
+        {
+            CompleteBoxOpen(tier, slotIndex, onResult);
+            return;
+        }
+
+        // ── Free user: show rewarded ad ───────────────────────────────────────
+        if (!AdService.IsAdReady)
+        {
+            string msg = "Ad not ready. Please try again shortly.";
+            Debug.Log($"[TreasureBoxManager] {msg}");
+            onResult?.Invoke(false, msg);
+            return;
+        }
+
+        AdService.ShowRewardedAd(earned =>
+        {
+            if (earned)
+            {
+                CompleteBoxOpen(tier, slotIndex, onResult);
+            }
+            else
+            {
+                string msg = "Ad skipped — box not opened.";
+                Debug.Log($"[TreasureBoxManager] {msg}");
+                onResult?.Invoke(false, msg);
+            }
+        });
+    }
+
+    /// <summary>
+    /// Initiates the real-money IAP flow to immediately unlock all 3 boxes
+    /// of a specific tier, bypassing the standard progression order.
+    /// On success, marks all 3 slots as opened and awards the set-completion reward.
+    /// </summary>
+    public void PurchaseTierUnlock(TreasureBoxTier tier, Action<bool, string> onResult = null)
+    {
+        IAPService.PurchaseTierUnlock(tier, success =>
+        {
+            if (!success)
+            {
+                onResult?.Invoke(false, "Purchase cancelled or failed.");
+                return;
+            }
+
+            // Mark all 3 slots as immediately opened (no progression gate applied)
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            DateTime now = DateTime.UtcNow;
+
+            for (int i = 0; i < SLOTS_PER_TIER; i++)
+            {
+                if (!state.slotOpened[i])
+                {
+                    state.slotOpened[i] = true;
+                    state.openedCount++;
+                    
+                    // Destroy the spawned box
+                    for (int j = _spawnedBoxes.Count - 1; j >= 0; j--)
+                    {
+                        if (_spawnedBoxes[j].tier == tier && _spawnedBoxes[j].slotIndex == i)
+                        {
+                            if (_spawnedBoxes[j].gameObject != null)
+                            {
+                                TreasureBox tb = _spawnedBoxes[j].boxScript;
+                                if (tb != null && tb.timerText != null) tb.timerText.text = "Box Openned";
+                                Destroy(_spawnedBoxes[j].gameObject, 2f);
+                            }
+                            _spawnedBoxes.RemoveAt(j);
+                            break;
+                        }
+                    }
+                    
+                    OnBoxOpened?.Invoke(tier, i, GetRewardData(tier));
+                }
+            }
+
+            if (state.cycleStartedAtTicks == 0L)
+                state.cycleStartedAtTicks = now.Ticks;
+
+            SaveState();
+            OnSetCompleted?.Invoke(tier, GetRewardData(tier));
+            GrantSetCompletionReward(tier);
+            OnStateChanged?.Invoke();
+
+            onResult?.Invoke(true, null);
+        });
+    }
+
+    // ─── Internal Helpers ─────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Core logic that runs after the ad/subscription gate has been cleared.
+    /// </summary>
+    private void CompleteBoxOpen(TreasureBoxTier tier, int slotIndex, Action<bool, string> onResult)
+    {
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        DateTime now = DateTime.UtcNow;
+
+        // Fetch reward data early — needed for cooldown calculation below.
+        TreasureBoxRewardData rewardData = GetRewardData(tier);
+
+        // Record cycle start on the very first open for this tier
+        if (state.cycleStartedAtTicks == 0L)
+            state.cycleStartedAtTicks = now.Ticks;
+
+        // Mark this slot opened
+        state.slotOpened[slotIndex] = true;
+        state.openedCount++;
+
+        // No need to schedule next slot here since it's strictly chronological from midnight
+
+        // Grant per-box NC reward
+        if (rewardData != null && rewardData.noorCoinPerBox > 0 && NoorCoinManager.Instance != null)
+        {
+            NoorCoinManager.Instance.Earn(rewardData.noorCoinPerBox);
+            Debug.Log($"[TreasureBoxManager] Earned {rewardData.noorCoinPerBox} NC from {tier} box {slotIndex}.");
+        }
+
+        SaveState();
+
+        Debug.Log($"[TreasureBoxManager] Opened {tier} slot {slotIndex}. " +
+                  $"({state.openedCount}/{SLOTS_PER_TIER} this cycle)");
+
+        // Destroy the spawned box
+        for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
+        {
+            if (_spawnedBoxes[i].tier == tier && _spawnedBoxes[i].slotIndex == slotIndex)
+            {
+                if (_spawnedBoxes[i].gameObject != null)
+                {
+                    TreasureBox tb = _spawnedBoxes[i].boxScript;
+                    if (tb != null && tb.timerText != null) tb.timerText.text = "Box Openned";
+                    Destroy(_spawnedBoxes[i].gameObject, 2f);
+                }
+                _spawnedBoxes.RemoveAt(i);
+                break;
+            }
+        }
+
+        OnBoxOpened?.Invoke(tier, slotIndex, rewardData);
+
+        // Check set completion
+        if (state.IsSetComplete)
+        {
+            Debug.Log($"[TreasureBoxManager] {tier} set complete!");
+            GrantSetCompletionReward(tier);
+            OnSetCompleted?.Invoke(tier, rewardData);
+        }
+
+        OnStateChanged?.Invoke();
+        onResult?.Invoke(true, null);
+    }
+
+    /// <summary>
+    /// Awards the set-completion reward: either unlocks the exclusive item
+    /// (by setting its ShopItemState to Unlocked) or grants NC if already owned.
+    /// </summary>
+    private void GrantSetCompletionReward(TreasureBoxTier tier)
+    {
+        TreasureBoxRewardData rewardData = GetRewardData(tier);
+        if (rewardData == null) return;
+
+        ShopItemData reward = rewardData.exclusiveRewardItem;
+        if (reward == null)
+        {
+            Debug.LogWarning($"[TreasureBoxManager] No exclusive reward assigned to {tier} reward data.");
+            return;
+        }
+
+        if (reward.itemState == ShopItemState.Unlocked)
+        {
+            // Player already owns this item — grant NC equivalent
+            if (NoorCoinManager.Instance != null && rewardData.noorCoinEquivalent > 0)
+            {
+                NoorCoinManager.Instance.Earn(rewardData.noorCoinEquivalent);
+                Debug.Log($"[TreasureBoxManager] {tier} set reward already owned. " +
+                          $"Granted {rewardData.noorCoinEquivalent} NC instead.");
+            }
+        }
+        else
+        {
+            // Unlock the exclusive item
+            reward.itemState = ShopItemState.Unlocked;
+            Debug.Log($"[TreasureBoxManager] {tier} set reward unlocked: {reward.itemName}");
+        }
+    }
+
+    /// <summary>
+    /// On startup, checks whether any active 24-hour cycle has expired and
+    /// resets the relevant tier if so.
+    /// </summary>
+    private void TickCycleResets()
+    {
+        bool changed = false;
+        DateTime now = DateTime.UtcNow;
+
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            if (state.IsFreshCycle) continue;
+
+            TreasureBoxRewardData rd = GetRewardData(tier);
+            double cycleDurationHours = rd != null ? rd.cycleDurationHours : DEFAULT_CYCLE_DURATION_HOURS;
+
+            DateTime cycleStart = new DateTime(state.cycleStartedAtTicks, DateTimeKind.Utc);
+            DateTime cycleEnd   = cycleStart.AddHours(cycleDurationHours);
+
+            if (now >= cycleEnd)
+            {
+                Debug.Log($"[TreasureBoxManager] {tier} cycle expired. Resetting.");
+                state.ResetCycle();
+                changed = true;
+            }
+        }
+
+        if (changed)
+        {
+            SaveState();
+            OnStateChanged?.Invoke();
+        }
+    }
+    
+    private void CheckAndSpawnNewBoxes()
+    {
+        if (spawnTerrain == null) return;
+        
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            if (!IsTierUnlocked(tier)) continue;
+            TreasureBoxRewardData rd = GetRewardData(tier);
+            if (rd == null || rd.boxPrefab == null) continue;
+            
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            for (int i = 0; i < SLOTS_PER_TIER; i++)
+            {
+                if (!state.slotOpened[i] && !_spawnedBoxes.Exists(b => b.tier == tier && b.slotIndex == i))
+                {
+                    SpawnBox(rd.boxPrefab, tier, i);
+                }
+            }
+        }
+    }
+
+    private void SpawnBox(GameObject prefab, TreasureBoxTier tier, int slotIndex)
+    {
+        float x = UnityEngine.Random.Range(0, spawnTerrain.terrainData.size.x);
+        float z = UnityEngine.Random.Range(0, spawnTerrain.terrainData.size.z);
+        Vector3 spawnPos = spawnTerrain.transform.position + new Vector3(x, 0, z);
+        spawnPos.y = spawnTerrain.SampleHeight(spawnPos) + spawnTerrain.transform.position.y;
+        
+        GameObject go = Instantiate(prefab, spawnPos, Quaternion.Euler(0, UnityEngine.Random.Range(0f, 360f), 0));
+        go.name = $"TreasureBox_{tier}_Slot{slotIndex}";
+        
+        TreasureBox boxScript = go.GetComponent<TreasureBox>();
+        if (boxScript != null)
+        {
+            boxScript.tier = tier;
+            boxScript.slotIndex = slotIndex;
+            
+            if (boxScript.nameText != null)
+            {
+                TreasureBoxRewardData rd = GetRewardData(tier);
+                if (rd != null)
+                {
+                    boxScript.nameText.text = rd.tierDisplayName;
+                }
+            }
+            _spawnedBoxes.Add(new SpawnedBoxInfo { boxScript = boxScript, tier = tier, slotIndex = slotIndex, gameObject = go });
+        }
+        else
+        {
+            _spawnedBoxes.Add(new SpawnedBoxInfo { boxScript = null, tier = tier, slotIndex = slotIndex, gameObject = go });
+        }
+    }
+
+    private void SaveState()
+    {
+        SaveSystem.Save(SAVE_KEY, _saveData);
+        Debug.Log("[TreasureBoxManager] State saved.");
+    }
+
+    private void LoadState()
+    {
+        if (SaveSystem.Exists(SAVE_KEY))
+        {
+            _saveData = SaveSystem.Load<TreasureBoxSaveData>(SAVE_KEY);
+            Debug.Log("[TreasureBoxManager] Save data loaded.");
+        }
+        else
+        {
+            _saveData = new TreasureBoxSaveData();
+            Debug.Log("[TreasureBoxManager] No save found. Starting fresh.");
+        }
+
+        // Guard: ensure per-slot arrays are initialized (handles saves from older versions)
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            TreasureBoxTierState s = _saveData.GetTierState(tier);
+            if (s.slotOpened == null || s.slotOpened.Length != SLOTS_PER_TIER)
+                s.slotOpened = new bool[SLOTS_PER_TIER];
+            if (s.slotAvailableAtTicks == null || s.slotAvailableAtTicks.Length != SLOTS_PER_TIER)
+                s.slotAvailableAtTicks = new long[SLOTS_PER_TIER];
+        }
+    }
+
+    private static string GetPreviousTierName(TreasureBoxTier tier)
+    {
+        int prev = (int)tier - 1;
+        return prev >= 0 ? ((TreasureBoxTier)prev).ToString() : "N/A";
+    }
+
+    private static string FormatTimeSpan(TimeSpan span)
+    {
+        if (span <= TimeSpan.Zero) return "now";
+        return span.Hours > 0
+            ? $"{span.Hours:D2}h {span.Minutes:D2}m {span.Seconds:D2}s"
+            : $"{span.Minutes:D2}m {span.Seconds:D2}s";
+    }
+
+    // ─── Debug / Editor Helpers ───────────────────────────────────────────────
+
+#if UNITY_EDITOR
+    private void UpdateDebugTimers(TreasureBoxTier tier, string[] timerArray)
+    {
+        for (int i = 0; i < SLOTS_PER_TIER; i++)
+        {
+            if (_saveData.GetTierState(tier).slotOpened[i])
+            {
+                timerArray[i] = "Opened";
+            }
+            else if (IsSlotAvailable(tier, i))
+            {
+                timerArray[i] = "Available";
+            }
+            else
+            {
+                DateTime availableAt = GetSlotAvailableAt(tier, i);
+                if (availableAt != DateTime.MinValue)
+                    timerArray[i] = FormatTimeSpan(availableAt - DateTime.Now);
+                else
+                    timerArray[i] = "Waiting on previous...";
+            }
+        }
+    }
+#endif
+
+    [ContextMenu("DEBUG — Reset All Boxes")]
+    private void Debug_ResetAllBoxes()
+    {
+        _saveData = new TreasureBoxSaveData();
+        SaveState();
+        OnStateChanged?.Invoke();
+        Debug.Log("[TreasureBoxManager] DEBUG: All boxes reset.");
+    }
+
+    [ContextMenu("DEBUG — Complete Silver Tier")]
+    private void Debug_CompleteSilver()
+    {
+        Debug_CompleteTier(TreasureBoxTier.Silver);
+    }
+
+    [ContextMenu("DEBUG — Complete Gold Tier")]
+    private void Debug_CompleteGold()
+    {
+        Debug_CompleteTier(TreasureBoxTier.Gold);
+    }
+
+    [ContextMenu("DEBUG — Complete Platinum Tier")]
+    private void Debug_CompletePlatinum()
+    {
+        Debug_CompleteTier(TreasureBoxTier.Platinum);
+    }
+
+    [ContextMenu("DEBUG — Expire All Cooldowns (Make All Available)")]
+    private void Debug_ExpireAllCooldowns()
+    {
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            for (int i = 0; i < SLOTS_PER_TIER; i++)
+            {
+                if (!state.slotOpened[i])
+                    state.slotAvailableAtTicks[i] = 0L; // 0 = immediately available
+            }
+        }
+        SaveState();
+        OnStateChanged?.Invoke();
+        Debug.Log("[TreasureBoxManager] DEBUG: All cooldowns expired.");
+    }
+
+    private void Debug_CompleteTier(TreasureBoxTier tier)
+    {
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        DateTime now = DateTime.UtcNow;
+        if (state.cycleStartedAtTicks == 0L) state.cycleStartedAtTicks = now.Ticks;
+
+        for (int i = 0; i < SLOTS_PER_TIER; i++)
+        {
+            state.slotOpened[i] = true;
+        }
+        state.openedCount = SLOTS_PER_TIER;
+        SaveState();
+        OnStateChanged?.Invoke();
+        Debug.Log($"[TreasureBoxManager] DEBUG: {tier} tier force-completed.");
+    }
+}
