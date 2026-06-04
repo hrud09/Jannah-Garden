@@ -126,7 +126,12 @@ public class PlayersInteractionManager : MonoBehaviour
         // Activate the itemInteractButton if a treasure box is targeted, otherwise deactivate it
         if (itemInteractButton != null)
         {
-            itemInteractButton.gameObject.SetActive(currentTargetBox != null);
+            bool shouldShow = (currentTargetBox != null);
+            if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing)
+            {
+                shouldShow = false;
+            }
+            itemInteractButton.gameObject.SetActive(shouldShow);
         }
     }
 

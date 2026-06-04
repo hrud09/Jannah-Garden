@@ -21,6 +21,6 @@ MonoBehaviour:
   closedBoxSprite: {fileID: 0}
   openedBoxSprite: {fileID: 0}
   openVFXPrefab: {fileID: 0}
-  exclusiveRewardItem: {fileID: 0}
+  exclusiveRewardItem: {fileID: 11400000, guid: 0f081ddad8cb12f429d7ac609e46cc48, type: 2}
   noorCoinEquivalent: 250
   noorCoinPerBox: 0

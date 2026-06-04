@@ -95,8 +95,8 @@ public class TreasureBoxManager : MonoBehaviour
     private TreasureBoxSaveData _saveData;
 
     [Header("Spawning")]
-    [Tooltip("Terrain reference to spawn boxes randomly within its bounds.")]
-    public Terrain spawnTerrain;
+    [Tooltip("Pre-placed spawn points for treasure boxes. A box will randomly pick one that is unoccupied.")]
+    public Transform[] spawnPoints;
 
     private class SpawnedBoxInfo
     {
@@ -216,7 +216,9 @@ public class TreasureBoxManager : MonoBehaviour
     /// </summary>
     public bool IsTierUnlocked(TreasureBoxTier tier)
     {
-        return true; // All tiers unlock based on time of day now
+        if (tier == TreasureBoxTier.Silver) return true;
+        TreasureBoxTier prevTier = (TreasureBoxTier)((int)tier - 1);
+        return _saveData.GetTierState(prevTier).IsSetComplete;
     }
 
     /// <summary>
@@ -293,6 +295,12 @@ public class TreasureBoxManager : MonoBehaviour
         {
             string msg = $"Complete all {GetPreviousTierName(tier)} boxes first.";
             Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
+            
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast(msg);
+            }
+
             onResult?.Invoke(false, msg);
             return;
         }
@@ -495,6 +503,12 @@ public class TreasureBoxManager : MonoBehaviour
             // Unlock the exclusive item
             reward.itemState = ShopItemState.Unlocked;
             Debug.Log($"[TreasureBoxManager] {tier} set reward unlocked: {reward.itemName}");
+            
+            ItemPlacementManager placementManager = FindObjectOfType<ItemPlacementManager>();
+            if (placementManager != null)
+            {
+                placementManager.PreparePlacement(reward);
+            }
         }
     }
 
@@ -535,11 +549,10 @@ public class TreasureBoxManager : MonoBehaviour
     
     private void CheckAndSpawnNewBoxes()
     {
-        if (spawnTerrain == null) return;
+        if (spawnPoints == null || spawnPoints.Length == 0) return;
         
         foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
         {
-            if (!IsTierUnlocked(tier)) continue;
             TreasureBoxRewardData rd = GetRewardData(tier);
             if (rd == null || rd.boxPrefab == null) continue;
             
@@ -554,14 +567,60 @@ public class TreasureBoxManager : MonoBehaviour
         }
     }
 
+    private int GetAvailableSpawnPointIndex()
+    {
+        if (spawnPoints == null || spawnPoints.Length == 0) return -1;
+        
+        List<int> availableIndices = new List<int>();
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            if (spawnPoints[i] != null) availableIndices.Add(i);
+        }
+
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            if (state.assignedSpawnPoints == null) continue;
+            for (int slot = 0; slot < SLOTS_PER_TIER; slot++)
+            {
+                if (!state.slotOpened[slot] && state.assignedSpawnPoints[slot] != -1)
+                {
+                    availableIndices.Remove(state.assignedSpawnPoints[slot]);
+                }
+            }
+        }
+
+        if (availableIndices.Count == 0) return -1;
+        return availableIndices[UnityEngine.Random.Range(0, availableIndices.Count)];
+    }
+
     private void SpawnBox(GameObject prefab, TreasureBoxTier tier, int slotIndex)
     {
-        float x = UnityEngine.Random.Range(0, spawnTerrain.terrainData.size.x);
-        float z = UnityEngine.Random.Range(0, spawnTerrain.terrainData.size.z);
-        Vector3 spawnPos = spawnTerrain.transform.position + new Vector3(x, 0, z);
-        spawnPos.y = spawnTerrain.SampleHeight(spawnPos) + spawnTerrain.transform.position.y;
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
         
-        GameObject go = Instantiate(prefab, spawnPos, Quaternion.Euler(0, UnityEngine.Random.Range(0f, 360f), 0));
+        // If not already assigned, get a new point
+        if (state.assignedSpawnPoints[slotIndex] == -1)
+        {
+            int spIndex = GetAvailableSpawnPointIndex();
+            if (spIndex == -1)
+            {
+                Debug.LogWarning($"[TreasureBoxManager] No available spawn points for {tier} slot {slotIndex}");
+                return;
+            }
+            state.assignedSpawnPoints[slotIndex] = spIndex;
+            SaveState();
+        }
+
+        int assignedIndex = state.assignedSpawnPoints[slotIndex];
+        if (spawnPoints == null || assignedIndex < 0 || assignedIndex >= spawnPoints.Length || spawnPoints[assignedIndex] == null)
+        {
+            Debug.LogWarning("[TreasureBoxManager] Assigned spawn point is missing or invalid.");
+            return;
+        }
+
+        Transform spawnPoint = spawnPoints[assignedIndex];
+        
+        GameObject go = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
         go.name = $"TreasureBox_{tier}_Slot{slotIndex}";
         
         TreasureBox boxScript = go.GetComponent<TreasureBox>();
@@ -613,6 +672,8 @@ public class TreasureBoxManager : MonoBehaviour
                 s.slotOpened = new bool[SLOTS_PER_TIER];
             if (s.slotAvailableAtTicks == null || s.slotAvailableAtTicks.Length != SLOTS_PER_TIER)
                 s.slotAvailableAtTicks = new long[SLOTS_PER_TIER];
+            if (s.assignedSpawnPoints == null || s.assignedSpawnPoints.Length != SLOTS_PER_TIER)
+                s.assignedSpawnPoints = new int[] { -1, -1, -1 };
         }
     }
 

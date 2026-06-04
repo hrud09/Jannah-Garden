@@ -17,6 +17,7 @@ public class TreasureBox : MonoBehaviour
     public TMP_Text timerText;
     [HideInInspector] public TreasureBoxTier tier;
     [HideInInspector] public int slotIndex;
+    public Transform treasureBoxCanvas;
     private void Start()
     {
         // Cache instanced materials to avoid cloning materials repeatedly at runtime.
@@ -31,6 +32,19 @@ public class TreasureBox : MonoBehaviour
                 {
                     instancedMaterials[i] = meshes[i].material;
                 }
+            }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        // Make the canvas face the camera
+        if (treasureBoxCanvas != null)
+        {
+            Camera mainCamera = Camera.main;
+            if (mainCamera != null)
+            {
+                treasureBoxCanvas.LookAt(mainCamera.transform);
             }
         }
     }

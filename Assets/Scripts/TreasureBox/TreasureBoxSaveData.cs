@@ -22,6 +22,11 @@ public class TreasureBoxTierState
     /// </summary>
     public long[] slotAvailableAtTicks = new long[TreasureBoxManager.SLOTS_PER_TIER];
 
+    /// <summary>
+    /// Index of the spawn point assigned to this slot from the manager's array. -1 means unassigned.
+    /// </summary>
+    public int[] assignedSpawnPoints = new int[] { -1, -1, -1 };
+
     // ── Cycle Tracking ────────────────────────────────────────────────────────
 
     /// <summary>
@@ -55,6 +60,7 @@ public class TreasureBoxTierState
         {
             slotOpened[i]           = false;
             slotAvailableAtTicks[i] = 0L;
+            assignedSpawnPoints[i]  = -1;
         }
     }
 }
