@@ -306,6 +306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c770eab1d783c3346bcdf06dec4e8c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayersInteractionManager
+  maxInteractionDistance: 10
+  crosshairRect: {fileID: 0}
+  interactionLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  currentTargetBox: {fileID: 0}
+  itemInteractButton: {fileID: 0}
 --- !u!1 &8114015898775887059
 GameObject:
   m_ObjectHideFlags: 0
