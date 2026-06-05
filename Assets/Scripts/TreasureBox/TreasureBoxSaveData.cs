@@ -75,6 +75,8 @@ public class TreasureBoxTierState
 [Serializable]
 public class TreasureBoxSaveData
 {
+    public long globalCycleStartedAtTicks = 0L;
+
     public TreasureBoxTierState silver   = new TreasureBoxTierState();
     public TreasureBoxTierState gold     = new TreasureBoxTierState();
     public TreasureBoxTierState platinum = new TreasureBoxTierState();

@@ -228,7 +228,7 @@ public class TreasureBoxUI : MonoBehaviour
 
     // ─── Reward Popup ─────────────────────────────────────────────────────────
 
-    private void ShowRewardPopup(TreasureBoxTier tier, TreasureBoxRewardData rewardData)
+    private void ShowRewardPopup(TreasureBoxTier tier, TreasureBoxData rewardData)
     {
         if (rewardPopupRoot == null || rewardData == null) return;
 
@@ -237,14 +237,14 @@ public class TreasureBoxUI : MonoBehaviour
         if (rewardPopupTitle != null)
             rewardPopupTitle.text = $"{rewardData.tierDisplayName} Set Complete!";
 
-        ShopItemData reward = rewardData.exclusiveRewardItem;
+        TreasureBoxRewardItemData reward = rewardData.exclusiveRewardItem;
 
         if (rewardPopupIcon != null && reward != null && reward.itemIcon != null)
             rewardPopupIcon.sprite = reward.itemIcon;
 
         if (rewardPopupDescription != null)
         {
-            if (reward != null && reward.itemState == ShopItemState.Unlocked)
+            if (reward != null && reward.isUnlocked)
                 rewardPopupDescription.text = $"Already owned! Received {rewardData.noorCoinEquivalent} Noor Coins.";
             else if (reward != null)
                 rewardPopupDescription.text = $"Unlocked: {reward.itemName}";

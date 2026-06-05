@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class TreasureBox : MonoBehaviour
 {
 
-    public TreasureBoxRewardData rewardData;
+    public TreasureBoxData boxData;
     [Header("Meshes to Outline")]
     public Renderer[] meshes;
 
@@ -14,10 +15,13 @@ public class TreasureBox : MonoBehaviour
 
     [Header("UI References")]
     public TMP_Text nameText;
-    public TMP_Text timerText;
     [HideInInspector] public TreasureBoxTier tier;
     [HideInInspector] public int slotIndex;
     public Transform treasureBoxCanvas;
+
+    [Header("Box Open Settings")]
+    public GameObject boxLid;
+    public float boxRiseHeight;
     private void Start()
     {
         // Cache instanced materials to avoid cloning materials repeatedly at runtime.
@@ -111,6 +115,84 @@ public class TreasureBox : MonoBehaviour
                     Destroy(mat);
                 }
             }
+        }
+    }
+
+    public IEnumerator PlayOpenAnimation()
+    {
+        float duration = 1.5f;
+        float elapsed = 0f;
+
+        Vector3 startPos = transform.position;
+        Vector3 endPos = startPos + Vector3.up * (boxRiseHeight > 0 ? boxRiseHeight : 2f);
+        Vector3 startScale = transform.localScale;
+
+        Quaternion startRot = transform.rotation;
+        
+        Quaternion lidStartRot = boxLid != null ? boxLid.transform.localRotation : Quaternion.identity;
+        // Assume lid opens by rotating -110 on X local axis for an exaggerated open
+        Quaternion lidEndRot = boxLid != null ? lidStartRot * Quaternion.Euler(-110f, 0, 0) : Quaternion.identity;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            // 1. Position: Anticipation (dip down) then elastic overshoot upwards
+            float posT = 0f;
+            if (t < 0.2f)
+            {
+                // Anticipation dip
+                posT = Mathf.Lerp(0, -0.1f, Mathf.Sin(t / 0.2f * Mathf.PI));
+            }
+            else
+            {
+                // Elastic overshoot rise
+                float rt = (t - 0.2f) / 0.8f; 
+                posT = 1f - Mathf.Exp(-5f * rt) * Mathf.Cos(12f * rt);
+            }
+            transform.position = Vector3.LerpUnclamped(startPos, endPos, posT);
+
+            // 2. Rotation: Smooth start, fast middle, smooth end (EaseInOut)
+            float rotT = t < 0.5f ? 4f * t * t * t : 1f - Mathf.Pow(-2f * t + 2f, 3f) / 2f;
+            transform.rotation = startRot * Quaternion.Euler(0, 1080f * rotT, 0);
+
+            // 3. Scale: Squash and stretch
+            float scaleY = 1f;
+            float scaleXZ = 1f;
+            if (t < 0.2f)
+            {
+                // Squash down before jumping
+                scaleY = Mathf.Lerp(1f, 0.7f, Mathf.Sin(t / 0.2f * Mathf.PI));
+                scaleXZ = Mathf.Lerp(1f, 1.2f, Mathf.Sin(t / 0.2f * Mathf.PI));
+            }
+            else if (t < 0.6f)
+            {
+                // Stretch up while rising fast
+                float stretchT = (t - 0.2f) / 0.4f;
+                scaleY = Mathf.Lerp(1f, 1.3f, Mathf.Sin(stretchT * Mathf.PI));
+                scaleXZ = Mathf.Lerp(1f, 0.8f, Mathf.Sin(stretchT * Mathf.PI));
+            }
+            transform.localScale = new Vector3(startScale.x * scaleXZ, startScale.y * scaleY, startScale.z * scaleXZ);
+
+            // 4. Lid: Open with an elastic bounce
+            if (boxLid != null && t > 0.3f)
+            {
+                float lidT = (t - 0.3f) / 0.7f;
+                float elasticT = 1f - Mathf.Exp(-8f * lidT) * Mathf.Cos(15f * lidT);
+                boxLid.transform.localRotation = Quaternion.LerpUnclamped(lidStartRot, lidEndRot, elasticT);
+            }
+
+            yield return null;
+        }
+
+        // Final snap to ensure precision at the end of the animation
+        transform.position = endPos;
+        transform.rotation = startRot * Quaternion.Euler(0, 1080f, 0);
+        transform.localScale = startScale;
+        if (boxLid != null)
+        {
+            boxLid.transform.localRotation = lidEndRot;
         }
     }
 }

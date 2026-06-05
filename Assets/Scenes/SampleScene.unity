@@ -61578,7 +61578,7 @@ Transform:
   m_GameObject: {fileID: 1252782338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 280.7, y: 8.8, z: 118.5}
+  m_LocalPosition: {x: 277.93, y: 5.39, z: 118.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105323,10 +105323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f175c717a2605e944b02d3e7c27a4118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxManager
-  silverRewardData: {fileID: 11400000, guid: bdc6e556e3949d94c9665ea3dda51c33, type: 2}
-  goldRewardData: {fileID: 11400000, guid: 7dd2867608290934ba8eaf3ab74d10aa, type: 2}
-  platinumRewardData: {fileID: 11400000, guid: 0ae62cbe89d8b0f438b4ecbc2d7b3888, type: 2}
-  diamondRewardData: {fileID: 11400000, guid: 6aa46fa171c4c3a45acf0dd61b07bac0, type: 2}
+  silverBoxData: {fileID: 11400000, guid: bdc6e556e3949d94c9665ea3dda51c33, type: 2}
+  goldBoxData: {fileID: 11400000, guid: 7dd2867608290934ba8eaf3ab74d10aa, type: 2}
+  platinumBoxData: {fileID: 11400000, guid: 0ae62cbe89d8b0f438b4ecbc2d7b3888, type: 2}
+  diamondBoxData: {fileID: 11400000, guid: 6aa46fa171c4c3a45acf0dd61b07bac0, type: 2}
   isSubscriber: 0
   silverTimers:
   - 

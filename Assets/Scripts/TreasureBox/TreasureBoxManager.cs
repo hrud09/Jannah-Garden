@@ -22,13 +22,13 @@ public class TreasureBoxManager : MonoBehaviour
 
     /// <summary>
     /// Fallback spawn cooldown in hours when no reward data is available.
-    /// The per-tier value from <see cref="TreasureBoxRewardData.spawnCooldownHours"/> is used preferentially.
+    /// The per-tier value from <see cref="TreasureBoxData.spawnCooldownHours"/> is used preferentially.
     /// </summary>
     public const double DEFAULT_SPAWN_COOLDOWN_HOURS = 2.0;
 
     /// <summary>
     /// Fallback cycle duration in hours when no reward data is available.
-    /// The per-tier value from <see cref="TreasureBoxRewardData.cycleDurationHours"/> is used preferentially.
+    /// The per-tier value from <see cref="TreasureBoxData.cycleDurationHours"/> is used preferentially.
     /// </summary>
     public const double DEFAULT_CYCLE_DURATION_HOURS = 24.0;
 
@@ -42,13 +42,13 @@ public class TreasureBoxManager : MonoBehaviour
     /// Fired after a single box is successfully opened.
     /// Parameters: (tier, slotIndex, rewardData).
     /// </summary>
-    public static event Action<TreasureBoxTier, int, TreasureBoxRewardData> OnBoxOpened;
+    public static event Action<TreasureBoxTier, int, TreasureBoxData> OnBoxOpened;
 
     /// <summary>
     /// Fired when all 3 boxes of a tier have been opened (set complete).
     /// Parameters: (tier, rewardData).
     /// </summary>
-    public static event Action<TreasureBoxTier, TreasureBoxRewardData> OnSetCompleted;
+    public static event Action<TreasureBoxTier, TreasureBoxData> OnSetCompleted;
 
     /// <summary>
     /// Fired whenever the overall state changes so the UI can refresh timers,
@@ -60,10 +60,10 @@ public class TreasureBoxManager : MonoBehaviour
 
     [Header("Reward Data Assets")]
     [Tooltip("Drag the TreasureBoxRewardData SO for each tier here, in order.")]
-    public TreasureBoxRewardData silverRewardData;
-    public TreasureBoxRewardData goldRewardData;
-    public TreasureBoxRewardData platinumRewardData;
-    public TreasureBoxRewardData diamondRewardData;
+    public TreasureBoxData silverBoxData;
+    public TreasureBoxData goldBoxData;
+    public TreasureBoxData platinumBoxData;
+    public TreasureBoxData diamondBoxData;
 
     [Header("Subscriber Setting")]
     [Tooltip("Subscribers bypass rewarded ads and open all available boxes instantly.")]
@@ -130,6 +130,8 @@ public class TreasureBoxManager : MonoBehaviour
         CheckAndSpawnNewBoxes();
     }
 
+    private float _spawnCheckTimer = 0f;
+
     private void Update()
     {
 #if UNITY_EDITOR
@@ -141,40 +143,11 @@ public class TreasureBoxManager : MonoBehaviour
             UpdateDebugTimers(TreasureBoxTier.Diamond, diamondTimers);
         }
 #endif
-        UpdateSpawnedBoxTimers();
-    }
-
-    private void UpdateSpawnedBoxTimers()
-    {
-        for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
+        _spawnCheckTimer += Time.deltaTime;
+        if (_spawnCheckTimer >= 1f)
         {
-            SpawnedBoxInfo info = _spawnedBoxes[i];
-            if (info.gameObject == null)
-            {
-                _spawnedBoxes.RemoveAt(i);
-                continue;
-            }
-
-            if (info.boxScript != null && info.boxScript.timerText != null)
-            {
-                if (IsSlotAvailable(info.tier, info.slotIndex))
-                {
-                    info.boxScript.timerText.text = "Available";
-                }
-                else
-                {
-                    DateTime readyAt = GetSlotAvailableAt(info.tier, info.slotIndex);
-                    if (readyAt != DateTime.MinValue)
-                    {
-                        TimeSpan span = readyAt - DateTime.Now;
-                        info.boxScript.timerText.text = FormatTimeSpan(span);
-                    }
-                    else
-                    {
-                        info.boxScript.timerText.text = "Waiting...";
-                    }
-                }
-            }
+            _spawnCheckTimer = 0f;
+            CheckAndSpawnNewBoxes();
         }
     }
 
@@ -184,16 +157,16 @@ public class TreasureBoxManager : MonoBehaviour
     // ─── Public Query API ─────────────────────────────────────────────────────
 
     /// <summary>
-    /// Returns the <see cref="TreasureBoxRewardData"/> associated with a tier.
+    /// Returns the <see cref="TreasureBoxData"/> associated with a tier.
     /// </summary>
-    public TreasureBoxRewardData GetRewardData(TreasureBoxTier tier)
+    public TreasureBoxData GetBoxData(TreasureBoxTier tier)
     {
         switch (tier)
         {
-            case TreasureBoxTier.Silver:   return silverRewardData;
-            case TreasureBoxTier.Gold:     return goldRewardData;
-            case TreasureBoxTier.Platinum: return platinumRewardData;
-            case TreasureBoxTier.Diamond:  return diamondRewardData;
+            case TreasureBoxTier.Silver:   return silverBoxData;
+            case TreasureBoxTier.Gold:     return goldBoxData;
+            case TreasureBoxTier.Platinum: return platinumBoxData;
+            case TreasureBoxTier.Diamond:  return diamondBoxData;
             default: return null;
         }
     }
@@ -383,7 +356,7 @@ public class TreasureBoxManager : MonoBehaviour
                             if (_spawnedBoxes[j].gameObject != null)
                             {
                                 TreasureBox tb = _spawnedBoxes[j].boxScript;
-                                if (tb != null && tb.timerText != null) tb.timerText.text = "Box Openned";
+                                if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation());
                                 Destroy(_spawnedBoxes[j].gameObject, 2f);
                             }
                             _spawnedBoxes.RemoveAt(j);
@@ -391,15 +364,18 @@ public class TreasureBoxManager : MonoBehaviour
                         }
                     }
                     
-                    OnBoxOpened?.Invoke(tier, i, GetRewardData(tier));
+                    OnBoxOpened?.Invoke(tier, i, GetBoxData(tier));
                 }
             }
 
             if (state.cycleStartedAtTicks == 0L)
                 state.cycleStartedAtTicks = now.Ticks;
 
+            if (_saveData.globalCycleStartedAtTicks == 0L)
+                _saveData.globalCycleStartedAtTicks = now.Ticks;
+
             SaveState();
-            OnSetCompleted?.Invoke(tier, GetRewardData(tier));
+            OnSetCompleted?.Invoke(tier, GetBoxData(tier));
             GrantSetCompletionReward(tier);
             OnStateChanged?.Invoke();
 
@@ -418,11 +394,15 @@ public class TreasureBoxManager : MonoBehaviour
         DateTime now = DateTime.UtcNow;
 
         // Fetch reward data early — needed for cooldown calculation below.
-        TreasureBoxRewardData rewardData = GetRewardData(tier);
+        TreasureBoxData rewardData = GetBoxData(tier);
 
         // Record cycle start on the very first open for this tier
         if (state.cycleStartedAtTicks == 0L)
             state.cycleStartedAtTicks = now.Ticks;
+
+        // Record global cycle start
+        if (_saveData.globalCycleStartedAtTicks == 0L)
+            _saveData.globalCycleStartedAtTicks = now.Ticks;
 
         // Mark this slot opened
         state.slotOpened[slotIndex] = true;
@@ -450,7 +430,7 @@ public class TreasureBoxManager : MonoBehaviour
                 if (_spawnedBoxes[i].gameObject != null)
                 {
                     TreasureBox tb = _spawnedBoxes[i].boxScript;
-                    if (tb != null && tb.timerText != null) tb.timerText.text = "Box Openned";
+                    if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation());
                     Destroy(_spawnedBoxes[i].gameObject, 2f);
                 }
                 _spawnedBoxes.RemoveAt(i);
@@ -478,17 +458,17 @@ public class TreasureBoxManager : MonoBehaviour
     /// </summary>
     private void GrantSetCompletionReward(TreasureBoxTier tier)
     {
-        TreasureBoxRewardData rewardData = GetRewardData(tier);
+        TreasureBoxData rewardData = GetBoxData(tier);
         if (rewardData == null) return;
 
-        ShopItemData reward = rewardData.exclusiveRewardItem;
+        TreasureBoxRewardItemData reward = rewardData.exclusiveRewardItem;
         if (reward == null)
         {
             Debug.LogWarning($"[TreasureBoxManager] No exclusive reward assigned to {tier} reward data.");
             return;
         }
 
-        if (reward.itemState == ShopItemState.Unlocked)
+        if (reward.isUnlocked)
         {
             // Player already owns this item — grant NC equivalent
             if (NoorCoinManager.Instance != null && rewardData.noorCoinEquivalent > 0)
@@ -501,7 +481,7 @@ public class TreasureBoxManager : MonoBehaviour
         else
         {
             // Unlock the exclusive item
-            reward.itemState = ShopItemState.Unlocked;
+            reward.isUnlocked = true;
             Debug.Log($"[TreasureBoxManager] {tier} set reward unlocked: {reward.itemName}");
             
             ItemPlacementManager placementManager = FindObjectOfType<ItemPlacementManager>();
@@ -521,21 +501,17 @@ public class TreasureBoxManager : MonoBehaviour
         bool changed = false;
         DateTime now = DateTime.UtcNow;
 
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        if (_saveData.globalCycleStartedAtTicks > 0)
         {
-            TreasureBoxTierState state = _saveData.GetTierState(tier);
-            if (state.IsFreshCycle) continue;
-
-            TreasureBoxRewardData rd = GetRewardData(tier);
-            double cycleDurationHours = rd != null ? rd.cycleDurationHours : DEFAULT_CYCLE_DURATION_HOURS;
-
-            DateTime cycleStart = new DateTime(state.cycleStartedAtTicks, DateTimeKind.Utc);
-            DateTime cycleEnd   = cycleStart.AddHours(cycleDurationHours);
-
-            if (now >= cycleEnd)
+            DateTime cycleStart = new DateTime(_saveData.globalCycleStartedAtTicks, DateTimeKind.Utc);
+            if (now >= cycleStart.AddHours(24.0))
             {
-                Debug.Log($"[TreasureBoxManager] {tier} cycle expired. Resetting.");
-                state.ResetCycle();
+                Debug.Log("[TreasureBoxManager] Global 24-hour cycle expired. Hard resetting all tiers.");
+                foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+                {
+                    _saveData.GetTierState(tier).ResetCycle();
+                }
+                _saveData.globalCycleStartedAtTicks = 0L;
                 changed = true;
             }
         }
@@ -553,13 +529,13 @@ public class TreasureBoxManager : MonoBehaviour
         
         foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
         {
-            TreasureBoxRewardData rd = GetRewardData(tier);
+            TreasureBoxData rd = GetBoxData(tier);
             if (rd == null || rd.boxPrefab == null) continue;
             
             TreasureBoxTierState state = _saveData.GetTierState(tier);
             for (int i = 0; i < SLOTS_PER_TIER; i++)
             {
-                if (!state.slotOpened[i] && !_spawnedBoxes.Exists(b => b.tier == tier && b.slotIndex == i))
+                if (!state.slotOpened[i] && IsTierUnlocked(tier) && IsSlotAvailable(tier, i) && !_spawnedBoxes.Exists(b => b.tier == tier && b.slotIndex == i))
                 {
                     SpawnBox(rd.boxPrefab, tier, i);
                 }
@@ -631,10 +607,11 @@ public class TreasureBoxManager : MonoBehaviour
             
             if (boxScript.nameText != null)
             {
-                TreasureBoxRewardData rd = GetRewardData(tier);
-                if (rd != null)
+                TreasureBoxData boxData = GetBoxData(tier);
+                if (boxData != null)
                 {
-                    boxScript.nameText.text = rd.tierDisplayName;
+                    boxScript.boxData = boxData;
+                    boxScript.nameText.text = boxData.tierDisplayName;
                 }
             }
             _spawnedBoxes.Add(new SpawnedBoxInfo { boxScript = boxScript, tier = tier, slotIndex = slotIndex, gameObject = go });

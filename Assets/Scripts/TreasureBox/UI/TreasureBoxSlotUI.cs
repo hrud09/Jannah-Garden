@@ -65,7 +65,7 @@ public class TreasureBoxSlotUI : MonoBehaviour
 
     // ─── Private State ────────────────────────────────────────────────────────
 
-    private TreasureBoxRewardData _rewardData;
+    private TreasureBoxData _rewardData;
     private Coroutine             _countdownCoroutine;
 
     // ─── Unity Lifecycle ──────────────────────────────────────────────────────
@@ -103,7 +103,7 @@ public class TreasureBoxSlotUI : MonoBehaviour
     {
         if (TreasureBoxManager.Instance == null) return;
 
-        _rewardData = TreasureBoxManager.Instance.GetRewardData(tier);
+        _rewardData = TreasureBoxManager.Instance.GetBoxData(tier);
 
         // Apply tier glow color
         if (_rewardData != null && glowImage != null)
@@ -218,7 +218,7 @@ public class TreasureBoxSlotUI : MonoBehaviour
 
     // ─── Event Handlers ───────────────────────────────────────────────────────
 
-    private void OnBoxOpenedHandler(TreasureBoxTier openedTier, int openedSlot, TreasureBoxRewardData data)
+    private void OnBoxOpenedHandler(TreasureBoxTier openedTier, int openedSlot, TreasureBoxData data)
     {
         if (openedTier == tier && openedSlot == slotIndex)
         {

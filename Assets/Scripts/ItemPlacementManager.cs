@@ -32,7 +32,8 @@ public class ItemPlacementManager : MonoBehaviour
     public GameObject[] placeablePrefabs;
 
     private GameObject currentPlacedObject;
-    private ShopItemData pendingItemData;
+    private GameObject _pendingItemPrefab;
+    private float _pendingDuration;
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
@@ -70,14 +71,28 @@ public class ItemPlacementManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Prepares placement for an item by instantly spawning the preview model,
-    /// letting it follow the crosshair, and activating the Place button.
-    /// </summary>
     public void PreparePlacement(ShopItemData itemData)
     {
         if (itemData == null || itemData.itemPrefab == null) return;
+        InternalPreparePlacement(
+            itemData.itemPrefab, 
+            itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
+            itemData.placementTimerDuration
+        );
+    }
+    
+    public void PreparePlacement(TreasureBoxRewardItemData itemData)
+    {
+        if (itemData == null || itemData.itemPrefab == null) return;
+        InternalPreparePlacement(
+            itemData.itemPrefab, 
+            itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
+            itemData.placementTimerDuration
+        );
+    }
 
+    private void InternalPreparePlacement(GameObject prefab, GameObject previewPrefab, float duration)
+    {
         // If there's an existing preview being placed, destroy it
         if (currentPlacedObject != null)
         {
@@ -85,13 +100,8 @@ public class ItemPlacementManager : MonoBehaviour
             currentPlacedObject = null;
         }
 
-        pendingItemData = itemData;
-
-        // Spawn the ghost/preview model and let it follow the crosshair immediately.
-        // Use itemPlacementModelPrefab if assigned; fall back to itemPrefab.
-        GameObject previewPrefab = pendingItemData.itemPlacementModelPrefab != null
-            ? pendingItemData.itemPlacementModelPrefab
-            : pendingItemData.itemPrefab;
+        _pendingItemPrefab = prefab;
+        _pendingDuration = duration;
 
         currentPlacedObject = Instantiate(previewPrefab);
 
@@ -103,7 +113,7 @@ public class ItemPlacementManager : MonoBehaviour
 
             // Show the timer label immediately so the player can see the
             // duration before confirming placement.
-            placeable.PreviewTimer(pendingItemData.placementTimerDuration);
+            placeable.PreviewTimer(duration);
         }
 
         UpdatePlacementPosition();
@@ -167,15 +177,14 @@ public class ItemPlacementManager : MonoBehaviour
         currentPlacedObject = null;
 
         // Spawn the real item prefab at the confirmed position.
-        if (pendingItemData == null || pendingItemData.itemPrefab == null)
+        if (_pendingItemPrefab == null)
         {
-            Debug.LogWarning("[ItemPlacementManager] PlaceItem: no itemPrefab on pendingItemData.");
-            pendingItemData = null;
+            Debug.LogWarning("[ItemPlacementManager] PlaceItem: no pending item prefab available.");
             if (placeButton != null) placeButton.gameObject.SetActive(false);
             return;
         }
 
-        GameObject realObject = Instantiate(pendingItemData.itemPrefab, confirmedPosition, confirmedRotation);
+        GameObject realObject = Instantiate(_pendingItemPrefab, confirmedPosition, confirmedRotation);
         // ─────────────────────────────────────────────────────────────────────
 
         // Enable and initialize the PlaceableItem component on the real object
@@ -187,8 +196,8 @@ public class ItemPlacementManager : MonoBehaviour
 
         placeable.enabled = true;
 
-        // Use the duration defined in the ShopItemData asset as the authoritative source.
-        float totalDuration = pendingItemData.placementTimerDuration;
+        // Use the duration defined in the data asset as the authoritative source.
+        float totalDuration = _pendingDuration;
 
         string uniqueId = System.Guid.NewGuid().ToString();
         placeable.Initialize(uniqueId, totalDuration, totalDuration);
@@ -203,7 +212,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         // Clear preview control references and hide placement button
         currentPlacedObject = null;
-        pendingItemData = null; // Reset pending state
+        _pendingItemPrefab = null; // Reset pending state
         if (placeButton != null)
         {
             placeButton.gameObject.SetActive(false);

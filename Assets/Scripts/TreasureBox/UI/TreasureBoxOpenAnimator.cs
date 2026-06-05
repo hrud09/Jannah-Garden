@@ -87,7 +87,7 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
     /// <param name="isSetComplete">
     ///   True if opening this box completed the set of 3, which changes the subtitle.
     /// </param>
-    public void PlayOpenAnimation(TreasureBoxTier tier, TreasureBoxRewardData rewardData, bool isSetComplete)
+    public void PlayOpenAnimation(TreasureBoxTier tier, TreasureBoxData rewardData, bool isSetComplete)
     {
         if (_animCoroutine != null) StopCoroutine(_animCoroutine);
         _animCoroutine = StartCoroutine(AnimationSequence(tier, rewardData, isSetComplete));
@@ -106,7 +106,7 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
 
     // ─── Animation Sequence ───────────────────────────────────────────────────
 
-    private IEnumerator AnimationSequence(TreasureBoxTier tier, TreasureBoxRewardData rewardData, bool isSetComplete)
+    private IEnumerator AnimationSequence(TreasureBoxTier tier, TreasureBoxData rewardData, bool isSetComplete)
     {
         // ── Setup ─────────────────────────────────────────────────────────────
         gameObject.SetActive(true);
@@ -149,7 +149,7 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
         }
 
         // ── Stage 4: Fade in reward icon + name ───────────────────────────────
-        ShopItemData reward = rewardData?.exclusiveRewardItem;
+        TreasureBoxRewardItemData reward = rewardData?.exclusiveRewardItem;
 
         if (rewardIcon != null && reward?.itemIcon != null)
             rewardIcon.sprite = reward.itemIcon;

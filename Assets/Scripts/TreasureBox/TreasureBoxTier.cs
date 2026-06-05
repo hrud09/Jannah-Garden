@@ -28,10 +28,10 @@ public enum TreasureBoxTier
 /// Create via: Assets → Create → Jannah Garden → Treasure Box Reward Data
 /// </summary>
 [CreateAssetMenu(
-    fileName = "TreasureBoxRewardData_Silver",
-    menuName  = "Jannah Garden/Treasure Box Reward Data",
+    fileName = "TreasureBoxData_Silver",
+    menuName  = "Jannah Garden/TreasureBoxData",
     order     = 10)]
-public class TreasureBoxRewardData : ScriptableObject
+public class TreasureBoxData : ScriptableObject
 {
     // ── Identity ─────────────────────────────────────────────────────────────
 
@@ -85,9 +85,8 @@ public class TreasureBoxRewardData : ScriptableObject
 
     [Header("Set-Completion Reward")]
     [Tooltip("The exclusive garden item awarded when the player opens all 3 boxes " +
-             "of this tier. References an existing ShopItemData asset so the item " +
-             "can be placed and tracked through the standard shop pipeline.")]
-    public ShopItemData exclusiveRewardItem;
+             "of this tier. References an existing TreasureBoxRewardItemData asset.")]
+    public TreasureBoxRewardItemData exclusiveRewardItem;
 
     [Tooltip("Noor Coins awarded instead if the player already owns the exclusive " +
              "reward item. Set this to the item's perceived NC value.")]

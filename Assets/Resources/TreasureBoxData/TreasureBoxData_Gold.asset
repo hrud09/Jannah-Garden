@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b24c0c8ff7f6448b8a7b11848c35b8, type: 3}
-  m_Name: TreasureBoxRewardData_Silver
+  m_Name: TreasureBoxData_Gold
   m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardData
-  tier: 0
-  tierDisplayName: Silver Box
+  tier: 1
+  tierDisplayName: Gold
   boxPrefab: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
   spawnCooldownHours: 0.5
   cycleDurationHours: 24
@@ -21,6 +21,6 @@ MonoBehaviour:
   closedBoxSprite: {fileID: 0}
   openedBoxSprite: {fileID: 0}
   openVFXPrefab: {fileID: 0}
-  exclusiveRewardItem: {fileID: 11400000, guid: 0f081ddad8cb12f429d7ac609e46cc48, type: 2}
+  exclusiveRewardItem: {fileID: 0}
   noorCoinEquivalent: 250
   noorCoinPerBox: 0
