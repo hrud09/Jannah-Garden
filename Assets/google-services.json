@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "1064683710947",
+    "project_id": "amal-app-production",
+    "storage_bucket": "amal-app-production.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064683710947:android:eb586f1c334053ca16d8d6",
+        "android_client_info": {
+          "package_name": "com.Amal.JannahGarden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064683710947-a9id4psegkr31fh607mvgar622ol91mb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcUIqKty7f3vEcpyKeKkRJSgpXbRG9jZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064683710947-a9id4psegkr31fh607mvgar622ol91mb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1064683710947-4edie5e0r9m12re10kpjjsmn1ip27fcs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amal.amalapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064683710947:android:72be42acaf39936b16d8d6",
+        "android_client_info": {
+          "package_name": "com.amal.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064683710947-pssppilcg9q1hthitmpisrie19nnce9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amal.app",
+            "certificate_hash": "2b997de7bd9b9bba80cd8066335bd56ceb69f4a2"
+          }
+        },
+        {
+          "client_id": "1064683710947-a9id4psegkr31fh607mvgar622ol91mb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcUIqKty7f3vEcpyKeKkRJSgpXbRG9jZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064683710947-a9id4psegkr31fh607mvgar622ol91mb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1064683710947-4edie5e0r9m12re10kpjjsmn1ip27fcs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amal.amalapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064683710947:android:91dd7a2619b4bd7416d8d6",
+        "android_client_info": {
+          "package_name": "google.gradle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064683710947-a9id4psegkr31fh607mvgar622ol91mb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcUIqKty7f3vEcpyKeKkRJSgpXbRG9jZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064683710947-a9id4psegkr31fh607mvgar622ol91mb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1064683710947-4edie5e0r9m12re10kpjjsmn1ip27fcs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amal.amalapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

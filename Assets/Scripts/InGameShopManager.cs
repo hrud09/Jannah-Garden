@@ -92,14 +92,14 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        // Select the default selected item or first item on start
+        // Select the default selected item or first item on start (set selection only)
         if (selectedShopItem != null)
         {
-            SelectAndUseItem(selectedShopItem);
+            selectedShopItem = selectedShopItem;
         }
         else if (shopItemUIs != null && shopItemUIs.Length > 0 && shopItemUIs[0] != null)
         {
-            SelectAndUseItem(shopItemUIs[0]);
+            selectedShopItem = shopItemUIs[0];
         }
 
         // Initialize default arrow state and panel position (Closed by default)
@@ -179,20 +179,47 @@ public class InGameShopManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Selects the given item, closes the shop, starts placement, and logs the selection/use event.
+    /// Selects the given item, checks if the player can afford it, deducts Noor Coins,
+    /// closes the shop, prepares placement, and logs the event.
     /// </summary>
     public void SelectAndUseItem(ShopItemUI item)
     {
         if (item == null) return;
+
+        ShopItemData data = item.ItemData;
+
+        // ── Economy Gate ──────────────────────────────────────────────────────
+        if (data != null && data.noorCoinCost > 0)
+        {
+            if (NoorCoinManager.Instance == null)
+            {
+                Debug.LogError("[InGameShopManager] NoorCoinManager not found in scene. "
+                    + "Add a NoorCoinManager GameObject.");
+                return;
+            }
+
+            if (!NoorCoinManager.Instance.TrySpend(data.noorCoinCost))
+            {
+                Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': "
+                    + $"insufficient Noor Coins (need {data.noorCoinCost}, "
+                    + $"have {NoorCoinManager.Instance.Balance}).");
+                return; // Abort — player can't afford it
+            }
+
+            Debug.Log($"[InGameShopManager] Purchased '{data.itemName}' for "
+                + $"{data.noorCoinCost} Noor Coins.");
+        }
+        // ─────────────────────────────────────────────────────────────────────
+
         selectedShopItem = item;
 
         // Close the shop panel
         SetShopOpen(false, smooth: true);
 
-        // Notify placement manager to start placing the item
-        if (placementManager != null && item.ItemData != null)
+        // Notify placement manager to prepare placing the item
+        if (placementManager != null && data != null)
         {
-            placementManager.StartPlacement(item.ItemData);
+            placementManager.PreparePlacement(data);
         }
 
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");

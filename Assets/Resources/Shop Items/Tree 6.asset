@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Tree 6
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemType: 0
   itemIcon: {fileID: 21300000, guid: 00045fa5eef822c479e292fe743be48a, type: 3}
   itemName: Green Tree
   itemDescription: 
+  noorCoinCost: 200
   itemPrice: 100
   shopItemType: 0
   itemPrefab: {fileID: 3639881908698059280, guid: 4e45ad568950cf94cbaeb8a9b2e04755, type: 3}
-  itemState: 0
+  itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
+  itemState: 1
+  placementTimerDuration: 360
