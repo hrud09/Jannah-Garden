@@ -5,10 +5,10 @@ public class TreasureBoxRewardItemData : ScriptableObject
 {
     [Header("Item Metadata")]
     public Sprite itemIcon;
-    
+
     [TextArea(1, 3)]
     public string itemName;
-    
+
     [TextArea(3, 10)]
     public string itemDescription;
 
@@ -22,4 +22,7 @@ public class TreasureBoxRewardItemData : ScriptableObject
 
     [Header("Placement Settings")]
     public float placementTimerDuration = 360f; // Required time to fully place the item in the game world in seconds
+
+    [Header("Puzzle Data")]
+    public GameObject[] puzzlePieces;
 }

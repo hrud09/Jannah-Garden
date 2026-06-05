@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 /// <summary>
 /// Singleton manager for the Jannah Garden Treasure Box daily-reward system.
@@ -68,6 +69,27 @@ public class TreasureBoxManager : MonoBehaviour
     [Header("Subscriber Setting")]
     [Tooltip("Subscribers bypass rewarded ads and open all available boxes instantly.")]
     public bool isSubscriber = false;
+
+    [Header("UI Data")]
+    public TreasureBoxStatusUI[] tierUiData;
+
+    [Header("Tier Colors")]
+    public Color silverColor = new Color(0.9f, 0.9f, 0.9f); // Soft white
+    public Color goldColor = new Color(1f, 0.75f, 0f);      // Warm amber
+    public Color platinumColor = new Color(0.85f, 0.9f, 1f);// Platinum-blue
+    public Color diamondColor = new Color(0.8f, 1f, 1f);    // Cyan-white
+
+    public Color GetTierColor(TreasureBoxTier tier)
+    {
+        switch (tier)
+        {
+            case TreasureBoxTier.Silver: return silverColor;
+            case TreasureBoxTier.Gold: return goldColor;
+            case TreasureBoxTier.Platinum: return platinumColor;
+            case TreasureBoxTier.Diamond: return diamondColor;
+            default: return Color.white;
+        }
+    }
 
     [Header("Debug Timers (Live Updates)")]
     [SerializeField] private string[] silverTimers = new string[3];
@@ -148,6 +170,90 @@ public class TreasureBoxManager : MonoBehaviour
         {
             _spawnCheckTimer = 0f;
             CheckAndSpawnNewBoxes();
+        }
+
+        UpdateTierUiData();
+    }
+
+    private void UpdateTierUiData()
+    {
+        if (tierUiData == null || _saveData == null) return;
+        
+        foreach (var ui in tierUiData)
+        {
+            if (ui == null) continue;
+            
+            TreasureBoxTierState state = _saveData.GetTierState(ui.tier);
+            TreasureBoxData data = GetBoxData(ui.tier);
+            
+            if (ui.nameText != null && data != null)
+            {
+                ui.nameText.text = data.tierDisplayName;
+            }
+                
+            if (ui.openedBoxCountText != null)
+            {
+                ui.openedBoxCountText.text = $"{state.openedCount}/{SLOTS_PER_TIER}";
+            }
+                
+            if (ui.timerText != null)
+            {
+                if (state.IsSetComplete)
+                {
+                    ui.timerText.text = "Completed";
+                }
+                else if (!IsTierUnlocked(ui.tier))
+                {
+                    DateTime readyAt = GetSlotAvailableAt(ui.tier, 0);
+                    if (readyAt != DateTime.MinValue)
+                    {
+                        TimeSpan span = readyAt - DateTime.Now;
+                        if (span.TotalSeconds > 0)
+                        {
+                            ui.timerText.text = FormatTimeSpan(span);
+                        }
+                        else
+                        {
+                            ui.timerText.text = "Finish previous tier";
+                        }
+                    }
+                    else
+                    {
+                        ui.timerText.text = "Locked";
+                    }
+                }
+                else
+                {
+                    // Tier is unlocked but not complete. Find the NEXT slot to open.
+                    int nextSlot = 0;
+                    for (int i = 0; i < SLOTS_PER_TIER; i++)
+                    {
+                        if (!state.slotOpened[i])
+                        {
+                            nextSlot = i;
+                            break;
+                        }
+                    }
+
+                    if (IsSlotAvailable(ui.tier, nextSlot))
+                    {
+                        ui.timerText.text = "Available";
+                    }
+                    else
+                    {
+                        DateTime readyAt = GetSlotAvailableAt(ui.tier, nextSlot);
+                        if (readyAt != DateTime.MinValue)
+                        {
+                            TimeSpan span = readyAt - DateTime.Now;
+                            ui.timerText.text = FormatTimeSpan(span);
+                        }
+                        else
+                        {
+                            ui.timerText.text = "Waiting...";
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -348,6 +454,13 @@ public class TreasureBoxManager : MonoBehaviour
                     state.slotOpened[i] = true;
                     state.openedCount++;
                     
+                    TreasureBoxData rd = GetBoxData(tier);
+                    GameObject puzzlePiecePrefab = null;
+                    if (rd != null && rd.exclusiveRewardItem != null && rd.exclusiveRewardItem.puzzlePieces != null && i < rd.exclusiveRewardItem.puzzlePieces.Length)
+                    {
+                        puzzlePiecePrefab = rd.exclusiveRewardItem.puzzlePieces[i];
+                    }
+                    
                     // Destroy the spawned box
                     for (int j = _spawnedBoxes.Count - 1; j >= 0; j--)
                     {
@@ -356,7 +469,7 @@ public class TreasureBoxManager : MonoBehaviour
                             if (_spawnedBoxes[j].gameObject != null)
                             {
                                 TreasureBox tb = _spawnedBoxes[j].boxScript;
-                                if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation());
+                                if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
                                 Destroy(_spawnedBoxes[j].gameObject, 2f);
                             }
                             _spawnedBoxes.RemoveAt(j);
@@ -422,6 +535,12 @@ public class TreasureBoxManager : MonoBehaviour
         Debug.Log($"[TreasureBoxManager] Opened {tier} slot {slotIndex}. " +
                   $"({state.openedCount}/{SLOTS_PER_TIER} this cycle)");
 
+        GameObject puzzlePiecePrefab = null;
+        if (rewardData != null && rewardData.exclusiveRewardItem != null && rewardData.exclusiveRewardItem.puzzlePieces != null && slotIndex < rewardData.exclusiveRewardItem.puzzlePieces.Length)
+        {
+            puzzlePiecePrefab = rewardData.exclusiveRewardItem.puzzlePieces[slotIndex];
+        }
+
         // Destroy the spawned box
         for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
         {
@@ -430,7 +549,7 @@ public class TreasureBoxManager : MonoBehaviour
                 if (_spawnedBoxes[i].gameObject != null)
                 {
                     TreasureBox tb = _spawnedBoxes[i].boxScript;
-                    if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation());
+                    if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
                     Destroy(_spawnedBoxes[i].gameObject, 2f);
                 }
                 _spawnedBoxes.RemoveAt(i);
@@ -520,6 +639,27 @@ public class TreasureBoxManager : MonoBehaviour
         {
             SaveState();
             OnStateChanged?.Invoke();
+        }
+    }
+
+    public void PlayShowAnimationForTier(TreasureBoxTier tier)
+    {
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        if (state != null && state.IsSetComplete)
+        {
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("All boxes for this tier are already opened!");
+            }
+            return;
+        }
+
+        foreach (var boxInfo in _spawnedBoxes)
+        {
+            if (boxInfo.tier == tier && boxInfo.boxScript != null)
+            {
+                boxInfo.boxScript.StartCoroutine(boxInfo.boxScript.PlayShowAnimation());
+            }
         }
     }
     
@@ -755,3 +895,4 @@ public class TreasureBoxManager : MonoBehaviour
         Debug.Log($"[TreasureBoxManager] DEBUG: {tier} tier force-completed.");
     }
 }
+

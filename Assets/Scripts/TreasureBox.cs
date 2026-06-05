@@ -118,7 +118,7 @@ public class TreasureBox : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayOpenAnimation()
+    public IEnumerator PlayOpenAnimation(GameObject puzzlePiecePrefab = null)
     {
         float duration = 1.5f;
         float elapsed = 0f;
@@ -132,6 +132,10 @@ public class TreasureBox : MonoBehaviour
         Quaternion lidStartRot = boxLid != null ? boxLid.transform.localRotation : Quaternion.identity;
         // Assume lid opens by rotating -110 on X local axis for an exaggerated open
         Quaternion lidEndRot = boxLid != null ? lidStartRot * Quaternion.Euler(-110f, 0, 0) : Quaternion.identity;
+
+        GameObject spawnedPiece = null;
+        Vector3 pieceStartPos = Vector3.zero;
+        Vector3 pieceEndPos = Vector3.zero;
 
         while (elapsed < duration)
         {
@@ -183,6 +187,22 @@ public class TreasureBox : MonoBehaviour
                 boxLid.transform.localRotation = Quaternion.LerpUnclamped(lidStartRot, lidEndRot, elasticT);
             }
 
+            // 5. Reveal puzzle piece
+            if (puzzlePiecePrefab != null && t > 0.4f && spawnedPiece == null)
+            {
+                spawnedPiece = Instantiate(puzzlePiecePrefab, transform.position, Quaternion.identity);
+                pieceStartPos = transform.position;
+                pieceEndPos = pieceStartPos + Vector3.up * 2.5f; // Pop out above the box
+            }
+
+            if (spawnedPiece != null)
+            {
+                float pieceT = Mathf.Clamp01((t - 0.4f) / 0.6f);
+                float pieceEase = 1f - Mathf.Pow(1f - pieceT, 3f); // Ease out
+                spawnedPiece.transform.position = Vector3.Lerp(pieceStartPos, pieceEndPos, pieceEase);
+                spawnedPiece.transform.Rotate(Vector3.up, 360f * Time.deltaTime);
+            }
+
             yield return null;
         }
 
@@ -194,5 +214,31 @@ public class TreasureBox : MonoBehaviour
         {
             boxLid.transform.localRotation = lidEndRot;
         }
+    }
+
+    public IEnumerator PlayShowAnimation()
+    {
+        float totalDuration = 5f;
+        float elapsed = 0f;
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
+        float riseHeight = boxRiseHeight > 0 ? boxRiseHeight : 2f;
+
+        while (elapsed < totalDuration)
+        {
+            elapsed += Time.deltaTime;
+            
+            // 1 bounce per second
+            float t = elapsed % 1f;
+            float height = Mathf.Sin(t * Mathf.PI) * riseHeight;
+            
+            transform.position = startPos + Vector3.up * height;
+            transform.Rotate(Vector3.up, 720f * Time.deltaTime, Space.World);
+
+            yield return null;
+        }
+
+        transform.position = startPos;
+        transform.rotation = startRot;
     }
 }

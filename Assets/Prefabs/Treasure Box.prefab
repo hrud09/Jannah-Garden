@@ -562,7 +562,7 @@ MonoBehaviour:
   slotIndex: 0
   treasureBoxCanvas: {fileID: 7082366562200578725}
   boxLid: {fileID: 919624828538137195}
-  boxRiseHeight: 2
+  boxRiseHeight: 10
 --- !u!1001 &3177204024458019767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,58 +571,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 467252429517818482}
     m_Modifications:
-    - target: {fileID: 1603825187, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1603825187, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238956937899610146, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238956937899610146, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238956937899610146, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238956937899610146, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028074641899494581, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054957621938029, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054957621938029, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054957621938029, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054957621938029, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.77412665
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054957621938029, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054958842060696, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8731054958842060697, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
       propertyPath: m_Name
       value: VFX_Health_up
@@ -666,22 +614,6 @@ PrefabInstance:
     - target: {fileID: 8731054958842060698, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054958842060699, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054958842060699, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054958842060699, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.59141964
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731054958842060699, guid: 6ecdea451b132a44a9717eb98427b4aa, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.7058824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
