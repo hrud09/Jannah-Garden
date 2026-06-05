@@ -71,7 +71,7 @@ public class TreasureBoxManager : MonoBehaviour
     public bool isSubscriber = false;
 
     [Header("UI Data")]
-    public TreasureBoxStatusUI[] tierUiData;
+    public TreasureBoxStatusUI[] treasureBoxStatusUis;
 
     [Header("Tier Colors")]
     public Color silverColor = new Color(0.9f, 0.9f, 0.9f); // Soft white
@@ -177,9 +177,9 @@ public class TreasureBoxManager : MonoBehaviour
 
     private void UpdateTierUiData()
     {
-        if (tierUiData == null || _saveData == null) return;
+        if (treasureBoxStatusUis == null || _saveData == null) return;
         
-        foreach (var ui in tierUiData)
+        foreach (var ui in treasureBoxStatusUis)
         {
             if (ui == null) continue;
             
