@@ -654,11 +654,32 @@ public class TreasureBoxManager : MonoBehaviour
             return;
         }
 
+        Vector3? firstBoxPos = null;
+
         foreach (var boxInfo in _spawnedBoxes)
         {
             if (boxInfo.tier == tier && boxInfo.boxScript != null)
             {
                 boxInfo.boxScript.StartCoroutine(boxInfo.boxScript.PlayShowAnimation());
+                if (firstBoxPos == null && boxInfo.gameObject != null)
+                {
+                    firstBoxPos = boxInfo.gameObject.transform.position;
+                }
+            }
+        }
+
+        if (firstBoxPos.HasValue)
+        {
+            if (TargetDirectionController.Instance != null)
+            {
+                TargetDirectionController.Instance.PointTo(firstBoxPos.Value, 10f);
+            }
+        }
+        else
+        {
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("Boxes for this tier haven't appeared yet!");
             }
         }
     }
