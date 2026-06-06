@@ -562,7 +562,7 @@ MonoBehaviour:
   slotIndex: 0
   treasureBoxCanvas: {fileID: 7082366562200578725}
   boxLid: {fileID: 919624828538137195}
-  boxRiseHeight: 5
+  boxRiseHeight: 2
 --- !u!1001 &3177204024458019767
 PrefabInstance:
   m_ObjectHideFlags: 0

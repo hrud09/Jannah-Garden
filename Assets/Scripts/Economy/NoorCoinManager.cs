@@ -75,6 +75,10 @@ public class NoorCoinManager : MonoBehaviour
         }
 
         SetBalance(_balance - amount);
+        if (ToastMessageManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast($"-{amount} Noor Coins", Color.red);
+        }
         Debug.Log($"[NoorCoinManager] Spent {amount} Noor Coins. New balance: {_balance}");
         return true;
     }
@@ -89,6 +93,10 @@ public class NoorCoinManager : MonoBehaviour
         }
 
         SetBalance(_balance + amount);
+        if (ToastMessageManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast($"+{amount} Noor Coins", Color.green);
+        }
         Debug.Log($"[NoorCoinManager] Earned {amount} Noor Coins. New balance: {_balance}");
     }
 

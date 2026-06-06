@@ -37,7 +37,16 @@ public class ToastMessageManager : MonoBehaviour
 
     public void ShowToast(string message)
     {
-        if (messageText != null) messageText.text = message;
+        ShowToast(message, Color.white);
+    }
+
+    public void ShowToast(string message, Color textColor)
+    {
+        if (messageText != null) 
+        {
+            messageText.text = message;
+            messageText.color = textColor;
+        }
         
         if (messageHolder != null) 
         {

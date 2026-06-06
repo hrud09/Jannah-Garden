@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // Assuming you are using TextMeshPro for UI text
@@ -24,6 +25,7 @@ public class MCQManager : MonoBehaviour
 
     [Header("UI References")]
     public GameObject quizPanel; // The main UI panel containing the quiz
+    public GameObject blurredBG; // The blurred background behind the quiz panel
     public TextMeshProUGUI questionTextUI;
     public Button[] optionButtons;
     public TextMeshProUGUI[] optionTextsUI;
@@ -67,11 +69,20 @@ public class MCQManager : MonoBehaviour
 
         if (quizPanel != null) quizPanel.SetActive(false);
         if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     public void StartQuiz()
     {
-        if (quizPanel != null) quizPanel.SetActive(true);
+        if (blurredBG != null) blurredBG.SetActive(true);
+
+        if (quizPanel != null) 
+        {
+            quizPanel.SetActive(true);
+            quizPanel.transform.DOKill();
+            quizPanel.transform.localScale = Vector3.zero;
+            quizPanel.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
+        }
         if (allQuestions != null && allQuestions.questions != null && allQuestions.questions.Length > 0)
         {
             int randomIndex = UnityEngine.Random.Range(0, allQuestions.questions.Length);
@@ -106,6 +117,11 @@ public class MCQManager : MonoBehaviour
 
         questionTextUI.text = qData.questionText;
 
+        // Juicy animation for question text
+        questionTextUI.transform.DOKill();
+        questionTextUI.transform.localScale = Vector3.zero;
+        questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
+
         for (int i = 0; i < optionButtons.Length; i++)
         {
             if (i < qData.options.Length)
@@ -116,6 +132,11 @@ public class MCQManager : MonoBehaviour
                 // Reset appearance and interaction
                 optionButtons[i].image.sprite = defaultSprite;
                 optionButtons[i].interactable = true;
+
+                // Juicy animation for option buttons
+                optionButtons[i].transform.DOKill();
+                optionButtons[i].transform.localScale = Vector3.zero;
+                optionButtons[i].transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (i * 0.1f));
             }
             else
             {
@@ -124,7 +145,13 @@ public class MCQManager : MonoBehaviour
         }
 
         if (submitButton != null)
+        {
             submitButton.interactable = false;
+            submitButton.gameObject.SetActive(true);
+            submitButton.transform.DOKill();
+            submitButton.transform.localScale = Vector3.zero;
+            submitButton.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (qData.options.Length * 0.1f));
+        }
     }
 
     public void SelectOption(int optionIndex)
@@ -134,13 +161,17 @@ public class MCQManager : MonoBehaviour
         // Update visual to selected
         for (int i = 0; i < optionButtons.Length; i++)
         {
+            optionButtons[i].transform.DOKill();
             if (i == optionIndex)
             {
                 optionButtons[i].image.sprite = selectedSprite;
+                optionButtons[i].transform.localScale = Vector3.one;
+                optionButtons[i].transform.DOPunchScale(new Vector3(0.05f, 0.05f, 0.05f), 0.2f, 5, 1);
             }
             else
             {
                 optionButtons[i].image.sprite = defaultSprite;
+                optionButtons[i].transform.localScale = Vector3.one;
             }
         }
 
@@ -168,6 +199,9 @@ public class MCQManager : MonoBehaviour
         {
             // Selected answer is correct
             optionButtons[selectedOptionIndex].image.sprite = correctSprite;
+            optionButtons[selectedOptionIndex].transform.DOKill();
+            optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
+            optionButtons[selectedOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
             
             // Award Noor Coins
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
@@ -179,9 +213,15 @@ public class MCQManager : MonoBehaviour
         {
             // Selected answer is wrong
             optionButtons[selectedOptionIndex].image.sprite = wrongSprite;
+            optionButtons[selectedOptionIndex].transform.DOKill();
+            optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
+            optionButtons[selectedOptionIndex].transform.DOShakePosition(0.4f, 10f, 20, 90f, false, true);
             
             // Also show the correct answer
             optionButtons[qData.correctAnswerIndex].image.sprite = correctSprite;
+            optionButtons[qData.correctAnswerIndex].transform.DOKill();
+            optionButtons[qData.correctAnswerIndex].transform.localScale = Vector3.one;
+            optionButtons[qData.correctAnswerIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
         }
 
         StartCoroutine(HideQuizAfterDelay(5f));
@@ -205,11 +245,24 @@ public class MCQManager : MonoBehaviour
             remainingTime -= 1f;
         }
 
-        if (quizPanel != null) quizPanel.SetActive(false);
-        
-        if (countDownToHidePanel != null)
+        if (quizPanel != null) 
         {
-            countDownToHidePanel.gameObject.SetActive(false);
+            quizPanel.transform.DOKill();
+            quizPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
+                quizPanel.SetActive(false);
+                if (countDownToHidePanel != null)
+                {
+                    countDownToHidePanel.gameObject.SetActive(false);
+                }
+                if (blurredBG != null)
+                {
+                    blurredBG.SetActive(false);
+                }
+            });
+        }
+        else if (blurredBG != null)
+        {
+            blurredBG.SetActive(false);
         }
     }
 
