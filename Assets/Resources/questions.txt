@@ -1,0 +1,554 @@
+{
+    "questions": [
+        {
+            "questionText": "What is the first pillar of Islam?",
+            "options": [
+                "Prayer (Salah)",
+                "Fasting (Sawm)",
+                "Declaration of Faith (Shahada)",
+                "Charity (Zakat)"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "In which month do Muslims fast from dawn until sunset?",
+            "options": [
+                "Shawwal",
+                "Ramadan",
+                "Muharram",
+                "Rajab"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "Which angel brought the revelations of the Quran to Prophet Muhammad (PBUH)?",
+            "options": [
+                "Angel Mika'il (Michael)",
+                "Angel Israfil (Raphael)",
+                "Angel Jibril (Gabriel)",
+                "Angel Azrael"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "What is the direction that Muslims face during their daily prayers?",
+            "options": [
+                "Towards Jerusalem",
+                "Towards the Kaaba in Mecca",
+                "Towards Medina",
+                "Towards the East"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "How many obligatory daily prayers are there in Islam?",
+            "options": [
+                "Three",
+                "Five",
+                "Seven",
+                "Nine"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the name of the holy book in Islam?",
+            "options": [
+                "Torah",
+                "Bible",
+                "Quran",
+                "Zabur"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Who was the first prophet in Islam?",
+            "options": [
+                "Prophet Muhammad",
+                "Prophet Ibrahim",
+                "Prophet Musa",
+                "Prophet Adam"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "Which prophet built the Kaaba?",
+            "options": [
+                "Prophet Muhammad",
+                "Prophet Ibrahim",
+                "Prophet Isa",
+                "Prophet Nuh"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the meaning of the word 'Islam'?",
+            "options": [
+                "Peace and submission",
+                "War",
+                "Faith",
+                "Charity"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "How many chapters (Surahs) are there in the Quran?",
+            "options": [
+                "100",
+                "114",
+                "120",
+                "144"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "In which language was the Quran revealed?",
+            "options": [
+                "Arabic",
+                "Urdu",
+                "Persian",
+                "English"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the Arabic word for God?",
+            "options": [
+                "Khuda",
+                "Allah",
+                "Rab",
+                "Ilah"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "Which prophet is known as the friend of Allah (Khalilullah)?",
+            "options": [
+                "Prophet Musa",
+                "Prophet Ibrahim",
+                "Prophet Isa",
+                "Prophet Nuh"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the name of the angel who takes the souls at death?",
+            "options": [
+                "Jibril",
+                "Mika'il",
+                "Israfil",
+                "Azrael"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "During which month was the Quran first revealed?",
+            "options": [
+                "Ramadan",
+                "Shawwal",
+                "Muharram",
+                "Rajab"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the first month of the Islamic calendar?",
+            "options": [
+                "Ramadan",
+                "Shawwal",
+                "Muharram",
+                "Rajab"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Which city is the Kaaba located in?",
+            "options": [
+                "Medina",
+                "Jerusalem",
+                "Mecca",
+                "Cairo"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Which city is the Prophet's Mosque located in?",
+            "options": [
+                "Mecca",
+                "Jerusalem",
+                "Medina",
+                "Damascus"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "What is the migration of the Prophet Muhammad from Mecca to Medina called?",
+            "options": [
+                "Hajj",
+                "Hijrah",
+                "Umrah",
+                "Isra"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "Which cave did Prophet Muhammad receive the first revelation in?",
+            "options": [
+                "Cave Hira",
+                "Cave Thawr",
+                "Cave Ashab",
+                "Cave Uhud"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the Islamic declaration of faith called?",
+            "options": [
+                "Salah",
+                "Zakat",
+                "Sawm",
+                "Shahada"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "What is the Islamic term for charity?",
+            "options": [
+                "Zakat",
+                "Sawm",
+                "Hajj",
+                "Salah"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the Islamic term for fasting?",
+            "options": [
+                "Zakat",
+                "Sawm",
+                "Hajj",
+                "Salah"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the Islamic pilgrimage to Mecca called?",
+            "options": [
+                "Zakat",
+                "Sawm",
+                "Hajj",
+                "Salah"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Who was the first Caliph of Islam?",
+            "options": [
+                "Umar ibn al-Khattab",
+                "Uthman ibn Affan",
+                "Ali ibn Abi Talib",
+                "Abu Bakr as-Siddiq"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "Who was the second Caliph of Islam?",
+            "options": [
+                "Abu Bakr as-Siddiq",
+                "Umar ibn al-Khattab",
+                "Uthman ibn Affan",
+                "Ali ibn Abi Talib"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "Who was the third Caliph of Islam?",
+            "options": [
+                "Abu Bakr as-Siddiq",
+                "Umar ibn al-Khattab",
+                "Uthman ibn Affan",
+                "Ali ibn Abi Talib"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Who was the fourth Caliph of Islam?",
+            "options": [
+                "Abu Bakr as-Siddiq",
+                "Umar ibn al-Khattab",
+                "Uthman ibn Affan",
+                "Ali ibn Abi Talib"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "What was the name of Prophet Muhammad's first wife?",
+            "options": [
+                "Aisha",
+                "Khadijah",
+                "Fatimah",
+                "Zaynab"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What was the name of Prophet Muhammad's father?",
+            "options": [
+                "Abu Talib",
+                "Abdullah",
+                "Abdul Muttalib",
+                "Hamza"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What was the name of Prophet Muhammad's mother?",
+            "options": [
+                "Aminah",
+                "Halimah",
+                "Khadijah",
+                "Fatimah"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What was the name of Prophet Muhammad's grandfather?",
+            "options": [
+                "Abu Talib",
+                "Abdullah",
+                "Abdul Muttalib",
+                "Hamza"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "What was the name of Prophet Muhammad's uncle who protected him?",
+            "options": [
+                "Abu Lahab",
+                "Abu Jahl",
+                "Abu Talib",
+                "Hamza"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Which prophet was swallowed by a whale?",
+            "options": [
+                "Prophet Yunus",
+                "Prophet Yusuf",
+                "Prophet Ayyub",
+                "Prophet Nuh"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "Which prophet was known for his immense patience?",
+            "options": [
+                "Prophet Yunus",
+                "Prophet Yusuf",
+                "Prophet Ayyub",
+                "Prophet Nuh"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Which prophet built an ark?",
+            "options": [
+                "Prophet Yunus",
+                "Prophet Yusuf",
+                "Prophet Ayyub",
+                "Prophet Nuh"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "Which prophet was thrown into a fire but remained unharmed?",
+            "options": [
+                "Prophet Musa",
+                "Prophet Ibrahim",
+                "Prophet Isa",
+                "Prophet Nuh"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "Which prophet could speak to animals?",
+            "options": [
+                "Prophet Dawud",
+                "Prophet Sulaiman",
+                "Prophet Musa",
+                "Prophet Isa"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "Which prophet was given the ability to heal the blind and lepers?",
+            "options": [
+                "Prophet Dawud",
+                "Prophet Sulaiman",
+                "Prophet Musa",
+                "Prophet Isa"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "Which prophet received the Torah?",
+            "options": [
+                "Prophet Dawud",
+                "Prophet Sulaiman",
+                "Prophet Musa",
+                "Prophet Isa"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "Which prophet received the Zabur (Psalms)?",
+            "options": [
+                "Prophet Dawud",
+                "Prophet Sulaiman",
+                "Prophet Musa",
+                "Prophet Isa"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "Which prophet was given the Injeel (Gospel)?",
+            "options": [
+                "Prophet Dawud",
+                "Prophet Sulaiman",
+                "Prophet Musa",
+                "Prophet Isa"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "What is the shortest Surah in the Quran?",
+            "options": [
+                "Surah Al-Fatiha",
+                "Surah Al-Ikhlas",
+                "Surah Al-Kawthar",
+                "Surah Al-Nas"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "What is the longest Surah in the Quran?",
+            "options": [
+                "Surah Al-Imran",
+                "Surah Al-Nisa",
+                "Surah Al-Ma'idah",
+                "Surah Al-Baqarah"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "Which Surah is known as the heart of the Quran?",
+            "options": [
+                "Surah Yasin",
+                "Surah Ar-Rahman",
+                "Surah Al-Mulk",
+                "Surah Al-Waqi'ah"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the name of the well near the Kaaba?",
+            "options": [
+                "Zamzam",
+                "Kawthar",
+                "Salsabil",
+                "Tasneem"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What are the sayings and actions of Prophet Muhammad called?",
+            "options": [
+                "Quran",
+                "Hadith",
+                "Sunnah",
+                "Both B and C"
+            ],
+            "correctAnswerIndex": 3
+        },
+        {
+            "questionText": "How many times did Prophet Muhammad perform Hajj?",
+            "options": [
+                "One",
+                "Two",
+                "Three",
+                "Four"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the night of power called?",
+            "options": [
+                "Laylat al-Qadr",
+                "Laylat al-Mi'raj",
+                "Laylat al-Bara'at",
+                "Laylat al-Raghaib"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the prayer performed in congregation on Fridays called?",
+            "options": [
+                "Salat al-Eid",
+                "Salat al-Jumu'ah",
+                "Salat al-Taraweeh",
+                "Salat al-Witr"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the special prayer during Ramadan called?",
+            "options": [
+                "Salat al-Eid",
+                "Salat al-Jumu'ah",
+                "Salat al-Taraweeh",
+                "Salat al-Witr"
+            ],
+            "correctAnswerIndex": 2
+        },
+        {
+            "questionText": "What is the festival marking the end of Ramadan called?",
+            "options": [
+                "Eid al-Adha",
+                "Eid al-Fitr",
+                "Ashura",
+                "Mawlid"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the festival marking the end of Hajj called?",
+            "options": [
+                "Eid al-Adha",
+                "Eid al-Fitr",
+                "Ashura",
+                "Mawlid"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "questionText": "What is the washing before prayer called?",
+            "options": [
+                "Ghusl",
+                "Wudu",
+                "Tayammum",
+                "Istinja"
+            ],
+            "correctAnswerIndex": 1
+        },
+        {
+            "questionText": "What is the dry ablution called?",
+            "options": [
+                "Ghusl",
+                "Wudu",
+                "Tayammum",
+                "Istinja"
+            ],
+            "correctAnswerIndex": 2
+        }
+    ]
+}

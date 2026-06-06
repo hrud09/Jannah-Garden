@@ -14,6 +14,7 @@ public class PlayersInteractionManager : MonoBehaviour
     public LayerMask interactionLayerMask = ~0; // Default to everything
 
     public TreasureBox currentTargetBox = null;
+    public QuestionMarkOrb currentTargetOrb = null;
     private Camera mainCam;
 
     public Button itemInteractButton;
@@ -40,6 +41,10 @@ public class PlayersInteractionManager : MonoBehaviour
         if (currentTargetBox != null && TreasureBoxManager.Instance != null)
         {
             TreasureBoxManager.Instance.TryOpenBox(currentTargetBox.tier, currentTargetBox.slotIndex);
+        }
+        else if (currentTargetOrb != null)
+        {
+            currentTargetOrb.OpenQuiz();
         }
     }
 
@@ -72,6 +77,7 @@ public class PlayersInteractionManager : MonoBehaviour
 
         RaycastHit hit;
         TreasureBox detectedBox = null;
+        QuestionMarkOrb detectedOrb = null;
         GameObject hitObject = null;
         
         bool didHit = Physics.Raycast(ray, out hit, maxInteractionDistance, interactionLayerMask);
@@ -93,19 +99,16 @@ public class PlayersInteractionManager : MonoBehaviour
                 detectedBox = hit.collider.GetComponentInParent<TreasureBox>();
             }
 
-            // Fallback: Verify if the collider or parent possesses the target tag "TreasueBox"
-            if (detectedBox == null)
+
+            // Also check for QuestionMarkOrb
+            detectedOrb = hit.collider.GetComponent<QuestionMarkOrb>();
+            if (detectedOrb == null)
             {
-                bool isTagged = hit.collider.CompareTag("TreasueBox") || 
-                               (hit.collider.transform.parent != null && hit.collider.transform.parent.CompareTag("TreasueBox"));
-                if (isTagged)
-                {
-                    detectedBox = hit.collider.GetComponentInParent<TreasureBox>();
-                }
+                detectedOrb = hit.collider.GetComponentInParent<QuestionMarkOrb>();
             }
         }
 
-        // Handle highlighting transitions
+        // Handle highlighting transitions for TreasureBox
         if (detectedBox != currentTargetBox)
         {
             // Disable outline on the previous box
@@ -122,11 +125,26 @@ public class PlayersInteractionManager : MonoBehaviour
             }
         }
 
+        // Handle highlighting transitions for QuestionMarkOrb
+        if (detectedOrb != currentTargetOrb)
+        {
+            if (currentTargetOrb != null)
+            {
+                currentTargetOrb.SetFocus(false);
+            }
+
+            currentTargetOrb = detectedOrb;
+            if (currentTargetOrb != null)
+            {
+                currentTargetOrb.SetFocus(true);
+            }
+        }
+
      
-        // Activate the itemInteractButton if a treasure box is targeted, otherwise deactivate it
+        // Activate the itemInteractButton if a treasure box or orb is targeted, otherwise deactivate it
         if (itemInteractButton != null)
         {
-            bool shouldShow = (currentTargetBox != null);
+            bool shouldShow = (currentTargetBox != null || currentTargetOrb != null);
             if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing)
             {
                 shouldShow = false;
@@ -142,6 +160,12 @@ public class PlayersInteractionManager : MonoBehaviour
         {
             currentTargetBox.SetOutline(false);
             currentTargetBox = null;
+        }
+
+        if (currentTargetOrb != null)
+        {
+            currentTargetOrb.SetFocus(false);
+            currentTargetOrb = null;
         }
 
         if (itemInteractButton != null)
