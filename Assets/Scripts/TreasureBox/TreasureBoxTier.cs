@@ -64,23 +64,6 @@ public class TreasureBoxData : ScriptableObject
     [Min(1f)]
     public float cycleDurationHours = 24f;
 
-    // ── Visuals ───────────────────────────────────────────────────────────────
-
-    [Header("Visual Theme")]
-    [Tooltip("Glow / shimmer colour for this tier's UI elements. " +
-             "Silver = soft white | Gold = warm amber | " +
-             "Platinum = platinum-blue | Diamond = cyan-white.")]
-    public Color glowColor = Color.white;
-
-    [Tooltip("Sprite shown on the closed (locked/available) box slot.")]
-    public Sprite closedBoxSprite;
-
-    [Tooltip("Sprite shown after the box has been opened.")]
-    public Sprite openedBoxSprite;
-
-    [Tooltip("Optional particle/VFX prefab played during the open animation.")]
-    public GameObject openVFXPrefab;
-
     // ── Set-Completion Reward ─────────────────────────────────────────────────
 
     [Header("Set-Completion Reward")]

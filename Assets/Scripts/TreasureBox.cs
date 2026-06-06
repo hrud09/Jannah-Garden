@@ -193,6 +193,7 @@ public class TreasureBox : MonoBehaviour
                 spawnedPiece = Instantiate(puzzlePiecePrefab, transform.position, Quaternion.identity);
                 pieceStartPos = transform.position;
                 pieceEndPos = pieceStartPos + Vector3.up * 2.5f; // Pop out above the box
+                Destroy(spawnedPiece, 5f);
             }
 
             if (spawnedPiece != null)

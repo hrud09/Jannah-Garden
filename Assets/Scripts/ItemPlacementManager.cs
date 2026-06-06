@@ -22,6 +22,8 @@ public class SaveStateCollection
 
 public class ItemPlacementManager : MonoBehaviour
 {
+    public static ItemPlacementManager Instance { get; private set; }
+
     public RectTransform crosshairRect;
     public TerrainCollider terrainCollider;
     public Button placeButton;
@@ -37,6 +39,15 @@ public class ItemPlacementManager : MonoBehaviour
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     private void Start()
     {

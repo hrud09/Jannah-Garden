@@ -20,6 +20,11 @@ public class TreasureBoxRewardItemData : ScriptableObject
     [Header("Item State")]
     public bool isUnlocked = false;
 
+    [Header("Economy")]
+    [Tooltip("Noor Coins awarded instead if the player already owns this exclusive reward item.")]
+    [Min(0)]
+    public int noorCoinAmount = 250;
+
     [Header("Placement Settings")]
     public float placementTimerDuration = 360f; // Required time to fully place the item in the game world in seconds
 

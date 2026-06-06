@@ -19,3 +19,7 @@ MonoBehaviour:
   itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
   isUnlocked: 0
   placementTimerDuration: 360
+  puzzlePieces:
+  - {fileID: 5337453049036405034, guid: 61ce83b14143ad4409c78cfcfae399c7, type: 3}
+  - {fileID: 3684959998774388844, guid: 2b6b79992da923e43995d7b9e48bdc5d, type: 3}
+  - {fileID: 1701337248194532064, guid: e5a82beac2023664199c84af027405b9, type: 3}

@@ -113,10 +113,6 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
 
         if (overlayCanvasGroup != null) overlayCanvasGroup.alpha = 1f;
 
-        // Box sprite (closed)
-        if (revealBoxImage != null && rewardData?.closedBoxSprite != null)
-            revealBoxImage.sprite = rewardData.closedBoxSprite;
-
         // Hide reward elements initially
         SetAlpha(rewardIcon,       0f);
         SetTextAlpha(rewardNameText,    0f);
@@ -132,12 +128,8 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
                                                    punchDuration, punchPeakScale));
         }
 
-        // ── Stage 2: Swap to opened sprite ───────────────────────────────────
-        if (revealBoxImage != null && rewardData?.openedBoxSprite != null)
-            revealBoxImage.sprite = rewardData.openedBoxSprite;
-
-        // ── Stage 3: Spawn VFX ────────────────────────────────────────────────
-        GameObject vfxPrefab = vfxOverridePrefab ?? rewardData?.openVFXPrefab;
+        // ── Stage 2: Spawn VFX ────────────────────────────────────────────────
+        GameObject vfxPrefab = vfxOverridePrefab;
         if (vfxPrefab != null)
         {
             Vector3 spawnPos = revealBoxImage != null
