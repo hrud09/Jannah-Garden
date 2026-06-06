@@ -40,7 +40,23 @@ public class PlayersInteractionManager : MonoBehaviour
     {
         if (currentTargetBox != null && TreasureBoxManager.Instance != null)
         {
-            TreasureBoxManager.Instance.TryOpenBox(currentTargetBox.tier, currentTargetBox.slotIndex);
+            TreasureBoxTier tier = currentTargetBox.tier;
+            int slot = currentTargetBox.slotIndex;
+
+            if (AdsManager.Instance != null)
+            {
+                AdsManager.Instance.ShowFakeRewardedAd(() => 
+                {
+                    if (TreasureBoxManager.Instance != null)
+                    {
+                        TreasureBoxManager.Instance.TryOpenBox(tier, slot);
+                    }
+                });
+            }
+            else
+            {
+                TreasureBoxManager.Instance.TryOpenBox(tier, slot);
+            }
         }
         else if (currentTargetOrb != null)
         {

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class TreasureBox : MonoBehaviour
 {
@@ -193,7 +194,7 @@ public class TreasureBox : MonoBehaviour
                 spawnedPiece = Instantiate(puzzlePiecePrefab, transform.position, Quaternion.identity);
                 pieceStartPos = transform.position;
                 pieceEndPos = pieceStartPos + Vector3.up * 2.5f; // Pop out above the box
-                Destroy(spawnedPiece, 5f);
+                StartCoroutine(AnimatePieceToPlayer(spawnedPiece));
             }
 
             if (spawnedPiece != null)
@@ -241,5 +242,37 @@ public class TreasureBox : MonoBehaviour
 
         transform.position = startPos;
         transform.rotation = startRot;
+    }
+
+    private IEnumerator AnimatePieceToPlayer(GameObject piece)
+    {
+        yield return new WaitForSeconds(5f);
+
+        if (piece != null)
+        {
+            Transform targetTransform = null;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                targetTransform = player.transform;
+            }
+            else if (Camera.main != null)
+            {
+                targetTransform = Camera.main.transform;
+            }
+
+            if (targetTransform != null)
+            {
+                // DOTween animation: suck it towards the player while scaling down
+                piece.transform.DOMove(targetTransform.position, 0.8f).SetEase(Ease.InBack);
+                piece.transform.DOScale(Vector3.zero, 0.8f).SetEase(Ease.InBack);
+                yield return new WaitForSeconds(0.8f);
+            }
+
+            if (piece != null)
+            {
+                Destroy(piece);
+            }
+        }
     }
 }
