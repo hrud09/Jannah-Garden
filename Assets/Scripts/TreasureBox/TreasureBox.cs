@@ -23,6 +23,8 @@ public class TreasureBox : MonoBehaviour
     [Header("Box Open Settings")]
     public GameObject boxLid;
     public float boxRiseHeight;
+    public GameObject openingVFXPrefab;
+    public GameObject vfxObject;
     private void Start()
     {
         // Cache instanced materials to avoid cloning materials repeatedly at runtime.
@@ -121,6 +123,16 @@ public class TreasureBox : MonoBehaviour
 
     public IEnumerator PlayOpenAnimation(GameObject puzzlePiecePrefab = null)
     {
+        if (vfxObject != null)
+        {
+            vfxObject.SetActive(false);
+        }
+
+        if (openingVFXPrefab != null)
+        {
+            Instantiate(openingVFXPrefab, transform.position, Quaternion.identity);
+        }
+
         float duration = 1.5f;
         float elapsed = 0f;
 
@@ -194,7 +206,7 @@ public class TreasureBox : MonoBehaviour
                 spawnedPiece = Instantiate(puzzlePiecePrefab, transform.position, Quaternion.identity);
                 pieceStartPos = transform.position;
                 pieceEndPos = pieceStartPos + Vector3.up * 2.5f; // Pop out above the box
-                StartCoroutine(AnimatePieceToPlayer(spawnedPiece));
+                Destroy(spawnedPiece, 5f);
             }
 
             if (spawnedPiece != null)
@@ -242,37 +254,5 @@ public class TreasureBox : MonoBehaviour
 
         transform.position = startPos;
         transform.rotation = startRot;
-    }
-
-    private IEnumerator AnimatePieceToPlayer(GameObject piece)
-    {
-        yield return new WaitForSeconds(5f);
-
-        if (piece != null)
-        {
-            Transform targetTransform = null;
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-            {
-                targetTransform = player.transform;
-            }
-            else if (Camera.main != null)
-            {
-                targetTransform = Camera.main.transform;
-            }
-
-            if (targetTransform != null)
-            {
-                // DOTween animation: suck it towards the player while scaling down
-                piece.transform.DOMove(targetTransform.position, 0.8f).SetEase(Ease.InBack);
-                piece.transform.DOScale(Vector3.zero, 0.8f).SetEase(Ease.InBack);
-                yield return new WaitForSeconds(0.8f);
-            }
-
-            if (piece != null)
-            {
-                Destroy(piece);
-            }
-        }
     }
 }

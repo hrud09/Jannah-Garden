@@ -14922,7 +14922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &340693044
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20058,7 +20058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdsManager
   fakeRewardedAdPanel: {fileID: 340693043}
-  fakeAdDuration: 15
+  fakeAdDuration: 3
   fakeTimerCountDownText: {fileID: 1439742882}
 --- !u!1001 &410366846
 PrefabInstance:
@@ -109024,6 +109024,10 @@ PrefabInstance:
     - target: {fileID: 3696790423197721534, guid: 0f5e3a3020bbb0f45ab4c610604b3c51, type: 3}
       propertyPath: m_Name
       value: Question Mark Orb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696790423197721534, guid: 0f5e3a3020bbb0f45ab4c610604b3c51, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

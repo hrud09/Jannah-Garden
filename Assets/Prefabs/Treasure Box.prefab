@@ -563,6 +563,8 @@ MonoBehaviour:
   treasureBoxCanvas: {fileID: 7082366562200578725}
   boxLid: {fileID: 919624828538137195}
   boxRiseHeight: 2
+  openingVFXPrefab: {fileID: 2159117630687702523, guid: ef2701cb6e400c542aa7ad01e981d01d, type: 3}
+  vfxObject: {fileID: 6686725425958268913}
 --- !u!1001 &6686725425958299991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -676,6 +678,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c040f7ccd795db54f898d253a9ed2e7a, type: 3}
+--- !u!1 &6686725425958268913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: c040f7ccd795db54f898d253a9ed2e7a, type: 3}
+  m_PrefabInstance: {fileID: 6686725425958299991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6686725425958695889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: c040f7ccd795db54f898d253a9ed2e7a, type: 3}
