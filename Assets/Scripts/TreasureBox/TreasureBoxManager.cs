@@ -590,23 +590,21 @@ public class TreasureBoxManager : MonoBehaviour
         if (reward.isUnlocked)
         {
             // Player already owns this item — grant NC equivalent
-            if (NoorCoinManager.Instance != null && rewardData.noorCoinEquivalent > 0)
+            if (NoorCoinManager.Instance != null && reward.noorCoinAmount > 0)
             {
-                NoorCoinManager.Instance.Earn(rewardData.noorCoinEquivalent);
+                NoorCoinManager.Instance.Earn(reward.noorCoinAmount);
                 Debug.Log($"[TreasureBoxManager] {tier} set reward already owned. " +
-                          $"Granted {rewardData.noorCoinEquivalent} NC instead.");
+                          $"Granted {reward.noorCoinAmount} NC instead.");
             }
         }
         else
         {
-            // Unlock the exclusive item
             reward.isUnlocked = true;
-            Debug.Log($"[TreasureBoxManager] {tier} set reward unlocked: {reward.itemName}");
+            Debug.Log($"[TreasureBoxManager] Unlocked {tier} set reward: {reward.itemName}!");
             
-            ItemPlacementManager placementManager = FindObjectOfType<ItemPlacementManager>();
-            if (placementManager != null)
+            if (ItemPlacementManager.Instance != null)
             {
-                placementManager.PreparePlacement(reward);
+                ItemPlacementManager.Instance.PreparePlacement(reward);
             }
         }
     }

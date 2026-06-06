@@ -23953,6 +23953,10 @@ PrefabInstance:
       propertyPath: itemInteractButton
       value: 
       objectReference: {fileID: 1063948188}
+    - target: {fileID: 5509489776399048857, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: maxInteractionDistance
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

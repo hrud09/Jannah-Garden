@@ -17,10 +17,6 @@ MonoBehaviour:
   boxPrefab: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
   spawnCooldownHours: 0.5
   cycleDurationHours: 24
-  glowColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
-  closedBoxSprite: {fileID: 0}
-  openedBoxSprite: {fileID: 0}
-  openVFXPrefab: {fileID: 0}
-  exclusiveRewardItem: {fileID: 0}
+  exclusiveRewardItem: {fileID: 11400000, guid: 13098bc48252fac409e795c36ad8585d, type: 2}
   noorCoinEquivalent: 250
   noorCoinPerBox: 0
