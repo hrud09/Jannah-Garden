@@ -41,6 +41,17 @@ public class TreasureBoxTierState
     /// </summary>
     public int openedCount = 0;
 
+    /// <summary>
+    /// Ticks of the cycle start time this tier belongs to.
+    /// </summary>
+    public long lastTierResetTicks = 0L;
+
+    /// <summary>
+    /// Ticks when a carried-forward tier has finished its 10-minute cooldown and can reset.
+    /// </summary>
+    public long pendingResetAvailableAtTicks = 0L;
+
+
     // ── Convenience ───────────────────────────────────────────────────────────
 
     /// <summary>Returns true if all 3 slots have been opened this cycle.</summary>

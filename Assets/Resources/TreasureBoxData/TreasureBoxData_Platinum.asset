@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TreasureBoxData_Platinum
   m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardData
   tier: 2
-  tierDisplayName: Plat
+  tierDisplayName: Platinum
   boxPrefab: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
   spawnCooldownHours: 0.5
   cycleDurationHours: 24

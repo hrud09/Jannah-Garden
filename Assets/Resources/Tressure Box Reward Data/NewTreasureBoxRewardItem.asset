@@ -18,6 +18,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 3639881908698059280, guid: 4e45ad568950cf94cbaeb8a9b2e04755, type: 3}
   itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
   isUnlocked: 0
+  noorCoinAmount: 250
   placementTimerDuration: 360
   puzzlePieces:
   - {fileID: 5337453049036405034, guid: 61ce83b14143ad4409c78cfcfae399c7, type: 3}

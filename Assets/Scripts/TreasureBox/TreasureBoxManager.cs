@@ -70,6 +70,10 @@ public class TreasureBoxManager : MonoBehaviour
     [Tooltip("Subscribers bypass rewarded ads and open all available boxes instantly.")]
     public bool isSubscriber = false;
 
+    [Header("Reset Configuration")]
+    [Tooltip("x = hour (0-23), y = minute (0-59) for daily reset.")]
+    public Vector2 dailyResetTime = new Vector2(0, 0);
+
     [Header("UI Data")]
     public TreasureBoxStatusUI[] treasureBoxStatusUis;
 
@@ -169,6 +173,7 @@ public class TreasureBoxManager : MonoBehaviour
         if (_spawnCheckTimer >= 1f)
         {
             _spawnCheckTimer = 0f;
+            TickCycleResets();
             CheckAndSpawnNewBoxes();
         }
 
@@ -198,7 +203,19 @@ public class TreasureBoxManager : MonoBehaviour
                 
             if (ui.timerText != null)
             {
-                if (state.IsSetComplete)
+                if (state.pendingResetAvailableAtTicks > 0)
+                {
+                    TimeSpan span = new DateTime(state.pendingResetAvailableAtTicks) - DateTime.Now;
+                    if (span.TotalSeconds > 0)
+                    {
+                        ui.timerText.text = FormatTimeSpan(span);
+                    }
+                    else
+                    {
+                        ui.timerText.text = "Resetting...";
+                    }
+                }
+                else if (state.IsSetComplete)
                 {
                     ui.timerText.text = "Completed";
                 }
@@ -296,8 +313,17 @@ public class TreasureBoxManager : MonoBehaviour
     public bool IsTierUnlocked(TreasureBoxTier tier)
     {
         if (tier == TreasureBoxTier.Silver) return true;
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+
+        if (state.openedCount > 0 && state.openedCount < SLOTS_PER_TIER) return true;
+
         TreasureBoxTier prevTier = (TreasureBoxTier)((int)tier - 1);
-        return _saveData.GetTierState(prevTier).IsSetComplete;
+        TreasureBoxTierState prevState = _saveData.GetTierState(prevTier);
+
+        DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
+        bool isPrevTierCurrentCycle = new DateTime(prevState.lastTierResetTicks) >= currentCycleStart;
+
+        return prevState.IsSetComplete && isPrevTierCurrentCycle;
     }
 
     /// <summary>
@@ -313,11 +339,7 @@ public class TreasureBoxManager : MonoBehaviour
         if (slotIndex < 0 || slotIndex >= SLOTS_PER_TIER) return false;
         if (state.slotOpened[slotIndex]) return false;
 
-        int overallIndex = (int)tier * SLOTS_PER_TIER + slotIndex;
-        int hoursOffset = overallIndex * 2;
-        DateTime readyAt = DateTime.Today.AddHours(hoursOffset);
-
-        return DateTime.Now >= readyAt;
+        return DateTime.Now >= GetSlotAvailableAt(tier, slotIndex);
     }
 
     /// <summary>
@@ -333,7 +355,18 @@ public class TreasureBoxManager : MonoBehaviour
         int overallIndex = (int)tier * SLOTS_PER_TIER + slotIndex;
         int hoursOffset = overallIndex * 2;
         
-        return DateTime.Today.AddHours(hoursOffset);
+        long baseTicks = state.lastTierResetTicks > 0 ? state.lastTierResetTicks : GetCurrentCycleStart(DateTime.Now).Ticks;
+        return new DateTime(baseTicks).AddHours(hoursOffset);
+    }
+
+    public DateTime GetCurrentCycleStart(DateTime now)
+    {
+        DateTime resetTimeToday = now.Date.AddHours(dailyResetTime.x).AddMinutes(dailyResetTime.y);
+        if (now < resetTimeToday)
+        {
+            return resetTimeToday.AddDays(-1);
+        }
+        return resetTimeToday;
     }
 
     /// <summary>
@@ -565,6 +598,13 @@ public class TreasureBoxManager : MonoBehaviour
             Debug.Log($"[TreasureBoxManager] {tier} set complete!");
             GrantSetCompletionReward(tier);
             OnSetCompleted?.Invoke(tier, rewardData);
+
+            DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
+            if (new DateTime(state.lastTierResetTicks) < currentCycleStart)
+            {
+                state.pendingResetAvailableAtTicks = DateTime.Now.AddMinutes(10).Ticks;
+                Debug.Log($"[TreasureBoxManager] {tier} finished carried-forward boxes. Starting 10-minute cooldown.");
+            }
         }
 
         OnStateChanged?.Invoke();
@@ -609,26 +649,42 @@ public class TreasureBoxManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// On startup, checks whether any active 24-hour cycle has expired and
-    /// resets the relevant tier if so.
-    /// </summary>
     private void TickCycleResets()
     {
         bool changed = false;
-        DateTime now = DateTime.UtcNow;
+        DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
 
-        if (_saveData.globalCycleStartedAtTicks > 0)
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
         {
-            DateTime cycleStart = new DateTime(_saveData.globalCycleStartedAtTicks, DateTimeKind.Utc);
-            if (now >= cycleStart.AddHours(24.0))
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            if (state.lastTierResetTicks == 0)
             {
-                Debug.Log("[TreasureBoxManager] Global 24-hour cycle expired. Hard resetting all tiers.");
-                foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+                state.ResetCycle();
+                state.lastTierResetTicks = currentCycleStart.Ticks;
+                changed = true;
+                continue;
+            }
+
+            DateTime tierLastReset = new DateTime(state.lastTierResetTicks);
+
+            if (tierLastReset < currentCycleStart)
+            {
+                if (state.openedCount == 0 || state.openedCount >= SLOTS_PER_TIER)
                 {
-                    _saveData.GetTierState(tier).ResetCycle();
+                    state.ResetCycle();
+                    state.lastTierResetTicks = currentCycleStart.Ticks;
+                    state.pendingResetAvailableAtTicks = 0;
+                    RemoveSpawnedBoxesForTier(tier);
+                    changed = true;
                 }
-                _saveData.globalCycleStartedAtTicks = 0L;
+            }
+
+            if (state.pendingResetAvailableAtTicks > 0 && DateTime.Now.Ticks >= state.pendingResetAvailableAtTicks)
+            {
+                state.ResetCycle();
+                state.lastTierResetTicks = currentCycleStart.Ticks;
+                state.pendingResetAvailableAtTicks = 0;
+                RemoveSpawnedBoxesForTier(tier);
                 changed = true;
             }
         }
@@ -637,6 +693,21 @@ public class TreasureBoxManager : MonoBehaviour
         {
             SaveState();
             OnStateChanged?.Invoke();
+        }
+    }
+
+    private void RemoveSpawnedBoxesForTier(TreasureBoxTier tier)
+    {
+        for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
+        {
+            if (_spawnedBoxes[i].tier == tier)
+            {
+                if (_spawnedBoxes[i].gameObject != null)
+                {
+                    Destroy(_spawnedBoxes[i].gameObject);
+                }
+                _spawnedBoxes.RemoveAt(i);
+            }
         }
     }
 
