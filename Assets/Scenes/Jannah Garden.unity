@@ -110322,10 +110322,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6157097169937542978, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6914278042558793955, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -110562,10 +110558,6 @@ PrefabInstance:
     - target: {fileID: 4036733133715931728, guid: aa09951ea20c49841a524368586365bf, type: 3}
       propertyPath: m_Name
       value: Economy Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6704750148371002831, guid: aa09951ea20c49841a524368586365bf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8449982332370201154, guid: aa09951ea20c49841a524368586365bf, type: 3}
       propertyPath: m_Pivot.x

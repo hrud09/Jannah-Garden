@@ -136,8 +136,8 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
                 ? revealBoxImage.transform.position
                 : transform.position;
 
-            GameObject vfx = Instantiate(vfxPrefab, spawnPos, Quaternion.identity);
-            Destroy(vfx, 3f); // Auto-destroy VFX after 3 seconds
+            GameObject vfx = Objectpool.Instance.Spawn(vfxPrefab, spawnPos, Quaternion.identity);
+            Objectpool.Instance.Despawn(vfx, 3f); // Auto-despawn VFX after 3 seconds
         }
 
         // ── Stage 4: Fade in reward icon + name ───────────────────────────────

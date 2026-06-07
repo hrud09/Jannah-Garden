@@ -130,7 +130,7 @@ public class TreasureBox : MonoBehaviour
 
         if (openingVFXPrefab != null)
         {
-            Instantiate(openingVFXPrefab, transform.position, Quaternion.identity);
+            Objectpool.Instance.Spawn(openingVFXPrefab, transform.position, Quaternion.identity);
         }
 
         float duration = 1.5f;
@@ -203,10 +203,10 @@ public class TreasureBox : MonoBehaviour
             // 5. Reveal puzzle piece
             if (puzzlePiecePrefab != null && t > 0.4f && spawnedPiece == null)
             {
-                spawnedPiece = Instantiate(puzzlePiecePrefab, transform.position, Quaternion.identity);
+                spawnedPiece = Objectpool.Instance.Spawn(puzzlePiecePrefab, transform.position, Quaternion.identity);
                 pieceStartPos = transform.position;
                 pieceEndPos = pieceStartPos + Vector3.up * 2.5f; // Pop out above the box
-                Destroy(spawnedPiece, 5f);
+                Objectpool.Instance.Despawn(spawnedPiece, 5f);
             }
 
             if (spawnedPiece != null)

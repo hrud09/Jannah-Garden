@@ -49,7 +49,7 @@ public class QuestionMarkOrbManager : MonoBehaviour
         // Remove it from available points
         availableSpawnPoints.RemoveAt(randIndex);
 
-        GameObject newOrb = Instantiate(orbPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject newOrb = Objectpool.Instance.Spawn(orbPrefab, spawnPoint.position, spawnPoint.rotation);
         
         // Attach a reference to the spawn point so we can free it later
         QuestionMarkOrb orbScript = newOrb.GetComponent<QuestionMarkOrb>();
@@ -74,7 +74,7 @@ public class QuestionMarkOrbManager : MonoBehaviour
             activeOrbs.Remove(orb.gameObject);
         }
 
-        Destroy(orb.gameObject);
+        Objectpool.Instance.Despawn(orb.gameObject);
 
         // Schedule respawn
         StartCoroutine(RespawnRoutine());

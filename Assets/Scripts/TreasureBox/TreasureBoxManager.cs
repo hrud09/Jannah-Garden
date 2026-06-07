@@ -503,7 +503,7 @@ public class TreasureBoxManager : MonoBehaviour
                             {
                                 TreasureBox tb = _spawnedBoxes[j].boxScript;
                                 if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
-                                Destroy(_spawnedBoxes[j].gameObject, 2f);
+                                Objectpool.Instance.Despawn(_spawnedBoxes[j].gameObject, 2f);
                             }
                             _spawnedBoxes.RemoveAt(j);
                             break;
@@ -583,7 +583,7 @@ public class TreasureBoxManager : MonoBehaviour
                 {
                     TreasureBox tb = _spawnedBoxes[i].boxScript;
                     if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
-                    Destroy(_spawnedBoxes[i].gameObject, 2f);
+                    Objectpool.Instance.Despawn(_spawnedBoxes[i].gameObject, 2f);
                 }
                 _spawnedBoxes.RemoveAt(i);
                 break;
@@ -691,7 +691,7 @@ public class TreasureBoxManager : MonoBehaviour
             {
                 if (_spawnedBoxes[i].gameObject != null)
                 {
-                    Destroy(_spawnedBoxes[i].gameObject);
+                    Objectpool.Instance.Despawn(_spawnedBoxes[i].gameObject);
                 }
                 _spawnedBoxes.RemoveAt(i);
             }
@@ -813,7 +813,7 @@ public class TreasureBoxManager : MonoBehaviour
 
         Transform spawnPoint = spawnPoints[assignedIndex];
         
-        GameObject go = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject go = Objectpool.Instance.Spawn(prefab, spawnPoint.position, spawnPoint.rotation);
         go.name = $"TreasureBox_{tier}_Slot{slotIndex}";
         
         TreasureBox boxScript = go.GetComponent<TreasureBox>();
