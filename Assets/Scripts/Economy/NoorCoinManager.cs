@@ -80,6 +80,11 @@ public class NoorCoinManager : MonoBehaviour
             ToastMessageManager.Instance.ShowToast($"-{amount} Noor Coins", Color.red);
         }
         Debug.Log($"[NoorCoinManager] Spent {amount} Noor Coins. New balance: {_balance}");
+        
+        // --- FLUTTER COMMUNICATION ---
+        // Notify Flutter so it can deduct from Firebase
+        SendCoinUpdateToFlutter(-amount);
+
         return true;
     }
 
@@ -98,6 +103,10 @@ public class NoorCoinManager : MonoBehaviour
             ToastMessageManager.Instance.ShowToast($"+{amount} Noor Coins", Color.green);
         }
         Debug.Log($"[NoorCoinManager] Earned {amount} Noor Coins. New balance: {_balance}");
+        
+        // --- FLUTTER COMMUNICATION ---
+        // Notify Flutter so it can add to Firebase
+        SendCoinUpdateToFlutter(amount);
     }
 
     /// <summary>
@@ -114,6 +123,43 @@ public class NoorCoinManager : MonoBehaviour
         SetBalance(startingBalance);
         SaveBalance();
         Debug.Log($"[NoorCoinManager] Balance reset to starting value: {startingBalance}");
+    }
+
+    // ─── Flutter Communication API ────────────────────────────────────────────
+
+    /// <summary>
+    /// Flutter will call this method directly when the embedded Unity view opens,
+    /// passing the user's Firebase Noor Coin balance as a string.
+    /// </summary>
+    public void SetInitialCoinsFromFlutter(string coinCountString)
+    {
+        if (int.TryParse(coinCountString, out int coinCount))
+        {
+            // Set balance directly without triggering Earn/Spend notifications
+            _balance = Mathf.Max(0, coinCount);
+            OnBalanceChanged?.Invoke(_balance);
+            SaveBalance(); // Optionally keep saving locally as a fallback
+            
+            Debug.Log($"[NoorCoinManager] Initial balance set from Flutter/Firebase: {_balance}");
+        }
+        else
+        {
+            Debug.LogError($"[NoorCoinManager] Failed to parse coin count from Flutter: {coinCountString}");
+        }
+    }
+
+    /// <summary>
+    /// Sends a message back to Flutter indicating a change in the coin balance.
+    /// amountChange is positive for earning, negative for spending.
+    /// </summary>
+    private void SendCoinUpdateToFlutter(int amountChange)
+    {
+        string message = $"CoinUpdate:{amountChange}";
+        
+        // TODO: Uncomment this when you import the flutter_unity_widget package!
+        // FlutterUnityIntegration.UnityMessageManager.Instance.SendMessageToFlutter(message);
+        
+        Debug.Log($"[NoorCoinManager] Sent to Flutter: {message}");
     }
 
     // ─── Internal Helpers ─────────────────────────────────────────────────────
