@@ -25,6 +25,7 @@ public class MCQManager : MonoBehaviour
 
     [Header("UI References")]
     public GameObject quizPanel; // The main UI panel containing the quiz
+    public Button closeButton; // Button to close the quiz dramatically
     public GameObject blurredBG; // The blurred background behind the quiz panel
     public TextMeshProUGUI questionTextUI;
     public Button[] optionButtons;
@@ -44,6 +45,9 @@ public class MCQManager : MonoBehaviour
     private QuestionList allQuestions;
     private int currentQuestionIndex = 0;
     private int selectedOptionIndex = -1;
+    private QuestionMarkOrb currentOrb;
+    private int[] currentShuffledIndices;
+    private int currentCorrectOptionIndex;
 
     void Awake()
     {
@@ -60,6 +64,11 @@ public class MCQManager : MonoBehaviour
             submitButton.interactable = false;
         }
 
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(CloseQuizDramatically);
+        }
+
         // Setup button listeners
         for (int i = 0; i < optionButtons.Length; i++)
         {
@@ -72,8 +81,9 @@ public class MCQManager : MonoBehaviour
         if (blurredBG != null) blurredBG.SetActive(false);
     }
 
-    public void StartQuiz()
+    public void StartQuiz(QuestionMarkOrb orb = null)
     {
+        currentOrb = orb;
         if (blurredBG != null) blurredBG.SetActive(true);
 
         if (quizPanel != null) 
@@ -115,6 +125,28 @@ public class MCQManager : MonoBehaviour
 
         QuestionData qData = allQuestions.questions[index];
 
+        currentShuffledIndices = new int[qData.options.Length];
+        for (int i = 0; i < qData.options.Length; i++) currentShuffledIndices[i] = i;
+
+        // Shuffle options
+        for (int i = 0; i < currentShuffledIndices.Length; i++)
+        {
+            int temp = currentShuffledIndices[i];
+            int rand = UnityEngine.Random.Range(i, currentShuffledIndices.Length);
+            currentShuffledIndices[i] = currentShuffledIndices[rand];
+            currentShuffledIndices[rand] = temp;
+        }
+
+        // Find the correct option index after shuffle
+        for (int i = 0; i < currentShuffledIndices.Length; i++)
+        {
+            if (currentShuffledIndices[i] == qData.correctAnswerIndex)
+            {
+                currentCorrectOptionIndex = i;
+                break;
+            }
+        }
+
         questionTextUI.text = qData.questionText;
 
         // Juicy animation for question text
@@ -127,7 +159,7 @@ public class MCQManager : MonoBehaviour
             if (i < qData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                optionTextsUI[i].text = qData.options[i];
+                optionTextsUI[i].text = qData.options[currentShuffledIndices[i]];
                 
                 // Reset appearance and interaction
                 optionButtons[i].image.sprite = defaultSprite;
@@ -195,7 +227,7 @@ public class MCQManager : MonoBehaviour
             submitButton.interactable = false;
 
         // Visual feedback
-        if (selectedOptionIndex == qData.correctAnswerIndex)
+        if (selectedOptionIndex == currentCorrectOptionIndex)
         {
             // Selected answer is correct
             optionButtons[selectedOptionIndex].image.sprite = correctSprite;
@@ -208,6 +240,13 @@ public class MCQManager : MonoBehaviour
             {
                 NoorCoinManager.Instance.Earn(QuestionMarkOrbManager.Instance.rewardCoins);
             }
+            if (currentOrb != null && QuestionMarkOrbManager.Instance != null)
+            {
+                QuestionMarkOrbManager.Instance.OnOrbOpened(currentOrb);
+                currentOrb = null;
+            }
+
+            StartCoroutine(HideQuizAfterDelay(5f));
         }
         else
         {
@@ -218,13 +257,57 @@ public class MCQManager : MonoBehaviour
             optionButtons[selectedOptionIndex].transform.DOShakePosition(0.4f, 10f, 20, 90f, false, true);
             
             // Also show the correct answer
-            optionButtons[qData.correctAnswerIndex].image.sprite = correctSprite;
-            optionButtons[qData.correctAnswerIndex].transform.DOKill();
-            optionButtons[qData.correctAnswerIndex].transform.localScale = Vector3.one;
-            optionButtons[qData.correctAnswerIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
+            optionButtons[currentCorrectOptionIndex].image.sprite = correctSprite;
+            optionButtons[currentCorrectOptionIndex].transform.DOKill();
+            optionButtons[currentCorrectOptionIndex].transform.localScale = Vector3.one;
+            optionButtons[currentCorrectOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
+            
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("Opps! Review the correct answer and try again to earn your Noor Coins.", Color.red);
+            }
+            
+            StartCoroutine(ResetQuizAfterDelay(5f));
+        }
+    }
+
+    public void CloseQuizDramatically()
+    {
+        StopAllCoroutines();
+
+        if (quizPanel != null) 
+        {
+            quizPanel.transform.DOKill();
+            quizPanel.transform.DOPunchScale(new Vector3(0.05f, 0.05f, 0.05f), 0.2f, 5, 1).OnComplete(() => {
+                quizPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
+                    quizPanel.SetActive(false);
+                    if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+                    if (blurredBG != null) blurredBG.SetActive(false);
+                    currentOrb = null;
+                });
+            });
+        }
+        else if (blurredBG != null)
+        {
+            blurredBG.SetActive(false);
+            currentOrb = null;
+        }
+    }
+
+    private IEnumerator ResetQuizAfterDelay(float delay)
+    {
+        if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(true);
+
+        float remainingTime = delay;
+        while (remainingTime > 0)
+        {
+            if (countDownToHidePanel != null) countDownToHidePanel.text = Mathf.CeilToInt(remainingTime).ToString();
+            yield return new WaitForSeconds(1f);
+            remainingTime -= 1f;
         }
 
-        StartCoroutine(HideQuizAfterDelay(5f));
+        if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+        ShowQuestion(currentQuestionIndex);
     }
 
     private IEnumerator HideQuizAfterDelay(float delay)

@@ -41108,7 +41108,7 @@ GameObject:
   - component: {fileID: 840563303}
   - component: {fileID: 840563302}
   m_Layer: 5
-  m_Name: Item Interaction Canvas
+  m_Name: Item Interaction and QA Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109677,10 +109677,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -86.150955
       objectReference: {fileID: 0}
-    - target: {fileID: 2953900485674224415, guid: 878ca8f8b9cdc8c4591dc9893225a3f4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 51.238037
-      objectReference: {fileID: 0}
     - target: {fileID: 4515395951096466660, guid: 878ca8f8b9cdc8c4591dc9893225a3f4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -109737,9 +109733,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6081526197410951257, guid: 878ca8f8b9cdc8c4591dc9893225a3f4, type: 3}
+    - target: {fileID: 5945960653952998321, guid: 878ca8f8b9cdc8c4591dc9893225a3f4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 51.238037
+      value: -67.9021
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

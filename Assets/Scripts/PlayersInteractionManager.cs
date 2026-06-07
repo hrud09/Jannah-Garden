@@ -18,6 +18,7 @@ public class PlayersInteractionManager : MonoBehaviour
     private Camera mainCam;
 
     public Button itemInteractButton;
+    private bool isInteracting = false;
 
 
     private void Start()
@@ -38,6 +39,12 @@ public class PlayersInteractionManager : MonoBehaviour
 
     private void OnInteractButtonClicked()
     {
+        isInteracting = true;
+        if (itemInteractButton != null)
+        {
+            itemInteractButton.gameObject.SetActive(false);
+        }
+
         if (currentTargetBox != null && TreasureBoxManager.Instance != null)
         {
             TreasureBoxTier tier = currentTargetBox.tier;
@@ -127,6 +134,7 @@ public class PlayersInteractionManager : MonoBehaviour
         // Handle highlighting transitions for TreasureBox
         if (detectedBox != currentTargetBox)
         {
+            isInteracting = false;
             // Disable outline on the previous box
             if (currentTargetBox != null)
             {
@@ -144,6 +152,7 @@ public class PlayersInteractionManager : MonoBehaviour
         // Handle highlighting transitions for QuestionMarkOrb
         if (detectedOrb != currentTargetOrb)
         {
+            isInteracting = false;
             if (currentTargetOrb != null)
             {
                 currentTargetOrb.SetFocus(false);
@@ -160,7 +169,7 @@ public class PlayersInteractionManager : MonoBehaviour
         // Activate the itemInteractButton if a treasure box or orb is targeted, otherwise deactivate it
         if (itemInteractButton != null)
         {
-            bool shouldShow = (currentTargetBox != null || currentTargetOrb != null);
+            bool shouldShow = (currentTargetBox != null || currentTargetOrb != null) && !isInteracting;
             if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing)
             {
                 shouldShow = false;

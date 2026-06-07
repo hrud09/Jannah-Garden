@@ -17,12 +17,7 @@ public class QuestionMarkOrb : MonoBehaviour
     {
         if (MCQManager.Instance != null)
         {
-            MCQManager.Instance.StartQuiz();
-        }
-
-        if (QuestionMarkOrbManager.Instance != null)
-        {
-            QuestionMarkOrbManager.Instance.OnOrbOpened(this);
+            MCQManager.Instance.StartQuiz(this);
         }
     }
 }
