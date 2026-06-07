@@ -107,14 +107,14 @@ public class ItemPlacementManager : MonoBehaviour
         // If there's an existing preview being placed, destroy it
         if (currentPlacedObject != null)
         {
-            Destroy(currentPlacedObject);
+            Objectpool.Instance.Despawn(currentPlacedObject);
             currentPlacedObject = null;
         }
 
         _pendingItemPrefab = prefab;
         _pendingDuration = duration;
 
-        currentPlacedObject = Instantiate(previewPrefab);
+        currentPlacedObject = Objectpool.Instance.Spawn(previewPrefab);
 
         // Disable PlaceableItem on the ghost so the countdown doesn't start yet
         PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
@@ -184,7 +184,7 @@ public class ItemPlacementManager : MonoBehaviour
         // Record where the ghost ended up, then destroy it.
         Vector3 confirmedPosition = currentPlacedObject.transform.position;
         Quaternion confirmedRotation = currentPlacedObject.transform.rotation;
-        Destroy(currentPlacedObject);
+        Objectpool.Instance.Despawn(currentPlacedObject);
         currentPlacedObject = null;
 
         // Spawn the real item prefab at the confirmed position.
@@ -195,7 +195,7 @@ public class ItemPlacementManager : MonoBehaviour
             return;
         }
 
-        GameObject realObject = Instantiate(_pendingItemPrefab, confirmedPosition, confirmedRotation);
+        GameObject realObject = Objectpool.Instance.Spawn(_pendingItemPrefab, confirmedPosition, confirmedRotation);
         // ─────────────────────────────────────────────────────────────────────
 
         // Enable and initialize the PlaceableItem component on the real object
@@ -285,7 +285,7 @@ public class ItemPlacementManager : MonoBehaviour
             GameObject prefab = GetPrefabByName(itemData.prefabName);
             if (prefab != null)
             {
-                GameObject spawned = Instantiate(prefab, itemData.position, itemData.rotation);
+                GameObject spawned = Objectpool.Instance.Spawn(prefab, itemData.position, itemData.rotation);
                 
                 PlaceableItem placeable = spawned.GetComponent<PlaceableItem>();
                 if (placeable == null)
