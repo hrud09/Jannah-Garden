@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Decoration 20
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 00045fa5eef822c479e292fe743be48a, type: 3}
+  itemName: Decoration 20
+  itemDescription: A beautiful Decoration 20 for your Jannah Garden.
+  noorCoinCost: 350
+  itemPrice: 350
+  shopItemType: 0
+  itemCategory: 3
+  itemPrefab: {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+  itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
+  itemState: 1
+  placementTimerDuration: 360

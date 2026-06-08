@@ -3,18 +3,22 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+
+
 [System.Serializable]
-public class ShopItemVisuals
+public class CategoryTab
 {
-    public ShopItemType itemType;
-    [Header("Item Visual Backgrounds")]
-    public Sprite itemBackground;
-    public Sprite itemIconBackground;
+    public ShopItemCategory category;
+    public Button tabButton;
+    public GameObject categoryPanel; // Enabled when active, disabled when inactive
+    public Transform contentParent;  // Parent where item prefabs of this category are spawned
 }
 
 public class InGameShopManager : MonoBehaviour
 {
-    public ShopItemUI[] shopItemUIs; // Array of ShopItemUI components
+    [Header("Dynamic Spawning References")]
+    [SerializeField] private GameObject shopItemUIPrefab; // The ShopItemUI prefab to instantiate
+    private List<ShopItemUI> spawnedShopItemUIs = new List<ShopItemUI>();
 
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
@@ -28,8 +32,18 @@ public class InGameShopManager : MonoBehaviour
     public float panelTransitionDuration = 0.3f;
     public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    [Header("Item Type Visual Overrides")]
-    public List<ShopItemVisuals> itemTypeVisuals; // Configured list in Inspector
+
+
+    [Header("Category Navigation")]
+    public List<CategoryTab> categoryTabs;
+    private ShopItemCategory currentCategory = ShopItemCategory.All;
+
+    [Header("Category Sizing Options")]
+    [SerializeField] private float selectedTabWidth = 150f;
+    [SerializeField] private float unselectedTabWidth = 100f;
+    private Coroutine scaleTabsCoroutine;
+    private Dictionary<CategoryTab, float> defaultWidths = new Dictionary<CategoryTab, float>();
+    private RectTransform tabsParentRect;
 
     private float closedPositionX;
     private bool isOpen = false;
@@ -55,55 +69,92 @@ public class InGameShopManager : MonoBehaviour
             openCloseButton.onClick.AddListener(ToggleShop);
         }
 
-        // Initialize shop items with data from ScriptableObjects and visual overrides
-        if (shopItemUIs != null && shopItemDatas != null)
+        // Dynamic Spawning of Shop Items based on Categories
+        if (shopItemDatas != null && shopItemUIPrefab != null)
         {
-            for (int i = 0; i < shopItemUIs.Length; i++)
+            foreach (var data in shopItemDatas)
             {
-                if (shopItemUIs[i] != null && i < shopItemDatas.Length && shopItemDatas[i] != null)
-                {
-                    ShopItemData data = shopItemDatas[i];
-                    Sprite bg = null;
-                    Sprite iconBg = null;
+                if (data == null) continue;
 
-                    // Match visuals from the global category override settings
-                    ShopItemVisuals visuals = GetVisualsForType(data.shopItemType);
-                    if (visuals != null)
+                // Find matching category tab configuration
+                CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
+                if (matchingTab != null && matchingTab.contentParent != null)
+                {
+                    GameObject spawnedObj = Instantiate(shopItemUIPrefab, matchingTab.contentParent);
+                    ShopItemUI itemUI = spawnedObj.GetComponent<ShopItemUI>();
+                    if (itemUI != null)
                     {
-                        bg = visuals.itemBackground;
-                        iconBg = visuals.itemIconBackground;
+                        itemUI.Initialize(data);
+
+                        // Hook up click listener to purchase/select item
+                        if (itemUI.purchaseButton != null)
+                        {
+                            ShopItemUI currentItem = itemUI;
+                            itemUI.purchaseButton.onClick.AddListener(() => SelectAndUseItem(currentItem));
+                        }
+
+                        spawnedShopItemUIs.Add(itemUI);
                     }
-
-                    shopItemUIs[i].Initialize(data, bg, iconBg);
                 }
-            }
-        }
-
-        // Register click listeners for purchase buttons to select and use items
-        if (shopItemUIs != null)
-        {
-            foreach (var itemUI in shopItemUIs)
-            {
-                if (itemUI != null && itemUI.purchaseButton != null)
+                else
                 {
-                    ShopItemUI currentItem = itemUI;
-                    itemUI.purchaseButton.onClick.AddListener(() => SelectAndUseItem(currentItem));
+                    Debug.LogWarning($"[InGameShopManager] No category tab setup or content parent found for category: {data.itemCategory} on item: {data.itemName}");
                 }
             }
         }
 
-        // Select the default selected item or first item on start (set selection only)
+        // Select the default selected item or first spawned item on start (set selection only)
         if (selectedShopItem != null)
         {
             selectedShopItem = selectedShopItem;
         }
-        else if (shopItemUIs != null && shopItemUIs.Length > 0 && shopItemUIs[0] != null)
+        else if (spawnedShopItemUIs.Count > 0 && spawnedShopItemUIs[0] != null)
         {
-            selectedShopItem = shopItemUIs[0];
+            selectedShopItem = spawnedShopItemUIs[0];
         }
 
         // Initialize default arrow state and panel position (Closed by default)
         SetShopOpen(false, smooth: false);
+
+        // Initialize Category Tabs
+        if (categoryTabs != null)
+        {
+            if (categoryTabs.Count > 0 && categoryTabs[0] != null && categoryTabs[0].tabButton != null)
+            {
+                tabsParentRect = categoryTabs[0].tabButton.transform.parent as RectTransform;
+            }
+
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.tabButton != null)
+                {
+                    ShopItemCategory cat = tab.category;
+                    tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
+
+                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                    if (rect != null)
+                    {
+                        defaultWidths[tab] = rect.sizeDelta.x;
+                    }
+                    else
+                    {
+                        defaultWidths[tab] = unselectedTabWidth;
+                    }
+                }
+            }
+        }
+
+        // Default to showing all categories initially
+        FilterByCategory(ShopItemCategory.All);
+    }
+
+    private void OnDisable()
+    {
+        if (scaleTabsCoroutine != null)
+        {
+            StopCoroutine(scaleTabsCoroutine);
+            scaleTabsCoroutine = null;
+        }
     }
 
     private void OnDestroy()
@@ -111,6 +162,17 @@ public class InGameShopManager : MonoBehaviour
         if (openCloseButton != null)
         {
             openCloseButton.onClick.RemoveListener(ToggleShop);
+        }
+
+        if (categoryTabs != null)
+        {
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.tabButton != null)
+                {
+                    tab.tabButton.onClick.RemoveAllListeners();
+                }
+            }
         }
     }
 
@@ -225,18 +287,178 @@ public class InGameShopManager : MonoBehaviour
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
     }
 
+
+
     /// <summary>
-    /// Helper method to retrieve visual background settings for a specific ShopItemType.
+    /// Filters the shop UI items by the specified category and updates the category panel visibility.
     /// </summary>
-    public ShopItemVisuals GetVisualsForType(ShopItemType type)
+    public void FilterByCategory(ShopItemCategory category)
     {
-        if (itemTypeVisuals != null)
+        currentCategory = category;
+
+        // Toggle active state of category panels
+        if (categoryTabs != null)
         {
-            foreach (var visuals in itemTypeVisuals)
+            foreach (var tab in categoryTabs)
             {
-                if (visuals != null && visuals.itemType == type)
+                if (tab != null && tab.categoryPanel != null)
                 {
-                    return visuals;
+                    tab.categoryPanel.SetActive(tab.category == category);
+                }
+            }
+        }
+
+        // Animate/lerp the scale of the tab buttons
+        UpdateTabVisuals(category);
+    }
+
+    private void UpdateTabVisuals(ShopItemCategory selectedCategory)
+    {
+        if (scaleTabsCoroutine != null)
+        {
+            StopCoroutine(scaleTabsCoroutine);
+        }
+        
+        if (gameObject.activeInHierarchy)
+        {
+            scaleTabsCoroutine = StartCoroutine(WidthTabsRoutine(selectedCategory));
+        }
+        else
+        {
+            // Immediate update if manager is not active/playing
+            if (categoryTabs != null)
+            {
+                foreach (var tab in categoryTabs)
+                {
+                    if (tab != null && tab.tabButton != null)
+                    {
+                        RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                        if (rect != null)
+                        {
+                            float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
+                            float targetWidth = (tab.category == selectedCategory) ? selectedTabWidth : defaultWidth;
+                            rect.sizeDelta = new Vector2(targetWidth, rect.sizeDelta.y);
+                        }
+                    }
+                }
+                if (tabsParentRect != null)
+                {
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
+                }
+            }
+        }
+    }
+
+    private IEnumerator WidthTabsRoutine(ShopItemCategory selectedCategory)
+    {
+        float duration = 0.15f; // Snappy, juicy animation
+        float elapsed = 0f;
+
+        // Store starting width for each tab button
+        Dictionary<CategoryTab, float> startWidths = new Dictionary<CategoryTab, float>();
+        if (categoryTabs != null)
+        {
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.tabButton != null)
+                {
+                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                    if (rect != null)
+                    {
+                        startWidths[tab] = rect.sizeDelta.x;
+                    }
+                }
+            }
+        }
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            if (categoryTabs != null)
+            {
+                foreach (var tab in categoryTabs)
+                {
+                    if (tab != null && tab.tabButton != null && startWidths.ContainsKey(tab))
+                    {
+                        RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                        if (rect != null)
+                        {
+                            float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
+                            float targetWidth = (tab.category == selectedCategory) ? selectedTabWidth : defaultWidth;
+                            float currentWidth = Mathf.Lerp(startWidths[tab], targetWidth, t);
+                            rect.sizeDelta = new Vector2(currentWidth, rect.sizeDelta.y);
+                        }
+                    }
+                }
+            }
+
+            // Force layout group to rebuild immediately during interpolation
+            if (tabsParentRect != null)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
+            }
+
+            yield return null;
+        }
+
+        // Ensure final state is applied
+        if (categoryTabs != null)
+        {
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.tabButton != null)
+                {
+                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                    if (rect != null)
+                    {
+                        float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
+                        float targetWidth = (tab.category == selectedCategory) ? selectedTabWidth : defaultWidth;
+                        rect.sizeDelta = new Vector2(targetWidth, rect.sizeDelta.y);
+                    }
+                }
+            }
+            if (tabsParentRect != null)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
+            }
+        }
+        scaleTabsCoroutine = null;
+    }
+
+    /// <summary>
+    /// Overload helper to filter categories by integer index (useful for Inspector UnityEvents).
+    /// </summary>
+    public void FilterByCategoryInt(int categoryIndex)
+    {
+        FilterByCategory((ShopItemCategory)categoryIndex);
+    }
+
+    /// <summary>
+    /// Overload helper to filter categories by string name (useful for Inspector UnityEvents).
+    /// </summary>
+    public void FilterByCategoryString(string categoryName)
+    {
+        if (System.Enum.TryParse(categoryName, true, out ShopItemCategory result))
+        {
+            FilterByCategory(result);
+        }
+        else
+        {
+            Debug.LogWarning($"[InGameShopManager] Unknown category name: {categoryName}");
+        }
+    }
+
+    private CategoryTab FindTabForCategory(ShopItemCategory category)
+    {
+        if (categoryTabs != null)
+        {
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.category == category)
+                {
+                    return tab;
                 }
             }
         }

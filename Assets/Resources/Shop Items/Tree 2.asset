@@ -18,6 +18,7 @@ MonoBehaviour:
   noorCoinCost: 200
   itemPrice: 100
   shopItemType: 0
+  itemCategory: 1
   itemPrefab: {fileID: 7755859256941194996, guid: ff9a53b575ceb964887a7787bce9c9fe, type: 3}
   itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
   itemState: 1

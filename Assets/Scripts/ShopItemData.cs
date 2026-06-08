@@ -23,6 +23,9 @@ public class ShopItemData : ScriptableObject
     [Header("Item Visual Category")]
     public ShopItemType shopItemType;
 
+    [Header("Shop Category")]
+    public ShopItemCategory itemCategory = ShopItemCategory.Plants;
+
     [Header("Asset References")]
     public GameObject itemPrefab; // The real item prefab spawned after placement is confirmed
     [Tooltip("Lightweight ghost/preview prefab shown while the player is positioning the item. " +
@@ -40,6 +43,14 @@ public enum ShopItemState
 {
     Locked,
     Unlocked
+}
+
+public enum ShopItemCategory
+{
+    All,
+    Plants,
+    Buildings,
+    Decorations
 }
 
 public enum ShopItemType
