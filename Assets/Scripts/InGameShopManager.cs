@@ -41,9 +41,13 @@ public class InGameShopManager : MonoBehaviour
     [Header("Category Sizing Options")]
     [SerializeField] private float selectedTabWidth = 150f;
     [SerializeField] private float unselectedTabWidth = 100f;
-    private Coroutine scaleTabsCoroutine;
+    [SerializeField] private Color selectedTabColor = Color.white;
+    [SerializeField] private Color unselectedTabColor = new Color(0.7f, 0.7f, 0.7f, 0.8f);
+
+    private Coroutine categoryTransitionCoroutine;
     private Dictionary<CategoryTab, float> defaultWidths = new Dictionary<CategoryTab, float>();
     private RectTransform tabsParentRect;
+    private ShopItemCategory lastCategory = ShopItemCategory.Plants;
 
     private float closedPositionX;
     private bool isOpen = false;
@@ -144,16 +148,16 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        // Default to showing all categories initially
-        FilterByCategory(ShopItemCategory.All);
+        // Default to showing Plants category initially
+        FilterByCategory(ShopItemCategory.Plants);
     }
 
     private void OnDisable()
     {
-        if (scaleTabsCoroutine != null)
+        if (categoryTransitionCoroutine != null)
         {
-            StopCoroutine(scaleTabsCoroutine);
-            scaleTabsCoroutine = null;
+            StopCoroutine(categoryTransitionCoroutine);
+            categoryTransitionCoroutine = null;
         }
     }
 
@@ -290,72 +294,86 @@ public class InGameShopManager : MonoBehaviour
 
 
     /// <summary>
-    /// Filters the shop UI items by the specified category and updates the category panel visibility.
+    /// Filters the shop UI items by the specified category and triggers smooth transitions.
     /// </summary>
     public void FilterByCategory(ShopItemCategory category)
     {
+        if (currentCategory == category && lastCategory == category) return; // Already selected
+
+        lastCategory = currentCategory;
         currentCategory = category;
 
-        // Toggle active state of category panels
+        if (categoryTransitionCoroutine != null)
+        {
+            StopCoroutine(categoryTransitionCoroutine);
+        }
+
+        if (gameObject.activeInHierarchy && Application.isPlaying)
+        {
+            categoryTransitionCoroutine = StartCoroutine(CategoryTransitionRoutine(lastCategory, currentCategory));
+        }
+        else
+        {
+            ApplyImmediateState(category);
+        }
+    }
+
+    private void ApplyImmediateState(ShopItemCategory selectedCategory)
+    {
         if (categoryTabs != null)
         {
             foreach (var tab in categoryTabs)
             {
-                if (tab != null && tab.categoryPanel != null)
-                {
-                    tab.categoryPanel.SetActive(tab.category == category);
-                }
-            }
-        }
+                if (tab == null) continue;
 
-        // Animate/lerp the scale of the tab buttons
-        UpdateTabVisuals(category);
-    }
+                bool isActive = (tab.category == selectedCategory);
 
-    private void UpdateTabVisuals(ShopItemCategory selectedCategory)
-    {
-        if (scaleTabsCoroutine != null)
-        {
-            StopCoroutine(scaleTabsCoroutine);
-        }
-        
-        if (gameObject.activeInHierarchy)
-        {
-            scaleTabsCoroutine = StartCoroutine(WidthTabsRoutine(selectedCategory));
-        }
-        else
-        {
-            // Immediate update if manager is not active/playing
-            if (categoryTabs != null)
-            {
-                foreach (var tab in categoryTabs)
+                // Set panel active state and opacity
+                if (tab.categoryPanel != null)
                 {
-                    if (tab != null && tab.tabButton != null)
+                    tab.categoryPanel.SetActive(isActive);
+                    CanvasGroup cg = GetOrAddCanvasGroup(tab.categoryPanel);
+                    if (cg != null)
                     {
-                        RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
-                        if (rect != null)
-                        {
-                            float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
-                            float targetWidth = (tab.category == selectedCategory) ? selectedTabWidth : defaultWidth;
-                            rect.sizeDelta = new Vector2(targetWidth, rect.sizeDelta.y);
-                        }
+                        cg.alpha = isActive ? 1f : 0f;
+                    }
+                    tab.categoryPanel.transform.localScale = Vector3.one;
+                }
+
+                // Set button size and color
+                if (tab.tabButton != null)
+                {
+                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                    if (rect != null)
+                    {
+                        float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
+                        rect.sizeDelta = new Vector2(isActive ? selectedTabWidth : defaultWidth, rect.sizeDelta.y);
+                    }
+                    if (tab.tabButton.image != null)
+                    {
+                        tab.tabButton.image.color = isActive ? selectedTabColor : unselectedTabColor;
                     }
                 }
-                if (tabsParentRect != null)
-                {
-                    LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
-                }
+            }
+            if (tabsParentRect != null)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
             }
         }
     }
 
-    private IEnumerator WidthTabsRoutine(ShopItemCategory selectedCategory)
+    private IEnumerator CategoryTransitionRoutine(ShopItemCategory oldCategory, ShopItemCategory newCategory)
     {
-        float duration = 0.15f; // Snappy, juicy animation
+        float duration = 0.25f;
         float elapsed = 0f;
 
-        // Store starting width for each tab button
+        CategoryTab oldTab = FindTabForCategory(oldCategory);
+        CategoryTab newTab = FindTabForCategory(newCategory);
+
+        // Prep starting states for buttons
         Dictionary<CategoryTab, float> startWidths = new Dictionary<CategoryTab, float>();
+        Dictionary<CategoryTab, Color> startColors = new Dictionary<CategoryTab, Color>();
+        
         if (categoryTabs != null)
         {
             foreach (var tab in categoryTabs)
@@ -367,8 +385,23 @@ public class InGameShopManager : MonoBehaviour
                     {
                         startWidths[tab] = rect.sizeDelta.x;
                     }
+                    if (tab.tabButton.image != null)
+                    {
+                        startColors[tab] = tab.tabButton.image.color;
+                    }
                 }
             }
+        }
+
+        // Prep panels
+        CanvasGroup oldPanelCG = oldTab != null ? GetOrAddCanvasGroup(oldTab.categoryPanel) : null;
+        CanvasGroup newPanelCG = newTab != null ? GetOrAddCanvasGroup(newTab.categoryPanel) : null;
+
+        if (newTab != null && newTab.categoryPanel != null)
+        {
+            newTab.categoryPanel.SetActive(true);
+            newTab.categoryPanel.transform.localScale = new Vector3(0.9f, 0.9f, 1f); // Start slightly scaled down
+            if (newPanelCG != null) newPanelCG.alpha = 0f;
         }
 
         while (elapsed < duration)
@@ -376,55 +409,83 @@ public class InGameShopManager : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
+            // 1. Interpolate buttons (Sizing and Color)
             if (categoryTabs != null)
             {
                 foreach (var tab in categoryTabs)
                 {
-                    if (tab != null && tab.tabButton != null && startWidths.ContainsKey(tab))
+                    if (tab != null && tab.tabButton != null)
                     {
-                        RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
-                        if (rect != null)
+                        bool isTarget = (tab.category == newCategory);
+                        float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
+                        float targetWidth = isTarget ? selectedTabWidth : defaultWidth;
+                        Color targetColor = isTarget ? selectedTabColor : unselectedTabColor;
+
+                        // Lerp width
+                        if (startWidths.ContainsKey(tab))
                         {
-                            float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
-                            float targetWidth = (tab.category == selectedCategory) ? selectedTabWidth : defaultWidth;
-                            float currentWidth = Mathf.Lerp(startWidths[tab], targetWidth, t);
-                            rect.sizeDelta = new Vector2(currentWidth, rect.sizeDelta.y);
+                            RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                            if (rect != null)
+                            {
+                                rect.sizeDelta = new Vector2(Mathf.Lerp(startWidths[tab], targetWidth, t), rect.sizeDelta.y);
+                            }
+                        }
+
+                        // Lerp color
+                        if (tab.tabButton.image != null && startColors.ContainsKey(tab))
+                        {
+                            tab.tabButton.image.color = Color.Lerp(startColors[tab], targetColor, t);
                         }
                     }
                 }
             }
 
-            // Force layout group to rebuild immediately during interpolation
+            // Force layout rebuild immediately
             if (tabsParentRect != null)
             {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
+            }
+
+            // 2. Interpolate Panels (Fade-out old, Fade-in & Pop new)
+            float easeOut = Mathf.Sin(t * Mathf.PI * 0.5f); // Smooth ease-out
+            float popScale = Mathf.Lerp(0.9f, 1.02f, easeOut); // Overshoot for juicy pop
+            if (t > 0.8f)
+            {
+                float settleT = (t - 0.8f) / 0.2f;
+                popScale = Mathf.Lerp(1.02f, 1.0f, settleT); // Settle back to 1.0
+            }
+
+            if (oldPanelCG != null)
+            {
+                oldPanelCG.alpha = Mathf.Lerp(1f, 0f, t);
+                if (oldTab != null && oldTab.categoryPanel != null)
+                {
+                    oldTab.categoryPanel.transform.localScale = new Vector3(Mathf.Lerp(1f, 0.95f, t), Mathf.Lerp(1f, 0.95f, t), 1f);
+                }
+            }
+
+            if (newTab != null && newTab.categoryPanel != null)
+            {
+                newTab.categoryPanel.transform.localScale = new Vector3(popScale, popScale, 1f);
+                if (newPanelCG != null)
+                {
+                    newPanelCG.alpha = Mathf.Lerp(0f, 1f, t);
+                }
             }
 
             yield return null;
         }
 
-        // Ensure final state is applied
-        if (categoryTabs != null)
+        // Ensure final states are set
+        ApplyImmediateState(newCategory);
+
+        // Turn off the old panel fully
+        if (oldTab != null && oldTab.categoryPanel != null && oldTab.category != newCategory)
         {
-            foreach (var tab in categoryTabs)
-            {
-                if (tab != null && tab.tabButton != null)
-                {
-                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
-                    if (rect != null)
-                    {
-                        float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
-                        float targetWidth = (tab.category == selectedCategory) ? selectedTabWidth : defaultWidth;
-                        rect.sizeDelta = new Vector2(targetWidth, rect.sizeDelta.y);
-                    }
-                }
-            }
-            if (tabsParentRect != null)
-            {
-                LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
-            }
+            oldTab.categoryPanel.SetActive(false);
         }
-        scaleTabsCoroutine = null;
+
+        categoryTransitionCoroutine = null;
     }
 
     /// <summary>
@@ -463,5 +524,16 @@ public class InGameShopManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private CanvasGroup GetOrAddCanvasGroup(GameObject go)
+    {
+        if (go == null) return null;
+        CanvasGroup cg = go.GetComponent<CanvasGroup>();
+        if (cg == null)
+        {
+            cg = go.AddComponent<CanvasGroup>();
+        }
+        return cg;
     }
 }
