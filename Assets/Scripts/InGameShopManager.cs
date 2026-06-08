@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 
 
@@ -76,33 +77,28 @@ public class InGameShopManager : MonoBehaviour
         // Dynamic Spawning of Shop Items based on Categories
         if (shopItemDatas != null && shopItemUIPrefab != null)
         {
+            // Find the "All" category tab configuration once
+            CategoryTab allTab = FindTabForCategory(ShopItemCategory.All);
+
             foreach (var data in shopItemDatas)
             {
                 if (data == null) continue;
 
-                // Find matching category tab configuration
+                // 1. Spawn under its specific category
                 CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
-                if (matchingTab != null && matchingTab.contentParent != null)
+                if (matchingTab != null)
                 {
-                    GameObject spawnedObj = Instantiate(shopItemUIPrefab, matchingTab.contentParent);
-                    ShopItemUI itemUI = spawnedObj.GetComponent<ShopItemUI>();
-                    if (itemUI != null)
-                    {
-                        itemUI.Initialize(data);
-
-                        // Hook up click listener to purchase/select item
-                        if (itemUI.purchaseButton != null)
-                        {
-                            ShopItemUI currentItem = itemUI;
-                            itemUI.purchaseButton.onClick.AddListener(() => SelectAndUseItem(currentItem));
-                        }
-
-                        spawnedShopItemUIs.Add(itemUI);
-                    }
+                    SpawnShopItemUI(data, matchingTab.contentParent);
                 }
                 else
                 {
-                    Debug.LogWarning($"[InGameShopManager] No category tab setup or content parent found for category: {data.itemCategory} on item: {data.itemName}");
+                    Debug.LogWarning($"[InGameShopManager] No category tab setup found for category: {data.itemCategory} on item: {data.itemName}");
+                }
+
+                // 2. Also spawn under the "All" category panel (if configured)
+                if (allTab != null && allTab.contentParent != null)
+                {
+                    SpawnShopItemUI(data, allTab.contentParent);
                 }
             }
         }
@@ -134,6 +130,13 @@ public class InGameShopManager : MonoBehaviour
                 {
                     ShopItemCategory cat = tab.category;
                     tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
+
+                    // Dynamically set button text label from category name
+                    TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
+                    if (txt != null)
+                    {
+                        txt.text = cat.ToString();
+                    }
 
                     RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
                     if (rect != null)
@@ -269,6 +272,13 @@ public class InGameShopManager : MonoBehaviour
                 Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': "
                     + $"insufficient Noor Coins (need {data.noorCoinCost}, "
                     + $"have {NoorCoinManager.Instance.Balance}).");
+
+                // Show toast message to the player indicating insufficient funds
+                if (ToastMessageManager.Instance != null)
+                {
+                    ToastMessageManager.Instance.ShowToast("Not enough Noor Coins");
+                }
+
                 return; // Abort — player can't afford it
             }
 
@@ -282,10 +292,24 @@ public class InGameShopManager : MonoBehaviour
         // Close the shop panel
         SetShopOpen(false, smooth: true);
 
-        // Notify placement manager to prepare placing the item
-        if (placementManager != null && data != null)
+        // Notify placement manager to prepare placing the item (spawn preview & show Place button)
+        if (data != null)
         {
-            placementManager.PreparePlacement(data);
+            if (placementManager == null)
+            {
+                placementManager = ItemPlacementManager.Instance != null
+                    ? ItemPlacementManager.Instance
+                    : FindObjectOfType<ItemPlacementManager>();
+            }
+
+            if (placementManager != null)
+            {
+                placementManager.PreparePlacement(data);
+            }
+            else
+            {
+                Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
+            }
         }
 
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
@@ -298,7 +322,7 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void FilterByCategory(ShopItemCategory category)
     {
-        if (currentCategory == category && lastCategory == category) return; // Already selected
+        if (currentCategory == category) return; // Already selected
 
         lastCategory = currentCategory;
         currentCategory = category;
@@ -524,6 +548,27 @@ public class InGameShopManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private void SpawnShopItemUI(ShopItemData data, Transform parent)
+    {
+        if (parent == null || shopItemUIPrefab == null) return;
+
+        GameObject spawnedObj = Instantiate(shopItemUIPrefab, parent);
+        ShopItemUI itemUI = spawnedObj.GetComponent<ShopItemUI>();
+        if (itemUI != null)
+        {
+            itemUI.Initialize(data);
+
+            // Hook up click listener to purchase/select item
+            if (itemUI.purchaseButton != null)
+            {
+                ShopItemUI currentItem = itemUI;
+                itemUI.purchaseButton.onClick.AddListener(() => SelectAndUseItem(currentItem));
+            }
+
+            spawnedShopItemUIs.Add(itemUI);
+        }
     }
 
     private CanvasGroup GetOrAddCanvasGroup(GameObject go)

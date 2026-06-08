@@ -20,8 +20,9 @@ public class ShopItemData : ScriptableObject
     [Tooltip("Legacy string price field. Kept for backwards compatibility only. Use noorCoinCost instead.")]
     public string itemPrice; // Deprecated — use noorCoinCost
 
-    [Header("Item Visual Category")]
-    public ShopItemType shopItemType;
+    [Header("Item Identifier")]
+    [Tooltip("Unique identifier for this shop item. If empty, use the Editor menu 'Tools/Assign Shop Item IDs' to generate IDs automatically.")]
+    public string itemID;
 
     [Header("Shop Category")]
     public ShopItemCategory itemCategory = ShopItemCategory.Plants;
