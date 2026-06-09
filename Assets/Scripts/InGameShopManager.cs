@@ -257,6 +257,17 @@ public class InGameShopManager : MonoBehaviour
 
         ShopItemData data = item.ItemData;
 
+        // ── Level Gate ────────────────────────────────────────────────────────
+        if (data != null && PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel)
+        {
+            Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': requires level {data.requiredXPLevel}.");
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast($"Requires Level {data.requiredXPLevel}");
+            }
+            return; // Abort — player doesn't have the required level
+        }
+
         // ── Economy Gate ──────────────────────────────────────────────────────
         if (data != null && data.noorCoinCost > 0)
         {

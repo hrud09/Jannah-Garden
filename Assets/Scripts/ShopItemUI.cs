@@ -71,11 +71,20 @@ public class ShopItemUI : MonoBehaviour
         }
 
         // ── Economy: display Noor Coin cost ──────────────────────────────────
+        bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel;
+
         if (itemPriceText != null)
         {
-            itemPriceText.text = data.noorCoinCost == 0
-                ? "Free"
-                : $"{data.noorCoinCost} \u29DF"; // ⟟ coin glyph (fallback: ⟡)
+            if (isLevelLocked)
+            {
+                itemPriceText.text = $"Lvl {data.requiredXPLevel} Req";
+            }
+            else
+            {
+                itemPriceText.text = data.noorCoinCost == 0
+                    ? "Free"
+                    : $"{data.noorCoinCost} \u29DF"; // ⟟ coin glyph (fallback: ⟡)
+            }
         }
 
         if (itemBackgroundImg != null && customBackground != null)
@@ -89,7 +98,7 @@ public class ShopItemUI : MonoBehaviour
         }
 
         // Keep locked visuals active when locked, inactive otherwise
-        bool isLocked = data.itemState == ShopItemState.Locked;
+        bool isLocked = isLevelLocked;
         if (lockedVisuals != null)
         {
             foreach (var go in lockedVisuals)
@@ -134,7 +143,8 @@ public class ShopItemUI : MonoBehaviour
         if (itemPriceText == null || ItemData == null) return;
 
         // Locked items don't need affordability tinting
-        if (ItemData.itemState == ShopItemState.Locked) return;
+        bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < ItemData.requiredXPLevel;
+        if (isLevelLocked) return;
 
         // Free items are always "affordable"
         if (ItemData.noorCoinCost <= 0)

@@ -24,6 +24,10 @@ public class ShopItemData : ScriptableObject
     [Tooltip("Unique identifier for this shop item. If empty, use the Editor menu 'Tools/Assign Shop Item IDs' to generate IDs automatically.")]
     public string itemID;
 
+    [Header("Unlock Requirements")]
+    [Tooltip("The required XP level to unlock and purchase this item.")]
+    public int requiredXPLevel = 1;
+
     [Header("Shop Category")]
     public ShopItemCategory itemCategory = ShopItemCategory.Plants;
 
@@ -33,17 +37,8 @@ public class ShopItemData : ScriptableObject
              "Falls back to itemPrefab if left empty.")]
     public GameObject itemPlacementModelPrefab; // Temporary preview shown during placement
 
-    [Header("Item State")]
-    public ShopItemState itemState = ShopItemState.Locked;
-
     [Header("Placement Settings")]
     public float placementTimerDuration = 360f; // Required time to fully place the item in the game world in seconds
-}
-
-public enum ShopItemState
-{
-    Locked,
-    Unlocked
 }
 
 public enum ShopItemCategory

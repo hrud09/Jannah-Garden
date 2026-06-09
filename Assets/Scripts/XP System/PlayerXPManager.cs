@@ -11,6 +11,8 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerXPManager : MonoBehaviour
 {
+    public static PlayerXPManager Instance { get; private set; }
+
     [Header("Player Data")]
     [Tooltip("Current player level (starts at 1)")]
     public int xpLevel = 1;
@@ -40,6 +42,16 @@ public class PlayerXPManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Load();
         UpdateUI();
     }
