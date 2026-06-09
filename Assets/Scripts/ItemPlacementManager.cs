@@ -36,6 +36,7 @@ public class ItemPlacementManager : MonoBehaviour
     private GameObject currentPlacedObject;
     private GameObject _pendingItemPrefab;
     private float _pendingDuration;
+    private int _pendingRequiredXPLevel;
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
@@ -85,6 +86,7 @@ public class ItemPlacementManager : MonoBehaviour
     public void PreparePlacement(ShopItemData itemData)
     {
         if (itemData == null || itemData.itemPrefab == null) return;
+        _pendingRequiredXPLevel = itemData.requiredXPLevel;
         InternalPreparePlacement(
             itemData.itemPrefab, 
             itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
@@ -95,6 +97,7 @@ public class ItemPlacementManager : MonoBehaviour
     public void PreparePlacement(TreasureBoxRewardItemData itemData)
     {
         if (itemData == null || itemData.itemPrefab == null) return;
+        _pendingRequiredXPLevel = 0; // No XP reward for treasure box items
         InternalPreparePlacement(
             itemData.itemPrefab, 
             itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
@@ -221,9 +224,16 @@ public class ItemPlacementManager : MonoBehaviour
         activePlacedItems.Add(placeable);
         SavePlacedItems();
 
+        // Award XP if applicable
+        if (_pendingRequiredXPLevel > 0 && PlayerXPManager.Instance != null)
+        {
+            PlayerXPManager.Instance.AddXPForPlacingShopItem(_pendingRequiredXPLevel);
+        }
+
         // Clear preview control references and hide placement button
         currentPlacedObject = null;
         _pendingItemPrefab = null; // Reset pending state
+        _pendingRequiredXPLevel = 0;
         if (placeButton != null)
         {
             placeButton.gameObject.SetActive(false);

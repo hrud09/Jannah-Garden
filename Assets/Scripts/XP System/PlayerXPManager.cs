@@ -3,6 +3,23 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+using System.Collections.Generic;
+
+public enum XPTaskType
+{
+    PlaceShopItem,
+    AnswerQuestionFirstTry,
+    AnswerQuestionMultipleTries,
+    CompleteDhikr
+}
+
+[Serializable]
+public struct XPTaskReward
+{
+    public XPTaskType taskType;
+    public float rewardAmount;
+}
+
 /// <summary>
 /// Player XP manager with a nonlinear progression similar to Clash of Clans.
 /// - Use AddXP(amount) to add XP; excess carries over to the next level(s).
@@ -27,9 +44,34 @@ public class PlayerXPManager : MonoBehaviour
     [Tooltip("Exponent applied to level to get nonlinear growth (1.5 is typical)")]
     [SerializeField] private float levelExponent = 1.5f;
 
+    [Header("Task XP Rewards")]
+    [Tooltip("Configure XP rewards for different tasks here.")]
+    public List<XPTaskReward> taskRewards = new List<XPTaskReward>()
+    {
+        new XPTaskReward { taskType = XPTaskType.PlaceShopItem, rewardAmount = 20f }, // Used as multiplier per level
+        new XPTaskReward { taskType = XPTaskType.AnswerQuestionFirstTry, rewardAmount = 50f },
+        new XPTaskReward { taskType = XPTaskType.AnswerQuestionMultipleTries, rewardAmount = 15f },
+        new XPTaskReward { taskType = XPTaskType.CompleteDhikr, rewardAmount = 30f }
+    };
+
     [Header("UI Reference")]
     public TMP_Text xpLevelText;
     public Slider xpSlider;
+    
+    [Header("XP Gain Chart UI")]
+    public Button xpGainChartToggleButton;
+    public RectTransform xpGainChartPanel;
+    public Transform xpGainChartContentParent;
+    public GameObject xpChartDataPrefab;
+
+    [Header("XP Gain Chart Animation")]
+    public float chartTransitionDuration = 0.3f;
+    public float chartClosedOffsetX = 500f; // Distance to move right when hidden
+
+    private Vector2 _chartOpenedPos;
+    private Vector2 _chartClosedPos;
+    private bool _isChartOpen = false;
+    private Coroutine _chartTransitionCoroutine;
 
     // SaveSystem key
     private const string SaveKey = "player_xp";
@@ -54,6 +96,90 @@ public class PlayerXPManager : MonoBehaviour
 
         Load();
         UpdateUI();
+        PopulateXPGainChart();
+
+        if (xpGainChartToggleButton != null)
+        {
+            xpGainChartToggleButton.onClick.AddListener(ToggleXPGainChart);
+        }
+    }
+
+    private void Start()
+    {
+        if (xpGainChartPanel != null)
+        {
+            // Store the position set in the inspector as the "opened" position
+            _chartOpenedPos = xpGainChartPanel.anchoredPosition;
+            
+            // Calculate closed position (shifted to the right)
+            _chartClosedPos = new Vector2(_chartOpenedPos.x + chartClosedOffsetX, _chartOpenedPos.y);
+            
+            // Start closed by default
+            _isChartOpen = false;
+            xpGainChartPanel.anchoredPosition = _chartClosedPos;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (xpGainChartToggleButton != null)
+        {
+            xpGainChartToggleButton.onClick.RemoveListener(ToggleXPGainChart);
+        }
+    }
+
+    public void ToggleXPGainChart()
+    {
+        if (xpGainChartPanel == null) return;
+
+        _isChartOpen = !_isChartOpen;
+
+        if (_chartTransitionCoroutine != null)
+        {
+            StopCoroutine(_chartTransitionCoroutine);
+        }
+
+        _chartTransitionCoroutine = StartCoroutine(TransitionChart(_isChartOpen ? _chartOpenedPos : _chartClosedPos));
+    }
+
+    private System.Collections.IEnumerator TransitionChart(Vector2 targetPos)
+    {
+        Vector2 startPos = xpGainChartPanel.anchoredPosition;
+        float elapsed = 0f;
+
+        while (elapsed < chartTransitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / chartTransitionDuration);
+            // Smooth step interpolation
+            t = t * t * (3f - 2f * t);
+            xpGainChartPanel.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+
+        xpGainChartPanel.anchoredPosition = targetPos;
+    }
+
+    private void PopulateXPGainChart()
+    {
+        if (xpGainChartContentParent == null || xpChartDataPrefab == null) return;
+
+        // Clear existing children (useful if called multiple times, e.g., on data refresh)
+        foreach (Transform child in xpGainChartContentParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (var reward in taskRewards)
+        {
+            GameObject go = Instantiate(xpChartDataPrefab, xpGainChartContentParent);
+            TMP_Text txt = go.GetComponentInChildren<TMP_Text>();
+            if (txt != null)
+            {
+                // Format the text as "TaskName - Amount"
+                txt.text = $"{reward.taskType} - {reward.rewardAmount}";
+            }
+        }
     }
 
     /// <summary>
@@ -80,6 +206,66 @@ public class PlayerXPManager : MonoBehaviour
         if (leveledUp)
         {
             // optional: fire an event or play effects here
+        }
+    }
+
+    /// <summary>
+    /// Grants XP based on the predefined task type in the taskRewards list.
+    /// </summary>
+    public void AddXPForTask(XPTaskType taskType)
+    {
+        foreach (var reward in taskRewards)
+        {
+            if (reward.taskType == taskType)
+            {
+                if (reward.rewardAmount > 0f)
+                {
+                    AddXP(reward.rewardAmount);
+                    Debug.Log($"[PlayerXPManager] Granted {reward.rewardAmount} XP for {taskType}.");
+                    if (ToastMessageManager.Instance != null)
+                    {
+                        ToastMessageManager.Instance.ShowToast($"+{reward.rewardAmount} XP");
+                    }
+                }
+                return;
+            }
+        }
+        Debug.LogWarning($"[PlayerXPManager] No XP reward defined for task: {taskType}");
+    }
+
+    /// <summary>
+    /// Grants XP when a shop item is placed, scaled by its required unlock level.
+    /// </summary>
+    public void AddXPForPlacingShopItem(int requiredXPLevel)
+    {
+        float multiplier = 0f;
+        foreach (var reward in taskRewards)
+        {
+            if (reward.taskType == XPTaskType.PlaceShopItem)
+            {
+                multiplier = reward.rewardAmount;
+                break;
+            }
+        }
+
+        if (multiplier <= 0f)
+        {
+            Debug.LogWarning("[PlayerXPManager] No positive XP reward multiplier defined for PlaceShopItem task.");
+            return;
+        }
+
+        // Give at least the multiplier if level is 0 or 1
+        int effectiveLevel = Mathf.Max(1, requiredXPLevel);
+        float amount = effectiveLevel * multiplier;
+        
+        if (amount > 0f)
+        {
+            AddXP(amount);
+            Debug.Log($"[PlayerXPManager] Granted {amount} XP for placing a shop item (Level {requiredXPLevel}).");
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast($"+{amount} XP");
+            }
         }
     }
 
@@ -120,7 +306,7 @@ public class PlayerXPManager : MonoBehaviour
     {
         if (xpLevelText != null)
         {
-            xpLevelText.text = $"Level {xpLevel}";
+            xpLevelText.text = $"{xpLevel}";
         }
 
         if (xpSlider != null)
