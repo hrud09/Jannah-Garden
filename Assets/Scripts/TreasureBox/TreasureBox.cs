@@ -25,6 +25,19 @@ public class TreasureBox : MonoBehaviour
     public float boxRiseHeight;
     public GameObject openingVFXPrefab;
     public GameObject vfxObject;
+
+    private Quaternion _initialLidRot;
+    private Vector3 _initialScale;
+
+    private void Awake()
+    {
+        if (boxLid != null)
+        {
+            _initialLidRot = boxLid.transform.localRotation;
+        }
+        _initialScale = transform.localScale;
+    }
+
     private void Start()
     {
         // Cache instanced materials to avoid cloning materials repeatedly at runtime.
@@ -118,6 +131,23 @@ public class TreasureBox : MonoBehaviour
                     Destroy(mat);
                 }
             }
+        }
+    }
+
+    private void OnDisable()
+    {
+        // Reset state when returned to the object pool
+        transform.DOKill();
+        transform.localScale = _initialScale;
+        
+        if (boxLid != null)
+        {
+            boxLid.transform.localRotation = _initialLidRot;
+        }
+        
+        if (vfxObject != null)
+        {
+            vfxObject.SetActive(true);
         }
     }
 

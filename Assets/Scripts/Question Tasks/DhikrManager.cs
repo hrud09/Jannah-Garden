@@ -167,10 +167,29 @@ public class DhikrManager : MonoBehaviour
         {
             if (submitButton != null) submitButton.interactable = false;
 
+            int coinsEarned = 0;
+            float xpEarned = 0f;
+
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
-                NoorCoinManager.Instance.Earn(QuestionMarkOrbManager.Instance.rewardCoins);
+                coinsEarned = QuestionMarkOrbManager.Instance.rewardCoins;
+                NoorCoinManager.Instance.Earn(coinsEarned, false); // Suppress default toast
             }
+            if (PlayerXPManager.Instance != null)
+            {
+                xpEarned = PlayerXPManager.Instance.AddXPForTask(XPTaskType.CompleteDhikr, false); // Suppress default toast
+            }
+
+            if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
+            {
+                string toastMsg = "";
+                if (coinsEarned > 0) toastMsg += $"<color=#FFD700>+{coinsEarned} Noor Coins</color> ";
+                if (coinsEarned > 0 && xpEarned > 0) toastMsg += "& ";
+                if (xpEarned > 0) toastMsg += $"<color=#00FFFF>+{xpEarned} XP</color>";
+                
+                ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
+            }
+
             if (currentOrb != null && QuestionMarkOrbManager.Instance != null)
             {
                 QuestionMarkOrbManager.Instance.OnOrbOpened(currentOrb);

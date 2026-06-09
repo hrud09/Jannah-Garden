@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using System.Collections.Generic;
+using DG.Tweening;
 
 public enum XPTaskType
 {
@@ -231,7 +232,7 @@ public class PlayerXPManager : MonoBehaviour
             leveledUp = true;
         }
 
-        UpdateUI();
+        UpdateUI(true);
         Save();
 
         if (leveledUp)
@@ -243,7 +244,7 @@ public class PlayerXPManager : MonoBehaviour
     /// <summary>
     /// Grants XP based on the predefined task type in the taskRewards list.
     /// </summary>
-    public void AddXPForTask(XPTaskType taskType)
+    public float AddXPForTask(XPTaskType taskType, bool showToast = true)
     {
         foreach (var reward in taskRewards)
         {
@@ -253,15 +254,17 @@ public class PlayerXPManager : MonoBehaviour
                 {
                     AddXP(reward.rewardAmount);
                     Debug.Log($"[PlayerXPManager] Granted {reward.rewardAmount} XP for {taskType}.");
-                    if (ToastMessageManager.Instance != null)
+                    if (showToast && ToastMessageManager.Instance != null)
                     {
                         ToastMessageManager.Instance.ShowToast($"+{reward.rewardAmount} XP");
                     }
+                    return reward.rewardAmount;
                 }
-                return;
+                return 0f;
             }
         }
         Debug.LogWarning($"[PlayerXPManager] No XP reward defined for task: {taskType}");
+        return 0f;
     }
 
     /// <summary>
@@ -333,17 +336,35 @@ public class PlayerXPManager : MonoBehaviour
         if (save) Save();
     }
 
-    private void UpdateUI()
+    private void UpdateUI(bool animate = false)
     {
         if (xpLevelText != null)
         {
-            xpLevelText.text = $"{xpLevel}";
+            if (xpLevelText.text != $"{xpLevel}")
+            {
+                xpLevelText.text = $"{xpLevel}";
+                if (animate)
+                {
+                    xpLevelText.transform.DOKill();
+                    xpLevelText.transform.localScale = Vector3.one;
+                    xpLevelText.transform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 0.5f, 10, 1f);
+                }
+            }
         }
 
         if (xpSlider != null)
         {
             xpSlider.maxValue = xpToNextLevel;
-            xpSlider.value = Mathf.Clamp(currentXP, 0f, xpToNextLevel);
+            float targetValue = Mathf.Clamp(currentXP, 0f, xpToNextLevel);
+            if (animate)
+            {
+                xpSlider.DOKill();
+                xpSlider.DOValue(targetValue, 0.5f).SetEase(Ease.OutQuad);
+            }
+            else
+            {
+                xpSlider.value = targetValue;
+            }
         }
 
         OnXPChanged?.Invoke(xpLevel, currentXP, xpToNextLevel);

@@ -89,7 +89,7 @@ public class NoorCoinManager : MonoBehaviour
     }
 
     /// <summary>Adds <paramref name="amount"/> Noor Coins to the player's balance.</summary>
-    public void Earn(int amount)
+    public void Earn(int amount, bool showToast = true)
     {
         if (amount < 0)
         {
@@ -98,7 +98,7 @@ public class NoorCoinManager : MonoBehaviour
         }
 
         SetBalance(_balance + amount);
-        if (ToastMessageManager.Instance != null)
+        if (showToast && ToastMessageManager.Instance != null)
         {
             ToastMessageManager.Instance.ShowToast($"+{amount} Noor Coins", Color.green);
         }

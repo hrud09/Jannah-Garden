@@ -15810,7 +15810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8bc020450129442b93cb6964d15833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoorCoinManager
-  startingBalance: 1000
+  startingBalance: 500
 --- !u!4 &350008107
 Transform:
   m_ObjectHideFlags: 0

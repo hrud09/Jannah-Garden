@@ -48,6 +48,7 @@ public class MCQManager : MonoBehaviour
     private QuestionMarkOrb currentOrb;
     private int[] currentShuffledIndices;
     private int currentCorrectOptionIndex;
+    private int currentQuestionAttempts = 0;
 
     void Awake()
     {
@@ -119,6 +120,7 @@ public class MCQManager : MonoBehaviour
 
         currentQuestionIndex = index;
         selectedOptionIndex = -1;
+        currentQuestionAttempts = 0;
         
         if (countDownToHidePanel != null) 
             countDownToHidePanel.gameObject.SetActive(false);
@@ -230,16 +232,37 @@ public class MCQManager : MonoBehaviour
         if (selectedOptionIndex == currentCorrectOptionIndex)
         {
             // Selected answer is correct
+            currentQuestionAttempts++;
             optionButtons[selectedOptionIndex].image.sprite = correctSprite;
             optionButtons[selectedOptionIndex].transform.DOKill();
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
             optionButtons[selectedOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
             
-            // Award Noor Coins
+            // Award Noor Coins and XP together
+            int coinsEarned = 0;
+            float xpEarned = 0f;
+
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
-                NoorCoinManager.Instance.Earn(QuestionMarkOrbManager.Instance.rewardCoins);
+                coinsEarned = QuestionMarkOrbManager.Instance.rewardCoins;
+                NoorCoinManager.Instance.Earn(coinsEarned, false);
             }
+            if (PlayerXPManager.Instance != null)
+            {
+                XPTaskType xpTask = currentQuestionAttempts == 1 ? XPTaskType.AnswerQuestion1stTry : XPTaskType.AnswerQuestionRetry;
+                xpEarned = PlayerXPManager.Instance.AddXPForTask(xpTask, false);
+            }
+
+            if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
+            {
+                string toastMsg = "";
+                if (coinsEarned > 0) toastMsg += $"<color=#FFD700>+{coinsEarned} Noor Coins</color> ";
+                if (coinsEarned > 0 && xpEarned > 0) toastMsg += "& ";
+                if (xpEarned > 0) toastMsg += $"<color=#00FFFF>+{xpEarned} XP</color>";
+                
+                ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
+            }
+
             if (currentOrb != null && QuestionMarkOrbManager.Instance != null)
             {
                 QuestionMarkOrbManager.Instance.OnOrbOpened(currentOrb);
@@ -251,6 +274,7 @@ public class MCQManager : MonoBehaviour
         else
         {
             // Selected answer is wrong
+            currentQuestionAttempts++;
             optionButtons[selectedOptionIndex].image.sprite = wrongSprite;
             optionButtons[selectedOptionIndex].transform.DOKill();
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
