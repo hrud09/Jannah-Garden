@@ -8,9 +8,13 @@ using System.Collections.Generic;
 public enum XPTaskType
 {
     PlaceShopItem,
-    AnswerQuestionFirstTry,
-    AnswerQuestionMultipleTries,
-    CompleteDhikr
+    AnswerQuestion1stTry,
+    AnswerQuestionRetry,
+    CompleteDhikr,
+    OpenSilverBox,
+    OpenGoldBox,
+    OpenPlatinumBox,
+    OpenDiamondBox
 }
 
 [Serializable]
@@ -49,9 +53,13 @@ public class PlayerXPManager : MonoBehaviour
     public List<XPTaskReward> taskRewards = new List<XPTaskReward>()
     {
         new XPTaskReward { taskType = XPTaskType.PlaceShopItem, rewardAmount = 20f }, // Used as multiplier per level
-        new XPTaskReward { taskType = XPTaskType.AnswerQuestionFirstTry, rewardAmount = 50f },
-        new XPTaskReward { taskType = XPTaskType.AnswerQuestionMultipleTries, rewardAmount = 15f },
-        new XPTaskReward { taskType = XPTaskType.CompleteDhikr, rewardAmount = 30f }
+        new XPTaskReward { taskType = XPTaskType.AnswerQuestion1stTry, rewardAmount = 50f },
+        new XPTaskReward { taskType = XPTaskType.AnswerQuestionRetry, rewardAmount = 15f },
+        new XPTaskReward { taskType = XPTaskType.CompleteDhikr, rewardAmount = 30f },
+        new XPTaskReward { taskType = XPTaskType.OpenSilverBox, rewardAmount = 25f },
+        new XPTaskReward { taskType = XPTaskType.OpenGoldBox, rewardAmount = 50f },
+        new XPTaskReward { taskType = XPTaskType.OpenPlatinumBox, rewardAmount = 100f },
+        new XPTaskReward { taskType = XPTaskType.OpenDiamondBox, rewardAmount = 200f }
     };
 
     [Header("UI Reference")]
@@ -118,6 +126,29 @@ public class PlayerXPManager : MonoBehaviour
             _isChartOpen = false;
             xpGainChartPanel.anchoredPosition = _chartClosedPos;
         }
+    }
+
+    private void OnEnable()
+    {
+        TreasureBoxManager.OnBoxOpened += HandleBoxOpened;
+    }
+
+    private void OnDisable()
+    {
+        TreasureBoxManager.OnBoxOpened -= HandleBoxOpened;
+    }
+
+    private void HandleBoxOpened(TreasureBoxTier tier, int slotIndex, TreasureBoxData data)
+    {
+        XPTaskType taskType = XPTaskType.OpenSilverBox; // Default
+        switch(tier)
+        {
+            case TreasureBoxTier.Silver: taskType = XPTaskType.OpenSilverBox; break;
+            case TreasureBoxTier.Gold: taskType = XPTaskType.OpenGoldBox; break;
+            case TreasureBoxTier.Platinum: taskType = XPTaskType.OpenPlatinumBox; break;
+            case TreasureBoxTier.Diamond: taskType = XPTaskType.OpenDiamondBox; break;
+        }
+        AddXPForTask(taskType);
     }
 
     private void OnDestroy()
