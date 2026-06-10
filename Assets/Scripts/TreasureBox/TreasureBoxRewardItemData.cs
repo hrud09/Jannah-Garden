@@ -12,13 +12,22 @@ public class TreasureBoxRewardItemData : ScriptableObject
     [TextArea(3, 10)]
     public string itemDescription;
 
+    [Header("Item Identifier")]
+    [Tooltip("Unique identifier for this inventory item.")]
+    public string itemID;
+
     [Header("Asset References")]
     public GameObject itemPrefab; // The real item prefab spawned after placement is confirmed
     [Tooltip("Lightweight ghost/preview prefab shown while the player is positioning the item. Falls back to itemPrefab if left empty.")]
     public GameObject itemPlacementModelPrefab; // Temporary preview shown during placement
 
     [Header("Item State")]
-    public bool isUnlocked = false;
+    public ShopItemCategory itemCategory = ShopItemCategory.Silver;
+    public int quantity = 0;
+
+    [Header("Unlock Requirements")]
+    [Tooltip("The required XP level to unlock and find this item.")]
+    public int unlockXPLevel = 1;
 
     [Header("Economy")]
     [Tooltip("Noor Coins awarded instead if the player already owns this exclusive reward item.")]

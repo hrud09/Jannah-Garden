@@ -75,5 +75,42 @@ public static class ShopItemIdAssigner
 
         Debug.Log($"[ShopItemIdAssigner] Processed {assigned} ShopItemData assets. Assigned/Updated IDs on {updated} assets.");
     }
+
+    [MenuItem("Tools/Assign Random Shop Item Unlock Levels")]
+    public static void AssignRandomUnlockLevelsToAllShopItems()
+    {
+        string[] guids = AssetDatabase.FindAssets("t:ShopItemData");
+        int processed = 0;
+
+        foreach (string g in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(g);
+            var obj = AssetDatabase.LoadMainAssetAtPath(path);
+            if (obj == null) continue;
+
+            SerializedObject so = new SerializedObject(obj);
+            SerializedProperty prop = so.FindProperty("requiredXPLevel");
+            if (prop != null)
+            {
+                // Generate a random required XP level between 1 and 15 (inclusive)
+                int randomLevel = UnityEngine.Random.Range(1, 16);
+                prop.intValue = randomLevel;
+                so.ApplyModifiedProperties();
+                EditorUtility.SetDirty(obj);
+                processed++;
+            }
+            else
+            {
+                Debug.LogWarning($"[ShopItemIdAssigner] requiredXPLevel property not found on asset: {path}");
+            }
+        }
+
+        if (processed > 0)
+        {
+            AssetDatabase.SaveAssets();
+        }
+
+        Debug.Log($"[ShopItemIdAssigner] Assigned random requiredXPLevel values (1-15) to {processed} ShopItemData assets.");
+    }
 }
 #endif

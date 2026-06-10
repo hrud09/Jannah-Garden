@@ -106536,7 +106536,7 @@ MonoBehaviour:
   platinumBoxData: {fileID: 11400000, guid: 0ae62cbe89d8b0f438b4ecbc2d7b3888, type: 2}
   diamondBoxData: {fileID: 11400000, guid: 6aa46fa171c4c3a45acf0dd61b07bac0, type: 2}
   isSubscriber: 0
-  dailyResetTime: {x: 13, y: 10}
+  dailyResetTime: {x: 16, y: 50}
   treasureBoxStatusUis:
   - {fileID: 302626757594565094}
   - {fileID: 931550739}
@@ -110390,10 +110390,6 @@ PrefabInstance:
     - target: {fileID: 2881293622320012850, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
-      propertyPath: selectedTabWidth
-      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3758511848264303505, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: m_AnchorMax.y

@@ -17,6 +17,11 @@ MonoBehaviour:
   boxPrefab: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
   spawnCooldownHours: 0.5
   cycleDurationHours: 24
-  exclusiveRewardItem: {fileID: 11400000, guid: 13098bc48252fac409e795c36ad8585d, type: 2}
+  exclusiveRewardItems:
+  - {fileID: 11400000, guid: 13098bc48252fac409e795c36ad8585d, type: 2}
+  - {fileID: 11400000, guid: b0c77c71038340afb2eff14b6588968e, type: 2}
+  - {fileID: 11400000, guid: 99841e862db74923bd9c82a80b7a7612, type: 2}
+  - {fileID: 11400000, guid: 9f30a88db43648d9951229fde4e65032, type: 2}
+  - {fileID: 11400000, guid: 7e46688c9b34419c8e77ede072cd9359, type: 2}
   noorCoinEquivalent: 250
   noorCoinPerBox: 0

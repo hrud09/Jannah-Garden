@@ -141,7 +141,11 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
         }
 
         // ── Stage 4: Fade in reward icon + name ───────────────────────────────
-        TreasureBoxRewardItemData reward = rewardData?.exclusiveRewardItem;
+        TreasureBoxRewardItemData reward = null;
+        if (TreasureBoxManager.Instance != null && rewardData != null)
+        {
+            reward = TreasureBoxManager.Instance.GetCurrentCycleReward(rewardData.tier);
+        }
 
         if (rewardIcon != null && reward?.itemIcon != null)
             rewardIcon.sprite = reward.itemIcon;

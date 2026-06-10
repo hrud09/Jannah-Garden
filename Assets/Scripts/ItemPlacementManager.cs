@@ -37,6 +37,7 @@ public class ItemPlacementManager : MonoBehaviour
     private GameObject _pendingItemPrefab;
     private float _pendingDuration;
     private int _pendingRequiredXPLevel;
+    private TreasureBoxRewardItemData _pendingRewardItemData;
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
@@ -87,6 +88,7 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (itemData == null || itemData.itemPrefab == null) return;
         _pendingRequiredXPLevel = itemData.requiredXPLevel;
+        _pendingRewardItemData = null;
         InternalPreparePlacement(
             itemData.itemPrefab, 
             itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
@@ -98,6 +100,7 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (itemData == null || itemData.itemPrefab == null) return;
         _pendingRequiredXPLevel = 0; // No XP reward for treasure box items
+        _pendingRewardItemData = itemData;
         InternalPreparePlacement(
             itemData.itemPrefab, 
             itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
@@ -228,6 +231,16 @@ public class ItemPlacementManager : MonoBehaviour
         if (_pendingRequiredXPLevel > 0 && PlayerXPManager.Instance != null)
         {
             PlayerXPManager.Instance.AddXPForPlacingShopItem(_pendingRequiredXPLevel);
+        }
+
+        if (_pendingRewardItemData != null)
+        {
+            _pendingRewardItemData.quantity++;
+            if (shopManager != null)
+            {
+                shopManager.UpdateInventoryUI(_pendingRewardItemData);
+            }
+            _pendingRewardItemData = null; // Clear after use
         }
 
         // Clear preview control references and hide placement button

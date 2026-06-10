@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 
 
@@ -17,9 +18,17 @@ public class CategoryTab
 
 public class InGameShopManager : MonoBehaviour
 {
+    public static InGameShopManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     [Header("Dynamic Spawning References")]
     [SerializeField] private GameObject shopItemUIPrefab; // The ShopItemUI prefab to instantiate
+    [SerializeField] private GameObject inventoryItemUIPrefab; // The InventoryItemUI prefab to instantiate
     private List<ShopItemUI> spawnedShopItemUIs = new List<ShopItemUI>();
+    private List<InventoryItemUI> spawnedInventoryItemUIs = new List<InventoryItemUI>();
 
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
@@ -57,6 +66,9 @@ public class InGameShopManager : MonoBehaviour
     [Header("Shop Item Data Source")]
     public ShopItemData[] shopItemDatas; // Data assets for each shop item
 
+    [Header("Inventory Item Data Source")]
+    public TreasureBoxRewardItemData[] inventoryItemDatas;
+
     [Header("Placement Reference")]
     public ItemPlacementManager placementManager;
 
@@ -79,8 +91,11 @@ public class InGameShopManager : MonoBehaviour
         {
             // Find the "All" category tab configuration once
             CategoryTab allTab = FindTabForCategory(ShopItemCategory.All);
+            int currentXPLevel = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpLevel : 1;
 
-            foreach (var data in shopItemDatas)
+            var sortedShopItems = shopItemDatas.OrderBy(d => d != null && currentXPLevel >= d.requiredXPLevel ? 0 : 1);
+
+            foreach (var data in sortedShopItems)
             {
                 if (data == null) continue;
 
@@ -99,6 +114,28 @@ public class InGameShopManager : MonoBehaviour
                 if (allTab != null && allTab.contentParent != null)
                 {
                     SpawnShopItemUI(data, allTab.contentParent);
+                }
+            }
+        }
+
+        // Dynamic Spawning of Inventory Items based on Categories
+        if (inventoryItemDatas != null && inventoryItemUIPrefab != null)
+        {
+            int currentXPLevel = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpLevel : 1;
+            var sortedInventoryItems = inventoryItemDatas.OrderBy(d => d != null && currentXPLevel >= d.unlockXPLevel ? 0 : 1);
+
+            foreach (var data in sortedInventoryItems)
+            {
+                if (data == null) continue;
+
+                CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
+                if (matchingTab != null)
+                {
+                    SpawnInventoryItemUI(data, matchingTab.contentParent);
+                }
+                else
+                {
+                    Debug.LogWarning($"[InGameShopManager] No category tab setup found for category: {data.itemCategory} on inventory item: {data.itemName}");
                 }
             }
         }
@@ -324,6 +361,44 @@ public class InGameShopManager : MonoBehaviour
         }
 
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
+    }
+
+    /// <summary>
+    /// Selects the given inventory item, checks if it is unlocked, 
+    /// closes the shop, prepares placement.
+    /// </summary>
+    public void SelectAndUseInventoryItem(ShopItemUI item)
+    {
+        if (item == null) return;
+
+        TreasureBoxRewardItemData data = item.RewardItemData;
+
+        selectedShopItem = item;
+
+        // Close the shop panel
+        SetShopOpen(false, smooth: true);
+
+        // Notify placement manager to prepare placing the item (spawn preview & show Place button)
+        if (data != null)
+        {
+            if (placementManager == null)
+            {
+                placementManager = ItemPlacementManager.Instance != null
+                    ? ItemPlacementManager.Instance
+                    : FindObjectOfType<ItemPlacementManager>();
+            }
+
+            if (placementManager != null)
+            {
+                placementManager.PreparePlacement(data);
+            }
+            else
+            {
+                Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
+            }
+        }
+
+        Debug.Log($"Selected and used inventory item: {item.itemNameText?.text}");
     }
 
 
@@ -579,6 +654,32 @@ public class InGameShopManager : MonoBehaviour
             }
 
             spawnedShopItemUIs.Add(itemUI);
+        }
+    }
+
+    private void SpawnInventoryItemUI(TreasureBoxRewardItemData data, Transform parent)
+    {
+        if (parent == null || inventoryItemUIPrefab == null) return;
+
+        GameObject spawnedObj = Instantiate(inventoryItemUIPrefab, parent);
+        InventoryItemUI itemUI = spawnedObj.GetComponent<InventoryItemUI>();
+        if (itemUI != null)
+        {
+            itemUI.Initialize(data, data.quantity);
+            spawnedInventoryItemUIs.Add(itemUI);
+            // Note: Select button / placing logic is excluded as requested
+        }
+    }
+
+    public void UpdateInventoryUI(TreasureBoxRewardItemData data)
+    {
+        if (data == null) return;
+        foreach (var itemUI in spawnedInventoryItemUIs)
+        {
+            if (itemUI != null && itemUI.RewardItemData == data)
+            {
+                itemUI.Initialize(data, data.quantity);
+            }
         }
     }
 

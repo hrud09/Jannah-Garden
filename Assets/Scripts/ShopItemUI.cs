@@ -25,6 +25,7 @@ public class ShopItemUI : MonoBehaviour
 
 
     public ShopItemData ItemData { get; private set; }
+    public TreasureBoxRewardItemData RewardItemData { get; private set; }
 
     private CanvasGroup canvasGroup;
 
@@ -140,7 +141,15 @@ public class ShopItemUI : MonoBehaviour
     /// </summary>
     public void RefreshAffordabilityVisual()
     {
-        if (itemPriceText == null || ItemData == null) return;
+        if (itemPriceText == null) return;
+
+        if (RewardItemData != null)
+        {
+            itemPriceText.color = affordableColor;
+            return;
+        }
+
+        if (ItemData == null) return;
 
         // Locked items don't need affordability tinting
         bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < ItemData.requiredXPLevel;
@@ -157,5 +166,64 @@ public class ShopItemUI : MonoBehaviour
                          NoorCoinManager.Instance.CanAfford(ItemData.noorCoinCost);
 
         itemPriceText.color = canAfford ? affordableColor : unaffordableColor;
+    }
+
+    /// <summary>
+    /// Initializes the UI components with the values from a TreasureBoxRewardItemData asset and background overrides.
+    /// </summary>
+    public void Initialize(TreasureBoxRewardItemData data, Sprite customBackground = null, Sprite customIconBackground = null)
+    {
+        if (data == null) return;
+        RewardItemData = data;
+
+        if (itemIcon != null && data.itemIcon != null)
+        {
+            itemIcon.sprite = data.itemIcon;
+        }
+
+        if (itemNameText != null && !string.IsNullOrEmpty(data.itemName))
+        {
+            itemNameText.text = data.itemName;
+        }
+
+        if (itemDescriptionText != null && !string.IsNullOrEmpty(data.itemDescription))
+        {
+            itemDescriptionText.text = data.itemDescription;
+        }
+
+        if (itemPriceText != null)
+        {
+            itemPriceText.text = "Owned"; // Since there is no isUnlocked, assume they own what is shown in inventory
+        }
+
+        if (itemBackgroundImg != null && customBackground != null)
+        {
+            itemBackgroundImg.sprite = customBackground;
+        }
+
+        if (itemIconBackgroundImg != null && customIconBackground != null)
+        {
+            itemIconBackgroundImg.sprite = customIconBackground;
+        }
+
+        bool isLocked = false;
+        if (lockedVisuals != null)
+        {
+            foreach (var go in lockedVisuals)
+            {
+                if (go != null) go.SetActive(isLocked);
+            }
+        }
+        
+        bool isUnlocked = !isLocked;
+        if (unlockedVisuals != null)
+        {
+            foreach (var go in unlockedVisuals)
+            {
+                if (go != null) go.SetActive(isUnlocked);
+            }
+        }
+
+        RefreshAffordabilityVisual();
     }
 }

@@ -300,6 +300,21 @@ public class TreasureBoxManager : MonoBehaviour
     public TreasureBoxTierState GetTierState(TreasureBoxTier tier)
         => _saveData.GetTierState(tier);
 
+    public TreasureBoxRewardItemData GetCurrentCycleReward(TreasureBoxTier tier)
+    {
+        TreasureBoxData data = GetBoxData(tier);
+        if (data == null || data.exclusiveRewardItems == null || data.exclusiveRewardItems.Length == 0) return null;
+
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        if (state.selectedRewardIndex < 0 || state.selectedRewardIndex >= data.exclusiveRewardItems.Length)
+        {
+            state.selectedRewardIndex = UnityEngine.Random.Range(0, data.exclusiveRewardItems.Length);
+            SaveState();
+        }
+
+        return data.exclusiveRewardItems[state.selectedRewardIndex];
+    }
+
     /// <summary>
     /// Returns true if the given tier is unlocked for opening.
     ///
@@ -312,6 +327,15 @@ public class TreasureBoxManager : MonoBehaviour
     /// </summary>
     public bool IsTierUnlocked(TreasureBoxTier tier)
     {
+        TreasureBoxRewardItemData currentReward = GetCurrentCycleReward(tier);
+        if (currentReward != null)
+        {
+            if (PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < currentReward.unlockXPLevel)
+            {
+                return false;
+            }
+        }
+
         if (tier == TreasureBoxTier.Silver) return true;
         TreasureBoxTierState state = _saveData.GetTierState(tier);
 
@@ -488,10 +512,11 @@ public class TreasureBoxManager : MonoBehaviour
                     state.openedCount++;
                     
                     TreasureBoxData rd = GetBoxData(tier);
+                    TreasureBoxRewardItemData rewardItem = GetCurrentCycleReward(tier);
                     GameObject puzzlePiecePrefab = null;
-                    if (rd != null && rd.exclusiveRewardItem != null && rd.exclusiveRewardItem.puzzlePieces != null && i < rd.exclusiveRewardItem.puzzlePieces.Length)
+                    if (rd != null && rewardItem != null && rewardItem.puzzlePieces != null && i < rewardItem.puzzlePieces.Length)
                     {
-                        puzzlePiecePrefab = rd.exclusiveRewardItem.puzzlePieces[i];
+                        puzzlePiecePrefab = rewardItem.puzzlePieces[i];
                     }
                     
                     // Destroy the spawned box
@@ -569,9 +594,10 @@ public class TreasureBoxManager : MonoBehaviour
                   $"({state.openedCount}/{SLOTS_PER_TIER} this cycle)");
 
         GameObject puzzlePiecePrefab = null;
-        if (rewardData != null && rewardData.exclusiveRewardItem != null && rewardData.exclusiveRewardItem.puzzlePieces != null && slotIndex < rewardData.exclusiveRewardItem.puzzlePieces.Length)
+        TreasureBoxRewardItemData rewardItem = GetCurrentCycleReward(tier);
+        if (rewardData != null && rewardItem != null && rewardItem.puzzlePieces != null && slotIndex < rewardItem.puzzlePieces.Length)
         {
-            puzzlePiecePrefab = rewardData.exclusiveRewardItem.puzzlePieces[slotIndex];
+            puzzlePiecePrefab = rewardItem.puzzlePieces[slotIndex];
         }
 
         // Destroy the spawned box
@@ -620,19 +646,35 @@ public class TreasureBoxManager : MonoBehaviour
         TreasureBoxData rewardData = GetBoxData(tier);
         if (rewardData == null) return;
 
-        TreasureBoxRewardItemData reward = rewardData.exclusiveRewardItem;
+        TreasureBoxRewardItemData reward = GetCurrentCycleReward(tier);
         if (reward == null)
         {
             Debug.LogWarning($"[TreasureBoxManager] No exclusive reward assigned to {tier} reward data.");
             return;
         }
 
-        reward.isUnlocked = true;
         Debug.Log($"[TreasureBoxManager] Unlocked {tier} set reward: {reward.itemName}!");
         
+        if (InventoryManager.Instance != null && !string.IsNullOrEmpty(reward.itemID))
+        {
+            InventoryManager.Instance.AddInventoryItem(reward.itemID, 1);
+        }
+        else if (InventoryManager.Instance == null)
+        {
+            Debug.LogWarning("[TreasureBoxManager] InventoryManager instance not found. Cannot add item to inventory.");
+        }
+        else if (string.IsNullOrEmpty(reward.itemID))
+        {
+            Debug.LogWarning("[TreasureBoxManager] Reward item is missing an itemID! Cannot save to inventory.");
+        }
+
         if (ItemPlacementManager.Instance != null)
         {
             ItemPlacementManager.Instance.PreparePlacement(reward);
+        }
+        else
+        {
+            Debug.LogWarning("[TreasureBoxManager] ItemPlacementManager instance not found. Cannot automatically place item.");
         }
     }
 

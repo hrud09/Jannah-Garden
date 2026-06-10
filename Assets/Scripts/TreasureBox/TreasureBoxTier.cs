@@ -67,9 +67,9 @@ public class TreasureBoxData : ScriptableObject
     // ── Set-Completion Reward ─────────────────────────────────────────────────
 
     [Header("Set-Completion Reward")]
-    [Tooltip("The exclusive garden item awarded when the player opens all 3 boxes " +
-             "of this tier. References an existing TreasureBoxRewardItemData asset.")]
-    public TreasureBoxRewardItemData exclusiveRewardItem;
+    [Tooltip("The exclusive garden items awarded when the player opens all 3 boxes " +
+             "of this tier. One item is chosen randomly per cycle.")]
+    public TreasureBoxRewardItemData[] exclusiveRewardItems;
 
     [Tooltip("Noor Coins awarded instead if the player already owns the exclusive " +
              "reward item. Set this to the item's perceived NC value.")]

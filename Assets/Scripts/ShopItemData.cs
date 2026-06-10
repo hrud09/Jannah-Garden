@@ -46,7 +46,11 @@ public enum ShopItemCategory
     All,
     Plants,
     Buildings,
-    Decorations
+    Decorations,
+    Silver,
+    Gold,
+    Platinum,
+    Diamond
 }
 
 public enum ShopItemType

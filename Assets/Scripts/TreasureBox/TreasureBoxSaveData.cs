@@ -51,6 +51,11 @@ public class TreasureBoxTierState
     /// </summary>
     public long pendingResetAvailableAtTicks = 0L;
 
+    /// <summary>
+    /// The index of the randomly selected reward item from the tier's exclusiveRewardItems array for this cycle.
+    /// </summary>
+    public int selectedRewardIndex = -1;
+
 
     // ── Convenience ───────────────────────────────────────────────────────────
 
@@ -73,6 +78,7 @@ public class TreasureBoxTierState
             slotAvailableAtTicks[i] = 0L;
             assignedSpawnPoints[i]  = -1;
         }
+        selectedRewardIndex = -1;
     }
 }
 
