@@ -520,6 +520,27 @@ public class InGameShopManager : MonoBehaviour
 
 
 
+    private void UpdateHeaderTextColors(ShopItemCategory category)
+    {
+        bool isShop = category == ShopItemCategory.All ||
+                      category == ShopItemCategory.Plants ||
+                      category == ShopItemCategory.Buildings ||
+                      category == ShopItemCategory.Decorations;
+
+        Color activeColor = Color.white;
+        Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
+
+        if (shopText != null)
+        {
+            shopText.color = isShop ? activeColor : inactiveColor;
+        }
+
+        if (inventoryText != null)
+        {
+            inventoryText.color = isShop ? inactiveColor : activeColor;
+        }
+    }
+
     /// <summary>
     /// Filters the shop UI items by the specified category and triggers smooth transitions.
     /// </summary>
@@ -529,6 +550,8 @@ public class InGameShopManager : MonoBehaviour
 
         lastCategory = currentCategory;
         currentCategory = category;
+
+        UpdateHeaderTextColors(category);
 
         if (categoryTransitionCoroutine != null)
         {
@@ -547,6 +570,7 @@ public class InGameShopManager : MonoBehaviour
 
     private void ApplyImmediateState(ShopItemCategory selectedCategory)
     {
+        UpdateHeaderTextColors(selectedCategory);
         if (categoryTabs != null)
         {
             foreach (var tab in categoryTabs)
