@@ -42,6 +42,29 @@ public class InGameShopManager : MonoBehaviour
     public float panelTransitionDuration = 0.3f;
     public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
+    [Header("Juicy Animation References")]
+
+    public RectTransform mainBg;
+    public RectTransform insideBg;
+    public RectTransform shopItemPanel;
+    public RectTransform inventoryItemPanel;
+    public TMP_Text shopText;
+    public TMP_Text inventoryText;
+    public RectTransform shopCategoryTabsParent;
+    public RectTransform inventoryCategoryTabsParent;
+
+    [Header("Juicy Animation Curves")]
+    public AnimationCurve openCurve = new AnimationCurve(
+        new Keyframe(0f, 0f, 0f, 3f),
+        new Keyframe(0.7f, 1.15f, 0.5f, 0.5f),
+        new Keyframe(1f, 1.0f)
+    );
+    public AnimationCurve closeCurve = new AnimationCurve(
+        new Keyframe(0f, 1.0f),
+        new Keyframe(0.3f, 1.05f),
+        new Keyframe(1f, 0f, -3f, 0f)
+    );
+
 
 
     [Header("Category Navigation")]
@@ -229,7 +252,7 @@ public class InGameShopManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Explicitly sets the shop open/closed state, updates the arrow UI states, and slides the panel.
+    /// Explicitly sets the shop open/closed state, updates the arrow UI states, and handles scaling.
     /// </summary>
     public void SetShopOpen(bool open, bool smooth)
     {
@@ -239,8 +262,6 @@ public class InGameShopManager : MonoBehaviour
         if (openArrow != null) openArrow.SetActive(!isOpen);
         if (closeArrow != null) closeArrow.SetActive(isOpen);
 
-        float targetX = isOpen ? openedPositionX : closedPositionX;
-
         if (panelTransitionCoroutine != null)
         {
             StopCoroutine(panelTransitionCoroutine);
@@ -248,40 +269,133 @@ public class InGameShopManager : MonoBehaviour
 
         if (smooth && gameObject.activeInHierarchy)
         {
-            panelTransitionCoroutine = StartCoroutine(TransitionPanel(targetX));
+            panelTransitionCoroutine = StartCoroutine(TransitionPanelJuicy(isOpen));
+        }
+        else
+        {
+            // Immediate state setting without transition
+            float scaleY = isOpen ? 1f : 0f;
+            
+            if (shopPanel != null)
+            {
+                shopPanel.gameObject.SetActive(isOpen);
+            }
+
+            Transform targetBg = mainBg != null ? mainBg : shopPanel;
+            if (targetBg != null)
+            {
+                targetBg.localScale = new Vector3(1f, scaleY, 1f);
+            }
+
+            Vector3 innerScale = isOpen ? Vector3.one : Vector3.zero;
+            if (insideBg != null) insideBg.localScale = innerScale;
+            if (shopText != null) shopText.transform.localScale = innerScale;
+            if (inventoryText != null) inventoryText.transform.localScale = innerScale;
+
+            if (shopItemPanel != null) shopItemPanel.gameObject.SetActive(isOpen);
+            if (inventoryItemPanel != null) inventoryItemPanel.gameObject.SetActive(isOpen);
+            if (shopCategoryTabsParent != null) shopCategoryTabsParent.gameObject.SetActive(isOpen);
+            if (inventoryCategoryTabsParent != null) inventoryCategoryTabsParent.gameObject.SetActive(isOpen);
+        }
+    }
+
+    private IEnumerator TransitionPanelJuicy(bool open)
+    {
+        float duration = panelTransitionDuration;
+        float elapsed = 0f;
+
+        Transform targetBg = mainBg != null ? mainBg : shopPanel;
+
+        if (open)
+        {
+            if (shopPanel != null) shopPanel.gameObject.SetActive(true);
+            if (targetBg != null) targetBg.localScale = new Vector3(1f, 0f, 1f);
+            if (insideBg != null) insideBg.localScale = Vector3.zero;
+            if (shopText != null) shopText.transform.localScale = Vector3.zero;
+            if (inventoryText != null) inventoryText.transform.localScale = Vector3.zero;
+
+            // Deactivate item panels while scaling up
+            if (shopItemPanel != null) shopItemPanel.gameObject.SetActive(false);
+            if (inventoryItemPanel != null) inventoryItemPanel.gameObject.SetActive(false);
+            if (shopCategoryTabsParent != null) shopCategoryTabsParent.gameObject.SetActive(false);
+            if (inventoryCategoryTabsParent != null) inventoryCategoryTabsParent.gameObject.SetActive(false);
+        }
+        else
+        {
+            // Deactivate item panels immediately when closing
+            if (shopItemPanel != null) shopItemPanel.gameObject.SetActive(false);
+            if (inventoryItemPanel != null) inventoryItemPanel.gameObject.SetActive(false);
+            if (shopCategoryTabsParent != null) shopCategoryTabsParent.gameObject.SetActive(false);
+            if (inventoryCategoryTabsParent != null) inventoryCategoryTabsParent.gameObject.SetActive(false);
+        }
+
+        AnimationCurve curve = open ? openCurve : closeCurve;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            float scaleY = curve.Evaluate(t);
+
+            if (targetBg != null)
+            {
+                targetBg.localScale = new Vector3(1f, scaleY, 1f);
+            }
+
+            if (open)
+            {
+                // Scale up insideBg
+                float insideT = Mathf.Clamp01((t - 0.15f) / 0.85f);
+                float insideScale = openCurve.Evaluate(insideT);
+
+                if (insideBg != null) insideBg.localScale = new Vector3(insideScale, insideScale, 1f);
+
+                float textT = Mathf.Clamp01((t - 0.3f) / 0.7f);
+                float textScale = openCurve.Evaluate(textT);
+
+                if (shopText != null) shopText.transform.localScale = new Vector3(textScale, textScale, 1f);
+                if (inventoryText != null) inventoryText.transform.localScale = new Vector3(textScale, textScale, 1f);
+            }
+            else
+            {
+                // Scale down insideBg
+                float shrinkScale = Mathf.Lerp(1f, 0f, t * 1.5f);
+                if (insideBg != null) insideBg.localScale = new Vector3(shrinkScale, shrinkScale, 1f);
+                if (shopText != null) shopText.transform.localScale = new Vector3(shrinkScale, shrinkScale, 1f);
+                if (inventoryText != null) inventoryText.transform.localScale = new Vector3(shrinkScale, shrinkScale, 1f);
+            }
+
+            yield return null;
+        }
+
+        float finalScaleY = open ? 1f : 0f;
+        if (targetBg != null)
+        {
+            targetBg.localScale = new Vector3(1f, finalScaleY, 1f);
+        }
+
+        Vector3 finalInnerScale = open ? Vector3.one : Vector3.zero;
+        if (insideBg != null) insideBg.localScale = finalInnerScale;
+        if (shopText != null) shopText.transform.localScale = finalInnerScale;
+        if (inventoryText != null) inventoryText.transform.localScale = finalInnerScale;
+
+        // Activate item panels at the end of opening
+        if (open)
+        {
+            if (shopItemPanel != null) shopItemPanel.gameObject.SetActive(true);
+            if (inventoryItemPanel != null) inventoryItemPanel.gameObject.SetActive(true);
+            if (shopCategoryTabsParent != null) shopCategoryTabsParent.gameObject.SetActive(true);
+            if (inventoryCategoryTabsParent != null) inventoryCategoryTabsParent.gameObject.SetActive(true);
         }
         else
         {
             if (shopPanel != null)
             {
-                Vector2 pos = shopPanel.anchoredPosition;
-                pos.x = targetX;
-                shopPanel.anchoredPosition = pos;
+                shopPanel.gameObject.SetActive(false);
             }
         }
-    }
 
-    private IEnumerator TransitionPanel(float targetX)
-    {
-        if (shopPanel == null) yield break;
-
-        Vector2 startPos = shopPanel.anchoredPosition;
-        float elapsed = 0f;
-
-        while (elapsed < panelTransitionDuration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / panelTransitionDuration);
-            float curveT = scrollCurve != null ? scrollCurve.Evaluate(t) : t;
-            Vector2 currentPos = shopPanel.anchoredPosition;
-            currentPos.x = Mathf.Lerp(startPos.x, targetX, curveT);
-            shopPanel.anchoredPosition = currentPos;
-            yield return null;
-        }
-
-        Vector2 finalPos = shopPanel.anchoredPosition;
-        finalPos.x = targetX;
-        shopPanel.anchoredPosition = finalPos;
+        panelTransitionCoroutine = null;
     }
 
     /// <summary>
