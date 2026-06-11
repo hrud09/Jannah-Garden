@@ -38,8 +38,7 @@ public class InGameShopManager : MonoBehaviour
     public Button openCloseButton;
     public GameObject openArrow;
     public GameObject closeArrow;
-    public float openedPositionX = 0f;
-    public float panelTransitionDuration = 0.3f;
+    public float panelTransitionDuration = 0.5f;
     public AnimationCurve scrollCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Juicy Animation References")]
@@ -55,14 +54,18 @@ public class InGameShopManager : MonoBehaviour
 
     [Header("Juicy Animation Curves")]
     public AnimationCurve openCurve = new AnimationCurve(
-        new Keyframe(0f, 0f, 0f, 3f),
-        new Keyframe(0.7f, 1.15f, 0.5f, 0.5f),
-        new Keyframe(1f, 1.0f)
+        new Keyframe(0f, 0f, 0f, 4f),
+        new Keyframe(0.45f, 1.15f, 0.5f, -0.5f),
+        new Keyframe(0.7f, 0.95f, -0.5f, 0.5f),
+        new Keyframe(0.88f, 1.02f, 0.2f, -0.2f),
+        new Keyframe(1f, 1f, 0f, 0f)
     );
     public AnimationCurve closeCurve = new AnimationCurve(
-        new Keyframe(0f, 1.0f),
-        new Keyframe(0.3f, 1.05f),
-        new Keyframe(1f, 0f, -3f, 0f)
+        new Keyframe(0f, 1f, 0f, 0f),
+        new Keyframe(0.2f, 1.05f, 0.5f, -0.5f),
+        new Keyframe(0.6f, -0.08f, -2f, 2f),
+        new Keyframe(0.85f, 0.03f, 0.5f, -0.5f),
+        new Keyframe(1f, 0f, 0f, 0f)
     );
 
 
