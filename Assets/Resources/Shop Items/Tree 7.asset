@@ -1,4 +1,4 @@
-﻿%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
@@ -17,10 +17,9 @@ MonoBehaviour:
   itemDescription: 
   noorCoinCost: 200
   itemPrice: 100
-  shopItemType: 0
+  itemID: b254ac04d88a49c8ad9bf03cf2b81cb8
+  requiredXPLevel: 13
   itemCategory: 1
   itemPrefab: {fileID: 0}
   itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
-  itemState: 1
   placementTimerDuration: 360
-  requiredXPLevel: 13
