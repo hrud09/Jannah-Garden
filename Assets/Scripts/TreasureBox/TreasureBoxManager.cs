@@ -657,7 +657,8 @@ public class TreasureBoxManager : MonoBehaviour
         
         if (InventoryManager.Instance != null && !string.IsNullOrEmpty(reward.itemID))
         {
-            InventoryManager.Instance.AddInventoryItem(reward.itemID, 1);
+            int quantityToAdd = reward.quantity > 0 ? reward.quantity : 1;
+            InventoryManager.Instance.AddInventoryItem(reward.itemID, quantityToAdd);
         }
         else if (InventoryManager.Instance == null)
         {
