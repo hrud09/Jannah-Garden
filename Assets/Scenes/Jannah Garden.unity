@@ -109199,25 +109199,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1446059982894985796, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1629628625275807063, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: messageHolderRisingY
-      value: -427
-      objectReference: {fileID: 0}
-    - target: {fileID: 1629628625275807063, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: messageHolderOffscreenY
-      value: -763
-      objectReference: {fileID: 0}
     - target: {fileID: 5767951910289720032, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_Name
       value: Toaster Message Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6698173638702989947, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 176.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -427
+      value: -45.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698173638702989947, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
