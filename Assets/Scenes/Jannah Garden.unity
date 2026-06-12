@@ -85888,20 +85888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestionMarkOrbManager
   orbPrefab: {fileID: 3696790423197721534, guid: 0f5e3a3020bbb0f45ab4c610604b3c51, type: 3}
-  spawnPoints:
-  - {fileID: 402461503}
-  - {fileID: 1097208087}
-  - {fileID: 2146162678}
-  - {fileID: 1106756643}
-  - {fileID: 1211359172}
-  - {fileID: 476334837}
-  - {fileID: 2137536849}
-  - {fileID: 154144681}
-  - {fileID: 128611647}
-  - {fileID: 1240814411}
-  - {fileID: 1403298120}
-  - {fileID: 178292366}
-  - {fileID: 2061930213}
+  spawnPointsParent: {fileID: 1758729016}
+  terrainReference: {fileID: 320240521}
   maxOrbs: 5
   respawnDelay: 20
   rewardCoins: 10
@@ -106562,17 +106550,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  spawnPoints:
-  - {fileID: 631245633}
-  - {fileID: 449120817}
-  - {fileID: 981775179}
-  - {fileID: 1796652516}
-  - {fileID: 1964591201}
-  - {fileID: 1465837542}
-  - {fileID: 1233324060}
-  - {fileID: 658975451}
-  - {fileID: 593502399}
-  - {fileID: 1504247148}
+  spawnPointsParent: {fileID: 1940706185}
+  terrainReference: {fileID: 320240521}
 --- !u!4 &2090118979
 Transform:
   m_ObjectHideFlags: 0
@@ -109225,7 +109204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45.69995
+      value: -36.69995
       objectReference: {fileID: 0}
     - target: {fileID: 6698173638702989947, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_SizeDelta.x
@@ -110362,6 +110341,10 @@ PrefabInstance:
     - target: {fileID: 1763337426497378742, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960433852754520511, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -54.433594
       objectReference: {fileID: 0}
     - target: {fileID: 1998143489887736614, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: m_AnchorMax.y

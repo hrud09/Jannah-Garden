@@ -7,7 +7,8 @@ public class QuestionMarkOrbManager : MonoBehaviour
     public static QuestionMarkOrbManager Instance;
 
     public GameObject orbPrefab;
-    public Transform[] spawnPoints;
+    public Transform spawnPointsParent;
+    public Terrain terrainReference;
     
     [Header("Settings")]
     public int maxOrbs = 5;
@@ -25,9 +26,12 @@ public class QuestionMarkOrbManager : MonoBehaviour
 
     void Start()
     {
-        if (spawnPoints != null)
+        if (spawnPointsParent != null)
         {
-            availableSpawnPoints.AddRange(spawnPoints);
+            foreach (Transform child in spawnPointsParent)
+            {
+                availableSpawnPoints.Add(child);
+            }
         }
         
         // Initial spawn
@@ -49,7 +53,14 @@ public class QuestionMarkOrbManager : MonoBehaviour
         // Remove it from available points
         availableSpawnPoints.RemoveAt(randIndex);
 
-        GameObject newOrb = Objectpool.Instance.Spawn(orbPrefab, spawnPoint.position, spawnPoint.rotation);
+        Vector3 spawnPos = spawnPoint.position;
+        if (terrainReference != null)
+        {
+            float terrainY = terrainReference.SampleHeight(spawnPos) + terrainReference.transform.position.y;
+            spawnPos = new Vector3(spawnPos.x, terrainY + 2f, spawnPos.z);
+        }
+
+        GameObject newOrb = Objectpool.Instance.Spawn(orbPrefab, spawnPos, spawnPoint.rotation);
         
         // Attach a reference to the spawn point so we can free it later
         QuestionMarkOrb orbScript = newOrb.GetComponent<QuestionMarkOrb>();

@@ -121,8 +121,11 @@ public class TreasureBoxManager : MonoBehaviour
     private TreasureBoxSaveData _saveData;
 
     [Header("Spawning")]
-    [Tooltip("Pre-placed spawn points for treasure boxes. A box will randomly pick one that is unoccupied.")]
-    public Transform[] spawnPoints;
+    [Tooltip("Parent transform for spawn points. Children will be used as spawn points.")]
+    public Transform spawnPointsParent;
+    public Terrain terrainReference;
+
+    private List<Transform> spawnPoints = new List<Transform>();
 
     private class SpawnedBoxInfo
     {
@@ -145,6 +148,14 @@ public class TreasureBoxManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        if (spawnPointsParent != null)
+        {
+            foreach (Transform child in spawnPointsParent)
+            {
+                spawnPoints.Add(child);
+            }
+        }
 
         LoadState();
         TickCycleResets();
@@ -785,7 +796,7 @@ public class TreasureBoxManager : MonoBehaviour
     
     private void CheckAndSpawnNewBoxes()
     {
-        if (spawnPoints == null || spawnPoints.Length == 0) return;
+        if (spawnPoints == null || spawnPoints.Count == 0) return;
         
         foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
         {
@@ -805,10 +816,10 @@ public class TreasureBoxManager : MonoBehaviour
 
     private int GetAvailableSpawnPointIndex()
     {
-        if (spawnPoints == null || spawnPoints.Length == 0) return -1;
+        if (spawnPoints == null || spawnPoints.Count == 0) return -1;
         
         List<int> availableIndices = new List<int>();
-        for (int i = 0; i < spawnPoints.Length; i++)
+        for (int i = 0; i < spawnPoints.Count; i++)
         {
             if (spawnPoints[i] != null) availableIndices.Add(i);
         }
@@ -848,7 +859,7 @@ public class TreasureBoxManager : MonoBehaviour
         }
 
         int assignedIndex = state.assignedSpawnPoints[slotIndex];
-        if (spawnPoints == null || assignedIndex < 0 || assignedIndex >= spawnPoints.Length || spawnPoints[assignedIndex] == null)
+        if (spawnPoints == null || assignedIndex < 0 || assignedIndex >= spawnPoints.Count || spawnPoints[assignedIndex] == null)
         {
             Debug.LogWarning("[TreasureBoxManager] Assigned spawn point is missing or invalid.");
             return;
@@ -856,7 +867,14 @@ public class TreasureBoxManager : MonoBehaviour
 
         Transform spawnPoint = spawnPoints[assignedIndex];
         
-        GameObject go = Objectpool.Instance.Spawn(prefab, spawnPoint.position, spawnPoint.rotation);
+        Vector3 spawnPos = spawnPoint.position;
+        if (terrainReference != null)
+        {
+            float terrainY = terrainReference.SampleHeight(spawnPos) + terrainReference.transform.position.y;
+            spawnPos = new Vector3(spawnPos.x, terrainY + 2f, spawnPos.z);
+        }
+        
+        GameObject go = Objectpool.Instance.Spawn(prefab, spawnPos, spawnPoint.rotation);
         go.name = $"TreasureBox_{tier}_Slot{slotIndex}";
         
         TreasureBox boxScript = go.GetComponent<TreasureBox>();
