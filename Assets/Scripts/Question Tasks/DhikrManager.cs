@@ -116,6 +116,7 @@ public class DhikrManager : MonoBehaviour
 
     void IncrementCount()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrIncrement);
         currentCount++;
         UpdateCountUI();
         CheckSubmitCondition();
@@ -130,6 +131,7 @@ public class DhikrManager : MonoBehaviour
 
     void DecrementCount()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrDecrement);
         if (currentCount > 0)
         {
             currentCount--;
@@ -163,6 +165,7 @@ public class DhikrManager : MonoBehaviour
 
     public void SubmitDhikr()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrSubmit);
         if (currentCount >= targetCount)
         {
             if (submitButton != null) submitButton.interactable = false;
@@ -202,6 +205,7 @@ public class DhikrManager : MonoBehaviour
 
     public void CloseDhikrDramatically()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrClose);
         StopAllCoroutines();
 
         if (dhikrPanel != null) 

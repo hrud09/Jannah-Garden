@@ -82,6 +82,7 @@ public class MinimapBehaviour : MonoBehaviour
     /// </summary>
     public void ExpandMinimap()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.MinimapExpand);
         isExpanded = true;
         UpdateMinimapState(true);
     }
@@ -91,6 +92,7 @@ public class MinimapBehaviour : MonoBehaviour
     /// </summary>
     public void CollapseMinimap()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.MinimapCollapse);
         isExpanded = false;
         UpdateMinimapState(true);
     }

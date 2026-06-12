@@ -190,6 +190,7 @@ public class MCQManager : MonoBehaviour
 
     public void SelectOption(int optionIndex)
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
         selectedOptionIndex = optionIndex;
         
         // Update visual to selected
@@ -217,6 +218,7 @@ public class MCQManager : MonoBehaviour
 
     public void CheckAnswer()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.QuizSubmit);
         if (selectedOptionIndex == -1) return; // No option selected
 
         QuestionData qData = allQuestions.questions[currentQuestionIndex];
@@ -297,6 +299,7 @@ public class MCQManager : MonoBehaviour
 
     public void CloseQuizDramatically()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.QuizClose);
         StopAllCoroutines();
 
         if (quizPanel != null) 

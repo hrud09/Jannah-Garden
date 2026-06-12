@@ -251,6 +251,7 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void ToggleShop()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ShopOpenClose);
         SetShopOpen(!isOpen, smooth: true);
     }
 
@@ -407,6 +408,7 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void SelectAndUseItem(ShopItemUI item)
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPurchase);
         if (item == null) return;
 
         ShopItemData data = item.ItemData;
@@ -546,6 +548,7 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void FilterByCategory(ShopItemCategory category)
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TabSwitch);
         if (currentCategory == category) return; // Already selected
 
         lastCategory = currentCategory;

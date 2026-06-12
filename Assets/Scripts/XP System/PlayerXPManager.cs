@@ -162,6 +162,7 @@ public class PlayerXPManager : MonoBehaviour
 
     public void ToggleXPGainChart()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.XPGainChartToggle);
         if (xpGainChartPanel == null) return;
 
         _isChartOpen = !_isChartOpen;

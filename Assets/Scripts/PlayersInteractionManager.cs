@@ -40,6 +40,7 @@ public class PlayersInteractionManager : MonoBehaviour
     private void OnInteractButtonClicked()
     {
         isInteracting = true;
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
         if (itemInteractButton != null)
         {
             itemInteractButton.gameObject.SetActive(false);

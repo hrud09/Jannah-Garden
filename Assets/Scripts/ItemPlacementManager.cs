@@ -150,6 +150,7 @@ public class ItemPlacementManager : MonoBehaviour
     /// </summary>
     public void HandlePlaceButtonClick()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPlace);
         if (currentPlacedObject != null)
         {
             // Finalize placement immediately
