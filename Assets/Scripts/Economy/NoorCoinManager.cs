@@ -158,7 +158,8 @@ public class NoorCoinManager : MonoBehaviour
     {
         string message = $"CoinUpdate:{amountChange}";
         
-        FlutterUnityIntegration.UnityMessageManager.Instance.SendMessageToFlutter(message);
+        // flutter_embed_unity
+        SendToFlutter.Send(message);
         
         Debug.Log($"[NoorCoinManager] Sent to Flutter: {message}");
     }

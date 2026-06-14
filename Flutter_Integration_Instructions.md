@@ -1,42 +1,23 @@
-# Flutter & Unity Integration Instructions: Noor Coins
+# Flutter Integration: Noor Coins (flutter_embed_unity)
 
-This guide explains how to connect your Flutter app's Noor Coin balance with the Unity `Jannah-Garden` project using the `flutter_unity_widget` plugin.
+This guide provides the exact Flutter code you need to communicate with the `Jannah-Garden` Unity project.
 
-## 1. Required Plugin
-Ensure you have the `flutter_unity_widget` package installed in your Flutter project's `pubspec.yaml`:
-```yaml
-dependencies:
-  flutter_unity_widget: ^2022.2.0 # Check pub.dev for the latest compatible version
-```
-*Note: You can find the package and full setup instructions on [pub.dev/packages/flutter_unity_widget](https://pub.dev/packages/flutter_unity_widget).*
+*(Note: The Unity side of this integration has already been completely configured for you.)*
 
-## 2. Unity Setup
-You need to import the Unity package provided by `flutter_unity_widget` into this Unity project. Once imported, you must uncomment a line of code in the `NoorCoinManager.cs` script to allow Unity to send messages back to Flutter.
+## Overview
+You need to establish two-way communication using the `FlutterEmbed` widget:
+1. **Sending Coins to Unity:** Send the initial Firebase balance when Unity is ready.
+2. **Receiving Coins from Unity:** Listen for spending/earning events to update Firebase.
 
-1. Open `Assets/Scripts/Economy/NoorCoinManager.cs`.
-2. Locate the `SendCoinUpdateToFlutter` method.
-3. Uncomment the `UnityMessageManager` line:
-```csharp
-    private void SendCoinUpdateToFlutter(int amountChange)
-    {
-        string message = $"CoinUpdate:{amountChange}";
-        
-        // UNCOMMENT THIS LINE once the package is imported:
-        FlutterUnityIntegration.UnityMessageManager.Instance.SendMessageToFlutter(message);
-        
-        Debug.Log($"[NoorCoinManager] Sent to Flutter: {message}");
-    }
-```
+---
 
-## 3. Flutter Implementation
-In your Flutter screen that displays the Unity Widget, you need to establish two-way communication.
+## 1. Setting up the FlutterEmbed Widget
 
-### A. Set up the Widget
-Initialize the `UnityWidgetController` and pass callbacks for creation and messaging:
+Initialize the `FlutterEmbed` widget in your screen and provide the `onMessageFromUnity` callback so you can listen for updates.
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter_unity_widget/flutter_unity_widget.dart';
+import 'package:flutter_embed_unity/flutter_embed_unity.dart';
 
 class JannahGardenScreen extends StatefulWidget {
   @override
@@ -44,31 +25,35 @@ class JannahGardenScreen extends StatefulWidget {
 }
 
 class _JannahGardenScreenState extends State<JannahGardenScreen> {
-  UnityWidgetController? _unityWidgetController;
-  
   // Example: Get this from Firebase or your local state
   int userNoorCoins = 500; 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: UnityWidget(
-        onUnityCreated: onUnityCreated,
-        onUnityMessage: onUnityMessage,
+      body: FlutterEmbed(
+        onMessageFromUnity: _onMessageFromUnity,
       ),
     );
   }
 ```
 
-### B. Send Initial Coins to Unity
-When Unity is ready, send the current coin balance using `.postMessage()`. The GameObject name must be **"Noor Coin Manager"**.
+---
+
+## 2. Sending Initial Coins to Unity
+
+To send coins from Flutter to Unity, you use the top-level `sendToUnity` function provided by the plugin. 
+
+**Important details for the Unity project:**
+* **GameObject Name:** `"Noor Coin Manager"`
+* **Method Name:** `"SetInitialCoinsFromFlutter"`
+
+*You can trigger this using a button, or listen to an event that tells you Unity is ready, depending on your app's flow.*
 
 ```dart
-  void onUnityCreated(UnityWidgetController controller) {
-    _unityWidgetController = controller;
-    
-    // Format: postMessage(GameObject_Name, Method_Name, Message_String)
-    _unityWidgetController?.postMessage(
+  void sendInitialCoinsToUnity() {
+    // Format: sendToUnity('GameObject_Name', 'Method_Name', 'Message_String')
+    sendToUnity(
       'Noor Coin Manager', 
       'SetInitialCoinsFromFlutter', 
       userNoorCoins.toString(),
@@ -76,18 +61,22 @@ When Unity is ready, send the current coin balance using `.postMessage()`. The G
   }
 ```
 
-### C. Listen for Updates from Unity
-When the user earns or spends coins inside Jannah Garden, Unity sends a `CoinUpdate:X` message back to Flutter. Catch this message and update your database (e.g., Firebase).
+---
+
+## 3. Accepting Coin Updates from Unity
+
+When the user earns or spends coins inside Jannah Garden, Unity automatically sends a string message formatted as `CoinUpdate:X` (where X is the positive or negative amount changed) back to Flutter.
+
+Catch this message in your `onMessageFromUnity` callback to update your local state and database (e.g., Firebase).
 
 ```dart
-  void onUnityMessage(message) {
-    print('Received message from unity: ${message.toString()}');
+  void _onMessageFromUnity(String message) {
+    print('Received message from Unity: $message');
     
-    String msg = message.toString();
-    
-    if (msg.startsWith('CoinUpdate:')) {
+    // Check if the message is a Noor Coin update
+    if (message.startsWith('CoinUpdate:')) {
       // Extract the amount changed
-      String amountString = msg.replaceFirst('CoinUpdate:', '');
+      String amountString = message.replaceFirst('CoinUpdate:', '');
       int amountChange = int.tryParse(amountString) ?? 0;
       
       if (amountChange != 0) {
@@ -96,7 +85,7 @@ When the user earns or spends coins inside Jannah Garden, Unity sends a `CoinUpd
           userNoorCoins += amountChange;
         });
         
-        // TODO: Update the user's balance in Firebase/Backend
+        // TODO: Update the user's new balance in Firebase/Backend
         _updateFirebaseCoins(userNoorCoins);
       }
     }
@@ -104,13 +93,7 @@ When the user earns or spends coins inside Jannah Garden, Unity sends a `CoinUpd
 
   void _updateFirebaseCoins(int newBalance) {
     // Add your database update logic here
+    print('Updating Firebase with new balance: $newBalance');
   }
 }
 ```
-
-## Testing Locally in Unity
-If you want to test the Unity project in the editor without running it through Flutter:
-1. Select the `JannahGardenManager` GameObject in your scene.
-2. In the Inspector, check the **Is Debug** box.
-3. Set your desired **Debug Noor Coins Amount**.
-4. Press Play. The game will bypass waiting for Flutter and immediately assign your debug coins.
