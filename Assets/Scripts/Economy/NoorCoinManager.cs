@@ -47,7 +47,9 @@ public class NoorCoinManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        LoadBalance();
+        // We no longer load balance here because Jannah Garden is embedded in Flutter,
+        // and Noor coins will be assigned from the Flutter app (or via debug in JannahGardenManager).
+        // LoadBalance();
     }
 
     private void OnApplicationQuit() => SaveBalance();
@@ -156,8 +158,7 @@ public class NoorCoinManager : MonoBehaviour
     {
         string message = $"CoinUpdate:{amountChange}";
         
-        // TODO: Uncomment this when you import the flutter_unity_widget package!
-        // FlutterUnityIntegration.UnityMessageManager.Instance.SendMessageToFlutter(message);
+        FlutterUnityIntegration.UnityMessageManager.Instance.SendMessageToFlutter(message);
         
         Debug.Log($"[NoorCoinManager] Sent to Flutter: {message}");
     }
