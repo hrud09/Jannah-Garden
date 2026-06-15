@@ -91603,6 +91603,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2836439255435353027, guid: a86af659c52a1f54c924985f5d11a2b9, type: 3}
   m_PrefabInstance: {fileID: 1815599697}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1817128725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332061558558644690, guid: 3e81a4a78ff5df745a27aff884c132fe, type: 3}
+  m_PrefabInstance: {fileID: 6589882226986475273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1817128726 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6077512066831121554, guid: 3e81a4a78ff5df745a27aff884c132fe, type: 3}
@@ -110140,6 +110145,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1817128725}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683040532674296378, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9073787192939532166, guid: d71ba2badf8f915488b7a5565a7798a8, type: 3}
       propertyPath: m_Name
       value: Settings Button BG
@@ -111086,6 +111123,26 @@ PrefabInstance:
     - target: {fileID: 2812237384915339567, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224587454226233660, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d316d61d717f44183b4131b126283942, type: 3}
+    - target: {fileID: 8224587454226233660, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224587454226233660, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5754947
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224587454226233660, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5518868
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224587454226233660, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 2.31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
