@@ -75,7 +75,7 @@ public class TreasureBoxManager : MonoBehaviour
     public Vector2 dailyResetTime = new Vector2(0, 0);
 
     [Header("UI Data")]
-    public TreasureBoxStatusUI[] treasureBoxStatusUis;
+    public TreasureBoxStatusUI treasureBoxStatusUi;
 
     [Header("Tier Colors")]
     public Color silverColor = new Color(0.9f, 0.9f, 0.9f); // Soft white
@@ -193,96 +193,110 @@ public class TreasureBoxManager : MonoBehaviour
 
     private void UpdateTierUiData()
     {
-        if (treasureBoxStatusUis == null || _saveData == null) return;
+        if (treasureBoxStatusUi == null || _saveData == null) return;
         
-        foreach (var ui in treasureBoxStatusUis)
+        TreasureBoxTier upcomingTier = GetUpcomingTier();
+        treasureBoxStatusUi.tier = upcomingTier;
+        treasureBoxStatusUi.UpdateColor();
+        
+        TreasureBoxTierState state = _saveData.GetTierState(upcomingTier);
+        TreasureBoxData data = GetBoxData(upcomingTier);
+        
+        if (treasureBoxStatusUi.nameText != null && data != null)
         {
-            if (ui == null) continue;
+            treasureBoxStatusUi.nameText.text = data.tierDisplayName;
+        }
             
-            TreasureBoxTierState state = _saveData.GetTierState(ui.tier);
-            TreasureBoxData data = GetBoxData(ui.tier);
+        if (treasureBoxStatusUi.openedBoxCountText != null)
+        {
+            treasureBoxStatusUi.openedBoxCountText.text = $"{state.openedCount}/{SLOTS_PER_TIER}";
+        }
             
-            if (ui.nameText != null && data != null)
+        if (treasureBoxStatusUi.timerText != null)
+        {
+            if (state.pendingResetAvailableAtTicks > 0)
             {
-                ui.nameText.text = data.tierDisplayName;
-            }
-                
-            if (ui.openedBoxCountText != null)
-            {
-                ui.openedBoxCountText.text = $"{state.openedCount}/{SLOTS_PER_TIER}";
-            }
-                
-            if (ui.timerText != null)
-            {
-                if (state.pendingResetAvailableAtTicks > 0)
+                TimeSpan span = new DateTime(state.pendingResetAvailableAtTicks) - DateTime.Now;
+                if (span.TotalSeconds > 0)
                 {
-                    TimeSpan span = new DateTime(state.pendingResetAvailableAtTicks) - DateTime.Now;
+                    treasureBoxStatusUi.timerText.text = FormatTimeSpan(span);
+                }
+                else
+                {
+                    treasureBoxStatusUi.timerText.text = "Resetting...";
+                }
+            }
+            else if (state.IsSetComplete)
+            {
+                treasureBoxStatusUi.timerText.text = "Completed";
+            }
+            else if (!IsTierUnlocked(upcomingTier))
+            {
+                DateTime readyAt = GetSlotAvailableAt(upcomingTier, 0);
+                if (readyAt != DateTime.MinValue)
+                {
+                    TimeSpan span = readyAt - DateTime.Now;
                     if (span.TotalSeconds > 0)
                     {
-                        ui.timerText.text = FormatTimeSpan(span);
+                        treasureBoxStatusUi.timerText.text = FormatTimeSpan(span);
                     }
                     else
                     {
-                        ui.timerText.text = "Resetting...";
-                    }
-                }
-                else if (state.IsSetComplete)
-                {
-                    ui.timerText.text = "Completed";
-                }
-                else if (!IsTierUnlocked(ui.tier))
-                {
-                    DateTime readyAt = GetSlotAvailableAt(ui.tier, 0);
-                    if (readyAt != DateTime.MinValue)
-                    {
-                        TimeSpan span = readyAt - DateTime.Now;
-                        if (span.TotalSeconds > 0)
-                        {
-                            ui.timerText.text = FormatTimeSpan(span);
-                        }
-                        else
-                        {
-                            ui.timerText.text = "Finish previous tier";
-                        }
-                    }
-                    else
-                    {
-                        ui.timerText.text = "Locked";
+                        treasureBoxStatusUi.timerText.text = "Finish previous tier";
                     }
                 }
                 else
                 {
-                    // Tier is unlocked but not complete. Find the NEXT slot to open.
-                    int nextSlot = 0;
-                    for (int i = 0; i < SLOTS_PER_TIER; i++)
+                    treasureBoxStatusUi.timerText.text = "Locked";
+                }
+            }
+            else
+            {
+                // Tier is unlocked but not complete. Find the NEXT slot to open.
+                int nextSlot = 0;
+                for (int i = 0; i < SLOTS_PER_TIER; i++)
+                {
+                    if (!state.slotOpened[i])
                     {
-                        if (!state.slotOpened[i])
-                        {
-                            nextSlot = i;
-                            break;
-                        }
+                        nextSlot = i;
+                        break;
                     }
+                }
 
-                    if (IsSlotAvailable(ui.tier, nextSlot))
+                if (IsSlotAvailable(upcomingTier, nextSlot))
+                {
+                    treasureBoxStatusUi.timerText.text = "Available";
+                }
+                else
+                {
+                    DateTime readyAt = GetSlotAvailableAt(upcomingTier, nextSlot);
+                    if (readyAt != DateTime.MinValue)
                     {
-                        ui.timerText.text = "Available";
+                        TimeSpan span = readyAt - DateTime.Now;
+                        treasureBoxStatusUi.timerText.text = FormatTimeSpan(span);
                     }
                     else
                     {
-                        DateTime readyAt = GetSlotAvailableAt(ui.tier, nextSlot);
-                        if (readyAt != DateTime.MinValue)
-                        {
-                            TimeSpan span = readyAt - DateTime.Now;
-                            ui.timerText.text = FormatTimeSpan(span);
-                        }
-                        else
-                        {
-                            ui.timerText.text = "Waiting...";
-                        }
+                        treasureBoxStatusUi.timerText.text = "Waiting...";
                     }
                 }
             }
         }
+    }
+
+    public TreasureBoxTier GetUpcomingTier()
+    {
+        if (_saveData == null) return TreasureBoxTier.Silver;
+
+        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            if (!state.IsSetComplete)
+            {
+                return tier;
+            }
+        }
+        return TreasureBoxTier.Silver;
     }
 
     private void OnApplicationQuit()  => SaveState();
