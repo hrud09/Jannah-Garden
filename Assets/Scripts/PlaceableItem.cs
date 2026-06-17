@@ -23,6 +23,14 @@ public class PlaceableItem : MonoBehaviour
     private bool isTracking = false;
     private bool alreadyCompletedOnStart = false;
 
+    private Vector3 initialScale;
+
+    private void Awake()
+    {
+        // Capture the prefab's original scale before any tracking logic modifies it
+        initialScale = transform.localScale;
+    }
+
     /// <summary>
     /// Initializes tracking values for this item.
     /// </summary>
@@ -97,10 +105,12 @@ public class PlaceableItem : MonoBehaviour
                 timerHolder.SetActive(false);
             }
             UpdateSaturation(1f);
+            transform.localScale = initialScale;
         }
         else if (isTracking)
         {
             UpdateSaturation(0f);
+            transform.localScale = initialScale * 0.5f;
         }
     }
 
@@ -151,6 +161,7 @@ public class PlaceableItem : MonoBehaviour
             isTracking = false; // Stop tracking so we don't repeatedly trigger this
 
             UpdateSaturation(1f);
+            transform.localScale = initialScale;
 
             if (timerText != null)
             {
@@ -178,6 +189,9 @@ public class PlaceableItem : MonoBehaviour
             else if (timeRatio < 1f) currentSat = 0.75f;
 
             UpdateSaturation(currentSat);
+
+            // Update smooth gradual scale from 0.5x to 1.0x
+            transform.localScale = Vector3.Lerp(initialScale * 0.5f, initialScale, timeRatio);
         }
     }
 
