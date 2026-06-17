@@ -20,8 +20,12 @@ public class PlaceableItem : MonoBehaviour
     [Header("Renderers")]
     public Renderer[] itemRenderers;
 
+    [Header("Tree Settings")]
+    public bool isTree = false;
+
     private bool isTracking = false;
     private bool alreadyCompletedOnStart = false;
+    private bool isStartupGlooming = false;
 
     private Vector3 initialScale;
 
@@ -104,12 +108,21 @@ public class PlaceableItem : MonoBehaviour
             {
                 timerHolder.SetActive(false);
             }
-            UpdateSaturation(1f);
+            
+            if (isTree && Time.timeSinceLevelLoad < 30f)
+            {
+                isStartupGlooming = true;
+            }
+            else
+            {
+                UpdateSaturation(1f, -1);
+            }
+            
             transform.localScale = initialScale;
         }
         else if (isTracking)
         {
-            UpdateSaturation(0f);
+            UpdateSaturation(0f, -1);
             transform.localScale = initialScale * 0.5f;
         }
     }
@@ -151,6 +164,25 @@ public class PlaceableItem : MonoBehaviour
 
     private void Update()
     {
+        if (isStartupGlooming)
+        {
+            float t = Time.timeSinceLevelLoad;
+            if (t < 20f)
+            {
+                UpdateSaturation(0f, -1);
+            }
+            else if (t < 30f)
+            {
+                UpdateSaturation((t - 20f) / 10f, -1);
+            }
+            else
+            {
+                UpdateSaturation(1f, -1);
+                isStartupGlooming = false;
+            }
+            return;
+        }
+
         if (!isTracking) return;
 
         remainingDuration -= Time.deltaTime;
@@ -160,7 +192,7 @@ public class PlaceableItem : MonoBehaviour
             remainingDuration = 0f;
             isTracking = false; // Stop tracking so we don't repeatedly trigger this
 
-            UpdateSaturation(1f);
+            UpdateSaturation(1f, -1);
             transform.localScale = initialScale;
 
             if (timerText != null)
@@ -188,7 +220,23 @@ public class PlaceableItem : MonoBehaviour
             else if (timeRatio < 0.75f) currentSat = 0.5f;
             else if (timeRatio < 1f) currentSat = 0.75f;
 
-            UpdateSaturation(currentSat);
+            if (isTree)
+            {
+                UpdateSaturation(currentSat, 0); // Material 0 (trunk) follows normal
+                if (remainingDuration <= 10f)
+                {
+                    float leafSat = 1f - (remainingDuration / 10f);
+                    UpdateSaturation(leafSat, 1);
+                }
+                else
+                {
+                    UpdateSaturation(0f, 1);
+                }
+            }
+            else
+            {
+                UpdateSaturation(currentSat, -1);
+            }
 
             // Update smooth gradual scale from 0.5x to 1.0x
             transform.localScale = Vector3.Lerp(initialScale * 0.5f, initialScale, timeRatio);
@@ -205,7 +253,7 @@ public class PlaceableItem : MonoBehaviour
         }
     }
 
-    private void UpdateSaturation(float saturationValue)
+    private void UpdateSaturation(float saturationValue, int materialIndex = -1)
     {
         if (itemRenderers == null || itemRenderers.Length == 0) return;
 
@@ -215,8 +263,12 @@ public class PlaceableItem : MonoBehaviour
             
             // Using .materials creates instances of the materials if not already created,
             // which is safe here so we don't modify shared materials for other objects.
-            foreach (var mat in renderer.materials)
+            Material[] mats = renderer.materials;
+            for (int i = 0; i < mats.Length; i++)
             {
+                if (materialIndex != -1 && i != materialIndex) continue;
+
+                Material mat = mats[i];
                 if (mat != null && mat.HasProperty("_Saturation"))
                 {
                     mat.EnableKeyword("BASE_SATURATION");

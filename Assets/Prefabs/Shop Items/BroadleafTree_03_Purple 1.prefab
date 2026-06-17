@@ -316,6 +316,7 @@ MonoBehaviour:
   - {fileID: 8115052526451490356}
   - {fileID: 801423661500809194}
   - {fileID: 4875719113966068432}
+  isTree: 1
 --- !u!1 &4852493094797846282
 GameObject:
   m_ObjectHideFlags: 0

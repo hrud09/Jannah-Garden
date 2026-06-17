@@ -403,6 +403,8 @@ MonoBehaviour:
   prefabName: 
   timerText: {fileID: 4005692850135164339}
   timerHolder: {fileID: 2678748173105933267}
+  itemRenderers: []
+  isTree: 1
 --- !u!1001 &7953406474423719757
 PrefabInstance:
   m_ObjectHideFlags: 0

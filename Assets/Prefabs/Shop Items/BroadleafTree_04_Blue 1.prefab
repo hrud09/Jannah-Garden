@@ -106,6 +106,8 @@ MonoBehaviour:
   prefabName: 
   timerText: {fileID: 4166791115654156298}
   timerHolder: {fileID: 3127940537542614634}
+  itemRenderers: []
+  isTree: 1
 --- !u!1 &6016436186900053801
 GameObject:
   m_ObjectHideFlags: 0
