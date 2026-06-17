@@ -170,14 +170,18 @@ public class PlaceableItem : MonoBehaviour
             if (t < 20f)
             {
                 UpdateSaturation(0f, -1);
+                UpdateMaterialAlpha(0f, 1);
             }
             else if (t < 30f)
             {
-                UpdateSaturation((t - 20f) / 10f, -1);
+                float ratio = (t - 20f) / 10f;
+                UpdateSaturation(ratio, -1);
+                UpdateMaterialAlpha(ratio * (180f / 255f), 1);
             }
             else
             {
                 UpdateSaturation(1f, -1);
+                UpdateMaterialAlpha(180f / 255f, 1);
                 isStartupGlooming = false;
             }
             return;
@@ -273,6 +277,39 @@ public class PlaceableItem : MonoBehaviour
                 {
                     mat.EnableKeyword("BASE_SATURATION");
                     mat.SetFloat("_Saturation", saturationValue);
+                }
+            }
+        }
+    }
+
+    private void UpdateMaterialAlpha(float alphaValue, int materialIndex = -1)
+    {
+        if (itemRenderers == null || itemRenderers.Length == 0) return;
+
+        foreach (var renderer in itemRenderers)
+        {
+            if (renderer == null) continue;
+            
+            Material[] mats = renderer.materials;
+            for (int i = 0; i < mats.Length; i++)
+            {
+                if (materialIndex != -1 && i != materialIndex) continue;
+
+                Material mat = mats[i];
+                if (mat != null)
+                {
+                    if (mat.HasProperty("_Color"))
+                    {
+                        Color c = mat.GetColor("_Color");
+                        c.a = alphaValue;
+                        mat.SetColor("_Color", c);
+                    }
+                    else if (mat.HasProperty("_BaseColor"))
+                    {
+                        Color c = mat.GetColor("_BaseColor");
+                        c.a = alphaValue;
+                        mat.SetColor("_BaseColor", c);
+                    }
                 }
             }
         }

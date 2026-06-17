@@ -375,7 +375,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BottomColor: {r: 0.86401826, g: 0.4198113, b: 1, a: 0}
     - _Bottom_Color: {r: 1, g: 0.5990566, b: 0.7399288, a: 1}
-    - _Color: {r: 1, g: 0.3160377, b: 0.71369004, a: 0.50980395}
+    - _Color: {r: 1, g: 0.31603768, b: 0.71369004, a: 0.7294118}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
