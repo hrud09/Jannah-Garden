@@ -78,6 +78,44 @@ public class AudioManager : MonoBehaviour
             bgmSource.volume = bgmVolume;
             PlayRandomBGM();
         }
+
+        UpdateAudioSettings();
+    }
+
+    // Music mute state
+    public bool IsMusicMuted
+    {
+        get { return PlayerPrefs.GetInt("MusicMuted", 0) == 1; }
+        set 
+        { 
+            PlayerPrefs.SetInt("MusicMuted", value ? 1 : 0);
+            PlayerPrefs.Save();
+            UpdateAudioSettings();
+        }
+    }
+
+    // SFX mute state
+    public bool IsSfxMuted
+    {
+        get { return PlayerPrefs.GetInt("SFXMuted", 0) == 1; }
+        set 
+        { 
+            PlayerPrefs.SetInt("SFXMuted", value ? 1 : 0);
+            PlayerPrefs.Save();
+            UpdateAudioSettings();
+        }
+    }
+
+    public void UpdateAudioSettings()
+    {
+        if (bgmSource != null)
+        {
+            bgmSource.mute = IsMusicMuted;
+        }
+        if (sfxSource != null)
+        {
+            sfxSource.mute = IsSfxMuted;
+        }
     }
 
     void Update()

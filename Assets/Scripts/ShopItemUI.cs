@@ -19,9 +19,9 @@ public class ShopItemUI : MonoBehaviour
 
     [Header("Economy Visuals")]
     [Tooltip("Colour of the price label when the player CAN afford the item.")]
-    public Color affordableColor = new Color(1f, 0.85f, 0.1f); // gold
+    public Color affordableColor = Color.green; // green
     [Tooltip("Colour of the price label when the player CANNOT afford the item.")]
-    public Color unaffordableColor = new Color(0.9f, 0.2f, 0.2f); // red
+    public Color unaffordableColor = Color.red; // red
 
 
     public ShopItemData ItemData { get; private set; }
@@ -126,6 +126,7 @@ public class ShopItemUI : MonoBehaviour
     private void OnEnable()
     {
         NoorCoinManager.OnBalanceChanged += OnBalanceChanged;
+        RefreshAffordabilityVisual();
     }
 
     private void OnDisable()

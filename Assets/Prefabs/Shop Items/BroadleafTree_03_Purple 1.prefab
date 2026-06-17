@@ -66,8 +66,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a2776aad3b57804994baf2fcd717291, type: 2}
-  - {fileID: 2100000, guid: 60af0aa251dace2439770889908075fa, type: 2}
+  - {fileID: 2100000, guid: 37856c54bc79efe4eb5ccb7242c3a2ab, type: 2}
+  - {fileID: 2100000, guid: 6d4d690123e6ead43b39331bba2cfa90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,8 +157,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a2776aad3b57804994baf2fcd717291, type: 2}
-  - {fileID: 2100000, guid: 60af0aa251dace2439770889908075fa, type: 2}
+  - {fileID: 2100000, guid: 37856c54bc79efe4eb5ccb7242c3a2ab, type: 2}
+  - {fileID: 2100000, guid: 6d4d690123e6ead43b39331bba2cfa90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -312,6 +312,10 @@ MonoBehaviour:
   prefabName: 
   timerText: {fileID: 280452262714342166}
   timerHolder: {fileID: 1251889581588919670}
+  itemRenderers:
+  - {fileID: 8115052526451490356}
+  - {fileID: 801423661500809194}
+  - {fileID: 4875719113966068432}
 --- !u!1 &4852493094797846282
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,8 +382,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a2776aad3b57804994baf2fcd717291, type: 2}
-  - {fileID: 2100000, guid: 60af0aa251dace2439770889908075fa, type: 2}
+  - {fileID: 2100000, guid: 37856c54bc79efe4eb5ccb7242c3a2ab, type: 2}
+  - {fileID: 2100000, guid: 6d4d690123e6ead43b39331bba2cfa90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

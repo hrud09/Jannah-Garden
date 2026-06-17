@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -427}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 0, y: 91.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &908342283788943183
@@ -408,5 +408,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToastMessageManager
   messageHolder: {fileID: 6698173638702989947}
   messageText: {fileID: 3210797222117742113}
-  messageHolderRisingY: -427
+  messageHolderRisingY: -450
   messageHolderOffscreenY: -763

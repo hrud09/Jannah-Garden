@@ -20,6 +20,6 @@ MonoBehaviour:
   itemID: 60583ef86b7346b3a468735d4f892fa8
   requiredXPLevel: 1
   itemCategory: 1
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 4753570097628809075, guid: 7cc39a5e6a1890441974ee9e456fa8ef, type: 3}
   itemPlacementModelPrefab: {fileID: 287050275439249577, guid: 7f627acbb9e40b644a8438cc17e6d334, type: 3}
   placementTimerDuration: 360

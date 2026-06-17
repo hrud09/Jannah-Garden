@@ -17,6 +17,9 @@ public class PlaceableItem : MonoBehaviour
     public TMP_Text timerText;
     public GameObject timerHolder;
 
+    [Header("Renderers")]
+    public Renderer[] itemRenderers;
+
     private bool isTracking = false;
     private bool alreadyCompletedOnStart = false;
 
@@ -93,6 +96,11 @@ public class PlaceableItem : MonoBehaviour
             {
                 timerHolder.SetActive(false);
             }
+            UpdateSaturation(1f);
+        }
+        else if (isTracking)
+        {
+            UpdateSaturation(0f);
         }
     }
 
@@ -142,6 +150,8 @@ public class PlaceableItem : MonoBehaviour
             remainingDuration = 0f;
             isTracking = false; // Stop tracking so we don't repeatedly trigger this
 
+            UpdateSaturation(1f);
+
             if (timerText != null)
             {
                 timerText.text = "Completed!";
@@ -158,6 +168,16 @@ public class PlaceableItem : MonoBehaviour
                 int seconds = Mathf.FloorToInt(remainingDuration % 60f);
                 timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
+
+            // Update stepped saturation
+            float timeRatio = 1f - (remainingDuration / placementDuration);
+            float currentSat = 1f;
+            if (timeRatio < 0.25f) currentSat = 0f;
+            else if (timeRatio < 0.5f) currentSat = 0.25f;
+            else if (timeRatio < 0.75f) currentSat = 0.5f;
+            else if (timeRatio < 1f) currentSat = 0.75f;
+
+            UpdateSaturation(currentSat);
         }
     }
 
@@ -168,6 +188,27 @@ public class PlaceableItem : MonoBehaviour
         if (timerHolder != null)
         {
             timerHolder.SetActive(false);
+        }
+    }
+
+    private void UpdateSaturation(float saturationValue)
+    {
+        if (itemRenderers == null || itemRenderers.Length == 0) return;
+
+        foreach (var renderer in itemRenderers)
+        {
+            if (renderer == null) continue;
+            
+            // Using .materials creates instances of the materials if not already created,
+            // which is safe here so we don't modify shared materials for other objects.
+            foreach (var mat in renderer.materials)
+            {
+                if (mat != null && mat.HasProperty("_Saturation"))
+                {
+                    mat.EnableKeyword("BASE_SATURATION");
+                    mat.SetFloat("_Saturation", saturationValue);
+                }
+            }
         }
     }
 }

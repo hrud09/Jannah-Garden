@@ -332,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2702269553845717861, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 23.966
+      value: 30.3578
       objectReference: {fileID: 0}
     - target: {fileID: 2702269553845717861, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -428,7 +428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2980857568144182407, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_fontSize
-      value: 20.95
+      value: 26.55
       objectReference: {fileID: 0}
     - target: {fileID: 3600092975968949277, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_Sprite
@@ -443,12 +443,32 @@ PrefabInstance:
       value: 54.977
       objectReference: {fileID: 0}
     - target: {fileID: 4824098698454268105, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 28.1841
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824098698454268105, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -55.475
       objectReference: {fileID: 0}
+    - target: {fileID: 4824098698454268105, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.43712
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363777858241875102, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
+      propertyPath: m_fontSize
+      value: 24.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023732550634309109, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 91.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023732550634309109, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 38.8554
+      objectReference: {fileID: 0}
     - target: {fileID: 9023732550634309109, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 49.9
+      value: 54.296
       objectReference: {fileID: 0}
     - target: {fileID: 9023732550634309109, guid: 1c046684388243c47b26b1c9d025e3a1, type: 3}
       propertyPath: m_AnchoredPosition.y
