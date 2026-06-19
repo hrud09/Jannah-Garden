@@ -23,16 +23,40 @@ public class PlaceableItem : MonoBehaviour
     [Header("Tree Settings")]
     public bool isTree = false;
 
+    [Header("GFX Reference (Optional)")]
+    public Transform itemGFX;
+
     private bool isTracking = false;
     private bool alreadyCompletedOnStart = false;
-    private bool isStartupGlooming = false;
 
     private Vector3 initialScale;
+    public Vector3 InitialScale => initialScale;
 
     private void Awake()
     {
+        // Automatically add collider if not found
+        if (GetComponent<Collider>() == null)
+        {
+            gameObject.AddComponent<BoxCollider>();
+        }
+
         // Capture the prefab's original scale before any tracking logic modifies it
-        initialScale = transform.localScale;
+        initialScale = (itemGFX != null) ? itemGFX.localScale : transform.localScale;
+    }
+
+    /// <summary>
+    /// Helper method to set the scale multiplier on the itemGFX if assigned, otherwise the root transform.
+    /// </summary>
+    public void SetScaleMultiplier(float multiplier)
+    {
+        if (itemGFX != null)
+        {
+            itemGFX.localScale = initialScale * multiplier;
+        }
+        else
+        {
+            transform.localScale = initialScale * multiplier;
+        }
     }
 
     /// <summary>
@@ -109,21 +133,14 @@ public class PlaceableItem : MonoBehaviour
                 timerHolder.SetActive(false);
             }
             
-            if (isTree && Time.timeSinceLevelLoad < 30f)
-            {
-                isStartupGlooming = true;
-            }
-            else
-            {
-                UpdateSaturation(1f, -1);
-            }
+            UpdateSaturation(1f, -1);
             
-            transform.localScale = initialScale;
+            SetScaleMultiplier(1f);
         }
         else if (isTracking)
         {
             UpdateSaturation(0f, -1);
-            transform.localScale = initialScale * 0.5f;
+            SetScaleMultiplier(0.2f);
         }
     }
 
@@ -164,29 +181,6 @@ public class PlaceableItem : MonoBehaviour
 
     private void Update()
     {
-        if (isStartupGlooming)
-        {
-            float t = Time.timeSinceLevelLoad;
-            if (t < 20f)
-            {
-                UpdateSaturation(0f, -1);
-                UpdateMaterialAlpha(0f, 1);
-            }
-            else if (t < 30f)
-            {
-                float ratio = (t - 20f) / 10f;
-                UpdateSaturation(ratio, -1);
-                UpdateMaterialAlpha(ratio * (180f / 255f), 1);
-            }
-            else
-            {
-                UpdateSaturation(1f, -1);
-                UpdateMaterialAlpha(180f / 255f, 1);
-                isStartupGlooming = false;
-            }
-            return;
-        }
-
         if (!isTracking) return;
 
         remainingDuration -= Time.deltaTime;
@@ -197,7 +191,7 @@ public class PlaceableItem : MonoBehaviour
             isTracking = false; // Stop tracking so we don't repeatedly trigger this
 
             UpdateSaturation(1f, -1);
-            transform.localScale = initialScale;
+            SetScaleMultiplier(1f);
 
             if (timerText != null)
             {
@@ -242,8 +236,8 @@ public class PlaceableItem : MonoBehaviour
                 UpdateSaturation(currentSat, -1);
             }
 
-            // Update smooth gradual scale from 0.5x to 1.0x
-            transform.localScale = Vector3.Lerp(initialScale * 0.5f, initialScale, timeRatio);
+            // Update smooth gradual scale from 0.2x to 1.0x
+            SetScaleMultiplier(Mathf.Lerp(0.2f, 1.0f, timeRatio));
         }
     }
 
@@ -257,7 +251,7 @@ public class PlaceableItem : MonoBehaviour
         }
     }
 
-    private void UpdateSaturation(float saturationValue, int materialIndex = -1)
+    public void UpdateSaturation(float saturationValue, int materialIndex = -1)
     {
         if (itemRenderers == null || itemRenderers.Length == 0) return;
 
@@ -277,39 +271,6 @@ public class PlaceableItem : MonoBehaviour
                 {
                     mat.EnableKeyword("BASE_SATURATION");
                     mat.SetFloat("_Saturation", saturationValue);
-                }
-            }
-        }
-    }
-
-    private void UpdateMaterialAlpha(float alphaValue, int materialIndex = -1)
-    {
-        if (itemRenderers == null || itemRenderers.Length == 0) return;
-
-        foreach (var renderer in itemRenderers)
-        {
-            if (renderer == null) continue;
-            
-            Material[] mats = renderer.materials;
-            for (int i = 0; i < mats.Length; i++)
-            {
-                if (materialIndex != -1 && i != materialIndex) continue;
-
-                Material mat = mats[i];
-                if (mat != null)
-                {
-                    if (mat.HasProperty("_Color"))
-                    {
-                        Color c = mat.GetColor("_Color");
-                        c.a = alphaValue;
-                        mat.SetColor("_Color", c);
-                    }
-                    else if (mat.HasProperty("_BaseColor"))
-                    {
-                        Color c = mat.GetColor("_BaseColor");
-                        c.a = alphaValue;
-                        mat.SetColor("_BaseColor", c);
-                    }
                 }
             }
         }

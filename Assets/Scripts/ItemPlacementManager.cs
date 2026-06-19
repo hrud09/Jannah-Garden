@@ -91,7 +91,7 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingRewardItemData = null;
         InternalPreparePlacement(
             itemData.itemPrefab, 
-            itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
+            itemData.itemPrefab, 
             itemData.placementTimerDuration
         );
     }
@@ -103,7 +103,7 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingRewardItemData = itemData;
         InternalPreparePlacement(
             itemData.itemPrefab, 
-            itemData.itemPlacementModelPrefab != null ? itemData.itemPlacementModelPrefab : itemData.itemPrefab, 
+            itemData.itemPrefab, 
             itemData.placementTimerDuration
         );
     }
@@ -127,6 +127,11 @@ public class ItemPlacementManager : MonoBehaviour
         if (placeable != null)
         {
             placeable.enabled = false;
+
+            // Make sure the preview starts unsaturated
+            placeable.UpdateSaturation(0f, -1);
+            // Apply starting scale of 0.2x to the preview model to match the initial placement scale
+            placeable.SetScaleMultiplier(0.2f);
 
             // Show the timer label immediately so the player can see the
             // duration before confirming placement.
