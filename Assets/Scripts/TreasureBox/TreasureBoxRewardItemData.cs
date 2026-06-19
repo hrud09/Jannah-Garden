@@ -39,4 +39,43 @@ public class TreasureBoxRewardItemData : ScriptableObject
 
     [Header("Puzzle Data")]
     public GameObject[] puzzlePieces;
+
+    [Header("Calculated Rarity")]
+    public ItemRarity calculatedRarity;
+
+    private void OnValidate()
+    {
+        calculatedRarity = GetRarity();
+    }
+
+    public ItemRarity GetRarity()
+    {
+        if (unlockXPLevel <= 5) return ItemRarity.Common;
+        if (unlockXPLevel <= 10) return ItemRarity.Uncommon;
+        if (unlockXPLevel <= 15) return ItemRarity.Rare;
+        if (unlockXPLevel <= 20) return ItemRarity.Epic;
+        return ItemRarity.Legendary;
+    }
+
+    public Color GetRarityColor()
+    {
+        switch (GetRarity())
+        {
+            case ItemRarity.Common: return new Color(0.6f, 0.6f, 0.6f); // Gray
+            case ItemRarity.Uncommon: return new Color(0.3f, 0.8f, 0.3f); // Green
+            case ItemRarity.Rare: return new Color(0.2f, 0.6f, 1f); // Blue
+            case ItemRarity.Epic: return new Color(0.7f, 0.3f, 1f); // Purple
+            case ItemRarity.Legendary: return new Color(1f, 0.7f, 0.1f); // Orange
+            default: return Color.white;
+        }
+    }
+}
+
+public enum ItemRarity
+{
+    Common,
+    Uncommon,
+    Rare,
+    Epic,
+    Legendary
 }

@@ -10,6 +10,8 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text descriptionText;
     public Image rewardIcon;
+    public Image rarityBgImage;
+    public TMP_Text rarityText;
 
     [Header("Buttons")]
     public Button watchAdButton;
@@ -63,12 +65,24 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
                     rewardIcon.sprite = reward.itemIcon;
                     rewardIcon.gameObject.SetActive(reward.itemIcon != null);
                 }
+                if (rarityBgImage != null)
+                {
+                    rarityBgImage.color = reward.GetRarityColor();
+                    rarityBgImage.gameObject.SetActive(true);
+                }
+                if (rarityText != null)
+                {
+                    rarityText.text = reward.GetRarity().ToString();
+                    rarityText.gameObject.SetActive(true);
+                }
             }
             else
             {
                 if (nameText != null) nameText.text = tier.ToString() + " Box";
                 if (descriptionText != null) descriptionText.text = "Open this box to get rewards!";
                 if (rewardIcon != null) rewardIcon.gameObject.SetActive(false);
+                if (rarityBgImage != null) rarityBgImage.gameObject.SetActive(false);
+                if (rarityText != null) rarityText.gameObject.SetActive(false);
             }
         }
 
