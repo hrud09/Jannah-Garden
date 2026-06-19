@@ -51,7 +51,11 @@ public class PlayersInteractionManager : MonoBehaviour
             TreasureBoxTier tier = currentTargetBox.tier;
             int slot = currentTargetBox.slotIndex;
 
-            if (AdsManager.Instance != null)
+            if (TreasureBoxConfirmationPanel.Instance != null)
+            {
+                TreasureBoxConfirmationPanel.Instance.Show(tier, slot);
+            }
+            else if (AdsManager.Instance != null)
             {
                 AdsManager.Instance.ShowFakeRewardedAd(() => 
                 {
