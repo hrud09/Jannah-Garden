@@ -14,7 +14,7 @@ public class PlaceableItem : MonoBehaviour
     public string prefabName;
 
     [Header("UI References (Optional)")]
-    public TMP_Text timerText;
+    private TMP_Text timerText;
     public GameObject timerHolder;
 
     [Header("Renderers")]
@@ -42,6 +42,8 @@ public class PlaceableItem : MonoBehaviour
 
         // Capture the prefab's original scale before any tracking logic modifies it
         initialScale = (itemGFX != null) ? itemGFX.localScale : transform.localScale;
+
+        if(timerHolder) timerText = timerHolder.GetComponentInChildren<TMP_Text>();
     }
 
     /// <summary>
