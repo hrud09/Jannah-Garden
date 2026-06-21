@@ -1,0 +1,734 @@
+fileFormatVersion: 2
+guid: 69e966589202b13419a03af8b183341e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shop Item Icons_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1061
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d87d0ec30a9acc478a5ab4b2d3ed366
+      internalID: -1287048862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_1
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1073
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a8ce64de4dd954f8026234bfd271d9
+      internalID: 1962273046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_2
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 1075
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059b051048eedfa4298561b68845e3bf
+      internalID: -2075916650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_3
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1077
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61831bfecbb4cb04a9804809d5491c1b
+      internalID: 2071542909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_4
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1086
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8591a0ccf1db745991e45c81713d53
+      internalID: 854593555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_5
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1079
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54952fb2a4dbcc3448a339f74a55df40
+      internalID: -1086545813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_6
+      rect:
+        serializedVersion: 2
+        x: 2375
+        y: 1077
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0902cca4431ad4fb5574b6eab085eb
+      internalID: 447974139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 618
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f4cc8c50c6ff24dad6cca9b957f091
+      internalID: 1142134259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_8
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 609
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b75482dd746df41b7fe82b659babd5
+      internalID: -1172806135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_9
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 607
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9223571ca2ae8ce40945f0be1e501cc8
+      internalID: -24150490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_10
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 607
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3c2e54c54565b4da0a0c726f71df7a
+      internalID: 1513011804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_11
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 621
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbe1f83d943ec74281869af69d4083f
+      internalID: 1575174862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_12
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 619
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53916b7b5959aaa4e9c0bf4b967c5788
+      internalID: -1395557845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_13
+      rect:
+        serializedVersion: 2
+        x: 2391
+        y: 628
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca0acc471ce6df43994e4782631baba
+      internalID: -1577490714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 161
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b49660958b4224a9095406e14a567d
+      internalID: -918069050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 161
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0079570f8c31542afff0d14946fdda
+      internalID: 949291326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_16
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 161
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbf5030b600eaa49bf8790e4552b13c
+      internalID: 1840780794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_17
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 149
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f35889e3affd242a8294795c89cc40
+      internalID: 1455838293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Item Icons_18
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 151
+        width: 272
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352545531972ae14594e537c0fc690a8
+      internalID: 2123691343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ca3a5dbfaf72bd046a8998fa0cbf2673
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Shop Item Icons_0: -1287048862
+      Shop Item Icons_1: 1962273046
+      Shop Item Icons_10: 1513011804
+      Shop Item Icons_11: 1575174862
+      Shop Item Icons_12: -1395557845
+      Shop Item Icons_13: -1577490714
+      Shop Item Icons_14: -918069050
+      Shop Item Icons_15: 949291326
+      Shop Item Icons_16: 1840780794
+      Shop Item Icons_17: 1455838293
+      Shop Item Icons_18: 2123691343
+      Shop Item Icons_2: -2075916650
+      Shop Item Icons_3: 2071542909
+      Shop Item Icons_4: 854593555
+      Shop Item Icons_5: -1086545813
+      Shop Item Icons_6: 447974139
+      Shop Item Icons_7: 1142134259
+      Shop Item Icons_8: -1172806135
+      Shop Item Icons_9: -24150490
+      Untitled - June 21, 2026 at 19.26.14_0: -1638479882
+      Untitled - June 21, 2026 at 19.26.14_1: 293562680
+      Untitled - June 21, 2026 at 19.26.14_10: -882163201
+      Untitled - June 21, 2026 at 19.26.14_100: -1610201213
+      Untitled - June 21, 2026 at 19.26.14_101: -1133634314
+      Untitled - June 21, 2026 at 19.26.14_102: 384393816
+      Untitled - June 21, 2026 at 19.26.14_103: 848000704
+      Untitled - June 21, 2026 at 19.26.14_104: -1941080118
+      Untitled - June 21, 2026 at 19.26.14_105: 1217295110
+      Untitled - June 21, 2026 at 19.26.14_106: -53949145
+      Untitled - June 21, 2026 at 19.26.14_107: 1768600718
+      Untitled - June 21, 2026 at 19.26.14_108: -668126864
+      Untitled - June 21, 2026 at 19.26.14_109: 1146042390
+      Untitled - June 21, 2026 at 19.26.14_11: -746423336
+      Untitled - June 21, 2026 at 19.26.14_110: -83367335
+      Untitled - June 21, 2026 at 19.26.14_111: 1528680778
+      Untitled - June 21, 2026 at 19.26.14_112: -440216952
+      Untitled - June 21, 2026 at 19.26.14_113: 756940031
+      Untitled - June 21, 2026 at 19.26.14_114: -755825245
+      Untitled - June 21, 2026 at 19.26.14_115: 1176581998
+      Untitled - June 21, 2026 at 19.26.14_116: -415420674
+      Untitled - June 21, 2026 at 19.26.14_117: -602800129
+      Untitled - June 21, 2026 at 19.26.14_118: -1026762685
+      Untitled - June 21, 2026 at 19.26.14_119: -1980735139
+      Untitled - June 21, 2026 at 19.26.14_12: -1089667940
+      Untitled - June 21, 2026 at 19.26.14_120: -1145960862
+      Untitled - June 21, 2026 at 19.26.14_121: -820632141
+      Untitled - June 21, 2026 at 19.26.14_122: 1703884733
+      Untitled - June 21, 2026 at 19.26.14_123: 163576061
+      Untitled - June 21, 2026 at 19.26.14_124: 1424516205
+      Untitled - June 21, 2026 at 19.26.14_125: -152791139
+      Untitled - June 21, 2026 at 19.26.14_126: 2012296472
+      Untitled - June 21, 2026 at 19.26.14_127: -1259396785
+      Untitled - June 21, 2026 at 19.26.14_128: -74721683
+      Untitled - June 21, 2026 at 19.26.14_129: -442376832
+      Untitled - June 21, 2026 at 19.26.14_13: -555049591
+      Untitled - June 21, 2026 at 19.26.14_130: -2134254106
+      Untitled - June 21, 2026 at 19.26.14_131: 650405426
+      Untitled - June 21, 2026 at 19.26.14_132: 1684955258
+      Untitled - June 21, 2026 at 19.26.14_133: -2037079881
+      Untitled - June 21, 2026 at 19.26.14_134: -2142950335
+      Untitled - June 21, 2026 at 19.26.14_135: -182016649
+      Untitled - June 21, 2026 at 19.26.14_136: -597947696
+      Untitled - June 21, 2026 at 19.26.14_137: -114845556
+      Untitled - June 21, 2026 at 19.26.14_138: -1076868765
+      Untitled - June 21, 2026 at 19.26.14_14: 591432869
+      Untitled - June 21, 2026 at 19.26.14_15: 940954587
+      Untitled - June 21, 2026 at 19.26.14_16: -648100831
+      Untitled - June 21, 2026 at 19.26.14_17: 89416785
+      Untitled - June 21, 2026 at 19.26.14_18: -231409026
+      Untitled - June 21, 2026 at 19.26.14_19: -1140044018
+      Untitled - June 21, 2026 at 19.26.14_2: -1470667040
+      Untitled - June 21, 2026 at 19.26.14_20: -1023086862
+      Untitled - June 21, 2026 at 19.26.14_21: -1905952417
+      Untitled - June 21, 2026 at 19.26.14_22: -219195834
+      Untitled - June 21, 2026 at 19.26.14_23: 1316997936
+      Untitled - June 21, 2026 at 19.26.14_24: -1910631706
+      Untitled - June 21, 2026 at 19.26.14_25: 319114300
+      Untitled - June 21, 2026 at 19.26.14_26: 1080984469
+      Untitled - June 21, 2026 at 19.26.14_27: 1826528354
+      Untitled - June 21, 2026 at 19.26.14_28: 698745250
+      Untitled - June 21, 2026 at 19.26.14_29: -49588955
+      Untitled - June 21, 2026 at 19.26.14_3: -1717198058
+      Untitled - June 21, 2026 at 19.26.14_30: -1178342209
+      Untitled - June 21, 2026 at 19.26.14_31: -736785001
+      Untitled - June 21, 2026 at 19.26.14_32: -1463672423
+      Untitled - June 21, 2026 at 19.26.14_33: 826717278
+      Untitled - June 21, 2026 at 19.26.14_34: -62387907
+      Untitled - June 21, 2026 at 19.26.14_35: 1426790896
+      Untitled - June 21, 2026 at 19.26.14_36: -466710586
+      Untitled - June 21, 2026 at 19.26.14_37: 313307474
+      Untitled - June 21, 2026 at 19.26.14_38: -1621663104
+      Untitled - June 21, 2026 at 19.26.14_39: -557109752
+      Untitled - June 21, 2026 at 19.26.14_4: 1278515643
+      Untitled - June 21, 2026 at 19.26.14_40: -1916335015
+      Untitled - June 21, 2026 at 19.26.14_41: -1419396353
+      Untitled - June 21, 2026 at 19.26.14_42: -1926485365
+      Untitled - June 21, 2026 at 19.26.14_43: -1731344139
+      Untitled - June 21, 2026 at 19.26.14_44: 385274951
+      Untitled - June 21, 2026 at 19.26.14_45: 921331647
+      Untitled - June 21, 2026 at 19.26.14_46: 1960840757
+      Untitled - June 21, 2026 at 19.26.14_47: 1875249165
+      Untitled - June 21, 2026 at 19.26.14_48: -323446904
+      Untitled - June 21, 2026 at 19.26.14_49: 620899525
+      Untitled - June 21, 2026 at 19.26.14_5: -1979370500
+      Untitled - June 21, 2026 at 19.26.14_50: -2024418305
+      Untitled - June 21, 2026 at 19.26.14_51: -1231942625
+      Untitled - June 21, 2026 at 19.26.14_52: -1445934014
+      Untitled - June 21, 2026 at 19.26.14_53: -1995482366
+      Untitled - June 21, 2026 at 19.26.14_54: -48772689
+      Untitled - June 21, 2026 at 19.26.14_55: -303739105
+      Untitled - June 21, 2026 at 19.26.14_56: -1943617632
+      Untitled - June 21, 2026 at 19.26.14_57: -756374234
+      Untitled - June 21, 2026 at 19.26.14_58: 903103635
+      Untitled - June 21, 2026 at 19.26.14_59: 1388452827
+      Untitled - June 21, 2026 at 19.26.14_6: 1923810094
+      Untitled - June 21, 2026 at 19.26.14_60: 972746978
+      Untitled - June 21, 2026 at 19.26.14_61: 92149862
+      Untitled - June 21, 2026 at 19.26.14_62: -600868849
+      Untitled - June 21, 2026 at 19.26.14_63: 513083232
+      Untitled - June 21, 2026 at 19.26.14_64: -1530755253
+      Untitled - June 21, 2026 at 19.26.14_65: -339239842
+      Untitled - June 21, 2026 at 19.26.14_66: 2116776727
+      Untitled - June 21, 2026 at 19.26.14_67: 1957209117
+      Untitled - June 21, 2026 at 19.26.14_68: 2603047
+      Untitled - June 21, 2026 at 19.26.14_69: -336688801
+      Untitled - June 21, 2026 at 19.26.14_7: -863295496
+      Untitled - June 21, 2026 at 19.26.14_70: -793214058
+      Untitled - June 21, 2026 at 19.26.14_71: 1099791075
+      Untitled - June 21, 2026 at 19.26.14_72: 1706782652
+      Untitled - June 21, 2026 at 19.26.14_73: -1803734265
+      Untitled - June 21, 2026 at 19.26.14_74: 45991971
+      Untitled - June 21, 2026 at 19.26.14_75: 886113392
+      Untitled - June 21, 2026 at 19.26.14_76: -1719010701
+      Untitled - June 21, 2026 at 19.26.14_77: 944655406
+      Untitled - June 21, 2026 at 19.26.14_78: 1173959717
+      Untitled - June 21, 2026 at 19.26.14_79: 1699216098
+      Untitled - June 21, 2026 at 19.26.14_8: -1974491450
+      Untitled - June 21, 2026 at 19.26.14_80: 1346471390
+      Untitled - June 21, 2026 at 19.26.14_81: -990272825
+      Untitled - June 21, 2026 at 19.26.14_82: -893596160
+      Untitled - June 21, 2026 at 19.26.14_83: -1065082442
+      Untitled - June 21, 2026 at 19.26.14_84: 1679490415
+      Untitled - June 21, 2026 at 19.26.14_85: -202266470
+      Untitled - June 21, 2026 at 19.26.14_86: 676740477
+      Untitled - June 21, 2026 at 19.26.14_87: -133266962
+      Untitled - June 21, 2026 at 19.26.14_88: -101795534
+      Untitled - June 21, 2026 at 19.26.14_89: 74702458
+      Untitled - June 21, 2026 at 19.26.14_9: 1909531149
+      Untitled - June 21, 2026 at 19.26.14_90: 594518578
+      Untitled - June 21, 2026 at 19.26.14_91: -173181624
+      Untitled - June 21, 2026 at 19.26.14_92: 1770769051
+      Untitled - June 21, 2026 at 19.26.14_93: -1135335346
+      Untitled - June 21, 2026 at 19.26.14_94: -1029802695
+      Untitled - June 21, 2026 at 19.26.14_95: -1560206780
+      Untitled - June 21, 2026 at 19.26.14_96: -98367932
+      Untitled - June 21, 2026 at 19.26.14_97: 214930934
+      Untitled - June 21, 2026 at 19.26.14_98: -1451122798
+      Untitled - June 21, 2026 at 19.26.14_99: -744718025
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

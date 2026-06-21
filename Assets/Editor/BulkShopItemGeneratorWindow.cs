@@ -16,6 +16,7 @@ public class BulkShopItemGeneratorWindow : EditorWindow
         public ShopItemCategory category;
         public int price;
         public int requiredXP;
+        public Sprite icon;
     }
 
     private string prefabFolder = "Assets/Prefabs/Shop Items";
@@ -65,10 +66,27 @@ public class BulkShopItemGeneratorWindow : EditorWindow
 
             int price = existingData != null ? existingData.noorCoinCost : defaultPrice;
             int xpLevel = existingData != null ? existingData.requiredXPLevel : defaultXPLevel;
+            Sprite icon = existingData != null ? existingData.itemIcon : null;
             if (existingData != null)
             {
                 category = existingData.itemCategory;
                 cleanName = existingData.itemName;
+            }
+            else
+            {
+                // Try to find a matching icon in Assets/2D Assets/Icons
+                string possibleIconPath = $"Assets/2D Assets/Icons/{prefab.name}.png";
+                icon = AssetDatabase.LoadAssetAtPath<Sprite>(possibleIconPath);
+                if (icon == null)
+                {
+                    possibleIconPath = $"Assets/2D Assets/Icons/{cleanName.Replace(" ", "_")}.png";
+                    icon = AssetDatabase.LoadAssetAtPath<Sprite>(possibleIconPath);
+                }
+                if (icon == null)
+                {
+                    possibleIconPath = $"Assets/2D Assets/Icons/{cleanName}.png";
+                    icon = AssetDatabase.LoadAssetAtPath<Sprite>(possibleIconPath);
+                }
             }
 
             prefabItems.Add(new PrefabItemConfig
@@ -78,7 +96,8 @@ public class BulkShopItemGeneratorWindow : EditorWindow
                 cleanName = cleanName,
                 category = category,
                 price = price,
-                requiredXP = xpLevel
+                requiredXP = xpLevel,
+                icon = icon
             });
         }
     }
@@ -131,6 +150,7 @@ public class BulkShopItemGeneratorWindow : EditorWindow
         EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
         GUILayout.Label("Gen", GUILayout.Width(35));
         GUILayout.Label("Prefab Name", GUILayout.Width(150));
+        GUILayout.Label("Icon", GUILayout.Width(100));
         GUILayout.Label("Display Name", GUILayout.Width(150));
         GUILayout.Label("Category", GUILayout.Width(100));
         GUILayout.Label("Price", GUILayout.Width(60));
@@ -144,6 +164,7 @@ public class BulkShopItemGeneratorWindow : EditorWindow
 
             item.selected = EditorGUILayout.Toggle(item.selected, GUILayout.Width(35));
             EditorGUILayout.LabelField(item.prefab.name, GUILayout.Width(150));
+            item.icon = (Sprite)EditorGUILayout.ObjectField(item.icon, typeof(Sprite), false, GUILayout.Width(100));
             item.cleanName = EditorGUILayout.TextField(item.cleanName, GUILayout.Width(150));
             item.category = (ShopItemCategory)EditorGUILayout.EnumPopup(item.category, GUILayout.Width(100));
             item.price = EditorGUILayout.IntField(item.price, GUILayout.Width(60));
@@ -215,6 +236,7 @@ public class BulkShopItemGeneratorWindow : EditorWindow
                 itemData.requiredXPLevel = item.requiredXP;
             }
 
+            itemData.itemIcon = item.icon;
             itemData.itemPrefab = item.prefab;
 
             if (string.IsNullOrEmpty(itemData.itemID))

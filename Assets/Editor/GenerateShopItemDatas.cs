@@ -64,6 +64,24 @@ public class GenerateShopItemDatas
             itemData.itemCategory = category;
             itemData.itemPrefab = prefab;
 
+            // Try to find a matching icon in Assets/2D Assets/Icons
+            if (itemData.itemIcon == null)
+            {
+                string possibleIconPath = $"Assets/2D Assets/Icons/{prefab.name}.png";
+                Sprite icon = AssetDatabase.LoadAssetAtPath<Sprite>(possibleIconPath);
+                if (icon == null)
+                {
+                    possibleIconPath = $"Assets/2D Assets/Icons/{cleanedName.Replace(" ", "_")}.png";
+                    icon = AssetDatabase.LoadAssetAtPath<Sprite>(possibleIconPath);
+                }
+                if (icon == null)
+                {
+                    possibleIconPath = $"Assets/2D Assets/Icons/{cleanedName}.png";
+                    icon = AssetDatabase.LoadAssetAtPath<Sprite>(possibleIconPath);
+                }
+                itemData.itemIcon = icon;
+            }
+
             // Generate UUID if empty
             if (string.IsNullOrEmpty(itemData.itemID))
             {

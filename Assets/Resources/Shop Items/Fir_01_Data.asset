@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Fir_01_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 1455838293, guid: 69e966589202b13419a03af8b183341e, type: 3}
   itemName: Fir 01
   itemDescription: A unique Fir 01 decoration to personalize and enhance the atmosphere
     of your garden.
