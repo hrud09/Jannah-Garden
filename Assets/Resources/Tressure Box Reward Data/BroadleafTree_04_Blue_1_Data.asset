@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de61916da7098d4382f940459c0d4f5, type: 3}
+  m_Name: BroadleafTree_04_Blue_1_Data
+  m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardItemData
+  itemIcon: {fileID: 2145867861, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+  itemName: Broadleaf Tree 04 Blue
+  itemDescription: 'A special reward item: Broadleaf Tree 04 Blue. Find it to customize
+    your garden!'
+  itemID: 10de1f039f3e42ba960564c1284a2084
+  itemPrefab: {fileID: 4067607638956020432, guid: 5ad052af4362cc249be7df140568cb99, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  itemCategory: 7
+  quantity: 0
+  unlockXPLevel: 1
+  noorCoinAmount: 250
+  placementTimerDuration: 360
+  puzzlePieces: []
+  calculatedRarity: 0

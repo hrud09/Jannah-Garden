@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de61916da7098d4382f940459c0d4f5, type: 3}
+  m_Name: BlossomTree_02_Data
+  m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardItemData
+  itemIcon: {fileID: 1293285028, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+  itemName: Blossom Tree 02
+  itemDescription: 'A special reward item: Blossom Tree 02. Find it to customize
+    your garden!'
+  itemID: 844bf0963b99496dbd783486e3bf9095
+  itemPrefab: {fileID: 5600971282110277387, guid: 28cb30b20402c9148881d51f5c3ceb5f, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  itemCategory: 5
+  quantity: 0
+  unlockXPLevel: 2
+  noorCoinAmount: 250
+  placementTimerDuration: 360
+  puzzlePieces: []
+  calculatedRarity: 0

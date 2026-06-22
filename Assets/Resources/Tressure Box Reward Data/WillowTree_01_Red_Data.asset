@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de61916da7098d4382f940459c0d4f5, type: 3}
+  m_Name: WillowTree_01_Red_Data
+  m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardItemData
+  itemIcon: {fileID: -1573881193, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+  itemName: Willow Tree 01 Red
+  itemDescription: 'A special reward item: Willow Tree 01 Red. Find it to customize
+    your garden!'
+  itemID: 95cc5cdea5c34ef9b1f591f631367878
+  itemPrefab: {fileID: 5918471257419659846, guid: f5a27b2261923ad458aeaede85c57938, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  itemCategory: 4
+  quantity: 0
+  unlockXPLevel: 1
+  noorCoinAmount: 250
+  placementTimerDuration: 360
+  puzzlePieces: []
+  calculatedRarity: 0
