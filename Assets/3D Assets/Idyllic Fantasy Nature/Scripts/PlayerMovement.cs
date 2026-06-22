@@ -17,8 +17,18 @@ namespace IdyllicFantasyNature
         [Range(1f, 20f)]
         [SerializeField] private float _jumpHeight;
 
+        [Header("Audio Settings")]
+        [SerializeField] private float _walkStepInterval = 0.5f;
+        [Range(0f, 1f)]
+        [SerializeField] private float _footstepVolume = 0.8f;
+        [Range(0f, 1f)]
+        [SerializeField] private float _breathingVolume = 0.4f;
+
         private CharacterController characterController;
-        Vector3 _controllerVelocity;
+        private Vector3 _controllerVelocity;
+        private AudioSource _footstepSource;
+        private AudioSource _breathingSource;
+        private float _footstepTimer;
 
         // Start is called before the first frame update
         void Start()
@@ -28,6 +38,16 @@ namespace IdyllicFantasyNature
             {
                 _joystick = FindObjectOfType<Joystick>();
             }
+
+            // Initialize Audio Sources
+            _footstepSource = gameObject.AddComponent<AudioSource>();
+            _footstepSource.playOnAwake = false;
+            _footstepSource.spatialBlend = 0f; // 2D player audio
+
+            _breathingSource = gameObject.AddComponent<AudioSource>();
+            _breathingSource.playOnAwake = false;
+            _breathingSource.loop = true;
+            _breathingSource.spatialBlend = 0f; // 2D player audio
         }
 
         // Update is called once per frame
@@ -115,6 +135,73 @@ namespace IdyllicFantasyNature
             if (runPressed)
             {
                 characterController.Move(movement * Time.deltaTime * _runMultiplier);
+            }
+
+            // Handle player audio state
+            bool isMoving = (moveX != 0f || moveZ != 0f);
+            bool isRunning = runPressed && isMoving;
+            HandleMovementAudio(isMoving, isRunning);
+        }
+
+        private void HandleMovementAudio(bool isMoving, bool isRunning)
+        {
+            if (AudioManager.Instance == null) return;
+
+            AudioClip walkClip = null;
+            AudioClip runClip = null;
+            AudioClip breathingClip = null;
+
+            if (AudioManager.Instance.sounds != null)
+            {
+                var walkSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Walk);
+                var runSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Run);
+                var breathingSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Breathing);
+
+                if (walkSound != null) walkClip = walkSound.clip;
+                if (runSound != null) runClip = runSound.clip;
+                if (breathingSound != null) breathingClip = breathingSound.clip;
+            }
+
+            if (isMoving)
+            {
+                // Stop breathing
+                if (_breathingSource != null && _breathingSource.isPlaying)
+                {
+                    _breathingSource.Stop();
+                }
+
+                // Handle footsteps timer
+                _footstepTimer += Time.deltaTime;
+                float interval = isRunning ? (_walkStepInterval / 2f) : _walkStepInterval;
+                if (_footstepTimer >= interval)
+                {
+                    _footstepTimer = 0f;
+                    AudioClip clipToPlay = walkClip;
+                    if (clipToPlay != null && _footstepSource != null)
+                    {
+                        _footstepSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f); // slight pitch variation
+                        _footstepSource.PlayOneShot(clipToPlay, _footstepVolume);
+                    }
+                }
+            }
+            else
+            {
+                // Idle - stop footsteps, play breathing
+                _footstepTimer = _walkStepInterval; // Reset so next step triggers immediately when walking starts
+
+                if (breathingClip != null && _breathingSource != null)
+                {
+                    if (!_breathingSource.isPlaying)
+                    {
+                        _breathingSource.clip = breathingClip;
+                        _breathingSource.volume = _breathingVolume;
+                        _breathingSource.Play();
+                    }
+                }
+                else if (_breathingSource != null && _breathingSource.isPlaying)
+                {
+                    _breathingSource.Stop();
+                }
             }
         }
     }

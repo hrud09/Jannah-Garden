@@ -4,7 +4,18 @@ using TMPro;
 
 public class TreasureBoxConfirmationPanel : MonoBehaviour
 {
-    public static TreasureBoxConfirmationPanel Instance { get; private set; }
+    private static TreasureBoxConfirmationPanel _instance;
+    public static TreasureBoxConfirmationPanel Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<TreasureBoxConfirmationPanel>(true);
+            }
+            return _instance;
+        }
+    }
 
     [Header("UI Fields")]
     public TMP_Text nameText;
@@ -23,12 +34,12 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        Instance = this;
+        _instance = this;
 
         // Setup button listeners
         if (watchAdButton != null)

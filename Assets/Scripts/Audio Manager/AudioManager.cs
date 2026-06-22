@@ -21,7 +21,9 @@ public enum SoundEffect
     DhikrClose,
     TreasureBoxShow,
     XPGainChartToggle,
-    ItemInteract
+    ItemInteract,
+    Run,
+    Breathing
 }
 
 [System.Serializable]
