@@ -71,6 +71,9 @@ public class DhikrManager : MonoBehaviour
         currentOrb = orb;
         if (blurredBG != null) blurredBG.SetActive(true);
 
+        if (plusButton != null) plusButton.interactable = true;
+        if (minusButton != null) minusButton.interactable = true;
+
         if (dhikrPanel != null) 
         {
             dhikrPanel.SetActive(true);
@@ -116,6 +119,8 @@ public class DhikrManager : MonoBehaviour
 
     void IncrementCount()
     {
+        if (currentCount >= targetCount) return;
+
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrIncrement);
         currentCount++;
         UpdateCountUI();
@@ -127,10 +132,26 @@ public class DhikrManager : MonoBehaviour
             countTextUI.transform.localScale = Vector3.one;
             countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
         }
+
+        if (currentCount >= targetCount)
+        {
+            if (plusButton != null) plusButton.interactable = false;
+            if (minusButton != null) minusButton.interactable = false;
+            if (submitButton != null) submitButton.interactable = false;
+            StartCoroutine(AutoSubmitRoutine());
+        }
+    }
+
+    private IEnumerator AutoSubmitRoutine()
+    {
+        yield return new WaitForSeconds(2f);
+        SubmitDhikr();
     }
 
     void DecrementCount()
     {
+        if (currentCount >= targetCount) return;
+
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrDecrement);
         if (currentCount > 0)
         {

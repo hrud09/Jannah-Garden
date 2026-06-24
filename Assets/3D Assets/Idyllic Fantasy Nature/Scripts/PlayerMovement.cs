@@ -204,5 +204,43 @@ namespace IdyllicFantasyNature
                 }
             }
         }
+
+        private float _lastBoundaryToastTime = -10f;
+
+        private void ShowBoundaryToast()
+        {
+            if (Time.time - _lastBoundaryToastTime > 3f)
+            {
+                _lastBoundaryToastTime = Time.time;
+                if (ToastMessageManager.Instance != null)
+                {
+                    ToastMessageManager.Instance.ShowToast("Unlocked area ends here. Progress to higher level to unlock new areas.", Color.white);
+                }
+            }
+        }
+
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.gameObject.CompareTag("Boundary"))
+            {
+                ShowBoundaryToast();
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Boundary"))
+            {
+                ShowBoundaryToast();
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Boundary"))
+            {
+                ShowBoundaryToast();
+            }
+        }
     }
 }
