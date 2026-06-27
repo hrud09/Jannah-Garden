@@ -20,6 +20,13 @@ public class InGameShopManager : MonoBehaviour
 {
     public static InGameShopManager Instance { get; private set; }
 
+    // Tutorial Hooks
+    public static event System.Action OnShopOpened;
+    public static event System.Action OnShopClosed;
+    public static event System.Action<ShopItemData> OnShopItemUsed;
+
+    public List<ShopItemUI> GetSpawnedShopItemUIs() => spawnedShopItemUIs;
+
     private void Awake()
     {
         Instance = this;
@@ -262,6 +269,9 @@ public class InGameShopManager : MonoBehaviour
     {
         isOpen = open;
 
+        if (isOpen) OnShopOpened?.Invoke();
+        else OnShopClosed?.Invoke();
+
         // Toggle visibility of the arrows
         if (openArrow != null) openArrow.SetActive(!isOpen);
         if (closeArrow != null) closeArrow.SetActive(isOpen);
@@ -458,6 +468,11 @@ public class InGameShopManager : MonoBehaviour
 
         // Close the shop panel
         SetShopOpen(false, smooth: true);
+
+        if (data != null)
+        {
+            OnShopItemUsed?.Invoke(data);
+        }
 
         // Notify placement manager to prepare placing the item (spawn preview & show Place button)
         if (data != null)

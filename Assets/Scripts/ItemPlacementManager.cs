@@ -24,6 +24,8 @@ public class ItemPlacementManager : MonoBehaviour
 {
     public static ItemPlacementManager Instance { get; private set; }
 
+    public static event System.Action<PlaceableItem> OnItemPlaced;
+
     public RectTransform crosshairRect;
     public TerrainCollider terrainCollider;
     public Button placeButton;
@@ -232,6 +234,8 @@ public class ItemPlacementManager : MonoBehaviour
         // Add to tracking list and save state
         activePlacedItems.Add(placeable);
         SavePlacedItems();
+
+        OnItemPlaced?.Invoke(placeable);
 
         // Award XP if applicable
         if (_pendingRequiredXPLevel > 0 && PlayerXPManager.Instance != null)

@@ -24,6 +24,12 @@ public class JannahGardenManager : MonoBehaviour
 
     void Start()
     {
+        // Dynamically add TutorialManager to ensure it gets instantiated and runs
+        if (GetComponent<TutorialManager>() == null)
+        {
+            gameObject.AddComponent<TutorialManager>();
+        }
+
         if (isDebug)
         {
             if (NoorCoinManager.Instance != null)
