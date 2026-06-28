@@ -9,7 +9,7 @@ public class BulkItemGeneratorWindow : EditorWindow
 {
     // Tab tracking
     private int activeTab = 0;
-    private readonly string[] tabTitles = { "Shop Items Generator", "Treasure Box Rewards" };
+    private readonly string[] tabTitles = { "Shop Items Generator", "Treasure Box Rewards", "Treasure Box Data Editor" };
 
     // --- Tab 1: Shop Items Configuration ---
     [System.Serializable]
@@ -55,6 +55,13 @@ public class BulkItemGeneratorWindow : EditorWindow
     private List<TreasureRewardConfig> rewardItems = new List<TreasureRewardConfig>();
     private Vector2 rewardScrollPos;
 
+    // --- Tab 3: Treasure Box Data Editor ---
+    private TreasureBoxData silverBoxData;
+    private TreasureBoxData goldBoxData;
+    private TreasureBoxData platinumBoxData;
+    private TreasureBoxData diamondBoxData;
+    private Vector2 editorScrollPos;
+
     [MenuItem("Tools/Bulk Item Generator")]
     public static void ShowWindow()
     {
@@ -65,6 +72,16 @@ public class BulkItemGeneratorWindow : EditorWindow
     {
         LoadShopPrefabs();
         LoadRewardPrefabs();
+        LoadTreasureBoxDatas();
+    }
+
+    private void LoadTreasureBoxDatas()
+    {
+        string tbDataFolder = "Assets/Resources/TreasureBoxData";
+        silverBoxData = AssetDatabase.LoadAssetAtPath<TreasureBoxData>($"{tbDataFolder}/TreasureBoxData_Silver.asset");
+        goldBoxData = AssetDatabase.LoadAssetAtPath<TreasureBoxData>($"{tbDataFolder}/TreasureBoxData_Gold.asset");
+        platinumBoxData = AssetDatabase.LoadAssetAtPath<TreasureBoxData>($"{tbDataFolder}/TreasureBoxData_Platinum.asset");
+        diamondBoxData = AssetDatabase.LoadAssetAtPath<TreasureBoxData>($"{tbDataFolder}/TreasureBoxData_Diamond.asset");
     }
 
     private void OnGUI()
@@ -77,9 +94,13 @@ public class BulkItemGeneratorWindow : EditorWindow
         {
             DrawShopGeneratorGUI();
         }
-        else
+        else if (activeTab == 1)
         {
             DrawRewardGeneratorGUI();
+        }
+        else
+        {
+            DrawBoxDataEditorGUI();
         }
     }
 
@@ -493,8 +514,74 @@ public class BulkItemGeneratorWindow : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} TreasureBoxRewardItemData assets.", "OK");
+        AssignRewardsToTreasureBoxData();
+
+        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} TreasureBoxRewardItemData assets and assigned them to TreasureBoxData.", "OK");
         LoadRewardPrefabs();
+    }
+
+    private void AssignRewardsToTreasureBoxData()
+    {
+        string tbDataFolder = "Assets/Resources/TreasureBoxData";
+        if (!AssetDatabase.IsValidFolder(tbDataFolder))
+        {
+            Debug.LogWarning($"[BulkItemGeneratorWindow] TreasureBoxData folder not found at: {tbDataFolder}");
+            return;
+        }
+
+        // Find all TreasureBoxRewardItemData assets in the rewardOutputFolder
+        string[] rewardItemGuids = AssetDatabase.FindAssets("t:TreasureBoxRewardItemData", new[] { rewardOutputFolder });
+        
+        List<TreasureBoxRewardItemData> silverRewards = new List<TreasureBoxRewardItemData>();
+        List<TreasureBoxRewardItemData> goldRewards = new List<TreasureBoxRewardItemData>();
+        List<TreasureBoxRewardItemData> platinumRewards = new List<TreasureBoxRewardItemData>();
+        List<TreasureBoxRewardItemData> diamondRewards = new List<TreasureBoxRewardItemData>();
+
+        foreach (string guid in rewardItemGuids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            TreasureBoxRewardItemData rewardItem = AssetDatabase.LoadAssetAtPath<TreasureBoxRewardItemData>(path);
+            if (rewardItem == null) continue;
+
+            switch (rewardItem.itemCategory)
+            {
+                case ShopItemCategory.Silver:
+                    silverRewards.Add(rewardItem);
+                    break;
+                case ShopItemCategory.Gold:
+                    goldRewards.Add(rewardItem);
+                    break;
+                case ShopItemCategory.Platinum:
+                    platinumRewards.Add(rewardItem);
+                    break;
+                case ShopItemCategory.Diamond:
+                    diamondRewards.Add(rewardItem);
+                    break;
+            }
+        }
+
+        // Helper function to load TreasureBoxData, assign and save
+        UpdateTierRewards(TreasureBoxTier.Silver, silverRewards, $"{tbDataFolder}/TreasureBoxData_Silver.asset");
+        UpdateTierRewards(TreasureBoxTier.Gold, goldRewards, $"{tbDataFolder}/TreasureBoxData_Gold.asset");
+        UpdateTierRewards(TreasureBoxTier.Platinum, platinumRewards, $"{tbDataFolder}/TreasureBoxData_Platinum.asset");
+        UpdateTierRewards(TreasureBoxTier.Diamond, diamondRewards, $"{tbDataFolder}/TreasureBoxData_Diamond.asset");
+
+        AssetDatabase.SaveAssets();
+    }
+
+    private void UpdateTierRewards(TreasureBoxTier tier, List<TreasureBoxRewardItemData> rewards, string assetPath)
+    {
+        TreasureBoxData tbData = AssetDatabase.LoadAssetAtPath<TreasureBoxData>(assetPath);
+        if (tbData != null)
+        {
+            tbData.exclusiveRewardItems = rewards.ToArray();
+            EditorUtility.SetDirty(tbData);
+            Debug.Log($"[BulkItemGeneratorWindow] Assigned {rewards.Count} items to {tier} TreasureBoxData.");
+        }
+        else
+        {
+            Debug.LogWarning($"[BulkItemGeneratorWindow] TreasureBoxData asset not found at path: {assetPath}");
+        }
     }
 
     // ==========================================
@@ -610,6 +697,95 @@ public class BulkItemGeneratorWindow : EditorWindow
         }
         EditorGUILayout.EndHorizontal();
         return newPath;
+    }
+
+    private void DrawBoxDataEditorGUI()
+    {
+        GUILayout.Label("Treasure Box Data Editor", EditorStyles.boldLabel);
+        EditorGUILayout.Space();
+
+        if (silverBoxData == null || goldBoxData == null || platinumBoxData == null || diamondBoxData == null)
+        {
+            if (GUILayout.Button("Load Treasure Box Data Assets", GUILayout.Height(30)))
+            {
+                LoadTreasureBoxDatas();
+            }
+            EditorGUILayout.HelpBox("Some or all TreasureBoxData assets are missing. Make sure they are located at Assets/Resources/TreasureBoxData/.", MessageType.Warning);
+            return;
+        }
+
+        editorScrollPos = EditorGUILayout.BeginScrollView(editorScrollPos, GUILayout.ExpandHeight(true));
+
+        DrawTierEditor(silverBoxData);
+        EditorGUILayout.Space();
+        DrawTierEditor(goldBoxData);
+        EditorGUILayout.Space();
+        DrawTierEditor(platinumBoxData);
+        EditorGUILayout.Space();
+        DrawTierEditor(diamondBoxData);
+
+        EditorGUILayout.EndScrollView();
+
+        EditorGUILayout.BeginHorizontal();
+        if (GUILayout.Button("Auto-Assign Rewards from Resources Folder", GUILayout.Height(40)))
+        {
+            AssignRewardsToTreasureBoxData();
+            LoadTreasureBoxDatas();
+            EditorUtility.DisplayDialog("Success", "Successfully assigned rewards to respective TreasureBoxData assets from the resources folder.", "OK");
+        }
+        if (GUILayout.Button("Save All Changes", GUILayout.Height(40)))
+        {
+            SaveAllBoxDataChanges();
+        }
+        EditorGUILayout.EndHorizontal();
+    }
+
+    private void DrawTierEditor(TreasureBoxData data)
+    {
+        if (data == null) return;
+
+        GUILayout.BeginVertical(EditorStyles.helpBox);
+        GUILayout.Label($"{data.tier} Box Data Configuration", EditorStyles.boldLabel);
+        EditorGUILayout.Space();
+
+        data.tierDisplayName = EditorGUILayout.TextField("Display Name", data.tierDisplayName);
+        data.boxPrefab = (GameObject)EditorGUILayout.ObjectField("Box Prefab", data.boxPrefab, typeof(GameObject), false);
+        data.spawnCooldownHours = EditorGUILayout.FloatField("Spawn Cooldown (Hours)", data.spawnCooldownHours);
+        data.cycleDurationHours = EditorGUILayout.FloatField("Cycle Duration (Hours)", data.cycleDurationHours);
+        data.noorCoinEquivalent = EditorGUILayout.IntField("NC Equivalent (Backup)", data.noorCoinEquivalent);
+        data.noorCoinPerBox = EditorGUILayout.IntField("Noor Coin Per Box", data.noorCoinPerBox);
+
+        // Display Assigned exclusive rewards list
+        EditorGUILayout.Space();
+        GUILayout.Label("Assigned Exclusive Rewards", EditorStyles.miniBoldLabel);
+        if (data.exclusiveRewardItems == null || data.exclusiveRewardItems.Length == 0)
+        {
+            GUILayout.Label("No rewards assigned yet.", EditorStyles.miniLabel);
+        }
+        else
+        {
+            for (int i = 0; i < data.exclusiveRewardItems.Length; i++)
+            {
+                var item = data.exclusiveRewardItems[i];
+                if (item != null)
+                {
+                    EditorGUILayout.LabelField($"- {item.itemName} (ID: {item.itemID})");
+                }
+            }
+        }
+
+        GUILayout.EndVertical();
+    }
+
+    private void SaveAllBoxDataChanges()
+    {
+        if (silverBoxData != null) EditorUtility.SetDirty(silverBoxData);
+        if (goldBoxData != null) EditorUtility.SetDirty(goldBoxData);
+        if (platinumBoxData != null) EditorUtility.SetDirty(platinumBoxData);
+        if (diamondBoxData != null) EditorUtility.SetDirty(diamondBoxData);
+
+        AssetDatabase.SaveAssets();
+        EditorUtility.DisplayDialog("Success", "Successfully saved all changes to Treasure Box Data assets.", "OK");
     }
 }
 #endif

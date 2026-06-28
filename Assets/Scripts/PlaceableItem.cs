@@ -23,6 +23,9 @@ public class PlaceableItem : MonoBehaviour
     [Header("Tree Settings")]
     public bool isTree = false;
 
+    [Header("Building Settings")]
+    public bool isBuilding = false;
+
     [Header("GFX Reference (Optional)")]
     public Transform itemGFX;
 
@@ -38,6 +41,26 @@ public class PlaceableItem : MonoBehaviour
         if (GetComponent<Collider>() == null)
         {
             gameObject.AddComponent<BoxCollider>();
+        }
+
+        // Automatically populate itemRenderers if empty
+        if (itemRenderers == null || itemRenderers.Length == 0)
+        {
+            itemRenderers = GetComponentsInChildren<Renderer>(true);
+        }
+
+        // Auto-detect tree or building based on name if not set
+        if (!isTree && !isBuilding)
+        {
+            string lowerName = gameObject.name.ToLower();
+            if (lowerName.Contains("tree"))
+            {
+                isTree = true;
+            }
+            else if (lowerName.Contains("building") || lowerName.Contains("house"))
+            {
+                isBuilding = true;
+            }
         }
 
         // Capture the prefab's original scale before any tracking logic modifies it
@@ -220,17 +243,17 @@ public class PlaceableItem : MonoBehaviour
             else if (timeRatio < 0.75f) currentSat = 0.5f;
             else if (timeRatio < 1f) currentSat = 0.75f;
 
-            if (isTree)
+            if (isTree || isBuilding)
             {
-                UpdateSaturation(currentSat, 0); // Material 0 (trunk) follows normal
+                UpdateSaturation(currentSat, 0); // Material 0 (trunk / structure) follows normal
                 if (remainingDuration <= 10f)
                 {
-                    float leafSat = 1f - (remainingDuration / 10f);
-                    UpdateSaturation(leafSat, 1);
+                    float detailSat = 1f - (remainingDuration / 10f);
+                    UpdateSaturationForIndices(detailSat, 1); // Material 1+ (leaves / roof / details) fades in
                 }
                 else
                 {
-                    UpdateSaturation(0f, 1);
+                    UpdateSaturationForIndices(0f, 1);
                 }
             }
             else
@@ -268,6 +291,31 @@ public class PlaceableItem : MonoBehaviour
             {
                 if (materialIndex != -1 && i != materialIndex) continue;
 
+                Material mat = mats[i];
+                if (mat != null && mat.HasProperty("_Saturation"))
+                {
+                    mat.EnableKeyword("BASE_SATURATION");
+                    mat.SetFloat("_Saturation", saturationValue);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Updates saturation for all materials starting from a specific index.
+    /// Useful for desaturating/saturating roof/leaves/details (index >= 1) dynamically.
+    /// </summary>
+    public void UpdateSaturationForIndices(float saturationValue, int startIndex)
+    {
+        if (itemRenderers == null || itemRenderers.Length == 0) return;
+
+        foreach (var renderer in itemRenderers)
+        {
+            if (renderer == null) continue;
+            
+            Material[] mats = renderer.materials;
+            for (int i = startIndex; i < mats.Length; i++)
+            {
                 Material mat = mats[i];
                 if (mat != null && mat.HasProperty("_Saturation"))
                 {

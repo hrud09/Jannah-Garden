@@ -18,11 +18,9 @@ MonoBehaviour:
   spawnCooldownHours: 0.5
   cycleDurationHours: 24
   exclusiveRewardItems:
-  - {fileID: 11400000, guid: 5078cad57d3248a4bb06c83cbc7fe31b, type: 2}
-  - {fileID: 11400000, guid: 40b7ccb523c3462abb19efcd08997c9d, type: 2}
-  - {fileID: 11400000, guid: 5229032a149140819b27367e68cd6d3c, type: 2}
-  - {fileID: 11400000, guid: c46e23c906fe43f9a501c27b8f2b0b49, type: 2}
-  - {fileID: 11400000, guid: db4f8008f89c4bc1b274b0996f8189da, type: 2}
-  - {fileID: 11400000, guid: 1255087ea35c40c49acf7af48f5b6164, type: 2}
+  - {fileID: 11400000, guid: badac7081050cb04fa93c4a917ecd27a, type: 2}
+  - {fileID: 11400000, guid: ac06539aeec6369429ff3f80a8051ff1, type: 2}
+  - {fileID: 11400000, guid: 6c21185091ac3694286f6af60c135a29, type: 2}
+  - {fileID: 11400000, guid: f0dddf5b2a64b0542b88936fb0489f3a, type: 2}
   noorCoinEquivalent: 250
   noorCoinPerBox: 0

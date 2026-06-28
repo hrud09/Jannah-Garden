@@ -824,7 +824,8 @@ public class InGameShopManager : MonoBehaviour
         InventoryItemUI itemUI = spawnedObj.GetComponent<InventoryItemUI>();
         if (itemUI != null)
         {
-            itemUI.Initialize(data, data.quantity);
+            int qty = InventoryManager.Instance != null ? InventoryManager.Instance.GetItemQuantity(data.itemID) : data.quantity;
+            itemUI.Initialize(data, qty);
             spawnedInventoryItemUIs.Add(itemUI);
             // Note: Select button / placing logic is excluded as requested
         }
@@ -837,7 +838,8 @@ public class InGameShopManager : MonoBehaviour
         {
             if (itemUI != null && itemUI.RewardItemData == data)
             {
-                itemUI.Initialize(data, data.quantity);
+                int qty = InventoryManager.Instance != null ? InventoryManager.Instance.GetItemQuantity(data.itemID) : data.quantity;
+                itemUI.Initialize(data, qty);
             }
         }
     }

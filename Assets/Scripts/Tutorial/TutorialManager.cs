@@ -291,8 +291,9 @@ public class TutorialManager : MonoBehaviour
             ShopItemUI firstItem = spawnedItems[0];
             if (firstItem != null && firstItem.purchaseButton != null)
             {
+                RectTransform itemRect = firstItem.GetComponent<RectTransform>();
                 RectTransform purchaseBtnRect = firstItem.purchaseButton.GetComponent<RectTransform>();
-                HighlightUIElement(purchaseBtnRect);
+                HighlightUIElement(itemRect);
                 StartHandPointerAnimation(purchaseBtnRect);
                 yield break;
             }

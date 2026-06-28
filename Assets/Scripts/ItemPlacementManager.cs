@@ -91,9 +91,14 @@ public class ItemPlacementManager : MonoBehaviour
         if (itemData == null || itemData.itemPrefab == null) return;
         _pendingRequiredXPLevel = itemData.requiredXPLevel;
         _pendingRewardItemData = null;
+        
+        GameObject preview = itemData.itemPlacementModelPrefab != null 
+            ? itemData.itemPlacementModelPrefab 
+            : itemData.itemPrefab;
+
         InternalPreparePlacement(
             itemData.itemPrefab, 
-            itemData.itemPrefab, 
+            preview, 
             itemData.placementTimerDuration
         );
     }
@@ -103,9 +108,14 @@ public class ItemPlacementManager : MonoBehaviour
         if (itemData == null || itemData.itemPrefab == null) return;
         _pendingRequiredXPLevel = 0; // No XP reward for treasure box items
         _pendingRewardItemData = itemData;
+        
+        GameObject preview = itemData.itemPlacementModelPrefab != null 
+            ? itemData.itemPlacementModelPrefab 
+            : itemData.itemPrefab;
+
         InternalPreparePlacement(
             itemData.itemPrefab, 
-            itemData.itemPrefab, 
+            preview, 
             itemData.placementTimerDuration
         );
     }
@@ -245,7 +255,16 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (_pendingRewardItemData != null)
         {
-            _pendingRewardItemData.quantity++;
+            if (InventoryManager.Instance != null)
+            {
+                InventoryManager.Instance.ConsumeInventoryItem(_pendingRewardItemData.itemID, 1);
+                _pendingRewardItemData.quantity = InventoryManager.Instance.GetItemQuantity(_pendingRewardItemData.itemID);
+            }
+            else
+            {
+                if (_pendingRewardItemData.quantity > 0) _pendingRewardItemData.quantity--;
+            }
+
             if (shopManager != null)
             {
                 shopManager.UpdateInventoryUI(_pendingRewardItemData);

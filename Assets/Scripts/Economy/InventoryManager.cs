@@ -84,4 +84,29 @@ public class InventoryManager : MonoBehaviour
         }
         return 0;
     }
+
+    public bool ConsumeInventoryItem(string itemID, int amount = 1)
+    {
+        if (string.IsNullOrEmpty(itemID))
+        {
+            Debug.LogWarning("[InventoryManager] Cannot consume item with empty or null ID.");
+            return false;
+        }
+
+        if (_saveData == null || _saveData.itemCounts == null) return false;
+
+        if (_saveData.itemCounts.ContainsKey(itemID))
+        {
+            if (_saveData.itemCounts[itemID] >= amount)
+            {
+                _saveData.itemCounts[itemID] -= amount;
+                SaveInventory();
+                Debug.Log($"[InventoryManager] Consumed {amount} of item {itemID}. Remaining: {_saveData.itemCounts[itemID]}");
+                return true;
+            }
+        }
+
+        Debug.LogWarning($"[InventoryManager] Cannot consume {amount} of item {itemID}: insufficient quantity.");
+        return false;
+    }
 }

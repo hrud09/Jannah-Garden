@@ -24,5 +24,8 @@ MonoBehaviour:
   unlockXPLevel: 1
   noorCoinAmount: 250
   placementTimerDuration: 360
-  puzzlePieces: []
+  puzzlePieces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   calculatedRarity: 0
