@@ -48,7 +48,6 @@ public class PlaceableItem : MonoBehaviour
         {
             itemRenderers = GetComponentsInChildren<Renderer>(true);
         }
-
         // Auto-detect tree or building based on name if not set
         if (!isTree && !isBuilding)
         {
@@ -67,6 +66,30 @@ public class PlaceableItem : MonoBehaviour
         initialScale = (itemGFX != null) ? itemGFX.localScale : transform.localScale;
 
         if(timerHolder) timerText = timerHolder.GetComponentInChildren<TMP_Text>();
+    }
+
+    private void OnEnable()
+    {
+        if (RuntimeEnvironmentGenerator.Instance != null)
+        {
+            RuntimeEnvironmentGenerator.Instance.RegisterObject(gameObject);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (RuntimeEnvironmentGenerator.Instance != null && !RuntimeEnvironmentGenerator.Instance.IsDeactivatedByGenerator(gameObject))
+        {
+            RuntimeEnvironmentGenerator.Instance.UnregisterObject(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (RuntimeEnvironmentGenerator.Instance != null)
+        {
+            RuntimeEnvironmentGenerator.Instance.UnregisterObject(gameObject);
+        }
     }
 
     /// <summary>
