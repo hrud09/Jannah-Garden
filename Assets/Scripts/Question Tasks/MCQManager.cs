@@ -240,6 +240,15 @@ public class MCQManager : MonoBehaviour
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
             optionButtons[selectedOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
             
+            // Show congratulations message
+            if (questionTextUI != null)
+            {
+                questionTextUI.text = "<color=#00FF88>Congratulations!</color>\nCorrect Answer!";
+                questionTextUI.transform.DOKill();
+                questionTextUI.transform.localScale = Vector3.one;
+                questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+            }
+
             // Award Noor Coins and XP together
             int coinsEarned = 0;
             float xpEarned = 0f;

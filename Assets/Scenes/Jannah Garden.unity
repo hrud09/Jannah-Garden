@@ -12787,7 +12787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16cbd3f095d1014fa8f1843fdf8af73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialManager
-  forceStartTutorial: 0
+  forceStartTutorial: 1
   handUi: {fileID: 150527949}
   dimOverlay: {fileID: 1186234442}
   instructionPanel: {fileID: 1769460345}

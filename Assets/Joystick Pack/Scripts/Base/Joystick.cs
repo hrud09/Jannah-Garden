@@ -27,6 +27,9 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
     public bool SnapX { get { return snapX; } set { snapX = value; } }
     public bool SnapY { get { return snapY; } set { snapY = value; } }
+    public RectTransform Background { get { return background; } }
+    public RectTransform Handle { get { return handle; } }
+    public bool KeepBackgroundVisible { get; set; } = false;
 
     [SerializeField] private float handleRange = 1;
     [SerializeField] private float deadZone = 0;
@@ -201,7 +204,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
                 if (isKeyboardActive)
                 {
                     isKeyboardActive = false;
-                    if (!wasBackgroundActiveBeforeKeyboard)
+                    if (!wasBackgroundActiveBeforeKeyboard && !KeepBackgroundVisible)
                     {
                         background.gameObject.SetActive(false);
                     }

@@ -144,7 +144,7 @@ public class DhikrManager : MonoBehaviour
 
     private IEnumerator AutoSubmitRoutine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         SubmitDhikr();
     }
 
@@ -220,15 +220,46 @@ public class DhikrManager : MonoBehaviour
                 currentOrb = null;
             }
 
-            CloseDhikrDramatically();
+            StartCoroutine(CongratsAndCloseDhikrRoutine());
         }
+    }
+
+    private IEnumerator CongratsAndCloseDhikrRoutine()
+    {
+        if (plusButton != null) plusButton.interactable = false;
+        if (minusButton != null) minusButton.interactable = false;
+        if (submitButton != null) submitButton.interactable = false;
+
+        if (dhikrTextUI != null)
+        {
+            dhikrTextUI.text = "<color=#FFD700>Congratulations!</color>\nDhikr Completed!";
+            dhikrTextUI.transform.DOKill();
+            dhikrTextUI.transform.localScale = Vector3.one;
+            dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+        }
+
+        if (countTextUI != null)
+        {
+            countTextUI.text = "Masha'Allah!";
+            countTextUI.transform.DOKill();
+            countTextUI.transform.localScale = Vector3.one;
+            countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);
+        }
+
+        yield return new WaitForSeconds(3.0f);
+
+        CloseDhikrDramaticallyInternal();
     }
 
     public void CloseDhikrDramatically()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrClose);
         StopAllCoroutines();
+        CloseDhikrDramaticallyInternal();
+    }
 
+    private void CloseDhikrDramaticallyInternal()
+    {
         if (dhikrPanel != null) 
         {
             dhikrPanel.transform.DOKill();

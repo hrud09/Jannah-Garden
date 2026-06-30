@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class PlayersInteractionManager : MonoBehaviour
 {
+    public static PlayersInteractionManager Instance { get; private set; }
+
     [Header("Interaction Settings")]
     [Tooltip("Maximum distance at which the player can look at and interact with the treasure box.")]
     public float maxInteractionDistance = 10f;
@@ -20,6 +22,15 @@ public class PlayersInteractionManager : MonoBehaviour
     public Button itemInteractButton;
     private bool isInteracting = false;
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     private void Start()
     {

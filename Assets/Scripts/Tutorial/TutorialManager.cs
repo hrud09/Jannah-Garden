@@ -11,6 +11,8 @@ public enum TutorialStep
 {
     NotStarted,
     Welcome,
+    BasicMovement,
+    BasicLooking,
     OpenShop,
     SelectItem,
     PlaceItem,
@@ -58,6 +60,12 @@ public class TutorialManager : MonoBehaviour
     private bool addedRaycasterComponent = false;
     private Coroutine handPointerCoroutine;
     private Canvas createdCanvas; // Canvas created dynamically if references are null
+
+    // Persistent joystick highlight override fields
+    private Canvas joystickHighlightCanvas;
+    private GraphicRaycaster joystickHighlightRaycaster;
+    private bool joystickAddedCanvas = false;
+    private bool joystickAddedRaycaster = false;
 
     private void Awake()
     {
@@ -110,6 +118,7 @@ public class TutorialManager : MonoBehaviour
     {
         UnsubscribeEvents();
         RestoreHighlightSorting();
+        RestoreJoystickHighlight();
     }
 
     private void SubscribeEvents()
@@ -169,6 +178,7 @@ public class TutorialManager : MonoBehaviour
 
         DeactivateTutorialUI();
         RestoreHighlightSorting();
+        RestoreJoystickHighlight();
 
         Debug.Log("[TutorialManager] Tutorial successfully completed and saved.");
     }
@@ -178,16 +188,31 @@ public class TutorialManager : MonoBehaviour
         currentStep = step;
         RestoreHighlightSorting();
 
+        if (step != TutorialStep.BasicMovement)
+        {
+            RestoreJoystickHighlight();
+        }
+
         if (!isTutorialActive) return;
 
         // Ensure panels are active
-        if (dimOverlay != null) dimOverlay.gameObject.SetActive(true);
+        if (dimOverlay != null)
+        {
+            dimOverlay.gameObject.SetActive(true);
+            dimOverlay.blocksRaycasts = (step != TutorialStep.BasicLooking);
+        }
         if (instructionPanel != null) instructionPanel.gameObject.SetActive(true);
 
         switch (step)
         {
             case TutorialStep.Welcome:
                 ShowWelcomeStep();
+                break;
+            case TutorialStep.BasicMovement:
+                ShowBasicMovementStep();
+                break;
+            case TutorialStep.BasicLooking:
+                ShowBasicLookingStep();
                 break;
             case TutorialStep.OpenShop:
                 ShowOpenShopStep();
@@ -222,7 +247,7 @@ public class TutorialManager : MonoBehaviour
             nextStepButton.onClick.RemoveAllListeners();
             nextStepButton.onClick.AddListener(() => {
                 if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
-                SetStep(TutorialStep.OpenShop);
+                SetStep(TutorialStep.BasicMovement);
             });
         }
 
@@ -230,6 +255,73 @@ public class TutorialManager : MonoBehaviour
 
         // Hide hand during intro
         StopHandPointerAnimation();
+    }
+
+    private void ShowBasicMovementStep()
+    {
+        if (instructionText != null)
+        {
+            instructionText.text = "Use the <b>Virtual Joystick</b> on the left side of the screen to move your character around.";
+        }
+
+        if (nextStepButton != null)
+        {
+            nextStepButton.gameObject.SetActive(true);
+            var txt = nextStepButton.GetComponentInChildren<TMP_Text>();
+            if (txt != null) txt.text = "Next";
+
+            nextStepButton.onClick.RemoveAllListeners();
+            nextStepButton.onClick.AddListener(() => {
+                if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+                SetStep(TutorialStep.BasicLooking);
+            });
+        }
+
+        if (skipButton != null) skipButton.gameObject.SetActive(true);
+
+        // Find the joystick and highlight it
+        Joystick joystick = FindObjectOfType<Joystick>();
+        if (joystick != null)
+        {
+            RectTransform joystickRect = joystick.GetComponent<RectTransform>();
+            HighlightJoystickPermanently(joystickRect);
+            
+            // Point specifically to the joystick's handle if available, otherwise fallback to the base
+            RectTransform pointerTarget = joystick.Handle != null ? joystick.Handle : joystickRect;
+            StartHandPointerAnimation(pointerTarget);
+        }
+        else
+        {
+            Debug.LogWarning("[TutorialManager] Joystick reference not found in the scene.");
+            StopHandPointerAnimation();
+        }
+    }
+
+    private void ShowBasicLookingStep()
+    {
+        if (instructionText != null)
+        {
+            instructionText.text = "Swipe/drag anywhere on the screen to look around and control the camera view.";
+        }
+
+        if (nextStepButton != null)
+        {
+            nextStepButton.gameObject.SetActive(true);
+            var txt = nextStepButton.GetComponentInChildren<TMP_Text>();
+            if (txt != null) txt.text = "Next";
+
+            nextStepButton.onClick.RemoveAllListeners();
+            nextStepButton.onClick.AddListener(() => {
+                if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+                SetStep(TutorialStep.OpenShop);
+            });
+        }
+
+        if (skipButton != null) skipButton.gameObject.SetActive(true);
+
+        // Looking around doesn't target a specific UI button
+        StopHandPointerAnimation();
+        RestoreHighlightSorting();
     }
 
     private void ShowOpenShopStep()
@@ -727,6 +819,90 @@ public class TutorialManager : MonoBehaviour
             {
                 img.raycastTarget = false;
             }
+        }
+    }
+
+    private void HighlightJoystickPermanently(RectTransform target)
+    {
+        if (target == null || joystickHighlightCanvas != null) return;
+
+        // Find the Joystick component on target or parent/children
+        Joystick joystick = target.GetComponentInParent<Joystick>();
+        if (joystick != null)
+        {
+            joystick.KeepBackgroundVisible = true;
+            if (joystick.Background != null)
+            {
+                joystick.Background.gameObject.SetActive(true);
+            }
+        }
+
+        // Apply temporary canvas sorting override
+        joystickHighlightCanvas = target.GetComponent<Canvas>();
+        if (joystickHighlightCanvas == null)
+        {
+            joystickHighlightCanvas = target.gameObject.AddComponent<Canvas>();
+            joystickAddedCanvas = true;
+        }
+        else
+        {
+            joystickAddedCanvas = false;
+        }
+
+        joystickHighlightCanvas.overrideSorting = true;
+        joystickHighlightCanvas.sortingOrder = tutorialSortingOrder + 1;
+
+        // Apply temporary graphic raycaster so buttons remain clickable in the sorting override
+        joystickHighlightRaycaster = target.GetComponent<GraphicRaycaster>();
+        if (joystickHighlightRaycaster == null)
+        {
+            joystickHighlightRaycaster = target.gameObject.AddComponent<GraphicRaycaster>();
+            joystickAddedRaycaster = true;
+        }
+        else
+        {
+            joystickAddedRaycaster = false;
+        }
+    }
+
+    private void RestoreJoystickHighlight()
+    {
+        if (joystickHighlightCanvas != null)
+        {
+            Joystick joystick = joystickHighlightCanvas.GetComponentInParent<Joystick>();
+            if (joystick != null)
+            {
+                joystick.KeepBackgroundVisible = false;
+                if (joystick is FloatingJoystick || joystick is DynamicJoystick)
+                {
+                    if (joystick.Background != null)
+                    {
+                        joystick.Background.gameObject.SetActive(false);
+                    }
+                }
+                else if (joystick is VariableJoystick variableJoystick)
+                {
+                    variableJoystick.SetMode(variableJoystick.Mode);
+                }
+            }
+
+            if (joystickAddedRaycaster && joystickHighlightRaycaster != null)
+            {
+                Destroy(joystickHighlightRaycaster);
+            }
+            if (joystickAddedCanvas)
+            {
+                Destroy(joystickHighlightCanvas);
+            }
+            else
+            {
+                joystickHighlightCanvas.overrideSorting = false;
+            }
+
+            joystickHighlightCanvas = null;
+            joystickHighlightRaycaster = null;
+            joystickAddedCanvas = false;
+            joystickAddedRaycaster = false;
         }
     }
 
