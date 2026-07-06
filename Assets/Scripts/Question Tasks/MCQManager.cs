@@ -6,11 +6,32 @@ using UnityEngine.UI;
 using TMPro; // Assuming you are using TextMeshPro for UI text
 
 [System.Serializable]
-public class QuestionData
+public class LocalizedQuestionData
 {
+    public JannahGarden.Localization.Language language;
     public string questionText;
     public string[] options;
+}
+
+[System.Serializable]
+public class QuestionData
+{
     public int correctAnswerIndex;
+    public LocalizedQuestionData[] translations;
+
+    public LocalizedQuestionData GetTranslation(JannahGarden.Localization.Language lang)
+    {
+        if (translations == null) return null;
+        foreach (var t in translations)
+        {
+            if (t.language == lang) return t;
+        }
+        foreach (var t in translations)
+        {
+            if (t.language == JannahGarden.Localization.Language.English) return t;
+        }
+        return translations.Length > 0 ? translations[0] : null;
+    }
 }
 
 [System.Serializable]
@@ -56,6 +77,25 @@ public class MCQManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    void OnEnable()
+    {
+        JannahGarden.Localization.LocalizationManager.OnLanguageChanged += HandleLanguageChanged;
+    }
+
+    void OnDisable()
+    {
+        JannahGarden.Localization.LocalizationManager.OnLanguageChanged -= HandleLanguageChanged;
+    }
+
+    void HandleLanguageChanged(JannahGarden.Localization.Language newLang)
+    {
+        LoadQuestions();
+        if (quizPanel != null && quizPanel.activeSelf)
+        {
+            ShowQuestion(currentQuestionIndex, false);
+        }
+    }
+
     void Start()
     {
         LoadQuestions();
@@ -97,7 +137,7 @@ public class MCQManager : MonoBehaviour
         if (allQuestions != null && allQuestions.questions != null && allQuestions.questions.Length > 0)
         {
             int randomIndex = UnityEngine.Random.Range(0, allQuestions.questions.Length);
-            ShowQuestion(randomIndex);
+            ShowQuestion(randomIndex, true);
         }
     }
 
@@ -115,62 +155,77 @@ public class MCQManager : MonoBehaviour
 
     public void ShowQuestion(int index)
     {
+        ShowQuestion(index, true);
+    }
+
+    public void ShowQuestion(int index, bool reshuffle)
+    {
         if (allQuestions == null || allQuestions.questions == null || index < 0 || index >= allQuestions.questions.Length)
             return;
 
         currentQuestionIndex = index;
-        selectedOptionIndex = -1;
-        currentQuestionAttempts = 0;
         
         if (countDownToHidePanel != null) 
             countDownToHidePanel.gameObject.SetActive(false);
 
         QuestionData qData = allQuestions.questions[index];
+        LocalizedQuestionData locData = qData.GetTranslation(JannahGarden.Localization.LocalizationManager.CurrentLanguage);
+        
+        if (locData == null) return;
 
-        currentShuffledIndices = new int[qData.options.Length];
-        for (int i = 0; i < qData.options.Length; i++) currentShuffledIndices[i] = i;
-
-        // Shuffle options
-        for (int i = 0; i < currentShuffledIndices.Length; i++)
+        if (reshuffle)
         {
-            int temp = currentShuffledIndices[i];
-            int rand = UnityEngine.Random.Range(i, currentShuffledIndices.Length);
-            currentShuffledIndices[i] = currentShuffledIndices[rand];
-            currentShuffledIndices[rand] = temp;
-        }
+            selectedOptionIndex = -1;
+            currentQuestionAttempts = 0;
 
-        // Find the correct option index after shuffle
-        for (int i = 0; i < currentShuffledIndices.Length; i++)
-        {
-            if (currentShuffledIndices[i] == qData.correctAnswerIndex)
+            currentShuffledIndices = new int[locData.options.Length];
+            for (int i = 0; i < locData.options.Length; i++) currentShuffledIndices[i] = i;
+
+            // Shuffle options
+            for (int i = 0; i < currentShuffledIndices.Length; i++)
             {
-                currentCorrectOptionIndex = i;
-                break;
+                int temp = currentShuffledIndices[i];
+                int rand = UnityEngine.Random.Range(i, currentShuffledIndices.Length);
+                currentShuffledIndices[i] = currentShuffledIndices[rand];
+                currentShuffledIndices[rand] = temp;
             }
+
+            // Find the correct option index after shuffle
+            for (int i = 0; i < currentShuffledIndices.Length; i++)
+            {
+                if (currentShuffledIndices[i] == qData.correctAnswerIndex)
+                {
+                    currentCorrectOptionIndex = i;
+                    break;
+                }
+            }
+
+            // Juicy animation for question text on new question load
+            questionTextUI.transform.DOKill();
+            questionTextUI.transform.localScale = Vector3.zero;
+            questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
         }
 
-        questionTextUI.text = qData.questionText;
-
-        // Juicy animation for question text
-        questionTextUI.transform.DOKill();
-        questionTextUI.transform.localScale = Vector3.zero;
-        questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
+        questionTextUI.text = locData.questionText;
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
-            if (i < qData.options.Length)
+            if (i < locData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                optionTextsUI[i].text = qData.options[currentShuffledIndices[i]];
+                optionTextsUI[i].text = locData.options[currentShuffledIndices[i]];
                 
-                // Reset appearance and interaction
-                optionButtons[i].image.sprite = defaultSprite;
-                optionButtons[i].interactable = true;
+                if (reshuffle)
+                {
+                    // Reset appearance and interaction
+                    optionButtons[i].image.sprite = defaultSprite;
+                    optionButtons[i].interactable = true;
 
-                // Juicy animation for option buttons
-                optionButtons[i].transform.DOKill();
-                optionButtons[i].transform.localScale = Vector3.zero;
-                optionButtons[i].transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (i * 0.1f));
+                    // Juicy animation for option buttons
+                    optionButtons[i].transform.DOKill();
+                    optionButtons[i].transform.localScale = Vector3.zero;
+                    optionButtons[i].transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (i * 0.1f));
+                }
             }
             else
             {
@@ -178,13 +233,13 @@ public class MCQManager : MonoBehaviour
             }
         }
 
-        if (submitButton != null)
+        if (reshuffle && submitButton != null)
         {
             submitButton.interactable = false;
             submitButton.gameObject.SetActive(true);
             submitButton.transform.DOKill();
             submitButton.transform.localScale = Vector3.zero;
-            submitButton.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (qData.options.Length * 0.1f));
+            submitButton.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (locData.options.Length * 0.1f));
         }
     }
 
@@ -243,7 +298,7 @@ public class MCQManager : MonoBehaviour
             // Show congratulations message
             if (questionTextUI != null)
             {
-                questionTextUI.text = "<color=#00FF88>Congratulations!</color>\nCorrect Answer!";
+                questionTextUI.text = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#00FF88>Congratulations!</color>\nCorrect Answer!", "<color=#00FF88>Congratulations!</color>\nCorrect Answer!");
                 questionTextUI.transform.DOKill();
                 questionTextUI.transform.localScale = Vector3.one;
                 questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -267,9 +322,20 @@ public class MCQManager : MonoBehaviour
             if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
             {
                 string toastMsg = "";
-                if (coinsEarned > 0) toastMsg += $"<color=#FFD700>+{coinsEarned} Noor Coins</color> ";
-                if (coinsEarned > 0 && xpEarned > 0) toastMsg += "& ";
-                if (xpEarned > 0) toastMsg += $"<color=#00FFFF>+{xpEarned} XP</color>";
+                if (coinsEarned > 0)
+                {
+                    string transCoins = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("+{0} Noor Coins", "+{0} Noor Coins");
+                    toastMsg += string.Format(transCoins, coinsEarned) + " ";
+                }
+                if (coinsEarned > 0 && xpEarned > 0)
+                {
+                    toastMsg += JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("&", "&") + " ";
+                }
+                if (xpEarned > 0)
+                {
+                    string transXP = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("+{0} XP", "+{0} XP");
+                    toastMsg += string.Format(transXP, xpEarned);
+                }
                 
                 ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
             }
@@ -299,7 +365,8 @@ public class MCQManager : MonoBehaviour
             
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Opps! Review the correct answer and try again to earn your Noor Coins.", Color.red);
+                string transWrong = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Opps! Review the correct answer and try again to earn your Noor Coins.", "Opps! Review the correct answer and try again to earn your Noor Coins.");
+                ToastMessageManager.Instance.ShowToast(transWrong, Color.red);
             }
             
             StartCoroutine(ResetQuizAfterDelay(5f));

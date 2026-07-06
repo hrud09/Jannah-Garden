@@ -6,9 +6,30 @@ using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
+public class LocalizedDhikrData
+{
+    public JannahGarden.Localization.Language language;
+    public string[] dhikrs;
+}
+
+[System.Serializable]
 public class DhikrList
 {
-    public string[] dhikrs;
+    public LocalizedDhikrData[] translations;
+
+    public string[] GetDhikrs(JannahGarden.Localization.Language lang)
+    {
+        if (translations == null) return new string[0];
+        foreach (var t in translations)
+        {
+            if (t.language == lang) return t.dhikrs;
+        }
+        foreach (var t in translations)
+        {
+            if (t.language == JannahGarden.Localization.Language.English) return t.dhikrs;
+        }
+        return translations.Length > 0 ? translations[0].dhikrs : new string[0];
+    }
 }
 
 public class DhikrManager : MonoBehaviour
@@ -34,11 +55,44 @@ public class DhikrManager : MonoBehaviour
     private QuestionMarkOrb currentOrb;
     private int currentCount = 0;
     private int targetCount = 33;
+    private int currentDhikrIndex = 0;
+    private string currentDhikrName = "";
 
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    void OnEnable()
+    {
+        JannahGarden.Localization.LocalizationManager.OnLanguageChanged += HandleLanguageChanged;
+    }
+
+    void OnDisable()
+    {
+        JannahGarden.Localization.LocalizationManager.OnLanguageChanged -= HandleLanguageChanged;
+    }
+
+    void HandleLanguageChanged(JannahGarden.Localization.Language newLang)
+    {
+        LoadDhikrs();
+        if (dhikrPanel != null && dhikrPanel.activeSelf)
+        {
+            if (allDhikrs != null)
+            {
+                string[] currentDhikrs = allDhikrs.GetDhikrs(newLang);
+                if (currentDhikrs != null && currentDhikrIndex < currentDhikrs.Length)
+                {
+                    currentDhikrName = currentDhikrs[currentDhikrIndex];
+                    if (dhikrTextUI != null && currentCount < targetCount)
+                    {
+                        string template = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Dhikr \"{0}\" for {1} times", "Dhikr \"{0}\" for {1} times");
+                        dhikrTextUI.text = string.Format(template, currentDhikrName, targetCount);
+                    }
+                }
+            }
+        }
     }
 
     void Start()
@@ -82,23 +136,30 @@ public class DhikrManager : MonoBehaviour
             dhikrPanel.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
         }
 
-        if (allDhikrs != null && allDhikrs.dhikrs != null && allDhikrs.dhikrs.Length > 0)
+        if (allDhikrs != null)
         {
-            int randomIndex = UnityEngine.Random.Range(0, allDhikrs.dhikrs.Length);
-            targetCount = UnityEngine.Random.Range(minDhikrCount, maxDhikrCount + 1);
-            currentCount = 0;
-
-            string dhikrName = allDhikrs.dhikrs[randomIndex];
-            if (dhikrTextUI != null)
-                dhikrTextUI.text = $"Dhikr \"{dhikrName}\" for {targetCount} times";
-            
-            UpdateCountUI();
-
-            if (dhikrTextUI != null)
+            string[] currentDhikrs = allDhikrs.GetDhikrs(JannahGarden.Localization.LocalizationManager.CurrentLanguage);
+            if (currentDhikrs != null && currentDhikrs.Length > 0)
             {
-                dhikrTextUI.transform.DOKill();
-                dhikrTextUI.transform.localScale = Vector3.zero;
-                dhikrTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
+                currentDhikrIndex = UnityEngine.Random.Range(0, currentDhikrs.Length);
+                targetCount = UnityEngine.Random.Range(minDhikrCount, maxDhikrCount + 1);
+                currentCount = 0;
+
+                currentDhikrName = currentDhikrs[currentDhikrIndex];
+                if (dhikrTextUI != null)
+                {
+                    string template = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Dhikr \"{0}\" for {1} times", "Dhikr \"{0}\" for {1} times");
+                    dhikrTextUI.text = string.Format(template, currentDhikrName, targetCount);
+                }
+                
+                UpdateCountUI();
+
+                if (dhikrTextUI != null)
+                {
+                    dhikrTextUI.transform.DOKill();
+                    dhikrTextUI.transform.localScale = Vector3.zero;
+                    dhikrTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
+                }
             }
         }
         
@@ -232,7 +293,7 @@ public class DhikrManager : MonoBehaviour
 
         if (dhikrTextUI != null)
         {
-            dhikrTextUI.text = "<color=#FFD700>Congratulations!</color>\nDhikr Completed!";
+            dhikrTextUI.text = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#FFD700>Congratulations!</color>\nDhikr Completed!", "<color=#FFD700>Congratulations!</color>\nDhikr Completed!");
             dhikrTextUI.transform.DOKill();
             dhikrTextUI.transform.localScale = Vector3.one;
             dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -240,7 +301,7 @@ public class DhikrManager : MonoBehaviour
 
         if (countTextUI != null)
         {
-            countTextUI.text = "Masha'Allah!";
+            countTextUI.text = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Masha'Allah!", "Masha'Allah!");
             countTextUI.transform.DOKill();
             countTextUI.transform.localScale = Vector3.one;
             countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);

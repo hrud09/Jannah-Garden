@@ -1,0 +1,44 @@
+{
+    "entries": [
+        {
+            "key": "Dhikr \"{0}\" for {1} times",
+            "translations": []
+        },
+        {
+            "key": "<color=#FFD700>Congratulations!</color>\nDhikr Completed!",
+            "translations": []
+        },
+        {
+            "key": "Masha'Allah!",
+            "translations": []
+        },
+        {
+            "key": "<color=#00FF88>Congratulations!</color>\nCorrect Answer!",
+            "translations": []
+        },
+        {
+            "key": "Opps! Review the correct answer and try again to earn your Noor Coins.",
+            "translations": []
+        },
+        {
+            "key": "Congratulations!",
+            "translations": []
+        },
+        {
+            "key": "Correct Answer!",
+            "translations": []
+        },
+        {
+            "key": "+{0} Noor Coins",
+            "translations": []
+        },
+        {
+            "key": "+{0} XP",
+            "translations": []
+        },
+        {
+            "key": "&",
+            "translations": []
+        }
+    ]
+}
