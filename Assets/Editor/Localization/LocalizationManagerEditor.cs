@@ -445,12 +445,8 @@ namespace JannahGarden.Localization
             {
                 case Language.English: return "en";
                 case Language.Arabic: return "ar";
-                case Language.Spanish: return "es";
-                case Language.French: return "fr";
-                case Language.German: return "de";
-                case Language.Turkish: return "tr";
-                case Language.BahasaIndonesia: return "id";
                 case Language.Bengali: return "bn";
+                case Language.Urdu: return "ur";
                 default: return "en";
             }
         }

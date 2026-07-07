@@ -117,6 +117,52 @@ namespace JannahGarden.Localization
             }
         }
 
+        private void LateUpdate()
+        {
+            if (LocalizationManager.Instance == null) return;
+            bool useLegacy = LocalizationManager.Instance.ShouldUseLegacyText(LocalizationManager.CurrentLanguage);
+            
+            if (useLegacy)
+            {
+                if (tmpText != null) 
+                {
+                    tmpText.enabled = false;
+                    var cr = tmpText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
+                
+                Text targetText = uiText != null ? uiText : generatedLegacyText;
+                if (targetText != null)
+                {
+                    targetText.enabled = true;
+                    var cr = targetText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = false;
+                }
+            }
+            else
+            {
+                if (generatedLegacyText != null) 
+                {
+                    generatedLegacyText.enabled = false;
+                    var cr = generatedLegacyText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
+                if (uiText != null) 
+                {
+                    uiText.enabled = false;
+                    var cr = uiText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
+                
+                if (tmpText != null)
+                {
+                    tmpText.enabled = true;
+                    var cr = tmpText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = false;
+                }
+            }
+        }
+
         public void UpdateText(Language currentLanguage)
         {
             CacheComponents();
@@ -140,18 +186,39 @@ namespace JannahGarden.Localization
             }
             else
             {
-                useLegacy = (currentLanguage == Language.Arabic || currentLanguage == Language.Bengali);
+                useLegacy = (currentLanguage == Language.Arabic || currentLanguage == Language.Bengali || currentLanguage == Language.Urdu);
             }
 
             if (useLegacy)
             {
-                if (tmpText != null) tmpText.enabled = false;
+                if (tmpText != null) 
+                {
+                    tmpText.enabled = false;
+                    var cr = tmpText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
                 EnsureLegacyTextExists();
                 
+                if (uiText != null) 
+                {
+                    uiText.enabled = false;
+                    var cr = uiText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
+                if (generatedLegacyText != null) 
+                {
+                    generatedLegacyText.enabled = false;
+                    var cr = generatedLegacyText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
+
                 Text targetText = uiText != null ? uiText : generatedLegacyText;
                 if (targetText != null)
                 {
                     targetText.enabled = true;
+                    var cr = targetText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = false;
+
                     targetText.text = translatedText;
                     targetText.horizontalOverflow = HorizontalWrapMode.Overflow;
                     targetText.verticalOverflow = VerticalWrapMode.Overflow;
@@ -176,12 +243,25 @@ namespace JannahGarden.Localization
             }
             else
             {
-                if (generatedLegacyText != null) generatedLegacyText.enabled = false;
-                if (uiText != null && tmpText != null) uiText.enabled = false;
+                if (generatedLegacyText != null) 
+                {
+                    generatedLegacyText.enabled = false;
+                    var cr = generatedLegacyText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
+                if (uiText != null) 
+                {
+                    uiText.enabled = false;
+                    var cr = uiText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = true;
+                }
                 
                 if (tmpText != null)
                 {
                     tmpText.enabled = true;
+                    var cr = tmpText.GetComponent<CanvasRenderer>();
+                    if (cr != null) cr.cull = false;
+
                     tmpText.text = translatedText;
 
                     if (LocalizationManager.Instance != null)
@@ -201,27 +281,9 @@ namespace JannahGarden.Localization
                     }
 #endif
                 }
-                else if (uiText != null)
+                else
                 {
-                    uiText.enabled = true;
-                    uiText.text = translatedText;
-                    
-                    if (LocalizationManager.Instance != null)
-                    {
-                        Font langFont = LocalizationManager.Instance.GetFontForLanguage(currentLanguage);
-                        if (langFont != null)
-                        {
-                            uiText.font = langFont;
-                        }
-                    }
-
-#if UNITY_EDITOR
-                    if (!Application.isPlaying)
-                    {
-                        UnityEditor.EditorUtility.SetDirty(uiText);
-                        UnityEditor.EditorUtility.SetDirty(gameObject);
-                    }
-#endif
+                    Debug.LogWarning($"[LocalizedText] No TMP_Text component found on {gameObject.name} for language {currentLanguage} which requires TextMeshPro.");
                 }
             }
         }

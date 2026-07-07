@@ -94,17 +94,7 @@ namespace JannahGarden.Localization
 
         private static Language GetSystemLanguageFallback()
         {
-            SystemLanguage systemLang = Application.systemLanguage;
-            switch (systemLang)
-            {
-                case SystemLanguage.Arabic: return Language.Arabic;
-                case SystemLanguage.Spanish: return Language.Spanish;
-                case SystemLanguage.French: return Language.French;
-                case SystemLanguage.German: return Language.German;
-                case SystemLanguage.Turkish: return Language.Turkish;
-                case SystemLanguage.Indonesian: return Language.BahasaIndonesia;
-                default: return Language.English;
-            }
+            return Language.English;
         }
 
         public static string GetLanguageCode(Language lang)
@@ -113,12 +103,8 @@ namespace JannahGarden.Localization
             {
                 case Language.English: return "en";
                 case Language.Arabic: return "ar";
-                case Language.Spanish: return "es";
-                case Language.French: return "fr";
-                case Language.German: return "de";
-                case Language.Turkish: return "tr";
-                case Language.BahasaIndonesia: return "id";
                 case Language.Bengali: return "bn";
+                case Language.Urdu: return "ur";
                 default: return "en";
             }
         }
@@ -129,12 +115,8 @@ namespace JannahGarden.Localization
             {
                 case Language.English: return "English";
                 case Language.Arabic: return "العربية";
-                case Language.Spanish: return "Español";
-                case Language.French: return "Français";
-                case Language.German: return "Deutsch";
-                case Language.Turkish: return "Türkçe";
-                case Language.BahasaIndonesia: return "Bahasa Indonesia";
                 case Language.Bengali: return "বাংলা";
+                case Language.Urdu: return "اردو";
                 default: return "English";
             }
         }
@@ -231,8 +213,8 @@ namespace JannahGarden.Localization
                     return config.useLegacyText;
                 }
             }
-            // Hardcode Bengali and Arabic to use legacy text by default if not configured
-            if (lang == Language.Bengali || lang == Language.Arabic)
+            // Hardcode Bengali, Urdu, and Arabic to use legacy text by default if not configured
+            if (lang == Language.Bengali || lang == Language.Arabic || lang == Language.Urdu)
                 return true;
                 
             return false;
