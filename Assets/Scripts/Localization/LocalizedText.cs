@@ -163,17 +163,33 @@ namespace JannahGarden.Localization
             }
         }
 
+        private string dynamicTextValue = null;
+
+        public void SetDynamicText(string text)
+        {
+            dynamicTextValue = text;
+            UpdateText(LocalizationManager.Instance != null ? LocalizationManager.CurrentLanguage : Language.English);
+        }
+
         public void UpdateText(Language currentLanguage)
         {
             CacheComponents();
-            string translatedText = GetTranslation(currentLanguage);
-
-            // Fallback to global dictionary if no local translation is defined
-            if (translatedText == defaultText && currentLanguage != Language.English)
+            string translatedText;
+            if (!string.IsNullOrEmpty(dynamicTextValue))
             {
-                if (LocalizationManager.Instance != null)
+                translatedText = dynamicTextValue;
+            }
+            else
+            {
+                translatedText = GetTranslation(currentLanguage);
+
+                // Fallback to global dictionary if no local translation is defined
+                if (translatedText == defaultText && currentLanguage != Language.English)
                 {
-                    translatedText = LocalizationManager.Instance.GetTranslation(defaultText, defaultText);
+                    if (LocalizationManager.Instance != null)
+                    {
+                        translatedText = LocalizationManager.Instance.GetTranslation(defaultText, defaultText);
+                    }
                 }
             }
 

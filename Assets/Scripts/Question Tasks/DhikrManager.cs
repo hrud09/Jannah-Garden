@@ -88,7 +88,7 @@ public class DhikrManager : MonoBehaviour
                     if (dhikrTextUI != null && currentCount < targetCount)
                     {
                         string template = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Dhikr \"{0}\" for {1} times", "Dhikr \"{0}\" for {1} times");
-                        dhikrTextUI.text = string.Format(template, currentDhikrName, targetCount);
+                        SetText(dhikrTextUI, string.Format(template, currentDhikrName, targetCount));
                     }
                 }
             }
@@ -149,7 +149,7 @@ public class DhikrManager : MonoBehaviour
                 if (dhikrTextUI != null)
                 {
                     string template = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Dhikr \"{0}\" for {1} times", "Dhikr \"{0}\" for {1} times");
-                    dhikrTextUI.text = string.Format(template, currentDhikrName, targetCount);
+                    SetText(dhikrTextUI, string.Format(template, currentDhikrName, targetCount));
                 }
                 
                 UpdateCountUI();
@@ -168,13 +168,18 @@ public class DhikrManager : MonoBehaviour
 
     void LoadDhikrs()
     {
+        if (dhikrFile == null)
+        {
+            dhikrFile = Resources.Load<TextAsset>("dhikrs");
+        }
+
         if (dhikrFile != null)
         {
             allDhikrs = JsonUtility.FromJson<DhikrList>(dhikrFile.text);
         }
         else
         {
-            Debug.LogError("Dhikr JSON file not assigned in the inspector!");
+            Debug.LogError("Dhikr JSON file not assigned and 'dhikrs' not found in Resources!");
         }
     }
 
@@ -233,7 +238,7 @@ public class DhikrManager : MonoBehaviour
     {
         if (countTextUI != null)
         {
-            countTextUI.text = currentCount.ToString();
+            SetText(countTextUI, currentCount.ToString());
         }
     }
 
@@ -293,7 +298,7 @@ public class DhikrManager : MonoBehaviour
 
         if (dhikrTextUI != null)
         {
-            dhikrTextUI.text = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#FFD700>Congratulations!</color>\nDhikr Completed!", "<color=#FFD700>Congratulations!</color>\nDhikr Completed!");
+            SetText(dhikrTextUI, JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#FFD700>Congratulations!</color>\nDhikr Completed!", "<color=#FFD700>Congratulations!</color>\nDhikr Completed!"));
             dhikrTextUI.transform.DOKill();
             dhikrTextUI.transform.localScale = Vector3.one;
             dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -301,7 +306,7 @@ public class DhikrManager : MonoBehaviour
 
         if (countTextUI != null)
         {
-            countTextUI.text = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Masha'Allah!", "Masha'Allah!");
+            SetText(countTextUI, JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Masha'Allah!", "Masha'Allah!"));
             countTextUI.transform.DOKill();
             countTextUI.transform.localScale = Vector3.one;
             countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);
@@ -336,6 +341,21 @@ public class DhikrManager : MonoBehaviour
         {
             blurredBG.SetActive(false);
             currentOrb = null;
+        }
+    }
+
+    private void SetText(TextMeshProUGUI tmpTextUI, string text)
+    {
+        if (tmpTextUI == null) return;
+        
+        var localizedText = tmpTextUI.GetComponent<JannahGarden.Localization.LocalizedText>();
+        if (localizedText != null)
+        {
+            localizedText.SetDynamicText(text);
+        }
+        else
+        {
+            tmpTextUI.text = text;
         }
     }
 }

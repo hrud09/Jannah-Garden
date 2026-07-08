@@ -17796,7 +17796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4348e1cdb3218f9438c8c4123dcc83e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JannahGardenManager
-  isDebug: 0
+  isDebug: 1
   debugNoorCoinsAmount: 500000
 --- !u!4 &1841064312
 Transform:
@@ -25081,7 +25081,7 @@ PrefabInstance:
       objectReference: {fileID: 2517202264660172603, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
     - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: shopItemDatas.Array.size
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: 'shopItemDatas.Array.data[0]'
@@ -25151,6 +25151,10 @@ PrefabInstance:
       propertyPath: 'shopItemDatas.Array.data[16]'
       value: 
       objectReference: {fileID: 11400000, guid: b6bad9033a3eaec44a67f02526cf09f1, type: 2}
+    - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
+      propertyPath: 'shopItemDatas.Array.data[17]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fc1de82172c9f44dbf63a000dfc61b1, type: 2}
     - target: {fileID: 3649242668092485765, guid: c7a569a422aaac84985e7cdf967f56ce, type: 3}
       propertyPath: inventoryItemDatas.Array.size
       value: 17

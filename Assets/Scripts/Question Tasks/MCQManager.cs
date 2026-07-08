@@ -143,13 +143,18 @@ public class MCQManager : MonoBehaviour
 
     void LoadQuestions()
     {
+        if (questionFile == null)
+        {
+            questionFile = Resources.Load<TextAsset>("questions");
+        }
+
         if (questionFile != null)
         {
             allQuestions = JsonUtility.FromJson<QuestionList>(questionFile.text);
         }
         else
         {
-            Debug.LogError("Question JSON file not assigned in the inspector!");
+            Debug.LogError("Question JSON file not assigned and 'questions' not found in Resources!");
         }
     }
 
@@ -206,14 +211,14 @@ public class MCQManager : MonoBehaviour
             questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
         }
 
-        questionTextUI.text = locData.questionText;
+        SetText(questionTextUI, locData.questionText);
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
             if (i < locData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                optionTextsUI[i].text = locData.options[currentShuffledIndices[i]];
+                SetText(optionTextsUI[i], locData.options[currentShuffledIndices[i]]);
                 
                 if (reshuffle)
                 {
@@ -298,7 +303,7 @@ public class MCQManager : MonoBehaviour
             // Show congratulations message
             if (questionTextUI != null)
             {
-                questionTextUI.text = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#00FF88>Congratulations!</color>\nCorrect Answer!", "<color=#00FF88>Congratulations!</color>\nCorrect Answer!");
+                SetText(questionTextUI, JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#00FF88>Congratulations!</color>\nCorrect Answer!", "<color=#00FF88>Congratulations!</color>\nCorrect Answer!"));
                 questionTextUI.transform.DOKill();
                 questionTextUI.transform.localScale = Vector3.one;
                 questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -463,6 +468,21 @@ public class MCQManager : MonoBehaviour
         {
             Debug.Log("Quiz Completed!");
             // Handle quiz completion logic here
+        }
+    }
+
+    private void SetText(TextMeshProUGUI tmpTextUI, string text)
+    {
+        if (tmpTextUI == null) return;
+        
+        var localizedText = tmpTextUI.GetComponent<JannahGarden.Localization.LocalizedText>();
+        if (localizedText != null)
+        {
+            localizedText.SetDynamicText(text);
+        }
+        else
+        {
+            tmpTextUI.text = text;
         }
     }
 }
