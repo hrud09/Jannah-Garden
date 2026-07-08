@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 public class PlayersInteractionManager : MonoBehaviour
 {
@@ -96,6 +99,7 @@ public class PlayersInteractionManager : MonoBehaviour
         }
 
         PerformInteractionRaycast();
+        DetectOrbClick();
     }
 
     /// <summary>
@@ -191,6 +195,79 @@ public class PlayersInteractionManager : MonoBehaviour
                 shouldShow = false;
             }
             itemInteractButton.gameObject.SetActive(shouldShow);
+        }
+    }
+
+    private void DetectOrbClick()
+    {
+        if (isInteracting) return;
+        if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing) return;
+
+        bool clicked = false;
+        Vector2 pointerPosition = Vector2.zero;
+
+#if ENABLE_INPUT_SYSTEM
+        if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame)
+        {
+            clicked = true;
+            pointerPosition = Pointer.current.position.ReadValue();
+        }
+#else
+        if (Input.GetMouseButtonDown(0))
+        {
+            clicked = true;
+            pointerPosition = Input.mousePosition;
+        }
+#endif
+
+        if (clicked)
+        {
+            // Avoid clicking through UI elements
+            if (UnityEngine.EventSystems.EventSystem.current != null)
+            {
+                if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+                {
+                    return;
+                }
+#if ENABLE_INPUT_SYSTEM
+                if (Touchscreen.current != null && Touchscreen.current.touches.Count > 0)
+                {
+                    int touchId = Touchscreen.current.touches[0].touchId.ReadValue();
+                    if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(touchId))
+                    {
+                        return;
+                    }
+                }
+#else
+                if (Input.touchCount > 0)
+                {
+                    int touchId = Input.GetTouch(0).fingerId;
+                    if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(touchId))
+                    {
+                        return;
+                    }
+                }
+#endif
+            }
+
+            Ray ray = mainCam.ScreenPointToRay(pointerPosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, maxInteractionDistance, interactionLayerMask))
+            {
+                QuestionMarkOrb clickedOrb = hit.collider.GetComponent<QuestionMarkOrb>();
+                if (clickedOrb == null)
+                {
+                    clickedOrb = hit.collider.GetComponentInParent<QuestionMarkOrb>();
+                }
+
+                if (clickedOrb != null)
+                {
+                    // Clicked on the orb! Set it as the current target and trigger interaction.
+                    currentTargetBox = null;
+                    currentTargetOrb = clickedOrb;
+                    OnInteractButtonClicked();
+                }
+            }
         }
     }
 
