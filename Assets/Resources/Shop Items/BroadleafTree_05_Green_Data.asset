@@ -23,4 +23,4 @@ MonoBehaviour:
   itemCategory: 1
   itemPrefab: {fileID: 269750320397101300, guid: 776d6e523eb60be41abbfa8427ee472a, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 360
+  placementTimerDuration: 30

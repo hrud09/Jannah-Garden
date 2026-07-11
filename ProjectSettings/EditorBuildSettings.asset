@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/OuterGarden.unity
-    guid: d5277139a4e91f34985458477d28760b
+    guid: 6d5914f609d20cf43aa509a6813e735a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2729a7883b528814fa0476c231c8050c, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: b55d4544650889544a437e272a012d9f, type: 2}
