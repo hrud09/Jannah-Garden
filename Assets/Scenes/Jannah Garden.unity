@@ -26705,7 +26705,7 @@ MonoBehaviour:
   platinumBoxData: {fileID: 11400000, guid: 0ae62cbe89d8b0f438b4ecbc2d7b3888, type: 2}
   diamondBoxData: {fileID: 11400000, guid: 6aa46fa171c4c3a45acf0dd61b07bac0, type: 2}
   isSubscriber: 0
-  dailyResetTime: {x: 0, y: 0}
+  dailyResetTime: {x: 15, y: 50}
   treasureBoxStatusUi: {fileID: 302626757594565094}
   silverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   goldColor: {r: 1, g: 0.75, b: 0, a: 1}

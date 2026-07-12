@@ -71,7 +71,7 @@ public class PlayersInteractionManager : MonoBehaviour
             }
             else if (AdsManager.Instance != null)
             {
-                AdsManager.Instance.ShowFakeRewardedAd(() => 
+                AdsManager.Instance.ShowRewardedAd(() => 
                 {
                     if (TreasureBoxManager.Instance != null)
                     {

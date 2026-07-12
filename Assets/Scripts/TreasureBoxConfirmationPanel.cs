@@ -105,7 +105,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
         gameObject.SetActive(false);
         if (AdsManager.Instance != null)
         {
-            AdsManager.Instance.ShowFakeRewardedAd(() =>
+            AdsManager.Instance.ShowRewardedAd(() =>
             {
                 if (TreasureBoxManager.Instance != null)
                 {
