@@ -1,0 +1,88 @@
+{
+    "fellows": [
+        {
+            "userId": "u_1001",
+            "userName": "Ahmad Rahman",
+            "memberSince": "2024-03-15",
+            "noorCoins": 1250,
+            "profileImagePath": "Profiles/avatar_01"
+        },
+        {
+            "userId": "u_1002",
+            "userName": "Fatima Zahra",
+            "memberSince": "2023-11-02",
+            "noorCoins": 4820,
+            "profileImagePath": "Profiles/avatar_02"
+        },
+        {
+            "userId": "u_1003",
+            "userName": "Yusuf Karim",
+            "memberSince": "2025-01-20",
+            "noorCoins": 340,
+            "profileImagePath": "Profiles/avatar_03"
+        },
+        {
+            "userId": "u_1004",
+            "userName": "Aisha Siddiqui",
+            "memberSince": "2024-07-08",
+            "noorCoins": 2075,
+            "profileImagePath": "Profiles/avatar_04"
+        },
+        {
+            "userId": "u_1005",
+            "userName": "Bilal Hassan",
+            "memberSince": "2023-05-27",
+            "noorCoins": 9640,
+            "profileImagePath": "Profiles/avatar_05"
+        },
+        {
+            "userId": "u_1006",
+            "userName": "Maryam Noor",
+            "memberSince": "2025-04-11",
+            "noorCoins": 615,
+            "profileImagePath": "Profiles/avatar_06"
+        },
+        {
+            "userId": "u_1007",
+            "userName": "Ibrahim Malik",
+            "memberSince": "2024-09-30",
+            "noorCoins": 1880,
+            "profileImagePath": "Profiles/avatar_07"
+        },
+        {
+            "userId": "u_1008",
+            "userName": "Khadija Amin",
+            "memberSince": "2023-08-14",
+            "noorCoins": 7310,
+            "profileImagePath": "Profiles/avatar_08"
+        },
+        {
+            "userId": "u_1009",
+            "userName": "Omar Farouk",
+            "memberSince": "2025-02-06",
+            "noorCoins": 495,
+            "profileImagePath": "Profiles/avatar_09"
+        },
+        {
+            "userId": "u_1010",
+            "userName": "Zainab Iqbal",
+            "memberSince": "2024-12-19",
+            "noorCoins": 3260,
+            "profileImagePath": "Profiles/avatar_10"
+        },
+        {
+            "userId": "u_1011",
+            "userName": "Hamza Sheikh",
+            "memberSince": "2023-02-11",
+            "noorCoins": 12450,
+            "profileImagePath": "Profiles/avatar_11"
+        },
+        {
+            "userId": "u_1012",
+            "userName": "Safiya Haque",
+            "memberSince": "2025-06-03",
+            "noorCoins": 180,
+            "profileImagePath": "Profiles/avatar_12"
+        }
+    ]
+}
