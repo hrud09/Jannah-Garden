@@ -10,7 +10,7 @@ public class GenerateShopItemDatas
     public static void GenerateShopItems()
     {
         string prefabFolder = "Assets/Prefabs/Shop Items";
-        string outputFolder = "Assets/Resources/Shop Items";
+        string outputFolder = "Assets/Resources/Natural Placeable Shop Items";
 
         // Ensure the output folder exists
         if (!AssetDatabase.IsValidFolder(outputFolder))

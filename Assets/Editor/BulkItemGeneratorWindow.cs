@@ -25,7 +25,7 @@ public class BulkItemGeneratorWindow : EditorWindow
     }
 
     private string shopPrefabFolder = "Assets/Prefabs/Shop Items";
-    private string shopOutputFolder = "Assets/Resources/Shop Items";
+    private string shopOutputFolder = "Assets/Resources/Natural Placeable Shop Items";
     private int shopDefaultPrice = 50;
     private int shopDefaultXPLevel = 1;
     private bool shopOverwriteExisting = false;

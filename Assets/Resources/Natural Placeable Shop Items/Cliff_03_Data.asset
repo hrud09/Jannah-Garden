@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Cliff_03_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: -918069050, guid: 69e966589202b13419a03af8b183341e, type: 3}
+  itemName: Cliff 03
+  itemDescription: A unique Cliff 03 decoration to personalize and enhance the atmosphere
+    of your garden.
+  noorCoinCost: 1500
+  itemPrice: 
+  itemID: 1e92201e6b384b558c3c4d92a3b0b9dc
+  requiredXPLevel: 1
+  itemCategory: 3
+  itemPrefab: {fileID: 9203603020710262029, guid: ca00d4d4c0d329e4599915fdd324475f, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 30

@@ -147,6 +147,23 @@ namespace FlutterIntegration
                     break;
                 }
 
+                case FlutterCommands.IAPPurchaseResult:
+                {
+                    IAPPurchaseResultPayload result = JsonUtility.FromJson<IAPPurchaseResultPayload>(dataJson);
+                    if (result == null) break;
+
+                    Debug.Log($"[FlutterBridge] IAP -> Product: {result.productId}, Success: {result.success}");
+
+                    if (IAPManager.Instance == null)
+                    {
+                        Debug.LogWarning("[FlutterBridge] No IAPManager in this scene — purchase result dropped.");
+                        break;
+                    }
+
+                    IAPManager.Instance.HandlePurchaseResult(result.productId, result.success, result.message);
+                    break;
+                }
+
                 case FlutterCommands.UpdateFellowshipProfiles:
                 {
                     FellowshipProfilesPayload roster = JsonUtility.FromJson<FellowshipProfilesPayload>(dataJson);

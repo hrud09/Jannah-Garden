@@ -205,7 +205,7 @@ public class InGameShopManager : MonoBehaviour
                     TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
                     if (txt != null)
                     {
-                        txt.text = cat.ToString();
+                        txt.text = GetCategoryDisplayName(cat);
                     }
 
                     RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
@@ -413,8 +413,9 @@ public class InGameShopManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Selects the given item, checks if the player can afford it, deducts Noor Coins,
-    /// closes the shop, prepares placement, and logs the event.
+    /// Entry point for every shop item click. Enforces the level gate, then routes to the flow for the
+    /// item's <see cref="ShopAcquisitionType"/>: spend Noor Coins, watch a rewarded ad, or pay real money.
+    /// Each flow converges on <see cref="CompleteAcquisition"/> once the player has paid.
     /// </summary>
     public void SelectAndUseItem(ShopItemUI item)
     {
@@ -422,9 +423,10 @@ public class InGameShopManager : MonoBehaviour
         if (item == null) return;
 
         ShopItemData data = item.ItemData;
+        if (data == null) return;
 
-        // ── Level Gate ────────────────────────────────────────────────────────
-        if (data != null && PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel)
+        // ── Level Gate (applies to every acquisition type) ─────────────────────
+        if (PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel)
         {
             Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': requires level {data.requiredXPLevel}.");
             if (ToastMessageManager.Instance != null)
@@ -434,8 +436,29 @@ public class InGameShopManager : MonoBehaviour
             return; // Abort — player doesn't have the required level
         }
 
+        switch (data.acquisitionType)
+        {
+            case ShopAcquisitionType.RewardedAd:
+                AcquireByWatchingAd(item, data);
+                break;
+
+            case ShopAcquisitionType.InAppPurchase:
+                AcquireByRealMoney(item, data);
+                break;
+
+            default:
+                AcquireWithNoorCoins(item, data);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Standard flow: deduct <see cref="ShopItemData.noorCoinCost"/> and hand the item over.
+    /// </summary>
+    private void AcquireWithNoorCoins(ShopItemUI item, ShopItemData data)
+    {
         // ── Economy Gate ──────────────────────────────────────────────────────
-        if (data != null && data.noorCoinCost > 0)
+        if (data.noorCoinCost > 0)
         {
             if (NoorCoinManager.Instance == null)
             {
@@ -462,39 +485,181 @@ public class InGameShopManager : MonoBehaviour
             Debug.Log($"[InGameShopManager] Purchased '{data.itemName}' for "
                 + $"{data.noorCoinCost} Noor Coins.");
         }
-        // ─────────────────────────────────────────────────────────────────────
 
+        CompleteAcquisition(item, data);
+    }
+
+    /// <summary>
+    /// Rewarded-ad flow. For a daily offer the cooldown is checked first, and only started once the ad
+    /// has actually been watched — a player who bails out of the ad loses nothing.
+    /// </summary>
+    private void AcquireByWatchingAd(ShopItemUI item, ShopItemData data)
+    {
+        // ── Daily Offer Gate ──────────────────────────────────────────────────
+        if (data.isDailyOffer)
+        {
+            // DailyOfferManager creates itself on demand, so this is null only while the app is quitting.
+            if (DailyOfferManager.Instance == null) return;
+
+            if (!DailyOfferManager.Instance.IsOfferAvailable(data))
+            {
+                System.TimeSpan remaining = DailyOfferManager.Instance.GetTimeUntilAvailable(data);
+                Debug.Log($"[InGameShopManager] '{data.itemName}' is on cooldown for another "
+                    + $"{DailyOfferManager.FormatCooldown(remaining)}.");
+
+                if (ToastMessageManager.Instance != null)
+                {
+                    ToastMessageManager.Instance.ShowToast($"Come back in {DailyOfferManager.FormatCooldown(remaining)}");
+                }
+
+                return; // Abort — already claimed this cycle
+            }
+        }
+
+        if (AdsManager.Instance == null)
+        {
+            Debug.LogError("[InGameShopManager] AdsManager not found in scene — cannot show a rewarded ad. "
+                + "Add an AdsManager GameObject.");
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("Ads are unavailable right now");
+            }
+            return;
+        }
+
+        Debug.Log($"[InGameShopManager] Showing rewarded ad for '{data.itemName}'.");
+
+        // ShowRewardedAd only calls back once the reward is earned (it falls back to the fake ad panel
+        // when no real ad is loaded), so reaching this callback means the player has paid with their time.
+        AdsManager.Instance.ShowRewardedAd(() =>
+        {
+            if (item == null || item.ItemData != data) return; // Shop was torn down mid-ad
+
+            Debug.Log($"[InGameShopManager] Rewarded ad watched — granting '{data.itemName}'.");
+
+            if (data.isDailyOffer && DailyOfferManager.Instance != null)
+            {
+                DailyOfferManager.Instance.MarkOfferClaimed(data);
+            }
+
+            CompleteAcquisition(item, data);
+        });
+    }
+
+    /// <summary>
+    /// Real-money flow. Delegates to <see cref="IAPManager"/>, which currently fakes the transaction —
+    /// see that class for the storefront seam.
+    /// </summary>
+    private void AcquireByRealMoney(ShopItemUI item, ShopItemData data)
+    {
+        if (IAPManager.Instance == null)
+        {
+            Debug.LogError("[InGameShopManager] IAPManager not found in scene — cannot start a purchase. "
+                + "Add an IAPManager GameObject.");
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("The store is unavailable right now");
+            }
+            return;
+        }
+
+        if (IAPManager.Instance.IsPurchasePending)
+        {
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("A purchase is already in progress");
+            }
+            return;
+        }
+
+        item.SetPurchasePending(true);
+
+        IAPManager.Instance.PurchaseProduct(data, success =>
+        {
+            if (item == null || item.ItemData != data) return; // Shop was torn down mid-purchase
+
+            item.SetPurchasePending(false);
+
+            if (!success)
+            {
+                if (ToastMessageManager.Instance != null)
+                {
+                    ToastMessageManager.Instance.ShowToast("Purchase not completed");
+                }
+                return;
+            }
+
+            CompleteAcquisition(item, data);
+        });
+    }
+
+    /// <summary>
+    /// The player has paid (coins, an ad, or real money) — hand over what they bought.
+    /// Grants any Noor Coin reward, then prepares placement if the item is something to put in the garden.
+    /// Coin packs and coin-paying ad offers have no prefab, so they stop at the reward and leave the shop open.
+    /// </summary>
+    private void CompleteAcquisition(ShopItemUI item, ShopItemData data)
+    {
         selectedShopItem = item;
+
+        // ── Grant coins (coin packs, ad offers) ───────────────────────────────
+        if (data.noorCoinReward > 0)
+        {
+            if (NoorCoinManager.Instance == null)
+            {
+                Debug.LogError($"[InGameShopManager] '{data.itemName}' grants {data.noorCoinReward} Noor Coins "
+                    + "but there is no NoorCoinManager in the scene — the reward is lost.");
+            }
+            else
+            {
+                NoorCoinManager.Instance.Earn(data.noorCoinReward);
+                Debug.Log($"[InGameShopManager] Granted {data.noorCoinReward} Noor Coins from '{data.itemName}'. "
+                    + $"New balance: {NoorCoinManager.Instance.Balance}.");
+            }
+        }
+
+        OnShopItemUsed?.Invoke(data);
+
+        // ── Grant the item itself ─────────────────────────────────────────────
+        if (!data.IsPlaceable)
+        {
+            // Nothing to place (coin pack / coin-only ad offer). Keep the shop open so the player can
+            // spend what they just earned, and refresh the cards so the new balance is reflected.
+            RefreshShopItemVisuals();
+            Debug.Log($"[InGameShopManager] '{data.itemName}' has no prefab — reward granted, nothing to place.");
+            return;
+        }
 
         // Close the shop panel
         SetShopOpen(false, smooth: true);
 
-        if (data != null)
+        // Notify placement manager to prepare placing the item (spawn preview & show Place button)
+        if (placementManager == null)
         {
-            OnShopItemUsed?.Invoke(data);
+            placementManager = ItemPlacementManager.Instance != null
+                ? ItemPlacementManager.Instance
+                : FindObjectOfType<ItemPlacementManager>();
         }
 
-        // Notify placement manager to prepare placing the item (spawn preview & show Place button)
-        if (data != null)
+        if (placementManager != null)
         {
-            if (placementManager == null)
-            {
-                placementManager = ItemPlacementManager.Instance != null
-                    ? ItemPlacementManager.Instance
-                    : FindObjectOfType<ItemPlacementManager>();
-            }
-
-            if (placementManager != null)
-            {
-                placementManager.PreparePlacement(data);
-            }
-            else
-            {
-                Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
-            }
+            placementManager.PreparePlacement(data);
+        }
+        else
+        {
+            Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
         }
 
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
+    }
+
+    /// <summary>Re-runs the price/affordability pass on every spawned card.</summary>
+    private void RefreshShopItemVisuals()
+    {
+        foreach (var itemUI in spawnedShopItemUIs)
+        {
+            if (itemUI != null) itemUI.RefreshAffordabilityVisual();
+        }
     }
 
     /// <summary>
@@ -542,7 +707,8 @@ public class InGameShopManager : MonoBehaviour
         bool isShop = category == ShopItemCategory.All ||
                       category == ShopItemCategory.Plants ||
                       category == ShopItemCategory.Buildings ||
-                      category == ShopItemCategory.Decorations;
+                      category == ShopItemCategory.Decorations ||
+                      category == ShopItemCategory.NoorCoins;
 
         Color activeColor = Color.white;
         Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -777,6 +943,19 @@ public class InGameShopManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"[InGameShopManager] Unknown category name: {categoryName}");
+        }
+    }
+
+    /// <summary>
+    /// The label shown on a category tab. Enum names cannot contain spaces, so the ones that need a
+    /// two-word label are spelled out here; everything else uses its name as-is.
+    /// </summary>
+    private static string GetCategoryDisplayName(ShopItemCategory category)
+    {
+        switch (category)
+        {
+            case ShopItemCategory.NoorCoins: return "Noor Coins";
+            default: return category.ToString();
         }
     }
 

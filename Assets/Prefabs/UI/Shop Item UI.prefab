@@ -249,7 +249,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 20
+  m_fontSizeMin: 15
   m_fontSizeMax: 25
   m_fontStyle: 0
   m_HorizontalAlignment: 4
@@ -643,6 +643,8 @@ MonoBehaviour:
   - {fileID: 3742483132195107422}
   affordableColor: {r: 0.38978246, g: 1, b: 0.10196078, a: 1}
   unaffordableColor: {r: 0.9, g: 0.2, b: 0.2, a: 1}
+  watchAdLabel: Watch Ad
+  purchasePendingLabel: Purchasing...
 --- !u!225 &4078596483887000632
 CanvasGroup:
   m_ObjectHideFlags: 0

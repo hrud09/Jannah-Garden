@@ -8,13 +8,30 @@ using Unity.Notifications.iOS;
 #endif
 
 /// <summary>
-/// Manages mobile notifications for Jannah Garden, particularly for Treasure Box availability.
+/// Manages mobile notifications for Jannah Garden: Treasure Box availability, and the Daily Noor Coin
+/// Surprise becoming claimable again.
+///
+/// Scheduling is all-or-nothing on purpose. The platform APIs give no cheap way to cancel one pending
+/// notification by meaning, so every reschedule cancels everything and rebuilds the full set. That is
+/// why both features are scheduled from the single <see cref="ScheduleAllNotifications"/> pass — if the
+/// daily reward scheduled itself from a separate manager, the next treasure-box reschedule would
+/// silently wipe it.
 /// </summary>
 public class MobileNotificationManager : MonoBehaviour
 {
     public static MobileNotificationManager Instance { get; private set; }
 
     private const string CHANNEL_ID = "treasure_box_channel";
+    private const string DAILY_REWARD_CHANNEL_ID = "daily_reward_channel";
+
+    [Header("Daily Noor Coin Surprise")]
+    [Tooltip("Title of the notification fired when the daily rewarded-ad offer becomes claimable again.")]
+    [SerializeField] private string dailyRewardTitle = "Daily Noor Coin Surprise!";
+
+    [Tooltip("Body of the notification fired when the daily rewarded-ad offer becomes claimable again.")]
+    [TextArea(2, 4)]
+    [SerializeField] private string dailyRewardText =
+        "Your Daily Noor Coin Surprise is now available. Go and claim your reward!";
 
     private void Awake()
     {
@@ -31,29 +48,31 @@ public class MobileNotificationManager : MonoBehaviour
 
     private void Start()
     {
-        // Subscribe to state changes so we recalculate notifications when a box is opened or state resets
-        TreasureBoxManager.OnStateChanged += ScheduleTreasureBoxNotifications;
-        
+        // Recalculate whenever either system's state moves: a box opened/reset, or a daily offer claimed.
+        TreasureBoxManager.OnStateChanged += ScheduleAllNotifications;
+        DailyOfferManager.OnOffersChanged += ScheduleAllNotifications;
+
         // Initial schedule when game starts
-        ScheduleTreasureBoxNotifications();
+        ScheduleAllNotifications();
     }
 
     private void OnDestroy()
     {
-        TreasureBoxManager.OnStateChanged -= ScheduleTreasureBoxNotifications;
+        TreasureBoxManager.OnStateChanged -= ScheduleAllNotifications;
+        DailyOfferManager.OnOffersChanged -= ScheduleAllNotifications;
     }
 
     private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
         {
-            ScheduleTreasureBoxNotifications();
+            ScheduleAllNotifications();
         }
     }
 
     private void OnApplicationQuit()
     {
-        ScheduleTreasureBoxNotifications();
+        ScheduleAllNotifications();
     }
 
     /// <summary>
@@ -70,16 +89,36 @@ public class MobileNotificationManager : MonoBehaviour
             Description = "Notifications for when treasure boxes are ready to be opened"
         };
         AndroidNotificationCenter.RegisterNotificationChannel(channel);
+
+        var dailyRewardChannel = new AndroidNotificationChannel()
+        {
+            Id = DAILY_REWARD_CHANNEL_ID,
+            Name = "Daily Reward Notifications",
+            Importance = Importance.Default,
+            Description = "Notifications for when the Daily Noor Coin Surprise can be claimed again"
+        };
+        AndroidNotificationCenter.RegisterNotificationChannel(dailyRewardChannel);
 #endif
     }
 
     /// <summary>
-    /// Cancels existing notifications and schedules new ones for upcoming treasure boxes.
+    /// Cancels every pending notification and rebuilds the whole schedule from current state.
+    /// This is the only entry point that cancels — the per-feature schedulers below assume a clean slate.
     /// </summary>
-    public void ScheduleTreasureBoxNotifications()
+    public void ScheduleAllNotifications()
     {
         CancelAllNotifications();
 
+        ScheduleTreasureBoxNotifications();
+        ScheduleDailyRewardNotification();
+    }
+
+    /// <summary>
+    /// Schedules notifications for upcoming treasure boxes.
+    /// Assumes pending notifications were already cleared by <see cref="ScheduleAllNotifications"/>.
+    /// </summary>
+    private void ScheduleTreasureBoxNotifications()
+    {
         if (TreasureBoxManager.Instance == null) return;
 
         TreasureBoxTier upcomingTier = TreasureBoxManager.Instance.GetUpcomingTier();
@@ -93,19 +132,40 @@ public class MobileNotificationManager : MonoBehaviour
             if (!TreasureBoxManager.Instance.IsSlotAvailable(upcomingTier, i))
             {
                 DateTime availableAt = TreasureBoxManager.Instance.GetSlotAvailableAt(upcomingTier, i);
-                
+
                 // If we got a valid future time, schedule the notification
                 if (availableAt != DateTime.MinValue && availableAt > DateTime.Now)
                 {
                     string title = "Treasure Box Ready!";
                     string text = $"A new {upcomingTier} Treasure Box is ready to be opened in Jannah Garden!";
-                    ScheduleNotification(title, text, availableAt);
+                    ScheduleNotification(title, text, availableAt, CHANNEL_ID);
                 }
             }
         }
     }
 
-    private void ScheduleNotification(string title, string text, DateTime fireTime)
+    /// <summary>
+    /// Schedules the "your Daily Noor Coin Surprise is ready" notification for the moment the offer comes
+    /// off cooldown. Nothing is scheduled when the reward is already claimable — the player can just open
+    /// the shop and take it, so there is no future event to announce.
+    /// Assumes pending notifications were already cleared by <see cref="ScheduleAllNotifications"/>.
+    /// </summary>
+    private void ScheduleDailyRewardNotification()
+    {
+        if (DailyOfferManager.Instance == null) return;
+
+        if (!DailyOfferManager.Instance.TryGetNextRefreshTime(out DateTime nextRefreshUtc)) return;
+
+        // The notification APIs work in device-local time; DailyOfferManager tracks cooldowns in UTC.
+        DateTime fireTime = nextRefreshUtc.ToLocalTime();
+        if (fireTime <= DateTime.Now) return;
+
+        ScheduleNotification(dailyRewardTitle, dailyRewardText, fireTime, DAILY_REWARD_CHANNEL_ID);
+
+        Debug.Log($"[MobileNotificationManager] Daily reward notification scheduled for {fireTime}.");
+    }
+
+    private void ScheduleNotification(string title, string text, DateTime fireTime, string channelId)
     {
 #if UNITY_ANDROID
         var notification = new AndroidNotification
@@ -116,7 +176,7 @@ public class MobileNotificationManager : MonoBehaviour
             SmallIcon = "icon_small", // These should match icons configured in Mobile Notifications Settings
             LargeIcon = "icon_large"
         };
-        AndroidNotificationCenter.SendNotification(notification, CHANNEL_ID);
+        AndroidNotificationCenter.SendNotification(notification, channelId);
 #elif UNITY_IOS
         TimeSpan delay = fireTime - DateTime.Now;
         if (delay.TotalSeconds <= 0) return;

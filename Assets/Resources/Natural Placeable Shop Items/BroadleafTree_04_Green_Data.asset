@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: BroadleafTree_04_Green_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 2071542909, guid: 69e966589202b13419a03af8b183341e, type: 3}
+  itemName: Broadleaf Tree 04
+  itemDescription: A beautiful green Broadleaf Tree 04 to add vibrant life and natural
+    beauty to your garden.
+  noorCoinCost: 1500
+  itemPrice: 
+  itemID: eeece9907efd4b8bb7814c40380d9cd4
+  requiredXPLevel: 3
+  itemCategory: 1
+  itemPrefab: {fileID: 8509515907140916961, guid: cd70cd855f71078438d51c2883795a0e, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 30
