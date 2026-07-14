@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// View for a single fellow's floating profile card in the garden.
@@ -53,6 +56,12 @@ public class FellowProfileObject : MonoBehaviour
 
     private Camera cachedCamera;
 
+    /// <summary>
+    /// Downloaded avatars, shared across every card. Two fellows with the same avatar URL — and the same
+    /// fellow respawned onto a new point — reuse one texture instead of re-downloading.
+    /// </summary>
+    private static readonly Dictionary<string, Sprite> remoteAvatarCache = new Dictionary<string, Sprite>();
+
     private void Awake()
     {
         if (billboardRoot == null) billboardRoot = transform;
@@ -80,8 +89,73 @@ public class FellowProfileObject : MonoBehaviour
         if (noorCoinCountText != null)
             noorCoinCountText.text = data.noorCoins.ToString("N0", CultureInfo.InvariantCulture);
 
-        if (profilePicture != null)
-            profilePicture.sprite = ResolveProfileSprite(data.profileImagePath);
+        ApplyProfilePicture(data.profileImagePath);
+    }
+
+    /// <summary>
+    /// Avatars arrive one of two ways: a Resources path (dummy/local data) or an http(s) URL (real user
+    /// avatars from Flutter). Remote ones show the default while they download.
+    /// </summary>
+    private void ApplyProfilePicture(string path)
+    {
+        if (profilePicture == null) return;
+
+        if (string.IsNullOrEmpty(path))
+        {
+            profilePicture.sprite = defaultProfilePicture;
+            return;
+        }
+
+        if (IsRemote(path))
+        {
+            if (remoteAvatarCache.TryGetValue(path, out Sprite cached) && cached != null)
+            {
+                profilePicture.sprite = cached;
+                return;
+            }
+
+            profilePicture.sprite = defaultProfilePicture;
+
+            // StartCoroutine throws on an inactive object — a pooled card bound before it is re-enabled.
+            if (isActiveAndEnabled) StartCoroutine(DownloadAvatar(path));
+            else Debug.LogWarning($"[FellowProfileObject] '{name}' is inactive; skipping avatar download.", this);
+
+            return;
+        }
+
+        profilePicture.sprite = ResolveProfileSprite(path);
+    }
+
+    private static bool IsRemote(string path) =>
+        path.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+        path.StartsWith("https://", StringComparison.OrdinalIgnoreCase);
+
+    private IEnumerator DownloadAvatar(string url)
+    {
+        using UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogWarning(
+                $"[FellowProfileObject] Failed to download avatar '{url}': {request.error}. Keeping the default avatar.",
+                this);
+            yield break;
+        }
+
+        Texture2D texture = DownloadHandlerTexture.GetContent(request);
+        Sprite sprite = Sprite.Create(
+            texture,
+            new Rect(0, 0, texture.width, texture.height),
+            new Vector2(0.5f, 0.5f));
+
+        remoteAvatarCache[url] = sprite;
+
+        // The card may have been rebound to a different fellow (or pooled away) mid-download.
+        if (profilePicture != null && Data != null && Data.profileImagePath == url)
+        {
+            profilePicture.sprite = sprite;
+        }
     }
 
     /// <summary>

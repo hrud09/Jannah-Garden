@@ -39,7 +39,7 @@ public class SceneLoader : MonoBehaviour
     /// </summary>
     public void LoadOuterGarden()
     {
-        SceneManager.LoadScene("OuterGarden");
+        SceneManager.LoadScene("Outer Garden");
     }
 
     /// <summary>

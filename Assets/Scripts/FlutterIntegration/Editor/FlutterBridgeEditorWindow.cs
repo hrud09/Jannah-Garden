@@ -7,7 +7,13 @@ namespace FlutterIntegration.Editor
     public class FlutterBridgeEditorWindow : EditorWindow
     {
         private int selectedCommandIndex = 0;
-        private string[] availableCommands = new string[] { "UPDATE_USER_PROFILE", "UPDATE_COINS", "CUSTOM" };
+        private string[] availableCommands = new string[]
+        {
+            FlutterCommands.UpdateUserProfile,
+            FlutterCommands.UpdateCoins,
+            FlutterCommands.UpdateFellowshipProfiles,
+            "CUSTOM"
+        };
         
         private string jsonPayloadInput = "{\n  \"userName\": \"Mahad\",\n  \"noorCoins\": 1500,\n  \"profileImagePath\": \"\"\n}";
         private string customCommandInput = "";
@@ -58,15 +64,17 @@ namespace FlutterIntegration.Editor
             // Generate Full Wrapper JSON Preview
             GUILayout.Label("3. Full Message Preview (What Flutter sends)", EditorStyles.boldLabel);
             
-            // We minify the data payload to put inside the wrapper, exactly as it happens in real scenarios
+            // We minify the data payload to put inside the wrapper, exactly as it happens in real scenarios.
+            // Only whitespace *between* tokens is collapsed — stripping spaces outright would corrupt
+            // string values like "Ahmad Rahman".
             string stringifiedData = "{}";
-            try
+            if (!string.IsNullOrEmpty(jsonPayloadInput))
             {
-                // Simple validation check (doesn't catch all JSON errors, but enough for a preview)
-                if(!string.IsNullOrEmpty(jsonPayloadInput))
-                    stringifiedData = jsonPayloadInput.Replace("\n", "").Replace("\r", "").Replace(" ", ""); 
+                stringifiedData = jsonPayloadInput
+                    .Replace("\r", "")
+                    .Replace("\n", "")
+                    .Replace("\t", "");
             }
-            catch {}
             
             string fullJsonPreview = $"{{\n  \"command\": \"{currentCommand}\",\n  \"data\": \"{stringifiedData.Replace("\"", "\\\"")}\"\n}}";
             
@@ -94,11 +102,32 @@ namespace FlutterIntegration.Editor
         {
             switch (commandType)
             {
-                case "UPDATE_USER_PROFILE":
+                case FlutterCommands.UpdateUserProfile:
                     jsonPayloadInput = "{\n  \"userName\": \"PlayerName\",\n  \"noorCoins\": 1000,\n  \"profileImagePath\": \"https://example.com/image.png\"\n}";
                     break;
-                case "UPDATE_COINS":
+                case FlutterCommands.UpdateCoins:
                     jsonPayloadInput = "{\n  \"newBalance\": 550\n}";
+                    break;
+                case FlutterCommands.UpdateFellowshipProfiles:
+                    jsonPayloadInput =
+                        "{\n" +
+                        "  \"fellows\": [\n" +
+                        "    {\n" +
+                        "      \"userId\": \"u_1001\",\n" +
+                        "      \"userName\": \"Ahmad Rahman\",\n" +
+                        "      \"memberSince\": \"2024-03-15\",\n" +
+                        "      \"noorCoins\": 1250,\n" +
+                        "      \"profileImagePath\": \"https://example.com/avatars/ahmad.png\"\n" +
+                        "    },\n" +
+                        "    {\n" +
+                        "      \"userId\": \"u_1002\",\n" +
+                        "      \"userName\": \"Fatima Zahra\",\n" +
+                        "      \"memberSince\": \"2023-11-02\",\n" +
+                        "      \"noorCoins\": 4820,\n" +
+                        "      \"profileImagePath\": \"\"\n" +
+                        "    }\n" +
+                        "  ]\n" +
+                        "}";
                     break;
                 case "CUSTOM":
                     jsonPayloadInput = "{\n  \"key\": \"value\"\n}";

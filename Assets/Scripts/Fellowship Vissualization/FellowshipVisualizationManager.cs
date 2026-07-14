@@ -1,12 +1,18 @@
 using System.Collections.Generic;
+using FlutterIntegration;
 using UnityEngine;
 
 /// <summary>
 /// Spawns fellow profile cards around the map at registered spawn points.
 ///
-/// Right now the profiles come from a dummy JSON file (Resources/fellow_profiles.txt). When the real
-/// profile system arrives, call <see cref="ShowFellows"/> with the live data instead — the spawning,
-/// spawn-point bookkeeping, and the prefab itself stay exactly as they are.
+/// The roster comes from Flutter, via <see cref="FlutterBridge"/>. Because Flutter usually pushes the
+/// data while the player is still in Jannah Garden — long before this scene loads — the bridge caches
+/// the last roster it received. So this manager does not rely on catching the message live:
+///
+///   1. On Start, take whatever roster the bridge already has cached.
+///   2. If the cache is empty, ask Flutter to send it, and render it when it lands.
+///   3. If Flutter never answers (e.g. running the scene straight from the editor), optionally fall
+///      back to the dummy JSON in Resources/fellow_profiles.txt.
 ///
 /// Spawn points are registered the same way as <see cref="QuestionMarkOrbManager"/>: every child of
 /// <see cref="spawnPointsParent"/> is one point, and each holds at most one profile.
@@ -30,6 +36,16 @@ public class FellowshipVisualizationManager : MonoBehaviour
 
     public bool spawnOnStart = true;
 
+    [Header("Data Source")]
+    [Tooltip("Use the roster pushed from the Flutter app. Turn off to always use the dummy JSON.")]
+    public bool useFlutterData = true;
+
+    [Tooltip("Show the dummy JSON when Flutter has sent nothing. Keep on for editor testing; consider off for release so real users never see fake fellows.")]
+    public bool fallbackToDummyData = true;
+
+    [Tooltip("How long to wait for Flutter's roster before falling back to the dummy JSON.")]
+    public float flutterResponseTimeout = 3f;
+
     [Header("Data")]
     [Tooltip("Dummy profile JSON. Falls back to Resources/fellow_profiles.txt when unassigned.")]
     public TextAsset fellowProfileFile;
@@ -37,21 +53,85 @@ public class FellowshipVisualizationManager : MonoBehaviour
     private readonly List<Transform> availableSpawnPoints = new List<Transform>();
     private readonly List<FellowProfileObject> activeProfiles = new List<FellowProfileObject>();
 
+    /// <summary>Guards the dummy fallback from overwriting a roster that arrived while we waited.</summary>
+    private bool hasRenderedFlutterRoster;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
+    private void OnEnable()
+    {
+        // Static event, so this works even though the bridge lives in another scene.
+        FlutterBridge.OnFellowshipProfilesReceived += HandleFlutterRoster;
+    }
+
+    private void OnDisable()
+    {
+        FlutterBridge.OnFellowshipProfilesReceived -= HandleFlutterRoster;
+    }
+
     private void Start()
     {
         RegisterSpawnPoints();
 
-        if (spawnOnStart)
+        if (!spawnOnStart) return;
+
+        if (!useFlutterData)
         {
-            List<FellowProfileData> fellows = LoadDummyFellows();
-            if (fellows != null) ShowFellows(fellows);
+            ShowDummyFellows();
+            return;
         }
+
+        // The roster was very likely pushed before this scene loaded — the bridge kept it for us.
+        if (FlutterBridge.HasFellowshipProfiles)
+        {
+            HandleFlutterRoster(FlutterBridge.LatestFellowshipProfiles);
+            return;
+        }
+
+        // Nothing cached: ask Flutter for it, and fall back if the answer never comes.
+        if (FlutterBridge.Instance != null)
+        {
+            FlutterBridge.Instance.RequestFellowshipProfiles();
+        }
+
+        if (fallbackToDummyData)
+        {
+            Invoke(nameof(FallBackToDummyData), flutterResponseTimeout);
+        }
+    }
+
+    // ─── Flutter data ─────────────────────────────────────────────────────────
+
+    private void HandleFlutterRoster(FellowshipProfilesPayload roster)
+    {
+        if (roster?.fellows == null || roster.fellows.Length == 0) return;
+
+        hasRenderedFlutterRoster = true;
+        CancelInvoke(nameof(FallBackToDummyData));
+
+        Debug.Log($"[FellowshipVisualization] Showing {roster.fellows.Length} fellow(s) from Flutter.", this);
+        ShowFellows(roster.fellows);
+    }
+
+    private void FallBackToDummyData()
+    {
+        if (hasRenderedFlutterRoster) return;
+
+        Debug.LogWarning(
+            $"[FellowshipVisualization] Flutter sent no roster within {flutterResponseTimeout}s — showing dummy profiles.",
+            this);
+
+        ShowDummyFellows();
+    }
+
+    private void ShowDummyFellows()
+    {
+        List<FellowProfileData> fellows = LoadDummyFellows();
+        if (fellows != null) ShowFellows(fellows);
     }
 
     // ─── Spawn points ─────────────────────────────────────────────────────────
