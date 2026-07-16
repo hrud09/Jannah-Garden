@@ -23,6 +23,13 @@ namespace IdyllicFantasyNature
         [Tooltip("the parent of this object")]
         [SerializeField] private Transform _controller;
 
+        /// <summary>
+        /// When true, allows the camera to look nearly straight up/down.
+        /// Set by InspectorModeUI when entering/exiting Inspector Mode.
+        /// </summary>
+        [HideInInspector]
+        public bool unlockFullPitch = false;
+
         private bool _isDraggingRotation = false;
         private int _activeTouchId = -1;
 
@@ -184,8 +191,10 @@ namespace IdyllicFantasyNature
             _yRotation += rotateX;
             _xRotation -= rotateY;
 
-            // limits camera rotation
-            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+            // limits camera rotation — wider range in Inspector Mode for bird's-eye view
+            float minPitch = unlockFullPitch ? -89f : -90f;
+            float maxPitch = unlockFullPitch ? 89f : 90f;
+            _xRotation = Mathf.Clamp(_xRotation, minPitch, maxPitch);
 
             // rotates camera on the y- and x-axis
             transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
