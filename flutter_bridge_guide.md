@@ -76,6 +76,25 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 |---|---|---|
 | `UNITY_READY` | The bridge is alive and listening. | Push the user profile, coins, and the fellowship roster. |
 | `REQUEST_FELLOWSHIP_PROFILES` | A scene needs the roster and has none cached. | Send `UPDATE_FELLOWSHIP_PROFILES`. |
+| `REQUEST_SUBSCRIBE` | The player tapped **Subscribe** on the treasure box panel. Payload: `{ source }`. | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and navigate to your app's subscribe page. |
+
+#### Handling `REQUEST_SUBSCRIBE`
+
+Unity cannot pop its own `UnityWidget` — only Flutter can. When you receive this command, dismiss the
+Unity screen and route to the subscription page:
+
+```dart
+case 'REQUEST_SUBSCRIBE':
+  final data = jsonDecode(envelope['data'] as String) as Map<String, dynamic>;
+  final source = data['source'] as String?; // e.g. "treasure_box"
+  // Close the Unity view and go to your subscribe screen.
+  Navigator.of(context).popUntil((r) => r.isFirst); // or however you exit Unity
+  Navigator.of(context).pushNamed('/subscribe', arguments: source);
+  break;
+```
+
+The `source` field (currently `"treasure_box"`) tells you what prompted the request, in case you want to
+tailor the subscribe screen or log analytics.
 
 ---
 

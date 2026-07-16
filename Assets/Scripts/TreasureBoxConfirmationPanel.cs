@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FlutterIntegration;
 
 public class TreasureBoxConfirmationPanel : MonoBehaviour
 {
@@ -125,9 +126,22 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     private void OnSubscribeClicked()
     {
         gameObject.SetActive(false);
-        if (ToastMessageManager.Instance != null)
+
+        // Subscriptions are owned by the Flutter app, not the game. Ask Flutter to leave Unity and open
+        // its subscribe page — Flutter pops the Unity widget and handles navigation on its side.
+        if (FlutterBridge.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("You need to subscribe from the Amal Apps.");
+            FlutterBridge.Instance.SendMessageToFlutterApp(
+                FlutterCommands.RequestSubscribe,
+                new SubscribeRequestPayload { source = "treasure_box" });
+        }
+        else
+        {
+            Debug.LogWarning("[TreasureBoxConfirmationPanel] No FlutterBridge — cannot open subscribe page.");
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("You need to subscribe from the Amal Apps.");
+            }
         }
     }
 

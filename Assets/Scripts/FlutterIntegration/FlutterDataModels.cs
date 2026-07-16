@@ -35,6 +35,14 @@ namespace FlutterIntegration
         /// the store plugin and the Firebase wallet. Payload: <see cref="IAPPurchaseRequestPayload"/>.
         /// </summary>
         public const string RequestIAPPurchase = "REQUEST_IAP_PURCHASE";
+
+        /// <summary>
+        /// Asks Flutter to leave the Unity game and open the app's subscription page. Fired when the
+        /// player taps "Subscribe" on the treasure box panel. Flutter owns the subscription flow, so
+        /// its job is to pop/dismiss the Unity widget and navigate to the subscribe screen.
+        /// Payload: <see cref="SubscribeRequestPayload"/> (carries the context that prompted it).
+        /// </summary>
+        public const string RequestSubscribe = "REQUEST_SUBSCRIBE";
     }
 
     [Serializable]
@@ -81,6 +89,16 @@ namespace FlutterIntegration
 
         /// <summary>Optional store message, shown to the player when the purchase fails.</summary>
         public string message;
+    }
+
+    /// <summary>
+    /// Unity → Flutter: the player asked to subscribe. <paramref name="source"/> tells Flutter where the
+    /// request came from (e.g. "treasure_box") so it can tailor the subscribe screen or analytics.
+    /// </summary>
+    [Serializable]
+    public class SubscribeRequestPayload
+    {
+        public string source;
     }
 
     /// <summary>Placeholder for commands that carry no data (JsonUtility cannot serialize null).</summary>

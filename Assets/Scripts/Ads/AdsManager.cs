@@ -10,20 +10,16 @@ public class AdsManager : MonoBehaviour
 
     // Test Ad Unit IDs (Android). Replace with iOS IDs if needed for iOS builds.
 #if UNITY_ANDROID
-    private string bannerAdUnitId = "ca-app-pub-3940256099942544/6300978111";
     private string interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
     private string rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
 #elif UNITY_IPHONE
-    private string bannerAdUnitId = "ca-app-pub-3940256099942544/2934735716";
     private string interstitialAdUnitId = "ca-app-pub-3940256099942544/4411468910";
     private string rewardedAdUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
-    private string bannerAdUnitId = "unused";
     private string interstitialAdUnitId = "unused";
     private string rewardedAdUnitId = "unused";
 #endif
 
-    private BannerView bannerView;
     private InterstitialAd interstitialAd;
     private RewardedAd rewardedAd;
 
@@ -58,47 +54,10 @@ public class AdsManager : MonoBehaviour
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(initStatus => {
             Debug.Log("AdMob initialized.");
-            LoadBannerAd();
             LoadInterstitialAd();
             LoadRewardedAd();
         });
     }
-
-    #region Banner Ad
-
-    public void LoadBannerAd()
-    {
-        if (bannerView != null)
-        {
-            bannerView.Destroy();
-        }
-
-        bannerView = new BannerView(bannerAdUnitId, AdSize.Banner, AdPosition.Bottom);
-        AdRequest request = new AdRequest();
-        bannerView.LoadAd(request);
-    }
-
-    public void ShowBanner()
-    {
-        if (bannerView != null)
-        {
-            bannerView.Show();
-        }
-        else
-        {
-            LoadBannerAd();
-        }
-    }
-
-    public void HideBanner()
-    {
-        if (bannerView != null)
-        {
-            bannerView.Hide();
-        }
-    }
-
-    #endregion
 
     #region Interstitial Ad
 

@@ -3,6 +3,12 @@ using UnityEditor;
 
 public static class ToolsMenu
 {
+    [MenuItem("Tools/Occlusion Culling Settings")]
+    public static void OpenOcclusionCullingSettings()
+    {
+        OcclusionCullingEditorWindow.ShowWindow();
+    }
+
     [MenuItem("Tools/Clear All Saved Data")]
     public static void ClearAllSavedData()
     {
