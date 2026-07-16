@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 #if UNITY_ANDROID
 using Unity.Notifications.Android;
@@ -52,7 +53,29 @@ public class MobileNotificationManager : MonoBehaviour
         TreasureBoxManager.OnStateChanged += ScheduleAllNotifications;
         DailyOfferManager.OnOffersChanged += ScheduleAllNotifications;
 
-        // Initial schedule when game starts
+        // Ask for permissions first (if needed), then do the initial schedule when game starts
+        StartCoroutine(RequestNotificationPermissions());
+    }
+
+    private IEnumerator RequestNotificationPermissions()
+    {
+#if UNITY_ANDROID
+        if (!UnityEngine.Android.Permission.HasUserAuthorizedPermission("android.permission.POST_NOTIFICATIONS"))
+        {
+            UnityEngine.Android.Permission.RequestUserPermission("android.permission.POST_NOTIFICATIONS");
+            // Wait until the permission dialog is resolved
+            yield return new WaitWhile(() => !UnityEngine.Android.Permission.HasUserAuthorizedPermission("android.permission.POST_NOTIFICATIONS"));
+        }
+#elif UNITY_IOS
+        using (var req = new AuthorizationRequest(AuthorizationOption.Alert | AuthorizationOption.Badge | AuthorizationOption.Sound, true))
+        {
+            while (!req.IsFinished)
+            {
+                yield return null;
+            }
+        }
+#endif
+        yield return null;
         ScheduleAllNotifications();
     }
 
