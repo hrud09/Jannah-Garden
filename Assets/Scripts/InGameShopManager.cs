@@ -126,7 +126,9 @@ public class InGameShopManager : MonoBehaviour
             CategoryTab allTab = FindTabForCategory(ShopItemCategory.All);
             int currentXPLevel = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpLevel : 1;
 
-            var sortedShopItems = shopItemDatas.OrderBy(d => d != null && currentXPLevel >= d.requiredXPLevel ? 0 : 1);
+            var sortedShopItems = shopItemDatas
+                .OrderBy(d => d != null && currentXPLevel >= d.requiredXPLevel ? 0 : 1)
+                .ThenBy(d => d != null ? d.sortOrder : 0);
 
             foreach (var data in sortedShopItems)
             {

@@ -68,6 +68,9 @@ public class ShopItemData : ScriptableObject
     [Header("Shop Category")]
     public ShopItemCategory itemCategory = ShopItemCategory.Plants;
 
+    [Tooltip("Sort order in the shop UI. Lower numbers appear first.")]
+    public int sortOrder = 0;
+
     [Header("Unlock Requirements")]
     [Tooltip("The required XP level to unlock and purchase this item.")]
     public int requiredXPLevel = 1;
