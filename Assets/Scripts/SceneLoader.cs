@@ -2,13 +2,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Attach to any GameObject with Button components to trigger scene loads.
+/// All loads are routed through <see cref="LoadingScreenManager"/> when available,
+/// otherwise fall back to a direct synchronous load.
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {
-    [Tooltip("The button to assign the load scene method to. If left empty, it will try to get a Button component on the same GameObject.")]
+    [Header("Scene Buttons")]
+    [Tooltip("The button to assign the load Outer Garden scene method to. " +
+             "If left empty, it will try to get a Button component on the same GameObject.")]
     public Button loadSceneButton;
 
     [Tooltip("The button to assign the load Jannah Garden scene method to.")]
     public Button jannahGardenButton;
+
+    [Tooltip("The button to assign the load Innate Sense scene method to.")]
+    public Button innateSenseButton;
 
     private void Awake()
     {
@@ -32,6 +42,11 @@ public class SceneLoader : MonoBehaviour
         {
             jannahGardenButton.onClick.AddListener(LoadJannahGarden);
         }
+
+        if (innateSenseButton != null)
+        {
+            innateSenseButton.onClick.AddListener(LoadInnateSense);
+        }
     }
 
     /// <summary>
@@ -39,7 +54,7 @@ public class SceneLoader : MonoBehaviour
     /// </summary>
     public void LoadOuterGarden()
     {
-        SceneManager.LoadScene("Outer Garden");
+        LoadSceneSafe("Outer Garden");
     }
 
     /// <summary>
@@ -47,7 +62,32 @@ public class SceneLoader : MonoBehaviour
     /// </summary>
     public void LoadJannahGarden()
     {
-        SceneManager.LoadScene("Jannah Garden");
+        LoadSceneSafe("Jannah Garden");
+    }
+
+    /// <summary>
+    /// Loads the Innate Sense scene.
+    /// </summary>
+    public void LoadInnateSense()
+    {
+        LoadSceneSafe("Innate Sense");
+    }
+
+    /// <summary>
+    /// Generic loader: routes through LoadingScreenManager if available,
+    /// otherwise falls back to a direct synchronous SceneManager.LoadScene.
+    /// </summary>
+    public void LoadSceneSafe(string sceneName)
+    {
+        if (LoadingScreenManager.Instance != null)
+        {
+            LoadingScreenManager.Instance.LoadScene(sceneName);
+        }
+        else
+        {
+            Debug.LogWarning($"SceneLoader: LoadingScreenManager not found. Loading '{sceneName}' directly.", this);
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     private void OnDestroy()
@@ -61,6 +101,11 @@ public class SceneLoader : MonoBehaviour
         if (jannahGardenButton != null)
         {
             jannahGardenButton.onClick.RemoveListener(LoadJannahGarden);
+        }
+
+        if (innateSenseButton != null)
+        {
+            innateSenseButton.onClick.RemoveListener(LoadInnateSense);
         }
     }
 }
