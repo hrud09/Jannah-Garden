@@ -18,7 +18,17 @@ public class JannahGardenManager : MonoBehaviour
         
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
 
+    // Runs before the first scene loads, so the cap applies to every scene -
+    // including when a scene is opened directly - without depending on this
+    // manager's GameObject being present in it.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void ConfigureFrameRate()
+    {
+        // vSync takes precedence over targetFrameRate; leaving it on makes
+        // Unity ignore the target and cap to the display's refresh rate.
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
     }
 
