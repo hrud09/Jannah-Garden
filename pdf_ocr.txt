@@ -1,0 +1,6 @@
+<USER_REQUEST>
+I have uploaded the PDF for all the questions for the MCQ manager or question answer manager inside my Janna Garden game. Can you edit the question JSON file with the new system of question and answer pattern from the PDF and update the logics behind the question answering system? 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-07-20T20:02:19+06:00.
+</ADDITIONAL_METADATA>

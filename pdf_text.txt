@@ -1,0 +1,6226 @@
+ID
+Level
+Category
+Question
+L1-PR-2
+1
+Prophets
+Who was swallowed by a great fish?
+L1-PR-3
+1
+Prophets
+Which prophet built the Ark?
+L1-PR-4
+1
+Prophets
+Which prophet is known as “Khalilullah” (Friend of Allah)?
+L1-PR-5
+1
+Prophets
+Which prophet could understand the language of 
+animals?
+L1-PR-6
+1
+Prophets
+Which prophet's staff turned into a snake?
+L1-PR-7
+1
+Prophets
+Who was thrown into a well by his brothers?
+L1-PR-8
+1
+Prophets
+Which prophet is remembered for his patience during 
+severe illness?
+L1-PR-9
+1
+Prophets
+Which prophet was born miraculously to Maryam?
+L1-PR-10
+1
+Prophets
+Which prophet is remembered for his willingness to 
+sacrifice his son for Allah?
+L1-PR-11
+1
+Prophets
+Which prophet built the Kaaba with his son?
+L1-QU-12
+1
+Quran
+How many Surahs are in the Quran?
+L1-QU-13
+1
+Quran
+What was the first word revealed to Prophet Muhammad 
+ﷺ?
+L1-QU-14
+1
+Quran
+Which is the longest Surah?
+L1-QU-15
+1
+Quran
+What does “Quran” literally mean?
+L1-QU-16
+1
+Quran
+In which month was the Quran first revealed?
+L1-QU-17
+1
+Quran
+Which Surah does not begin with “Bismillah”?
+L1-QU-18
+1
+Quran
+How many Juz (parts) is the Quran divided into?
+L1-QU-19
+1
+Quran
+Which Surah is recited in every unit (rakah) of prayer?
+L1-QU-20
+1
+Quran
+What is the shortest Surah in the Quran?
+L1-QU-21
+1
+Quran
+Which angel brought revelation to the Prophet ﷺ?
+L1-SE-22
+1
+Seerah
+In which city was Prophet Muhammad ﷺ born?
+L1-SE-23
+1
+Seerah
+What was the Prophet's ﷺ mother's name?
+ID
+Level
+Category
+Question
+L1-SE-24
+1
+Seerah
+Who was the Prophet's ﷺ first wife?
+L1-SE-25
+1
+Seerah
+What is the migration from Makkah to Madinah called?
+L1-SE-26
+1
+Seerah
+Who nursed the Prophet ﷺ as an infant?
+L1-SE-27
+1
+Seerah
+At what age did the Prophet ﷺ receive his first 
+revelation?
+L1-SE-28
+1
+Seerah
+What is the cave called where the Prophet ﷺ received 
+his first revelation?
+L1-SE-29
+1
+Seerah
+Who accompanied the Prophet ﷺ during the Hijrah?
+L1-SE-30
+1
+Seerah
+Which uncle raised the Prophet after his grandfather 
+passed?
+L1-SE-31
+1
+Seerah
+In which city did Prophet Muhammad ﷺ pass away?
+L1-HI-32
+1
+History & Calendar
+How many months are in the Islamic calendar?
+L1-HI-33
+1
+History & Calendar
+Which month is the month of fasting?
+L1-HI-34
+1
+History & Calendar
+What is the first month of the Islamic calendar?
+L1-HI-35
+1
+History & Calendar
+Which Eid comes right after Ramadan?
+L1-HI-36
+1
+History & Calendar
+In which month does Hajj take place?
+L1-HI-37
+1
+History & Calendar
+The Islamic calendar is based on which cycle?
+L1-HI-38
+1
+History & Calendar
+Which event marks the start of the Islamic calendar?
+L1-HI-39
+1
+History & Calendar
+Eid al-Adha commemorates which event?
+L1-HI-40
+1
+History & Calendar
+Laylatul Qadr is known as:
+L1-HI-41
+1
+History & Calendar
+In which month does Laylatul Qadr occur?
+L1-WO-42
+1
+Worship & Companions
+How many obligatory prayers do Muslims perform daily?
+L1-WO-43
+1
+Worship & Companions
+What are the Five Pillars of Islam called in Arabic?
+L1-WO-44
+1
+Worship & Companions
+What is voluntary charity called in Islam?
+L1-WO-45
+1
+Worship & Companions
+Which direction do Muslims face in prayer?
+ID
+Level
+Category
+Question
+L1-WO-46
+1
+Worship & Companions
+What is the pilgrimage to Makkah called?
+L1-WO-47
+1
+Worship & Companions Who was the first Caliph after the Prophet ﷺ?
+L1-WO-48
+1
+Worship & Companions
+What is the declaration of faith called?
+L1-WO-49
+1
+Worship & Companions
+Which companion is known as “Al-Farooq”?
+L1-WO-50
+1
+Worship & Companions
+What is the obligatory charity in Islam called?
+L1-WO-51
+1
+Worship & Companions
+Which Caliph standardized the Quran into one official 
+written text?
+L2-PR-52
+2
+Prophets
+Which prophet is called “Kalimullah” (One who spoke to 
+Allah)?
+L2-PR-53
+2
+Prophets
+Which prophet had the gift of interpreting dreams?
+L2-PR-54
+2
+Prophets
+Who was Prophet Musa's AS brother and helper?
+L2-PR-55
+2
+Prophets
+Which prophet is remembered for immense strength 
+alongside deep devotion?
+L2-PR-56
+2
+Prophets
+Which prophet was sent to the people of Madyan?
+L2-PR-57
+2
+Prophets
+Which prophet was sent to the people of 'Aad?
+L2-PR-58
+2
+Prophets
+Which prophet was sent to the people of Thamud, with 
+the miracle of a she-camel?
+L2-PR-59
+2
+Prophets
+Which prophet's people were destroyed near the Dead 
+Sea region for their sins?
+L2-PR-60
+2
+Prophets
+Which prophet is described as raised to a high station, 
+linked with the heavens?
+L2-PR-61
+2
+Prophets
+Which prophet was the father of Prophet Yusuf AS?
+L2-QU-62
+2
+Quran
+Which Surah is known as “The Heart of the Quran”?
+L2-QU-63
+2
+Quran
+How many times is the name “Muhammad” ﷺ 
+explicitly mentioned in the Quran?
+L2-QU-64
+2
+Quran
+Which Surah is named after a female figure?
+L2-QU-65
+2
+Quran
+What is the concluding Surah of the Quran?
+L2-QU-66
+2
+Quran
+Which Surah discusses the Night Journey (Isra)?
+L2-QU-67
+2
+Quran
+Which Surah is recommended to be recited on Friday?
+ID
+Level
+Category
+Question
+L2-QU-68
+2
+Quran
+What are the disconnected letters at the start of some 
+Surahs called?
+L2-QU-69
+2
+Quran
+Which Surah is widely narrated to have been revealed in 
+its entirety at once?
+L2-QU-70
+2
+Quran
+Which Surah mentions the People of the Cave (Ashab al-
+Kahf)?
+L2-QU-71
+2
+Quran
+Approximately how many years did the revelation of the 
+Quran take?
+L2-SE-72
+2
+Seerah
+What was the name of the Prophet's ﷺ grandfather 
+who cared for him?
+L2-SE-73
+2
+Seerah
+What is the Year of the Elephant (Aam al-Fil) associated 
+with?
+L2-SE-74
+2
+Seerah
+Who was the Prophet's ﷺ wet nurse from the Banu 
+Sa'd tribe?
+L2-SE-75
+2
+Seerah
+Which tribe did the Prophet ﷺ belong to?
+L2-SE-76
+2
+Seerah
+Which miraculous night journey took the Prophet ﷺ 
+from Makkah to Jerusalem and the heavens?
+L2-SE-77
+2
+Seerah
+Which companion is known as “As-Siddiq” (The Truthful)?
+L2-SE-78
+2
+Seerah
+What treaty was signed between the Muslims and 
+Quraysh in year 6 AH?
+L2-SE-79
+2
+Seerah
+In which battle did the Muslims face a major test after 
+archers left their post?
+L2-SE-80
+2
+Seerah
+What document established rights and duties of Muslims, 
+Jews, and other tribes in Madinah?
+L2-SE-81
+2
+Seerah
+How many years after the first revelation did the Hijrah to 
+Madinah take place?
+L2-HI-82
+2
+History & Calendar
+Which Caliph was first given the title “Amir al-Mu'minin”?
+L2-HI-83
+2
+History & Calendar
+Which of these is one of the four sacred months in Islam?
+L2-HI-84
+2
+History & Calendar
+What is commemorated on the 10th of Muharram 
+(Ashura)?
+L2-HI-85
+2
+History & Calendar
+Which caliph oversaw major expansion into Persia and 
+the Levant?
+L2-HI-86
+2
+History & Calendar
+What is the Islamic New Year's date called?
+L2-HI-87
+2
+History & Calendar
+Which month follows Ramadan?
+L2-HI-88
+2
+History & Calendar
+What does the Battle of Badr mark historically?
+L2-HI-89
+2
+History & Calendar
+In which Hijri year was Makkah conquered?
+ID
+Level
+Category
+Question
+L2-HI-90
+2
+History & Calendar
+What does “Hijri” refer to?
+L2-HI-91
+2
+History & Calendar
+Which month comes right before Ramadan?
+L2-WO-92
+2
+Worship & Companions
+Which companion is known as “Dhun-Nurayn” (Possessor 
+of Two Lights)?
+L2-WO-93
+2
+Worship & Companions
+What is the term for the fixed times of daily prayer?
+L2-WO-94
+2
+Worship & Companions Which companion was the Prophet's ﷺ cousin and son-
+in-law?
+L2-WO-95
+2
+Worship & Companions
+What is the minimum amount of wealth that triggers 
+Zakat obligation called?
+L2-WO-96
+2
+Worship & Companions
+Which companion compiled the Quran into a single 
+Mushaf during Abu Bakr's RA caliphate?
+L2-WO-97
+2
+Worship & Companions
+What is the term for the call to prayer?
+L2-WO-98
+2
+Worship & Companions Who was the Prophet's ﷺ wife known for her deep 
+knowledge and hadith narrations?
+L2-WO-99
+2
+Worship & Companions Which companion was the Prophet's ﷺ uncle and 
+fierce warrior, called “Lion of Allah”?
+2-WO-100
+2
+Worship & Companions
+What is the night prayer performed especially in Ramadan 
+called?
+2-WO-10
+2
+Worship & Companions
+Which companion was among the first Muslims to 
+migrate to Abyssinia?
+L3-PR-102
+3
+Prophets
+Which prophet is known for a kingdom of great power, 
+said to command wind and jinn by Allah's permission?
+L3-PR-103
+3
+Prophets
+Which prophet's mother placed him in a basket on a river 
+to protect him?
+L3-PR-104
+3
+Prophets
+Which prophet had twelve sons who became forefathers 
+of the Tribes of Israel?
+L3-PR-105
+3
+Prophets
+Which prophet's Ark is described in the Quran as resting 
+on Mount Judi?
+L3-PR-106
+3
+Prophets
+Which prophet asked Allah to show him how the dead are 
+given life, illustrated with birds?
+L3-PR-107
+3
+Prophets
+According to the Quran, how many years did Prophet Nuh 
+AS call his people before the Flood?
+L3-PR-108
+3
+Prophets
+Which prophet was given the Zabur (Psalms)?
+L3-PR-109
+3
+Prophets
+Which prophet is described as raised up to Allah, and 
+whose return is a matter of belief in Islamic tradition?
+L3-PR-110
+3
+Prophets
+Which prophet's son, according to tradition, refused to 
+board the Ark and was drowned?
+L3-PR-111
+3
+Prophets
+Which prophet's narrative describes idols being broken, 
+leaving only the largest one?
+ID
+Level
+Category
+Question
+L3-QU-112
+3
+Quran
+Which Surah is also referred to as “Umm al-Kitab” 
+(Mother of the Book)?
+L3-QU-113
+3
+Quran
+How many years did Prophet Muhammad's prophethood 
+last in total?
+L3-QU-114
+3
+Quran
+Which Surah discusses the story of Talut (Saul) and Jalut 
+(Goliath)?
+L3-QU-115
+3
+Quran
+Which Surah is named after a spider?
+L3-QU-116
+3
+Quran
+Which Surah discusses Dhul-Qarnayn and the barrier 
+against Gog and Magog?
+L3-QU-117
+3
+Quran
+Which Surah is also known as “Bara'ah”?
+L3-QU-118
+3
+Quran
+Which Surah discusses the Battle of the Trench (Khandaq) 
+events?
+L3-QU-119
+3
+Quran
+Which Surah is dedicated in full to the story of Prophet 
+Yusuf AS?
+L3-QU-120
+3
+Quran
+Which Surah opens with an oath by the pen?
+L3-QU-121
+3
+Quran
+A Surah revealed before the Hijrah is classified as which 
+type?
+L3-SE-122
+3
+Seerah
+Which uncle of the Prophet never accepted Islam and is 
+named directly in a Surah of the Quran?
+L3-SE-123
+3
+Seerah
+Which battle is known as the first major battle in Islam, 
+fought in 2 AH?
+L3-SE-124
+3
+Seerah
+Approximately how many Muslims fought at the Battle of 
+Badr?
+L3-SE-125
+3
+Seerah
+What is the year called in which Khadijah RA and Abu 
+Talib both passed away?
+L3-SE-126
+3
+Seerah
+Which daughter of the Prophet was married to Ali RA?
+L3-SE-127
+3
+Seerah
+Which companion, the Prophet's uncle, was martyred at 
+the Battle of Uhud?
+L3-SE-128
+3
+Seerah
+What was the name of the first mosque built by the 
+Prophet upon reaching the Madinah area?
+L3-SE-129
+3
+Seerah
+Which treaty allowed the Muslims to perform Umrah 
+peacefully the following year after being blocked?
+L3-SE-130
+3
+Seerah
+In which Hijri year did the Conquest of Makkah occur?
+L3-SE-131
+3
+Seerah
+What year is the Farewell Pilgrimage (Hajjatul Wada) 
+dated to?
+L3-HI-132
+3
+History & Calendar
+Which caliphate was founded after the Rashidun 
+Caliphate ended?
+L3-HI-133
+3
+History & Calendar
+In which Hijri year did the events at Karbala take place?
+ID
+Level
+Category
+Question
+L3-HI-134
+3
+History & Calendar
+Which battle is historically linked to the month of 
+Shawwal, 3 AH?
+L3-HI-135
+3
+History & Calendar
+Which caliphate followed the Umayyads in most regions?
+L3-HI-136
+3
+History & Calendar
+Which city became the capital of the Abbasid Caliphate, 
+home to the House of Wisdom?
+L3-HI-137
+3
+History & Calendar
+Which dynasty ruled from Damascus as its capital?
+L3-HI-138
+3
+History & Calendar
+Which Muslim commander led the early conquest of 
+Spain (Al-Andalus)?
+L3-HI-139
+3
+History & Calendar
+The Hijri calendar begins counting years from which 
+event?
+L3-HI-140
+3
+History & Calendar
+Islamic lunar months are typically how many days long?
+L3-HI-141
+3
+History & Calendar
+Which of these is one of the four sacred months alongside 
+Muharram, Rajab, and Dhul Qa'dah?
+3-WO-142
+3
+Worship & Companions
+Which companion was known as the “Sword of Allah”?
+3-WO-143
+3
+Worship & Companions
+What are the four Rightly Guided Caliphs collectively 
+called?
+3-WO-144
+3
+Worship & Companions
+What is the term for scholarly consensus as a source of 
+Islamic law?
+3-WO-145
+3
+Worship & Companions
+What is the term for analogical reasoning in Islamic law?
+3-WO-146
+3
+Worship & Companions
+Which companion is credited with narrating the largest 
+number of hadith?
+3-WO-147
+3
+Worship & Companions
+What is the fast on the 9th and 10th of Muharram 
+commonly called?
+3-WO-148
+3
+Worship & Companions
+Which companion served as one of the scribes recording 
+the Prophet's ﷺ revelation?
+3-WO-149
+3
+Worship & Companions
+What is the term for the Friday congregational prayer?
+3-WO-150
+3
+Worship & Companions
+Which companion is known by the title “Amin al-Ummah” 
+(Trustworthy One of the Nation)?
+3-WO-15
+3
+Worship & Companions
+What is the pre-dawn meal during Ramadan fasting 
+called?
+L4-PR-152
+4
+Prophets
+Which prophet asked Allah for a kingdom that none after 
+him would have?
+L4-PR-153
+4
+Prophets
+Which prophet was tested with illness and the loss of 
+wealth and family, remaining patient throughout?
+L4-PR-154
+4
+Prophets
+Which prophet's people ('Aad) were destroyed by a 
+violent, roaring wind?
+L4-PR-155
+4
+Prophets
+Which prophet's she-camel was killed by his people, 
+leading to their destruction?
+ID
+Level
+Category
+Question
+L4-PR-156
+4
+Prophets
+Which prophet prayed for a son in old age and was given 
+Yahya AS?
+L4-PR-157
+4
+Prophets
+Which prophet is described in Surah Maryam with the 
+titles “Siddiq” and “Nabi”?
+L4-PR-158
+4
+Prophets
+Whose people (Nineveh) repented after his warning, 
+sparing them from destruction?
+L4-PR-159
+4
+Prophets
+Which prophet's Ark, per the Quran, came to rest on 
+Mount Judi?
+L4-PR-160
+4
+Prophets
+Which prophet spoke while still an infant in the cradle, 
+defending his mother?
+L4-PR-161
+4
+Prophets
+Which prophet's people were among the earliest 
+mentioned as destroyed for rejecting his message, 
+alongside Nuh's AS people?
+L4-QU-162
+4
+Quran
+What is the number of Surah Al-Baqarah in the Quran's 
+order?
+L4-QU-163
+4
+Quran
+What is the term for a single verse of the Quran?
+L4-QU-164
+4
+Quran
+Which Surah is known as “The Table Spread”?
+L4-QU-165
+4
+Quran
+Which Surah was revealed regarding the slander (Ifk) 
+against Aisha RA?
+L4-QU-166
+4
+Quran
+Which Surah discusses the story of the elephant army of 
+Abraha?
+L4-QU-167
+4
+Quran
+Which two short Surahs are known together as “Al-
+Mu'awwidhatayn” (the two chapters of refuge)?
+L4-QU-168
+4
+Quran
+What is the term for the interpretation and explanation of 
+the Quran?
+L4-QU-169
+4
+Quran
+Which Surah is devoted entirely to vivid descriptions of 
+the Day of Judgment, titled “The Event”?
+L4-QU-170
+4
+Quran
+Which verse/phrase states “There is no compulsion in 
+religion”?
+L4-QU-171
+4
+Quran
+What is the general term given to Surahs revealed before 
+the Hijrah?
+L4-SE-172
+4
+Seerah
+What was the name of the Prophet's she-camel used 
+during the Hijrah journey?
+L4-SE-173
+4
+Seerah
+Which cave did the Prophet and Abu Bakr RA hide in 
+during the Hijrah?
+L4-SE-174
+4
+Seerah
+Approximately how outnumbered were the Muslims at 
+the Battle of Badr against the Quraysh?
+L4-SE-175
+4
+Seerah
+In which battle was the Prophet injured and lost a tooth?
+L4-SE-176
+4
+Seerah
+Who suggested digging a trench as a defensive strategy in 
+the Battle of the Trench?
+L4-SE-177
+4
+Seerah
+Where did the Prophet deliver his Farewell Sermon?
+ID
+Level
+Category
+Question
+L4-SE-178
+4
+Seerah
+What is the event of the Prophet's death and Abu Bakr's 
+RA reassurance speech associated with?
+L4-SE-179
+4
+Seerah
+What historic gathering took place immediately after the 
+Prophet's death to select a leader?
+L4-SE-180
+4
+Seerah
+Approximately what age was the Prophet when he passed 
+away?
+L4-SE-181
+4
+Seerah
+Where is the Prophet buried?
+L4-HI-182
+4
+History & Calendar
+Whose assassination led to a period of civil strife known 
+as the Fitna?
+L4-HI-183
+4
+History & Calendar
+Which Muslim dynasty ruled Al-Andalus (Spain) for 
+centuries after the initial conquest?
+L4-HI-184
+4
+History & Calendar
+Who founded the Abbasid Caliphate's line, descending 
+from the Prophet's uncle?
+L4-HI-185
+4
+History & Calendar
+Which scholar compiled one of the most authentic hadith 
+collections, titled “Sahih”?
+L4-HI-186
+4
+History & Calendar
+In which century did the Ottoman Empire rise to 
+prominence?
+L4-HI-187
+4
+History & Calendar
+What is the historic center of learning and translation in 
+Abbasid Baghdad called?
+L4-HI-188
+4
+History & Calendar
+Who is historically known as the conqueror of 
+Constantinople in 1453?
+L4-HI-189
+4
+History & Calendar
+Which era do historians commonly call the “Islamic 
+Golden Age”?
+L4-HI-190
+4
+History & Calendar
+What was the era of the first four caliphs after the 
+Prophet collectively known as?
+L4-HI-191
+4
+History & Calendar
+Which historic event marks the founding of the Ottoman 
+state, traditionally dated to around 1299?
+4-WO-192
+4
+Worship & Companions
+Which companion is credited with organizing Taraweeh 
+prayers in congregation?
+4-WO-193
+4
+Worship & Companions
+What is the term for a scholar qualified to derive detailed 
+Islamic legal rulings?
+4-WO-194
+4
+Worship & Companions
+Which companion was the Prophet's adopted son before 
+adoption practice was revised in Islamic law?
+4-WO-195
+4
+Worship & Companions
+What term describes voluntary prayers performed 
+beyond the five obligatory prayers?
+4-WO-196
+4
+Worship & Companions
+Which companion is remembered for extraordinary 
+generosity, equipping an army from personal wealth?
+4-WO-197
+4
+Worship & Companions
+What is the term for the ritual bath of full purification?
+4-WO-198
+4
+Worship & Companions
+Which companion, though blind, was given responsibility 
+in Madinah and mentioned regarding a Quranic verse?
+4-WO-199
+4
+Worship & Companions
+What is the general Islamic term for supplication?
+ID
+Level
+Category
+Question
+4-WO-200
+4
+Worship & Companions
+Which four schools of jurisprudence are commonly 
+recognized within Sunni Islam?
+4-WO-20
+4
+Worship & Companions
+What is the term for the annual obligatory charity on 
+wealth meeting the Nisab threshold?
+L5-PR-202
+5
+Prophets
+What is the name traditionally given to Ibrahim's AS 
+father in Islamic sources?
+L5-PR-203
+5
+Prophets
+Which prophet is described as having iron become soft 
+and pliable in his hands?
+L5-PR-204
+5
+Prophets
+Which prophet's story includes the splitting of the sea to 
+escape Pharaoh?
+L5-PR-205
+5
+Prophets
+Which prophet's people were destroyed by an earthquake 
+or thunderous blast after rejecting his warnings, per Surah 
+Al A'raf?
+L5-PR-206
+5
+Prophets
+Which prophet was given wisdom (hikmah) while still a 
+child, per the Quran?
+L5-PR-207
+5
+Prophets
+Ismail AS is traditionally regarded as a forefather of which 
+broader group of people?
+L5-PR-208
+5
+Prophets
+Ishaq AS is traditionally regarded as forefather of which 
+prophetic lineage?
+L5-PR-209
+5
+Prophets
+Which prophet assisted his father in raising the 
+foundations of the Kaaba?
+L5-PR-210
+5
+Prophets
+Which prophet is traditionally associated with early skill in 
+writing, per some scholarly traditions?
+L5-PR-211
+5
+Prophets
+Which righteous figure in Surah Al-Kahf built a barrier 
+against Gog and Magog (Yajuj wa Majuj)?
+L5-QU-212
+5
+Quran
+Which Surah is known as “The Criterion”?
+L5-QU-213
+5
+Quran
+Roughly how many years passed between the start of 
+Makki and Madani revelation combined?
+L5-QU-214
+5
+Quran
+Which Surah discusses detailed laws of inheritance?
+L5-QU-215
+5
+Quran
+Which Surah's title means “Light”?
+L5-QU-216
+5
+Quran
+Which Surah opens with an oath by the sun and its 
+brightness?
+L5-QU-217
+5
+Quran
+Surah Al-Isra is also known by which alternate title?
+L5-QU-218
+5
+Quran
+What is a Surah revealed in Makkah before the Hijrah 
+called?
+L5-QU-219
+5
+Quran
+What is a Surah revealed in Madinah after the Hijrah 
+called?
+L5-QU-220
+5
+Quran
+Which Surah's name means “The Pilgrimage” and 
+discusses Hajj rulings?
+L5-QU-221
+5
+Quran
+Which Surah is traditionally linked to describing the 
+Prophet's Night Journey and Ascension together with 
+Surah An Najm?
+ID
+Level
+Category
+Question
+L5-SE-222
+5
+Seerah
+Which uncle raised the Prophet after Abdul Muttalib's 
+death, though he never accepted Islam himself?
+L5-SE-223
+5
+Seerah
+What was the name of the Prophet's son who died in 
+infancy, born to Maria al-Qibtiyya RA?
+L5-SE-224
+5
+Seerah
+What was the pre-Islamic pact of the young men of 
+Makkah pledging to help the wronged, which the Prophet 
+later praised?
+L5-SE-225
+5
+Seerah
+What is the year called in which many tribal delegations 
+came to accept Islam, near the end of the Prophet's life?
+L5-SE-226
+5
+Seerah
+Which companion was sent to Yemen as a governor and 
+teacher during the Prophet's lifetime?
+L5-SE-227
+5
+Seerah
+What material was the Prophet's minbar (pulpit) initially, 
+before a proper structure was built?
+L5-SE-228
+5
+Seerah
+Which military expedition in 9 AH was directed toward 
+the Byzantines at Tabuk?
+L5-SE-229
+5
+Seerah
+Who was appointed as the first Mu'adhin (caller to 
+prayer) in Islam?
+L5-SE-230
+5
+Seerah
+Which expedition resulted in the surrender of the Jewish 
+stronghold of Khaybar?
+L5-SE-231
+5
+Seerah
+What is the general term for the military expeditions the 
+Prophet personally participated in?
+L5-HI-232
+5
+History & Calendar
+Which caliph is credited with establishing the Islamic 
+administrative register (diwan) system?
+L5-HI-233
+5
+History & Calendar
+Who was the last of the four Rightly Guided Caliphs?
+L5-HI-234
+5
+History & Calendar
+Which dynasty succeeded the Umayyads in most regions 
+of the Islamic world?
+L5-HI-235
+5
+History & Calendar
+Which historic city served as the capital of the Umayyad 
+Caliphate?
+L5-HI-236
+5
+History & Calendar
+Approximately what year (CE) did the Hijrah take place?
+L5-HI-237
+5
+History & Calendar
+Which empire's capital was Constantinople/Istanbul for 
+centuries?
+L5-HI-238
+5
+History & Calendar
+What is the name of the historic library and translation 
+institution established in Abbasid Baghdad?
+L5-HI-239
+5
+History & Calendar
+Approximately when did Muslim rule in Al-Andalus (Spain) 
+fully end with the fall of Granada?
+L5-HI-240
+5
+History & Calendar
+Which month is historically associated with the Conquest 
+of Makkah?
+L5-HI-241
+5
+History & Calendar
+Which century is broadly considered the peak of the 
+Islamic Golden Age?
+5-WO-242
+5
+Worship & Companions
+Which companion served as a scribe for the Prophet's 
+correspondence with kings and rulers?
+5-WO-243
+5
+Worship & Companions
+What is the term for a well-established, authentic hadith 
+graded at the highest level of reliability?
+ID
+Level
+Category
+Question
+5-WO-244
+5
+Worship & Companions
+What is Zakat al-Fitr?
+5-WO-245
+5
+Worship & Companions
+What is the term for the state of major ritual impurity 
+requiring a full bath?
+5-WO-246
+5
+Worship & Companions
+Which companion, known as “Interpreter of the Quran,” 
+was a cousin of the Prophet and prayed for by him for 
+deep understanding?
+5-WO-247
+5
+Worship & Companions
+What is the Arabic term for a will or testament in Islamic 
+law?
+5-WO-248
+5
+Worship & Companions
+Which companion was the mother of Anas ibn Malik RA, 
+remembered for her strong faith?
+5-WO-249
+5
+Worship & Companions
+What is the term for spiritual retreat in the mosque, 
+especially during the last ten days of Ramadan?
+5-WO-250
+5
+Worship & Companions
+Which companion served as the Prophet's personal 
+attendant for about ten years?
+5-WO-25
+5
+Worship & Companions
+What is the term for concession/relaxation of a ruling due 
+to hardship, such as while traveling?
+L6-PR-252
+6
+Prophets
+What are Ibrahim's AS scrolls of revelation known as?
+L6-PR-253
+6
+Prophets
+What is the name of the scripture given to Musa AS?
+L6-PR-254
+6
+Prophets
+What is the name of the scripture given to Isa AS?
+L6-PR-255
+6
+Prophets
+What is the name of the scripture given to Dawud AS?
+L6-PR-256
+6
+Prophets
+How many prophets are commonly cited as being named 
+in the Quran?
+L6-PR-257
+6
+Prophets
+Which prophet is the final and last prophet in Islam?
+L6-PR-258
+6
+Prophets
+Which of these is one of the five “Ulul Azm” (possessors 
+of great resolve) prophets?
+L6-PR-259
+6
+Prophets
+Which prophet's brother, Harun AS, was also granted 
+prophethood to support him?
+L6-PR-260
+6
+Prophets
+Which prophet confronted Pharaoh directly with signs 
+and miracles?
+L6-PR-261
+6
+Prophets
+Which prophet's people worshipped a golden calf in his 
+temporary absence?
+L6-QU-262
+6
+Quran
+Which Surah's recitation is described in a hadith as 
+equivalent in reward to one-third of the Quran?
+L6-QU-263
+6
+Quran
+Which Surah addresses the “People of the Book” 
+extensively regarding shared history and law?
+L6-QU-264
+6
+Quran
+Which Surah begins with “Alif Lam Meem” and discusses 
+a prophecy about the Romans?
+L6-QU-265
+6
+Quran
+Which Surah is titled after the moon?
+ID
+Level
+Category
+Question
+L6-QU-266
+6
+Quran
+Which Surah discusses the miracle of the moon splitting?
+L6-QU-267
+6
+Quran
+Which Surah is uniquely not preceded by “Bismillah” in 
+the standard Mushaf?
+L6-QU-268
+6
+Quran
+Which Surah discusses detailed rulings and rites of Hajj?
+L6-QU-269
+6
+Quran
+Which Surah is titled “The Believers”?
+L6-QU-270
+6
+Quran
+Which Surah contains the famous “Verse of Light” (Ayat 
+an-Nur)?
+L6-QU-271
+6
+Quran
+Which two verses at the end of Al-Baqarah are 
+recommended for recitation before sleeping?
+L6-SE-272
+6
+Seerah
+Where did the Second Pledge of Aqabah take place?
+L6-SE-273
+6
+Seerah
+Approximately how many people from Madinah took part 
+in the Second Pledge of Aqabah?
+L6-SE-274
+6
+Seerah
+Which two tribes of Madinah are most associated with 
+supporting the Prophet after the Hijrah?
+L6-SE-275
+6
+Seerah
+Which Jewish tribe of Madinah was expelled following a 
+breach of agreement early in the Madinan period?
+L6-SE-276
+6
+Seerah
+In which Hijri year did the Battle of the Trench (Khandaq) 
+take place?
+L6-SE-277
+6
+Seerah
+Which companion, of Persian origin, proposed the trench-
+digging strategy?
+L6-SE-278
+6
+Seerah
+The Quran describes the Treaty of Hudaybiyyah's 
+outcome using which term?
+L6-SE-279
+6
+Seerah
+In which Hijri year was Makkah conquered without major 
+bloodshed?
+L6-SE-280
+6
+Seerah
+What is the Prophet's final sermon at Arafat commonly 
+called?
+L6-SE-281
+6
+Seerah
+Approximately how many companions accompanied the 
+Prophet on the Farewell Pilgrimage?
+L6-HI-282
+6
+History & Calendar
+Which caliph's era is associated with major territorial 
+expansion into Persia, Egypt, and the Levant?
+L6-HI-283
+6
+History & Calendar
+Which historic battle in 636 CE saw Muslims defeat 
+Byzantine forces in the Levant?
+L6-HI-284
+6
+History & Calendar
+Which historic battle in 636 CE saw Muslims defeat the 
+Sassanid Persian Empire?
+L6-HI-285
+6
+History & Calendar
+Which Muslim empire ruled large parts of India for 
+centuries, known for the Taj Mahal?
+L6-HI-286
+6
+History & Calendar
+Who founded the Mughal Empire in India?
+L6-HI-287
+6
+History & Calendar
+Approximately when did Baghdad fall to the Mongols, 
+weakening central Abbasid authority?
+ID
+Level
+Category
+Question
+L6-HI-288
+6
+History & Calendar
+Which historic institution in Fez, Morocco, is considered 
+among the oldest continuously operating universities?
+L6-HI-289
+6
+History & Calendar
+Which historic mosque-university in Cairo was founded by 
+the Fatimid dynasty?
+L6-HI-290
+6
+History & Calendar
+Which dynasty founded Al-Azhar and ruled Egypt for a 
+significant period?
+L6-HI-291
+6
+History & Calendar
+Which Muslim polymath is credited with major early 
+developments in algebra?
+6-WO-292
+6
+Worship & Companions
+What is the term for the intention made before 
+performing an act of worship?
+6-WO-293
+6
+Worship & Companions
+Which companion is known for memorizing an especially 
+large number of hadith, attributed in tradition to a dua 
+from the Prophet?
+6-WO-294
+6
+Worship & Companions
+What is the term for a hadith transmitted through so 
+many independent chains that fabrication is practically 
+impossible?
+6-WO-295
+6
+Worship & Companions
+What is the term for a scholar who specializes in the 
+science of hadith?
+6-WO-296
+6
+Worship & Companions
+Which companion held the title “Amin al-Ummah”, 
+meaning the Trustworthy One of the Nation?
+6-WO-297
+6
+Worship & Companions
+What is the ruling classification for an act that is 
+obligatory in Islamic law?
+6-WO-298
+6
+Worship & Companions
+What is the ruling classification for an act that is 
+recommended but not obligatory?
+6-WO-299
+6
+Worship & Companions
+What is the ruling classification for an act that is disliked 
+but not forbidden?
+6-WO-300
+6
+Worship & Companions
+What is the ruling classification for an act that is 
+forbidden?
+6-WO-30
+6
+Worship & Companions
+What is the ruling classification for a neutral, simply 
+permissible act?
+L7-PR-302
+7
+Prophets
+Which prophet's narrative includes the greeting “Salamun 
+ala Ibrahim” (Peace be upon Ibrahim) in Surah As-Saffat?
+L7-PR-303
+7
+Prophets
+Which prophet's story features a hoopoe bird (hudhud) 
+bringing news of a queen's kingdom?
+L7-PR-304
+7
+Prophets
+What is the name traditionally given to the queen 
+mentioned in Sulaiman's AS narrative?
+L7-PR-305
+7
+Prophets
+Which prophet is linked with a miraculous spring that 
+gushed forth when he struck the ground in distress?
+L7-PR-306
+7
+Prophets
+Which prophet's brothers proposed leaving him in a well, 
+as told in Surah Yusuf?
+L7-PR-307
+7
+Prophets
+Which prophet interpreted the Egyptian king's dream of 
+seven fat and seven lean cows?
+L7-PR-308
+7
+Prophets
+Which prophet was eventually given a position of 
+authority over Egypt's treasuries?
+L7-PR-309
+7
+Prophets
+What name does Islamic tradition commonly give to the 
+wife of Al-Aziz who is described attempting to mislead 
+Yusuf AS?
+ID
+Level
+Category
+Question
+L7-PR-310
+7
+Prophets
+Which prophet is credited in tradition with early use of 
+the pen for writing?
+L7-PR-311
+7
+Prophets
+Which prophet is described in the Quran as “raised to a 
+lofty station” (makanan aliyya)?
+L7-QU-312
+7
+Quran
+Which verse is known as “Ayat al-Kursi” (The Verse of the 
+Throne)?
+L7-QU-313
+7
+Quran
+Which Surah contains the longest verse in the Quran, 
+discussing debt contracts?
+L7-QU-314
+7
+Quran
+Which Surah discusses the parable of two garden owners, 
+one of whom became arrogant about his wealth?
+L7-QU-315
+7
+Quran
+Which Surah is described in a hadith as “the seven oft-
+repeated verses” (As-Sab' al-Mathani)?
+L7-QU-316
+7
+Quran
+Which Surah is named after “The Spoils of War”?
+L7-QU-317
+7
+Quran
+Which Surah is named “The Private Apartments,” 
+discussing social etiquette?
+L7-QU-318
+7
+Quran
+Which Surah discusses etiquette of entering others' 
+homes and lowering the gaze?
+L7-QU-319
+7
+Quran
+Which Surah addresses matters connected to Zaid ibn 
+Harithah's RA family situation?
+L7-QU-320
+7
+Quran
+What is the term for the branch of Quranic study 
+examining the historical context/reasons behind 
+revelations?
+L7-QU-321
+7
+Quran
+What is the term for verses whose meanings are entirely 
+clear, as opposed to allegorical verses?
+L7-SE-322
+7
+Seerah
+Which Jewish tribe's dispute during the Battle of the 
+Trench led to a siege afterward?
+L7-SE-323
+7
+Seerah
+Which companion was appointed to judge the case 
+concerning Banu Qurayza?
+L7-SE-324
+7
+Seerah
+In which Hijri year did the Prophet pass away?
+L7-SE-325
+7
+Seerah
+Who gave the well-known speech beginning “Whoever 
+worshipped Muhammad, Muhammad has died...” after 
+the Prophet's passing?
+L7-SE-326
+7
+Seerah
+What historic gathering selected Abu Bakr RA as the first 
+caliph right after the Prophet's death?
+L7-SE-327
+7
+Seerah
+Approximately how many men and women migrated in 
+the first migration to Abyssinia?
+L7-SE-328
+7
+Seerah
+Who was the Abyssinian king (Negus / An-Najashi) who 
+protected the early Muslim migrants?
+L7-SE-329
+7
+Seerah
+Which companion delivered a well-known speech to the 
+Negus explaining Islam's teachings?
+L7-SE-330
+7
+Seerah
+What was the name of the boycott the Quraysh imposed 
+on the Prophet's clan for roughly three years?
+L7-SE-331
+7
+Seerah
+Which city did the Prophet visit seeking support after Abu 
+Talib's death, where he faced hostility?
+ID
+Level
+Category
+Question
+L7-HI-332
+7
+History & Calendar
+Which Muslim leader recaptured Jerusalem from 
+Crusader forces in 1187?
+L7-HI-333
+7
+History & Calendar
+Which dynasty did Salahuddin al-Ayyubi found?
+L7-HI-334
+7
+History & Calendar
+Which sultanate, ruling Egypt and the Levant, is famous 
+for repelling the Mongol invasion?
+L7-HI-335
+7
+History & Calendar
+Which battle in 1260 CE saw the Mamluks defeat the 
+Mongols, halting their westward advance?
+L7-HI-336
+7
+History & Calendar
+Which medieval Muslim traveler documented extensive 
+journeys across the Islamic world in his “Rihla”?
+L7-HI-337
+7
+History & Calendar
+Which Muslim scholar is known for foundational work in 
+sociology and history, authoring the “Muqaddimah”?
+L7-HI-338
+7
+History & Calendar
+Which Muslim physician authored “Al-Qanun fi al-Tibb” 
+(The Canon of Medicine)?
+L7-HI-339
+7
+History & Calendar
+Which Muslim scholar is known for foundational work in 
+optics, authoring the “Book of Optics”?
+L7-HI-340
+7
+History & Calendar
+Which institution in Baghdad served as a hub for 
+translation and scientific scholarship during the Golden 
+Age?
+L7-HI-341
+7
+History & Calendar
+Which historic Crusader conflict period is directly 
+associated with Salahuddin's recapture of Jerusalem?
+7-WO-342
+7
+Worship & Companions
+What is the science of studying and verifying hadith 
+narrators' reliability called?
+7-WO-343
+7
+Worship & Companions
+Which of these is one of the six major hadith collections 
+(Kutub al-Sittah), besides Bukhari and Muslim?
+7-WO-344
+7
+Worship & Companions
+What is the term for a hadith whose chain of narration 
+has a weak or missing link?
+7-WO-345
+7
+Worship & Companions
+Who compiled the early hadith and legal work known as 
+“Al-Muwatta”?
+7-WO-346
+7
+Worship & Companions
+What is the term for scholarly consensus used as a source 
+of Islamic law?
+7-WO-347
+7
+Worship & Companions
+What is the Islamic term often used for the greater 
+spiritual struggle of self-improvement?
+7-WO-348
+7
+Worship & Companions
+What is the term for the lesser pilgrimage that can be 
+performed at any time of year?
+7-WO-349
+7
+Worship & Companions
+What is the term for the ritual circling of the Kaaba?
+7-WO-350
+7
+Worship & Companions
+What is the term for walking between Safa and Marwah 
+during Hajj or Umrah?
+7-WO-35
+7
+Worship & Companions
+What is the term for the symbolic stoning ritual 
+performed at Mina during Hajj?
+L8-PR-352
+8
+Prophets
+Which prophet's disciples are described in the Quran as 
+asking for a table spread with food from heaven?
+L8-PR-353
+8
+Prophets
+What are the disciples of Isa AS called in the Quran?
+ID
+Level
+Category
+Question
+L8-PR-354
+8
+Prophets
+Which righteous woman is the only one named directly 
+and extensively in the Quran, with a Surah named after 
+her?
+L8-PR-355
+8
+Prophets
+Which miracle did Isa AS perform involving clay birds, by 
+Allah's permission?
+L8-PR-356
+8
+Prophets
+Which prophet spoke from the cradle in defense of his 
+mother's honor?
+L8-PR-357
+8
+Prophets
+Which prophet asked to see Allah directly, after which the 
+mountain crumbled upon Divine manifestation?
+L8-PR-358
+8
+Prophets
+Which prophet received the tablets (alwah) containing 
+commandments?
+L8-PR-359
+8
+Prophets
+Which prophet's staff swallowed the magicians' ropes 
+that had turned into apparent snakes in Pharaoh's court?
+L8-PR-360
+8
+Prophets
+Which prophet's people are most consistently referred to 
+as “Bani Israel” throughout the Quranic narrative?
+L8-PR-361
+8
+Prophets
+Which prophet's narrative describes the crumbling of a 
+mountain upon a request to witness Allah directly?
+L8-QU-362
+8
+Quran
+Which Surah is often considered a companion in style and 
+length to Al-Baqarah, named after a family?
+L8-QU-363
+8
+Quran
+Which topic does Surah Al-Mujadila address regarding a 
+pre-Islamic divorce practice and its expiation?
+L8-QU-364
+8
+Quran
+Which Surah discusses the concept of “Mubahalah” (a 
+mutual invocation on truthfulness)?
+L8-QU-365
+8
+Quran
+Which entirely Meccan Surah poetically describes the 
+Hereafter, titled “The Folded Up”?
+L8-QU-366
+8
+Quran
+Which Surah describes “The Cleaving Asunder” of the sky?
+L8-QU-367
+8
+Quran
+Which Surah is titled “The Overwhelming,” describing the 
+Day of Judgment?
+L8-QU-368
+8
+Quran
+Which Surah is titled “The Dawn”?
+L8-QU-369
+8
+Quran
+Which Surah links the story of the Elephant army directly 
+to the year of the Prophet's birth?
+L8-QU-370
+8
+Quran
+Which short Surah is named “Quraysh,” discussing their 
+trade caravans?
+L8-QU-371
+8
+Quran
+Which Surah criticizes withholding small kindnesses from 
+others, titled accordingly?
+L8-SE-372
+8
+Seerah
+Approximately how many men and women are commonly 
+cited as part of the first migration to Abyssinia?
+L8-SE-373
+8
+Seerah
+What was the name of the Abyssinian king (Negus) who 
+granted protection to the Muslim migrants?
+L8-SE-374
+8
+Seerah
+Which companion delivered a well-known explanation of 
+Islam before the Negus's court?
+L8-SE-375
+8
+Seerah
+Approximately how many years is the boycott of Banu 
+Hashim commonly said to have lasted?
+ID
+Level
+Category
+Question
+L8-SE-376
+8
+Seerah
+What was the name of the quarter/valley in Makkah 
+where the boycotted clan was confined?
+L8-SE-377
+8
+Seerah
+The Year of Sorrow (Aam al-Huzn) refers to the deaths of 
+which two important figures in the Prophet's life?
+L8-SE-378
+8
+Seerah
+After Khadijah's RA passing, who did the Prophet marry 
+next?
+L8-SE-379
+8
+Seerah
+What is the name of the well-known event in which the 
+Prophet was met with hostility while seeking support in 
+Ta'if?
+L8-SE-380
+8
+Seerah
+Approximately how many wives did the Prophet have 
+over the course of his lifetime, as commonly cited by 
+historians?
+L8-SE-381
+8
+Seerah
+Which battle occurred shortly after the Conquest of 
+Makkah, against the Hawazin and Thaqif tribes?
+L8-HI-382
+8
+History & Calendar
+Which Umayyad Caliph is often called by some historians 
+“the fifth rightly guided caliph” for his piety and reforms?
+L8-HI-383
+8
+History & Calendar
+By the early 8th century, Umayyad expansion reached 
+which two furthest regions?
+L8-HI-384
+8
+History & Calendar
+Which commander led the early Muslim conquest of 
+Sindh (in present-day Pakistan)?
+L8-HI-385
+8
+History & Calendar
+Which Muslim ruler is credited with founding the city of 
+Baghdad?
+L8-HI-386
+8
+History & Calendar
+Which historic library in Muslim Cordoba was renowned 
+for its vast collection under Al-Hakam II?
+L8-HI-387
+8
+History & Calendar
+Which West African kingdom is historically renowned for 
+Mansa Musa's famously wealthy pilgrimage to Makkah?
+L8-HI-388
+8
+History & Calendar
+Approximately which century did Mansa Musa perform 
+his famous Hajj journey?
+L8-HI-389
+8
+History & Calendar
+Roughly which centuries saw significant spread of Islam 
+into Southeast Asia via trade routes?
+L8-HI-390
+8
+History & Calendar
+Which historic term describes the era when translation 
+and scientific work flourished under Abbasid patronage in 
+Baghdad?
+L8-HI-391
+8
+History & Calendar
+Which historic Muslim traveler visited China, India, and 
+East Africa extensively during the 14th century?
+8-WO-392
+8
+Worship & Companions
+What is the branch of Islamic theology dealing with 
+matters of belief called?
+8-WO-393
+8
+Worship & Companions
+What is the general term for Islamic jurisprudence?
+8-WO-394
+8
+Worship & Companions
+What collective term describes the sources of Islamic law: 
+Quran, Sunnah, Ijma, and Qiyas?
+8-WO-395
+8
+Worship & Companions
+Which companion is credited with compiling the first 
+complete written copy of the Quran under Abu Bakr's RA 
+direction?
+8-WO-396
+8
+Worship & Companions
+What is the term for a narrator's chain of transmission in 
+a hadith?
+8-WO-397
+8
+Worship & Companions
+What is the term for the textual content portion of a 
+hadith, as opposed to its chain?
+ID
+Level
+Category
+Question
+8-WO-398
+8
+Worship & Companions
+Which early Imam compiled the foundational legal and 
+hadith text “Al-Muwatta”?
+8-WO-399
+8
+Worship & Companions
+Who founded the Hanafi school of Islamic jurisprudence?
+8-WO-400
+8
+Worship & Companions
+Who founded the Shafi'i school of Islamic jurisprudence?
+8-WO-40
+8
+Worship & Companions
+Who founded the Hanbali school of Islamic 
+jurisprudence?
+L9-PR-402
+9
+Prophets
+Islamic tradition holds that the son Ibrahim AS was 
+commanded to sacrifice was:
+L9-PR-403
+9
+Prophets
+Which spring is traditionally said to have appeared for 
+Hajar RA and baby Ismail AS in the desert?
+L9-PR-404
+9
+Prophets
+Which Hajj ritual commemorates Hajar's RA search for 
+water between two hills?
+L9-PR-405
+9
+Prophets
+Surah Al-Haqqah describes the destruction of which 
+prophet's people by a fierce, prolonged wind?
+L9-PR-406
+9
+Prophets
+The story of an overnight-destroyed fruit orchard, as 
+punishment for withholding charity, appears in which 
+Surah without naming a specific prophet?
+L9-PR-407
+9
+Prophets
+Which titles does the Quran give to Prophet Muhammad, 
+including 'a witness, and a bringer of glad tidings and a 
+warner'?
+L9-PR-408
+9
+Prophets
+Which prophet was given wisdom (Al-Hikmah) as a youth 
+and tested through his father's idol worship?
+L9-PR-409
+9
+Prophets
+Which prophet broke the idols in the temple, leaving only 
+the largest one, per the Quranic account?
+L9-PR-410
+9
+Prophets
+Which angels are named in connection with a trial/testing 
+narrative in Babel, mentioned in Surah Al-Baqarah?
+L9-PR-411
+9
+Prophets
+Is Khidr, companion to Musa AS in Surah Al-Kahf, explicitly 
+confirmed in the Quran as a prophet?
+L9-QU-412
+9
+Quran
+What is the commonly cited total number of verses (ayat) 
+in the Quran?
+L9-QU-413
+9
+Quran
+Which Surah is widely considered by many scholars to be 
+the last complete Surah revealed in its entirety?
+L9-QU-414
+9
+Quran
+What is the science studying verses that were later 
+abrogated by subsequent revelations called?
+L9-QU-415
+9
+Quran
+Which Surah opens with a direct address, “O you who 
+wraps himself [in a garment],” referring to the Prophet?
+L9-QU-416
+9
+Quran
+Which Surah is centrally connected to the events of the 
+Battle of the Trench (Khandaq)?
+L9-QU-417
+9
+Quran
+Which Surah discusses the ruling and expiation for 
+“zihar,” a pre-Islamic divorce-like declaration?
+L9-QU-418
+9
+Quran
+Which Surah is named after and centered on the concept 
+of “Al-Qadr” (Divine Decree), revealed regarding Laylatul 
+Qadr?
+L9-QU-419
+9
+Quran
+Which Surah provides detailed inheritance shares for 
+specific relatives such as daughters, parents, and siblings?
+ID
+Level
+Category
+Question
+L9-QU-420
+9
+Quran
+Which Surah opens by describing the splitting asunder of 
+the sky on an appointed Day?
+L9-QU-421
+9
+Quran
+Which Surah discusses the distinction between clear 
+(Muhkam) and allegorical (Mutashabih) verses directly?
+L9-SE-422
+9
+Seerah
+Approximately how many years is the Prophet's message 
+commonly said to have been preached privately before 
+public proclamation?
+L9-SE-423
+9
+Seerah
+Which mountain did the Prophet climb to publicly 
+proclaim his message to the Quraysh?
+L9-SE-424
+9
+Seerah
+Which Quranic command is associated with initiating 
+public preaching, “And warn your closest kindred”?
+L9-SE-425
+9
+Seerah
+The Isra and Mi'raj is commonly dated by scholars to 
+approximately which period before the Hijrah?
+L9-SE-426
+9
+Seerah
+How many daily prayers were initially prescribed during 
+the Mi'raj before being reduced to five, per the widely 
+narrated account?
+L9-SE-427
+9
+Seerah
+Which earlier prophet is described as advising the 
+Prophet to request a reduction in the number of daily 
+prayers during the Mi'raj?
+L9-SE-428
+9
+Seerah
+Which mosque in Jerusalem is traditionally associated 
+with the starting point of the Mi'raj ascension?
+L9-SE-429
+9
+Seerah
+In which Hijri year did the change of Qibla direction from 
+Jerusalem to Makkah occur?
+L9-SE-430
+9
+Seerah
+Which battle in 8 AH occurred shortly after the Conquest 
+of Makkah, against the Hawazin and Thaqif tribes?
+L9-SE-431
+9
+Seerah
+Which two tribes were primarily involved in opposing the 
+Muslims at the Battle of Hunayn?
+L9-HI-432
+9
+History & Calendar
+Which sultanate ruling Muslim India preceded the Mughal 
+Empire, based in Delhi?
+L9-HI-433
+9
+History & Calendar
+Under which Ottoman ruler was the Suleymaniye Mosque 
+and much major architecture completed?
+L9-HI-434
+9
+History & Calendar
+Which architect is credited with many masterpieces of 
+Ottoman-era mosque architecture?
+L9-HI-435
+9
+History & Calendar
+Which historic West African empire, centered near 
+Timbuktu, became a renowned hub of Islamic scholarship 
+after the Mali Empire's decline?
+L9-HI-436
+9
+History & Calendar
+Which historic institution in Timbuktu was renowned as a 
+center of Islamic learning?
+L9-HI-437
+9
+History & Calendar
+Approximately when did the Ottoman Caliphate formally 
+come to an end?
+L9-HI-438
+9
+History & Calendar
+Which empire established Shia Islam as its state religion in 
+the 16th century?
+L9-HI-439
+9
+History & Calendar
+Which historic astronomical observatory is associated 
+with Persian scholar Nasir al-Din al-Tusi?
+L9-HI-440
+9
+History & Calendar
+Which scholar is most closely associated with the 
+Maragheh Observatory's astronomical work?
+L9-HI-441
+9
+History & Calendar
+Broadly, which centuries are commonly cited by 
+historians as the peak of the Islamic Golden Age's 
+scientific achievements?
+ID
+Level
+Category
+Question
+9-WO-442
+9
+Worship & Companions
+What is the term for a hadith narrated through only a 
+single chain at some point in its transmission, though 
+potentially still authentic?
+9-WO-443
+9
+Worship & Companions
+What term describes a hadith attributed to a 
+Companion's own statement or action rather than directly 
+to the Prophet?
+9-WO-444
+9
+Worship & Companions
+What term describes a hadith attributed to a Successor 
+(Tabi'i) rather than a Companion or the Prophet directly?
+9-WO-445
+9
+Worship & Companions
+Which scholar compiled the hadith collection considered 
+by most scholars second in authenticity after Bukhari?
+9-WO-446
+9
+Worship & Companions
+What is the term for the science of hadith terminology 
+and classification called?
+9-WO-447
+9
+Worship & Companions
+Which wife of the Prophet is especially renowned as a 
+prominent hadith narrator and early scholar?
+9-WO-448
+9
+Worship & Companions
+What is the term for the specific expiation required for 
+breaking certain oaths or vows?
+9-WO-449
+9
+Worship & Companions
+What is the term for the concession exempting travelers 
+from certain fasting or prayer requirements?
+9-WO-450
+9
+Worship & Companions
+What is the term for combining two prayers due to travel 
+or valid necessity?
+9-WO-45
+9
+Worship & Companions
+What is the term for shortening the number of rakat in 
+prayer during travel?
+10-PR-452
+10
+Prophets
+Which chapter and verse set is commonly cited as the first 
+revelation to the Prophet?
+10-PR-453
+10
+Prophets
+Which mountain is traditionally associated with Musa's AS 
+direct communication with Allah?
+10-PR-454
+10
+Prophets
+Thamud (Salih's AS people) and several other destroyed 
+nations are described in the Quran as being struck by 
+which type of punishment?
+10-PR-455
+10
+Prophets
+Per Surah Al-Ankabut, how many years does the Quran 
+state Prophet Nuh AS lived among his people delivering 
+his message?
+10-PR-456
+10
+Prophets
+In Surah Al-Kahf, Musa AS travels alongside a mysterious 
+righteous figure often identified in tradition as:
+10-PR-457
+10
+Prophets
+Which two prophets are traditionally cited among the 
+“Ulul Azm” (possessors of great resolve) alongside 
+Muhammad and Ibrahim AS?
+10-PR-458
+10
+Prophets
+Which prophet's staff is described as swallowing the 
+illusory snakes created by Pharaoh's magicians?
+10-PR-459
+10
+Prophets
+Ismail AS and his mother Hajar RA are connected to the 
+origin of which enduring Hajj ritual?
+10-PR-460
+10
+Prophets
+Which prophet is described as having communicated 
+directly with Allah, earning the title “Kalimullah”?
+10-PR-461
+10
+Prophets
+Scholars differ on whether Dhul-Qarnayn, mentioned in 
+Surah Al-Kahf, was a:
+10-QU-46
+10
+Quran
+What is the commonly cited approximate split between 
+Makki and Madani Surahs?
+10-QU-46
+10
+Quran
+The longest verse in the Quran, discussing debt contracts, 
+is found in which Surah?
+ID
+Level
+Category
+Question
+10-QU-46
+10
+Quran
+What is the term for the seven canonical recitation styles 
+(Qira'at) of the Quran?
+10-QU-46
+10
+Quran
+Which reading (Qira'ah) of the Quran is most widely used 
+in printed copies globally today?
+10-QU-46
+10
+Quran
+Which Qira'ah is notably used in parts of North and West 
+Africa?
+10-QU-46
+10
+Quran
+What is the collective term for the rules governing correct 
+Quranic recitation and pronunciation?
+10-QU-46
+10
+Quran
+What is the term for the study of the historical context 
+and occasions behind specific revelations?
+10-QU-46
+10
+Quran
+The revelation of Surah An-Nur is specifically linked to 
+which historical incident involving Aisha RA?
+10-QU-47
+10
+Quran
+What are verses whose meaning is entirely clear called, in 
+contrast to allegorical verses?
+10-QU-47
+10
+Quran
+Which Surah discusses the Muhkam/Mutashabih 
+distinction of Quranic verses directly?
+10-SE-472
+10
+Seerah
+Which date is most commonly cited in popular tradition 
+for the Prophet's birth?
+10-SE-473
+10
+Seerah
+Approximately which date is commonly cited for the 
+departure of the Hijrah journey from Makkah?
+10-SE-474
+10
+Seerah
+Approximately how many companions are commonly 
+cited as having witnessed the Battle of Badr?
+10-SE-475
+10
+Seerah
+Approximately how many Muslims are commonly cited as 
+martyred at the Battle of Uhud?
+10-SE-476
+10
+Seerah
+Approximately how many years passed between the first 
+revelation and the Hijrah?
+10-SE-477
+10
+Seerah
+Approximately how many years did the Prophet live in 
+Madinah after the Hijrah?
+10-SE-478
+10
+Seerah
+What is the combined term for the Prophet's Night 
+Journey and Ascension, often referenced together as one 
+event?
+10-SE-479
+10
+Seerah
+Which mosque compound in Jerusalem is traditionally 
+linked to the starting point of the Mi'raj ascension?
+10-SE-480
+10
+Seerah
+Approximately how many military expeditions (ghazawat) 
+did the Prophet personally lead, per common historical 
+estimates?
+10-SE-481
+10
+Seerah
+Which treaty's terms initially appeared unfavorable to 
+Muslims but the Quran describes as “a clear victory”?
+L10-HI-482
+10
+History & Calendar
+Under which caliph was the first distinctly Islamic gold 
+Dinar coinage minted, around 77 AH?
+L10-HI-483
+10
+History & Calendar
+Which 1187 CE battle led by Salahuddin al-Ayyubi paved 
+the way for the recapture of Jerusalem?
+L10-HI-484
+10
+History & Calendar
+Approximately which century did the printing press 
+become widely used for Arabic script in the Ottoman 
+Empire notably later than in Europe?
+L10-HI-485
+10
+History & Calendar
+Which 18th-century scholar in Arabia is associated with 
+founding a major religious revivalist movement?
+ID
+Level
+Category
+Question
+L10-HI-486
+10
+History & Calendar
+Approximately which century do historical accounts 
+commonly place Islam's earliest arrival in China via trade 
+routes?
+L10-HI-487
+10
+History & Calendar
+A popular tradition credits which companion with 
+introducing Islam to China, though this is historically 
+debated?
+L10-HI-488
+10
+History & Calendar
+Which dynasties are associated with ruling Muslim Sicily 
+for roughly two centuries?
+L10-HI-489
+10
+History & Calendar
+Approximately when did Muslim rule in Sicily come to an 
+end?
+L10-HI-490
+10
+History & Calendar
+Which 19th-century Ottoman legal code is a notable 
+example of codified Islamic civil law?
+L10-HI-491
+10
+History & Calendar
+Which historic Mughal-era legal compilation is a well-
+known example of codified Islamic jurisprudence in South 
+Asia?
+10-WO-49
+10
+Worship & Companions
+What is the term for a hadith in which a Companion 
+narrates the Prophet's silent approval of an action 
+performed in his presence?
+10-WO-49
+10
+Worship & Companions
+Alongside Sahih, Hasan, and Da'if, what is the fourth 
+commonly cited grading category for a fabricated hadith?
+10-WO-49
+10
+Worship & Companions
+Which early scholar is credited with formalizing hadith 
+terminology sciences extensively in a work known as 
+“Muqaddimah Ibn as Salah”?
+10-WO-49
+10
+Worship & Companions
+What is the term for a hadith narrator considered 
+trustworthy both in religious integrity and precision of 
+memory?
+10-WO-49
+10
+Worship & Companions
+What is the term for a hadith scholar's process of directly 
+hearing a hadith from a teacher?
+10-WO-49
+10
+Worship & Companions
+What is the term for a written certification permitting one 
+to narrate a scholar's works without direct hearing?
+10-WO-49
+10
+Worship & Companions
+What is the term for the scholarly discipline studying the 
+biographies of hadith narrators?
+10-WO-49
+10
+Worship & Companions
+What term describes a Companion who narrated 
+comparatively very few hadith, in contrast to prolific 
+narrators like Abu Hurairah RA?
+10-WO-50
+10
+Worship & Companions
+What is the term for hadith collections arranged by 
+Companion narrator rather than by topic?
+10-WO-50
+10
+Worship & Companions
+Which early Imam compiled a famous Musnad-style 
+hadith collection organized by narrator?
+Option A
+Option B
+Option C
+Option D
+Musa AS
+Yunus AS
+Yusuf AS
+Ibrahim AS
+Nuh AS
+Hud AS
+Salih AS
+Lut AS
+Ibrahim AS
+Ismail AS
+Ishaq AS
+Yaqub AS
+Dawud AS
+Sulaiman AS
+Musa AS
+Isa AS
+Musa AS
+Harun AS
+Yusuf AS
+Idris AS
+Yusuf AS
+Yunus AS
+Ismail AS
+Ayyub AS
+Ayyub AS
+Zakariya AS
+Yahya AS
+Ilyas AS
+Isa AS
+Yahya AS
+Ismail AS
+Ishaq AS
+Ibrahim AS
+Nuh AS
+Musa AS
+Dawud AS
+Ibrahim AS
+Nuh AS
+Musa AS
+Dawud AS
+100
+114
+120
+99
+Iqra
+Qul
+Bismillah
+Alhamdulillah
+Al-Baqarah
+Aal-Imran
+An-Nisa
+Al-Ma'idah
+The Book
+The Recitation
+The Guidance
+The Light
+Rajab
+Shaban
+Ramadan
+Dhul Hijjah
+At-Tawbah
+Al-Fatiha
+Yasin
+Al-Kahf
+20
+30
+40
+12
+Al-Ikhlas
+Al-Fatiha
+An-Nas
+Al-Falaq
+Al-Kawthar
+An-Nas
+Al-Falaq
+Al-Asr
+Mika'il
+Jibril AS
+Israfil
+Malik
+Madinah
+Makkah
+Ta'if
+Jerusalem
+Amina
+Khadijah RA
+Halima
+Fatimah RA
+Option A
+Option B
+Option C
+Option D
+Aisha RA
+Khadijah RA
+Hafsa RA
+Zainab RA
+Hajj
+Hijrah
+Isra
+Mi'raj
+Halima
+Amina
+Khadijah RA
+Aisha RA
+25
+40
+50
+30
+Thawr
+Hira
+Uhud
+Badr
+Umar RA
+Abu Bakr RA
+Uthman RA
+Ali RA
+Abu Talib
+Abu Lahab
+Hamza RA
+Abbas RA
+Makkah
+Madinah
+Ta'if
+Khaybar
+10
+12
+13
+11
+Shawwal
+Ramadan
+Muharram
+Rajab
+Muharram
+Safar
+Rajab
+Ramadan
+Eid al-Adha
+Eid al-Fitr
+Eid al-Ghadir
+Milad
+Shawwal
+Dhul Qa'dah
+Dhul Hijjah
+Muharram
+Solar
+Lunar
+Solar-lunar hybrid
+Gregorian
+The Prophet's birth
+The Hijrah
+First revelation
+Conquest of Makkah
+The Hijrah
+s AS willingness to sacrifice
+First revelation
+Battle of Badr
+Night of Power
+Night of Forgiveness
+Night of Ascension
+Night of Migration
+Shawwal
+Ramadan
+Muharram
+Rajab
+3
+5
+7
+4
+Arkan al-Islam
+Sunan
+Adab
+Akhlaq
+Zakat
+Sadaqah
+Fidyah
+Kaffarah
+Madinah
+Jerusalem
+Makkah
+East
+Option A
+Option B
+Option C
+Option D
+Umrah
+Hajj
+Ziyarah
+Tawaf
+Umar RA
+Abu Bakr RA
+Uthman RA
+Ali RA
+Salah
+Shahada
+Zakat
+Sawm
+Abu Bakr RA
+Umar RA
+Uthman RA
+Ali RA
+Sadaqah
+Zakat
+Waqf
+Nafl
+Abu Bakr RA
+Umar RA
+Uthman RA
+Ali RA
+Musa AS
+Harun AS
+Yusuf AS
+Dawud AS
+Yusuf AS
+Yunus AS
+Idris AS
+Zakariya AS
+Harun AS
+Yusha AS
+Yunus AS
+Ilyas AS
+Sulaiman AS
+Shu'ayb AS
+Musa AS
+Dawud AS
+Shu'ayb AS
+Hud AS
+Salih AS
+Lut AS
+Hud AS
+Salih AS
+Lut AS
+Nuh AS
+Salih AS
+Hud AS
+Lut AS
+Shu'ayb AS
+Lut AS
+Hud AS
+Salih AS
+Idris AS
+Idris AS
+Yunus AS
+Ayyub AS
+Ishaq AS
+Yaqub AS
+Ishaq AS
+Ibrahim AS
+Ismail AS
+Yasin
+Al-Mulk
+Ar-Rahman
+Al-Waqiah
+2
+4
+6
+10
+Maryam
+An-Nisa
+Al-Ahzab
+Both A and B
+Al-Falaq
+An-Nas
+Al-Ikhlas
+Al-Asr
+Al-Isra
+An-Najm
+Al-Kahf
+Ta-Ha
+Al-Kahf
+Al-Mulk
+Yasin
+Ar-Rahman
+Option A
+Option B
+Option C
+Option D
+Ayat
+Huruf Muqatta'at
+Asma
+Rumooz
+Al-An'am
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+Al-Kahf
+Maryam
+Yusuf
+Al-Anbiya
+10
+23
+15
+30
+Abdul Muttalib
+Abu Talib
+Abdullah
+Hashim
+he Prophet's ﷺ birth yea
+The Hijrah
+The first revelation
+The Battle of Badr
+Halima As-Sa'diyyah
+Umm Ayman RA
+Barakah
+Thuwaybah
+Quraysh
+Aws
+Khazraj
+Thaqif
+Hijrah
+Isra and Mi'raj
+Ghazwa
+Umrah
+Umar RA
+Abu Bakr RA
+Uthman RA
+Ali RA
+Treaty of Hudaybiyyah
+Treaty of Madinah
+Constitution of Madinah
+Charter of Aqabah
+Badr
+Uhud
+Khandaq
+Hunayn
+Constitution of Madinah
+Treaty of Hudaybiyyah
+Charter of Rights
+Pact of Aqabah
+5
+10
+13
+20
+Abu Bakr RA
+Umar RA
+Uthman RA
+Ali RA
+Muharram
+Safar
+Jumada
+Shaban
+g / Musa's AS deliverance, a
+The Hijrah
+First revelation
+Battle of Badr
+Umar RA
+Abu Bakr RA
+Ali RA
+Uthman RA
+Ras as-Sanah
+Eid al-Hijri
+Muharram Al-Haram
+festival name — it simply b
+Dhul Qa'dah
+Shawwal
+Rajab
+Muharram
+jor military victory for the MThe conquest of Makkah
+Death of the Prophet
+The Hijrah
+6 AH
+8 AH
+10 AH
+2 AH
+Option A
+Option B
+Option C
+Option D
+endar dating system based
+A prayer name
+A type of charity
+A pilgrimage rite
+Rajab
+Shaban
+Shawwal
+Muharram
+Uthman RA
+Ali RA
+Umar RA
+Abu Bakr RA
+Adhan
+Mawaqit
+Rakat
+Sujud
+Ali RA
+Umar RA
+Uthman RA
+Zayd RA
+Nisab
+Sadaqah
+Kaffarah
+Fidyah
+Zayd ibn Thabit RA
+Ali RA
+Umar RA
+Uthman RA
+Iqamah
+Adhan
+Takbir
+Tasbih
+Aisha RA
+Khadijah RA
+Hafsa RA
+Zainab RA
+Hamza RA
+Abbas RA
+Abu Talib
+Ja'far RA
+Tahajjud
+Taraweeh
+Witr
+Duha
+an ibn Affan RA and Ruqayy
+Ali RA
+Umar RA
+Abu Bakr RA
+Sulaiman AS
+Dawud AS
+Yusuf AS
+Musa AS
+Musa AS
+Ibrahim AS
+Yusuf AS
+Isa AS
+Yaqub AS
+Ishaq AS
+Ismail AS
+Ibrahim AS
+Nuh AS
+Hud AS
+Salih AS
+Lut AS
+Ibrahim AS
+Musa AS
+Isa AS
+Sulaiman AS
+500
+950
+1000
+300
+Dawud AS
+Sulaiman AS
+Musa AS
+Isa AS
+Isa AS
+Idris AS
+Ilyas AS
+Yunus AS
+Nuh's AS son
+Hud's AS son
+Salih's AS son
+Lut's AS son
+Ibrahim AS
+Musa AS
+Sulaiman AS
+Nuh AS
+Option A
+Option B
+Option C
+Option D
+Al-Fatiha
+Al-Baqarah
+Yasin
+Al-Ikhlas
+20
+23
+25
+30
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+Al-A'raf
+An-Naml
+Al-Ankabut
+An-Nahl
+An-Naml
+Al-Kahf
+Al-Anbiya
+Maryam
+Ta-Ha
+Al-Anfal
+At-Tawbah
+Al-Hashr
+Al-Mumtahanah
+Al-Ahzab
+Al-Fath
+Al-Hujurat
+Al-Hashr
+Yusuf
+Al-Qasas
+Hud
+Ibrahim
+Al-Qalam
+An-Najm
+Al-Buruj
+Al-Insan
+Madani
+Makki
+Hijri
+Ansari
+Abu Lahab
+Abu Talib
+Hamza RA
+Abbas RA
+Uhud
+Badr
+Khandaq
+Hunayn
+313
+500
+150
+700
+Aam al-Fil
+Aam al-Huzn
+Aam al-Wufud
+Aam al-Ridda
+Fatimah RA
+Zainab RA
+Ruqayyah RA
+Umm Kulthum RA
+Hamza RA
+Abbas RA
+Ja'far RA
+Zubayr RA
+Masjid an-Nabawi
+Masjid Quba
+Masjid al-Aqsa
+Masjid al-Haram
+Constitution of Madinah
+Treaty of Hudaybiyyah
+Pact of Aqabah
+Charter of Rights
+5 AH
+6 AH
+8 AH
+10 AH
+8 AH
+9 AH
+10 AH
+11 AH
+Abbasid
+Umayyad
+Ottoman
+Fatimid
+41 AH
+61 AH
+72 AH
+90 AH
+Option A
+Option B
+Option C
+Option D
+Badr
+Uhud
+Khandaq
+Hunayn
+Abbasid
+Ottoman
+Fatimid
+Safavid
+Damascus
+Baghdad
+Cairo
+Cordoba
+Abbasid
+Umayyad
+Fatimid
+Ottoman
+Tariq ibn Ziyad
+Uqba ibn Nafi
+Musa ibn Nusayr
+Khalid ibn al-Walid RA
+The Prophet's birth
+The Hijrah
+The first revelation
+The Conquest of Makkah
+28 or 29
+29 or 30
+30 or 31
+31 or 32
+Shawwal
+Dhul Hijjah
+Safar
+Jumada al-Awwal
+Khalid ibn al-Walid RA
+Sa'd ibn Abi Waqqas RA
+Zubayr ibn al-Awwam RA
+Talha ibn Ubaydillah RA
+Al-Khulafa Ar-Rashidun
+Al-Muhajirun
+Al-Ansar
+Ahlul Bayt
+Qiyas
+Ijma
+Istihsan
+Urf
+Ijma
+Qiyas
+Istihsan
+Urf
+Abu Hurairah RA
+Ibn Abbas RA
+Anas ibn Malik RA
+Aisha RA
+Ashura fasting
+Tasu'a only
+Ayyam al-Bidh
+Sitta min Shawwal
+Zayd ibn Thabit RA
+Bilal ibn Rabah RA
+Salman al-Farisi RA
+Suhayb RA
+Zuhr
+Jumu'ah
+Eid
+Witr
+bu Ubaidah ibn al-Jarrah RA
+Sa'd ibn Mu'adh RA
+Mu'adh ibn Jabal RA
+Ubayy ibn Ka'b RA
+Iftar
+Suhoor
+Fidyah
+Kaffarah
+Sulaiman AS
+Dawud AS
+Yusuf AS
+Musa AS
+Ayyub AS
+Yunus AS
+Zakariya AS
+Yahya AS
+Hud AS
+Salih AS
+Shu'ayb AS
+Lut AS
+Salih AS
+Hud AS
+Shu'ayb AS
+Lut AS
+Option A
+Option B
+Option C
+Option D
+Zakariya AS
+Ibrahim AS
+Ayyub AS
+Ilyas AS
+Idris AS
+Ilyas AS
+Yunus AS
+Ishaq AS
+Yunus AS
+Hud AS
+Salih AS
+Lut AS
+Nuh AS
+Hud AS
+Lut AS
+Salih AS
+Isa AS
+Yahya AS
+Musa AS
+Ismail AS
+Hud AS
+Idris AS
+Ilyas AS
+Dhul-Kifl AS
+1
+2
+3
+4
+Surah
+Ayah
+Juz
+Hizb
+Al-Ma'idah
+Al-An'am
+Al-A'raf
+Al-Anfal
+An-Nur
+Al-Ahzab
+Al-Mumtahanah
+Al-Hujurat
+Al-Fil
+Quraysh
+Al-Ma'un
+Al-Kawthar
+Al-Ikhlas and Al-Kawthar
+Al-Falaq and An-Nas
+Al-Asr and Al-Kawthar
+An-Nasr and Al-Kafirun
+Tajweed
+Tafsir
+Qira'ah
+Hifz
+Al-Waqiah
+Al-Qiyamah
+Al-Infitar
+At-Takwir
+Surah Al-Baqarah
+Surah An-Nisa
+Surah Al-Ma'idah
+Surah Al-An'am
+Madani
+Makki
+Ansari
+Muhajir
+Al-Qaswa
+Al-Adba
+Al-Jad'a
+Al-Ghadba
+Hira
+Thawr
+Uhud
+Arafat
+Roughly 1 to 3
+Roughly 1 to 10
+Roughly equal
+uslims outnumbered Quray
+Badr
+Uhud
+Khandaq
+Hunayn
+Salman al-Farisi RA
+Abu Bakr RA
+Bilal RA
+Suhayb RA
+Madinah
+Mount Arafat
+Mount Uhud
+Ta'if
+Option A
+Option B
+Option C
+Option D
+ipped Muhammad, Muham
+The Farewell Sermon
+The Treaty of Hudaybiyyah The Conquest of Makkah
+Saqifah Bani Sa'idah
+he Second Pledge of Aqaba The Battle of the Camel
+The Council of Madinah
+58
+63
+70
+50
+Makkah, near the Kaaba adinah, at Masjid an-Nabaw
+Ta'if
+Jerusalem
+Umar RA
+Uthman RA
+Ali RA
+Abu Bakr RA
+Umayyads of Cordoba
+Abbasids
+Fatimids
+Ottomans
+ibn Abdul Muttalib's desce Abu Talib's descendants
+Umar's RA descendants Uthman's RA descendants
+Imam Bukhari
+Imam Tirmidhi
+Imam Nasa'i
+Imam Ibn Majah
+11th century
+14th century
+17th century
+19th century
+Bayt al-Hikmah
+Al-Azhar
+Al-Qarawiyyin
+Nizamiyyah
+Sultan Mehmed II
+Sultan Suleiman
+Salahuddin al-Ayyubi
+Sultan Selim I
+oughly 8th–13th century CRoughly 1st–2nd century CEoughly 15th–16th century CRoughly 19th century CE
+Khilafah Rashidah
+Khilafah Umawiyyah
+Khilafah Abbasiyyah
+Khilafah Uthmaniyyah
+the Ottoman Beylik under O Fall of Constantinople
+Battle of Manzikert
+Conquest of Baghdad
+Umar RA
+Abu Bakr RA
+Uthman RA
+Ali RA
+Muhaddith
+Mujtahid
+Qari
+Hafiz
+Zayd ibn Harithah RA
+Salman al-Farisi RA
+Bilal RA
+Suhayb RA
+Fard
+Nafl
+Witr only
+Jumu'ah
+Uthman RA
+Zubayr RA
+Talha RA
+Sa'd ibn Abi Waqqas RA
+Wudu
+Ghusl
+Tayammum
+Istinja
+bdullah ibn Umm Maktum R
+Bilal RA
+Suhayb RA
+Salman al-Farisi RA
+Dhikr
+Dua
+Tasbih
+Istighfar
+Option A
+Option B
+Option C
+Option D
+anafi, Maliki, Shafi'i, HanbaJa'fari, Zaidi, Ismaili, HanafiMaliki, Ja'fari, Hanbali, ZahirShafi'i, Zaidi, Hanafi, Maliki
+Sadaqah
+Zakat
+Kaffarah
+Fidyah
+Azar
+Terah
+Nahor
+Haran
+Dawud AS
+Sulaiman AS
+Musa AS
+Ismail AS
+Musa AS
+Nuh AS
+Ibrahim AS
+Yunus AS
+Shu'ayb AS
+Hud AS
+Yunus AS
+Ilyas AS
+Yahya AS
+Yunus AS
+Idris AS
+Ilyas AS
+he Arabs, via Quraysh lineag
+The Persians
+The Romans
+The Abyssinians
+ani Israel (Children of Israe
+The Arabs
+The Byzantines
+The Nabateans
+Ismail AS
+Ishaq AS
+Yaqub AS
+Yusuf AS
+Idris AS
+Ilyas AS
+Yunus AS
+Dhul-Kifl AS
+Dhul-Qarnayn
+Khidr
+Luqman AS
+Uzair
+Al-Furqan
+Al-Bayyinah
+Al-Hadid
+Al-Waqiah
+13
+23
+33
+10
+An-Nisa
+Al-Ma'idah
+Al-Anfal
+At-Tawbah
+An-Nur
+Al-Fajr
+Ad-Duha
+Ash-Shams
+Ash-Shams
+Al-Layl
+Al-Fajr
+Ad-Duha
+Bani Isra'il
+Al-Anbiya
+Al-Kahf
+Maryam
+Madani
+Makki
+Ansari
+Hijri
+Makki
+Madani
+Qurashi
+Ansari
+Al-Hajj
+Al-Baqarah
+Al-Ma'idah
+An-Nisa
+Al-Isra
+Al-Kahf
+Maryam
+Ta-Ha
+Option A
+Option B
+Option C
+Option D
+Abu Talib
+Abu Lahab
+Hamza RA
+Abbas RA
+Qasim
+Ibrahim
+Abdullah
+Tahir
+Hilf al-Fudul
+Hilf al-Mutayyabin
+Ahd al-Quraysh
+Mithaq al-Madinah
+Aam al-Huzn
+Aam al-Wufud
+Aam al-Fil
+Aam ar-Ridda
+Mu'adh ibn Jabal RA
+Zayd ibn Thabit RA
+Ubayy ibn Ka'b RA
+Salman al-Farisi RA
+A stone platform
+A palm trunk
+A woven mat
+A wooden chair
+The Battle of Tabuk
+The Battle of Hunayn
+The Battle of Khaybar
+The Battle of Mu'tah
+Bilal ibn Rabah RA
+Abu Hurairah RA
+Salman al-Farisi RA
+Suhayb RA
+The Battle of Khaybar
+The Battle of Hunayn
+The Battle of Tabuk
+The Battle of Mu'tah
+Ghazawat
+Riddah
+Futuhat
+Ansar
+Umar RA
+Abu Bakr RA
+Uthman RA
+Ali RA
+Uthman RA
+Ali RA
+Umar RA
+Abu Bakr RA
+Abbasids
+Fatimids
+Safavids
+Mamluks
+Baghdad
+Damascus
+Cairo
+Cordoba
+610 CE
+622 CE
+632 CE
+570 CE
+Ottoman
+Safavid
+Mughal
+Abbasid
+Bayt al-Hikmah
+Al-Azhar
+Nizamiyyah
+Al-Qarawiyyin
+13th century
+15th century
+17th century
+19th century
+Ramadan
+Muharram
+Rajab
+Dhul Hijjah
+6th–7th century
+8th–13th century
+14th–15th century
+17th–18th century
+Zayd ibn Thabit RA
+Bilal RA
+Suhayb RA
+Salman al-Farisi RA
+Hasan
+Sahih
+Da'if
+Mawdu'
+Option A
+Option B
+Option C
+Option D
+at the end of Ramadan befohe annual charity on wealt charity for breaking an oat A charity for missed fasts
+Hadath
+Janabah
+Najasah
+Wudu
+Abdullah ibn Abbas RA
+Abdullah ibn Umar RA
+Abdullah ibn Mas'ud RA
+Zayd ibn Thabit RA
+Wasiyyah
+Mirath
+Waqf
+Kaffarah
+Umm Sulaim RA
+Umm Salama RA
+Umm Habiba RA
+Safiyyah RA
+Tahajjud
+I'tikaf
+Qiyam
+Tarawih
+Anas ibn Malik RA
+Zayd ibn Harithah RA
+Bilal RA
+Salman al-Farisi RA
+Azimah
+Rukhsah
+Kaffarah
+Fidyah
+Suhuf Ibrahim
+Zabur
+Tawrat
+Injil
+Zabur
+Tawrat
+Injil
+Suhuf
+Tawrat
+Zabur
+Injil
+Suhuf
+Zabur
+Tawrat
+Injil
+Suhuf
+20
+25
+30
+33
+Isa AS
+Muhammad
+Musa AS
+Ibrahim AS
+Nuh AS
+Yunus AS
+Idris AS
+Ilyas AS
+Musa AS
+Yusuf AS
+Dawud AS
+Sulaiman AS
+Musa AS
+Ibrahim AS
+Nuh AS
+Yunus AS
+Musa AS
+Ibrahim AS
+Nuh AS
+Sulaiman AS
+Al-Ikhlas
+Al-Kawthar
+Al-Asr
+Al-Fatiha
+Al-Ma'idah
+Al-Fil
+Quraysh
+Al-Kawthar
+Ar-Rum
+Al-Ankabut
+Luqman
+As-Sajdah
+Al-Qamar
+Ash-Shams
+An-Najm
+Al-Buruj
+Option A
+Option B
+Option C
+Option D
+Al-Qamar
+Al-Inshiqaq
+Al-Insan
+At-Takwir
+Al-Anfal
+At-Tawbah
+Al-Hashr
+Al-Mumtahanah
+Al-Hajj
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+Al-Mu'minun
+Al-Muminat
+An-Nur
+Al-Ahzab
+An-Nur
+An-Najm
+Al-Qamar
+Al-Buruj
+e last two verses of Al-Baqa
+Ayat al-Kursi only
+e first five verses of Al-Baqa
+Surah Al-Ikhlas
+Near Mina, outside Makkah
+In Madinah
+In Ta'if
+In Jerusalem
+40
+73
+100
+12
+Aws and Khazraj
+Quraysh and Thaqif
+Hudhayl and Bakr
+Ghatafan and Hawazin
+Banu Qainuqa
+Banu Nadir
+Banu Qurayza
+Banu Thaqif
+3 AH
+5 AH
+6 AH
+8 AH
+Salman al-Farisi RA
+Suhayb RA
+Bilal RA
+Zayd ibn Harithah RA
+A clear loss
+A clear victory (Fath Mubin)
+A minor treaty
+An unresolved truce
+6 AH
+7 AH
+8 AH
+9 AH
+Khutbatul Wada
+Khutbat al-Jumu'ah
+Khutbat al-Fath
+Khutbat al-Hijrah
+A small group only
+nd, commonly estimated ar
+Fewer than 100
+Only his immediate family
+Umar RA
+Abu Bakr RA
+Ali RA
+Uthman RA
+Battle of Yarmouk
+Battle of Qadisiyyah
+Battle of Nahawand
+Battle of Talas
+Battle of Yarmouk
+Battle of Qadisiyyah
+Battle of Ain Jalut
+Battle of Hattin
+Mughal Empire
+Ottoman Empire
+Safavid Empire
+Delhi Sultanate
+Akbar
+Babur
+Aurangzeb
+Shah Jahan
+11th century
+13th century
+15th century
+17th century
+Option A
+Option B
+Option C
+Option D
+University of al-Qarawiyyin
+Al-Azhar
+Bayt al-Hikmah
+Nizamiyyah
+Al-Azhar
+Al-Qarawiyyin
+Bayt al-Hikmah
+Sankore Madrasah
+Fatimid
+Ayyubid
+Mamluk
+Abbasid
+Al-Khwarizmi
+Ibn Sina
+Ibn al-Haytham
+Al-Farabi
+Niyyah
+Takbir
+Tashahhud
+Qunut
+Abu Hurairah RA
+Abu Dharr RA
+Ubadah ibn as-Samit RA
+Hudhayfah RA
+Ahad
+Mutawatir
+Gharib
+Mursal
+Faqih
+Muhaddith
+Qari
+Mufassir
+bu Ubaidah ibn al-Jarrah RA
+Sa'd ibn Mu'adh RA
+Ubayy ibn Ka'b RA
+Hudhayfah RA
+Mustahab
+Fard / Wajib
+Makruh
+Mubah
+Fard
+Mustahab / Sunnah
+Haram
+Makruh
+Makruh
+Haram
+Fard
+Mustahab
+Makruh
+Mubah
+Haram
+Sunnah
+Mubah
+Fard
+Haram
+Makruh
+Ibrahim AS
+Ismail AS
+Ishaq AS
+Yaqub AS
+Sulaiman AS
+Dawud AS
+Yusuf AS
+Musa AS
+Bilqis
+Zulaikha
+Asiyah
+Hajar
+Ayyub AS
+Yunus AS
+Zakariya AS
+Yahya AS
+Yusuf AS
+Musa AS
+Isa AS
+Sulaiman AS
+Yusuf AS
+Musa AS
+Sulaiman AS
+Dawud AS
+Yusuf AS
+Musa AS
+Ismail AS
+Ishaq AS
+Zulaikha
+Bilqis
+Hajar
+Asiyah
+Option A
+Option B
+Option C
+Option D
+Idris AS
+Ilyas AS
+Yunus AS
+Dhul-Kifl AS
+Idris AS
+Yunus AS
+Ilyas AS
+Ishaq AS
+Surah Al-Baqarah, verse 255Surah Aal-Imran, verse 18
+Surah Al-Ikhlas, verse 1
+Surah Al-Fatiha, verse 5
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+Al-Anfal
+Al-Kahf
+Saba
+Al-Mulk
+Al-Qalam
+Al-Fatiha
+Al-Ikhlas
+Yasin
+Al-Waqiah
+Al-Anfal
+At-Tawbah
+Al-Fath
+Al-Hashr
+Al-Hujurat
+An-Nur
+Al-Ahzab
+Al-Mumtahanah
+An-Nur
+Al-Hujurat
+Al-Ahzab
+Al-Mumtahanah
+Al-Ahzab
+An-Nur
+Al-Hujurat
+Al-Mumtahanah
+Tajweed
+Asbab an-Nuzul
+Qira'ah
+Naskh
+Mutashabih
+Muhkam
+Mansukh
+Nasikh
+Banu Qainuqa
+Banu Nadir
+Banu Qurayza
+Banu Thaqif
+Sa'd ibn Mu'adh RA
+Sa'd ibn Abi Waqqas RA
+Abu Ubaidah RA
+Mu'adh ibn Jabal RA
+9 AH
+10 AH
+11 AH
+12 AH
+Umar RA
+Abu Bakr RA
+Uthman RA
+Ali RA
+Saqifah Bani Sa'idah
+he Second Pledge of Aqaba The Battle of the Camel
+Majlis ash-Shura
+About 15
+About 100
+About 300
+About 5
+Ashama ibn Abjar
+Heraclius
+Khosrow
+Muqawqis
+Ja'far ibn Abi Talib RA
+Zayd ibn Harithah RA
+Amr ibn al-As RA
+Uthman RA
+t of Banu Hashim (Shi'b Ab Treaty of Hudaybiyyah
+Constitution of Madinah
+Charter of Aqabah
+Ta'if
+Yathrib
+Damascus
+Jerusalem
+Option A
+Option B
+Option C
+Option D
+Salahuddin al-Ayyubi
+Nur ad-Din Zangi
+Baibars
+Suleiman the Magnificent
+Ayyubid dynasty
+Mamluk Sultanate
+Fatimid dynasty
+Zangid dynasty
+Mamluk Sultanate
+Ayyubid dynasty
+Fatimid dynasty
+Ottoman Empire
+Battle of Ain Jalut
+Battle of Hattin
+Battle of Manzikert
+Battle of Yarmouk
+Ibn Battuta
+Ibn Khaldun
+Ibn Sina
+Al-Biruni
+Ibn Khaldun
+Ibn Battuta
+Al-Ghazali
+Ibn Rushd
+Ibn Sina (Avicenna)
+Ibn al-Haytham
+Al-Razi
+Al-Khwarizmi
+Ibn al-Haytham (Alhazen)
+Ibn Sina
+Al-Khwarizmi
+Al-Kindi
+Bayt al-Hikmah
+Al-Azhar
+Al-Qarawiyyin
+Nizamiyyah
+The Third Crusade era
+The First Crusade era
+The Fourth Crusade era The Children's Crusade era
+Ilm al-Rijal
+Tafsir
+Tajweed
+Qira'ah
+Sunan Abu Dawood
+Muwatta Imam Malik
+Musnad Ahmad
+Sahih Ibn Khuzaymah
+Sahih
+Hasan
+Da'if
+Mutawatir
+Imam Malik ibn Anas
+Imam Bukhari
+Imam Muslim
+Imam Ahmad
+Qiyas
+Ijma
+Istihsan
+Istishab
+Jihad an-Nafs
+Ribat
+Hisbah
+Tazkiyah only
+Hajj
+Umrah
+Ziyarah
+Tawaf
+Sa'i
+Tawaf
+Rami
+Wuquf
+Tawaf
+Sa'i
+Rami
+Ihram
+Sa'i
+Tawaf
+Rami al-Jamarat
+Wuquf
+Isa AS
+Musa AS
+Sulaiman AS
+Dawud AS
+Al-Hawariyyun
+Al-Ansar
+Al-Muhajirun
+Al-Aqtab
+Option A
+Option B
+Option C
+Option D
+Maryam
+Hajar
+Asiyah
+Khadijah RA
+g life into clay birds, which t Turning water into wine
+Splitting the moon
+Calming a storm
+Isa AS
+Yahya AS
+Musa AS
+Ismail AS
+Musa AS
+Ibrahim AS
+Nuh AS
+Sulaiman AS
+Musa AS
+Dawud AS
+Sulaiman AS
+Isa AS
+Musa AS
+Ibrahim AS
+Sulaiman AS
+Yusuf AS
+Musa AS
+Ibrahim AS
+Nuh AS
+Yunus AS
+Musa AS
+Sulaiman AS
+Dawud AS
+Ilyas AS
+Aal-Imran
+An-Nisa
+Al-Ma'idah
+Al-An'am
+Zihar
+Li'an
+Khula
+Talaq al-Ba'in
+Aal-Imran
+An-Nisa
+Al-Ma'idah
+At-Tawbah
+At-Takwir
+Al-Infitar
+Al-Inshiqaq
+Al-Ghashiyah
+Al-Infitar
+At-Takwir
+Al-Buruj
+At-Tariq
+Al-Ghashiyah
+Al-Fajr
+Al-Balad
+Ash-Shams
+Al-Fajr
+Ad-Duha
+Al-Layl
+Ash-Shams
+Al-Fil
+Quraysh
+Al-Ma'un
+Al-Kawthar
+Quraysh
+Al-Fil
+Al-Ma'un
+Al-Kawthar
+Al-Ma'un
+Al-Kawthar
+Quraysh
+Al-Fil
+About 15
+About 50
+About 100
+About 300
+Ashama ibn Abjar
+Heraclius
+Muqawqis
+Khosrow
+Ja'far ibn Abi Talib RA
+Amr ibn al-As RA
+Uthman RA
+Zayd ibn Harithah RA
+1 year
+3 years
+7 years
+10 years
+Option A
+Option B
+Option C
+Option D
+Shi'b Abi Talib
+Dar an-Nadwah
+Masjid al-Haram precinct
+Jabal al-Nur
+Khadijah RA and Abu Talib Abu Bakr RA and Umar RA Hamza RA and Ja'far RA
+Zayd RA and Bilal RA
+Sawda bint Zam'ah RA
+Aisha RA
+Hafsa RA
+Zainab RA
+The Ta'if journey
+he Hudaybiyyah negotiatio
+The Tabuk expedition
+The Hunayn campaign
+5
+7
+11 or 13
+20
+Battle of Hunayn
+Battle of Tabuk
+Battle of Khaybar
+Battle of Mu'tah
+Umar ibn Abdul Aziz
+Abdul Malik ibn Marwan Muawiyah ibn Abi Sufyan
+Al-Walid I
+in the west and Sindh in th
+Persia and China
+Anatolia and the Balkans
+Egypt and Sudan
+Muhammad ibn Qasim
+Tariq ibn Ziyad
+Uqba ibn Nafi
+Amr ibn al-As RA
+Caliph Al-Mansur
+Caliph Al-Ma'mun
+Caliph Harun al-Rashid
+Caliph Al-Mahdi
+Library of Cordoba
+Bayt al-Hikmah
+Al-Azhar Library
+Nizamiyyah Library
+Mali Empire
+Songhai Empire
+Ghana Empire
+Kanem-Bornu Empire
+12th century
+14th century
+16th century
+18th century
+5th–6th century
+9th–10th century
+13th–15th century
+17th–18th century
+The Islamic Golden Age e Age of Ignorance (Jahiliyyage of the Rightly Guided Ca
+The Reconquista era
+Ibn Battuta
+Ibn Khaldun
+Al-Biruni
+Ibn Fadlan
+Fiqh
+Aqeedah
+Tafsir
+Tajweed
+Aqeedah
+Fiqh
+Tasawwuf
+Kalam
+Usul al-Fiqh
+Ilm al-Kalam
+Mustalah al-Hadith
+Ilm ar-Rijal
+Zayd ibn Thabit RA
+Ubayy ibn Ka'b RA
+Abdullah ibn Mas'ud RA
+Mu'adh ibn Jabal RA
+Matn
+Isnad
+Sanad only
+Riwayah
+Isnad
+Matn
+Sanad
+Tabaqat
+Option A
+Option B
+Option C
+Option D
+Imam Malik ibn Anas
+Imam Abu Hanifa
+Imam Ash-Shafi'i
+Imam Ahmad ibn Hanbal
+Imam Abu Hanifa
+Imam Malik
+Imam Ash-Shafi'i
+Imam Ahmad ibn Hanbal
+Imam Abu Hanifa
+Imam Malik
+Imam Ash-Shafi'i
+Imam Ahmad ibn Hanbal
+Imam Abu Hanifa
+Imam Malik
+Imam Ash-Shafi'i
+Imam Ahmad ibn Hanbal
+AS, per the more widely heAS, per the more widely heleither son is mentioned at a
+Yaqub AS
+Zamzam
+Kawthar
+Salsabil
+Tasnim
+Tawaf
+Sa'i
+Rami
+Wuquf
+Hud AS ('Aad)
+Salih AS (Thamud)
+Shu'ayb AS (Madyan)
+Lut AS
+Al-Qalam
+Al-Kahf
+Saba
+Al-Mulk
+Found in Surah Al-Ahzab Found in Surah Al-Baqarah Found in Surah Al-Ikhlas Found in Surah Al-Kawthar
+Ibrahim AS
+Musa AS
+Yusuf AS
+Sulaiman AS
+Ibrahim AS
+Musa AS
+Sulaiman AS
+Nuh AS
+Harut and Marut
+Munkar and Nakir
+Jibril and Mika'il
+Israfil and Azrail
+Yes, explicitly stated
+is a matter of scholarly diffe is explicitly called an angeHe is explicitly called a king
+6,236
+5,000
+7,000
+4,500
+An-Nasr
+Al-Ma'idah
+At-Tawbah
+Al-Baqarah
+Ilm an-Naskh
+Ilm al-Qira'at
+Ilm at-Tajweed
+Ilm al-Fiqh
+Al-Muzzammil
+Al-Fatiha
+Yasin
+Al-Kahf
+Al-Ahzab
+Al-Fath
+Al-Hujurat
+Al-Mumtahanah
+Al-Mujadila
+An-Nur
+Al-Ahzab
+At-Talaq
+Al-Qadr
+Al-Qiyamah
+Al-Waqiah
+Al-Insan
+An-Nisa
+Al-Baqarah
+Al-Ma'idah
+Al-Anfal
+Option A
+Option B
+Option C
+Option D
+Al-Inshiqaq
+Al-Infitar
+At-Takwir
+Al-Ghashiyah
+Aal-Imran
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+1 year
+3 years
+7 years
+10 years
+Mount Safa
+Mount Uhud
+Mount Arafat
+Mount Thawr
+urah Ash-Shu'ara, verse 21Surah Al-Muddathir, verse 1 Surah Al-Alaq, verse 1
+Surah Al-Qalam, verse 1
+1–2 years before
+10–12 years before
+20 years before
+mmediately after the Hijrah
+10, reduced to 5
+50, reduced to 5
+100, reduced to 5
+20, reduced to 5
+Musa AS
+Ibrahim AS
+Isa AS
+Adam AS
+Al-Aqsa Mosque
+Dome of the Rock only
+hurch of the Holy Sepulchr
+Masjid Qiblatayn
+1 AH
+2 AH
+3 AH
+5 AH
+Battle of Hunayn
+Battle of Tabuk
+Battle of Khaybar
+Battle of Mu'tah
+Hawazin and Thaqif
+Quraysh and Thaqif
+Aws and Khazraj
+Ghatafan and Hudhayl
+Delhi Sultanate
+Bahmani Sultanate
+Deccan Sultanates
+Bengal Sultanate
+Suleiman the Magnificent
+Mehmed II
+Selim I
+Abdul Hamid II
+Mimar Sinan
+Ibn Tulun
+Al-Walid I
+Ahmad ibn Tulun
+Songhai Empire
+Kanem-Bornu
+Ashanti Empire
+Wolof Empire
+Sankore Madrasah
+Al-Qarawiyyin
+Nizamiyyah
+Bayt al-Hikmah
+19th century
+1924
+1948
+1830
+Safavid Empire
+Ottoman Empire
+Mughal Empire
+Mamluk Sultanate
+Maragheh Observatory
+Samarkand Observatory
+Istanbul Observatory
+Cairo Observatory
+Nasir al-Din al-Tusi
+Al-Biruni
+Al-Khwarizmi
+Ibn al-Haytham
+5th–6th century
+8th–13th century
+15th–16th century
+18th–19th century
+Option A
+Option B
+Option C
+Option D
+Mutawatir
+Ahad
+Mursal
+Munqati
+Marfu'
+Mawquf
+Maqtu'
+Musnad
+Mawquf
+Marfu'
+Maqtu'
+Mutawatir
+Imam Muslim
+Imam Tirmidhi
+Imam Nasa'i
+Imam Abu Dawood
+Mustalah al-Hadith
+Usul al-Fiqh
+Ilm al-Kalam
+Tafsir
+Aisha RA
+Hafsa RA
+Zainab RA
+Umm Salama RA
+Fidyah
+Kaffarah
+Zakat
+Nisab
+Azimah
+Rukhsah
+Kaffarah
+Fidyah
+Qasr
+Jam'
+Sujud
+Witr
+Jam'
+Qasr
+Witr
+Tarawih
+Surah Al-Alaq, verses 1–5 Surah Al-Fatiha, verses 1–7rah Al-Muddathir, verses 1–Surah Al-Baqarah, verse 1
+Mount Tur (Sinai)
+Mount Uhud
+Mount Arafat
+Mount Hira
+A single mighty blast (Sayha
+A great flood only
+A famine only
+An earthquake only
+500 years
+950 years
+1,000 years
+300 years
+Khidr
+Luqman AS
+Dhul-Qarnayn
+Uzair
+Nuh AS and Musa AS
+Yunus AS and Idris AS
+Ilyas AS and Ishaq AS
+Dawud AS and Sulaiman AS
+Musa AS
+Harun AS
+Sulaiman AS
+Dawud AS
+'i between Safa and Marwa
+Rami al-Jamarat
+Wuquf at Arafat
+Tawaf al-Ifadah
+Musa AS
+Ibrahim AS
+Isa AS
+Dawud AS
+ing, or ruler — a matter of Confirmed prophet only
+Confirmed angel
+Confirmed jinn
+86 Makki, 28 Madani
+70 Makki, 44 Madani
+100 Makki, 14 Madani
+60 Makki, 54 Madani
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+Al-Anfal
+Option A
+Option B
+Option C
+Option D
+Qira'at Sab'ah
+Ahruf Sittah
+Tajweed Kubra
+Mushaf Jami'
+Hafs 'an 'Asim
+Warsh 'an Nafi'
+Qalun 'an Nafi'
+Al-Duri 'an Abu Amr
+Warsh 'an Nafi'
+Hafs 'an 'Asim
+Al-Kisa'i
+Ibn Kathir
+Tajweed
+Tafsir
+Naskh
+Isnad
+Asbab an-Nuzul
+Ilm al-Qira'at
+Ilm al-Kalam
+Usul al-Fiqh
+e incident of Ifk (the slande The Battle of the Trench The Treaty of Hudaybiyyah The Conquest of Makkah
+Muhkam
+Mutashabih
+Mansukh
+Nasikh
+Aal-Imran
+Al-Baqarah
+An-Nisa
+Al-Ma'idah
+12th Rabi al-Awwal
+1st Muharram
+27th Rajab
+10th Dhul Hijjah
+th Safar or 1st Rabi al-Aww
+12th Rabi al-Awwal
+1st Muharram
+10th Dhul Hijjah
+150
+220
+313 or 314
+500
+20
+70
+150
+300
+5 years
+13 years
+20 years
+25 years
+5 years
+10 years
+15 years
+20 years
+Al-Isra wal Mi'raj
+Al-Hijratayn
+Al-Fathu'l-Mubin
+Ghazwatu'l-Ahzab
+Al-Aqsa Mosque compoundhurch of the Holy Sepulchr Dome of the Chain only
+Western Wall precinct
+About 10
+About 27
+About 50
+About 100
+Treaty of Hudaybiyyah
+Constitution of Madinah
+Charter of Aqabah
+Pact of Najran
+Abdul Malik ibn Marwan Muawiyah ibn Abi Sufyan
+Al-Walid I
+Umar ibn Abdul Aziz
+Battle of Hattin
+Battle of Ain Jalut
+Battle of Manzikert
+Battle of Yarmouk
+15th century
+18th century
+20th century
+12th century
+uhammad ibn Abdul Wahha
+Ibn Taymiyyah
+Al-Ghazali
+Ibn Khaldun
+Option A
+Option B
+Option C
+Option D
+5th century
+7th century
+10th century
+13th century
+Sa'd ibn Abi Waqqas RA
+Uqba ibn Nafi
+Amr ibn al-As RA
+Khalid ibn al-Walid RA
+ghlabid and Kalbid dynastiemayyad and Abbasid dynasttimid and Ayyubid dynastietoman and Mamluk dynast
+9th century
+11th–12th century
+15th century
+17th century
+Mecelle (Ottoman Civil Codeharia Compendium of Cairo
+Fiqh Akbar Code
+Fatawa Alamgiri
+Fatawa Alamgiri
+Mecelle
+Majalla
+Qanun-e-Shahi
+Qawli
+Fi'li
+Taqriri
+Khilqi
+Mawdu'
+Munkar
+Shadhdh
+Mu'allal
+Ibn as-Salah
+Ibn Hajar al-Asqalani
+An-Nawawi
+Adh-Dhahabi
+Thiqah
+Da'if
+Matruk
+Majhul
+Ijazah
+Sama'
+Qira'ah 'ala shaykh
+Munawalah
+Sama'
+Ijazah
+Wijadah
+Mukatabah
+Ilm al-Rijal
+Ilm al-Kalam
+Usul al-Fiqh
+Ilm al-Qira'at
+Muqill
+Mukthir
+Thiqah
+Hafiz
+Musannaf
+Musnad
+Mustadrak
+Mu'jam
+Imam Ahmad ibn Hanbal
+Imam Bukhari
+Imam Muslim
+Imam Tirmidhi
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+D
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+D
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+N
+FALSE
+A
+Y
+Narration on single-sitting revelation varies; 
+confirm framing with scholar
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+C
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Multiple events are traditionally linked to Ashura; 
+confirm exact phrasing with scholar
+FALSE
+A
+N
+FALSE
+D
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+Y
+Several early migrants are recorded; confirm 
+precise 'first' framing with scholar
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+The son's name (commonly cited as Kan'an) comes 
+from tafsir tradition, not explicitly named in the 
+Quran
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+Y
+Number commonly cited as 313–314 across 
+narrations
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+C
+N
+FALSE
+B
+N
+FALSE
+B
+Y
+Sensitive historical event; present as neutral 
+historical fact only, no sectarian framing
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+Y
+Historical event; present neutrally without 
+assigning blame
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Broad historical dating; treat as approximate
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Dates are approximate and vary by historian
+FALSE
+A
+N
+FALSE
+A
+Y
+Founding date is approximate per historical 
+tradition
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+Y
+Multiple companions are noted for generosity; 
+confirm specific narration referenced
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+B
+N
+FALSE
+A
+Y
+Name differs from some other religious traditions; 
+note as per Islamic sources
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Attribution comes from tradition/tafsir rather than 
+an explicit Quranic statement
+FALSE
+A
+Y
+Scholars differ on whether Dhul-Qarnayn was a 
+prophet, king, or righteous ruler
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Dating is approximate and debated among 
+historians
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Number of named prophets is a commonly cited 
+figure (25); confirm exact count with scholar
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Number commonly cited as 73 (or 75 including two 
+women) across narrations
+FALSE
+A
+N
+FALSE
+A
+Y
+Sequence and details of the three tribes' 
+expulsions/judgments vary across sources; verify 
+order with scholar
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Numbers vary significantly across historical 
+narrations; treat as approximate
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Name comes from tafsir tradition; not explicitly 
+stated in the Quran
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+Y
+Attribution from tradition, not an explicit Quranic 
+statement
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+C
+Y
+Historical detail; present factually and neutrally
+FALSE
+A
+N
+FALSE
+C
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Numbers vary slightly across historical narrations
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Figures vary slightly across historical narrations
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Duration cited across sources ranges roughly 2–3 
+years
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+C
+Y
+Number commonly cited as 11–13 depending on 
+how marriages are counted
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+C
+Y
+Dating varies by region and historical source
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+C
+N
+FALSE
+D
+N
+FALSE
+A
+Y
+A minority scholarly view holds Ishaq AS; note both 
+views exist across traditions
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+The story does not name a specific prophet; 
+owners of the garden are unnamed
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Scholars differ on interpretation of this narrative; 
+treat with care
+FALSE
+B
+Y
+Scholars differ on whether Khidr held 
+prophethood; present as an open question
+FALSE
+A
+Y
+Total ayah count varies slightly (around 6,236–
+6,348) depending on counting method used
+FALSE
+A
+Y
+Scholarly opinions differ on the exact chronology of 
+final revelations
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Exact dating of the Isra and Mi'raj is debated 
+among historians
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Regional political history is complex; confirm 
+chronological framing with scholar
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+Y
+Present as neutral historical fact only, without 
+sectarian framing
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Dating ranges vary among historians
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+N
+FALSE
+B
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+Different nations faced different described 
+punishments; this refers to Thamud and similar 
+accounts specifically
+FALSE
+B
+N
+FALSE
+A
+Y
+Khidr is not explicitly named in the Quranic text 
+itself; identification comes from hadith and tafsir 
+tradition
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+This is explicitly a matter of scholarly difference; 
+present as open question, not settled fact
+FALSE
+A
+Y
+Classification of a small number of Surahs is 
+debated among scholars
+FALSE
+A
+N
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+Y
+The exact birth date is disputed among historians; 
+12th Rabi al-Awwal is the most popularly cited
+FALSE
+A
+Y
+Exact dates vary across historical sources
+FALSE
+C
+Y
+Number commonly cited across narrations as 313–
+314
+FALSE
+B
+Y
+Number commonly cited as approximately 70 
+across historical sources
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+Y
+Estimates of the exact number vary across 
+historical sources
+FALSE
+A
+N
+FALSE
+A
+Y
+Exact date and attribution are commonly cited 
+historical estimates
+FALSE
+A
+N
+FALSE
+B
+Y
+Adoption timeline is historically documented but 
+approximate
+FALSE
+A
+Y
+Present as a neutral historical fact; avoid sectarian 
+framing
+FALSE
+Correct Answercholar Review Fla
+Notes
+isScholarReviewed
+B
+Y
+Traditional accounts vary; treat as approximate
+FALSE
+A
+Y
+This attribution is a popular tradition and 
+historically disputed; flag clearly as such
+FALSE
+A
+Y
+Regional rule was complex and multi-dynastic; 
+confirm framing with scholar
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+C
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE
+A
+N
+FALSE
+B
+N
+FALSE
+A
+N
+FALSE

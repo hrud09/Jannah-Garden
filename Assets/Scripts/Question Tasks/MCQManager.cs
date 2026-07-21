@@ -16,8 +16,16 @@ public class LocalizedQuestionData
 [System.Serializable]
 public class QuestionData
 {
+    public string id;
+    public int level;
+    public string category;
+
     public int correctAnswerIndex;
     public LocalizedQuestionData[] translations;
+
+    public string scholarReviewFlag;
+    public string notes;
+    public bool isScholarReviewed;
 
     public LocalizedQuestionData GetTranslation(JannahGarden.Localization.Language lang)
     {
@@ -136,8 +144,21 @@ public class MCQManager : MonoBehaviour
         }
         if (allQuestions != null && allQuestions.questions != null && allQuestions.questions.Length > 0)
         {
-            int randomIndex = UnityEngine.Random.Range(0, allQuestions.questions.Length);
-            ShowQuestion(randomIndex, true);
+            int targetLevel = 1;
+            if (PlayerXPManager.Instance != null)
+            {
+                targetLevel = PlayerXPManager.Instance.xpLevel;
+            }
+
+            int questionIndex = GetRandomQuestionIndexByLevel(targetLevel);
+            
+            // Fallback to any random question if no questions exist for the player's exact level
+            if (questionIndex == -1)
+            {
+                questionIndex = UnityEngine.Random.Range(0, allQuestions.questions.Length);
+            }
+
+            ShowQuestion(questionIndex, true);
         }
     }
 
@@ -156,6 +177,32 @@ public class MCQManager : MonoBehaviour
         {
             Debug.LogError("Question JSON file not assigned and 'questions' not found in Resources!");
         }
+    }
+
+    public QuestionData[] GetQuestionsByLevel(int level)
+    {
+        if (allQuestions == null || allQuestions.questions == null) return new QuestionData[0];
+        List<QuestionData> filtered = new List<QuestionData>();
+        foreach(var q in allQuestions.questions)
+        {
+            if (q.level == level) filtered.Add(q);
+        }
+        return filtered.ToArray();
+    }
+
+    public int GetRandomQuestionIndexByLevel(int level)
+    {
+        if (allQuestions == null || allQuestions.questions == null) return -1;
+        List<int> indices = new List<int>();
+        for (int i = 0; i < allQuestions.questions.Length; i++)
+        {
+            if (allQuestions.questions[i].level == level) indices.Add(i);
+        }
+        if (indices.Count > 0)
+        {
+            return indices[UnityEngine.Random.Range(0, indices.Count)];
+        }
+        return -1;
     }
 
     public void ShowQuestion(int index)
