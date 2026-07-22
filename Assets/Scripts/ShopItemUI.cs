@@ -12,6 +12,8 @@ public class ShopItemUI : MonoBehaviour
     public Image itemBackgroundImg;
     public Image itemIconBackgroundImg;
     public Button purchaseButton;
+    [Tooltip("Label inside the purchase button. Reads 'Select' for normal items and 'Watch Ad' for rewarded-ad packs.")]
+    public TMP_Text purchaseButtonLabel;
 
     [Header("State Visual References")]
     public GameObject[] lockedVisuals;
@@ -24,8 +26,10 @@ public class ShopItemUI : MonoBehaviour
     public Color unaffordableColor = Color.red; // red
 
     [Header("Acquisition Labels")]
-    [Tooltip("Price label shown on a rewarded-ad item that is ready to claim.")]
+    [Tooltip("Button label shown on a rewarded-ad item that is ready to claim.")]
     public string watchAdLabel = "Watch Ad";
+    [Tooltip("Button label shown on every non-ad item.")]
+    public string selectLabel = "Select";
     [Tooltip("Price label shown while a real-money purchase is in flight.")]
     public string purchasePendingLabel = "Purchasing...";
 
@@ -172,10 +176,14 @@ public class ShopItemUI : MonoBehaviour
         if (RewardItemData != null)
         {
             itemPriceText.color = affordableColor;
+            SetButtonLabel(selectLabel);
             return;
         }
 
         if (ItemData == null) return;
+
+        // The button says how the item is acquired; the price label says what it costs or pays out.
+        SetButtonLabel(ItemData.acquisitionType == ShopAcquisitionType.RewardedAd ? watchAdLabel : selectLabel);
 
         // A pending purchase blocks the card regardless of anything else.
         if (isPurchasePending)
@@ -221,7 +229,12 @@ public class ShopItemUI : MonoBehaviour
                 }
                 else
                 {
-                    itemPriceText.text = watchAdLabel;
+                    // The price slot advertises the payout instead of a cost — the button already says
+                    // it costs an ad. A prefab-granting offer has no coin payout, so it falls back to
+                    // the ad label.
+                    itemPriceText.text = ItemData.noorCoinReward > 0
+                        ? $"+{ItemData.noorCoinReward} ⧟" // coin glyph
+                        : watchAdLabel;
                     itemPriceText.color = affordableColor;
                 }
                 break;
@@ -262,6 +275,11 @@ public class ShopItemUI : MonoBehaviour
     private void SetButtonInteractable(bool interactable)
     {
         if (purchaseButton != null) purchaseButton.interactable = interactable;
+    }
+
+    private void SetButtonLabel(string label)
+    {
+        if (purchaseButtonLabel != null) purchaseButtonLabel.text = label;
     }
 
     /// <summary>

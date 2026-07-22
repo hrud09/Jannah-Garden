@@ -637,6 +637,7 @@ MonoBehaviour:
   itemBackgroundImg: {fileID: 9137901029120366804}
   itemIconBackgroundImg: {fileID: 9137901029120366804}
   purchaseButton: {fileID: 6387661725429029381}
+  purchaseButtonLabel: {fileID: 4046453132856433163}
   lockedVisuals:
   - {fileID: 2365978869663017916}
   unlockedVisuals:
@@ -644,6 +645,7 @@ MonoBehaviour:
   affordableColor: {r: 0.38978246, g: 1, b: 0.10196078, a: 1}
   unaffordableColor: {r: 0.9, g: 0.2, b: 0.2, a: 1}
   watchAdLabel: Watch Ad
+  selectLabel: Select
   purchasePendingLabel: Purchasing...
 --- !u!225 &4078596483887000632
 CanvasGroup:
@@ -876,7 +878,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 7b1fb759e4983ad4b88887b418269467, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1381,7 +1383,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e007681ffe10f47cfbc74fe58564b2a1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
