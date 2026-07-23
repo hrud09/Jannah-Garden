@@ -1,10 +1,12 @@
 using UnityEngine;
 
 /// <summary>
-/// Attach this component to individual GameObjects or parent zone objects
-/// to override the global OcclusionCullingManager settings for specific objects.
-/// 
-/// All child renderers will inherit these settings unless they have their own zone.
+/// DEPRECATED / INERT. This component used to override the old runtime
+/// occlusion-culling system, which has been replaced by the progressive mesh
+/// activation in <see cref="OcclusionCullingManager"/>. It no longer does anything
+/// at runtime; it is kept only so existing scene references remain valid.
+/// The fields below are retained purely to preserve serialized scene data — you
+/// can safely remove this component from any object.
 /// </summary>
 public class OcclusionCullingZone : MonoBehaviour
 {
@@ -47,24 +49,8 @@ public class OcclusionCullingZone : MonoBehaviour
     public bool shadowOnlyMode = false;
 
     [Header("Auto Registration")]
-    [Tooltip("Automatically register all child renderers with OcclusionCullingManager on Start.")]
+    [Tooltip("Unused. Retained only to preserve serialized scene data.")]
     public bool autoRegister = true;
-
-    private void Start()
-    {
-        if (autoRegister && OcclusionCullingManager.Instance != null)
-        {
-            OcclusionCullingManager.Instance.RegisterGameObject(gameObject);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (OcclusionCullingManager.Instance != null)
-        {
-            OcclusionCullingManager.Instance.UnregisterGameObject(gameObject);
-        }
-    }
 
     // ─── Gizmos for Scene View ───────────────────────────────────────
 

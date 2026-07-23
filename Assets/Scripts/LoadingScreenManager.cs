@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using TMPro;
 
@@ -50,8 +51,18 @@ public class LoadingScreenManager : MonoBehaviour
     [Tooltip("Optional background sprite. If null a solid colour is used.")]
     public Sprite backgroundSprite;
 
-    [Tooltip("Optional logo/icon displayed above the progress bar.")]
-    public Sprite logoSprite;
+    [FormerlySerializedAs("logoSprite")]
+    [Tooltip("Logo shown above the progress bar while the Jannah Garden scene loads.")]
+    public Sprite jannahGardenLogoSprite;
+
+    [Tooltip("Logo shown above the progress bar while the Outer Garden scene loads.")]
+    public Sprite outerGardenLogoSprite;
+
+    [Tooltip("Scene name treated as 'Outer Garden' when choosing which logo to show.")]
+    public string outerGardenSceneName = "Outer Garden";
+
+    [Tooltip("Scene name treated as 'Jannah Garden' when choosing which logo to show.")]
+    public string jannahGardenSceneName = "Jannah Garden";
 
     [Tooltip("Logo display size in pixels.")]
     public Vector2 logoSize = new Vector2(180f, 180f);
@@ -73,6 +84,11 @@ public class LoadingScreenManager : MonoBehaviour
     [Tooltip("How fast the displayed progress catches up to the real progress. " +
              "Higher = snappier, lower = smoother.")]
     public float progressLerpSpeed = 3f;
+
+    [Tooltip("Safety cap (seconds) on how long external hold-requests may keep the " +
+             "loading screen up after loading finishes (e.g. progressive mesh activation). " +
+             "The panel fades out anyway once this elapses.")]
+    public float maxHoldTime = 30f;
 
     // ─────────────────────────────────────────────
     //  Inspector — Loading Tips
@@ -123,6 +139,29 @@ public class LoadingScreenManager : MonoBehaviour
 
     // Coroutine handle so we can stop it if LoadScene is called mid-load
     private Coroutine _loadRoutine;
+
+    // External systems can hold the loading screen open until they finish work
+    // behind the panel (e.g. OcclusionCullingManager's progressive mesh activation).
+    private readonly HashSet<object> _loadHolds = new HashSet<object>();
+
+    /// <summary>
+    /// Registers a hold that keeps the loading screen visible after loading completes.
+    /// The panel will not fade out until every registered hold has been released
+    /// (or <see cref="maxHoldTime"/> elapses). Safe to call while a load is in progress.
+    /// </summary>
+    public void AddLoadHold(object token)
+    {
+        if (token != null) _loadHolds.Add(token);
+    }
+
+    /// <summary>
+    /// Releases a hold previously registered with <see cref="AddLoadHold"/>.
+    /// The loading screen fades out once all holds are cleared.
+    /// </summary>
+    public void RemoveLoadHold(object token)
+    {
+        if (token != null) _loadHolds.Remove(token);
+    }
 
     // ─────────────────────────────────────────────
     //  Lifecycle
@@ -295,6 +334,7 @@ public class LoadingScreenManager : MonoBehaviour
         IsLoading = true;
         _displayedProgress = 0f;
         _targetProgress = 0f;
+        _loadHolds.Clear();
 
         // Check if this scene has sub-scenes associated with it
         AdditiveSceneGroup activeGroup = default;
@@ -321,6 +361,9 @@ public class LoadingScreenManager : MonoBehaviour
             tipsText.text = loadingTips[Random.Range(0, loadingTips.Length)];
             tipsText.gameObject.SetActive(true);
         }
+
+        // Show the logo that matches the scene being loaded
+        ApplyLogoForScene(sceneName);
 
         // Fade in
         yield return StartCoroutine(FadeIn());
@@ -415,6 +458,19 @@ public class LoadingScreenManager : MonoBehaviour
         if (percentText != null) percentText.text = "100%";
 
         SetStatusText("Preparing scene...");
+
+        // Wait for any external systems still holding the screen open — e.g. the
+        // OcclusionCullingManager activating scene meshes behind the panel. The
+        // meshes populate the world while the loading screen stays fully opaque.
+        if (_loadHolds.Count > 0)
+        {
+            float holdStart = Time.unscaledTime;
+            while (_loadHolds.Count > 0 && (Time.unscaledTime - holdStart) < maxHoldTime)
+            {
+                yield return null;
+            }
+            _loadHolds.Clear();
+        }
 
         // Give the new scenes a moment to render their first frames
         yield return new WaitForSecondsRealtime(hideDelay);
@@ -513,6 +569,44 @@ public class LoadingScreenManager : MonoBehaviour
     {
         if (statusText != null)
             statusText.text = text;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Per-Scene Logo
+    // ─────────────────────────────────────────────
+
+    /// <summary>
+    /// Sets the logo image to the sprite matching the scene being loaded and
+    /// hides the logo entirely if no sprite is available for it.
+    /// </summary>
+    private void ApplyLogoForScene(string sceneName)
+    {
+        if (logoImage == null) return;
+
+        Sprite sprite = GetLogoForScene(sceneName);
+        if (sprite != null)
+        {
+            logoImage.sprite = sprite;
+            logoImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            // No logo assigned for this scene — hide it rather than show a stale one.
+            logoImage.gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>Returns the logo sprite configured for the given scene, with sensible fallbacks.</summary>
+    private Sprite GetLogoForScene(string sceneName)
+    {
+        if (sceneName == outerGardenSceneName)
+            return outerGardenLogoSprite != null ? outerGardenLogoSprite : jannahGardenLogoSprite;
+
+        if (sceneName == jannahGardenSceneName)
+            return jannahGardenLogoSprite != null ? jannahGardenLogoSprite : outerGardenLogoSprite;
+
+        // Any other scene: default to the Jannah Garden logo.
+        return jannahGardenLogoSprite != null ? jannahGardenLogoSprite : outerGardenLogoSprite;
     }
 
     // ═══════════════════════════════════════════════
@@ -615,7 +709,10 @@ public class LoadingScreenManager : MonoBehaviour
         contentRT.anchoredPosition = Vector2.zero;
 
         // ── 6. Logo (optional) ──
-        if (logoSprite != null)
+        // Create the logo image if either scene logo is assigned; the correct
+        // sprite is chosen per-scene at load time via ApplyLogoForScene().
+        Sprite defaultLogo = jannahGardenLogoSprite != null ? jannahGardenLogoSprite : outerGardenLogoSprite;
+        if (defaultLogo != null)
         {
             GameObject logoGO = new GameObject("Logo");
             logoGO.transform.SetParent(contentGO.transform, false);
@@ -627,7 +724,7 @@ public class LoadingScreenManager : MonoBehaviour
             logoRT.anchoredPosition = new Vector2(0f, 0f);
 
             logoImage = logoGO.AddComponent<Image>();
-            logoImage.sprite = logoSprite;
+            logoImage.sprite = defaultLogo;
             logoImage.preserveAspect = true;
             logoImage.raycastTarget = false;
         }

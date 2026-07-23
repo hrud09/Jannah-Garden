@@ -2,9 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-// Integration note: This system handles coarse distance-based activation (SetActive).
-// OcclusionCullingManager handles fine-grained frustum/renderer culling.
-// In "Combined" mode, both systems cooperate without conflict.
+// This system handles coarse distance-based activation (SetActive) of scene objects
+// relative to the player.
 
 public class RuntimeEnvironmentGenerator : MonoBehaviour
 {
@@ -45,19 +44,6 @@ public class RuntimeEnvironmentGenerator : MonoBehaviour
     private readonly Dictionary<GameObject, System.DateTime> _deactivationTimes = new Dictionary<GameObject, System.DateTime>();
     private Vector3 _lastCheckPlayerPos = new Vector3(-9999f, -9999f, -9999f);
     private Coroutine _checkCoroutine;
-
-    /// <summary>
-    /// Returns true if the OcclusionCullingManager is present and actively culling.
-    /// Other systems can query this to avoid redundant culling work.
-    /// </summary>
-    public bool IsOcclusionCullingActive
-    {
-        get
-        {
-            return OcclusionCullingManager.Instance != null
-                && OcclusionCullingManager.Instance.IsOcclusionCullingActive;
-        }
-    }
 
     private void Awake()
     {
@@ -278,42 +264,12 @@ public class RuntimeEnvironmentGenerator : MonoBehaviour
                 AdjustTimers(go, elapsed);
             }
             go.SetActive(true);
-
-            // When activating, register with OcclusionCullingManager if in Combined mode
-            RegisterWithOcclusionCulling(go);
         }
         else
         {
-            // When deactivating, unregister from OcclusionCullingManager
-            UnregisterFromOcclusionCulling(go);
-
             _deactivationTimes[go] = System.DateTime.UtcNow;
             go.SetActive(false);
         }
-    }
-
-    /// <summary>
-    /// Registers a GameObject's renderers with the OcclusionCullingManager
-    /// so it can handle frustum-based culling while this system handles distance activation.
-    /// </summary>
-    private void RegisterWithOcclusionCulling(GameObject go)
-    {
-        if (OcclusionCullingManager.Instance == null) return;
-        if (OcclusionCullingManager.Instance.cullingMode != OcclusionCullingManager.CullingMode.Combined) return;
-
-        OcclusionCullingManager.Instance.RegisterGameObject(go);
-    }
-
-    /// <summary>
-    /// Unregisters a GameObject's renderers from the OcclusionCullingManager
-    /// when this system deactivates it entirely.
-    /// </summary>
-    private void UnregisterFromOcclusionCulling(GameObject go)
-    {
-        if (OcclusionCullingManager.Instance == null) return;
-        if (OcclusionCullingManager.Instance.cullingMode != OcclusionCullingManager.CullingMode.Combined) return;
-
-        OcclusionCullingManager.Instance.UnregisterGameObject(go);
     }
 
     private void AdjustTimers(GameObject go, double elapsedSeconds)
