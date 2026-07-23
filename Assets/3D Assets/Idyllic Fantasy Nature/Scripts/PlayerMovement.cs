@@ -74,6 +74,12 @@ namespace IdyllicFantasyNature
         private AudioSource _breathingSource;
         private float _footstepTimer;
 
+
+        private void Awake()
+        {
+            Application.targetFrameRate = 60; // Cap frame rate to 60 FPS for consistent movement and audio timing
+        }
+
         // Start is called before the first frame update
         void Start()
         {
