@@ -40,6 +40,13 @@ namespace FlutterIntegration
         public static UserProfilePayload LatestUserProfile { get; private set; }
         public static FellowshipProfilesPayload LatestFellowshipProfiles { get; private set; }
 
+        /// <summary>
+        /// The last authoritative Noor Coin balance Flutter pushed, or null if none yet. Cached so a
+        /// <see cref="NoorCoinManager"/> that initialises *after* Flutter's message (e.g. because the
+        /// message arrived during a loading scene) can still adopt it. See <see cref="ApplyCoinBalance"/>.
+        /// </summary>
+        public static int? LatestCoinBalance { get; private set; }
+
         /// <summary>True once Flutter has sent at least one non-empty fellowship roster.</summary>
         public static bool HasFellowshipProfiles =>
             LatestFellowshipProfiles?.fellows != null && LatestFellowshipProfiles.fellows.Length > 0;
@@ -192,9 +199,13 @@ namespace FlutterIntegration
         /// <summary>Pushes an authoritative balance from Flutter into the game's economy.</summary>
         private void ApplyCoinBalance(int balance)
         {
+            // Cache first — unconditionally — so the value survives even when no manager exists yet. A
+            // NoorCoinManager that spawns in a later scene reads this on Awake (see NoorCoinManager.Awake).
+            LatestCoinBalance = balance;
+
             if (NoorCoinManager.Instance == null)
             {
-                Debug.LogWarning("[FlutterBridge] No NoorCoinManager in this scene — coin balance not applied.");
+                Debug.LogWarning("[FlutterBridge] No NoorCoinManager yet — balance cached; it will be applied when the manager loads.");
                 return;
             }
 

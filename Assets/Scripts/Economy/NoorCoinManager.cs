@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using FlutterIntegration;
 
 /// <summary>
 /// Singleton manager for the Noor Coin economy.
@@ -50,6 +51,15 @@ public class NoorCoinManager : MonoBehaviour
         // We no longer load balance here because Jannah Garden is embedded in Flutter,
         // and Noor coins will be assigned from the Flutter app (or via debug in JannahGardenManager).
         // LoadBalance();
+
+        // If Flutter already pushed a balance before this manager existed (its message can arrive during
+        // an earlier loading scene, when FlutterBridge has no manager to hand it to), FlutterBridge cached
+        // it. Adopt that cached value now so the balance — and any UI bound to OnBalanceChanged — is
+        // correct from the first frame this manager runs, instead of showing the default 0.
+        if (FlutterBridge.LatestCoinBalance.HasValue)
+        {
+            SetInitialCoinsFromFlutter(FlutterBridge.LatestCoinBalance.Value.ToString());
+        }
     }
 
     private void OnApplicationQuit() => SaveBalance();
