@@ -67,11 +67,19 @@ public class TutorialManager : MonoBehaviour
     private bool joystickAddedCanvas = false;
     private bool joystickAddedRaycaster = false;
 
+    // Set on a duplicate that lost the singleton race, so its OnDestroy skips the
+    // teardown it never set up.
+    private bool isDuplicate;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            // Destroy the component, never the host GameObject. This manager is also
+            // attached at runtime onto shared objects (e.g. Jannah Garden Manager), and
+            // destroying the host would take the unrelated managers on it down too.
+            isDuplicate = true;
+            Destroy(this);
             return;
         }
         Instance = this;
@@ -116,6 +124,13 @@ public class TutorialManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (isDuplicate) return;
+
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+
         UnsubscribeEvents();
         RestoreHighlightSorting();
         RestoreJoystickHighlight();

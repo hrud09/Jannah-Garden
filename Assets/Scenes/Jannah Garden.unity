@@ -542,6 +542,138 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &72202561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72202562}
+  - component: {fileID: 72202565}
+  - component: {fileID: 72202564}
+  - component: {fileID: 72202563}
+  m_Layer: 5
+  m_Name: Exit Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &72202562
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72202561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1428646432}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 22.799805, y: -14}
+  m_SizeDelta: {x: 100.6302, y: 68.6861}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &72202563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72202561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 72202564}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841064311}
+        m_TargetAssemblyTypeName: JannahGardenManager, Assembly-CSharp
+        m_MethodName: OpenExitConfirmationPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &72202564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72202561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fda9564e96d404ec384b9e32872d049a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &72202565
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72202561}
+  m_CullTransparentMesh: 1
 --- !u!1 &82262822 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8950650481514539343, guid: 3e81a4a78ff5df745a27aff884c132fe, type: 3}
@@ -4892,6 +5024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoorCoinManager
   startingBalance: 5000
+  isDebug: 0
+  debugNoorCoinsAmount: 500
 --- !u!4 &350008107
 Transform:
   m_ObjectHideFlags: 0
@@ -7298,7 +7432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad3487ad9dad74ad59fefcc2dbc34a20, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 551085aaeb4a544a581ffba25cc47ee6, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8946,7 +9080,6 @@ GameObject:
   - component: {fileID: 667601817}
   - component: {fileID: 667601820}
   - component: {fileID: 667601819}
-  - component: {fileID: 667601818}
   m_Layer: 0
   m_Name: InstructionText
   m_TagString: Untagged
@@ -8974,43 +9107,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 22.990417}
   m_SizeDelta: {x: -40, y: -129.7497}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &667601818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667601816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 667601819}
-  defaultText: Welcome to Jannah Garden!
-  translations:
-  - language: 1
-    text: "\u0645\u0631\u062D\u0628\u0627 \u0628\u0643\u0645 \u0641\u064A \u062D\u062F\u064A\u0642\u0629
-      \u0627\u0644\u062C\u0646\u0629!"
-  - language: 2
-    text: "\u062C\u0646\u062A \u06AF\u0627\u0631\u0688\u0646 \u0645\u06CC\u06BA \u062E\u0648\u0634
-      \u0622\u0645\u062F\u06CC\u062F!"
-  - language: 3
-    text: "\u0645\u0631\u062D\u0628\u0627 \u0628\u0643\u0645 \u0641\u064A \u062D\u062F\u064A\u0642\u0629
-      \u0627\u0644\u062C\u0646\u0629!"
-  - language: 4
-    text: Willkommen im Jannah Garden!
-  - language: 5
-    text: "Cennet Bah\xE7esi'ne ho\u015F geldiniz!"
-  - language: 6
-    text: Selamat datang di Taman Jannah!
-  - language: 7
-    text: "\u099C\u09BE\u09A8\u09CD\u09A8\u09BE\u09B9 \u0997\u09BE\u09B0\u09CD\u09A1\u09C7\u09A8\u09C7
-      \u09B8\u09CD\u09AC\u09BE\u0997\u09A4\u09AE!"
-  - language: 8
-    text: "\u062C\u0646\u062A \u06AF\u0627\u0631\u0688\u0646 \u0645\u06CC\u06BA \u062E\u0648\u0634
-      \u0622\u0645\u062F\u06CC\u062F!"
 --- !u!114 &667601819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9911,7 +10007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 93, y: -58.600098}
   m_SizeDelta: {x: 165.5923, y: 23.5779}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &724547790
@@ -11581,7 +11677,6 @@ GameObject:
   - component: {fileID: 896861466}
   - component: {fileID: 896861469}
   - component: {fileID: 896861468}
-  - component: {fileID: 896861467}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -11609,36 +11704,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 3.7}
   m_SizeDelta: {x: -26.7614, y: -12.4886}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &896861467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896861465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 896861468}
-  defaultText: Next
-  translations:
-  - language: 1
-    text: "\u09AA\u09B0\u09AC\u09B0\u09CD\u09A4\u09C0"
-  - language: 2
-    text: "\u0627\u06AF\u0644\u0627"
-  - language: 3
-    text: "\u0627\u0644\u062A\u0627\u0644\u064A"
-  - language: 4
-    text: "N\xE4chste"
-  - language: 5
-    text: Sonraki
-  - language: 6
-    text: Berikutnya
-  - language: 7
-    text: "\u09AA\u09B0\u09AC\u09B0\u09CD\u09A4\u09C0"
 --- !u!114 &896861468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18633,6 +18698,7 @@ RectTransform:
   - {fileID: 340693044}
   - {fileID: 724547789}
   - {fileID: 1678177955}
+  - {fileID: 72202562}
   m_Father: {fileID: 2111190028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19499,7 +19565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1491117866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23248,8 +23314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4348e1cdb3218f9438c8c4123dcc83e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JannahGardenManager
-  isDebug: 0
-  debugNoorCoinsAmount: 500000
+  exitConfirmationPanel: {fileID: 547715941}
+  quitButton: {fileID: 1858998911}
+  outerGardenButton: {fileID: 1482545343}
+  cancelButton: {fileID: 0}
+  outerGardenSceneName: Outer Garden
 --- !u!4 &1841064312
 Transform:
   m_ObjectHideFlags: 0
@@ -24236,7 +24305,6 @@ GameObject:
   - component: {fileID: 1930333385}
   - component: {fileID: 1930333388}
   - component: {fileID: 1930333387}
-  - component: {fileID: 1930333386}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -24264,36 +24332,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1930333386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930333384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 1930333387}
-  defaultText: Skip
-  translations:
-  - language: 1
-    text: "\u098F\u09A1\u09BC\u09BF\u09AF\u09BC\u09C7 \u09AF\u09BE\u09A8"
-  - language: 2
-    text: "\u0686\u06BE\u0648\u0691\u06CC\u06BA\u06D4"
-  - language: 3
-    text: "\u064A\u062A\u062E\u0637\u0649"
-  - language: 4
-    text: "\xDCberspringen"
-  - language: 5
-    text: Atlamak
-  - language: 6
-    text: Melewati
-  - language: 7
-    text: "\u098F\u09A1\u09BC\u09BF\u09AF\u09BC\u09C7 \u09AF\u09BE\u09A8"
 --- !u!114 &1930333387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31130,7 +31168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920473188726296437, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 492.50113
+      value: 422
       objectReference: {fileID: 0}
     - target: {fileID: 1920473188726296437, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

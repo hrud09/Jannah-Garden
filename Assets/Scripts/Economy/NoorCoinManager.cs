@@ -24,6 +24,10 @@ public class NoorCoinManager : MonoBehaviour
     [Tooltip("Noor Coins the player starts with on a fresh save.")]
     [SerializeField] private int startingBalance = 500;
 
+    [Header("Debug Settings")]
+    [SerializeField] private bool isDebug = false;
+    [SerializeField] private int debugNoorCoinsAmount = 500;
+
     // ─── Private State ────────────────────────────────────────────────────────
 
     private const string SAVE_KEY = "NoorCoinBalance";
@@ -49,7 +53,7 @@ public class NoorCoinManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // We no longer load balance here because Jannah Garden is embedded in Flutter,
-        // and Noor coins will be assigned from the Flutter app (or via debug in JannahGardenManager).
+        // and Noor coins are assigned directly from the Flutter app or via debug settings in NoorCoinManager.
         // LoadBalance();
 
         // If Flutter already pushed a balance before this manager existed (its message can arrive during
@@ -59,6 +63,14 @@ public class NoorCoinManager : MonoBehaviour
         if (FlutterBridge.LatestCoinBalance.HasValue)
         {
             SetInitialCoinsFromFlutter(FlutterBridge.LatestCoinBalance.Value.ToString());
+        }
+    }
+
+    private void Start()
+    {
+        if (isDebug)
+        {
+            SetInitialCoinsFromFlutter(debugNoorCoinsAmount.ToString());
         }
     }
 
