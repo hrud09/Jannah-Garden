@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f85924bb0e224489bb57a56b8fbefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  loadSceneButton: {fileID: 0}
+  sceneButtons:
+  - button: {fileID: 0}
+    sceneName: Outer Garden 25%
+  - button: {fileID: 0}
+    sceneName: Outer Garden 50%
