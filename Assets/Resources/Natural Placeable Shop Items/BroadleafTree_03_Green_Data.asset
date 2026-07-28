@@ -16,11 +16,18 @@ MonoBehaviour:
   itemName: Broadleaf Tree 03
   itemDescription: A beautiful green Broadleaf Tree 03 to add vibrant life and natural
     beauty to your garden.
-  noorCoinCost: 1500
-  itemPrice: 
   itemID: 624a9859f6a34937b73d66e4be4fc504
-  requiredXPLevel: 2
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
   itemCategory: 1
+  sortOrder: 0
+  requiredXPLevel: 2
   itemPrefab: {fileID: 7755859256941194996, guid: ff9a53b575ceb964887a7787bce9c9fe, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 30
+  itemPrice: 

@@ -16,11 +16,18 @@ MonoBehaviour:
   itemName: House
   itemDescription: An elegant House structure to provide comfort and architectural
     beauty to your estate.
-  noorCoinCost: 1500
-  itemPrice: 
   itemID: d2dd88c50513416a8f7120ac4eb1148b
-  requiredXPLevel: 1
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
   itemCategory: 2
+  sortOrder: 0
+  requiredXPLevel: 1
   itemPrefab: {fileID: 3435643351429671060, guid: c9cc368541b7d9d4eb7b576ecdf8f1f9, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 30
+  itemPrice: 

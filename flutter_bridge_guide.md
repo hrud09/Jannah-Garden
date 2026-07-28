@@ -74,9 +74,63 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 
 | Command | Meaning | What you should do |
 |---|---|---|
-| `UNITY_READY` | The bridge is alive and listening. | Push the user profile, coins, and the fellowship roster. |
+| `UNITY_READY` | The bridge is alive and listening. **Sent more than once** — see below. | Push the user profile, coins, and the fellowship roster. |
+| `REQUEST_COIN_BALANCE` | The game started (or the player re-entered it) and needs the player's Noor Coin balance. Payload: `{}`. | Send `UPDATE_COINS` (or `UPDATE_USER_PROFILE`, which also carries `noorCoins`). |
 | `REQUEST_FELLOWSHIP_PROFILES` | A scene needs the roster and has none cached. | Send `UPDATE_FELLOWSHIP_PROFILES`. |
 | `REQUEST_SUBSCRIBE` | The player tapped **Subscribe** on the treasure box panel. Payload: `{ source }`. | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and navigate to your app's subscribe page. |
+| `REQUEST_EXIT_GAME` | The player confirmed **Exit** on the exit panel. Payload: `{ source }` (currently `"exit_panel"`). | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and show your app's home screen. Do *not* close the app. |
+
+#### Handling `REQUEST_COIN_BALANCE` (and repeated `UNITY_READY`)
+
+**This is what makes the coin balance show up in the game.** Unity has no wallet of its own — until Flutter
+sends a balance, the garden runs on 0 coins, so nothing in the shop is affordable.
+
+On every game start the bridge announces `UNITY_READY` *and* `REQUEST_COIN_BALANCE` together, then repeats
+the pair every 1.5s — up to 8 times, ~12s — until a balance arrives. It retries because a single
+announcement is easy to miss: Unity's first frame can run before your `onMessageFromUnity` handler is
+attached, and a dropped message used to leave the player on 0 coins for the whole session.
+
+Two consequences for your side:
+
+- **Both handlers must be idempotent.** You will receive `UNITY_READY` several times in a row on a slow
+  start, and again on every resume. Answering each one with the current balance is correct and cheap;
+  just don't do anything with side effects (analytics events, wallet writes) in that handler.
+- **Answer as soon as you can, even from cache.** The retries stop the moment Unity sees a balance, so a
+  fast local answer followed by the fresh Firebase value is better than waiting for the network.
+
+```dart
+case 'REQUEST_COIN_BALANCE':
+  // Answer immediately from whatever you already have...
+  UnityBridge.sendCoins(user.coins);
+  // ...then push the authoritative value when Firebase responds.
+  UnityBridge.sendCoins(await fetchCoinBalance());
+  break;
+```
+
+"Game start" also means **re-entry**. With `flutter_embed_unity` the Unity player is paused, not destroyed,
+when the widget goes away, so Unity's `Start` never runs twice. The bridge instead re-handshakes on resume
+— which is exactly what you want, since the player may have spent or earned coins in the app while the
+garden was in the background.
+
+#### Handling `REQUEST_EXIT_GAME`
+
+This is the exit button inside the garden. Unity used to call `Application.Quit()` here, which killed the
+whole host process and closed the Flutter app with it — so it no longer does. Unity cannot dismiss its own
+widget, so exiting is entirely your side's job:
+
+```dart
+case 'REQUEST_EXIT_GAME':
+  // Pop the route that hosts the EmbedUnity widget — back to the app, app stays running.
+  Navigator.of(context).popUntil((r) => r.isFirst);
+  break;
+```
+
+If the game is *not* on a pushed route (e.g. it is a tab or the body of your home page), switch away from
+it instead of popping — hide/replace the widget so the player lands somewhere in the app.
+
+Unity keeps running in the background once the widget is gone; that is expected with
+`flutter_embed_unity` (single Unity instance, paused rather than torn down). The pause is also what makes
+the game save its state, so nothing is lost when the player re-enters the garden.
 
 #### Handling `REQUEST_SUBSCRIBE`
 
@@ -223,12 +277,25 @@ EmbedUnity(
     switch (command) {
       case 'UNITY_READY':
         // The bridge is up. Push everything the game needs.
+        // Arrives repeatedly until Unity has a coin balance — keep this handler side-effect free.
         UnityBridge.sendUserProfile(user.name, user.coins, user.avatarUrl);
         UnityBridge.sendFellowshipProfiles(await fetchFellows());
         break;
 
+      case 'REQUEST_COIN_BALANCE':
+        // Without this the garden runs on 0 coins. Answer from cache first, then refresh.
+        UnityBridge.sendCoins(user.coins);
+        UnityBridge.sendCoins(await fetchCoinBalance());
+        break;
+
       case 'REQUEST_FELLOWSHIP_PROFILES':
         UnityBridge.sendFellowshipProfiles(await fetchFellows());
+        break;
+
+      case 'REQUEST_EXIT_GAME':
+        // The player tapped Exit in the garden. Close the Unity screen only —
+        // never exit the app; Unity no longer calls Application.Quit().
+        Navigator.of(context).popUntil((r) => r.isFirst);
         break;
     }
   },
@@ -256,6 +323,11 @@ cache when it loads. So:
 - If Unity ever sends `REQUEST_FELLOWSHIP_PROFILES`, it means the scene loaded with an empty cache — just
   answer it with the roster.
 
+Coins work the other way round: **Unity asks, and keeps asking.** Send `UPDATE_COINS` in reply to
+`UNITY_READY` / `REQUEST_COIN_BALANCE`, and again any time the balance changes on your side (a purchase, a
+reward, a `CoinUpdate:` message the game sent you). Unity caches the last balance it received, so a manager
+that loads in a later scene still gets it.
+
 If Unity gets no roster within 3 seconds of asking, it falls back to placeholder dummy profiles (this is a
 development convenience and can be turned off for release).
 
@@ -280,5 +352,7 @@ Use it to confirm the payload shape before wiring up the Flutter side.
 | `Fellowship payload had no 'fellows' array` | You sent a top-level array instead of `{"fellows": [...]}`. |
 | `Unhandled command: X` | The command string does not match one in the table above (case-sensitive). |
 | Nothing happens at all | The GameObject name or method name is wrong. Must be `Flutter Bridge` / `ReceiveMessageFromFlutter`. |
+| Player has 0 Noor Coins in the game | Flutter never answered `UNITY_READY` / `REQUEST_COIN_BALANCE` with `UPDATE_COINS` or `UPDATE_USER_PROFILE`. Unity logs `Flutter sent no Noor Coin balance after 8 attempts` after ~12s of asking. |
+| Coins are stale after returning to the garden | Your `UNITY_READY` / `REQUEST_COIN_BALANCE` handler replies from a cached user object that was not refreshed. Unity re-asks on every resume; answer with the current balance. |
 | All cards show "Member since —" | `memberSince` is not `YYYY-MM-DD`. |
 | Avatars never appear | `profileImagePath` is not a reachable `http(s)` URL, or the device has no network. Unity logs the failure and keeps the default avatar. |

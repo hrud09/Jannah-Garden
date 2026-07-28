@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 25921943816515101}
   - component: {fileID: 5764006192643687798}
   - component: {fileID: 4264868418441799812}
-  - component: {fileID: 5066513617426562381}
   m_Layer: 5
   m_Name: Answer Text (TMP)
   m_TagString: Untagged
@@ -199,22 +198,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &5066513617426562381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517992063699426779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 4264868418441799812}
-  defaultText: +
-  translations: []
 --- !u!1 &1668407093357096155
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +209,6 @@ GameObject:
   - component: {fileID: 1037488371698880285}
   - component: {fileID: 8089608239396772210}
   - component: {fileID: 7540304487229586901}
-  - component: {fileID: 3931457190736736922}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -353,22 +335,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3931457190736736922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668407093357096155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 7540304487229586901}
-  defaultText: x
-  translations: []
 --- !u!1 &2233022725427979234
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +579,6 @@ GameObject:
   - component: {fileID: 6488929000922065124}
   - component: {fileID: 2073868193317171258}
   - component: {fileID: 9038678356680619730}
-  - component: {fileID: 877520116142022314}
   m_Layer: 5
   m_Name: Dhikr Text
   m_TagString: Untagged
@@ -740,22 +705,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &877520116142022314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744184567723374415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 9038678356680619730}
-  defaultText: Dhikr "Allahu" for 33 times
-  translations: []
 --- !u!1 &5218255533428675651
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +836,6 @@ GameObject:
   - component: {fileID: 4458649459542367620}
   - component: {fileID: 8999129150408030100}
   - component: {fileID: 6251379534470649201}
-  - component: {fileID: 3439939443057348718}
   m_Layer: 5
   m_Name: Count Text
   m_TagString: Untagged
@@ -942,7 +890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 33
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
   m_sharedMaterial: {fileID: 2517202264660172603, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
@@ -1014,22 +962,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3439939443057348718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5875628690708042996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 6251379534470649201}
-  defaultText: 33
-  translations: []
 --- !u!1 &6295506578117310062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1466,6 @@ GameObject:
   - component: {fileID: 4750984197523815841}
   - component: {fileID: 5598397491025402621}
   - component: {fileID: 8236637091082193302}
-  - component: {fileID: 1083554070620132310}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1589,7 +1520,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: entregar
+  m_text: submit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
   m_sharedMaterial: {fileID: 2517202264660172603, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
@@ -1661,36 +1592,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1083554070620132310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8534650210925554410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 8236637091082193302}
-  defaultText: submit
-  translations:
-  - language: 1
-    text: "\u064A\u064F\u0642\u062F\u0651\u0650\u0645"
-  - language: 2
-    text: entregar
-  - language: 3
-    text: soumettre
-  - language: 4
-    text: einreichen
-  - language: 5
-    text: "g\xF6ndermek"
-  - language: 6
-    text: kirim
-  - language: 7
-    text: "\u099C\u09AE\u09BE"
 --- !u!1 &8604918114269762060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1754,6 @@ GameObject:
   - component: {fileID: 1646651688818424372}
   - component: {fileID: 7536762484850413886}
   - component: {fileID: 3405940718401575631}
-  - component: {fileID: 5231999939483011406}
   m_Layer: 5
   m_Name: Answer Text (TMP)
   m_TagString: Untagged
@@ -1980,31 +1880,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &5231999939483011406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097358408606699632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc94b351a9c32e47a6248b3161bfcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JannahGarden.Localization.LocalizedText
-  uiText: {fileID: 0}
-  tmpText: {fileID: 3405940718401575631}
-  defaultText: '-'
-  translations:
-  - language: 1
-    text: '-'
-  - language: 2
-    text: '-'
-  - language: 3
-    text: '-'
-  - language: 4
-    text: '-'
-  - language: 5
-    text: '-'
-  - language: 6
-    text: '-'

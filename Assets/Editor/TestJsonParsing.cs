@@ -16,10 +16,8 @@ public class TestJsonParsing
             if (allQuestions != null && allQuestions.questions != null) {
                 Debug.Log("Successfully parsed " + allQuestions.questions.Length + " questions.");
                 var q0 = allQuestions.questions[0];
-                Debug.Log("Q0 translations count: " + q0.translations.Length);
-                var t0 = q0.translations[0];
-                Debug.Log("T0 text: " + t0.questionText);
-                Debug.Log("T0 options count: " + t0.options.Length);
+                Debug.Log("Q0 text: " + q0.questionText);
+                Debug.Log("Q0 options count: " + q0.options.Length);
             } else {
                 Debug.LogError("Parsed object or questions array is null!");
             }

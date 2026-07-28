@@ -31,6 +31,15 @@ namespace FlutterIntegration
         public const string RequestFellowshipProfiles = "REQUEST_FELLOWSHIP_PROFILES";
 
         /// <summary>
+        /// Asks Flutter for the player's authoritative Noor Coin balance. Sent on every game start —
+        /// including each time the player re-enters the embedded game, since Unity is paused rather than
+        /// torn down — and repeated until Flutter answers. Flutter should reply with
+        /// <see cref="UpdateCoins"/> (or <see cref="UpdateUserProfile"/>, which also carries the balance).
+        /// Payload: <see cref="EmptyPayload"/>.
+        /// </summary>
+        public const string RequestCoinBalance = "REQUEST_COIN_BALANCE";
+
+        /// <summary>
         /// Asks Flutter to run the real-money purchase flow for a Noor Coin pack, since Flutter owns
         /// the store plugin and the Firebase wallet. Payload: <see cref="IAPPurchaseRequestPayload"/>.
         /// </summary>
@@ -43,6 +52,15 @@ namespace FlutterIntegration
         /// Payload: <see cref="SubscribeRequestPayload"/> (carries the context that prompted it).
         /// </summary>
         public const string RequestSubscribe = "REQUEST_SUBSCRIBE";
+
+        /// <summary>
+        /// Asks Flutter to leave the Unity game and return the player to the app. Fired when the player
+        /// confirms exit on the exit panel. Unity must NOT call <c>Application.Quit()</c> for this: the
+        /// game runs inside the Flutter host process, so quitting would close the whole app. Flutter's
+        /// job is to pop/dismiss the Unity widget and show its own screen.
+        /// Payload: <see cref="ExitGameRequestPayload"/> (carries the context that prompted it).
+        /// </summary>
+        public const string RequestExitGame = "REQUEST_EXIT_GAME";
     }
 
     [Serializable]
@@ -97,6 +115,16 @@ namespace FlutterIntegration
     /// </summary>
     [Serializable]
     public class SubscribeRequestPayload
+    {
+        public string source;
+    }
+
+    /// <summary>
+    /// Unity → Flutter: the player asked to leave the game. <paramref name="source"/> tells Flutter what
+    /// triggered it (e.g. "exit_panel") so it can decide where to land the player or log analytics.
+    /// </summary>
+    [Serializable]
+    public class ExitGameRequestPayload
     {
         public string source;
     }

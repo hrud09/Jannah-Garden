@@ -6,14 +6,6 @@ using UnityEngine.UI;
 using TMPro; // Assuming you are using TextMeshPro for UI text
 
 [System.Serializable]
-public class LocalizedQuestionData
-{
-    public JannahGarden.Localization.Language language;
-    public string questionText;
-    public string[] options;
-}
-
-[System.Serializable]
 public class QuestionData
 {
     public string id;
@@ -21,25 +13,12 @@ public class QuestionData
     public string category;
 
     public int correctAnswerIndex;
-    public LocalizedQuestionData[] translations;
+    public string questionText;
+    public string[] options;
 
     public string scholarReviewFlag;
     public string notes;
     public bool isScholarReviewed;
-
-    public LocalizedQuestionData GetTranslation(JannahGarden.Localization.Language lang)
-    {
-        if (translations == null) return null;
-        foreach (var t in translations)
-        {
-            if (t.language == lang) return t;
-        }
-        foreach (var t in translations)
-        {
-            if (t.language == JannahGarden.Localization.Language.English) return t;
-        }
-        return translations.Length > 0 ? translations[0] : null;
-    }
 }
 
 [System.Serializable]
@@ -83,25 +62,6 @@ public class MCQManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-    }
-
-    void OnEnable()
-    {
-        JannahGarden.Localization.LocalizationManager.OnLanguageChanged += HandleLanguageChanged;
-    }
-
-    void OnDisable()
-    {
-        JannahGarden.Localization.LocalizationManager.OnLanguageChanged -= HandleLanguageChanged;
-    }
-
-    void HandleLanguageChanged(JannahGarden.Localization.Language newLang)
-    {
-        LoadQuestions();
-        if (quizPanel != null && quizPanel.activeSelf)
-        {
-            ShowQuestion(currentQuestionIndex, false);
-        }
     }
 
     void Start()
@@ -221,17 +181,16 @@ public class MCQManager : MonoBehaviour
             countDownToHidePanel.gameObject.SetActive(false);
 
         QuestionData qData = allQuestions.questions[index];
-        LocalizedQuestionData locData = qData.GetTranslation(JannahGarden.Localization.LocalizationManager.CurrentLanguage);
-        
-        if (locData == null) return;
+
+        if (qData.options == null) return;
 
         if (reshuffle)
         {
             selectedOptionIndex = -1;
             currentQuestionAttempts = 0;
 
-            currentShuffledIndices = new int[locData.options.Length];
-            for (int i = 0; i < locData.options.Length; i++) currentShuffledIndices[i] = i;
+            currentShuffledIndices = new int[qData.options.Length];
+            for (int i = 0; i < qData.options.Length; i++) currentShuffledIndices[i] = i;
 
             // Shuffle options
             for (int i = 0; i < currentShuffledIndices.Length; i++)
@@ -258,14 +217,14 @@ public class MCQManager : MonoBehaviour
             questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
         }
 
-        SetText(questionTextUI, locData.questionText);
+        SetText(questionTextUI, qData.questionText);
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
-            if (i < locData.options.Length)
+            if (i < qData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                SetText(optionTextsUI[i], locData.options[currentShuffledIndices[i]]);
+                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]]);
                 
                 if (reshuffle)
                 {
@@ -291,7 +250,7 @@ public class MCQManager : MonoBehaviour
             submitButton.gameObject.SetActive(true);
             submitButton.transform.DOKill();
             submitButton.transform.localScale = Vector3.zero;
-            submitButton.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (locData.options.Length * 0.1f));
+            submitButton.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (qData.options.Length * 0.1f));
         }
     }
 
@@ -350,7 +309,7 @@ public class MCQManager : MonoBehaviour
             // Show congratulations message
             if (questionTextUI != null)
             {
-                SetText(questionTextUI, JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#00FF88>Congratulations!</color>\nCorrect Answer!", "<color=#00FF88>Congratulations!</color>\nCorrect Answer!"));
+                SetText(questionTextUI, "<color=#00FF88>Congratulations!</color>\nCorrect Answer!");
                 questionTextUI.transform.DOKill();
                 questionTextUI.transform.localScale = Vector3.one;
                 questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -376,19 +335,17 @@ public class MCQManager : MonoBehaviour
                 string toastMsg = "";
                 if (coinsEarned > 0)
                 {
-                    string transCoins = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("+{0} Noor Coins", "+{0} Noor Coins");
-                    toastMsg += string.Format(transCoins, coinsEarned) + " ";
+                    toastMsg += $"+{coinsEarned} Noor Coins ";
                 }
                 if (coinsEarned > 0 && xpEarned > 0)
                 {
-                    toastMsg += JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("&", "&") + " ";
+                    toastMsg += "& ";
                 }
                 if (xpEarned > 0)
                 {
-                    string transXP = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("+{0} XP", "+{0} XP");
-                    toastMsg += string.Format(transXP, xpEarned);
+                    toastMsg += $"+{xpEarned} XP";
                 }
-                
+
                 ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
             }
 
@@ -417,8 +374,8 @@ public class MCQManager : MonoBehaviour
             
             if (ToastMessageManager.Instance != null)
             {
-                string transWrong = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Opps! Review the correct answer and try again to earn your Noor Coins.", "Opps! Review the correct answer and try again to earn your Noor Coins.");
-                ToastMessageManager.Instance.ShowToast(transWrong, Color.red);
+                ToastMessageManager.Instance.ShowToast(
+                    "Opps! Review the correct answer and try again to earn your Noor Coins.", Color.red);
             }
             
             StartCoroutine(ResetQuizAfterDelay(5f));
@@ -521,15 +478,7 @@ public class MCQManager : MonoBehaviour
     private void SetText(TextMeshProUGUI tmpTextUI, string text)
     {
         if (tmpTextUI == null) return;
-        
-        var localizedText = tmpTextUI.GetComponent<JannahGarden.Localization.LocalizedText>();
-        if (localizedText != null)
-        {
-            localizedText.SetDynamicText(text);
-        }
-        else
-        {
-            tmpTextUI.text = text;
-        }
+
+        tmpTextUI.text = text;
     }
 }

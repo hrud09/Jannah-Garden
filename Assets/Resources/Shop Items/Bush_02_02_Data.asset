@@ -16,11 +16,18 @@ MonoBehaviour:
   itemName: Bush 04
   itemDescription: A beautiful green Bush 04 to add vibrant life and natural beauty
     to your garden.
-  noorCoinCost: 1500
-  itemPrice: 
   itemID: 2e242778b54b4fd095446bdf62dc61b6
-  requiredXPLevel: 3
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
   itemCategory: 1
+  sortOrder: 0
+  requiredXPLevel: 3
   itemPrefab: {fileID: 3052515965135097726, guid: 8022ebd68cb5b6948be983bf7aa7b94e, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 30
+  itemPrice: 

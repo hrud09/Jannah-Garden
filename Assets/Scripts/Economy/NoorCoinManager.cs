@@ -71,11 +71,27 @@ public class NoorCoinManager : MonoBehaviour
         if (isDebug)
         {
             SetInitialCoinsFromFlutter(debugNoorCoinsAmount.ToString());
+            return;
+        }
+
+        // Nothing cached means Flutter has not answered the bridge's handshake yet, or this manager came
+        // up in a scene loaded long after the handshake gave up. Either way, ask again rather than run the
+        // whole session on a 0 balance. Same pattern as FellowshipVisualizationManager.
+        if (!FlutterBridge.LatestCoinBalance.HasValue && FlutterBridge.Instance != null)
+        {
+            Debug.Log("[NoorCoinManager] No balance from Flutter yet — requesting it.");
+            FlutterBridge.Instance.RequestCoinBalance();
         }
     }
 
     private void OnApplicationQuit() => SaveBalance();
     private void OnApplicationPause(bool paused) { if (paused) SaveBalance(); }
+
+    private void OnDestroy()
+    {
+        // Leave no dangling singleton behind, so a manager loading later can take over cleanly.
+        if (Instance == this) Instance = null;
+    }
 
     // ─── Public API ───────────────────────────────────────────────────────────
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using System.Globalization;
 
 namespace FlutterIntegration
@@ -51,6 +52,20 @@ namespace FlutterIntegration
         public static bool HasFellowshipProfiles =>
             LatestFellowshipProfiles?.fellows != null && LatestFellowshipProfiles.fellows.Length > 0;
 
+        // ─── Handshake ────────────────────────────────────────────────────────────
+        // A single UNITY_READY on Start is not enough to get the coin balance: Flutter's listener may not
+        // be attached yet when Unity's first frame runs, and a dropped announcement is never retried, so
+        // the game sits on 0 coins forever. The handshake below re-announces until Flutter answers.
+
+        /// <summary>How long to wait for Flutter's answer before announcing again.</summary>
+        private const float HandshakeRetrySeconds = 1.5f;
+
+        /// <summary>How many times to ask before giving up (~12s of asking).</summary>
+        private const int HandshakeMaxAttempts = 8;
+
+        private Coroutine _handshake;
+        private bool _awaitingCoinBalance;
+
         // ─── Bootstrap ────────────────────────────────────────────────────────────
 
         /// <summary>
@@ -86,14 +101,61 @@ namespace FlutterIntegration
 
         private void Start()
         {
-            // Tell Flutter the bridge is live. Flutter should push the user profile, coins, and the
-            // fellowship roster in response to this.
-            SendMessageToFlutterApp(FlutterCommands.UnityReady, new EmptyPayload());
+            // Tell Flutter the bridge is live — and keep telling it until the coin balance comes back.
+            // Flutter should push the user profile, coins, and the fellowship roster in response.
+            BeginHandshake("game start");
+        }
+
+        /// <summary>
+        /// flutter_embed_unity keeps a single Unity instance alive: leaving the game pauses the player
+        /// instead of tearing it down, so <see cref="Start"/> never runs a second time. Resume is
+        /// therefore the only signal that the player "started the game" again — re-handshake so the
+        /// balance comes back fresh from Firebase rather than being whatever was on screen when they left
+        /// (they may have spent or earned coins in the app in between).
+        /// </summary>
+        private void OnApplicationPause(bool paused)
+        {
+            if (!paused) BeginHandshake("game resumed");
         }
 
         private void OnDestroy()
         {
             if (Instance == this) Instance = null;
+        }
+
+        /// <summary>
+        /// Announces UNITY_READY and asks for the coin balance, repeating until Flutter answers with one
+        /// (or the attempts run out). Restarts any handshake already in flight.
+        /// </summary>
+        private void BeginHandshake(string reason)
+        {
+            _awaitingCoinBalance = true;
+
+            if (_handshake != null) StopCoroutine(_handshake);
+            _handshake = StartCoroutine(HandshakeUntilCoinsArrive(reason));
+        }
+
+        private IEnumerator HandshakeUntilCoinsArrive(string reason)
+        {
+            for (int attempt = 1; attempt <= HandshakeMaxAttempts; attempt++)
+            {
+                Debug.Log($"[FlutterBridge] Handshake ({reason}) attempt {attempt}/{HandshakeMaxAttempts} — announcing {FlutterCommands.UnityReady} and requesting the Noor Coin balance.");
+
+                SendMessageToFlutterApp(FlutterCommands.UnityReady, new EmptyPayload());
+                SendMessageToFlutterApp(FlutterCommands.RequestCoinBalance, new EmptyPayload());
+
+                // Realtime: a paused/slowed game (timeScale 0 behind a panel) must still retry.
+                yield return new WaitForSecondsRealtime(HandshakeRetrySeconds);
+
+                if (!_awaitingCoinBalance)
+                {
+                    _handshake = null;
+                    yield break;
+                }
+            }
+
+            Debug.LogWarning($"[FlutterBridge] Flutter sent no Noor Coin balance after {HandshakeMaxAttempts} attempts — the game is running on its local balance. Check that the Flutter side answers {FlutterCommands.UnityReady} / {FlutterCommands.RequestCoinBalance} with UPDATE_COINS or UPDATE_USER_PROFILE.");
+            _handshake = null;
         }
 
         // ─── Flutter → Unity ──────────────────────────────────────────────────────
@@ -203,6 +265,9 @@ namespace FlutterIntegration
             // NoorCoinManager that spawns in a later scene reads this on Awake (see NoorCoinManager.Awake).
             LatestCoinBalance = balance;
 
+            // Flutter answered, so the handshake can stop asking.
+            _awaitingCoinBalance = false;
+
             if (NoorCoinManager.Instance == null)
             {
                 Debug.LogWarning("[FlutterBridge] No NoorCoinManager yet — balance cached; it will be applied when the manager loads.");
@@ -221,6 +286,16 @@ namespace FlutterIntegration
         public void RequestFellowshipProfiles()
         {
             SendMessageToFlutterApp(FlutterCommands.RequestFellowshipProfiles, new EmptyPayload());
+        }
+
+        /// <summary>
+        /// Asks Flutter for the player's authoritative Noor Coin balance. The handshake already does this
+        /// on every game start; call it directly when something loads late and finds nothing cached (see
+        /// <see cref="NoorCoinManager"/>).
+        /// </summary>
+        public void RequestCoinBalance()
+        {
+            SendMessageToFlutterApp(FlutterCommands.RequestCoinBalance, new EmptyPayload());
         }
 
         /// <summary>

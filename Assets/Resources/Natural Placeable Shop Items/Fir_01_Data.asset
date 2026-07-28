@@ -16,11 +16,18 @@ MonoBehaviour:
   itemName: Fir 01
   itemDescription: A unique Fir 01 decoration to personalize and enhance the atmosphere
     of your garden.
-  noorCoinCost: 1500
-  itemPrice: 
   itemID: 46945b5b8b93427b9fdbe73f331e8502
-  requiredXPLevel: 1
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
   itemCategory: 3
+  sortOrder: 0
+  requiredXPLevel: 1
   itemPrefab: {fileID: 3519991192614501125, guid: 4aa7a928cc83c7d49819fe52f53ec261, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 30
+  itemPrice: 

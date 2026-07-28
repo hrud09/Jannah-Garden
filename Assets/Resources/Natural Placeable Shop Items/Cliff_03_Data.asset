@@ -16,11 +16,18 @@ MonoBehaviour:
   itemName: Cliff 03
   itemDescription: A unique Cliff 03 decoration to personalize and enhance the atmosphere
     of your garden.
-  noorCoinCost: 1500
-  itemPrice: 
   itemID: 1e92201e6b384b558c3c4d92a3b0b9dc
-  requiredXPLevel: 1
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
   itemCategory: 3
+  sortOrder: 0
+  requiredXPLevel: 1
   itemPrefab: {fileID: 9203603020710262029, guid: ca00d4d4c0d329e4599915fdd324475f, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 30
+  itemPrice: 

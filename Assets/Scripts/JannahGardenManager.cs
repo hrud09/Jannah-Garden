@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using FlutterIntegration;
 
 public class JannahGardenManager : MonoBehaviour
 {
@@ -10,8 +12,9 @@ public class JannahGardenManager : MonoBehaviour
     [Tooltip("Reference to the exit confirmation UI panel GameObject.")]
     [SerializeField] private GameObject exitConfirmationPanel;
 
-    [Tooltip("Button in the confirmation panel that quits the game.")]
-    [SerializeField] private Button quitButton;
+    [Tooltip("Button in the confirmation panel that leaves the game and returns the player to the Amal app.")]
+    [FormerlySerializedAs("quitButton")]
+    [SerializeField] private Button exitToAppButton;
 
     [Tooltip("Button in the confirmation panel that loads the Outer Garden scene.")]
     [SerializeField] private Button outerGardenButton;
@@ -77,9 +80,9 @@ public class JannahGardenManager : MonoBehaviour
 
     private void SetupExitSystem()
     {
-        if (quitButton != null)
+        if (exitToAppButton != null)
         {
-            quitButton.onClick.AddListener(QuitGame);
+            exitToAppButton.onClick.AddListener(ExitToApp);
         }
 
         if (outerGardenButton != null)
@@ -120,15 +123,35 @@ public class JannahGardenManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Quits the game application.
+    /// Leaves the game and hands the player back to the Amal app.
+    ///
+    /// Deliberately NOT <c>Application.Quit()</c>: the game runs embedded in the Flutter host via
+    /// flutter_embed_unity, so quitting the player tears down the whole process and closes the app with
+    /// it. Only Flutter can dismiss the Unity widget, so we ask it to — see
+    /// <see cref="FlutterCommands.RequestExitGame"/> and flutter_bridge_guide.md.
+    ///
+    /// Nothing is saved here on purpose: pausing Unity (which is what Flutter does when the widget goes
+    /// away) fires OnApplicationPause on the managers that own persistent state, and they save there.
     /// </summary>
-    public void QuitGame()
+    public void ExitToApp()
     {
-        Debug.Log("[JannahGardenManager] Quitting application...");
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        Debug.Log("[JannahGardenManager] Asking Flutter to close the game and return to the app...");
+
+        CloseExitConfirmationPanel();
+
+        if (FlutterBridge.Instance != null)
+        {
+            FlutterBridge.Instance.SendMessageToFlutterApp(
+                FlutterCommands.RequestExitGame,
+                new ExitGameRequestPayload { source = "exit_panel" });
+            return;
+        }
+
+        Debug.LogWarning("[JannahGardenManager] No FlutterBridge — cannot return to the app.");
+        if (ToastMessageManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast("Use the back button to leave the garden.");
+        }
     }
 
     /// <summary>
@@ -154,9 +177,9 @@ public class JannahGardenManager : MonoBehaviour
             Instance = null;
         }
 
-        if (quitButton != null)
+        if (exitToAppButton != null)
         {
-            quitButton.onClick.RemoveListener(QuitGame);
+            exitToAppButton.onClick.RemoveListener(ExitToApp);
         }
 
         if (outerGardenButton != null)
