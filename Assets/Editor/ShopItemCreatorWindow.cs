@@ -159,6 +159,12 @@ public class ShopItemCreatorWindow : EditorWindow
         }
         EditorGUILayout.EndHorizontal();
 
+        if (GUILayout.Button("🖌️ Assign Respective Materials To Meshes", GUILayout.Height(30)))
+        {
+            AssignMaterialsToMeshes(meshSourceFolder);
+        }
+        EditorGUILayout.LabelField("Remaps each model to the material in its own asset folder.", EditorStyles.miniLabel);
+
         EditorGUILayout.EndVertical();
         GUILayout.Space(10);
 
@@ -872,6 +878,189 @@ public class ShopItemCreatorWindow : EditorWindow
         AssetDatabase.Refresh();
 
         EditorUtility.DisplayDialog("Material Generation", $"Successfully created/updated {matCount} Material(s) across subfolders!", "OK");
+    }
+
+    private void AssignMaterialsToMeshes(string rootFolderPath)
+    {
+        if (!AssetDatabase.IsValidFolder(rootFolderPath))
+        {
+            EditorUtility.DisplayDialog("Error", $"Folder path '{rootFolderPath}' does not exist.", "OK");
+            return;
+        }
+
+        string[] modelGuids = AssetDatabase.FindAssets("t:Model", new[] { rootFolderPath });
+        if (modelGuids.Length == 0)
+        {
+            EditorUtility.DisplayDialog("Nothing To Assign", $"No 3D models found under '{rootFolderPath}'.", "OK");
+            return;
+        }
+
+        // Name lookup used as a fallback for models that have no material in their own folder tree
+        Dictionary<string, Material> materialsByName = new Dictionary<string, Material>(System.StringComparer.OrdinalIgnoreCase);
+        foreach (string matGuid in AssetDatabase.FindAssets("t:Material", new[] { rootFolderPath }))
+        {
+            Material mat = AssetDatabase.LoadAssetAtPath<Material>(AssetDatabase.GUIDToAssetPath(matGuid));
+            if (mat == null) continue;
+
+            string key = MaterialMatchKey(mat.name);
+            if (!materialsByName.ContainsKey(key)) materialsByName[key] = mat;
+        }
+
+        int changedModels = 0;
+        int assignedSlots = 0;
+        List<string> unmatched = new List<string>();
+
+        try
+        {
+            for (int i = 0; i < modelGuids.Length; i++)
+            {
+                string modelPath = AssetDatabase.GUIDToAssetPath(modelGuids[i]);
+                string modelName = Path.GetFileNameWithoutExtension(modelPath);
+
+                EditorUtility.DisplayProgressBar("Assigning Materials",
+                    $"{modelName}  ({i + 1}/{modelGuids.Length})", (float)i / modelGuids.Length);
+
+                ModelImporter importer = AssetImporter.GetAtPath(modelPath) as ModelImporter;
+                if (importer == null) continue;
+
+                Material match = FindMaterialForModel(modelPath, rootFolderPath, materialsByName);
+                if (match == null)
+                {
+                    unmatched.Add(modelName);
+                    continue;
+                }
+
+                // Materials must be imported for the model to expose remappable slots
+                if (importer.materialImportMode == ModelImporterMaterialImportMode.None)
+                {
+                    importer.materialImportMode = ModelImporterMaterialImportMode.ImportStandard;
+                    importer.SaveAndReimport();
+                }
+
+                // Remaps are only honoured while the model keeps its materials embedded
+                bool changed = importer.materialLocation != ModelImporterMaterialLocation.InPrefab;
+                importer.materialLocation = ModelImporterMaterialLocation.InPrefab;
+
+                List<AssetImporter.SourceAssetIdentifier> slots = GetModelMaterialSlots(importer);
+                if (slots.Count == 0)
+                {
+                    unmatched.Add($"{modelName} (no material slots)");
+                    continue;
+                }
+
+                Dictionary<AssetImporter.SourceAssetIdentifier, Object> externalMap = importer.GetExternalObjectMap();
+                foreach (AssetImporter.SourceAssetIdentifier slot in slots)
+                {
+                    Object current;
+                    if (externalMap.TryGetValue(slot, out current) && current == match) continue;
+
+                    importer.AddRemap(slot, match);
+                    assignedSlots++;
+                    changed = true;
+                }
+
+                if (changed)
+                {
+                    importer.SaveAndReimport();
+                    changedModels++;
+                }
+            }
+        }
+        finally
+        {
+            EditorUtility.ClearProgressBar();
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+        string report = $"Assigned materials to {assignedSlots} slot(s) across {changedModels} of {modelGuids.Length} model(s).";
+        if (unmatched.Count > 0)
+        {
+            Debug.LogWarning($"[Shop Item Creator] No material matched for {unmatched.Count} model(s):\n" +
+                             string.Join("\n", unmatched.ToArray()));
+
+            int previewCount = Mathf.Min(unmatched.Count, 8);
+            report += $"\n\nNo material matched for {unmatched.Count} model(s):\n" +
+                      string.Join("\n", unmatched.GetRange(0, previewCount).ToArray());
+            if (unmatched.Count > previewCount) report += "\n... (see Console for the full list)";
+        }
+
+        EditorUtility.DisplayDialog("Material Assignment", report, "OK");
+    }
+
+    // Locates the material belonging to a model: nearest one in its own folder tree, then by name
+    private static Material FindMaterialForModel(string modelPath, string rootFolderPath,
+        Dictionary<string, Material> materialsByName)
+    {
+        string modelKey = MaterialMatchKey(Path.GetFileNameWithoutExtension(modelPath));
+        string root = rootFolderPath.Replace("\\", "/").TrimEnd('/');
+        string dir = Path.GetDirectoryName(modelPath).Replace("\\", "/");
+
+        while (!string.IsNullOrEmpty(dir))
+        {
+            Material fallback = null;
+            foreach (string guid in AssetDatabase.FindAssets("t:Material", new[] { dir }))
+            {
+                string matPath = AssetDatabase.GUIDToAssetPath(guid);
+
+                // FindAssets recurses, so keep only materials sitting directly in this folder
+                if (Path.GetDirectoryName(matPath).Replace("\\", "/") != dir) continue;
+
+                Material mat = AssetDatabase.LoadAssetAtPath<Material>(matPath);
+                if (mat == null) continue;
+
+                if (MaterialMatchKey(mat.name) == modelKey) return mat;
+                if (fallback == null) fallback = mat;
+            }
+
+            if (fallback != null) return fallback;
+
+            if (dir.Length <= root.Length) break;
+            dir = Path.GetDirectoryName(dir).Replace("\\", "/");
+        }
+
+        Material byName;
+        return materialsByName.TryGetValue(modelKey, out byName) ? byName : null;
+    }
+
+    // Material slots of an imported model, covering both fresh imports and already-remapped ones
+    private static List<AssetImporter.SourceAssetIdentifier> GetModelMaterialSlots(ModelImporter importer)
+    {
+        List<AssetImporter.SourceAssetIdentifier> slots = new List<AssetImporter.SourceAssetIdentifier>();
+        HashSet<string> seen = new HashSet<string>();
+
+        // Previously remapped slots keep their identifier, which makes re-runs idempotent
+        foreach (var kvp in importer.GetExternalObjectMap())
+        {
+            if (kvp.Key.type == typeof(Material) && seen.Add(kvp.Key.name))
+            {
+                slots.Add(kvp.Key);
+            }
+        }
+
+        // First run: the model's own materials are imported as sub-assets
+        foreach (Object sub in AssetDatabase.LoadAllAssetRepresentationsAtPath(importer.assetPath))
+        {
+            Material embedded = sub as Material;
+            if (embedded != null && seen.Add(embedded.name))
+            {
+                slots.Add(new AssetImporter.SourceAssetIdentifier(typeof(Material), embedded.name));
+            }
+        }
+
+        return slots;
+    }
+
+    // Normalised key so "Meshy_AI_Corinthian_Column_0721143532_texture" matches "AI_Corinthian_Column_Mat"
+    private static string MaterialMatchKey(string rawName)
+    {
+        string name = CleanMeshName(rawName);
+        if (name.EndsWith("_Mat", System.StringComparison.OrdinalIgnoreCase))
+        {
+            name = name.Substring(0, name.Length - 4);
+        }
+        return name.Replace("_", "").Replace(" ", "").ToLower();
     }
 
     public static string CleanMeshName(string rawName)
