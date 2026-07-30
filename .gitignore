@@ -111,4 +111,5 @@ InitTestScene*.unity*
 # Unity iOS export - oversized artifacts (exceed GitHub's 100MB file limit)
 /ios/unityLibrary.zip
 /ios/unityLibrary/Data/level2.resS
+/ios/unityLibrary/Data/resources.assets.resS
 /ios/unityLibrary/Libraries/libiPhone-lib.a

@@ -1277,7 +1277,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedAdWillPresentFullScreen
 	il2cppPInvokeFunc(___0_rewardedAdClient);
 
 }
-// Method Definition Index: 70694
+// Method Definition Index: 70695
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdWillPresentFullScreenContentCallback__ctor_mB29EFB6AB4051F57419CE50C6598F9754F52CFF2 (GADURewardedAdWillPresentFullScreenContentCallback_tAF452E8833BCB2654F14DFF08E77158FD422CBA7* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1306,20 +1306,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdWillPresentFullScreenConte
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedAdWillPresentFullScreenContentCallback_Invoke_mB1DEFB7DEBFE43A2C772CA576C1698C81AD9A947_Multicast;
 }
-// Method Definition Index: 70695
+// Method Definition Index: 70696
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdWillPresentFullScreenContentCallback_Invoke_mB1DEFB7DEBFE43A2C772CA576C1698C81AD9A947 (GADURewardedAdWillPresentFullScreenContentCallback_tAF452E8833BCB2654F14DFF08E77158FD422CBA7* __this, intptr_t ___0_rewardedAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70696
+// Method Definition Index: 70697
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedAdWillPresentFullScreenContentCallback_BeginInvoke_m6FE2C203B44F6795D1B6BC0B010611DE7A0AA9AC (GADURewardedAdWillPresentFullScreenContentCallback_tAF452E8833BCB2654F14DFF08E77158FD422CBA7* __this, intptr_t ___0_rewardedAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70697
+// Method Definition Index: 70698
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdWillPresentFullScreenContentCallback_EndInvoke_m1699F1A878EB873EC3B0A90A4A4500EDDE610FA0 (GADURewardedAdWillPresentFullScreenContentCallback_tAF452E8833BCB2654F14DFF08E77158FD422CBA7* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1360,7 +1360,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedAdDidDismissFullScreenC
 	il2cppPInvokeFunc(___0_rewardedAdClient);
 
 }
-// Method Definition Index: 70698
+// Method Definition Index: 70699
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidDismissFullScreenContentCallback__ctor_m6105C6D1B29FD5CB4B3425A13A68DC2B42AAC27F (GADURewardedAdDidDismissFullScreenContentCallback_t4B4FED99F1C1C2508CA93CC7256682D2CBC2229C* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1389,20 +1389,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidDismissFullScreenConten
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedAdDidDismissFullScreenContentCallback_Invoke_m4D84EE8C2042C141A86607BA7251F21B5CDD9159_Multicast;
 }
-// Method Definition Index: 70699
+// Method Definition Index: 70700
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidDismissFullScreenContentCallback_Invoke_m4D84EE8C2042C141A86607BA7251F21B5CDD9159 (GADURewardedAdDidDismissFullScreenContentCallback_t4B4FED99F1C1C2508CA93CC7256682D2CBC2229C* __this, intptr_t ___0_rewardedAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70700
+// Method Definition Index: 70701
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedAdDidDismissFullScreenContentCallback_BeginInvoke_m444E5BB33DE841401CA96FDB3A7B539B897A2565 (GADURewardedAdDidDismissFullScreenContentCallback_t4B4FED99F1C1C2508CA93CC7256682D2CBC2229C* __this, intptr_t ___0_rewardedAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70701
+// Method Definition Index: 70702
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidDismissFullScreenContentCallback_EndInvoke_m7E87C511508EF8470B5645158DEDBF3EC7B5BCCC (GADURewardedAdDidDismissFullScreenContentCallback_t4B4FED99F1C1C2508CA93CC7256682D2CBC2229C* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1443,7 +1443,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedAdDidRecordImpressionCa
 	il2cppPInvokeFunc(___0_rewardedAdClient);
 
 }
-// Method Definition Index: 70702
+// Method Definition Index: 70703
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordImpressionCallback__ctor_mB7B0530FF42FA92922A3EFFB52E88F36299E89ED (GADURewardedAdDidRecordImpressionCallback_t2B226ACBF37EF3621EE76314984322A6419C4489* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1472,20 +1472,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordImpressionCallbac
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedAdDidRecordImpressionCallback_Invoke_mAA48DD5787990187A16E6B9D48B011CF264800FE_Multicast;
 }
-// Method Definition Index: 70703
+// Method Definition Index: 70704
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordImpressionCallback_Invoke_mAA48DD5787990187A16E6B9D48B011CF264800FE (GADURewardedAdDidRecordImpressionCallback_t2B226ACBF37EF3621EE76314984322A6419C4489* __this, intptr_t ___0_rewardedAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70704
+// Method Definition Index: 70705
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedAdDidRecordImpressionCallback_BeginInvoke_mAD0C815CB2ECBCC2F078F9B0311BB4C39ED2B155 (GADURewardedAdDidRecordImpressionCallback_t2B226ACBF37EF3621EE76314984322A6419C4489* __this, intptr_t ___0_rewardedAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70705
+// Method Definition Index: 70706
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordImpressionCallback_EndInvoke_m5D15AFC43E89A8137823DF9864CA2F5D055545CF (GADURewardedAdDidRecordImpressionCallback_t2B226ACBF37EF3621EE76314984322A6419C4489* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1526,7 +1526,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedAdDidRecordClickCallbac
 	il2cppPInvokeFunc(___0_rewardedAdClient);
 
 }
-// Method Definition Index: 70706
+// Method Definition Index: 70707
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordClickCallback__ctor_mCD5BEB066460715C748E25D62E7CDF0FBFE8245F (GADURewardedAdDidRecordClickCallback_t00BA05C563633B47E21F925ADBE16757FC4E2D2B* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1555,20 +1555,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordClickCallback__ct
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedAdDidRecordClickCallback_Invoke_m4C96A61F2DF1E888E30E615FDDD9907723B322B4_Multicast;
 }
-// Method Definition Index: 70707
+// Method Definition Index: 70708
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordClickCallback_Invoke_m4C96A61F2DF1E888E30E615FDDD9907723B322B4 (GADURewardedAdDidRecordClickCallback_t00BA05C563633B47E21F925ADBE16757FC4E2D2B* __this, intptr_t ___0_rewardedAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70708
+// Method Definition Index: 70709
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedAdDidRecordClickCallback_BeginInvoke_m64D024DDFC5B18A53B213E5C41944B8B0A4B7AE8 (GADURewardedAdDidRecordClickCallback_t00BA05C563633B47E21F925ADBE16757FC4E2D2B* __this, intptr_t ___0_rewardedAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70709
+// Method Definition Index: 70710
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedAdDidRecordClickCallback_EndInvoke_m40DBC699698347526468A9669706FEF7B687DDE6 (GADURewardedAdDidRecordClickCallback_t00BA05C563633B47E21F925ADBE16757FC4E2D2B* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1611,7 +1611,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_RewardedAdPreloaderClient_Ads
 	RewardedAdPreloaderClient_AdsExhaustedForPreloadIdCallback_mE06D98E6E7664E17A0FBA44B2BBFAF636ED533FC(___0_rewardedAdPreloaderClient, ____1_preloadId_unmarshaled, NULL);
 
 }
-// Method Definition Index: 70710
+// Method Definition Index: 70711
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient__ctor_m2D7A67D31FAF88F34BB64D8C705F722BDBE340A7 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1740,7 +1740,7 @@ IL_0070:
 		return;
 	}
 }
-// Method Definition Index: 70711
+// Method Definition Index: 70712
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RewardedAdPreloaderClient_get_RewardedAdPreloaderPtr_m90770ADD1B3B05C639339511269831B0C675936E (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1748,7 +1748,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RewardedAdPreloaderClient_get_Reward
 		return L_0;
 	}
 }
-// Method Definition Index: 70712
+// Method Definition Index: 70713
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_set_RewardedAdPreloaderPtr_mDF00B05EA054D75AAAE5D84DD06C11BF9AC2A0D5 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, intptr_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -1759,7 +1759,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_set_RewardedAd
 		return;
 	}
 }
-// Method Definition Index: 70713
+// Method Definition Index: 70714
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RewardedAdPreloaderClient_Preload_mED963C680C6042CE625D32E9DCB0744F5F0D5987 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, String_t* ___0_preloadId, PreloadConfiguration_t6F0CC48C9DA9CD53B6D7C8E6AADF386734E7C479* ___1_preloadConfiguration, Action_2_tB8B19F4EDE6C424B73BDFA43E7DD37CA0290D9BD* ___2_onAdPreloaded, Action_2_t92F2D28593C640500A2777964512ACA5DEE53ACE* ___3_onAdFailedToPreload, Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___4_onAdsExhausted, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1846,7 +1846,7 @@ IL_006c:
 		return L_23;
 	}
 }
-// Method Definition Index: 70714
+// Method Definition Index: 70715
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RewardedAdPreloaderClient_IsAdAvailable_m7D84B22B73D6571F2366BF5943D7CAC508F37EA4 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, String_t* ___0_preloadId, const RuntimeMethod* method) 
 {
 	{
@@ -1873,7 +1873,7 @@ IL_0017:
 		return L_4;
 	}
 }
-// Method Definition Index: 70715
+// Method Definition Index: 70716
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RewardedAdPreloaderClient_DequeueAd_m331E39597B4F3484501E7A86A5A1DC648D183F49 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, String_t* ___0_preloadId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1942,7 +1942,7 @@ IL_0049:
 		return L_15;
 	}
 }
-// Method Definition Index: 70716
+// Method Definition Index: 70717
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RewardedAdPreloaderClient_GetNumAdsAvailable_m73C5BEB5D3C641151900E3BE35A69F8D97708472 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, String_t* ___0_preloadId, const RuntimeMethod* method) 
 {
 	{
@@ -1969,7 +1969,7 @@ IL_0017:
 		return L_4;
 	}
 }
-// Method Definition Index: 70717
+// Method Definition Index: 70718
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PreloadConfiguration_t6F0CC48C9DA9CD53B6D7C8E6AADF386734E7C479* RewardedAdPreloaderClient_GetConfiguration_mA8884A7B1F954060102D43E774678660D9F35038 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, String_t* ___0_preloadId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2048,7 +2048,7 @@ IL_0036:
 		return L_17;
 	}
 }
-// Method Definition Index: 70718
+// Method Definition Index: 70719
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t96AB71DABCC15AF7DCA0D68197AEF9E997065726* RewardedAdPreloaderClient_GetConfigurations_m06368ADD049151EB38C387F31159FECFF3A7404C (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2192,7 +2192,7 @@ IL_00ac:
 		return L_25;
 	}
 }
-// Method Definition Index: 70719
+// Method Definition Index: 70720
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_Destroy_mC0E46BA08E3C12356BFB2C250C84BAF06996075D (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, String_t* ___0_preloadId, const RuntimeMethod* method) 
 {
 	{
@@ -2219,7 +2219,7 @@ IL_0016:
 		return;
 	}
 }
-// Method Definition Index: 70720
+// Method Definition Index: 70721
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_DestroyAll_mB60D932988847E9EAD90726B4A25B1C3FEB544D3 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2244,7 +2244,7 @@ IL_0016:
 		return;
 	}
 }
-// Method Definition Index: 70721
+// Method Definition Index: 70722
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_Finalize_m24C09E23F55200A72EDC0619A9DC60CCEB729FF2 (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, const RuntimeMethod* method) 
 {
 	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC V_0;
@@ -2296,7 +2296,7 @@ IL_0044:
 		return;
 	}
 }
-// Method Definition Index: 70722
+// Method Definition Index: 70723
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_AdAvailableForPreloadIdCallback_m53FF89799DBD6C00A8B0F83B6DA7C53B26162D89 (intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, intptr_t ___2_responseInfoClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2336,7 +2336,7 @@ IL_0024:
 		return;
 	}
 }
-// Method Definition Index: 70723
+// Method Definition Index: 70724
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_AdFailedToPreloadForPreloadIdCallback_m8F8485534EF2B5A72BA0E92915BDA6E3C8B588D3 (intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, intptr_t ___2_adErrorReference, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2376,7 +2376,7 @@ IL_0024:
 		return;
 	}
 }
-// Method Definition Index: 70724
+// Method Definition Index: 70725
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedAdPreloaderClient_AdsExhaustedForPreloadIdCallback_mE06D98E6E7664E17A0FBA44B2BBFAF636ED533FC (intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, const RuntimeMethod* method) 
 {
 	RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* V_0 = NULL;
@@ -2407,7 +2407,7 @@ IL_001e:
 		return;
 	}
 }
-// Method Definition Index: 70725
+// Method Definition Index: 70726
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* RewardedAdPreloaderClient_IntPtrToRewardedAdPreloaderClient_m6C2F50C1EA49C10982FD204CDB87D6AEC5BC0CF7 (intptr_t ___0_rewardedAdPreloaderClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2470,7 +2470,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADUAdAvailableForPreloadIdCallback
 	____1_preloadId_marshaled = NULL;
 
 }
-// Method Definition Index: 70726
+// Method Definition Index: 70727
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdAvailableForPreloadIdCallback__ctor_m9DE692273FDA2908246D1066544EF7A9D180E725 (GADUAdAvailableForPreloadIdCallback_t8CA0969358202CA1E9F2BCAB9C7ABDEAF7077656* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2499,13 +2499,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdAvailableForPreloadIdCallback__cto
 	}
 	__this->___extra_arg = (intptr_t)&GADUAdAvailableForPreloadIdCallback_Invoke_mE310EA4193CB96519E67E914904F836C544447D8_Multicast;
 }
-// Method Definition Index: 70727
+// Method Definition Index: 70728
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdAvailableForPreloadIdCallback_Invoke_mE310EA4193CB96519E67E914904F836C544447D8 (GADUAdAvailableForPreloadIdCallback_t8CA0969358202CA1E9F2BCAB9C7ABDEAF7077656* __this, intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, intptr_t ___2_responseInfoClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, String_t*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdPreloaderClient, ___1_preloadId, ___2_responseInfoClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70728
+// Method Definition Index: 70729
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUAdAvailableForPreloadIdCallback_BeginInvoke_mB43EB45E1BB2207D169C9F1B45FAA7C30F55D28D (GADUAdAvailableForPreloadIdCallback_t8CA0969358202CA1E9F2BCAB9C7ABDEAF7077656* __this, intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, intptr_t ___2_responseInfoClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___3_callback, RuntimeObject* ___4_object, const RuntimeMethod* method) 
 {
 	void *__d_args[4] = {0};
@@ -2514,7 +2514,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUAdAvailableForPreloadIdCal
 	__d_args[2] = Box(il2cpp_defaults.int_class, &___2_responseInfoClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___3_callback, (RuntimeObject*)___4_object);
 }
-// Method Definition Index: 70729
+// Method Definition Index: 70730
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdAvailableForPreloadIdCallback_EndInvoke_mB1E7979E72A91E0A56C6EC7CFEC85356EDD302E2 (GADUAdAvailableForPreloadIdCallback_t8CA0969358202CA1E9F2BCAB9C7ABDEAF7077656* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2561,7 +2561,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADUAdFailedToPreloadForPreloadIdCa
 	____1_preloadId_marshaled = NULL;
 
 }
-// Method Definition Index: 70730
+// Method Definition Index: 70731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdFailedToPreloadForPreloadIdCallback__ctor_m66BE767F2A73727F6862F54DC6E438052D86C738 (GADUAdFailedToPreloadForPreloadIdCallback_t8D63384831A0DE775FA7A9E5884F0E6BB960EBD6* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2590,13 +2590,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdFailedToPreloadForPreloadIdCallbac
 	}
 	__this->___extra_arg = (intptr_t)&GADUAdFailedToPreloadForPreloadIdCallback_Invoke_m08147CD50C644A3303C284CA37B7961BC7D994F7_Multicast;
 }
-// Method Definition Index: 70731
+// Method Definition Index: 70732
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdFailedToPreloadForPreloadIdCallback_Invoke_m08147CD50C644A3303C284CA37B7961BC7D994F7 (GADUAdFailedToPreloadForPreloadIdCallback_t8D63384831A0DE775FA7A9E5884F0E6BB960EBD6* __this, intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, intptr_t ___2_adErrorReference, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, String_t*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdPreloaderClient, ___1_preloadId, ___2_adErrorReference, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70732
+// Method Definition Index: 70733
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUAdFailedToPreloadForPreloadIdCallback_BeginInvoke_mC92155533BCD8425B2DE9D51867EA22ECAD1AC68 (GADUAdFailedToPreloadForPreloadIdCallback_t8D63384831A0DE775FA7A9E5884F0E6BB960EBD6* __this, intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, intptr_t ___2_adErrorReference, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___3_callback, RuntimeObject* ___4_object, const RuntimeMethod* method) 
 {
 	void *__d_args[4] = {0};
@@ -2605,7 +2605,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUAdFailedToPreloadForPreloa
 	__d_args[2] = Box(il2cpp_defaults.int_class, &___2_adErrorReference);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___3_callback, (RuntimeObject*)___4_object);
 }
-// Method Definition Index: 70733
+// Method Definition Index: 70734
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdFailedToPreloadForPreloadIdCallback_EndInvoke_mDF91BA6F709332EAFCF8C9BBC858F412634D7530 (GADUAdFailedToPreloadForPreloadIdCallback_t8D63384831A0DE775FA7A9E5884F0E6BB960EBD6* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2652,7 +2652,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADUAdsExhaustedForPreloadIdCallbac
 	____1_preloadId_marshaled = NULL;
 
 }
-// Method Definition Index: 70734
+// Method Definition Index: 70735
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdsExhaustedForPreloadIdCallback__ctor_mB858E74ED7A930B41E48534920BD3335F7680473 (GADUAdsExhaustedForPreloadIdCallback_t6C94B3613D77CBEA36774DF7DBFC193440A5F53C* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2681,13 +2681,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdsExhaustedForPreloadIdCallback__ct
 	}
 	__this->___extra_arg = (intptr_t)&GADUAdsExhaustedForPreloadIdCallback_Invoke_m64ADB8A270024C6164E538A83FA7BE0FE07CED05_Multicast;
 }
-// Method Definition Index: 70735
+// Method Definition Index: 70736
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdsExhaustedForPreloadIdCallback_Invoke_m64ADB8A270024C6164E538A83FA7BE0FE07CED05 (GADUAdsExhaustedForPreloadIdCallback_t6C94B3613D77CBEA36774DF7DBFC193440A5F53C* __this, intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedAdPreloaderClient, ___1_preloadId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70736
+// Method Definition Index: 70737
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUAdsExhaustedForPreloadIdCallback_BeginInvoke_mF2E2274F0B66095A2C6A478311E6B510D75FE3C8 (GADUAdsExhaustedForPreloadIdCallback_t6C94B3613D77CBEA36774DF7DBFC193440A5F53C* __this, intptr_t ___0_rewardedAdPreloaderClient, String_t* ___1_preloadId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -2695,7 +2695,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUAdsExhaustedForPreloadIdCa
 	__d_args[1] = ___1_preloadId;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 70737
+// Method Definition Index: 70738
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUAdsExhaustedForPreloadIdCallback_EndInvoke_m931E6198C192B7B0CE27F32D72DBBF27CE97D986 (GADUAdsExhaustedForPreloadIdCallback_t6C94B3613D77CBEA36774DF7DBFC193440A5F53C* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2777,7 +2777,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_RewardedInterstitialAdClient_
 	RewardedInterstitialAdClient_AdDidRecordClickCallback_mC193623F896D781FA0BD8F7660ED077B884799DF(___0_rewardedInterstitialAdClient, NULL);
 
 }
-// Method Definition Index: 70738
+// Method Definition Index: 70739
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient__ctor_m2D9AA18220E15B12E56D3B683F5D484543CE4ACF (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2785,7 +2785,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient__ctor_m2D9A
 		return;
 	}
 }
-// Method Definition Index: 70739
+// Method Definition Index: 70740
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdLoaded_m4F3ED9C738D8039A0D5EBEA209F643106018C193 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2825,7 +2825,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70740
+// Method Definition Index: 70741
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdLoaded_m3C1B7973E27B02FC649016D3CFC3432A61597F1B (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2865,7 +2865,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70741
+// Method Definition Index: 70742
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdFailedToLoad_mDF62CFA9ED72722F93CD5F7C8C4C4C59C4FFBECD (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tCA9CA1333E3C6F3F7AFFC7AB4401ABC3F1049D50* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2905,7 +2905,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70742
+// Method Definition Index: 70743
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdFailedToLoad_mD0338A5443C7EDD8BC82D4535550ACE28A0ED465 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tCA9CA1333E3C6F3F7AFFC7AB4401ABC3F1049D50* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2945,7 +2945,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70743
+// Method Definition Index: 70744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnUserEarnedReward_m7169A9AA01EB8B218F8812FC9A092669A63CF0EA (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_t2CE28DD464FEA7CA750218186087659B7122DBAC* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2985,7 +2985,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70744
+// Method Definition Index: 70745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnUserEarnedReward_mEC2FF0BD00D25086D51CEFF10FF1E0F3045B1D92 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_t2CE28DD464FEA7CA750218186087659B7122DBAC* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3025,7 +3025,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70745
+// Method Definition Index: 70746
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnPaidEvent_mFE53CDB978D8024BA98DFDAB7A15783D6748AE7C (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, Action_1_t96EA761F7BE52B89F4904338B4DF546EB9F1FAFF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3065,7 +3065,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70746
+// Method Definition Index: 70747
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnPaidEvent_m0A369277675F7364E46313C3EF959646AF518BA2 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, Action_1_t96EA761F7BE52B89F4904338B4DF546EB9F1FAFF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3105,7 +3105,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70747
+// Method Definition Index: 70748
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdFailedToPresentFullScreenContent_m2BAC6B236FDA794688F10E3FC89FFCC23CC74AA4 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tE6F594B79408473D4004D4405BB5C5CFBA966E5E* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3145,7 +3145,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70748
+// Method Definition Index: 70749
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdFailedToPresentFullScreenContent_m902E55E0C42D9330BDB119950A93C519C11DC843 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tE6F594B79408473D4004D4405BB5C5CFBA966E5E* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3185,7 +3185,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70749
+// Method Definition Index: 70750
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdDidPresentFullScreenContent_m681506D8A1CCD427C60D9664D70AA69D8364B300 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3225,7 +3225,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70750
+// Method Definition Index: 70751
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdDidPresentFullScreenContent_m755D14BB948C17AA9425E21A50ED7E6A738AF5AE (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3265,7 +3265,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70751
+// Method Definition Index: 70752
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdDidDismissFullScreenContent_mF73BD1326FC1A986BE33184324FBAE8E06373B66 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3305,7 +3305,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70752
+// Method Definition Index: 70753
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdDidDismissFullScreenContent_m08304D53C6BE46F7691831AC7DBBBBC40A79CC32 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3345,7 +3345,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70753
+// Method Definition Index: 70754
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdDidRecordImpression_m6F76BE200EDF4698E04E6DA641EC5B374FCC37F3 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3385,7 +3385,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70754
+// Method Definition Index: 70755
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdDidRecordImpression_m5B80D0D00F0EF210ED287D6913E7F4CC1AD4FB31 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, EventHandler_1_tF2D41B212D800E7E7D00F9BDEA817E57153988BF* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3425,7 +3425,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70755
+// Method Definition Index: 70756
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_add_OnAdClicked_m6024056C03EE7A8985FE42859EAF350EDFF5642E (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3465,7 +3465,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70756
+// Method Definition Index: 70757
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_remove_OnAdClicked_m24AC28D19FA01157F7B68EFA813958E68D846BCA (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3505,7 +3505,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 70757
+// Method Definition Index: 70758
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RewardedInterstitialAdClient_get_RewardedInterstitialAdPtr_m323F17BC68DB8C1D7B3E1C04630ADDA61EAEEEE8 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3513,7 +3513,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RewardedInterstitialAdClient_get_Rew
 		return L_0;
 	}
 }
-// Method Definition Index: 70758
+// Method Definition Index: 70759
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_set_RewardedInterstitialAdPtr_m9A7EE9C79B399ECCDEF7A8D32C6C741F9E4F76F3 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, intptr_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3524,7 +3524,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_set_Rewarde
 		return;
 	}
 }
-// Method Definition Index: 70759
+// Method Definition Index: 70760
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t RewardedInterstitialAdClient_get_PlacementId_mD1C80D2AA3EEF573043762CCA259A5EF402C8CDD (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3550,7 +3550,7 @@ IL_0018:
 		return L_3;
 	}
 }
-// Method Definition Index: 70760
+// Method Definition Index: 70761
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_set_PlacementId_m52BC01E647920FD0860807AB1A37656EE8D988E0 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, int64_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3585,7 +3585,7 @@ IL_0020:
 		return;
 	}
 }
-// Method Definition Index: 70761
+// Method Definition Index: 70762
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_CreateRewardedInterstitialAd_m77CBDB4BCF71DEC1D046D846AFF493B65A4B3826 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4015,7 +4015,7 @@ IL_0128:
 		return;
 	}
 }
-// Method Definition Index: 70762
+// Method Definition Index: 70763
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_LoadAd_mD6B151C8C72F30E1ED95F1752408B8FFBB7174C3 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, String_t* ___0_adUnitID, AdRequest_tB2AC2CD266CFD5D636C917BC2D938BE96E72BF4D* ___1_request, const RuntimeMethod* method) 
 {
 	intptr_t V_0;
@@ -4036,7 +4036,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_LoadAd_mD6B
 		return;
 	}
 }
-// Method Definition Index: 70763
+// Method Definition Index: 70764
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_Show_m2B89722827624CAA68EB2C1BDD65402F824579F6 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4046,7 +4046,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_Show_m2B897
 		return;
 	}
 }
-// Method Definition Index: 70764
+// Method Definition Index: 70765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* RewardedInterstitialAdClient_GetAdUnitID_mB7210827124FB1ED07B9AFBC4835B198F09D5E3E (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4057,7 +4057,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* RewardedInterstitialAdClient_GetAdU
 		return L_1;
 	}
 }
-// Method Definition Index: 70765
+// Method Definition Index: 70766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_SetServerSideVerificationOptions_m8446761E276DC574F4F84C9B37122333799A0A71 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, ServerSideVerificationOptions_tCB0CF0403C3E4DDA0E47F9594BE01D214B4673C3* ___0_serverSideVerificationOptions, const RuntimeMethod* method) 
 {
 	intptr_t V_0;
@@ -4076,7 +4076,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_SetServerSi
 		return;
 	}
 }
-// Method Definition Index: 70766
+// Method Definition Index: 70767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Reward_t0F20A888BB23A15D26BEF02E5C367B31ECB87511* RewardedInterstitialAdClient_GetRewardItem_mACBD2EB8F270FE5236777CBB2F466444447FCFD5 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4115,7 +4115,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Reward_t0F20A888BB23A15D26BEF02E5C367B31ECB87
 		return L_9;
 	}
 }
-// Method Definition Index: 70767
+// Method Definition Index: 70768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RewardedInterstitialAdClient_GetResponseInfoClient_m33EF91C2BD4AE1B9E156DE240D6A4B5E10E18313 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4132,7 +4132,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RewardedInterstitialAdClient_G
 		return L_1;
 	}
 }
-// Method Definition Index: 70768
+// Method Definition Index: 70769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_DestroyRewardedInterstitialAd_mBFFA3CECCFBD99AB20E259F2C95C655FBA87FBC8 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4140,7 +4140,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_DestroyRewa
 		return;
 	}
 }
-// Method Definition Index: 70769
+// Method Definition Index: 70770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_Dispose_mA2C74F31CA044CC8BA9514E970BAD4DB611CC5D9 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC V_0;
@@ -4155,7 +4155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_Dispose_mA2
 		return;
 	}
 }
-// Method Definition Index: 70770
+// Method Definition Index: 70771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_Finalize_m3D560BB9CDC69FCC3028E9B04A7DA7C8DE4CF6E2 (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4184,7 +4184,7 @@ IL_0012:
 		return;
 	}
 }
-// Method Definition Index: 70771
+// Method Definition Index: 70772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_RewardedInterstitialAdLoadedCallback_m1C0720EF2B961EB1026C8685A7EED3A10C075E9C (intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4223,7 +4223,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 70772
+// Method Definition Index: 70773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_RewardedInterstitialAdFailedToLoadCallback_mD6D04162DA53B6D47D981FF22C30AB30EFD79386 (intptr_t ___0_rewardedInterstitialAdClient, intptr_t ___1_error, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4275,7 +4275,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 70773
+// Method Definition Index: 70774
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_RewardedInterstitialAdUserDidEarnRewardCallback_m7E5CE4E4C3E8286FEBA3FC3E3126C89DFCDCCDA5 (intptr_t ___0_rewardedInterstitialAdClient, String_t* ___1_rewardType, double ___2_rewardAmount, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4329,7 +4329,7 @@ IL_0035:
 		return;
 	}
 }
-// Method Definition Index: 70774
+// Method Definition Index: 70775
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_RewardedInterstitialAdPaidEventCallback_m6C6ACAF671785A8E5003B95A8FF302756DE51AB8 (intptr_t ___0_rewardedInterstitialAdClient, int32_t ___1_precision, int64_t ___2_value, String_t* ___3_currencyCode, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4385,7 +4385,7 @@ IL_003b:
 		return;
 	}
 }
-// Method Definition Index: 70775
+// Method Definition Index: 70776
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_AdFailedToPresentFullScreenContentCallback_mBB4D17D0635618D261AE895D6EB9C84E2FD8857A (intptr_t ___0_rewardedInterstitialAdClient, intptr_t ___1_error, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4437,7 +4437,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 70776
+// Method Definition Index: 70777
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_AdWillPresentFullScreenContentCallback_m05307C2245AF2EBDF718D3AFD145ED7EE8C9AF8A (intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4476,7 +4476,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 70777
+// Method Definition Index: 70778
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_AdDidDismissFullScreenContentCallback_mE22BB0C8B831ED419F10CCD68C8FFD9B9C5BA86B (intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4515,7 +4515,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 70778
+// Method Definition Index: 70779
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_AdDidRecordImpressionCallback_mA2407C34E2CE9D3D69E2CCAE0BC1B04C9CB9BC0B (intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4554,7 +4554,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 70779
+// Method Definition Index: 70780
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardedInterstitialAdClient_AdDidRecordClickCallback_mC193623F896D781FA0BD8F7660ED077B884799DF (intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* V_0 = NULL;
@@ -4584,7 +4584,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 70780
+// Method Definition Index: 70781
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* RewardedInterstitialAdClient_IntPtrToRewardedInterstitialAdClient_mE9EA49B66F0B1EC4176358B5DFFB9E986A50950C (intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4641,7 +4641,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdLoadedCal
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient);
 
 }
-// Method Definition Index: 70781
+// Method Definition Index: 70782
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdLoadedCallback__ctor_m20F9B31DF38EDCD59429DD70F49361216C8532B9 (GADURewardedInterstitialAdLoadedCallback_t0B9E3124DA85030D82FE7F300548EF8E199CE693* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -4670,20 +4670,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdLoadedCallback
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdLoadedCallback_Invoke_mEA35D906FFF060E07902C5ADB24CDAB8F558E763_Multicast;
 }
-// Method Definition Index: 70782
+// Method Definition Index: 70783
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdLoadedCallback_Invoke_mEA35D906FFF060E07902C5ADB24CDAB8F558E763 (GADURewardedInterstitialAdLoadedCallback_t0B9E3124DA85030D82FE7F300548EF8E199CE693* __this, intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70783
+// Method Definition Index: 70784
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdLoadedCallback_BeginInvoke_mF8999D96AC93AE59CCC5519E9A2D1E0EC34B7016 (GADURewardedInterstitialAdLoadedCallback_t0B9E3124DA85030D82FE7F300548EF8E199CE693* __this, intptr_t ___0_rewardedInterstitialAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedInterstitialAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70784
+// Method Definition Index: 70785
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdLoadedCallback_EndInvoke_m77770AC2AF086C844A6FE33C9087F502A5780EB6 (GADURewardedInterstitialAdLoadedCallback_t0B9E3124DA85030D82FE7F300548EF8E199CE693* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -4724,7 +4724,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdFailedToL
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient, ___1_error);
 
 }
-// Method Definition Index: 70785
+// Method Definition Index: 70786
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToLoadCallback__ctor_m079CBF393A6D84A760A07818FBA2A811BB012004 (GADURewardedInterstitialAdFailedToLoadCallback_t13FFAD229EF51C493231EDF3629EEDE961632102* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -4753,13 +4753,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToLoadCa
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdFailedToLoadCallback_Invoke_m659CCB2F6094631AD3A60505C91CEE22F3082A87_Multicast;
 }
-// Method Definition Index: 70786
+// Method Definition Index: 70787
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToLoadCallback_Invoke_m659CCB2F6094631AD3A60505C91CEE22F3082A87 (GADURewardedInterstitialAdFailedToLoadCallback_t13FFAD229EF51C493231EDF3629EEDE961632102* __this, intptr_t ___0_rewardedInterstitialAdClient, intptr_t ___1_error, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, ___1_error, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70787
+// Method Definition Index: 70788
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdFailedToLoadCallback_BeginInvoke_mF303E42770325FCAF58752220713B1D83E3C492A (GADURewardedInterstitialAdFailedToLoadCallback_t13FFAD229EF51C493231EDF3629EEDE961632102* __this, intptr_t ___0_rewardedInterstitialAdClient, intptr_t ___1_error, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -4767,7 +4767,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdFail
 	__d_args[1] = Box(il2cpp_defaults.int_class, &___1_error);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 70788
+// Method Definition Index: 70789
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToLoadCallback_EndInvoke_mBC32576384E7F8869C59B545074758EA4A785720 (GADURewardedInterstitialAdFailedToLoadCallback_t13FFAD229EF51C493231EDF3629EEDE961632102* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -4814,7 +4814,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdUserEarne
 	____1_rewardType_marshaled = NULL;
 
 }
-// Method Definition Index: 70789
+// Method Definition Index: 70790
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdUserEarnedRewardCallback__ctor_mBD859FFB3913ED467F8FE3598B28F3A1627117D7 (GADURewardedInterstitialAdUserEarnedRewardCallback_t272F71AFDBC79B4C569B671F5F671ABDD1817607* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -4843,13 +4843,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdUserEarnedRewa
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdUserEarnedRewardCallback_Invoke_mBA20BD60BBE3133C7E884E3A4F47D31B65937FA6_Multicast;
 }
-// Method Definition Index: 70790
+// Method Definition Index: 70791
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdUserEarnedRewardCallback_Invoke_mBA20BD60BBE3133C7E884E3A4F47D31B65937FA6 (GADURewardedInterstitialAdUserEarnedRewardCallback_t272F71AFDBC79B4C569B671F5F671ABDD1817607* __this, intptr_t ___0_rewardedInterstitialAdClient, String_t* ___1_rewardType, double ___2_rewardAmount, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, String_t*, double, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, ___1_rewardType, ___2_rewardAmount, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70791
+// Method Definition Index: 70792
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdUserEarnedRewardCallback_BeginInvoke_m168F6674EAA8A09A9C459EFB847988C6AA3AE53E (GADURewardedInterstitialAdUserEarnedRewardCallback_t272F71AFDBC79B4C569B671F5F671ABDD1817607* __this, intptr_t ___0_rewardedInterstitialAdClient, String_t* ___1_rewardType, double ___2_rewardAmount, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___3_callback, RuntimeObject* ___4_object, const RuntimeMethod* method) 
 {
 	void *__d_args[4] = {0};
@@ -4858,7 +4858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdUser
 	__d_args[2] = Box(il2cpp_defaults.double_class, &___2_rewardAmount);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___3_callback, (RuntimeObject*)___4_object);
 }
-// Method Definition Index: 70792
+// Method Definition Index: 70793
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdUserEarnedRewardCallback_EndInvoke_mE074DF78A7469D7885370824D7138547E831AF66 (GADURewardedInterstitialAdUserEarnedRewardCallback_t272F71AFDBC79B4C569B671F5F671ABDD1817607* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -4905,7 +4905,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdPaidEvent
 	____3_currencyCode_marshaled = NULL;
 
 }
-// Method Definition Index: 70793
+// Method Definition Index: 70794
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdPaidEventCallback__ctor_m6EE9E2FC68D79449C5668734C208E1235EEBD896 (GADURewardedInterstitialAdPaidEventCallback_tB4C666891673515B68320E4E40F0353EA43694D9* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -4934,13 +4934,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdPaidEventCallb
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdPaidEventCallback_Invoke_m4285C90659BFB32AAD418278D9A5FFFAE8956E8A_Multicast;
 }
-// Method Definition Index: 70794
+// Method Definition Index: 70795
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdPaidEventCallback_Invoke_m4285C90659BFB32AAD418278D9A5FFFAE8956E8A (GADURewardedInterstitialAdPaidEventCallback_tB4C666891673515B68320E4E40F0353EA43694D9* __this, intptr_t ___0_rewardedInterstitialAdClient, int32_t ___1_precision, int64_t ___2_value, String_t* ___3_currencyCode, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, int32_t, int64_t, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, ___1_precision, ___2_value, ___3_currencyCode, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70795
+// Method Definition Index: 70796
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdPaidEventCallback_BeginInvoke_m0B5F860C4719B5D98222102CBB087065E7A9F60F (GADURewardedInterstitialAdPaidEventCallback_tB4C666891673515B68320E4E40F0353EA43694D9* __this, intptr_t ___0_rewardedInterstitialAdClient, int32_t ___1_precision, int64_t ___2_value, String_t* ___3_currencyCode, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___4_callback, RuntimeObject* ___5_object, const RuntimeMethod* method) 
 {
 	void *__d_args[5] = {0};
@@ -4950,7 +4950,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdPaid
 	__d_args[3] = ___3_currencyCode;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___4_callback, (RuntimeObject*)___5_object);
 }
-// Method Definition Index: 70796
+// Method Definition Index: 70797
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdPaidEventCallback_EndInvoke_mC97D38489456F9621A45C34CF9829FF1D8FCD2BF (GADURewardedInterstitialAdPaidEventCallback_tB4C666891673515B68320E4E40F0353EA43694D9* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -4991,7 +4991,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdFailedToP
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient, ___1_error);
 
 }
-// Method Definition Index: 70797
+// Method Definition Index: 70798
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback__ctor_mFF0C8390911A49E11C79611A086B6CD6547B30F7 (GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_t6472F4EEAB48BAF502092BA0AF3FE60DFA2C7F80* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -5020,13 +5020,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToPresen
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_Invoke_m652C988A5DF8A71EF3E0BF4E7AB20AE13B10C6C3_Multicast;
 }
-// Method Definition Index: 70798
+// Method Definition Index: 70799
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_Invoke_m652C988A5DF8A71EF3E0BF4E7AB20AE13B10C6C3 (GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_t6472F4EEAB48BAF502092BA0AF3FE60DFA2C7F80* __this, intptr_t ___0_rewardedInterstitialAdClient, intptr_t ___1_error, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, ___1_error, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70799
+// Method Definition Index: 70800
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_BeginInvoke_mBF7103708F1B7E2CA8E7EBE4C2E3FF034DE977AD (GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_t6472F4EEAB48BAF502092BA0AF3FE60DFA2C7F80* __this, intptr_t ___0_rewardedInterstitialAdClient, intptr_t ___1_error, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -5034,7 +5034,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdFail
 	__d_args[1] = Box(il2cpp_defaults.int_class, &___1_error);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 70800
+// Method Definition Index: 70801
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_EndInvoke_mC287923F3A38F728F8FB8DD0C3047EB31D6BF0FA (GADURewardedInterstitialAdFailedToPresentFullScreenContentCallback_t6472F4EEAB48BAF502092BA0AF3FE60DFA2C7F80* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -5075,7 +5075,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdWillPrese
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient);
 
 }
-// Method Definition Index: 70801
+// Method Definition Index: 70802
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdWillPresentFullScreenContentCallback__ctor_mE5435F371D6D0E554402C538F73A4FD35245E6EE (GADURewardedInterstitialAdWillPresentFullScreenContentCallback_t6810455639D95D7447EF806FD2384BF7FA3CF3B0* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -5104,20 +5104,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdWillPresentFul
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdWillPresentFullScreenContentCallback_Invoke_mAC0EF08A5D69F2C98C8302D18169F293F0D9EC6A_Multicast;
 }
-// Method Definition Index: 70802
+// Method Definition Index: 70803
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdWillPresentFullScreenContentCallback_Invoke_mAC0EF08A5D69F2C98C8302D18169F293F0D9EC6A (GADURewardedInterstitialAdWillPresentFullScreenContentCallback_t6810455639D95D7447EF806FD2384BF7FA3CF3B0* __this, intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70803
+// Method Definition Index: 70804
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdWillPresentFullScreenContentCallback_BeginInvoke_mD34B08A607D469E7A11DDB0BB66DF69C31271FD2 (GADURewardedInterstitialAdWillPresentFullScreenContentCallback_t6810455639D95D7447EF806FD2384BF7FA3CF3B0* __this, intptr_t ___0_rewardedInterstitialAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedInterstitialAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70804
+// Method Definition Index: 70805
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdWillPresentFullScreenContentCallback_EndInvoke_m960DB2273A33001D14F9817592904F8506B501FD (GADURewardedInterstitialAdWillPresentFullScreenContentCallback_t6810455639D95D7447EF806FD2384BF7FA3CF3B0* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -5158,7 +5158,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdDidDismis
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient);
 
 }
-// Method Definition Index: 70805
+// Method Definition Index: 70806
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidDismissFullScreenContentCallback__ctor_m149B78952FDCDF9121ACA16717AB6B97D3FD0845 (GADURewardedInterstitialAdDidDismissFullScreenContentCallback_t5D916B52538DEF3D03328656B9ACC2B2692A44AA* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -5187,20 +5187,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidDismissFull
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdDidDismissFullScreenContentCallback_Invoke_m78F4F2A6375136F403D8F9CC7C9414D4F5244B49_Multicast;
 }
-// Method Definition Index: 70806
+// Method Definition Index: 70807
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidDismissFullScreenContentCallback_Invoke_m78F4F2A6375136F403D8F9CC7C9414D4F5244B49 (GADURewardedInterstitialAdDidDismissFullScreenContentCallback_t5D916B52538DEF3D03328656B9ACC2B2692A44AA* __this, intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70807
+// Method Definition Index: 70808
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdDidDismissFullScreenContentCallback_BeginInvoke_m948433AA136A73546206CDF4AE7096B9B0D96C6E (GADURewardedInterstitialAdDidDismissFullScreenContentCallback_t5D916B52538DEF3D03328656B9ACC2B2692A44AA* __this, intptr_t ___0_rewardedInterstitialAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedInterstitialAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70808
+// Method Definition Index: 70809
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidDismissFullScreenContentCallback_EndInvoke_m82BBCFA493524806ABE441C1AEB080CEA10DC6A3 (GADURewardedInterstitialAdDidDismissFullScreenContentCallback_t5D916B52538DEF3D03328656B9ACC2B2692A44AA* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -5241,7 +5241,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdDidRecord
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient);
 
 }
-// Method Definition Index: 70809
+// Method Definition Index: 70810
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordImpressionCallback__ctor_mB2CB6224BFDAE68A3D23FA9C75DDD9004915BF95 (GADURewardedInterstitialAdDidRecordImpressionCallback_tB1F6565FDE66FBACCB922E1345EBFDE12349B29F* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -5270,20 +5270,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordImpre
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdDidRecordImpressionCallback_Invoke_mBC3D9BF92997A21558920243F7FC158FA2C0A340_Multicast;
 }
-// Method Definition Index: 70810
+// Method Definition Index: 70811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordImpressionCallback_Invoke_mBC3D9BF92997A21558920243F7FC158FA2C0A340 (GADURewardedInterstitialAdDidRecordImpressionCallback_tB1F6565FDE66FBACCB922E1345EBFDE12349B29F* __this, intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70811
+// Method Definition Index: 70812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdDidRecordImpressionCallback_BeginInvoke_mCD2422EFFEE15A8B48D2D6FC0C98B757D259D596 (GADURewardedInterstitialAdDidRecordImpressionCallback_tB1F6565FDE66FBACCB922E1345EBFDE12349B29F* __this, intptr_t ___0_rewardedInterstitialAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedInterstitialAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70812
+// Method Definition Index: 70813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordImpressionCallback_EndInvoke_m9D8A30F6CED54832AED488A911542B07B046FD5D (GADURewardedInterstitialAdDidRecordImpressionCallback_tB1F6565FDE66FBACCB922E1345EBFDE12349B29F* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -5324,7 +5324,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADURewardedInterstitialAdDidRecord
 	il2cppPInvokeFunc(___0_rewardedInterstitialAdClient);
 
 }
-// Method Definition Index: 70813
+// Method Definition Index: 70814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordClickCallback__ctor_m9EFF9EA2E086C0B83C5BFB8C44852BF0A1656FC9 (GADURewardedInterstitialAdDidRecordClickCallback_t497F3442030EFA09B6E03CAC90D13535AE091A5E* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -5353,20 +5353,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordClick
 	}
 	__this->___extra_arg = (intptr_t)&GADURewardedInterstitialAdDidRecordClickCallback_Invoke_m0378D2FDA1E86651354313ED0F3F76599BBFA663_Multicast;
 }
-// Method Definition Index: 70814
+// Method Definition Index: 70815
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordClickCallback_Invoke_m0378D2FDA1E86651354313ED0F3F76599BBFA663 (GADURewardedInterstitialAdDidRecordClickCallback_t497F3442030EFA09B6E03CAC90D13535AE091A5E* __this, intptr_t ___0_rewardedInterstitialAdClient, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_rewardedInterstitialAdClient, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 70815
+// Method Definition Index: 70816
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADURewardedInterstitialAdDidRecordClickCallback_BeginInvoke_mDB27E310BE7719700041A412AC9FB863A4711986 (GADURewardedInterstitialAdDidRecordClickCallback_t497F3442030EFA09B6E03CAC90D13535AE091A5E* __this, intptr_t ___0_rewardedInterstitialAdClient, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.int_class, &___0_rewardedInterstitialAdClient);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 70816
+// Method Definition Index: 70817
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordClickCallback_EndInvoke_mC444719B1A4A16670992405644D6D580A67492CA (GADURewardedInterstitialAdDidRecordClickCallback_t497F3442030EFA09B6E03CAC90D13535AE091A5E* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -5379,7 +5379,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADURewardedInterstitialAdDidRecordClick
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 70817
+// Method Definition Index: 70818
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Utils__ctor_mA447CFE3B47D42DD02289B7CCB5D37FBD2E43685 (Utils_t9EC0EFD19842B5DD5DF2A66F897DB43F4BED5F43* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5387,7 +5387,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Utils__ctor_mA447CFE3B47D42DD02289B7CCB5
 		return;
 	}
 }
-// Method Definition Index: 70818
+// Method Definition Index: 70819
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Utils_BuildAdRequest_m5236B8F2180BCC7C45ED6C21B7FF2465AC6E5D68 (AdRequest_tB2AC2CD266CFD5D636C917BC2D938BE96E72BF4D* ___0_request, String_t* ___1_nativePluginVersion, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5760,7 +5760,7 @@ IL_01c9:
 		return L_52;
 	}
 }
-// Method Definition Index: 70819
+// Method Definition Index: 70820
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Utils_BuildAdManagerAdRequest_m99F3C7391E02D6E91295096A514E792FDE5837B1 (AdRequest_tB2AC2CD266CFD5D636C917BC2D938BE96E72BF4D* ___0_request, String_t* ___1_nativePluginVersion, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6219,7 +6219,7 @@ IL_0230:
 		return L_67;
 	}
 }
-// Method Definition Index: 70820
+// Method Definition Index: 70821
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Utils_BuildServerSideVerificationOptions_mE15882D0B7388C013268F844FA2E786A8948A948 (ServerSideVerificationOptions_tCB0CF0403C3E4DDA0E47F9594BE01D214B4673C3* ___0_options, const RuntimeMethod* method) 
 {
 	intptr_t V_0;
@@ -6242,7 +6242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Utils_BuildServerSideVerificationOpt
 		return L_7;
 	}
 }
-// Method Definition Index: 70821
+// Method Definition Index: 70822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Utils_PtrToString_mCBE79FE8ECC8CB98B62B9AE89B572F576EA0A08C (intptr_t ___0_stringPtr, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6264,7 +6264,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Utils_PtrToString_mCBE79FE8ECC8CB98
 		return L_3;
 	}
 }
-// Method Definition Index: 70822
+// Method Definition Index: 70823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* Utils_PtrArrayToManagedList_m5D7AAAB3FA2CA145D2149AE68D736CEFC4B42A05 (intptr_t ___0_arrayPtr, int32_t ___1_numOfAssets, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6339,7 +6339,7 @@ IL_0035:
 		return L_23;
 	}
 }
-// Method Definition Index: 70823
+// Method Definition Index: 70824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t773E327FDA553CD97D06EAE14E2299684DFE7DF9* Utils_PtrNsDictionaryToDictionary_mC816316D0CE7CD9AFCA7285153F06245BA75EE86 (intptr_t ___0_dictPtr, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6427,7 +6427,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t GCHandle_op_Explicit_m03
 		return L_1;
 	}
 }
-// Method Definition Index: 70711
+// Method Definition Index: 70712
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t RewardedAdPreloaderClient_get_RewardedAdPreloaderPtr_m90770ADD1B3B05C639339511269831B0C675936E_inline (RewardedAdPreloaderClient_t83EE37CF4583D1971E9B7D5042678553BE498FD4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6486,7 +6486,7 @@ IL_002c:
 		return L_7;
 	}
 }
-// Method Definition Index: 70757
+// Method Definition Index: 70758
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t RewardedInterstitialAdClient_get_RewardedInterstitialAdPtr_m323F17BC68DB8C1D7B3E1C04630ADDA61EAEEEE8_inline (RewardedInterstitialAdClient_tA8D695A240A58EEA3D6B96FDC442CE281E2EB34B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6494,7 +6494,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t RewardedInterstitialAdCl
 		return L_0;
 	}
 }
-// Method Definition Index: 74059
+// Method Definition Index: 74060
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadAdErrorClientEventArgs_set_LoadAdErrorClient_m6E865CB1B347CEF0B75F55CE43EE3FDBF8353353_inline (LoadAdErrorClientEventArgs_t620986A0A396DB96DE025A536B77350BCAF9BEF2* __this, RuntimeObject* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6504,7 +6504,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadAdErrorClientEventArgs_s
 		return;
 	}
 }
-// Method Definition Index: 76071
+// Method Definition Index: 76072
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdValue_set_Precision_m488B0F9CAEBACDD5013E094660C3DD58B362FD03_inline (AdValue_t3D87DDD4D06FAAA212BD2119CA464B4F0FEBBCFD* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6513,7 +6513,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdValue_set_Precision_m488B0
 		return;
 	}
 }
-// Method Definition Index: 76073
+// Method Definition Index: 76074
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdValue_set_Value_m7DF76A9D4ED62FE1F5FDBA6FEBBACD4E92115BE9_inline (AdValue_t3D87DDD4D06FAAA212BD2119CA464B4F0FEBBCFD* __this, int64_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6522,7 +6522,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdValue_set_Value_m7DF76A9D4
 		return;
 	}
 }
-// Method Definition Index: 76075
+// Method Definition Index: 76076
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdValue_set_CurrencyCode_mA493466D946C6484F0F20604EF0B013EA0571F71_inline (AdValue_t3D87DDD4D06FAAA212BD2119CA464B4F0FEBBCFD* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6532,7 +6532,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdValue_set_CurrencyCode_mA4
 		return;
 	}
 }
-// Method Definition Index: 73772
+// Method Definition Index: 73773
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AdErrorClientEventArgs_set_AdErrorClient_mF1018FAC40B7908AADE3D91D83CD6AC3310CDC6E_inline (AdErrorClientEventArgs_t911564D6B3C88F90B85A38EAF26518E4ED46212D* __this, RuntimeObject* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6557,7 +6557,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool IntPtr_op_Inequality_m90EFC9
 		return (bool)((((int32_t)((((intptr_t)L_0) == ((intptr_t)L_1))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 76121
+// Method Definition Index: 76122
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* MediationExtras_get_Extras_m301316E0049B5580869A85F9414C82445BADEB81_inline (MediationExtras_t390586958F7ED4B158AD5AD18F58A86E9E7B621E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6607,7 +6607,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void EventHandler_1_Invoke_mBD72C
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_sender, ___1_e, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 73767
+// Method Definition Index: 73768
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m139A176CD271A0532D75BE08DA7831C8C45CE28F_gshared_inline (Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8* __this, const RuntimeMethod* method) 
 {
 	{

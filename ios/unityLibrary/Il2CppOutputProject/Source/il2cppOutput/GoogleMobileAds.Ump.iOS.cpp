@@ -604,7 +604,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_ConsentFormClient_ConsentForm
 	ConsentFormClient_ConsentFormPresentCompletionHandler_m04F646ACFA0B3B5CDAC0554D1EFAC5EC039F765B(___0_clientRef, ___1_errorRef, NULL);
 
 }
-// Method Definition Index: 76126
+// Method Definition Index: 76127
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient__ctor_mC1EEA93DCAF7CE4FA1EC79FE00241D914A6B3AAE (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -640,7 +640,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 76127
+// Method Definition Index: 76128
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* ConsentFormClient_get_Instance_mA3644D237BAED202A6035C3B04C15871D26E36F1 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -655,7 +655,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0
 		return L_0;
 	}
 }
-// Method Definition Index: 76128
+// Method Definition Index: 76129
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_Load_m3940F0990769CAF8E68C10C4CEB00A75EB578812 (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_onFormLoaded, Action_1_tB03D82616088D202ABD23F934CC2976A2ED530B4* ___1_onError, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -718,7 +718,7 @@ IL_0041:
 		return;
 	}
 }
-// Method Definition Index: 76129
+// Method Definition Index: 76130
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_Show_m0027D3151786645885B08685CFDED4C8F549203B (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, Action_1_tB03D82616088D202ABD23F934CC2976A2ED530B4* ___0_onDismissed, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -778,7 +778,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76130
+// Method Definition Index: 76131
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_LoadAndShowConsentFormIfRequired_m163BC0C744D22097B175EDEC6BAFC043C9B0B795 (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, Action_1_tB03D82616088D202ABD23F934CC2976A2ED530B4* ___0_onDismissed, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -838,7 +838,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76131
+// Method Definition Index: 76132
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_ShowPrivacyOptionsForm_m917D5BD9A2BD58D83DB2ACB4133B312C61C653A9 (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, Action_1_tB03D82616088D202ABD23F934CC2976A2ED530B4* ___0_onDismissed, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -898,7 +898,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76132
+// Method Definition Index: 76133
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_ConsentFormLoadCompletionHandler_m3161FC8CDF3BDB16015D91FA7ED7035655DE5BFD (intptr_t ___0_clientRef, intptr_t ___1_errorRef, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1025,7 +1025,7 @@ IL_0094:
 		return;
 	}
 }
-// Method Definition Index: 76133
+// Method Definition Index: 76134
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_ConsentFormPresentCompletionHandler_m04F646ACFA0B3B5CDAC0554D1EFAC5EC039F765B (intptr_t ___0_clientRef, intptr_t ___1_errorRef, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1138,7 +1138,7 @@ IL_0074:
 		return;
 	}
 }
-// Method Definition Index: 76134
+// Method Definition Index: 76135
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* ConsentFormClient_IntPtrToConsentFormClient_mB8BFD0B1074AFC85277F47ED61F7543E39D4C448 (intptr_t ___0_clientRef, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1159,7 +1159,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0
 		return ((ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1*)IsInstClass((RuntimeObject*)L_2, ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1_il2cpp_TypeInfo_var));
 	}
 }
-// Method Definition Index: 76135
+// Method Definition Index: 76136
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_Dispose_mAD8DB765B7A9C642BAEEAAE6980D4691C762343E (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, const RuntimeMethod* method) 
 {
 	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC V_0;
@@ -1173,7 +1173,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_Dispose_mAD8DB765B7A9C
 		return;
 	}
 }
-// Method Definition Index: 76136
+// Method Definition Index: 76137
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient_Finalize_m01D399787813BD345E4839C4C5CD5F0CB007D305 (ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1202,7 +1202,7 @@ IL_0012:
 		return;
 	}
 }
-// Method Definition Index: 76137
+// Method Definition Index: 76138
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentFormClient__cctor_m68BC343BDCD3B60074410B4BE93C7BEB7413A768 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1255,7 +1255,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADUConsentFormLoadCompletionHandle
 	il2cppPInvokeFunc(___0_clientRef, ___1_errorRef);
 
 }
-// Method Definition Index: 76138
+// Method Definition Index: 76139
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormLoadCompletionHandler__ctor_m73C10AD0211F66C303676C205F697F25E4D00079 (GADUConsentFormLoadCompletionHandler_tCEDA61B1731AA6292F53FF26EAEFD5960A4E3254* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1284,13 +1284,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormLoadCompletionHandler__ct
 	}
 	__this->___extra_arg = (intptr_t)&GADUConsentFormLoadCompletionHandler_Invoke_m0ECD08D6196C89823EC5BD5D01FE9C2866750A80_Multicast;
 }
-// Method Definition Index: 76139
+// Method Definition Index: 76140
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormLoadCompletionHandler_Invoke_m0ECD08D6196C89823EC5BD5D01FE9C2866750A80 (GADUConsentFormLoadCompletionHandler_tCEDA61B1731AA6292F53FF26EAEFD5960A4E3254* __this, intptr_t ___0_clientRef, intptr_t ___1_errorRef, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_clientRef, ___1_errorRef, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 76140
+// Method Definition Index: 76141
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUConsentFormLoadCompletionHandler_BeginInvoke_mBCFC7FF4A05C5187A1A001D5828887BBDADB9BFC (GADUConsentFormLoadCompletionHandler_tCEDA61B1731AA6292F53FF26EAEFD5960A4E3254* __this, intptr_t ___0_clientRef, intptr_t ___1_errorRef, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1298,7 +1298,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUConsentFormLoadCompletionH
 	__d_args[1] = Box(il2cpp_defaults.int_class, &___1_errorRef);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 76141
+// Method Definition Index: 76142
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormLoadCompletionHandler_EndInvoke_m0DA7CFCFD6C5077706267B15467B4E6B054F0DAC (GADUConsentFormLoadCompletionHandler_tCEDA61B1731AA6292F53FF26EAEFD5960A4E3254* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1339,7 +1339,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADUConsentFormPresentCompletionHan
 	il2cppPInvokeFunc(___0_clientRef, ___1_errorRef);
 
 }
-// Method Definition Index: 76142
+// Method Definition Index: 76143
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormPresentCompletionHandler__ctor_mE8A485414387552E135CBFB0850AA971BA665F4D (GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1368,13 +1368,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormPresentCompletionHandler_
 	}
 	__this->___extra_arg = (intptr_t)&GADUConsentFormPresentCompletionHandler_Invoke_mC69F0A2FC468CF52B09BCF4F2CE84139FB3CB258_Multicast;
 }
-// Method Definition Index: 76143
+// Method Definition Index: 76144
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormPresentCompletionHandler_Invoke_mC69F0A2FC468CF52B09BCF4F2CE84139FB3CB258 (GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* __this, intptr_t ___0_clientRef, intptr_t ___1_errorRef, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_clientRef, ___1_errorRef, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 76144
+// Method Definition Index: 76145
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUConsentFormPresentCompletionHandler_BeginInvoke_mB22E9CC983737AF39D4E97169F02D170F1C23946 (GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* __this, intptr_t ___0_clientRef, intptr_t ___1_errorRef, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1382,7 +1382,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUConsentFormPresentCompleti
 	__d_args[1] = Box(il2cpp_defaults.int_class, &___1_errorRef);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 76145
+// Method Definition Index: 76146
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentFormPresentCompletionHandler_EndInvoke_m5B9DBC2B5FA37CF0AE844A83E9AB13F77395EA3F (GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1402,7 +1402,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_ConsentInformationClient_Cons
 	ConsentInformationClient_ConsentInfoUpdateCallback_m01A1B5982AE827C301F4BA2A0801A2A3E13577D6(___0_clientRef, ___1_errorRef, NULL);
 
 }
-// Method Definition Index: 76146
+// Method Definition Index: 76147
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient__ctor_mA4272704F07B4B3CC88339FB36187A49C94ADF82 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1438,7 +1438,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 76147
+// Method Definition Index: 76148
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t ConsentInformationClient_get_ConsentInformationPtr_m67A4ED0E10DF4DB7B9E2A1643225177905DD06C5 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1446,7 +1446,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t ConsentInformationClient_get_Consent
 		return L_0;
 	}
 }
-// Method Definition Index: 76148
+// Method Definition Index: 76149
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_set_ConsentInformationPtr_mBA0AF74DDCD02983BCFADFA8907E4144332D7823 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, intptr_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -1457,7 +1457,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_set_ConsentInfo
 		return;
 	}
 }
-// Method Definition Index: 76149
+// Method Definition Index: 76150
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* ConsentInformationClient_get_Instance_m4F33F30EFF31A02F7DCF81826BA7C4BCEE5A7A08 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1472,7 +1472,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentInformationClient_tA72DF61A2E613C9DC9D
 		return L_0;
 	}
 }
-// Method Definition Index: 76150
+// Method Definition Index: 76151
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_Update_mCD49A6432843EE1F3EC248A386B6E3768D564183 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, ConsentRequestParameters_t34C1E8C04ED21B543DFE57708C303AABEA447516* ___0_request, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onConsentInfoUpdateSuccessCallback, Action_1_tB03D82616088D202ABD23F934CC2976A2ED530B4* ___2_onConsentInfoUpdateFailureCallback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1639,7 +1639,7 @@ IL_00d2:
 		return;
 	}
 }
-// Method Definition Index: 76151
+// Method Definition Index: 76152
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_Reset_m33D05624221D6CB935EE36964C4BFFB99873C5D3 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1683,7 +1683,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76152
+// Method Definition Index: 76153
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ConsentInformationClient_GetConsentStatus_mA0ED9529AE12E1AC62492A26304BEF9F3A5DF492 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1763,7 +1763,7 @@ IL_0038:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_8, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ConsentInformationClient_GetConsentStatus_mA0ED9529AE12E1AC62492A26304BEF9F3A5DF492_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76153
+// Method Definition Index: 76154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ConsentInformationClient_GetPrivacyOptionsRequirementStatus_mDA19820BD4C64967E245541F55513BD40F13F8B2 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1839,7 +1839,7 @@ IL_0034:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_8, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ConsentInformationClient_GetPrivacyOptionsRequirementStatus_mDA19820BD4C64967E245541F55513BD40F13F8B2_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76154
+// Method Definition Index: 76155
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConsentInformationClient_CanRequestAds_m763076896786F8C9EAFEFBD2C06F86B0EC9AD958 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1879,7 +1879,7 @@ IL_0017:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_6, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ConsentInformationClient_CanRequestAds_m763076896786F8C9EAFEFBD2C06F86B0EC9AD958_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76155
+// Method Definition Index: 76156
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConsentInformationClient_IsConsentFormAvailable_mD4D908AC971567F63970100C3A476D67C4FF4385 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1919,7 +1919,7 @@ IL_0017:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_6, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ConsentInformationClient_IsConsentFormAvailable_mD4D908AC971567F63970100C3A476D67C4FF4385_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76156
+// Method Definition Index: 76157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_ConsentInfoUpdateCallback_m01A1B5982AE827C301F4BA2A0801A2A3E13577D6 (intptr_t ___0_clientRef, intptr_t ___1_errorRef, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2046,7 +2046,7 @@ IL_0094:
 		return;
 	}
 }
-// Method Definition Index: 76157
+// Method Definition Index: 76158
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* ConsentInformationClient_IntPtrToConsentInformationClient_m7ADD9E4D86678379FB4E89C7BAB887E855609B5F (intptr_t ___0_clientRef, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2067,7 +2067,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConsentInformationClient_tA72DF61A2E613C9DC9D
 		return ((ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1*)IsInstClass((RuntimeObject*)L_2, ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1_il2cpp_TypeInfo_var));
 	}
 }
-// Method Definition Index: 76158
+// Method Definition Index: 76159
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_Dispose_mC49216E7F4398541A5E8D83C9B08DE9DFACE48F9 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC V_0;
@@ -2081,7 +2081,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_Dispose_mC49216
 		return;
 	}
 }
-// Method Definition Index: 76159
+// Method Definition Index: 76160
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient_Finalize_m34691F9551F3D7E1589E9C71FBD5F8B5ADDF1D30 (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2110,7 +2110,7 @@ IL_0012:
 		return;
 	}
 }
-// Method Definition Index: 76160
+// Method Definition Index: 76161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentInformationClient__cctor_mD8CC9E5335DC768DEEE2A843907ABE64A51EC3B7 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2163,7 +2163,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_GADUConsentInfoUpdateCallback_t3F5F
 	il2cppPInvokeFunc(___0_clientRef, ___1_errorRef);
 
 }
-// Method Definition Index: 76161
+// Method Definition Index: 76162
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentInfoUpdateCallback__ctor_m5F3AD20929FE57E93270BCE0EFEADFAEA41812B3 (GADUConsentInfoUpdateCallback_t3F5F5E587ACC5BAF163FADD1269401A40163AEDB* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2192,13 +2192,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentInfoUpdateCallback__ctor_m5F3
 	}
 	__this->___extra_arg = (intptr_t)&GADUConsentInfoUpdateCallback_Invoke_m2F8DB1303E06B75C396BA37D288E6E32BEF4E138_Multicast;
 }
-// Method Definition Index: 76162
+// Method Definition Index: 76163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentInfoUpdateCallback_Invoke_m2F8DB1303E06B75C396BA37D288E6E32BEF4E138 (GADUConsentInfoUpdateCallback_t3F5F5E587ACC5BAF163FADD1269401A40163AEDB* __this, intptr_t ___0_clientRef, intptr_t ___1_errorRef, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_clientRef, ___1_errorRef, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 76163
+// Method Definition Index: 76164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUConsentInfoUpdateCallback_BeginInvoke_m5C631FC2C39183EA8FB01FFA9A61677A77134878 (GADUConsentInfoUpdateCallback_t3F5F5E587ACC5BAF163FADD1269401A40163AEDB* __this, intptr_t ___0_clientRef, intptr_t ___1_errorRef, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -2206,7 +2206,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GADUConsentInfoUpdateCallback_
 	__d_args[1] = Box(il2cpp_defaults.int_class, &___1_errorRef);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 76164
+// Method Definition Index: 76165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentInfoUpdateCallback_EndInvoke_mF0918A41C381886B02D7750CB93B160CD6853198 (GADUConsentInfoUpdateCallback_t3F5F5E587ACC5BAF163FADD1269401A40163AEDB* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2219,7 +2219,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GADUConsentInfoUpdateCallback_EndInvoke_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76165
+// Method Definition Index: 76166
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs__ctor_mD45431FDBE09B3540B3F0270F5169AFBA758DE66 (Externs_t8C1E08109EC604AF48C9B439F139F4B64E537504* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2227,7 +2227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs__ctor_mD45431FDBE09B3540B3F0270F
 		return;
 	}
 }
-// Method Definition Index: 76166
+// Method Definition Index: 76167
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Externs_GADUGetFormErrorCode_mCED0FCF2EFCF807A812A2698A1F928594B8B83AF (intptr_t ___0_error, const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2236,7 +2236,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Externs_GADUGetFormErrorCode_mCED0FCF
 
 	return returnValue;
 }
-// Method Definition Index: 76167
+// Method Definition Index: 76168
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Externs_GADUGetFormErrorMessage_mC85893CCE27D7CB289FD724D0AE4A65CFE3732CB (intptr_t ___0_error, const RuntimeMethod* method) 
 {
 	typedef char* (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2251,7 +2251,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Externs_GADUGetFormErrorMessage_mC8
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 76168
+// Method Definition Index: 76169
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateRequestParameters_mA0DB2EA8850345665565D7C28D5EB06F25DCD9B5 (const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -2260,7 +2260,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateRequestParameters_
 
 	return returnValue;
 }
-// Method Definition Index: 76169
+// Method Definition Index: 76170
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetRequestParametersTagForUnderAgeOfConsent_m21898F9CEC922FDE18A9AF55842C52E9C3755F55 (intptr_t ___0_requestParametersRef, bool ___1_tagForUnderAgeOfConsent, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, int32_t);
@@ -2268,7 +2268,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetRequestParametersTagForUn
 	reinterpret_cast<PInvokeFunc>(GADUSetRequestParametersTagForUnderAgeOfConsent)(___0_requestParametersRef, static_cast<int32_t>(___1_tagForUnderAgeOfConsent));
 
 }
-// Method Definition Index: 76170
+// Method Definition Index: 76171
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetRequestParametersConsentSyncID_m2BAF8D1AD19A3609461F1A8DE3B03A6AEF078FC8 (intptr_t ___0_requestParametersRef, String_t* ___1_consentSyncID, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, char*);
@@ -2282,7 +2282,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetRequestParametersConsentS
 	____1_consentSyncID_marshaled = NULL;
 
 }
-// Method Definition Index: 76171
+// Method Definition Index: 76172
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateDebugSettings_mB7A04EAAA7CAEB0DB94B9054B8F69389C2A1D457 (const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -2291,7 +2291,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateDebugSettings_mB7A
 
 	return returnValue;
 }
-// Method Definition Index: 76172
+// Method Definition Index: 76173
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetDebugSettingsDebugGeography_m724BFF876907DF87B9AA06D0BFB87AB59018772F (intptr_t ___0_debugSettingsRef, int32_t ___1_debugGeography, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, int32_t);
@@ -2299,7 +2299,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetDebugSettingsDebugGeograp
 	reinterpret_cast<PInvokeFunc>(GADUSetDebugSettingsDebugGeography)(___0_debugSettingsRef, ___1_debugGeography);
 
 }
-// Method Definition Index: 76173
+// Method Definition Index: 76174
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetDebugSettingsTestDeviceIdentifiers_m19F3AEECF8B6CB1F8B5931E6ABBB5C2570564847 (intptr_t ___0_debugSettingsRef, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1_testDeviceIDs, int32_t ___2_testDeviceIDLength, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, char**, int32_t);
@@ -2335,7 +2335,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetDebugSettingsTestDeviceId
 	}
 
 }
-// Method Definition Index: 76174
+// Method Definition Index: 76175
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetRequestParametersDebugSettings_m710CF368AC20FCBF1FEB0EA5578136B32D51CB93 (intptr_t ___0_requestParametersRef, intptr_t ___1_debugSettingsRef, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t);
@@ -2343,7 +2343,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUSetRequestParametersDebugSet
 	reinterpret_cast<PInvokeFunc>(GADUSetRequestParametersDebugSettings)(___0_requestParametersRef, ___1_debugSettingsRef);
 
 }
-// Method Definition Index: 76175
+// Method Definition Index: 76176
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateConsentInformation_m40445E013F2C25A5030190929D07FA5204386C35 (intptr_t ___0_clientRef, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2352,7 +2352,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateConsentInformation
 
 	return returnValue;
 }
-// Method Definition Index: 76176
+// Method Definition Index: 76177
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUResetConsentInformation_m23FCECCE4CACCE15CD5B5A307F2B404BF64D6D66 (intptr_t ___0_consentInfoRef, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2360,7 +2360,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUResetConsentInformation_m23F
 	reinterpret_cast<PInvokeFunc>(GADUResetConsentInformation)(___0_consentInfoRef);
 
 }
-// Method Definition Index: 76177
+// Method Definition Index: 76178
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Externs_GADUGetConsentStatus_mD9905A66A5060741B894A9C2D7D00ECD9E36532D (intptr_t ___0_consentInfoRef, const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2369,7 +2369,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Externs_GADUGetConsentStatus_mD9905A6
 
 	return returnValue;
 }
-// Method Definition Index: 76178
+// Method Definition Index: 76179
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Externs_GADUGetPrivacyOptionsRequirementStatus_m90D8398D2477241865AEC8D625B8CFFA0189595B (intptr_t ___0_consentInfoRef, const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2378,7 +2378,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Externs_GADUGetPrivacyOptionsRequirem
 
 	return returnValue;
 }
-// Method Definition Index: 76179
+// Method Definition Index: 76180
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Externs_GADUUMPCanRequestAds_mA71DB43F21052850C260457704A042502C688E36 (intptr_t ___0_consentInfoRef, const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2387,7 +2387,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Externs_GADUUMPCanRequestAds_mA71DB43F21
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 76180
+// Method Definition Index: 76181
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Externs_GADUIsConsentFormAvailable_mF1F363401873F80C010E475B0E60685796DED593 (intptr_t ___0_consentInfoRef, const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2396,7 +2396,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Externs_GADUIsConsentFormAvailable_mF1F3
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 76181
+// Method Definition Index: 76182
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADURequestConsentInfoUpdate_mD77603CF4CE1EB7438348E93A601A042274364F4 (intptr_t ___0_clientRef, intptr_t ___1_parameters, GADUConsentInfoUpdateCallback_t3F5F5E587ACC5BAF163FADD1269401A40163AEDB* ___2_callback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t, Il2CppMethodPointer);
@@ -2407,7 +2407,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADURequestConsentInfoUpdate_mD7
 	reinterpret_cast<PInvokeFunc>(GADURequestConsentInfoUpdate)(___0_clientRef, ___1_parameters, ____2_callback_marshaled);
 
 }
-// Method Definition Index: 76182
+// Method Definition Index: 76183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateConsentForm_m4EBB46674010C2BDB73AC7D2D407C483D5664EE3 (intptr_t ___0_clientRef, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2416,7 +2416,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Externs_GADUCreateConsentForm_m4EBB4
 
 	return returnValue;
 }
-// Method Definition Index: 76183
+// Method Definition Index: 76184
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADULoadConsentForm_m6852D39910D8F09C3CD3EF0CA28B85CA5F0FB878 (intptr_t ___0_formRef, GADUConsentFormLoadCompletionHandler_tCEDA61B1731AA6292F53FF26EAEFD5960A4E3254* ___1_consentFormLoadCallback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, Il2CppMethodPointer);
@@ -2427,7 +2427,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADULoadConsentForm_m6852D39910D
 	reinterpret_cast<PInvokeFunc>(GADULoadConsentForm)(___0_formRef, ____1_consentFormLoadCallback_marshaled);
 
 }
-// Method Definition Index: 76184
+// Method Definition Index: 76185
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUPresentConsentForm_mCC8114769B778D5CC8F449AFE2925ACEFC55C487 (intptr_t ___0_formRef, GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* ___1_consentFormPresentCallback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, Il2CppMethodPointer);
@@ -2438,7 +2438,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUPresentConsentForm_mCC811476
 	reinterpret_cast<PInvokeFunc>(GADUPresentConsentForm)(___0_formRef, ____1_consentFormPresentCallback_marshaled);
 
 }
-// Method Definition Index: 76185
+// Method Definition Index: 76186
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADULoadAndPresentConsentForm_mCC529F231B582994E6A3376C403BA9040AE47607 (intptr_t ___0_formRef, GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* ___1_consentFormPresentCallback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, Il2CppMethodPointer);
@@ -2449,7 +2449,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADULoadAndPresentConsentForm_mC
 	reinterpret_cast<PInvokeFunc>(GADULoadAndPresentConsentForm)(___0_formRef, ____1_consentFormPresentCallback_marshaled);
 
 }
-// Method Definition Index: 76186
+// Method Definition Index: 76187
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUPresentPrivacyOptionsForm_mEF4655C87CF478A815BEBBDFA2E3CAFF5183893F (intptr_t ___0_formRef, GADUConsentFormPresentCompletionHandler_t7BE8E6E55FBFBD76CBAA12588EEBE1B796442E25* ___1_consentFormPresentCallback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, Il2CppMethodPointer);
@@ -2460,7 +2460,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADUPresentPrivacyOptionsForm_mE
 	reinterpret_cast<PInvokeFunc>(GADUPresentPrivacyOptionsForm)(___0_formRef, ____1_consentFormPresentCallback_marshaled);
 
 }
-// Method Definition Index: 76187
+// Method Definition Index: 76188
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADURelease_mD645D7AE2BD9355B6F45F8E0F59FA4FA8BFF0100 (intptr_t ___0_obj, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -2476,7 +2476,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Externs_GADURelease_mD645D7AE2BD9355B6F4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76188
+// Method Definition Index: 76189
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UmpClientFactory__ctor_m5C0430D964888036FFE3EFEEB4BFEF01975F8C01 (UmpClientFactory_t419C0174AA6B63B15489EF309508540C1D78CF18* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2484,7 +2484,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UmpClientFactory__ctor_m5C0430D964888036
 		return;
 	}
 }
-// Method Definition Index: 76189
+// Method Definition Index: 76190
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UmpClientFactory_ConsentFormClient_mADABD934A32673E760D2B45A4B246DE52D3F01A9 (UmpClientFactory_t419C0174AA6B63B15489EF309508540C1D78CF18* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2524,7 +2524,7 @@ IL_0011:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_5, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&UmpClientFactory_ConsentFormClient_mADABD934A32673E760D2B45A4B246DE52D3F01A9_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76190
+// Method Definition Index: 76191
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UmpClientFactory_ConsentInformationClient_mC8BCFC29B4D19B11F8AE4E1AAE25C940CDCDAFBA (UmpClientFactory_t419C0174AA6B63B15489EF309508540C1D78CF18* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2650,7 +2650,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D
 		return L_0;
 	}
 }
-// Method Definition Index: 76147
+// Method Definition Index: 76148
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t ConsentInformationClient_get_ConsentInformationPtr_m67A4ED0E10DF4DB7B9E2A1643225177905DD06C5_inline (ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2658,7 +2658,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t ConsentInformationClient
 		return L_0;
 	}
 }
-// Method Definition Index: 76127
+// Method Definition Index: 76128
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ConsentFormClient_tBEC2D325BC9255F78BF2FB9DD0EBFA8DC8A0B7E1* ConsentFormClient_get_Instance_mA3644D237BAED202A6035C3B04C15871D26E36F1_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2673,7 +2673,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ConsentFormClient_tBEC2D325BC9255
 		return L_0;
 	}
 }
-// Method Definition Index: 76149
+// Method Definition Index: 76150
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ConsentInformationClient_tA72DF61A2E613C9DC9DE3111E8D5AC7672A23FB1* ConsentInformationClient_get_Instance_m4F33F30EFF31A02F7DCF81826BA7C4BCEE5A7A08_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

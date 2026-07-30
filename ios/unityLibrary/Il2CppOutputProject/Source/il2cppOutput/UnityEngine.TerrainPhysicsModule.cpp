@@ -86,7 +86,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Collider__ctor_m8975C6CCFC0E5740C523DB4A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76125
+// Method Definition Index: 76126
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider__ctor_mC7DD5783B65E6AB3F2CC52CEAD67ADCE9A95CBFE (TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* __this, const RuntimeMethod* method) 
 {
 	{

@@ -182,9 +182,9 @@ IL2CPP_EXTERN_C const RuntimeMethod* InputControl_1_ReadValue_m86BC52207D5120BD0
 IL2CPP_EXTERN_C const RuntimeMethod* Object_FindObjectOfType_TisJoystick_tE3193C48A43E3F5577CBD4E9A8204BBFF2FEEB7A_m21AB3893AE23842F0C1CE095AD70E86C7F13F585_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ReadOnlyArray_1_GetEnumerator_m493B249D436123C920427858ACDD7C5D05B8D343_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ReadOnlyArray_1_get_Count_m322B2C406CB93A8BB27DDBA287593AE863B8AA03_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CHandleMovementAudioU3Eb__41_0_mAA4FEE0AF3B094DBCF0CE6346731EF4283E3413F_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CHandleMovementAudioU3Eb__41_1_m8010493C0F55FB320A25C5A8349480187FD5E1F3_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CHandleMovementAudioU3Eb__41_2_mC70476322627D1453C5BF5079B251BFF865ECC80_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CHandleMovementAudioU3Eb__42_0_m23C08ED336E65A6177F8E12992BE01D0DCC0E824_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CHandleMovementAudioU3Eb__42_1_mD56F6E224B62B42EE7FB471F6762F35D1647005E_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CHandleMovementAudioU3Eb__42_2_m017082EDC95297E758B55031D3EA50E70F705301_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 
@@ -1789,9 +1789,9 @@ struct String_t_StaticFields
 struct U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields
 {
 	U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* ___U3CU3E9;
-	Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* ___U3CU3E9__41_0;
-	Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* ___U3CU3E9__41_1;
-	Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* ___U3CU3E9__41_2;
+	Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* ___U3CU3E9__42_0;
+	Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* ___U3CU3E9__42_1;
+	Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* ___U3CU3E9__42_2;
 };
 struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 {
@@ -2171,6 +2171,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CharacterController_Move_mE3F7AC1B4A2D6955980811C088B68ED3A31D2DA4 (CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_motion, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyControl_t1686D14A78AEC9364B8C7628DD482DE99CC20FE0* Keyboard_get_spaceKey_m1C9EB8D145DF0C1B8734FB7CCDB194B3E6174C6A (Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF* Gamepad_get_buttonSouth_m1C81B6F569B14FE4622863BD860C3906BA72688D_inline (Gamepad_tA8C0E40B4F0828615C6C6E1A69AAEBE5AA643A4C* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_Jump_mA94ACB4E3304F189787A9C01180688FCCB543E67 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyControl_t1686D14A78AEC9364B8C7628DD482DE99CC20FE0* Keyboard_get_leftShiftKey_mD0E48DA49D8EE54E82721974646BAD69B9B1457C (Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_HandleMovementAudio_m8CCE3ABA97FB805D61D2A47719539710F46E1DEE (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, bool ___0_isMoving, bool ___1_isRunning, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) ;
@@ -2178,6 +2179,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_SmoothDamp_m3A255A356
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyControl_t1686D14A78AEC9364B8C7628DD482DE99CC20FE0* Keyboard_get_leftCtrlKey_m27FF6871EFCD532AE1F11BEA5AB4AD112804D8CE (Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_normalized_m736BBF65D5CDA7A18414370D15B4DFCC1E466F07_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_SmoothDamp_mF673AC30464B7DF671A0556140EB6E9DD75827ED_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_current, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_target, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___2_currentVelocity, float ___3_smoothTime, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Collider_get_enabled_mDBFB488088ADB14C8016A83EF445653AC5A4A12B (Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ExitInspectorMode_mEC311663D62A1472722ADDFCD3093CDCBAA93AE1 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_EnterInspectorMode_m48FBC4F769C4AA9CAD4AB971AD13535461C66FD7 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) ;
@@ -4096,7 +4098,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_UpdateNormalMode_mB039BFE
 	bool V_4 = false;
 	bool V_5 = false;
 	bool V_6 = false;
-	int32_t G_B40_0 = 0;
+	int32_t G_B39_0 = 0;
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:125>
 		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_0 = __this->___characterController;
@@ -4489,53 +4491,38 @@ IL_0217:
 		bool L_84 = V_3;
 		if (!L_84)
 		{
-			goto IL_024a;
-		}
-	}
-	{
-		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_85 = __this->___characterController;
-		NullCheck(L_85);
-		bool L_86;
-		L_86 = CharacterController_get_isGrounded_m548072EC190878925C0F97595B6C307714EFDD67(L_85, NULL);
-		if (!L_86)
-		{
-			goto IL_024a;
+			goto IL_0220;
 		}
 	}
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:189>
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_87 = (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)(&__this->____controllerVelocity);
-		float L_88 = __this->____jumpHeight;
-		float L_89 = __this->____gravity;
-		float L_90;
-		L_90 = sqrtf(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_88, (-2.0f))), L_89)));
-		L_87->___y = L_90;
+		PlayerMovement_Jump_mA94ACB4E3304F189787A9C01180688FCCB543E67(__this, NULL);
 	}
 
-IL_024a:
+IL_0220:
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:193>
 		V_4 = (bool)0;
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:195>
-		Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* L_91;
-		L_91 = Keyboard_get_current_mDE773B54C9975CEFEAA469AD091C49E150A3FEC3_inline(NULL);
-		if (!L_91)
+		Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* L_85;
+		L_85 = Keyboard_get_current_mDE773B54C9975CEFEAA469AD091C49E150A3FEC3_inline(NULL);
+		if (!L_85)
 		{
-			goto IL_0268;
+			goto IL_023e;
 		}
 	}
 	{
-		Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* L_92;
-		L_92 = Keyboard_get_current_mDE773B54C9975CEFEAA469AD091C49E150A3FEC3_inline(NULL);
-		NullCheck(L_92);
-		KeyControl_t1686D14A78AEC9364B8C7628DD482DE99CC20FE0* L_93;
-		L_93 = Keyboard_get_leftShiftKey_mD0E48DA49D8EE54E82721974646BAD69B9B1457C(L_92, NULL);
-		NullCheck(L_93);
-		bool L_94;
-		L_94 = ButtonControl_get_isPressed_m947621402F6EC1B957C2DE984806A6500D422EA6(L_93, NULL);
-		if (!L_94)
+		Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43* L_86;
+		L_86 = Keyboard_get_current_mDE773B54C9975CEFEAA469AD091C49E150A3FEC3_inline(NULL);
+		NullCheck(L_86);
+		KeyControl_t1686D14A78AEC9364B8C7628DD482DE99CC20FE0* L_87;
+		L_87 = Keyboard_get_leftShiftKey_mD0E48DA49D8EE54E82721974646BAD69B9B1457C(L_86, NULL);
+		NullCheck(L_87);
+		bool L_88;
+		L_88 = ButtonControl_get_isPressed_m947621402F6EC1B957C2DE984806A6500D422EA6(L_87, NULL);
+		if (!L_88)
 		{
-			goto IL_0268;
+			goto IL_023e;
 		}
 	}
 	{
@@ -4543,62 +4530,62 @@ IL_024a:
 		V_4 = (bool)1;
 	}
 
-IL_0268:
+IL_023e:
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:203>
-		bool L_95 = V_4;
-		if (!L_95)
+		bool L_89 = V_4;
+		if (!L_89)
 		{
-			goto IL_028e;
+			goto IL_0264;
 		}
 	}
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:205>
-		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_96 = __this->___characterController;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_97 = V_2;
-		float L_98;
-		L_98 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_99;
-		L_99 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_97, L_98, NULL);
-		float L_100 = __this->____runMultiplier;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_101;
-		L_101 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_99, L_100, NULL);
-		NullCheck(L_96);
-		int32_t L_102;
-		L_102 = CharacterController_Move_mE3F7AC1B4A2D6955980811C088B68ED3A31D2DA4(L_96, L_101, NULL);
+		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_90 = __this->___characterController;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_91 = V_2;
+		float L_92;
+		L_92 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_93;
+		L_93 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_91, L_92, NULL);
+		float L_94 = __this->____runMultiplier;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_95;
+		L_95 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_93, L_94, NULL);
+		NullCheck(L_90);
+		int32_t L_96;
+		L_96 = CharacterController_Move_mE3F7AC1B4A2D6955980811C088B68ED3A31D2DA4(L_90, L_95, NULL);
 	}
 
-IL_028e:
+IL_0264:
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:209>
-		float L_103 = V_0;
-		if ((!(((float)L_103) == ((float)(0.0f)))))
+		float L_97 = V_0;
+		if ((!(((float)L_97) == ((float)(0.0f)))))
 		{
-			goto IL_02a3;
+			goto IL_0279;
 		}
 	}
 	{
-		float L_104 = V_1;
-		G_B40_0 = ((((int32_t)((((float)L_104) == ((float)(0.0f)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
-		goto IL_02a4;
+		float L_98 = V_1;
+		G_B39_0 = ((((int32_t)((((float)L_98) == ((float)(0.0f)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		goto IL_027a;
 	}
 
-IL_02a3:
+IL_0279:
 	{
-		G_B40_0 = 1;
+		G_B39_0 = 1;
 	}
 
-IL_02a4:
+IL_027a:
 	{
-		V_5 = (bool)G_B40_0;
+		V_5 = (bool)G_B39_0;
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:210>
-		bool L_105 = V_4;
-		bool L_106 = V_5;
-		V_6 = (bool)((int32_t)((int32_t)L_105&(int32_t)L_106));
+		bool L_99 = V_4;
+		bool L_100 = V_5;
+		V_6 = (bool)((int32_t)((int32_t)L_99&(int32_t)L_100));
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:211>
-		bool L_107 = V_5;
-		bool L_108 = V_6;
-		PlayerMovement_HandleMovementAudio_m8CCE3ABA97FB805D61D2A47719539710F46E1DEE(__this, L_107, L_108, NULL);
+		bool L_101 = V_5;
+		bool L_102 = V_6;
+		PlayerMovement_HandleMovementAudio_m8CCE3ABA97FB805D61D2A47719539710F46E1DEE(__this, L_101, L_102, NULL);
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:212>
 		return;
 	}
@@ -5198,58 +5185,16 @@ IL_0262:
 	}
 }
 // Method Definition Index: 58036
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ToggleInspectorMode_m07ECEE8C65F2A1BBA0496618E752926FAAB651E0 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:349>
-		bool L_0 = __this->____isTransitioning;
-		if (!L_0)
-		{
-			goto IL_0009;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:349>
-		return;
-	}
-
-IL_0009:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:351>
-		bool L_1 = __this->____isInspectorMode;
-		if (!L_1)
-		{
-			goto IL_0018;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:353>
-		PlayerMovement_ExitInspectorMode_mEC311663D62A1472722ADDFCD3093CDCBAA93AE1(__this, NULL);
-		return;
-	}
-
-IL_0018:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:357>
-		PlayerMovement_EnterInspectorMode_m48FBC4F769C4AA9CAD4AB971AD13535461C66FD7(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:359>
-		return;
-	}
-}
-// Method Definition Index: 58037
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_EnterInspectorMode_m48FBC4F769C4AA9CAD4AB971AD13535461C66FD7 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_Jump_mA94ACB4E3304F189787A9C01180688FCCB543E67 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF70E2857A39F970B8A70941774293762CC82A78F);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B5_0 = NULL;
-	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B4_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:366>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:350>
 		bool L_0 = __this->____isInspectorMode;
 		if (L_0)
 		{
@@ -5266,28 +5211,160 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_EnterInspectorMode_m48FBC
 
 IL_0010:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:366>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:350>
 		return;
 	}
 
 IL_0011:
 	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:351>
+		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_2 = __this->___characterController;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_3)
+		{
+			goto IL_002c;
+		}
+	}
+	{
+		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_4 = __this->___characterController;
+		NullCheck(L_4);
+		bool L_5;
+		L_5 = Collider_get_enabled_mDBFB488088ADB14C8016A83EF445653AC5A4A12B(L_4, NULL);
+		if (L_5)
+		{
+			goto IL_002d;
+		}
+	}
+
+IL_002c:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:351>
+		return;
+	}
+
+IL_002d:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:352>
+		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_6 = __this->___characterController;
+		NullCheck(L_6);
+		bool L_7;
+		L_7 = CharacterController_get_isGrounded_m548072EC190878925C0F97595B6C307714EFDD67(L_6, NULL);
+		if (L_7)
+		{
+			goto IL_003b;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:352>
+		return;
+	}
+
+IL_003b:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:354>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_8 = (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)(&__this->____controllerVelocity);
+		float L_9 = __this->____jumpHeight;
+		float L_10 = __this->____gravity;
+		float L_11;
+		L_11 = sqrtf(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_9, (-2.0f))), L_10)));
+		L_8->___y = L_11;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:355>
+		return;
+	}
+}
+// Method Definition Index: 58037
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ToggleInspectorMode_m07ECEE8C65F2A1BBA0496618E752926FAAB651E0 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:366>
+		bool L_0 = __this->____isTransitioning;
+		if (!L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:366>
+		return;
+	}
+
+IL_0009:
+	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:368>
-		__this->____isInspectorMode = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:369>
-		__this->____isTransitioning = (bool)1;
+		bool L_1 = __this->____isInspectorMode;
+		if (!L_1)
+		{
+			goto IL_0018;
+		}
+	}
+	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:370>
+		PlayerMovement_ExitInspectorMode_mEC311663D62A1472722ADDFCD3093CDCBAA93AE1(__this, NULL);
+		return;
+	}
+
+IL_0018:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:374>
+		PlayerMovement_EnterInspectorMode_m48FBC4F769C4AA9CAD4AB971AD13535461C66FD7(__this, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:376>
+		return;
+	}
+}
+// Method Definition Index: 58038
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_EnterInspectorMode_m48FBC4F769C4AA9CAD4AB971AD13535461C66FD7 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF70E2857A39F970B8A70941774293762CC82A78F);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B5_0 = NULL;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B4_0 = NULL;
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:383>
+		bool L_0 = __this->____isInspectorMode;
+		if (L_0)
+		{
+			goto IL_0010;
+		}
+	}
+	{
+		bool L_1 = __this->____isTransitioning;
+		if (!L_1)
+		{
+			goto IL_0011;
+		}
+	}
+
+IL_0010:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:383>
+		return;
+	}
+
+IL_0011:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:385>
+		__this->____isInspectorMode = (bool)1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:386>
+		__this->____isTransitioning = (bool)1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:387>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
 		L_2 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		__this->____inspectorSmoothVelocity = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:373>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:390>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
 		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_3);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
 		L_4 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_3, NULL);
 		__this->____savedGroundPosition = L_4;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:374>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:391>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
 		L_5 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_5);
@@ -5296,13 +5373,13 @@ IL_0011:
 		float L_7 = L_6.___y;
 		float L_8 = __this->___inspectorModeHeight;
 		__this->____targetInspectorY = ((float)il2cpp_codegen_add(L_7, L_8));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:377>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:394>
 		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_9 = __this->___characterController;
 		NullCheck(L_9);
 		Collider_set_enabled_m8D5C3B5047592D227A52560FC9723D176E209F70(L_9, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:380>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:397>
 		PlayerMovement_StopAllMovementAudio_mC3289CCA30CFE906E7CF26B2EDABEF67C635527F(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:383>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:400>
 		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_10 = __this->___OnInspectorModeChanged;
 		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_11 = L_10;
 		if (L_11)
@@ -5324,7 +5401,7 @@ IL_0076:
 
 IL_007c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:385>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:402>
 		float L_12 = __this->____targetInspectorY;
 		float L_13 = L_12;
 		RuntimeObject* L_14 = Box(il2cpp_defaults.single_class, &L_13);
@@ -5332,11 +5409,11 @@ IL_007c:
 		L_15 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF70E2857A39F970B8A70941774293762CC82A78F, L_14, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_15, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:386>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:403>
 		return;
 	}
 }
-// Method Definition Index: 58038
+// Method Definition Index: 58039
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ExitInspectorMode_mEC311663D62A1472722ADDFCD3093CDCBAA93AE1 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5349,7 +5426,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ExitInspectorMode_mEC3116
 	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B4_0 = NULL;
 	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B3_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:393>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:410>
 		bool L_0 = __this->____isInspectorMode;
 		if (L_0)
 		{
@@ -5357,31 +5434,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ExitInspectorMode_mEC3116
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:393>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:410>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:395>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:412>
 		__this->____isInspectorMode = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:398>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:415>
 		__this->____isTransitioning = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:399>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:416>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
 		L_1 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		__this->____inspectorSmoothVelocity = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:402>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:419>
 		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_2 = __this->___characterController;
 		NullCheck(L_2);
 		Collider_set_enabled_m8D5C3B5047592D227A52560FC9723D176E209F70(L_2, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:403>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:420>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3;
 		L_3 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		__this->____controllerVelocity = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:406>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:423>
 		PlayerMovement_StopAllMovementAudio_mC3289CCA30CFE906E7CF26B2EDABEF67C635527F(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:409>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:426>
 		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_4 = __this->___OnInspectorModeChanged;
 		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_5 = L_4;
 		if (L_5)
@@ -5403,27 +5480,27 @@ IL_004b:
 
 IL_0051:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:411>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:428>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralBB488B148E4FB56E1A88DE256EEED21F6ED08941, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:412>
-		return;
-	}
-}
-// Method Definition Index: 58039
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_SetInspectorVerticalInput_m40A72ED234C2E0F08683EACA3A1B88612E8EECB5 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:420>
-		float L_0 = ___0_value;
-		float L_1;
-		L_1 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(L_0, (-1.0f), (1.0f), NULL);
-		__this->____inspectorVerticalInput = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:421>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:429>
 		return;
 	}
 }
 // Method Definition Index: 58040
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_SetInspectorVerticalInput_m40A72ED234C2E0F08683EACA3A1B88612E8EECB5 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, float ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:437>
+		float L_0 = ___0_value;
+		float L_1;
+		L_1 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(L_0, (-1.0f), (1.0f), NULL);
+		__this->____inspectorVerticalInput = L_1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:438>
+		return;
+	}
+}
+// Method Definition Index: 58041
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_StopAllMovementAudio_mC3289CCA30CFE906E7CF26B2EDABEF67C635527F (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5433,7 +5510,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_StopAllMovementAudio_mC32
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:425>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:442>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->____footstepSource;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -5454,7 +5531,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_StopAllMovementAudio_mC32
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:427>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:444>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_4 = __this->____footstepSource;
 		NullCheck(L_4);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_4, NULL);
@@ -5462,7 +5539,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_StopAllMovementAudio_mC32
 
 IL_0026:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:429>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:446>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->____breathingSource;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -5483,7 +5560,7 @@ IL_0026:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:431>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:448>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_9 = __this->____breathingSource;
 		NullCheck(L_9);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_9, NULL);
@@ -5491,11 +5568,11 @@ IL_0026:
 
 IL_004c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:433>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:450>
 		return;
 	}
 }
-// Method Definition Index: 58041
+// Method Definition Index: 58042
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_HandleMovementAudio_m8CCE3ABA97FB805D61D2A47719539710F46E1DEE (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, bool ___0_isMoving, bool ___1_isRunning, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5505,9 +5582,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_HandleMovementAudio_m8CCE
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CHandleMovementAudioU3Eb__41_0_mAA4FEE0AF3B094DBCF0CE6346731EF4283E3413F_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CHandleMovementAudioU3Eb__41_1_m8010493C0F55FB320A25C5A8349480187FD5E1F3_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CHandleMovementAudioU3Eb__41_2_mC70476322627D1453C5BF5079B251BFF865ECC80_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CHandleMovementAudioU3Eb__42_0_m23C08ED336E65A6177F8E12992BE01D0DCC0E824_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CHandleMovementAudioU3Eb__42_1_mD56F6E224B62B42EE7FB471F6762F35D1647005E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CHandleMovementAudioU3Eb__42_2_m017082EDC95297E758B55031D3EA50E70F705301_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -5532,7 +5609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_HandleMovementAudio_m8CCE
 	SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* G_B8_1 = NULL;
 	float G_B22_0 = 0.0f;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:437>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:454>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_0 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -5543,17 +5620,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_HandleMovementAudio_m8CCE
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:437>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:454>
 		return;
 	}
 
 IL_000e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:439>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:456>
 		V_0 = (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:441>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:458>
 		V_1 = (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:443>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:460>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_2 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_2);
 		SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* L_3 = L_2->___sounds;
@@ -5563,12 +5640,12 @@ IL_000e:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:445>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:462>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_4 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_4);
 		SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* L_5 = L_4->___sounds;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
-		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_6 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_0;
+		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_6 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_0;
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_7 = L_6;
 		if (L_7)
 		{
@@ -5583,10 +5660,10 @@ IL_000e:
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
 		U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* L_8 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9;
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_9 = (Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A*)il2cpp_codegen_object_new(Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A_il2cpp_TypeInfo_var);
-		Predicate_1__ctor_mD508F46C736E97AC65AEC65E413880D3C2A905BD(L_9, L_8, (intptr_t)((void*)U3CU3Ec_U3CHandleMovementAudioU3Eb__41_0_mAA4FEE0AF3B094DBCF0CE6346731EF4283E3413F_RuntimeMethod_var), NULL);
+		Predicate_1__ctor_mD508F46C736E97AC65AEC65E413880D3C2A905BD(L_9, L_8, (intptr_t)((void*)U3CU3Ec_U3CHandleMovementAudioU3Eb__42_0_m23C08ED336E65A6177F8E12992BE01D0DCC0E824_RuntimeMethod_var), NULL);
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_10 = L_9;
-		((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_0 = L_10;
-		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_0), (void*)L_10);
+		((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_0 = L_10;
+		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_0), (void*)L_10);
 		G_B5_0 = L_10;
 		G_B5_1 = G_B4_1;
 	}
@@ -5596,12 +5673,12 @@ IL_004a:
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_11;
 		L_11 = Array_Find_TisSound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0_mC0CB47A63BDC87DACBFD11BEA79C65EAEBB0DCE7(G_B5_1, G_B5_0, Array_Find_TisSound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0_mC0CB47A63BDC87DACBFD11BEA79C65EAEBB0DCE7_RuntimeMethod_var);
 		V_2 = L_11;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:446>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:463>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_12 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_12);
 		SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* L_13 = L_12->___sounds;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
-		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_14 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_1;
+		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_14 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_1;
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_15 = L_14;
 		if (L_15)
 		{
@@ -5616,10 +5693,10 @@ IL_004a:
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
 		U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* L_16 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9;
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_17 = (Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A*)il2cpp_codegen_object_new(Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A_il2cpp_TypeInfo_var);
-		Predicate_1__ctor_mD508F46C736E97AC65AEC65E413880D3C2A905BD(L_17, L_16, (intptr_t)((void*)U3CU3Ec_U3CHandleMovementAudioU3Eb__41_1_m8010493C0F55FB320A25C5A8349480187FD5E1F3_RuntimeMethod_var), NULL);
+		Predicate_1__ctor_mD508F46C736E97AC65AEC65E413880D3C2A905BD(L_17, L_16, (intptr_t)((void*)U3CU3Ec_U3CHandleMovementAudioU3Eb__42_1_mD56F6E224B62B42EE7FB471F6762F35D1647005E_RuntimeMethod_var), NULL);
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_18 = L_17;
-		((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_1 = L_18;
-		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_1), (void*)L_18);
+		((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_1 = L_18;
+		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_1), (void*)L_18);
 		G_B7_0 = L_18;
 		G_B7_1 = G_B6_1;
 	}
@@ -5629,12 +5706,12 @@ IL_0079:
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_19;
 		L_19 = Array_Find_TisSound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0_mC0CB47A63BDC87DACBFD11BEA79C65EAEBB0DCE7(G_B7_1, G_B7_0, Array_Find_TisSound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0_mC0CB47A63BDC87DACBFD11BEA79C65EAEBB0DCE7_RuntimeMethod_var);
 		V_3 = L_19;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:447>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:464>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_20 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_20);
 		SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* L_21 = L_20->___sounds;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
-		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_22 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_2;
+		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_22 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_2;
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_23 = L_22;
 		if (L_23)
 		{
@@ -5649,10 +5726,10 @@ IL_0079:
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var);
 		U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* L_24 = ((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9;
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_25 = (Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A*)il2cpp_codegen_object_new(Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A_il2cpp_TypeInfo_var);
-		Predicate_1__ctor_mD508F46C736E97AC65AEC65E413880D3C2A905BD(L_25, L_24, (intptr_t)((void*)U3CU3Ec_U3CHandleMovementAudioU3Eb__41_2_mC70476322627D1453C5BF5079B251BFF865ECC80_RuntimeMethod_var), NULL);
+		Predicate_1__ctor_mD508F46C736E97AC65AEC65E413880D3C2A905BD(L_25, L_24, (intptr_t)((void*)U3CU3Ec_U3CHandleMovementAudioU3Eb__42_2_m017082EDC95297E758B55031D3EA50E70F705301_RuntimeMethod_var), NULL);
 		Predicate_1_tCA7B47253C16D768A67CE2038792E40256D5327A* L_26 = L_25;
-		((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_2 = L_26;
-		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__41_2), (void*)L_26);
+		((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_2 = L_26;
+		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F_il2cpp_TypeInfo_var))->___U3CU3E9__42_2), (void*)L_26);
 		G_B9_0 = L_26;
 		G_B9_1 = G_B8_1;
 	}
@@ -5662,7 +5739,7 @@ IL_00a8:
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_27;
 		L_27 = Array_Find_TisSound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0_mC0CB47A63BDC87DACBFD11BEA79C65EAEBB0DCE7(G_B9_1, G_B9_0, Array_Find_TisSound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0_mC0CB47A63BDC87DACBFD11BEA79C65EAEBB0DCE7_RuntimeMethod_var);
 		V_4 = L_27;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:449>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:466>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_28 = V_2;
 		if (!L_28)
 		{
@@ -5670,7 +5747,7 @@ IL_00a8:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:449>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:466>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_29 = V_2;
 		NullCheck(L_29);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_30 = L_29->___clip;
@@ -5679,7 +5756,7 @@ IL_00a8:
 
 IL_00b9:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:450>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:467>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_31 = V_3;
 		if (!L_31)
 		{
@@ -5687,7 +5764,7 @@ IL_00b9:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:450>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:467>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_32 = V_3;
 		NullCheck(L_32);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_33 = L_32->___clip;
@@ -5695,7 +5772,7 @@ IL_00b9:
 
 IL_00c3:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:451>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:468>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_34 = V_4;
 		if (!L_34)
 		{
@@ -5703,7 +5780,7 @@ IL_00c3:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:451>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:468>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_35 = V_4;
 		NullCheck(L_35);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_36 = L_35->___clip;
@@ -5712,7 +5789,7 @@ IL_00c3:
 
 IL_00cf:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:454>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:471>
 		bool L_37 = ___0_isMoving;
 		if (!L_37)
 		{
@@ -5720,7 +5797,7 @@ IL_00cf:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:457>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:474>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_38 = __this->____breathingSource;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_39;
@@ -5741,7 +5818,7 @@ IL_00cf:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:459>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:476>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_42 = __this->____breathingSource;
 		NullCheck(L_42);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_42, NULL);
@@ -5749,12 +5826,12 @@ IL_00cf:
 
 IL_00fb:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:463>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:480>
 		float L_43 = __this->____footstepTimer;
 		float L_44;
 		L_44 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->____footstepTimer = ((float)il2cpp_codegen_add(L_43, L_44));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:464>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:481>
 		bool L_45 = ___1_isRunning;
 		if (L_45)
 		{
@@ -5776,7 +5853,7 @@ IL_0118:
 IL_0124:
 	{
 		V_5 = G_B22_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:465>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:482>
 		float L_48 = __this->____footstepTimer;
 		float L_49 = V_5;
 		if ((!(((float)L_48) >= ((float)L_49))))
@@ -5785,12 +5862,12 @@ IL_0124:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:467>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:484>
 		__this->____footstepTimer = (0.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:468>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:485>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_50 = V_0;
 		V_6 = L_50;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:469>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:486>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_51 = V_6;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_52;
@@ -5811,13 +5888,13 @@ IL_0124:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:471>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:488>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_55 = __this->____footstepSource;
 		float L_56;
 		L_56 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.899999976f), (1.10000002f), NULL);
 		NullCheck(L_55);
 		AudioSource_set_pitch_mD14631FC99BF38AAFB356D9C45546BC16CF9E811(L_55, L_56, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:472>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:489>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_57 = __this->____footstepSource;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_58 = V_6;
 		float L_59 = __this->____footstepVolume;
@@ -5828,10 +5905,10 @@ IL_0124:
 
 IL_018d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:479>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:496>
 		float L_60 = __this->____walkStepInterval;
 		__this->____footstepTimer = L_60;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:481>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:498>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_61 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_62;
@@ -5852,7 +5929,7 @@ IL_018d:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:483>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:500>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_65 = __this->____breathingSource;
 		NullCheck(L_65);
 		bool L_66;
@@ -5863,17 +5940,17 @@ IL_018d:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:485>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:502>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_67 = __this->____breathingSource;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_68 = V_1;
 		NullCheck(L_67);
 		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_67, L_68, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:486>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:503>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_69 = __this->____breathingSource;
 		float L_70 = __this->____breathingVolume;
 		NullCheck(L_69);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_69, L_70, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:487>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:504>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_71 = __this->____breathingSource;
 		NullCheck(L_71);
 		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_71, NULL);
@@ -5882,7 +5959,7 @@ IL_018d:
 
 IL_01e6:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:490>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:507>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_72 = __this->____breathingSource;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_73;
@@ -5903,7 +5980,7 @@ IL_01e6:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:492>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:509>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_76 = __this->____breathingSource;
 		NullCheck(L_76);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_76, NULL);
@@ -5911,11 +5988,11 @@ IL_01e6:
 
 IL_020c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:495>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:512>
 		return;
 	}
 }
-// Method Definition Index: 58042
+// Method Definition Index: 58043
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ShowBoundaryToast_mD996C8B2E24C2E3735D1AAFF0C54FFF2E300FD60 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5926,7 +6003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ShowBoundaryToast_mD996C8
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:501>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:518>
 		float L_0;
 		L_0 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
 		float L_1 = __this->____lastBoundaryToastTime;
@@ -5936,11 +6013,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ShowBoundaryToast_mD996C8
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:503>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:520>
 		float L_2;
 		L_2 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
 		__this->____lastBoundaryToastTime = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:504>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:521>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_3;
 		L_3 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -5952,7 +6029,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ShowBoundaryToast_mD996C8
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:506>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:523>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_5;
 		L_5 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6;
@@ -5963,11 +6040,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_ShowBoundaryToast_mD996C8
 
 IL_003f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:509>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:526>
 		return;
 	}
 }
-// Method Definition Index: 58043
+// Method Definition Index: 58044
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnControllerColliderHit_mE990F7C23277C3EABDA911114E082AFD458BE635 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, ControllerColliderHit_tD0B734CBE0E2B089339B14600EB5A80295F6DE92* ___0_hit, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5977,7 +6054,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnControllerColliderHit_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:514>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:531>
 		bool L_0 = __this->____isInspectorMode;
 		if (!L_0)
 		{
@@ -5985,13 +6062,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnControllerColliderHit_m
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:514>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:531>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:516>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:533>
 		ControllerColliderHit_tD0B734CBE0E2B089339B14600EB5A80295F6DE92* L_1 = ___0_hit;
 		NullCheck(L_1);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
@@ -6005,17 +6082,17 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:518>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:535>
 		PlayerMovement_ShowBoundaryToast_mD996C8B2E24C2E3735D1AAFF0C54FFF2E300FD60(__this, NULL);
 	}
 
 IL_0021:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:520>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:537>
 		return;
 	}
 }
-// Method Definition Index: 58044
+// Method Definition Index: 58045
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnTriggerEnter_m07CC8388C1CC9053A2F2EE5996E47DCAAD8620F0 (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6025,7 +6102,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnTriggerEnter_m07CC8388C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:524>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:541>
 		bool L_0 = __this->____isInspectorMode;
 		if (!L_0)
 		{
@@ -6033,13 +6110,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnTriggerEnter_m07CC8388C
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:524>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:541>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:526>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:543>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_1 = ___0_other;
 		NullCheck(L_1);
 		bool L_2;
@@ -6050,17 +6127,17 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:528>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:545>
 		PlayerMovement_ShowBoundaryToast_mD996C8B2E24C2E3735D1AAFF0C54FFF2E300FD60(__this, NULL);
 	}
 
 IL_001c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:530>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:547>
 		return;
 	}
 }
-// Method Definition Index: 58045
+// Method Definition Index: 58046
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnCollisionEnter_m895D737E034A5B0F7360EF73043FCD204452746E (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* ___0_collision, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6070,7 +6147,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnCollisionEnter_m895D737
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:534>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:551>
 		bool L_0 = __this->____isInspectorMode;
 		if (!L_0)
 		{
@@ -6078,13 +6155,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_OnCollisionEnter_m895D737
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:534>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:551>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:536>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:553>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_1 = ___0_collision;
 		NullCheck(L_1);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
@@ -6098,17 +6175,17 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:538>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:555>
 		PlayerMovement_ShowBoundaryToast_mD996C8B2E24C2E3735D1AAFF0C54FFF2E300FD60(__this, NULL);
 	}
 
 IL_0021:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:540>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:557>
 		return;
 	}
 }
-// Method Definition Index: 58046
+// Method Definition Index: 58047
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement__ctor_m3067AD549DC0F6C93303B3E013346B97EF4C134E (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6132,7 +6209,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement__ctor_m3067AD549DC0F6C933
 		__this->___inspectorModeTransitionSpeed = (3.0f);
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:51>
 		__this->___inspectorModeBoostMultiplier = (2.5f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:497>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:514>
 		__this->____lastBoundaryToastTime = (-10.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -6146,7 +6223,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement__ctor_m3067AD549DC0F6C933
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 58047
+// Method Definition Index: 58048
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_m3144383F41E34925083A4DA6960553F7457027E0 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6163,7 +6240,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_m3144383F41E34925083A4DA6
 		return;
 	}
 }
-// Method Definition Index: 58048
+// Method Definition Index: 58049
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m32A936E030BB8834F10922BA1B587CFD130E9A58 (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6171,33 +6248,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m32A936E030BB8834F10922BA1
 		return;
 	}
 }
-// Method Definition Index: 58049
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__41_0_mAA4FEE0AF3B094DBCF0CE6346731EF4283E3413F (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* ___0_s, const RuntimeMethod* method) 
+// Method Definition Index: 58050
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__42_0_m23C08ED336E65A6177F8E12992BE01D0DCC0E824 (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* ___0_s, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:445>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:462>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_0 = ___0_s;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___effect;
 		return (bool)((((int32_t)L_1) == ((int32_t)1))? 1 : 0);
 	}
 }
-// Method Definition Index: 58050
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__41_1_m8010493C0F55FB320A25C5A8349480187FD5E1F3 (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* ___0_s, const RuntimeMethod* method) 
+// Method Definition Index: 58051
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__42_1_mD56F6E224B62B42EE7FB471F6762F35D1647005E (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* ___0_s, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:446>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:463>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_0 = ___0_s;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___effect;
 		return (bool)((((int32_t)L_1) == ((int32_t)((int32_t)19)))? 1 : 0);
 	}
 }
-// Method Definition Index: 58051
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__41_2_mC70476322627D1453C5BF5079B251BFF865ECC80 (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* ___0_s, const RuntimeMethod* method) 
+// Method Definition Index: 58052
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__42_2_m017082EDC95297E758B55031D3EA50E70F705301 (U3CU3Ec_t6AE517A1108F5E720DB70315E3517A742DB7796F* __this, Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* ___0_s, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:447>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/3D Assets/Idyllic Fantasy Nature/Scripts/PlayerMovement.cs:464>
 		Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0* L_0 = ___0_s;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___effect;
@@ -6212,7 +6289,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CHandleMovementAudioU3Eb__41_2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 58052
+// Method Definition Index: 58053
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl_Update_mBE903DC54B556590559CF0A0E90EC1291FED5487 (VegetationBendControl_t0E2416685F35F0252BE77C57E180208331423DE4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6234,7 +6311,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 58053
+// Method Definition Index: 58054
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl_OnValidate_m2F2039198BCBEAE58185D99F7B0F097632C464A4 (VegetationBendControl_t0E2416685F35F0252BE77C57E180208331423DE4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6244,7 +6321,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl_OnValidate_m2F2039
 		return;
 	}
 }
-// Method Definition Index: 58054
+// Method Definition Index: 58055
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl_moveOnVegetation_m874F82238FE7C3DC1B4B8D763FFCF0E13735D3BB (VegetationBendControl_t0E2416685F35F0252BE77C57E180208331423DE4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6321,7 +6398,7 @@ IL_005e:
 		return;
 	}
 }
-// Method Definition Index: 58055
+// Method Definition Index: 58056
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl_BendSettings_m251AA76DF83AFC2D478A0DB5A5F1D4CBA14B1AF5 (VegetationBendControl_t0E2416685F35F0252BE77C57E180208331423DE4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6379,7 +6456,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 58056
+// Method Definition Index: 58057
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl__ctor_mAE30E170652B941D97B14458DBFB36EAC0F186AC (VegetationBendControl_t0E2416685F35F0252BE77C57E180208331423DE4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6395,7 +6472,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VegetationBendControl__ctor_mAE30E170652
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 58057
+// Method Definition Index: 58058
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindControl_OnValidate_m9938687E723F19045F371D3466A5900938ECD4B5 (WindControl_t6E4CE3857C0DA36ABAD24A07838204A9BB44B517* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6485,7 +6562,7 @@ IL_0088:
 		return;
 	}
 }
-// Method Definition Index: 58058
+// Method Definition Index: 58059
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindControl__ctor_m4F3C859526190A2A90486EED900CD8F4DCBD4EE8 (WindControl_t6E4CE3857C0DA36ABAD24A07838204A9BB44B517* __this, const RuntimeMethod* method) 
 {
 	{

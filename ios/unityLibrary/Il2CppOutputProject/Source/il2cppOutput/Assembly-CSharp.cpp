@@ -4244,6 +4244,7 @@ struct GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D  : public 
 {
 	int32_t ____lastXPLevel;
 	int32_t ____lastCoinBalance;
+	bool ____isInitialized;
 };
 struct GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -24870,7 +24871,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_Awake_m17BF1CEE58E0
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:19>
 		GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* L_0;
 		L_0 = GameAnalyticsManager_get_Instance_m65BDFAA20D52E03709468C16BB9302D1314476C3_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -24893,25 +24894,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_Awake_m17BF1CEE58E0
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:19>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:21>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
 		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:20>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:22>
 		return;
 	}
 
 IL_0026:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:24>
 		GameAnalyticsManager_set_Instance_m12550AEA26B4C8F0CC9C026D37A8882DC6706FDE_inline(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:25>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5;
 		L_5 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7(L_5, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:28>
+		GameAnalytics_Initialize_mA383D2D9F778047A3C30DDFD83DE94D0E4A4EC49(NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:29>
+		__this->____isInitialized = (bool)1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:30>
 		return;
 	}
 }
@@ -24930,67 +24935,77 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_Start_m3D8EACF21013
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:29>
-		GameAnalytics_Initialize_mA383D2D9F778047A3C30DDFD83DE94D0E4A4EC49(NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:32>
-		GameAnalytics_NewDesignEvent_m9E73812D7731BFD6263FBA37425BF33A59E13DE2(_stringLiteral31CD8D355DEA8D90813E1BC1BE5D8B0F9E1458CD, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:35>
-		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_0;
-		L_0 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_1)
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:34>
+		bool L_0 = __this->____isInitialized;
+		if (!L_0)
 		{
-			goto IL_0042;
+			goto IL_0012;
 		}
 	}
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:37>
-		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_2;
-		L_2 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
-		NullCheck(L_2);
-		int32_t L_3 = L_2->___xpLevel;
-		__this->____lastXPLevel = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:38>
-		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_4;
-		L_4 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
-		Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A* L_5 = (Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A*)il2cpp_codegen_object_new(Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A_il2cpp_TypeInfo_var);
-		Action_3__ctor_mA3F42D8E00F0BE0F873AC33F51BB4AD0F7027163(L_5, __this, (intptr_t)((void*)GameAnalyticsManager_OnXPChanged_mAEE8B78A26EED0306C4ED537714E51B30D657C53_RuntimeMethod_var), NULL);
-		NullCheck(L_4);
-		PlayerXPManager_add_OnXPChanged_m0FEF7FF5422BED43D827D1D5362A0C772A996A07(L_4, L_5, NULL);
+		GameAnalytics_NewDesignEvent_m9E73812D7731BFD6263FBA37425BF33A59E13DE2(_stringLiteral31CD8D355DEA8D90813E1BC1BE5D8B0F9E1458CD, NULL);
 	}
 
-IL_0042:
+IL_0012:
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:41>
-		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_6;
-		L_6 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
+		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_1;
+		L_1 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_7;
-		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_7)
+		bool L_2;
+		L_2 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_1, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_2)
 		{
-			goto IL_0070;
+			goto IL_0045;
 		}
 	}
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:43>
-		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_8;
-		L_8 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
-		NullCheck(L_8);
-		int32_t L_9;
-		L_9 = NoorCoinManager_get_Balance_m10C32AC8622DC29F2B8C490D25C6408B45D2D363_inline(L_8, NULL);
-		__this->____lastCoinBalance = L_9;
+		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_3;
+		L_3 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
+		NullCheck(L_3);
+		int32_t L_4 = L_3->___xpLevel;
+		__this->____lastXPLevel = L_4;
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:44>
-		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_10 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
-		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_10, __this, (intptr_t)((void*)GameAnalyticsManager_OnCoinBalanceChanged_mAA08F806B9CACC7CFE5880C60C206AFF0583B409_RuntimeMethod_var), NULL);
-		NoorCoinManager_add_OnBalanceChanged_mD7733157024D277EFD097FBB0DD87BF883B1E97F(L_10, NULL);
+		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_5;
+		L_5 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
+		Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A* L_6 = (Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A*)il2cpp_codegen_object_new(Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A_il2cpp_TypeInfo_var);
+		Action_3__ctor_mA3F42D8E00F0BE0F873AC33F51BB4AD0F7027163(L_6, __this, (intptr_t)((void*)GameAnalyticsManager_OnXPChanged_mAEE8B78A26EED0306C4ED537714E51B30D657C53_RuntimeMethod_var), NULL);
+		NullCheck(L_5);
+		PlayerXPManager_add_OnXPChanged_m0FEF7FF5422BED43D827D1D5362A0C772A996A07(L_5, L_6, NULL);
 	}
 
-IL_0070:
+IL_0045:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:47>
+		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_7;
+		L_7 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_8;
+		L_8 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_7, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_8)
+		{
+			goto IL_0073;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:49>
+		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_9;
+		L_9 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
+		NullCheck(L_9);
+		int32_t L_10;
+		L_10 = NoorCoinManager_get_Balance_m10C32AC8622DC29F2B8C490D25C6408B45D2D363_inline(L_9, NULL);
+		__this->____lastCoinBalance = L_10;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:50>
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_11 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
+		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_11, __this, (intptr_t)((void*)GameAnalyticsManager_OnCoinBalanceChanged_mAA08F806B9CACC7CFE5880C60C206AFF0583B409_RuntimeMethod_var), NULL);
+		NoorCoinManager_add_OnBalanceChanged_mD7733157024D277EFD097FBB0DD87BF883B1E97F(L_11, NULL);
+	}
+
+IL_0073:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:52>
 		return;
 	}
 }
@@ -25008,7 +25023,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnDestroy_mB178D929
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:56>
 		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_0;
 		L_0 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -25020,7 +25035,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnDestroy_mB178D929
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:58>
 		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_2;
 		L_2 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
 		Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A* L_3 = (Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A*)il2cpp_codegen_object_new(Action_3_t0E86DA63793CD1809A131CFBD949A3CE47DA0F1A_il2cpp_TypeInfo_var);
@@ -25031,11 +25046,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnDestroy_mB178D929
 
 IL_0023:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:61>
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_4 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_4, __this, (intptr_t)((void*)GameAnalyticsManager_OnCoinBalanceChanged_mAA08F806B9CACC7CFE5880C60C206AFF0583B409_RuntimeMethod_var), NULL);
 		NoorCoinManager_remove_OnBalanceChanged_m5EEAF859FD4A6CB80661EBCDC343F241DC2A41A0(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:62>
 		return;
 	}
 }
@@ -25049,9 +25064,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnApplicationQuit_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:66>
+		bool L_0 = __this->____isInitialized;
+		if (!L_0)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:68>
 		GameAnalytics_NewDesignEvent_m9E73812D7731BFD6263FBA37425BF33A59E13DE2(_stringLiteralFF5C6695C1932F271878171F2EA1E1485DDC0485, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:61>
+	}
+
+IL_0012:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:70>
 		return;
 	}
 }
@@ -25066,24 +25093,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnApplicationPause_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:65>
-		bool L_0 = ___0_pause;
-		if (!L_0)
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:74>
+		bool L_0 = __this->____isInitialized;
+		if (L_0)
 		{
-			goto IL_000e;
+			goto IL_0009;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:74>
+		return;
+	}
+
+IL_0009:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:76>
+		bool L_1 = ___0_pause;
+		if (!L_1)
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:78>
 		GameAnalytics_NewDesignEvent_m9E73812D7731BFD6263FBA37425BF33A59E13DE2(_stringLiteralB1EF5EA82D2456905AD2D55E19C1B6E2190B08BE, NULL);
 		return;
 	}
 
-IL_000e:
+IL_0017:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:82>
 		GameAnalytics_NewDesignEvent_m9E73812D7731BFD6263FBA37425BF33A59E13DE2(_stringLiteralF2F6E438D6523FA0314D9D96C40248CC325698D6, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:84>
 		return;
 	}
 }
@@ -25098,37 +25139,51 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnXPChanged_mAEE8B7
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:79>
-		int32_t L_0 = __this->____lastXPLevel;
-		if ((((int32_t)L_0) == ((int32_t)(-1))))
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:90>
+		bool L_0 = __this->____isInitialized;
+		if (L_0)
 		{
-			goto IL_002d;
+			goto IL_0009;
 		}
 	}
 	{
-		int32_t L_1 = ___0_newLevel;
-		int32_t L_2 = __this->____lastXPLevel;
-		if ((((int32_t)L_1) <= ((int32_t)L_2)))
-		{
-			goto IL_002d;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:82>
-		int32_t L_3 = ___0_newLevel;
-		int32_t L_4 = L_3;
-		RuntimeObject* L_5 = Box(il2cpp_defaults.int32_class, &L_4);
-		String_t* L_6;
-		L_6 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral45D1694BAEA616BC22CDA1ABDB6BEC8ABE43CD89, L_5, NULL);
-		GameAnalytics_NewProgressionEvent_mFDAA76ACD0497A96A00014B2ED3C9A1B384285F6(2, _stringLiteral8B3B2E9256C4DF24A2F5B0B657D5A5761ADBFAE9, L_6, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:90>
+		return;
 	}
 
-IL_002d:
+IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:84>
-		int32_t L_7 = ___0_newLevel;
-		__this->____lastXPLevel = L_7;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:92>
+		int32_t L_1 = __this->____lastXPLevel;
+		if ((((int32_t)L_1) == ((int32_t)(-1))))
+		{
+			goto IL_0036;
+		}
+	}
+	{
+		int32_t L_2 = ___0_newLevel;
+		int32_t L_3 = __this->____lastXPLevel;
+		if ((((int32_t)L_2) <= ((int32_t)L_3)))
+		{
+			goto IL_0036;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:95>
+		int32_t L_4 = ___0_newLevel;
+		int32_t L_5 = L_4;
+		RuntimeObject* L_6 = Box(il2cpp_defaults.int32_class, &L_5);
+		String_t* L_7;
+		L_7 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral45D1694BAEA616BC22CDA1ABDB6BEC8ABE43CD89, L_6, NULL);
+		GameAnalytics_NewProgressionEvent_mFDAA76ACD0497A96A00014B2ED3C9A1B384285F6(2, _stringLiteral8B3B2E9256C4DF24A2F5B0B657D5A5761ADBFAE9, L_7, NULL);
+	}
+
+IL_0036:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:97>
+		int32_t L_8 = ___0_newLevel;
+		__this->____lastXPLevel = L_8;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:98>
 		return;
 	}
 }
@@ -25146,64 +25201,78 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnCoinBalanceChange
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:91>
-		int32_t L_0 = __this->____lastCoinBalance;
-		if ((!(((uint32_t)L_0) == ((uint32_t)(-1)))))
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:104>
+		bool L_0 = __this->____isInitialized;
+		if (L_0)
 		{
-			goto IL_0011;
+			goto IL_0009;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:93>
-		int32_t L_1 = ___0_newBalance;
-		__this->____lastCoinBalance = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:104>
 		return;
 	}
 
-IL_0011:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:97>
-		int32_t L_2 = ___0_newBalance;
-		int32_t L_3 = __this->____lastCoinBalance;
-		V_0 = ((int32_t)il2cpp_codegen_subtract(L_2, L_3));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:98>
-		int32_t L_4 = V_0;
-		if ((((int32_t)L_4) <= ((int32_t)0)))
-		{
-			goto IL_0037;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:101>
-		int32_t L_5 = V_0;
-		GameAnalytics_NewResourceEvent_m3F5E44EA93BC77441858BD6DB8F85B47FE626E75(1, _stringLiteral02632F313B1D48F82B0A605A47E469AF26EA0C95, ((float)L_5), _stringLiteral42BE89C6A66E84EE1086370DF52323B75A26F3D6, _stringLiteral05C3A77D4FCD64E3BF226996A6E202DB832A0255, NULL);
-		goto IL_0057;
-	}
-
-IL_0037:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:103>
-		int32_t L_6 = V_0;
-		if ((((int32_t)L_6) >= ((int32_t)0)))
-		{
-			goto IL_0057;
-		}
-	}
+IL_0009:
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:106>
-		int32_t L_7 = V_0;
-		int32_t L_8;
-		L_8 = Mathf_Abs_mD945EDDEA0D62D21BFDBAB7B1C0F18DFF1CEC905_inline(L_7, NULL);
-		GameAnalytics_NewResourceEvent_m3F5E44EA93BC77441858BD6DB8F85B47FE626E75(2, _stringLiteral02632F313B1D48F82B0A605A47E469AF26EA0C95, ((float)L_8), _stringLiteral42BE89C6A66E84EE1086370DF52323B75A26F3D6, _stringLiteral1A2A71818A463C441E004723142602142B99B450, NULL);
+		int32_t L_1 = __this->____lastCoinBalance;
+		if ((!(((uint32_t)L_1) == ((uint32_t)(-1)))))
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:108>
+		int32_t L_2 = ___0_newBalance;
+		__this->____lastCoinBalance = L_2;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:109>
+		return;
 	}
 
-IL_0057:
+IL_001a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:109>
-		int32_t L_9 = ___0_newBalance;
-		__this->____lastCoinBalance = L_9;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:112>
+		int32_t L_3 = ___0_newBalance;
+		int32_t L_4 = __this->____lastCoinBalance;
+		V_0 = ((int32_t)il2cpp_codegen_subtract(L_3, L_4));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:113>
+		int32_t L_5 = V_0;
+		if ((((int32_t)L_5) <= ((int32_t)0)))
+		{
+			goto IL_0040;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:116>
+		int32_t L_6 = V_0;
+		GameAnalytics_NewResourceEvent_m3F5E44EA93BC77441858BD6DB8F85B47FE626E75(1, _stringLiteral02632F313B1D48F82B0A605A47E469AF26EA0C95, ((float)L_6), _stringLiteral42BE89C6A66E84EE1086370DF52323B75A26F3D6, _stringLiteral05C3A77D4FCD64E3BF226996A6E202DB832A0255, NULL);
+		goto IL_0060;
+	}
+
+IL_0040:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:118>
+		int32_t L_7 = V_0;
+		if ((((int32_t)L_7) >= ((int32_t)0)))
+		{
+			goto IL_0060;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:121>
+		int32_t L_8 = V_0;
+		int32_t L_9;
+		L_9 = Mathf_Abs_mD945EDDEA0D62D21BFDBAB7B1C0F18DFF1CEC905_inline(L_8, NULL);
+		GameAnalytics_NewResourceEvent_m3F5E44EA93BC77441858BD6DB8F85B47FE626E75(2, _stringLiteral02632F313B1D48F82B0A605A47E469AF26EA0C95, ((float)L_9), _stringLiteral42BE89C6A66E84EE1086370DF52323B75A26F3D6, _stringLiteral1A2A71818A463C441E004723142602142B99B450, NULL);
+	}
+
+IL_0060:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:124>
+		int32_t L_10 = ___0_newBalance;
+		__this->____lastCoinBalance = L_10;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/GameAnalyticsManager.cs:125>
 		return;
 	}
 }
@@ -31033,7 +31102,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager__ctor_m840D0AAAE7C39B8
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 76074
+// Method Definition Index: 76075
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* AdValue_get_CurrencyCode_m2AF57ADB2877FB0408ED804180173807B1459E44_inline (AdValue_t3D87DDD4D06FAAA212BD2119CA464B4F0FEBBCFD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31041,7 +31110,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* AdValue_get_CurrencyCod
 		return L_0;
 	}
 }
-// Method Definition Index: 76070
+// Method Definition Index: 76071
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AdValue_get_Precision_m727B490E89FD420F8BF25E0A1EE00397C63B4815_inline (AdValue_t3D87DDD4D06FAAA212BD2119CA464B4F0FEBBCFD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31049,7 +31118,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AdValue_get_Precision_m72
 		return L_0;
 	}
 }
-// Method Definition Index: 76072
+// Method Definition Index: 76073
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int64_t AdValue_get_Value_mB60399D1CA779A1976CB1F7A905781E262964398_inline (AdValue_t3D87DDD4D06FAAA212BD2119CA464B4F0FEBBCFD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31057,7 +31126,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int64_t AdValue_get_Value_mB60399
 		return L_0;
 	}
 }
-// Method Definition Index: 76051
+// Method Definition Index: 76052
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* AdRequest_get_Version_mDEA58424E216DCD68C3CD09115A3F0207D8DDF79_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31235,7 +31304,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_6;
 	}
 }
-// Method Definition Index: 64186
+// Method Definition Index: 64187
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PointerEventData_get_position_m5BE71C28EB72EFB8435749E4E6E839213AEF458C_inline (PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32330,7 +32399,7 @@ IL_000a:
 		return L_2;
 	}
 }
-// Method Definition Index: 62588
+// Method Definition Index: 62589
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{

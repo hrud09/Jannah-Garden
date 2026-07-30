@@ -28077,7 +28077,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Quaternion__ctor_m868FD60AA6
 		return;
 	}
 }
-// Method Definition Index: 62588
+// Method Definition Index: 62589
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28365,7 +28365,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TreasureBoxManager_t9CE419825FDD2
 		return L_0;
 	}
 }
-// Method Definition Index: 74376
+// Method Definition Index: 74377
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationTimeIntervalTrigger_set_Repeats_m7A9109F22E610DF25D696DD1CDEED9B311FBE5B9_inline (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
