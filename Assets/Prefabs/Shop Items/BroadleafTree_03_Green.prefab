@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2965559347790313199}
   - component: {fileID: 6893903767063189135}
   - component: {fileID: 7633674503254805335}
+  - component: {fileID: 393032714118037771}
   m_Layer: 0
   m_Name: LOD2
   m_TagString: Untagged
@@ -91,6 +92,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &393032714118037771
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519916375586756138}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1873884413595140299, guid: 5b1014fb87e698843ba68edc3778ec4d, type: 3}
 --- !u!1 &1993289460867624097
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +125,7 @@ GameObject:
   - component: {fileID: 4296731104567347025}
   - component: {fileID: 2567602754842559461}
   - component: {fileID: 6540422311688066995}
+  - component: {fileID: 5159241223714973416}
   m_Layer: 0
   m_Name: LOD0
   m_TagString: Untagged
@@ -182,6 +206,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5159241223714973416
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993289460867624097}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -102499355888119846, guid: 5b1014fb87e698843ba68edc3778ec4d, type: 3}
 --- !u!1 &7569934100535185037
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +239,7 @@ GameObject:
   - component: {fileID: 6718775306933662145}
   - component: {fileID: 8000991757694883355}
   - component: {fileID: 2397446232490055277}
+  - component: {fileID: 8261772674533201801}
   m_Layer: 0
   m_Name: LOD1
   m_TagString: Untagged
@@ -273,6 +320,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8261772674533201801
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7569934100535185037}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6997488862146721494, guid: 5b1014fb87e698843ba68edc3778ec4d, type: 3}
 --- !u!1 &7755859256941194996
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6983262550692983886}
   - component: {fileID: 2788739596032754495}
-  - component: {fileID: -436863479841777530}
   - component: {fileID: 4952307789740045314}
   m_Layer: 0
   m_Name: BroadleafTree_03_Green
@@ -336,29 +404,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 7633674503254805335}
   m_Enabled: 1
---- !u!136 &-436863479841777530
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755859256941194996}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Height: 1.6
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: -0.06}
 --- !u!114 &4952307789740045314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +426,7 @@ MonoBehaviour:
   - {fileID: 2397446232490055277}
   - {fileID: 7633674503254805335}
   isTree: 1
+  isBuilding: 0
   itemGFX: {fileID: 8268142042656273457}
 --- !u!1 &8787500577323204456
 GameObject:

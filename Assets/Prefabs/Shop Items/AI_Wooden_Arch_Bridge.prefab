@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6651764014708627420}
-  - component: {fileID: 6587303484939554813}
   - component: {fileID: 8498252903553491819}
   m_Layer: 15
   m_Name: AI_Wooden_Arch_Bridge
@@ -35,27 +34,6 @@ Transform:
   - {fileID: 6797522952581904090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6587303484939554813
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9055491930284551282}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.5, z: 0.74414116}
-  m_Center: {x: 0, y: -0.00097649806, z: -0.002929499}
 --- !u!114 &8498252903553491819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +112,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e2a7ae4ae63d364b9ae2c67c0f65bc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7769218570774003494}
   m_SourcePrefab: {fileID: 100100000, guid: 6e2a7ae4ae63d364b9ae2c67c0f65bc7, type: 3}
 --- !u!23 &489616719787304445 stripped
 MeshRenderer:
@@ -146,6 +127,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e2a7ae4ae63d364b9ae2c67c0f65bc7, type: 3}
   m_PrefabInstance: {fileID: 1228042826888067449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2146963167583667240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e2a7ae4ae63d364b9ae2c67c0f65bc7, type: 3}
+  m_PrefabInstance: {fileID: 1228042826888067449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &7769218570774003494
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146963167583667240}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7158796146257112550, guid: 6e2a7ae4ae63d364b9ae2c67c0f65bc7, type: 3}
 --- !u!1001 &6978714942846080489
 PrefabInstance:
   m_ObjectHideFlags: 0

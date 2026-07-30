@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866822861313536890}
-  - component: {fileID: 4901050314989751002}
   - component: {fileID: 3474573822646333221}
   m_Layer: 15
   m_Name: AI_Runic_Ring_of_Fire
@@ -35,27 +34,6 @@ Transform:
   - {fileID: 5713697018876369568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4901050314989751002
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5300121739884325304}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.5, z: 1.0000001}
-  m_Center: {x: 0, y: 0.0019530013, z: -2.3281585e-10}
 --- !u!114 &3474573822646333221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,13 +112,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b3a0ac2d88fbce4c8644da1bf23824b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3779588441212318263}
   m_SourcePrefab: {fileID: 100100000, guid: 2b3a0ac2d88fbce4c8644da1bf23824b, type: 3}
 --- !u!4 &7217698085066308740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2b3a0ac2d88fbce4c8644da1bf23824b, type: 3}
   m_PrefabInstance: {fileID: 7178970179443465071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8025901096760550974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b3a0ac2d88fbce4c8644da1bf23824b, type: 3}
+  m_PrefabInstance: {fileID: 7178970179443465071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &3779588441212318263
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025901096760550974}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5461320835613783329, guid: 2b3a0ac2d88fbce4c8644da1bf23824b, type: 3}
 --- !u!23 &8386062005470693355 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2b3a0ac2d88fbce4c8644da1bf23824b, type: 3}

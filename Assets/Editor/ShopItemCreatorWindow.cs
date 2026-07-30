@@ -38,6 +38,10 @@ public class ShopItemCreatorWindow : EditorWindow
     private string singlePrefabName = "New_Shop_Item";
     private PrefabItemType singleItemType = PrefabItemType.Tree;
 
+    // Bulk Mesh Collider options
+    private bool meshCollidersConvex = false;
+    private bool replaceRootPrimitiveCollider = false;
+
     // Mode inside Tab 1 (0 = Single / Multi selection list, 1 = Bulk folder drop)
     private int tab1SubMode = 0;
     private readonly string[] tab1SubModeTitles = { "Single / Custom List", "Batch Add From Folder" };
@@ -194,6 +198,41 @@ public class ShopItemCreatorWindow : EditorWindow
         GUILayout.Space(10);
 
         DrawTab1SingleAndCustomList();
+        GUILayout.Space(10);
+
+        DrawTab1MeshColliderSection();
+    }
+
+    private void DrawTab1MeshColliderSection()
+    {
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("🧱 Section 2: Mesh Colliders For Existing Prefabs", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField($"Targets every prefab inside '{prefabOutputFolder}'.", EditorStyles.miniLabel);
+        EditorGUILayout.Space(4);
+
+        meshCollidersConvex = EditorGUILayout.Toggle(
+            new GUIContent("Convex Colliders", "Needed for triggers and non-kinematic Rigidbodies. Leave off for static scenery so the collider follows the mesh exactly."),
+            meshCollidersConvex);
+
+        replaceRootPrimitiveCollider = EditorGUILayout.Toggle(
+            new GUIContent("Remove Root Box/Capsule", "Deletes the primitive collider generated on the prefab root once its meshes have MeshColliders."),
+            replaceRootPrimitiveCollider);
+
+        if (replaceRootPrimitiveCollider)
+        {
+            EditorGUILayout.HelpBox("PlaceableItem.Awake() re-adds a BoxCollider at runtime when the root has no Collider, " +
+                                    "so the root will still end up with one in play mode.", MessageType.Warning);
+        }
+
+        GUI.backgroundColor = new Color(1f, 0.75f, 0.3f);
+        if (GUILayout.Button("🧱 Add Mesh Colliders To All Shop Item Prefab Meshes", GUILayout.Height(38)))
+        {
+            AddMeshCollidersToAllPrefabs(prefabOutputFolder);
+        }
+        GUI.backgroundColor = Color.white;
+
+        EditorGUILayout.LabelField("Adds a MeshCollider to every mesh in each prefab. Timer / UI objects are skipped.", EditorStyles.miniLabel);
+        EditorGUILayout.EndVertical();
     }
 
     private void DrawTab1SingleAndCustomList()
@@ -440,6 +479,149 @@ public class ShopItemCreatorWindow : EditorWindow
 
         EditorUtility.DisplayDialog("Success", $"Successfully created {createdCount} Prefab(s) under '{prefabOutputFolder}'!", "OK");
         RefreshShopPrefabsList();
+    }
+
+    // Walks every prefab in the folder and gives each of its meshes a MeshCollider
+    private void AddMeshCollidersToAllPrefabs(string folderPath)
+    {
+        if (!AssetDatabase.IsValidFolder(folderPath))
+        {
+            EditorUtility.DisplayDialog("Error", $"Folder path '{folderPath}' does not exist.", "OK");
+            return;
+        }
+
+        string[] prefabGuids = AssetDatabase.FindAssets("t:Prefab", new[] { folderPath });
+        if (prefabGuids.Length == 0)
+        {
+            EditorUtility.DisplayDialog("Nothing To Do", $"No prefabs found under '{folderPath}'.", "OK");
+            return;
+        }
+
+        bool proceed = EditorUtility.DisplayDialog("Add Mesh Colliders",
+            $"Add a MeshCollider to every mesh inside {prefabGuids.Length} prefab(s) under '{folderPath}'?\n\n" +
+            "This edits the prefab assets directly and cannot be undone with Ctrl+Z.",
+            "Add Colliders", "Cancel");
+        if (!proceed) return;
+
+        int addedColliders = 0;
+        int changedPrefabs = 0;
+        int alreadyHad = 0;
+        int removedPrimitives = 0;
+        List<string> withoutMeshes = new List<string>();
+
+        try
+        {
+            for (int i = 0; i < prefabGuids.Length; i++)
+            {
+                string prefabPath = AssetDatabase.GUIDToAssetPath(prefabGuids[i]);
+                string prefabName = Path.GetFileNameWithoutExtension(prefabPath);
+
+                EditorUtility.DisplayProgressBar("Adding Mesh Colliders",
+                    $"{prefabName}  ({i + 1}/{prefabGuids.Length})", (float)i / prefabGuids.Length);
+
+                GameObject root = PrefabUtility.LoadPrefabContents(prefabPath);
+                if (root == null) continue;
+
+                try
+                {
+                    bool dirty = false;
+                    int meshCount = 0;
+
+                    foreach (MeshFilter filter in root.GetComponentsInChildren<MeshFilter>(true))
+                    {
+                        if (filter.sharedMesh == null) continue;
+                        if (IsTimerOrUIObject(filter.transform)) continue;
+
+                        meshCount++;
+
+                        MeshCollider existing = filter.GetComponent<MeshCollider>();
+                        if (existing != null)
+                        {
+                            alreadyHad++;
+
+                            // Repair colliders left without a mesh, otherwise leave them untouched
+                            if (existing.sharedMesh == null)
+                            {
+                                existing.sharedMesh = filter.sharedMesh;
+                                existing.convex = meshCollidersConvex;
+                                dirty = true;
+                            }
+                            continue;
+                        }
+
+                        MeshCollider collider = filter.gameObject.AddComponent<MeshCollider>();
+                        collider.sharedMesh = filter.sharedMesh;
+                        collider.convex = meshCollidersConvex;
+
+                        addedColliders++;
+                        dirty = true;
+                    }
+
+                    if (meshCount == 0)
+                    {
+                        withoutMeshes.Add(prefabName);
+                    }
+                    else if (replaceRootPrimitiveCollider)
+                    {
+                        foreach (Collider rootCol in root.GetComponents<Collider>())
+                        {
+                            if (rootCol is MeshCollider) continue;
+
+                            DestroyImmediate(rootCol, true);
+                            removedPrimitives++;
+                            dirty = true;
+                        }
+                    }
+
+                    if (dirty)
+                    {
+                        PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+                        changedPrefabs++;
+                    }
+                }
+                finally
+                {
+                    PrefabUtility.UnloadPrefabContents(root);
+                }
+            }
+        }
+        finally
+        {
+            EditorUtility.ClearProgressBar();
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+        string report = $"Added {addedColliders} MeshCollider(s) across {changedPrefabs} of {prefabGuids.Length} prefab(s).";
+        if (alreadyHad > 0) report += $"\n{alreadyHad} mesh(es) already had a MeshCollider and were left as-is.";
+        if (removedPrimitives > 0) report += $"\nRemoved {removedPrimitives} primitive collider(s) from prefab roots.";
+
+        if (withoutMeshes.Count > 0)
+        {
+            Debug.LogWarning($"[Shop Item Creator] No meshes found in {withoutMeshes.Count} prefab(s):\n" +
+                             string.Join("\n", withoutMeshes.ToArray()));
+
+            int previewCount = Mathf.Min(withoutMeshes.Count, 8);
+            report += $"\n\nNo meshes found in {withoutMeshes.Count} prefab(s):\n" +
+                      string.Join("\n", withoutMeshes.GetRange(0, previewCount).ToArray());
+            if (withoutMeshes.Count > previewCount) report += "\n... (see Console for the full list)";
+        }
+
+        EditorUtility.DisplayDialog("Mesh Colliders", report, "OK");
+    }
+
+    // Timer Area / world-space canvases render through MeshFilters too, but must stay collider-free
+    private static bool IsTimerOrUIObject(Transform target)
+    {
+        if (target is RectTransform) return true;
+        if (target.GetComponentInParent<Canvas>() != null) return true;
+
+        for (Transform t = target; t != null; t = t.parent)
+        {
+            if (t.name.IndexOf("Timer", System.StringComparison.OrdinalIgnoreCase) >= 0) return true;
+        }
+        return false;
     }
 
     private Bounds CalculateBounds(GameObject target)

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2225704816497122261}
-  - component: {fileID: 114208553357101693}
   - component: {fileID: 8726641026008534082}
   m_Layer: 15
   m_Name: AI_Prismatic_Cascade
@@ -35,27 +34,6 @@ Transform:
   - {fileID: 3024868604209672567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &114208553357101693
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5091497638672757399}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.9316409, y: 0.7714852, z: 1.0000002}
-  m_Center: {x: -0.000976515, y: -0.0009764919, z: 1.16406884e-10}
 --- !u!114 &8726641026008534082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,13 +184,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d63d0463703965498fe78756491499d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3765610230658059874}
   m_SourcePrefab: {fileID: 100100000, guid: 7d63d0463703965498fe78756491499d, type: 3}
 --- !u!4 &7370521331473874932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7d63d0463703965498fe78756491499d, type: 3}
   m_PrefabInstance: {fileID: 7044724264352421919}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7854993210907567438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d63d0463703965498fe78756491499d, type: 3}
+  m_PrefabInstance: {fileID: 7044724264352421919}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &3765610230658059874
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854993210907567438}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7158796146257112550, guid: 7d63d0463703965498fe78756491499d, type: 3}
 --- !u!23 &8503489635042690203 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7d63d0463703965498fe78756491499d, type: 3}

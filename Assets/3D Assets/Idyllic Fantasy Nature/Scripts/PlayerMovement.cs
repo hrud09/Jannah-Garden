@@ -184,9 +184,9 @@ namespace IdyllicFantasyNature
             jumpPressed = Input.GetButton("Jump");
 #endif
 
-            if (jumpPressed && characterController.isGrounded)
+            if (jumpPressed)
             {
-                _controllerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
+                Jump();
             }
 
             // the controller is able to run
@@ -335,6 +335,23 @@ namespace IdyllicFantasyNature
                 ref _inspectorSmoothVelocity,
                 inspectorModeSmoothTime
             );
+        }
+
+        // ═════════════════════════════════════════════════════════════
+        //  JUMP PUBLIC API
+        // ═════════════════════════════════════════════════════════════
+
+        /// <summary>
+        /// Makes the player jump if grounded. Safe to hook up to a UI Button's OnClick event.
+        /// Ignored while in Inspector Mode.
+        /// </summary>
+        public void Jump()
+        {
+            if (_isInspectorMode || _isTransitioning) return;
+            if (characterController == null || !characterController.enabled) return;
+            if (!characterController.isGrounded) return;
+
+            _controllerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
         }
 
         // ═════════════════════════════════════════════════════════════

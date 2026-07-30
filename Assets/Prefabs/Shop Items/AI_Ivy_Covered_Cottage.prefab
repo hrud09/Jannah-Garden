@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 919505852575258649}
-  - component: {fileID: 6515815740125159036}
   - component: {fileID: 3258638468024279813}
   m_Layer: 15
   m_Name: AI_Ivy_Covered_Cottage
@@ -35,27 +34,6 @@ Transform:
   - {fileID: 2650569982635321855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6515815740125159036
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315036716405467918}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.893137, y: 1.5954674, z: 1.8315115}
-  m_Center: {x: -0.0013134908, y: -0.0033995146, z: -0.0031744596}
 --- !u!114 &3258638468024279813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +112,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 091dbbe5092edb5469f0d034b373ee53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2185235977198667804}
   m_SourcePrefab: {fileID: 100100000, guid: 091dbbe5092edb5469f0d034b373ee53, type: 3}
+--- !u!1 &215165394602332525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 091dbbe5092edb5469f0d034b373ee53, type: 3}
+  m_PrefabInstance: {fileID: 1025978595253136444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2185235977198667804
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215165394602332525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5461320835613783329, guid: 091dbbe5092edb5469f0d034b373ee53, type: 3}
 --- !u!4 &700234312960363479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 091dbbe5092edb5469f0d034b373ee53, type: 3}

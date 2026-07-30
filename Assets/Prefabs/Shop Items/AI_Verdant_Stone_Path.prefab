@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4115374722147047196}
-  - component: {fileID: 7894724235627682080}
   - component: {fileID: 2052803732697655354}
   m_Layer: 15
   m_Name: AI_Verdant_Stone_Path
@@ -35,27 +34,6 @@ Transform:
   - {fileID: 4445968938313182142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7894724235627682080
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7267908695769568842}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.63281196, y: 0.5, z: 0.9863281}
-  m_Center: {x: 0, y: 0.005370997, z: 0.0048829946}
 --- !u!114 &2052803732697655354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,13 +184,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 83ace97a46e070049ba1dc2f52a1fed5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 940383152562262815}
   m_SourcePrefab: {fileID: 100100000, guid: 83ace97a46e070049ba1dc2f52a1fed5, type: 3}
 --- !u!4 &47654578345832418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83ace97a46e070049ba1dc2f52a1fed5, type: 3}
   m_PrefabInstance: {fileID: 514524074089908233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &856419754750588248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 83ace97a46e070049ba1dc2f52a1fed5, type: 3}
+  m_PrefabInstance: {fileID: 514524074089908233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &940383152562262815
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856419754750588248}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7158796146257112550, guid: 83ace97a46e070049ba1dc2f52a1fed5, type: 3}
 --- !u!23 &1216641822116713613 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 83ace97a46e070049ba1dc2f52a1fed5, type: 3}

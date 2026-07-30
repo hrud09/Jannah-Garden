@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6591510481481449854}
   - component: {fileID: 8808057032793187253}
   - component: {fileID: 689994363823228342}
+  - component: {fileID: 6555090971230813340}
   m_Layer: 0
   m_Name: LOD0
   m_TagString: Untagged
@@ -91,6 +92,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6555090971230813340
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097121533782899480}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -202531897937639607, guid: 94e5ec0f777848b419387f31e5247cb9, type: 3}
 --- !u!1 &2758375734906593588
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +125,7 @@ GameObject:
   - component: {fileID: 6782462662881972653}
   - component: {fileID: 1534782963163338267}
   - component: {fileID: 6971340890223442204}
+  - component: {fileID: 6602766198833879787}
   m_Layer: 0
   m_Name: LOD2
   m_TagString: Untagged
@@ -182,6 +206,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6602766198833879787
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758375734906593588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5093497073462021869, guid: 94e5ec0f777848b419387f31e5247cb9, type: 3}
 --- !u!1 &3274414853626786742
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +239,7 @@ GameObject:
   - component: {fileID: 6399603485135993466}
   - component: {fileID: 3191725206140898901}
   - component: {fileID: 3115091607397294262}
+  - component: {fileID: 1459725931821524069}
   m_Layer: 0
   m_Name: LOD1
   m_TagString: Untagged
@@ -273,6 +320,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1459725931821524069
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274414853626786742}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3551542677692072514, guid: 94e5ec0f777848b419387f31e5247cb9, type: 3}
 --- !u!1 &8509515907140916961
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9033111502401031259}
   - component: {fileID: 4253105195041782570}
-  - component: {fileID: 1987649752300711972}
   - component: {fileID: 8987917818724292202}
   m_Layer: 0
   m_Name: BroadleafTree_04_Green
@@ -338,29 +406,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6971340890223442204}
   m_Enabled: 1
---- !u!136 &1987649752300711972
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8509515907140916961}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Height: 7.39
-  m_Direction: 1
-  m_Center: {x: 0, y: 3.7, z: 0}
 --- !u!114 &8987917818724292202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +428,7 @@ MonoBehaviour:
   - {fileID: 3115091607397294262}
   - {fileID: 6971340890223442204}
   isTree: 1
+  isBuilding: 0
   itemGFX: {fileID: 0}
 --- !u!1001 &8201034499150900629
 PrefabInstance:
