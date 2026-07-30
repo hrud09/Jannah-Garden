@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: BroadleafTree_01_Green_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: -1086545813, guid: 69e966589202b13419a03af8b183341e, type: 3}
-  itemName: Broadleaf Tree 01
-  itemDescription: A beautiful green Broadleaf Tree 01 to add vibrant life and natural
-    beauty to your garden.
-  itemID: a2efbb38034946c1aa75cf5638f85de0
+  itemIcon: {fileID: 0}
+  itemName: BroadleafTree 01 Green
+  itemDescription: Beautiful BroadleafTree 01 Green to decorate your garden.
+  itemID: f55504b4707c4627a17a74f95fef56df
   acquisitionType: 0
   noorCoinCost: 0
   isDailyOffer: 0
@@ -29,5 +28,5 @@ MonoBehaviour:
   requiredXPLevel: 1
   itemPrefab: {fileID: 7736027864159789925, guid: 743b50117cc380a4f8f6871e04789159, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 30
+  placementTimerDuration: 360
   itemPrice: 

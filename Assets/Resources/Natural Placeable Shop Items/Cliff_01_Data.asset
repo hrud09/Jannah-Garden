@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Cliff_01_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: -1395557845, guid: 69e966589202b13419a03af8b183341e, type: 3}
+  itemIcon: {fileID: 0}
   itemName: Cliff 01
-  itemDescription: A unique Cliff 01 decoration to personalize and enhance the atmosphere
-    of your garden.
-  itemID: 102fc4184879462d8df340c2a245750a
+  itemDescription: Beautiful Cliff 01 to decorate your garden.
+  itemID: 71c0f8e2a7104a21b115f1ed3081aadf
   acquisitionType: 0
   noorCoinCost: 0
   isDailyOffer: 0
@@ -29,5 +28,5 @@ MonoBehaviour:
   requiredXPLevel: 1
   itemPrefab: {fileID: 2836439255435353025, guid: a86af659c52a1f54c924985f5d11a2b9, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 30
+  placementTimerDuration: 360
   itemPrice: 

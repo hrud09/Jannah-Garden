@@ -23,7 +23,8 @@
       "Bash(python __TRACKED_VAR__/strip_fallbacks.py __TRACKED_VAR__/dry/scene2.unity __TRACKED_VAR__/dry/treasure2.prefab)",
       "Bash(python __TRACKED_VAR__/strip_fallbacks.py 'Assets/Scenes/Jannah Garden.unity' 'Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab' Assets/_Recovery/*.unity)",
       "Bash(python -)",
-      "Bash(python \"C:/Users/mahad/AppData/Local/Temp/claude/e--New-Unity-Projects-Jannah-Garden/6da83cad-443e-4143-8a02-b20a405daba2/scratchpad/sanity.py\")"
+      "Bash(python \"C:/Users/mahad/AppData/Local/Temp/claude/e--New-Unity-Projects-Jannah-Garden/6da83cad-443e-4143-8a02-b20a405daba2/scratchpad/sanity.py\")",
+      "Bash(awk '/^--- !u!223/{c=1; buf=\"\"} c{buf=buf $0 \"\\\\n\"} /m_TargetDisplay/{if\\(c\\){print \"=== line \" NR; print buf; c=0}}' \"Jannah Garden.unity\")"
     ]
   }
 }

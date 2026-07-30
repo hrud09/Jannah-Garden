@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Fir_02_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 2123691343, guid: 69e966589202b13419a03af8b183341e, type: 3}
+  itemIcon: {fileID: 0}
   itemName: Fir 02
-  itemDescription: A unique Fir 02 decoration to personalize and enhance the atmosphere
-    of your garden.
-  itemID: a12d712eff4d46ce854763811cb39760
+  itemDescription: Beautiful Fir 02 to decorate your garden.
+  itemID: a43fbfff5bd54f8d9b4c360db42f54c1
   acquisitionType: 0
   noorCoinCost: 0
   isDailyOffer: 0
@@ -29,5 +28,5 @@ MonoBehaviour:
   requiredXPLevel: 1
   itemPrefab: {fileID: 1502869466188940898, guid: 77e842542dc470c4cacb99376e9140d7, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 30
+  placementTimerDuration: 360
   itemPrice: 

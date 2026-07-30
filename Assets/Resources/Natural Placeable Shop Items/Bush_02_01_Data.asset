@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Bush_02_01_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: -24150490, guid: 69e966589202b13419a03af8b183341e, type: 3}
-  itemName: Bush 03
-  itemDescription: A beautiful green Bush 03 to add vibrant life and natural beauty
-    to your garden.
-  itemID: 774d51526fcb4847bb04f4bf84a4e254
+  itemIcon: {fileID: 0}
+  itemName: Bush 02 01
+  itemDescription: Beautiful Bush 02 01 to decorate your garden.
+  itemID: ec7479364cb2455dabadc714ac31c7da
   acquisitionType: 0
   noorCoinCost: 0
   isDailyOffer: 0
@@ -24,10 +23,10 @@ MonoBehaviour:
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 1
+  itemCategory: 3
   sortOrder: 0
-  requiredXPLevel: 2
+  requiredXPLevel: 1
   itemPrefab: {fileID: 233986929952047716, guid: d8470b2d9ac17874a8c59119201e6671, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 30
+  placementTimerDuration: 360
   itemPrice: 

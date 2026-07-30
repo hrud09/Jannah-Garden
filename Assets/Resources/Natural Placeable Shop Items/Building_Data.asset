@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Building_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 447974139, guid: 69e966589202b13419a03af8b183341e, type: 3}
-  itemName: House
-  itemDescription: An elegant House structure to provide comfort and architectural
-    beauty to your estate.
-  itemID: d2dd88c50513416a8f7120ac4eb1148b
+  itemIcon: {fileID: 0}
+  itemName: Building
+  itemDescription: Beautiful Building to decorate your garden.
+  itemID: 20cd5b4749904d9bbc43cbf3df8a631f
   acquisitionType: 0
   noorCoinCost: 0
   isDailyOffer: 0
@@ -29,5 +28,5 @@ MonoBehaviour:
   requiredXPLevel: 1
   itemPrefab: {fileID: 3435643351429671060, guid: c9cc368541b7d9d4eb7b576ecdf8f1f9, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 30
+  placementTimerDuration: 360
   itemPrice: 
