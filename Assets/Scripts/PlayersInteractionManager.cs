@@ -18,8 +18,18 @@ public class PlayersInteractionManager : MonoBehaviour
     [Tooltip("Physics layers to include in the raycast check.")]
     public LayerMask interactionLayerMask = ~0; // Default to everything
 
+    [Header("Placed Item Management")]
+    [Tooltip("Let the player look at something they have placed and choose to move it or return it to " +
+             "the Asset Store.")]
+    public bool allowPlacedItemManagement = true;
+
+    [Tooltip("Layers to search for placed items. Separate from the mask above because placed assets sit " +
+             "on the default layer, not the treasure box / orb layers.")]
+    public LayerMask placedItemLayerMask = ~0;
+
     public TreasureBox currentTargetBox = null;
     public QuestionMarkOrb currentTargetOrb = null;
+    public PlaceableItem currentTargetPlaceable = null;
     private Camera mainCam;
 
     public Button itemInteractButton;
@@ -49,6 +59,25 @@ public class PlayersInteractionManager : MonoBehaviour
             itemInteractButton.gameObject.SetActive(false);
             itemInteractButton.onClick.AddListener(OnInteractButtonClicked);
         }
+
+        EnsurePlacedItemActionsUI();
+    }
+
+    /// <summary>
+    /// Makes sure something in the scene can show the relocate / return options. The UI builds itself
+    /// when it has no references, so adding the component is all it takes — but a designed panel already
+    /// placed in the scene wins, exactly like <c>JannahGardenManager</c> does with the tutorial.
+    /// </summary>
+    private void EnsurePlacedItemActionsUI()
+    {
+        if (!allowPlacedItemManagement) return;
+        if (PlacedItemActionsUI.Instance != null) return;
+
+        // Instance is only assigned from Awake, so one sitting under a disabled parent has not
+        // registered yet — include inactive objects in the search before adding another.
+        if (FindFirstObjectByType<PlacedItemActionsUI>(FindObjectsInactive.Include) != null) return;
+
+        gameObject.AddComponent<PlacedItemActionsUI>();
     }
 
     private void OnInteractButtonClicked()
@@ -87,6 +116,10 @@ public class PlayersInteractionManager : MonoBehaviour
         else if (currentTargetOrb != null)
         {
             currentTargetOrb.OpenQuiz();
+        }
+        else if (currentTargetPlaceable != null && PlacedItemActionsUI.Instance != null)
+        {
+            PlacedItemActionsUI.Instance.Show(currentTargetPlaceable);
         }
     }
 
@@ -185,17 +218,67 @@ public class PlayersInteractionManager : MonoBehaviour
             }
         }
 
-     
-        // Activate the itemInteractButton if a treasure box or orb is targeted, otherwise deactivate it
+        // Placed assets are the lowest-priority target: a treasure box standing in front of a tree is
+        // still what the player means.
+        PlaceableItem detectedPlaceable = (currentTargetBox == null && currentTargetOrb == null)
+            ? FindTargetedPlacedItem(ray)
+            : null;
+
+        if (detectedPlaceable != currentTargetPlaceable)
+        {
+            isInteracting = false;
+            if (currentTargetPlaceable != null)
+            {
+                currentTargetPlaceable.SetHighlight(false);
+            }
+
+            currentTargetPlaceable = detectedPlaceable;
+            if (currentTargetPlaceable != null)
+            {
+                currentTargetPlaceable.SetHighlight(true);
+            }
+        }
+
+        // Activate the itemInteractButton if a treasure box, orb or placed item is targeted
         if (itemInteractButton != null)
         {
-            bool shouldShow = (currentTargetBox != null || currentTargetOrb != null) && !isInteracting;
+            bool shouldShow = (currentTargetBox != null || currentTargetOrb != null || currentTargetPlaceable != null)
+                              && !isInteracting;
             if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing)
             {
                 shouldShow = false;
             }
             itemInteractButton.gameObject.SetActive(shouldShow);
         }
+    }
+
+    /// <summary>
+    /// Looks for a placed asset under the crosshair. Runs as its own raycast because placed items sit on
+    /// the default layer, which <see cref="interactionLayerMask"/> deliberately excludes.
+    /// </summary>
+    private PlaceableItem FindTargetedPlacedItem(Ray ray)
+    {
+        if (!allowPlacedItemManagement) return null;
+
+        // Nothing to offer while an item is already following the crosshair, or while the options for
+        // another item are open.
+        if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing) return null;
+        if (PlacedItemActionsUI.Instance != null && PlacedItemActionsUI.Instance.IsOpen) return null;
+
+        if (!Physics.Raycast(ray, out RaycastHit hit, maxInteractionDistance, placedItemLayerMask,
+                             QueryTriggerInteraction.Ignore))
+        {
+            return null;
+        }
+
+        PlaceableItem placeable = hit.collider.GetComponent<PlaceableItem>();
+        if (placeable == null)
+        {
+            placeable = hit.collider.GetComponentInParent<PlaceableItem>();
+        }
+
+        // A ghost being positioned has its PlaceableItem disabled — it is not a target.
+        return (placeable != null && placeable.enabled) ? placeable : null;
     }
 
     private void DetectOrbClick()
@@ -284,6 +367,12 @@ public class PlayersInteractionManager : MonoBehaviour
         {
             currentTargetOrb.SetFocus(false);
             currentTargetOrb = null;
+        }
+
+        if (currentTargetPlaceable != null)
+        {
+            currentTargetPlaceable.SetHighlight(false);
+            currentTargetPlaceable = null;
         }
 
         if (itemInteractButton != null)

@@ -40,12 +40,28 @@ namespace FlutterIntegration
         /// <summary>Fires when Flutter's rewarded-ad readiness changes, so "Watch Ad" buttons can follow it.</summary>
         public static event Action<bool> OnRewardedAdAvailabilityChanged;
 
+        /// <summary>
+        /// Fires when Flutter hands over the garden stored in Firebase. <see cref="ItemPlacementManager"/>
+        /// listens for this and rebuilds the garden when the stored copy is newer than the device's.
+        /// </summary>
+        public static event Action<GardenStatePayload> OnGardenStateReceived;
+
+        /// <summary>Fires when Flutter reports how a photo share or gallery save ended.</summary>
+        public static event Action<PhotoActionResultPayload> OnPhotoActionResult;
+
         // ─── Cached payloads ──────────────────────────────────────────────────────
         // Flutter may push data long before the scene that needs it is loaded, so we keep the last of
         // each. Consumers read these on Start and subscribe to the matching event for later updates.
 
         public static UserProfilePayload LatestUserProfile { get; private set; }
         public static FellowshipProfilesPayload LatestFellowshipProfiles { get; private set; }
+
+        /// <summary>
+        /// The last garden Flutter pushed, or null if none yet. Cached for the same reason as the coin
+        /// balance: the garden usually arrives while a loading scene is up, long before the
+        /// <see cref="ItemPlacementManager"/> that wants it exists.
+        /// </summary>
+        public static GardenStatePayload LatestGardenState { get; private set; }
 
         /// <summary>
         /// The last authoritative Noor Coin balance Flutter pushed, or null if none yet. Cached so a
@@ -296,6 +312,42 @@ namespace FlutterIntegration
                     break;
                 }
 
+                case FlutterCommands.UpdateGardenState:
+                {
+                    GardenStatePayload garden = JsonUtility.FromJson<GardenStatePayload>(dataJson);
+
+                    if (garden == null)
+                    {
+                        Debug.LogWarning("[FlutterBridge] UPDATE_GARDEN_STATE had no payload — ignoring.");
+                        break;
+                    }
+
+                    // A null items array and an empty one mean different things to the placement manager
+                    // ("nothing stored yet" vs "the player emptied their garden"), so normalise only the
+                    // former, and only when Flutter says it has data.
+                    if (garden.hasData && garden.items == null) garden.items = new GardenItemPayload[0];
+
+                    LatestGardenState = garden;
+                    Debug.Log($"[FlutterBridge] Garden -> hasData: {garden.hasData}, " +
+                              $"items: {garden.items?.Length ?? 0}, savedAt: {garden.savedAtUnix}");
+
+                    // Fires only if a listener exists; otherwise the garden waits in the cache for the
+                    // scene that wants it.
+                    OnGardenStateReceived?.Invoke(garden);
+                    break;
+                }
+
+                case FlutterCommands.PhotoActionResult:
+                {
+                    PhotoActionResultPayload result = JsonUtility.FromJson<PhotoActionResultPayload>(dataJson);
+                    if (result == null) break;
+
+                    Debug.Log($"[FlutterBridge] Photo -> Action: {result.action}, Success: {result.success}");
+
+                    OnPhotoActionResult?.Invoke(result);
+                    break;
+                }
+
                 default:
                     Debug.LogWarning($"[FlutterBridge] Unhandled command: {command}");
                     break;
@@ -354,6 +406,65 @@ namespace FlutterIntegration
             SendMessageToFlutterApp(
                 FlutterCommands.RequestRewardedAd,
                 new RewardedAdRequestPayload { source = source });
+        }
+
+        /// <summary>
+        /// Asks Flutter for the garden stored in Firebase. Called by <see cref="ItemPlacementManager"/>
+        /// when it loads with nothing cached — which is every cold start, and the reason a player's
+        /// garden survives a change of device.
+        /// </summary>
+        public void RequestGardenState()
+        {
+            SendMessageToFlutterApp(FlutterCommands.RequestGardenState, new EmptyPayload());
+        }
+
+        /// <summary>
+        /// Hands the player's garden to Flutter to be written to Firebase. Unity has no Firebase SDK, so
+        /// this is the only route the garden has off the device.
+        /// </summary>
+        public void SaveGardenState(GardenStatePayload garden)
+        {
+            if (garden == null)
+            {
+                Debug.LogWarning("[FlutterBridge] SaveGardenState called with no payload — nothing sent.");
+                return;
+            }
+
+            // Keep the cache in step with what we just wrote, so a scene loading straight after this
+            // does not adopt a stale copy of the garden.
+            LatestGardenState = garden;
+
+            SendMessageToFlutterApp(FlutterCommands.SaveGardenState, garden);
+        }
+
+        /// <summary>
+        /// Asks Flutter to open the native share sheet for a photo the player took. Flutter owns the
+        /// share plugin; Unity only writes the file and says where it is.
+        /// </summary>
+        public void RequestSharePhoto(PhotoSharePayload photo)
+        {
+            if (photo == null || string.IsNullOrEmpty(photo.filePath))
+            {
+                Debug.LogWarning("[FlutterBridge] RequestSharePhoto called without a file path — nothing sent.");
+                return;
+            }
+
+            SendMessageToFlutterApp(FlutterCommands.RequestSharePhoto, photo);
+        }
+
+        /// <summary>
+        /// Asks Flutter to write a photo into the device's gallery. Flutter owns the gallery plugin and
+        /// the permission prompt that goes with it.
+        /// </summary>
+        public void RequestSavePhoto(PhotoSharePayload photo)
+        {
+            if (photo == null || string.IsNullOrEmpty(photo.filePath))
+            {
+                Debug.LogWarning("[FlutterBridge] RequestSavePhoto called without a file path — nothing sent.");
+                return;
+            }
+
+            SendMessageToFlutterApp(FlutterCommands.RequestSavePhoto, photo);
         }
 
         /// <summary>

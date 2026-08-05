@@ -2,6 +2,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Where a placed item came from, so returning it to the Asset Store knows what to give back:
+/// Noor Coins for a shop purchase, a stack of one for a treasure box reward.
+/// </summary>
+public enum PlacedItemSource
+{
+    /// <summary>Placed before source tracking existed, or the source asset is gone. Falls back to a prefab-name lookup.</summary>
+    Unknown = 0,
+    ShopItem = 1,
+    InventoryItem = 2
+}
+
 public class PlaceableItem : MonoBehaviour
 {
     [Header("Placement Time Settings")]
@@ -12,6 +24,14 @@ public class PlaceableItem : MonoBehaviour
     public string uniqueId;
     [HideInInspector]
     public string prefabName;
+
+    /// <summary>Which shop/inventory asset this was placed from. Used by the return-to-store flow.</summary>
+    [HideInInspector]
+    public PlacedItemSource sourceKind = PlacedItemSource.Unknown;
+
+    /// <summary>The <c>itemID</c> of the asset named by <see cref="sourceKind"/>, when it had one.</summary>
+    [HideInInspector]
+    public string sourceItemId;
 
     [Header("UI References (Optional)")]
     private TMP_Text timerText;
@@ -31,6 +51,11 @@ public class PlaceableItem : MonoBehaviour
 
     private bool isTracking = false;
     private bool alreadyCompletedOnStart = false;
+    private bool hasStarted = false;
+    private bool isHighlighted = false;
+
+    /// <summary>True once the placement timer has run out and the item is fully grown.</summary>
+    public bool IsFullyPlaced => remainingDuration <= 0f;
 
     private Vector3 initialScale;
     public Vector3 InitialScale => initialScale;
@@ -78,6 +103,9 @@ public class PlaceableItem : MonoBehaviour
 
     private void OnDisable()
     {
+        // Pooled objects come back with whatever state they left with — never with a stale outline.
+        SetHighlight(false);
+
         if (RuntimeEnvironmentGenerator.Instance != null && !RuntimeEnvironmentGenerator.Instance.IsDeactivatedByGenerator(gameObject))
         {
             RuntimeEnvironmentGenerator.Instance.UnregisterObject(gameObject);
@@ -109,18 +137,30 @@ public class PlaceableItem : MonoBehaviour
 
     /// <summary>
     /// Initializes tracking values for this item.
+    ///
+    /// Safe to call more than once on the same instance: relocating an item respawns it from the object
+    /// pool, which never re-runs <see cref="Start"/>, so the visual state is applied here instead once
+    /// the object has started.
     /// </summary>
     public void Initialize(string id, float totalDur, float remainingDur)
     {
         this.uniqueId = id;
         this.placementDuration = totalDur;
-        this.remainingDuration = remainingDur;
-        this.isTracking = true;
+        this.remainingDuration = Mathf.Max(0f, remainingDur);
+        this.alreadyCompletedOnStart = this.remainingDuration <= 0f;
+        this.isTracking = !alreadyCompletedOnStart;
 
-        if (remainingDur <= 0f)
+        if (hasStarted)
         {
-            alreadyCompletedOnStart = true;
+            ApplyStateVisuals();
         }
+    }
+
+    /// <summary>Records which shop or inventory asset this item was placed from.</summary>
+    public void SetSource(PlacedItemSource kind, string itemId)
+    {
+        sourceKind = kind;
+        sourceItemId = itemId;
     }
 
     /// <summary>
@@ -171,6 +211,17 @@ public class PlaceableItem : MonoBehaviour
             CreateFloatingTimerUI();
         }
 
+        hasStarted = true;
+        ApplyStateVisuals();
+    }
+
+    /// <summary>
+    /// Brings the model's saturation, scale and timer label in line with <see cref="remainingDuration"/>.
+    /// Called on Start and again whenever the item is re-initialized (a relocation, a state pushed down
+    /// from the cloud) so a pooled object never keeps the previous item's look.
+    /// </summary>
+    private void ApplyStateVisuals()
+    {
         // If it was already completed on start/load, disable the timer holder immediately
         if (alreadyCompletedOnStart)
         {
@@ -180,15 +231,24 @@ public class PlaceableItem : MonoBehaviour
             {
                 timerHolder.SetActive(false);
             }
-            
+
             UpdateSaturation(1f, -1);
-            
+
             SetScaleMultiplier(1f);
         }
         else if (isTracking)
         {
+            if (timerHolder != null)
+            {
+                timerHolder.SetActive(true);
+            }
+
+            float timeRatio = placementDuration > 0f
+                ? Mathf.Clamp01(1f - (remainingDuration / placementDuration))
+                : 0f;
+
             UpdateSaturation(0f, -1);
-            SetScaleMultiplier(0.2f);
+            SetScaleMultiplier(Mathf.Lerp(0.2f, 1f, timeRatio));
         }
     }
 
@@ -319,6 +379,46 @@ public class PlaceableItem : MonoBehaviour
                 {
                     mat.EnableKeyword("BASE_SATURATION");
                     mat.SetFloat("_Saturation", saturationValue);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Draws (or clears) the selection outline, so the player can see which placed item the relocate /
+    /// return options will act on. Mirrors <see cref="TreasureBox.SetOutline"/> — same OmniShade URP
+    /// properties, same pass names.
+    /// </summary>
+    public void SetHighlight(bool enable)
+    {
+        if (isHighlighted == enable) return;
+        isHighlighted = enable;
+
+        if (itemRenderers == null) return;
+
+        foreach (var renderer in itemRenderers)
+        {
+            if (renderer == null) continue;
+
+            foreach (Material mat in renderer.materials)
+            {
+                if (mat == null || !mat.HasProperty("_Outline")) continue;
+
+                mat.SetFloat("_Outline", enable ? 1f : 0f);
+
+                // "SRPDefaultUnlit" is the outline pass under URP; "Always" under Built-in.
+                string outlinePassName = mat.shader.name.Contains("URP") ? "SRPDefaultUnlit" : "Always";
+                mat.SetShaderPassEnabled(outlinePassName, enable);
+
+                if (enable)
+                {
+                    mat.EnableKeyword("OUTLINE");
+                    mat.DisableKeyword("OUTLINE_PASS_DISABLED");
+                }
+                else
+                {
+                    mat.DisableKeyword("OUTLINE");
+                    mat.EnableKeyword("OUTLINE_PASS_DISABLED");
                 }
             }
         }

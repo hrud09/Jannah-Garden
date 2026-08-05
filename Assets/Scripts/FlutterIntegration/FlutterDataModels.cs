@@ -37,6 +37,23 @@ namespace FlutterIntegration
         /// </summary>
         public const string UpdateAdAvailability = "UPDATE_AD_AVAILABILITY";
 
+        /// <summary>
+        /// Flutter hands over the garden it has stored in Firebase — every asset the player has placed,
+        /// where it stands and how far along its growth timer is. Sent in answer to
+        /// <see cref="RequestGardenState"/>, and again whenever the stored garden changes.
+        /// Payload: <see cref="GardenStatePayload"/>. This is what carries a player's Jannah Garden onto
+        /// a new device.
+        /// </summary>
+        public const string UpdateGardenState = "UPDATE_GARDEN_STATE";
+
+        /// <summary>
+        /// Flutter's answer to <see cref="RequestSharePhoto"/> / <see cref="RequestSavePhoto"/>, sent once
+        /// the share sheet closes or the gallery write finishes. Payload:
+        /// <see cref="PhotoActionResultPayload"/>. Optional — the game only uses it to tell the player
+        /// what happened, and says nothing if it never arrives.
+        /// </summary>
+        public const string PhotoActionResult = "PHOTO_ACTION_RESULT";
+
         // ─── Unity → Flutter ──────────────────────────────────────────────────
         /// <summary>Sent once the bridge is alive, so Flutter knows it is safe to push data.</summary>
         public const string UnityReady = "UNITY_READY";
@@ -82,6 +99,48 @@ namespace FlutterIntegration
         /// Payload: <see cref="RewardedAdRequestPayload"/>. Answered with <see cref="RewardedAdResult"/>.
         /// </summary>
         public const string RequestRewardedAd = "REQUEST_REWARDED_AD";
+
+        /// <summary>
+        /// Asks Flutter for the garden stored in Firebase. Sent once when the placement manager comes up
+        /// with nothing cached. Payload: <see cref="EmptyPayload"/>. Answered with
+        /// <see cref="UpdateGardenState"/> — including when the account has no garden yet, in which case
+        /// <see cref="GardenStatePayload.hasData"/> is false and the game seeds Firebase from this device.
+        /// </summary>
+        public const string RequestGardenState = "REQUEST_GARDEN_STATE";
+
+        /// <summary>
+        /// The player's garden changed — write it to Firebase under their account. Sent a few seconds
+        /// after any placement, move or return (so a burst of edits is one write), and immediately when
+        /// the game is paused or closed. Payload: <see cref="GardenStatePayload"/>, always with
+        /// <see cref="GardenStatePayload.hasData"/> true; an empty <c>items</c> array means the player
+        /// really has emptied their garden and Firebase should record that.
+        /// </summary>
+        public const string SaveGardenState = "SAVE_GARDEN_STATE";
+
+        /// <summary>
+        /// The player tapped Share on a photo they took of their garden — open the native share sheet.
+        /// Payload: <see cref="PhotoSharePayload"/>.
+        ///
+        /// The image travels as a <b>file path</b>, never as image data: the game writes a PNG into its
+        /// own <c>persistentDataPath</c> (readable by the Flutter side of the same app) and sends where
+        /// it put it. A full-screen screenshot is megabytes, and base64 through the message channel
+        /// would stall both sides.
+        /// </summary>
+        public const string RequestSharePhoto = "REQUEST_SHARE_PHOTO";
+
+        /// <summary>
+        /// The player tapped Save on a photo — write it to the device's photo gallery. Same file-path
+        /// contract as <see cref="RequestSharePhoto"/>. Payload: <see cref="PhotoSharePayload"/>.
+        /// Flutter owns the gallery permission prompt; the game never asks for one.
+        /// </summary>
+        public const string RequestSavePhoto = "REQUEST_SAVE_PHOTO";
+    }
+
+    /// <summary>The action values <see cref="PhotoActionResultPayload.action"/> can carry.</summary>
+    public static class PhotoAction
+    {
+        public const string Share = "share";
+        public const string Save = "save";
     }
 
     /// <summary>The outcome values <see cref="RewardedAdResultPayload.status"/> can carry.</summary>
@@ -192,6 +251,109 @@ namespace FlutterIntegration
     public class AdAvailabilityPayload
     {
         public bool rewardedReady;
+    }
+
+    /// <summary>
+    /// One asset standing in the player's garden.
+    ///
+    /// Position and rotation are flat floats rather than nested Vector3/Quaternion objects: this maps
+    /// straight onto a Firestore document without a custom converter on the Flutter side, and it keeps
+    /// JsonUtility (which is fussy about nesting) out of trouble in both directions.
+    /// </summary>
+    [Serializable]
+    public class GardenItemPayload
+    {
+        /// <summary>Stable id for this placement, so a move updates a row instead of adding one.</summary>
+        public string uniqueId;
+
+        /// <summary>Name of the prefab to respawn. Must match a prefab the game can reach — do not rewrite it.</summary>
+        public string prefabName;
+
+        public float posX;
+        public float posY;
+        public float posZ;
+
+        public float rotX;
+        public float rotY;
+        public float rotZ;
+        public float rotW;
+
+        /// <summary>Seconds of growth left when the snapshot was taken. The game ages it by the time since.</summary>
+        public float remainingDuration;
+
+        /// <summary>How long this item takes to fully grow, start to finish.</summary>
+        public float totalDuration;
+
+        /// <summary>The shop/inventory item this was placed from, used when the player returns it.</summary>
+        public string sourceItemId;
+
+        /// <summary>0 = unknown, 1 = shop item, 2 = inventory (treasure box) item. See <c>PlacedItemSource</c>.</summary>
+        public int sourceKind;
+    }
+
+    /// <summary>
+    /// The whole garden, in both directions: Unity → Flutter to be written to Firebase
+    /// (<see cref="FlutterCommands.SaveGardenState"/>), and Flutter → Unity to be restored
+    /// (<see cref="FlutterCommands.UpdateGardenState"/>).
+    /// </summary>
+    [Serializable]
+    public class GardenStatePayload
+    {
+        /// <summary>
+        /// False only from Flutter, meaning "this account has no garden stored yet". The game then keeps
+        /// whatever is on the device and seeds Firebase from it. An account whose garden is genuinely
+        /// empty should send true with an empty <see cref="items"/> array instead.
+        /// </summary>
+        public bool hasData;
+
+        /// <summary>
+        /// When this snapshot was taken (Unix seconds, UTC). Drives two things: how much growth to
+        /// fast-forward while the player was away, and which of the device's and Firebase's copies is
+        /// newer. Flutter should replace it with a server timestamp when it can — the value written here
+        /// is the device's own clock, and a badly-set clock otherwise always wins the comparison.
+        /// </summary>
+        public long savedAtUnix;
+
+        /// <summary>Save counter, used only to break a tie when both copies report the same second.</summary>
+        public int revision;
+
+        public GardenItemPayload[] items;
+    }
+
+    /// <summary>
+    /// Unity → Flutter: a photo the player took of their garden, ready to share or save.
+    /// </summary>
+    [Serializable]
+    public class PhotoSharePayload
+    {
+        /// <summary>
+        /// Absolute path to a PNG inside the app's own storage. Already written and closed by the time
+        /// this arrives, so it can be read immediately.
+        /// </summary>
+        public string filePath;
+
+        /// <summary>Suggested text for the share sheet. Ignored when saving to the gallery.</summary>
+        public string caption;
+
+        /// <summary>What prompted it, e.g. "photo_mode", for analytics.</summary>
+        public string source;
+
+        /// <summary>Pixel size of the image, in case the host wants to resize before sharing.</summary>
+        public int width;
+        public int height;
+    }
+
+    /// <summary>Flutter → Unity: how a share or save ended, so the game can tell the player.</summary>
+    [Serializable]
+    public class PhotoActionResultPayload
+    {
+        /// <summary>One of <see cref="PhotoAction"/>.</summary>
+        public string action;
+
+        public bool success;
+
+        /// <summary>Optional message shown to the player when <see cref="success"/> is false.</summary>
+        public string message;
     }
 
     /// <summary>Placeholder for commands that carry no data (JsonUtility cannot serialize null).</summary>

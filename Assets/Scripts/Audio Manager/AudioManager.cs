@@ -23,7 +23,11 @@ public enum SoundEffect
     XPGainChartToggle,
     ItemInteract,
     Run,
-    Breathing
+    Breathing,
+
+    // Appended last on purpose: this enum is serialized by index on the AudioManager's `sounds` array,
+    // so inserting anywhere above would silently reassign every clip already set up in the scene.
+    CameraShutter
 }
 
 [System.Serializable]
