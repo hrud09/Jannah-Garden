@@ -112,7 +112,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
                 {
                     TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
                 }
-            });
+            }, "treasure_box");
         }
         else
         {

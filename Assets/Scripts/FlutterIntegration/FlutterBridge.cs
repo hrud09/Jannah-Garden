@@ -34,6 +34,12 @@ namespace FlutterIntegration
         public static event Action<CoinUpdatePayload> OnCoinsReceived;
         public static event Action<FellowshipProfilesPayload> OnFellowshipProfilesReceived;
 
+        /// <summary>Fires when Flutter reports how a rewarded ad ended. AdsManager listens for this.</summary>
+        public static event Action<RewardedAdResultPayload> OnRewardedAdResult;
+
+        /// <summary>Fires when Flutter's rewarded-ad readiness changes, so "Watch Ad" buttons can follow it.</summary>
+        public static event Action<bool> OnRewardedAdAvailabilityChanged;
+
         // ─── Cached payloads ──────────────────────────────────────────────────────
         // Flutter may push data long before the scene that needs it is loaded, so we keep the last of
         // each. Consumers read these on Start and subscribe to the matching event for later updates.
@@ -47,6 +53,14 @@ namespace FlutterIntegration
         /// message arrived during a loading scene) can still adopt it. See <see cref="ApplyCoinBalance"/>.
         /// </summary>
         public static int? LatestCoinBalance { get; private set; }
+
+        /// <summary>
+        /// Whether Flutter currently has a rewarded ad loaded. Static and cached for the same reason as
+        /// the coin balance: Flutter pushes availability whenever it changes, which is often before the
+        /// scene holding the "Watch Ad" button exists. Defaults to false — the game must not promise an
+        /// ad it has not been told about.
+        /// </summary>
+        public static bool RewardedAdReady { get; private set; }
 
         /// <summary>True once Flutter has sent at least one non-empty fellowship roster.</summary>
         public static bool HasFellowshipProfiles =>
@@ -252,6 +266,36 @@ namespace FlutterIntegration
                     break;
                 }
 
+                case FlutterCommands.RewardedAdResult:
+                {
+                    RewardedAdResultPayload result = JsonUtility.FromJson<RewardedAdResultPayload>(dataJson);
+
+                    if (result == null || string.IsNullOrEmpty(result.status))
+                    {
+                        // Nobody would resume the game if this were dropped silently, so synthesise a
+                        // failure — AdsManager treats it the same as a failed ad and unpauses.
+                        Debug.LogWarning("[FlutterBridge] REWARDED_AD_RESULT had no status — treating it as failed.");
+                        result = new RewardedAdResultPayload { status = RewardedAdStatus.Failed, source = string.Empty };
+                    }
+
+                    Debug.Log($"[FlutterBridge] Rewarded ad -> Status: {result.status}, Source: {result.source}");
+
+                    OnRewardedAdResult?.Invoke(result);
+                    break;
+                }
+
+                case FlutterCommands.UpdateAdAvailability:
+                {
+                    AdAvailabilityPayload availability = JsonUtility.FromJson<AdAvailabilityPayload>(dataJson);
+                    if (availability == null) break;
+
+                    Debug.Log($"[FlutterBridge] Ad availability -> Rewarded ready: {availability.rewardedReady}");
+
+                    RewardedAdReady = availability.rewardedReady;
+                    OnRewardedAdAvailabilityChanged?.Invoke(availability.rewardedReady);
+                    break;
+                }
+
                 default:
                     Debug.LogWarning($"[FlutterBridge] Unhandled command: {command}");
                     break;
@@ -296,6 +340,20 @@ namespace FlutterIntegration
         public void RequestCoinBalance()
         {
             SendMessageToFlutterApp(FlutterCommands.RequestCoinBalance, new EmptyPayload());
+        }
+
+        /// <summary>
+        /// Asks Flutter to play a rewarded ad. Flutter owns the ad SDK, so the game only decides when an
+        /// ad is due; the outcome comes back as <see cref="FlutterCommands.RewardedAdResult"/>.
+        /// Callers should go through AdsManager rather than calling this directly — it handles pausing
+        /// the game and resuming it whatever the ad does.
+        /// </summary>
+        /// <param name="source">What the player is paying for, e.g. "treasure_box".</param>
+        public void RequestRewardedAd(string source)
+        {
+            SendMessageToFlutterApp(
+                FlutterCommands.RequestRewardedAd,
+                new RewardedAdRequestPayload { source = source });
         }
 
         /// <summary>

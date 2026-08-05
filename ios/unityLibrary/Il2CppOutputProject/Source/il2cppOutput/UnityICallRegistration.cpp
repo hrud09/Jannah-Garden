@@ -694,10 +694,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Application_SetLogCallbackDefined();
 		Register_UnityEngine_Application_SetLogCallbackDefined();
 
-		//System.Void UnityEngine.Application::get_identifier_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
-		void Register_UnityEngine_Application_get_identifier_Injected();
-		Register_UnityEngine_Application_get_identifier_Injected();
-
 		//System.Void UnityEngine.Application::get_persistentDataPath_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_Application_get_persistentDataPath_Injected();
 		Register_UnityEngine_Application_get_persistentDataPath_Injected();
@@ -717,10 +713,6 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Application::set_targetFrameRate(System.Int32)
 		void Register_UnityEngine_Application_set_targetFrameRate();
 		Register_UnityEngine_Application_set_targetFrameRate();
-
-		//UnityEngine.NetworkReachability UnityEngine.Application::get_internetReachability()
-		void Register_UnityEngine_Application_get_internetReachability();
-		Register_UnityEngine_Application_get_internetReachability();
 
 		//UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
 		void Register_UnityEngine_Application_get_platform();
@@ -2946,10 +2938,6 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.ImageConversion
 
-		//System.Boolean UnityEngine.ImageConversion::LoadImage_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Boolean)
-		void Register_UnityEngine_ImageConversion_LoadImage_Injected();
-		Register_UnityEngine_ImageConversion_LoadImage_Injected();
-
 		//System.Void UnityEngine.ImageConversion::EncodeToPNG_Injected(System.IntPtr,UnityEngine.Bindings.BlittableArrayWrapper&)
 		void Register_UnityEngine_ImageConversion_EncodeToPNG_Injected();
 		Register_UnityEngine_ImageConversion_EncodeToPNG_Injected();
@@ -4098,10 +4086,6 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.Networking.CertificateHandler
 
-		//System.IntPtr UnityEngine.Networking.CertificateHandler::Create(UnityEngine.Networking.CertificateHandler)
-		void Register_UnityEngine_Networking_CertificateHandler_Create();
-		Register_UnityEngine_Networking_CertificateHandler_Create();
-
 		//System.Void UnityEngine.Networking.CertificateHandler::ReleaseFromScripting_Injected(System.IntPtr)
 		void Register_UnityEngine_Networking_CertificateHandler_ReleaseFromScripting_Injected();
 		Register_UnityEngine_Networking_CertificateHandler_ReleaseFromScripting_Injected();
@@ -4115,14 +4099,6 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Networking_DownloadHandler_ReleaseFromScripting_Injected();
 
 	//End Registrations for type : UnityEngine.Networking.DownloadHandler
-
-	//Start Registrations for type : UnityEngine.Networking.DownloadHandlerBuffer
-
-		//System.IntPtr UnityEngine.Networking.DownloadHandlerBuffer::Create(UnityEngine.Networking.DownloadHandlerBuffer)
-		void Register_UnityEngine_Networking_DownloadHandlerBuffer_Create();
-		Register_UnityEngine_Networking_DownloadHandlerBuffer_Create();
-
-	//End Registrations for type : UnityEngine.Networking.DownloadHandlerBuffer
 
 	//Start Registrations for type : UnityEngine.Networking.DownloadHandlerTexture
 
@@ -4178,14 +4154,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Networking_UnityWebRequest_GetError_Injected();
 		Register_UnityEngine_Networking_UnityWebRequest_GetError_Injected();
 
-		//UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::InternalSetRequestHeader_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
-		void Register_UnityEngine_Networking_UnityWebRequest_InternalSetRequestHeader_Injected();
-		Register_UnityEngine_Networking_UnityWebRequest_InternalSetRequestHeader_Injected();
-
-		//UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetCertificateHandler_Injected(System.IntPtr,System.IntPtr)
-		void Register_UnityEngine_Networking_UnityWebRequest_SetCertificateHandler_Injected();
-		Register_UnityEngine_Networking_UnityWebRequest_SetCertificateHandler_Injected();
-
 		//UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetCustomMethod_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_Networking_UnityWebRequest_SetCustomMethod_Injected();
 		Register_UnityEngine_Networking_UnityWebRequest_SetCustomMethod_Injected();
@@ -4215,14 +4183,6 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Networking_UploadHandler_ReleaseFromScripting_Injected();
 
 	//End Registrations for type : UnityEngine.Networking.UploadHandler
-
-	//Start Registrations for type : UnityEngine.Networking.UploadHandlerRaw
-
-		//System.IntPtr UnityEngine.Networking.UploadHandlerRaw::Create(UnityEngine.Networking.UploadHandlerRaw,System.Byte*,System.Int32)
-		void Register_UnityEngine_Networking_UploadHandlerRaw_Create();
-		Register_UnityEngine_Networking_UploadHandlerRaw_Create();
-
-	//End Registrations for type : UnityEngine.Networking.UploadHandlerRaw
 
 	//Start Registrations for type : UnityEngine.Object
 
@@ -7161,14 +7121,6 @@ void RegisterAllStrippedInternalCalls()
 		//System.Int32 UnityEngine.SystemInfo::GetMaxTextureSize()
 		void Register_UnityEngine_SystemInfo_GetMaxTextureSize();
 		Register_UnityEngine_SystemInfo_GetMaxTextureSize();
-
-		//System.Int32 UnityEngine.SystemInfo::GetPhysicalMemoryMB()
-		void Register_UnityEngine_SystemInfo_GetPhysicalMemoryMB();
-		Register_UnityEngine_SystemInfo_GetPhysicalMemoryMB();
-
-		//System.Int32 UnityEngine.SystemInfo::GetProcessorCount()
-		void Register_UnityEngine_SystemInfo_GetProcessorCount();
-		Register_UnityEngine_SystemInfo_GetProcessorCount();
 
 		//System.Int32 UnityEngine.SystemInfo::GetRenderTextureSupportedMSAASampleCount_Injected(UnityEngine.RenderTextureDescriptor&)
 		void Register_UnityEngine_SystemInfo_GetRenderTextureSupportedMSAASampleCount_Injected();

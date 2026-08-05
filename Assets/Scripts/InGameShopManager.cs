@@ -545,7 +545,7 @@ public class InGameShopManager : MonoBehaviour
             }
 
             CompleteAcquisition(item, data);
-        });
+        }, "shop_item");
     }
 
     /// <summary>

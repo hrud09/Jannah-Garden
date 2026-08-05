@@ -69,6 +69,8 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 | `UPDATE_USER_PROFILE` | `{ userName, noorCoins, profileImagePath }` — the *local* player |
 | `UPDATE_COINS` | `{ newBalance }` — authoritative coin balance |
 | `UPDATE_FELLOWSHIP_PROFILES` | `{ fellows: [...] }` — the roster of *other* users |
+| `UPDATE_AD_AVAILABILITY` | `{ rewardedReady }` — whether you have a rewarded ad loaded right now |
+| `REWARDED_AD_RESULT` | `{ status, source }` — how the ad you were asked for ended |
 
 ### Unity → Flutter
 
@@ -79,6 +81,53 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 | `REQUEST_FELLOWSHIP_PROFILES` | A scene needs the roster and has none cached. | Send `UPDATE_FELLOWSHIP_PROFILES`. |
 | `REQUEST_SUBSCRIBE` | The player tapped **Subscribe** on the treasure box panel. Payload: `{ source }`. | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and navigate to your app's subscribe page. |
 | `REQUEST_EXIT_GAME` | The player confirmed **Exit** on the exit panel. Payload: `{ source }` (currently `"exit_panel"`). | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and show your app's home screen. Do *not* close the app. |
+| `REQUEST_REWARDED_AD` | The player asked for something that costs an ad. Payload: `{ source }` (`"treasure_box"`, `"shop_item"`). | Show a rewarded ad **over** the Unity view, then answer with `REWARDED_AD_RESULT`. |
+
+#### Handling `REQUEST_REWARDED_AD`
+
+**The game has no ad SDK.** Unity used to ship its own copy of Google Mobile Ads; on iOS that made `dyld`
+kill the app at launch (`_GADAdLoaderAdTypeNative` not found), because the Unity plugin referenced
+native-ads symbols the final binary never linked. The plugin is gone, and it must stay gone — two GMA
+instances in one process also means two initialisations and two UMP consent flows.
+
+So ads are yours entirely. Unity only says *when* one is due, and waits:
+
+```dart
+case 'REQUEST_REWARDED_AD':
+  final data = jsonDecode(envelope['data'] as String) as Map<String, dynamic>;
+  final source = data['source'] as String? ?? 'game'; // "treasure_box" | "shop_item"
+
+  final ad = _rewardedAd; // pre-loaded, see UPDATE_AD_AVAILABILITY below
+  if (ad == null) {
+    UnityBridge.sendRewardedAdResult(status: 'unavailable', source: source);
+    break;
+  }
+
+  ad.show(onUserEarnedReward: (_, __) => _earned = true);
+  // On dismiss / failure:
+  //   sendRewardedAdResult(status: _earned ? 'rewarded' : 'dismissed', source: source)
+  //   sendRewardedAdResult(status: 'failed', source: source)
+  break;
+```
+
+Three things the game depends on:
+
+- **Always answer.** `status` is one of `rewarded` | `dismissed` | `failed` | `unavailable`. The game is
+  frozen at `timeScale = 0` from the moment it asks until your answer arrives — it will unfreeze itself
+  after 120s as a last resort, but the player watches a dead screen until then. Answer on *every* exit
+  path, including the error ones.
+- **Do not send coins in this message.** `REWARDED_AD_RESULT` carries no amount, on purpose. If the reward
+  is coins, credit the wallet server-side and push the new balance as `UPDATE_COINS` — one source of truth.
+- **`dismissed` is not an error.** The player closed the ad early: no reward, no error message. The game
+  resumes normally.
+
+#### Handling `UPDATE_AD_AVAILABILITY`
+
+Ads take a few seconds to load, so pre-load one and tell the game whether it has an ad to offer. Push
+`{ "rewardedReady": true|false }` whenever that changes — after a load succeeds, and again after the ad is
+consumed. The game defaults to `false` and, while it is false, plays its built-in placeholder timer panel
+instead of asking you for an ad, so a stale `false` costs the player a real ad rather than breaking
+anything.
 
 #### Handling `REQUEST_COIN_BALANCE` (and repeated `UNITY_READY`)
 

@@ -2,46 +2,80 @@ using UnityEngine;
 using System.Collections;
 using System;
 using TMPro;
-using GoogleMobileAds.Api;
+using FlutterIntegration;
 
+/// <summary>
+/// The game's single entry point for rewarded ads.
+///
+/// The game does NOT own an ad SDK. Amal embeds this Unity build inside a Flutter host that already
+/// ships google_mobile_ads, and shipping a second copy inside UnityFramework broke the iOS app: the
+/// Unity plugin referenced native-ads symbols that the final binary never linked, so dyld killed the
+/// app before Flutter's main() even ran. Ads now live on the Flutter side only, and this class just
+/// asks for them over <see cref="FlutterBridge"/>.
+///
+/// Do not reintroduce a Unity-side ad package. Two Google Mobile Ads instances in one process means two
+/// initialisations and two consent (UMP) flows, on top of the linking problem that caused the crash.
+///
+/// The fake ad panel below is the fallback when there is no Flutter host at all (Editor play mode) or
+/// when Flutter has no ad loaded — the player waits out a timer and is granted the reward, which is the
+/// behaviour the game shipped with.
+/// </summary>
 public class AdsManager : MonoBehaviour
 {
     public static AdsManager Instance;
 
-    // Test Ad Unit IDs (Android). Replace with iOS IDs if needed for iOS builds.
-#if UNITY_ANDROID
-    private string interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
-    private string rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
-#elif UNITY_IPHONE
-    private string interstitialAdUnitId = "ca-app-pub-3940256099942544/4411468910";
-    private string rewardedAdUnitId = "ca-app-pub-3940256099942544/1712485313";
-#else
-    private string interstitialAdUnitId = "unused";
-    private string rewardedAdUnitId = "unused";
-#endif
+    /// <summary>
+    /// How long to wait for Flutter's REWARDED_AD_RESULT before giving up. Generous, because the wait
+    /// covers the whole ad: request, load, playback, and the close button. Without it a dropped message
+    /// would strand the game at timeScale 0 with no way out.
+    /// </summary>
+    private const float ResultTimeoutSeconds = 120f;
 
-    private InterstitialAd interstitialAd;
-    private RewardedAd rewardedAd;
-
-    // Dynamic callback for rewarded ad
+    // Dynamic callback for the in-flight rewarded ad.
     private Action onRewardedAdEarned;
+
+    /// <summary>Set while a request is out to Flutter, so a second tap cannot start a second ad.</summary>
+    private bool _adInFlight;
+
+    private Coroutine _timeout;
+    private float _timeScaleBeforeAd = 1f;
 
     [Header("Fake Ad Setup (Fallback)")]
     public GameObject fakeRewardedAdPanel;
     public float fakeAdDuration = 15f;
     public TMP_Text fakeTimerCountDownText;
 
+    /// <summary>
+    /// True when Flutter has told us it has a rewarded ad loaded. False does not block
+    /// <see cref="ShowRewardedAd(Action)"/> — it falls back to the fake ad — but a "Watch Ad" button can
+    /// read this to show the player what to expect.
+    /// </summary>
+    public bool IsAdReady => FlutterBridge.RewardedAdReady;
+
     void Awake()
     {
-        if (Instance == null) 
+        if (Instance == null)
         {
             Instance = this;
             // Optionally: DontDestroyOnLoad(gameObject);
         }
-        else 
+        else
         {
             Destroy(gameObject);
+            return;
         }
+
+        FlutterBridge.OnRewardedAdResult += HandleRewardedAdResult;
+    }
+
+    void OnDestroy()
+    {
+        FlutterBridge.OnRewardedAdResult -= HandleRewardedAdResult;
+
+        // A scene change mid-ad must not leave the next scene frozen.
+        if (_adInFlight) Time.timeScale = _timeScaleBeforeAd;
+
+        if (Instance == this) Instance = null;
     }
 
     void Start()
@@ -50,136 +84,108 @@ public class AdsManager : MonoBehaviour
         {
             fakeRewardedAdPanel.SetActive(false);
         }
-
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(initStatus => {
-            Debug.Log("AdMob initialized.");
-            LoadInterstitialAd();
-            LoadRewardedAd();
-        });
     }
-
-    #region Interstitial Ad
-
-    public void LoadInterstitialAd()
-    {
-        if (interstitialAd != null)
-        {
-            interstitialAd.Destroy();
-            interstitialAd = null;
-        }
-
-        var adRequest = new AdRequest();
-
-        InterstitialAd.Load(interstitialAdUnitId, adRequest,
-            (InterstitialAd ad, LoadAdError error) =>
-            {
-                if (error != null || ad == null)
-                {
-                    Debug.LogError("Interstitial ad failed to load an ad with error : " + error);
-                    return;
-                }
-                
-                interstitialAd = ad;
-                RegisterEventHandlers(interstitialAd);
-            });
-    }
-
-    public void ShowInterstitialAd()
-    {
-        if (interstitialAd != null && interstitialAd.CanShowAd())
-        {
-            interstitialAd.Show();
-        }
-        else
-        {
-            Debug.LogWarning("Interstitial ad is not ready yet.");
-            LoadInterstitialAd(); // Try loading one for next time
-        }
-    }
-
-    private void RegisterEventHandlers(InterstitialAd ad)
-    {
-        ad.OnAdFullScreenContentClosed += () =>
-        {
-            Debug.Log("Interstitial Ad full screen content closed.");
-            LoadInterstitialAd(); // Load next ad
-        };
-        ad.OnAdFullScreenContentFailed += (AdError error) =>
-        {
-            Debug.LogError("Interstitial ad failed to open full screen content with error : " + error);
-            LoadInterstitialAd(); // Load next ad
-        };
-    }
-
-    #endregion
 
     #region Rewarded Ad
 
-    public void LoadRewardedAd()
+    /// <summary>
+    /// Shows a rewarded ad and runs <paramref name="onReward"/> only if the player earns the reward.
+    /// </summary>
+    /// <param name="onReward">Runs once the ad is watched through. Never runs if the player skips.</param>
+    /// <param name="source">
+    /// What the reward is for, forwarded to Flutter for attribution — e.g. "treasure_box", "shop_item".
+    /// </param>
+    public void ShowRewardedAd(Action onReward, string source = "game")
     {
-        if (rewardedAd != null)
+        if (_adInFlight)
         {
-            rewardedAd.Destroy();
-            rewardedAd = null;
+            Debug.LogWarning("[AdsManager] A rewarded ad is already in flight — ignoring this request.");
+            return;
         }
 
-        var adRequest = new AdRequest();
-        RewardedAd.Load(rewardedAdUnitId, adRequest,
-            (RewardedAd ad, LoadAdError error) =>
-            {
-                if (error != null || ad == null)
-                {
-                    Debug.LogError("Rewarded ad failed to load an ad with error : " + error);
-                    return;
-                }
+        // No host (Editor play mode) or nothing loaded: the player waits out the timer instead. Flutter
+        // pre-loads ads and pushes UPDATE_AD_AVAILABILITY, so this is the rare path on device.
+        if (FlutterBridge.Instance == null || !FlutterBridge.RewardedAdReady)
+        {
+            Debug.LogWarning("[AdsManager] No rewarded ad available from Flutter — showing the fake ad instead.");
+            ShowFakeRewardedAd(onReward);
+            return;
+        }
 
-                rewardedAd = ad;
-                RegisterEventHandlers(rewardedAd);
-            });
+        _adInFlight = true;
+        onRewardedAdEarned = onReward;
+
+        // Flutter draws the ad over the Unity view, so the game must stop rather than run underneath it.
+        _timeScaleBeforeAd = Time.timeScale;
+        Time.timeScale = 0f;
+
+        Debug.Log($"[AdsManager] Requesting a rewarded ad from Flutter (source: {source}).");
+        FlutterBridge.Instance.RequestRewardedAd(source);
+
+        _timeout = StartCoroutine(FailIfFlutterNeverAnswers());
+    }
+
+    private IEnumerator FailIfFlutterNeverAnswers()
+    {
+        // Realtime: the game is paused at timeScale 0 while the ad plays.
+        yield return new WaitForSecondsRealtime(ResultTimeoutSeconds);
+
+        Debug.LogError($"[AdsManager] Flutter sent no {FlutterCommands.RewardedAdResult} within "
+            + $"{ResultTimeoutSeconds}s — resuming the game without a reward.");
+
+        _timeout = null;
+        FinishRewardedAd(false);
+    }
+
+    private void HandleRewardedAdResult(RewardedAdResultPayload result)
+    {
+        if (!_adInFlight)
+        {
+            // Late or duplicate answer to an ad that already ended. Resuming here would clobber a
+            // timeScale the game has since set for its own reasons, so drop it.
+            Debug.LogWarning($"[AdsManager] Rewarded ad result '{result.status}' arrived with no ad in flight — ignoring.");
+            return;
+        }
+
+        if (_timeout != null)
+        {
+            StopCoroutine(_timeout);
+            _timeout = null;
+        }
+
+        switch (result.status)
+        {
+            case RewardedAdStatus.Rewarded:
+                Debug.Log($"[AdsManager] Rewarded ad watched (source: {result.source}) — granting the reward.");
+                FinishRewardedAd(true);
+                break;
+
+            case RewardedAdStatus.Dismissed:
+                // Not an error. The player chose to stop watching; they simply do not get the reward.
+                Debug.Log("[AdsManager] Rewarded ad dismissed — no reward.");
+                FinishRewardedAd(false);
+                break;
+
+            default:
+                Debug.LogWarning($"[AdsManager] Rewarded ad did not play (status: {result.status}) — no reward.");
+                FinishRewardedAd(false);
+                break;
+        }
     }
 
     /// <summary>
-    /// Shows the rewarded ad and passes the dynamic reward action.
+    /// Restores the game and settles the pending callback. Every exit from an ad goes through here —
+    /// missing one would leave the game frozen at timeScale 0.
     /// </summary>
-    /// <param name="onReward">The action to execute when the user successfully earns the reward.</param>
-    public void ShowRewardedAd(Action onReward)
+    private void FinishRewardedAd(bool earned)
     {
-        if (rewardedAd != null && rewardedAd.CanShowAd())
-        {
-            onRewardedAdEarned = onReward;
-            rewardedAd.Show((Reward reward) =>
-            {
-                // Reward the user!
-                Debug.Log($"Rewarded ad granted a reward: {reward.Amount} {reward.Type}");
-                if (onRewardedAdEarned != null)
-                {
-                    onRewardedAdEarned.Invoke();
-                    onRewardedAdEarned = null; // Clear the callback after executing
-                }
-            });
-        }
-        else
-        {
-            Debug.LogWarning("Rewarded ad is not ready yet. Showing fake rewarded ad as fallback.");
-            // Fallback to fake ad if the real one isn't ready
-            ShowFakeRewardedAd(onReward);
-            LoadRewardedAd(); // Attempt to load a real one for next time
-        }
-    }
+        _adInFlight = false;
+        Time.timeScale = _timeScaleBeforeAd;
 
-    private void RegisterEventHandlers(RewardedAd ad)
-    {
-        ad.OnAdFullScreenContentClosed += () =>
-        {
-            Debug.Log("Rewarded Ad full screen content closed.");
-            LoadRewardedAd(); // Load next ad
-        };
-        ad.OnAdFullScreenContentFailed += (AdError error) =>
-        {
-            Debug.LogError("Rewarded ad failed to open full screen content with error : " + error);
-            LoadRewardedAd(); // Load next ad
-        };
+        Action callback = onRewardedAdEarned;
+        onRewardedAdEarned = null;
+
+        if (earned) callback?.Invoke();
     }
 
     #endregion
@@ -205,7 +211,8 @@ public class AdsManager : MonoBehaviour
             {
                 fakeTimerCountDownText.text = Mathf.CeilToInt(remainingTime).ToString();
             }
-            yield return new WaitForSeconds(1f);
+            // Realtime, so the countdown still runs when a panel has paused the game.
+            yield return new WaitForSecondsRealtime(1f);
             remainingTime -= 1f;
         }
 

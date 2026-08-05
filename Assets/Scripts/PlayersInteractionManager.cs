@@ -77,7 +77,7 @@ public class PlayersInteractionManager : MonoBehaviour
                     {
                         TreasureBoxManager.Instance.TryOpenBox(tier, slot);
                     }
-                });
+                }, "treasure_box");
             }
             else
             {

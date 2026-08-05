@@ -23,6 +23,20 @@ namespace FlutterIntegration
         /// </summary>
         public const string IAPPurchaseResult = "IAP_PURCHASE_RESULT";
 
+        /// <summary>
+        /// Flutter's answer to <see cref="RequestRewardedAd"/>, sent once the ad closes for any reason.
+        /// Payload: <see cref="RewardedAdResultPayload"/>. Carries no coin amount by design — the reward
+        /// arrives separately as <see cref="UpdateCoins"/> once the server has credited the wallet.
+        /// </summary>
+        public const string RewardedAdResult = "REWARDED_AD_RESULT";
+
+        /// <summary>
+        /// Flutter tells the game whether a rewarded ad is loaded and showable. Pushed unprompted
+        /// whenever the ad's state changes, so "Watch Ad" buttons can be enabled/disabled ahead of time.
+        /// Payload: <see cref="AdAvailabilityPayload"/>.
+        /// </summary>
+        public const string UpdateAdAvailability = "UPDATE_AD_AVAILABILITY";
+
         // ─── Unity → Flutter ──────────────────────────────────────────────────
         /// <summary>Sent once the bridge is alive, so Flutter knows it is safe to push data.</summary>
         public const string UnityReady = "UNITY_READY";
@@ -61,6 +75,29 @@ namespace FlutterIntegration
         /// Payload: <see cref="ExitGameRequestPayload"/> (carries the context that prompted it).
         /// </summary>
         public const string RequestExitGame = "REQUEST_EXIT_GAME";
+
+        /// <summary>
+        /// Asks Flutter to show a rewarded ad. Flutter owns the ad SDK and the consent (UMP) flow, so
+        /// the game only says *when* an ad should play — it never loads or renders one itself.
+        /// Payload: <see cref="RewardedAdRequestPayload"/>. Answered with <see cref="RewardedAdResult"/>.
+        /// </summary>
+        public const string RequestRewardedAd = "REQUEST_REWARDED_AD";
+    }
+
+    /// <summary>The outcome values <see cref="RewardedAdResultPayload.status"/> can carry.</summary>
+    public static class RewardedAdStatus
+    {
+        /// <summary>The player watched the ad through — grant whatever it was paying for.</summary>
+        public const string Rewarded = "rewarded";
+
+        /// <summary>The player closed the ad early. Not an error: no reward, but no complaint either.</summary>
+        public const string Dismissed = "dismissed";
+
+        /// <summary>The ad was loaded but failed to present.</summary>
+        public const string Failed = "failed";
+
+        /// <summary>No ad was loaded when the request arrived.</summary>
+        public const string Unavailable = "unavailable";
     }
 
     [Serializable]
@@ -127,6 +164,34 @@ namespace FlutterIntegration
     public class ExitGameRequestPayload
     {
         public string source;
+    }
+
+    /// <summary>
+    /// Unity → Flutter: please show a rewarded ad. <paramref name="source"/> says what the player is
+    /// paying for (e.g. "treasure_box", "shop_item") so Flutter can attribute the impression.
+    /// </summary>
+    [Serializable]
+    public class RewardedAdRequestPayload
+    {
+        public string source;
+    }
+
+    /// <summary>
+    /// Flutter → Unity: how the rewarded ad ended. <see cref="status"/> is one of
+    /// <see cref="RewardedAdStatus"/>; <see cref="source"/> echoes back the request's source.
+    /// </summary>
+    [Serializable]
+    public class RewardedAdResultPayload
+    {
+        public string status;
+        public string source;
+    }
+
+    /// <summary>Flutter → Unity: whether a rewarded ad is loaded and ready to show right now.</summary>
+    [Serializable]
+    public class AdAvailabilityPayload
+    {
+        public bool rewardedReady;
     }
 
     /// <summary>Placeholder for commands that carry no data (JsonUtility cannot serialize null).</summary>
