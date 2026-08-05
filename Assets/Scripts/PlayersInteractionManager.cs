@@ -1,8 +1,22 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
+
+/// <summary>
+/// The kind of thing the crosshair is resting on. Each kind gets its own on-screen button, so the
+/// prompt reads "open" in front of a treasure box and "answer" in front of an orb instead of one
+/// button meaning three different things.
+/// </summary>
+public enum InteractionTargetType
+{
+    None,
+    TreasureBox,
+    QuestionOrb,
+    PlacedItem
+}
 
 public class PlayersInteractionManager : MonoBehaviour
 {
@@ -27,13 +41,41 @@ public class PlayersInteractionManager : MonoBehaviour
              "on the default layer, not the treasure box / orb layers.")]
     public LayerMask placedItemLayerMask = ~0;
 
+    [Header("Interaction Buttons")]
+    [Tooltip("Shown while looking at a treasure box. Opens the box.")]
+    public Button treasureBoxInteractButton;
+
+    [Tooltip("Shown while looking at a question mark orb. Opens the quiz.")]
+    public Button orbInteractButton;
+
+    [Tooltip("Shown while looking at an asset the player has placed. Opens the move / return options.")]
+    public Button placedItemInteractButton;
+
+    [Tooltip("Used for any target kind left without a button of its own above. A scene wired to this one " +
+             "button behaves exactly as it did before the per-kind buttons existed.")]
+    public Button itemInteractButton;
+
     public TreasureBox currentTargetBox = null;
     public QuestionMarkOrb currentTargetOrb = null;
     public PlaceableItem currentTargetPlaceable = null;
     private Camera mainCam;
 
-    public Button itemInteractButton;
     private bool isInteracting = false;
+
+    /// <summary>
+    /// What the crosshair is on right now. A treasure box standing in front of a tree is still what the
+    /// player means, so the order here is the priority order the raycasts already use.
+    /// </summary>
+    public InteractionTargetType CurrentTargetType
+    {
+        get
+        {
+            if (currentTargetBox != null) return InteractionTargetType.TreasureBox;
+            if (currentTargetOrb != null) return InteractionTargetType.QuestionOrb;
+            if (currentTargetPlaceable != null) return InteractionTargetType.PlacedItem;
+            return InteractionTargetType.None;
+        }
+    }
 
     private void Awake()
     {
@@ -53,14 +95,43 @@ public class PlayersInteractionManager : MonoBehaviour
             Debug.LogWarning("[PlayersInteractionManager] Main Camera not found. Please tag your camera as 'MainCamera'.");
         }
 
-        // Disable the interaction button by default
-        if (itemInteractButton != null)
-        {
-            itemInteractButton.gameObject.SetActive(false);
-            itemInteractButton.onClick.AddListener(OnInteractButtonClicked);
-        }
+        // Every button starts hidden and knows the single thing it does. The shared button is the odd
+        // one out: it has to work out at click time which of the three it is standing in for.
+        RegisterButton(treasureBoxInteractButton, OnTreasureBoxButtonClicked);
+        RegisterButton(orbInteractButton, OnOrbButtonClicked);
+        RegisterButton(placedItemInteractButton, OnPlacedItemButtonClicked);
+        RegisterButton(itemInteractButton, OnSharedButtonClicked);
 
         EnsurePlacedItemActionsUI();
+    }
+
+    private void OnDestroy()
+    {
+        UnregisterButton(treasureBoxInteractButton, OnTreasureBoxButtonClicked);
+        UnregisterButton(orbInteractButton, OnOrbButtonClicked);
+        UnregisterButton(placedItemInteractButton, OnPlacedItemButtonClicked);
+        UnregisterButton(itemInteractButton, OnSharedButtonClicked);
+
+        if (Instance == this) Instance = null;
+    }
+
+    /// <summary>
+    /// Hides a button and hooks up what it does. Assigning the same button to two fields — the shared
+    /// button also left in the treasure box slot, say — would otherwise fire its interaction twice.
+    /// </summary>
+    private void RegisterButton(Button button, UnityAction handler)
+    {
+        if (button == null) return;
+
+        button.gameObject.SetActive(false);
+        button.onClick.RemoveListener(handler);
+        button.onClick.AddListener(handler);
+    }
+
+    private void UnregisterButton(Button button, UnityAction handler)
+    {
+        if (button == null) return;
+        button.onClick.RemoveListener(handler);
     }
 
     /// <summary>
@@ -80,46 +151,72 @@ public class PlayersInteractionManager : MonoBehaviour
         gameObject.AddComponent<PlacedItemActionsUI>();
     }
 
-    private void OnInteractButtonClicked()
+    // ─── Button handlers ──────────────────────────────────────────────────────
+
+    private void OnTreasureBoxButtonClicked() => BeginInteraction(InteractionTargetType.TreasureBox);
+
+    private void OnOrbButtonClicked() => BeginInteraction(InteractionTargetType.QuestionOrb);
+
+    private void OnPlacedItemButtonClicked() => BeginInteraction(InteractionTargetType.PlacedItem);
+
+    /// <summary>The fallback button, standing in for whichever kind has no button of its own.</summary>
+    private void OnSharedButtonClicked() => BeginInteraction(CurrentTargetType);
+
+    /// <summary>
+    /// Runs the interaction for <paramref name="type"/> against whatever is currently targeted. The
+    /// buttons are hidden first: the panel that opens is the player's next step, not another prompt.
+    /// </summary>
+    private void BeginInteraction(InteractionTargetType type)
     {
+        if (type == InteractionTargetType.None) return;
+
         isInteracting = true;
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
-        if (itemInteractButton != null)
-        {
-            itemInteractButton.gameObject.SetActive(false);
-        }
+        HideAllButtons();
 
-        if (currentTargetBox != null && TreasureBoxManager.Instance != null)
+        switch (type)
         {
-            TreasureBoxTier tier = currentTargetBox.tier;
-            int slot = currentTargetBox.slotIndex;
+            case InteractionTargetType.TreasureBox:
+                OpenTargetedTreasureBox();
+                break;
 
-            if (TreasureBoxConfirmationPanel.Instance != null)
-            {
-                TreasureBoxConfirmationPanel.Instance.Show(tier, slot);
-            }
-            else if (AdsManager.Instance != null)
-            {
-                AdsManager.Instance.ShowRewardedAd(() => 
+            case InteractionTargetType.QuestionOrb:
+                if (currentTargetOrb != null) currentTargetOrb.OpenQuiz();
+                break;
+
+            case InteractionTargetType.PlacedItem:
+                if (currentTargetPlaceable != null && PlacedItemActionsUI.Instance != null)
                 {
-                    if (TreasureBoxManager.Instance != null)
-                    {
-                        TreasureBoxManager.Instance.TryOpenBox(tier, slot);
-                    }
-                }, "treasure_box");
-            }
-            else
+                    PlacedItemActionsUI.Instance.Show(currentTargetPlaceable);
+                }
+                break;
+        }
+    }
+
+    private void OpenTargetedTreasureBox()
+    {
+        if (currentTargetBox == null || TreasureBoxManager.Instance == null) return;
+
+        TreasureBoxTier tier = currentTargetBox.tier;
+        int slot = currentTargetBox.slotIndex;
+
+        if (TreasureBoxConfirmationPanel.Instance != null)
+        {
+            TreasureBoxConfirmationPanel.Instance.Show(tier, slot);
+        }
+        else if (AdsManager.Instance != null)
+        {
+            AdsManager.Instance.ShowRewardedAd(() =>
             {
-                TreasureBoxManager.Instance.TryOpenBox(tier, slot);
-            }
+                if (TreasureBoxManager.Instance != null)
+                {
+                    TreasureBoxManager.Instance.TryOpenBox(tier, slot);
+                }
+            }, "treasure_box");
         }
-        else if (currentTargetOrb != null)
+        else
         {
-            currentTargetOrb.OpenQuiz();
-        }
-        else if (currentTargetPlaceable != null && PlacedItemActionsUI.Instance != null)
-        {
-            PlacedItemActionsUI.Instance.Show(currentTargetPlaceable);
+            TreasureBoxManager.Instance.TryOpenBox(tier, slot);
         }
     }
 
@@ -155,7 +252,7 @@ public class PlayersInteractionManager : MonoBehaviour
         TreasureBox detectedBox = null;
         QuestionMarkOrb detectedOrb = null;
         GameObject hitObject = null;
-        
+
         bool didHit = Physics.Raycast(ray, out hit, maxInteractionDistance, interactionLayerMask);
 
         // Draw the ray in the Editor/Scene view (and Game view if Gizmos are enabled)
@@ -239,17 +336,71 @@ public class PlayersInteractionManager : MonoBehaviour
             }
         }
 
-        // Activate the itemInteractButton if a treasure box, orb or placed item is targeted
-        if (itemInteractButton != null)
+        UpdateInteractionButtons();
+    }
+
+    /// <summary>
+    /// Shows the one button that belongs to whatever is targeted, and hides the rest. Only ever one is
+    /// on screen, which is why they can all share the same spot on the canvas.
+    /// </summary>
+    private void UpdateInteractionButtons()
+    {
+        InteractionTargetType target = CurrentTargetType;
+
+        // Nothing to prompt while the interaction just fired, or while a toast is using the screen.
+        if (isInteracting) target = InteractionTargetType.None;
+        if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing)
         {
-            bool shouldShow = (currentTargetBox != null || currentTargetOrb != null || currentTargetPlaceable != null)
-                              && !isInteracting;
-            if (ToastMessageManager.Instance != null && ToastMessageManager.Instance.IsShowing)
-            {
-                shouldShow = false;
-            }
-            itemInteractButton.gameObject.SetActive(shouldShow);
+            target = InteractionTargetType.None;
         }
+
+        Button wanted = GetButtonFor(target);
+
+        ShowOnly(treasureBoxInteractButton, wanted);
+        ShowOnly(orbInteractButton, wanted);
+        ShowOnly(placedItemInteractButton, wanted);
+        ShowOnly(itemInteractButton, wanted);
+    }
+
+    /// <summary>
+    /// The button for a target kind, falling back to the shared one so a scene that has not been split
+    /// into per-kind buttons — or has only had some of them wired — still prompts the player.
+    /// </summary>
+    private Button GetButtonFor(InteractionTargetType type)
+    {
+        switch (type)
+        {
+            case InteractionTargetType.TreasureBox:
+                return treasureBoxInteractButton != null ? treasureBoxInteractButton : itemInteractButton;
+
+            case InteractionTargetType.QuestionOrb:
+                return orbInteractButton != null ? orbInteractButton : itemInteractButton;
+
+            case InteractionTargetType.PlacedItem:
+                return placedItemInteractButton != null ? placedItemInteractButton : itemInteractButton;
+
+            default:
+                return null;
+        }
+    }
+
+    private static void ShowOnly(Button button, Button wanted)
+    {
+        if (button == null) return;
+
+        bool shouldShow = button == wanted;
+        if (button.gameObject.activeSelf != shouldShow)
+        {
+            button.gameObject.SetActive(shouldShow);
+        }
+    }
+
+    private void HideAllButtons()
+    {
+        ShowOnly(treasureBoxInteractButton, null);
+        ShowOnly(orbInteractButton, null);
+        ShowOnly(placedItemInteractButton, null);
+        ShowOnly(itemInteractButton, null);
     }
 
     /// <summary>
@@ -348,7 +499,7 @@ public class PlayersInteractionManager : MonoBehaviour
                     // Clicked on the orb! Set it as the current target and trigger interaction.
                     currentTargetBox = null;
                     currentTargetOrb = clickedOrb;
-                    OnInteractButtonClicked();
+                    BeginInteraction(InteractionTargetType.QuestionOrb);
                 }
             }
         }
@@ -375,9 +526,6 @@ public class PlayersInteractionManager : MonoBehaviour
             currentTargetPlaceable = null;
         }
 
-        if (itemInteractButton != null)
-        {
-            itemInteractButton.gameObject.SetActive(false);
-        }
+        HideAllButtons();
     }
 }
