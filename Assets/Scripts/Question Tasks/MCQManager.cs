@@ -29,7 +29,18 @@ public class QuestionList
 
 public class MCQManager : MonoBehaviour
 {
-    public static MCQManager Instance;
+    private static MCQManager _instance;
+    public static MCQManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<MCQManager>(true);
+            }
+            return _instance;
+        }
+    }
 
     [Header("UI References")]
     public GameObject quizPanel; // The main UI panel containing the quiz
@@ -60,8 +71,18 @@ public class MCQManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+
+        // Hide the panel visuals here rather than in Start so they never render for a
+        // frame. Only these children are toggled — this GameObject stays active.
+        if (quizPanel != null) quizPanel.SetActive(false);
+        if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     void Start()
@@ -84,10 +105,6 @@ public class MCQManager : MonoBehaviour
             int index = i; // Local copy for closure
             optionButtons[i].onClick.AddListener(() => SelectOption(index));
         }
-
-        if (quizPanel != null) quizPanel.SetActive(false);
-        if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
-        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     public void StartQuiz(QuestionMarkOrb orb = null)

@@ -18,7 +18,18 @@ public class DhikrList
 
 public class DhikrManager : MonoBehaviour
 {
-    public static DhikrManager Instance;
+    private static DhikrManager _instance;
+    public static DhikrManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<DhikrManager>(true);
+            }
+            return _instance;
+        }
+    }
 
     [Header("UI References")]
     public GameObject dhikrPanel;
@@ -44,8 +55,17 @@ public class DhikrManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+
+        // Hide the panel visuals here rather than in Start so they never render for a
+        // frame. Only these children are toggled — this GameObject stays active.
+        if (dhikrPanel != null) dhikrPanel.SetActive(false);
+        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     void Start()
@@ -68,9 +88,6 @@ public class DhikrManager : MonoBehaviour
         {
             minusButton.onClick.AddListener(DecrementCount);
         }
-
-        if (dhikrPanel != null) dhikrPanel.SetActive(false);
-        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     public void StartDhikr(QuestionMarkOrb orb = null)

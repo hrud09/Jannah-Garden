@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 using FlutterIntegration;
+using NativeIntegration;
 
 /// <summary>
 /// Photo mode: one tap on the camera button takes a clean screenshot of the garden — no HUD in the
@@ -17,8 +18,11 @@ using FlutterIntegration;
 /// every root Canvas is disabled, the frame is allowed to finish, the pixels are read, and everything
 /// is switched back on — all inside a single coroutine, so the player never sees a UI-less frame.
 ///
-/// Sharing goes through Flutter. Unity writes a PNG into its own storage and sends the path across the
-/// bridge; the host app owns the share sheet and the gallery permission. See flutter_bridge_guide.md.
+/// Share and Save talk to the phone directly, through <see cref="NativePhotoService"/> — the system
+/// share sheet on both platforms, MediaStore on Android and PHPhotoLibrary on iOS. They used to be
+/// handed to Flutter, which meant they did nothing at all unless the surrounding app had implemented
+/// the two commands; that route is still tried when the game is running somewhere the native layer
+/// cannot reach (an Editor play session inside a Flutter-driven workflow, for instance).
 /// </summary>
 public class PhotoModeManager : MonoBehaviour
 {
@@ -70,6 +74,9 @@ public class PhotoModeManager : MonoBehaviour
     [Tooltip("Title shown above the photo in the preview window.")]
     public string previewHeading = "Your Jannah Garden";
 
+    [Tooltip("Album the saved photo is filed under on Android. iOS always saves to the camera roll.")]
+    public string galleryAlbumName = NativePhotoService.DefaultAlbumName;
+
     [Header("Storage")]
     [Tooltip("How many photos to keep on the device. The oldest are deleted beyond this, so a player " +
              "taking hundreds of shots does not slowly fill their storage.")]
@@ -82,6 +89,13 @@ public class PhotoModeManager : MonoBehaviour
     private const string FileExtension = ".png";
 
     private bool _isCapturing;
+
+    /// <summary>
+    /// True between tapping Share or Save and the platform answering. Sharing on iOS only answers once
+    /// the sheet closes, so without this a second tap would stack a second share sheet on the first.
+    /// </summary>
+    private bool _actionInFlight;
+
     private Texture2D _photoTexture;
     private Sprite _photoSprite;
     private string _photoPath;
@@ -158,24 +172,43 @@ public class PhotoModeManager : MonoBehaviour
         StartCoroutine(CaptureRoutine());
     }
 
-    /// <summary>Hands the current photo to the app to share.</summary>
+    /// <summary>Opens the device's share sheet with the current photo.</summary>
     public void SharePhoto()
     {
         if (!HasPhotoOnDisk("share")) return;
+        if (_actionInFlight) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        PlayButtonClick();
 
-        FlutterBridge.Instance.RequestSharePhoto(BuildPayload());
+        if (NativePhotoService.IsSupported)
+        {
+            _actionInFlight = true;
+            NativePhotoService.Share(_photoPath, shareCaption, HandleNativeShareResult);
+            return;
+        }
+
+        // Not on a phone — there is no share sheet to open. A host app may still be able to.
+        if (FlutterBridge.Instance != null)
+        {
+            FlutterBridge.Instance.RequestSharePhoto(BuildPayload());
+            return;
+        }
+
+        ShowToast("Sharing only works on a phone");
     }
 
-    /// <summary>Asks the app to write the current photo into the device gallery.</summary>
+    /// <summary>Writes the current photo into the device gallery.</summary>
     public void SavePhoto()
     {
         if (!HasPhotoOnDisk("save")) return;
+        if (_actionInFlight) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        PlayButtonClick();
 
-        FlutterBridge.Instance.RequestSavePhoto(BuildPayload());
+        // Off a phone this copies the photo into the user's Pictures folder instead, so the button is
+        // still testable from the Editor.
+        _actionInFlight = true;
+        NativePhotoService.SaveToGallery(_photoPath, galleryAlbumName, HandleNativeSaveResult);
     }
 
     /// <summary>Closes the preview. The file stays on the device until it ages out of the library.</summary>
@@ -186,6 +219,10 @@ public class PhotoModeManager : MonoBehaviour
         PreviewWindowTransform.DOKill();
         previewPanel.SetActive(false);
 
+        // A share sheet the player dismissed by leaving the app can leave this set; the preview closing
+        // is the end of that photo either way.
+        _actionInFlight = false;
+
         // The texture is only needed while it is on screen; a full-screen RGB24 grab is several MB.
         ReleasePhoto();
     }
@@ -195,6 +232,7 @@ public class PhotoModeManager : MonoBehaviour
     private IEnumerator CaptureRoutine()
     {
         _isCapturing = true;
+        _actionInFlight = false;
 
         // Any previous shot is about to be replaced.
         ReleasePhoto();
@@ -393,6 +431,43 @@ public class PhotoModeManager : MonoBehaviour
         }
     }
 
+    // ─── Share / save results ─────────────────────────────────────────────────
+
+    /// <summary>
+    /// Nothing is said on success. Android reports the moment the sheet opens rather than when the photo
+    /// is actually sent, so a "Shared!" toast there would be a guess — and on iOS, where the report is
+    /// real, the player has just watched their own share complete.
+    /// </summary>
+    private void HandleNativeShareResult(bool success, string message)
+    {
+        _actionInFlight = false;
+
+        if (success) return;
+
+        // Backing out of the share sheet is a choice, not a failure.
+        if (message == NativePhotoService.CancelledMessage) return;
+
+        ShowToast(string.IsNullOrEmpty(message) ? "Could not share the photo" : message);
+    }
+
+    private void HandleNativeSaveResult(bool success, string message)
+    {
+        _actionInFlight = false;
+
+        if (success)
+        {
+            ShowToast("Saved to your gallery");
+            return;
+        }
+
+        ShowToast(string.IsNullOrEmpty(message) ? "Could not save the photo" : message);
+    }
+
+    private static void PlayButtonClick()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+    }
+
     // ─── Flutter ──────────────────────────────────────────────────────────────
 
     private PhotoSharePayload BuildPayload()
@@ -410,17 +485,10 @@ public class PhotoModeManager : MonoBehaviour
     /// <summary>Guards the share/save buttons against a photo that never made it to disk.</summary>
     private bool HasPhotoOnDisk(string action)
     {
-        if (string.IsNullOrEmpty(_photoPath))
+        if (string.IsNullOrEmpty(_photoPath) || !File.Exists(_photoPath))
         {
             Debug.LogWarning($"[PhotoModeManager] Cannot {action} — the photo was not written to disk.");
             ShowToast("This photo could not be saved to the device");
-            return false;
-        }
-
-        if (FlutterBridge.Instance == null)
-        {
-            Debug.LogWarning($"[PhotoModeManager] Cannot {action} — no FlutterBridge. The app owns sharing.");
-            ShowToast("Sharing is unavailable right now");
             return false;
         }
 

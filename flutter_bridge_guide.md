@@ -90,42 +90,36 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 | `REQUEST_REWARDED_AD` | The player asked for something that costs an ad. Payload: `{ source }` (`"treasure_box"`, `"shop_item"`). | Show a rewarded ad **over** the Unity view, then answer with `REWARDED_AD_RESULT`. |
 | `REQUEST_GARDEN_STATE` | The garden loaded and needs the player's saved assets. Payload: `{}`. | Read the garden from Firestore and answer with `UPDATE_GARDEN_STATE`. Answer **even when there is nothing saved** — send `hasData: false`. |
 | `SAVE_GARDEN_STATE` | The player placed, moved or returned something. Payload: the same garden shape. | Write it to Firestore under the signed-in user. |
-| `REQUEST_SHARE_PHOTO` | The player took a photo of their garden and tapped **Share**. Payload: `{ filePath, caption, source, width, height }`. | Open the native share sheet with that file. |
-| `REQUEST_SAVE_PHOTO` | The player tapped **Save**. Same payload. | Write the file into the device photo gallery, asking for permission if needed. |
+| `REQUEST_SHARE_PHOTO` | **No longer sent on a phone** — see below. Payload: `{ filePath, caption, source, width, height }`. | Nothing. Implement only if you want to override the game's own share sheet. |
+| `REQUEST_SAVE_PHOTO` | **No longer sent at all** — see below. Same payload. | Nothing. |
 
-#### Handling `REQUEST_SHARE_PHOTO` / `REQUEST_SAVE_PHOTO`
+#### Photos are handled by the game now
 
-The game has no share plugin and no gallery permission — both belong to the host app. Unity's part is
-taking the screenshot; it writes a PNG into its own storage and tells you where:
+**You do not need to implement anything for the Share and Save buttons.** The game talks to the phone
+directly: the system share sheet on both platforms, MediaStore on Android and PHPhotoLibrary on iOS. It
+also declares its own FileProvider and asks for its own permissions, all injected at build time — see
+`Assets/Scripts/Native/NativePhotoService.cs`.
 
-```dart
-case 'REQUEST_SHARE_PHOTO':
-  final data = jsonDecode(envelope['data'] as String) as Map<String, dynamic>;
-  final path = data['filePath'] as String;
-  await Share.shareXFiles([XFile(path)], text: data['caption'] as String? ?? '');
-  UnityBridge.sendPhotoResult(action: 'share', success: true);
-  break;
+One thing is still yours: **iOS reads the usage description from the host app's `Info.plist`, not
+Unity's.** Add `NSPhotoLibraryAddUsageDescription` to your Runner's `Info.plist` or iOS will terminate
+the app the first time a player taps **Save**:
 
-case 'REQUEST_SAVE_PHOTO':
-  final data = jsonDecode(envelope['data'] as String) as Map<String, dynamic>;
-  try {
-    await Gal.putImage(data['filePath'] as String);   // prompts for permission itself
-    UnityBridge.sendPhotoResult(action: 'save', success: true);
-  } catch (e) {
-    UnityBridge.sendPhotoResult(action: 'save', success: false, message: 'Could not save the photo');
-  }
-  break;
+```xml
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>Jannah Garden saves the photos you take of your garden to your gallery.</string>
 ```
 
-Three things worth knowing:
+The two commands remain in the protocol as a fallback. `REQUEST_SHARE_PHOTO` is sent only when the game
+is running somewhere with no share sheet of its own — the Unity Editor, or a desktop build — so on a
+real device you will never see it. `REQUEST_SAVE_PHOTO` is never sent any more. If you handle them
+anyway, `PHOTO_ACTION_RESULT` still works exactly as before.
+
+Two things worth knowing if you do:
 
 - **The image never travels through the bridge.** A full-screen PNG is several megabytes; base64 in a
   JSON envelope would stall both sides. `filePath` points inside `persistentDataPath` — app-private
   storage on both platforms, which the Flutter side of the same app can read directly. The file is
   already written and closed by the time the message arrives.
-- **Answering with `PHOTO_ACTION_RESULT` is optional.** The game only uses it for a toast. If you never
-  send it, nothing breaks and the player simply gets no confirmation — so do send it, including on
-  failure, where `message` is shown to them verbatim.
 - **The game keeps only the last few photos.** Old ones are deleted as new ones are taken, so do not
   hold a path and expect it to still be there later — act on it while the message is fresh.
 
@@ -591,6 +585,7 @@ Use it to confirm the payload shape before wiring up the Flutter side.
 | Some placed items are missing after a restore | `Failed to find placeable prefab named: X` in the log — `prefabName` was altered in storage, or the item's prefab is not reachable from the loaded scene. |
 | Firebase keeps losing the newest garden | Both copies are being compared on device clocks. Stamp `savedAtUnix` server-side on write and return that value on read (§5). |
 | The garden reverts to an old state | You answered `REQUEST_GARDEN_STATE` with a stale cached document whose `savedAtUnix` was newer than the device's. Read through to Firestore. |
-| Sharing a photo does nothing | `REQUEST_SHARE_PHOTO` has no handler on the Flutter side. Unity logs the outgoing message either way. |
+| The app dies when the player taps **Save** on iOS | `NSPhotoLibraryAddUsageDescription` is missing from the host app's `Info.plist`. iOS terminates rather than refuses. |
+| Sharing a photo does nothing | The game handles this itself now; look for `[NativePhoto]` in the device log rather than for a bridge message. |
 | The shared photo file is missing | You held the path and used it later. The game keeps only the most recent photos and deletes the rest as new ones are taken. |
 | The shared photo has the HUD in it | Not possible from the game's side — every canvas is switched off for the captured frame. Check you are not re-capturing the screen yourself in Flutter. |

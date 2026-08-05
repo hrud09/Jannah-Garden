@@ -5,6 +5,9 @@ apply from: '../shared/common.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // androidx.core.content.FileProvider — how a garden photo reaches the share sheet. The provider
+    // itself is declared in the manifest by NativePhotoBuildPostProcessor; this is the class behind it.
+    implementation 'androidx.core:core:1.13.1'
 // Android Resolver Dependencies Start
     implementation 'com.google.android.gms:play-services-appset:16.0.2' // Assets/GameAnalytics/Editor/Android/Dependencies.xml:4
     implementation 'com.google.android.instantapps:instantapps:1.1.0' // Assets/GameAnalytics/Editor/Android/Dependencies.xml:3

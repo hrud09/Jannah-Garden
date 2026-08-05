@@ -30,6 +30,14 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     public Button subscribeButton;
     public Button closeButton;
 
+    [Header("Visual Roots")]
+    [Tooltip("The fullscreen dim behind the panel. Toggled instead of this GameObject so the " +
+             "panel root stays active and Instance stays resolvable.")]
+    public GameObject darkBgImage;
+
+    [Tooltip("The panel body (window + content). Toggled instead of this GameObject.")]
+    public GameObject bgImage;
+
     private TreasureBoxTier _tier;
     private int _slotIndex;
 
@@ -41,6 +49,8 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
             return;
         }
         _instance = this;
+
+        ResolveVisualRoots();
 
         // Setup button listeners
         if (watchAdButton != null)
@@ -56,8 +66,36 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
             closeButton.onClick.AddListener(OnCloseClicked);
         }
 
-        // Initially hide the panel
-        gameObject.SetActive(false);
+        // Initially hide the panel visuals — the root itself stays active.
+        SetVisualsActive(false);
+    }
+
+    /// <summary>
+    /// Falls back to looking the visual roots up by name so an un-wired prefab
+    /// instance still hides correctly.
+    /// </summary>
+    private void ResolveVisualRoots()
+    {
+        if (darkBgImage == null)
+        {
+            Transform t = transform.Find("Dark BG Image");
+            if (t != null) darkBgImage = t.gameObject;
+        }
+        if (bgImage == null)
+        {
+            Transform t = transform.Find("BG Image");
+            if (t != null) bgImage = t.gameObject;
+        }
+    }
+
+    /// <summary>
+    /// Shows/hides only the panel's visual children. The panel GameObject itself is
+    /// never deactivated, so <see cref="Instance"/> and any coroutines on it survive.
+    /// </summary>
+    private void SetVisualsActive(bool active)
+    {
+        if (darkBgImage != null) darkBgImage.SetActive(active);
+        if (bgImage != null) bgImage.SetActive(active);
     }
 
     public void Show(TreasureBoxTier tier, int slotIndex)
@@ -98,12 +136,13 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
             }
         }
 
-        gameObject.SetActive(true);
+        ResolveVisualRoots();
+        SetVisualsActive(true);
     }
 
     private void OnWatchAdClicked()
     {
-        gameObject.SetActive(false);
+        SetVisualsActive(false);
         if (AdsManager.Instance != null)
         {
             AdsManager.Instance.ShowRewardedAd(() =>
@@ -125,7 +164,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     private void OnSubscribeClicked()
     {
-        gameObject.SetActive(false);
+        SetVisualsActive(false);
 
         // Subscriptions are owned by the Flutter app, not the game. Ask Flutter to leave Unity and open
         // its subscribe page — Flutter pops the Unity widget and handles navigation on its side.
@@ -147,6 +186,6 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     private void OnCloseClicked()
     {
-        gameObject.SetActive(false);
+        SetVisualsActive(false);
     }
 }
