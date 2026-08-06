@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardData
   tier: 3
   tierDisplayName: Diamond
+  tierIcon: {fileID: 21300000, guid: e88d5a7f307e9401fb0c9f181bbf602d, type: 3}
   boxPrefab: {fileID: 5725349440609399862, guid: 67d6f53916898724788223ad684d9f7f, type: 3}
   spawnCooldownHours: 0.5
   cycleDurationHours: 24

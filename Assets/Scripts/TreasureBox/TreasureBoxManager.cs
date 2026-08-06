@@ -196,9 +196,8 @@ public class TreasureBoxManager : MonoBehaviour
         if (treasureBoxStatusUi == null || _saveData == null) return;
         
         TreasureBoxTier upcomingTier = GetUpcomingTier();
-        treasureBoxStatusUi.tier = upcomingTier;
-        treasureBoxStatusUi.UpdateColor();
-        
+        treasureBoxStatusUi.SetTier(upcomingTier);
+
         TreasureBoxTierState state = _saveData.GetTierState(upcomingTier);
         TreasureBoxData data = GetBoxData(upcomingTier);
         
