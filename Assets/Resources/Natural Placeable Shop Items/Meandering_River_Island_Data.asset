@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Meandering_River_Island_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 5d2d4299378c06343aea4e026671cc0e, type: 3}
   itemName: Meandering River Island
   itemDescription: A unique Meandering River Island decoration to personalize and
     enhance the atmosphere of your garden.

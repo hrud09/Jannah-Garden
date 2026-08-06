@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Ornate_Golden_Censer_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 76e2cba4f83d450419feacf6af24e686, type: 3}
   itemName: Ornate Golden Censer
   itemDescription: A unique Ornate Golden Censer decoration to personalize and enhance
     the atmosphere of your garden.

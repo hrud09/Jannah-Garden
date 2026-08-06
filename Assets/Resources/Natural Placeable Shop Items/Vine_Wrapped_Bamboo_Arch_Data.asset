@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Vine_Wrapped_Bamboo_Arch_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: b54922f03049c49419da9f0d423ce7f7, type: 3}
   itemName: Vine Wrapped Bamboo Arch
   itemDescription: An elegant Vine Wrapped Bamboo Arch structure to provide comfort
     and architectural beauty to your estate.

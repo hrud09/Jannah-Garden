@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Celestial_Blossom_Tree_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: f1efb2d6c885f674b86a0d254a06dfe5, type: 3}
   itemName: Celestial Blossom Tree
   itemDescription: A beautiful Celestial Blossom Tree to add vibrant life and natural
     beauty to your garden.

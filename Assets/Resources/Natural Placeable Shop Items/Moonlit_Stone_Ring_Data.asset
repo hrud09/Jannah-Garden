@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Moonlit_Stone_Ring_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: f3dcc098242ea6d4194b9b54c5963294, type: 3}
   itemName: Moonlit Stone Ring
   itemDescription: A unique Moonlit Stone Ring decoration to personalize and enhance
     the atmosphere of your garden.

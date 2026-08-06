@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Coconut_Palm_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 9828983dc24119a468e69c740091f6f1, type: 3}
   itemName: Coconut Palm
   itemDescription: A beautiful Coconut Palm to add vibrant life and natural beauty
     to your garden.

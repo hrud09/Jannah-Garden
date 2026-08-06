@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Starflower_Trellis_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 00c86b96a4dbc2845b14c6ac0d24a719, type: 3}
   itemName: Starflower Trellis
   itemDescription: A beautiful Starflower Trellis to add vibrant life and natural
     beauty to your garden.

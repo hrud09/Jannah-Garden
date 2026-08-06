@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Ornate_Medallion_Rug_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: a13288ce001f0244fa3b3ec0ef588514, type: 3}
   itemName: Ornate Medallion Rug
   itemDescription: A unique Ornate Medallion Rug decoration to personalize and enhance
     the atmosphere of your garden.

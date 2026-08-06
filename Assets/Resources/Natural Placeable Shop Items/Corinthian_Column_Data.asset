@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Corinthian_Column_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 79fb3e202686a3e47b02c44b94cc3943, type: 3}
   itemName: Corinthian Column
   itemDescription: An elegant Corinthian Column structure to provide comfort and
     architectural beauty to your estate.

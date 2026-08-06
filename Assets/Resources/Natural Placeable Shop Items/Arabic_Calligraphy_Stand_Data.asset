@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Arabic_Calligraphy_Stand_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 8ed74ef0d758a7f4898969e09605c22d, type: 3}
   itemName: Arabic Calligraphy Stand
   itemDescription: A unique Arabic Calligraphy Stand decoration to personalize and
     enhance the atmosphere of your garden.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Whispering_Well_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: db8f13bb524d0d7459639ecb3f073d65, type: 3}
   itemName: Whispering Well
   itemDescription: An elegant Whispering Well structure to provide comfort and architectural
     beauty to your estate.

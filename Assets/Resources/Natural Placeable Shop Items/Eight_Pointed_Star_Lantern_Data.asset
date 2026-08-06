@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Eight_Pointed_Star_Lantern_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 8247eec7b7e6f3c41a6475846db5d7db, type: 3}
   itemName: Eight Pointed Star Lantern
   itemDescription: A unique Eight Pointed Star Lantern decoration to personalize
     and enhance the atmosphere of your garden.

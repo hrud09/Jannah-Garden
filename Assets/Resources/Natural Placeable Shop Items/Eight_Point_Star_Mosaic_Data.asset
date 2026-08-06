@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Eight_Point_Star_Mosaic_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: c182e0dff22094341b5ef7ce770c15fa, type: 3}
   itemName: Eight Point Star Mosaic
   itemDescription: A unique Eight Point Star Mosaic decoration to personalize and
     enhance the atmosphere of your garden.

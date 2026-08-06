@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Floating_Lotus_Altar_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 69ca1a28e1171b242b9bf7178b600695, type: 3}
   itemName: Floating Lotus Altar
   itemDescription: A unique Floating Lotus Altar decoration to personalize and enhance
     the atmosphere of your garden.

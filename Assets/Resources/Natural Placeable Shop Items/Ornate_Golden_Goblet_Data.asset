@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Ornate_Golden_Goblet_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: ae0ddb90d42ecd34386cef6db0ed924d, type: 3}
   itemName: Ornate Golden Goblet
   itemDescription: A unique Ornate Golden Goblet decoration to personalize and enhance
     the atmosphere of your garden.
