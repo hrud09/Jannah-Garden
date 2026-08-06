@@ -60,7 +60,8 @@ public class ShopItemCreatorWindow : EditorWindow
         public Sprite itemIcon;
         public ShopAcquisitionType acquisitionType = ShopAcquisitionType.NoorCoins;
         public int noorCoinCost = 50;
-        public ShopItemCategory itemCategory = ShopItemCategory.Plants;
+        public ShopItemCategory itemCategory = ShopItemCategory.PlantsAndGardens;
+        public ShopItemTier itemTier = ShopItemTier.Tier1;
         public int requiredXPLevel = 1;
         public int sortOrder = 0;
         public float placementTimerDuration = 360f;
@@ -75,7 +76,8 @@ public class ShopItemCreatorWindow : EditorWindow
     // Global defaults for SO batch creation
     private ShopAcquisitionType defaultAcquisitionType = ShopAcquisitionType.NoorCoins;
     private int defaultNoorCoinCost = 50;
-    private ShopItemCategory defaultCategory = ShopItemCategory.Plants;
+    private ShopItemCategory defaultCategory = ShopItemCategory.PlantsAndGardens;
+    private ShopItemTier defaultTier = ShopItemTier.Tier1;
     private int defaultRequiredXP = 1;
     private float defaultSOPlausibleDuration = 360f;
 
@@ -698,6 +700,7 @@ public class ShopItemCreatorWindow : EditorWindow
         
         EditorGUILayout.BeginHorizontal();
         defaultCategory = (ShopItemCategory)EditorGUILayout.EnumPopup("Category", defaultCategory);
+        defaultTier = (ShopItemTier)EditorGUILayout.EnumPopup("Tier", defaultTier);
         defaultAcquisitionType = (ShopAcquisitionType)EditorGUILayout.EnumPopup("Acquisition", defaultAcquisitionType);
         EditorGUILayout.EndHorizontal();
 
@@ -712,6 +715,7 @@ public class ShopItemCreatorWindow : EditorWindow
             foreach (var item in shopDataConfigs)
             {
                 item.itemCategory = defaultCategory;
+                item.itemTier = defaultTier;
                 item.acquisitionType = defaultAcquisitionType;
                 item.noorCoinCost = defaultNoorCoinCost;
                 item.requiredXPLevel = defaultRequiredXP;
@@ -766,6 +770,7 @@ public class ShopItemCreatorWindow : EditorWindow
 
         EditorGUILayout.BeginHorizontal();
         cfg.itemCategory = (ShopItemCategory)EditorGUILayout.EnumPopup("Category", cfg.itemCategory);
+        cfg.itemTier = (ShopItemTier)EditorGUILayout.EnumPopup("Tier", cfg.itemTier);
         cfg.acquisitionType = (ShopAcquisitionType)EditorGUILayout.EnumPopup("Acquisition", cfg.acquisitionType);
         if (cfg.acquisitionType == ShopAcquisitionType.NoorCoins)
         {
@@ -796,6 +801,7 @@ public class ShopItemCreatorWindow : EditorWindow
                     itemName = cleanName,
                     itemDescription = $"Beautiful {cleanName} to decorate your garden.",
                     itemCategory = defaultCategory,
+                    itemTier = defaultTier,
                     acquisitionType = defaultAcquisitionType,
                     noorCoinCost = defaultNoorCoinCost,
                     requiredXPLevel = defaultRequiredXP,
@@ -913,6 +919,7 @@ public class ShopItemCreatorWindow : EditorWindow
             itemData.noorCoinCost = cfg.noorCoinCost;
 
             itemData.itemCategory = cfg.itemCategory;
+            itemData.itemTier = cfg.itemTier;
             itemData.requiredXPLevel = cfg.requiredXPLevel;
             itemData.sortOrder = cfg.sortOrder;
 

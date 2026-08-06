@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 6b9e81727fdaf1b4589567d9e6bf1bb1, type: 3}
   itemName: Emerald Velvet Cushion
-  itemDescription: A unique Emerald Velvet Cushion decoration to personalize and
-    enhance the atmosphere of your garden.
+  itemDescription: An ornate Emerald Velvet Cushion to adorn your garden with craftsmanship
+    and quiet reverence.
   itemID: 960fc290d2e52fc1696d4349c0ecd285
   acquisitionType: 0
-  noorCoinCost: 225
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 3
-  sortOrder: 460
-  requiredXPLevel: 2
+  itemTier: 2
+  sortOrder: 480
+  requiredXPLevel: 1
   itemPrefab: {fileID: 4774164648659637101, guid: 3d62e899955bf044cb8e2c1fcd17d80d, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

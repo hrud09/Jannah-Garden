@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 69ca1a28e1171b242b9bf7178b600695, type: 3}
   itemName: Floating Lotus Altar
-  itemDescription: A unique Floating Lotus Altar decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: An ornate Floating Lotus Altar to adorn your garden with craftsmanship
+    and quiet reverence.
   itemID: e92347bd50aa6b1769312e8b21c8b174
   acquisitionType: 0
-  noorCoinCost: 300
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 3
-  sortOrder: 470
-  requiredXPLevel: 3
+  itemTier: 3
+  sortOrder: 490
+  requiredXPLevel: 1
   itemPrefab: {fileID: 7497669140788257442, guid: f5076a95134897041a6cca523d747ba4, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

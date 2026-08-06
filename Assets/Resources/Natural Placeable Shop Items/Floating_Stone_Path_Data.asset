@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 46d83f4ad052e7f4096fd34aba2b94dc, type: 3}
   itemName: Floating Stone Path
-  itemDescription: A unique Floating Stone Path decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: An elegant Floating Stone Path structure to provide comfort and
+    architectural beauty to your estate.
   itemID: f1dfa038f5ca3656be50d729b3e6968b
   acquisitionType: 0
-  noorCoinCost: 300
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 3
-  sortOrder: 480
-  requiredXPLevel: 3
+  itemCategory: 2
+  itemTier: 1
+  sortOrder: 300
+  requiredXPLevel: 1
   itemPrefab: {fileID: 2984423599138853034, guid: b44fd53de93ed7f4aa1753a571ac6cb9, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

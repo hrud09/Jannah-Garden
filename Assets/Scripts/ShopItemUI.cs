@@ -19,6 +19,25 @@ public class ShopItemUI : MonoBehaviour
     public GameObject[] lockedVisuals;
     public GameObject[] unlockedVisuals;
 
+    [Header("Category & Tier Visuals")]
+    [Tooltip("Reads the collection this item belongs to, e.g. 'Water of Garden'.")]
+    public TMP_Text itemCategoryText;
+    [Tooltip("Strip or icon tinted with the collection's accent colour.")]
+    public Image itemCategoryAccentImg;
+    [Tooltip("Reads the quality band, e.g. 'Tier 3 · Premium'.")]
+    public TMP_Text itemTierText;
+    [Tooltip("Badge behind the tier label. Tinted with the tier colour, and given the tier's sprite "
+           + "when the shop supplies one.")]
+    public Image itemTierBadgeImg;
+    [Tooltip("Optional frame around the whole card, tinted with the tier colour.")]
+    public Image itemTierFrameImg;
+    [Tooltip("Optional per-tier decoration roots. Index 0 is Tier 1 — only the entry matching this "
+           + "item's tier is left active. Leave empty if the card has no per-tier objects.")]
+    public GameObject[] tierRoots;
+    [Tooltip("Tint the tier badge, frame and per-tier roots with the tier colour from ShopTaxonomy. "
+           + "Turn off when the sprites already carry their own colour.")]
+    public bool tintTierVisuals = true;
+
     [Header("Economy Visuals")]
     [Tooltip("Colour of the price label when the player CAN afford the item.")]
     public Color affordableColor = Color.green; // green
@@ -65,13 +84,22 @@ public class ShopItemUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Initializes the UI components with the values from a ShopItemData asset and background overrides.
+    /// Initializes the UI components with the values from a ShopItemData asset, the tier styling for
+    /// its quality band, and background overrides.
     /// </summary>
-    public void Initialize(ShopItemData data, Sprite customBackground = null, Sprite customIconBackground = null)
+    public void Initialize(ShopItemData data, ShopTierVisuals tierVisuals = null,
+                           Sprite customBackground = null, Sprite customIconBackground = null)
     {
         if (data == null) return;
         ItemData = data;
         isPurchasePending = false;
+
+        // A tier entry can carry its own card art, which wins over the plain overrides.
+        if (tierVisuals != null)
+        {
+            if (tierVisuals.cardBackground != null) customBackground = tierVisuals.cardBackground;
+            if (tierVisuals.iconBackground != null) customIconBackground = tierVisuals.iconBackground;
+        }
 
         if (itemIcon != null && data.itemIcon != null)
         {
@@ -119,8 +147,82 @@ public class ShopItemUI : MonoBehaviour
             }
         }
 
+        ApplyTaxonomyVisuals(data.itemCategory, data.itemTier, tierVisuals);
+
         // Price label + affordability tint (both derived from the acquisition type)
         RefreshAffordabilityVisual();
+    }
+
+    /// <summary>
+    /// Paints the collection and tier badges. Every reference here is optional, so a card prefab can
+    /// opt into as much or as little of this as its layout has room for. Items with no tier (coin
+    /// packs, ad offers) hide the tier widgets entirely rather than showing an empty badge.
+    /// </summary>
+    private void ApplyTaxonomyVisuals(ShopItemCategory category, ShopItemTier tier, ShopTierVisuals tierVisuals)
+    {
+        // ── Category ──────────────────────────────────────────────────────
+        Color categoryColor = ShopTaxonomy.GetCategoryColor(category);
+
+        if (itemCategoryText != null)
+        {
+            itemCategoryText.text = ShopTaxonomy.GetCategoryName(category);
+            itemCategoryText.color = categoryColor;
+        }
+
+        if (itemCategoryAccentImg != null)
+        {
+            // Preserve the authored alpha so a soft accent strip stays soft.
+            categoryColor.a = itemCategoryAccentImg.color.a;
+            itemCategoryAccentImg.color = categoryColor;
+        }
+
+        // ── Tier ──────────────────────────────────────────────────────────
+        bool hasTier = tier != ShopItemTier.None;
+        Color tierColor = ShopTaxonomy.GetTierColor(tier);
+
+        if (itemTierText != null)
+        {
+            itemTierText.gameObject.SetActive(hasTier);
+            if (hasTier)
+            {
+                itemTierText.text = ShopTaxonomy.GetTierLabel(tier);
+                if (tintTierVisuals) itemTierText.color = tierColor;
+            }
+        }
+
+        if (itemTierBadgeImg != null)
+        {
+            itemTierBadgeImg.gameObject.SetActive(hasTier);
+            if (hasTier)
+            {
+                if (tierVisuals != null && tierVisuals.tierBadge != null)
+                {
+                    itemTierBadgeImg.sprite = tierVisuals.tierBadge;
+                }
+                if (tintTierVisuals)
+                {
+                    tierColor.a = itemTierBadgeImg.color.a;
+                    itemTierBadgeImg.color = tierColor;
+                }
+            }
+        }
+
+        if (itemTierFrameImg != null && hasTier && tintTierVisuals)
+        {
+            Color frameColor = ShopTaxonomy.GetTierColor(tier);
+            frameColor.a = itemTierFrameImg.color.a;
+            itemTierFrameImg.color = frameColor;
+        }
+
+        // Only the root matching this item's tier stays on; Tier 1 is index 0.
+        if (tierRoots != null && tierRoots.Length > 0)
+        {
+            int activeIndex = hasTier ? (int)tier - 1 : -1;
+            for (int i = 0; i < tierRoots.Length; i++)
+            {
+                if (tierRoots[i] != null) tierRoots[i].SetActive(i == activeIndex);
+            }
+        }
     }
 
     // Affordability Visuals
@@ -319,6 +421,10 @@ public class ShopItemUI : MonoBehaviour
         {
             itemIconBackgroundImg.sprite = customIconBackground;
         }
+
+        // Treasure box rewards are ranked by their own ItemRarity, not by a shop tier, so the tier
+        // widgets stay hidden here.
+        ApplyTaxonomyVisuals(data.itemCategory, ShopItemTier.None, null);
 
         bool isLocked = false;
         if (lockedVisuals != null)

@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 085e367913299e6499b6c0fa4cc43de5, type: 3}
   itemName: Star Lantern
-  itemDescription: A unique Star Lantern decoration to personalize and enhance the
-    atmosphere of your garden.
+  itemDescription: A radiant Star Lantern to lift your garden with light and wonder.
   itemID: 40de1a41c6124205bed217d1d80e5488
   acquisitionType: 0
-  noorCoinCost: 600
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 3
-  sortOrder: 630
-  requiredXPLevel: 7
+  itemCategory: 9
+  itemTier: 4
+  sortOrder: 640
+  requiredXPLevel: 1
   itemPrefab: {fileID: 5822765343059930685, guid: db28bbaf5d417d940a3b01ed401d9005, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 6526c5db03fa4ef4ab9cc7e702295edd, type: 3}
   itemName: Azure Mosaic Bench
-  itemDescription: A unique Azure Mosaic Bench decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: An ornate Azure Mosaic Bench to adorn your garden with craftsmanship
+    and quiet reverence.
   itemID: 9141d4caa1471fc40c615d60e625f070
   acquisitionType: 0
-  noorCoinCost: 150
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 3
-  sortOrder: 400
+  itemTier: 1
+  sortOrder: 430
   requiredXPLevel: 1
   itemPrefab: {fileID: 3880700765134744100, guid: 67531d4d7e7cf74449dab395613b2c2e, type: 3}
   itemPlacementModelPrefab: {fileID: 0}

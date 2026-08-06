@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: a13288ce001f0244fa3b3ec0ef588514, type: 3}
   itemName: Ornate Medallion Rug
-  itemDescription: A unique Ornate Medallion Rug decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: An ornate Ornate Medallion Rug to adorn your garden with craftsmanship
+    and quiet reverence.
   itemID: c09503ffcd716c4165b197f8eb6dd253
   acquisitionType: 0
-  noorCoinCost: 525
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 3
-  sortOrder: 590
-  requiredXPLevel: 6
+  itemTier: 4
+  sortOrder: 530
+  requiredXPLevel: 1
   itemPrefab: {fileID: 3415561764430739046, guid: 84b30b493a74673479eb2330d2ffe38b, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

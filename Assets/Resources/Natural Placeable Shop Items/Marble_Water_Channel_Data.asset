@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: a2a93b74d56cffc44aca31813ac7a2cc, type: 3}
   itemName: Marble Water Channel
-  itemDescription: An elegant Marble Water Channel structure to provide comfort and
-    architectural beauty to your estate.
+  itemDescription: A tranquil Marble Water Channel to bring flowing water and calm
+    to your garden.
   itemID: 45236065029f7a84478813750eb24738
   acquisitionType: 0
-  noorCoinCost: 450
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 2
-  sortOrder: 310
-  requiredXPLevel: 4
+  itemCategory: 1
+  itemTier: 2
+  sortOrder: 220
+  requiredXPLevel: 1
   itemPrefab: {fileID: 3463643323026074355, guid: d09d29aacf13ce14eafdeb61458c0bbc, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

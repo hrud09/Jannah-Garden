@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 36dd31f73288cf04eb9b6333994485ea, type: 3}
   itemName: Crimson Diamond Pedestal
-  itemDescription: A unique Crimson Diamond Pedestal decoration to personalize and
-    enhance the atmosphere of your garden.
+  itemDescription: An ornate Crimson Diamond Pedestal to adorn your garden with craftsmanship
+    and quiet reverence.
   itemID: bc682c70ac133526e4004b4f54d17917
   acquisitionType: 0
-  noorCoinCost: 225
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 3
-  sortOrder: 430
-  requiredXPLevel: 2
+  itemTier: 2
+  sortOrder: 460
+  requiredXPLevel: 1
   itemPrefab: {fileID: 9044473427303699416, guid: 96d1d000e3ca54d4083344b7ef44db0d, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

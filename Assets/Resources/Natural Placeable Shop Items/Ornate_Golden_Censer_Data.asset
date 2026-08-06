@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 76e2cba4f83d450419feacf6af24e686, type: 3}
   itemName: Ornate Golden Censer
-  itemDescription: A unique Ornate Golden Censer decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: An ornate Ornate Golden Censer to adorn your garden with craftsmanship
+    and quiet reverence.
   itemID: ed7f9ff2e032babc5045bdf50b962d90
   acquisitionType: 0
-  noorCoinCost: 450
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 3
-  sortOrder: 560
-  requiredXPLevel: 5
+  itemTier: 4
+  sortOrder: 510
+  requiredXPLevel: 1
   itemPrefab: {fileID: 3915874906766854084, guid: 9d292e1c1d549dc4a9689c29c9720997, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

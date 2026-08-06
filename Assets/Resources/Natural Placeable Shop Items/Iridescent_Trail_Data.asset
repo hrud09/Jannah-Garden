@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 88c28beb02c126e4184c15a07499c016, type: 3}
   itemName: Iridescent Trail
-  itemDescription: A unique Iridescent Trail decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: A radiant Iridescent Trail to lift your garden with light and
+    wonder.
   itemID: c9d0d33026286402518f11f390b029f8
   acquisitionType: 0
-  noorCoinCost: 375
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 3
-  sortOrder: 510
-  requiredXPLevel: 4
+  itemCategory: 9
+  itemTier: 2
+  sortOrder: 580
+  requiredXPLevel: 1
   itemPrefab: {fileID: 7065528604795488749, guid: 26be55c193df5f841893c0f6c8eb0863, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

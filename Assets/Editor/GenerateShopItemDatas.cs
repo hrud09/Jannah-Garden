@@ -95,6 +95,9 @@ public class GenerateShopItemDatas
                 itemData.noorCoinCost = 50; // default cost
             }
 
+            // Tier follows the price, so it is re-derived even for assets that already exist.
+            itemData.itemTier = ShopItemClassifier.DetermineTier(itemData.noorCoinCost);
+
             if (isNew)
             {
                 AssetDatabase.CreateAsset(itemData, assetPath);
@@ -135,42 +138,9 @@ public class GenerateShopItemDatas
     }
 
     private static ShopItemCategory DetermineCategory(string prefabName)
-    {
-        string lower = prefabName.ToLower();
-        if (lower.Contains("tree") || 
-            lower.Contains("bush") || 
-            lower.Contains("flower") || 
-            lower.Contains("grass") || 
-            lower.Contains("reed") || 
-            lower.Contains("cattail") || 
-            lower.Contains("lily") || 
-            lower.Contains("leaf") || 
-            lower.Contains("plant") || 
-            lower.Contains("meadow"))
-        {
-            return ShopItemCategory.Plants;
-        }
-
-        if (lower.Contains("building") || lower.Contains("house"))
-        {
-            return ShopItemCategory.Buildings;
-        }
-
-        return ShopItemCategory.Decorations;
-    }
+        => ShopItemClassifier.DetermineCategory(prefabName);
 
     private static string GenerateDescription(string itemName, ShopItemCategory category)
-    {
-        switch (category)
-        {
-            case ShopItemCategory.Plants:
-                return $"A beautiful green {itemName} to add vibrant life and natural beauty to your garden.";
-            case ShopItemCategory.Buildings:
-                return $"An elegant {itemName} structure to provide comfort and architectural beauty to your estate.";
-            case ShopItemCategory.Decorations:
-            default:
-                return $"A unique {itemName} decoration to personalize and enhance the atmosphere of your garden.";
-        }
-    }
+        => ShopItemClassifier.GenerateDescription(itemName, category);
 }
 #endif

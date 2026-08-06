@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 85c4aefafff5e154d9073d9e956d63b4, type: 3}
   itemName: Floating Meadow
-  itemDescription: A beautiful Floating Meadow to add vibrant life and natural beauty
-    to your garden.
+  itemDescription: A radiant Floating Meadow to lift your garden with light and wonder.
   itemID: 156c89d0965de4298757d8b7aea231be
   acquisitionType: 0
-  noorCoinCost: 100
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 1
-  sortOrder: 30
+  itemCategory: 9
+  itemTier: 1
+  sortOrder: 540
   requiredXPLevel: 1
   itemPrefab: {fileID: 6971538899323631887, guid: d9929b5ec2be05d40a5f436970470e36, type: 3}
   itemPlacementModelPrefab: {fileID: 0}

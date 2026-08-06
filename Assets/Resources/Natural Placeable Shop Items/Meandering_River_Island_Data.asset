@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 5d2d4299378c06343aea4e026671cc0e, type: 3}
   itemName: Meandering River Island
-  itemDescription: A unique Meandering River Island decoration to personalize and
-    enhance the atmosphere of your garden.
+  itemDescription: A tranquil Meandering River Island to bring flowing water and
+    calm to your garden.
   itemID: 3b090e69ca199b7d217531032712b920
   acquisitionType: 0
-  noorCoinCost: 375
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 3
-  sortOrder: 540
-  requiredXPLevel: 4
+  itemCategory: 1
+  itemTier: 2
+  sortOrder: 200
+  requiredXPLevel: 1
   itemPrefab: {fileID: 436508078374261733, guid: 7340b1e9f39ffd449a54bdf72d0b2308, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 8247eec7b7e6f3c41a6475846db5d7db, type: 3}
   itemName: Eight Pointed Star Lantern
-  itemDescription: A unique Eight Pointed Star Lantern decoration to personalize
-    and enhance the atmosphere of your garden.
+  itemDescription: A radiant Eight Pointed Star Lantern to lift your garden with
+    light and wonder.
   itemID: d285f07515626c88fcc65f444bfaae62
   acquisitionType: 0
-  noorCoinCost: 225
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 3
-  sortOrder: 450
-  requiredXPLevel: 2
+  itemCategory: 9
+  itemTier: 1
+  sortOrder: 560
+  requiredXPLevel: 1
   itemPrefab: {fileID: 4170149314847309714, guid: 68b1b2801573edd498e45b6e074c07e3, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

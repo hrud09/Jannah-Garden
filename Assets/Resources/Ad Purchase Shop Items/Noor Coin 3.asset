@@ -24,6 +24,7 @@ MonoBehaviour:
   realMoneyPriceLabel: $0.99
   noorCoinReward: 500
   itemCategory: 8
+  itemTier: 0
   sortOrder: 0
   requiredXPLevel: 1
   itemPrefab: {fileID: 0}

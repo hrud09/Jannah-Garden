@@ -18,15 +18,16 @@ MonoBehaviour:
     and architectural beauty to your estate.
   itemID: f51486b7130cb7c6af4172aef5de8f9f
   acquisitionType: 0
-  noorCoinCost: 550
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
   itemCategory: 2
-  sortOrder: 320
-  requiredXPLevel: 5
+  itemTier: 3
+  sortOrder: 370
+  requiredXPLevel: 1
   itemPrefab: {fileID: 8697620360135693696, guid: 54a01b56e5e334440b80736d2f32abdb, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

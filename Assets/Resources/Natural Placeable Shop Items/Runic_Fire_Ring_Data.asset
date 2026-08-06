@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: bb0a7b9914d7e904991adb05f08c9e4a, type: 3}
   itemName: Runic Fire Ring
-  itemDescription: A unique Runic Fire Ring decoration to personalize and enhance
-    the atmosphere of your garden.
+  itemDescription: A radiant Runic Fire Ring to lift your garden with light and wonder.
   itemID: 0f0bf24939c7b7a0d9218d2a6e8c05b5
   acquisitionType: 0
-  noorCoinCost: 525
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 3
-  sortOrder: 620
-  requiredXPLevel: 6
+  itemCategory: 9
+  itemTier: 4
+  sortOrder: 630
+  requiredXPLevel: 1
   itemPrefab: {fileID: 4173279774341873342, guid: 6963c4194b8666a41b21bd17bbb406ce, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

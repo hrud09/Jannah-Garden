@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: bb7a103662d442046b46fafff03d404b, type: 3}
   itemName: Ancient Stone Pool
-  itemDescription: An elegant Ancient Stone Pool structure to provide comfort and
-    architectural beauty to your estate.
+  itemDescription: A tranquil Ancient Stone Pool to bring flowing water and calm
+    to your garden.
   itemID: 9266c6d5e48fb366088f7d703fc354fd
   acquisitionType: 0
-  noorCoinCost: 250
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 2
-  sortOrder: 210
-  requiredXPLevel: 2
+  itemCategory: 1
+  itemTier: 1
+  sortOrder: 190
+  requiredXPLevel: 1
   itemPrefab: {fileID: 294056016648836798, guid: a14d0f3c8b250644384d52f9cbdc41fa, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360

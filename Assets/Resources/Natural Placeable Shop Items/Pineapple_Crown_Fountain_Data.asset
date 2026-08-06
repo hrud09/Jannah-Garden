@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 21300000, guid: 18bcec6a67d81aa4988c07ca58a63172, type: 3}
   itemName: Pineapple Crown Fountain
-  itemDescription: An elegant Pineapple Crown Fountain structure to provide comfort
-    and architectural beauty to your estate.
+  itemDescription: A tranquil Pineapple Crown Fountain to bring flowing water and
+    calm to your garden.
   itemID: d06798148d103014f4d2729b928ccf7e
   acquisitionType: 0
-  noorCoinCost: 550
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
   realMoneyPriceLabel: $0.99
   noorCoinReward: 0
-  itemCategory: 2
-  sortOrder: 330
-  requiredXPLevel: 5
+  itemCategory: 1
+  itemTier: 3
+  sortOrder: 250
+  requiredXPLevel: 1
   itemPrefab: {fileID: 3761873038896358771, guid: 24e24ea9d3622c24bb8d4f7e6b1f6ec6, type: 3}
   itemPlacementModelPrefab: {fileID: 0}
   placementTimerDuration: 360
