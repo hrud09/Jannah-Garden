@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1741263206265464181
 Transform:
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133536813580327210}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.5438317e-15, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6101843522524801295}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5132413166846808721
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -122,14 +122,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6101843522524801295}
-  - component: {fileID: 701476203271005436}
   - component: {fileID: 5657382218207380585}
   m_Layer: 0
   m_Name: Golden_Archway_of_Lig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6101843522524801295
 Transform:
@@ -148,25 +147,6 @@ Transform:
   - {fileID: 1741263206265464181}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &701476203271005436
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4498113226154306989}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.000009249896, y: 0.000009954907, z: -0.0000104298815}
-  m_Size: 0.018994983
-  m_FadeMode: 0
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 7764183815523774084}
-  m_Enabled: 1
 --- !u!114 &5657382218207380585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +170,7 @@ MonoBehaviour:
   - {fileID: 7764183815523774084}
   isTree: 0
   isBuilding: 0
-  itemGFX: {fileID: 0}
+  itemGFX: {fileID: 1741263206265464181}
 --- !u!1001 &99134574248851832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +179,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6101843522524801295}
     m_Modifications:
+    - target: {fileID: 35994243457594801, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597972346789783187, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,6 +230,14 @@ PrefabInstance:
     - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_Name
       value: Timer Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039723079813570194, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

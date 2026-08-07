@@ -49,6 +49,25 @@ public class PlaceableItem : MonoBehaviour
     [Header("GFX Reference (Optional)")]
     public Transform itemGFX;
 
+    [Header("Ground Alignment")]
+    /// <summary>
+    /// Lifts <see cref="itemGFX"/> so the bottom of its colliders rests on the root's Y plane.
+    /// The root is dropped exactly onto the terrain at placement time, so root Y is ground level —
+    /// without this, any model whose geometry hangs below its pivot sinks into the ground.
+    /// </summary>
+    public bool alignGfxToGround = true;
+
+    /// <summary>Falls back to renderer bounds when the GFX has no colliders to measure.</summary>
+    public bool alignUsingRenderersIfNoCollider = true;
+
+    /// <summary>
+    /// How far the geometry's lowest point sits below the GFX origin, in root-local units, measured
+    /// at the GFX's authored scale. Scales linearly with the growth multiplier.
+    /// </summary>
+    private float gfxBottomDrop;
+    private Vector3 initialGfxLocalPos;
+    private bool canAlignGfx;
+
     private bool isTracking = false;
     private bool alreadyCompletedOnStart = false;
     private bool hasStarted = false;
@@ -90,6 +109,10 @@ public class PlaceableItem : MonoBehaviour
         // Capture the prefab's original scale before any tracking logic modifies it
         initialScale = (itemGFX != null) ? itemGFX.localScale : transform.localScale;
 
+        // Must run while the GFX is still at its authored transform, before any scaling is applied.
+        MeasureGfxGroundOffset();
+        SetScaleMultiplier(1f);
+
         if(timerHolder) timerText = timerHolder.GetComponentInChildren<TMP_Text>();
     }
 
@@ -122,16 +145,143 @@ public class PlaceableItem : MonoBehaviour
 
     /// <summary>
     /// Helper method to set the scale multiplier on the itemGFX if assigned, otherwise the root transform.
+    ///
+    /// When ground alignment is active this also re-lifts the GFX, because the drop below the pivot
+    /// scales with the model: at multiplier <c>m</c> the geometry hangs <c>gfxBottomDrop * m</c> below
+    /// the GFX origin. Correcting by exactly that keeps the model's underside planted on the ground
+    /// through the whole growth animation, so it grows up out of the ground rather than hovering.
     /// </summary>
     public void SetScaleMultiplier(float multiplier)
     {
         if (itemGFX != null)
         {
             itemGFX.localScale = initialScale * multiplier;
+
+            if (canAlignGfx)
+            {
+                // gfxBottomDrop is measured relative to the authored origin, so it already accounts
+                // for any authored Y — this replaces that Y rather than adding to it.
+                Vector3 p = initialGfxLocalPos;
+                p.y = gfxBottomDrop * multiplier;
+                itemGFX.localPosition = p;
+            }
         }
         else
         {
             transform.localScale = initialScale * multiplier;
+        }
+    }
+
+    /// <summary>
+    /// Measures how far the GFX's collision geometry hangs below the root's Y plane, so
+    /// <see cref="SetScaleMultiplier"/> can lift it back up.
+    ///
+    /// Bounds are gathered in root-local space, which folds in the GFX's own rotation (the models
+    /// carry a -90° X rotation) without any special-casing. Colliders are measured from their local
+    /// definitions rather than <see cref="Collider.bounds"/>, since the latter is a world-space AABB
+    /// that would inflate once the root is rotated at placement time.
+    ///
+    /// Safe to call again if the GFX is swapped or re-authored.
+    /// </summary>
+    public void MeasureGfxGroundOffset()
+    {
+        canAlignGfx = false;
+        gfxBottomDrop = 0f;
+
+        if (!alignGfxToGround || itemGFX == null) return;
+
+        initialGfxLocalPos = itemGFX.localPosition;
+
+        if (!TryGetGfxBottomInRootSpace(out float bottomY)) return;
+
+        // How far the geometry reaches below the GFX origin, at the authored scale.
+        // Positive means it hangs below and needs lifting.
+        gfxBottomDrop = initialGfxLocalPos.y - bottomY;
+        canAlignGfx = true;
+    }
+
+    /// <summary>Lowest point of the GFX's collision (or renderer) geometry, in root-local space.</summary>
+    private bool TryGetGfxBottomInRootSpace(out float bottomY)
+    {
+        bottomY = 0f;
+        bool any = false;
+        Matrix4x4 toRoot = transform.worldToLocalMatrix;
+
+        foreach (Collider col in itemGFX.GetComponentsInChildren<Collider>(true))
+        {
+            // Triggers are gameplay volumes, not the model's physical footprint — measuring them
+            // would lift the item off the ground by however far the volume overhangs.
+            if (col.isTrigger) continue;
+            if (!TryGetColliderLocalBounds(col, out Bounds local)) continue;
+            AccumulateMinY(local, toRoot * col.transform.localToWorldMatrix, ref bottomY, ref any);
+        }
+
+        if (!any && alignUsingRenderersIfNoCollider)
+        {
+            foreach (MeshFilter mf in itemGFX.GetComponentsInChildren<MeshFilter>(true))
+            {
+                if (mf.sharedMesh == null || !mf.TryGetComponent<Renderer>(out _)) continue;
+                AccumulateMinY(mf.sharedMesh.bounds, toRoot * mf.transform.localToWorldMatrix, ref bottomY, ref any);
+            }
+
+            foreach (SkinnedMeshRenderer sm in itemGFX.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+            {
+                if (sm.sharedMesh == null) continue;
+                AccumulateMinY(sm.sharedMesh.bounds, toRoot * sm.transform.localToWorldMatrix, ref bottomY, ref any);
+            }
+        }
+
+        return any;
+    }
+
+    /// <summary>Collider geometry expressed in its own transform's local space.</summary>
+    private static bool TryGetColliderLocalBounds(Collider col, out Bounds local)
+    {
+        switch (col)
+        {
+            case MeshCollider mc when mc.sharedMesh != null:
+                local = mc.sharedMesh.bounds;
+                return true;
+
+            case BoxCollider bc:
+                local = new Bounds(bc.center, bc.size);
+                return true;
+
+            case SphereCollider sc:
+                local = new Bounds(sc.center, Vector3.one * (sc.radius * 2f));
+                return true;
+
+            case CapsuleCollider cc:
+                Vector3 size = Vector3.one * (cc.radius * 2f);
+                // direction: 0 = X, 1 = Y, 2 = Z
+                if (cc.direction == 0) size.x = Mathf.Max(cc.height, cc.radius * 2f);
+                else if (cc.direction == 1) size.y = Mathf.Max(cc.height, cc.radius * 2f);
+                else size.z = Mathf.Max(cc.height, cc.radius * 2f);
+                local = new Bounds(cc.center, size);
+                return true;
+
+            default:
+                local = default;
+                return false;
+        }
+    }
+
+    /// <summary>Transforms all 8 corners of <paramref name="local"/> and tracks the lowest Y.</summary>
+    private static void AccumulateMinY(Bounds local, Matrix4x4 m, ref float minY, ref bool any)
+    {
+        Vector3 c = local.center, e = local.extents;
+
+        for (int i = 0; i < 8; i++)
+        {
+            var corner = new Vector3(
+                c.x + (((i & 1) == 0) ? -e.x : e.x),
+                c.y + (((i & 2) == 0) ? -e.y : e.y),
+                c.z + (((i & 4) == 0) ? -e.z : e.z));
+
+            float y = m.MultiplyPoint3x4(corner).y;
+
+            if (!any) { minY = y; any = true; }
+            else if (y < minY) minY = y;
         }
     }
 

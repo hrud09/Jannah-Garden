@@ -9,14 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8482866681520029381}
-  - component: {fileID: 1639752499261625245}
   - component: {fileID: 7681795488161819275}
   m_Layer: 0
   m_Name: Runic_Fire_Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8482866681520029381
 Transform:
@@ -35,25 +34,6 @@ Transform:
   - {fileID: 4671103063031754906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &1639752499261625245
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4173279774341873342}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.000010045245, y: 0.000008484349, z: -0.000040085055}
-  m_Size: 0.018993374
-  m_FadeMode: 0
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 4015949429063604535}
-  m_Enabled: 1
 --- !u!114 &7681795488161819275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +57,7 @@ MonoBehaviour:
   - {fileID: 4015949429063604535}
   isTree: 0
   isBuilding: 0
-  itemGFX: {fileID: 0}
+  itemGFX: {fileID: 4671103063031754906}
 --- !u!1 &4794367222978253534
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +75,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4671103063031754906
 Transform:
@@ -105,13 +85,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4794367222978253534}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.5438317e-15, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8482866681520029381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3972176075803006656
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -199,6 +179,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8482866681520029381}
     m_Modifications:
+    - target: {fileID: 35994243457594801, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597972346789783187, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,6 +230,14 @@ PrefabInstance:
     - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_Name
       value: Timer Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039723079813570194, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

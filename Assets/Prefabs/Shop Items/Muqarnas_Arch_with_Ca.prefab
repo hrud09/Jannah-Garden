@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &527567786850318285
 Transform:
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8609678723897355474}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.5438317e-15, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7549275054493267706}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5205739429885681863
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -122,14 +122,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7549275054493267706}
-  - component: {fileID: 6312157402463026448}
   - component: {fileID: 1723636238517591079}
   m_Layer: 0
   m_Name: Muqarnas_Arch_with_Ca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7549275054493267706
 Transform:
@@ -148,25 +147,6 @@ Transform:
   - {fileID: 527567786850318285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &6312157402463026448
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8697620360135693696}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.000009374693, y: 0.0000057499856, z: -0.000010449439}
-  m_Size: 0.018995725
-  m_FadeMode: 0
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3653266722351088574}
-  m_Enabled: 1
 --- !u!114 &1723636238517591079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +170,7 @@ MonoBehaviour:
   - {fileID: 3653266722351088574}
   isTree: 0
   isBuilding: 0
-  itemGFX: {fileID: 0}
+  itemGFX: {fileID: 527567786850318285}
 --- !u!1001 &8314679255755076251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +179,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7549275054493267706}
     m_Modifications:
+    - target: {fileID: 35994243457594801, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597972346789783187, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,6 +230,14 @@ PrefabInstance:
     - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_Name
       value: Timer Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039723079813570194, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5929,11 +5929,19 @@ PrefabInstance:
       objectReference: {fileID: 411495268}
     - target: {fileID: 2531667859275332622, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _movementSpeed
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2531667859275332622, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _runMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531667859275332622, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: inspectorModeSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531667859275332622, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: inspectorModeVerticalSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5509489776399048857, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: crosshairRect

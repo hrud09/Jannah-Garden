@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8342196597672350371
 Transform:
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955247481594615763}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.5438317e-15, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.41, z: -0}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3971993888553300024}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5926330161119182458
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -122,14 +122,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3971993888553300024}
-  - component: {fileID: 2580894352681521636}
   - component: {fileID: 1976354828747010907}
   m_Layer: 0
   m_Name: Blue_Star_Mosaic_Slab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 122
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3971993888553300024
 Transform:
@@ -148,25 +147,6 @@ Transform:
   - {fileID: 8342196597672350371}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &2580894352681521636
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4329874644623482907}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.0000064801425, y: 0.000014649704, z: 0.000042369997}
-  m_Size: 0.018984959
-  m_FadeMode: 0
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3733533776302612323}
-  m_Enabled: 1
 --- !u!114 &1976354828747010907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +170,7 @@ MonoBehaviour:
   - {fileID: 3733533776302612323}
   isTree: 0
   isBuilding: 0
-  itemGFX: {fileID: 0}
+  itemGFX: {fileID: 8342196597672350371}
 --- !u!1001 &5452866240129166693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +179,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3971993888553300024}
     m_Modifications:
+    - target: {fileID: 35994243457594801, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597972346789783187, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,6 +230,14 @@ PrefabInstance:
     - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_Name
       value: Timer Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425991244770049182, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039723079813570194, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
