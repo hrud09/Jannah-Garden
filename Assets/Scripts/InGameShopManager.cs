@@ -52,6 +52,7 @@ public class InGameShopManager : MonoBehaviour
     [SerializeField] private GameObject inventoryItemUIPrefab; // The InventoryItemUI prefab to instantiate
     private List<ShopItemUI> spawnedShopItemUIs = new List<ShopItemUI>();
     private List<InventoryItemUI> spawnedInventoryItemUIs = new List<InventoryItemUI>();
+    private bool hasSpawnedItems;
 
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
@@ -152,6 +153,59 @@ public class InGameShopManager : MonoBehaviour
             openCloseButton.onClick.AddListener(ToggleShop);
         }
 
+        // Initialize default arrow state and panel position (Closed by default)
+        SetShopOpen(false, smooth: false);
+
+        // Initialize Category Tabs
+        if (categoryTabs != null)
+        {
+            if (categoryTabs.Count > 0 && categoryTabs[0] != null && categoryTabs[0].tabButton != null)
+            {
+                tabsParentRect = categoryTabs[0].tabButton.transform.parent as RectTransform;
+            }
+
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.tabButton != null)
+                {
+                    ShopItemCategory cat = tab.category;
+                    tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
+
+                    // Dynamically set button text label from category name
+                    TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
+                    if (txt != null)
+                    {
+                        txt.text = ShopTaxonomy.GetCategoryName(cat);
+                    }
+
+                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                    if (rect != null)
+                    {
+                        defaultWidths[tab] = rect.sizeDelta.x;
+                    }
+                    else
+                    {
+                        defaultWidths[tab] = unselectedTabWidth;
+                    }
+                }
+            }
+        }
+
+        // Default to showing the Plants & Gardens collection initially
+        FilterByCategory(defaultCategory);
+    }
+
+    /// <summary>
+    /// Instantiates every shop/inventory item card. Deferred out of <see cref="Start"/> and run once,
+    /// the first time the shop panel actually opens — scene load shouldn't pay for ~80+ Instantiate
+    /// calls (one per <see cref="ShopItemData"/>/<see cref="TreasureBoxRewardItemData"/>) for a panel
+    /// the player may never open this session.
+    /// </summary>
+    private void EnsureItemsSpawned()
+    {
+        if (hasSpawnedItems) return;
+        hasSpawnedItems = true;
+
         // Dynamic Spawning of Shop Items based on Categories
         if (shopItemDatas != null && shopItemUIPrefab != null)
         {
@@ -204,7 +258,7 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        // Select the default selected item or first spawned item on start (set selection only)
+        // Select the default selected item or first spawned item (set selection only)
         if (selectedShopItem != null)
         {
             selectedShopItem = selectedShopItem;
@@ -213,47 +267,6 @@ public class InGameShopManager : MonoBehaviour
         {
             selectedShopItem = spawnedShopItemUIs[0];
         }
-
-        // Initialize default arrow state and panel position (Closed by default)
-        SetShopOpen(false, smooth: false);
-
-        // Initialize Category Tabs
-        if (categoryTabs != null)
-        {
-            if (categoryTabs.Count > 0 && categoryTabs[0] != null && categoryTabs[0].tabButton != null)
-            {
-                tabsParentRect = categoryTabs[0].tabButton.transform.parent as RectTransform;
-            }
-
-            foreach (var tab in categoryTabs)
-            {
-                if (tab != null && tab.tabButton != null)
-                {
-                    ShopItemCategory cat = tab.category;
-                    tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
-
-                    // Dynamically set button text label from category name
-                    TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
-                    if (txt != null)
-                    {
-                        txt.text = ShopTaxonomy.GetCategoryName(cat);
-                    }
-
-                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
-                    if (rect != null)
-                    {
-                        defaultWidths[tab] = rect.sizeDelta.x;
-                    }
-                    else
-                    {
-                        defaultWidths[tab] = unselectedTabWidth;
-                    }
-                }
-            }
-        }
-
-        // Default to showing the Plants & Gardens collection initially
-        FilterByCategory(defaultCategory);
     }
 
     private void OnDisable()
@@ -298,6 +311,11 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void SetShopOpen(bool open, bool smooth)
     {
+        if (open)
+        {
+            EnsureItemsSpawned();
+        }
+
         isOpen = open;
 
         if (isOpen) OnShopOpened?.Invoke();
