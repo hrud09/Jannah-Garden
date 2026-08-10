@@ -1,6 +1,8 @@
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using System.IO;
 
 public class ShopItemMakerWindow : EditorWindow
@@ -214,8 +216,10 @@ public class ShopItemMakerWindow : EditorWindow
         itemData.sortOrder = sortOrder;
 
         // Set Prefabs
-        itemData.itemPrefab = itemPrefab;
-        itemData.itemPlacementModelPrefab = itemPlacementModelPrefab;
+        AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
+        var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
+        AddressableItemAuthoring.AssignPrefab(itemData.itemPrefabRef, itemPrefab, addressableSettings, remoteGroup);
+        AddressableItemAuthoring.AssignPrefab(itemData.itemPlacementModelPrefabRef, itemPlacementModelPrefab, addressableSettings, remoteGroup);
         itemData.placementTimerDuration = placementTimerDuration;
 
         // Save

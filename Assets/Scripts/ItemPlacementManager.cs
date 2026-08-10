@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
 using System.Collections;
 using System.Collections.Generic;
 using FlutterIntegration;
@@ -14,9 +15,9 @@ public class PlacedItemSaveData
     public float remainingDuration;
     public float totalDuration;
 
-    // Added after the first release. BinaryFormatter leaves fields it does not find in an older save
-    // at their defaults, so old save files still load — they just come back as Unknown/empty and fall
-    // back to a prefab-name lookup when the player returns the item to the store.
+    // sourceItemId/sourceKind are the authoritative key used to resolve this item's prefab back to a
+    // ShopItemData/TreasureBoxRewardItemData asset on load (see ResolveItemPrefabRef). prefabName is
+    // kept for display/debugging only — it is no longer used for lookup.
     public string sourceItemId;
     public PlacedItemSource sourceKind;
 }
@@ -54,8 +55,6 @@ public class ItemPlacementManager : MonoBehaviour
 
     [Header("Shop/Prefab References")]
     public InGameShopManager shopManager;
-    [Tooltip("Explicit array of prefabs for quick loading. Fallback searches shopManager.")]
-    public GameObject[] placeablePrefabs;
 
     [Header("Return To Asset Store")]
     [Tooltip("Share of the Noor Coin price refunded when a shop item is returned to the store. " +
@@ -81,6 +80,19 @@ public class ItemPlacementManager : MonoBehaviour
     private PlacedItemSource _pendingSourceKind = PlacedItemSource.Unknown;
     private string _pendingSourceItemId;
 
+    // ── Async prefab loading (Addressables) ──────────────────────────────────────
+    // True while a placement's real/preview prefabs are downloading, i.e. between InternalPreparePlacement
+    // starting and FinishPreparingPlacement/HandlePlacementLoadFailure ending it. currentPlacedObject alone
+    // can no longer stand in for "a placement is in progress" — the ghost doesn't exist yet during the load.
+    private bool _isPreparingPlacement;
+    // Bumped every time a new placement starts or the pending one is cleared, so a load callback from a
+    // superseded request (the player picked a different item before the first one finished downloading)
+    // can recognize it's stale and no-op instead of resurrecting an abandoned ghost.
+    private int _placementRequestVersion;
+    // True while RebuildGardenAsync is reconstructing the garden from a save (cold start or a cloud
+    // adopt) — guards SaveEverything from persisting a partially-populated garden mid-rebuild.
+    private bool _isRebuildingGarden;
+
     // ── Relocation state ──────────────────────────────────────────────────────
     // A relocation is a placement that reuses an existing item's identity and growth progress instead
     // of minting a new one, and that must not charge the player or award XP a second time.
@@ -100,8 +112,11 @@ public class ItemPlacementManager : MonoBehaviour
     private bool _cloudPushPending;
     private GardenStatePayload _deferredCloudState;
 
-    /// <summary>True while an item is following the crosshair and waiting to be confirmed.</summary>
-    public bool IsPlacing => currentPlacedObject != null;
+    /// <summary>
+    /// True while an item is following the crosshair and waiting to be confirmed, or while its prefab is
+    /// still downloading (before the ghost even exists).
+    /// </summary>
+    public bool IsPlacing => currentPlacedObject != null || _isPreparingPlacement;
 
     /// <summary>True when the placement in progress is moving an item that is already in the garden.</summary>
     public bool IsRelocating => _isRelocating;
@@ -177,6 +192,12 @@ public class ItemPlacementManager : MonoBehaviour
     /// </summary>
     private void SaveEverything()
     {
+        // The garden is mid-reconstruction (cold start / cloud adopt) — activePlacedItems is only
+        // partially populated right now. Writing it out would overwrite the save file (and the cloud
+        // mirror) with an incomplete garden; the on-disk/cloud copy this is rebuilding from is already
+        // the correct source of truth, so there is nothing to gain by saving mid-rebuild.
+        if (_isRebuildingGarden) return;
+
         if (_isRelocating) CancelPlacement();
 
         SavePlacedItems();
@@ -189,7 +210,7 @@ public class ItemPlacementManager : MonoBehaviour
 
     public void PreparePlacement(ShopItemData itemData)
     {
-        if (itemData == null || itemData.itemPrefab == null) return;
+        if (itemData == null || itemData.itemPrefabRef == null || !itemData.itemPrefabRef.RuntimeKeyIsValid()) return;
 
         // Buying something in the middle of a move would overwrite the relocation state and lose the
         // item being carried. Put it back first.
@@ -200,20 +221,12 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingSourceKind = PlacedItemSource.ShopItem;
         _pendingSourceItemId = itemData.itemID;
 
-        GameObject preview = itemData.itemPlacementModelPrefab != null
-            ? itemData.itemPlacementModelPrefab
-            : itemData.itemPrefab;
-
-        InternalPreparePlacement(
-            itemData.itemPrefab,
-            preview,
-            itemData.placementTimerDuration
-        );
+        InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration);
     }
 
     public void PreparePlacement(TreasureBoxRewardItemData itemData)
     {
-        if (itemData == null || itemData.itemPrefab == null) return;
+        if (itemData == null || itemData.itemPrefabRef == null || !itemData.itemPrefabRef.RuntimeKeyIsValid()) return;
 
         // As above: never let a new placement swallow the item currently being moved.
         if (_isRelocating) CancelPlacement();
@@ -223,18 +236,17 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingSourceKind = PlacedItemSource.InventoryItem;
         _pendingSourceItemId = itemData.itemID;
 
-        GameObject preview = itemData.itemPlacementModelPrefab != null
-            ? itemData.itemPlacementModelPrefab
-            : itemData.itemPrefab;
-
-        InternalPreparePlacement(
-            itemData.itemPrefab,
-            preview,
-            itemData.placementTimerDuration
-        );
+        InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration);
     }
 
-    private void InternalPreparePlacement(GameObject prefab, GameObject previewPrefab, float duration)
+    /// <summary>
+    /// Starts (or restarts) a placement: downloads the real and preview prefabs — a no-op if both are
+    /// already cached from a previous download this session — then hands off to
+    /// <see cref="FinishPreparingPlacement"/> once both resolve, or <see cref="HandlePlacementLoadFailure"/>
+    /// if either fails. <paramref name="previewRef"/> may be an unassigned reference; it falls back to
+    /// <paramref name="prefabRef"/>.
+    /// </summary>
+    private void InternalPreparePlacement(AssetReferenceGameObject prefabRef, AssetReferenceGameObject previewRef, float duration)
     {
         // If there's an existing preview being placed, destroy it
         if (currentPlacedObject != null)
@@ -243,6 +255,69 @@ public class ItemPlacementManager : MonoBehaviour
             currentPlacedObject = null;
         }
 
+        _pendingItemPrefab = null;
+        _pendingDuration = duration;
+        _isPreparingPlacement = true;
+        int requestVersion = ++_placementRequestVersion;
+
+        AssetReferenceGameObject effectivePreviewRef =
+            previewRef != null && previewRef.RuntimeKeyIsValid() ? previewRef : prefabRef;
+
+        GameObject resolvedReal = null;
+        GameObject resolvedPreview = null;
+        bool realReady = false;
+        bool previewReady = false;
+
+        StartCoroutine(ShowSlowLoadToastAfterDelay(requestVersion));
+
+        void TryFinish()
+        {
+            if (requestVersion != _placementRequestVersion) return; // superseded by a newer request
+            if (!realReady || !previewReady) return;
+
+            if (resolvedReal == null || resolvedPreview == null)
+            {
+                HandlePlacementLoadFailure();
+                return;
+            }
+
+            FinishPreparingPlacement(resolvedReal, resolvedPreview, duration);
+        }
+
+        AddressableItemLoader.LoadAsync(prefabRef, loaded =>
+        {
+            if (requestVersion != _placementRequestVersion) return;
+            resolvedReal = loaded;
+            realReady = true;
+            TryFinish();
+        });
+
+        AddressableItemLoader.LoadAsync(effectivePreviewRef, loaded =>
+        {
+            if (requestVersion != _placementRequestVersion) return;
+            resolvedPreview = loaded;
+            previewReady = true;
+            TryFinish();
+        });
+    }
+
+    /// <summary>Shows a "downloading" toast if a placement is still loading after a short delay — never
+    /// fires for a cache hit, since those resolve synchronously before this coroutine's first yield.</summary>
+    private IEnumerator ShowSlowLoadToastAfterDelay(int requestVersion)
+    {
+        yield return new WaitForSecondsRealtime(0.3f);
+
+        if (requestVersion == _placementRequestVersion && _isPreparingPlacement && ToastMessageManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast("Downloading item…");
+        }
+    }
+
+    /// <summary>The tail of the old synchronous InternalPreparePlacement — spawns the ghost once both
+    /// the real and preview prefabs have actually been resolved.</summary>
+    private void FinishPreparingPlacement(GameObject prefab, GameObject previewPrefab, float duration)
+    {
+        _isPreparingPlacement = false;
         _pendingItemPrefab = prefab;
         _pendingDuration = duration;
 
@@ -278,6 +353,33 @@ public class ItemPlacementManager : MonoBehaviour
         {
             cancelPlacementButton.gameObject.SetActive(true);
         }
+    }
+
+    /// <summary>
+    /// The real or preview prefab failed to download. Unwinds exactly like a cancelled placement — refund
+    /// a fresh purchase, or (in the unreachable-in-v1 case a relocate's already-cached prefab somehow
+    /// fails to reload) log it, since the live instance is already gone by this point.
+    /// </summary>
+    private void HandlePlacementLoadFailure()
+    {
+        _isPreparingPlacement = false;
+
+        if (ToastMessageManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast("Couldn't download this item — check your connection");
+        }
+
+        if (_isRelocating)
+        {
+            Debug.LogError("[ItemPlacementManager] Relocate failed to reload an already-cached prefab — item lost.");
+        }
+        else
+        {
+            RefundPendingPurchase();
+        }
+
+        ClearPendingPlacement();
+        ApplyDeferredCloudState();
     }
 
     /// <summary>
@@ -474,7 +576,7 @@ public class ItemPlacementManager : MonoBehaviour
             return;
         }
 
-        ShopItemData shopData = FindShopItemData(_pendingSourceItemId, _pendingItemPrefab != null ? _pendingItemPrefab.name : null);
+        ShopItemData shopData = FindShopItemData(_pendingSourceItemId);
         int refund = CalculateCoinRefund(shopData);
 
         if (refund > 0 && NoorCoinManager.Instance != null)
@@ -498,6 +600,8 @@ public class ItemPlacementManager : MonoBehaviour
         _isRelocating = false;
         _relocateUniqueId = null;
         _relocateRemainingDuration = 0f;
+        _isPreparingPlacement = false;
+        _placementRequestVersion++; // invalidate any in-flight load callbacks tied to the placement just cleared
 
         if (placeButton != null) placeButton.gameObject.SetActive(false);
         if (cancelPlacementButton != null) cancelPlacementButton.gameObject.SetActive(false);
@@ -525,10 +629,15 @@ public class ItemPlacementManager : MonoBehaviour
             return false;
         }
 
-        GameObject prefab = GetPrefabByName(item.prefabName);
-        if (prefab == null)
+        AssetReferenceGameObject prefabRef = ResolveItemPrefabRef(item.sourceKind, item.sourceItemId);
+
+        // The prefab standing in as `item` right now was already downloaded to spawn it, so this is
+        // always a cache hit in v1 (nothing evicts AddressableItemLoader's cache) — checked rather than
+        // assumed so a hypothetical miss fails safely, leaving the live item exactly where it is instead
+        // of despawning it ahead of a load that might not succeed.
+        if (prefabRef == null || !prefabRef.RuntimeKeyIsValid() || !AddressableItemLoader.TryGetCached(prefabRef, out _))
         {
-            Debug.LogWarning($"[ItemPlacementManager] Cannot relocate '{item.prefabName}' — its prefab is not reachable from this scene.");
+            Debug.LogWarning($"[ItemPlacementManager] Cannot relocate item (sourceItemId='{item.sourceItemId}') — its prefab is not reachable.");
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast("This item cannot be moved");
@@ -549,8 +658,7 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingSourceItemId = item.sourceItemId;
 
         float totalDuration = item.placementDuration;
-        PlacedItemSource kind = item.sourceKind;
-        string sourceItemId = item.sourceItemId;
+        AssetReferenceGameObject previewRef = ResolvePreviewPrefabRef(item.sourceKind, item.sourceItemId);
 
         // Take the real item out of the world — the ghost under the crosshair stands in for it until the
         // player puts it down. Nothing is saved yet on purpose: if the app dies mid-move, the last save
@@ -558,8 +666,7 @@ public class ItemPlacementManager : MonoBehaviour
         RemoveFromGarden(item);
         Objectpool.Instance.Despawn(item.gameObject);
 
-        GameObject preview = GetPreviewPrefabFor(kind, sourceItemId, prefab);
-        InternalPreparePlacement(prefab, preview, totalDuration);
+        InternalPreparePlacement(prefabRef, previewRef, totalDuration);
 
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
         if (ToastMessageManager.Instance != null)
@@ -589,7 +696,6 @@ public class ItemPlacementManager : MonoBehaviour
             return false;
         }
 
-        string prefabName = item.prefabName;
         PlacedItemSource kind = item.sourceKind;
         string sourceItemId = item.sourceItemId;
 
@@ -602,7 +708,7 @@ public class ItemPlacementManager : MonoBehaviour
         // ── Treasure box reward → back on the shelf as one item ───────────────
         TreasureBoxRewardItemData rewardData = kind == PlacedItemSource.ShopItem
             ? null
-            : FindInventoryItemData(sourceItemId, prefabName);
+            : FindInventoryItemData(sourceItemId);
 
         if (rewardData != null)
         {
@@ -627,7 +733,7 @@ public class ItemPlacementManager : MonoBehaviour
         }
 
         // ── Shop purchase → Noor Coins back ───────────────────────────────────
-        ShopItemData shopData = FindShopItemData(sourceItemId, prefabName);
+        ShopItemData shopData = FindShopItemData(sourceItemId);
         int refund = CalculateCoinRefund(shopData);
 
         if (refund > 0 && NoorCoinManager.Instance != null)
@@ -661,22 +767,48 @@ public class ItemPlacementManager : MonoBehaviour
         OnItemRemoved?.Invoke(item);
     }
 
-    /// <summary>The lightweight ghost model for an item, falling back to the real prefab.</summary>
-    private GameObject GetPreviewPrefabFor(PlacedItemSource kind, string itemId, GameObject fallback)
+    /// <summary>The real item prefab an already-placed item came from, resolved by source id — used to
+    /// re-download it for a relocate or a garden rebuild.</summary>
+    private AssetReferenceGameObject ResolveItemPrefabRef(PlacedItemSource kind, string itemId)
     {
         if (kind != PlacedItemSource.InventoryItem)
         {
-            ShopItemData shopData = FindShopItemData(itemId, fallback != null ? fallback.name : null);
-            if (shopData != null && shopData.itemPlacementModelPrefab != null) return shopData.itemPlacementModelPrefab;
+            ShopItemData shopData = FindShopItemData(itemId);
+            if (shopData != null && shopData.itemPrefabRef != null && shopData.itemPrefabRef.RuntimeKeyIsValid())
+            {
+                return shopData.itemPrefabRef;
+            }
         }
 
         if (kind != PlacedItemSource.ShopItem)
         {
-            TreasureBoxRewardItemData rewardData = FindInventoryItemData(itemId, fallback != null ? fallback.name : null);
-            if (rewardData != null && rewardData.itemPlacementModelPrefab != null) return rewardData.itemPlacementModelPrefab;
+            TreasureBoxRewardItemData rewardData = FindInventoryItemData(itemId);
+            if (rewardData != null && rewardData.itemPrefabRef != null && rewardData.itemPrefabRef.RuntimeKeyIsValid())
+            {
+                return rewardData.itemPrefabRef;
+            }
         }
 
-        return fallback;
+        return null;
+    }
+
+    /// <summary>The lightweight ghost model for an item. May return null/invalid — InternalPreparePlacement
+    /// falls back to the real prefab ref in that case.</summary>
+    private AssetReferenceGameObject ResolvePreviewPrefabRef(PlacedItemSource kind, string itemId)
+    {
+        if (kind != PlacedItemSource.InventoryItem)
+        {
+            ShopItemData shopData = FindShopItemData(itemId);
+            if (shopData != null) return shopData.itemPlacementModelPrefabRef;
+        }
+
+        if (kind != PlacedItemSource.ShopItem)
+        {
+            TreasureBoxRewardItemData rewardData = FindInventoryItemData(itemId);
+            if (rewardData != null) return rewardData.itemPlacementModelPrefabRef;
+        }
+
+        return null;
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -743,15 +875,21 @@ public class ItemPlacementManager : MonoBehaviour
         _revision = state.revision;
         _lastSavedAtUnix = state.gameClosedTimeUnix;
 
-        RebuildGarden(state);
+        StartCoroutine(RebuildGardenAsync(state));
     }
 
     /// <summary>
     /// Clears the garden and rebuilds it from <paramref name="state"/>, deducting the time that passed
-    /// since the snapshot was taken from every growth timer.
+    /// since the snapshot was taken from every growth timer. Every saved item's prefab is resolved by
+    /// <see cref="ResolveItemPrefabRef"/> (source id, not the legacy prefab-name lookup) and downloaded
+    /// if it isn't already cached; all downloads for the batch fire concurrently rather than one at a
+    /// time, so a garden full of items doesn't serialize into a chain of sequential round trips at cold
+    /// start (Addressables' own request-concurrency cap still throttles the actual network use).
     /// </summary>
-    private void RebuildGarden(SaveStateCollection state)
+    private IEnumerator RebuildGardenAsync(SaveStateCollection state)
     {
+        _isRebuildingGarden = true;
+
         double currentUnix = System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         double elapsedOffline = state.gameClosedTimeUnix > 0
             ? System.Math.Max(0, currentUnix - state.gameClosedTimeUnix)
@@ -766,15 +904,42 @@ public class ItemPlacementManager : MonoBehaviour
         }
         activePlacedItems.Clear();
 
-        foreach (var itemData in state.items)
+        int count = state.items.Count;
+        GameObject[] resolvedPrefabs = new GameObject[count];
+        bool[] done = new bool[count];
+
+        for (int i = 0; i < count; i++)
         {
-            GameObject prefab = GetPrefabByName(itemData.prefabName);
-            if (prefab == null)
+            PlacedItemSaveData itemData = state.items[i];
+            AssetReferenceGameObject prefabRef = ResolveItemPrefabRef(itemData.sourceKind, itemData.sourceItemId);
+
+            if (prefabRef == null || !prefabRef.RuntimeKeyIsValid())
             {
-                Debug.LogWarning("Failed to find placeable prefab named: " + itemData.prefabName);
+                Debug.LogWarning($"[ItemPlacementManager] Failed to resolve a prefab for saved item "
+                    + $"(sourceItemId='{itemData.sourceItemId}', sourceKind={itemData.sourceKind}).");
+                done[i] = true;
                 continue;
             }
 
+            int index = i; // capture by value for the closure — `i` itself keeps incrementing
+            AddressableItemLoader.LoadAsync(prefabRef, loaded =>
+            {
+                resolvedPrefabs[index] = loaded;
+                done[index] = true;
+            });
+        }
+
+        while (System.Array.IndexOf(done, false) >= 0)
+        {
+            yield return null;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            GameObject prefab = resolvedPrefabs[i];
+            if (prefab == null) continue; // unresolved or failed to download — skip, same as today's "not found"
+
+            PlacedItemSaveData itemData = state.items[i];
             GameObject spawned = Objectpool.Instance.Spawn(prefab, itemData.position, itemData.rotation);
 
             PlaceableItem placeable = spawned.GetComponent<PlaceableItem>();
@@ -794,102 +959,31 @@ public class ItemPlacementManager : MonoBehaviour
             placeable.SetSource(itemData.sourceKind, itemData.sourceItemId);
             activePlacedItems.Add(placeable);
         }
+
+        _isRebuildingGarden = false;
     }
 
-    /// <summary>
-    /// Searches for a placeable prefab matching the provided name.
-    /// </summary>
-    private GameObject GetPrefabByName(string prefabName)
+    /// <summary>Finds the shop entry an item came from by its stable id.</summary>
+    private ShopItemData FindShopItemData(string itemId)
     {
-        if (string.IsNullOrEmpty(prefabName)) return null;
+        if (shopManager == null || shopManager.shopItemDatas == null || string.IsNullOrEmpty(itemId)) return null;
 
-        // 1. Search custom prefabs list
-        if (placeablePrefabs != null)
+        foreach (var data in shopManager.shopItemDatas)
         {
-            foreach (var prefab in placeablePrefabs)
-            {
-                if (prefab != null && prefab.name == prefabName)
-                {
-                    return prefab;
-                }
-            }
-        }
-
-        if (shopManager == null) return null;
-
-        // 2. Search the shop's catalogue
-        if (shopManager.shopItemDatas != null)
-        {
-            foreach (var data in shopManager.shopItemDatas)
-            {
-                if (data != null && data.itemPrefab != null && data.itemPrefab.name == prefabName)
-                {
-                    return data.itemPrefab;
-                }
-            }
-        }
-
-        // 3. …and the treasure box rewards, which are placeable too.
-        if (shopManager.inventoryItemDatas != null)
-        {
-            foreach (var data in shopManager.inventoryItemDatas)
-            {
-                if (data != null && data.itemPrefab != null && data.itemPrefab.name == prefabName)
-                {
-                    return data.itemPrefab;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /// <summary>
-    /// Finds the shop entry an item came from, by id when it has one and by prefab name otherwise —
-    /// items placed before source tracking existed only have the name.
-    /// </summary>
-    private ShopItemData FindShopItemData(string itemId, string prefabName)
-    {
-        if (shopManager == null || shopManager.shopItemDatas == null) return null;
-
-        if (!string.IsNullOrEmpty(itemId))
-        {
-            foreach (var data in shopManager.shopItemDatas)
-            {
-                if (data != null && data.itemID == itemId) return data;
-            }
-        }
-
-        if (!string.IsNullOrEmpty(prefabName))
-        {
-            foreach (var data in shopManager.shopItemDatas)
-            {
-                if (data != null && data.itemPrefab != null && data.itemPrefab.name == prefabName) return data;
-            }
+            if (data != null && data.itemID == itemId) return data;
         }
 
         return null;
     }
 
     /// <summary>The inventory (treasure box reward) equivalent of <see cref="FindShopItemData"/>.</summary>
-    private TreasureBoxRewardItemData FindInventoryItemData(string itemId, string prefabName)
+    private TreasureBoxRewardItemData FindInventoryItemData(string itemId)
     {
-        if (shopManager == null || shopManager.inventoryItemDatas == null) return null;
+        if (shopManager == null || shopManager.inventoryItemDatas == null || string.IsNullOrEmpty(itemId)) return null;
 
-        if (!string.IsNullOrEmpty(itemId))
+        foreach (var data in shopManager.inventoryItemDatas)
         {
-            foreach (var data in shopManager.inventoryItemDatas)
-            {
-                if (data != null && data.itemID == itemId) return data;
-            }
-        }
-
-        if (!string.IsNullOrEmpty(prefabName))
-        {
-            foreach (var data in shopManager.inventoryItemDatas)
-            {
-                if (data != null && data.itemPrefab != null && data.itemPrefab.name == prefabName) return data;
-            }
+            if (data != null && data.itemID == itemId) return data;
         }
 
         return null;
@@ -968,12 +1062,14 @@ public class ItemPlacementManager : MonoBehaviour
         _revision = payload.revision;
         _lastSavedAtUnix = payload.savedAtUnix;
 
-        RebuildGarden(state);
+        StartCoroutine(RebuildGardenAsync(state));
 
-        // Mirror it locally so the next cold start shows the right garden before Flutter answers.
+        // Mirror it locally so the next cold start shows the right garden before Flutter answers. This
+        // persists the incoming state itself, not activePlacedItems, so it doesn't need to wait for the
+        // (now async) rebuild above to finish spawning anything.
         SaveSystem.Save(SAVE_KEY, state);
 
-        Debug.Log($"[ItemPlacementManager] Garden restored from Firebase — {state.items.Count} item(s).");
+        Debug.Log($"[ItemPlacementManager] Restoring garden from Firebase — {state.items.Count} item(s).");
     }
 
     private void ApplyDeferredCloudState()

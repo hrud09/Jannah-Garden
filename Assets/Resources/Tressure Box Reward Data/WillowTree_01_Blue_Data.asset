@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Willow Tree 01 Blue. Find it to customize
     your garden!'
   itemID: c321751bab0d43218c0338bea8893a44
-  itemPrefab: {fileID: 6451577632815704034, guid: 107cac4590a2a764daf1cbcf0a7e7daf, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: 107cac4590a2a764daf1cbcf0a7e7daf
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 6451577632815704034, guid: 107cac4590a2a764daf1cbcf0a7e7daf, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 6
   quantity: 0
   unlockXPLevel: 2

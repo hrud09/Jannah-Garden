@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Stone Big 01. Find it to customize your
     garden!'
   itemID: 2866167319434a63bb4bfe6b1e3bef8c
-  itemPrefab: {fileID: 4502823302244845586, guid: 78f4fda6b7fccb646bf8ac8de2537205, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: 78f4fda6b7fccb646bf8ac8de2537205
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 4502823302244845586, guid: 78f4fda6b7fccb646bf8ac8de2537205, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 4
   quantity: 0
   unlockXPLevel: 1

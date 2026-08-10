@@ -28,7 +28,19 @@ MonoBehaviour:
   itemTier: 4
   sortOrder: 160
   requiredXPLevel: 1
-  itemPrefab: {fileID: 6157635341346234597, guid: cd59de99b173f0946bc8aa45ecc3acfa, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: cd59de99b173f0946bc8aa45ecc3acfa
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 6157635341346234597, guid: cd59de99b173f0946bc8aa45ecc3acfa, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   placementTimerDuration: 360
   itemPrice: 

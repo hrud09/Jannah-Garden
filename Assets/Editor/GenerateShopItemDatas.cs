@@ -1,6 +1,8 @@
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -11,6 +13,9 @@ public class GenerateShopItemDatas
     {
         string prefabFolder = "Assets/Prefabs/Shop Items";
         string outputFolder = "Assets/Resources/Natural Placeable Shop Items";
+
+        AddressableAssetSettings settings = AddressableAssetSettingsDefaultObject.Settings;
+        var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(settings);
 
         // Ensure the output folder exists
         if (!AssetDatabase.IsValidFolder(outputFolder))
@@ -62,7 +67,7 @@ public class GenerateShopItemDatas
             itemData.itemName = cleanedName;
             itemData.itemDescription = description;
             itemData.itemCategory = category;
-            itemData.itemPrefab = prefab;
+            AddressableItemAuthoring.AssignPrefab(itemData.itemPrefabRef, prefab, settings, remoteGroup);
 
             // Try to find a matching icon in Assets/2D Assets/Icons
             if (itemData.itemIcon == null)

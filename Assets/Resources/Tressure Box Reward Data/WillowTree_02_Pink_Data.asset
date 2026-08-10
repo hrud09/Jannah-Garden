@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Willow Tree 02 Pink. Find it to customize
     your garden!'
   itemID: 2ca87ec4976b4e72b9dd795153c3ffc0
-  itemPrefab: {fileID: 7384784294687962480, guid: b0695c356c279e845abdba6c9f5676b9, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: b0695c356c279e845abdba6c9f5676b9
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 7384784294687962480, guid: b0695c356c279e845abdba6c9f5676b9, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 7
   quantity: 0
   unlockXPLevel: 2

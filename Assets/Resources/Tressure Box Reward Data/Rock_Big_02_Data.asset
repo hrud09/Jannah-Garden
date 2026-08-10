@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Rock Big 02. Find it to customize your
     garden!'
   itemID: 2470d121b6384893b8424c42bd6838c0
-  itemPrefab: {fileID: 555382245844887498, guid: 1d985827dc2f0a94fbb84d96fdf353fa, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: 1d985827dc2f0a94fbb84d96fdf353fa
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 555382245844887498, guid: 1d985827dc2f0a94fbb84d96fdf353fa, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 5
   quantity: 0
   unlockXPLevel: 2

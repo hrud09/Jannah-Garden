@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Broadleaf Tree 04 Blue. Find it to customize
     your garden!'
   itemID: 10de1f039f3e42ba960564c1284a2084
-  itemPrefab: {fileID: 4067607638956020432, guid: 5ad052af4362cc249be7df140568cb99, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: 5ad052af4362cc249be7df140568cb99
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 4067607638956020432, guid: 5ad052af4362cc249be7df140568cb99, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 7
   quantity: 0
   unlockXPLevel: 1

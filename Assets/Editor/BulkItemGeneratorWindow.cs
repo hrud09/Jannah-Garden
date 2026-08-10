@@ -1,6 +1,8 @@
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -257,6 +259,9 @@ public class BulkItemGeneratorWindow : EditorWindow
     {
         EnsureFolderExists(shopOutputFolder);
 
+        AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
+        var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
+
         int count = 0;
         foreach (var item in shopItems)
         {
@@ -285,7 +290,7 @@ public class BulkItemGeneratorWindow : EditorWindow
             }
 
             itemData.itemIcon = item.icon;
-            itemData.itemPrefab = item.prefab;
+            AddressableItemAuthoring.AssignPrefab(itemData.itemPrefabRef, item.prefab, addressableSettings, remoteGroup);
 
             if (string.IsNullOrEmpty(itemData.itemID))
             {
@@ -466,6 +471,9 @@ public class BulkItemGeneratorWindow : EditorWindow
     {
         EnsureFolderExists(rewardOutputFolder);
 
+        AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
+        var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
+
         int count = 0;
         foreach (var item in rewardItems)
         {
@@ -494,7 +502,7 @@ public class BulkItemGeneratorWindow : EditorWindow
             }
 
             itemData.itemIcon = item.icon;
-            itemData.itemPrefab = item.prefab;
+            AddressableItemAuthoring.AssignPrefab(itemData.itemPrefabRef, item.prefab, addressableSettings, remoteGroup);
 
             if (string.IsNullOrEmpty(itemData.itemID))
             {

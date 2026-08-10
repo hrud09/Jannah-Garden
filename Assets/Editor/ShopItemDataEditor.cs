@@ -18,7 +18,7 @@ public class ShopItemDataEditor : Editor
     SerializedProperty iapProductId, realMoneyPriceLabel;
     SerializedProperty noorCoinReward;
     SerializedProperty itemCategory, itemTier, sortOrder, requiredXPLevel;
-    SerializedProperty itemPrefab, itemPlacementModelPrefab, placementTimerDuration;
+    SerializedProperty itemPrefabRef, itemPlacementModelPrefabRef, placementTimerDuration;
 
     void OnEnable()
     {
@@ -41,8 +41,8 @@ public class ShopItemDataEditor : Editor
         sortOrder = serializedObject.FindProperty(nameof(ShopItemData.sortOrder));
         requiredXPLevel = serializedObject.FindProperty(nameof(ShopItemData.requiredXPLevel));
 
-        itemPrefab = serializedObject.FindProperty(nameof(ShopItemData.itemPrefab));
-        itemPlacementModelPrefab = serializedObject.FindProperty(nameof(ShopItemData.itemPlacementModelPrefab));
+        itemPrefabRef = serializedObject.FindProperty(nameof(ShopItemData.itemPrefabRef));
+        itemPlacementModelPrefabRef = serializedObject.FindProperty(nameof(ShopItemData.itemPlacementModelPrefabRef));
         placementTimerDuration = serializedObject.FindProperty(nameof(ShopItemData.placementTimerDuration));
     }
 
@@ -119,10 +119,11 @@ public class ShopItemDataEditor : Editor
         EditorGUILayout.PropertyField(requiredXPLevel);
 
         Section("Placement");
-        EditorGUILayout.PropertyField(itemPrefab);
-        EditorGUILayout.PropertyField(itemPlacementModelPrefab);
+        EditorGUILayout.PropertyField(itemPrefabRef);
+        EditorGUILayout.PropertyField(itemPlacementModelPrefabRef);
 
-        bool placeable = itemPrefab.objectReferenceValue != null || itemPrefab.hasMultipleDifferentValues;
+        SerializedProperty itemPrefabGuid = itemPrefabRef.FindPropertyRelative("m_AssetGUID");
+        bool placeable = itemPrefabGuid.hasMultipleDifferentValues || !string.IsNullOrEmpty(itemPrefabGuid.stringValue);
         if (placeable)
         {
             EditorGUILayout.PropertyField(placementTimerDuration);
