@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Whispering_Well_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Whispering Well
+  itemDescription: An elegant Whispering Well structure to provide comfort and architectural
+    beauty to your estate.
+  itemID: 30cbad77453f47a180fc6fb277e5eb2d
+  acquisitionType: 0
+  noorCoinCost: 650
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 2
+  sortOrder: 380
+  requiredXPLevel: 6
+  itemPrefab: {fileID: 3961004026530978419, guid: 12a56b1201287e8448c1e656cd917a40, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

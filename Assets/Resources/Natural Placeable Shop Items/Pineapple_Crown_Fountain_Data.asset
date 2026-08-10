@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Pineapple_Crown_Fountain_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Pineapple Crown Fountain
+  itemDescription: An elegant Pineapple Crown Fountain structure to provide comfort
+    and architectural beauty to your estate.
+  itemID: d06798148d103014f4d2729b928ccf7e
+  acquisitionType: 0
+  noorCoinCost: 550
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 2
+  sortOrder: 330
+  requiredXPLevel: 5
+  itemPrefab: {fileID: 3761873038896358771, guid: 24e24ea9d3622c24bb8d4f7e6b1f6ec6, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

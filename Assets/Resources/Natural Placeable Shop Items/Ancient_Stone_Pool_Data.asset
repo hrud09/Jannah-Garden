@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Ancient_Stone_Pool_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Ancient Stone Pool
+  itemDescription: An elegant Ancient Stone Pool structure to provide comfort and
+    architectural beauty to your estate.
+  itemID: 9266c6d5e48fb366088f7d703fc354fd
+  acquisitionType: 0
+  noorCoinCost: 250
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 2
+  sortOrder: 210
+  requiredXPLevel: 2
+  itemPrefab: {fileID: 294056016648836798, guid: a14d0f3c8b250644384d52f9cbdc41fa, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

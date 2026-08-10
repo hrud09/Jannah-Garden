@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Azure_Mosaic_Bench_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Azure Mosaic Bench
+  itemDescription: A unique Azure Mosaic Bench decoration to personalize and enhance
+    the atmosphere of your garden.
+  itemID: 9141d4caa1471fc40c615d60e625f070
+  acquisitionType: 0
+  noorCoinCost: 150
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 3
+  sortOrder: 400
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 3880700765134744100, guid: 67531d4d7e7cf74449dab395613b2c2e, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

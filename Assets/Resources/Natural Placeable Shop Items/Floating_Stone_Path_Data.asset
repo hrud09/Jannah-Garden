@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Floating_Stone_Path_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Floating Stone Path
+  itemDescription: A unique Floating Stone Path decoration to personalize and enhance
+    the atmosphere of your garden.
+  itemID: f1dfa038f5ca3656be50d729b3e6968b
+  acquisitionType: 0
+  noorCoinCost: 300
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 3
+  sortOrder: 480
+  requiredXPLevel: 3
+  itemPrefab: {fileID: 2984423599138853034, guid: b44fd53de93ed7f4aa1753a571ac6cb9, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

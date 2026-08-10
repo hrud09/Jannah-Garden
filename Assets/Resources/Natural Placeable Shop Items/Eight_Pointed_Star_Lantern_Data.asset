@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Eight_Pointed_Star_Lantern_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Eight Pointed Star Lantern
+  itemDescription: A unique Eight Pointed Star Lantern decoration to personalize
+    and enhance the atmosphere of your garden.
+  itemID: d285f07515626c88fcc65f444bfaae62
+  acquisitionType: 0
+  noorCoinCost: 225
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 3
+  sortOrder: 450
+  requiredXPLevel: 2
+  itemPrefab: {fileID: 4170149314847309714, guid: 68b1b2801573edd498e45b6e074c07e3, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

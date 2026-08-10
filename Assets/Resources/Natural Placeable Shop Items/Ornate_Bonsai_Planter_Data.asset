@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Ornate_Bonsai_Planter_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Ornate Bonsai Planter
+  itemDescription: A beautiful Ornate Bonsai Planter to add vibrant life and natural
+    beauty to your garden.
+  itemID: 169a10ff3aa8cf031779c8faf374b2d4
+  acquisitionType: 0
+  noorCoinCost: 150
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 1
+  sortOrder: 80
+  requiredXPLevel: 2
+  itemPrefab: {fileID: 4709636548231741075, guid: e08f7c1e9f027c84eba29e231ae15b99, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

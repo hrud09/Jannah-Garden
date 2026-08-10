@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Ornate_Medallion_Rug_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Ornate Medallion Rug
+  itemDescription: A unique Ornate Medallion Rug decoration to personalize and enhance
+    the atmosphere of your garden.
+  itemID: c09503ffcd716c4165b197f8eb6dd253
+  acquisitionType: 0
+  noorCoinCost: 525
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 3
+  sortOrder: 590
+  requiredXPLevel: 6
+  itemPrefab: {fileID: 3415561764430739046, guid: 84b30b493a74673479eb2330d2ffe38b, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

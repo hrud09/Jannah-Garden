@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Crimson_Diamond_Pedestal_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 0}
+  itemName: Crimson Diamond Pedestal
+  itemDescription: A unique Crimson Diamond Pedestal decoration to personalize and
+    enhance the atmosphere of your garden.
+  itemID: bc682c70ac133526e4004b4f54d17917
+  acquisitionType: 0
+  noorCoinCost: 225
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 3
+  sortOrder: 430
+  requiredXPLevel: 2
+  itemPrefab: {fileID: 9044473427303699416, guid: 96d1d000e3ca54d4083344b7ef44db0d, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 
