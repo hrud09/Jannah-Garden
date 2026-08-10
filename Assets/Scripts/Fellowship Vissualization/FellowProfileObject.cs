@@ -159,19 +159,14 @@ public class FellowProfileObject : MonoBehaviour
     }
 
     /// <summary>
-    /// Renders the join date as e.g. "Member since Mar 2024", routed through the localization
-    /// dictionary so the label can be translated.
+    /// Renders the join date as e.g. "Member since Mar 2024".
     /// </summary>
     private string FormatMemberSince(FellowProfileData data)
     {
         if (!data.TryGetMemberSince(out DateTime joined))
             return unknownMemberSinceText;
 
-        const string key = "Member since {0}";
-        string format = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation(key, key);
-
-        string joinedLabel = joined.ToString("MMM yyyy", CultureInfo.InvariantCulture);
-        return string.Format(format, joinedLabel);
+        return $"Member since {joined.ToString("MMM yyyy", CultureInfo.InvariantCulture)}";
     }
 
     /// <summary>

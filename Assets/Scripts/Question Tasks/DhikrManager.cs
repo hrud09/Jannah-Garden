@@ -6,35 +6,30 @@ using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
-public class LocalizedDhikrData
-{
-    public JannahGarden.Localization.Language language;
-    public string[] dhikrs;
-}
-
-[System.Serializable]
 public class DhikrList
 {
-    public LocalizedDhikrData[] translations;
+    public string[] dhikrs;
 
-    public string[] GetDhikrs(JannahGarden.Localization.Language lang)
+    public string[] GetDhikrs()
     {
-        if (translations == null) return new string[0];
-        foreach (var t in translations)
-        {
-            if (t.language == lang) return t.dhikrs;
-        }
-        foreach (var t in translations)
-        {
-            if (t.language == JannahGarden.Localization.Language.English) return t.dhikrs;
-        }
-        return translations.Length > 0 ? translations[0].dhikrs : new string[0];
+        return dhikrs ?? new string[0];
     }
 }
 
 public class DhikrManager : MonoBehaviour
 {
-    public static DhikrManager Instance;
+    private static DhikrManager _instance;
+    public static DhikrManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<DhikrManager>(true);
+            }
+            return _instance;
+        }
+    }
 
     [Header("UI References")]
     public GameObject dhikrPanel;
@@ -60,39 +55,17 @@ public class DhikrManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-    }
-
-    void OnEnable()
-    {
-        JannahGarden.Localization.LocalizationManager.OnLanguageChanged += HandleLanguageChanged;
-    }
-
-    void OnDisable()
-    {
-        JannahGarden.Localization.LocalizationManager.OnLanguageChanged -= HandleLanguageChanged;
-    }
-
-    void HandleLanguageChanged(JannahGarden.Localization.Language newLang)
-    {
-        LoadDhikrs();
-        if (dhikrPanel != null && dhikrPanel.activeSelf)
+        if (_instance != null && _instance != this)
         {
-            if (allDhikrs != null)
-            {
-                string[] currentDhikrs = allDhikrs.GetDhikrs(newLang);
-                if (currentDhikrs != null && currentDhikrIndex < currentDhikrs.Length)
-                {
-                    currentDhikrName = currentDhikrs[currentDhikrIndex];
-                    if (dhikrTextUI != null && currentCount < targetCount)
-                    {
-                        string template = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Dhikr \"{0}\" for {1} times", "Dhikr \"{0}\" for {1} times");
-                        SetText(dhikrTextUI, string.Format(template, currentDhikrName, targetCount));
-                    }
-                }
-            }
+            Destroy(gameObject);
+            return;
         }
+        _instance = this;
+
+        // Hide the panel visuals here rather than in Start so they never render for a
+        // frame. Only these children are toggled — this GameObject stays active.
+        if (dhikrPanel != null) dhikrPanel.SetActive(false);
+        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     void Start()
@@ -115,9 +88,6 @@ public class DhikrManager : MonoBehaviour
         {
             minusButton.onClick.AddListener(DecrementCount);
         }
-
-        if (dhikrPanel != null) dhikrPanel.SetActive(false);
-        if (blurredBG != null) blurredBG.SetActive(false);
     }
 
     public void StartDhikr(QuestionMarkOrb orb = null)
@@ -138,7 +108,7 @@ public class DhikrManager : MonoBehaviour
 
         if (allDhikrs != null)
         {
-            string[] currentDhikrs = allDhikrs.GetDhikrs(JannahGarden.Localization.LocalizationManager.CurrentLanguage);
+            string[] currentDhikrs = allDhikrs.GetDhikrs();
             if (currentDhikrs != null && currentDhikrs.Length > 0)
             {
                 currentDhikrIndex = UnityEngine.Random.Range(0, currentDhikrs.Length);
@@ -148,10 +118,9 @@ public class DhikrManager : MonoBehaviour
                 currentDhikrName = currentDhikrs[currentDhikrIndex];
                 if (dhikrTextUI != null)
                 {
-                    string template = JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Dhikr \"{0}\" for {1} times", "Dhikr \"{0}\" for {1} times");
-                    SetText(dhikrTextUI, string.Format(template, currentDhikrName, targetCount));
+                    SetText(dhikrTextUI, $"Dhikr \"{currentDhikrName}\" for {targetCount} times");
                 }
-                
+
                 UpdateCountUI();
 
                 if (dhikrTextUI != null)
@@ -298,7 +267,7 @@ public class DhikrManager : MonoBehaviour
 
         if (dhikrTextUI != null)
         {
-            SetText(dhikrTextUI, JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("<color=#FFD700>Congratulations!</color>\nDhikr Completed!", "<color=#FFD700>Congratulations!</color>\nDhikr Completed!"));
+            SetText(dhikrTextUI, "<color=#FFD700>Congratulations!</color>\nDhikr Completed!");
             dhikrTextUI.transform.DOKill();
             dhikrTextUI.transform.localScale = Vector3.one;
             dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -306,7 +275,7 @@ public class DhikrManager : MonoBehaviour
 
         if (countTextUI != null)
         {
-            SetText(countTextUI, JannahGarden.Localization.LocalizationManager.Instance.GetTranslation("Masha'Allah!", "Masha'Allah!"));
+            SetText(countTextUI, "Masha'Allah!");
             countTextUI.transform.DOKill();
             countTextUI.transform.localScale = Vector3.one;
             countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);
@@ -347,15 +316,7 @@ public class DhikrManager : MonoBehaviour
     private void SetText(TextMeshProUGUI tmpTextUI, string text)
     {
         if (tmpTextUI == null) return;
-        
-        var localizedText = tmpTextUI.GetComponent<JannahGarden.Localization.LocalizedText>();
-        if (localizedText != null)
-        {
-            localizedText.SetDynamicText(text);
-        }
-        else
-        {
-            tmpTextUI.text = text;
-        }
+
+        tmpTextUI.text = text;
     }
 }

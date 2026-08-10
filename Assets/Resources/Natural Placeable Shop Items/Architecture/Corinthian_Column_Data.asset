@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Corinthian_Column_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 03aded7a306610742bac1be155c18925, type: 3}
+  itemName: Corinthian Column
+  itemDescription: An elegant Corinthian Column structure to provide comfort and
+    architectural beauty to your estate.
+  itemID: 6e91398dc9edb3eb6c10c93213d66dde
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 2
+  itemTier: 2
+  sortOrder: 320
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 7422861402941532343, guid: 737ec70c423792140b4abf3a01613c0d, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

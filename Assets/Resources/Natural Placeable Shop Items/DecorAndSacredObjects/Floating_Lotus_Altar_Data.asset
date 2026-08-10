@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Floating_Lotus_Altar_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 62f68dbe86a0a0b4382c66bb17bd48ff, type: 3}
+  itemName: Floating Lotus Altar
+  itemDescription: An ornate Floating Lotus Altar to adorn your garden with craftsmanship
+    and quiet reverence.
+  itemID: e92347bd50aa6b1769312e8b21c8b174
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 3
+  itemTier: 3
+  sortOrder: 490
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 7497669140788257442, guid: f5076a95134897041a6cca523d747ba4, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

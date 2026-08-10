@@ -23,7 +23,11 @@ public enum SoundEffect
     XPGainChartToggle,
     ItemInteract,
     Run,
-    Breathing
+    Breathing,
+
+    // Appended last on purpose: this enum is serialized by index on the AudioManager's `sounds` array,
+    // so inserting anywhere above would silently reassign every clip already set up in the scene.
+    CameraShutter
 }
 
 [System.Serializable]
@@ -63,25 +67,48 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        // Initialize single SFX source
-        if (sfxSource == null)
-        {
-            sfxSource = gameObject.AddComponent<AudioSource>();
-        }
+        EnsureSources();
 
-        // Initialize Background Music
         if (backgroundMusics != null && backgroundMusics.Length > 0)
         {
-            if (bgmSource == null)
-            {
-                bgmSource = gameObject.AddComponent<AudioSource>();
-            }
-            bgmSource.loop = false;
-            bgmSource.volume = bgmVolume;
             PlayRandomBGM();
         }
 
         UpdateAudioSettings();
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
+    /// <summary>
+    /// Guarantees the audio sources live on this GameObject. Sources assigned from the scene
+    /// (e.g. on the Controller) are destroyed on scene load while this manager survives via
+    /// DontDestroyOnLoad, leaving dangling references that throw on every PlaySound call.
+    /// </summary>
+    private void EnsureSources()
+    {
+        if (!IsOwnSource(sfxSource))
+        {
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            sfxSource.playOnAwake = false;
+        }
+
+        if (!IsOwnSource(bgmSource))
+        {
+            bgmSource = gameObject.AddComponent<AudioSource>();
+            bgmSource.playOnAwake = false;
+            bgmSource.loop = false;
+            bgmSource.volume = bgmVolume;
+        }
+    }
+
+    private bool IsOwnSource(AudioSource source)
+    {
+        // The null check must come first: reading .gameObject on a destroyed object throws.
+        return source != null && source.gameObject == gameObject;
     }
 
     // Music mute state
@@ -110,19 +137,22 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateAudioSettings()
     {
-        if (bgmSource != null)
-        {
-            bgmSource.mute = IsMusicMuted;
-        }
-        if (sfxSource != null)
-        {
-            sfxSource.mute = IsSfxMuted;
-        }
+        EnsureSources();
+        bgmSource.mute = IsMusicMuted;
+        sfxSource.mute = IsSfxMuted;
     }
 
     void Update()
     {
-        if (bgmSource != null && !bgmSource.isPlaying && backgroundMusics != null && backgroundMusics.Length > 0)
+        if (backgroundMusics == null || backgroundMusics.Length == 0) return;
+
+        if (!IsOwnSource(bgmSource))
+        {
+            EnsureSources();
+            UpdateAudioSettings();
+        }
+
+        if (!bgmSource.isPlaying)
         {
             PlayRandomBGM();
         }
@@ -131,6 +161,8 @@ public class AudioManager : MonoBehaviour
     private void PlayRandomBGM()
     {
         if (backgroundMusics == null || backgroundMusics.Length == 0) return;
+
+        EnsureSources();
 
         int randomIndex = Random.Range(0, backgroundMusics.Length);
         bgmSource.clip = backgroundMusics[randomIndex];
@@ -145,7 +177,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + effect + " not found!");
             return;
         }
-        
+
+        if (s.clip == null) return;
+
+        EnsureSources();
+
         sfxSource.pitch = s.pitch;
         sfxSource.PlayOneShot(s.clip, s.volume);
     }

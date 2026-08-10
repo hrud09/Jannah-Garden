@@ -15,8 +15,49 @@ namespace IdyllicFantasyNature
         [Range(1f, 20f)]
         [SerializeField] private float _runMultiplier;
         [SerializeField] private float _gravity = -9.81f;
-        [Range(1f, 20f)]
-        [SerializeField] private float _jumpHeight;
+
+        // ─── Auto Climb Settings ─────────────────────────────────────
+        [Header("Auto Climb")]
+        [Tooltip("Automatically pull the player onto low ledges they walk into. Turn this off to leave " +
+                 "them with nothing but the CharacterController's own step offset.")]
+        public bool autoClimbEnabled = true;
+
+        [Tooltip("Ledges shorter than this are already handled by the CharacterController's step offset, " +
+                 "so the climb ignores them and the player just walks up.")]
+        [Range(0.05f, 1f)]
+        public float minClimbHeight = 0.3f;
+
+        [Tooltip("The tallest ledge the player can pull themselves onto. Anything higher stays a wall.")]
+        [Range(0.3f, 3f)]
+        public float maxClimbHeight = 1.5f;
+
+        [Tooltip("How far past the player's body to look for a ledge to climb.")]
+        [Range(0.05f, 1.5f)]
+        public float climbCheckDistance = 0.35f;
+
+        [Tooltip("How long a climb takes from start to finish. Short values feel snappy, long ones cinematic.")]
+        [Range(0.1f, 1.5f)]
+        public float climbDuration = 0.4f;
+
+        [Tooltip("Surfaces the climb is allowed to see. Leave as Everything unless the garden has " +
+                 "collider-only helpers the player should walk through.")]
+        public LayerMask climbLayerMask = ~0;
+
+        [Tooltip("Vertical progress over the climb (0→1). Front-loaded so the player rises first, " +
+                 "then settles forward onto the ledge.")]
+        public AnimationCurve climbRiseCurve = new AnimationCurve(
+            new Keyframe(0f, 0f, 0f, 2.4f),
+            new Keyframe(0.55f, 1f, 0f, 0f),
+            new Keyframe(1f, 1f, 0f, 0f)
+        );
+
+        [Tooltip("Forward progress over the climb (0→1). Back-loaded so the player clears the edge " +
+                 "before moving over it.")]
+        public AnimationCurve climbForwardCurve = new AnimationCurve(
+            new Keyframe(0f, 0f, 0f, 0f),
+            new Keyframe(0.4f, 0.15f, 0.7f, 0.7f),
+            new Keyframe(1f, 1f, 1.2f, 0f)
+        );
 
         [Header("Audio Settings")]
         [SerializeField] private float _walkStepInterval = 0.5f;
@@ -64,6 +105,18 @@ namespace IdyllicFantasyNature
         /// <summary>Fired when Inspector Mode is toggled. True = entering, False = exiting.</summary>
         public event Action<bool> OnInspectorModeChanged;
 
+        // ─── Auto Climb Runtime State ────────────────────────────────
+        private bool _isClimbing;
+        private float _climbTimer;
+        private Vector3 _climbStartPosition;
+        private Vector3 _climbEndPosition;
+
+        /// <summary>Whether the player is currently being carried over a ledge.</summary>
+        public bool IsClimbing => _isClimbing;
+
+        /// <summary>Fired when a climb starts (true) and when it finishes (false).</summary>
+        public event Action<bool> OnClimbStateChanged;
+
         // ─── Camera Reference (for Inspector Mode flight direction) ──
         private Camera _mainCamera;
 
@@ -73,6 +126,12 @@ namespace IdyllicFantasyNature
         private AudioSource _footstepSource;
         private AudioSource _breathingSource;
         private float _footstepTimer;
+
+
+        private void Awake()
+        {
+            Application.targetFrameRate = 60; // Cap frame rate to 60 FPS for consistent movement and audio timing
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -115,6 +174,13 @@ namespace IdyllicFantasyNature
 
         private void UpdateNormalMode()
         {
+            // A climb owns the transform until it finishes — gravity and input would fight it.
+            if (_isClimbing)
+            {
+                UpdateClimb();
+                return;
+            }
+
             // stops the y velocity when player is on the ground and the velocity has reached 0
             if (characterController.isGrounded && _controllerVelocity.y < 0)
             {
@@ -155,6 +221,13 @@ namespace IdyllicFantasyNature
 
             // moves the controller in the desired direction on the x- and z-axis
             Vector3 movement = transform.right * moveX + transform.forward * moveZ;
+
+            // Walking into a low ledge lifts the player over it instead of stopping them dead.
+            if (TryStartClimb(movement))
+            {
+                return;
+            }
+
             characterController.Move(movement * _movementSpeed * Time.deltaTime);
 
             // gravity affects the controller on the y-axis
@@ -162,26 +235,6 @@ namespace IdyllicFantasyNature
 
             // moves the controller on the y-axis
             characterController.Move(_controllerVelocity * Time.deltaTime);
-
-            // the controller is able to jump when on the ground
-            bool jumpPressed = false;
-#if ENABLE_INPUT_SYSTEM
-            if (Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
-            {
-                jumpPressed = true;
-            }
-            else if (Gamepad.current != null && Gamepad.current.buttonSouth.isPressed)
-            {
-                jumpPressed = true;
-            }
-#else
-            jumpPressed = Input.GetButton("Jump");
-#endif
-
-            if (jumpPressed && characterController.isGrounded)
-            {
-                _controllerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
-            }
 
             // the controller is able to run
             bool runPressed = false;
@@ -332,6 +385,157 @@ namespace IdyllicFantasyNature
         }
 
         // ═════════════════════════════════════════════════════════════
+        //  AUTO CLIMB
+        //
+        //  There is no jump button: walking into anything low enough to
+        //  step onto carries the player over it. Detection is a two-part
+        //  probe — find the face blocking us, then find the top of it —
+        //  so gentle slopes (which the controller already walks up) never
+        //  trigger a climb.
+        // ═════════════════════════════════════════════════════════════
+
+        /// <summary>
+        /// Looks for a climbable ledge in <paramref name="movement"/>'s direction and begins the climb if
+        /// one is there. Returns true when a climb started, in which case the caller must not move the
+        /// controller this frame.
+        /// </summary>
+        private bool TryStartClimb(Vector3 movement)
+        {
+            if (!autoClimbEnabled || _isClimbing) return false;
+            if (characterController == null || !characterController.enabled) return false;
+
+            // Only climb from the ground, and only when actually walking into something.
+            if (!characterController.isGrounded) return false;
+
+            Vector3 direction = new Vector3(movement.x, 0f, movement.z);
+            if (direction.sqrMagnitude < 0.0001f) return false;
+            direction.Normalize();
+
+            float radius = characterController.radius;
+            float height = characterController.height;
+            Vector3 center = transform.position + characterController.center;
+            float feetY = center.y - height * 0.5f;
+
+            // ── 1. Is something solid right in front of the player's shins? ──
+            Vector3 shinProbe = new Vector3(center.x, feetY + minClimbHeight * 0.5f, center.z);
+            if (!Physics.Raycast(shinProbe, direction, out RaycastHit faceHit,
+                                 radius + climbCheckDistance, climbLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                return false;
+            }
+
+            // A walkable slope is not a ledge — the controller handles those on its own, and climbing
+            // them would turn every hillside into a series of hops.
+            if (Vector3.Angle(faceHit.normal, Vector3.up) < characterController.slopeLimit) return false;
+
+            // ── 2. Where is the top of it? Drop a ray from above, just past the face. ──
+            Vector3 justPastFace = faceHit.point + direction * 0.05f;
+            Vector3 topProbe = new Vector3(justPastFace.x, feetY + maxClimbHeight + 0.05f, justPastFace.z);
+            if (!Physics.Raycast(topProbe, Vector3.down, out RaycastHit topHit,
+                                 maxClimbHeight + 0.05f, climbLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                return false; // Taller than maxClimbHeight, or no top at all — it stays a wall.
+            }
+
+            // The player has to be able to stand on what they land on.
+            if (Vector3.Angle(topHit.normal, Vector3.up) > characterController.slopeLimit) return false;
+
+            float rise = topHit.point.y - feetY;
+            if (rise < minClimbHeight || rise > maxClimbHeight) return false;
+
+            // ── 3. Is there room up there for the player's whole body? ──
+            Vector3 landingFeet = new Vector3(
+                faceHit.point.x + direction.x * (radius + characterController.skinWidth),
+                topHit.point.y + characterController.skinWidth,
+                faceHit.point.z + direction.z * (radius + characterController.skinWidth));
+
+            float capsuleHalf = Mathf.Max(0f, height * 0.5f - radius);
+            Vector3 landingCenter = landingFeet + Vector3.up * (height * 0.5f);
+            if (Physics.CheckCapsule(landingCenter - Vector3.up * capsuleHalf,
+                                     landingCenter + Vector3.up * capsuleHalf,
+                                     radius * 0.95f, climbLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                return false; // Low ceiling, another object on the ledge — nowhere to land.
+            }
+
+            BeginClimb(landingCenter - characterController.center);
+            return true;
+        }
+
+        /// <summary>Starts carrying the player to <paramref name="destination"/> (a transform position).</summary>
+        private void BeginClimb(Vector3 destination)
+        {
+            _isClimbing = true;
+            _climbTimer = 0f;
+            _climbStartPosition = transform.position;
+            _climbEndPosition = destination;
+            _controllerVelocity = Vector3.zero;
+
+            // The controller would resolve the ledge as a collision and cancel the motion, so the climb
+            // drives the transform directly and hands control back when it lands.
+            characterController.enabled = false;
+
+            PlayClimbSound();
+            OnClimbStateChanged?.Invoke(true);
+        }
+
+        /// <summary>Advances the current climb, re-enabling normal movement once it lands.</summary>
+        private void UpdateClimb()
+        {
+            _climbTimer += Time.deltaTime;
+            float t = climbDuration <= 0f ? 1f : Mathf.Clamp01(_climbTimer / climbDuration);
+
+            // Rise and forward travel are curved separately: up first, then over. Moving on both axes at
+            // once would drag the player through the corner of the ledge.
+            float rise = climbRiseCurve != null ? climbRiseCurve.Evaluate(t) : t;
+            float forward = climbForwardCurve != null ? climbForwardCurve.Evaluate(t) : t;
+
+            Vector3 position;
+            position.x = Mathf.LerpUnclamped(_climbStartPosition.x, _climbEndPosition.x, forward);
+            position.z = Mathf.LerpUnclamped(_climbStartPosition.z, _climbEndPosition.z, forward);
+            position.y = Mathf.LerpUnclamped(_climbStartPosition.y, _climbEndPosition.y, rise);
+            transform.position = position;
+
+            if (t >= 1f)
+            {
+                EndClimb();
+            }
+        }
+
+        /// <summary>Settles the player on the ledge and gives the CharacterController back control.</summary>
+        private void EndClimb()
+        {
+            transform.position = _climbEndPosition;
+            _isClimbing = false;
+            _climbTimer = 0f;
+            _controllerVelocity = Vector3.zero;
+
+            // Inspector Mode may have been entered mid-climb; it owns the controller's enabled state.
+            if (!_isInspectorMode && !_isTransitioning && characterController != null)
+            {
+                characterController.enabled = true;
+            }
+
+            OnClimbStateChanged?.Invoke(false);
+        }
+
+        /// <summary>
+        /// Plays a single footstep as the player pushes off. There is no dedicated climb clip, and a
+        /// step reads as effort well enough without shipping a new asset.
+        /// </summary>
+        private void PlayClimbSound()
+        {
+            if (_footstepSource == null || AudioManager.Instance == null || AudioManager.Instance.sounds == null) return;
+
+            var walkSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Walk);
+            if (walkSound == null || walkSound.clip == null) return;
+
+            _footstepSource.pitch = UnityEngine.Random.Range(0.75f, 0.85f); // Lower than a walking step.
+            _footstepSource.PlayOneShot(walkSound.clip, _footstepVolume);
+            _footstepTimer = 0f;
+        }
+
+        // ═════════════════════════════════════════════════════════════
         //  INSPECTOR MODE PUBLIC API
         // ═════════════════════════════════════════════════════════════
 
@@ -358,6 +562,14 @@ namespace IdyllicFantasyNature
         public void EnterInspectorMode()
         {
             if (_isInspectorMode || _isTransitioning) return;
+
+            // A climb in flight would keep driving the transform from Update; drop it where it is.
+            if (_isClimbing)
+            {
+                _isClimbing = false;
+                _climbTimer = 0f;
+                OnClimbStateChanged?.Invoke(false);
+            }
 
             _isInspectorMode = true;
             _isTransitioning = true;

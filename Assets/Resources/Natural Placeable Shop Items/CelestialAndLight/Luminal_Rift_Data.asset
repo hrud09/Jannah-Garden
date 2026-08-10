@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Luminal_Rift_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: c28dea198ea6dd54eacc42da5742493a, type: 3}
+  itemName: Luminal Rift
+  itemDescription: A radiant Luminal Rift to lift your garden with light and wonder.
+  itemID: c3c9f802da5c8352bbb3209f78e1e4c5
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 9
+  itemTier: 2
+  sortOrder: 600
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 2455201714847311873, guid: d1fc34eaffb466f4682095bce350c15b, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

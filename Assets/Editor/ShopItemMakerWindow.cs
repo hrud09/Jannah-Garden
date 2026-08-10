@@ -30,7 +30,8 @@ public class ShopItemMakerWindow : EditorWindow
     private int noorCoinReward = 0;
 
     // Presentation
-    private ShopItemCategory itemCategory = ShopItemCategory.Plants;
+    private ShopItemCategory itemCategory = ShopItemCategory.PlantsAndGardens;
+    private ShopItemTier itemTier = ShopItemTier.Tier1;
     private int requiredXPLevel = 1;
     private int sortOrder = 0;
 
@@ -122,6 +123,7 @@ public class ShopItemMakerWindow : EditorWindow
         EditorGUILayout.BeginVertical("box");
         GUILayout.Label("3. Requirements & Sorting", EditorStyles.boldLabel);
         itemCategory = (ShopItemCategory)EditorGUILayout.EnumPopup("Category", itemCategory);
+        itemTier = (ShopItemTier)EditorGUILayout.EnumPopup("Tier", itemTier);
         requiredXPLevel = EditorGUILayout.IntField("Required XP Level", requiredXPLevel);
         sortOrder = EditorGUILayout.IntField("Sort Order (Lowest First)", sortOrder);
         EditorGUILayout.EndVertical();
@@ -207,6 +209,7 @@ public class ShopItemMakerWindow : EditorWindow
 
         // Set Presentation
         itemData.itemCategory = itemCategory;
+        itemData.itemTier = itemTier;
         itemData.requiredXPLevel = requiredXPLevel;
         itemData.sortOrder = sortOrder;
 

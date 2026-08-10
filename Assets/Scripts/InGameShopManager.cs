@@ -16,6 +16,22 @@ public class CategoryTab
     public Transform contentParent;  // Parent where item prefabs of this category are spawned
 }
 
+/// <summary>
+/// Optional art for one quality band. Every field can be left empty — a tier with no entry still
+/// gets its label and colour from <see cref="ShopTaxonomy"/>, this is only for swapping in bespoke
+/// card art as the tiers climb.
+/// </summary>
+[System.Serializable]
+public class ShopTierVisuals
+{
+    public ShopItemTier tier = ShopItemTier.Tier1;
+
+    [Header("Card Art")]
+    public Sprite cardBackground;
+    public Sprite iconBackground;
+    public Sprite tierBadge;
+}
+
 public class InGameShopManager : MonoBehaviour
 {
     public static InGameShopManager Instance { get; private set; }
@@ -36,6 +52,7 @@ public class InGameShopManager : MonoBehaviour
     [SerializeField] private GameObject inventoryItemUIPrefab; // The InventoryItemUI prefab to instantiate
     private List<ShopItemUI> spawnedShopItemUIs = new List<ShopItemUI>();
     private List<InventoryItemUI> spawnedInventoryItemUIs = new List<InventoryItemUI>();
+    private bool hasSpawnedItems;
 
     [Header("Selection Status")]
     public ShopItemUI selectedShopItem;
@@ -79,7 +96,15 @@ public class InGameShopManager : MonoBehaviour
 
     [Header("Category Navigation")]
     public List<CategoryTab> categoryTabs;
-    private ShopItemCategory currentCategory = ShopItemCategory.All;
+
+    [Tooltip("Category shown when the shop first opens.")]
+    public ShopItemCategory defaultCategory = ShopItemCategory.PlantsAndGardens;
+
+    private ShopItemCategory currentCategory;
+
+    // There is no longer an "All" pseudo-category to park on, so the first FilterByCategory call has
+    // nothing to compare against — without this the "already selected" guard would swallow it.
+    private bool hasSelectedCategory;
 
     [Header("Category Sizing Options")]
     [SerializeField] private float selectedTabWidth = 150f;
@@ -87,10 +112,19 @@ public class InGameShopManager : MonoBehaviour
     [SerializeField] private Color selectedTabColor = Color.white;
     [SerializeField] private Color unselectedTabColor = new Color(0.7f, 0.7f, 0.7f, 0.8f);
 
+    [Tooltip("Tint the active tab with its collection's accent colour (leaf green for Plants & Gardens, "
+           + "water blue for Water of Garden, and so on) instead of the flat Selected Tab Color.")]
+    [SerializeField] private bool useCategoryAccentColors = true;
+
+    [Header("Tier Visual Overrides")]
+    [Tooltip("Optional per-tier card art. Tiers left out of this list still get their badge label and "
+           + "colour from ShopTaxonomy.")]
+    public List<ShopTierVisuals> tierVisuals = new List<ShopTierVisuals>();
+
     private Coroutine categoryTransitionCoroutine;
     private Dictionary<CategoryTab, float> defaultWidths = new Dictionary<CategoryTab, float>();
     private RectTransform tabsParentRect;
-    private ShopItemCategory lastCategory = ShopItemCategory.Plants;
+    private ShopItemCategory lastCategory;
 
     private float closedPositionX;
     private bool isOpen = false;
@@ -119,22 +153,75 @@ public class InGameShopManager : MonoBehaviour
             openCloseButton.onClick.AddListener(ToggleShop);
         }
 
+        // Initialize default arrow state and panel position (Closed by default)
+        SetShopOpen(false, smooth: false);
+
+        // Initialize Category Tabs
+        if (categoryTabs != null)
+        {
+            if (categoryTabs.Count > 0 && categoryTabs[0] != null && categoryTabs[0].tabButton != null)
+            {
+                tabsParentRect = categoryTabs[0].tabButton.transform.parent as RectTransform;
+            }
+
+            foreach (var tab in categoryTabs)
+            {
+                if (tab != null && tab.tabButton != null)
+                {
+                    ShopItemCategory cat = tab.category;
+                    tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
+
+                    // Dynamically set button text label from category name
+                    TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
+                    if (txt != null)
+                    {
+                        txt.text = ShopTaxonomy.GetCategoryName(cat);
+                    }
+
+                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
+                    if (rect != null)
+                    {
+                        defaultWidths[tab] = rect.sizeDelta.x;
+                    }
+                    else
+                    {
+                        defaultWidths[tab] = unselectedTabWidth;
+                    }
+                }
+            }
+        }
+
+        // Default to showing the Plants & Gardens collection initially
+        FilterByCategory(defaultCategory);
+    }
+
+    /// <summary>
+    /// Instantiates every shop/inventory item card. Deferred out of <see cref="Start"/> and run once,
+    /// the first time the shop panel actually opens — scene load shouldn't pay for ~80+ Instantiate
+    /// calls (one per <see cref="ShopItemData"/>/<see cref="TreasureBoxRewardItemData"/>) for a panel
+    /// the player may never open this session.
+    /// </summary>
+    private void EnsureItemsSpawned()
+    {
+        if (hasSpawnedItems) return;
+        hasSpawnedItems = true;
+
         // Dynamic Spawning of Shop Items based on Categories
         if (shopItemDatas != null && shopItemUIPrefab != null)
         {
-            // Find the "All" category tab configuration once
-            CategoryTab allTab = FindTabForCategory(ShopItemCategory.All);
             int currentXPLevel = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpLevel : 1;
 
+            // Unlocked first, then by tier so each collection reads Common → Premium Plus, then by
+            // the authored sort order inside a tier.
             var sortedShopItems = shopItemDatas
                 .OrderBy(d => d != null && currentXPLevel >= d.requiredXPLevel ? 0 : 1)
+                .ThenBy(d => d != null ? (int)d.itemTier : 0)
                 .ThenBy(d => d != null ? d.sortOrder : 0);
 
             foreach (var data in sortedShopItems)
             {
                 if (data == null) continue;
 
-                // 1. Spawn under its specific category
                 CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
                 if (matchingTab != null)
                 {
@@ -142,13 +229,9 @@ public class InGameShopManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"[InGameShopManager] No category tab setup found for category: {data.itemCategory} on item: {data.itemName}");
-                }
-
-                // 2. Also spawn under the "All" category panel (if configured)
-                if (allTab != null && allTab.contentParent != null)
-                {
-                    SpawnShopItemUI(data, allTab.contentParent);
+                    Debug.LogWarning($"[InGameShopManager] No category tab setup found for category: "
+                        + $"{ShopTaxonomy.GetCategoryLongName(data.itemCategory)} on item: {data.itemName}. "
+                        + "Run Tools/Shop/Rebuild Category Tabs to add the missing tab.");
                 }
             }
         }
@@ -175,7 +258,7 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        // Select the default selected item or first spawned item on start (set selection only)
+        // Select the default selected item or first spawned item (set selection only)
         if (selectedShopItem != null)
         {
             selectedShopItem = selectedShopItem;
@@ -184,47 +267,6 @@ public class InGameShopManager : MonoBehaviour
         {
             selectedShopItem = spawnedShopItemUIs[0];
         }
-
-        // Initialize default arrow state and panel position (Closed by default)
-        SetShopOpen(false, smooth: false);
-
-        // Initialize Category Tabs
-        if (categoryTabs != null)
-        {
-            if (categoryTabs.Count > 0 && categoryTabs[0] != null && categoryTabs[0].tabButton != null)
-            {
-                tabsParentRect = categoryTabs[0].tabButton.transform.parent as RectTransform;
-            }
-
-            foreach (var tab in categoryTabs)
-            {
-                if (tab != null && tab.tabButton != null)
-                {
-                    ShopItemCategory cat = tab.category;
-                    tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
-
-                    // Dynamically set button text label from category name
-                    TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
-                    if (txt != null)
-                    {
-                        txt.text = GetCategoryDisplayName(cat);
-                    }
-
-                    RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
-                    if (rect != null)
-                    {
-                        defaultWidths[tab] = rect.sizeDelta.x;
-                    }
-                    else
-                    {
-                        defaultWidths[tab] = unselectedTabWidth;
-                    }
-                }
-            }
-        }
-
-        // Default to showing Plants category initially
-        FilterByCategory(ShopItemCategory.Plants);
     }
 
     private void OnDisable()
@@ -269,6 +311,11 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void SetShopOpen(bool open, bool smooth)
     {
+        if (open)
+        {
+            EnsureItemsSpawned();
+        }
+
         isOpen = open;
 
         if (isOpen) OnShopOpened?.Invoke();
@@ -545,7 +592,7 @@ public class InGameShopManager : MonoBehaviour
             }
 
             CompleteAcquisition(item, data);
-        });
+        }, "shop_item");
     }
 
     /// <summary>
@@ -706,11 +753,7 @@ public class InGameShopManager : MonoBehaviour
 
     private void UpdateHeaderTextColors(ShopItemCategory category)
     {
-        bool isShop = category == ShopItemCategory.All ||
-                      category == ShopItemCategory.Plants ||
-                      category == ShopItemCategory.Buildings ||
-                      category == ShopItemCategory.Decorations ||
-                      category == ShopItemCategory.NoorCoins;
+        bool isShop = ShopTaxonomy.IsShopCategory(category);
 
         Color activeColor = Color.white;
         Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -732,10 +775,11 @@ public class InGameShopManager : MonoBehaviour
     public void FilterByCategory(ShopItemCategory category)
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TabSwitch);
-        if (currentCategory == category) return; // Already selected
+        if (hasSelectedCategory && currentCategory == category) return; // Already selected
 
-        lastCategory = currentCategory;
+        lastCategory = hasSelectedCategory ? currentCategory : category;
         currentCategory = category;
+        hasSelectedCategory = true;
 
         UpdateHeaderTextColors(category);
 
@@ -788,7 +832,7 @@ public class InGameShopManager : MonoBehaviour
                     }
                     if (tab.tabButton.image != null)
                     {
-                        tab.tabButton.image.color = isActive ? selectedTabColor : unselectedTabColor;
+                        tab.tabButton.image.color = GetTabColor(tab.category, isActive);
                     }
                 }
             }
@@ -856,7 +900,7 @@ public class InGameShopManager : MonoBehaviour
                         bool isTarget = (tab.category == newCategory);
                         float defaultWidth = defaultWidths.ContainsKey(tab) ? defaultWidths[tab] : unselectedTabWidth;
                         float targetWidth = isTarget ? selectedTabWidth : defaultWidth;
-                        Color targetColor = isTarget ? selectedTabColor : unselectedTabColor;
+                        Color targetColor = GetTabColor(tab.category, isTarget);
 
                         // Lerp width
                         if (startWidths.ContainsKey(tab))
@@ -949,16 +993,18 @@ public class InGameShopManager : MonoBehaviour
     }
 
     /// <summary>
-    /// The label shown on a category tab. Enum names cannot contain spaces, so the ones that need a
-    /// two-word label are spelled out here; everything else uses its name as-is.
+    /// Fill colour for a tab. The active tab picks up its collection's accent colour so the five
+    /// shop sections stay distinguishable at a glance; inactive tabs share one muted tint.
     /// </summary>
-    private static string GetCategoryDisplayName(ShopItemCategory category)
+    private Color GetTabColor(ShopItemCategory category, bool isActive)
     {
-        switch (category)
-        {
-            case ShopItemCategory.NoorCoins: return "Noor Coins";
-            default: return category.ToString();
-        }
+        if (!isActive) return unselectedTabColor;
+        if (!useCategoryAccentColors) return selectedTabColor;
+
+        // Keep the authored alpha so a translucent tab stays translucent.
+        Color accent = ShopTaxonomy.GetCategoryColor(category);
+        accent.a = selectedTabColor.a;
+        return accent;
     }
 
     private CategoryTab FindTabForCategory(ShopItemCategory category)
@@ -976,6 +1022,22 @@ public class InGameShopManager : MonoBehaviour
         return null;
     }
 
+    /// <summary>The card art configured for a quality band, or null when the tier has no entry.</summary>
+    public ShopTierVisuals GetVisualsForTier(ShopItemTier tier)
+    {
+        if (tierVisuals != null)
+        {
+            foreach (var visuals in tierVisuals)
+            {
+                if (visuals != null && visuals.tier == tier)
+                {
+                    return visuals;
+                }
+            }
+        }
+        return null;
+    }
+
     private void SpawnShopItemUI(ShopItemData data, Transform parent)
     {
         if (parent == null || shopItemUIPrefab == null) return;
@@ -984,7 +1046,7 @@ public class InGameShopManager : MonoBehaviour
         ShopItemUI itemUI = spawnedObj.GetComponent<ShopItemUI>();
         if (itemUI != null)
         {
-            itemUI.Initialize(data);
+            itemUI.Initialize(data, GetVisualsForTier(data.itemTier));
 
             // Hook up click listener to purchase/select item
             if (itemUI.purchaseButton != null)

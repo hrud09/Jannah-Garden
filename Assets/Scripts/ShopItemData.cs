@@ -66,7 +66,11 @@ public class ShopItemData : ScriptableObject
     // Shop presentation & gating — shown for every acquisition type.
     // ---------------------------------------------------------------------
     [Header("Shop Category")]
-    public ShopItemCategory itemCategory = ShopItemCategory.Plants;
+    public ShopItemCategory itemCategory = ShopItemCategory.PlantsAndGardens;
+
+    [Tooltip("Quality band inside the category. Drives the tier badge and frame on the item card. " +
+             "Coin packs and ad offers have no tier.")]
+    public ShopItemTier itemTier = ShopItemTier.Tier1;
 
     [Tooltip("Sort order in the shop UI. Lower numbers appear first.")]
     public int sortOrder = 0;
@@ -117,21 +121,178 @@ public enum ShopAcquisitionType
     InAppPurchase
 }
 
+/// <summary>
+/// The tab an item lives under. Values are pinned explicitly because assets serialize this enum by
+/// index — renumbering a member silently recategorizes every asset that already holds the old value.
+/// The five shop collections come first, then the treasure-box rarity tabs used by the inventory
+/// side of the panel, then the Noor Coin section.
+/// </summary>
 public enum ShopItemCategory
 {
-    All,
-    Plants,
-    Buildings,
-    Decorations,
-    Silver,
-    Gold,
-    Platinum,
-    Diamond,
+    // ── Shop collections ──────────────────────────────────────────────────
+    /// <summary>Trees, flowers, planters and greenery.</summary>
+    PlantsAndGardens = 0,       // was the unused "All" slot
+
+    /// <summary>Fountains, pools, ponds, channels, cascades and wells.</summary>
+    WaterOfGarden = 1,          // was Plants
+
+    /// <summary>Arches, gateways, columns, bridges, paths and buildings.</summary>
+    Architecture = 2,           // was Buildings
+
+    /// <summary>Mosaics, rugs, calligraphy, vessels and altars.</summary>
+    DecorAndSacredObjects = 3,  // was Decorations
+
+    /// <summary>Lanterns, stars, light effects and floating landscape pieces.</summary>
+    CelestialAndLight = 9,      // appended: 4-8 were already taken by the tabs below
+
+    // ── Inventory (treasure box) rarity tabs ──────────────────────────────
+    Silver = 4,
+    Gold = 5,
+    Platinum = 6,
+    Diamond = 7,
 
     // Noor Coin bundles and the daily ad reward — the section where the player acquires coins rather
-    // than spends them. Appended last on purpose: assets serialize this enum by index, so inserting
-    // anywhere above would silently recategorize every existing shop item.
-    NoorCoins
+    // than spends them.
+    NoorCoins = 8
+}
+
+/// <summary>
+/// Quality band within a category. Every collection runs Tier 1 through Tier 4, so the tier says how
+/// premium an item is relative to its own category rather than across the whole shop.
+/// </summary>
+public enum ShopItemTier
+{
+    /// <summary>Coin packs and ad offers — nothing to rank.</summary>
+    None = 0,
+    Tier1 = 1,  // Common
+    Tier2 = 2,  // Standard
+    Tier3 = 3,  // Premium
+    Tier4 = 4   // Premium Plus
+}
+
+/// <summary>
+/// Labels and colours for the shop taxonomy. Enum names cannot carry spaces or ampersands, so every
+/// player-facing string for a category or tier is spelled out here and nowhere else — the tab bar,
+/// the item card and the editor tools all read from this one table.
+/// </summary>
+public static class ShopTaxonomy
+{
+    /// <summary>The five collections a placeable item can belong to, in shop order.</summary>
+    public static readonly ShopItemCategory[] ShopCategories =
+    {
+        ShopItemCategory.PlantsAndGardens,
+        ShopItemCategory.WaterOfGarden,
+        ShopItemCategory.Architecture,
+        ShopItemCategory.DecorAndSacredObjects,
+        ShopItemCategory.CelestialAndLight
+    };
+
+    /// <summary>The rarity tabs on the inventory side of the panel.</summary>
+    public static readonly ShopItemCategory[] InventoryCategories =
+    {
+        ShopItemCategory.Silver,
+        ShopItemCategory.Gold,
+        ShopItemCategory.Platinum,
+        ShopItemCategory.Diamond
+    };
+
+    /// <summary>True for the collections that live on the shop side of the panel.</summary>
+    public static bool IsShopCategory(ShopItemCategory category)
+    {
+        switch (category)
+        {
+            case ShopItemCategory.PlantsAndGardens:
+            case ShopItemCategory.WaterOfGarden:
+            case ShopItemCategory.Architecture:
+            case ShopItemCategory.DecorAndSacredObjects:
+            case ShopItemCategory.CelestialAndLight:
+            case ShopItemCategory.NoorCoins:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /// <summary>The label shown on a category tab.</summary>
+    public static string GetCategoryName(ShopItemCategory category)
+    {
+        switch (category)
+        {
+            case ShopItemCategory.PlantsAndGardens: return "Plants & Gardens";
+            case ShopItemCategory.WaterOfGarden: return "Water of Garden";
+            case ShopItemCategory.Architecture: return "Architecture";
+            case ShopItemCategory.DecorAndSacredObjects: return "Decor & Sacred";
+            case ShopItemCategory.CelestialAndLight: return "Celestial & Light";
+            case ShopItemCategory.NoorCoins: return "Noor Coins";
+            default: return category.ToString();
+        }
+    }
+
+    /// <summary>The full category name, used in tooltips and generated item descriptions.</summary>
+    public static string GetCategoryLongName(ShopItemCategory category)
+    {
+        switch (category)
+        {
+            case ShopItemCategory.DecorAndSacredObjects: return "Decor & Sacred Objects";
+            case ShopItemCategory.CelestialAndLight: return "Celestial & Light / Landscape";
+            default: return GetCategoryName(category);
+        }
+    }
+
+    /// <summary>Accent colour for a category tab, so each collection reads at a glance.</summary>
+    public static Color GetCategoryColor(ShopItemCategory category)
+    {
+        switch (category)
+        {
+            case ShopItemCategory.PlantsAndGardens: return new Color(0.40f, 0.76f, 0.38f); // leaf green
+            case ShopItemCategory.WaterOfGarden: return new Color(0.29f, 0.66f, 0.87f);    // water blue
+            case ShopItemCategory.Architecture: return new Color(0.83f, 0.70f, 0.47f);     // sandstone
+            case ShopItemCategory.DecorAndSacredObjects: return new Color(0.75f, 0.45f, 0.78f); // mosaic violet
+            case ShopItemCategory.CelestialAndLight: return new Color(0.99f, 0.83f, 0.36f); // lantern gold
+            case ShopItemCategory.NoorCoins: return new Color(1.00f, 0.76f, 0.20f);        // coin amber
+            default: return Color.white;
+        }
+    }
+
+    /// <summary>Short tier label for the badge on an item card, e.g. "Tier 3".</summary>
+    public static string GetTierName(ShopItemTier tier)
+    {
+        return tier == ShopItemTier.None ? string.Empty : $"Tier {(int)tier}";
+    }
+
+    /// <summary>The rarity word players read, e.g. "Premium Plus".</summary>
+    public static string GetTierQuality(ShopItemTier tier)
+    {
+        switch (tier)
+        {
+            case ShopItemTier.Tier1: return "Common";
+            case ShopItemTier.Tier2: return "Standard";
+            case ShopItemTier.Tier3: return "Premium";
+            case ShopItemTier.Tier4: return "Premium Plus";
+            default: return string.Empty;
+        }
+    }
+
+    /// <summary>Badge label combining both, e.g. "Tier 3 · Premium".</summary>
+    public static string GetTierLabel(ShopItemTier tier)
+    {
+        return tier == ShopItemTier.None
+            ? string.Empty
+            : $"{GetTierName(tier)} · {GetTierQuality(tier)}";
+    }
+
+    /// <summary>Badge colour, climbing from muted stone to gold as the tier rises.</summary>
+    public static Color GetTierColor(ShopItemTier tier)
+    {
+        switch (tier)
+        {
+            case ShopItemTier.Tier1: return new Color(0.72f, 0.74f, 0.72f); // stone
+            case ShopItemTier.Tier2: return new Color(0.45f, 0.78f, 0.95f); // sky
+            case ShopItemTier.Tier3: return new Color(0.76f, 0.53f, 0.95f); // amethyst
+            case ShopItemTier.Tier4: return new Color(1.00f, 0.79f, 0.28f); // gold
+            default: return Color.white;
+        }
+    }
 }
 
 public enum ShopItemType

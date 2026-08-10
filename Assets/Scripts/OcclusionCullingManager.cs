@@ -1,120 +1,64 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
-/// Runtime occlusion culling manager for the Outer Garden scene.
-/// Performs frustum + distance-based culling on registered renderers,
-/// batching checks across multiple frames to avoid CPU spikes on mobile.
-/// 
-/// Works alongside RuntimeEnvironmentGenerator:
-/// - RuntimeEnvironmentGenerator handles SetActive (full activation/deactivation by distance)
-/// - OcclusionCullingManager handles Renderer.enabled (visual culling by frustum + distance tiers)
+/// Progressive scene-mesh activator for the Outer Garden scene.
+///
+/// Workflow:
+///  1. In the editor, press "Collect Scene Meshes &amp; Deactivate" on this component
+///     (button provided by OcclusionCullingManagerEditor). It gathers every mesh
+///     object in the scene into <see cref="managedMeshes"/> and sets them inactive,
+///     so the scene starts empty.
+///  2. At runtime, while the loading screen still covers the scene, the meshes are
+///     re-activated in small batches spread across several frames (cheap on mobile).
+///  3. Once every mesh is active, the loading panel is released so it can fade out.
 /// </summary>
 public class OcclusionCullingManager : MonoBehaviour
 {
     public static OcclusionCullingManager Instance { get; private set; }
 
-    // ─── Culling Mode ────────────────────────────────────────────────
-    public enum CullingMode
-    {
-        /// <summary>Only this occlusion system is active (RuntimeEnvironmentGenerator ignored).</summary>
-        OcclusionOnly,
-        /// <summary>Only RuntimeEnvironmentGenerator distance culling is active.</summary>
-        DistanceOnly,
-        /// <summary>Both systems work together. Occlusion handles renderers; distance handles SetActive.</summary>
-        Combined
-    }
+    // ─── Collection Filter ───────────────────────────────────────────
+    [Header("Collection Filter")]
+    [Tooltip("Only meshes on these layers are collected by the " +
+             "'Collect Scene Meshes & Deactivate' button. Meshes on any other layer are ignored.")]
+    public LayerMask meshLayers = ~0;
 
-    [Header("Culling Mode")]
-    [Tooltip("How this system interacts with RuntimeEnvironmentGenerator.")]
-    public CullingMode cullingMode = CullingMode.Combined;
+    // ─── Managed Meshes ──────────────────────────────────────────────
+    [Header("Managed Meshes")]
+    [Tooltip("Every mesh object that gets activated at scene start. Populate this " +
+             "with the 'Collect Scene Meshes & Deactivate' button in the inspector.")]
+    public List<GameObject> managedMeshes = new List<GameObject>();
 
-    // ─── Distance Tiers ──────────────────────────────────────────────
-    [Header("Distance Tiers")]
-    [Tooltip("Objects closer than this are never frustum-culled (always fully visible).")]
-    public float nearDistance = 15f;
-    [Tooltip("Between near and mid, small objects (low priority) may be culled when outside frustum.")]
-    public float midDistance = 40f;
-    [Tooltip("Beyond this distance, everything except 'Never Cull' objects is culled.")]
-    public float farDistance = 60f;
-    [Tooltip("Beyond this distance, shadows are disabled even for visible objects.")]
-    public float shadowDistance = 30f;
+    // ─── Activation ──────────────────────────────────────────────────
+    [Header("Activation")]
+    [Tooltip("How many meshes to activate per frame while loading. " +
+             "Lower = smoother frame pacing, higher = faster reveal.")]
+    [Range(1, 500)]
+    public int meshesPerFrame = 40;
 
-    // ─── Performance ─────────────────────────────────────────────────
-    [Header("Performance")]
-    [Tooltip("How many frames to wait between full culling passes (1 = every frame, 2 = every other frame).")]
-    [Range(1, 6)]
-    public int checkEveryNFrames = 2;
-    [Tooltip("Maximum number of objects to process per frame to spread the load.")]
-    [Range(16, 256)]
-    public int batchSize = 64;
+    [Tooltip("Deactivate every managed mesh in Awake, guaranteeing the scene starts " +
+             "empty even if it was accidentally saved with some meshes active.")]
+    public bool forceDeactivateOnAwake = true;
 
-    // ─── Filters ─────────────────────────────────────────────────────
-    [Header("Filters")]
-    [Tooltip("Only cull objects on these layers. Leave 'Everything' to cull all layers.")]
-    public LayerMask cullableLayers = ~0;
-
-    // ─── Camera ──────────────────────────────────────────────────────
-    [Header("Camera (Auto-detected if empty)")]
-    [Tooltip("The camera used for frustum calculations. Auto-detects Camera.main if null.")]
-    public Camera cullingCamera;
+    [Tooltip("Keep the loading screen visible until every mesh has been activated, " +
+             "so the world is fully populated before the panel fades out.")]
+    public bool holdLoadingScreen = true;
 
     // ─── Debug ───────────────────────────────────────────────────────
     [Header("Debug")]
-    [Tooltip("Draw gizmo spheres showing culling tier distances in Scene view.")]
-    public bool showDebugGizmos = true;
-    [Tooltip("Log culling statistics to the console each pass.")]
-    public bool logStats = false;
+    [Tooltip("Log activation progress to the console.")]
+    public bool logProgress = false;
 
     // ─── Runtime State ───────────────────────────────────────────────
-    /// <summary>All registered culling entries.</summary>
-    private readonly List<CullEntry> _entries = new List<CullEntry>();
-    private readonly HashSet<Renderer> _registeredRenderers = new HashSet<Renderer>();
+    /// <summary>True while the activation coroutine is running.</summary>
+    public bool IsActivating { get; private set; }
+    /// <summary>How many meshes have been activated so far this run.</summary>
+    public int ActivatedCount { get; private set; }
+    /// <summary>Total number of managed meshes.</summary>
+    public int TotalCount => managedMeshes != null ? managedMeshes.Count : 0;
 
-    /// <summary>Index into _entries for the next batch to process.</summary>
-    private int _batchCursor = 0;
-
-    /// <summary>Cached frustum planes, recalculated each culling frame.</summary>
-    private Plane[] _frustumPlanes = new Plane[6];
-
-    /// <summary>Frame counter for throttling.</summary>
-    private int _frameCounter = 0;
-
-    // ─── Stats ───────────────────────────────────────────────────────
-    private int _lastVisibleCount;
-    private int _lastCulledCount;
-    private int _lastShadowOnlyCount;
-
-    /// <summary>Number of objects visible after last culling pass.</summary>
-    public int VisibleCount => _lastVisibleCount;
-    /// <summary>Number of objects culled after last culling pass.</summary>
-    public int CulledCount => _lastCulledCount;
-    /// <summary>Number of objects in shadow-only mode after last culling pass.</summary>
-    public int ShadowOnlyCount => _lastShadowOnlyCount;
-    /// <summary>Total registered objects.</summary>
-    public int TotalRegistered => _entries.Count;
-    /// <summary>Whether the occlusion system is actively culling.</summary>
-    public bool IsOcclusionCullingActive => cullingMode != CullingMode.DistanceOnly && enabled;
-
-    // ─── Internal Types ──────────────────────────────────────────────
-    private class CullEntry
-    {
-        public Renderer renderer;
-        public Transform transform;
-        public Bounds worldBounds;
-        public OcclusionCullingZone zone; // nullable — per-object overrides
-        public bool wasCulled;
-        public bool wasShadowOnly;
-        public ShadowCastingMode originalShadowMode;
-    }
-
-    private enum ShadowCastingMode
-    {
-        Off = 0,
-        On = 1,
-        TwoSided = 2,
-        ShadowsOnly = 3
-    }
+    private Coroutine _activateRoutine;
 
     // ─── Lifecycle ───────────────────────────────────────────────────
 
@@ -126,437 +70,176 @@ public class OcclusionCullingManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        if (forceDeactivateOnAwake)
+        {
+            DeactivateAll();
+        }
     }
 
     private void Start()
     {
-        if (cullingCamera == null)
-        {
-            cullingCamera = Camera.main;
-        }
-
-        if (cullingCamera == null)
-        {
-            Debug.LogWarning("[OcclusionCullingManager] No camera found. Culling disabled until a camera is available.");
-        }
-    }
-
-    private void LateUpdate()
-    {
-        if (cullingMode == CullingMode.DistanceOnly) return;
-        if (_entries.Count == 0) return;
-
-        // Throttle: only run on every N-th frame
-        _frameCounter++;
-        if (_frameCounter % checkEveryNFrames != 0) return;
-
-        // Auto-detect camera if lost
-        if (cullingCamera == null)
-        {
-            cullingCamera = Camera.main;
-            if (cullingCamera == null) return;
-        }
-
-        // Recalculate frustum planes once per culling frame
-        GeometryUtility.CalculateFrustumPlanes(cullingCamera, _frustumPlanes);
-        Vector3 camPos = cullingCamera.transform.position;
-
-        // Process a batch of entries
-        int processed = 0;
-        int visible = 0, culled = 0, shadowOnly = 0;
-
-        // If the batch cursor wrapped, reset stats
-        if (_batchCursor == 0)
-        {
-            _lastVisibleCount = 0;
-            _lastCulledCount = 0;
-            _lastShadowOnlyCount = 0;
-        }
-
-        while (processed < batchSize && _entries.Count > 0)
-        {
-            if (_batchCursor >= _entries.Count)
-            {
-                _batchCursor = 0;
-                break; // We've completed a full pass
-            }
-
-            var entry = _entries[_batchCursor];
-            _batchCursor++;
-            processed++;
-
-            // Skip destroyed renderers
-            if (entry.renderer == null || entry.transform == null)
-            {
-                _entries.RemoveAt(_batchCursor - 1);
-                _registeredRenderers.Remove(entry.renderer);
-                _batchCursor--;
-                continue;
-            }
-
-            // Skip objects already fully deactivated by RuntimeEnvironmentGenerator
-            if (!entry.renderer.gameObject.activeInHierarchy)
-            {
-                continue;
-            }
-
-            ProcessEntry(entry, camPos, ref visible, ref culled, ref shadowOnly);
-        }
-
-        _lastVisibleCount += visible;
-        _lastCulledCount += culled;
-        _lastShadowOnlyCount += shadowOnly;
-
-        if (logStats && _batchCursor == 0)
-        {
-            Debug.Log($"[OcclusionCulling] Visible: {_lastVisibleCount} | Culled: {_lastCulledCount} | ShadowOnly: {_lastShadowOnlyCount} | Total: {_entries.Count}");
-        }
-    }
-
-    // ─── Core Culling Logic ──────────────────────────────────────────
-
-    private void ProcessEntry(CullEntry entry, Vector3 camPos, ref int visible, ref int culled, ref int shadowOnly)
-    {
-        // Determine effective settings (zone overrides vs global)
-        bool neverCull = false;
-        float effectiveNear = nearDistance;
-        float effectiveMid = midDistance;
-        float effectiveFar = farDistance;
-        float effectiveShadow = shadowDistance;
-        OcclusionCullingZone.CullingPriority priority = OcclusionCullingZone.CullingPriority.Medium;
-
-        if (entry.zone != null && entry.zone.enabled)
-        {
-            neverCull = entry.zone.neverCull;
-            priority = entry.zone.priority;
-
-            if (entry.zone.useCustomDistances)
-            {
-                effectiveNear = entry.zone.customNearDistance;
-                effectiveMid = entry.zone.customMidDistance;
-                effectiveFar = entry.zone.customFarDistance;
-            }
-
-            if (entry.zone.customShadowDistance > 0f)
-            {
-                effectiveShadow = entry.zone.customShadowDistance;
-            }
-        }
-
-        // Never-cull objects are always visible
-        if (neverCull)
-        {
-            SetVisible(entry);
-            visible++;
-            return;
-        }
-
-        // Calculate distance
-        float distSqr = (entry.transform.position - camPos).sqrMagnitude;
-        float nearSqr = effectiveNear * effectiveNear;
-        float midSqr = effectiveMid * effectiveMid;
-        float farSqr = effectiveFar * effectiveFar;
-        float shadowSqr = effectiveShadow * effectiveShadow;
-
-        // --- Tier 1: Near Distance → always visible ---
-        if (distSqr <= nearSqr)
-        {
-            SetVisible(entry);
-            visible++;
-            return;
-        }
-
-        // --- Tier 4: Beyond Far Distance → always culled ---
-        if (distSqr > farSqr)
-        {
-            SetCulled(entry);
-            culled++;
-            return;
-        }
-
-        // --- Frustum Check (for mid-range objects) ---
-        // Update the world bounds from the renderer
-        entry.worldBounds = entry.renderer.bounds;
-        bool inFrustum = GeometryUtility.TestPlanesAABB(_frustumPlanes, entry.worldBounds);
-
-        if (!inFrustum)
-        {
-            // Object is outside the camera frustum
-            SetCulled(entry);
-            culled++;
-            return;
-        }
-
-        // Object is in frustum and within range — it's visible
-        // But check if shadows should be disabled at this distance
-        if (distSqr > shadowSqr)
-        {
-            // Check zone setting for shadow-only behavior
-            if (entry.zone != null && entry.zone.shadowOnlyMode && entry.zone.enabled)
-            {
-                SetShadowOnly(entry);
-                shadowOnly++;
-                return;
-            }
-
-            // Otherwise, visible but with shadows disabled for performance
-            SetVisibleNoShadow(entry);
-            visible++;
-            return;
-        }
-
-        // Fully visible with shadows
-        SetVisible(entry);
-        visible++;
-    }
-
-    // ─── State Transitions ───────────────────────────────────────────
-
-    private void SetVisible(CullEntry entry)
-    {
-        if (entry.wasCulled || entry.wasShadowOnly)
-        {
-            entry.renderer.enabled = true;
-            RestoreShadowMode(entry);
-            entry.wasCulled = false;
-            entry.wasShadowOnly = false;
-        }
-    }
-
-    private void SetVisibleNoShadow(CullEntry entry)
-    {
-        entry.renderer.enabled = true;
-        entry.renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        entry.wasCulled = false;
-        entry.wasShadowOnly = false;
-    }
-
-    private void SetShadowOnly(CullEntry entry)
-    {
-        entry.renderer.enabled = true;
-        entry.renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
-        entry.wasCulled = false;
-        entry.wasShadowOnly = true;
-    }
-
-    private void SetCulled(CullEntry entry)
-    {
-        if (!entry.wasCulled)
-        {
-            entry.renderer.enabled = false;
-            entry.wasCulled = true;
-            entry.wasShadowOnly = false;
-        }
-    }
-
-    private void RestoreShadowMode(CullEntry entry)
-    {
-        entry.renderer.shadowCastingMode = (UnityEngine.Rendering.ShadowCastingMode)(int)entry.originalShadowMode;
-    }
-
-    // ─── Registration API ────────────────────────────────────────────
-
-    /// <summary>
-    /// Registers a single Renderer to be tracked by the occlusion culling system.
-    /// </summary>
-    public void RegisterRenderer(Renderer rend)
-    {
-        if (rend == null) return;
-        if (_registeredRenderers.Contains(rend)) return;
-
-        // Layer check
-        if (((1 << rend.gameObject.layer) & cullableLayers.value) == 0) return;
-
-        var entry = new CullEntry
-        {
-            renderer = rend,
-            transform = rend.transform,
-            worldBounds = rend.bounds,
-            zone = rend.GetComponentInParent<OcclusionCullingZone>(),
-            wasCulled = false,
-            wasShadowOnly = false,
-            originalShadowMode = (ShadowCastingMode)(int)rend.shadowCastingMode
-        };
-
-        _entries.Add(entry);
-        _registeredRenderers.Add(rend);
-    }
-
-    /// <summary>
-    /// Registers all Renderers on a GameObject and its children.
-    /// </summary>
-    public void RegisterGameObject(GameObject go)
-    {
-        if (go == null) return;
-
-        var renderers = go.GetComponentsInChildren<Renderer>(true);
-        foreach (var rend in renderers)
-        {
-            RegisterRenderer(rend);
-        }
-    }
-
-    /// <summary>
-    /// Unregisters a single Renderer from the occlusion culling system and restores its state.
-    /// </summary>
-    public void UnregisterRenderer(Renderer rend)
-    {
-        if (rend == null) return;
-        if (!_registeredRenderers.Contains(rend)) return;
-
-        for (int i = _entries.Count - 1; i >= 0; i--)
-        {
-            if (_entries[i].renderer == rend)
-            {
-                // Restore renderer state before removing
-                var entry = _entries[i];
-                entry.renderer.enabled = true;
-                RestoreShadowMode(entry);
-
-                _entries.RemoveAt(i);
-                break;
-            }
-        }
-
-        _registeredRenderers.Remove(rend);
-    }
-
-    /// <summary>
-    /// Unregisters all Renderers on a GameObject and its children.
-    /// </summary>
-    public void UnregisterGameObject(GameObject go)
-    {
-        if (go == null) return;
-
-        var renderers = go.GetComponentsInChildren<Renderer>(true);
-        foreach (var rend in renderers)
-        {
-            UnregisterRenderer(rend);
-        }
-    }
-
-    /// <summary>
-    /// Scans the entire scene and registers all renderers on the cullable layers.
-    /// Call this once when the scene loads, or from the editor window.
-    /// </summary>
-    public void ScanAndRegisterAll()
-    {
-        // Clear existing registrations
-        RestoreAllAndClear();
-
-        Renderer[] allRenderers = FindObjectsOfType<Renderer>(true);
-        int registered = 0;
-
-        foreach (var rend in allRenderers)
-        {
-            if (rend == null) continue;
-
-            // Skip UI elements (Canvas renderers)
-            if (rend is CanvasRenderer) continue;
-
-            // Skip if not on a cullable layer
-            if (((1 << rend.gameObject.layer) & cullableLayers.value) == 0) continue;
-
-            // Skip the culling camera itself
-            if (cullingCamera != null && rend.gameObject == cullingCamera.gameObject) continue;
-
-            // Skip player
-            if (rend.gameObject.CompareTag("Player")) continue;
-            if (rend.transform.root.CompareTag("Player")) continue;
-
-            RegisterRenderer(rend);
-            registered++;
-        }
-
-        Debug.Log($"[OcclusionCullingManager] Scanned scene: registered {registered} renderers for culling.");
-    }
-
-    /// <summary>
-    /// Restores all renderers to their original state and clears registration.
-    /// </summary>
-    public void RestoreAllAndClear()
-    {
-        foreach (var entry in _entries)
-        {
-            if (entry.renderer != null)
-            {
-                entry.renderer.enabled = true;
-                RestoreShadowMode(entry);
-            }
-        }
-
-        _entries.Clear();
-        _registeredRenderers.Clear();
-        _batchCursor = 0;
-    }
-
-    /// <summary>
-    /// Checks whether a specific Renderer is registered with this system.
-    /// </summary>
-    public bool IsRegistered(Renderer rend)
-    {
-        return _registeredRenderers.Contains(rend);
-    }
-
-    /// <summary>
-    /// Checks whether a specific Renderer is currently culled by this system.
-    /// </summary>
-    public bool IsCulled(Renderer rend)
-    {
-        if (rend == null) return false;
-
-        foreach (var entry in _entries)
-        {
-            if (entry.renderer == rend)
-            {
-                return entry.wasCulled;
-            }
-        }
-        return false;
-    }
-
-    // ─── Gizmos ──────────────────────────────────────────────────────
-
-    private void OnDrawGizmosSelected()
-    {
-        if (!showDebugGizmos) return;
-
-        Vector3 center = transform.position;
-
-        // Use camera position if available
-        if (Application.isPlaying && cullingCamera != null)
-        {
-            center = cullingCamera.transform.position;
-        }
-        else if (Camera.main != null)
-        {
-            center = Camera.main.transform.position;
-        }
-
-        // Near tier — green
-        Gizmos.color = new Color(0.2f, 0.9f, 0.3f, 0.15f);
-        Gizmos.DrawWireSphere(center, nearDistance);
-
-        // Mid tier — yellow
-        Gizmos.color = new Color(0.95f, 0.85f, 0.1f, 0.12f);
-        Gizmos.DrawWireSphere(center, midDistance);
-
-        // Far tier — red
-        Gizmos.color = new Color(0.95f, 0.2f, 0.15f, 0.1f);
-        Gizmos.DrawWireSphere(center, farDistance);
-
-        // Shadow distance — cyan
-        Gizmos.color = new Color(0.1f, 0.8f, 0.9f, 0.1f);
-        Gizmos.DrawWireSphere(center, shadowDistance);
+        _activateRoutine = StartCoroutine(ActivateAllRoutine());
     }
 
     private void OnDestroy()
     {
-        RestoreAllAndClear();
-
         if (Instance == this)
         {
             Instance = null;
         }
     }
+
+    // ─── Activation ──────────────────────────────────────────────────
+
+    /// <summary>Immediately sets every managed mesh inactive (no batching).</summary>
+    private void DeactivateAll()
+    {
+        if (managedMeshes == null) return;
+
+        for (int i = 0; i < managedMeshes.Count; i++)
+        {
+            var go = managedMeshes[i];
+            if (go != null && go.activeSelf)
+            {
+                go.SetActive(false);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Re-activates every managed mesh in batches, holding the loading screen open
+    /// until it finishes so the reveal stays hidden behind the panel.
+    /// </summary>
+    private IEnumerator ActivateAllRoutine()
+    {
+        IsActivating = true;
+        ActivatedCount = 0;
+
+        // Hold the loading screen up while we populate the world behind it.
+        bool holding = false;
+        if (holdLoadingScreen
+            && LoadingScreenManager.Instance != null
+            && LoadingScreenManager.Instance.IsLoading)
+        {
+            LoadingScreenManager.Instance.AddLoadHold(this);
+            holding = true;
+        }
+
+        int perFrame = Mathf.Max(1, meshesPerFrame);
+        int inFrame = 0;
+
+        if (managedMeshes != null)
+        {
+            for (int i = 0; i < managedMeshes.Count; i++)
+            {
+                var go = managedMeshes[i];
+                if (go != null && !go.activeSelf)
+                {
+                    go.SetActive(true);
+                }
+                ActivatedCount++;
+
+                if (++inFrame >= perFrame)
+                {
+                    inFrame = 0;
+                    yield return null;
+                }
+            }
+        }
+
+        if (logProgress)
+        {
+            Debug.Log($"[OcclusionCullingManager] Activated {ActivatedCount}/{TotalCount} meshes.");
+        }
+
+        IsActivating = false;
+        _activateRoutine = null;
+
+        // Release the loading screen so it can fade out.
+        if (holding && LoadingScreenManager.Instance != null)
+        {
+            LoadingScreenManager.Instance.RemoveLoadHold(this);
+        }
+    }
+
+#if UNITY_EDITOR
+    // ─── Editor Setup ────────────────────────────────────────────────
+
+    /// <summary>
+    /// Editor-only: scans the current scene for every mesh object (MeshRenderer or
+    /// SkinnedMeshRenderer), stores them in <see cref="managedMeshes"/>, and sets
+    /// them inactive so the scene starts empty. Invoked from the inspector button.
+    /// </summary>
+    public void CollectAndDeactivateSceneMeshes()
+    {
+        var collected = new List<GameObject>();
+        var seen = new HashSet<GameObject>();
+
+        void Consider(Renderer rend)
+        {
+            if (rend == null) return;
+            GameObject go = rend.gameObject;
+
+            if (go == gameObject) return;                           // never manage ourselves
+            if (seen.Contains(go)) return;
+            if (((1 << go.layer) & meshLayers.value) == 0) return;  // only the chosen layers
+            if (go.CompareTag("Player")) return;
+            if (go.transform.root.CompareTag("Player")) return;
+            if (go.GetComponentInParent<Canvas>() != null) return;  // skip UI renderers
+
+            seen.Add(go);
+            collected.Add(go);
+        }
+
+        foreach (var r in FindObjectsOfType<MeshRenderer>(true)) Consider(r);
+        foreach (var r in FindObjectsOfType<SkinnedMeshRenderer>(true)) Consider(r);
+
+        UnityEditor.Undo.RecordObject(this, "Collect Scene Meshes");
+        managedMeshes = collected;
+        UnityEditor.EditorUtility.SetDirty(this);
+
+        // Deactivate each collected mesh (recorded for undo).
+        foreach (var go in collected)
+        {
+            if (go.activeSelf)
+            {
+                UnityEditor.Undo.RecordObject(go, "Deactivate Scene Mesh");
+                go.SetActive(false);
+                UnityEditor.EditorUtility.SetDirty(go);
+            }
+        }
+
+        if (!Application.isPlaying)
+        {
+            UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+        }
+
+        Debug.Log($"[OcclusionCullingManager] Collected and deactivated {collected.Count} scene meshes.");
+    }
+
+    /// <summary>
+    /// Editor-only: re-activates every managed mesh. Handy for editing the scene
+    /// with everything visible again after a collect pass.
+    /// </summary>
+    public void ActivateAllInEditor()
+    {
+        if (managedMeshes == null) return;
+
+        foreach (var go in managedMeshes)
+        {
+            if (go != null && !go.activeSelf)
+            {
+                UnityEditor.Undo.RecordObject(go, "Activate Scene Mesh");
+                go.SetActive(true);
+                UnityEditor.EditorUtility.SetDirty(go);
+            }
+        }
+
+        if (!Application.isPlaying)
+        {
+            UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+        }
+    }
+#endif
 }

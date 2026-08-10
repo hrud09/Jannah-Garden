@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Whimsical_Floral_Cascade_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 969d558ce2606164a8a3d8e668a21ab3, type: 3}
+  itemName: Whimsical Floral Cascade
+  itemDescription: A beautiful Whimsical Floral Cascade to add vibrant life and natural
+    beauty to your garden.
+  itemID: eda847d69c98754e590474c1ffa0f52b
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 0
+  itemTier: 4
+  sortOrder: 150
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 8441250024891358796, guid: e99cd6960af738c429341b405e09e4f9, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

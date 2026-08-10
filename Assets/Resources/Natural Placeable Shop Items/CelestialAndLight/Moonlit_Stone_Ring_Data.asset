@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Moonlit_Stone_Ring_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: f3dcc098242ea6d4194b9b54c5963294, type: 3}
+  itemName: Moonlit Stone Ring
+  itemDescription: A radiant Moonlit Stone Ring to lift your garden with light and
+    wonder.
+  itemID: 58f65719d43fd04db087cd3437366aa2
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 9
+  itemTier: 3
+  sortOrder: 610
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 6623361757764537275, guid: c6fbc84cdb741194fab33d0e30a2fc74, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

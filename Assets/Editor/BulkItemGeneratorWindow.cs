@@ -279,6 +279,7 @@ public class BulkItemGeneratorWindow : EditorWindow
                 itemData.itemName = item.cleanName;
                 itemData.itemDescription = GenerateShopDescription(item.cleanName, item.category);
                 itemData.itemCategory = item.category;
+                itemData.itemTier = ShopItemClassifier.DetermineTier(item.price);
                 itemData.noorCoinCost = item.price;
                 itemData.requiredXPLevel = item.requiredXP;
             }
@@ -617,56 +618,13 @@ public class BulkItemGeneratorWindow : EditorWindow
     }
 
     private static ShopItemCategory DetermineCategory(string prefabName)
-    {
-        string lower = prefabName.ToLower();
-        if (lower.Contains("tree") || 
-            lower.Contains("bush") || 
-            lower.Contains("flower") || 
-            lower.Contains("grass") || 
-            lower.Contains("reed") || 
-            lower.Contains("cattail") || 
-            lower.Contains("lily") || 
-            lower.Contains("leaf") || 
-            lower.Contains("plant") || 
-            lower.Contains("meadow"))
-        {
-            return ShopItemCategory.Plants;
-        }
-
-        if (lower.Contains("building") || lower.Contains("house"))
-        {
-            return ShopItemCategory.Buildings;
-        }
-
-        return ShopItemCategory.Decorations;
-    }
+        => ShopItemClassifier.DetermineCategory(prefabName);
 
     private static ShopItemCategory DetermineRewardTier(string prefabName)
-    {
-        string lower = prefabName.ToLower();
-        if (lower.Contains("diamond") || lower.Contains("legendary") || lower.Contains("exclusive"))
-            return ShopItemCategory.Diamond;
-        if (lower.Contains("platinum") || lower.Contains("epic"))
-            return ShopItemCategory.Platinum;
-        if (lower.Contains("gold") || lower.Contains("rare"))
-            return ShopItemCategory.Gold;
-        
-        return ShopItemCategory.Silver;
-    }
+        => ShopItemClassifier.DetermineRewardTier(prefabName);
 
     private static string GenerateShopDescription(string itemName, ShopItemCategory category)
-    {
-        switch (category)
-        {
-            case ShopItemCategory.Plants:
-                return $"A beautiful green {itemName} to add vibrant life and natural beauty to your garden.";
-            case ShopItemCategory.Buildings:
-                return $"An elegant {itemName} structure to provide comfort and architectural beauty to your estate.";
-            case ShopItemCategory.Decorations:
-            default:
-                return $"A unique {itemName} decoration to personalize and enhance the atmosphere of your garden.";
-        }
-    }
+        => ShopItemClassifier.GenerateDescription(itemName, category);
 
     private string DrawFolderSelector(string label, string currentPath)
     {

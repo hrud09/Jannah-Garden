@@ -11,14 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jannah Garden.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Outer Garden.unity
-    guid: 96956e6781ad02244b1bee62acad13df
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2729a7883b528814fa0476c231c8050c, type: 2}
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: b55d4544650889544a437e272a012d9f, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: db91be0a19a86924ab7ba4abf0972256, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 4a08f1941fa33d547b9e1a4c8f9b0a5e, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cd21603e322a1ca4e8ec21da738cf42d, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2837f3964ead52340aa82b5af9d925f6, type: 2}
   m_UseUCBPForAssetBundles: 0

@@ -37,7 +37,7 @@ Shader "Custom/Mobile/Particles/Additive"
         o.position = UnityObjectToClipPos(v.position);
         o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
         o.color = v.color;
-        UNITY_TRANSFER_FOG(o, o.vertex);
+        UNITY_TRANSFER_FOG(o, o.position);
         return o;
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using System.Globalization;
 
 namespace FlutterIntegration
@@ -33,6 +34,21 @@ namespace FlutterIntegration
         public static event Action<CoinUpdatePayload> OnCoinsReceived;
         public static event Action<FellowshipProfilesPayload> OnFellowshipProfilesReceived;
 
+        /// <summary>Fires when Flutter reports how a rewarded ad ended. AdsManager listens for this.</summary>
+        public static event Action<RewardedAdResultPayload> OnRewardedAdResult;
+
+        /// <summary>Fires when Flutter's rewarded-ad readiness changes, so "Watch Ad" buttons can follow it.</summary>
+        public static event Action<bool> OnRewardedAdAvailabilityChanged;
+
+        /// <summary>
+        /// Fires when Flutter hands over the garden stored in Firebase. <see cref="ItemPlacementManager"/>
+        /// listens for this and rebuilds the garden when the stored copy is newer than the device's.
+        /// </summary>
+        public static event Action<GardenStatePayload> OnGardenStateReceived;
+
+        /// <summary>Fires when Flutter reports how a photo share or gallery save ended.</summary>
+        public static event Action<PhotoActionResultPayload> OnPhotoActionResult;
+
         // ─── Cached payloads ──────────────────────────────────────────────────────
         // Flutter may push data long before the scene that needs it is loaded, so we keep the last of
         // each. Consumers read these on Start and subscribe to the matching event for later updates.
@@ -40,9 +56,45 @@ namespace FlutterIntegration
         public static UserProfilePayload LatestUserProfile { get; private set; }
         public static FellowshipProfilesPayload LatestFellowshipProfiles { get; private set; }
 
+        /// <summary>
+        /// The last garden Flutter pushed, or null if none yet. Cached for the same reason as the coin
+        /// balance: the garden usually arrives while a loading scene is up, long before the
+        /// <see cref="ItemPlacementManager"/> that wants it exists.
+        /// </summary>
+        public static GardenStatePayload LatestGardenState { get; private set; }
+
+        /// <summary>
+        /// The last authoritative Noor Coin balance Flutter pushed, or null if none yet. Cached so a
+        /// <see cref="NoorCoinManager"/> that initialises *after* Flutter's message (e.g. because the
+        /// message arrived during a loading scene) can still adopt it. See <see cref="ApplyCoinBalance"/>.
+        /// </summary>
+        public static int? LatestCoinBalance { get; private set; }
+
+        /// <summary>
+        /// Whether Flutter currently has a rewarded ad loaded. Static and cached for the same reason as
+        /// the coin balance: Flutter pushes availability whenever it changes, which is often before the
+        /// scene holding the "Watch Ad" button exists. Defaults to false — the game must not promise an
+        /// ad it has not been told about.
+        /// </summary>
+        public static bool RewardedAdReady { get; private set; }
+
         /// <summary>True once Flutter has sent at least one non-empty fellowship roster.</summary>
         public static bool HasFellowshipProfiles =>
             LatestFellowshipProfiles?.fellows != null && LatestFellowshipProfiles.fellows.Length > 0;
+
+        // ─── Handshake ────────────────────────────────────────────────────────────
+        // A single UNITY_READY on Start is not enough to get the coin balance: Flutter's listener may not
+        // be attached yet when Unity's first frame runs, and a dropped announcement is never retried, so
+        // the game sits on 0 coins forever. The handshake below re-announces until Flutter answers.
+
+        /// <summary>How long to wait for Flutter's answer before announcing again.</summary>
+        private const float HandshakeRetrySeconds = 1.5f;
+
+        /// <summary>How many times to ask before giving up (~12s of asking).</summary>
+        private const int HandshakeMaxAttempts = 8;
+
+        private Coroutine _handshake;
+        private bool _awaitingCoinBalance;
 
         // ─── Bootstrap ────────────────────────────────────────────────────────────
 
@@ -79,14 +131,61 @@ namespace FlutterIntegration
 
         private void Start()
         {
-            // Tell Flutter the bridge is live. Flutter should push the user profile, coins, and the
-            // fellowship roster in response to this.
-            SendMessageToFlutterApp(FlutterCommands.UnityReady, new EmptyPayload());
+            // Tell Flutter the bridge is live — and keep telling it until the coin balance comes back.
+            // Flutter should push the user profile, coins, and the fellowship roster in response.
+            BeginHandshake("game start");
+        }
+
+        /// <summary>
+        /// flutter_embed_unity keeps a single Unity instance alive: leaving the game pauses the player
+        /// instead of tearing it down, so <see cref="Start"/> never runs a second time. Resume is
+        /// therefore the only signal that the player "started the game" again — re-handshake so the
+        /// balance comes back fresh from Firebase rather than being whatever was on screen when they left
+        /// (they may have spent or earned coins in the app in between).
+        /// </summary>
+        private void OnApplicationPause(bool paused)
+        {
+            if (!paused) BeginHandshake("game resumed");
         }
 
         private void OnDestroy()
         {
             if (Instance == this) Instance = null;
+        }
+
+        /// <summary>
+        /// Announces UNITY_READY and asks for the coin balance, repeating until Flutter answers with one
+        /// (or the attempts run out). Restarts any handshake already in flight.
+        /// </summary>
+        private void BeginHandshake(string reason)
+        {
+            _awaitingCoinBalance = true;
+
+            if (_handshake != null) StopCoroutine(_handshake);
+            _handshake = StartCoroutine(HandshakeUntilCoinsArrive(reason));
+        }
+
+        private IEnumerator HandshakeUntilCoinsArrive(string reason)
+        {
+            for (int attempt = 1; attempt <= HandshakeMaxAttempts; attempt++)
+            {
+                Debug.Log($"[FlutterBridge] Handshake ({reason}) attempt {attempt}/{HandshakeMaxAttempts} — announcing {FlutterCommands.UnityReady} and requesting the Noor Coin balance.");
+
+                SendMessageToFlutterApp(FlutterCommands.UnityReady, new EmptyPayload());
+                SendMessageToFlutterApp(FlutterCommands.RequestCoinBalance, new EmptyPayload());
+
+                // Realtime: a paused/slowed game (timeScale 0 behind a panel) must still retry.
+                yield return new WaitForSecondsRealtime(HandshakeRetrySeconds);
+
+                if (!_awaitingCoinBalance)
+                {
+                    _handshake = null;
+                    yield break;
+                }
+            }
+
+            Debug.LogWarning($"[FlutterBridge] Flutter sent no Noor Coin balance after {HandshakeMaxAttempts} attempts — the game is running on its local balance. Check that the Flutter side answers {FlutterCommands.UnityReady} / {FlutterCommands.RequestCoinBalance} with UPDATE_COINS or UPDATE_USER_PROFILE.");
+            _handshake = null;
         }
 
         // ─── Flutter → Unity ──────────────────────────────────────────────────────
@@ -183,6 +282,72 @@ namespace FlutterIntegration
                     break;
                 }
 
+                case FlutterCommands.RewardedAdResult:
+                {
+                    RewardedAdResultPayload result = JsonUtility.FromJson<RewardedAdResultPayload>(dataJson);
+
+                    if (result == null || string.IsNullOrEmpty(result.status))
+                    {
+                        // Nobody would resume the game if this were dropped silently, so synthesise a
+                        // failure — AdsManager treats it the same as a failed ad and unpauses.
+                        Debug.LogWarning("[FlutterBridge] REWARDED_AD_RESULT had no status — treating it as failed.");
+                        result = new RewardedAdResultPayload { status = RewardedAdStatus.Failed, source = string.Empty };
+                    }
+
+                    Debug.Log($"[FlutterBridge] Rewarded ad -> Status: {result.status}, Source: {result.source}");
+
+                    OnRewardedAdResult?.Invoke(result);
+                    break;
+                }
+
+                case FlutterCommands.UpdateAdAvailability:
+                {
+                    AdAvailabilityPayload availability = JsonUtility.FromJson<AdAvailabilityPayload>(dataJson);
+                    if (availability == null) break;
+
+                    Debug.Log($"[FlutterBridge] Ad availability -> Rewarded ready: {availability.rewardedReady}");
+
+                    RewardedAdReady = availability.rewardedReady;
+                    OnRewardedAdAvailabilityChanged?.Invoke(availability.rewardedReady);
+                    break;
+                }
+
+                case FlutterCommands.UpdateGardenState:
+                {
+                    GardenStatePayload garden = JsonUtility.FromJson<GardenStatePayload>(dataJson);
+
+                    if (garden == null)
+                    {
+                        Debug.LogWarning("[FlutterBridge] UPDATE_GARDEN_STATE had no payload — ignoring.");
+                        break;
+                    }
+
+                    // A null items array and an empty one mean different things to the placement manager
+                    // ("nothing stored yet" vs "the player emptied their garden"), so normalise only the
+                    // former, and only when Flutter says it has data.
+                    if (garden.hasData && garden.items == null) garden.items = new GardenItemPayload[0];
+
+                    LatestGardenState = garden;
+                    Debug.Log($"[FlutterBridge] Garden -> hasData: {garden.hasData}, " +
+                              $"items: {garden.items?.Length ?? 0}, savedAt: {garden.savedAtUnix}");
+
+                    // Fires only if a listener exists; otherwise the garden waits in the cache for the
+                    // scene that wants it.
+                    OnGardenStateReceived?.Invoke(garden);
+                    break;
+                }
+
+                case FlutterCommands.PhotoActionResult:
+                {
+                    PhotoActionResultPayload result = JsonUtility.FromJson<PhotoActionResultPayload>(dataJson);
+                    if (result == null) break;
+
+                    Debug.Log($"[FlutterBridge] Photo -> Action: {result.action}, Success: {result.success}");
+
+                    OnPhotoActionResult?.Invoke(result);
+                    break;
+                }
+
                 default:
                     Debug.LogWarning($"[FlutterBridge] Unhandled command: {command}");
                     break;
@@ -192,9 +357,16 @@ namespace FlutterIntegration
         /// <summary>Pushes an authoritative balance from Flutter into the game's economy.</summary>
         private void ApplyCoinBalance(int balance)
         {
+            // Cache first — unconditionally — so the value survives even when no manager exists yet. A
+            // NoorCoinManager that spawns in a later scene reads this on Awake (see NoorCoinManager.Awake).
+            LatestCoinBalance = balance;
+
+            // Flutter answered, so the handshake can stop asking.
+            _awaitingCoinBalance = false;
+
             if (NoorCoinManager.Instance == null)
             {
-                Debug.LogWarning("[FlutterBridge] No NoorCoinManager in this scene — coin balance not applied.");
+                Debug.LogWarning("[FlutterBridge] No NoorCoinManager yet — balance cached; it will be applied when the manager loads.");
                 return;
             }
 
@@ -210,6 +382,89 @@ namespace FlutterIntegration
         public void RequestFellowshipProfiles()
         {
             SendMessageToFlutterApp(FlutterCommands.RequestFellowshipProfiles, new EmptyPayload());
+        }
+
+        /// <summary>
+        /// Asks Flutter for the player's authoritative Noor Coin balance. The handshake already does this
+        /// on every game start; call it directly when something loads late and finds nothing cached (see
+        /// <see cref="NoorCoinManager"/>).
+        /// </summary>
+        public void RequestCoinBalance()
+        {
+            SendMessageToFlutterApp(FlutterCommands.RequestCoinBalance, new EmptyPayload());
+        }
+
+        /// <summary>
+        /// Asks Flutter to play a rewarded ad. Flutter owns the ad SDK, so the game only decides when an
+        /// ad is due; the outcome comes back as <see cref="FlutterCommands.RewardedAdResult"/>.
+        /// Callers should go through AdsManager rather than calling this directly — it handles pausing
+        /// the game and resuming it whatever the ad does.
+        /// </summary>
+        /// <param name="source">What the player is paying for, e.g. "treasure_box".</param>
+        public void RequestRewardedAd(string source)
+        {
+            SendMessageToFlutterApp(
+                FlutterCommands.RequestRewardedAd,
+                new RewardedAdRequestPayload { source = source });
+        }
+
+        /// <summary>
+        /// Asks Flutter for the garden stored in Firebase. Called by <see cref="ItemPlacementManager"/>
+        /// when it loads with nothing cached — which is every cold start, and the reason a player's
+        /// garden survives a change of device.
+        /// </summary>
+        public void RequestGardenState()
+        {
+            SendMessageToFlutterApp(FlutterCommands.RequestGardenState, new EmptyPayload());
+        }
+
+        /// <summary>
+        /// Hands the player's garden to Flutter to be written to Firebase. Unity has no Firebase SDK, so
+        /// this is the only route the garden has off the device.
+        /// </summary>
+        public void SaveGardenState(GardenStatePayload garden)
+        {
+            if (garden == null)
+            {
+                Debug.LogWarning("[FlutterBridge] SaveGardenState called with no payload — nothing sent.");
+                return;
+            }
+
+            // Keep the cache in step with what we just wrote, so a scene loading straight after this
+            // does not adopt a stale copy of the garden.
+            LatestGardenState = garden;
+
+            SendMessageToFlutterApp(FlutterCommands.SaveGardenState, garden);
+        }
+
+        /// <summary>
+        /// Asks Flutter to open the native share sheet for a photo the player took. Flutter owns the
+        /// share plugin; Unity only writes the file and says where it is.
+        /// </summary>
+        public void RequestSharePhoto(PhotoSharePayload photo)
+        {
+            if (photo == null || string.IsNullOrEmpty(photo.filePath))
+            {
+                Debug.LogWarning("[FlutterBridge] RequestSharePhoto called without a file path — nothing sent.");
+                return;
+            }
+
+            SendMessageToFlutterApp(FlutterCommands.RequestSharePhoto, photo);
+        }
+
+        /// <summary>
+        /// Asks Flutter to write a photo into the device's gallery. Flutter owns the gallery plugin and
+        /// the permission prompt that goes with it.
+        /// </summary>
+        public void RequestSavePhoto(PhotoSharePayload photo)
+        {
+            if (photo == null || string.IsNullOrEmpty(photo.filePath))
+            {
+                Debug.LogWarning("[FlutterBridge] RequestSavePhoto called without a file path — nothing sent.");
+                return;
+            }
+
+            SendMessageToFlutterApp(FlutterCommands.RequestSavePhoto, photo);
         }
 
         /// <summary>

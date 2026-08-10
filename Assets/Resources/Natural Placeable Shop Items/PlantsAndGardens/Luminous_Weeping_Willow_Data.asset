@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Luminous_Weeping_Willow_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 5e0167fcc75de8d4d98a133bf649a4dc, type: 3}
+  itemName: Luminous Weeping Willow
+  itemDescription: A beautiful Luminous Weeping Willow to add vibrant life and natural
+    beauty to your garden.
+  itemID: c26bcf28a847b7016978f39641762689
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 0
+  itemTier: 1
+  sortOrder: 30
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 1585034106356744223, guid: 4614feb4ead6185408f0c2c4b74e2ec7, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

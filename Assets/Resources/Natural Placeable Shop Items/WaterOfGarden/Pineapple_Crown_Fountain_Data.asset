@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Pineapple_Crown_Fountain_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 5db8a432478b026498fa3e9d76994bfc, type: 3}
+  itemName: Pineapple Crown Fountain
+  itemDescription: A tranquil Pineapple Crown Fountain to bring flowing water and
+    calm to your garden.
+  itemID: d06798148d103014f4d2729b928ccf7e
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 1
+  itemTier: 3
+  sortOrder: 250
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 3761873038896358771, guid: 24e24ea9d3622c24bb8d4f7e6b1f6ec6, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

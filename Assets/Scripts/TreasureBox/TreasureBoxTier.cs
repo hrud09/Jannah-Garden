@@ -42,6 +42,9 @@ public class TreasureBoxData : ScriptableObject
     [Tooltip("Player-facing display name shown in UI (e.g. 'Silver Box').")]
     public string tierDisplayName = "Silver Box";
 
+    [Tooltip("Chest sprite shown on the treasure box status HUD for this tier.")]
+    public Sprite tierIcon;
+
     // ── World Spawning ────────────────────────────────────────────────────────
 
     [Header("World Prefab")]

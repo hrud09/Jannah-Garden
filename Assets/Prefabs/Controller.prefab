@@ -495,7 +495,6 @@ MonoBehaviour:
   _movementSpeed: 10
   _runMultiplier: 5
   _gravity: -9.81
-  _jumpHeight: 1
   _walkStepInterval: 0.6
   _footstepVolume: 0.495
   _breathingVolume: 0.4

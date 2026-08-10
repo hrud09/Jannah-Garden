@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Moonlit_Cactus_Bloom_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: ed96c07ac15d603468685f5279c3d0c3, type: 3}
+  itemName: Moonlit Cactus Bloom
+  itemDescription: A beautiful Moonlit Cactus Bloom to add vibrant life and natural
+    beauty to your garden.
+  itemID: f55096a3cc5e7810573a1fb4fb88e4f8
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 0
+  itemTier: 1
+  sortOrder: 40
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 195127029976027907, guid: 2774f58dc19e2a74f97f3d8beaff4d74, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

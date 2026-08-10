@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 namespace IdyllicFantasyNature
 {
     public class ExitGame : MonoBehaviour
-    {
+    {/*
         void Update()
         {
             // If you press the ESC key in the game, the application will be closed
@@ -21,6 +21,6 @@ namespace IdyllicFantasyNature
                 Application.Quit();
             }
 #endif
-        }
+        }*/
     }
 }

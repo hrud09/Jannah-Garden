@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using FlutterIntegration;
 
 /// <summary>
 /// Singleton manager for the Noor Coin economy.
@@ -22,6 +23,10 @@ public class NoorCoinManager : MonoBehaviour
     [Header("Starting Balance")]
     [Tooltip("Noor Coins the player starts with on a fresh save.")]
     [SerializeField] private int startingBalance = 500;
+
+    [Header("Debug Settings")]
+    [SerializeField] private bool isDebug = false;
+    [SerializeField] private int debugNoorCoinsAmount = 500;
 
     // ─── Private State ────────────────────────────────────────────────────────
 
@@ -48,12 +53,45 @@ public class NoorCoinManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // We no longer load balance here because Jannah Garden is embedded in Flutter,
-        // and Noor coins will be assigned from the Flutter app (or via debug in JannahGardenManager).
+        // and Noor coins are assigned directly from the Flutter app or via debug settings in NoorCoinManager.
         // LoadBalance();
+
+        // If Flutter already pushed a balance before this manager existed (its message can arrive during
+        // an earlier loading scene, when FlutterBridge has no manager to hand it to), FlutterBridge cached
+        // it. Adopt that cached value now so the balance — and any UI bound to OnBalanceChanged — is
+        // correct from the first frame this manager runs, instead of showing the default 0.
+        if (FlutterBridge.LatestCoinBalance.HasValue)
+        {
+            SetInitialCoinsFromFlutter(FlutterBridge.LatestCoinBalance.Value.ToString());
+        }
+    }
+
+    private void Start()
+    {
+        if (isDebug)
+        {
+            SetInitialCoinsFromFlutter(debugNoorCoinsAmount.ToString());
+            return;
+        }
+
+        // Nothing cached means Flutter has not answered the bridge's handshake yet, or this manager came
+        // up in a scene loaded long after the handshake gave up. Either way, ask again rather than run the
+        // whole session on a 0 balance. Same pattern as FellowshipVisualizationManager.
+        if (!FlutterBridge.LatestCoinBalance.HasValue && FlutterBridge.Instance != null)
+        {
+            Debug.Log("[NoorCoinManager] No balance from Flutter yet — requesting it.");
+            FlutterBridge.Instance.RequestCoinBalance();
+        }
     }
 
     private void OnApplicationQuit() => SaveBalance();
     private void OnApplicationPause(bool paused) { if (paused) SaveBalance(); }
+
+    private void OnDestroy()
+    {
+        // Leave no dangling singleton behind, so a manager loading later can take over cleanly.
+        if (Instance == this) Instance = null;
+    }
 
     // ─── Public API ───────────────────────────────────────────────────────────
 

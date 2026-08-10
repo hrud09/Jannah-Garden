@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Turquoise_Mosaic_Arch_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: 750436b99c7b15b4a953a2787c22971f, type: 3}
+  itemName: Turquoise Mosaic Arch
+  itemDescription: An elegant Turquoise Mosaic Arch structure to provide comfort
+    and architectural beauty to your estate.
+  itemID: 352939995768cbb96524450a28f4fa6b
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 2
+  itemTier: 4
+  sortOrder: 400
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 3526881213033147936, guid: 17c44dede46c3ab42b9505170fab4fb8, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

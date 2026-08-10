@@ -17,7 +17,7 @@ public class ShopItemDataEditor : Editor
     SerializedProperty isDailyOffer, offerCooldownHours;
     SerializedProperty iapProductId, realMoneyPriceLabel;
     SerializedProperty noorCoinReward;
-    SerializedProperty itemCategory, requiredXPLevel;
+    SerializedProperty itemCategory, itemTier, sortOrder, requiredXPLevel;
     SerializedProperty itemPrefab, itemPlacementModelPrefab, placementTimerDuration;
 
     void OnEnable()
@@ -37,6 +37,8 @@ public class ShopItemDataEditor : Editor
         noorCoinReward = serializedObject.FindProperty(nameof(ShopItemData.noorCoinReward));
 
         itemCategory = serializedObject.FindProperty(nameof(ShopItemData.itemCategory));
+        itemTier = serializedObject.FindProperty(nameof(ShopItemData.itemTier));
+        sortOrder = serializedObject.FindProperty(nameof(ShopItemData.sortOrder));
         requiredXPLevel = serializedObject.FindProperty(nameof(ShopItemData.requiredXPLevel));
 
         itemPrefab = serializedObject.FindProperty(nameof(ShopItemData.itemPrefab));
@@ -94,6 +96,26 @@ public class ShopItemDataEditor : Editor
 
         Section("Shop Category & Unlock");
         EditorGUILayout.PropertyField(itemCategory);
+
+        // Coin packs and ad offers live in the Noor Coins tab and are not ranked, so the tier field
+        // would only be noise there.
+        var category = (ShopItemCategory)itemCategory.intValue;
+        bool tiered = itemCategory.hasMultipleDifferentValues || category != ShopItemCategory.NoorCoins;
+        if (tiered)
+        {
+            EditorGUILayout.PropertyField(itemTier);
+
+            if (!itemTier.hasMultipleDifferentValues)
+            {
+                var tier = (ShopItemTier)itemTier.intValue;
+                EditorGUILayout.LabelField(" ", tier == ShopItemTier.None
+                    ? "No tier — this item will not show a tier badge."
+                    : $"Shows as \"{ShopTaxonomy.GetTierLabel(tier)}\" in "
+                      + $"{ShopTaxonomy.GetCategoryLongName(category)}.", EditorStyles.miniLabel);
+            }
+        }
+
+        EditorGUILayout.PropertyField(sortOrder);
         EditorGUILayout.PropertyField(requiredXPLevel);
 
         Section("Placement");

@@ -12,6 +12,8 @@ public class GameAnalyticsManager : MonoBehaviour
     private int _lastXPLevel = -1;
     private int _lastCoinBalance = -1;
 
+    private bool _isInitialized = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -21,15 +23,19 @@ public class GameAnalyticsManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // Initialize GameAnalytics SDK in Awake so it is ready before OnApplicationPause or Start runs
+        GameAnalytics.Initialize();
+        _isInitialized = true;
     }
 
     private void Start()
     {
-        // Initialize GameAnalytics SDK
-        GameAnalytics.Initialize();
-
-        // Game Start Event
-        GameAnalytics.NewDesignEvent("Game:Start");
+        if (_isInitialized)
+        {
+            // Game Start Event
+            GameAnalytics.NewDesignEvent("Game:Start");
+        }
 
         // Hook up to existing managers for Progression and Economy
         if (PlayerXPManager.Instance != null)
@@ -57,11 +63,16 @@ public class GameAnalyticsManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        GameAnalytics.NewDesignEvent("Game:Quit");
+        if (_isInitialized)
+        {
+            GameAnalytics.NewDesignEvent("Game:Quit");
+        }
     }
 
     private void OnApplicationPause(bool pause)
     {
+        if (!_isInitialized) return;
+
         if (pause)
         {
             GameAnalytics.NewDesignEvent("Game:Pause");
@@ -76,6 +87,8 @@ public class GameAnalyticsManager : MonoBehaviour
 
     private void OnXPChanged(int newLevel, float currentXP, float xpToNextLevel)
     {
+        if (!_isInitialized) return;
+
         if (_lastXPLevel != -1 && newLevel > _lastXPLevel)
         {
             // Player leveled up
@@ -88,6 +101,8 @@ public class GameAnalyticsManager : MonoBehaviour
 
     private void OnCoinBalanceChanged(int newBalance)
     {
+        if (!_isInitialized) return;
+
         if (_lastCoinBalance == -1)
         {
             _lastCoinBalance = newBalance;

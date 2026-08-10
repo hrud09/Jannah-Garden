@@ -7,6 +7,11 @@ using TMPro;
 /// the label automatically on every balance change.
 /// Numbers are formatted compactly: 999 → "999", 1000 → "1k", 1500 → "1.5k",
 /// 1,000,000 → "1m", 1,000,000,000 → "1b", etc.
+///
+/// The label does NOT have to live on this GameObject — in Jannah Garden this component sits on the
+/// Pop Up Canvas while the label it drives is in the HUD canvas. That is why the subscription lasts for
+/// the component's whole lifetime (Awake → OnDestroy) instead of its enabled state: disabling the popup
+/// canvas must not freeze a label that is still on screen.
 /// </summary>
 public class NoorCoinDisplay : MonoBehaviour
 {
@@ -14,20 +19,34 @@ public class NoorCoinDisplay : MonoBehaviour
     [Tooltip("The TMP label that shows the current Noor Coin balance.")]
     public TMP_Text balanceLabel;
 
+    /// <summary>The live balance, or 0 when no manager exists yet — never the label's authored text.</summary>
+    private static int CurrentBalance =>
+        NoorCoinManager.Instance != null ? NoorCoinManager.Instance.Balance : 0;
+
     // ─── Unity Lifecycle ──────────────────────────────────────────────────────
+
+    private void Awake()
+    {
+        if (balanceLabel == null)
+        {
+            Debug.LogWarning($"[NoorCoinDisplay] No balanceLabel assigned on '{name}' — the balance has nowhere to show.");
+        }
+
+        NoorCoinManager.OnBalanceChanged += Refresh;
+
+        // Paint a real number straight away. Without this the label keeps whatever placeholder the
+        // designer typed (the HUD one says "200"), so a player with no coins appears to have 200.
+        Refresh(CurrentBalance);
+    }
 
     private void OnEnable()
     {
-        NoorCoinManager.OnBalanceChanged += Refresh;
-
-        // Show the current balance immediately when this object becomes active
-        if (NoorCoinManager.Instance != null)
-        {
-            Refresh(NoorCoinManager.Instance.Balance);
-        }
+        // Re-show the current balance whenever this object comes back on; the subscription itself is
+        // already alive, so nothing is re-registered here.
+        Refresh(CurrentBalance);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         NoorCoinManager.OnBalanceChanged -= Refresh;
     }
@@ -37,6 +56,7 @@ public class NoorCoinDisplay : MonoBehaviour
     private void Refresh(int newBalance)
     {
         if (balanceLabel == null) return;
+
         balanceLabel.text = FormatCoins(newBalance);
     }
 

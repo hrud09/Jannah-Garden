@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
+  m_Name: Ropebound_Bamboo_Arch_Data
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
+  itemIcon: {fileID: 21300000, guid: a4bf327ee6012bc49896be3f8b9b4239, type: 3}
+  itemName: Ropebound Bamboo Arch
+  itemDescription: An elegant Ropebound Bamboo Arch structure to provide comfort
+    and architectural beauty to your estate.
+  itemID: 2908420f6f6079ec1b7aecaf48477769
+  acquisitionType: 0
+  noorCoinCost: 0
+  isDailyOffer: 0
+  offerCooldownHours: 24
+  iapProductId: 
+  realMoneyPriceLabel: $0.99
+  noorCoinReward: 0
+  itemCategory: 2
+  itemTier: 3
+  sortOrder: 380
+  requiredXPLevel: 1
+  itemPrefab: {fileID: 3109185905251620827, guid: bd3229993494e09469defbbb8598c237, type: 3}
+  itemPlacementModelPrefab: {fileID: 0}
+  placementTimerDuration: 360
+  itemPrice: 

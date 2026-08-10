@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git check-ignore *)",
+      "Bash(python \"C:/Users/mahad/AppData/Local/Temp/claude/e--New-Unity-Projects-Jannah-Garden/6da83cad-443e-4143-8a02-b20a405daba2/scratchpad/analyze.py\" \"Assets/Prefabs/UI/Dhikr Counter Panel.prefab\" \"Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab\")",
+      "Bash(python \"C:/Users/mahad/AppData/Local/Temp/claude/e--New-Unity-Projects-Jannah-Garden/6da83cad-443e-4143-8a02-b20a405daba2/scratchpad/analyze.py\" \"Assets/Scenes/Jannah Garden.unity\")",
+      "Bash(python \"C:/Users/mahad/AppData/Local/Temp/claude/e--New-Unity-Projects-Jannah-Garden/6da83cad-443e-4143-8a02-b20a405daba2/scratchpad/resolve.py\" \"Assets/Scenes/Jannah Garden.unity\" \"Assets/Prefabs/UI/Dhikr Counter Panel.prefab\" \"Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab\")",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import yaml; print\\('pyyaml', yaml.__version__\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import yaml; print\\('pyyaml', yaml.__version__\\); print\\(repr\\(yaml.safe_load\\('a: 1:3'\\)\\)\\)\")",
+      "Bash(rm -rf __TRACKED_VAR__/dry)",
+      "Bash(mkdir -p __TRACKED_VAR__/dry)",
+      "Bash(cp 'Assets/Scenes/Jannah Garden.unity' __TRACKED_VAR__/dry/scene.unity)",
+      "Bash(cp 'Assets/Prefabs/UI/Dhikr Counter Panel.prefab' __TRACKED_VAR__/dry/dhikr.prefab)",
+      "Bash(cp 'Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab' __TRACKED_VAR__/dry/treasure.prefab)",
+      "Bash(python __TRACKED_VAR__/strip_localization.py 'Assets/Scenes/Jannah Garden.unity' 'Assets/Prefabs/UI/Dhikr Counter Panel.prefab' 'Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab' Assets/_Recovery/*.unity)",
+      "Bash(git rm *)",
+      "PowerShell($d = Get-Command dotnet -ErrorAction SilentlyContinue; if \\($d\\) { Write-Output \"dotnet: $\\($d.Source\\)\"; dotnet --version } else { Write-Output \"dotnet not found\" }; $mb = Get-ChildItem \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Name; Write-Output \"Unity versions: $mb\")",
+      "Read(//c/Program Files/Unity/**)",
+      "Bash(cp 'Assets/Scenes/Jannah Garden.unity' __TRACKED_VAR__/dry/scene2.unity)",
+      "Bash(cp 'Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab' __TRACKED_VAR__/dry/treasure2.prefab)",
+      "Bash(python __TRACKED_VAR__/strip_fallbacks.py __TRACKED_VAR__/dry/scene2.unity __TRACKED_VAR__/dry/treasure2.prefab)",
+      "Bash(python __TRACKED_VAR__/strip_fallbacks.py 'Assets/Scenes/Jannah Garden.unity' 'Assets/Prefabs/UI/Tresure Box Open Confirmation Panel.prefab' Assets/_Recovery/*.unity)",
+      "Bash(python -)",
+      "Bash(python \"C:/Users/mahad/AppData/Local/Temp/claude/e--New-Unity-Projects-Jannah-Garden/6da83cad-443e-4143-8a02-b20a405daba2/scratchpad/sanity.py\")",
+      "Bash(awk '/^--- !u!223/{c=1; buf=\"\"} c{buf=buf $0 \"\\\\n\"} /m_TargetDisplay/{if\\(c\\){print \"=== line \" NR; print buf; c=0}}' \"Jannah Garden.unity\")"
+    ]
+  }
+}
