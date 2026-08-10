@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,6 +28,10 @@ public class SceneLoader : MonoBehaviour
     [Header("Scene Buttons")]
     [Tooltip("One entry per button: assign the button and type the scene it loads.")]
     public SceneButton[] sceneButtons;
+
+    [Tooltip("Scene names loaded via Addressables when LoadingScreenManager is unavailable. " +
+             "Must match the entries configured on LoadingScreenManager.addressableSceneNames.")]
+    public string[] addressableSceneNames;
 
     // Keeps the generated listeners around so they can be removed again in OnDestroy
     // without wiping listeners added elsewhere (e.g. in the inspector).
@@ -87,7 +92,14 @@ public class SceneLoader : MonoBehaviour
         else
         {
             Debug.LogWarning($"SceneLoader: LoadingScreenManager not found. Loading '{sceneName}' directly.", this);
-            SceneManager.LoadScene(sceneName);
+            if (addressableSceneNames != null && System.Array.IndexOf(addressableSceneNames, sceneName) >= 0)
+            {
+                Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneName);
+            }
         }
     }
 

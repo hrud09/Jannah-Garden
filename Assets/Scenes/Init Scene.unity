@@ -427,9 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f85924bb0e224489bb57a56b8fbefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  loadSceneButton: {fileID: 0}
-  jannahGardenButton: {fileID: 0}
-  innateSenseButton: {fileID: 0}
+  sceneButtons: []
+  addressableSceneNames: []
 --- !u!1 &2081659352
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +519,22 @@ PrefabInstance:
     - target: {fileID: 4246105545637473545, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
       propertyPath: m_Name
       value: Loading Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: additiveSceneGroups.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: addressableSceneNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: 'addressableSceneNames.Array.data[0]'
+      value: Outer Garden
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: additiveSceneGroups.Array.data[0].baseSceneName
+      value: Outer Garden
       objectReference: {fileID: 0}
     - target: {fileID: 7443106609982205163, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
       propertyPath: m_AnchorMax.y

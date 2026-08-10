@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using FlutterIntegration;
@@ -166,7 +168,10 @@ public class JannahGardenManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(outerGardenSceneName);
+            // Outer Garden is loaded via Addressables, not Build Settings — this fallback
+            // path is hit when LoadingScreenManager hasn't bootstrapped (e.g. Play Mode
+            // started directly from this scene, skipping Init Scene).
+            Addressables.LoadSceneAsync(outerGardenSceneName, LoadSceneMode.Single);
         }
     }
 

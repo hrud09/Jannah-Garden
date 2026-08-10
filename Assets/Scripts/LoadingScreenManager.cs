@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -63,6 +66,11 @@ public class LoadingScreenManager : MonoBehaviour
 
     [Tooltip("Scene name treated as 'Jannah Garden' when choosing which logo to show.")]
     public string jannahGardenSceneName = "Jannah Garden";
+
+    [Header("Addressables")]
+    [Tooltip("Scene names loaded via Addressables instead of SceneManager. Must exactly match " +
+             "the Address configured for the scene in the Addressables Groups window (e.g. \"Outer Garden\").")]
+    public string[] addressableSceneNames;
 
     [Tooltip("Logo display size in pixels.")]
     public Vector2 logoSize = new Vector2(180f, 180f);
@@ -139,6 +147,11 @@ public class LoadingScreenManager : MonoBehaviour
 
     // Coroutine handle so we can stop it if LoadScene is called mid-load
     private Coroutine _loadRoutine;
+
+    // Tracks the AsyncOperationHandle for the currently active Addressable scene (if any),
+    // so its ref-count/bundle memory can be released once the next scene finishes loading.
+    private AsyncOperationHandle<SceneInstance> _activeAddressableSceneHandle;
+    private bool _hasActiveAddressableSceneHandle;
 
     // External systems can hold the loading screen open until they finish work
     // behind the panel (e.g. OcclusionCullingManager's progressive mesh activation).
@@ -375,26 +388,70 @@ public class LoadingScreenManager : MonoBehaviour
         yield return null;
 
         // 1. Begin loading the base scene
-        AsyncOperation baseAsyncOp = SceneManager.LoadSceneAsync(sceneName);
-        baseAsyncOp.allowSceneActivation = false;
-
         // Total weight calculation
         // The base scene gets 50% of weight, and additive subscenes share the other 50%
         float baseWeight = hasSubScenes ? 0.5f : 1.0f;
+        bool loadAsAddressable = IsAddressableScene(sceneName);
+        AsyncOperationHandle<SceneInstance> newAddressableHandle = default;
 
-        // Monitor base scene loading progress
-        while (baseAsyncOp.progress < 0.9f)
+        if (loadAsAddressable)
         {
-            float baseProgress = Mathf.Clamp01(baseAsyncOp.progress / 0.9f);
-            _targetProgress = baseProgress * baseWeight;
-            yield return null;
+            newAddressableHandle = Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Single, false);
+
+            while (!newAddressableHandle.IsDone)
+            {
+                _targetProgress = Mathf.Clamp01(newAddressableHandle.PercentComplete) * baseWeight;
+                yield return null;
+            }
+
+            if (newAddressableHandle.Status != AsyncOperationStatus.Succeeded)
+            {
+                Debug.LogError($"[LoadingScreenManager] Addressables failed to load scene '{sceneName}': " +
+                                $"{newAddressableHandle.OperationException}");
+            }
+            else
+            {
+                AsyncOperation activateOp = newAddressableHandle.Result.ActivateAsync();
+                while (!activateOp.isDone)
+                {
+                    yield return null;
+                }
+            }
+        }
+        else
+        {
+            AsyncOperation baseAsyncOp = SceneManager.LoadSceneAsync(sceneName);
+            baseAsyncOp.allowSceneActivation = false;
+
+            // Monitor base scene loading progress
+            while (baseAsyncOp.progress < 0.9f)
+            {
+                float baseProgress = Mathf.Clamp01(baseAsyncOp.progress / 0.9f);
+                _targetProgress = baseProgress * baseWeight;
+                yield return null;
+            }
+
+            // Allow base scene to activate
+            baseAsyncOp.allowSceneActivation = true;
+            while (!baseAsyncOp.isDone)
+            {
+                yield return null;
+            }
         }
 
-        // Allow base scene to activate
-        baseAsyncOp.allowSceneActivation = true;
-        while (!baseAsyncOp.isDone)
+        // Release the previously tracked Addressable scene now that the new scene is active.
+        // Safe even though Single-mode load already destroyed its GameObjects — this only
+        // releases the Addressables ref-count/bundle memory.
+        if (_hasActiveAddressableSceneHandle)
         {
-            yield return null;
+            Addressables.UnloadSceneAsync(_activeAddressableSceneHandle);
+            _hasActiveAddressableSceneHandle = false;
+        }
+
+        if (loadAsAddressable)
+        {
+            _activeAddressableSceneHandle = newAddressableHandle;
+            _hasActiveAddressableSceneHandle = true;
         }
 
         // 2. Load sub-scenes additively if defined
@@ -569,6 +626,17 @@ public class LoadingScreenManager : MonoBehaviour
     {
         if (statusText != null)
             statusText.text = text;
+    }
+
+    /// <summary>Whether the given scene name should be loaded via Addressables instead of SceneManager.</summary>
+    private bool IsAddressableScene(string sceneName)
+    {
+        if (addressableSceneNames == null) return false;
+        for (int i = 0; i < addressableSceneNames.Length; i++)
+        {
+            if (addressableSceneNames[i] == sceneName) return true;
+        }
+        return false;
     }
 
     // ─────────────────────────────────────────────

@@ -23433,6 +23433,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1192068936608778121, guid: de1a89a9989319c42ba58d4801805738, type: 3}
+      propertyPath: addressableSceneNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192068936608778121, guid: de1a89a9989319c42ba58d4801805738, type: 3}
       propertyPath: sceneButtons.Array.data[0].button
       value: 
       objectReference: {fileID: 5683040533047501450}
@@ -23440,6 +23444,10 @@ PrefabInstance:
       propertyPath: sceneButtons.Array.data[1].button
       value: 
       objectReference: {fileID: 5683040533047501450}
+    - target: {fileID: 1192068936608778121, guid: de1a89a9989319c42ba58d4801805738, type: 3}
+      propertyPath: 'addressableSceneNames.Array.data[0]'
+      value: Outer Garden
+      objectReference: {fileID: 0}
     - target: {fileID: 1192068936608778121, guid: de1a89a9989319c42ba58d4801805738, type: 3}
       propertyPath: sceneButtons.Array.data[0].sceneName
       value: Outer Garden
