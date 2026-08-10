@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Lantern_Ascension_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 8c354d4339053304abf0e8b6e34a352f, type: 3}
+  itemIcon: {fileID: 21300000, guid: c83e9d413057fd546b5f554071ba5d7a, type: 3}
   itemName: Lantern Ascension
   itemDescription: A radiant Lantern Ascension to lift your garden with light and
     wonder.

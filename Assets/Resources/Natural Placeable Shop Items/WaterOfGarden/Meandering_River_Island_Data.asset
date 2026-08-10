@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Meandering_River_Island_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 5d2d4299378c06343aea4e026671cc0e, type: 3}
+  itemIcon: {fileID: 21300000, guid: ca6e2c323d7987e49ac63de67d191d4d, type: 3}
   itemName: Meandering River Island
   itemDescription: A tranquil Meandering River Island to bring flowing water and
     calm to your garden.

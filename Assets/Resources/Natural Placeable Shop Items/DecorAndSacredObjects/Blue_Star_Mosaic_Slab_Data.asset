@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Blue_Star_Mosaic_Slab_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 7ee446fe48e05804da27f1724338ee3d, type: 3}
+  itemIcon: {fileID: 21300000, guid: 689b716932d3f5d4d9b1dc5aae6778b2, type: 3}
   itemName: Blue Star Mosaic Slab
   itemDescription: An ornate Blue Star Mosaic Slab to adorn your garden with craftsmanship
     and quiet reverence.

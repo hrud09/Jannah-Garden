@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Iridescent_Trail_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 88c28beb02c126e4184c15a07499c016, type: 3}
+  itemIcon: {fileID: 21300000, guid: 8eff2632afa334348a534a85d228c126, type: 3}
   itemName: Iridescent Trail
   itemDescription: A radiant Iridescent Trail to lift your garden with light and
     wonder.

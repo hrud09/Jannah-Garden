@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Ruby_Gold_Arched_Gate_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: aa99e0b2f72bac2429c7fec6de7436df, type: 3}
+  itemIcon: {fileID: 21300000, guid: cbf5c007d9264f147827a8bebf18d052, type: 3}
   itemName: Ruby Gold Arched Gate
   itemDescription: An elegant Ruby Gold Arched Gate structure to provide comfort
     and architectural beauty to your estate.

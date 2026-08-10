@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Whimsical_Apple_Tree_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 7f948087dc2aef1458324d7a5c0a1bdc, type: 3}
+  itemIcon: {fileID: 21300000, guid: 9604a424c8e8eed4aa1579cfe164012c, type: 3}
   itemName: Whimsical Apple Tree
   itemDescription: A beautiful Whimsical Apple Tree to add vibrant life and natural
     beauty to your garden.

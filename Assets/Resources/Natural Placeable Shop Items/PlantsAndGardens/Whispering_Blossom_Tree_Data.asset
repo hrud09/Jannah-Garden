@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Whispering_Blossom_Tree_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: e1b91060786626e4aa46e723712dd102, type: 3}
+  itemIcon: {fileID: 21300000, guid: d30319e8ff0921f42b27b1b0874b328f, type: 3}
   itemName: Whispering Blossom Tree
   itemDescription: A beautiful Whispering Blossom Tree to add vibrant life and natural
     beauty to your garden.

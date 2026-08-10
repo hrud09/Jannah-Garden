@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Ropebound_Bamboo_Arch_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 305dc1738e257ac4a92cc1ba493043a1, type: 3}
+  itemIcon: {fileID: 21300000, guid: a4bf327ee6012bc49896be3f8b9b4239, type: 3}
   itemName: Ropebound Bamboo Arch
   itemDescription: An elegant Ropebound Bamboo Arch structure to provide comfort
     and architectural beauty to your estate.

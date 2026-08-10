@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Azure_Mosaic_Bench_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 6526c5db03fa4ef4ab9cc7e702295edd, type: 3}
+  itemIcon: {fileID: 21300000, guid: 0c52e453c45e4d94d9865e5700aa5790, type: 3}
   itemName: Azure Mosaic Bench
   itemDescription: An ornate Azure Mosaic Bench to adorn your garden with craftsmanship
     and quiet reverence.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: River_of_Gold_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 8b0347074040bfe4884b35cea4d64425, type: 3}
+  itemIcon: {fileID: 21300000, guid: 70378dfadcb06bd419b461b97e7b41e2, type: 3}
   itemName: River of Gold
   itemDescription: A tranquil River of Gold to bring flowing water and calm to your
     garden.

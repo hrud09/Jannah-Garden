@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Tulip_Cluster_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 7990075a69aa84d4abc1570ba7e8fcb8, type: 3}
+  itemIcon: {fileID: 21300000, guid: 44f25736e12a1d74b9cbe9062da1b6bc, type: 3}
   itemName: Tulip Cluster
   itemDescription: A beautiful Tulip Cluster to add vibrant life and natural beauty
     to your garden.

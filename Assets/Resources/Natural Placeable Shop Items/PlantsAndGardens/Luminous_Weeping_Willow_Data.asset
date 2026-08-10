@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Luminous_Weeping_Willow_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 194627f827aa5bf428d67bb08cdf04a7, type: 3}
+  itemIcon: {fileID: 21300000, guid: 5e0167fcc75de8d4d98a133bf649a4dc, type: 3}
   itemName: Luminous Weeping Willow
   itemDescription: A beautiful Luminous Weeping Willow to add vibrant life and natural
     beauty to your garden.

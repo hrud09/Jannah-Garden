@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Prismatic_Bloom_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 8bb0ae483389a844c8699ebfb6345528, type: 3}
+  itemIcon: {fileID: 21300000, guid: 51fb5346d5154b2488c24f307a7d5caa, type: 3}
   itemName: Prismatic Bloom
   itemDescription: A beautiful Prismatic Bloom to add vibrant life and natural beauty
     to your garden.

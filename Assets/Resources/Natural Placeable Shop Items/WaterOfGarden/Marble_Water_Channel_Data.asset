@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Marble_Water_Channel_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: a2a93b74d56cffc44aca31813ac7a2cc, type: 3}
+  itemIcon: {fileID: 21300000, guid: 297a34b52e6accd4a873378da94b4dee, type: 3}
   itemName: Marble Water Channel
   itemDescription: A tranquil Marble Water Channel to bring flowing water and calm
     to your garden.

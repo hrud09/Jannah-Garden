@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Golden_Gateway_to_Paradise_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 0a257413dd3ba3849872f3e717034438, type: 3}
+  itemIcon: {fileID: 21300000, guid: 6b2970aefcfdbdf46ba874ed0c6939d6, type: 3}
   itemName: Golden Gateway to Paradise
   itemDescription: An elegant Golden Gateway to Paradise structure to provide comfort
     and architectural beauty to your estate.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Isle_of_Spring_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 0ded29dc25438cc4db2ebb72126edf5d, type: 3}
+  itemIcon: {fileID: 21300000, guid: b633c773e60e2654eb9c94d7bb2ac4f7, type: 3}
   itemName: Isle of Spring
   itemDescription: A radiant Isle of Spring to lift your garden with light and wonder.
   itemID: f8d1febf41c69a2267520b6b75dcd103

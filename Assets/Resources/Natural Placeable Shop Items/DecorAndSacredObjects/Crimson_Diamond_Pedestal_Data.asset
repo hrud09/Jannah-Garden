@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Crimson_Diamond_Pedestal_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 36dd31f73288cf04eb9b6333994485ea, type: 3}
+  itemIcon: {fileID: 21300000, guid: c17393a3ec28b8d4d990676e842267ea, type: 3}
   itemName: Crimson Diamond Pedestal
   itemDescription: An ornate Crimson Diamond Pedestal to adorn your garden with craftsmanship
     and quiet reverence.

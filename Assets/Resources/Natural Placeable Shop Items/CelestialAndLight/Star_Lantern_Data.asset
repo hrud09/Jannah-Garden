@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Star_Lantern_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 085e367913299e6499b6c0fa4cc43de5, type: 3}
+  itemIcon: {fileID: 21300000, guid: a75c3268a7973064cb563cd159a926dc, type: 3}
   itemName: Star Lantern
   itemDescription: A radiant Star Lantern to lift your garden with light and wonder.
   itemID: 40de1a41c6124205bed217d1d80e5488

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Ancient_Stone_Pool_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: bb7a103662d442046b46fafff03d404b, type: 3}
+  itemIcon: {fileID: 21300000, guid: f761778ffdcb036438b6b3a9f3834972, type: 3}
   itemName: Ancient Stone Pool
   itemDescription: A tranquil Ancient Stone Pool to bring flowing water and calm
     to your garden.
