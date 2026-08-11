@@ -93,6 +93,21 @@ public class ItemPlacementManager : MonoBehaviour
     // adopt) — guards SaveEverything from persisting a partially-populated garden mid-rebuild.
     private bool _isRebuildingGarden;
 
+    // Caller-supplied hooks for the placement request currently in flight (typically the shop), so it
+    // can find out when to stop waiting: onReady once the ghost is actually up, onFailed if the download
+    // failed or this request got superseded by a newer one before it could finish. See InternalPreparePlacement.
+    private System.Action _pendingPlacementReadyCallback;
+    private System.Action _pendingPlacementFailedCallback;
+
+    // Live download progress reporting for the request in flight — polled once a frame in Update() rather
+    // than pushed, since AddressableItemLoader/Addressables only expose PercentComplete as a snapshot, not
+    // an event. The two refs are whatever InternalPreparePlacement is currently downloading; progress is
+    // the average of both since the real and preview prefabs download concurrently.
+    private System.Action<float> _pendingPlacementProgressCallback;
+    private AssetReferenceGameObject _pendingProgressPrefabRef;
+    private AssetReferenceGameObject _pendingProgressPreviewRef;
+    private float _lastReportedPlacementProgress = -1f;
+
     // ── Relocation state ──────────────────────────────────────────────────────
     // A relocation is a placement that reuses an existing item's identity and growth progress instead
     // of minting a new one, and that must not charge the player or award XP a second time.
@@ -170,6 +185,20 @@ public class ItemPlacementManager : MonoBehaviour
         {
             UpdatePlacementPosition();
         }
+
+        if (_isPreparingPlacement && _pendingPlacementProgressCallback != null)
+        {
+            float progress = (AddressableItemLoader.GetProgress(_pendingProgressPrefabRef)
+                + AddressableItemLoader.GetProgress(_pendingProgressPreviewRef)) * 0.5f;
+
+            // PercentComplete jitters slightly frame to frame; only push an update when it actually moves,
+            // so the UI isn't rebuilding its label text every single frame for no visible change.
+            if (!Mathf.Approximately(progress, _lastReportedPlacementProgress))
+            {
+                _lastReportedPlacementProgress = progress;
+                _pendingPlacementProgressCallback.Invoke(progress);
+            }
+        }
     }
 
     private void OnApplicationQuit()
@@ -208,9 +237,20 @@ public class ItemPlacementManager : MonoBehaviour
     //  PLACEMENT
     // ═══════════════════════════════════════════════════════════════════════════
 
-    public void PreparePlacement(ShopItemData itemData)
+    /// <param name="onReady">Called once the ghost preview is actually up — a cache hit resolves this
+    /// synchronously, before <see cref="PreparePlacement(ShopItemData, System.Action, System.Action, System.Action{float})"/> even returns.</param>
+    /// <param name="onFailed">Called if the download fails, or if this request is superseded by a newer
+    /// one before it can finish (never both — exactly one of onReady/onFailed fires per call).</param>
+    /// <param name="onProgress">Called roughly once a frame with a 0–1 estimate while downloading. Never
+    /// called at all for a cache hit, since there is nothing to wait on.</param>
+    public void PreparePlacement(ShopItemData itemData, System.Action onReady = null, System.Action onFailed = null,
+        System.Action<float> onProgress = null)
     {
-        if (itemData == null || itemData.itemPrefabRef == null || !itemData.itemPrefabRef.RuntimeKeyIsValid()) return;
+        if (itemData == null || itemData.itemPrefabRef == null || !itemData.itemPrefabRef.RuntimeKeyIsValid())
+        {
+            onFailed?.Invoke();
+            return;
+        }
 
         // Buying something in the middle of a move would overwrite the relocation state and lose the
         // item being carried. Put it back first.
@@ -221,12 +261,23 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingSourceKind = PlacedItemSource.ShopItem;
         _pendingSourceItemId = itemData.itemID;
 
-        InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration);
+        InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration, onReady, onFailed, onProgress);
     }
 
-    public void PreparePlacement(TreasureBoxRewardItemData itemData)
+    /// <param name="onReady">Called once the ghost preview is actually up — a cache hit resolves this
+    /// synchronously, before <see cref="PreparePlacement(TreasureBoxRewardItemData, System.Action, System.Action, System.Action{float})"/> even returns.</param>
+    /// <param name="onFailed">Called if the download fails, or if this request is superseded by a newer
+    /// one before it can finish (never both — exactly one of onReady/onFailed fires per call).</param>
+    /// <param name="onProgress">Called roughly once a frame with a 0–1 estimate while downloading. Never
+    /// called at all for a cache hit, since there is nothing to wait on.</param>
+    public void PreparePlacement(TreasureBoxRewardItemData itemData, System.Action onReady = null, System.Action onFailed = null,
+        System.Action<float> onProgress = null)
     {
-        if (itemData == null || itemData.itemPrefabRef == null || !itemData.itemPrefabRef.RuntimeKeyIsValid()) return;
+        if (itemData == null || itemData.itemPrefabRef == null || !itemData.itemPrefabRef.RuntimeKeyIsValid())
+        {
+            onFailed?.Invoke();
+            return;
+        }
 
         // As above: never let a new placement swallow the item currently being moved.
         if (_isRelocating) CancelPlacement();
@@ -236,7 +287,7 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingSourceKind = PlacedItemSource.InventoryItem;
         _pendingSourceItemId = itemData.itemID;
 
-        InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration);
+        InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration, onReady, onFailed, onProgress);
     }
 
     /// <summary>
@@ -246,7 +297,8 @@ public class ItemPlacementManager : MonoBehaviour
     /// if either fails. <paramref name="previewRef"/> may be an unassigned reference; it falls back to
     /// <paramref name="prefabRef"/>.
     /// </summary>
-    private void InternalPreparePlacement(AssetReferenceGameObject prefabRef, AssetReferenceGameObject previewRef, float duration)
+    private void InternalPreparePlacement(AssetReferenceGameObject prefabRef, AssetReferenceGameObject previewRef, float duration,
+        System.Action onReady = null, System.Action onFailed = null, System.Action<float> onProgress = null)
     {
         // If there's an existing preview being placed, destroy it
         if (currentPlacedObject != null)
@@ -255,6 +307,18 @@ public class ItemPlacementManager : MonoBehaviour
             currentPlacedObject = null;
         }
 
+        // This request supersedes whatever was in flight (e.g. BeginRelocate interrupting a shop
+        // download). That old request's loaded-callbacks will now see a stale requestVersion and quietly
+        // no-op instead of calling FinishPreparingPlacement/HandlePlacementLoadFailure — so its caller
+        // would otherwise be stuck waiting forever. Tell it to give up.
+        System.Action supersededFailed = _pendingPlacementFailedCallback;
+        _pendingPlacementReadyCallback = onReady;
+        _pendingPlacementFailedCallback = onFailed;
+        _pendingPlacementProgressCallback = onProgress;
+        _pendingProgressPrefabRef = prefabRef;
+        _lastReportedPlacementProgress = -1f;
+        supersededFailed?.Invoke();
+
         _pendingItemPrefab = null;
         _pendingDuration = duration;
         _isPreparingPlacement = true;
@@ -262,6 +326,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         AssetReferenceGameObject effectivePreviewRef =
             previewRef != null && previewRef.RuntimeKeyIsValid() ? previewRef : prefabRef;
+        _pendingProgressPreviewRef = effectivePreviewRef;
 
         GameObject resolvedReal = null;
         GameObject resolvedPreview = null;
@@ -353,6 +418,12 @@ public class ItemPlacementManager : MonoBehaviour
         {
             cancelPlacementButton.gameObject.SetActive(true);
         }
+
+        System.Action readyCallback = _pendingPlacementReadyCallback;
+        _pendingPlacementReadyCallback = null;
+        _pendingPlacementFailedCallback = null;
+        _pendingPlacementProgressCallback = null;
+        readyCallback?.Invoke();
     }
 
     /// <summary>
@@ -380,6 +451,12 @@ public class ItemPlacementManager : MonoBehaviour
 
         ClearPendingPlacement();
         ApplyDeferredCloudState();
+
+        System.Action failedCallback = _pendingPlacementFailedCallback;
+        _pendingPlacementReadyCallback = null;
+        _pendingPlacementFailedCallback = null;
+        _pendingPlacementProgressCallback = null;
+        failedCallback?.Invoke();
     }
 
     /// <summary>

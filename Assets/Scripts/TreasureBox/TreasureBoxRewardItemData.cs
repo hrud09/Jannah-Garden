@@ -53,6 +53,9 @@ public class TreasureBoxRewardItemData : ScriptableObject
         calculatedRarity = GetRarity();
     }
 
+    /// <summary>True if claiming this reward hands the player something to place in the garden.</summary>
+    public bool IsPlaceable => itemPrefabRef != null && itemPrefabRef.RuntimeKeyIsValid();
+
     public ItemRarity GetRarity()
     {
         if (unlockXPLevel <= 5) return ItemRarity.Common;

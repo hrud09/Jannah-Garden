@@ -51,6 +51,16 @@ public class ShopItemUI : MonoBehaviour
     public string selectLabel = "Select";
     [Tooltip("Price label shown while a real-money purchase is in flight.")]
     public string purchasePendingLabel = "Purchasing...";
+    [Tooltip("Price label shown while the item's prefab is downloading after purchase, before placement mode "
+           + "starts. {0} is replaced with the live progress percentage, e.g. \"Downloading... 42%\".")]
+    public string downloadPendingLabel = "Downloading... {0}%";
+
+    [Header("Download Progress (optional)")]
+    [Tooltip("Optional fill image (Image Type = Filled) driven 0→1 with live download progress. Safe to "
+           + "leave unassigned — the price label always shows the percentage as text too.")]
+    public Image downloadProgressFillImg;
+    [Tooltip("Optional root (e.g. a progress bar container) shown only while a download is in progress.")]
+    public GameObject downloadProgressRoot;
 
 
     public ShopItemData ItemData { get; private set; }
@@ -60,6 +70,14 @@ public class ShopItemUI : MonoBehaviour
 
     // True while IAPManager has a real-money purchase in flight for this card.
     private bool isPurchasePending;
+
+    // True from the moment this item is paid for until ItemPlacementManager finishes downloading its
+    // prefab — see InGameShopManager.CompleteAcquisition/SelectAndUseInventoryItem. The shop stays open
+    // for this whole window, so the card needs its own visual to show something is happening.
+    private bool isDownloadPending;
+
+    // 0–1 progress within the current download, driven by ItemPlacementManager's onProgress callback.
+    private float downloadProgress01;
 
     // Throttles the daily-offer countdown to one refresh per second.
     private float countdownTimer;
@@ -93,6 +111,8 @@ public class ShopItemUI : MonoBehaviour
         if (data == null) return;
         ItemData = data;
         isPurchasePending = false;
+        isDownloadPending = false;
+        downloadProgress01 = 0f;
 
         // A tier entry can carry its own card art, which wins over the plain overrides.
         if (tierVisuals != null)
@@ -268,6 +288,36 @@ public class ShopItemUI : MonoBehaviour
     }
 
     /// <summary>
+    /// Called by <see cref="InGameShopManager"/> from the moment this item is paid for until its prefab
+    /// has finished downloading and placement mode takes over. Keeps the card from being clicked again
+    /// while the shop stays open waiting for the download.
+    /// </summary>
+    public void SetDownloadPending(bool pending)
+    {
+        isDownloadPending = pending;
+        downloadProgress01 = 0f;
+
+        if (downloadProgressFillImg != null) downloadProgressFillImg.fillAmount = 0f;
+        if (downloadProgressRoot != null) downloadProgressRoot.SetActive(pending);
+
+        RefreshAffordabilityVisual();
+    }
+
+    /// <summary>
+    /// Live download progress (0–1) for the item currently downloading on this card, pushed roughly once
+    /// a frame by ItemPlacementManager. Ignored once the card has moved on from the downloading state
+    /// (e.g. a stray update arriving right after SetDownloadPending(false)).
+    /// </summary>
+    public void SetDownloadProgress(float progress01)
+    {
+        if (!isDownloadPending) return;
+
+        downloadProgress01 = Mathf.Clamp01(progress01);
+        if (downloadProgressFillImg != null) downloadProgressFillImg.fillAmount = downloadProgress01;
+        RefreshAffordabilityVisual();
+    }
+
+    /// <summary>
     /// Rebuilds the price label and its tint from the item's acquisition type, and enables or disables
     /// the purchase button. Gold/green when the item can be acquired, red when it cannot.
     /// </summary>
@@ -275,10 +325,20 @@ public class ShopItemUI : MonoBehaviour
     {
         if (itemPriceText == null) return;
 
+        // A download in flight blocks the card regardless of what kind of item this is.
+        if (isDownloadPending)
+        {
+            itemPriceText.text = string.Format(downloadPendingLabel, Mathf.RoundToInt(downloadProgress01 * 100f));
+            itemPriceText.color = unaffordableColor;
+            SetButtonInteractable(false);
+            return;
+        }
+
         if (RewardItemData != null)
         {
             itemPriceText.color = affordableColor;
             SetButtonLabel(selectLabel);
+            SetButtonInteractable(true);
             return;
         }
 
@@ -391,6 +451,8 @@ public class ShopItemUI : MonoBehaviour
     {
         if (data == null) return;
         RewardItemData = data;
+        isDownloadPending = false;
+        downloadProgress01 = 0f;
 
         if (itemIcon != null && data.itemIcon != null)
         {

@@ -19,6 +19,7 @@ public static class AddressableItemLoader
 {
     private static readonly Dictionary<string, GameObject> _cache = new Dictionary<string, GameObject>();
     private static readonly Dictionary<string, List<Action<GameObject>>> _waiters = new Dictionary<string, List<Action<GameObject>>>();
+    private static readonly Dictionary<string, AsyncOperationHandle<GameObject>> _inFlight = new Dictionary<string, AsyncOperationHandle<GameObject>>();
 
     /// <summary>Synchronous fast path — true if this reference's prefab is already downloaded and cached.</summary>
     public static bool TryGetCached(AssetReferenceGameObject reference, out GameObject prefab)
@@ -26,6 +27,24 @@ public static class AddressableItemLoader
         prefab = null;
         if (reference == null || !reference.RuntimeKeyIsValid()) return false;
         return _cache.TryGetValue(reference.AssetGUID, out prefab);
+    }
+
+    /// <summary>
+    /// How far along an in-flight download/load is for this reference, from Addressables' own
+    /// <see cref="AsyncOperationHandle.PercentComplete"/> (a rough but live estimate that reflects actual
+    /// network transfer for a remote bundle, not just the local asset load once bytes are in). Returns 1
+    /// if the reference is already cached or invalid, 0 if nothing is loading for it yet.
+    /// </summary>
+    public static float GetProgress(AssetReferenceGameObject reference)
+    {
+        if (reference == null || !reference.RuntimeKeyIsValid()) return 1f;
+        string key = reference.AssetGUID;
+        if (_cache.ContainsKey(key)) return 1f;
+        if (_inFlight.TryGetValue(key, out AsyncOperationHandle<GameObject> handle) && handle.IsValid())
+        {
+            return handle.PercentComplete;
+        }
+        return 0f;
     }
 
     /// <summary>
@@ -59,12 +78,15 @@ public static class AddressableItemLoader
         _waiters[key] = new List<Action<GameObject>> { onLoaded };
 
         AsyncOperationHandle<GameObject> handle = Addressables.LoadAssetAsync<GameObject>(key);
+        _inFlight[key] = handle;
         handle.Completed += op => OnLoadCompleted(key, op);
     }
 
     private static void OnLoadCompleted(string key, AsyncOperationHandle<GameObject> handle)
     {
         GameObject result = handle.Status == AsyncOperationStatus.Succeeded ? handle.Result : null;
+
+        _inFlight.Remove(key);
 
         if (result != null)
         {
