@@ -24788,9 +24788,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7172503910686168653, guid: 8ad8c073dd109464cb5708ca449b4149, type: 3}
+      propertyPath: m_text
+      value: available
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172503910686168653, guid: 8ad8c073dd109464cb5708ca449b4149, type: 3}
+      propertyPath: m_fontSize
+      value: 18.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172503910686168653, guid: 8ad8c073dd109464cb5708ca449b4149, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7196475182972889498, guid: 8ad8c073dd109464cb5708ca449b4149, type: 3}
       propertyPath: m_Name
       value: Teasure Box Stats Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214363884849964262, guid: 8ad8c073dd109464cb5708ca449b4149, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -34.0421
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28383,7 +28399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Done
+  m_text: Cancel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
   m_sharedMaterial: {fileID: 2517202264660172603, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}

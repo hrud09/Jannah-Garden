@@ -40,7 +40,5 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  itemPrefab_Legacy: {fileID: 8894024711392439423, guid: c753baa09f997714090603ef3492727e, type: 3}
-  itemPlacementModelPrefab_Legacy: {fileID: 0}
-  placementTimerDuration: 360
+  placementTimerDuration: 60
   itemPrice: 
