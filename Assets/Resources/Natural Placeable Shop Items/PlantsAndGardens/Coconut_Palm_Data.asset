@@ -18,7 +18,7 @@ MonoBehaviour:
     to your garden.
   itemID: 73ba04d2af0ea26d6836fcae79829af7
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemIcon: {fileID: 0}
   itemName: Daily Surprise
-  itemDescription: Watch a short video and receive 100 Noor Coins. Comes back once a day.
+  itemDescription: Watch a short video and receive 500 Noor Coins. Comes back once a day.
   acquisitionType: 1
   noorCoinCost: 0
-  noorCoinReward: 100
+  noorCoinReward: 500
   itemPrice:
   iapProductId: 
   realMoneyPriceLabel: 

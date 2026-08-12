@@ -37,7 +37,7 @@ MonoBehaviour:
   noorCoinAmount: 250
   placementTimerDuration: 30
   puzzlePieces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3435643351429671060, guid: fd5ab67aa510888499f842d51f660a4a, type: 3}
+  - {fileID: 3435643351429671060, guid: fd5ab67aa510888499f842d51f660a4a, type: 3}
+  - {fileID: 3435643351429671060, guid: fd5ab67aa510888499f842d51f660a4a, type: 3}
   calculatedRarity: 0

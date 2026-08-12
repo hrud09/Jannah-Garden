@@ -18,7 +18,7 @@ MonoBehaviour:
     light and wonder.
   itemID: d285f07515626c88fcc65f444bfaae62
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

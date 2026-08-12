@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: A radiant Runic Fire Ring to lift your garden with light and wonder.
   itemID: 0f0bf24939c7b7a0d9218d2a6e8c05b5
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

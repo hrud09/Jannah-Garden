@@ -18,7 +18,7 @@ MonoBehaviour:
     and quiet reverence.
   itemID: a934e834392b9fa7d6fe1650d5515c52
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: Beautiful BroadleafTree 01 Green to decorate your garden.
   itemID: f55504b4707c4627a17a74f95fef56df
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

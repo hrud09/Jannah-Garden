@@ -18,7 +18,7 @@ MonoBehaviour:
     architectural beauty to your estate.
   itemID: 6e91398dc9edb3eb6c10c93213d66dde
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

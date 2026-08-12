@@ -18,7 +18,7 @@ MonoBehaviour:
     calm to your garden.
   itemID: d06798148d103014f4d2729b928ccf7e
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

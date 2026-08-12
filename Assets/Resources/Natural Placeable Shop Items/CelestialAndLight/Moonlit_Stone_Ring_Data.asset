@@ -18,7 +18,7 @@ MonoBehaviour:
     wonder.
   itemID: 58f65719d43fd04db087cd3437366aa2
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
