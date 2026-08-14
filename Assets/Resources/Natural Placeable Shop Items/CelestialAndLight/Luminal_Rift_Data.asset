@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: A radiant Luminal Rift to lift your garden with light and wonder.
   itemID: c3c9f802da5c8352bbb3209f78e1e4c5
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
@@ -27,7 +27,17 @@ MonoBehaviour:
   itemTier: 2
   sortOrder: 600
   requiredXPLevel: 1
-  itemPrefab: {fileID: 2455201714847311873, guid: d1fc34eaffb466f4682095bce350c15b, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 360
+  itemPrefabRef:
+    m_AssetGUID: d1fc34eaffb466f4682095bce350c15b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  placementTimerDuration: 60
   itemPrice: 

@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Blossom Tree 02. Find it to customize
     your garden!'
   itemID: 844bf0963b99496dbd783486e3bf9095
-  itemPrefab: {fileID: 5600971282110277387, guid: 28cb30b20402c9148881d51f5c3ceb5f, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: 28cb30b20402c9148881d51f5c3ceb5f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 5600971282110277387, guid: 28cb30b20402c9148881d51f5c3ceb5f, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 5
   quantity: 0
   unlockXPLevel: 2

@@ -17,15 +17,27 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Broadleaf Tree 02 Red. Find it to customize
     your garden!'
   itemID: 7781562f021e40cb85a27610a2b29d02
-  itemPrefab: {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: aec7bcbf20e5d5f4fa566cabacc811c9
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 6
   quantity: 0
   unlockXPLevel: 1
   noorCoinAmount: 250
   placementTimerDuration: 30
   puzzlePieces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+  - {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+  - {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
   calculatedRarity: 0

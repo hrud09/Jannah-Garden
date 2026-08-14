@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: e4c969e25699fa748a217637e850e16a
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 530ad0b474b3b596a1d82761cec8355b
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -24,11 +24,11 @@ MonoBehaviour:
   m_InternalBundleIdMode: 1
   m_AssetLoadMode: 0
   m_BundledAssetProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider
   m_AssetBundleProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_EnableJsonCatalog: 0
@@ -55,13 +55,14 @@ MonoBehaviour:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
-  m_ContentStateBuildPathProfileVariableName: 
+  m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
   - {fileID: 11400000, guid: ad9812f088954da4a92ebabe263374ea, type: 2}
+  - {fileID: 11400000, guid: aa8d110e2b4024d4f9b4d0a630f99711, type: 2}
   - {fileID: 11400000, guid: 2359027fc317ab14e8a1c896ae817980, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
@@ -73,7 +74,7 @@ MonoBehaviour:
       m_ProfileName: Default
       m_Values:
       - m_Id: 0389db2b9650d7542ae176a680e85af7
-        m_Value: <undefined>
+        m_Value: 'https://jannah-garden-asset-database.web.app/[BuildTarget]'
       - m_Id: 53e62b5792432ca44921649f83b175cf
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: 81594aad5a436f840bbc3225b8483bcf

@@ -1,6 +1,8 @@
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using System.IO;
 using System.Collections.Generic;
 
@@ -899,6 +901,9 @@ public class ShopItemCreatorWindow : EditorWindow
             AssetDatabase.Refresh();
         }
 
+        AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
+        var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
+
         int createdCount = 0;
         foreach (var cfg in shopDataConfigs)
         {
@@ -923,8 +928,8 @@ public class ShopItemCreatorWindow : EditorWindow
             itemData.requiredXPLevel = cfg.requiredXPLevel;
             itemData.sortOrder = cfg.sortOrder;
 
-            itemData.itemPrefab = cfg.prefab;
-            itemData.itemPlacementModelPrefab = cfg.placementGhostPrefab;
+            AddressableItemAuthoring.AssignPrefab(itemData.itemPrefabRef, cfg.prefab, addressableSettings, remoteGroup);
+            AddressableItemAuthoring.AssignPrefab(itemData.itemPlacementModelPrefabRef, cfg.placementGhostPrefab, addressableSettings, remoteGroup);
             itemData.placementTimerDuration = cfg.placementTimerDuration;
 
             AssetDatabase.CreateAsset(itemData, assetPath);

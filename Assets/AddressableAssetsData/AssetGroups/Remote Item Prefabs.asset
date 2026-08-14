@@ -1,0 +1,433 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Remote Item Prefabs
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Remote Item Prefabs
+  m_GUID: 3965d36e529a3c046a4d541158718178
+  m_SerializeEntries:
+  - m_GUID: 00569db4ce011734db9f21c149690a4b
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Ornate_Lantern_Galler.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 061b2bdb0b505404ab381eed6f75c1ba
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Tiered_Cascade.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fe37267e69811d4c914833e7816996a
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Petal_Cascade.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1055c55776b64c446bcb6cba984d7468
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Golden_Fountain_of_Li.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 107cac4590a2a764daf1cbcf0a7e7daf
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_01_Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 128e63914f0cfe9488502242ee445fc5
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Tulip_Cluster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12a56b1201287e8448c1e656cd917a40
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Whispering_Well.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17c44dede46c3ab42b9505170fab4fb8
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Turquoise_Mosaic_Arch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1995e8687630d444281001f26d1fa51a
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Golden_Quranic_Panel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ac509d66769a7e4caade9ede70df4a2
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Whimsical_Apple_Tree.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d985827dc2f0a94fbb84d96fdf353fa
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/Rock_Big_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e3e3497af7128842941de6845aa4b42
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Arabic_Script_Archway.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24e24ea9d3622c24bb8d4f7e6b1f6ec6
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Pineapple_Crown_Fount.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26be55c193df5f841893c0f6c8eb0863
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Iridescent_Trail.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2774f58dc19e2a74f97f3d8beaff4d74
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Moonlit_Cactus_Bloom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28cb30b20402c9148881d51f5c3ceb5f
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BlossomTree_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 291a8f6a09c01cc4f97fbf536f65461e
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Blue_Mosaic_Octagonal.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c5d118f204bb7944838a13e4148c88c
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Pomegranate_Tree_0806145639.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e17bc07ec3e307478a04990c128a5cd
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Ruby_Gold_Arched_Gate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39f999052b7ec9945909d39e655a69c5
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Prismatic_Cascade.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b519444c76ccf54e9bae6ad084438fc
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Golden_Archway_of_Lig.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d62e899955bf044cb8e2c1fcd17d80d
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Emerald_Velvet_Cushio.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4614feb4ead6185408f0c2c4b74e2ec7
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Luminous_Weeping_Will.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49ca857ca25523342a72a35489b7d5d6
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Crystal_Citadel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54a01b56e5e334440b80736d2f32abdb
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Muqarnas_Arch_with_Ca.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ad052af4362cc249be7df140568cb99
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BroadleafTree_04_Blue 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d83463fbec7b214bb8fc7bc2e061a4a
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Low_Poly_Coconut_Palm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67531d4d7e7cf74449dab395613b2c2e
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Azure_Mosaic_Bench.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68b1b2801573edd498e45b6e074c07e3
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Eight_Pointed_Star_La.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6963c4194b8666a41b21bd17bbb406ce
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Runic_Fire_Ring.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6bfbbc973eeef5c4d9e7e0d43e8a261b
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Celestial_Blossom_Tre.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ec2816b271f90945b1ac48dcb242f7d
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_04_Green.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7340b1e9f39ffd449a54bdf72d0b2308
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Meandering_River_Isla.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 737ec70c423792140b4abf3a01613c0d
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Corinthian_Column.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 743b50117cc380a4f8f6871e04789159
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/BroadleafTree_01_Green.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7708db588ca39844ebd86a6a78795c4f
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Tree_of_Light.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78f4fda6b7fccb646bf8ac8de2537205
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/Stone_Big_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a183a7d1673e62489ed277a92cfbd6d
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BlossomTree_01 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cc39a5e6a1890441974ee9e456fa8ef
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BroadleafTree_03_Purple 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84b30b493a74673479eb2330d2ffe38b
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Ornate_Medallion_Rug.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 889b3b9e57f5cac44b212e745f9e420d
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Ivy_Clad_Cottage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89a1ebf2734f6da45848797f48cc45c7
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Lantern_Ascension.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91af25deb6bfb2b48be4351a3077c547
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/River_of_Gold.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91af87783fb429f4c9229bf647f530cc
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Eight_Point_Star_Mosa.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96d1d000e3ca54d4083344b7ef44db0d
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Crimson_Diamond_on_a.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97421e8848172ea4abe1f2938e5435c8
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Bismillah_Portal_Ring.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98bc97596cb06ec48905cd8da9f202da
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Ancient_Stone_Fountai.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99bd25a06c225f7469d9a5fa3472bdbf
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Pomegranate_Tree_0806145350.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d292e1c1d549dc4a9689c29c9720997
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Ornate_Golden_Censer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a14d0f3c8b250644384d52f9cbdc41fa
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Ancient_Stone_Pool.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a155f81050a27e1488412d393aa5909d
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Vine_Wrapped_Bamboo_A.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3f0c91d12f1fd643adf945e86c9f01d
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_03_Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a48c0d1d9c522c642b477916fa0dfbec
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_03_Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7f8d41c960a4c947901f794bfdf5808
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Golden_Crescent_Star.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aec7bcbf20e5d5f4fa566cabacc811c9
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BroadleafTree_02_Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af105a08f3ae1f54eae4c132312cab5b
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Prismatic_Bloom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0695c356c279e845abdba6c9f5676b9
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_02_Pink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2cc2d46f1635ce4a8845d519500ba3f
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Isle_of_Spring.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b44fd53de93ed7f4aa1753a571ac6cb9
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Floating_Stone_Path.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bca1bf10e82e1a14c98a1327a8361431
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Blue_Star_Mosaic_Slab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd3229993494e09469defbbb8598c237
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Ropebound_Bamboo_Arch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6fbc84cdb741194fab33d0e30a2fc74
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Moonlit_Ring_in_a_Sto.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c753baa09f997714090603ef3492727e
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Golden_Gateway_to_Par.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c89e989b101bf074c92afecf2de6a555
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Pink_Rose_Garden_in_a.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca24b26b267452e40a0c819587e92f71
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Arabic_Calligraphy_St.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd59de99b173f0946bc8aa45ecc3acfa
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Whispering_Blossom_Tr.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d09d29aacf13ce14eafdeb61458c0bbc
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Marble_Water_Channel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0a1dd6fb7ae56447972d0371c8b4c65
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BroadleafTree_01_Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0f4264227b01f14ab52a2416357719c
+    m_Address: Assets/Prefabs/Shop Items/Architecture/Arched_Timber_Bridge.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1fc34eaffb466f4682095bce350c15b
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Luminal_Rift.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7c1b40f5df30ac49a73480dbad1a483
+    m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Lotus_Pond.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9929b5ec2be05d40a5f436970470e36
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Floating_Meadow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db28bbaf5d417d940a3b01ed401d9005
+    m_Address: Assets/Prefabs/Shop Items/CelestialAndLight/Star_Lantern.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e08f7c1e9f027c84eba29e231ae15b99
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Ornate_Bonsai_in_a_Ca.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e99cd6960af738c429341b405e09e4f9
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Whimsical_Floral_Casc.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eed9e9df9f832574585ca051fbbbf943
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_05_Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5076a95134897041a6cca523d747ba4
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Floating_Lotus_Altar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5675ed7b23079045bce7dae043e5342
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BroadleafTree_03_Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5a27b2261923ad458aeaede85c57938
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_01_Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc5a457aeb235d54592484a954b5ef83
+    m_Address: Assets/Prefabs/Shop Items/DecorAndSacredObjects/Ornate_Golden_Goblet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd5ab67aa510888499f842d51f660a4a
+    m_Address: Assets/Prefabs/Treasurebox Reward Items/BlossomTree_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffcc2484aa6751847bf6782966705110
+    m_Address: Assets/Prefabs/Shop Items/PlantsAndGardens/Starflower_Trellis.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 76dd432252803874bb871c549f2cb1ab, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 930cf4b222312e24e9a7a1432444e3b9, type: 2}
+    - {fileID: 11400000, guid: 637b006e3492fa4439fd9119aab8bffc, type: 2}

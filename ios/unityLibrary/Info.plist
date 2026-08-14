@@ -28,6 +28,8 @@
     <string>0</string>
     <key>LSRequiresIPhoneOS</key>
     <true />
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Jannah Garden saves the photos you take of your garden to your gallery.</string>
     <key>NSUserTrackingUsageDescription</key>
     <string>This identifier will be used to deliver personalized ads to you.</string>
     <key>UIApplicationSceneManifest</key>

@@ -18,7 +18,7 @@ MonoBehaviour:
     architectural beauty to your estate.
   itemID: f1dfa038f5ca3656be50d729b3e6968b
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
@@ -28,7 +28,17 @@ MonoBehaviour:
   itemTier: 1
   sortOrder: 300
   requiredXPLevel: 1
-  itemPrefab: {fileID: 2984423599138853034, guid: b44fd53de93ed7f4aa1753a571ac6cb9, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 360
+  itemPrefabRef:
+    m_AssetGUID: b44fd53de93ed7f4aa1753a571ac6cb9
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  placementTimerDuration: 60
   itemPrice: 

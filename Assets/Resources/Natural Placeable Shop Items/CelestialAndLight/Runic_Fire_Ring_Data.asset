@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: A radiant Runic Fire Ring to lift your garden with light and wonder.
   itemID: 0f0bf24939c7b7a0d9218d2a6e8c05b5
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
@@ -27,7 +27,17 @@ MonoBehaviour:
   itemTier: 4
   sortOrder: 630
   requiredXPLevel: 1
-  itemPrefab: {fileID: 4173279774341873342, guid: 6963c4194b8666a41b21bd17bbb406ce, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 360
+  itemPrefabRef:
+    m_AssetGUID: 6963c4194b8666a41b21bd17bbb406ce
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  placementTimerDuration: 60
   itemPrice: 

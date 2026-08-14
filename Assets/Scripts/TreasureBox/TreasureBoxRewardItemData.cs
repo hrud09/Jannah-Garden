@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 [CreateAssetMenu(fileName = "NewTreasureBoxRewardItem", menuName = "Jannah Garden/Treasure Box Reward Item", order = 20)]
 public class TreasureBoxRewardItemData : ScriptableObject
@@ -17,9 +18,13 @@ public class TreasureBoxRewardItemData : ScriptableObject
     public string itemID;
 
     [Header("Asset References")]
-    public GameObject itemPrefab; // The real item prefab spawned after placement is confirmed
-    [Tooltip("Lightweight ghost/preview prefab shown while the player is positioning the item. Falls back to itemPrefab if left empty.")]
-    public GameObject itemPlacementModelPrefab; // Temporary preview shown during placement
+    // See ShopItemData.itemPrefabRef for why these are initialized rather than left null.
+    [Tooltip("Addressable reference to the real item prefab, downloaded on demand and spawned after " +
+             "placement is confirmed.")]
+    public AssetReferenceGameObject itemPrefabRef = new AssetReferenceGameObject(string.Empty);
+    [Tooltip("Addressable reference to the lightweight ghost/preview prefab shown while the player is " +
+             "positioning the item. Falls back to itemPrefabRef if left empty.")]
+    public AssetReferenceGameObject itemPlacementModelPrefabRef = new AssetReferenceGameObject(string.Empty);
 
     [Header("Item State")]
     public ShopItemCategory itemCategory = ShopItemCategory.Silver;
@@ -47,6 +52,9 @@ public class TreasureBoxRewardItemData : ScriptableObject
     {
         calculatedRarity = GetRarity();
     }
+
+    /// <summary>True if claiming this reward hands the player something to place in the garden.</summary>
+    public bool IsPlaceable => itemPrefabRef != null && itemPrefabRef.RuntimeKeyIsValid();
 
     public ItemRarity GetRarity()
     {

@@ -17,15 +17,27 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Blossom Tree 01. Find it to customize
     your garden!'
   itemID: 4f1100893646431bb027e2360f6b337c
-  itemPrefab: {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: 7a183a7d1673e62489ed277a92cfbd6d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 4
   quantity: 0
   unlockXPLevel: 1
   noorCoinAmount: 250
   placementTimerDuration: 30
   puzzlePieces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+  - {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+  - {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
   calculatedRarity: 0

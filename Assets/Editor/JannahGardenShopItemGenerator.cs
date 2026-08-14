@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 
 /// <summary>
@@ -7,7 +9,7 @@ using UnityEngine;
 /// "Assets/3D Assets/Jannah Garden Assets" and points it at that folder's FBX.
 ///
 /// The .asset files themselves are checked in, but a model's root GameObject only
-/// gets its file ID when Unity imports the FBX, so <c>itemPrefab</c> cannot be
+/// gets its file ID when Unity imports the FBX, so <c>itemPrefabRef</c> cannot be
 /// written outside the editor. Run this once after pulling the assets to bind them.
 ///
 /// Safe to re-run. Name, description, category, tier and sort order are re-applied from
@@ -139,6 +141,9 @@ public static class JannahGardenShopItemGenerator
         int created = 0, bound = 0, alreadyBound = 0;
         var problems = new List<string>();
 
+        AddressableAssetSettings settings = AddressableAssetSettingsDefaultObject.Settings;
+        var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(settings);
+
         try
         {
             AssetDatabase.StartAssetEditing();
@@ -182,8 +187,16 @@ public static class JannahGardenShopItemGenerator
 
                     if (model != null)
                     {
-                        if (data.itemPrefab == model) alreadyBound++;
-                        else { data.itemPrefab = model; bound++; }
+                        bool alreadyCorrect = data.itemPrefabRef.RuntimeKeyIsValid() && data.itemPrefabRef.editorAsset == model;
+                        if (alreadyCorrect)
+                        {
+                            alreadyBound++;
+                        }
+                        else
+                        {
+                            AddressableItemAuthoring.AssignPrefab(data.itemPrefabRef, model, settings, remoteGroup);
+                            bound++;
+                        }
                     }
 
                     if (isNew)

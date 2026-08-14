@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 [CreateAssetMenu(fileName = "NewShopItemData", menuName = "Shop/Item Data", order = 1)]
 public class ShopItemData : ScriptableObject
@@ -83,11 +84,17 @@ public class ShopItemData : ScriptableObject
     // Placement — only meaningful when the item hands over a prefab.
     // ---------------------------------------------------------------------
     [Header("Asset References")]
-    public GameObject itemPrefab; // The real item prefab spawned after placement is confirmed
+    // Initialized rather than left null: AssetReferenceGameObject has no parameterless constructor, and
+    // a ScriptableObject created via CreateInstance (as every shop-item generator editor tool does)
+    // starts with true C# nulls here until Unity's serializer round-trips it once — these initializers
+    // make itemPrefabRef/itemPlacementModelPrefabRef safe to read immediately after CreateInstance too.
+    [Tooltip("Addressable reference to the real item prefab, downloaded on demand and spawned after " +
+             "placement is confirmed.")]
+    public AssetReferenceGameObject itemPrefabRef = new AssetReferenceGameObject(string.Empty);
 
-    [Tooltip("Lightweight ghost/preview prefab shown while the player is positioning the item. " +
-             "Falls back to itemPrefab if left empty.")]
-    public GameObject itemPlacementModelPrefab; // Temporary preview shown during placement
+    [Tooltip("Addressable reference to the lightweight ghost/preview prefab shown while the player is " +
+             "positioning the item. Falls back to itemPrefabRef if left empty.")]
+    public AssetReferenceGameObject itemPlacementModelPrefabRef = new AssetReferenceGameObject(string.Empty);
 
     [Header("Placement Settings")]
     public float placementTimerDuration = 360f; // Required time to fully place the item in the game world in seconds
@@ -103,7 +110,7 @@ public class ShopItemData : ScriptableObject
     /// True if acquiring this item hands the player something to place in the garden.
     /// Coin packs and coin-paying ad offers have no prefab, so they skip placement entirely.
     /// </summary>
-    public bool IsPlaceable => itemPrefab != null;
+    public bool IsPlaceable => itemPrefabRef != null && itemPrefabRef.RuntimeKeyIsValid();
 }
 
 /// <summary>

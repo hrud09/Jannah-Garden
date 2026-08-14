@@ -18,7 +18,7 @@ MonoBehaviour:
     and quiet reverence.
   itemID: 9141d4caa1471fc40c615d60e625f070
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
@@ -28,7 +28,17 @@ MonoBehaviour:
   itemTier: 1
   sortOrder: 430
   requiredXPLevel: 1
-  itemPrefab: {fileID: 3880700765134744100, guid: 67531d4d7e7cf74449dab395613b2c2e, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 360
+  itemPrefabRef:
+    m_AssetGUID: 67531d4d7e7cf74449dab395613b2c2e
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  placementTimerDuration: 60
   itemPrice: 

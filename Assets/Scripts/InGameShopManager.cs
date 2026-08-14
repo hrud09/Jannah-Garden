@@ -468,11 +468,22 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void SelectAndUseItem(ShopItemUI item)
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPurchase);
         if (item == null) return;
 
         ShopItemData data = item.ItemData;
         if (data == null) return;
+
+        // ── Placement Gate — one download/placement in flight at a time ────────
+        if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing)
+        {
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+            }
+            return;
+        }
+
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPurchase);
 
         // ── Level Gate (applies to every acquisition type) ─────────────────────
         if (PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel)
@@ -679,10 +690,6 @@ public class InGameShopManager : MonoBehaviour
             return;
         }
 
-        // Close the shop panel
-        SetShopOpen(false, smooth: true);
-
-        // Notify placement manager to prepare placing the item (spawn preview & show Place button)
         if (placementManager == null)
         {
             placementManager = ItemPlacementManager.Instance != null
@@ -690,14 +697,29 @@ public class InGameShopManager : MonoBehaviour
                 : FindObjectOfType<ItemPlacementManager>();
         }
 
-        if (placementManager != null)
-        {
-            placementManager.PreparePlacement(data);
-        }
-        else
+        if (placementManager == null)
         {
             Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
+            return;
         }
+
+        // The item is paid for but its prefab may still need to download. Keep the shop open (with a
+        // "Downloading..." indicator on the card) so the player isn't dropped into an empty scene waiting
+        // on a network request — only close the shop and hand off to placement mode once the prefab is
+        // actually ready to place.
+        item.SetDownloadPending(true);
+
+        placementManager.PreparePlacement(data,
+            onReady: () =>
+            {
+                item.SetDownloadPending(false);
+                SetShopOpen(false, smooth: true);
+            },
+            onFailed: () =>
+            {
+                item.SetDownloadPending(false);
+            },
+            onProgress: item.SetDownloadProgress);
 
         Debug.Log($"Selected and used item: {item.itemNameText?.text}");
     }
@@ -720,31 +742,57 @@ public class InGameShopManager : MonoBehaviour
         if (item == null) return;
 
         TreasureBoxRewardItemData data = item.RewardItemData;
+        if (data == null) return;
+
+        // ── Placement Gate — one download/placement in flight at a time ────────
+        if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing)
+        {
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+            }
+            return;
+        }
 
         selectedShopItem = item;
 
-        // Close the shop panel
-        SetShopOpen(false, smooth: true);
-
-        // Notify placement manager to prepare placing the item (spawn preview & show Place button)
-        if (data != null)
+        if (placementManager == null)
         {
-            if (placementManager == null)
-            {
-                placementManager = ItemPlacementManager.Instance != null
-                    ? ItemPlacementManager.Instance
-                    : FindObjectOfType<ItemPlacementManager>();
-            }
-
-            if (placementManager != null)
-            {
-                placementManager.PreparePlacement(data);
-            }
-            else
-            {
-                Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
-            }
+            placementManager = ItemPlacementManager.Instance != null
+                ? ItemPlacementManager.Instance
+                : FindObjectOfType<ItemPlacementManager>();
         }
+
+        if (placementManager == null)
+        {
+            Debug.LogError("[InGameShopManager] Item selected but ItemPlacementManager not found in scene.");
+            return;
+        }
+
+        if (!data.IsPlaceable)
+        {
+            // Nothing to download — fall back to the old immediate-close behaviour.
+            SetShopOpen(false, smooth: true);
+            placementManager.PreparePlacement(data);
+            Debug.Log($"Selected and used inventory item: {item.itemNameText?.text}");
+            return;
+        }
+
+        // As in CompleteAcquisition: keep the shop open with a "Downloading..." indicator on the card
+        // until the prefab is actually ready, then close the shop and hand off to placement mode.
+        item.SetDownloadPending(true);
+
+        placementManager.PreparePlacement(data,
+            onReady: () =>
+            {
+                item.SetDownloadPending(false);
+                SetShopOpen(false, smooth: true);
+            },
+            onFailed: () =>
+            {
+                item.SetDownloadPending(false);
+            },
+            onProgress: item.SetDownloadProgress);
 
         Debug.Log($"Selected and used inventory item: {item.itemNameText?.text}");
     }

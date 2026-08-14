@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: A radiant Isle of Spring to lift your garden with light and wonder.
   itemID: f8d1febf41c69a2267520b6b75dcd103
   acquisitionType: 0
-  noorCoinCost: 0
+  noorCoinCost: 100
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 
@@ -27,7 +27,17 @@ MonoBehaviour:
   itemTier: 1
   sortOrder: 550
   requiredXPLevel: 1
-  itemPrefab: {fileID: 8305899483978342898, guid: b2cc2d46f1635ce4a8845d519500ba3f, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
-  placementTimerDuration: 360
+  itemPrefabRef:
+    m_AssetGUID: b2cc2d46f1635ce4a8845d519500ba3f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  placementTimerDuration: 60
   itemPrice: 

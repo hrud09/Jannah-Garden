@@ -17,8 +17,20 @@ MonoBehaviour:
   itemDescription: 'A special reward item: Willow Tree 03 Red. Find it to customize
     your garden!'
   itemID: fb2d54e04cfe45c9b6ca91412979707f
-  itemPrefab: {fileID: 9193541323145385431, guid: a3f0c91d12f1fd643adf945e86c9f01d, type: 3}
-  itemPlacementModelPrefab: {fileID: 0}
+  itemPrefabRef:
+    m_AssetGUID: a3f0c91d12f1fd643adf945e86c9f01d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  itemPlacementModelPrefabRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  itemPrefab_Legacy: {fileID: 9193541323145385431, guid: a3f0c91d12f1fd643adf945e86c9f01d, type: 3}
+  itemPlacementModelPrefab_Legacy: {fileID: 0}
   itemCategory: 5
   quantity: 0
   unlockXPLevel: 1
