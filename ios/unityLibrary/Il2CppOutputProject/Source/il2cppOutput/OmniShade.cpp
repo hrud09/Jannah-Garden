@@ -513,7 +513,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeHelpers_InitializeArray_m751372AA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 79425
+// Method Definition Index: 79431
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Start_mADD88F57069CCBFDF879EEBD31AFAE7C282D7F48 (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -734,7 +734,7 @@ IL_0104:
 		return;
 	}
 }
-// Method Definition Index: 79426
+// Method Definition Index: 79432
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Update_m8AF96535F2686E2EF77EDD08190EE8ECC353CDE3 (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1046,7 +1046,7 @@ IL_0174:
 		return;
 	}
 }
-// Method Definition Index: 79427
+// Method Definition Index: 79433
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* OmniShadeAnimateTexture_GetTextureName_m246623C2A672B893A8CFB252CD1E3839DFEC82B7 (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, int32_t ___0_texture, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1075,7 +1075,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* OmniShadeAnimateTexture_GetTextureN
 		return L_4;
 	}
 }
-// Method Definition Index: 79428
+// Method Definition Index: 79434
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture__ctor_mCDDE1282290426CCAAC03AE8FA99DCCD76E47E0B (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1099,7 +1099,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture__ctor_mCDDE12822
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 79429
+// Method Definition Index: 79435
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatedTexture__ctor_mE9A6D01F9B0FAC0A9558B5153E7FC86975728192 (AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1115,7 +1115,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatedTexture__ctor_mE9A6D01F9B0FAC0A9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 79430
+// Method Definition Index: 79436
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t1EC30544FDC17BFC61768E8935D0DAE32B437D66 UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m8B23451E2F8CCC8494D4190E0DA0EA2C0EBC829D (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1149,7 +1149,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t1EC30544FDC17BFC61768E8935D0D
 		return L_6;
 	}
 }
-// Method Definition Index: 79431
+// Method Definition Index: 79437
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mAAD7CA3B536CF153EB36B6B4005AB6505D9B9836 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_t5BEAA00352549348F411CDCBA5B2A1F65E358B3B* __this, const RuntimeMethod* method) 
 {
 	{

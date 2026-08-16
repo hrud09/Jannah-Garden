@@ -4538,12 +4538,14 @@ struct ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25  : public MonoBehavi
 	String_t* ___downloadPendingLabel;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___downloadProgressFillImg;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___downloadProgressRoot;
+	float ___blockedCardAlpha;
 	ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___U3CItemDataU3Ek__BackingField;
 	TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ___U3CRewardItemDataU3Ek__BackingField;
 	CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* ___canvasGroup;
 	bool ___isPurchasePending;
 	bool ___isDownloadPending;
 	float ___downloadProgress01;
+	bool ___isInteractionBlocked;
 	float ___countdownTimer;
 };
 struct ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
@@ -5194,6 +5196,7 @@ struct ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFiel
 	ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ___U3CInstanceU3Ek__BackingField;
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* ___OnItemPlaced;
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* ___OnItemRemoved;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___OnDownloadStateChanged;
 };
 struct Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43_StaticFields
 {
@@ -31577,7 +31580,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_6;
 	}
 }
-// Method Definition Index: 66457
+// Method Definition Index: 66463
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PointerEventData_get_position_m5BE71C28EB72EFB8435749E4E6E839213AEF458C_inline (PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32002,7 +32005,7 @@ IL_0010:
 		return L_5;
 	}
 }
-// Method Definition Index: 59774
+// Method Definition Index: 59780
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FlutterBridge_get_RewardedAdReady_m5DD03387CBFB88F137A674E1B90B4E6B8CE5774A_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32017,7 +32020,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FlutterBridge_get_RewardedAd
 		return L_0;
 	}
 }
-// Method Definition Index: 59750
+// Method Definition Index: 59756
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32350,7 +32353,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance
 		return;
 	}
 }
-// Method Definition Index: 59772
+// Method Definition Index: 59778
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32365,7 +32368,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 59457
+// Method Definition Index: 59463
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32457,7 +32460,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowProfileData_tE64FB39268902B
 		return L_0;
 	}
 }
-// Method Definition Index: 59768
+// Method Definition Index: 59774
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowshipProfilesPayload_t009784E75B70678D078072CA951B8D961E880C12* FlutterBridge_get_LatestFellowshipProfiles_mC31A6DE61C0F223355E6F4681366C415717089F5_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32600,7 +32603,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 59120
+// Method Definition Index: 59124
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32647,7 +32650,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GameAnalyticsManager_set_Ins
 		return;
 	}
 }
-// Method Definition Index: 59672
+// Method Definition Index: 59678
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32687,7 +32690,7 @@ IL_000a:
 		return L_2;
 	}
 }
-// Method Definition Index: 64859
+// Method Definition Index: 64865
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32727,11 +32730,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InGameShopManager_set_Instan
 		return;
 	}
 }
-// Method Definition Index: 59423
+// Method Definition Index: 59427
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ShopItemUI_get_ItemData_m2608FAD02DBE15440B44D660F555E1F765A3B0C8_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ShopItemUI.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ShopItemUI.cs:71>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_0 = __this->___U3CItemDataU3Ek__BackingField;
 		return L_0;
 	}
@@ -32751,11 +32754,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ItemPlacementManager_tF321BDE7C13
 		return L_0;
 	}
 }
-// Method Definition Index: 59425
+// Method Definition Index: 59429
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ShopItemUI_get_RewardItemData_mFC1196138E54B22CF152C0F8C0A000D520F0275A_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ShopItemUI.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ShopItemUI.cs:72>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_0 = __this->___U3CRewardItemDataU3Ek__BackingField;
 		return L_0;
 	}

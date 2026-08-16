@@ -343,12 +343,12 @@ struct U3CCategoryTransitionRoutineU3Ed__74_tD9F77D2E2A0C763FD564ED5A77C26C118EF
 struct U3CTransitionPanelJuicyU3Ed__63_t24D8C15CB6F3A885923D5012296F835974E45737;
 struct U3CU3Ec__DisplayClass14_0_tDDFCDBF8151344838A7A0D8DC79349B8DCC01A69;
 struct U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B;
-struct U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236;
-struct U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB;
-struct U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7;
-struct U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F;
-struct U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41;
-struct U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597;
+struct U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37;
+struct U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90;
+struct U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F;
+struct U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174;
+struct U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C;
+struct U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6;
 struct U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291;
 struct U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4;
 struct U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58;
@@ -442,14 +442,14 @@ IL2CPP_EXTERN_C RuntimeClass* U3CDisableTimerHolderAfterDelayU3Ed__42_t5C521CDE4
 IL2CPP_EXTERN_C RuntimeClass* U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass14_0_tDDFCDBF8151344838A7A0D8DC79349B8DCC01A69_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tA948D4B48F79550F9F7B0E09DBDC5CEF84C8CFAC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnityAction_1_tDCC99FBA001EBDDF07829A18E8358DF5B8757F64_il2cpp_TypeInfo_var;
@@ -711,19 +711,19 @@ IL2CPP_EXTERN_C const RuntimeMethod* U3CDespawnCoroutineU3Ed__12_System_Collecti
 IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeInU3Ed__57_System_Collections_IEnumerator_Reset_mC8A51A21B83D5B4E5D452953488308A92179A173_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeOutU3Ed__58_System_Collections_IEnumerator_Reset_m7A02B09B999F83A9446B1AB68C32AF5F7BC7A4A4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_Reset_m632E8C4562217EF7E5CDA7C31C1502AB7B6C8DEF_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CPushToCloudAfterDelayU3Ed__90_System_Collections_IEnumerator_Reset_mED608E33947CEF1B95021DC363FCDB89DA0600DB_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CRebuildGardenAsyncU3Ed__81_System_Collections_IEnumerator_Reset_m60BA0B1393E0F74DD158314F42A1420CF7DCDC8A_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CShowSlowLoadToastAfterDelayU3Ed__62_System_Collections_IEnumerator_Reset_mDF5D158A2BE0DFDA008D828AFC1CB3ED4980B6AA_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CPushToCloudAfterDelayU3Ed__96_System_Collections_IEnumerator_Reset_m10E7AD7337531EAF041A37472DFB4503B7976110_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CRebuildGardenAsyncU3Ed__87_System_Collections_IEnumerator_Reset_m4B3BC8CE4682280DB38504AA6F682FBE60308D42_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CShowSlowLoadToastAfterDelayU3Ed__68_System_Collections_IEnumerator_Reset_m15345EC76472560794271E314CC3345845A22C48_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CTransitionPanelJuicyU3Ed__63_System_Collections_IEnumerator_Reset_mE40EFB566C7A0008D374D3B4933A7000CAF72887_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CTransitionRoutineU3Ed__30_System_Collections_IEnumerator_Reset_m2D5E6A2819AAF1E46F1D210F711056230311E6D9_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CBuildCurrentStateU3Eb__79_0_m6CE628664BEB81BDCEE77643FC36832ED3B17B6E_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CToPayloadU3Eb__93_0_m592C301A24A0ABB2549E6BBC127C0794116069CA_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CBuildCurrentStateU3Eb__85_0_mF9E16AED7CE7493CCF67647F7B5A71E145220396_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CToPayloadU3Eb__99_0_mB6F27C2AD6D9E37642E49B97FBE627C5348B764D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass14_0_U3CSetupVerticalButtonU3Eb__0_m67FFF6214973D075B1337034416E1DAF89CB2A41_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass14_0_U3CSetupVerticalButtonU3Eb__1_mF0657CCBBAB5CBD6EEA479CB52940E354CDA84B7_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass14_0_U3CSetupVerticalButtonU3Eb__2_mF8CCD27C47A7266A7DB7BC7E7F89D2AC81E52FCC_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__1_m81C4F481FF8514B14B1D90F484D8207147F43B85_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__2_m349E59BE9744A91726E1442E9DCE534650A9D1E7_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass81_1_U3CRebuildGardenAsyncU3Eb__0_mD9839BB8AB4F882E705DC03E58308FB6423493E8_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__1_mB208FBE92DE97116B7378D45912DAB028C83CCAF_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__2_m92EB9311ABA12BD182397F4E06D4678E163E3033_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass87_1_U3CRebuildGardenAsyncU3Eb__0_m3E35AA6FB818B439F825ACB362277391E4CB5306_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* UnityEvent_1_AddListener_mC4A5C41CF8D2336E9459CA430A39B9CE7DA5A1BD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeType* AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5_0_0_0_var;
 struct AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C_marshaled_com;
@@ -1133,7 +1133,7 @@ struct U3CU3Ec__DisplayClass14_0_tDDFCDBF8151344838A7A0D8DC79349B8DCC01A69  : pu
 struct U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B  : public RuntimeObject
 {
 };
-struct U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236  : public RuntimeObject
+struct U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37  : public RuntimeObject
 {
 	int32_t ___requestVersion;
 	ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ___U3CU3E4__this;
@@ -1143,33 +1143,33 @@ struct U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236  : pu
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___resolvedPreview;
 	float ___duration;
 };
-struct U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB  : public RuntimeObject
+struct U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90  : public RuntimeObject
 {
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___resolvedPrefabs;
 	BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* ___done;
 };
-struct U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7  : public RuntimeObject
+struct U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F  : public RuntimeObject
 {
 	int32_t ___index;
-	U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* ___CSU24U3CU3E8__locals1;
+	U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* ___CSU24U3CU3E8__locals1;
 };
-struct U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F  : public RuntimeObject
+struct U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
 	ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ___U3CU3E4__this;
 };
-struct U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41  : public RuntimeObject
+struct U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
 	ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ___U3CU3E4__this;
 	SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* ___state;
-	U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* ___U3CU3E8__1;
+	U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* ___U3CU3E8__1;
 	double ___U3CelapsedOfflineU3E5__2;
 	int32_t ___U3CcountU3E5__3;
 };
-struct U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597  : public RuntimeObject
+struct U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -3914,12 +3914,14 @@ struct ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25  : public MonoBehavi
 	String_t* ___downloadPendingLabel;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___downloadProgressFillImg;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___downloadProgressRoot;
+	float ___blockedCardAlpha;
 	ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___U3CItemDataU3Ek__BackingField;
 	TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ___U3CRewardItemDataU3Ek__BackingField;
 	CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* ___canvasGroup;
 	bool ___isPurchasePending;
 	bool ___isDownloadPending;
 	float ___downloadProgress01;
+	bool ___isInteractionBlocked;
 	float ___countdownTimer;
 };
 struct ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
@@ -4446,8 +4448,8 @@ struct U3CU3Ec_tA948D4B48F79550F9F7B0E09DBDC5CEF84C8CFAC_StaticFields
 struct U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields
 {
 	U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* ___U3CU3E9;
-	Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* ___U3CU3E9__79_0;
-	Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* ___U3CU3E9__93_0;
+	Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* ___U3CU3E9__85_0;
+	Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* ___U3CU3E9__99_0;
 };
 struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 {
@@ -4594,6 +4596,7 @@ struct ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFiel
 	ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ___U3CInstanceU3Ek__BackingField;
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* ___OnItemPlaced;
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* ___OnItemRemoved;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___OnDownloadStateChanged;
 };
 struct JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642_StaticFields
 {
@@ -5392,6 +5395,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_3__ctor_mA3F42D8E00F0BE0F873AC33F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m2E1DFA67718FC1A0B6E5DFEB78831FFE9C059EB4_gshared (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mA8F89FB04FEA0F48A4F22EC84B5F9ADB2914341F_gshared_inline (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* __this, float ___0_obj, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m69C8773D6967F3B224777183E24EA621CE056F8F_gshared_inline (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* __this, bool ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponentInChildren_TisRuntimeObject_mE483A27E876DE8E4E6901D6814837F81D7C42F65_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool List_1_Remove_m4DFA48F4CEB9169601E75FC28517C5C06EFA5AD7_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___0_item, const RuntimeMethod* method) ;
@@ -5621,9 +5625,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SavePlacedItems_mDB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FlushCloudPush_m7B214417B3B5FABC0A61BF9A05E7D8FC30DF501E (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72B845424072887B5F3A51FC3808E_inline (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_InternalPreparePlacement_m28D9FBDAB47F57D18BE2C611F61B76E3945FCECB (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ___0_prefabRef, AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ___1_previewRef, float ___2_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___3_onReady, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___4_onFailed, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___5_onProgress, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0__ctor_mFCD92F1BBF13A97336CCE052C7DEC9F7F59635F3 (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* __this, const RuntimeMethod* method) ;
+inline void Action_1_Invoke_m69C8773D6967F3B224777183E24EA621CE056F8F_inline (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* __this, bool ___0_obj, const RuntimeMethod* method)
+{
+	((  void (*) (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*, bool, const RuntimeMethod*))Action_1_Invoke_m69C8773D6967F3B224777183E24EA621CE056F8F_gshared_inline)(__this, ___0_obj, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass67_0__ctor_m5BFCFDED11BFB9DB69211E7F4AC1EF5DE143B881 (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38 (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SetPreparingPlacement_mA6E0BA39AF9ECFD3B899C086A3E960BF27473FC6 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, bool ___0_preparing, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_ShowSlowLoadToastAfterDelay_mFEFEE08A83691845F9129E10B2BC0B8AB752B600 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, int32_t ___0_requestVersion, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812 (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, RuntimeObject* ___0_routine, const RuntimeMethod* method) ;
 inline void Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01 (Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method)
@@ -5631,7 +5640,7 @@ inline void Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01 (Action_1_t
 	((  void (*) (Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_1__ctor_m2E1DFA67718FC1A0B6E5DFEB78831FFE9C059EB4_gshared)(__this, ___0_object, ___1_method, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AddressableItemLoader_LoadAsync_m8A7378D97D2EDFBA91D969785CA67D36DB51C2CA (AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ___0_reference, Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C* ___1_onLoaded, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__62__ctor_m3B9EC523F9F736E475CC5810D9DDA2EE04030D79 (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__68__ctor_m8E9977B2487A06A818ADF02FF280E75EBD8539CD (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Objectpool_Spawn_mF370B9924033975CB48C6361B6C8039D49317BAA (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, const RuntimeMethod* method) ;
 inline PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
 {
@@ -5748,7 +5757,7 @@ inline SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* SaveSystem
 	return ((  SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* (*) (String_t*, const RuntimeMethod*))SaveSystem_Load_TisRuntimeObject_mD2D55123B150B583E36A44A24E1DC072CEF0CDDF_gshared)(___0_key, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_RebuildGardenAsync_mC7C951A1D15D8DA092649BF4D75E7B451FD21782 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* ___0_state, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__81__ctor_m8A3513C41B8BC5455FC4242F90D7C733A403AE9B (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__87__ctor_m89ACFFFC5BC399D6A808F620124F478FD18634E4 (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___0_a, String_t* ___1_b, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FlutterBridge_add_OnGardenStateReceived_m0BD29AD52EC21ECCA000FA07314DF463E7088387 (Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* FlutterBridge_get_LatestGardenState_m4ED08B3B15ACFAA34ECB2621EB0413C7850A5346_inline (const RuntimeMethod* method) ;
@@ -5769,7 +5778,7 @@ inline int32_t List_1_get_Count_mB3D9E6F0EF4B23F8E3297F43D2B9FA140DD67DE6_inline
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Behaviour_get_isActiveAndEnabled_mEB4ECCE9761A7016BC619557CEFEA1A30D3BF28A (Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___0_routine, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_PushToCloudAfterDelay_mA253B1DCBAB9127A258CF0154A9EA996E5FE5018 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__90__ctor_mE7DD437CCC378CB97542035E2B1203EC7D194071 (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__96__ctor_m99C4A6A5BCD9A683D2AA8D8645B5E3A602851737 (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PushToCloud_mD328CEAA49F2818CE8BCA8D3E8A6337ABC68F21C (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ItemPlacementManager_ToPayload_mEBB5ED012E3E8BC947915D0F7635F19CCD6D0624 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FlutterBridge_SaveGardenState_m0750059FBC29DC1DC6038C846A0D0B2AE9077D2F (FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* __this, GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ___0_garden, const RuntimeMethod* method) ;
@@ -5787,15 +5796,15 @@ inline void List_1__ctor_m46DC10AEA5C6E2CEA49D22F7869A126D49F1AC5B (List_1_t7728
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m7B3B2714E45BE41B8F4C64B4A21787A5547A9236 (U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlacementLoadFailure_mD72232CA0110C4F7697B5EEA4A3DE5D41317FC5B (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FinishPreparingPlacement_mA57470711491FE13631BE0EC969DAEEA55AD94A9 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_previewPrefab, float ___2_duration, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5FF134BDCAEC8D9360D35E28CFA9602335E04DDC (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5213F500A52337CE5299333CB7A94B78DB424AD1 (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* __this, float ___0_time, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass81_0__ctor_m61EB55FA26CD4624A9780967F5911F3482DB0833 (U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass87_0__ctor_m8E5939701E33E5EFA2790BF4FA023DC46AA17F4D (U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Max_m7BAC743E1752A51F258BB82DEBDD13E7C6D3ED26 (double ___0_val1, double ___1_val2, const RuntimeMethod* method) ;
 inline void List_1_Clear_m9926FEFA5857AA8EB94D545144A2621D5EDEBBC1_inline (List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* __this, const RuntimeMethod* method)
 {
 	((  void (*) (List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B*, const RuntimeMethod*))List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline)(__this, method);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass81_1__ctor_m0F1C6D7490006003754169DB5D51D2CBF9FD8549 (U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass87_1__ctor_m33F492AC6C7E467D45C543B1ED433CEED8CF3172 (U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* __this, const RuntimeMethod* method) ;
 inline PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* List_1_get_Item_m7B7A4A53339FEE9707C9026774D19A2341D0CBF1 (List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* __this, int32_t ___0_index, const RuntimeMethod* method)
 {
 	return ((  PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* (*) (List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364*, int32_t, const RuntimeMethod*))List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared)(__this, ___0_index, method);
@@ -10517,6 +10526,92 @@ IL_0006:
 	}
 }
 // Method Definition Index: 58964
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_add_OnDownloadStateChanged_mD5FFFD1E9AA241511BFCBB07F5309B97CA42554A (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* V_0 = NULL;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* V_1 = NULL;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* V_2 = NULL;
+	{
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_0 = ((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnDownloadStateChanged;
+		V_0 = L_0;
+	}
+
+IL_0006:
+	{
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_1 = V_0;
+		V_1 = L_1;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_2 = V_1;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_3 = ___0_value;
+		Delegate_t* L_4;
+		L_4 = Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00(L_2, L_3, NULL);
+		V_2 = ((Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*)Castclass((RuntimeObject*)L_4, Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C_il2cpp_TypeInfo_var));
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_5 = V_2;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_6 = V_1;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_7;
+		L_7 = InterlockedCompareExchangeImpl<Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*>((&((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnDownloadStateChanged), L_5, L_6);
+		V_0 = L_7;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_8 = V_0;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_9 = V_1;
+		if ((!(((RuntimeObject*)(Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*)L_8) == ((RuntimeObject*)(Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*)L_9))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		return;
+	}
+}
+// Method Definition Index: 58965
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_remove_OnDownloadStateChanged_m47CA2D07B3D3A95EB5BAD5595A09F2AA305DE53C (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* V_0 = NULL;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* V_1 = NULL;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* V_2 = NULL;
+	{
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_0 = ((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnDownloadStateChanged;
+		V_0 = L_0;
+	}
+
+IL_0006:
+	{
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_1 = V_0;
+		V_1 = L_1;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_2 = V_1;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_3 = ___0_value;
+		Delegate_t* L_4;
+		L_4 = Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3(L_2, L_3, NULL);
+		V_2 = ((Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*)Castclass((RuntimeObject*)L_4, Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C_il2cpp_TypeInfo_var));
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_5 = V_2;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_6 = V_1;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_7;
+		L_7 = InterlockedCompareExchangeImpl<Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*>((&((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnDownloadStateChanged), L_5, L_6);
+		V_0 = L_7;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_8 = V_0;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_9 = V_1;
+		if ((!(((RuntimeObject*)(Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*)L_8) == ((RuntimeObject*)(Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C*)L_9))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		return;
+	}
+}
+// Method Definition Index: 58966
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_get_IsPlacing_mE6289860C5505456CF9331A5A710480D346A85A3 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10526,7 +10621,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_get_IsPlacing_mE628
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:144>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -10546,25 +10641,34 @@ IL_0015:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 58965
+// Method Definition Index: 58967
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_get_IsDownloadingItem_mCD20FE2DD176408938A4D8A6AC2A82CD3EC41CF7 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:151>
+		bool L_0 = __this->____isPreparingPlacement;
+		return L_0;
+	}
+}
+// Method Definition Index: 58968
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_get_IsRelocating_m17D9E54676B9E281A9F6C60E59FC64E6C50BEC18 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:137>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:154>
 		bool L_0 = __this->____isRelocating;
 		return L_0;
 	}
 }
-// Method Definition Index: 58966
+// Method Definition Index: 58969
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_get_ActivePlacedItems_mEF7000CA3D00A765077D1F7781AAA3D72CE3091A (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:157>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_0 = __this->___activePlacedItems;
 		return L_0;
 	}
 }
-// Method Definition Index: 58967
+// Method Definition Index: 58970
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Awake_mE82100D1C92E0E518579304D692ACC69D65CD78A (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10574,7 +10678,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Awake_mE82100D1C92E
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:144>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:161>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_0;
 		L_0 = ItemPlacementManager_get_Instance_m8B5892189758CD9CA80CDB96D8A91F552DE5F177_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -10597,24 +10701,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Awake_mE82100D1C92E
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:146>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:163>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
 		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:164>
 		return;
 	}
 
 IL_0026:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:166>
 		ItemPlacementManager_set_Instance_m5905E424A1A40528610880A0DEF81562B1CAE888_inline(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:167>
 		return;
 	}
 }
-// Method Definition Index: 58968
+// Method Definition Index: 58971
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Start_m3CBD4699526B8590430EE5C514F323A9F906BF23 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10627,7 +10731,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Start_m3CBD4699526B
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:154>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:171>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_0 = __this->___placeButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -10638,7 +10742,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Start_m3CBD4699526B
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:156>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:173>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___placeButton;
 		NullCheck(L_2);
 		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_3;
@@ -10647,7 +10751,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Start_m3CBD4699526B
 		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_4, __this, (intptr_t)((void*)ItemPlacementManager_HandlePlaceButtonClick_m28036A53666A140BC38F2B3F66DFE10B679D1319_RuntimeMethod_var), NULL);
 		NullCheck(L_3);
 		UnityEvent_AddListener_m8AA4287C16628486B41DA41CA5E7A856A706D302(L_3, L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:174>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_5 = __this->___placeButton;
 		NullCheck(L_5);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
@@ -10658,7 +10762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Start_m3CBD4699526B
 
 IL_003b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:177>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_7 = __this->___cancelPlacementButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -10669,7 +10773,7 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:179>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_9 = __this->___cancelPlacementButton;
 		NullCheck(L_9);
 		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_10;
@@ -10678,7 +10782,7 @@ IL_003b:
 		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_11, __this, (intptr_t)((void*)ItemPlacementManager_CancelPlacement_mEF79B1AE500361AB9D3F4720ED64CD001B648E53_RuntimeMethod_var), NULL);
 		NullCheck(L_10);
 		UnityEvent_AddListener_m8AA4287C16628486B41DA41CA5E7A856A706D302(L_10, L_11, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:180>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_12 = __this->___cancelPlacementButton;
 		NullCheck(L_12);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13;
@@ -10689,15 +10793,15 @@ IL_003b:
 
 IL_0076:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:184>
 		ItemPlacementManager_LoadPlacedItems_m849DF04D6249CCE8806BF00E7EFC21DABBC8E4A5(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:169>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:186>
 		ItemPlacementManager_BeginCloudSync_m55268EC9FD37E38ADE520F1CF8490BB7E99ED992(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:187>
 		return;
 	}
 }
-// Method Definition Index: 58969
+// Method Definition Index: 58972
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnDestroy_m199B5E23D28ADBFBD96699339DB24DDD3F8001AA (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10712,11 +10816,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnDestroy_m199B5E23
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:191>
 		Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF* L_0 = (Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF*)il2cpp_codegen_object_new(Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF_il2cpp_TypeInfo_var);
 		Action_1__ctor_m180FBE7B35FB8686D49DBD4002E0382911DFC5BE(L_0, __this, (intptr_t)((void*)ItemPlacementManager_HandleCloudGardenState_m8F0B8D7B6C171FC9127FD846D5702E584BA76EC0_RuntimeMethod_var), NULL);
 		FlutterBridge_remove_OnGardenStateReceived_mCD9F13E1A29969954FB5B9A20B17644BD6EF4564(L_0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:193>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_1 = __this->___placeButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -10727,7 +10831,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnDestroy_m199B5E23
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:193>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_3 = __this->___placeButton;
 		NullCheck(L_3);
 		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_4;
@@ -10740,7 +10844,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnDestroy_m199B5E23
 
 IL_003b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:194>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_6 = __this->___cancelPlacementButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
@@ -10751,7 +10855,7 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:194>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_8 = __this->___cancelPlacementButton;
 		NullCheck(L_8);
 		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_9;
@@ -10764,7 +10868,7 @@ IL_003b:
 
 IL_0065:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:196>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_11;
 		L_11 = ItemPlacementManager_get_Instance_m8B5892189758CD9CA80CDB96D8A91F552DE5F177_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -10776,17 +10880,17 @@ IL_0065:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:196>
 		ItemPlacementManager_set_Instance_m5905E424A1A40528610880A0DEF81562B1CAE888_inline((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A*)NULL, NULL);
 	}
 
 IL_0078:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:180>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:197>
 		return;
 	}
 }
-// Method Definition Index: 58970
+// Method Definition Index: 58973
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Update_m4F62B66947C1C78A1C09A3EFC039D2912B9F0BA0 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10798,7 +10902,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Update_m4F62B66947C
 	}
 	float V_0 = 0.0f;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:201>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -10809,13 +10913,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_Update_m4F62B66947C
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:203>
 		ItemPlacementManager_UpdatePlacementPosition_m479E5B4826963076B6971FBD7E41F499B3170AD4(__this, NULL);
 	}
 
 IL_0014:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:206>
 		bool L_2 = __this->____isPreparingPlacement;
 		if (!L_2)
 		{
@@ -10830,8 +10934,8 @@ IL_0014:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:191>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:208>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:209>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_4 = __this->____pendingProgressPrefabRef;
 		il2cpp_codegen_runtime_class_init_inline(AddressableItemLoader_tAB174A74B5A5D52C9E84E23AABC2048469FD48A8_il2cpp_TypeInfo_var);
 		float L_5;
@@ -10840,7 +10944,7 @@ IL_0014:
 		float L_7;
 		L_7 = AddressableItemLoader_GetProgress_m1553C9F63C84979101FC2EDC038F281F577721B5(L_6, NULL);
 		V_0 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add(L_5, L_7)), (0.5f)));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:196>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:213>
 		float L_8 = V_0;
 		float L_9 = __this->____lastReportedPlacementProgress;
 		bool L_10;
@@ -10851,10 +10955,10 @@ IL_0014:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:198>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:215>
 		float L_11 = V_0;
 		__this->____lastReportedPlacementProgress = L_11;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:199>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:216>
 		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_12 = __this->____pendingPlacementProgressCallback;
 		float L_13 = V_0;
 		NullCheck(L_12);
@@ -10863,25 +10967,25 @@ IL_0014:
 
 IL_0063:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:219>
 		return;
 	}
 }
-// Method Definition Index: 58971
+// Method Definition Index: 58974
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnApplicationQuit_m8E080AF3A08D2E666DBF95A292F1BDAE0A504434 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:206>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:223>
 		ItemPlacementManager_SaveEverything_m324DDAD170C2CEAC7F17040FEDFC31208B099BA9(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:207>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:224>
 		return;
 	}
 }
-// Method Definition Index: 58972
+// Method Definition Index: 58975
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnApplicationPause_mC74AF9C0795D66060EF34F27F1B9BB6902A9AC8E (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, bool ___0_pauseStatus, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:228>
 		bool L_0 = ___0_pauseStatus;
 		if (!L_0)
 		{
@@ -10889,21 +10993,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_OnApplicationPause_
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:213>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:230>
 		ItemPlacementManager_SaveEverything_m324DDAD170C2CEAC7F17040FEDFC31208B099BA9(__this, NULL);
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:232>
 		return;
 	}
 }
-// Method Definition Index: 58973
+// Method Definition Index: 58976
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SaveEverything_m324DDAD170C2CEAC7F17040FEDFC31208B099BA9 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:245>
 		bool L_0 = __this->____isRebuildingGarden;
 		if (!L_0)
 		{
@@ -10911,13 +11015,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SaveEverything_m324
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:245>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:247>
 		bool L_1 = __this->____isRelocating;
 		if (!L_1)
 		{
@@ -10925,21 +11029,21 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:247>
 		ItemPlacementManager_CancelPlacement_mEF79B1AE500361AB9D3F4720ED64CD001B648E53(__this, NULL);
 	}
 
 IL_0017:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:249>
 		ItemPlacementManager_SavePlacedItems_mDB4247A994783E733FC97C6CC04900B27B292593(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:250>
 		ItemPlacementManager_FlushCloudPush_m7B214417B3B5FABC0A61BF9A05E7D8FC30DF501E(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:251>
 		return;
 	}
 }
-// Method Definition Index: 58974
+// Method Definition Index: 58977
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PreparePlacement_m1A47EDF38205BDC79DB8206AD1469DCC229FF448 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___0_itemData, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onReady, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___2_onFailed, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___3_onProgress, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10949,7 +11053,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PreparePlacement_m1
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:249>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:266>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_0 = ___0_itemData;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -10983,7 +11087,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PreparePlacement_m1
 
 IL_001e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:251>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:268>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_7 = ___2_onFailed;
 		if (!L_7)
 		{
@@ -10998,13 +11102,13 @@ IL_001e:
 
 IL_0027:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:269>
 		return;
 	}
 
 IL_0028:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:274>
 		bool L_9 = __this->____isRelocating;
 		if (!L_9)
 		{
@@ -11012,29 +11116,29 @@ IL_0028:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:274>
 		ItemPlacementManager_CancelPlacement_mEF79B1AE500361AB9D3F4720ED64CD001B648E53(__this, NULL);
 	}
 
 IL_0036:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:259>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:276>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_10 = ___0_itemData;
 		NullCheck(L_10);
 		int32_t L_11 = L_10->___requiredXPLevel;
 		__this->____pendingRequiredXPLevel = L_11;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:260>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:277>
 		__this->____pendingRewardItemData = (TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingRewardItemData), (void*)(TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:261>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:278>
 		__this->____pendingSourceKind = 1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:262>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:279>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_12 = ___0_itemData;
 		NullCheck(L_12);
 		String_t* L_13 = L_12->___itemID;
 		__this->____pendingSourceItemId = L_13;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingSourceItemId), (void*)L_13);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:264>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:281>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_14 = ___0_itemData;
 		NullCheck(L_14);
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_15 = L_14->___itemPrefabRef;
@@ -11048,11 +11152,11 @@ IL_0036:
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_21 = ___2_onFailed;
 		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_22 = ___3_onProgress;
 		ItemPlacementManager_InternalPreparePlacement_m28D9FBDAB47F57D18BE2C611F61B76E3945FCECB(__this, L_15, L_17, L_19, L_20, L_21, L_22, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:265>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:282>
 		return;
 	}
 }
-// Method Definition Index: 58975
+// Method Definition Index: 58978
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PreparePlacement_m4EBCB223630603DAC50507BCF8BF1E2C1E5509C1 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ___0_itemData, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onReady, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___2_onFailed, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___3_onProgress, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11062,7 +11166,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PreparePlacement_m4
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:276>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:293>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_0 = ___0_itemData;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11096,7 +11200,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PreparePlacement_m4
 
 IL_001e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:278>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:295>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_7 = ___2_onFailed;
 		if (!L_7)
 		{
@@ -11111,13 +11215,13 @@ IL_001e:
 
 IL_0027:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:279>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:296>
 		return;
 	}
 
 IL_0028:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:283>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:300>
 		bool L_9 = __this->____isRelocating;
 		if (!L_9)
 		{
@@ -11125,27 +11229,27 @@ IL_0028:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:283>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:300>
 		ItemPlacementManager_CancelPlacement_mEF79B1AE500361AB9D3F4720ED64CD001B648E53(__this, NULL);
 	}
 
 IL_0036:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:285>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:302>
 		__this->____pendingRequiredXPLevel = 0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:286>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:303>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_10 = ___0_itemData;
 		__this->____pendingRewardItemData = L_10;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingRewardItemData), (void*)L_10);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:287>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:304>
 		__this->____pendingSourceKind = 2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:288>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:305>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_11 = ___0_itemData;
 		NullCheck(L_11);
 		String_t* L_12 = L_11->___itemID;
 		__this->____pendingSourceItemId = L_12;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingSourceItemId), (void*)L_12);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:290>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:307>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_13 = ___0_itemData;
 		NullCheck(L_13);
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_14 = L_13->___itemPrefabRef;
@@ -11159,11 +11263,64 @@ IL_0036:
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_20 = ___2_onFailed;
 		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_21 = ___3_onProgress;
 		ItemPlacementManager_InternalPreparePlacement_m28D9FBDAB47F57D18BE2C611F61B76E3945FCECB(__this, L_14, L_16, L_18, L_19, L_20, L_21, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:291>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:308>
 		return;
 	}
 }
-// Method Definition Index: 58976
+// Method Definition Index: 58979
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SetPreparingPlacement_mA6E0BA39AF9ECFD3B899C086A3E960BF27473FC6 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, bool ___0_preparing, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B4_0 = NULL;
+	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* G_B3_0 = NULL;
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:318>
+		bool L_0 = __this->____isPreparingPlacement;
+		bool L_1 = ___0_preparing;
+		if ((!(((uint32_t)L_0) == ((uint32_t)L_1))))
+		{
+			goto IL_000a;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:318>
+		return;
+	}
+
+IL_000a:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:320>
+		bool L_2 = ___0_preparing;
+		__this->____isPreparingPlacement = L_2;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:321>
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_3 = ((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnDownloadStateChanged;
+		Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* L_4 = L_3;
+		if (L_4)
+		{
+			G_B4_0 = L_4;
+			goto IL_001b;
+		}
+		G_B3_0 = L_4;
+	}
+	{
+		return;
+	}
+
+IL_001b:
+	{
+		bool L_5 = ___0_preparing;
+		NullCheck(G_B4_0);
+		Action_1_Invoke_m69C8773D6967F3B224777183E24EA621CE056F8F_inline(G_B4_0, L_5, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:322>
+		return;
+	}
+}
+// Method Definition Index: 58980
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_InternalPreparePlacement_m28D9FBDAB47F57D18BE2C611F61B76E3945FCECB (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ___0_prefabRef, AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ___1_previewRef, float ___2_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___3_onReady, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___4_onFailed, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___5_onProgress, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11172,30 +11329,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_InternalPreparePlac
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AddressableItemLoader_tAB174A74B5A5D52C9E84E23AABC2048469FD48A8_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__1_m81C4F481FF8514B14B1D90F484D8207147F43B85_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__2_m349E59BE9744A91726E1442E9DCE534650A9D1E7_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__1_mB208FBE92DE97116B7378D45912DAB028C83CCAF_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__2_m92EB9311ABA12BD182397F4E06D4678E163E3033_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* V_0 = NULL;
+	U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* V_0 = NULL;
 	AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* V_1 = NULL;
 	int32_t V_2 = 0;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B4_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B3_0 = NULL;
 	AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* G_B9_0 = NULL;
 	{
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_0 = (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236_il2cpp_TypeInfo_var);
-		U3CU3Ec__DisplayClass61_0__ctor_mFCD92F1BBF13A97336CCE052C7DEC9F7F59635F3(L_0, NULL);
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_0 = (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37_il2cpp_TypeInfo_var);
+		U3CU3Ec__DisplayClass67_0__ctor_m5BFCFDED11BFB9DB69211E7F4AC1EF5DE143B881(L_0, NULL);
 		V_0 = L_0;
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_1 = V_0;
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_1 = V_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_2 = V_0;
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_2 = V_0;
 		float L_3 = ___2_duration;
 		NullCheck(L_2);
 		L_2->___duration = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:304>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:335>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -11206,40 +11363,40 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_InternalPreparePlac
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:306>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:337>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_6;
 		L_6 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->___currentPlacedObject;
 		NullCheck(L_6);
 		Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38(L_6, L_7, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:307>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:338>
 		__this->___currentPlacedObject = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentPlacedObject), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
 	}
 
 IL_0039:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:314>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:345>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_8 = __this->____pendingPlacementFailedCallback;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:315>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:346>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_9 = ___3_onReady;
 		__this->____pendingPlacementReadyCallback = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementReadyCallback), (void*)L_9);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:316>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:347>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_10 = ___4_onFailed;
 		__this->____pendingPlacementFailedCallback = L_10;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementFailedCallback), (void*)L_10);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:317>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:348>
 		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_11 = ___5_onProgress;
 		__this->____pendingPlacementProgressCallback = L_11;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementProgressCallback), (void*)L_11);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:318>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:349>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_12 = ___0_prefabRef;
 		__this->____pendingProgressPrefabRef = L_12;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingProgressPrefabRef), (void*)L_12);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:319>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:350>
 		__this->____lastReportedPlacementProgress = (-1.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:320>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:351>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_13 = L_8;
 		if (L_13)
 		{
@@ -11260,18 +11417,18 @@ IL_006f:
 
 IL_0074:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:322>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:353>
 		__this->____pendingItemPrefab = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingItemPrefab), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:323>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_14 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:354>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_14 = V_0;
 		NullCheck(L_14);
 		float L_15 = L_14->___duration;
 		__this->____pendingDuration = L_15;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:324>
-		__this->____isPreparingPlacement = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:325>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_16 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:355>
+		ItemPlacementManager_SetPreparingPlacement_mA6E0BA39AF9ECFD3B899C086A3E960BF27473FC6(__this, (bool)1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:356>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_16 = V_0;
 		int32_t L_17 = __this->____placementRequestVersion;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_17, 1));
 		int32_t L_18 = V_2;
@@ -11279,8 +11436,8 @@ IL_0074:
 		int32_t L_19 = V_2;
 		NullCheck(L_16);
 		L_16->___requestVersion = L_19;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:327>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:328>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:358>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:359>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_20 = ___1_previewRef;
 		if (!L_20)
 		{
@@ -11314,89 +11471,89 @@ IL_00b3:
 IL_00b4:
 	{
 		V_1 = G_B9_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:329>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:360>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_25 = V_1;
 		__this->____pendingProgressPreviewRef = L_25;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingProgressPreviewRef), (void*)L_25);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:331>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_26 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:362>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_26 = V_0;
 		NullCheck(L_26);
 		L_26->___resolvedReal = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_26->___resolvedReal), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:332>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_27 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:363>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_27 = V_0;
 		NullCheck(L_27);
 		L_27->___resolvedPreview = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_27->___resolvedPreview), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:333>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_28 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:364>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_28 = V_0;
 		NullCheck(L_28);
 		L_28->___realReady = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:334>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_29 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:365>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_29 = V_0;
 		NullCheck(L_29);
 		L_29->___previewReady = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:336>
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_30 = V_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:367>
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_30 = V_0;
 		NullCheck(L_30);
 		int32_t L_31 = L_30->___requestVersion;
 		RuntimeObject* L_32;
 		L_32 = ItemPlacementManager_ShowSlowLoadToastAfterDelay_mFEFEE08A83691845F9129E10B2BC0B8AB752B600(__this, L_31, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_33;
 		L_33 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_32, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:352>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:353>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:354>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:355>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:356>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:357>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:358>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:383>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:384>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:385>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:386>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:387>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:388>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:389>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_34 = ___0_prefabRef;
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_35 = V_0;
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_35 = V_0;
 		Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C* L_36 = (Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C*)il2cpp_codegen_object_new(Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C_il2cpp_TypeInfo_var);
-		Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01(L_36, L_35, (intptr_t)((void*)U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__1_m81C4F481FF8514B14B1D90F484D8207147F43B85_RuntimeMethod_var), NULL);
+		Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01(L_36, L_35, (intptr_t)((void*)U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__1_mB208FBE92DE97116B7378D45912DAB028C83CCAF_RuntimeMethod_var), NULL);
 		il2cpp_codegen_runtime_class_init_inline(AddressableItemLoader_tAB174A74B5A5D52C9E84E23AABC2048469FD48A8_il2cpp_TypeInfo_var);
 		AddressableItemLoader_LoadAsync_m8A7378D97D2EDFBA91D969785CA67D36DB51C2CA(L_34, L_36, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:360>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:361>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:362>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:363>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:364>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:365>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:366>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:391>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:392>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:393>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:394>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:395>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:396>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:397>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_37 = V_1;
-		U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* L_38 = V_0;
+		U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* L_38 = V_0;
 		Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C* L_39 = (Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C*)il2cpp_codegen_object_new(Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C_il2cpp_TypeInfo_var);
-		Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01(L_39, L_38, (intptr_t)((void*)U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__2_m349E59BE9744A91726E1442E9DCE534650A9D1E7_RuntimeMethod_var), NULL);
+		Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01(L_39, L_38, (intptr_t)((void*)U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__2_m92EB9311ABA12BD182397F4E06D4678E163E3033_RuntimeMethod_var), NULL);
 		AddressableItemLoader_LoadAsync_m8A7378D97D2EDFBA91D969785CA67D36DB51C2CA(L_37, L_39, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:367>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:398>
 		return;
 	}
 }
-// Method Definition Index: 58977
+// Method Definition Index: 58981
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_ShowSlowLoadToastAfterDelay_mFEFEE08A83691845F9129E10B2BC0B8AB752B600 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, int32_t ___0_requestVersion, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* L_0 = (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597*)il2cpp_codegen_object_new(U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597_il2cpp_TypeInfo_var);
-		U3CShowSlowLoadToastAfterDelayU3Ed__62__ctor_m3B9EC523F9F736E475CC5810D9DDA2EE04030D79(L_0, 0, NULL);
-		U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* L_1 = L_0;
+		U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* L_0 = (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6*)il2cpp_codegen_object_new(U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6_il2cpp_TypeInfo_var);
+		U3CShowSlowLoadToastAfterDelayU3Ed__68__ctor_m8E9977B2487A06A818ADF02FF280E75EBD8539CD(L_0, 0, NULL);
+		U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
-		U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* L_2 = L_1;
+		U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* L_2 = L_1;
 		int32_t L_3 = ___0_requestVersion;
 		NullCheck(L_2);
 		L_2->___requestVersion = L_3;
 		return L_2;
 	}
 }
-// Method Definition Index: 58978
+// Method Definition Index: 58982
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FinishPreparingPlacement_mA57470711491FE13631BE0EC969DAEEA55AD94A9 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_previewPrefab, float ___2_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11422,16 +11579,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FinishPreparingPlac
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B15_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B14_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:385>
-		__this->____isPreparingPlacement = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:386>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:416>
+		ItemPlacementManager_SetPreparingPlacement_mA6E0BA39AF9ECFD3B899C086A3E960BF27473FC6(__this, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:417>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_prefab;
 		__this->____pendingItemPrefab = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingItemPrefab), (void*)L_0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:387>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:418>
 		float L_1 = ___2_duration;
 		__this->____pendingDuration = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:389>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:420>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_2;
 		L_2 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = ___1_previewPrefab;
@@ -11440,13 +11597,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FinishPreparingPlac
 		L_4 = Objectpool_Spawn_mF370B9924033975CB48C6361B6C8039D49317BAA(L_2, L_3, NULL);
 		__this->___currentPlacedObject = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentPlacedObject), (void*)L_4);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:392>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:423>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___currentPlacedObject;
 		NullCheck(L_5);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_6;
 		L_6 = GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF(L_5, GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF_RuntimeMethod_var);
 		V_0 = L_6;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:393>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:424>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_7 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -11457,19 +11614,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FinishPreparingPlac
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:395>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:426>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_9 = V_0;
 		NullCheck(L_9);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_9, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:398>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:429>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_10 = V_0;
 		NullCheck(L_10);
 		PlaceableItem_UpdateSaturation_mB96E41AC78D0AD555AC2B8D408AC67015A5FCCDB(L_10, (0.0f), (-1), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:400>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:431>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_11 = V_0;
 		NullCheck(L_11);
 		PlaceableItem_SetScaleMultiplier_m0EB057F3AB5519298B3728B8D0CADA31CDF4E05D(L_11, (0.200000003f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:404>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:435>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_12 = V_0;
 		bool L_13 = __this->____isRelocating;
 		if (L_13)
@@ -11501,9 +11658,9 @@ IL_006b:
 
 IL_0070:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:407>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:438>
 		ItemPlacementManager_UpdatePlacementPosition_m479E5B4826963076B6971FBD7E41F499B3170AD4(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:410>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:441>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_16 = __this->___placeButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_17;
@@ -11514,20 +11671,20 @@ IL_0070:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:412>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:443>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_18 = __this->___placeButton;
 		NullCheck(L_18);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19;
 		L_19 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_18, NULL);
 		NullCheck(L_19);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_19, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:413>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:444>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_20 = __this->___placeButton;
 		NullCheck(L_20);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_21;
 		L_21 = Component_GetComponentInChildren_TisTMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9_mA5C534600978A673C682FADEE1BBFE1B535981AA(L_20, Component_GetComponentInChildren_TisTMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9_mA5C534600978A673C682FADEE1BBFE1B535981AA_RuntimeMethod_var);
 		V_1 = L_21;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:414>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:445>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_22 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_23;
@@ -11538,7 +11695,7 @@ IL_0070:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:414>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:445>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_24 = V_1;
 		bool L_25 = __this->____isRelocating;
 		if (L_25)
@@ -11568,7 +11725,7 @@ IL_00bf:
 
 IL_00c4:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:417>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:448>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_26 = __this->___cancelPlacementButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_27;
@@ -11579,7 +11736,7 @@ IL_00c4:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:419>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:450>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_28 = __this->___cancelPlacementButton;
 		NullCheck(L_28);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_29;
@@ -11590,18 +11747,18 @@ IL_00c4:
 
 IL_00e3:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:422>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:453>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_30 = __this->____pendingPlacementReadyCallback;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:423>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:454>
 		__this->____pendingPlacementReadyCallback = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementReadyCallback), (void*)(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:424>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:455>
 		__this->____pendingPlacementFailedCallback = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementFailedCallback), (void*)(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:425>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:456>
 		__this->____pendingPlacementProgressCallback = (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementProgressCallback), (void*)(Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:426>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:457>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_31 = L_30;
 		if (L_31)
 		{
@@ -11618,11 +11775,11 @@ IL_0103:
 	{
 		NullCheck(G_B15_0);
 		Action_Invoke_m7126A54DACA72B845424072887B5F3A51FC3808E_inline(G_B15_0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:427>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:458>
 		return;
 	}
 }
-// Method Definition Index: 58979
+// Method Definition Index: 58983
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlacementLoadFailure_mD72232CA0110C4F7697B5EEA4A3DE5D41317FC5B (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11637,9 +11794,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlacementLoad
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B7_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B6_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:436>
-		__this->____isPreparingPlacement = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:438>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:467>
+		ItemPlacementManager_SetPreparingPlacement_mA6E0BA39AF9ECFD3B899C086A3E960BF27473FC6(__this, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:469>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_0;
 		L_0 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -11651,7 +11808,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlacementLoad
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:440>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:471>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_2;
 		L_2 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_2);
@@ -11660,7 +11817,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlacementLoad
 
 IL_0023:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:443>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:474>
 		bool L_3 = __this->____isRelocating;
 		if (!L_3)
 		{
@@ -11668,7 +11825,7 @@ IL_0023:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:445>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:476>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral0C2D06F6ED8D585CCE6F9ADC8D8D4BBA982E72E6, NULL);
 		goto IL_003d;
@@ -11676,28 +11833,28 @@ IL_0023:
 
 IL_0037:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:449>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:480>
 		ItemPlacementManager_RefundPendingPurchase_m3E8BFE98034D8DA650BBC0F14E1AC0596B298026(__this, NULL);
 	}
 
 IL_003d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:452>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:483>
 		ItemPlacementManager_ClearPendingPlacement_mB959B2975963D12B3AB74D1ADE17222B474A360E(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:453>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:484>
 		ItemPlacementManager_ApplyDeferredCloudState_mE07E10356FEDB32AFCDFFD04F5FBA027DF5D3183(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:455>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:486>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_4 = __this->____pendingPlacementFailedCallback;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:456>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:487>
 		__this->____pendingPlacementReadyCallback = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementReadyCallback), (void*)(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:457>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:488>
 		__this->____pendingPlacementFailedCallback = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementFailedCallback), (void*)(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:458>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:489>
 		__this->____pendingPlacementProgressCallback = (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingPlacementProgressCallback), (void*)(Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:459>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:490>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_5 = L_4;
 		if (L_5)
 		{
@@ -11714,11 +11871,11 @@ IL_0069:
 	{
 		NullCheck(G_B7_0);
 		Action_Invoke_m7126A54DACA72B845424072887B5F3A51FC3808E_inline(G_B7_0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:460>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:491>
 		return;
 	}
 }
-// Method Definition Index: 58980
+// Method Definition Index: 58984
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlaceButtonClick_m28036A53666A140BC38F2B3F66DFE10B679D1319 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11729,7 +11886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlaceButtonCl
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:468>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:499>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_0 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11740,7 +11897,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlaceButtonCl
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:468>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:499>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_2 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_2);
 		AudioManager_PlaySound_m1C225EEC720214C2C52A4F422794CF05AE47127A(L_2, 6, NULL);
@@ -11748,7 +11905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandlePlaceButtonCl
 
 IL_0018:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:469>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:500>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -11759,17 +11916,17 @@ IL_0018:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:472>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:503>
 		ItemPlacementManager_PlaceItem_mEDF3BD0255651221158EF00855BB53F6D3FDDAEC(__this, NULL);
 	}
 
 IL_002c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:474>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:505>
 		return;
 	}
 }
-// Method Definition Index: 58981
+// Method Definition Index: 58985
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_UpdatePlacementPosition_m479E5B4826963076B6971FBD7E41F499B3170AD4 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11784,7 +11941,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_UpdatePlacementPosi
 	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:482>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:513>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11817,17 +11974,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_UpdatePlacementPosi
 
 IL_002a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:482>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:513>
 		return;
 	}
 
 IL_002b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:484>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:515>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_6;
 		L_6 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		V_0 = L_6;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:485>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:516>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_7 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -11838,13 +11995,13 @@ IL_002b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:485>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:516>
 		return;
 	}
 
 IL_003b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:488>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:519>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_9 = V_0;
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_10 = __this->___crosshairRect;
 		NullCheck(L_10);
@@ -11854,7 +12011,7 @@ IL_003b:
 		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_12;
 		L_12 = Camera_ScreenPointToRay_m2887B9A49880B7AB670C57D66B67D6A6689FE315(L_9, L_11, NULL);
 		V_1 = L_12;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:492>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:523>
 		TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* L_13 = __this->___terrainCollider;
 		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_14 = V_1;
 		NullCheck(L_13);
@@ -11866,7 +12023,7 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:494>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:525>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = __this->___currentPlacedObject;
 		NullCheck(L_16);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
@@ -11879,11 +12036,11 @@ IL_003b:
 
 IL_0079:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:496>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:527>
 		return;
 	}
 }
-// Method Definition Index: 58982
+// Method Definition Index: 58986
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PlaceItem_mEDF3BD0255651221158EF00855BB53F6D3FDDAEC (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11918,7 +12075,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PlaceItem_mEDF3BD02
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* G_B14_0 = NULL;
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* G_B13_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:503>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:534>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11929,13 +12086,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PlaceItem_mEDF3BD02
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:503>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:534>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:507>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:538>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___currentPlacedObject;
 		NullCheck(L_2);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
@@ -11944,7 +12101,7 @@ IL_000f:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
 		L_4 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_3, NULL);
 		V_0 = L_4;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:508>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:539>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___currentPlacedObject;
 		NullCheck(L_5);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
@@ -11953,16 +12110,16 @@ IL_000f:
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_7;
 		L_7 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_6, NULL);
 		V_1 = L_7;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:509>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:540>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_8;
 		L_8 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___currentPlacedObject;
 		NullCheck(L_8);
 		Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38(L_8, L_9, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:510>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:541>
 		__this->___currentPlacedObject = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentPlacedObject), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:513>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:544>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->____pendingItemPrefab;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
@@ -11973,18 +12130,18 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:515>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:546>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteralFB0ADF418A2CE6AD83FFC3CC1495A0A46CC1E13A, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:516>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:547>
 		ItemPlacementManager_ClearPendingPlacement_mB959B2975963D12B3AB74D1ADE17222B474A360E(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:517>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:548>
 		return;
 	}
 
 IL_0067:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:520>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:551>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_12;
 		L_12 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->____pendingItemPrefab;
@@ -11994,13 +12151,13 @@ IL_0067:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16;
 		L_16 = Objectpool_Spawn_m4AC4312546C0F3C61EEFD185726D887CD1CCCC93(L_12, L_13, L_14, L_15, (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*)NULL, NULL);
 		V_2 = L_16;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:524>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:555>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = V_2;
 		NullCheck(L_17);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_18;
 		L_18 = GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF(L_17, GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF_RuntimeMethod_var);
 		V_3 = L_18;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:525>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:556>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_19 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_20;
@@ -12011,7 +12168,7 @@ IL_0067:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:527>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:558>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = V_2;
 		NullCheck(L_21);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_22;
@@ -12021,14 +12178,14 @@ IL_0067:
 
 IL_0092:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:530>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:561>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_23 = V_3;
 		NullCheck(L_23);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_23, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:533>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:564>
 		float L_24 = __this->____pendingDuration;
 		V_4 = L_24;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:537>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:568>
 		bool L_25 = __this->____isRelocating;
 		if (L_25)
 		{
@@ -12054,7 +12211,7 @@ IL_00bf:
 IL_00c5:
 	{
 		V_5 = G_B9_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:538>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:569>
 		bool L_29 = __this->____isRelocating;
 		if (L_29)
 		{
@@ -12076,20 +12233,20 @@ IL_00d3:
 IL_00d9:
 	{
 		V_6 = G_B12_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:540>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:571>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_32 = V_3;
 		String_t* L_33 = V_5;
 		float L_34 = V_4;
 		float L_35 = V_6;
 		NullCheck(L_32);
 		PlaceableItem_Initialize_mE55ECD65E934FE846EA4AAD950FD19BAB217ED57(L_32, L_33, L_34, L_35, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:541>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:572>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_36 = V_3;
 		int32_t L_37 = __this->____pendingSourceKind;
 		String_t* L_38 = __this->____pendingSourceItemId;
 		NullCheck(L_36);
 		PlaceableItem_SetSource_m17B26015B737817DDEEBFE505F9C84838A6AC7A8(L_36, L_37, L_38, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:544>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:575>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39 = V_2;
 		NullCheck(L_39);
 		String_t* L_40;
@@ -12101,20 +12258,20 @@ IL_00d9:
 		String_t* L_42;
 		L_42 = String_Trim_mCD6D8C6D4CFD15225D12DB7D3E0544CA80FB8DA5(L_41, NULL);
 		V_7 = L_42;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:545>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:576>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_43 = V_3;
 		String_t* L_44 = V_7;
 		NullCheck(L_43);
 		L_43->___prefabName = L_44;
 		Il2CppCodeGenWriteBarrier((void**)(&L_43->___prefabName), (void*)L_44);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:548>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:579>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_45 = __this->___activePlacedItems;
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_46 = V_3;
 		NullCheck(L_45);
 		List_1_Add_m479CE50320535CF340AE7B768230F6F47A941238_inline(L_45, L_46, List_1_Add_m479CE50320535CF340AE7B768230F6F47A941238_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:549>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:580>
 		ItemPlacementManager_SavePlacedItems_mDB4247A994783E733FC97C6CC04900B27B292593(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:551>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:582>
 		Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* L_47 = ((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnItemPlaced;
 		Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* L_48 = L_47;
 		if (L_48)
@@ -12137,7 +12294,7 @@ IL_013a:
 
 IL_0140:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:553>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:584>
 		bool L_50 = __this->____isRelocating;
 		if (!L_50)
 		{
@@ -12145,7 +12302,7 @@ IL_0140:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:556>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:587>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_51;
 		L_51 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12157,7 +12314,7 @@ IL_0140:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:558>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:589>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_53;
 		L_53 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_53);
@@ -12167,7 +12324,7 @@ IL_0140:
 
 IL_016c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:564>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:595>
 		int32_t L_54 = __this->____pendingRequiredXPLevel;
 		if ((((int32_t)L_54) <= ((int32_t)0)))
 		{
@@ -12186,7 +12343,7 @@ IL_016c:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:566>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:597>
 		PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* L_57;
 		L_57 = PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline(NULL);
 		int32_t L_58 = __this->____pendingRequiredXPLevel;
@@ -12196,7 +12353,7 @@ IL_016c:
 
 IL_0192:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:569>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:600>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_59 = __this->____pendingRewardItemData;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_60;
@@ -12207,7 +12364,7 @@ IL_0192:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:571>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:602>
 		InventoryManager_t7A39808946F0799F4EABCBFCE3653CBC57F99945* L_61;
 		L_61 = InventoryManager_get_Instance_m370C3CAE957F976B9EA890D81AA4BB40F66E20A8_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12219,7 +12376,7 @@ IL_0192:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:573>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:604>
 		InventoryManager_t7A39808946F0799F4EABCBFCE3653CBC57F99945* L_63;
 		L_63 = InventoryManager_get_Instance_m370C3CAE957F976B9EA890D81AA4BB40F66E20A8_inline(NULL);
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_64 = __this->____pendingRewardItemData;
@@ -12228,7 +12385,7 @@ IL_0192:
 		NullCheck(L_63);
 		bool L_66;
 		L_66 = InventoryManager_ConsumeInventoryItem_mE42917672E056CFAFC79FB9899BA3592523288AB(L_63, L_65, 1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:574>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:605>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_67 = __this->____pendingRewardItemData;
 		InventoryManager_t7A39808946F0799F4EABCBFCE3653CBC57F99945* L_68;
 		L_68 = InventoryManager_get_Instance_m370C3CAE957F976B9EA890D81AA4BB40F66E20A8_inline(NULL);
@@ -12245,7 +12402,7 @@ IL_0192:
 
 IL_01e9:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:578>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:609>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_72 = __this->____pendingRewardItemData;
 		NullCheck(L_72);
 		int32_t L_73 = L_72->___quantity;
@@ -12255,7 +12412,7 @@ IL_01e9:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:578>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:609>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_74 = __this->____pendingRewardItemData;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_75 = L_74;
 		NullCheck(L_75);
@@ -12266,7 +12423,7 @@ IL_01e9:
 
 IL_020a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:581>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:612>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_77 = __this->___shopManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_78;
@@ -12277,7 +12434,7 @@ IL_020a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:583>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:614>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_79 = __this->___shopManager;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_80 = __this->____pendingRewardItemData;
 		NullCheck(L_79);
@@ -12286,15 +12443,15 @@ IL_020a:
 
 IL_0229:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:588>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:619>
 		ItemPlacementManager_ClearPendingPlacement_mB959B2975963D12B3AB74D1ADE17222B474A360E(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:589>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:620>
 		ItemPlacementManager_ApplyDeferredCloudState_mE07E10356FEDB32AFCDFFD04F5FBA027DF5D3183(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:590>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:621>
 		return;
 	}
 }
-// Method Definition Index: 58983
+// Method Definition Index: 58987
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_CancelPlacement_mEF79B1AE500361AB9D3F4720ED64CD001B648E53 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12304,7 +12461,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_CancelPlacement_mEF
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:599>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:630>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___currentPlacedObject;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -12315,22 +12472,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_CancelPlacement_mEF
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:599>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:630>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:601>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:632>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_2;
 		L_2 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___currentPlacedObject;
 		NullCheck(L_2);
 		Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38(L_2, L_3, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:602>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:633>
 		__this->___currentPlacedObject = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentPlacedObject), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:604>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:635>
 		bool L_4 = __this->____isRelocating;
 		if (!L_4)
 		{
@@ -12348,28 +12505,28 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:606>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:637>
 		ItemPlacementManager_RestoreRelocatedItem_mDFD4C7E73946F3962A299D53681B0C38FF9A223C(__this, NULL);
 		goto IL_004a;
 	}
 
 IL_0044:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:610>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:641>
 		ItemPlacementManager_RefundPendingPurchase_m3E8BFE98034D8DA650BBC0F14E1AC0596B298026(__this, NULL);
 	}
 
 IL_004a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:613>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:644>
 		ItemPlacementManager_ClearPendingPlacement_mB959B2975963D12B3AB74D1ADE17222B474A360E(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:614>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:645>
 		ItemPlacementManager_ApplyDeferredCloudState_mE07E10356FEDB32AFCDFFD04F5FBA027DF5D3183(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:615>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:646>
 		return;
 	}
 }
-// Method Definition Index: 58984
+// Method Definition Index: 58988
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RestoreRelocatedItem_mDFD4C7E73946F3962A299D53681B0C38FF9A223C (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12387,8 +12544,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RestoreRelocatedIte
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
 	PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* V_1 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:620>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:621>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:651>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:652>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_0;
 		L_0 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->____pendingItemPrefab;
@@ -12398,13 +12555,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RestoreRelocatedIte
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
 		L_4 = Objectpool_Spawn_m4AC4312546C0F3C61EEFD185726D887CD1CCCC93(L_0, L_1, L_2, L_3, (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*)NULL, NULL);
 		V_0 = L_4;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:623>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:654>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = V_0;
 		NullCheck(L_5);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_6;
 		L_6 = GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF(L_5, GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF_RuntimeMethod_var);
 		V_1 = L_6;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:624>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:655>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_7 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -12415,7 +12572,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RestoreRelocatedIte
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:626>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:657>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = V_0;
 		NullCheck(L_9);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_10;
@@ -12425,11 +12582,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RestoreRelocatedIte
 
 IL_0035:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:629>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:660>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_11 = V_1;
 		NullCheck(L_11);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_11, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:630>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:661>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_12 = V_1;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = V_0;
 		NullCheck(L_13);
@@ -12444,27 +12601,27 @@ IL_0035:
 		NullCheck(L_12);
 		L_12->___prefabName = L_16;
 		Il2CppCodeGenWriteBarrier((void**)(&L_12->___prefabName), (void*)L_16);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:631>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:662>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_17 = V_1;
 		String_t* L_18 = __this->____relocateUniqueId;
 		float L_19 = __this->____pendingDuration;
 		float L_20 = __this->____relocateRemainingDuration;
 		NullCheck(L_17);
 		PlaceableItem_Initialize_mE55ECD65E934FE846EA4AAD950FD19BAB217ED57(L_17, L_18, L_19, L_20, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:632>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:663>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_21 = V_1;
 		int32_t L_22 = __this->____pendingSourceKind;
 		String_t* L_23 = __this->____pendingSourceItemId;
 		NullCheck(L_21);
 		PlaceableItem_SetSource_m17B26015B737817DDEEBFE505F9C84838A6AC7A8(L_21, L_22, L_23, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:634>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:665>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_24 = __this->___activePlacedItems;
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_25 = V_1;
 		NullCheck(L_24);
 		List_1_Add_m479CE50320535CF340AE7B768230F6F47A941238_inline(L_24, L_25, List_1_Add_m479CE50320535CF340AE7B768230F6F47A941238_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:635>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:666>
 		ItemPlacementManager_SavePlacedItems_mDB4247A994783E733FC97C6CC04900B27B292593(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:637>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:668>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_26;
 		L_26 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12476,7 +12633,7 @@ IL_0035:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:639>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:670>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_28;
 		L_28 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_28);
@@ -12485,11 +12642,11 @@ IL_0035:
 
 IL_00b4:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:641>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:672>
 		return;
 	}
 }
-// Method Definition Index: 58985
+// Method Definition Index: 58989
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RefundPendingPurchase_m3E8BFE98034D8DA650BBC0F14E1AC0596B298026 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12502,7 +12659,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RefundPendingPurcha
 	ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:646>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:677>
 		int32_t L_0 = __this->____pendingSourceKind;
 		if ((!(((uint32_t)L_0) == ((uint32_t)2))))
 		{
@@ -12520,7 +12677,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RefundPendingPurcha
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:649>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:680>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_3;
 		L_3 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12532,7 +12689,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RefundPendingPurcha
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:651>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:682>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_5;
 		L_5 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_5);
@@ -12541,23 +12698,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RefundPendingPurcha
 
 IL_0033:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:653>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:684>
 		return;
 	}
 
 IL_0034:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:656>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:687>
 		String_t* L_6 = __this->____pendingSourceItemId;
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_7;
 		L_7 = ItemPlacementManager_FindShopItemData_m408777F9AD6C098C13A82EB4960D821C8C3904B1(__this, L_6, NULL);
 		V_0 = L_7;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:657>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:688>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_8 = V_0;
 		int32_t L_9;
 		L_9 = ItemPlacementManager_CalculateCoinRefund_m817810947479A2D142EA6262BEF2CA9BF529E4A9(__this, L_8, NULL);
 		V_1 = L_9;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:659>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:690>
 		int32_t L_10 = V_1;
 		if ((((int32_t)L_10) <= ((int32_t)0)))
 		{
@@ -12576,7 +12733,7 @@ IL_0034:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:661>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:692>
 		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_13;
 		L_13 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
 		int32_t L_14 = V_1;
@@ -12587,7 +12744,7 @@ IL_0034:
 
 IL_0067:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:663>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:694>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_15;
 		L_15 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12599,7 +12756,7 @@ IL_0067:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:665>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:696>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_17;
 		L_17 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_17);
@@ -12608,11 +12765,11 @@ IL_0067:
 
 IL_0083:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:667>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:698>
 		return;
 	}
 }
-// Method Definition Index: 58986
+// Method Definition Index: 58990
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_ClearPendingPlacement_mB959B2975963D12B3AB74D1ADE17222B474A360E (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12622,35 +12779,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_ClearPendingPlaceme
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:671>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:702>
 		__this->___currentPlacedObject = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentPlacedObject), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:672>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:703>
 		__this->____pendingItemPrefab = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingItemPrefab), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:673>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:704>
 		__this->____pendingRequiredXPLevel = 0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:674>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:705>
 		__this->____pendingRewardItemData = (TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingRewardItemData), (void*)(TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:675>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:706>
 		__this->____pendingSourceKind = 0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:676>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:707>
 		__this->____pendingSourceItemId = (String_t*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingSourceItemId), (void*)(String_t*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:677>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:708>
 		__this->____isRelocating = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:678>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:709>
 		__this->____relocateUniqueId = (String_t*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____relocateUniqueId), (void*)(String_t*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:679>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:710>
 		__this->____relocateRemainingDuration = (0.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:680>
-		__this->____isPreparingPlacement = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:681>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:711>
+		ItemPlacementManager_SetPreparingPlacement_mA6E0BA39AF9ECFD3B899C086A3E960BF27473FC6(__this, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:712>
 		int32_t L_0 = __this->____placementRequestVersion;
 		__this->____placementRequestVersion = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:683>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:714>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_1 = __this->___placeButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -12661,7 +12818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_ClearPendingPlaceme
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:683>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:714>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_3 = __this->___placeButton;
 		NullCheck(L_3);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
@@ -12672,7 +12829,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_ClearPendingPlaceme
 
 IL_0077:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:684>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:715>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_5 = __this->___cancelPlacementButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -12683,7 +12840,7 @@ IL_0077:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:684>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:715>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_7 = __this->___cancelPlacementButton;
 		NullCheck(L_7);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8;
@@ -12694,11 +12851,11 @@ IL_0077:
 
 IL_0096:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:685>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:716>
 		return;
 	}
 }
-// Method Definition Index: 58987
+// Method Definition Index: 58991
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_BeginRelocate_mC9A5673680F7E9002F81EAB513BB7757A76AC5DC (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12720,7 +12877,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_BeginRelocate_mC9A5
 	AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* V_2 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_3 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:698>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:729>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_0 = ___0_item;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -12731,13 +12888,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_BeginRelocate_mC9A5
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:698>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:729>
 		return (bool)0;
 	}
 
 IL_000b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:700>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:731>
 		bool L_2;
 		L_2 = ItemPlacementManager_get_IsPlacing_mE6289860C5505456CF9331A5A710480D346A85A3(__this, NULL);
 		if (!L_2)
@@ -12746,7 +12903,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:702>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:733>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_3;
 		L_3 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12758,7 +12915,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:704>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:735>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_5;
 		L_5 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_5);
@@ -12767,13 +12924,13 @@ IL_000b:
 
 IL_002f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:706>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:737>
 		return (bool)0;
 	}
 
 IL_0031:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:709>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:740>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_6 = ___0_item;
 		NullCheck(L_6);
 		int32_t L_7 = L_6->___sourceKind;
@@ -12783,7 +12940,7 @@ IL_0031:
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_10;
 		L_10 = ItemPlacementManager_ResolveItemPrefabRef_m14F91EA86640C2A9BD1F8EABB81003A147BC7CFC(__this, L_7, L_9, NULL);
 		V_0 = L_10;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:715>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:746>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_11 = V_0;
 		if (!L_11)
 		{
@@ -12813,7 +12970,7 @@ IL_0031:
 
 IL_0059:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:717>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:748>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_16 = ___0_item;
 		NullCheck(L_16);
 		String_t* L_17 = L_16->___sourceItemId;
@@ -12821,7 +12978,7 @@ IL_0059:
 		L_18 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteralE45CB77A123FD54AF849023AB38E3E074EC108C5, L_17, _stringLiteralCFC9E11DA8847774206F7910B0DB43DB0FCDCF4F, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_18, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:718>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:749>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_19;
 		L_19 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12833,7 +12990,7 @@ IL_0059:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:720>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:751>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_21;
 		L_21 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_21);
@@ -12842,26 +12999,26 @@ IL_0059:
 
 IL_008f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:722>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:753>
 		return (bool)0;
 	}
 
 IL_0091:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:726>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:757>
 		__this->____isRelocating = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:727>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:758>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_22 = ___0_item;
 		NullCheck(L_22);
 		String_t* L_23 = L_22->___uniqueId;
 		__this->____relocateUniqueId = L_23;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____relocateUniqueId), (void*)L_23);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:728>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:759>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_24 = ___0_item;
 		NullCheck(L_24);
 		float L_25 = L_24->___remainingDuration;
 		__this->____relocateRemainingDuration = L_25;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:729>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:760>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_26 = ___0_item;
 		NullCheck(L_26);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_27;
@@ -12870,7 +13027,7 @@ IL_0091:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_28;
 		L_28 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_27, NULL);
 		__this->____relocateOriginalPosition = L_28;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:730>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:761>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_29 = ___0_item;
 		NullCheck(L_29);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_30;
@@ -12879,28 +13036,28 @@ IL_0091:
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_31;
 		L_31 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_30, NULL);
 		__this->____relocateOriginalRotation = L_31;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:732>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:763>
 		__this->____pendingRequiredXPLevel = 0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:733>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:764>
 		__this->____pendingRewardItemData = (TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingRewardItemData), (void*)(TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:734>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:765>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_32 = ___0_item;
 		NullCheck(L_32);
 		int32_t L_33 = L_32->___sourceKind;
 		__this->____pendingSourceKind = L_33;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:735>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:766>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_34 = ___0_item;
 		NullCheck(L_34);
 		String_t* L_35 = L_34->___sourceItemId;
 		__this->____pendingSourceItemId = L_35;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pendingSourceItemId), (void*)L_35);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:737>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:768>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_36 = ___0_item;
 		NullCheck(L_36);
 		float L_37 = L_36->___placementDuration;
 		V_1 = L_37;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:738>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:769>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_38 = ___0_item;
 		NullCheck(L_38);
 		int32_t L_39 = L_38->___sourceKind;
@@ -12910,10 +13067,10 @@ IL_0091:
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_42;
 		L_42 = ItemPlacementManager_ResolvePreviewPrefabRef_mD4A23C8402ABD81781599DE5177E724ACE148F99(__this, L_39, L_41, NULL);
 		V_2 = L_42;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:743>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:774>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_43 = ___0_item;
 		ItemPlacementManager_RemoveFromGarden_m35771594A1ABF3281F72207F54E72A36D957BCFB(__this, L_43, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:744>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:775>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_44;
 		L_44 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_45 = ___0_item;
@@ -12922,12 +13079,12 @@ IL_0091:
 		L_46 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_45, NULL);
 		NullCheck(L_44);
 		Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38(L_44, L_46, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:746>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:777>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_47 = V_0;
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_48 = V_2;
 		float L_49 = V_1;
 		ItemPlacementManager_InternalPreparePlacement_m28D9FBDAB47F57D18BE2C611F61B76E3945FCECB(__this, L_47, L_48, L_49, (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL, (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)NULL, (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)NULL, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:748>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:779>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_50 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_51;
@@ -12938,7 +13095,7 @@ IL_0091:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:748>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:779>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_52 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_52);
 		AudioManager_PlaySound_m1C225EEC720214C2C52A4F422794CF05AE47127A(L_52, ((int32_t)18), NULL);
@@ -12946,7 +13103,7 @@ IL_0091:
 
 IL_014e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:749>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:780>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_53;
 		L_53 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -12958,7 +13115,7 @@ IL_014e:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:751>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:782>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_55;
 		L_55 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_55);
@@ -12967,11 +13124,11 @@ IL_014e:
 
 IL_016a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:754>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:785>
 		return (bool)1;
 	}
 }
-// Method Definition Index: 58988
+// Method Definition Index: 58992
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_ReturnToStore_mAC4ADCD0BB663AAD4D3AF7154A1C7494AC19044C (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12992,7 +13149,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_ReturnToStore_mAC4A
 	int32_t G_B7_0 = 0;
 	TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* G_B11_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:765>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:796>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_0 = ___0_item;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -13003,13 +13160,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_ReturnToStore_mAC4A
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:765>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:796>
 		return (bool)0;
 	}
 
 IL_000b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:767>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:798>
 		bool L_2;
 		L_2 = ItemPlacementManager_get_IsPlacing_mE6289860C5505456CF9331A5A710480D346A85A3(__this, NULL);
 		if (!L_2)
@@ -13018,7 +13175,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:769>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:800>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_3;
 		L_3 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -13030,7 +13187,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:771>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:802>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_5;
 		L_5 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_5);
@@ -13039,25 +13196,25 @@ IL_000b:
 
 IL_002f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:773>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:804>
 		return (bool)0;
 	}
 
 IL_0031:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:776>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:807>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_6 = ___0_item;
 		NullCheck(L_6);
 		int32_t L_7 = L_6->___sourceKind;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:777>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:808>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_8 = ___0_item;
 		NullCheck(L_8);
 		String_t* L_9 = L_8->___sourceItemId;
 		V_0 = L_9;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:779>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:810>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_10 = ___0_item;
 		ItemPlacementManager_RemoveFromGarden_m35771594A1ABF3281F72207F54E72A36D957BCFB(__this, L_10, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:780>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:811>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_11;
 		L_11 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_12 = ___0_item;
@@ -13066,9 +13223,9 @@ IL_0031:
 		L_13 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_12, NULL);
 		NullCheck(L_11);
 		Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38(L_11, L_13, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:781>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:812>
 		ItemPlacementManager_SavePlacedItems_mDB4247A994783E733FC97C6CC04900B27B292593(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:783>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:814>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_14 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_15;
@@ -13081,7 +13238,7 @@ IL_0031:
 		G_B7_0 = L_7;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:783>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:814>
 		AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_16 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_16);
 		AudioManager_PlaySound_m1C225EEC720214C2C52A4F422794CF05AE47127A(L_16, ((int32_t)18), NULL);
@@ -13090,9 +13247,9 @@ IL_0031:
 
 IL_0074:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:786>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:787>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:788>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:817>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:818>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:819>
 		if ((((int32_t)G_B8_0) == ((int32_t)1)))
 		{
 			goto IL_0080;
@@ -13114,7 +13271,7 @@ IL_0080:
 IL_0081:
 	{
 		V_1 = G_B11_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:790>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:821>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_19 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_20;
@@ -13125,7 +13282,7 @@ IL_0081:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:792>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:823>
 		InventoryManager_t7A39808946F0799F4EABCBFCE3653CBC57F99945* L_21;
 		L_21 = InventoryManager_get_Instance_m370C3CAE957F976B9EA890D81AA4BB40F66E20A8_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -13137,7 +13294,7 @@ IL_0081:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:794>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:825>
 		InventoryManager_t7A39808946F0799F4EABCBFCE3653CBC57F99945* L_23;
 		L_23 = InventoryManager_get_Instance_m370C3CAE957F976B9EA890D81AA4BB40F66E20A8_inline(NULL);
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_24 = V_1;
@@ -13145,7 +13302,7 @@ IL_0081:
 		String_t* L_25 = L_24->___itemID;
 		NullCheck(L_23);
 		InventoryManager_AddInventoryItem_m584137BF47789DA08BD138D8182DBB03BF99353C(L_23, L_25, 1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:795>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:826>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_26 = V_1;
 		InventoryManager_t7A39808946F0799F4EABCBFCE3653CBC57F99945* L_27;
 		L_27 = InventoryManager_get_Instance_m370C3CAE957F976B9EA890D81AA4BB40F66E20A8_inline(NULL);
@@ -13162,7 +13319,7 @@ IL_0081:
 
 IL_00c4:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:799>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:830>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_31 = V_1;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_32 = L_31;
 		NullCheck(L_32);
@@ -13173,7 +13330,7 @@ IL_00c4:
 
 IL_00d2:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:802>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:833>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_34 = __this->___shopManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_35;
@@ -13184,7 +13341,7 @@ IL_00d2:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:802>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:833>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_36 = __this->___shopManager;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_37 = V_1;
 		NullCheck(L_36);
@@ -13193,7 +13350,7 @@ IL_00d2:
 
 IL_00ec:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:804>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:835>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_38;
 		L_38 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -13205,7 +13362,7 @@ IL_00ec:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:806>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:837>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_40;
 		L_40 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_41 = V_1;
@@ -13219,23 +13376,23 @@ IL_00ec:
 
 IL_0113:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:809>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:840>
 		return (bool)1;
 	}
 
 IL_0115:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:813>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:844>
 		String_t* L_44 = V_0;
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_45;
 		L_45 = ItemPlacementManager_FindShopItemData_m408777F9AD6C098C13A82EB4960D821C8C3904B1(__this, L_44, NULL);
 		V_2 = L_45;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:814>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:845>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_46 = V_2;
 		int32_t L_47;
 		L_47 = ItemPlacementManager_CalculateCoinRefund_m817810947479A2D142EA6262BEF2CA9BF529E4A9(__this, L_46, NULL);
 		V_3 = L_47;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:816>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:847>
 		int32_t L_48 = V_3;
 		if ((((int32_t)L_48) <= ((int32_t)0)))
 		{
@@ -13254,19 +13411,19 @@ IL_0115:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:818>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:849>
 		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_51;
 		L_51 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
 		int32_t L_52 = V_3;
 		NullCheck(L_51);
 		NoorCoinManager_Earn_m2E8D27BDCE73C48150F14D45F62147E023F7A8D6(L_51, L_52, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:819>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:850>
 		return (bool)1;
 	}
 
 IL_0144:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:824>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:855>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_53;
 		L_53 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -13278,7 +13435,7 @@ IL_0144:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:826>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:857>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_55;
 		L_55 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_55);
@@ -13287,11 +13444,11 @@ IL_0144:
 
 IL_0160:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:829>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:860>
 		return (bool)1;
 	}
 }
-// Method Definition Index: 58989
+// Method Definition Index: 58993
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ItemPlacementManager_CalculateCoinRefund_m817810947479A2D142EA6262BEF2CA9BF529E4A9 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___0_shopData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13301,7 +13458,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ItemPlacementManager_CalculateCoinRef
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:835>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:866>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_0 = ___0_shopData;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -13323,13 +13480,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ItemPlacementManager_CalculateCoinRef
 
 IL_0012:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:835>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:866>
 		return 0;
 	}
 
 IL_0014:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:836>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:867>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_4 = ___0_shopData;
 		NullCheck(L_4);
 		int32_t L_5 = L_4->___noorCoinCost;
@@ -13339,7 +13496,7 @@ IL_0014:
 		return L_7;
 	}
 }
-// Method Definition Index: 58990
+// Method Definition Index: 58994
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RemoveFromGarden_m35771594A1ABF3281F72207F54E72A36D957BCFB (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13352,17 +13509,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_RemoveFromGarden_m3
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* G_B2_0 = NULL;
 	Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* G_B1_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:842>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:873>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_0 = __this->___activePlacedItems;
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_1 = ___0_item;
 		NullCheck(L_0);
 		bool L_2;
 		L_2 = List_1_Remove_mD2286FCEF6DC17166984450CAFB3329AF0E924C5(L_0, L_1, List_1_Remove_mD2286FCEF6DC17166984450CAFB3329AF0E924C5_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:843>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:874>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_3 = ___0_item;
 		NullCheck(L_3);
 		PlaceableItem_SetHighlight_m568F7A10594700BF5F4B171FD4B229FDE026A354(L_3, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:844>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:875>
 		Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* L_4 = ((ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_StaticFields*)il2cpp_codegen_static_fields_for(ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A_il2cpp_TypeInfo_var))->___OnItemRemoved;
 		Action_1_tCADEE4ACE094BBD1B597FE340D772DB64549901F* L_5 = L_4;
 		if (L_5)
@@ -13381,11 +13538,11 @@ IL_001e:
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_6 = ___0_item;
 		NullCheck(G_B2_0);
 		Action_1_Invoke_m6F2BD7D87966ECF8A3BBE51FD328BC328425A536_inline(G_B2_0, L_6, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:845>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:876>
 		return;
 	}
 }
-// Method Definition Index: 58991
+// Method Definition Index: 58995
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ItemPlacementManager_ResolveItemPrefabRef_m14F91EA86640C2A9BD1F8EABB81003A147BC7CFC (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, int32_t ___0_kind, String_t* ___1_itemId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13397,7 +13554,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 	ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* V_0 = NULL;
 	TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* V_1 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:851>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:882>
 		int32_t L_0 = ___0_kind;
 		if ((((int32_t)L_0) == ((int32_t)2)))
 		{
@@ -13405,12 +13562,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:853>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:884>
 		String_t* L_1 = ___1_itemId;
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_2;
 		L_2 = ItemPlacementManager_FindShopItemData_m408777F9AD6C098C13A82EB4960D821C8C3904B1(__this, L_1, NULL);
 		V_0 = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:854>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:885>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_3 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -13442,7 +13599,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:856>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:887>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_10 = V_0;
 		NullCheck(L_10);
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_11 = L_10->___itemPrefabRef;
@@ -13451,7 +13608,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 
 IL_0031:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:860>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:891>
 		int32_t L_12 = ___0_kind;
 		if ((((int32_t)L_12) == ((int32_t)1)))
 		{
@@ -13459,12 +13616,12 @@ IL_0031:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:862>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:893>
 		String_t* L_13 = ___1_itemId;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_14;
 		L_14 = ItemPlacementManager_FindInventoryItemData_m3D54B8B4D77499EA165C1EC265A74E3A6D4D9E51(__this, L_13, NULL);
 		V_1 = L_14;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:863>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:894>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_15 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_16;
@@ -13496,7 +13653,7 @@ IL_0031:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:865>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:896>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_22 = V_1;
 		NullCheck(L_22);
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_23 = L_22->___itemPrefabRef;
@@ -13505,11 +13662,11 @@ IL_0031:
 
 IL_0062:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:869>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:900>
 		return (AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B*)NULL;
 	}
 }
-// Method Definition Index: 58992
+// Method Definition Index: 58996
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* ItemPlacementManager_ResolvePreviewPrefabRef_mD4A23C8402ABD81781599DE5177E724ACE148F99 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, int32_t ___0_kind, String_t* ___1_itemId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13521,7 +13678,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 	ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* V_0 = NULL;
 	TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* V_1 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:876>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:907>
 		int32_t L_0 = ___0_kind;
 		if ((((int32_t)L_0) == ((int32_t)2)))
 		{
@@ -13529,12 +13686,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:878>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:909>
 		String_t* L_1 = ___1_itemId;
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_2;
 		L_2 = ItemPlacementManager_FindShopItemData_m408777F9AD6C098C13A82EB4960D821C8C3904B1(__this, L_1, NULL);
 		V_0 = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:879>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:910>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_3 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -13545,7 +13702,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:879>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:910>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_5 = V_0;
 		NullCheck(L_5);
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_6 = L_5->___itemPlacementModelPrefabRef;
@@ -13554,7 +13711,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetReferenceGameObject_t45C68C64E1153AED134
 
 IL_001c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:882>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:913>
 		int32_t L_7 = ___0_kind;
 		if ((((int32_t)L_7) == ((int32_t)1)))
 		{
@@ -13562,12 +13719,12 @@ IL_001c:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:884>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:915>
 		String_t* L_8 = ___1_itemId;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_9;
 		L_9 = ItemPlacementManager_FindInventoryItemData_m3D54B8B4D77499EA165C1EC265A74E3A6D4D9E51(__this, L_8, NULL);
 		V_1 = L_9;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:885>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:916>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_10 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
@@ -13578,7 +13735,7 @@ IL_001c:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:885>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:916>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_12 = V_1;
 		NullCheck(L_12);
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_13 = L_12->___itemPlacementModelPrefabRef;
@@ -13587,11 +13744,11 @@ IL_001c:
 
 IL_0038:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:888>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:919>
 		return (AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B*)NULL;
 	}
 }
-// Method Definition Index: 58993
+// Method Definition Index: 58997
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SavePlacedItems_mDB4247A994783E733FC97C6CC04900B27B292593 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13605,23 +13762,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_SavePlacedItems_mDB
 	}
 	SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:901>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:932>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_0;
 		L_0 = ItemPlacementManager_BuildCurrentState_m2B6B6D17D45E9A5E050501A3B9D2A6D646996646(__this, NULL);
 		V_0 = L_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:903>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:934>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_1 = V_0;
 		SaveSystem_Save_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_mC54AD6906162FE11F2C46EC4570536B4F3D7553D(_stringLiteral2E151709732C0CC9AE468DD0521ED0B687E678B9, L_1, SaveSystem_Save_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_mC54AD6906162FE11F2C46EC4570536B4F3D7553D_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:904>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:935>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral6ED3441AEE7CBAEDE373BD83E436468A588CC612, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:906>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:937>
 		ItemPlacementManager_QueueCloudPush_mD8596775D176BC9EDE5C3C8ED0142F651C86DB4D(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:907>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:938>
 		return;
 	}
 }
-// Method Definition Index: 58994
+// Method Definition Index: 58998
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* ItemPlacementManager_BuildCurrentState_m2B6B6D17D45E9A5E050501A3B9D2A6D646996646 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13637,7 +13794,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E4
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CBuildCurrentStateU3Eb__79_0_m6CE628664BEB81BDCEE77643FC36832ED3B17B6E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CBuildCurrentStateU3Eb__85_0_mF9E16AED7CE7493CCF67647F7B5A71E145220396_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -13652,10 +13809,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E4
 	Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* G_B1_0 = NULL;
 	List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* G_B1_1 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:913>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:944>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_0 = __this->___activePlacedItems;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var);
-		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_1 = ((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__79_0;
+		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_1 = ((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__85_0;
 		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_2 = L_1;
 		if (L_2)
 		{
@@ -13670,10 +13827,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E4
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var);
 		U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* L_3 = ((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9;
 		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_4 = (Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535*)il2cpp_codegen_object_new(Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535_il2cpp_TypeInfo_var);
-		Predicate_1__ctor_mCCEFEFB552099675C0A737ED69889847E5BA2015(L_4, L_3, (intptr_t)((void*)U3CU3Ec_U3CBuildCurrentStateU3Eb__79_0_m6CE628664BEB81BDCEE77643FC36832ED3B17B6E_RuntimeMethod_var), NULL);
+		Predicate_1__ctor_mCCEFEFB552099675C0A737ED69889847E5BA2015(L_4, L_3, (intptr_t)((void*)U3CU3Ec_U3CBuildCurrentStateU3Eb__85_0_mF9E16AED7CE7493CCF67647F7B5A71E145220396_RuntimeMethod_var), NULL);
 		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_5 = L_4;
-		((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__79_0 = L_5;
-		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__79_0), (void*)L_5);
+		((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__85_0 = L_5;
+		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__85_0), (void*)L_5);
 		G_B2_0 = L_5;
 		G_B2_1 = G_B1_1;
 	}
@@ -13683,10 +13840,10 @@ IL_0025:
 		NullCheck(G_B2_1);
 		int32_t L_6;
 		L_6 = List_1_RemoveAll_mD2B2591C5976F1C3249677A02A6FC6C6D9A57F7F(G_B2_1, G_B2_0, List_1_RemoveAll_mD2B2591C5976F1C3249677A02A6FC6C6D9A57F7F_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:915>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:946>
 		int32_t L_7 = __this->____revision;
 		__this->____revision = ((int32_t)il2cpp_codegen_add(L_7, 1));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:916>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:947>
 		il2cpp_codegen_runtime_class_init_inline(DateTimeOffset_t4EE701FE2F386D6F932FAC9B11E4B74A5B30F0A4_il2cpp_TypeInfo_var);
 		DateTimeOffset_t4EE701FE2F386D6F932FAC9B11E4B74A5B30F0A4 L_8;
 		L_8 = DateTimeOffset_get_UtcNow_mD315065704E3FE153970E6BD06362AEDD3D9765F(NULL);
@@ -13694,11 +13851,11 @@ IL_0025:
 		int64_t L_9;
 		L_9 = DateTimeOffset_ToUnixTimeSeconds_m91F88288451BAB5A8373467A94DAEA359AAF34BD((&V_1), NULL);
 		__this->____lastSavedAtUnix = ((double)L_9);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:918>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:919>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:920>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:921>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:922>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:949>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:950>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:951>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:952>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:953>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_10 = (SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB*)il2cpp_codegen_object_new(SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_il2cpp_TypeInfo_var);
 		SaveStateCollection__ctor_m7AB12E95369D5250528381BA420F173F87D11229(L_10, NULL);
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_11 = L_10;
@@ -13710,7 +13867,7 @@ IL_0025:
 		NullCheck(L_13);
 		L_13->___revision = L_14;
 		V_0 = L_13;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:924>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:955>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_15 = __this->___activePlacedItems;
 		NullCheck(L_15);
 		Enumerator_t227FB2AA96B45FA9B9BE6B2D54808547D407C689 L_16;
@@ -13735,21 +13892,21 @@ FINALLY_0116:
 
 IL_007c_1:
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:924>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:955>
 				PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_17;
 				L_17 = Enumerator_get_Current_mF531CFB4EA7F8057845120425F1FC007D8C20153_inline((&V_2), Enumerator_get_Current_mF531CFB4EA7F8057845120425F1FC007D8C20153_RuntimeMethod_var);
 				V_3 = L_17;
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:926>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:927>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:928>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:929>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:930>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:931>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:932>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:933>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:934>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:935>
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:936>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:957>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:958>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:959>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:960>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:961>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:962>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:963>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:964>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:965>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:966>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:967>
 				SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_18 = V_0;
 				NullCheck(L_18);
 				List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* L_19 = L_18->___items;
@@ -13824,7 +13981,7 @@ IL_007c_1:
 
 IL_0108_1:
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:924>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:955>
 				bool L_49;
 				L_49 = Enumerator_MoveNext_mB1F7FF5312E430251E529CE7277A0F149250F659((&V_2), Enumerator_MoveNext_mB1F7FF5312E430251E529CE7277A0F149250F659_RuntimeMethod_var);
 				if (L_49)
@@ -13844,12 +14001,12 @@ IL_0108_1:
 
 IL_0124:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:939>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:970>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_50 = V_0;
 		return L_50;
 	}
 }
-// Method Definition Index: 58995
+// Method Definition Index: 58999
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_LoadPlacedItems_m849DF04D6249CCE8806BF00E7EFC21DABBC8E4A5 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13861,7 +14018,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_LoadPlacedItems_m84
 	}
 	SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:947>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:978>
 		bool L_0;
 		L_0 = SaveSystem_Exists_m1886FB2E731CD63EEE045C293946BE8E229EE7EF(_stringLiteral2E151709732C0CC9AE468DD0521ED0B687E678B9, NULL);
 		if (L_0)
@@ -13870,17 +14027,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_LoadPlacedItems_m84
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:947>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:978>
 		return;
 	}
 
 IL_000d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:949>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:980>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_1;
 		L_1 = SaveSystem_Load_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_m27DF04684B78CE40329C426C9294572B1F92F90F(_stringLiteral2E151709732C0CC9AE468DD0521ED0B687E678B9, SaveSystem_Load_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_m27DF04684B78CE40329C426C9294572B1F92F90F_RuntimeMethod_var);
 		V_0 = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:950>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:981>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_2 = V_0;
 		if (!L_2)
 		{
@@ -13899,49 +14056,49 @@ IL_000d:
 
 IL_0023:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:950>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:981>
 		return;
 	}
 
 IL_0024:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:952>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:983>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_5 = V_0;
 		NullCheck(L_5);
 		int32_t L_6 = L_5->___revision;
 		__this->____revision = L_6;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:953>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:984>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_7 = V_0;
 		NullCheck(L_7);
 		double L_8 = L_7->___gameClosedTimeUnix;
 		__this->____lastSavedAtUnix = L_8;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:955>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:986>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_9 = V_0;
 		RuntimeObject* L_10;
 		L_10 = ItemPlacementManager_RebuildGardenAsync_mC7C951A1D15D8DA092649BF4D75E7B451FD21782(__this, L_9, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_11;
 		L_11 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_10, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:956>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:987>
 		return;
 	}
 }
-// Method Definition Index: 58996
+// Method Definition Index: 59000
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_RebuildGardenAsync_mC7C951A1D15D8DA092649BF4D75E7B451FD21782 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* ___0_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* L_0 = (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41*)il2cpp_codegen_object_new(U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41_il2cpp_TypeInfo_var);
-		U3CRebuildGardenAsyncU3Ed__81__ctor_m8A3513C41B8BC5455FC4242F90D7C733A403AE9B(L_0, 0, NULL);
-		U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* L_1 = L_0;
+		U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* L_0 = (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C*)il2cpp_codegen_object_new(U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C_il2cpp_TypeInfo_var);
+		U3CRebuildGardenAsyncU3Ed__87__ctor_m89ACFFFC5BC399D6A808F620124F478FD18634E4(L_0, 0, NULL);
+		U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
-		U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* L_2 = L_1;
+		U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* L_2 = L_1;
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_3 = ___0_state;
 		NullCheck(L_2);
 		L_2->___state = L_3;
@@ -13949,7 +14106,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_RebuildGa
 		return L_2;
 	}
 }
-// Method Definition Index: 58997
+// Method Definition Index: 59001
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ItemPlacementManager_FindShopItemData_m408777F9AD6C098C13A82EB4960D821C8C3904B1 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, String_t* ___0_itemId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13962,7 +14119,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2
 	int32_t V_1 = 0;
 	ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* V_2 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1046>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1077>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_0 = __this->___shopManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -13993,13 +14150,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2
 
 IL_0023:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1046>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1077>
 		return (ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89*)NULL;
 	}
 
 IL_0025:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1048>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1079>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_6 = __this->___shopManager;
 		NullCheck(L_6);
 		ShopItemDataU5BU5D_t95EEF4891E3196FBECD641E249452F54683F4C5B* L_7 = L_6->___shopItemDatas;
@@ -14010,14 +14167,14 @@ IL_0025:
 
 IL_0035:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1048>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1079>
 		ShopItemDataU5BU5D_t95EEF4891E3196FBECD641E249452F54683F4C5B* L_8 = V_0;
 		int32_t L_9 = V_1;
 		NullCheck(L_8);
 		int32_t L_10 = L_9;
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
 		V_2 = L_11;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1050>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1081>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_12 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -14040,7 +14197,7 @@ IL_0035:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1050>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1081>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_18 = V_2;
 		return L_18;
 	}
@@ -14053,7 +14210,7 @@ IL_0052:
 
 IL_0056:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1048>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1079>
 		int32_t L_20 = V_1;
 		ShopItemDataU5BU5D_t95EEF4891E3196FBECD641E249452F54683F4C5B* L_21 = V_0;
 		NullCheck(L_21);
@@ -14063,11 +14220,11 @@ IL_0056:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1053>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1084>
 		return (ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89*)NULL;
 	}
 }
-// Method Definition Index: 58998
+// Method Definition Index: 59002
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ItemPlacementManager_FindInventoryItemData_m3D54B8B4D77499EA165C1EC265A74E3A6D4D9E51 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, String_t* ___0_itemId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14080,7 +14237,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E
 	int32_t V_1 = 0;
 	TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* V_2 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1059>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1090>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_0 = __this->___shopManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -14111,13 +14268,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E
 
 IL_0023:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1059>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1090>
 		return (TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL;
 	}
 
 IL_0025:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1061>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1092>
 		InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* L_6 = __this->___shopManager;
 		NullCheck(L_6);
 		TreasureBoxRewardItemDataU5BU5D_tAF40E42F9DAE5040BC81E8A60672E4191CA730A2* L_7 = L_6->___inventoryItemDatas;
@@ -14128,14 +14285,14 @@ IL_0025:
 
 IL_0035:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1061>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1092>
 		TreasureBoxRewardItemDataU5BU5D_tAF40E42F9DAE5040BC81E8A60672E4191CA730A2* L_8 = V_0;
 		int32_t L_9 = V_1;
 		NullCheck(L_8);
 		int32_t L_10 = L_9;
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
 		V_2 = L_11;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1063>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1094>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_12 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -14158,7 +14315,7 @@ IL_0035:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1063>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1094>
 		TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* L_18 = V_2;
 		return L_18;
 	}
@@ -14171,7 +14328,7 @@ IL_0052:
 
 IL_0056:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1061>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1092>
 		int32_t L_20 = V_1;
 		TreasureBoxRewardItemDataU5BU5D_tAF40E42F9DAE5040BC81E8A60672E4191CA730A2* L_21 = V_0;
 		NullCheck(L_21);
@@ -14181,11 +14338,11 @@ IL_0056:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1066>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1097>
 		return (TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40*)NULL;
 	}
 }
-// Method Definition Index: 58999
+// Method Definition Index: 59003
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_BeginCloudSync_m55268EC9FD37E38ADE520F1CF8490BB7E99ED992 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14197,7 +14354,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_BeginCloudSync_m552
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1080>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1111>
 		bool L_0 = __this->___syncToCloud;
 		if (L_0)
 		{
@@ -14205,17 +14362,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_BeginCloudSync_m552
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1080>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1111>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1082>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1113>
 		Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF* L_1 = (Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF*)il2cpp_codegen_object_new(Action_1_t4C5AAD959DEB3CB9D25659FC533D53B18E7E71FF_il2cpp_TypeInfo_var);
 		Action_1__ctor_m180FBE7B35FB8686D49DBD4002E0382911DFC5BE(L_1, __this, (intptr_t)((void*)ItemPlacementManager_HandleCloudGardenState_m8F0B8D7B6C171FC9127FD846D5702E584BA76EC0_RuntimeMethod_var), NULL);
 		FlutterBridge_add_OnGardenStateReceived_m0BD29AD52EC21ECCA000FA07314DF463E7088387(L_1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1085>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1116>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_2;
 		L_2 = FlutterBridge_get_LatestGardenState_m4ED08B3B15ACFAA34ECB2621EB0413C7850A5346_inline(NULL);
 		if (!L_2)
@@ -14224,7 +14381,7 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1087>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1118>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_3;
 		L_3 = FlutterBridge_get_LatestGardenState_m4ED08B3B15ACFAA34ECB2621EB0413C7850A5346_inline(NULL);
 		ItemPlacementManager_HandleCloudGardenState_m8F0B8D7B6C171FC9127FD846D5702E584BA76EC0(__this, L_3, NULL);
@@ -14233,7 +14390,7 @@ IL_0009:
 
 IL_002d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1089>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1120>
 		FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* L_4;
 		L_4 = FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -14245,7 +14402,7 @@ IL_002d:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1091>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1122>
 		FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* L_6;
 		L_6 = FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline(NULL);
 		NullCheck(L_6);
@@ -14254,11 +14411,11 @@ IL_002d:
 
 IL_0044:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1093>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1124>
 		return;
 	}
 }
-// Method Definition Index: 59000
+// Method Definition Index: 59004
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandleCloudGardenState_m8F0B8D7B6C171FC9127FD846D5702E584BA76EC0 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ___0_payload, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14272,7 +14429,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandleCloudGardenSt
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1132>
 		bool L_0 = __this->___syncToCloud;
 		if (!L_0)
 		{
@@ -14289,13 +14446,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_HandleCloudGardenSt
 
 IL_000b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1132>
 		return;
 	}
 
 IL_000c:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1137>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_2 = ___0_payload;
 		NullCheck(L_2);
 		bool L_3 = L_2->___hasData;
@@ -14305,7 +14462,7 @@ IL_000c:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1139>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_4 = __this->___activePlacedItems;
 		NullCheck(L_4);
 		int32_t L_5;
@@ -14316,22 +14473,22 @@ IL_000c:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1141>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralBCCF6481E635F44D4C13564EB3EC6896EBA77275, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1142>
 		ItemPlacementManager_QueueCloudPush_mD8596775D176BC9EDE5C3C8ED0142F651C86DB4D(__this, NULL);
 	}
 
 IL_0032:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1144>
 		return;
 	}
 
 IL_0033:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1116>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1147>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_6 = ___0_payload;
 		bool L_7;
 		L_7 = ItemPlacementManager_IsCloudStateNewer_mF668D74BE15EA406464A37F293CA62061408214B(__this, L_6, NULL);
@@ -14341,18 +14498,18 @@ IL_0033:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1149>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral2305E13743534ED532F4E66AED7476F4C2E5B954, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1150>
 		ItemPlacementManager_QueueCloudPush_mD8596775D176BC9EDE5C3C8ED0142F651C86DB4D(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1151>
 		return;
 	}
 
 IL_004d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1156>
 		bool L_8;
 		L_8 = ItemPlacementManager_get_IsPlacing_mE6289860C5505456CF9331A5A710480D346A85A3(__this, NULL);
 		if (!L_8)
@@ -14361,27 +14518,27 @@ IL_004d:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1158>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral88AE3921139B9FC1F915753DA00246E3C276AB3A, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1159>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_9 = ___0_payload;
 		__this->____deferredCloudState = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____deferredCloudState), (void*)L_9);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1129>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1160>
 		return;
 	}
 
 IL_0067:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1163>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_10 = ___0_payload;
 		ItemPlacementManager_AdoptCloudState_m6F5F7D0029B926349AD2CE3810174DA12E8EB399(__this, L_10, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1164>
 		return;
 	}
 }
-// Method Definition Index: 59001
+// Method Definition Index: 59005
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_AdoptCloudState_m6F5F7D0029B926349AD2CE3810174DA12E8EB399 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ___0_payload, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14396,31 +14553,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_AdoptCloudState_m6F
 	}
 	SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1137>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1168>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_0 = ___0_payload;
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_1;
 		L_1 = ItemPlacementManager_ToSaveState_m9321CF17A7BF89FF840B3E5D5A90C78C33010228(L_0, NULL);
 		V_0 = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1170>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_2 = ___0_payload;
 		NullCheck(L_2);
 		int32_t L_3 = L_2->___revision;
 		__this->____revision = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1171>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_4 = ___0_payload;
 		NullCheck(L_4);
 		int64_t L_5 = L_4->___savedAtUnix;
 		__this->____lastSavedAtUnix = ((double)L_5);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1173>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_6 = V_0;
 		RuntimeObject* L_7;
 		L_7 = ItemPlacementManager_RebuildGardenAsync_mC7C951A1D15D8DA092649BF4D75E7B451FD21782(__this, L_6, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_8;
 		L_8 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_7, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1178>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_9 = V_0;
 		SaveSystem_Save_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_mC54AD6906162FE11F2C46EC4570536B4F3D7553D(_stringLiteral2E151709732C0CC9AE468DD0521ED0B687E678B9, L_9, SaveSystem_Save_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_mC54AD6906162FE11F2C46EC4570536B4F3D7553D_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1180>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_10 = V_0;
 		NullCheck(L_10);
 		List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* L_11 = L_10->___items;
@@ -14433,16 +14590,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_AdoptCloudState_m6F
 		L_15 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF9BCBB4A8E3E1A48F3FB9DD2DC1AD29EB43669F7, L_14, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_15, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1181>
 		return;
 	}
 }
-// Method Definition Index: 59002
+// Method Definition Index: 59006
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_ApplyDeferredCloudState_mE07E10356FEDB32AFCDFFD04F5FBA027DF5D3183 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1154>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1185>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_0 = __this->____deferredCloudState;
 		if (!L_0)
 		{
@@ -14460,19 +14617,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_ApplyDeferredCloudS
 
 IL_0010:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1154>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1185>
 		return;
 	}
 
 IL_0011:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1156>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1187>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_2 = __this->____deferredCloudState;
 		V_0 = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1188>
 		__this->____deferredCloudState = (GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____deferredCloudState), (void*)(GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1192>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_3 = V_0;
 		bool L_4;
 		L_4 = ItemPlacementManager_IsCloudStateNewer_mF668D74BE15EA406464A37F293CA62061408214B(__this, L_3, NULL);
@@ -14482,26 +14639,26 @@ IL_0011:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1194>
 		ItemPlacementManager_QueueCloudPush_mD8596775D176BC9EDE5C3C8ED0142F651C86DB4D(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1164>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1195>
 		return;
 	}
 
 IL_002f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1198>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_5 = V_0;
 		ItemPlacementManager_AdoptCloudState_m6F5F7D0029B926349AD2CE3810174DA12E8EB399(__this, L_5, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1199>
 		return;
 	}
 }
-// Method Definition Index: 59003
+// Method Definition Index: 59007
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_IsCloudStateNewer_mF668D74BE15EA406464A37F293CA62061408214B (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ___0_payload, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1207>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_0 = ___0_payload;
 		NullCheck(L_0);
 		int64_t L_1 = L_0->___savedAtUnix;
@@ -14512,13 +14669,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ItemPlacementManager_IsCloudStateNewer_m
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1207>
 		return (bool)1;
 	}
 
 IL_0011:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1208>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_3 = ___0_payload;
 		NullCheck(L_3);
 		int64_t L_4 = L_3->___savedAtUnix;
@@ -14529,13 +14686,13 @@ IL_0011:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1208>
 		return (bool)0;
 	}
 
 IL_0022:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1178>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1209>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_6 = ___0_payload;
 		NullCheck(L_6);
 		int32_t L_7 = L_6->___revision;
@@ -14543,11 +14700,11 @@ IL_0022:
 		return (bool)((((int32_t)L_7) > ((int32_t)L_8))? 1 : 0);
 	}
 }
-// Method Definition Index: 59004
+// Method Definition Index: 59008
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_QueueCloudPush_mD8596775D176BC9EDE5C3C8ED0142F651C86DB4D (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1215>
 		bool L_0 = __this->___syncToCloud;
 		if (L_0)
 		{
@@ -14555,15 +14712,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_QueueCloudPush_mD85
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1215>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1217>
 		__this->____cloudPushPending = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1221>
 		bool L_1;
 		L_1 = Behaviour_get_isActiveAndEnabled_mEB4ECCE9761A7016BC619557CEFEA1A30D3BF28A(__this, NULL);
 		if (L_1)
@@ -14572,13 +14729,13 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1221>
 		return;
 	}
 
 IL_0019:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1223>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2 = __this->____cloudPushRoutine;
 		if (!L_2)
 		{
@@ -14586,48 +14743,48 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1223>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_3 = __this->____cloudPushRoutine;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_3, NULL);
 	}
 
 IL_002d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1193>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1224>
 		RuntimeObject* L_4;
 		L_4 = ItemPlacementManager_PushToCloudAfterDelay_mA253B1DCBAB9127A258CF0154A9EA996E5FE5018(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_5;
 		L_5 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_4, NULL);
 		__this->____cloudPushRoutine = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____cloudPushRoutine), (void*)L_5);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1225>
 		return;
 	}
 }
-// Method Definition Index: 59005
+// Method Definition Index: 59009
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ItemPlacementManager_PushToCloudAfterDelay_mA253B1DCBAB9127A258CF0154A9EA996E5FE5018 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* L_0 = (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F*)il2cpp_codegen_object_new(U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F_il2cpp_TypeInfo_var);
-		U3CPushToCloudAfterDelayU3Ed__90__ctor_mE7DD437CCC378CB97542035E2B1203EC7D194071(L_0, 0, NULL);
-		U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* L_1 = L_0;
+		U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* L_0 = (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174*)il2cpp_codegen_object_new(U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174_il2cpp_TypeInfo_var);
+		U3CPushToCloudAfterDelayU3Ed__96__ctor_m99C4A6A5BCD9A683D2AA8D8645B5E3A602851737(L_0, 0, NULL);
+		U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
 		return L_1;
 	}
 }
-// Method Definition Index: 59006
+// Method Definition Index: 59010
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FlushCloudPush_m7B214417B3B5FABC0A61BF9A05E7D8FC30DF501E (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1208>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1239>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____cloudPushRoutine;
 		if (!L_0)
 		{
@@ -14635,17 +14792,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_FlushCloudPush_m7B2
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1241>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____cloudPushRoutine;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1242>
 		__this->____cloudPushRoutine = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____cloudPushRoutine), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
 	}
 
 IL_001b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1245>
 		bool L_2 = __this->____cloudPushPending;
 		if (!L_2)
 		{
@@ -14653,17 +14810,17 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1245>
 		ItemPlacementManager_PushToCloud_mD328CEAA49F2818CE8BCA8D3E8A6337ABC68F21C(__this, NULL);
 	}
 
 IL_0029:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1246>
 		return;
 	}
 }
-// Method Definition Index: 59007
+// Method Definition Index: 59011
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PushToCloud_mD328CEAA49F2818CE8BCA8D3E8A6337ABC68F21C (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14675,7 +14832,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PushToCloud_mD328CE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1250>
 		bool L_0 = __this->___syncToCloud;
 		if (L_0)
 		{
@@ -14683,13 +14840,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager_PushToCloud_mD328CE
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1250>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1252>
 		FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* L_1;
 		L_1 = FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -14701,29 +14858,29 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1223>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1254>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteral7C7FED980D042A77E4912CC7192FFBC1F39EB8A4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1224>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1255>
 		return;
 	}
 
 IL_0021:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1227>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1258>
 		FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* L_3;
 		L_3 = FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline(NULL);
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_4;
 		L_4 = ItemPlacementManager_ToPayload_mEBB5ED012E3E8BC947915D0F7635F19CCD6D0624(__this, NULL);
 		NullCheck(L_3);
 		FlutterBridge_SaveGardenState_m0750059FBC29DC1DC6038C846A0D0B2AE9077D2F(L_3, L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1259>
 		__this->____cloudPushPending = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1229>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1260>
 		return;
 	}
 }
-// Method Definition Index: 59008
+// Method Definition Index: 59012
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ItemPlacementManager_ToPayload_mEBB5ED012E3E8BC947915D0F7635F19CCD6D0624 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14736,7 +14893,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C75655
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_m8624F3C1CFF7E94F4F222115EA79AABF6EFF9F7B_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m7B42D4FDD892B214257BF8EB399340AD72F4A65B_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CToPayloadU3Eb__93_0_m592C301A24A0ABB2549E6BBC127C0794116069CA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_U3CToPayloadU3Eb__99_0_mB6F27C2AD6D9E37642E49B97FBE627C5348B764D_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -14752,10 +14909,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C75655
 	Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* G_B1_0 = NULL;
 	List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* G_B1_1 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1265>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_0 = __this->___activePlacedItems;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var);
-		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_1 = ((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__93_0;
+		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_1 = ((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__99_0;
 		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_2 = L_1;
 		if (L_2)
 		{
@@ -14770,10 +14927,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C75655
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var);
 		U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* L_3 = ((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9;
 		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_4 = (Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535*)il2cpp_codegen_object_new(Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535_il2cpp_TypeInfo_var);
-		Predicate_1__ctor_mCCEFEFB552099675C0A737ED69889847E5BA2015(L_4, L_3, (intptr_t)((void*)U3CU3Ec_U3CToPayloadU3Eb__93_0_m592C301A24A0ABB2549E6BBC127C0794116069CA_RuntimeMethod_var), NULL);
+		Predicate_1__ctor_mCCEFEFB552099675C0A737ED69889847E5BA2015(L_4, L_3, (intptr_t)((void*)U3CU3Ec_U3CToPayloadU3Eb__99_0_mB6F27C2AD6D9E37642E49B97FBE627C5348B764D_RuntimeMethod_var), NULL);
 		Predicate_1_tD585768F14A5CA3CC25CB042EFEB62D32F202535* L_5 = L_4;
-		((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__93_0 = L_5;
-		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__93_0), (void*)L_5);
+		((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__99_0 = L_5;
+		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B_il2cpp_TypeInfo_var))->___U3CU3E9__99_0), (void*)L_5);
 		G_B2_0 = L_5;
 		G_B2_1 = G_B1_1;
 	}
@@ -14783,28 +14940,28 @@ IL_0025:
 		NullCheck(G_B2_1);
 		int32_t L_6;
 		L_6 = List_1_RemoveAll_mD2B2591C5976F1C3249677A02A6FC6C6D9A57F7F(G_B2_1, G_B2_0, List_1_RemoveAll_mD2B2591C5976F1C3249677A02A6FC6C6D9A57F7F_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1236>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1267>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_7 = __this->___activePlacedItems;
 		NullCheck(L_7);
 		int32_t L_8;
 		L_8 = List_1_get_Count_m8624F3C1CFF7E94F4F222115EA79AABF6EFF9F7B_inline(L_7, List_1_get_Count_m8624F3C1CFF7E94F4F222115EA79AABF6EFF9F7B_RuntimeMethod_var);
 		GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E* L_9 = (GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E*)(GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E*)SZArrayNew(GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E_il2cpp_TypeInfo_var, (uint32_t)L_8);
 		V_0 = L_9;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1268>
 		V_1 = 0;
 		goto IL_0115;
 	}
 
 IL_0043:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1239>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1270>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_10 = __this->___activePlacedItems;
 		int32_t L_11 = V_1;
 		NullCheck(L_10);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_12;
 		L_12 = List_1_get_Item_m7B42D4FDD892B214257BF8EB399340AD72F4A65B(L_10, L_11, List_1_get_Item_m7B42D4FDD892B214257BF8EB399340AD72F4A65B_RuntimeMethod_var);
 		V_2 = L_12;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1271>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_13 = V_2;
 		NullCheck(L_13);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
@@ -14813,7 +14970,7 @@ IL_0043:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
 		L_15 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_14, NULL);
 		V_3 = L_15;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1241>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1272>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_16 = V_2;
 		NullCheck(L_16);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
@@ -14822,22 +14979,22 @@ IL_0043:
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_18;
 		L_18 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_17, NULL);
 		V_4 = L_18;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1243>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1244>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1245>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1246>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1247>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1248>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1249>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1250>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1251>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1252>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1253>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1254>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1255>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1256>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1257>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1258>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1274>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1275>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1276>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1277>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1278>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1279>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1281>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1282>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1283>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1284>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1285>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1286>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1287>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1288>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1289>
 		GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E* L_19 = V_0;
 		int32_t L_20 = V_1;
 		GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1* L_21 = (GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1*)il2cpp_codegen_object_new(GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1_il2cpp_TypeInfo_var);
@@ -14919,14 +15076,14 @@ IL_0043:
 		NullCheck(L_19);
 		ArrayElementTypeCheck (L_19, L_58);
 		(L_19)->SetAt(static_cast<il2cpp_array_size_t>(L_20), (GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1*)L_58);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1268>
 		int32_t L_61 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_61, 1));
 	}
 
 IL_0115:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1268>
 		int32_t L_62 = V_1;
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_63 = __this->___activePlacedItems;
 		NullCheck(L_63);
@@ -14938,13 +15095,13 @@ IL_0115:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1261>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1262>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1263>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1264>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1265>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1266>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1267>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1292>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1293>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1294>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1295>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1296>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1297>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1298>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_65 = (GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95*)il2cpp_codegen_object_new(GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95_il2cpp_TypeInfo_var);
 		GardenStatePayload__ctor_mB45A3986413D05940A9EF70E88C85599265693CA(L_65, NULL);
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_66 = L_65;
@@ -14966,7 +15123,7 @@ IL_0115:
 		return L_71;
 	}
 }
-// Method Definition Index: 59009
+// Method Definition Index: 59013
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* ItemPlacementManager_ToSaveState_m9321CF17A7BF89FF840B3E5D5A90C78C33010228 (GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* ___0_payload, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14982,11 +15139,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E4
 	int32_t V_2 = 0;
 	GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1* V_3 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1272>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1273>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1274>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1275>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1276>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1303>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1304>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1305>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1306>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1307>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_0 = (SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB*)il2cpp_codegen_object_new(SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_il2cpp_TypeInfo_var);
 		SaveStateCollection__ctor_m7AB12E95369D5250528381BA420F173F87D11229(L_0, NULL);
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_1 = L_0;
@@ -15002,7 +15159,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E4
 		NullCheck(L_4);
 		L_4->___revision = L_6;
 		V_0 = L_4;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1278>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1309>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_7 = ___0_payload;
 		NullCheck(L_7);
 		GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E* L_8 = L_7->___items;
@@ -15012,14 +15169,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SaveStateCollection_tF924CC44EBEE09A0A69463E4
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1278>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1309>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_9 = V_0;
 		return L_9;
 	}
 
 IL_0029:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1311>
 		GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* L_10 = ___0_payload;
 		NullCheck(L_10);
 		GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E* L_11 = L_10->___items;
@@ -15030,14 +15187,14 @@ IL_0029:
 
 IL_0037:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1311>
 		GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E* L_12 = V_1;
 		int32_t L_13 = V_2;
 		NullCheck(L_12);
 		int32_t L_14 = L_13;
 		GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1* L_15 = (L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_14));
 		V_3 = L_15;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1282>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1313>
 		GardenItemPayload_t43EBBF948B123189FF09B49CEC1CF4C2AD92A1F1* L_16 = V_3;
 		if (!L_16)
 		{
@@ -15045,17 +15202,17 @@ IL_0037:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1284>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1285>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1286>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1287>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1288>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1289>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1290>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1291>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1292>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1293>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1294>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1315>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1316>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1317>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1318>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1319>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1320>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1321>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1322>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1323>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1324>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1325>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_17 = V_0;
 		NullCheck(L_17);
 		List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* L_18 = L_17->___items;
@@ -15149,7 +15306,7 @@ IL_00e3:
 
 IL_00e7:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1311>
 		int32_t L_59 = V_2;
 		GardenItemPayloadU5BU5D_tC1F3EB854FC45B068F284A6E4344017EEE7DB14E* L_60 = V_1;
 		NullCheck(L_60);
@@ -15159,12 +15316,12 @@ IL_00e7:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1297>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1328>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_61 = V_0;
 		return L_61;
 	}
 }
-// Method Definition Index: 59010
+// Method Definition Index: 59014
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager__ctor_m66EA84A6F5B3EC657B54A04810F10617A7EF2177 (ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15175,15 +15332,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager__ctor_m66EA84A6F5B3
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:63>
-		__this->___storeRefundRate = (1.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:68>
-		__this->___syncToCloud = (bool)1;
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:73>
+		__this->___storeRefundRate = (1.0f);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:78>
+		__this->___syncToCloud = (bool)1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:83>
 		__this->___cloudPushDelay = (3.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:119>
 		__this->____lastReportedPlacementProgress = (-1.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:130>
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_0 = (List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B*)il2cpp_codegen_object_new(List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B_il2cpp_TypeInfo_var);
 		List_1__ctor_m46DC10AEA5C6E2CEA49D22F7869A126D49F1AC5B(L_0, List_1__ctor_m46DC10AEA5C6E2CEA49D22F7869A126D49F1AC5B_RuntimeMethod_var);
 		__this->___activePlacedItems = L_0;
@@ -15200,7 +15357,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ItemPlacementManager__ctor_m66EA84A6F5B3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59011
+// Method Definition Index: 59015
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mBF0E9F0B09E2E127523FED90E98EBA3D05F2E8BF (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15217,7 +15374,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mBF0E9F0B09E2E127523FED90
 		return;
 	}
 }
-// Method Definition Index: 59012
+// Method Definition Index: 59016
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m7B3B2714E45BE41B8F4C64B4A21787A5547A9236 (U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15225,8 +15382,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m7B3B2714E45BE41B8F4C64B4A
 		return;
 	}
 }
-// Method Definition Index: 59013
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CBuildCurrentStateU3Eb__79_0_m6CE628664BEB81BDCEE77643FC36832ED3B17B6E (U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
+// Method Definition Index: 59017
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CBuildCurrentStateU3Eb__85_0_mF9E16AED7CE7493CCF67647F7B5A71E145220396 (U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15235,7 +15392,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CBuildCurrentStateU3Eb__79_0_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:913>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:944>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_0 = ___0_item;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15243,8 +15400,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CBuildCurrentStateU3Eb__79_0_m
 		return L_1;
 	}
 }
-// Method Definition Index: 59014
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CToPayloadU3Eb__93_0_m592C301A24A0ABB2549E6BBC127C0794116069CA (U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
+// Method Definition Index: 59018
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CToPayloadU3Eb__99_0_mB6F27C2AD6D9E37642E49B97FBE627C5348B764D (U3CU3Ec_t1247A84945E1DA944620530D4B9AFA043FD2347B* __this, PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15253,7 +15410,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CToPayloadU3Eb__93_0_m592C301A
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1265>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_0 = ___0_item;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15269,16 +15426,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CToPayloadU3Eb__93_0_m592C301A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59015
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0__ctor_mFCD92F1BBF13A97336CCE052C7DEC9F7F59635F3 (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59019
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass67_0__ctor_m5BFCFDED11BFB9DB69211E7F4AC1EF5DE143B881 (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* __this, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		return;
 	}
 }
-// Method Definition Index: 59016
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5FF134BDCAEC8D9360D35E28CFA9602335E04DDC (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59020
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5213F500A52337CE5299333CB7A94B78DB424AD1 (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15287,7 +15444,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0_U3CInternalPre
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:340>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:371>
 		int32_t L_0 = __this->___requestVersion;
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_1 = __this->___U3CU3E4__this;
 		NullCheck(L_1);
@@ -15298,13 +15455,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0_U3CInternalPre
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:340>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:371>
 		return;
 	}
 
 IL_0014:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:341>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:372>
 		bool L_3 = __this->___realReady;
 		if (!L_3)
 		{
@@ -15321,13 +15478,13 @@ IL_0014:
 
 IL_0024:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:341>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:372>
 		return;
 	}
 
 IL_0025:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:343>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:374>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___resolvedReal;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -15350,145 +15507,145 @@ IL_0025:
 
 IL_0041:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:345>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:376>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_9 = __this->___U3CU3E4__this;
 		NullCheck(L_9);
 		ItemPlacementManager_HandlePlacementLoadFailure_mD72232CA0110C4F7697B5EEA4A3DE5D41317FC5B(L_9, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:346>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:377>
 		return;
 	}
 
 IL_004d:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:349>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:380>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_10 = __this->___U3CU3E4__this;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___resolvedReal;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___resolvedPreview;
 		float L_13 = __this->___duration;
 		NullCheck(L_10);
 		ItemPlacementManager_FinishPreparingPlacement_mA57470711491FE13631BE0EC969DAEEA55AD94A9(L_10, L_11, L_12, L_13, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:350>
-		return;
-	}
-}
-// Method Definition Index: 59017
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__1_m81C4F481FF8514B14B1D90F484D8207147F43B85 (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_loaded, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:354>
-		int32_t L_0 = __this->___requestVersion;
-		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_1 = __this->___U3CU3E4__this;
-		NullCheck(L_1);
-		int32_t L_2 = L_1->____placementRequestVersion;
-		if ((((int32_t)L_0) == ((int32_t)L_2)))
-		{
-			goto IL_0014;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:354>
-		return;
-	}
-
-IL_0014:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:355>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = ___0_loaded;
-		__this->___resolvedReal = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___resolvedReal), (void*)L_3);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:356>
-		__this->___realReady = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:357>
-		U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5FF134BDCAEC8D9360D35E28CFA9602335E04DDC(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:358>
-		return;
-	}
-}
-// Method Definition Index: 59018
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eb__2_m349E59BE9744A91726E1442E9DCE534650A9D1E7 (U3CU3Ec__DisplayClass61_0_t5AFE2EA00C7331CDB17736F58FD27EDC19223236* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_loaded, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:362>
-		int32_t L_0 = __this->___requestVersion;
-		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_1 = __this->___U3CU3E4__this;
-		NullCheck(L_1);
-		int32_t L_2 = L_1->____placementRequestVersion;
-		if ((((int32_t)L_0) == ((int32_t)L_2)))
-		{
-			goto IL_0014;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:362>
-		return;
-	}
-
-IL_0014:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:363>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = ___0_loaded;
-		__this->___resolvedPreview = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___resolvedPreview), (void*)L_3);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:364>
-		__this->___previewReady = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:365>
-		U3CU3Ec__DisplayClass61_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5FF134BDCAEC8D9360D35E28CFA9602335E04DDC(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:366>
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// Method Definition Index: 59019
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass81_0__ctor_m61EB55FA26CD4624A9780967F5911F3482DB0833 (U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* __this, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// Method Definition Index: 59020
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass81_1__ctor_m0F1C6D7490006003754169DB5D51D2CBF9FD8549 (U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* __this, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:381>
 		return;
 	}
 }
 // Method Definition Index: 59021
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass81_1_U3CRebuildGardenAsyncU3Eb__0_mD9839BB8AB4F882E705DC03E58308FB6423493E8 (U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_loaded, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__1_mB208FBE92DE97116B7378D45912DAB028C83CCAF (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_loaded, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1004>
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_0 = __this->___CSU24U3CU3E8__locals1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:385>
+		int32_t L_0 = __this->___requestVersion;
+		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_1 = __this->___U3CU3E4__this;
+		NullCheck(L_1);
+		int32_t L_2 = L_1->____placementRequestVersion;
+		if ((((int32_t)L_0) == ((int32_t)L_2)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:385>
+		return;
+	}
+
+IL_0014:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:386>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = ___0_loaded;
+		__this->___resolvedReal = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___resolvedReal), (void*)L_3);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:387>
+		__this->___realReady = (bool)1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:388>
+		U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5213F500A52337CE5299333CB7A94B78DB424AD1(__this, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:389>
+		return;
+	}
+}
+// Method Definition Index: 59022
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eb__2_m92EB9311ABA12BD182397F4E06D4678E163E3033 (U3CU3Ec__DisplayClass67_0_t99E7D948EFA1B495628FF618FD6B95D18631EF37* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_loaded, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:393>
+		int32_t L_0 = __this->___requestVersion;
+		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_1 = __this->___U3CU3E4__this;
+		NullCheck(L_1);
+		int32_t L_2 = L_1->____placementRequestVersion;
+		if ((((int32_t)L_0) == ((int32_t)L_2)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:393>
+		return;
+	}
+
+IL_0014:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:394>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = ___0_loaded;
+		__this->___resolvedPreview = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___resolvedPreview), (void*)L_3);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:395>
+		__this->___previewReady = (bool)1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:396>
+		U3CU3Ec__DisplayClass67_0_U3CInternalPreparePlacementU3Eg__TryFinishU7C0_m5213F500A52337CE5299333CB7A94B78DB424AD1(__this, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:397>
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 59023
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass87_0__ctor_m8E5939701E33E5EFA2790BF4FA023DC46AA17F4D (U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 59024
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass87_1__ctor_m33F492AC6C7E467D45C543B1ED433CEED8CF3172 (U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		return;
+	}
+}
+// Method Definition Index: 59025
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass87_1_U3CRebuildGardenAsyncU3Eb__0_m3E35AA6FB818B439F825ACB362277391E4CB5306 (U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_loaded, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1035>
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_0 = __this->___CSU24U3CU3E8__locals1;
 		NullCheck(L_0);
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_1 = L_0->___resolvedPrefabs;
 		int32_t L_2 = __this->___index;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = ___0_loaded;
 		NullCheck(L_1);
 		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(L_2), (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)L_3);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1005>
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_4 = __this->___CSU24U3CU3E8__locals1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1036>
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_4 = __this->___CSU24U3CU3E8__locals1;
 		NullCheck(L_4);
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_5 = L_4->___done;
 		int32_t L_6 = __this->___index;
 		NullCheck(L_5);
 		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(L_6), (bool)1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1006>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1037>
 		return;
 	}
 }
@@ -15500,8 +15657,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass81_1_U3CRebuildGard
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59022
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__90__ctor_mE7DD437CCC378CB97542035E2B1203EC7D194071 (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+// Method Definition Index: 59026
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__96__ctor_m99C4A6A5BCD9A683D2AA8D8645B5E3A602851737 (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -15510,15 +15667,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__90__ctor_m
 		return;
 	}
 }
-// Method Definition Index: 59023
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__90_System_IDisposable_Dispose_m53B088839435560E2A648BA019F25229A789A92F (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59027
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__96_System_IDisposable_Dispose_mBBDD45AA27F93322C9220933D36F4E9067EF1B67 (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59024
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPushToCloudAfterDelayU3Ed__90_MoveNext_mE29EE9DFE7BBF30A06DAAEDCE18694D1A9778746 (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59028
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPushToCloudAfterDelayU3Ed__96_MoveNext_m904BC520F0621625674DF572819F99BF4765EC10 (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15553,7 +15710,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPushToCloudAfterDelayU3Ed__90_MoveNex
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1231>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_4 = V_1;
 		NullCheck(L_4);
 		float L_5 = L_4->___cloudPushDelay;
@@ -15568,38 +15725,38 @@ IL_0017:
 IL_0038:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1201>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1232>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_7 = V_1;
 		NullCheck(L_7);
 		L_7->____cloudPushRoutine = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_7->____cloudPushRoutine), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1233>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_8 = V_1;
 		NullCheck(L_8);
 		ItemPlacementManager_PushToCloud_mD328CEAA49F2818CE8BCA8D3E8A6337ABC68F21C(L_8, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1203>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1234>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59025
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPushToCloudAfterDelayU3Ed__90_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0FA13A43595896A29673004D90C6C558B5650BAC (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59029
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPushToCloudAfterDelayU3Ed__96_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB5676D608A91C769E62721DB22ADF5366880BDFF (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 59026
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__90_System_Collections_IEnumerator_Reset_mED608E33947CEF1B95021DC363FCDB89DA0600DB (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59030
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPushToCloudAfterDelayU3Ed__96_System_Collections_IEnumerator_Reset_m10E7AD7337531EAF041A37472DFB4503B7976110 (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CPushToCloudAfterDelayU3Ed__90_System_Collections_IEnumerator_Reset_mED608E33947CEF1B95021DC363FCDB89DA0600DB_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CPushToCloudAfterDelayU3Ed__96_System_Collections_IEnumerator_Reset_m10E7AD7337531EAF041A37472DFB4503B7976110_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59027
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPushToCloudAfterDelayU3Ed__90_System_Collections_IEnumerator_get_Current_mD64182759E2D53F7FECBB1B750631960360910F0 (U3CPushToCloudAfterDelayU3Ed__90_t8F8FBFA9B7AB9A80F26B5A32B762E0BF7F88EE2F* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59031
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPushToCloudAfterDelayU3Ed__96_System_Collections_IEnumerator_get_Current_m5E74A5C063D257F1152C6BB235E0144B85172D8D (U3CPushToCloudAfterDelayU3Ed__96_tB74A0DBE3AC4C26A1EE0AD5AE8792D1DC08A5174* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -15614,8 +15771,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPushToCloudAfterDelayU3Ed__
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59028
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__81__ctor_m8A3513C41B8BC5455FC4242F90D7C733A403AE9B (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+// Method Definition Index: 59032
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__87__ctor_m89ACFFFC5BC399D6A808F620124F478FD18634E4 (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -15624,15 +15781,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__81__ctor_m8A3
 		return;
 	}
 }
-// Method Definition Index: 59029
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__81_System_IDisposable_Dispose_m26EE1F0AB5F7B61C556E94567666DEC0100429F6 (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59033
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__87_System_IDisposable_Dispose_mC633130A5595C79D66B68404A2A9A5E8824A396C (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59030
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRebuildGardenAsyncU3Ed__81_MoveNext_mEABE5CC4D0F1D04ACB5ECAF9DC9A61B06015FADA (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59034
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRebuildGardenAsyncU3Ed__87_MoveNext_mFCB9E29D80D775D43BB3D1A616EF59DF50C09018 (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15657,9 +15814,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRebuildGardenAsyncU3Ed__81_MoveNext_m
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlacedItemSource_t2D439654095B962694C78C9615206B7CC13DE2C6_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass81_1_U3CRebuildGardenAsyncU3Eb__0_mD9839BB8AB4F882E705DC03E58308FB6423493E8_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass87_1_U3CRebuildGardenAsyncU3Eb__0_m3E35AA6FB818B439F825ACB362277391E4CB5306_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7CB70EFF90CCFDF4EA4719AAE487965B14E38DF7);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAF34E6E4B7785C63C8EC615C268EFB0E148AD149);
 		s_Il2CppMethodInitialized = true;
@@ -15673,7 +15830,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRebuildGardenAsyncU3Ed__81_MoveNext_m
 	memset((&V_4), 0, sizeof(V_4));
 	PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* V_5 = NULL;
 	int32_t V_6 = 0;
-	U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* V_7 = NULL;
+	U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* V_7 = NULL;
 	PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* V_8 = NULL;
 	AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* V_9 = NULL;
 	int32_t V_10 = 0;
@@ -15682,10 +15839,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRebuildGardenAsyncU3Ed__81_MoveNext_m
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_13 = NULL;
 	PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* V_14 = NULL;
 	float V_15 = 0.0f;
-	U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* G_B5_0 = NULL;
-	U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* G_B4_0 = NULL;
+	U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* G_B5_0 = NULL;
+	U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* G_B4_0 = NULL;
 	double G_B6_0 = 0.0;
-	U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* G_B6_1 = NULL;
+	U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* G_B6_1 = NULL;
 	{
 		int32_t L_0 = __this->___U3CU3E1__state;
 		V_0 = L_0;
@@ -15711,15 +15868,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRebuildGardenAsyncU3Ed__81_MoveNext_m
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_4 = (U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB_il2cpp_TypeInfo_var);
-		U3CU3Ec__DisplayClass81_0__ctor_m61EB55FA26CD4624A9780967F5911F3482DB0833(L_4, NULL);
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_4 = (U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90_il2cpp_TypeInfo_var);
+		U3CU3Ec__DisplayClass87_0__ctor_m8E5939701E33E5EFA2790BF4FA023DC46AA17F4D(L_4, NULL);
 		__this->___U3CU3E8__1 = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E8__1), (void*)L_4);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:968>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:999>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_5 = V_1;
 		NullCheck(L_5);
 		L_5->____isRebuildingGarden = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:970>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1001>
 		il2cpp_codegen_runtime_class_init_inline(DateTimeOffset_t4EE701FE2F386D6F932FAC9B11E4B74A5B30F0A4_il2cpp_TypeInfo_var);
 		DateTimeOffset_t4EE701FE2F386D6F932FAC9B11E4B74A5B30F0A4 L_6;
 		L_6 = DateTimeOffset_get_UtcNow_mD315065704E3FE153970E6BD06362AEDD3D9765F(NULL);
@@ -15727,9 +15884,9 @@ IL_001a:
 		int64_t L_7;
 		L_7 = DateTimeOffset_ToUnixTimeSeconds_m91F88288451BAB5A8373467A94DAEA359AAF34BD((&V_3), NULL);
 		V_2 = ((double)L_7);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:971>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:972>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:973>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1002>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1003>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1004>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_8 = __this->___state;
 		NullCheck(L_8);
 		double L_9 = L_8->___gameClosedTimeUnix;
@@ -15763,7 +15920,7 @@ IL_007f:
 	{
 		NullCheck(G_B6_1);
 		G_B6_1->___U3CelapsedOfflineU3E5__2 = G_B6_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:976>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1007>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_14 = V_1;
 		NullCheck(L_14);
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_15 = L_14->___activePlacedItems;
@@ -15790,11 +15947,11 @@ FINALLY_00ca:
 
 IL_0093_1:
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:976>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1007>
 				PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_17;
 				L_17 = Enumerator_get_Current_mF531CFB4EA7F8057845120425F1FC007D8C20153_inline((&V_4), Enumerator_get_Current_mF531CFB4EA7F8057845120425F1FC007D8C20153_RuntimeMethod_var);
 				V_5 = L_17;
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:978>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1009>
 				PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_18 = V_5;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				bool L_19;
@@ -15805,11 +15962,11 @@ IL_0093_1:
 				}
 			}
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:979>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1010>
 				PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_20 = V_5;
 				NullCheck(L_20);
 				PlaceableItem_SetHighlight_m568F7A10594700BF5F4B171FD4B229FDE026A354(L_20, (bool)0, NULL);
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:980>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1011>
 				Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_21;
 				L_21 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 				PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_22 = V_5;
@@ -15822,7 +15979,7 @@ IL_0093_1:
 
 IL_00bf_1:
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:976>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1007>
 				bool L_24;
 				L_24 = Enumerator_MoveNext_mB1F7FF5312E430251E529CE7277A0F149250F659((&V_4), Enumerator_MoveNext_mB1F7FF5312E430251E529CE7277A0F149250F659_RuntimeMethod_var);
 				if (L_24)
@@ -15842,13 +15999,13 @@ IL_00bf_1:
 
 IL_00d8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:982>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1013>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_25 = V_1;
 		NullCheck(L_25);
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_26 = L_25->___activePlacedItems;
 		NullCheck(L_26);
 		List_1_Clear_m9926FEFA5857AA8EB94D545144A2621D5EDEBBC1_inline(L_26, List_1_Clear_m9926FEFA5857AA8EB94D545144A2621D5EDEBBC1_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:984>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1015>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_27 = __this->___state;
 		NullCheck(L_27);
 		List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* L_28 = L_27->___items;
@@ -15856,36 +16013,36 @@ IL_00d8:
 		int32_t L_29;
 		L_29 = List_1_get_Count_mB3D9E6F0EF4B23F8E3297F43D2B9FA140DD67DE6_inline(L_28, List_1_get_Count_mB3D9E6F0EF4B23F8E3297F43D2B9FA140DD67DE6_RuntimeMethod_var);
 		__this->___U3CcountU3E5__3 = L_29;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:985>
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_30 = __this->___U3CU3E8__1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1016>
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_30 = __this->___U3CU3E8__1;
 		int32_t L_31 = __this->___U3CcountU3E5__3;
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_32 = (GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF*)(GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF*)SZArrayNew(GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF_il2cpp_TypeInfo_var, (uint32_t)L_31);
 		NullCheck(L_30);
 		L_30->___resolvedPrefabs = L_32;
 		Il2CppCodeGenWriteBarrier((void**)(&L_30->___resolvedPrefabs), (void*)L_32);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:986>
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_33 = __this->___U3CU3E8__1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1017>
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_33 = __this->___U3CU3E8__1;
 		int32_t L_34 = __this->___U3CcountU3E5__3;
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_35 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)L_34);
 		NullCheck(L_33);
 		L_33->___done = L_35;
 		Il2CppCodeGenWriteBarrier((void**)(&L_33->___done), (void*)L_35);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:988>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1019>
 		V_6 = 0;
 		goto IL_01d9;
 	}
 
 IL_012d:
 	{
-		U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* L_36 = (U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7_il2cpp_TypeInfo_var);
-		U3CU3Ec__DisplayClass81_1__ctor_m0F1C6D7490006003754169DB5D51D2CBF9FD8549(L_36, NULL);
+		U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* L_36 = (U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F_il2cpp_TypeInfo_var);
+		U3CU3Ec__DisplayClass87_1__ctor_m33F492AC6C7E467D45C543B1ED433CEED8CF3172(L_36, NULL);
 		V_7 = L_36;
-		U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* L_37 = V_7;
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_38 = __this->___U3CU3E8__1;
+		U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* L_37 = V_7;
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_38 = __this->___U3CU3E8__1;
 		NullCheck(L_37);
 		L_37->___CSU24U3CU3E8__locals1 = L_38;
 		Il2CppCodeGenWriteBarrier((void**)(&L_37->___CSU24U3CU3E8__locals1), (void*)L_38);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:990>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1021>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_39 = __this->___state;
 		NullCheck(L_39);
 		List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* L_40 = L_39->___items;
@@ -15894,7 +16051,7 @@ IL_012d:
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_42;
 		L_42 = List_1_get_Item_m7B7A4A53339FEE9707C9026774D19A2341D0CBF1(L_40, L_41, List_1_get_Item_m7B7A4A53339FEE9707C9026774D19A2341D0CBF1_RuntimeMethod_var);
 		V_8 = L_42;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:991>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1022>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_43 = V_1;
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_44 = V_8;
 		NullCheck(L_44);
@@ -15906,7 +16063,7 @@ IL_012d:
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_48;
 		L_48 = ItemPlacementManager_ResolveItemPrefabRef_m14F91EA86640C2A9BD1F8EABB81003A147BC7CFC(L_43, L_45, L_47, NULL);
 		V_9 = L_48;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:993>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1024>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_49 = V_9;
 		if (!L_49)
 		{
@@ -15926,8 +16083,8 @@ IL_012d:
 
 IL_0178:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:995>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:996>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1026>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1027>
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_52 = V_8;
 		NullCheck(L_52);
 		String_t* L_53 = L_52->___sourceItemId;
@@ -15942,49 +16099,49 @@ IL_0178:
 		L_59 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral7CB70EFF90CCFDF4EA4719AAE487965B14E38DF7, L_58, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_59, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:997>
-		U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* L_60 = V_7;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1028>
+		U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* L_60 = V_7;
 		NullCheck(L_60);
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_61 = L_60->___CSU24U3CU3E8__locals1;
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_61 = L_60->___CSU24U3CU3E8__locals1;
 		NullCheck(L_61);
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_62 = L_61->___done;
 		int32_t L_63 = V_6;
 		NullCheck(L_62);
 		(L_62)->SetAt(static_cast<il2cpp_array_size_t>(L_63), (bool)1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:998>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1029>
 		goto IL_01d3;
 	}
 
 IL_01b6:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1001>
-		U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* L_64 = V_7;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1032>
+		U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* L_64 = V_7;
 		int32_t L_65 = V_6;
 		NullCheck(L_64);
 		L_64->___index = L_65;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1002>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1003>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1004>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1005>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1006>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1033>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1034>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1035>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1036>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1037>
 		AssetReferenceGameObject_t45C68C64E1153AED134A702A8B8F32F27C58416B* L_66 = V_9;
-		U3CU3Ec__DisplayClass81_1_t524A612CD465091C6CABC3C7CDD1DCE88A112DB7* L_67 = V_7;
+		U3CU3Ec__DisplayClass87_1_tD40BCD349CA89A3DBF4C9BAEFAA1735CF7C6945F* L_67 = V_7;
 		Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C* L_68 = (Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C*)il2cpp_codegen_object_new(Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C_il2cpp_TypeInfo_var);
-		Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01(L_68, L_67, (intptr_t)((void*)U3CU3Ec__DisplayClass81_1_U3CRebuildGardenAsyncU3Eb__0_mD9839BB8AB4F882E705DC03E58308FB6423493E8_RuntimeMethod_var), NULL);
+		Action_1__ctor_m3FA37AFA5AAB09F49F9C00A7D5B2A5F3D83CBB01(L_68, L_67, (intptr_t)((void*)U3CU3Ec__DisplayClass87_1_U3CRebuildGardenAsyncU3Eb__0_m3E35AA6FB818B439F825ACB362277391E4CB5306_RuntimeMethod_var), NULL);
 		il2cpp_codegen_runtime_class_init_inline(AddressableItemLoader_tAB174A74B5A5D52C9E84E23AABC2048469FD48A8_il2cpp_TypeInfo_var);
 		AddressableItemLoader_LoadAsync_m8A7378D97D2EDFBA91D969785CA67D36DB51C2CA(L_66, L_68, NULL);
 	}
 
 IL_01d3:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:988>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1019>
 		int32_t L_69 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_69, 1));
 	}
 
 IL_01d9:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:988>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1019>
 		int32_t L_70 = V_6;
 		int32_t L_71 = __this->___U3CcountU3E5__3;
 		if ((((int32_t)L_70) < ((int32_t)L_71)))
@@ -15998,7 +16155,7 @@ IL_01d9:
 
 IL_01e8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1011>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1042>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -16012,8 +16169,8 @@ IL_01f8:
 
 IL_01ff:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1009>
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_72 = __this->___U3CU3E8__1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1040>
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_72 = __this->___U3CU3E8__1;
 		NullCheck(L_72);
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_73 = L_72->___done;
 		int32_t L_74;
@@ -16024,15 +16181,15 @@ IL_01ff:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1014>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1045>
 		V_10 = 0;
 		goto IL_0305;
 	}
 
 IL_021b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1016>
-		U3CU3Ec__DisplayClass81_0_t66E7088CA1EDE397B9EF96832B8257219D004BFB* L_75 = __this->___U3CU3E8__1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1047>
+		U3CU3Ec__DisplayClass87_0_t0E77205B49F14CE02D878C63D47CABB4B9716F90* L_75 = __this->___U3CU3E8__1;
 		NullCheck(L_75);
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_76 = L_75->___resolvedPrefabs;
 		int32_t L_77 = V_10;
@@ -16040,7 +16197,7 @@ IL_021b:
 		int32_t L_78 = L_77;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_79 = (L_76)->GetAt(static_cast<il2cpp_array_size_t>(L_78));
 		V_11 = L_79;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1017>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1048>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_80 = V_11;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_81;
@@ -16051,7 +16208,7 @@ IL_021b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1019>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1050>
 		SaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB* L_82 = __this->___state;
 		NullCheck(L_82);
 		List_1_tDF078CA57CFB5BB66E693DAFB8D0EB23875F0364* L_83 = L_82->___items;
@@ -16060,7 +16217,7 @@ IL_021b:
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_85;
 		L_85 = List_1_get_Item_m7B7A4A53339FEE9707C9026774D19A2341D0CBF1(L_83, L_84, List_1_get_Item_m7B7A4A53339FEE9707C9026774D19A2341D0CBF1_RuntimeMethod_var);
 		V_12 = L_85;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1020>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1051>
 		Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* L_86;
 		L_86 = Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline(NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_87 = V_11;
@@ -16078,13 +16235,13 @@ IL_021b:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_94;
 		L_94 = Objectpool_Spawn_m4AC4312546C0F3C61EEFD185726D887CD1CCCC93(L_86, L_87, L_90, L_93, (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*)NULL, NULL);
 		V_13 = L_94;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1022>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1053>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_95 = V_13;
 		NullCheck(L_95);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_96;
 		L_96 = GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF(L_95, GameObject_GetComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m5026BE2BB284D30BAC8541FEAF6E9FE843D904BF_RuntimeMethod_var);
 		V_14 = L_96;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1023>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1054>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_97 = V_14;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_98;
@@ -16095,7 +16252,7 @@ IL_021b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1025>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1056>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_99 = V_13;
 		NullCheck(L_99);
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_100;
@@ -16105,11 +16262,11 @@ IL_021b:
 
 IL_028f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1028>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1059>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_101 = V_14;
 		NullCheck(L_101);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_101, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1029>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1060>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_102 = V_14;
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_103 = V_12;
 		NullCheck(L_103);
@@ -16117,13 +16274,13 @@ IL_028f:
 		NullCheck(L_102);
 		L_102->___prefabName = L_104;
 		Il2CppCodeGenWriteBarrier((void**)(&L_102->___prefabName), (void*)L_104);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1032>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1063>
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_105 = V_12;
 		NullCheck(L_105);
 		float L_106 = L_105->___remainingDuration;
 		double L_107 = __this->___U3CelapsedOfflineU3E5__2;
 		V_15 = ((float)il2cpp_codegen_subtract(L_106, ((float)L_107)));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1033>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1064>
 		float L_108 = V_15;
 		if ((!(((float)L_108) < ((float)(0.0f)))))
 		{
@@ -16131,13 +16288,13 @@ IL_028f:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1033>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1064>
 		V_15 = (0.0f);
 	}
 
 IL_02c6:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1035>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1066>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_109 = V_14;
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_110 = V_12;
 		NullCheck(L_110);
@@ -16148,7 +16305,7 @@ IL_02c6:
 		float L_114 = V_15;
 		NullCheck(L_109);
 		PlaceableItem_Initialize_mE55ECD65E934FE846EA4AAD950FD19BAB217ED57(L_109, L_111, L_113, L_114, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1036>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1067>
 		PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* L_115 = V_14;
 		PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879* L_116 = V_12;
 		NullCheck(L_116);
@@ -16158,7 +16315,7 @@ IL_02c6:
 		String_t* L_119 = L_118->___sourceItemId;
 		NullCheck(L_115);
 		PlaceableItem_SetSource_m17B26015B737817DDEEBFE505F9C84838A6AC7A8(L_115, L_117, L_119, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1037>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1068>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_120 = V_1;
 		NullCheck(L_120);
 		List_1_t77282F0CF3386B3C5786C67D65B87DB609311C7B* L_121 = L_120->___activePlacedItems;
@@ -16169,14 +16326,14 @@ IL_02c6:
 
 IL_02ff:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1014>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1045>
 		int32_t L_123 = V_10;
 		V_10 = ((int32_t)il2cpp_codegen_add(L_123, 1));
 	}
 
 IL_0305:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1014>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1045>
 		int32_t L_124 = V_10;
 		int32_t L_125 = __this->___U3CcountU3E5__3;
 		if ((((int32_t)L_124) < ((int32_t)L_125)))
@@ -16185,33 +16342,33 @@ IL_0305:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1040>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1071>
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_126 = V_1;
 		NullCheck(L_126);
 		L_126->____isRebuildingGarden = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1041>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:1072>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59031
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRebuildGardenAsyncU3Ed__81_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m79DAC27AE0353ED3999F568F1B6E52F35B923EB8 (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59035
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRebuildGardenAsyncU3Ed__87_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFA41BD52F47881EB2AE8A3A729B62DDD5AE666F3 (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 59032
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__81_System_Collections_IEnumerator_Reset_m60BA0B1393E0F74DD158314F42A1420CF7DCDC8A (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59036
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRebuildGardenAsyncU3Ed__87_System_Collections_IEnumerator_Reset_m4B3BC8CE4682280DB38504AA6F682FBE60308D42 (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CRebuildGardenAsyncU3Ed__81_System_Collections_IEnumerator_Reset_m60BA0B1393E0F74DD158314F42A1420CF7DCDC8A_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CRebuildGardenAsyncU3Ed__87_System_Collections_IEnumerator_Reset_m4B3BC8CE4682280DB38504AA6F682FBE60308D42_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59033
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRebuildGardenAsyncU3Ed__81_System_Collections_IEnumerator_get_Current_m706A398B1B8A55E0A2F33F92E36A112D7BCC510E (U3CRebuildGardenAsyncU3Ed__81_t0A3FA8D8092FE9FBE559AF3465E5DB36A0C9EB41* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59037
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRebuildGardenAsyncU3Ed__87_System_Collections_IEnumerator_get_Current_mAF627382FBF412D0692A604AAC3DD87B400BF76C (U3CRebuildGardenAsyncU3Ed__87_t50CCC29ECD56CA8289B76501963E1E743948CF0C* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -16226,8 +16383,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRebuildGardenAsyncU3Ed__81_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59034
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__62__ctor_m3B9EC523F9F736E475CC5810D9DDA2EE04030D79 (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+// Method Definition Index: 59038
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__68__ctor_m8E9977B2487A06A818ADF02FF280E75EBD8539CD (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -16236,15 +16393,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__62__
 		return;
 	}
 }
-// Method Definition Index: 59035
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__62_System_IDisposable_Dispose_m51D991B6F82C0C707CE79A2F95627AB68B5CDD72 (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59039
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__68_System_IDisposable_Dispose_mEDE3BB68F918D8973B7B84721BAE0DF73338164B (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59036
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowSlowLoadToastAfterDelayU3Ed__62_MoveNext_mFEE1EA88DF79C3BD3DA369976D8BF274B8D849BC (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59040
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowSlowLoadToastAfterDelayU3Ed__68_MoveNext_m02583B447075A5A70904D832CDE97B5A6E0767A2 (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -16281,7 +16438,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowSlowLoadToastAfterDelayU3Ed__62_M
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:373>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:404>
 		WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* L_4 = (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01*)il2cpp_codegen_object_new(WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01_il2cpp_TypeInfo_var);
 		WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F(L_4, (0.300000012f), NULL);
 		__this->___U3CU3E2__current = L_4;
@@ -16293,7 +16450,7 @@ IL_0017:
 IL_0037:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:375>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:406>
 		int32_t L_5 = __this->___requestVersion;
 		ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* L_6 = V_1;
 		NullCheck(L_6);
@@ -16324,7 +16481,7 @@ IL_0037:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:377>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:408>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_12;
 		L_12 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		NullCheck(L_12);
@@ -16333,29 +16490,29 @@ IL_0037:
 
 IL_0070:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:379>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ItemPlacementManager.cs:410>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59037
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowSlowLoadToastAfterDelayU3Ed__62_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD2E2826E629FEE70459B3D232D8BA97B12CA2CBF (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59041
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowSlowLoadToastAfterDelayU3Ed__68_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mBCC29BB7EA30A96E7CF9C57182931D5EE324F337 (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 59038
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__62_System_Collections_IEnumerator_Reset_mDF5D158A2BE0DFDA008D828AFC1CB3ED4980B6AA (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59042
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowSlowLoadToastAfterDelayU3Ed__68_System_Collections_IEnumerator_Reset_m15345EC76472560794271E314CC3345845A22C48 (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CShowSlowLoadToastAfterDelayU3Ed__62_System_Collections_IEnumerator_Reset_mDF5D158A2BE0DFDA008D828AFC1CB3ED4980B6AA_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CShowSlowLoadToastAfterDelayU3Ed__68_System_Collections_IEnumerator_Reset_m15345EC76472560794271E314CC3345845A22C48_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59039
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowSlowLoadToastAfterDelayU3Ed__62_System_Collections_IEnumerator_get_Current_m95786B822F22F026484E1B9B4765CAA8CB86C07B (U3CShowSlowLoadToastAfterDelayU3Ed__62_tEFBAA333F62789BAA7EA3436CA950B6500C94597* __this, const RuntimeMethod* method) 
+// Method Definition Index: 59043
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowSlowLoadToastAfterDelayU3Ed__68_System_Collections_IEnumerator_get_Current_m51D9CB6CBAAD13F6F33B905DD029FCE6E6AF4F15 (U3CShowSlowLoadToastAfterDelayU3Ed__68_tB03C9F790450F003EB4D88B549B67BD357F414D6* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -16370,7 +16527,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowSlowLoadToastAfterDelay
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59040
+// Method Definition Index: 59044
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* JannahGardenManager_get_Instance_m333D51BD2CC4551E481DA65D8563AFB7CA8E3FFE (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16385,7 +16542,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1
 		return L_0;
 	}
 }
-// Method Definition Index: 59041
+// Method Definition Index: 59045
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_set_Instance_m5A97CAD0AE7AAFE0892B1BD9DDA3161D2CDEC42C (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16402,7 +16559,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_set_Instance_m5A97CA
 		return;
 	}
 }
-// Method Definition Index: 59042
+// Method Definition Index: 59046
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_Awake_mD501194DD48E8185ECBE0D73DDA70CB43FF96CD8 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16452,7 +16609,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 59043
+// Method Definition Index: 59047
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_ConfigureFrameRate_mE27649EFE52FF214BEB528B8BCF0DC3C7FA0A95B (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16471,7 +16628,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_ConfigureFrameRate_m
 		return;
 	}
 }
-// Method Definition Index: 59044
+// Method Definition Index: 59048
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_Start_m4F73AC939FC1450727499FB02A5C296D08B3A969 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	{
@@ -16483,7 +16640,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_Start_m4F73AC939FC14
 		return;
 	}
 }
-// Method Definition Index: 59045
+// Method Definition Index: 59049
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_EnsureTutorialManager_m34320A27D8D37CD1204290C656B65F5051B7A744 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16541,7 +16698,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 59046
+// Method Definition Index: 59050
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_SetupExitSystem_m32E27EF3B8A600BC0C3C02A7599885AAB44BC78D (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16631,7 +16788,7 @@ IL_007e:
 		return;
 	}
 }
-// Method Definition Index: 59047
+// Method Definition Index: 59051
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_OpenExitConfirmationPanel_m7C7C960294B93C4F18947BE394F527E0C13205D9 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16670,7 +16827,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 59048
+// Method Definition Index: 59052
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_CloseExitConfirmationPanel_mC6A6BF309494AD11FC8E58BE24D1F1528CE3D767 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16703,7 +16860,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 59049
+// Method Definition Index: 59053
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_ExitToApp_m876DF8C95F67A9CB3A39D4403E426EAEF800DAE4 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16784,7 +16941,7 @@ IL_0063:
 		return;
 	}
 }
-// Method Definition Index: 59050
+// Method Definition Index: 59054
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_LoadOuterGarden_mCAB5C3AC4959F6F72CE7C752F2E8D8984A36E5CE (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16836,7 +16993,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 59051
+// Method Definition Index: 59055
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager_OnDestroy_mA69429C952ADFDB3BAEF01EFC5674FF25CC90E33 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16944,7 +17101,7 @@ IL_0091:
 		return;
 	}
 }
-// Method Definition Index: 59052
+// Method Definition Index: 59056
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager__ctor_m5A5CB4017554E05081E7A16855CAE5B26774B298 (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16969,7 +17126,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JannahGardenManager__ctor_m5A5CB4017554E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59053
+// Method Definition Index: 59057
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* LoadingScreenManager_get_Instance_m7D3E2921C7D8B64F44BD4C284F04DCFE6C1242DE (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16984,7 +17141,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LoadingScreenManager_tB013C5661A310961AE997D7
 		return L_0;
 	}
 }
-// Method Definition Index: 59054
+// Method Definition Index: 59058
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_set_Instance_mCECCE56255105884CDD973FCBE6F68DE8E42A4D8 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17001,7 +17158,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_set_Instance_mCECCE
 		return;
 	}
 }
-// Method Definition Index: 59055
+// Method Definition Index: 59059
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsLoading_m74C14BF37047FB4C005267CCC652382A3D96A771 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -17010,7 +17167,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsLoading_m74C1
 		return L_0;
 	}
 }
-// Method Definition Index: 59056
+// Method Definition Index: 59060
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -17020,7 +17177,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_set_IsLoading_m4916
 		return;
 	}
 }
-// Method Definition Index: 59057
+// Method Definition Index: 59061
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AddLoadHold_mA43763B3F1DD670363C0BDF3A75DFB48252E3C65 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, RuntimeObject* ___0_token, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17052,7 +17209,7 @@ IL_0010:
 		return;
 	}
 }
-// Method Definition Index: 59058
+// Method Definition Index: 59062
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_RemoveLoadHold_mFD879F767A143208F146DFB1459BB0AE858B19FB (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, RuntimeObject* ___0_token, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17084,7 +17241,7 @@ IL_0010:
 		return;
 	}
 }
-// Method Definition Index: 59059
+// Method Definition Index: 59063
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Awake_m82E5135DB995BCA950439EE544A52744069AD8EC (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17159,7 +17316,7 @@ IL_0051:
 		return;
 	}
 }
-// Method Definition Index: 59060
+// Method Definition Index: 59064
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_FindUIReferences_m8E9CDEA0B72F60CD2BB3CC372D8FD2E38A13E3BF (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17583,7 +17740,7 @@ IL_0218:
 		return;
 	}
 }
-// Method Definition Index: 59061
+// Method Definition Index: 59065
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Start_m148170CC940A5E406467A01186778F304310BDC2 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17649,7 +17806,7 @@ IL_0044:
 		return;
 	}
 }
-// Method Definition Index: 59062
+// Method Definition Index: 59066
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Update_mF3F584D45AB23251DE0F2466D582F5F3B88906AD (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17739,7 +17896,7 @@ IL_0087:
 		return;
 	}
 }
-// Method Definition Index: 59063
+// Method Definition Index: 59067
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_LoadScene_mAE984B6930768D6391687CE1BEB9AF4E2F895D02 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	{
@@ -17770,7 +17927,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 59064
+// Method Definition Index: 59068
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_LoadSceneRoutine_m7A463706054C1395A75AED29BF3F17799E3F6154 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17794,7 +17951,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_LoadScene
 		return L_2;
 	}
 }
-// Method Definition Index: 59065
+// Method Definition Index: 59069
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeIn_m2DA61228B92DF84F2E307FDACB776B4D8F168B01 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17813,7 +17970,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeIn_m2
 		return L_1;
 	}
 }
-// Method Definition Index: 59066
+// Method Definition Index: 59070
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeOut_m197FB328386AB27C0B6BCA0B2AAA0615B4612217 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17832,7 +17989,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeOut_m
 		return L_1;
 	}
 }
-// Method Definition Index: 59067
+// Method Definition Index: 59071
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ShowImmediate_m9E65CAB42FA71898BA3BA4376748D31395B196F0 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17884,7 +18041,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 59068
+// Method Definition Index: 59072
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_HideImmediate_m9FCBF8B36B38B03E717225B6533D1DDD8DD9DDAB (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17936,7 +18093,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 59069
+// Method Definition Index: 59073
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AnimateSpinner_m11F55D289F82C5ED2E05DB3E7917E6DD357736B4 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18067,7 +18224,7 @@ IL_00a8:
 		return;
 	}
 }
-// Method Definition Index: 59070
+// Method Definition Index: 59074
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18101,7 +18258,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 59071
+// Method Definition Index: 59075
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_IsAddressableScene_m0FA2336537EC4775F7599A5F805278F45A54C60B (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -18169,7 +18326,7 @@ IL_0024:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59072
+// Method Definition Index: 59076
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ApplyLogoForScene_mA0EFC29DD19FBC51A0BBFBD7E041317767F06328 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18241,7 +18398,7 @@ IL_003e:
 		return;
 	}
 }
-// Method Definition Index: 59073
+// Method Definition Index: 59077
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* LoadingScreenManager_GetLogoForScene_m0B677D44F6ED21B2AAF743F3500AB151F14D11F9 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18340,7 +18497,7 @@ IL_0069:
 		return L_17;
 	}
 }
-// Method Definition Index: 59074
+// Method Definition Index: 59078
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildUI_mEAB8BD6851699841CF1612D06CF6042DDBCCFC5C (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19235,7 +19392,7 @@ IL_07a8:
 		return;
 	}
 }
-// Method Definition Index: 59075
+// Method Definition Index: 59079
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9B61069E009E40641ADAC00488E444C1EB045C43 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19564,7 +19721,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9
 		return;
 	}
 }
-// Method Definition Index: 59076
+// Method Definition Index: 59080
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildSpinner_mFAED31507DCCB4E8B22C32657D60BC6285186247 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19762,7 +19919,7 @@ IL_019b:
 		return;
 	}
 }
-// Method Definition Index: 59077
+// Method Definition Index: 59081
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_rt, const RuntimeMethod* method) 
 {
 	{
@@ -19801,7 +19958,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_StretchFull_m23F75A
 		return;
 	}
 }
-// Method Definition Index: 59078
+// Method Definition Index: 59082
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager__ctor_mE31332B5B0F7414BB3C95D11FDB397E471D75C64 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19932,7 +20089,7 @@ IL2CPP_EXTERN_C void AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59079
+// Method Definition Index: 59083
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57__ctor_m428C8EB2200AF0EC7C811860AC0305D9B23DA498 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -19942,14 +20099,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57__ctor_m428C8EB2200AF0E
 		return;
 	}
 }
-// Method Definition Index: 59080
+// Method Definition Index: 59084
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57_System_IDisposable_Dispose_m8BC5AFCCCE72E9F9351611909D360C652FD2C0C3 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59081
+// Method Definition Index: 59085
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeInU3Ed__57_MoveNext_mDFB13B52E32C246724890673AE4E60DBCB32A5AF (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20092,7 +20249,7 @@ IL_00b8:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59082
+// Method Definition Index: 59086
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF953DFE9FC2358C36CFF27EAA70E0FEE86594F53 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20100,7 +20257,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Colle
 		return L_0;
 	}
 }
-// Method Definition Index: 59083
+// Method Definition Index: 59087
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57_System_Collections_IEnumerator_Reset_mC8A51A21B83D5B4E5D452953488308A92179A173 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20109,7 +20266,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57_System_Collections_IEn
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeInU3Ed__57_System_Collections_IEnumerator_Reset_mC8A51A21B83D5B4E5D452953488308A92179A173_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59084
+// Method Definition Index: 59088
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Collections_IEnumerator_get_Current_m251237D8C05AEE9E4FC91313E72CB16C2B77938F (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20125,7 +20282,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Colle
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59085
+// Method Definition Index: 59089
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58__ctor_mB8A4685BEF12AC40EDA519B55D02D292D21E3550 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -20135,14 +20292,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58__ctor_mB8A4685BEF12AC
 		return;
 	}
 }
-// Method Definition Index: 59086
+// Method Definition Index: 59090
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58_System_IDisposable_Dispose_mB7C86FE6AB46AD937155DD043867AA79FD054B4E (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59087
+// Method Definition Index: 59091
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeOutU3Ed__58_MoveNext_m1F2CFB1682AD14EF6C8E2D19A116A379649BA7A6 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20279,7 +20436,7 @@ IL_00c3:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59088
+// Method Definition Index: 59092
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC105798E70E270E3CD6C7266417E1DD88FD0BF32 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20287,7 +20444,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Coll
 		return L_0;
 	}
 }
-// Method Definition Index: 59089
+// Method Definition Index: 59093
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58_System_Collections_IEnumerator_Reset_m7A02B09B999F83A9446B1AB68C32AF5F7BC7A4A4 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20296,7 +20453,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58_System_Collections_IE
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeOutU3Ed__58_System_Collections_IEnumerator_Reset_m7A02B09B999F83A9446B1AB68C32AF5F7BC7A4A4_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59090
+// Method Definition Index: 59094
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Collections_IEnumerator_get_Current_m60D67EC024E8C1715F98122097D62C862386071E (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20312,7 +20469,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Coll
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59091
+// Method Definition Index: 59095
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56__ctor_mF58D04FDB8AE7C24135045DD27B2A528AE6C4C20 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -20322,14 +20479,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56__ctor_mF58D0
 		return;
 	}
 }
-// Method Definition Index: 59092
+// Method Definition Index: 59096
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56_System_IDisposable_Dispose_mEBF2C47DBC3AC72735A7AC445FCE5073C3BECBA4 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59093
+// Method Definition Index: 59097
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneRoutineU3Ed__56_MoveNext_m99D1DD8BAA42F4B54C1A627B997CB521DA77CB8E (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21439,7 +21596,7 @@ IL_0627:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59094
+// Method Definition Index: 59098
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mDEF683ABDFA07A345CA7319106F45306BD332C5A (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21447,7 +21604,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_Sy
 		return L_0;
 	}
 }
-// Method Definition Index: 59095
+// Method Definition Index: 59099
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_Reset_m632E8C4562217EF7E5CDA7C31C1502AB7B6C8DEF (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21456,7 +21613,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56_System_Colle
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_Reset_m632E8C4562217EF7E5CDA7C31C1502AB7B6C8DEF_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59096
+// Method Definition Index: 59100
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_get_Current_mBE4C8FC46ADB11A23147DAED35B51E4DA533AE19 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21472,7 +21629,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59097
+// Method Definition Index: 59101
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MinimapBehaviour_get_IsExpanded_mE8EF5F605E014DA54E1BC00908D28D06569C2249 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21481,7 +21638,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MinimapBehaviour_get_IsExpanded_mE8EF5F6
 		return L_0;
 	}
 }
-// Method Definition Index: 59098
+// Method Definition Index: 59102
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_Start_m0CF0C39065A1F88194CB12C6AFB57A84D8F111CC (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21640,7 +21797,7 @@ IL_00a3:
 		return;
 	}
 }
-// Method Definition Index: 59099
+// Method Definition Index: 59103
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_Update_mAB0062663FF2750803E73D5EF0B20F9A6480432E (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -21722,7 +21879,7 @@ IL_0034:
 		return;
 	}
 }
-// Method Definition Index: 59100
+// Method Definition Index: 59104
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_OnDisable_m698DB6C84EB4E1E9656F4618142EBE8C9E2550FD (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21748,7 +21905,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 59101
+// Method Definition Index: 59105
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_OnDestroy_m6F1785B208D882A4A32C16D640B02771D534B601 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21813,7 +21970,7 @@ IL_0054:
 		return;
 	}
 }
-// Method Definition Index: 59102
+// Method Definition Index: 59106
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_ExpandMinimap_mEC0702246242FAD6B5D3947A22AF2B54A58A9D9D (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21869,7 +22026,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 59103
+// Method Definition Index: 59107
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_CollapseMinimap_m6BF819D9DF1AB80F5343767D2CA46EE7EB96CF33 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21925,7 +22082,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 59104
+// Method Definition Index: 59108
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MinimapBehaviour_TryGetPressPosition_m29ED4FA99A7D16B44A0C683C9AD042CA9E519A63 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___0_position, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21984,7 +22141,7 @@ IL_003a:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59105
+// Method Definition Index: 59109
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MinimapBehaviour_IsPointerInsideMinimap_mA64C4533437C3BE38034309B506CA0B702EB6971 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_screenPosition, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22143,7 +22300,7 @@ IL_0098:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59106
+// Method Definition Index: 59110
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MinimapBehaviour_ContainsScreenPoint_mB71480599C17DF5C427AEE25C15E69CF95B9271B (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_rect, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_screenPosition, Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___2_eventCamera, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22196,7 +22353,7 @@ IL_0018:
 		return L_8;
 	}
 }
-// Method Definition Index: 59107
+// Method Definition Index: 59111
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* MinimapBehaviour_GetEventCamera_m00D80CB3987CB140186BA118BA57117896023B2D (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22246,7 +22403,7 @@ IL_0029:
 		return (Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184*)NULL;
 	}
 }
-// Method Definition Index: 59108
+// Method Definition Index: 59112
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_UpdateMinimapState_m1E57D48A131D481D9009308B53AC6AD0F993C950 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, bool ___0_animate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22407,7 +22564,7 @@ IL_00a9:
 		return;
 	}
 }
-// Method Definition Index: 59109
+// Method Definition Index: 59113
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_StartTransition_mD8AD1F9A21F545F2EEE960FE40C48BEA8A126CFB (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_targetSize, float ___1_targetCamSize, const RuntimeMethod* method) 
 {
 	{
@@ -22439,7 +22596,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 59110
+// Method Definition Index: 59114
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MinimapBehaviour_TransitionRoutine_mCC878ED06143002CB117B799A51812E10514A625 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_targetSize, float ___1_targetCamSize, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22466,7 +22623,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MinimapBehaviour_TransitionRou
 		return L_4;
 	}
 }
-// Method Definition Index: 59111
+// Method Definition Index: 59115
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MinimapBehaviour_GetCurrentCameraSize_m5EBB550765F0B01C9F23882D404BF8D2B538F248 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22520,7 +22677,7 @@ IL_002d:
 		return L_7;
 	}
 }
-// Method Definition Index: 59112
+// Method Definition Index: 59116
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour_SetCameraSize_m80846C533F3241745BC974069E6B86C6FEB83949 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, float ___0_size, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22577,7 +22734,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 59113
+// Method Definition Index: 59117
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour__ctor_m0AF3883B36EA5125BA11C3AA0DFCD2D04DE92E29 (MinimapBehaviour_tEF79C7EDCA539CF391AA246004B3C4ED38CE3D30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22655,7 +22812,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimapBehaviour__ctor_m0AF3883B36EA5125
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59114
+// Method Definition Index: 59118
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__30__ctor_mEB3EDFF08D85F5BD8EEAB833B6120BF2159D634A (U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -22665,14 +22822,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__30__ctor_mEB3E
 		return;
 	}
 }
-// Method Definition Index: 59115
+// Method Definition Index: 59119
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__30_System_IDisposable_Dispose_m4F41B850AD3003C157340E34EC302C43AE6A210D (U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59116
+// Method Definition Index: 59120
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CTransitionRoutineU3Ed__30_MoveNext_m0D13F9CDD2BC8592B2B5C3DB758FDDFA6D4413FD (U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22887,7 +23044,7 @@ IL_0120:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59117
+// Method Definition Index: 59121
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8E27ADC8A6008926C5CD15BA49475CFEB53F9781 (U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22895,7 +23052,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__30_S
 		return L_0;
 	}
 }
-// Method Definition Index: 59118
+// Method Definition Index: 59122
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__30_System_Collections_IEnumerator_Reset_m2D5E6A2819AAF1E46F1D210F711056230311E6D9 (U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22904,7 +23061,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__30_System_Coll
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CTransitionRoutineU3Ed__30_System_Collections_IEnumerator_Reset_m2D5E6A2819AAF1E46F1D210F711056230311E6D9_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59119
+// Method Definition Index: 59123
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__30_System_Collections_IEnumerator_get_Current_mB023995A410E37C291F766BD08D04E12C2293A65 (U3CTransitionRoutineU3Ed__30_t373106F777C419D17CF751DF54B24012D38B5909* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22920,7 +23077,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__30_S
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59120
+// Method Definition Index: 59124
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22935,7 +23092,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D
 		return L_0;
 	}
 }
-// Method Definition Index: 59121
+// Method Definition Index: 59125
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool_set_Instance_m53B896988BA5FF177558C5D8DC9CB896B0F11EB5 (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22952,7 +23109,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool_set_Instance_m53B896988BA5FF1
 		return;
 	}
 }
-// Method Definition Index: 59122
+// Method Definition Index: 59126
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool_Awake_m52968F2DFCB0ABF09C21DC0C395DF30D3B964A09 (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23007,7 +23164,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 59123
+// Method Definition Index: 59127
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Objectpool_Spawn_m4AC4312546C0F3C61EEFD185726D887CD1CCCC93 (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_position, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___2_rotation, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___3_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23182,7 +23339,7 @@ IL_00aa:
 		return L_38;
 	}
 }
-// Method Definition Index: 59124
+// Method Definition Index: 59128
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Objectpool_Spawn_m9A1705CC182FE0A831B26499C844506C4D97DA0B (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_parent, const RuntimeMethod* method) 
 {
 	{
@@ -23208,7 +23365,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		return L_8;
 	}
 }
-// Method Definition Index: 59125
+// Method Definition Index: 59129
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Objectpool_Spawn_mF370B9924033975CB48C6361B6C8039D49317BAA (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, const RuntimeMethod* method) 
 {
 	{
@@ -23233,7 +23390,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		return L_7;
 	}
 }
-// Method Definition Index: 59126
+// Method Definition Index: 59130
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool_Despawn_m35F5B55EA7827C72696CD59FF2856DB28C753B38 (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23336,7 +23493,7 @@ IL_005a:
 		return;
 	}
 }
-// Method Definition Index: 59127
+// Method Definition Index: 59131
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool_Despawn_mA1D7521F6D1EC62EC057FE55A597D8390C6F363D (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, float ___1_delay, const RuntimeMethod* method) 
 {
 	{
@@ -23371,7 +23528,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 59128
+// Method Definition Index: 59132
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Objectpool_DespawnCoroutine_mF08A0773A9843A6E1BCC461757E415EDE56A972B (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, float ___1_delay, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23399,7 +23556,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Objectpool_DespawnCoroutine_mF
 		return L_4;
 	}
 }
-// Method Definition Index: 59129
+// Method Definition Index: 59133
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool__ctor_mEF370B363CDD2B3A0AAB95A0C436C5BD7B6B2DA2 (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23434,7 +23591,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Objectpool__ctor_mEF370B363CDD2B3A0AAB95
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59130
+// Method Definition Index: 59134
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDespawnCoroutineU3Ed__12__ctor_m5665C23D277E595098BF01D77B7C4C178B710D02 (U3CDespawnCoroutineU3Ed__12_t176F8CD7747044707EECB6FB1702178327DD82B6* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -23444,14 +23601,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDespawnCoroutineU3Ed__12__ctor_m5665C
 		return;
 	}
 }
-// Method Definition Index: 59131
+// Method Definition Index: 59135
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDespawnCoroutineU3Ed__12_System_IDisposable_Dispose_m1D7F6FE5D262AFAC14185477B998645990891DF6 (U3CDespawnCoroutineU3Ed__12_t176F8CD7747044707EECB6FB1702178327DD82B6* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59132
+// Method Definition Index: 59136
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CDespawnCoroutineU3Ed__12_MoveNext_m5D69E759A7069BC18C18E8743AFF8A62B705D075 (U3CDespawnCoroutineU3Ed__12_t176F8CD7747044707EECB6FB1702178327DD82B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23509,7 +23666,7 @@ IL_0038:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59133
+// Method Definition Index: 59137
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDespawnCoroutineU3Ed__12_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mBC19E356002AD94345A027185073FC1758031C89 (U3CDespawnCoroutineU3Ed__12_t176F8CD7747044707EECB6FB1702178327DD82B6* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23517,7 +23674,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDespawnCoroutineU3Ed__12_Sy
 		return L_0;
 	}
 }
-// Method Definition Index: 59134
+// Method Definition Index: 59138
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDespawnCoroutineU3Ed__12_System_Collections_IEnumerator_Reset_m1367E3C20AB5669AE414156B22F212EC10F76690 (U3CDespawnCoroutineU3Ed__12_t176F8CD7747044707EECB6FB1702178327DD82B6* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23526,7 +23683,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDespawnCoroutineU3Ed__12_System_Colle
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CDespawnCoroutineU3Ed__12_System_Collections_IEnumerator_Reset_m1367E3C20AB5669AE414156B22F212EC10F76690_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59135
+// Method Definition Index: 59139
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDespawnCoroutineU3Ed__12_System_Collections_IEnumerator_get_Current_m78C891A1DADDC6215919D5BCF35940DF1DE00C7C (U3CDespawnCoroutineU3Ed__12_t176F8CD7747044707EECB6FB1702178327DD82B6* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23542,7 +23699,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDespawnCoroutineU3Ed__12_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59136
+// Method Definition Index: 59140
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* OcclusionCullingManager_get_Instance_m548EB6E7893C195091FD922CFC0F9FDC77FAE798 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23557,7 +23714,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR OcclusionCullingManager_tCEB9D1233DDB840A915A
 		return L_0;
 	}
 }
-// Method Definition Index: 59137
+// Method Definition Index: 59141
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_Instance_m0E6D57486127EE38D4C89BE25935417ED0B5A703 (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23574,7 +23731,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_Instance_m0E
 		return;
 	}
 }
-// Method Definition Index: 59138
+// Method Definition Index: 59142
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OcclusionCullingManager_get_IsActivating_m0CAB0631A8EEF601662000E8F110E1E137F7F3FC (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23583,7 +23740,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OcclusionCullingManager_get_IsActivating
 		return L_0;
 	}
 }
-// Method Definition Index: 59139
+// Method Definition Index: 59143
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_IsActivating_m4735FCD3CDCE699ABF375C0E460F5EA60C7AB28C (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -23593,7 +23750,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_IsActivating
 		return;
 	}
 }
-// Method Definition Index: 59140
+// Method Definition Index: 59144
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t OcclusionCullingManager_get_ActivatedCount_m63655C3A6771E10BFF063036C4E87BB91A7465D8 (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23602,7 +23759,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t OcclusionCullingManager_get_Activated
 		return L_0;
 	}
 }
-// Method Definition Index: 59141
+// Method Definition Index: 59145
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_ActivatedCount_m80F93068826063C3E01C03E2245247F83D8FBBBF (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -23612,7 +23769,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_ActivatedCou
 		return;
 	}
 }
-// Method Definition Index: 59142
+// Method Definition Index: 59146
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t OcclusionCullingManager_get_TotalCount_m7F5D99E939373F93D94984DF745CB7C7BF56AB74 (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23642,7 +23799,7 @@ IL_000a:
 		return L_2;
 	}
 }
-// Method Definition Index: 59143
+// Method Definition Index: 59147
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_Awake_m0FF57BF15BB7A5587970A75B1F5A0A8F72E776EC (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23706,7 +23863,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 59144
+// Method Definition Index: 59148
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_Start_m6F7ACC2D0C95C18ECF25FCD29FD2DE0EA4B17CEA (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23721,7 +23878,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_Start_m6F7ACC2D0
 		return;
 	}
 }
-// Method Definition Index: 59145
+// Method Definition Index: 59149
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_OnDestroy_mE705BC40F39567370FAAC63D3DC2B0EF10EA3B42 (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23753,7 +23910,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 59146
+// Method Definition Index: 59150
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager_DeactivateAll_mC432361B4BCF62E1DBF99B52E71E90F84D5DC2DF (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23847,7 +24004,7 @@ IL_0036:
 		return;
 	}
 }
-// Method Definition Index: 59147
+// Method Definition Index: 59151
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OcclusionCullingManager_ActivateAllRoutine_mD626817DC9BB3DF01B2AFBDFCA65B3F27231D567 (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23866,7 +24023,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OcclusionCullingManager_Activa
 		return L_1;
 	}
 }
-// Method Definition Index: 59148
+// Method Definition Index: 59152
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager__ctor_m8C985CF6DEF42C2A9E37F325BA418F7B568AFD6C (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23904,7 +24061,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingManager__ctor_m8C985CF6D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59149
+// Method Definition Index: 59153
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CActivateAllRoutineU3Ed__25__ctor_mA67299F0A44CEC37636C95363B6999E615B21C32 (U3CActivateAllRoutineU3Ed__25_t71378CB23BB1B6D08D1B8B11ECC1081EA93618D5* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -23914,14 +24071,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CActivateAllRoutineU3Ed__25__ctor_mA67
 		return;
 	}
 }
-// Method Definition Index: 59150
+// Method Definition Index: 59154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CActivateAllRoutineU3Ed__25_System_IDisposable_Dispose_mAB4CCCCC423940D029285B17420F8A5F5EF3F258 (U3CActivateAllRoutineU3Ed__25_t71378CB23BB1B6D08D1B8B11ECC1081EA93618D5* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59151
+// Method Definition Index: 59155
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CActivateAllRoutineU3Ed__25_MoveNext_mB07288D9E738BAF03E42D213E19BA6DC4B81B72B (U3CActivateAllRoutineU3Ed__25_t71378CB23BB1B6D08D1B8B11ECC1081EA93618D5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24220,7 +24377,7 @@ IL_018b:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59152
+// Method Definition Index: 59156
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CActivateAllRoutineU3Ed__25_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m65D6BE3F6CEF33CFF635D05EDF59D7999BD25513 (U3CActivateAllRoutineU3Ed__25_t71378CB23BB1B6D08D1B8B11ECC1081EA93618D5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24228,7 +24385,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CActivateAllRoutineU3Ed__25_
 		return L_0;
 	}
 }
-// Method Definition Index: 59153
+// Method Definition Index: 59157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CActivateAllRoutineU3Ed__25_System_Collections_IEnumerator_Reset_m43DFF5D4F6DB4A4BB5BC24EB758D5658F8DE3C32 (U3CActivateAllRoutineU3Ed__25_t71378CB23BB1B6D08D1B8B11ECC1081EA93618D5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24237,7 +24394,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CActivateAllRoutineU3Ed__25_System_Col
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CActivateAllRoutineU3Ed__25_System_Collections_IEnumerator_Reset_m43DFF5D4F6DB4A4BB5BC24EB758D5658F8DE3C32_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59154
+// Method Definition Index: 59158
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CActivateAllRoutineU3Ed__25_System_Collections_IEnumerator_get_Current_m3485C335DDB37BEDA76043A8BCD5155B8F5A3D66 (U3CActivateAllRoutineU3Ed__25_t71378CB23BB1B6D08D1B8B11ECC1081EA93618D5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24253,7 +24410,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CActivateAllRoutineU3Ed__25_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59155
+// Method Definition Index: 59159
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingZone_OnDrawGizmosSelected_mBA0A6D20E2D6FECA5777E464DEA7EB2DA7A33DD7 (OcclusionCullingZone_t8FD95F21D494F11E89B71D399A46BCC13529206C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24382,7 +24539,7 @@ IL_0118:
 		return;
 	}
 }
-// Method Definition Index: 59156
+// Method Definition Index: 59160
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingZone__ctor_m78D192D2DC7C53F907319577E209C3496BD12D41 (OcclusionCullingZone_t8FD95F21D494F11E89B71D399A46BCC13529206C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24416,7 +24573,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OcclusionCullingZone__ctor_m78D192D2DC7C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59157
+// Method Definition Index: 59161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* PhotoModeManager_get_Instance_mF1FA3827953B97C81255D43C37A90723FD59238E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24431,7 +24588,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhotoModeManager_t19343190E81B384562CC51BDC0A
 		return L_0;
 	}
 }
-// Method Definition Index: 59158
+// Method Definition Index: 59162
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_set_Instance_mE711006F53C0EEB62ABE05DAE2C64449BF9DE676 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24448,7 +24605,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_set_Instance_mE711006F5
 		return;
 	}
 }
-// Method Definition Index: 59159
+// Method Definition Index: 59163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhotoModeManager_get_IsCapturing_mDEA3334D0AB506046CE0450FDC3D2369FFA7B416 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24457,7 +24614,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhotoModeManager_get_IsCapturing_mDEA333
 		return L_0;
 	}
 }
-// Method Definition Index: 59160
+// Method Definition Index: 59164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhotoModeManager_get_IsPreviewOpen_m233BB1C28805FD3BB51762754B340D059913447D (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24490,7 +24647,7 @@ IL_001a:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59161
+// Method Definition Index: 59165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_Awake_m0E80622FA204D558C9BE485A24D2601B47BC85E9 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24538,7 +24695,7 @@ IL_0021:
 		return;
 	}
 }
-// Method Definition Index: 59162
+// Method Definition Index: 59166
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_Start_mC94B830C50A0E416269A705366AF1E575F06EECC (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24701,7 +24858,7 @@ IL_00e7:
 		return;
 	}
 }
-// Method Definition Index: 59163
+// Method Definition Index: 59167
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_OnDestroy_m1E7FE77B314988AF483F6D02267FA7E973345B7A (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24881,7 +25038,7 @@ IL_0108:
 		return;
 	}
 }
-// Method Definition Index: 59164
+// Method Definition Index: 59168
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_TakePhoto_m211E492D7C8593F4259E6F6BCAF405DE42FA3D71 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24933,7 +25090,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 59165
+// Method Definition Index: 59169
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_SharePhoto_mBF7A781535126E53C535CD12A124CE083C9BC2A4 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25033,7 +25190,7 @@ IL_0067:
 		return;
 	}
 }
-// Method Definition Index: 59166
+// Method Definition Index: 59170
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_SavePhoto_mDC351701D9CE756ED48C67A20B074C58DF1876CA (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25089,7 +25246,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 59167
+// Method Definition Index: 59171
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_ClosePreview_m3637A55B1DFCE0893AD99855A53CDFB8B5726620 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25133,7 +25290,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 59168
+// Method Definition Index: 59172
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhotoModeManager_CaptureRoutine_mE816CF31BDB0C7B8BAE177044B0AEEF8805BB5DF (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25152,7 +25309,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhotoModeManager_CaptureRoutin
 		return L_1;
 	}
 }
-// Method Definition Index: 59169
+// Method Definition Index: 59173
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t5421B2468AFFE816206B49B3A6E589B74E5C6C94* PhotoModeManager_HideAllCanvases_m8621BFE88EE132E776767B12322060ADAF3F00CE (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25258,7 +25415,7 @@ IL_0041:
 		return L_18;
 	}
 }
-// Method Definition Index: 59170
+// Method Definition Index: 59174
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_RestoreCanvases_m47E39DF2E98F2EFFDA4A298FE14F974378C1AB5B (List_1_t5421B2468AFFE816206B49B3A6E589B74E5C6C94* ___0_hidden, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25361,7 +25518,7 @@ IL_003e:
 		return;
 	}
 }
-// Method Definition Index: 59171
+// Method Definition Index: 59175
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_PlayFlash_m0C00F85BA340C1E4194B5FE3EA77C61DC8BFEC2A (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25410,7 +25567,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 59172
+// Method Definition Index: 59176
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_SetFlashAlpha_m5E5D78B18FC20F1C44611AF18D5BEDF855D22511 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, float ___0_alpha, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -25434,7 +25591,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_SetFlashAlpha_m5E5D78B1
 		return;
 	}
 }
-// Method Definition Index: 59173
+// Method Definition Index: 59177
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_ShowPreview_mEF3F779F46821EFAAA2CAB110114FC591E28C2B9 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25578,7 +25735,7 @@ IL_00c1:
 		return;
 	}
 }
-// Method Definition Index: 59174
+// Method Definition Index: 59178
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* PhotoModeManager_get_PreviewWindowTransform_m028CC4D8344D6B36A906100017AA2F7C1333759A (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25612,7 +25769,7 @@ IL_001a:
 		return L_4;
 	}
 }
-// Method Definition Index: 59175
+// Method Definition Index: 59179
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhotoModeManager_WritePhoto_mB565F5CA4E1503D5EBA6161F75CA2EE99CB0CEAC (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* ___0_photo, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25716,7 +25873,7 @@ IL_006f:
 		return L_17;
 	}
 }
-// Method Definition Index: 59176
+// Method Definition Index: 59180
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_PrunePhotoLibrary_m6B8EE4CBB52C7148EED45091013E93CDC65E2B4B (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25854,7 +26011,7 @@ IL_006f:
 		return;
 	}
 }
-// Method Definition Index: 59177
+// Method Definition Index: 59181
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_ReleasePhoto_mED47E2BAD5470FD4342B12BE68EAADDDADB84016 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25931,7 +26088,7 @@ IL_005a:
 		return;
 	}
 }
-// Method Definition Index: 59178
+// Method Definition Index: 59182
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_HandleNativeShareResult_mBC5FB7B895F5D94873630770F1BEA8130C418B00 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, bool ___0_success, String_t* ___1_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26002,7 +26159,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 59179
+// Method Definition Index: 59183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_HandleNativeSaveResult_m7D5A5D6E47A2ED16D72BEBCD3A1A16AB463AF853 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, bool ___0_success, String_t* ___1_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26059,7 +26216,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 59180
+// Method Definition Index: 59184
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_PlayButtonClick_m9D38247E89727280B559A982948425033EE54E77 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26093,7 +26250,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 59181
+// Method Definition Index: 59185
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhotoSharePayload_t30ABE04142D4E5C6A9FB819F8FE1F20F873FD97E* PhotoModeManager_BuildPayload_m6297579153F63F675864F983953F593202B41E51 (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26139,7 +26296,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhotoSharePayload_t30ABE04142D4E5C6A9FB819F8F
 		return L_8;
 	}
 }
-// Method Definition Index: 59182
+// Method Definition Index: 59186
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhotoModeManager_HasPhotoOnDisk_m18B13EF5C4BCAA7F95C2DD0729012A046C885CBE (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, String_t* ___0_action, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26191,7 +26348,7 @@ IL_003b:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 59183
+// Method Definition Index: 59187
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_HandlePhotoActionResult_mC36B60881FAA29628AEDFC11E7D375E8A8DB2C0B (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, PhotoActionResultPayload_tEC3DF735D5D9AB38F3202EBD071905C85D3CDAED* ___0_result, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26291,7 +26448,7 @@ IL_004a:
 		return;
 	}
 }
-// Method Definition Index: 59184
+// Method Definition Index: 59188
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager_ShowToast_m1B5FAD643D2D2CB1A7B49AE183CFAF5BA764FEE9 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26327,7 +26484,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 59185
+// Method Definition Index: 59189
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager__ctor_mEBB1D071E5EBAA35C7274D037C58180EDA41121B (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26366,7 +26523,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhotoModeManager__ctor_mEBB1D071E5EBAA35
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59186
+// Method Definition Index: 59190
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCaptureRoutineU3Ed__39__ctor_m9DE818F8ED44FFC3981362C0BFC78E7BB1AC64B6 (U3CCaptureRoutineU3Ed__39_tEBFAEF821D65EC00A209F93FA78AC70E9CBD2A0A* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -26376,14 +26533,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCaptureRoutineU3Ed__39__ctor_m9DE818F
 		return;
 	}
 }
-// Method Definition Index: 59187
+// Method Definition Index: 59191
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCaptureRoutineU3Ed__39_System_IDisposable_Dispose_m7DAB9374779D4CDBE2DB81243DC1CE141ABA7BE4 (U3CCaptureRoutineU3Ed__39_tEBFAEF821D65EC00A209F93FA78AC70E9CBD2A0A* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 59188
+// Method Definition Index: 59192
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CCaptureRoutineU3Ed__39_MoveNext_mE6303FE75C08F8D0A61CCABFE0CFDC2A6FE2E9C0 (U3CCaptureRoutineU3Ed__39_tEBFAEF821D65EC00A209F93FA78AC70E9CBD2A0A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26653,7 +26810,7 @@ IL_0127:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59189
+// Method Definition Index: 59193
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCaptureRoutineU3Ed__39_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m795934A187DDE4219FF4C5B5352D96373A641BA9 (U3CCaptureRoutineU3Ed__39_tEBFAEF821D65EC00A209F93FA78AC70E9CBD2A0A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26661,7 +26818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCaptureRoutineU3Ed__39_Syst
 		return L_0;
 	}
 }
-// Method Definition Index: 59190
+// Method Definition Index: 59194
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCaptureRoutineU3Ed__39_System_Collections_IEnumerator_Reset_m68C9B76F7E54C756D36A4F99419FA8D5AEC0D6A2 (U3CCaptureRoutineU3Ed__39_tEBFAEF821D65EC00A209F93FA78AC70E9CBD2A0A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26670,7 +26827,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCaptureRoutineU3Ed__39_System_Collect
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CCaptureRoutineU3Ed__39_System_Collections_IEnumerator_Reset_m68C9B76F7E54C756D36A4F99419FA8D5AEC0D6A2_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 59191
+// Method Definition Index: 59195
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCaptureRoutineU3Ed__39_System_Collections_IEnumerator_get_Current_mCF238181C5B0340BA17D660E85BA1F753476C7AC (U3CCaptureRoutineU3Ed__39_tEBFAEF821D65EC00A209F93FA78AC70E9CBD2A0A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26694,7 +26851,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCaptureRoutineU3Ed__39_Syst
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 59192
+// Method Definition Index: 59196
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlaceableItem_get_IsFullyPlaced_mF61CE1D304EE46857B2231D5F10E1FB38AF7399E (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26703,7 +26860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlaceableItem_get_IsFullyPlaced_mF61CE1D
 		return (bool)((((int32_t)((!(((float)L_0) <= ((float)(0.0f))))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 59193
+// Method Definition Index: 59197
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 PlaceableItem_get_InitialScale_m0598C85A41A72605F6BDF6665490CE1971DD605A (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26712,7 +26869,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A
 		return L_0;
 	}
 }
-// Method Definition Index: 59194
+// Method Definition Index: 59198
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_Awake_mC59087D32BCB79BB98DE5A520E36A6770FE25C19 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26923,7 +27080,7 @@ IL_00eb:
 		return;
 	}
 }
-// Method Definition Index: 59195
+// Method Definition Index: 59199
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_OnEnable_m0AF93A7506C016E51752DDCD84BD8F22925D9371 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26960,7 +27117,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 59196
+// Method Definition Index: 59200
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_OnDisable_m3ACA8D9CDDD1ABD4DE155E7F19E02AA7E8FC4425 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27012,7 +27169,7 @@ IL_0036:
 		return;
 	}
 }
-// Method Definition Index: 59197
+// Method Definition Index: 59201
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_OnDestroy_m29ACED30106991490958BE69A706CD8DEC25C645 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27049,7 +27206,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 59198
+// Method Definition Index: 59202
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_SetScaleMultiplier_m0EB057F3AB5519298B3728B8D0CADA31CDF4E05D (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, float ___0_multiplier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27122,7 +27279,7 @@ IL_0067:
 		return;
 	}
 }
-// Method Definition Index: 59199
+// Method Definition Index: 59203
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_MeasureGfxGroundOffset_m102932462C5C169669AC748240E31948D143D1E5 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27195,7 +27352,7 @@ IL_0045:
 		return;
 	}
 }
-// Method Definition Index: 59200
+// Method Definition Index: 59204
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlaceableItem_TryGetGfxBottomInRootSpace_mE30B0B21F48E4FB72097D96FD4CAF6286D7FE5FF (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, float* ___0_bottomY, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27486,7 +27643,7 @@ IL_0131:
 		return L_69;
 	}
 }
-// Method Definition Index: 59201
+// Method Definition Index: 59205
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlaceableItem_TryGetColliderLocalBounds_m88EBE7DA198294227BA8B8403D865D1C27AB03AB (Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_col, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___1_local, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27731,7 +27888,7 @@ IL_0140:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 59202
+// Method Definition Index: 59206
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_AccumulateMinY_mE5665D9A2B7C7DD8C9BD7D1A6B8D950DC3AC626B (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 ___0_local, Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___1_m, float* ___2_minY, bool* ___3_any, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -27965,7 +28122,7 @@ IL_0099:
 		return;
 	}
 }
-// Method Definition Index: 59203
+// Method Definition Index: 59207
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_Initialize_mE55ECD65E934FE846EA4AAD950FD19BAB217ED57 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, String_t* ___0_id, float ___1_totalDur, float ___2_remainingDur, const RuntimeMethod* method) 
 {
 	{
@@ -28005,7 +28162,7 @@ IL_0052:
 		return;
 	}
 }
-// Method Definition Index: 59204
+// Method Definition Index: 59208
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_SetSource_m17B26015B737817DDEEBFE505F9C84838A6AC7A8 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, int32_t ___0_kind, String_t* ___1_itemId, const RuntimeMethod* method) 
 {
 	{
@@ -28020,7 +28177,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_SetSource_m17B26015B737817
 		return;
 	}
 }
-// Method Definition Index: 59205
+// Method Definition Index: 59209
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_PreviewTimer_mAE4384D3F9EF4687F52197F263E67220231397DA (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, float ___0_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28112,7 +28269,7 @@ IL_0077:
 		return;
 	}
 }
-// Method Definition Index: 59206
+// Method Definition Index: 59210
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_Start_m3B5C3883725205A0C1250E3FEA7420B4484E65F4 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28203,7 +28360,7 @@ IL_005b:
 		return;
 	}
 }
-// Method Definition Index: 59207
+// Method Definition Index: 59211
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_ApplyStateVisuals_m069FFF0CE7EB1270A78C762D553BCB75202F6FD2 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28323,7 +28480,7 @@ IL_00bd:
 		return;
 	}
 }
-// Method Definition Index: 59208
+// Method Definition Index: 59212
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_CreateFloatingTimerUI_m0410E1DB236B59F497BA419A26029CE043753F6A (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28468,7 +28625,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_CreateFloatingTimerUI_m041
 		return;
 	}
 }
-// Method Definition Index: 59209
+// Method Definition Index: 59213
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_Update_m43605EFBE38860871E35CF0F8F67A94CDDA6D21B (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28713,7 +28870,7 @@ IL_0187:
 		return;
 	}
 }
-// Method Definition Index: 59210
+// Method Definition Index: 59214
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PlaceableItem_DisableTimerHolderAfterDelay_mE0A4F93633237E8D2EB263D007D35E6CC2FF1C51 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, float ___0_delay, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28736,7 +28893,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PlaceableItem_DisableTimerHold
 		return L_2;
 	}
 }
-// Method Definition Index: 59211
+// Method Definition Index: 59215
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_UpdateSaturation_mB96E41AC78D0AD555AC2B8D408AC67015A5FCCDB (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, float ___0_saturationValue, int32_t ___1_materialIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28916,7 +29073,7 @@ IL_0087:
 		return;
 	}
 }
-// Method Definition Index: 59212
+// Method Definition Index: 59216
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_SetHighlight_m568F7A10594700BF5F4B171FD4B229FDE026A354 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, bool ___0_enable, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29182,7 +29339,7 @@ IL_00ff:
 		return;
 	}
 }
-// Method Definition Index: 59213
+// Method Definition Index: 59217
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem_UpdateSaturationForIndices_m5810264C234E77BBF6CA602D559852262758535E (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, float ___0_saturationValue, int32_t ___1_startIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29345,7 +29502,7 @@ IL_007e:
 		return;
 	}
 }
-// Method Definition Index: 59214
+// Method Definition Index: 59218
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem__ctor_m62BC6DFE26E0F3CD1C3F6CF076A5E49DFAE1FDA2 (PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29364,16 +29521,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaceableItem__ctor_m62BC6DFE26E0F3CD1C3
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 59423
+// Method Definition Index: 59427
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ShopItemUI_get_ItemData_m2608FAD02DBE15440B44D660F555E1F765A3B0C8_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ShopItemUI.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/ShopItemUI.cs:71>
 		ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* L_0 = __this->___U3CItemDataU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 59457
+// Method Definition Index: 59463
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29565,7 +29722,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 64859
+// Method Definition Index: 64865
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29585,7 +29742,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InventoryItemUI_set_RewardIt
 		return;
 	}
 }
-// Method Definition Index: 59672
+// Method Definition Index: 59678
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29683,7 +29840,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 59120
+// Method Definition Index: 59124
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29753,7 +29910,7 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 59770
+// Method Definition Index: 59776
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* FlutterBridge_get_LatestGardenState_m4ED08B3B15ACFAA34ECB2621EB0413C7850A5346_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29768,7 +29925,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B
 		return L_0;
 	}
 }
-// Method Definition Index: 59750
+// Method Definition Index: 59756
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29798,7 +29955,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Quaternion__ctor_m868FD60AA6
 		return;
 	}
 }
-// Method Definition Index: 59040
+// Method Definition Index: 59044
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* JannahGardenManager_get_Instance_m333D51BD2CC4551E481DA65D8563AFB7CA8E3FFE_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29813,7 +29970,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR JannahGardenManager_t6D8ED9919DD4
 		return L_0;
 	}
 }
-// Method Definition Index: 59041
+// Method Definition Index: 59045
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void JannahGardenManager_set_Instance_m5A97CAD0AE7AAFE0892B1BD9DDA3161D2CDEC42C_inline (JannahGardenManager_t6D8ED9919DD4CE3141DE2BF1B6BF5E3F4494F642* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29830,7 +29987,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void JannahGardenManager_set_Inst
 		return;
 	}
 }
-// Method Definition Index: 59617
+// Method Definition Index: 59623
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TutorialManager_tA517EF826FE03300C6A8ED492158E82A0E210CCF* TutorialManager_get_Instance_m42501574BCC12E6BA6E5A6BAF99C9AFA47BC1D5C_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29845,7 +30002,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TutorialManager_tA517EF826FE03300
 		return L_0;
 	}
 }
-// Method Definition Index: 59053
+// Method Definition Index: 59057
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* LoadingScreenManager_get_Instance_m7D3E2921C7D8B64F44BD4C284F04DCFE6C1242DE_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29860,7 +30017,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR LoadingScreenManager_tB013C5661A3
 		return L_0;
 	}
 }
-// Method Definition Index: 59054
+// Method Definition Index: 59058
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadingScreenManager_set_Instance_mCECCE56255105884CDD973FCBE6F68DE8E42A4D8_inline (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29877,7 +30034,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadingScreenManager_set_Ins
 		return;
 	}
 }
-// Method Definition Index: 65975
+// Method Definition Index: 65981
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* Slider_get_fillRect_m35EE2868F52084F9543158A2EAD99476E5C13D9A_inline (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29886,7 +30043,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488
 		return L_0;
 	}
 }
-// Method Definition Index: 59055
+// Method Definition Index: 59059
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsLoading_m74C14BF37047FB4C005267CCC652382A3D96A771_inline (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29895,7 +30052,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsL
 		return L_0;
 	}
 }
-// Method Definition Index: 65452
+// Method Definition Index: 65458
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode_m064C83FFA35E2AED4E9FA7D5EC1AD19630D8FC2A_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -29906,7 +30063,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode
 		return;
 	}
 }
-// Method Definition Index: 65462
+// Method Definition Index: 65468
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -29999,7 +30156,7 @@ IL_0030:
 		return L_11;
 	}
 }
-// Method Definition Index: 59056
+// Method Definition Index: 59060
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D_inline (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30088,7 +30245,7 @@ IL_000b:
 		return L_4;
 	}
 }
-// Method Definition Index: 59121
+// Method Definition Index: 59125
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Objectpool_set_Instance_m53B896988BA5FF177558C5D8DC9CB896B0F11EB5_inline (Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30105,7 +30262,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Objectpool_set_Instance_m53B
 		return;
 	}
 }
-// Method Definition Index: 59136
+// Method Definition Index: 59140
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* OcclusionCullingManager_get_Instance_m548EB6E7893C195091FD922CFC0F9FDC77FAE798_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30120,7 +30277,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR OcclusionCullingManager_tCEB9D123
 		return L_0;
 	}
 }
-// Method Definition Index: 59137
+// Method Definition Index: 59141
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_Instance_m0E6D57486127EE38D4C89BE25935417ED0B5A703_inline (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30137,7 +30294,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_
 		return;
 	}
 }
-// Method Definition Index: 59139
+// Method Definition Index: 59143
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_IsActivating_m4735FCD3CDCE699ABF375C0E460F5EA60C7AB28C_inline (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30147,7 +30304,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_
 		return;
 	}
 }
-// Method Definition Index: 59141
+// Method Definition Index: 59145
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OcclusionCullingManager_set_ActivatedCount_m80F93068826063C3E01C03E2245247F83D8FBBBF_inline (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30194,7 +30351,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 59140
+// Method Definition Index: 59144
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t OcclusionCullingManager_get_ActivatedCount_m63655C3A6771E10BFF063036C4E87BB91A7465D8_inline (OcclusionCullingManager_tCEB9D1233DDB840A915A7F4F63C60AB4F9BEE45E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30203,7 +30360,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t OcclusionCullingManager_g
 		return L_0;
 	}
 }
-// Method Definition Index: 59157
+// Method Definition Index: 59161
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* PhotoModeManager_get_Instance_mF1FA3827953B97C81255D43C37A90723FD59238E_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30218,7 +30375,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PhotoModeManager_t19343190E81B384
 		return L_0;
 	}
 }
-// Method Definition Index: 59158
+// Method Definition Index: 59162
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PhotoModeManager_set_Instance_mE711006F53C0EEB62ABE05DAE2C64449BF9DE676_inline (PhotoModeManager_t19343190E81B384562CC51BDC0A031C27A0785A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30288,7 +30445,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR StringComparer_t6268F19CA34879176
 		return L_0;
 	}
 }
-// Method Definition Index: 59356
+// Method Definition Index: 59360
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeEnvironmentGenerator_t97B633909642CAAC6DE3CD671D3E21FFA3C08DC6* RuntimeEnvironmentGenerator_get_Instance_mC568711C2F477B662E30710A46EEA3481D7DDF9B_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30753,7 +30910,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E
 		return L_0;
 	}
 }
-// Method Definition Index: 65470
+// Method Definition Index: 65476
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_dynamicPixelsPerUnit_m7A081D5FD963F751140DCF1E5190ED4E51308CA2_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30827,6 +30984,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mA8F89FB04FE
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
 // Method Definition Index: 614
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m69C8773D6967F3B224777183E24EA621CE056F8F_gshared_inline (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* __this, bool ___0_obj, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, bool, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method));
+}
+// Method Definition Index: 614
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
@@ -30870,7 +31033,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 76992
+// Method Definition Index: 76998
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) 
 {
 	{

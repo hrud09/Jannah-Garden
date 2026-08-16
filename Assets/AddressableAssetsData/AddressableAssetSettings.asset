@@ -38,7 +38,7 @@ MonoBehaviour:
   m_maxConcurrentWebRequests: 3
   m_UseUWRForLocalBundles: 0
   m_BundleTimeout: 0
-  m_BundleRetryCount: 0
+  m_BundleRetryCount: 3
   m_BundleRedirectLimit: -1
   m_SharedBundleSettings: 0
   m_SharedBundleSettingsCustomGroupIndex: 0
