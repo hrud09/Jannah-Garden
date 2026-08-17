@@ -6,6 +6,13 @@ using UnityEngine.InputSystem;
 
 public class MinimapBehaviour : MonoBehaviour
 {
+    /// <summary>Fired when the minimap finishes expanding to its large size. Onboarding hooks into
+    /// this to detect a full open+close cycle without needing its own polling.</summary>
+    public static event System.Action OnExpanded;
+
+    /// <summary>Fired when the minimap finishes collapsing back to its small size.</summary>
+    public static event System.Action OnCollapsed;
+
     [Header("UI References")]
     [SerializeField] private RectTransform minimapPanel;
     [SerializeField] private Button expandButton;
@@ -120,6 +127,7 @@ public class MinimapBehaviour : MonoBehaviour
         isExpanded = true;
         lastStateChangeFrame = Time.frameCount;
         UpdateMinimapState(true);
+        OnExpanded?.Invoke();
     }
 
     /// <summary>
@@ -133,6 +141,7 @@ public class MinimapBehaviour : MonoBehaviour
         isExpanded = false;
         lastStateChangeFrame = Time.frameCount;
         UpdateMinimapState(true);
+        OnCollapsed?.Invoke();
     }
 
     /// <summary>
