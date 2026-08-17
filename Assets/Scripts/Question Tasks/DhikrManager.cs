@@ -267,15 +267,16 @@ public class DhikrManager : MonoBehaviour
 
         if (dhikrTextUI != null)
         {
-            SetText(dhikrTextUI, "<color=#FFD700>Congratulations!</color>\nDhikr Completed!");
+            SetText(dhikrTextUI, "<color=#FFD700>Masha'Allah!</color>\nDhikr Completed!");
             dhikrTextUI.transform.DOKill();
             dhikrTextUI.transform.localScale = Vector3.one;
             dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
         }
 
+        // The count label is only as wide as the gap between the -/+ buttons, so it keeps
+        // showing the finished count — words put here wrap and spill over the panel.
         if (countTextUI != null)
         {
-            SetText(countTextUI, "Masha'Allah!");
             countTextUI.transform.DOKill();
             countTextUI.transform.localScale = Vector3.one;
             countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);
