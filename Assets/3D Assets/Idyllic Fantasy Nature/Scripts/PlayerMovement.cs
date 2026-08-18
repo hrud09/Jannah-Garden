@@ -626,6 +626,25 @@ namespace IdyllicFantasyNature
             _inspectorVerticalInput = Mathf.Clamp(value, -1f, 1f);
         }
 
+        // ═════════════════════════════════════════════════════════════
+        //  MOVEMENT SPEED SETTINGS API (Normal + Inspector Mode)
+        // ═════════════════════════════════════════════════════════════
+
+        /// <summary>Current Normal Mode movement speed.</summary>
+        public float MovementSpeed => _movementSpeed;
+
+        /// <summary>Sets Normal Mode movement speed (clamped to the same range as the inspector slider, 1-20).</summary>
+        public void SetMovementSpeed(float value)
+        {
+            _movementSpeed = Mathf.Clamp(value, 1f, 20f);
+        }
+
+        /// <summary>Sets Inspector Mode movement speed (clamped to the same range as the inspector slider, 5-50).</summary>
+        public void SetInspectorModeSpeed(float value)
+        {
+            inspectorModeSpeed = Mathf.Clamp(value, 5f, 50f);
+        }
+
         private void StopAllMovementAudio()
         {
             if (_footstepSource != null && _footstepSource.isPlaying)

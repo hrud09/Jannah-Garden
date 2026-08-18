@@ -9,6 +9,10 @@ public class GameSettingsManager : MonoBehaviour
     public Toggle musicToggle;
     public Toggle vibrationToggle;
 
+    [Header("UI Sliders")]
+    public Slider normalSpeedSlider;
+    public Slider inspectorSpeedSlider;
+
     [Header("Close Settings")]
     public Button closeButton;
     public GameObject settingsPanel;
@@ -31,6 +35,7 @@ public class GameSettingsManager : MonoBehaviour
     public float itemScaleDuration = 0.2f;
 
     private bool _isAnimating = false;
+    private IdyllicFantasyNature.PlayerMovement _playerMovement;
 
     private void Awake()
     {
@@ -61,12 +66,25 @@ public class GameSettingsManager : MonoBehaviour
         bool sfxEnabled = PlayerPrefs.GetInt("SFXEnabled", 1) == 1;
         bool musicEnabled = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;
         bool vibrationEnabled = PlayerPrefs.GetInt("VibrationEnabled", 1) == 1;
+        float normalSpeed = PlayerPrefs.GetFloat("NormalMovementSpeed", 8f);
+        float inspectorSpeed = PlayerPrefs.GetFloat("InspectorMovementSpeed", 25f);
 
         // Apply audio settings to AudioManager
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.IsSfxMuted = !sfxEnabled;
             AudioManager.Instance.IsMusicMuted = !musicEnabled;
+        }
+
+        // Apply movement speed settings to PlayerMovement
+        if (_playerMovement == null)
+        {
+            _playerMovement = FindObjectOfType<IdyllicFantasyNature.PlayerMovement>();
+        }
+        if (_playerMovement != null)
+        {
+            _playerMovement.SetMovementSpeed(normalSpeed);
+            _playerMovement.SetInspectorModeSpeed(inspectorSpeed);
         }
 
         // Set up Toggle components
@@ -84,6 +102,22 @@ public class GameSettingsManager : MonoBehaviour
         {
             vibrationToggle.isOn = vibrationEnabled;
             vibrationToggle.onValueChanged.AddListener(SetVibration);
+        }
+
+        // Set up Slider components
+        if (normalSpeedSlider != null)
+        {
+            normalSpeedSlider.minValue = 1f;
+            normalSpeedSlider.maxValue = 20f;
+            normalSpeedSlider.SetValueWithoutNotify(normalSpeed);
+            normalSpeedSlider.onValueChanged.AddListener(SetNormalMovementSpeed);
+        }
+        if (inspectorSpeedSlider != null)
+        {
+            inspectorSpeedSlider.minValue = 5f;
+            inspectorSpeedSlider.maxValue = 50f;
+            inspectorSpeedSlider.SetValueWithoutNotify(inspectorSpeed);
+            inspectorSpeedSlider.onValueChanged.AddListener(SetInspectorMovementSpeed);
         }
 
         // Update visuals
@@ -193,10 +227,32 @@ public class GameSettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("VibrationEnabled", enabled ? 1 : 0);
         PlayerPrefs.Save();
-        
+
         PlayClickSound();
         TriggerVibrationFeedback();
         UpdateVisuals();
+    }
+
+    public void SetNormalMovementSpeed(float value)
+    {
+        PlayerPrefs.SetFloat("NormalMovementSpeed", value);
+        PlayerPrefs.Save();
+
+        if (_playerMovement != null)
+        {
+            _playerMovement.SetMovementSpeed(value);
+        }
+    }
+
+    public void SetInspectorMovementSpeed(float value)
+    {
+        PlayerPrefs.SetFloat("InspectorMovementSpeed", value);
+        PlayerPrefs.Save();
+
+        if (_playerMovement != null)
+        {
+            _playerMovement.SetInspectorModeSpeed(value);
+        }
     }
 
     private void UpdateVisuals()
