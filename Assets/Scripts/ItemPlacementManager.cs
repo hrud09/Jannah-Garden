@@ -59,6 +59,13 @@ public class ItemPlacementManager : MonoBehaviour
     public TerrainCollider terrainCollider;
     public Button placeButton;
 
+    [Header("Placement Radius")]
+    [Tooltip("Max horizontal distance from the player the ghost can be positioned. Looking further than " +
+             "this clamps the ghost to the radius edge along the same look direction, so an item can't " +
+             "be dropped somewhere unreachable (across a lake, through a mountain, etc). Looking inside " +
+             "the radius has no effect - the ghost tracks the crosshair/terrain intersection directly.")]
+    public float placementRadius = 15f;
+
     [Tooltip("Optional. Abandons the placement in progress. For a relocation the item goes back where " +
              "it was; for a fresh purchase the item is handed back the same way a return would.")]
     public Button cancelPlacementButton;
@@ -522,8 +529,42 @@ public class ItemPlacementManager : MonoBehaviour
         // Raycast specifically against the TerrainCollider
         if (terrainCollider.Raycast(ray, out hit, 1000f))
         {
-            currentPlacedObject.transform.position = hit.point;
+            currentPlacedObject.transform.position = ClampToPlacementRadius(hit.point);
         }
+    }
+
+    /// <summary>
+    /// Keeps the ghost within <see cref="placementRadius"/> of the player. A hit point inside the radius
+    /// is used as-is (the ghost tracks the crosshair/terrain intersection directly); a hit point beyond
+    /// it is pulled back along the same look direction to the radius edge, then re-sampled against the
+    /// terrain so it still sits on the ground at that clamped spot rather than at the original (likely
+    /// very different) hit height.
+    /// </summary>
+    private Vector3 ClampToPlacementRadius(Vector3 hitPoint)
+    {
+        Vector3 playerPos = transform.position;
+        Vector3 flatOffset = hitPoint - playerPos;
+        flatOffset.y = 0f;
+
+        float flatDistance = flatOffset.magnitude;
+        if (flatDistance <= placementRadius || flatDistance < 0.0001f)
+        {
+            return hitPoint;
+        }
+
+        Vector3 direction = flatOffset / flatDistance;
+        Vector3 clampedXZ = playerPos + direction * placementRadius;
+
+        Terrain terrain = terrainCollider != null ? terrainCollider.GetComponent<Terrain>() : null;
+        if (terrain != null)
+        {
+            float terrainY = terrain.SampleHeight(clampedXZ) + terrain.transform.position.y;
+            return new Vector3(clampedXZ.x, terrainY, clampedXZ.z);
+        }
+
+        // No Terrain component to resample height from - fall back to the original hit height rather
+        // than leaving the ghost floating or buried at the wrong elevation.
+        return new Vector3(clampedXZ.x, hitPoint.y, clampedXZ.z);
     }
 
     /// <summary>

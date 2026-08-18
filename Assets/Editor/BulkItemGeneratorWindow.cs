@@ -64,7 +64,7 @@ public class BulkItemGeneratorWindow : EditorWindow
     private TreasureBoxData diamondBoxData;
     private Vector2 editorScrollPos;
 
-    [MenuItem("Tools/Bulk Item Generator")]
+    [MenuItem("Tools/Misc/Bulk Item Generator")]
     public static void ShowWindow()
     {
         GetWindow<BulkItemGeneratorWindow>("Bulk Item Generator");

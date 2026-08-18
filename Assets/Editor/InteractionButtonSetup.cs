@@ -33,7 +33,7 @@ public static class InteractionButtonSetup
         new ButtonSpec { fieldName = "placedItemInteractButton",  objectName = "Manage Button", label = "manage" },
     };
 
-    [MenuItem("Tools/Setup Interaction Buttons")]
+    [MenuItem("Tools/Misc/Setup Interaction Buttons")]
     public static void SetupInteractionButtons()
     {
         PlayersInteractionManager manager =

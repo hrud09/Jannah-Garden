@@ -57,7 +57,7 @@ public static class JannahGardenPrefabGenerator
     static readonly string[] TreeWords = { "tree", "palm", "willow", "bonsai" };
     static readonly string[] BuildingWords = { "cottage", "citadel", "house", "building" };
 
-    [MenuItem("Tools/Generate Jannah Garden Shop Prefabs")]
+    [MenuItem("Tools/Shop/Generate Jannah Garden Shop Prefabs")]
     public static void Generate()
     {
         var timerArea = AssetDatabase.LoadAssetAtPath<GameObject>(TimerAreaPath);

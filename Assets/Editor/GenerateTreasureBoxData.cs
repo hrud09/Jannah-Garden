@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class GenerateTreasureBoxData
 {
-    [MenuItem("Tools/Generate 20 Treasure Box Items")]
+    [MenuItem("Tools/Treasure Box/Generate 20 Treasure Box Items")]
     public static void GenerateItems()
     {
         string folderPath = "Assets/Resources/Tressure Box Reward Data";

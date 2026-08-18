@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public static class TreasureBoxRewardItemIdAssigner
 {
-    [MenuItem("Tools/Assign Treasure Box Reward Item IDs")]
+    [MenuItem("Tools/Treasure Box/Assign Reward Item IDs")]
     public static void AssignIdsToAllRewardItems()
     {
         string[] guids = AssetDatabase.FindAssets("t:TreasureBoxRewardItemData");

@@ -32,7 +32,7 @@ public static class JannahGardenMaterialGenerator
     const string SpecFile = "Meshy_AI_texture_0_spec.png";
     const int SpecMaxSize = 1024;
 
-    [MenuItem("Tools/Generate Jannah Garden Materials")]
+    [MenuItem("Tools/Shop/Generate Jannah Garden Materials")]
     public static void Generate()
     {
         var shader = Shader.Find(ShaderName);

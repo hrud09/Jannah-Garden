@@ -129,7 +129,7 @@ public static class JannahGardenShopItemGenerator
         new Item("019fd754-f7ac-7315-8fa2-521e6487e994", "Star Lantern", ShopItemCategory.CelestialAndLight, ShopItemTier.Tier4, 600, 7),
     };
 
-    [MenuItem("Tools/Generate Jannah Garden Shop Items")]
+    [MenuItem("Tools/Shop/Generate Jannah Garden Shop Items")]
     public static void Generate()
     {
         if (!AssetDatabase.IsValidFolder(OutputFolder))

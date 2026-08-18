@@ -83,7 +83,7 @@ public class ShopItemCreatorWindow : EditorWindow
     private int defaultRequiredXP = 1;
     private float defaultSOPlausibleDuration = 360f;
 
-    [MenuItem("Tools/Shop Item Creator")]
+    [MenuItem("Tools/Shop/Shop Item Creator")]
     public static void ShowWindow()
     {
         ShopItemCreatorWindow window = GetWindow<ShopItemCreatorWindow>("Shop Item Creator");

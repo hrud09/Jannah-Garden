@@ -25,7 +25,7 @@ public class SceneTextureOptimizerWindow : EditorWindow
     private readonly string[] _maxSizes = { "128", "256", "512", "1024", "2048", "4096" };
     private readonly int[] _maxSizeValues = { 128, 256, 512, 1024, 2048, 4096 };
 
-    [MenuItem("Tools/Scene Texture & Material Optimizer")]
+    [MenuItem("Tools/Performance/Scene Texture & Material Optimizer")]
     public static void ShowWindow()
     {
         GetWindow<SceneTextureOptimizerWindow>("Scene Texture Optimizer");

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ShopItemIdAssigner
 {
-    [MenuItem("Tools/Assign Shop Item IDs")]
+    [MenuItem("Tools/Shop/Assign Shop Item IDs")]
     public static void AssignIdsToAllShopItems()
     {
         string[] guids = AssetDatabase.FindAssets("t:ShopItemData");
@@ -76,7 +76,7 @@ public static class ShopItemIdAssigner
         Debug.Log($"[ShopItemIdAssigner] Processed {assigned} ShopItemData assets. Assigned/Updated IDs on {updated} assets.");
     }
 
-    [MenuItem("Tools/Assign Random Shop Item Unlock Levels")]
+    [MenuItem("Tools/Shop/Assign Random Shop Item Unlock Levels")]
     public static void AssignRandomUnlockLevelsToAllShopItems()
     {
         string[] guids = AssetDatabase.FindAssets("t:ShopItemData");

@@ -29,13 +29,13 @@ public static class ShopItemPrefabFixer
     /// <summary>A mesh counts as "lengthy in Y" when its height dominates its footprint by this factor.</summary>
     private const float LengthyYRatio = 1.25f;
 
-    [MenuItem("Tools/Jannah/Shop Items/1. Report Bounds (no changes)", priority = 0)]
+    [MenuItem("Tools/Shop/Prefab Fixer/1. Report Bounds (no changes)", priority = 0)]
     private static void MenuReport() => Run(dryRun: true, tallOnly: false);
 
-    [MenuItem("Tools/Jannah/Shop Items/2. Drop Pivot To Bottom (all)", priority = 1)]
+    [MenuItem("Tools/Shop/Prefab Fixer/2. Drop Pivot To Bottom (all)", priority = 1)]
     private static void MenuPivotAll() => Run(dryRun: false, tallOnly: false);
 
-    [MenuItem("Tools/Jannah/Shop Items/3. Drop Pivot To Bottom (Y-lengthy only)", priority = 2)]
+    [MenuItem("Tools/Shop/Prefab Fixer/3. Drop Pivot To Bottom (Y-lengthy only)", priority = 2)]
     private static void MenuPivotTall() => Run(dryRun: false, tallOnly: true);
 
     private static void Run(bool dryRun, bool tallOnly)

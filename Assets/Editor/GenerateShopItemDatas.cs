@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 public class GenerateShopItemDatas
 {
-    [MenuItem("Tools/Generate Shop Item Datas")]
+    [MenuItem("Tools/Shop/Generate Shop Item Datas")]
     public static void GenerateShopItems()
     {
         string prefabFolder = "Assets/Prefabs/Shop Items";
