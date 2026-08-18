@@ -3177,7 +3177,7 @@ MonoBehaviour:
   minIntensity: 0
   daySkybox: {fileID: 2100000, guid: 5d5eebce588f65f418757d3cfaa9563c, type: 2}
   nightSkybox: {fileID: 2100000, guid: ffb777b6c60362f4c91c6e29cd23f381, type: 2}
-  timeMultiplier: 1
+  timeMultiplier: 2
   currentTimeInHours: 0
   currentTimeString: 
   transitionDuration: 2
