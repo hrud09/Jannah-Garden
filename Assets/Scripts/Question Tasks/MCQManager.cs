@@ -59,6 +59,8 @@ public class MCQManager : MonoBehaviour
     public Sprite wrongSprite;
 
     [Header("Data")]
+    [Tooltip("Optional explicit override. Leave empty to auto-load Resources/questions_{locale}.txt for " +
+             "the active locale (falling back to questions_en if that locale has no file yet).")]
     public TextAsset questionFile;
 
     private QuestionList allQuestions;
@@ -88,6 +90,7 @@ public class MCQManager : MonoBehaviour
     void Start()
     {
         LoadQuestions();
+        LocalizationManager.OnLocaleChanged += LoadQuestions;
         if (submitButton != null)
         {
             submitButton.onClick.AddListener(CheckAnswer);
@@ -105,6 +108,11 @@ public class MCQManager : MonoBehaviour
             int index = i; // Local copy for closure
             optionButtons[i].onClick.AddListener(() => SelectOption(index));
         }
+    }
+
+    void OnDestroy()
+    {
+        LocalizationManager.OnLocaleChanged -= LoadQuestions;
     }
 
     public void StartQuiz(QuestionMarkOrb orb = null)
@@ -141,18 +149,15 @@ public class MCQManager : MonoBehaviour
 
     void LoadQuestions()
     {
-        if (questionFile == null)
-        {
-            questionFile = Resources.Load<TextAsset>("questions");
-        }
+        TextAsset asset = questionFile != null ? questionFile : LocalizationManager.LoadLocalizedTextAsset("questions");
 
-        if (questionFile != null)
+        if (asset != null)
         {
-            allQuestions = JsonUtility.FromJson<QuestionList>(questionFile.text);
+            allQuestions = JsonUtility.FromJson<QuestionList>(asset.text);
         }
         else
         {
-            Debug.LogError("Question JSON file not assigned and 'questions' not found in Resources!");
+            Debug.LogError("Question JSON file not assigned and no 'questions_{locale}' found in Resources!");
         }
     }
 
@@ -326,7 +331,7 @@ public class MCQManager : MonoBehaviour
             // Show congratulations message
             if (questionTextUI != null)
             {
-                SetText(questionTextUI, "<color=#00FF88>Congratulations!</color>\nCorrect Answer!");
+                SetText(questionTextUI, LocalizationManager.Instance.Get("quiz.correct"));
                 questionTextUI.transform.DOKill();
                 questionTextUI.transform.localScale = Vector3.one;
                 questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -349,18 +354,19 @@ public class MCQManager : MonoBehaviour
 
             if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
             {
+                LocalizationManager loc = LocalizationManager.Instance;
                 string toastMsg = "";
                 if (coinsEarned > 0)
                 {
-                    toastMsg += $"+{coinsEarned} Noor Coins ";
+                    toastMsg += loc.Get("reward.coins", coinsEarned) + " ";
                 }
                 if (coinsEarned > 0 && xpEarned > 0)
                 {
-                    toastMsg += "& ";
+                    toastMsg += loc.Get("reward.and") + " ";
                 }
                 if (xpEarned > 0)
                 {
-                    toastMsg += $"+{xpEarned} XP";
+                    toastMsg += loc.Get("reward.xp", xpEarned);
                 }
 
                 ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
@@ -392,7 +398,7 @@ public class MCQManager : MonoBehaviour
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(
-                    "Opps! Review the correct answer and try again to earn your Noor Coins.", Color.red);
+                    LocalizationManager.Instance.Get("quiz.wrong"), Color.red);
             }
             
             StartCoroutine(ResetQuizAfterDelay(5f));
@@ -496,6 +502,7 @@ public class MCQManager : MonoBehaviour
     {
         if (tmpTextUI == null) return;
 
-        tmpTextUI.text = text;
+        bool rtl = LocalizationManager.Instance != null && LocalizationManager.Instance.IsRightToLeft;
+        tmpTextUI.text = rtl ? ArabicTextShaper.Shape(text) : text;
     }
 }

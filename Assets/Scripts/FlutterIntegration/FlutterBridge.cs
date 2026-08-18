@@ -337,6 +337,27 @@ namespace FlutterIntegration
                     break;
                 }
 
+                case FlutterCommands.SetLocale:
+                {
+                    LocalePayload localePayload = JsonUtility.FromJson<LocalePayload>(dataJson);
+                    if (localePayload == null || string.IsNullOrEmpty(localePayload.localeCode))
+                    {
+                        Debug.LogWarning("[FlutterBridge] SET_LOCALE had no localeCode — ignoring.");
+                        break;
+                    }
+
+                    Debug.Log($"[FlutterBridge] Locale -> {localePayload.localeCode}");
+
+                    if (LocalizationManager.Instance == null)
+                    {
+                        Debug.LogWarning("[FlutterBridge] No LocalizationManager yet — locale change dropped.");
+                        break;
+                    }
+
+                    LocalizationManager.Instance.SetLocale(localePayload.localeCode);
+                    break;
+                }
+
                 case FlutterCommands.PhotoActionResult:
                 {
                     PhotoActionResultPayload result = JsonUtility.FromJson<PhotoActionResultPayload>(dataJson);
