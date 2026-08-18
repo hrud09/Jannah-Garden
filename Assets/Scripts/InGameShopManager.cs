@@ -139,6 +139,8 @@ public class InGameShopManager : MonoBehaviour
     [Header("Placement Reference")]
     public ItemPlacementManager placementManager;
 
+    private IdyllicFantasyNature.PlayerMovement playerMovement;
+
     private void Start()
     {
         // Save initial X position as the closed state position
@@ -151,6 +153,14 @@ public class InGameShopManager : MonoBehaviour
         if (openCloseButton != null)
         {
             openCloseButton.onClick.AddListener(ToggleShop);
+        }
+
+        // Disable the shop button while Inspector Mode is active — inspecting isn't the time to shop.
+        playerMovement = FindObjectOfType<IdyllicFantasyNature.PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.OnInspectorModeChanged += OnInspectorModeChanged;
+            OnInspectorModeChanged(playerMovement.IsInspectorMode);
         }
 
         // Initialize default arrow state and panel position (Closed by default)
@@ -285,6 +295,11 @@ public class InGameShopManager : MonoBehaviour
             openCloseButton.onClick.RemoveListener(ToggleShop);
         }
 
+        if (playerMovement != null)
+        {
+            playerMovement.OnInspectorModeChanged -= OnInspectorModeChanged;
+        }
+
         if (categoryTabs != null)
         {
             foreach (var tab in categoryTabs)
@@ -302,8 +317,21 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void ToggleShop()
     {
+        if (playerMovement != null && playerMovement.IsInspectorMode) return;
+
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ShopOpenClose);
         SetShopOpen(!isOpen, smooth: true);
+    }
+
+    /// <summary>
+    /// Keeps the shop button uninteractable while Inspector Mode is active.
+    /// </summary>
+    private void OnInspectorModeChanged(bool isInspectorMode)
+    {
+        if (openCloseButton != null)
+        {
+            openCloseButton.interactable = !isInspectorMode;
+        }
     }
 
     /// <summary>
