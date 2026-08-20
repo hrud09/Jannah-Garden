@@ -690,6 +690,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Application_SetLogCallbackDefined();
 		Register_UnityEngine_Application_SetLogCallbackDefined();
 
+		//System.Void UnityEngine.Application::SetStackTraceLogType(UnityEngine.LogType,UnityEngine.StackTraceLogType)
+		void Register_UnityEngine_Application_SetStackTraceLogType();
+		Register_UnityEngine_Application_SetStackTraceLogType();
+
 		//System.Void UnityEngine.Application::get_persistentDataPath_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_Application_get_persistentDataPath_Injected();
 		Register_UnityEngine_Application_get_persistentDataPath_Injected();
@@ -717,6 +721,10 @@ void RegisterAllStrippedInternalCalls()
 		//UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
 		void Register_UnityEngine_Application_get_platform();
 		Register_UnityEngine_Application_get_platform();
+
+		//UnityEngine.StackTraceLogType UnityEngine.Application::GetStackTraceLogType(UnityEngine.LogType)
+		void Register_UnityEngine_Application_GetStackTraceLogType();
+		Register_UnityEngine_Application_GetStackTraceLogType();
 
 	//End Registrations for type : UnityEngine.Application
 
@@ -7658,6 +7666,14 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.PlayerPrefs
 
+		//System.Boolean UnityEngine.PlayerPrefs::HasKey_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+		void Register_UnityEngine_PlayerPrefs_HasKey_Injected();
+		Register_UnityEngine_PlayerPrefs_HasKey_Injected();
+
+		//System.Boolean UnityEngine.PlayerPrefs::TrySetFloat_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Single)
+		void Register_UnityEngine_PlayerPrefs_TrySetFloat_Injected();
+		Register_UnityEngine_PlayerPrefs_TrySetFloat_Injected();
+
 		//System.Boolean UnityEngine.PlayerPrefs::TrySetInt_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
 		void Register_UnityEngine_PlayerPrefs_TrySetInt_Injected();
 		Register_UnityEngine_PlayerPrefs_TrySetInt_Injected();
@@ -7665,6 +7681,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Int32 UnityEngine.PlayerPrefs::GetInt_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
 		void Register_UnityEngine_PlayerPrefs_GetInt_Injected();
 		Register_UnityEngine_PlayerPrefs_GetInt_Injected();
+
+		//System.Single UnityEngine.PlayerPrefs::GetFloat_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Single)
+		void Register_UnityEngine_PlayerPrefs_GetFloat_Injected();
+		Register_UnityEngine_PlayerPrefs_GetFloat_Injected();
 
 		//System.Void UnityEngine.PlayerPrefs::DeleteAll()
 		void Register_UnityEngine_PlayerPrefs_DeleteAll();
@@ -8094,6 +8114,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.Rendering.AsyncGPUReadback
 
+		//System.Void UnityEngine.Rendering.AsyncGPUReadback::Request_Internal_ComputeBuffer_2_Injected(System.IntPtr,System.Int32,System.Int32,UnityEngine.Rendering.AsyncRequestNativeArrayData*,UnityEngine.Rendering.AsyncGPUReadbackRequest&)
+		void Register_UnityEngine_Rendering_AsyncGPUReadback_Request_Internal_ComputeBuffer_2_Injected();
+		Register_UnityEngine_Rendering_AsyncGPUReadback_Request_Internal_ComputeBuffer_2_Injected();
+
 		//System.Void UnityEngine.Rendering.AsyncGPUReadback::Request_Internal_GraphicsBuffer_1_Injected(System.IntPtr,UnityEngine.Rendering.AsyncRequestNativeArrayData*,UnityEngine.Rendering.AsyncGPUReadbackRequest&)
 		void Register_UnityEngine_Rendering_AsyncGPUReadback_Request_Internal_GraphicsBuffer_1_Injected();
 		Register_UnityEngine_Rendering_AsyncGPUReadback_Request_Internal_GraphicsBuffer_1_Injected();
@@ -8350,6 +8374,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Rendering_CommandBuffer_Internal_DispatchCompute_Injected();
 		Register_UnityEngine_Rendering_CommandBuffer_Internal_DispatchCompute_Injected();
 
+		//System.Void UnityEngine.Rendering.CommandBuffer::Internal_DispatchMachineLearningOperator_Injected(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_Rendering_CommandBuffer_Internal_DispatchMachineLearningOperator_Injected();
+		Register_UnityEngine_Rendering_CommandBuffer_Internal_DispatchMachineLearningOperator_Injected();
+
 		//System.Void UnityEngine.Rendering.CommandBuffer::Internal_DispatchRaysIndirect_Injected(System.IntPtr,System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.IntPtr,System.UInt32,System.IntPtr)
 		void Register_UnityEngine_Rendering_CommandBuffer_Internal_DispatchRaysIndirect_Injected();
 		Register_UnityEngine_Rendering_CommandBuffer_Internal_DispatchRaysIndirect_Injected();
@@ -8497,6 +8525,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Rendering.CommandBuffer::Internal_SetComputeTextureParam_Injected(System.IntPtr,System.IntPtr,System.Int32,System.Int32,UnityEngine.Rendering.RenderTargetIdentifier&,System.Int32,UnityEngine.Rendering.RenderTextureSubElement)
 		void Register_UnityEngine_Rendering_CommandBuffer_Internal_SetComputeTextureParam_Injected();
 		Register_UnityEngine_Rendering_CommandBuffer_Internal_SetComputeTextureParam_Injected();
+
+		//System.Void UnityEngine.Rendering.CommandBuffer::Internal_SetMachineLearningOperatorTensors_Injected(System.IntPtr,System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
+		void Register_UnityEngine_Rendering_CommandBuffer_Internal_SetMachineLearningOperatorTensors_Injected();
+		Register_UnityEngine_Rendering_CommandBuffer_Internal_SetMachineLearningOperatorTensors_Injected();
 
 		//System.Void UnityEngine.Rendering.CommandBuffer::Internal_SetRayTracingAccelerationStructure_Injected(System.IntPtr,System.IntPtr,System.Int32,System.IntPtr)
 		void Register_UnityEngine_Rendering_CommandBuffer_Internal_SetRayTracingAccelerationStructure_Injected();
@@ -8995,6 +9027,54 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Rendering_LocalKeywordSpace_GetKeywords();
 
 	//End Registrations for type : UnityEngine.Rendering.LocalKeywordSpace
+
+	//Start Registrations for type : UnityEngine.Rendering.MachineLearningContext
+
+		//System.IntPtr UnityEngine.Rendering.MachineLearningContext::CreateContext()
+		void Register_UnityEngine_Rendering_MachineLearningContext_CreateContext();
+		Register_UnityEngine_Rendering_MachineLearningContext_CreateContext();
+
+		//System.Void UnityEngine.Rendering.MachineLearningContext::BuildConv_Internal_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Rendering.MachineLearningOperator/ConvAttributes&,UnityEngine.Rendering.MachineLearningOperator&)
+		void Register_UnityEngine_Rendering_MachineLearningContext_BuildConv_Internal_Injected();
+		Register_UnityEngine_Rendering_MachineLearningContext_BuildConv_Internal_Injected();
+
+		//System.Void UnityEngine.Rendering.MachineLearningContext::BuildGemm_Internal_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Rendering.MachineLearningOperator/GemmAttributes&,UnityEngine.Rendering.MachineLearningOperator&)
+		void Register_UnityEngine_Rendering_MachineLearningContext_BuildGemm_Internal_Injected();
+		Register_UnityEngine_Rendering_MachineLearningContext_BuildGemm_Internal_Injected();
+
+		//System.Void UnityEngine.Rendering.MachineLearningContext::BuildReduce_Internal_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Rendering.MachineLearningOperator/ReduceAttributes&,UnityEngine.Rendering.MachineLearningOperator&)
+		void Register_UnityEngine_Rendering_MachineLearningContext_BuildReduce_Internal_Injected();
+		Register_UnityEngine_Rendering_MachineLearningContext_BuildReduce_Internal_Injected();
+
+		//System.Void UnityEngine.Rendering.MachineLearningContext::DestroyContext(System.IntPtr)
+		void Register_UnityEngine_Rendering_MachineLearningContext_DestroyContext();
+		Register_UnityEngine_Rendering_MachineLearningContext_DestroyContext();
+
+	//End Registrations for type : UnityEngine.Rendering.MachineLearningContext
+
+	//Start Registrations for type : UnityEngine.Rendering.MachineLearningOperator
+
+		//System.Void UnityEngine.Rendering.MachineLearningOperator::AddInputTensor_Internal(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_Rendering_MachineLearningOperator_AddInputTensor_Internal();
+		Register_UnityEngine_Rendering_MachineLearningOperator_AddInputTensor_Internal();
+
+		//System.Void UnityEngine.Rendering.MachineLearningOperator::AddOutputTensor_Internal(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_Rendering_MachineLearningOperator_AddOutputTensor_Internal();
+		Register_UnityEngine_Rendering_MachineLearningOperator_AddOutputTensor_Internal();
+
+		//System.Void UnityEngine.Rendering.MachineLearningOperator::Dispatch_Internal(System.IntPtr)
+		void Register_UnityEngine_Rendering_MachineLearningOperator_Dispatch_Internal();
+		Register_UnityEngine_Rendering_MachineLearningOperator_Dispatch_Internal();
+
+		//System.Void UnityEngine.Rendering.MachineLearningOperator::ResetInputTensors_Internal(System.IntPtr)
+		void Register_UnityEngine_Rendering_MachineLearningOperator_ResetInputTensors_Internal();
+		Register_UnityEngine_Rendering_MachineLearningOperator_ResetInputTensors_Internal();
+
+		//System.Void UnityEngine.Rendering.MachineLearningOperator::ResetOutputTensors_Internal(System.IntPtr)
+		void Register_UnityEngine_Rendering_MachineLearningOperator_ResetOutputTensors_Internal();
+		Register_UnityEngine_Rendering_MachineLearningOperator_ResetOutputTensors_Internal();
+
+	//End Registrations for type : UnityEngine.Rendering.MachineLearningOperator
 
 	//Start Registrations for type : UnityEngine.Rendering.RayTracingAccelerationStructure
 
@@ -10741,6 +10821,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Boolean UnityEngine.SystemInfo::SupportsInstancing()
 		void Register_UnityEngine_SystemInfo_SupportsInstancing();
 		Register_UnityEngine_SystemInfo_SupportsInstancing();
+
+		//System.Boolean UnityEngine.SystemInfo::SupportsMachineLearning()
+		void Register_UnityEngine_SystemInfo_SupportsMachineLearning();
+		Register_UnityEngine_SystemInfo_SupportsMachineLearning();
 
 		//System.Boolean UnityEngine.SystemInfo::SupportsMemorylessTextures()
 		void Register_UnityEngine_SystemInfo_SupportsMemorylessTextures();
