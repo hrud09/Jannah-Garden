@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class GameSettingsManager : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class GameSettingsManager : MonoBehaviour
     [Header("UI Sliders")]
     public Slider normalSpeedSlider;
     public Slider inspectorSpeedSlider;
+    public Slider lookAroundSpeedSlider;
+
+    [Header("UI Slider Value Texts")]
+    public TextMeshProUGUI normalSpeedValueText;
+    public TextMeshProUGUI inspectorSpeedValueText;
+    public TextMeshProUGUI lookAroundSpeedValueText;
 
     [Header("Close Settings")]
     public Button closeButton;
@@ -36,6 +43,7 @@ public class GameSettingsManager : MonoBehaviour
 
     private bool _isAnimating = false;
     private IdyllicFantasyNature.PlayerMovement _playerMovement;
+    private IdyllicFantasyNature.CameraMovement _cameraMovement;
 
     private void Awake()
     {
@@ -87,6 +95,21 @@ public class GameSettingsManager : MonoBehaviour
             _playerMovement.SetInspectorModeSpeed(inspectorSpeed);
         }
 
+        // Apply look around speed setting to CameraMovement
+        if (_cameraMovement == null)
+        {
+            _cameraMovement = FindObjectOfType<IdyllicFantasyNature.CameraMovement>();
+        }
+
+        float defaultLookSpeed = _cameraMovement != null ? _cameraMovement.SensitivityMultiplier : 1f;
+        float lookAroundSpeed = PlayerPrefs.GetFloat("LookAroundSpeed", defaultLookSpeed);
+        lookAroundSpeed = Mathf.Clamp(lookAroundSpeed, 0.5f, 100f);
+
+        if (_cameraMovement != null)
+        {
+            _cameraMovement.SetSensitivityMultiplier(lookAroundSpeed);
+        }
+
         // Set up Toggle components
         if (sfxToggle != null)
         {
@@ -112,6 +135,8 @@ public class GameSettingsManager : MonoBehaviour
             normalSpeedSlider.SetValueWithoutNotify(normalSpeed);
             normalSpeedSlider.onValueChanged.AddListener(SetNormalMovementSpeed);
         }
+        UpdateNormalSpeedText(normalSpeed);
+
         if (inspectorSpeedSlider != null)
         {
             inspectorSpeedSlider.minValue = 5f;
@@ -119,6 +144,30 @@ public class GameSettingsManager : MonoBehaviour
             inspectorSpeedSlider.SetValueWithoutNotify(inspectorSpeed);
             inspectorSpeedSlider.onValueChanged.AddListener(SetInspectorMovementSpeed);
         }
+        UpdateInspectorSpeedText(inspectorSpeed);
+
+        // Auto-find lookAroundSpeedSlider if not explicitly assigned in inspector
+        if (lookAroundSpeedSlider == null)
+        {
+            Transform content = transform.Find("Settings Panel/BG Image/Content") ?? transform.Find("BG Image/Content");
+            if (content != null)
+            {
+                Transform lookOption = content.Find("Look Arround Speed Option UI") ?? content.Find("Look Around Speed Option UI");
+                if (lookOption != null)
+                {
+                    lookAroundSpeedSlider = lookOption.GetComponentInChildren<Slider>();
+                }
+            }
+        }
+
+        if (lookAroundSpeedSlider != null)
+        {
+            lookAroundSpeedSlider.minValue = 0.5f;
+            lookAroundSpeedSlider.maxValue = 100f;
+            lookAroundSpeedSlider.SetValueWithoutNotify(lookAroundSpeed);
+            lookAroundSpeedSlider.onValueChanged.AddListener(SetLookAroundSpeed);
+        }
+        UpdateLookAroundSpeedText(lookAroundSpeed);
 
         // Update visuals
         UpdateVisuals();
@@ -238,6 +287,8 @@ public class GameSettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("NormalMovementSpeed", value);
         PlayerPrefs.Save();
 
+        UpdateNormalSpeedText(value);
+
         if (_playerMovement != null)
         {
             _playerMovement.SetMovementSpeed(value);
@@ -249,9 +300,54 @@ public class GameSettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("InspectorMovementSpeed", value);
         PlayerPrefs.Save();
 
+        UpdateInspectorSpeedText(value);
+
         if (_playerMovement != null)
         {
             _playerMovement.SetInspectorModeSpeed(value);
+        }
+    }
+
+    public void SetLookAroundSpeed(float value)
+    {
+        float clampedValue = Mathf.Clamp(value, 0.5f, 100f);
+        PlayerPrefs.SetFloat("LookAroundSpeed", clampedValue);
+        PlayerPrefs.Save();
+
+        UpdateLookAroundSpeedText(clampedValue);
+
+        if (_cameraMovement == null)
+        {
+            _cameraMovement = FindObjectOfType<IdyllicFantasyNature.CameraMovement>();
+        }
+
+        if (_cameraMovement != null)
+        {
+            _cameraMovement.SetSensitivityMultiplier(clampedValue);
+        }
+    }
+
+    private void UpdateNormalSpeedText(float value)
+    {
+        if (normalSpeedValueText != null)
+        {
+            normalSpeedValueText.text = value.ToString("0.#");
+        }
+    }
+
+    private void UpdateInspectorSpeedText(float value)
+    {
+        if (inspectorSpeedValueText != null)
+        {
+            inspectorSpeedValueText.text = value.ToString("0.#");
+        }
+    }
+
+    private void UpdateLookAroundSpeedText(float value)
+    {
+        if (lookAroundSpeedValueText != null)
+        {
+            lookAroundSpeedValueText.text = value.ToString("0.#");
         }
     }
 
@@ -264,6 +360,15 @@ public class GameSettingsManager : MonoBehaviour
         if (sfxToggle != null) sfxToggle.SetIsOnWithoutNotify(sfxEnabled);
         if (musicToggle != null) musicToggle.SetIsOnWithoutNotify(musicEnabled);
         if (vibrationToggle != null) vibrationToggle.SetIsOnWithoutNotify(vibrationEnabled);
+
+        if (normalSpeedSlider != null) UpdateNormalSpeedText(normalSpeedSlider.value);
+        else UpdateNormalSpeedText(PlayerPrefs.GetFloat("NormalMovementSpeed", 8f));
+
+        if (inspectorSpeedSlider != null) UpdateInspectorSpeedText(inspectorSpeedSlider.value);
+        else UpdateInspectorSpeedText(PlayerPrefs.GetFloat("InspectorMovementSpeed", 25f));
+
+        if (lookAroundSpeedSlider != null) UpdateLookAroundSpeedText(lookAroundSpeedSlider.value);
+        else UpdateLookAroundSpeedText(PlayerPrefs.GetFloat("LookAroundSpeed", 1f));
     }
 
     public void TriggerVibrationFeedback()

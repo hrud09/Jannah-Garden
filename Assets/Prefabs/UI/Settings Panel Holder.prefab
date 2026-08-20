@@ -403,6 +403,7 @@ MonoBehaviour:
   vibrationToggle: {fileID: 6838204062645853377}
   normalSpeedSlider: {fileID: 2934803240025944405}
   inspectorSpeedSlider: {fileID: 2107207315711942234}
+  lookAroundSpeedSlider: {fileID: 0}
   closeButton: {fileID: 6003480008502770646}
   settingsPanel: {fileID: 8950650481514539343}
   settingsButton: {fileID: 0}
