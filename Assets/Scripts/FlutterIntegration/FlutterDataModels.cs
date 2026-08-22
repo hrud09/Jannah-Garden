@@ -17,6 +17,15 @@ namespace FlutterIntegration
         public const string UpdateFellowshipProfiles  = "UPDATE_FELLOWSHIP_PROFILES";
 
         /// <summary>
+        /// Flutter tells the game which language to display. Payload: <see cref="LocalePayload"/>, whose
+        /// <c>localeCode</c> is a short code ("en", "ar", "bn") — longer forms like "ar-SA" are also
+        /// accepted and normalised. Sent whenever the app's language changes, and ideally once right after
+        /// <see cref="UnityReady"/> so the game doesn't briefly show its cached/default language first.
+        /// LocalizationManager falls back to English for any locale it doesn't recognise.
+        /// </summary>
+        public const string SetLocale                 = "SET_LOCALE";
+
+        /// <summary>
         /// Flutter's answer to <see cref="RequestIAPPurchase"/>, sent once the store sheet closes.
         /// Payload: <see cref="IAPPurchaseResultPayload"/>. Not implemented on the Flutter side yet —
         /// until it is, IAPManager runs in dummy mode.
@@ -171,6 +180,13 @@ namespace FlutterIntegration
     public class CoinUpdatePayload
     {
         public int newBalance;
+    }
+
+    /// <summary>Flutter → Unity: the app's active language. See <see cref="FlutterCommands.SetLocale"/>.</summary>
+    [Serializable]
+    public class LocalePayload
+    {
+        public string localeCode;
     }
 
     /// <summary>

@@ -223,14 +223,16 @@ public static class ShopTaxonomy
     /// <summary>The label shown on a category tab.</summary>
     public static string GetCategoryName(ShopItemCategory category)
     {
+        // Falls back to the English literal when LocalizationManager hasn't bootstrapped yet (e.g. an
+        // editor tool running outside Play Mode) so this stays usable without Play Mode running.
         switch (category)
         {
-            case ShopItemCategory.PlantsAndGardens: return "Plants & Gardens";
-            case ShopItemCategory.WaterOfGarden: return "Water of Garden";
-            case ShopItemCategory.Architecture: return "Architecture";
-            case ShopItemCategory.DecorAndSacredObjects: return "Decor & Sacred";
-            case ShopItemCategory.CelestialAndLight: return "Celestial & Light";
-            case ShopItemCategory.NoorCoins: return "Noor Coins";
+            case ShopItemCategory.PlantsAndGardens: return Localized("shop.category.plants_gardens", "Plants & Gardens");
+            case ShopItemCategory.WaterOfGarden: return Localized("shop.category.water_of_garden", "Water of Garden");
+            case ShopItemCategory.Architecture: return Localized("shop.category.architecture", "Architecture");
+            case ShopItemCategory.DecorAndSacredObjects: return Localized("shop.category.decor_sacred", "Decor & Sacred");
+            case ShopItemCategory.CelestialAndLight: return Localized("shop.category.celestial_light", "Celestial & Light");
+            case ShopItemCategory.NoorCoins: return Localized("shop.category.noor_coins", "Noor Coins");
             default: return category.ToString();
         }
     }
@@ -240,10 +242,16 @@ public static class ShopTaxonomy
     {
         switch (category)
         {
-            case ShopItemCategory.DecorAndSacredObjects: return "Decor & Sacred Objects";
-            case ShopItemCategory.CelestialAndLight: return "Celestial & Light / Landscape";
+            case ShopItemCategory.DecorAndSacredObjects: return Localized("shop.category.decor_sacred_long", "Decor & Sacred Objects");
+            case ShopItemCategory.CelestialAndLight: return Localized("shop.category.celestial_light_long", "Celestial & Light / Landscape");
             default: return GetCategoryName(category);
         }
+    }
+
+    /// <summary>Looks up a localization key, falling back to the given English literal outside Play Mode.</summary>
+    private static string Localized(string key, string englishFallback)
+    {
+        return LocalizationManager.Instance != null ? LocalizationManager.Instance.Get(key) : englishFallback;
     }
 
     /// <summary>Accent colour for a category tab, so each collection reads at a glance.</summary>
@@ -272,10 +280,10 @@ public static class ShopTaxonomy
     {
         switch (tier)
         {
-            case ShopItemTier.Tier1: return "Common";
-            case ShopItemTier.Tier2: return "Standard";
-            case ShopItemTier.Tier3: return "Premium";
-            case ShopItemTier.Tier4: return "Premium Plus";
+            case ShopItemTier.Tier1: return Localized("shop.tier.common", "Common");
+            case ShopItemTier.Tier2: return Localized("shop.tier.standard", "Standard");
+            case ShopItemTier.Tier3: return Localized("shop.tier.premium", "Premium");
+            case ShopItemTier.Tier4: return Localized("shop.tier.premium_plus", "Premium Plus");
             default: return string.Empty;
         }
     }

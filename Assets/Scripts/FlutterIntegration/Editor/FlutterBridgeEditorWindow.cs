@@ -14,6 +14,7 @@ namespace FlutterIntegration.Editor
             FlutterCommands.UpdateFellowshipProfiles,
             FlutterCommands.UpdateGardenState,
             FlutterCommands.PhotoActionResult,
+            FlutterCommands.SetLocale,
             "CUSTOM"
         };
         
@@ -161,6 +162,9 @@ namespace FlutterIntegration.Editor
                         "  \"success\": true,\n" +
                         "  \"message\": \"\"\n" +
                         "}";
+                    break;
+                case FlutterCommands.SetLocale:
+                    jsonPayloadInput = "{\n  \"localeCode\": \"ar\"\n}";
                     break;
                 case "CUSTOM":
                     jsonPayloadInput = "{\n  \"key\": \"value\"\n}";
