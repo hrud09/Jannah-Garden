@@ -1,0 +1,2628 @@
+{
+    "questions": [
+        {
+            "id": "L1-PR-2",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন নবীকে একটি বিশাল মাছ গিলে ফেলেছিল?",
+            "options": [
+                "মূসা (আঃ)",
+                "ইউনুস (আঃ)",
+                "ইউসুফ (আঃ)",
+                "ইবরাহীম (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-3",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী কিশতি (নৌকা) তৈরি করেছিলেন?",
+            "options": [
+                "নূহ (আঃ)",
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "লুত (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-4",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীকে “খলীলুল্লাহ” (আল্লাহর বন্ধু) বলা হয়?",
+            "options": [
+                "ইবরাহীম (আঃ)",
+                "ইসমাঈল (আঃ)",
+                "ইসহাক (আঃ)",
+                "ইয়াকুব (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-5",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন নবী পশু-পাখির ভাষা বুঝতে পারতেন?",
+            "options": [
+                "দাউদ (আঃ)",
+                "সুলাইমান (আঃ)",
+                "মূসা (আঃ)",
+                "ঈসা (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-6",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর লাঠি সাপে পরিণত হয়েছিল?",
+            "options": [
+                "মূসা (আঃ)",
+                "হারুন (আঃ)",
+                "ইউসুফ (আঃ)",
+                "ইদরীস (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-7",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কাকে তাঁর ভাইয়েরা কুয়ায় ফেলে দিয়েছিল?",
+            "options": [
+                "ইউসুফ (আঃ)",
+                "ইউনুস (আঃ)",
+                "ইসমাঈল (আঃ)",
+                "আইয়ূব (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-8",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী কঠিন অসুস্থতায় ধৈর্যের জন্য স্মরণীয়?",
+            "options": [
+                "আইয়ূব (আঃ)",
+                "যাকারিয়া (আঃ)",
+                "ইয়াহইয়া (আঃ)",
+                "ইলিয়াস (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-9",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী মারইয়াম (আঃ)-এর গর্ভে অলৌকিকভাবে জন্মগ্রহণ করেন?",
+            "options": [
+                "ঈসা (আঃ)",
+                "ইয়াহইয়া (আঃ)",
+                "ইসমাঈল (আঃ)",
+                "ইসহাক (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-10",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী আল্লাহর জন্য তাঁর পুত্রকে কুরবানী দিতে প্রস্তুত হওয়ার জন্য স্মরণীয়?",
+            "options": [
+                "ইবরাহীম (আঃ)",
+                "নূহ (আঃ)",
+                "মূসা (আঃ)",
+                "দাউদ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-PR-11",
+            "level": 1,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী তাঁর পুত্রের সাথে কাবা ঘর নির্মাণ করেছিলেন?",
+            "options": [
+                "ইবরাহীম (আঃ)",
+                "নূহ (আঃ)",
+                "মূসা (আঃ)",
+                "দাউদ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-12",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআনে মোট কতটি সূরা আছে?",
+            "options": [
+                "১০০",
+                "১১৪",
+                "১২০",
+                "৯৯"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-13",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী মুহাম্মদ ﷺ-এর কাছে সর্বপ্রথম যে শব্দটি অবতীর্ণ হয়েছিল, তা কী?",
+            "options": [
+                "ইকরা",
+                "কুল",
+                "বিসমিল্লাহ",
+                "আলহামদুলিল্লাহ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-14",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "সবচেয়ে দীর্ঘ সূরা কোনটি?",
+            "options": [
+                "আল-বাকারা",
+                "আলে ইমরান",
+                "আন-নিসা",
+                "আল-মায়িদা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-15",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "“কুরআন” শব্দের আভিধানিক অর্থ কী?",
+            "options": [
+                "গ্রন্থ",
+                "তেলাওয়াত (পাঠ)",
+                "পথনির্দেশ",
+                "আলো"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-16",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 2,
+            "questionText": "কোন মাসে কুরআন প্রথম অবতীর্ণ হয়?",
+            "options": [
+                "রজব",
+                "শাবান",
+                "রমজান",
+                "জিলহজ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-17",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরা “বিসমিল্লাহ” দিয়ে শুরু হয় না?",
+            "options": [
+                "আত-তাওবা",
+                "আল-ফাতিহা",
+                "ইয়াসিন",
+                "আল-কাহফ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-18",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআনকে মোট কতটি জুয (পারা)-এ ভাগ করা হয়েছে?",
+            "options": [
+                "২০",
+                "৩০",
+                "৪০",
+                "১২"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-19",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "নামাযের প্রতিটি রাকাতে কোন সূরা পড়া হয়?",
+            "options": [
+                "আল-ইখলাস",
+                "আল-ফাতিহা",
+                "আন-নাস",
+                "আল-ফালাক"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-20",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কুরআনের সবচেয়ে ছোট সূরা কোনটি?",
+            "options": [
+                "আল-কাউসার",
+                "আন-নাস",
+                "আল-ফালাক",
+                "আল-আসর"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-QU-21",
+            "level": 1,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন ফেরেশতা নবী ﷺ-এর কাছে অহী নিয়ে আসতেন?",
+            "options": [
+                "মিকাঈল (আঃ)",
+                "জিবরাঈল (আঃ)",
+                "ইসরাফিল (আঃ)",
+                "মালিক"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-22",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "নবী মুহাম্মদ ﷺ কোন শহরে জন্মগ্রহণ করেন?",
+            "options": [
+                "মদীনা",
+                "মক্কা",
+                "তায়েফ",
+                "জেরুজালেম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-23",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর মায়ের নাম কী ছিল?",
+            "options": [
+                "আমিনা",
+                "খাদীজা (রাঃ)",
+                "হালিমা",
+                "ফাতিমা (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-24",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "নবী ﷺ-এর প্রথম স্ত্রী কে ছিলেন?",
+            "options": [
+                "আয়িশা (রাঃ)",
+                "খাদীজা (রাঃ)",
+                "হাফসা (রাঃ)",
+                "যাইনাব (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-25",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "মক্কা থেকে মদীনায় হিজরতকে কী বলা হয়?",
+            "options": [
+                "হজ",
+                "হিজরত",
+                "ইসরা",
+                "মিরাজ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-26",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "শৈশবে নবী ﷺ-কে কে স্তন্যদান করেছিলেন?",
+            "options": [
+                "হালিমা",
+                "আমিনা",
+                "খাদীজা (রাঃ)",
+                "আয়িশা (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-27",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "নবী ﷺ কত বছর বয়সে প্রথম অহী লাভ করেন?",
+            "options": [
+                "২৫",
+                "৪০",
+                "৫০",
+                "৩০"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-28",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "যে গুহায় নবী ﷺ প্রথম অহী লাভ করেন, তার নাম কী?",
+            "options": [
+                "সাওর",
+                "হেরা",
+                "উহুদ",
+                "বদর"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-29",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "হিজরতের সময় নবী ﷺ-এর সঙ্গী কে ছিলেন?",
+            "options": [
+                "উমর (রাঃ)",
+                "আবু বকর (রাঃ)",
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-30",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "দাদার মৃত্যুর পর কোন চাচা নবী ﷺ-কে লালন-পালন করেন?",
+            "options": [
+                "আবু তালিব",
+                "আবু লাহাব",
+                "হামযা (রাঃ)",
+                "আব্বাস (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-SE-31",
+            "level": 1,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "নবী মুহাম্মদ ﷺ কোন শহরে ইন্তেকাল করেন?",
+            "options": [
+                "মক্কা",
+                "মদীনা",
+                "তায়েফ",
+                "খাইবার"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-32",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামি (হিজরি) ক্যালেন্ডারে কতটি মাস আছে?",
+            "options": [
+                "১০",
+                "১২",
+                "১৩",
+                "১১"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-33",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন মাসে রোযা রাখা হয়?",
+            "options": [
+                "শাওয়াল",
+                "রমজান",
+                "মুহররম",
+                "রজব"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-34",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "হিজরি বছরের প্রথম মাস কোনটি?",
+            "options": [
+                "মুহররম",
+                "সফর",
+                "রজব",
+                "রমজান"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-35",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "রমজানের পরপরই কোন ঈদ আসে?",
+            "options": [
+                "ঈদুল আযহা",
+                "ঈদুল ফিতর",
+                "ঈদুল গাদীর",
+                "মিলাদ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-36",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 2,
+            "questionText": "কোন মাসে হজ অনুষ্ঠিত হয়?",
+            "options": [
+                "শাওয়াল",
+                "জিলকদ",
+                "জিলহজ",
+                "মুহররম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-37",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "হিজরি ক্যালেন্ডার কোন চক্রের ওপর ভিত্তি করে তৈরি?",
+            "options": [
+                "সৌর",
+                "চান্দ্র",
+                "সৌর-চান্দ্র মিশ্র",
+                "গ্রেগরিয়ান"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-38",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন ঘটনা দিয়ে হিজরি সন গণনা শুরু হয়?",
+            "options": [
+                "নবীর জন্ম",
+                "হিজরত",
+                "প্রথম অহী",
+                "মক্কা বিজয়"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-39",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "ঈদুল আযহা কোন ঘটনার স্মরণে পালিত হয়?",
+            "options": [
+                "হিজরত",
+                "ইবরাহীম (আঃ)-এর তাঁর পুত্রকে কুরবানী দিতে প্রস্তুত হওয়া",
+                "প্রথম অহী",
+                "বদরের যুদ্ধ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-40",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "লাইলাতুল কদরকে কী বলা হয়?",
+            "options": [
+                "শবে কদর (মহিমান্বিত রাত)",
+                "ক্ষমার রাত",
+                "মিরাজের রাত",
+                "হিজরতের রাত"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-HI-41",
+            "level": 1,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "লাইলাতুল কদর কোন মাসে হয়?",
+            "options": [
+                "শাওয়াল",
+                "রমজান",
+                "মুহররম",
+                "রজব"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-42",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "মুসলিমরা প্রতিদিন কতটি ফরজ নামায আদায় করে?",
+            "options": [
+                "৩",
+                "৫",
+                "৭",
+                "৪"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-43",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "আরবিতে ইসলামের পাঁচ স্তম্ভকে কী বলা হয়?",
+            "options": [
+                "আরকানুল ইসলাম",
+                "সুনান",
+                "আদব",
+                "আখলাক"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-44",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামে স্বেচ্ছায় দেওয়া দান-খয়রাতকে কী বলা হয়?",
+            "options": [
+                "যাকাত",
+                "সদকা",
+                "ফিদইয়া",
+                "কাফফারা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-45",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 2,
+            "questionText": "নামাযে মুসলিমরা কোন দিকে মুখ করে দাঁড়ায়?",
+            "options": [
+                "মদীনা",
+                "জেরুজালেম",
+                "মক্কা",
+                "পূর্ব"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-46",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "মক্কায় সম্পাদিত তীর্থযাত্রাকে কী বলা হয়?",
+            "options": [
+                "ওমরা",
+                "হজ",
+                "যিয়ারত",
+                "তাওয়াফ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-47",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "নবী ﷺ-এর পর প্রথম খলিফা কে ছিলেন?",
+            "options": [
+                "উমর (রাঃ)",
+                "আবু বকর (রাঃ)",
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-48",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "ঈমানের ঘোষণাকে কী বলা হয়?",
+            "options": [
+                "সালাত",
+                "শাহাদাহ (কালেমা)",
+                "যাকাত",
+                "সাওম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-49",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন সাহাবী “আল-ফারুক” নামে পরিচিত?",
+            "options": [
+                "আবু বকর (রাঃ)",
+                "উমর (রাঃ)",
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-50",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামে ফরজ দান-খয়রাতকে কী বলা হয়?",
+            "options": [
+                "সদকা",
+                "যাকাত",
+                "ওয়াকফ",
+                "নফল"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L1-WO-51",
+            "level": 1,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 2,
+            "questionText": "কোন খলিফা কুরআনকে একটি একক সরকারি লিখিত রূপে সংকলিত করেন?",
+            "options": [
+                "আবু বকর (রাঃ)",
+                "উমর (রাঃ)",
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-2",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীকে “কালীমুল্লাহ” (যিনি আল্লাহর সাথে কথা বলেছেন) বলা হয়?",
+            "options": [
+                "মূসা (আঃ)",
+                "হারুন (আঃ)",
+                "ইউসুফ (আঃ)",
+                "দাউদ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-3",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর স্বপ্নের ব্যাখ্যা করার বিশেষ ক্ষমতা ছিল?",
+            "options": [
+                "ইউসুফ (আঃ)",
+                "ইউনুস (আঃ)",
+                "ইদরীস (আঃ)",
+                "যাকারিয়া (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-4",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী মূসা (আঃ)-এর ভাই ও সহকারী কে ছিলেন?",
+            "options": [
+                "হারুন (আঃ)",
+                "ইউশা (আঃ)",
+                "ইউনুস (আঃ)",
+                "ইলিয়াস (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-5",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 3,
+            "questionText": "কোন নবী প্রচণ্ড শক্তি ও গভীর ইবাদতের জন্য স্মরণীয়?",
+            "options": [
+                "সুলাইমান (আঃ)",
+                "শুয়াইব (আঃ)",
+                "মূসা (আঃ)",
+                "দাউদ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-6",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী মাদইয়ানবাসীদের কাছে প্রেরিত হন?",
+            "options": [
+                "শুয়াইব (আঃ)",
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "লুত (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-7",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী আদ জাতির কাছে প্রেরিত হন?",
+            "options": [
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "লুত (আঃ)",
+                "নূহ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-8",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "উষ্ট্রীর মুজিযাসহ কোন নবী সামূদ জাতির কাছে প্রেরিত হন?",
+            "options": [
+                "সালিহ (আঃ)",
+                "হুদ (আঃ)",
+                "লুত (আঃ)",
+                "শুয়াইব (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-9",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর জাতি তাদের পাপের কারণে মৃত সাগর অঞ্চলের কাছে ধ্বংস হয়েছিল?",
+            "options": [
+                "লুত (আঃ)",
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "ইদরীস (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-10",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী সম্পর্কে বলা হয় যে তাঁকে উচ্চ মর্যাদায় উন্নীত করা হয়েছিল, যা আসমানের সাথে সম্পর্কিত?",
+            "options": [
+                "ইদরীস (আঃ)",
+                "ইউনুস (আঃ)",
+                "আইয়ূব (আঃ)",
+                "ইসহাক (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-PR-11",
+            "level": 2,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ইউসুফ (আঃ)-এর পিতা কে ছিলেন?",
+            "options": [
+                "ইয়াকুব (আঃ)",
+                "ইসহাক (আঃ)",
+                "ইবরাহীম (আঃ)",
+                "ইসমাঈল (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-12",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরাকে “কুরআনের হৃদয়” বলা হয়?",
+            "options": [
+                "ইয়াসিন",
+                "আল-মুলক",
+                "আর-রহমান",
+                "আল-ওয়াকিয়া"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-13",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআনে “মুহাম্মদ” ﷺ নামটি সরাসরি কতবার উল্লেখ করা হয়েছে?",
+            "options": [
+                "২",
+                "৪",
+                "৬",
+                "১০"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-14",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 3,
+            "questionText": "কোন সূরার নামকরণ একজন নারীর নামে করা হয়েছে?",
+            "options": [
+                "মারইয়াম",
+                "আন-নিসা",
+                "আল-আহযাব",
+                "A ও B উভয়ই"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-15",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআনের সর্বশেষ সূরা কোনটি?",
+            "options": [
+                "আল-ফালাক",
+                "আন-নাস",
+                "আল-ইখলাস",
+                "আল-আসর"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-16",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরায় ইসরা (রাত্রি-সফর) নিয়ে আলোচনা করা হয়েছে?",
+            "options": [
+                "আল-ইসরা",
+                "আন-নাজম",
+                "আল-কাহফ",
+                "ত্বা-হা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-17",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "শুক্রবারে কোন সূরা তেলাওয়াত করার পরামর্শ দেওয়া হয়?",
+            "options": [
+                "আল-কাহফ",
+                "আল-মুলক",
+                "ইয়াসিন",
+                "আর-রহমান"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-18",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কিছু সূরার শুরুতে থাকা বিচ্ছিন্ন হরফগুলোকে কী বলা হয়?",
+            "options": [
+                "আয়াত",
+                "হুরুফ মুকাত্তাআত",
+                "আসমা",
+                "রুমুয"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-19",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরা সম্পর্কে ব্যাপকভাবে বর্ণিত আছে যে তা একবারেই সম্পূর্ণরূপে অবতীর্ণ হয়েছিল?",
+            "options": [
+                "আল-আনআম",
+                "আল-বাকারা",
+                "আন-নিসা",
+                "আল-মায়িদা"
+            ],
+            "scholarReviewFlag": "Y",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-20",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরায় গুহাবাসীদের (আসহাবে কাহফ) কথা উল্লেখ আছে?",
+            "options": [
+                "আল-কাহফ",
+                "মারইয়াম",
+                "ইউসুফ",
+                "আল-আম্বিয়া"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-QU-21",
+            "level": 2,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআন অবতীর্ণ হতে আনুমানিক কত বছর সময় লেগেছিল?",
+            "options": [
+                "১০",
+                "২৩",
+                "১৫",
+                "৩০"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-22",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর দাদা, যিনি তাঁকে লালন-পালন করেছিলেন, তাঁর নাম কী ছিল?",
+            "options": [
+                "আবদুল মুত্তালিব",
+                "আবু তালিব",
+                "আবদুল্লাহ",
+                "হাশিম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-23",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "হস্তী বর্ষ (আমুল ফীল) কীসের সাথে সম্পর্কিত?",
+            "options": [
+                "নবী ﷺ-এর জন্মবর্ষ",
+                "হিজরত",
+                "প্রথম অহী",
+                "বদরের যুদ্ধ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-24",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "বনু সা'দ গোত্র থেকে নবী ﷺ-এর দুধমা কে ছিলেন?",
+            "options": [
+                "হালিমা সা'দিয়া",
+                "উম্মে আইমান (রাঃ)",
+                "বারাকাহ",
+                "সুওয়াইবা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-25",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ কোন গোত্রের ছিলেন?",
+            "options": [
+                "কুরাইশ",
+                "আউস",
+                "খাজরাজ",
+                "সাকীফ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-26",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন অলৌকিক রাত্রি-সফরে নবী ﷺ মক্কা থেকে জেরুজালেম হয়ে আসমানে গমন করেন?",
+            "options": [
+                "হিজরত",
+                "ইসরা ও মিরাজ",
+                "গাযওয়া",
+                "ওমরা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-27",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন সাহাবী “আস-সিদ্দিক” (সত্যবাদী) নামে পরিচিত?",
+            "options": [
+                "উমর (রাঃ)",
+                "আবু বকর (রাঃ)",
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-28",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "৬ষ্ঠ হিজরিতে মুসলিম ও কুরাইশদের মধ্যে কোন সন্ধি স্বাক্ষরিত হয়?",
+            "options": [
+                "হুদাইবিয়ার সন্ধি",
+                "মদীনার সন্ধি",
+                "মদীনা সনদ",
+                "আকাবার সনদ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-29",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন যুদ্ধে তীরন্দাজরা নিজেদের অবস্থান ত্যাগ করার পর মুসলিমরা বড় পরীক্ষার সম্মুখীন হন?",
+            "options": [
+                "বদর",
+                "উহুদ",
+                "খন্দক",
+                "হুনাইন"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-30",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন দলিল মদীনায় মুসলিম, ইহুদি ও অন্যান্য গোত্রের অধিকার ও দায়িত্ব নির্ধারণ করেছিল?",
+            "options": [
+                "মদীনা সনদ",
+                "হুদাইবিয়ার সন্ধি",
+                "অধিকার সনদ",
+                "আকাবার সনদ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-SE-31",
+            "level": 2,
+            "category": "সীরাত",
+            "correctAnswerIndex": 2,
+            "questionText": "প্রথম অহী লাভের কত বছর পর মদীনায় হিজরত সংঘটিত হয়?",
+            "options": [
+                "৫",
+                "১০",
+                "১৩",
+                "২০"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-32",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন খলিফাকে সর্বপ্রথম “আমীরুল মুমিনীন” উপাধি দেওয়া হয়?",
+            "options": [
+                "আবু বকর (রাঃ)",
+                "উমর (রাঃ)",
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-33",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "নিচের কোনটি ইসলামের চারটি সম্মানিত মাসের একটি?",
+            "options": [
+                "মুহররম",
+                "সফর",
+                "জমাদিউস",
+                "শাবান"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-34",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "মুহররমের ১০ তারিখে (আশুরায়) কী স্মরণ করা হয়?",
+            "options": [
+                "নূহ (আঃ)-এর কিশতির অবতরণ / মূসা (আঃ)-এর মুক্তিসহ আরও কিছু ঘটনা",
+                "হিজরত",
+                "প্রথম অহী",
+                "বদরের যুদ্ধ"
+            ],
+            "scholarReviewFlag": "Y",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-35",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন খলিফার শাসনামলে পারস্য ও লেভান্ট অঞ্চলে বড় ধরনের সম্প্রসারণ ঘটে?",
+            "options": [
+                "উমর (রাঃ)",
+                "আবু বকর (রাঃ)",
+                "আলী (রাঃ)",
+                "উসমান (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-36",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 3,
+            "questionText": "ইসলামি নববর্ষের দিনটিকে কী বলা হয়?",
+            "options": [
+                "রাস আস-সানাহ",
+                "ঈদ আল-হিজরি",
+                "মুহররম আল-হারাম",
+                "এর কোনো বিশেষ নাম নেই — এটি কেবল মুহররম দিয়ে শুরু হয়"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-37",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "রমজানের পরের মাস কোনটি?",
+            "options": [
+                "জিলকদ",
+                "শাওয়াল",
+                "রজব",
+                "মুহররম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-38",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "বদরের যুদ্ধ ঐতিহাসিকভাবে কীসের প্রতীক?",
+            "options": [
+                "মুসলিমদের প্রথম বড় সামরিক বিজয়",
+                "মক্কা বিজয়",
+                "নবীর মৃত্যু",
+                "হিজরত"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-39",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন হিজরি সনে মক্কা বিজয় সংঘটিত হয়?",
+            "options": [
+                "৬ হিজরি",
+                "৮ হিজরি",
+                "১০ হিজরি",
+                "২ হিজরি"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-40",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "“হিজরি” বলতে কী বোঝায়?",
+            "options": [
+                "হিজরতের ওপর ভিত্তি করে গঠিত ইসলামি সন গণনা পদ্ধতি",
+                "একটি নামাযের নাম",
+                "এক প্রকার দান",
+                "হজের একটি অনুষ্ঠান"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-HI-41",
+            "level": 2,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "রমজানের ঠিক আগের মাস কোনটি?",
+            "options": [
+                "রজব",
+                "শাবান",
+                "শাওয়াল",
+                "মুহররম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-42",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী “জুন-নুরাইন” (দুই নূরের অধিকারী) নামে পরিচিত?",
+            "options": [
+                "উসমান (রাঃ)",
+                "আলী (রাঃ)",
+                "উমর (রাঃ)",
+                "আবু বকর (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-43",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "দৈনিক নামাযের নির্ধারিত সময়সমূহকে কী বলা হয়?",
+            "options": [
+                "আযান",
+                "মাওয়াকিত",
+                "রাকাত",
+                "সিজদা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-44",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী ছিলেন নবী ﷺ-এর চাচাতো ভাই ও জামাতা?",
+            "options": [
+                "আলী (রাঃ)",
+                "উমর (রাঃ)",
+                "উসমান (রাঃ)",
+                "যায়েদ (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-45",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "যাকাত ফরজ হওয়ার জন্য নির্ধারিত ন্যূনতম সম্পদের পরিমাণকে কী বলা হয়?",
+            "options": [
+                "নিসাব",
+                "সদকা",
+                "কাফফারা",
+                "ফিদইয়া"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-46",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "আবু বকর (রাঃ)-এর খিলাফতকালে কোন সাহাবী কুরআনকে একক মুসহাফে সংকলন করেন?",
+            "options": [
+                "যায়েদ ইবনে সাবিত (রাঃ)",
+                "আলী (রাঃ)",
+                "উমর (রাঃ)",
+                "উসমান (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-47",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "নামাযের আহ্বানকে কী বলা হয়?",
+            "options": [
+                "ইকামত",
+                "আযান",
+                "তাকবীর",
+                "তাসবীহ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-48",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর কোন স্ত্রী গভীর জ্ঞান ও হাদীস বর্ণনার জন্য পরিচিত?",
+            "options": [
+                "আয়িশা (রাঃ)",
+                "খাদীজা (রাঃ)",
+                "হাফসা (রাঃ)",
+                "যাইনাব (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-49",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর কোন চাচা, যিনি একজন সাহসী যোদ্ধা ছিলেন, তাঁকে “আল্লাহর সিংহ” বলা হয়?",
+            "options": [
+                "হামযা (রাঃ)",
+                "আব্বাস (রাঃ)",
+                "আবু তালিব",
+                "জাফর (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-50",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "বিশেষত রমজান মাসে আদায় করা রাতের নামাযকে কী বলা হয়?",
+            "options": [
+                "তাহাজ্জুদ",
+                "তারাবীহ",
+                "বিতর",
+                "দুহা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L2-WO-51",
+            "level": 2,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী আবিসিনিয়ায় হিজরতকারী প্রথম মুসলিমদের অন্তর্ভুক্ত ছিলেন?",
+            "options": [
+                "উসমান ইবনে আফফান (রাঃ) ও রুকাইয়া (রাঃ)",
+                "আলী (রাঃ)",
+                "উমর (রাঃ)",
+                "আবু বকর (রাঃ)"
+            ],
+            "scholarReviewFlag": "Y",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-2",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী সুবিশাল রাজত্বের জন্য পরিচিত, যিনি আল্লাহর অনুমতিক্রমে বাতাস ও জিনদের নিয়ন্ত্রণ করতে পারতেন বলে বর্ণিত?",
+            "options": [
+                "সুলাইমান (আঃ)",
+                "দাউদ (আঃ)",
+                "ইউসুফ (আঃ)",
+                "মূসা (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-3",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর মা তাঁকে রক্ষার জন্য একটি ঝুড়িতে ভরে নদীতে ভাসিয়ে দিয়েছিলেন?",
+            "options": [
+                "মূসা (আঃ)",
+                "ইবরাহীম (আঃ)",
+                "ইউসুফ (আঃ)",
+                "ঈসা (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-4",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর বারো পুত্র ছিল, যাঁরা বনী ইসরাঈলের বিভিন্ন গোত্রের পূর্বপুরুষ হয়েছিলেন?",
+            "options": [
+                "ইয়াকুব (আঃ)",
+                "ইসহাক (আঃ)",
+                "ইসমাঈল (আঃ)",
+                "ইবরাহীম (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-5",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর কিশতি সম্পর্কে কুরআনে বলা হয়েছে যে তা জুদি পর্বতে গিয়ে থেমেছিল?",
+            "options": [
+                "নূহ (আঃ)",
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "লুত (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-6",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী আল্লাহর কাছে দেখতে চেয়েছিলেন যে কীভাবে মৃতকে জীবিত করা হয়, যা পাখির মাধ্যমে তাঁকে দেখানো হয়েছিল?",
+            "options": [
+                "ইবরাহীম (আঃ)",
+                "মূসা (আঃ)",
+                "ঈসা (আঃ)",
+                "সুলাইমান (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-7",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআন অনুযায়ী, মহাপ্লাবনের আগে নূহ (আঃ) কত বছর ধরে তাঁর জাতিকে আহ্বান করেছিলেন?",
+            "options": [
+                "৫০০",
+                "৯৫০",
+                "১০০০",
+                "৩০০"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-8",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীকে যাবুর (কিতাব) দেওয়া হয়েছিল?",
+            "options": [
+                "দাউদ (আঃ)",
+                "সুলাইমান (আঃ)",
+                "মূসা (আঃ)",
+                "ঈসা (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-9",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী সম্পর্কে বলা হয় যে তাঁকে আল্লাহর দিকে তুলে নেওয়া হয়েছে, এবং তাঁর পুনরাগমন ইসলামি বিশ্বাসের একটি বিষয়?",
+            "options": [
+                "ঈসা (আঃ)",
+                "ইদরীস (আঃ)",
+                "ইলিয়াস (আঃ)",
+                "ইউনুস (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-10",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "ঐতিহ্য অনুসারে, কোন নবীর পুত্র কিশতিতে উঠতে অস্বীকার করে ডুবে মারা যান?",
+            "options": [
+                "নূহ (আঃ)-এর পুত্র",
+                "হুদ (আঃ)-এর পুত্র",
+                "সালিহ (আঃ)-এর পুত্র",
+                "লুত (আঃ)-এর পুত্র"
+            ],
+            "scholarReviewFlag": "Y",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-PR-11",
+            "level": 3,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর কাহিনীতে মূর্তি ভেঙে ফেলার কথা বর্ণিত আছে, যেখানে শুধু সবচেয়ে বড় মূর্তিটি অক্ষত রাখা হয়েছিল?",
+            "options": [
+                "ইবরাহীম (আঃ)",
+                "মূসা (আঃ)",
+                "সুলাইমান (আঃ)",
+                "নূহ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-12",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরাকে “উম্মুল কিতাব” (কিতাবের মূল/জননী)ও বলা হয়?",
+            "options": [
+                "আল-ফাতিহা",
+                "আল-বাকারা",
+                "ইয়াসিন",
+                "আল-ইখলাস"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-13",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "নবী মুহাম্মদ ﷺ-এর নবুওয়তের সময়কাল মোট কত বছর ছিল?",
+            "options": [
+                "২০",
+                "২৩",
+                "২৫",
+                "৩০"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-14",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরায় তালুত (শাউল) ও জালুত (গলিয়াথ)-এর কাহিনী আলোচিত হয়েছে?",
+            "options": [
+                "আল-বাকারা",
+                "আন-নিসা",
+                "আল-মায়িদা",
+                "আল-আরাফ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-15",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন সূরার নাম একটি মাকড়সার নামে রাখা হয়েছে?",
+            "options": [
+                "আন-নামল",
+                "আল-আনকাবুত",
+                "আন-নাহল",
+                "আন-নামল"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-16",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরায় জুলকারনাইন এবং ইয়াজুজ-মাজুজের বিরুদ্ধে প্রাচীর নির্মাণের কথা আলোচিত হয়েছে?",
+            "options": [
+                "আল-কাহফ",
+                "আল-আম্বিয়া",
+                "মারইয়াম",
+                "ত্বা-হা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-17",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন সূরাকে “বারাআত”ও বলা হয়?",
+            "options": [
+                "আল-আনফাল",
+                "আত-তাওবা",
+                "আল-হাশর",
+                "আল-মুমতাহিনা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-18",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরায় খন্দকের যুদ্ধের ঘটনাবলি আলোচিত হয়েছে?",
+            "options": [
+                "আল-আহযাব",
+                "আল-ফাতহ",
+                "আল-হুজুরাত",
+                "আল-হাশর"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-19",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরা সম্পূর্ণভাবে নবী ইউসুফ (আঃ)-এর কাহিনীর জন্য নিবেদিত?",
+            "options": [
+                "ইউসুফ",
+                "আল-কাসাস",
+                "হুদ",
+                "ইবরাহীম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-20",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরা কলমের শপথ দিয়ে শুরু হয়?",
+            "options": [
+                "আল-কলম",
+                "আন-নাজম",
+                "আল-বুরুজ",
+                "আল-ইনসান"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-QU-21",
+            "level": 3,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "হিজরতের আগে অবতীর্ণ সূরাকে কোন ধরনের সূরা বলা হয়?",
+            "options": [
+                "মাদানী",
+                "মাক্কী",
+                "হিজরী",
+                "আনসারী"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-22",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর কোন চাচা কখনো ইসলাম গ্রহণ করেননি এবং কুরআনের একটি সূরায় সরাসরি যাঁর নাম উল্লেখ আছে?",
+            "options": [
+                "আবু লাহাব",
+                "আবু তালিব",
+                "হামযা (রাঃ)",
+                "আব্বাস (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-23",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামের প্রথম বড় যুদ্ধ হিসেবে পরিচিত, যা ২য় হিজরিতে সংঘটিত হয়েছিল, তা কোনটি?",
+            "options": [
+                "উহুদ",
+                "বদর",
+                "খন্দক",
+                "হুনাইন"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-24",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "বদরের যুদ্ধে আনুমানিক কতজন মুসলিম অংশগ্রহণ করেছিলেন?",
+            "options": [
+                "৩১৩",
+                "৫০০",
+                "১৫০",
+                "৭০০"
+            ],
+            "scholarReviewFlag": "Y",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-25",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "যে বছর খাদীজা (রাঃ) ও আবু তালিব উভয়েই ইন্তেকাল করেন, তাকে কী বলা হয়?",
+            "options": [
+                "আমুল ফীল (হস্তী বর্ষ)",
+                "আমুল হুযন (শোকের বছর)",
+                "আমুল ওয়ুফুদ",
+                "আমুর রিদ্দাহ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-26",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর কোন কন্যা আলী (রাঃ)-এর সাথে বিবাহবন্ধনে আবদ্ধ হন?",
+            "options": [
+                "ফাতিমা (রাঃ)",
+                "যাইনাব (রাঃ)",
+                "রুকাইয়া (রাঃ)",
+                "উম্মে কুলসুম (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-27",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 0,
+            "questionText": "নবী ﷺ-এর কোন চাচা, যিনি একজন সাহাবী ছিলেন, উহুদের যুদ্ধে শহীদ হন?",
+            "options": [
+                "হামযা (রাঃ)",
+                "আব্বাস (রাঃ)",
+                "জাফর (রাঃ)",
+                "যুবাইর (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-28",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "মদীনা এলাকায় পৌঁছানোর পর নবী ﷺ-এর নির্মিত প্রথম মসজিদের নাম কী ছিল?",
+            "options": [
+                "মসজিদে নববী",
+                "মসজিদে কুবা",
+                "মসজিদুল আকসা",
+                "মসজিদুল হারাম"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-29",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন সন্ধির ফলে মুসলিমরা বাধাপ্রাপ্ত হওয়ার পরের বছর শান্তিপূর্ণভাবে ওমরা পালন করতে পেরেছিলেন?",
+            "options": [
+                "মদীনা সনদ",
+                "হুদাইবিয়ার সন্ধি",
+                "আকাবার সনদ",
+                "অধিকার সনদ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-30",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 2,
+            "questionText": "মক্কা বিজয় কোন হিজরি সনে সংঘটিত হয়?",
+            "options": [
+                "৫ হিজরি",
+                "৬ হিজরি",
+                "৮ হিজরি",
+                "১০ হিজরি"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-SE-31",
+            "level": 3,
+            "category": "সীরাত",
+            "correctAnswerIndex": 2,
+            "questionText": "বিদায় হজ (হাজ্জাতুল বিদা) কোন সনে অনুষ্ঠিত হয়েছিল?",
+            "options": [
+                "৮ হিজরি",
+                "৯ হিজরি",
+                "১০ হিজরি",
+                "১১ হিজরি"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-32",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "রাশিদুন খিলাফতের অবসানের পর কোন খিলাফত প্রতিষ্ঠিত হয়?",
+            "options": [
+                "আব্বাসীয়",
+                "উমাইয়া",
+                "উসমানীয়",
+                "ফাতিমীয়"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-33",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কারবালার ঘটনা কোন হিজরি সনে সংঘটিত হয়?",
+            "options": [
+                "৪১ হিজরি",
+                "৬১ হিজরি",
+                "৭২ হিজরি",
+                "৯০ হিজরি"
+            ],
+            "scholarReviewFlag": "Y",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-34",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "৩য় হিজরির শাওয়াল মাসের সাথে ঐতিহাসিকভাবে কোন যুদ্ধ সম্পর্কিত?",
+            "options": [
+                "বদর",
+                "উহুদ",
+                "খন্দক",
+                "হুনাইন"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-35",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "অধিকাংশ অঞ্চলে উমাইয়াদের পরে কোন খিলাফত প্রতিষ্ঠিত হয়?",
+            "options": [
+                "আব্বাসীয়",
+                "উসমানীয়",
+                "ফাতিমীয়",
+                "সাফাভি"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-36",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন শহর আব্বাসীয় খিলাফতের রাজধানী হয়েছিল, যেখানে “বাইতুল হিকমাহ” (জ্ঞানের ঘর) অবস্থিত ছিল?",
+            "options": [
+                "দামেস্ক",
+                "বাগদাদ",
+                "কায়রো",
+                "কর্ডোবা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-37",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "কোন রাজবংশ দামেস্ককে রাজধানী করে শাসন করেছিল?",
+            "options": [
+                "আব্বাসীয়",
+                "উমাইয়া",
+                "ফাতিমীয়",
+                "উসমানীয়"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-38",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 0,
+            "questionText": "স্পেন (আল-আন্দালুস)-এর প্রাথমিক বিজয়ে কোন মুসলিম সেনাপতি নেতৃত্ব দিয়েছিলেন?",
+            "options": [
+                "তারিক ইবনে যিয়াদ",
+                "উকবা ইবনে নাফি",
+                "মুসা ইবনে নুসাইর",
+                "খালিদ ইবনুল ওয়ালিদ (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-39",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "হিজরি সন গণনা কোন ঘটনা থেকে শুরু হয়?",
+            "options": [
+                "নবীর জন্ম",
+                "হিজরত",
+                "প্রথম অহী",
+                "মক্কা বিজয়"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-40",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামি চান্দ্র মাস সাধারণত কত দিনের হয়?",
+            "options": [
+                "২৮ বা ২৯",
+                "২৯ বা ৩০",
+                "৩০ বা ৩১",
+                "৩১ বা ৩২"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-HI-41",
+            "level": 3,
+            "category": "ইতিহাস ও পঞ্জিকা",
+            "correctAnswerIndex": 1,
+            "questionText": "মুহররম, রজব ও জিলকদের পাশাপাশি নিচের কোনটি চারটি সম্মানিত মাসের একটি?",
+            "options": [
+                "শাওয়াল",
+                "জিলহজ",
+                "সফর",
+                "জমাদিউল আউয়াল"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-42",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী “আল্লাহর তরবারি” নামে পরিচিত ছিলেন?",
+            "options": [
+                "খালিদ ইবনুল ওয়ালিদ (রাঃ)",
+                "সা'দ ইবনে আবী ওয়াক্কাস (রাঃ)",
+                "যুবাইর ইবনুল আওয়াম (রাঃ)",
+                "তালহা ইবনে উবাইদুল্লাহ (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-43",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "চারজন সৎপথপ্রাপ্ত খলিফাকে সম্মিলিতভাবে কী বলা হয়?",
+            "options": [
+                "আল-খুলাফা আর-রাশিদুন",
+                "আল-মুহাজিরুন",
+                "আল-আনসার",
+                "আহলুল বাইত"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-44",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামি আইনের উৎস হিসেবে আলেমদের সর্বসম্মত মতকে কী বলা হয়?",
+            "options": [
+                "কিয়াস",
+                "ইজমা",
+                "ইস্তিহসান",
+                "উরফ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-45",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "ইসলামি আইনে তুলনামূলক যুক্তিনির্ভর সিদ্ধান্তকে কী বলা হয়?",
+            "options": [
+                "ইজমা",
+                "কিয়াস",
+                "ইস্তিহসান",
+                "উরফ"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-46",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী সর্বাধিক সংখ্যক হাদীস বর্ণনার জন্য পরিচিত?",
+            "options": [
+                "আবু হুরাইরা (রাঃ)",
+                "ইবনে আব্বাস (রাঃ)",
+                "আনাস ইবনে মালিক (রাঃ)",
+                "আয়িশা (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-47",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "মুহররমের ৯ ও ১০ তারিখের রোযাকে সাধারণত কী বলা হয়?",
+            "options": [
+                "আশুরার রোযা",
+                "শুধু তাসুয়া",
+                "আইয়ামে বিয",
+                "সিত্তা মিন শাওয়াল"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-48",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী নবী ﷺ-এর অহী লিপিবদ্ধকারী লেখকদের একজন ছিলেন?",
+            "options": [
+                "যায়েদ ইবনে সাবিত (রাঃ)",
+                "বিলাল ইবনে রাবাহ (রাঃ)",
+                "সালমান আল-ফারিসী (রাঃ)",
+                "সুহাইব (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-49",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "শুক্রবারের জামাতে আদায় করা নামাযকে কী বলা হয়?",
+            "options": [
+                "যুহর",
+                "জুমুআ",
+                "ঈদ",
+                "বিতর"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-50",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সাহাবী “আমীনুল উম্মাহ” (জাতির বিশ্বস্ত ব্যক্তি) উপাধিতে পরিচিত?",
+            "options": [
+                "আবু উবাইদা ইবনুল জাররাহ (রাঃ)",
+                "সা'দ ইবনে মুআয (রাঃ)",
+                "মুআয ইবনে জাবাল (রাঃ)",
+                "উবাই ইবনে কাব (রাঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L3-WO-51",
+            "level": 3,
+            "category": "ইবাদত ও সাহাবীগণ",
+            "correctAnswerIndex": 1,
+            "questionText": "রমজানের রোযার আগে ভোররাতের খাবারকে কী বলা হয়?",
+            "options": [
+                "ইফতার",
+                "সাহরি",
+                "ফিদইয়া",
+                "কাফফারা"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-2",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী আল্লাহর কাছে এমন এক রাজত্ব চেয়েছিলেন, যা তাঁর পরে আর কেউ পাবে না?",
+            "options": [
+                "সুলাইমান (আঃ)",
+                "দাউদ (আঃ)",
+                "ইউসুফ (আঃ)",
+                "মূসা (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-3",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী অসুস্থতা এবং সম্পদ ও পরিবার হারানোর মাধ্যমে পরীক্ষিত হয়েছিলেন, অথচ সবসময় ধৈর্য ধরে রেখেছিলেন?",
+            "options": [
+                "আইয়ূব (আঃ)",
+                "ইউনুস (আঃ)",
+                "যাকারিয়া (আঃ)",
+                "ইয়াহইয়া (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-4",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর জাতি (আদ) প্রচণ্ড গর্জনকারী ঝড়ো বাতাসের দ্বারা ধ্বংস হয়েছিল?",
+            "options": [
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "শুয়াইব (আঃ)",
+                "লুত (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-5",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর উষ্ট্রীকে তাঁর জাতি হত্যা করেছিল, যার ফলে তারা ধ্বংস হয়ে যায়?",
+            "options": [
+                "সালিহ (আঃ)",
+                "হুদ (আঃ)",
+                "শুয়াইব (আঃ)",
+                "লুত (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-6",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী বার্ধক্যে একটি পুত্র সন্তানের জন্য দোয়া করেছিলেন এবং তাঁকে ইয়াহইয়া (আঃ) দান করা হয়েছিল?",
+            "options": [
+                "যাকারিয়া (আঃ)",
+                "ইবরাহীম (আঃ)",
+                "আইয়ূব (আঃ)",
+                "ইলিয়াস (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-7",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "সূরা মারইয়ামে কোন নবীকে “সিদ্দিক” ও “নবী” উপাধিতে বর্ণনা করা হয়েছে?",
+            "options": [
+                "ইদরীস (আঃ)",
+                "ইলিয়াস (আঃ)",
+                "ইউনুস (আঃ)",
+                "ইসহাক (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-8",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবীর সতর্কবাণীর পর তাঁর জাতি (নিনেভা) তওবা করেছিল, যার ফলে তারা ধ্বংস থেকে রক্ষা পায়?",
+            "options": [
+                "ইউনুস (আঃ)",
+                "হুদ (আঃ)",
+                "সালিহ (আঃ)",
+                "লুত (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-9",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কুরআন অনুযায়ী, কোন নবীর কিশতি জুদি পর্বতে গিয়ে থেমেছিল?",
+            "options": [
+                "নূহ (আঃ)",
+                "হুদ (আঃ)",
+                "লুত (আঃ)",
+                "সালিহ (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-10",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন নবী শিশু অবস্থায় দোলনায় থেকেই কথা বলে তাঁর মাকে রক্ষা করেছিলেন?",
+            "options": [
+                "ঈসা (আঃ)",
+                "ইয়াহইয়া (আঃ)",
+                "মূসা (আঃ)",
+                "ইসমাঈল (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-PR-11",
+            "level": 4,
+            "category": "নবীগণ",
+            "correctAnswerIndex": 0,
+            "questionText": "নূহ (আঃ)-এর জাতির পাশাপাশি বার্তা প্রত্যাখ্যান করায় ধ্বংসপ্রাপ্ত প্রথমদিকের জাতিগুলোর মধ্যে কোন নবীর জাতি উল্লেখযোগ্য?",
+            "options": [
+                "হুদ (আঃ)",
+                "ইদরীস (আঃ)",
+                "ইলিয়াস (আঃ)",
+                "জুলকিফল (আঃ)"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-QU-12",
+            "level": 4,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআনের ক্রমানুসারে সূরা আল-বাকারার নম্বর কত?",
+            "options": [
+                "১",
+                "২",
+                "৩",
+                "৪"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-QU-13",
+            "level": 4,
+            "category": "কুরআন",
+            "correctAnswerIndex": 1,
+            "questionText": "কুরআনের একটি একক আয়াতকে কী বলা হয়?",
+            "options": [
+                "সূরা",
+                "আয়াত",
+                "জুয",
+                "হিজব"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-QU-14",
+            "level": 4,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "কোন সূরাকে “খাদ্যপূর্ণ দস্তরখান” নামে অভিহিত করা হয়?",
+            "options": [
+                "আল-মায়িদা",
+                "আল-আনআম",
+                "আল-আরাফ",
+                "আল-আনফাল"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        },
+        {
+            "id": "L4-QU-15",
+            "level": 4,
+            "category": "কুরআন",
+            "correctAnswerIndex": 0,
+            "questionText": "আয়িশা (রাঃ)-এর বিরুদ্ধে অপবাদ (ইফক)-এর ঘটনায় কোন সূরা অবতীর্ণ হয়?",
+            "options": [
+                "আন-নূর",
+                "আল-আহযাব",
+                "আল-মুমতাহিনা",
+                "আল-হুজুরাত"
+            ],
+            "scholarReviewFlag": "N",
+            "notes": "",
+            "isScholarReviewed": false
+        }
+    ]
+}

@@ -154,11 +154,46 @@ public class MCQManager : MonoBehaviour
         if (asset != null)
         {
             allQuestions = JsonUtility.FromJson<QuestionList>(asset.text);
+            if (questionFile == null) FillMissingQuestionsFromEnglish();
         }
         else
         {
             Debug.LogError("Question JSON file not assigned and no 'questions_{locale}' found in Resources!");
         }
+    }
+
+    /// <summary>
+    /// Translation work lands incrementally, so a locale's questions_{locale}.txt can legitimately contain
+    /// fewer than the full 500 entries (e.g. Bengali currently covers Levels 1-4 only). Rather than leaving
+    /// every other level with zero questions for that locale, fill in any id missing from the active file
+    /// using the English original, so every level always has a full question pool while translations catch up.
+    /// </summary>
+    void FillMissingQuestionsFromEnglish()
+    {
+        if (LocalizationManager.Instance != null && LocalizationManager.Instance.CurrentLocale == AppLocale.en) return;
+        if (allQuestions?.questions == null) return;
+
+        TextAsset englishAsset = Resources.Load<TextAsset>("questions_en");
+        if (englishAsset == null) return;
+
+        QuestionList englishQuestions = JsonUtility.FromJson<QuestionList>(englishAsset.text);
+        if (englishQuestions?.questions == null) return;
+
+        var presentIds = new HashSet<string>();
+        foreach (var q in allQuestions.questions)
+        {
+            if (!string.IsNullOrEmpty(q.id)) presentIds.Add(q.id);
+        }
+
+        List<QuestionData> merged = null;
+        foreach (var enQ in englishQuestions.questions)
+        {
+            if (presentIds.Contains(enQ.id)) continue;
+            merged ??= new List<QuestionData>(allQuestions.questions);
+            merged.Add(enQ);
+        }
+
+        if (merged != null) allQuestions.questions = merged.ToArray();
     }
 
     public QuestionData[] GetQuestionsByLevel(int level)

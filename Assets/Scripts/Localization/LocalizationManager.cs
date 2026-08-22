@@ -11,7 +11,8 @@ public enum AppLocale
 {
     en,
     ar,
-    bn
+    bn,
+    ur
 }
 
 /// <summary>
@@ -53,8 +54,9 @@ public class LocalizationManager : MonoBehaviour
 
     public AppLocale CurrentLocale { get; private set; } = FallbackLocale;
 
-    /// <summary>True only for Arabic. Bengali is not Latin script either, but it is still left-to-right.</summary>
-    public bool IsRightToLeft => CurrentLocale == AppLocale.ar;
+    /// <summary>True for Arabic and Urdu (both Perso-Arabic script, right-to-left). Bengali is not Latin
+    /// script either, but it is still left-to-right.</summary>
+    public bool IsRightToLeft => CurrentLocale == AppLocale.ar || CurrentLocale == AppLocale.ur;
 
     private Dictionary<string, string> _activeTable = new Dictionary<string, string>();
     private Dictionary<string, string> _fallbackTable = new Dictionary<string, string>();

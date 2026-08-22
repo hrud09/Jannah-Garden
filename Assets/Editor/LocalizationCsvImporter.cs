@@ -6,14 +6,14 @@ using UnityEngine;
 
 /// <summary>
 /// Round-trips Resources/Localization/ui_{locale}.json against a single translator-facing CSV (columns:
-/// key, en, ar, bn, notes), so translating UI strings never requires opening Unity or touching JSON by
-/// hand. Import overwrites all three ui_*.json files; Export regenerates the CSV from them (handy the
+/// key, en, ar, bn, ur, notes), so translating UI strings never requires opening Unity or touching JSON by
+/// hand. Import overwrites all four ui_*.json files; Export regenerates the CSV from them (handy the
 /// first time, and any time someone hand-edits a json file and you want to get back to one source of truth).
 /// </summary>
 public static class LocalizationCsvImporter
 {
     private const string ResourceFolder = "Assets/Resources/Localization";
-    private static readonly string[] Locales = { "en", "ar", "bn" };
+    private static readonly string[] Locales = { "en", "ar", "bn", "ur" };
 
     [MenuItem("Tools/Localization/Import CSV...")]
     public static void ImportCsv()
@@ -89,7 +89,7 @@ public static class LocalizationCsvImporter
         }
 
         var sb = new StringBuilder();
-        sb.AppendLine("key,en,ar,bn");
+        sb.AppendLine("key," + string.Join(",", Locales));
         foreach (string key in orderedKeys)
         {
             sb.Append(CsvUtil.Escape(key));
