@@ -2898,7 +2898,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void* IntPtr_op_Explicit_m2728CBA081E79B97DDC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107455
+// Method Definition Index: 107500
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* Terrain_get_terrainData_m3B6C1D89471A4E1C60FC19C168DB37A011B924FD (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2937,7 +2937,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107456
+// Method Definition Index: 107501
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_terrainData_m59F63BECF7DC2657DC887F1F59DA3427ED59994C (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2976,7 +2976,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107457
+// Method Definition Index: 107502
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeDistance_mE5394C9AAD12F1BD5474B51615D2E3906404F77A (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3012,7 +3012,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107458
+// Method Definition Index: 107503
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeDistance_m8836D1691B1C7BDC76725A624601E6543806C14C (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3048,7 +3048,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107459
+// Method Definition Index: 107504
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeBillboardDistance_m5A9D3F3B388042BE9C19F346426AA7BA01CBE1D8 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3084,7 +3084,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107460
+// Method Definition Index: 107505
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeBillboardDistance_m654B35A6BEE23489F2E4DEF0D12214D9F4A5FD8E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3120,7 +3120,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107461
+// Method Definition Index: 107506
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeCrossFadeLength_m037BF60679DC6C878F5D7B5189F4555CF496AFD4 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3156,7 +3156,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107462
+// Method Definition Index: 107507
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeCrossFadeLength_m639B8CAD49CF4AF938477D3F1E080932F2DBE6F1 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3192,7 +3192,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107463
+// Method Definition Index: 107508
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_treeMaximumFullLODCount_m3626EB8E365A9B8620375AEB15604D112F669812 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3228,7 +3228,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107464
+// Method Definition Index: 107509
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeMaximumFullLODCount_mCDE91147B62F207B2841D41A2710A4B563A953D1 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3264,7 +3264,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107465
+// Method Definition Index: 107510
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_detailObjectDistance_m230A961919F3B468A7F79312C164C1D50C648EBA (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3300,7 +3300,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107466
+// Method Definition Index: 107511
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_detailObjectDistance_mE8B84B8EDE307BEB41E477CC9C35F8BA3A969EDE (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3336,7 +3336,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107467
+// Method Definition Index: 107512
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_detailObjectDensity_m2FEBE42D389A14F98A38888A423B21FD91E605E9 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3372,7 +3372,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107468
+// Method Definition Index: 107513
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_detailObjectDensity_mFDE71C06416A56C18C54ED41485CBB1D1CB3520D (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3408,7 +3408,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107469
+// Method Definition Index: 107514
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_heightmapPixelError_m9051CAA3D0939B5F0F5719F53A3B5E4CF55438C5 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3444,7 +3444,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107470
+// Method Definition Index: 107515
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapPixelError_mEE31EA7AF7F41EB82C643468B52F4B10109C7FFF (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3480,7 +3480,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107471
+// Method Definition Index: 107516
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapMaximumLOD_mC57749C8FF75F58EE1F209BBD26C2B1C5292C829 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3516,7 +3516,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107472
+// Method Definition Index: 107517
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapMaximumLOD_m0638986CDAF871DDD4C80EA55E1CF60F44DF6F5E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3552,7 +3552,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107473
+// Method Definition Index: 107518
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapMinimumLODSimplification_m319C4BAEFD45FAA988396F395F6D220487FFBA44 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3588,7 +3588,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107474
+// Method Definition Index: 107519
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapMinimumLODSimplification_mE9AF955106D0E1CB137AE372BF1E6C64E3BEDA6C (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3624,7 +3624,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107475
+// Method Definition Index: 107520
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_basemapDistance_m19DDA753F682B416665C5A7E171376EEE3BF312B (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3660,7 +3660,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107476
+// Method Definition Index: 107521
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_basemapDistance_m3CC75A7D5D67BA75A0E030F300A462C16905CF40 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3696,7 +3696,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107477
+// Method Definition Index: 107522
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_lightmapIndex_m79CF88EEEA60C4FACBA6D568C10A769D9654803E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3732,7 +3732,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107478
+// Method Definition Index: 107523
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_lightmapIndex_m771ADCC6B582144408D4736C93E97EFFE21319C4 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3768,7 +3768,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107479
+// Method Definition Index: 107524
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_realtimeLightmapIndex_m7DA20D23C390C3525A3245A8CF3340188541BB64 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3804,7 +3804,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107480
+// Method Definition Index: 107525
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_realtimeLightmapIndex_m1D972992A2DCBBD141D21DD089ADEB561CF6EA30 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3840,7 +3840,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107481
+// Method Definition Index: 107526
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 Terrain_get_lightmapScaleOffset_m27B3E8FD4CF439470223ABF5F077AAC2A045480B (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3878,7 +3878,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107482
+// Method Definition Index: 107527
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_lightmapScaleOffset_m5ABDFF3AAA8BC1243B976AD50A89AA864C8D218D (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3913,7 +3913,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107483
+// Method Definition Index: 107528
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 Terrain_get_realtimeLightmapScaleOffset_m028BC94F9D808480C241BD2D1A55F857E2D5287D (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3951,7 +3951,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107484
+// Method Definition Index: 107529
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_realtimeLightmapScaleOffset_m599578984D728DC7EF3AE412879D7DC293A66E77 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3986,7 +3986,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107485
+// Method Definition Index: 107530
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_freeUnusedRenderingResources_mB7750A5195DFE7A96E99763E9EF0143D52124715 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4022,7 +4022,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107486
+// Method Definition Index: 107531
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_freeUnusedRenderingResources_mAFBEB163234FB5F808B453246765B980A8A28DDA (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4058,7 +4058,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107487
+// Method Definition Index: 107532
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_keepUnusedRenderingResources_m795AD911467CB1E237543208A48A9E5DDFFF5032 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4094,7 +4094,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107488
+// Method Definition Index: 107533
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_keepUnusedRenderingResources_mFFE068865CA7F9EF1B875E0C1B0548A4D14E8C9F (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4130,7 +4130,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107489
+// Method Definition Index: 107534
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_GetKeepUnusedCameraRenderingResources_m0FBD083EC883C5F1778A77166BCF22D2C6DF035B (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___0_cameraEntityId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4166,7 +4166,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107490
+// Method Definition Index: 107535
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetKeepUnusedCameraRenderingResources_m2A5300ADAE8FD0466DA80941B7699FD1B631FB48 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___0_cameraEntityId, bool ___1_keepUnused, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4202,7 +4202,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107491
+// Method Definition Index: 107536
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_GetKeepUnusedCameraRenderingResources_m36AE2CC2933A8ED02A0A6B1581B1733C9309BA97 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_cameraInstanceID, const RuntimeMethod* method) 
 {
 	{
@@ -4214,7 +4214,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_GetKeepUnusedCameraRenderingReso
 		return L_2;
 	}
 }
-// Method Definition Index: 107492
+// Method Definition Index: 107537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetKeepUnusedCameraRenderingResources_m00A637BC1210C488F62A6D39A7E60EDD843371D0 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_cameraInstanceID, bool ___1_keepUnused, const RuntimeMethod* method) 
 {
 	{
@@ -4226,7 +4226,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetKeepUnusedCameraRenderingReso
 		return;
 	}
 }
-// Method Definition Index: 107493
+// Method Definition Index: 107538
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_shadowCastingMode_m4070042014ED55612368631D6335105FDF951114 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4262,7 +4262,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107494
+// Method Definition Index: 107539
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_shadowCastingMode_m1267E7389BEF6EBA9B6E23044225362CD6EA79BD (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4298,7 +4298,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107495
+// Method Definition Index: 107540
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_reflectionProbeUsage_mAAFE9BC6BD45E280BF1EFD911184A630CC91C090 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4334,7 +4334,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107496
+// Method Definition Index: 107541
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_reflectionProbeUsage_m9D034C6790A0F28D118E330F590772E3240373B6 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4370,7 +4370,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107497
+// Method Definition Index: 107542
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetClosestReflectionProbes_m6DFCD7ACACF5566A37691DBDD466BFD0F96A0B29 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, List_1_t1100962F75A3C1A8DDD989C01DEE91D38A84082A* ___0_result, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4406,7 +4406,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107498
+// Method Definition Index: 107543
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* Terrain_get_materialTemplate_mB3BE06B73866CF772A9B2B42069CE3AECA288DE7 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4445,7 +4445,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107499
+// Method Definition Index: 107544
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_materialTemplate_mAC433DD496BAB83C63718B862C11064FD20EB7F0 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4484,7 +4484,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107500
+// Method Definition Index: 107545
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawHeightmap_m41EBA9E260C303324FD8A24A9FD155001D4715FE (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4520,7 +4520,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107501
+// Method Definition Index: 107546
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawHeightmap_m39CA641057F8C3482CF7BADD65B1FD89106195F9 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4556,7 +4556,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107502
+// Method Definition Index: 107547
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_allowAutoConnect_m4E9CB87D130BB118517C5504C8FB4A5CC3AA91D7 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4592,7 +4592,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107503
+// Method Definition Index: 107548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_allowAutoConnect_mBAA98DD489268404D1157A29759982CDFB45BF11 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4628,7 +4628,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107504
+// Method Definition Index: 107549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_groupingID_mE52E78018126A5D00F837081287BE076E7709C24 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4664,7 +4664,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107505
+// Method Definition Index: 107550
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_groupingID_m0C89CE036FD16514CDC70B52270B853F7FCBF334 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4700,7 +4700,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107506
+// Method Definition Index: 107551
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawInstanced_m7E8C2EB30B4F778927EE017163B79B113598CB34 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4736,7 +4736,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107507
+// Method Definition Index: 107552
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawInstanced_m8846CAE84A778178A98DE6C0A764EBEA7B45D1F3 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4772,7 +4772,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107508
+// Method Definition Index: 107553
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_enableHeightmapRayTracing_mEC782BB01FE856D14FA6F8AA36DFFEA30F351409 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4808,7 +4808,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107509
+// Method Definition Index: 107554
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_enableHeightmapRayTracing_mD93ADA6B988DE9DC3B15E4C0254FFCAEE58F07BE (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4844,7 +4844,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107510
+// Method Definition Index: 107555
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* Terrain_get_normalmapTexture_m0B073CA3D5CD8E6176A8512B6B095F7BBE0D4C53 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4883,7 +4883,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107511
+// Method Definition Index: 107556
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawTreesAndFoliage_mD04FA3FDAAF4C49C875AFF6DA926531AD2190187 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4919,7 +4919,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107512
+// Method Definition Index: 107557
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawTreesAndFoliage_mCF36A66A7AC9072D3EC5706A9213CFC46D38689A (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4955,7 +4955,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107513
+// Method Definition Index: 107558
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Terrain_get_patchBoundsMultiplier_m9FFCE6D0355BE5853182DAEF3DA4043EE3CC7435 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4993,7 +4993,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107514
+// Method Definition Index: 107559
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_patchBoundsMultiplier_mD5B6AED331E3843988403FD13BBC2E625344BAAC (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5028,7 +5028,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107515
+// Method Definition Index: 107560
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_SampleHeight_m460F9060BC4D5F05275391A6AC05570047EF3177 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_worldPosition, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5064,7 +5064,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107516
+// Method Definition Index: 107561
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_AddTreeInstance_mD11FD23312CDF066606036F336EC317FC63B6436 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, TreeInstance_t382B018173ED020660D262061EA9424682614F50 ___0_instance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5099,7 +5099,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107517
+// Method Definition Index: 107562
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetNeighbors_m2FFA89D199120125D264EF7EE0BC749A35514C1E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_left, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___1_top, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___2_right, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___3_bottom, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5147,7 +5147,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107518
+// Method Definition Index: 107563
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeLODBiasMultiplier_m1BB2454CBE32BB3AE525E5F0FAD8F9363CBB7DCA (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5183,7 +5183,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107519
+// Method Definition Index: 107564
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeLODBiasMultiplier_mD8287BC51A55A0B68C2066F3C22AD1C18AE863E5 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5219,7 +5219,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107520
+// Method Definition Index: 107565
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_collectDetailPatches_m0E86F73ABD8BDC8DE29A062D307BCEC4E03EE64B (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5255,7 +5255,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107521
+// Method Definition Index: 107566
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_collectDetailPatches_m1FC681318E104B97274412E3C80F04FF90E6B564 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5291,7 +5291,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107522
+// Method Definition Index: 107567
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_ignoreQualitySettings_m173884E86DDCA1F511B1C4A59FC14BEA356693CB (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5327,7 +5327,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107523
+// Method Definition Index: 107568
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_ignoreQualitySettings_m46E198F92258132EDBEA5491AADE5A3149EE9780 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5363,7 +5363,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107524
+// Method Definition Index: 107569
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_editorRenderFlags_mE55875C5D3E964CC1275FC4ACAF3674D9D8793F4 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5399,7 +5399,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107525
+// Method Definition Index: 107570
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_editorRenderFlags_m891E1F37730C9E3D6ABDED416B360A3EB0468C8A (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5435,7 +5435,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107526
+// Method Definition Index: 107571
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Terrain_GetPosition_m5A1020F22CA4B1818E69A3B9687668AFAB2C43F5 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5473,7 +5473,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107527
+// Method Definition Index: 107572
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Flush_m960CA9087AB6C18BE3C6B54DD993B5E728E5FA95 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5508,7 +5508,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107528
+// Method Definition Index: 107573
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_RemoveTrees_mD2D7E380123771264CEB2306594DE290AD604EB7 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_position, float ___1_radius, int32_t ___2_prototypeIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5545,7 +5545,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107529
+// Method Definition Index: 107574
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetSplatMaterialPropertyBlock_mF7D441C25CA04812F7A95D5CDBAA6F4ACA6D7F0E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, MaterialPropertyBlock_t2308669579033A857EFE6E4831909F638B27411D* ___0_properties, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5613,7 +5613,7 @@ IL_001e:
 		return;
 	}
 }
-// Method Definition Index: 107530
+// Method Definition Index: 107575
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetSplatMaterialPropertyBlock_m12C9F2F14B6D92021E72AE994D438E2C6DF69FEF (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, MaterialPropertyBlock_t2308669579033A857EFE6E4831909F638B27411D* ___0_dest, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -5639,7 +5639,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 107531
+// Method Definition Index: 107576
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Internal_GetSplatMaterialPropertyBlock_m30EF43010BAE0F7F7AD19041E36A4F44F023D61E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, MaterialPropertyBlock_t2308669579033A857EFE6E4831909F638B27411D* ___0_dest, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5707,7 +5707,7 @@ IL_001e:
 		return;
 	}
 }
-// Method Definition Index: 107532
+// Method Definition Index: 107577
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_treeMotionVectorModeOverride_mDB25A728890AD3B16057940451AC9DE3ACBCE859 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5743,7 +5743,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107533
+// Method Definition Index: 107578
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeMotionVectorModeOverride_m24581C6A921EFDB811EA3D560664158D18AEF65D (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5779,7 +5779,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107534
+// Method Definition Index: 107579
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_preserveTreePrototypeLayers_m8C45D508EBB7A14A25920093D24AFC66E2ACFBD6 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5815,7 +5815,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107535
+// Method Definition Index: 107580
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_preserveTreePrototypeLayers_mCBE60BF8EE44DA31170E32B8C31B64393A8EC4DA (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5851,7 +5851,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107536
+// Method Definition Index: 107581
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapFormat_m7BDD479FF7710457999A405C226D2AEE901DDF87 (const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_heightmapFormat_m7BDD479FF7710457999A405C226D2AEE901DDF87_ftn) ();
@@ -5861,7 +5861,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapFormat_m7BDD479F
 	int32_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 107537
+// Method Definition Index: 107582
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapTextureFormat_mD3B13DC4664DDB71E4C4CD1CE95ACC9DF35B9722 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5887,7 +5887,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 107538
+// Method Definition Index: 107583
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapRenderTextureFormat_m81550AE5326309C22601E667FA4F5032DDE56BC5 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5913,7 +5913,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 107539
+// Method Definition Index: 107584
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_normalmapFormat_m70C88E3838D7938A60BFBBEF5BB2EFCD99EBA716 (const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_normalmapFormat_m70C88E3838D7938A60BFBBEF5BB2EFCD99EBA716_ftn) ();
@@ -5923,7 +5923,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_normalmapFormat_m70C88E38
 	int32_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 107540
+// Method Definition Index: 107585
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_normalmapTextureFormat_m4599EE3389898A7589ABC29F50DB337BC2F81BFC (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5949,7 +5949,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 107541
+// Method Definition Index: 107586
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_normalmapRenderTextureFormat_mE32604BFA382DEE5EF9E223FC5B0AED451FBB7A5 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5975,7 +5975,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 107542
+// Method Definition Index: 107587
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_holesFormat_m3BCE4632B6CE7D1A058070DC65CEDEF5365838BE (const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_holesFormat_m3BCE4632B6CE7D1A058070DC65CEDEF5365838BE_ftn) ();
@@ -5985,7 +5985,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_holesFormat_m3BCE4632B6CE
 	int32_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 107543
+// Method Definition Index: 107588
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_holesRenderTextureFormat_m960C437EC8DA9338ED56323263AD6F8B5CB6CD3B (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6011,7 +6011,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 107544
+// Method Definition Index: 107589
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_compressedHolesFormat_m386E6544EE29FC198609605B796C8DD06983658C (const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_compressedHolesFormat_m386E6544EE29FC198609605B796C8DD06983658C_ftn) ();
@@ -6021,7 +6021,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_compressedHolesFormat_m38
 	int32_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 107545
+// Method Definition Index: 107590
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_compressedHolesTextureFormat_m1613558760307F7999EEFE230A1DFC612BE73A33 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6047,7 +6047,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 107546
+// Method Definition Index: 107591
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* Terrain_get_activeTerrain_mAE5A7FE933C2C1A57FC9542E9BFA315A413F224E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6064,7 +6064,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665C
 		return L_1;
 	}
 }
-// Method Definition Index: 107547
+// Method Definition Index: 107592
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetConnectivityDirty_mE2F27F3B012109EC58BA2B37711EAAA9329CF91C (const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_SetConnectivityDirty_mE2F27F3B012109EC58BA2B37711EAAA9329CF91C_ftn) ();
@@ -6073,7 +6073,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetConnectivityDirty_mE2F27F3B01
 	_il2cpp_icall_func = (Terrain_SetConnectivityDirty_mE2F27F3B012109EC58BA2B37711EAAA9329CF91C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::SetConnectivityDirty()");
 	_il2cpp_icall_func();
 }
-// Method Definition Index: 107548
+// Method Definition Index: 107593
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* Terrain_get_activeTerrains_mB90A9BC89764F626D13F3EF1420EA8D3E186B701 (const RuntimeMethod* method) 
 {
 	typedef TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* (*Terrain_get_activeTerrains_mB90A9BC89764F626D13F3EF1420EA8D3E186B701_ftn) ();
@@ -6083,7 +6083,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD
 	TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 107549
+// Method Definition Index: 107594
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetActiveTerrains_mED4BDC0714F7743290CEC886012B04A81DC77686 (List_1_tD2AD001A66810CB968E98D9E635A799408554017* ___0_terrainList, const RuntimeMethod* method) 
 {
 	{
@@ -6092,7 +6092,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetActiveTerrains_mED4BDC0714F77
 		return;
 	}
 }
-// Method Definition Index: 107550
+// Method Definition Index: 107595
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Internal_FillActiveTerrainList_m00E77C57C0ED1C10647C734780A511DF56B50692 (RuntimeObject* ___0_terrainList, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6120,7 +6120,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 107551
+// Method Definition Index: 107596
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Terrain_CreateTerrainGameObject_m31CBC26A8971667B09CC08C868EA31E8A5D29522 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* ___0_assignTerrain, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6141,7 +6141,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		return L_3;
 	}
 }
-// Method Definition Index: 107552
+// Method Definition Index: 107597
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* Terrain_get_leftNeighbor_mA42E758BD513BC9E0FB87888FC24B3C4349A353E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6180,7 +6180,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107553
+// Method Definition Index: 107598
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* Terrain_get_rightNeighbor_mA50D19F61FFBA544E94733B097D4409B15FECC17 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6219,7 +6219,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107554
+// Method Definition Index: 107599
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* Terrain_get_topNeighbor_mCBC502C4CC0D617863D7A3A726EBFA4BD18BDF8C (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6258,7 +6258,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107555
+// Method Definition Index: 107600
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* Terrain_get_bottomNeighbor_m31306E01318F62D214B5E0966C988FB24255406F (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6297,7 +6297,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107556
+// Method Definition Index: 107601
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Terrain_get_renderingLayerMask_m8A0C2E21E7DC988D9DF2E058DA231D0AA13ECC31 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6333,7 +6333,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107557
+// Method Definition Index: 107602
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_renderingLayerMask_m5F843E15CF24EF2BE27AEB21F1C9E6C846F2D249 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, uint32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6369,7 +6369,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107558
+// Method Definition Index: 107603
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_splatmapDistance_m0FC2686DCFB5606FE515B9B7EC720FE92C96065E (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -6386,7 +6386,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107559
+// Method Definition Index: 107604
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_splatmapDistance_m863B50B87A1DF039426E79D916E690A1E2EAFAF3 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6395,7 +6395,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_splatmapDistance_m863B50B87A
 		return;
 	}
 }
-// Method Definition Index: 107560
+// Method Definition Index: 107605
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_castShadows_m3323F44BE250A712E8D34CE3C5D4EC7F1AD87BC7 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -6412,7 +6412,7 @@ IL_000d:
 		return L_1;
 	}
 }
-// Method Definition Index: 107561
+// Method Definition Index: 107606
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_castShadows_mEC211FA9586B718ED5436632A566DE8D6C0E26AB (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* G_B2_0 = NULL;
@@ -6447,7 +6447,7 @@ IL_0009:
 		return;
 	}
 }
-// Method Definition Index: 107562
+// Method Definition Index: 107607
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_materialType_m4DA6FCD1D6E98FFB51B163E852CB904522B60FCB (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -6462,14 +6462,14 @@ IL_0005:
 		return L_0;
 	}
 }
-// Method Definition Index: 107563
+// Method Definition Index: 107608
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_materialType_mC78AA6B3C29A28909943D2498C281CE882E8D50F (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 107564
+// Method Definition Index: 107609
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Terrain_get_legacySpecular_m9066C975D891182376AB99BEDDC9B66EAB841C30 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -6487,14 +6487,14 @@ IL_0009:
 		return L_1;
 	}
 }
-// Method Definition Index: 107565
+// Method Definition Index: 107610
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_legacySpecular_m8576A8BD0E10E6C5F88D324C317367522BEF7242 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 107566
+// Method Definition Index: 107611
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_legacyShininess_mA4C410EBAF37DB0A6986890C41ED2627AE9846B7 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -6509,14 +6509,14 @@ IL_0009:
 		return L_0;
 	}
 }
-// Method Definition Index: 107567
+// Method Definition Index: 107612
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_legacyShininess_mA4716046912CE099D9B58B1CD70F2063455BE757 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 107568
+// Method Definition Index: 107613
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_ApplyDelayedHeightmapModification_m7C23AC364F9431B7F890B47F8D3EFA3FB268DB01 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* G_B2_0 = NULL;
@@ -6547,7 +6547,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 107569
+// Method Definition Index: 107614
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain__ctor_m11F03EC6C1E68752DDCAE8EF2DED99CFD939FCDC (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6555,7 +6555,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain__ctor_m11F03EC6C1E68752DDCAE8EF2
 		return;
 	}
 }
-// Method Definition Index: 107570
+// Method Definition Index: 107615
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_terrainData_Injected_m3FC31FFCC4C519951263DF3FA656AC9F74172893 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_terrainData_Injected_m3FC31FFCC4C519951263DF3FA656AC9F74172893_ftn) (intptr_t);
@@ -6565,7 +6565,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_terrainData_Injected_m3F
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107571
+// Method Definition Index: 107616
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_terrainData_Injected_mA794B56F48B6367A2DE7E664B317123BD4E6CE8E (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_terrainData_Injected_mA794B56F48B6367A2DE7E664B317123BD4E6CE8E_ftn) (intptr_t, intptr_t);
@@ -6574,7 +6574,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_terrainData_Injected_mA794B5
 	_il2cpp_icall_func = (Terrain_set_terrainData_Injected_mA794B56F48B6367A2DE7E664B317123BD4E6CE8E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_terrainData_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107572
+// Method Definition Index: 107617
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeDistance_Injected_mBCA4B744980B87B46DC83A50E33A061233269C1B (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_treeDistance_Injected_mBCA4B744980B87B46DC83A50E33A061233269C1B_ftn) (intptr_t);
@@ -6584,7 +6584,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeDistance_Injected_mBCA4
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107573
+// Method Definition Index: 107618
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeDistance_Injected_m390E800853A3825EBB0E2C81D2AEB7949EDD8A4D (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_treeDistance_Injected_m390E800853A3825EBB0E2C81D2AEB7949EDD8A4D_ftn) (intptr_t, float);
@@ -6593,7 +6593,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeDistance_Injected_m390E8
 	_il2cpp_icall_func = (Terrain_set_treeDistance_Injected_m390E800853A3825EBB0E2C81D2AEB7949EDD8A4D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_treeDistance_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107574
+// Method Definition Index: 107619
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeBillboardDistance_Injected_m279053CABEE2139A47B9B987F30B2EF1EA7AD779 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_treeBillboardDistance_Injected_m279053CABEE2139A47B9B987F30B2EF1EA7AD779_ftn) (intptr_t);
@@ -6603,7 +6603,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeBillboardDistance_Injec
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107575
+// Method Definition Index: 107620
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeBillboardDistance_Injected_m0CE7792D395B4F4D2BCB7A03A8B6B0BB27DDAC52 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_treeBillboardDistance_Injected_m0CE7792D395B4F4D2BCB7A03A8B6B0BB27DDAC52_ftn) (intptr_t, float);
@@ -6612,7 +6612,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeBillboardDistance_Inject
 	_il2cpp_icall_func = (Terrain_set_treeBillboardDistance_Injected_m0CE7792D395B4F4D2BCB7A03A8B6B0BB27DDAC52_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_treeBillboardDistance_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107576
+// Method Definition Index: 107621
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeCrossFadeLength_Injected_mF9A7D8C135A11934A389B527ADB2108F08CFA470 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_treeCrossFadeLength_Injected_mF9A7D8C135A11934A389B527ADB2108F08CFA470_ftn) (intptr_t);
@@ -6622,7 +6622,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeCrossFadeLength_Injecte
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107577
+// Method Definition Index: 107622
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeCrossFadeLength_Injected_m9017425C18EAA0EEE4E7609BFCB16987B7261438 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_treeCrossFadeLength_Injected_m9017425C18EAA0EEE4E7609BFCB16987B7261438_ftn) (intptr_t, float);
@@ -6631,7 +6631,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeCrossFadeLength_Injected
 	_il2cpp_icall_func = (Terrain_set_treeCrossFadeLength_Injected_m9017425C18EAA0EEE4E7609BFCB16987B7261438_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_treeCrossFadeLength_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107578
+// Method Definition Index: 107623
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_treeMaximumFullLODCount_Injected_m80DF713C2ADE24BDD878B81A664E3201AFCD1A0E (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_treeMaximumFullLODCount_Injected_m80DF713C2ADE24BDD878B81A664E3201AFCD1A0E_ftn) (intptr_t);
@@ -6641,7 +6641,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_treeMaximumFullLODCount_I
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107579
+// Method Definition Index: 107624
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeMaximumFullLODCount_Injected_m2F6DE75420AD4FDBE35C1FBCD45F795E94AC1F52 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_treeMaximumFullLODCount_Injected_m2F6DE75420AD4FDBE35C1FBCD45F795E94AC1F52_ftn) (intptr_t, int32_t);
@@ -6650,7 +6650,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeMaximumFullLODCount_Inje
 	_il2cpp_icall_func = (Terrain_set_treeMaximumFullLODCount_Injected_m2F6DE75420AD4FDBE35C1FBCD45F795E94AC1F52_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_treeMaximumFullLODCount_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107580
+// Method Definition Index: 107625
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_detailObjectDistance_Injected_mD1CCE6D59449856FDC52BC09337695F0FD212C08 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_detailObjectDistance_Injected_mD1CCE6D59449856FDC52BC09337695F0FD212C08_ftn) (intptr_t);
@@ -6660,7 +6660,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_detailObjectDistance_Inject
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107581
+// Method Definition Index: 107626
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_detailObjectDistance_Injected_m3923B4A332155FE147B50DE346AFF56B133F18FA (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_detailObjectDistance_Injected_m3923B4A332155FE147B50DE346AFF56B133F18FA_ftn) (intptr_t, float);
@@ -6669,7 +6669,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_detailObjectDistance_Injecte
 	_il2cpp_icall_func = (Terrain_set_detailObjectDistance_Injected_m3923B4A332155FE147B50DE346AFF56B133F18FA_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_detailObjectDistance_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107582
+// Method Definition Index: 107627
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_detailObjectDensity_Injected_m8174F0364E1EE585DF3B959E7240296F2D6A3747 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_detailObjectDensity_Injected_m8174F0364E1EE585DF3B959E7240296F2D6A3747_ftn) (intptr_t);
@@ -6679,7 +6679,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_detailObjectDensity_Injecte
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107583
+// Method Definition Index: 107628
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_detailObjectDensity_Injected_m02B0191A411B282FE8FEA21B02893482FBE2F297 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_detailObjectDensity_Injected_m02B0191A411B282FE8FEA21B02893482FBE2F297_ftn) (intptr_t, float);
@@ -6688,7 +6688,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_detailObjectDensity_Injected
 	_il2cpp_icall_func = (Terrain_set_detailObjectDensity_Injected_m02B0191A411B282FE8FEA21B02893482FBE2F297_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_detailObjectDensity_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107584
+// Method Definition Index: 107629
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_heightmapPixelError_Injected_m89251A01F63EDF2F9320F59D586541201A731343 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_heightmapPixelError_Injected_m89251A01F63EDF2F9320F59D586541201A731343_ftn) (intptr_t);
@@ -6698,7 +6698,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_heightmapPixelError_Injecte
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107585
+// Method Definition Index: 107630
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapPixelError_Injected_m3100C2735FAE503656BCF831D73CA751D1737A05 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_heightmapPixelError_Injected_m3100C2735FAE503656BCF831D73CA751D1737A05_ftn) (intptr_t, float);
@@ -6707,7 +6707,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapPixelError_Injected
 	_il2cpp_icall_func = (Terrain_set_heightmapPixelError_Injected_m3100C2735FAE503656BCF831D73CA751D1737A05_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_heightmapPixelError_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107586
+// Method Definition Index: 107631
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapMaximumLOD_Injected_mCB947D511730F2BCFB53E6536B12D9EBB6699304 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_heightmapMaximumLOD_Injected_mCB947D511730F2BCFB53E6536B12D9EBB6699304_ftn) (intptr_t);
@@ -6717,7 +6717,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapMaximumLOD_Injec
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107587
+// Method Definition Index: 107632
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapMaximumLOD_Injected_mC48B9DDA8E26DE63B4700A285F6BC9BE7AA9F379 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_heightmapMaximumLOD_Injected_mC48B9DDA8E26DE63B4700A285F6BC9BE7AA9F379_ftn) (intptr_t, int32_t);
@@ -6726,7 +6726,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapMaximumLOD_Injected
 	_il2cpp_icall_func = (Terrain_set_heightmapMaximumLOD_Injected_mC48B9DDA8E26DE63B4700A285F6BC9BE7AA9F379_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_heightmapMaximumLOD_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107588
+// Method Definition Index: 107633
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapMinimumLODSimplification_Injected_mABEFE5B4C9D4F4A6DFA807C1A1B60127AC3E2EAD (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_heightmapMinimumLODSimplification_Injected_mABEFE5B4C9D4F4A6DFA807C1A1B60127AC3E2EAD_ftn) (intptr_t);
@@ -6736,7 +6736,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_heightmapMinimumLODSimpli
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107589
+// Method Definition Index: 107634
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapMinimumLODSimplification_Injected_m2E212CB43B1555729520328F9419950D659157B8 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_heightmapMinimumLODSimplification_Injected_m2E212CB43B1555729520328F9419950D659157B8_ftn) (intptr_t, int32_t);
@@ -6745,7 +6745,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_heightmapMinimumLODSimplific
 	_il2cpp_icall_func = (Terrain_set_heightmapMinimumLODSimplification_Injected_m2E212CB43B1555729520328F9419950D659157B8_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_heightmapMinimumLODSimplification_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107590
+// Method Definition Index: 107635
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_basemapDistance_Injected_mFD8DB4BBC55E5D40EF979AAC5976B5AF805E9515 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_basemapDistance_Injected_mFD8DB4BBC55E5D40EF979AAC5976B5AF805E9515_ftn) (intptr_t);
@@ -6755,7 +6755,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_basemapDistance_Injected_mF
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107591
+// Method Definition Index: 107636
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_basemapDistance_Injected_mB9F13C62C51FBC124EAC5977C6EA320ADDC733E3 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_basemapDistance_Injected_mB9F13C62C51FBC124EAC5977C6EA320ADDC733E3_ftn) (intptr_t, float);
@@ -6764,7 +6764,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_basemapDistance_Injected_mB9
 	_il2cpp_icall_func = (Terrain_set_basemapDistance_Injected_mB9F13C62C51FBC124EAC5977C6EA320ADDC733E3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_basemapDistance_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107592
+// Method Definition Index: 107637
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_lightmapIndex_Injected_mA56F0489018B59084822EBABE86B9BD4BC118229 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_lightmapIndex_Injected_mA56F0489018B59084822EBABE86B9BD4BC118229_ftn) (intptr_t);
@@ -6774,7 +6774,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_lightmapIndex_Injected_mA
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107593
+// Method Definition Index: 107638
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_lightmapIndex_Injected_m4362DBCCE196B70891D99B708CCEEBFE4F5EB0CD (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_lightmapIndex_Injected_m4362DBCCE196B70891D99B708CCEEBFE4F5EB0CD_ftn) (intptr_t, int32_t);
@@ -6783,7 +6783,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_lightmapIndex_Injected_m4362
 	_il2cpp_icall_func = (Terrain_set_lightmapIndex_Injected_m4362DBCCE196B70891D99B708CCEEBFE4F5EB0CD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_lightmapIndex_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107594
+// Method Definition Index: 107639
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_realtimeLightmapIndex_Injected_mB27EB6D7C7D97794F34B3A4F7326CFC1EA13355E (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_realtimeLightmapIndex_Injected_mB27EB6D7C7D97794F34B3A4F7326CFC1EA13355E_ftn) (intptr_t);
@@ -6793,7 +6793,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_realtimeLightmapIndex_Inj
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107595
+// Method Definition Index: 107640
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_realtimeLightmapIndex_Injected_mFAE7288B73A4055C04F323C7B7158C96A717D929 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_realtimeLightmapIndex_Injected_mFAE7288B73A4055C04F323C7B7158C96A717D929_ftn) (intptr_t, int32_t);
@@ -6802,7 +6802,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_realtimeLightmapIndex_Inject
 	_il2cpp_icall_func = (Terrain_set_realtimeLightmapIndex_Injected_mFAE7288B73A4055C04F323C7B7158C96A717D929_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_realtimeLightmapIndex_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107596
+// Method Definition Index: 107641
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_get_lightmapScaleOffset_Injected_mE5A94D86820CFD0AFF235B73DD39B9BF127A06D6 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_get_lightmapScaleOffset_Injected_mE5A94D86820CFD0AFF235B73DD39B9BF127A06D6_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -6811,7 +6811,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_get_lightmapScaleOffset_Injected
 	_il2cpp_icall_func = (Terrain_get_lightmapScaleOffset_Injected_mE5A94D86820CFD0AFF235B73DD39B9BF127A06D6_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::get_lightmapScaleOffset_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107597
+// Method Definition Index: 107642
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_lightmapScaleOffset_Injected_m10838B7C099ABFCA3EB4BEF2B79F00EE077D1CB2 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_lightmapScaleOffset_Injected_m10838B7C099ABFCA3EB4BEF2B79F00EE077D1CB2_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -6820,7 +6820,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_lightmapScaleOffset_Injected
 	_il2cpp_icall_func = (Terrain_set_lightmapScaleOffset_Injected_m10838B7C099ABFCA3EB4BEF2B79F00EE077D1CB2_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_lightmapScaleOffset_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107598
+// Method Definition Index: 107643
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_get_realtimeLightmapScaleOffset_Injected_mA7C63D5D29D21468C3606F78A522B2D90F3CCD00 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_get_realtimeLightmapScaleOffset_Injected_mA7C63D5D29D21468C3606F78A522B2D90F3CCD00_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -6829,7 +6829,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_get_realtimeLightmapScaleOffset_
 	_il2cpp_icall_func = (Terrain_get_realtimeLightmapScaleOffset_Injected_mA7C63D5D29D21468C3606F78A522B2D90F3CCD00_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::get_realtimeLightmapScaleOffset_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107599
+// Method Definition Index: 107644
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_realtimeLightmapScaleOffset_Injected_m37F7789413CED9BE0404E2AF4F09141CC255FA02 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_realtimeLightmapScaleOffset_Injected_m37F7789413CED9BE0404E2AF4F09141CC255FA02_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -6838,7 +6838,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_realtimeLightmapScaleOffset_
 	_il2cpp_icall_func = (Terrain_set_realtimeLightmapScaleOffset_Injected_m37F7789413CED9BE0404E2AF4F09141CC255FA02_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_realtimeLightmapScaleOffset_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107600
+// Method Definition Index: 107645
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_freeUnusedRenderingResources_Injected_m26F2EBEB9C3767449BB38763DD1114E87A680EC8 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_freeUnusedRenderingResources_Injected_m26F2EBEB9C3767449BB38763DD1114E87A680EC8_ftn) (intptr_t);
@@ -6848,7 +6848,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_freeUnusedRenderingResources
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107601
+// Method Definition Index: 107646
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_freeUnusedRenderingResources_Injected_m1A862B11988AA0EC7F543296E159AC611136DCA4 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_freeUnusedRenderingResources_Injected_m1A862B11988AA0EC7F543296E159AC611136DCA4_ftn) (intptr_t, bool);
@@ -6857,7 +6857,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_freeUnusedRenderingResources
 	_il2cpp_icall_func = (Terrain_set_freeUnusedRenderingResources_Injected_m1A862B11988AA0EC7F543296E159AC611136DCA4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_freeUnusedRenderingResources_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107602
+// Method Definition Index: 107647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_keepUnusedRenderingResources_Injected_mD81D3BBB63E0569FD074D3A59D59244093A9B21F (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_keepUnusedRenderingResources_Injected_mD81D3BBB63E0569FD074D3A59D59244093A9B21F_ftn) (intptr_t);
@@ -6867,7 +6867,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_keepUnusedRenderingResources
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107603
+// Method Definition Index: 107648
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_keepUnusedRenderingResources_Injected_mE2E6420606D5A64B7F3B11EACCAB8789CB8B5B5E (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_keepUnusedRenderingResources_Injected_mE2E6420606D5A64B7F3B11EACCAB8789CB8B5B5E_ftn) (intptr_t, bool);
@@ -6876,7 +6876,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_keepUnusedRenderingResources
 	_il2cpp_icall_func = (Terrain_set_keepUnusedRenderingResources_Injected_mE2E6420606D5A64B7F3B11EACCAB8789CB8B5B5E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_keepUnusedRenderingResources_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107604
+// Method Definition Index: 107649
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_GetKeepUnusedCameraRenderingResources_Injected_mC2830614206E196E1D3CD78FB09FD2895A9FA6D7 (intptr_t ___0__unity_self, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8* ___1_cameraEntityId, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_GetKeepUnusedCameraRenderingResources_Injected_mC2830614206E196E1D3CD78FB09FD2895A9FA6D7_ftn) (intptr_t, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8*);
@@ -6886,7 +6886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_GetKeepUnusedCameraRenderingReso
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_cameraEntityId);
 	return icallRetVal;
 }
-// Method Definition Index: 107605
+// Method Definition Index: 107650
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetKeepUnusedCameraRenderingResources_Injected_m6B2679C017ABAAC2280B15AF54D0EAA3E1BBE7E4 (intptr_t ___0__unity_self, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8* ___1_cameraEntityId, bool ___2_keepUnused, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_SetKeepUnusedCameraRenderingResources_Injected_m6B2679C017ABAAC2280B15AF54D0EAA3E1BBE7E4_ftn) (intptr_t, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8*, bool);
@@ -6895,7 +6895,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetKeepUnusedCameraRenderingReso
 	_il2cpp_icall_func = (Terrain_SetKeepUnusedCameraRenderingResources_Injected_m6B2679C017ABAAC2280B15AF54D0EAA3E1BBE7E4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::SetKeepUnusedCameraRenderingResources_Injected(System.IntPtr,UnityEngine.EntityId&,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_cameraEntityId, ___2_keepUnused);
 }
-// Method Definition Index: 107606
+// Method Definition Index: 107651
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_shadowCastingMode_Injected_m3DA36069B4CCA833970B68BE42C2D20E26557E4B (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_shadowCastingMode_Injected_m3DA36069B4CCA833970B68BE42C2D20E26557E4B_ftn) (intptr_t);
@@ -6905,7 +6905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_shadowCastingMode_Injecte
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107607
+// Method Definition Index: 107652
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_shadowCastingMode_Injected_mD0833DC281029FB8A033BDC395567EE5C443C795 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_shadowCastingMode_Injected_mD0833DC281029FB8A033BDC395567EE5C443C795_ftn) (intptr_t, int32_t);
@@ -6914,7 +6914,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_shadowCastingMode_Injected_m
 	_il2cpp_icall_func = (Terrain_set_shadowCastingMode_Injected_mD0833DC281029FB8A033BDC395567EE5C443C795_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_shadowCastingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowCastingMode)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107608
+// Method Definition Index: 107653
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_reflectionProbeUsage_Injected_m8E8F64FAF5F3BB37B1963816406DAA7125FF0395 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_reflectionProbeUsage_Injected_m8E8F64FAF5F3BB37B1963816406DAA7125FF0395_ftn) (intptr_t);
@@ -6924,7 +6924,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_reflectionProbeUsage_Inje
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107609
+// Method Definition Index: 107654
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_reflectionProbeUsage_Injected_m832AFE11A27636E0EB82886FED76ECC15174C617 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_reflectionProbeUsage_Injected_m832AFE11A27636E0EB82886FED76ECC15174C617_ftn) (intptr_t, int32_t);
@@ -6933,7 +6933,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_reflectionProbeUsage_Injecte
 	_il2cpp_icall_func = (Terrain_set_reflectionProbeUsage_Injected_m832AFE11A27636E0EB82886FED76ECC15174C617_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_reflectionProbeUsage_Injected(System.IntPtr,UnityEngine.Rendering.ReflectionProbeUsage)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107610
+// Method Definition Index: 107655
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetClosestReflectionProbes_Injected_mBB7210BBF5418A35EAB331F885652BDC312FEBA0 (intptr_t ___0__unity_self, List_1_t1100962F75A3C1A8DDD989C01DEE91D38A84082A* ___1_result, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_GetClosestReflectionProbes_Injected_mBB7210BBF5418A35EAB331F885652BDC312FEBA0_ftn) (intptr_t, List_1_t1100962F75A3C1A8DDD989C01DEE91D38A84082A*);
@@ -6942,7 +6942,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetClosestReflectionProbes_Injec
 	_il2cpp_icall_func = (Terrain_GetClosestReflectionProbes_Injected_mBB7210BBF5418A35EAB331F885652BDC312FEBA0_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::GetClosestReflectionProbes_Injected(System.IntPtr,System.Collections.Generic.List`1<UnityEngine.Rendering.ReflectionProbeBlendInfo>)");
 	_il2cpp_icall_func(___0__unity_self, ___1_result);
 }
-// Method Definition Index: 107611
+// Method Definition Index: 107656
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_materialTemplate_Injected_mFF5D43AD4E441665E3CA44D692291450A1AD3A3F (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_materialTemplate_Injected_mFF5D43AD4E441665E3CA44D692291450A1AD3A3F_ftn) (intptr_t);
@@ -6952,7 +6952,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_materialTemplate_Injecte
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107612
+// Method Definition Index: 107657
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_materialTemplate_Injected_mF60DC74D8EAC62E7B6517D672349BAEFD9B25429 (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_materialTemplate_Injected_mF60DC74D8EAC62E7B6517D672349BAEFD9B25429_ftn) (intptr_t, intptr_t);
@@ -6961,7 +6961,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_materialTemplate_Injected_mF
 	_il2cpp_icall_func = (Terrain_set_materialTemplate_Injected_mF60DC74D8EAC62E7B6517D672349BAEFD9B25429_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_materialTemplate_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107613
+// Method Definition Index: 107658
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawHeightmap_Injected_mF0F9D18A32BD41C7C7E5D61270D1FEEA789E8210 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_drawHeightmap_Injected_mF0F9D18A32BD41C7C7E5D61270D1FEEA789E8210_ftn) (intptr_t);
@@ -6971,7 +6971,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawHeightmap_Injected_mF0F9
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107614
+// Method Definition Index: 107659
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawHeightmap_Injected_mE2A57AAA6EA7A51E3ED398692F2DC8F05D1C3D87 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_drawHeightmap_Injected_mE2A57AAA6EA7A51E3ED398692F2DC8F05D1C3D87_ftn) (intptr_t, bool);
@@ -6980,7 +6980,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawHeightmap_Injected_mE2A5
 	_il2cpp_icall_func = (Terrain_set_drawHeightmap_Injected_mE2A57AAA6EA7A51E3ED398692F2DC8F05D1C3D87_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_drawHeightmap_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107615
+// Method Definition Index: 107660
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_allowAutoConnect_Injected_m74E9E8819248B352E4ED1137195ACE399A555051 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_allowAutoConnect_Injected_m74E9E8819248B352E4ED1137195ACE399A555051_ftn) (intptr_t);
@@ -6990,7 +6990,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_allowAutoConnect_Injected_m7
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107616
+// Method Definition Index: 107661
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_allowAutoConnect_Injected_m884A5E4E9D257B605832DF429073F6DE2AE94103 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_allowAutoConnect_Injected_m884A5E4E9D257B605832DF429073F6DE2AE94103_ftn) (intptr_t, bool);
@@ -6999,7 +6999,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_allowAutoConnect_Injected_m8
 	_il2cpp_icall_func = (Terrain_set_allowAutoConnect_Injected_m884A5E4E9D257B605832DF429073F6DE2AE94103_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_allowAutoConnect_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107617
+// Method Definition Index: 107662
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_groupingID_Injected_mA9DE75C25C170261E5DDDFB0CC7C429C83CC2E96 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_groupingID_Injected_mA9DE75C25C170261E5DDDFB0CC7C429C83CC2E96_ftn) (intptr_t);
@@ -7009,7 +7009,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_groupingID_Injected_mA9DE
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107618
+// Method Definition Index: 107663
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_groupingID_Injected_mDE7606B644A762553F390928EF68CE863F654B87 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_groupingID_Injected_mDE7606B644A762553F390928EF68CE863F654B87_ftn) (intptr_t, int32_t);
@@ -7018,7 +7018,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_groupingID_Injected_mDE7606B
 	_il2cpp_icall_func = (Terrain_set_groupingID_Injected_mDE7606B644A762553F390928EF68CE863F654B87_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_groupingID_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107619
+// Method Definition Index: 107664
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawInstanced_Injected_m8CAD05E308214C369DDDB2266531FA12A3C773A1 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_drawInstanced_Injected_m8CAD05E308214C369DDDB2266531FA12A3C773A1_ftn) (intptr_t);
@@ -7028,7 +7028,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawInstanced_Injected_m8CAD
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107620
+// Method Definition Index: 107665
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawInstanced_Injected_mC1B86FA99A38FD95FE2B80D698D3434C463C5B19 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_drawInstanced_Injected_mC1B86FA99A38FD95FE2B80D698D3434C463C5B19_ftn) (intptr_t, bool);
@@ -7037,7 +7037,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawInstanced_Injected_mC1B8
 	_il2cpp_icall_func = (Terrain_set_drawInstanced_Injected_mC1B86FA99A38FD95FE2B80D698D3434C463C5B19_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_drawInstanced_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107621
+// Method Definition Index: 107666
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_enableHeightmapRayTracing_Injected_m75E221EDFCC15B9AC03180B89E728A7BC8FE4F73 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_enableHeightmapRayTracing_Injected_m75E221EDFCC15B9AC03180B89E728A7BC8FE4F73_ftn) (intptr_t);
@@ -7047,7 +7047,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_enableHeightmapRayTracing_In
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107622
+// Method Definition Index: 107667
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_enableHeightmapRayTracing_Injected_mD038E76784965BEDFDC08405A2973054CC6AD11C (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_enableHeightmapRayTracing_Injected_mD038E76784965BEDFDC08405A2973054CC6AD11C_ftn) (intptr_t, bool);
@@ -7056,7 +7056,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_enableHeightmapRayTracing_In
 	_il2cpp_icall_func = (Terrain_set_enableHeightmapRayTracing_Injected_mD038E76784965BEDFDC08405A2973054CC6AD11C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_enableHeightmapRayTracing_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107623
+// Method Definition Index: 107668
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_normalmapTexture_Injected_m390387ECA1703DAD6BA5B50F2826D7B13D7A673E (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_normalmapTexture_Injected_m390387ECA1703DAD6BA5B50F2826D7B13D7A673E_ftn) (intptr_t);
@@ -7066,7 +7066,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_normalmapTexture_Injecte
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107624
+// Method Definition Index: 107669
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawTreesAndFoliage_Injected_mB9ADF9040564BA331BE890D4DB3D77B5204D01F8 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_drawTreesAndFoliage_Injected_mB9ADF9040564BA331BE890D4DB3D77B5204D01F8_ftn) (intptr_t);
@@ -7076,7 +7076,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_drawTreesAndFoliage_Injected
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107625
+// Method Definition Index: 107670
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawTreesAndFoliage_Injected_m4E2DA7B70F4C32647D83024379E4E3D1E4C45031 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_drawTreesAndFoliage_Injected_m4E2DA7B70F4C32647D83024379E4E3D1E4C45031_ftn) (intptr_t, bool);
@@ -7085,7 +7085,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_drawTreesAndFoliage_Injected
 	_il2cpp_icall_func = (Terrain_set_drawTreesAndFoliage_Injected_m4E2DA7B70F4C32647D83024379E4E3D1E4C45031_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_drawTreesAndFoliage_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107626
+// Method Definition Index: 107671
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_get_patchBoundsMultiplier_Injected_m4F953DDC0296F8D0210A699944559CF5979C47B7 (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_get_patchBoundsMultiplier_Injected_m4F953DDC0296F8D0210A699944559CF5979C47B7_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -7094,7 +7094,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_get_patchBoundsMultiplier_Inject
 	_il2cpp_icall_func = (Terrain_get_patchBoundsMultiplier_Injected_m4F953DDC0296F8D0210A699944559CF5979C47B7_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::get_patchBoundsMultiplier_Injected(System.IntPtr,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107627
+// Method Definition Index: 107672
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_patchBoundsMultiplier_Injected_m6EC0CB47DF8ECA2DC86CB342B4E7293239E45C3D (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_patchBoundsMultiplier_Injected_m6EC0CB47DF8ECA2DC86CB342B4E7293239E45C3D_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -7103,7 +7103,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_patchBoundsMultiplier_Inject
 	_il2cpp_icall_func = (Terrain_set_patchBoundsMultiplier_Injected_m6EC0CB47DF8ECA2DC86CB342B4E7293239E45C3D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_patchBoundsMultiplier_Injected(System.IntPtr,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107628
+// Method Definition Index: 107673
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_SampleHeight_Injected_m1EAE62B9FA454DD81536367601AA303A7F872287 (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_worldPosition, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_SampleHeight_Injected_m1EAE62B9FA454DD81536367601AA303A7F872287_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -7113,7 +7113,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_SampleHeight_Injected_m1EAE62B9
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_worldPosition);
 	return icallRetVal;
 }
-// Method Definition Index: 107629
+// Method Definition Index: 107674
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_AddTreeInstance_Injected_m9F1E5FAE252D0BF48B5C5B429EEA7499392CE890 (intptr_t ___0__unity_self, TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___1_instance, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_AddTreeInstance_Injected_m9F1E5FAE252D0BF48B5C5B429EEA7499392CE890_ftn) (intptr_t, TreeInstance_t382B018173ED020660D262061EA9424682614F50*);
@@ -7122,7 +7122,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_AddTreeInstance_Injected_m9F1E5F
 	_il2cpp_icall_func = (Terrain_AddTreeInstance_Injected_m9F1E5FAE252D0BF48B5C5B429EEA7499392CE890_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::AddTreeInstance_Injected(System.IntPtr,UnityEngine.TreeInstance&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_instance);
 }
-// Method Definition Index: 107630
+// Method Definition Index: 107675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetNeighbors_Injected_m1F6944296C8F749845DD36AFC524E75B5C4EEE87 (intptr_t ___0__unity_self, intptr_t ___1_left, intptr_t ___2_top, intptr_t ___3_right, intptr_t ___4_bottom, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_SetNeighbors_Injected_m1F6944296C8F749845DD36AFC524E75B5C4EEE87_ftn) (intptr_t, intptr_t, intptr_t, intptr_t, intptr_t);
@@ -7131,7 +7131,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetNeighbors_Injected_m1F6944296
 	_il2cpp_icall_func = (Terrain_SetNeighbors_Injected_m1F6944296C8F749845DD36AFC524E75B5C4EEE87_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::SetNeighbors_Injected(System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_left, ___2_top, ___3_right, ___4_bottom);
 }
-// Method Definition Index: 107631
+// Method Definition Index: 107676
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeLODBiasMultiplier_Injected_m52EF5E1684A448EA772E90C9BEDC2DE6BFFBD0B8 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*Terrain_get_treeLODBiasMultiplier_Injected_m52EF5E1684A448EA772E90C9BEDC2DE6BFFBD0B8_ftn) (intptr_t);
@@ -7141,7 +7141,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Terrain_get_treeLODBiasMultiplier_Injec
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107632
+// Method Definition Index: 107677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeLODBiasMultiplier_Injected_m45AC425F44162576D7593D8F9A32C8B17C7ACF09 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_treeLODBiasMultiplier_Injected_m45AC425F44162576D7593D8F9A32C8B17C7ACF09_ftn) (intptr_t, float);
@@ -7150,7 +7150,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeLODBiasMultiplier_Inject
 	_il2cpp_icall_func = (Terrain_set_treeLODBiasMultiplier_Injected_m45AC425F44162576D7593D8F9A32C8B17C7ACF09_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_treeLODBiasMultiplier_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107633
+// Method Definition Index: 107678
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_collectDetailPatches_Injected_m35B970AF64940D2B1ED2A71957C46D0E9A402FE7 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_collectDetailPatches_Injected_m35B970AF64940D2B1ED2A71957C46D0E9A402FE7_ftn) (intptr_t);
@@ -7160,7 +7160,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_collectDetailPatches_Injecte
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107634
+// Method Definition Index: 107679
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_collectDetailPatches_Injected_m64F694C375F7084D940D7CBE605FFFFEAD4A0FAD (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_collectDetailPatches_Injected_m64F694C375F7084D940D7CBE605FFFFEAD4A0FAD_ftn) (intptr_t, bool);
@@ -7169,7 +7169,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_collectDetailPatches_Injecte
 	_il2cpp_icall_func = (Terrain_set_collectDetailPatches_Injected_m64F694C375F7084D940D7CBE605FFFFEAD4A0FAD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_collectDetailPatches_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107635
+// Method Definition Index: 107680
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_ignoreQualitySettings_Injected_mB970F15EF73C907F7930E6A391B823363A4CE5C4 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_ignoreQualitySettings_Injected_mB970F15EF73C907F7930E6A391B823363A4CE5C4_ftn) (intptr_t);
@@ -7179,7 +7179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_ignoreQualitySettings_Inject
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107636
+// Method Definition Index: 107681
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_ignoreQualitySettings_Injected_m85F0CF8DA391FC131A33C4173E697581BBD17F83 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_ignoreQualitySettings_Injected_m85F0CF8DA391FC131A33C4173E697581BBD17F83_ftn) (intptr_t, bool);
@@ -7188,7 +7188,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_ignoreQualitySettings_Inject
 	_il2cpp_icall_func = (Terrain_set_ignoreQualitySettings_Injected_m85F0CF8DA391FC131A33C4173E697581BBD17F83_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_ignoreQualitySettings_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107637
+// Method Definition Index: 107682
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_editorRenderFlags_Injected_mCDB6995DB6A9AD7CDDA9F7AA9F3C98847198F34A (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_editorRenderFlags_Injected_mCDB6995DB6A9AD7CDDA9F7AA9F3C98847198F34A_ftn) (intptr_t);
@@ -7198,7 +7198,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_editorRenderFlags_Injecte
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107638
+// Method Definition Index: 107683
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_editorRenderFlags_Injected_mCF768D3B0B687A70CEF7AAA4ADD8FAED0E61FEE7 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_editorRenderFlags_Injected_mCF768D3B0B687A70CEF7AAA4ADD8FAED0E61FEE7_ftn) (intptr_t, int32_t);
@@ -7207,7 +7207,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_editorRenderFlags_Injected_m
 	_il2cpp_icall_func = (Terrain_set_editorRenderFlags_Injected_mCF768D3B0B687A70CEF7AAA4ADD8FAED0E61FEE7_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_editorRenderFlags_Injected(System.IntPtr,UnityEngine.TerrainRenderFlags)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107639
+// Method Definition Index: 107684
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetPosition_Injected_m5ED8678D88B1C06DA6DBA93D6BE6040EFFB69BED (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_GetPosition_Injected_m5ED8678D88B1C06DA6DBA93D6BE6040EFFB69BED_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -7216,7 +7216,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_GetPosition_Injected_m5ED8678D88
 	_il2cpp_icall_func = (Terrain_GetPosition_Injected_m5ED8678D88B1C06DA6DBA93D6BE6040EFFB69BED_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::GetPosition_Injected(System.IntPtr,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107640
+// Method Definition Index: 107685
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Flush_Injected_m2B22608ACE3D05577B5B3F1BDF6CDB4B078C342C (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_Flush_Injected_m2B22608ACE3D05577B5B3F1BDF6CDB4B078C342C_ftn) (intptr_t);
@@ -7225,7 +7225,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Flush_Injected_m2B22608ACE3D0557
 	_il2cpp_icall_func = (Terrain_Flush_Injected_m2B22608ACE3D05577B5B3F1BDF6CDB4B078C342C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::Flush_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107641
+// Method Definition Index: 107686
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_RemoveTrees_Injected_mDBCFCEA8E57200F1797FAB3DDB14E796A068B06B (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_position, float ___2_radius, int32_t ___3_prototypeIndex, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_RemoveTrees_Injected_mDBCFCEA8E57200F1797FAB3DDB14E796A068B06B_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*, float, int32_t);
@@ -7234,7 +7234,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_RemoveTrees_Injected_mDBCFCEA8E5
 	_il2cpp_icall_func = (Terrain_RemoveTrees_Injected_mDBCFCEA8E57200F1797FAB3DDB14E796A068B06B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::RemoveTrees_Injected(System.IntPtr,UnityEngine.Vector2&,System.Single,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_position, ___2_radius, ___3_prototypeIndex);
 }
-// Method Definition Index: 107642
+// Method Definition Index: 107687
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetSplatMaterialPropertyBlock_Injected_m47DF86D6CE7E50ACBF498E406F3FDABDA525AA20 (intptr_t ___0__unity_self, intptr_t ___1_properties, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_SetSplatMaterialPropertyBlock_Injected_m47DF86D6CE7E50ACBF498E406F3FDABDA525AA20_ftn) (intptr_t, intptr_t);
@@ -7243,7 +7243,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_SetSplatMaterialPropertyBlock_In
 	_il2cpp_icall_func = (Terrain_SetSplatMaterialPropertyBlock_Injected_m47DF86D6CE7E50ACBF498E406F3FDABDA525AA20_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::SetSplatMaterialPropertyBlock_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_properties);
 }
-// Method Definition Index: 107643
+// Method Definition Index: 107688
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Internal_GetSplatMaterialPropertyBlock_Injected_mFB3FF8CD50AA2E13650E150CDDBA2E89592D3780 (intptr_t ___0__unity_self, intptr_t ___1_dest, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_Internal_GetSplatMaterialPropertyBlock_Injected_mFB3FF8CD50AA2E13650E150CDDBA2E89592D3780_ftn) (intptr_t, intptr_t);
@@ -7252,7 +7252,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Internal_GetSplatMaterialPropert
 	_il2cpp_icall_func = (Terrain_Internal_GetSplatMaterialPropertyBlock_Injected_mFB3FF8CD50AA2E13650E150CDDBA2E89592D3780_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::Internal_GetSplatMaterialPropertyBlock_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_dest);
 }
-// Method Definition Index: 107644
+// Method Definition Index: 107689
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_treeMotionVectorModeOverride_Injected_m1A564C0B31BA97C7A95F653E3913A5633FCB4D17 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Terrain_get_treeMotionVectorModeOverride_Injected_m1A564C0B31BA97C7A95F653E3913A5633FCB4D17_ftn) (intptr_t);
@@ -7262,7 +7262,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Terrain_get_treeMotionVectorModeOverr
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107645
+// Method Definition Index: 107690
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeMotionVectorModeOverride_Injected_m4F7ECFD647E24BB87A4D53D5D1CF515915C4759C (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_treeMotionVectorModeOverride_Injected_m4F7ECFD647E24BB87A4D53D5D1CF515915C4759C_ftn) (intptr_t, int32_t);
@@ -7271,7 +7271,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_treeMotionVectorModeOverride
 	_il2cpp_icall_func = (Terrain_set_treeMotionVectorModeOverride_Injected_m4F7ECFD647E24BB87A4D53D5D1CF515915C4759C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_treeMotionVectorModeOverride_Injected(System.IntPtr,UnityEngine.TreeMotionVectorModeOverride)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107646
+// Method Definition Index: 107691
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_preserveTreePrototypeLayers_Injected_mE9D4CC085B0E0F149F260066EB14C3976A2EFFE6 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Terrain_get_preserveTreePrototypeLayers_Injected_mE9D4CC085B0E0F149F260066EB14C3976A2EFFE6_ftn) (intptr_t);
@@ -7281,7 +7281,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Terrain_get_preserveTreePrototypeLayers_
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107647
+// Method Definition Index: 107692
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_preserveTreePrototypeLayers_Injected_m480E422934C2C89192315B51A176E593831EE6E4 (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_preserveTreePrototypeLayers_Injected_m480E422934C2C89192315B51A176E593831EE6E4_ftn) (intptr_t, bool);
@@ -7290,7 +7290,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_preserveTreePrototypeLayers_
 	_il2cpp_icall_func = (Terrain_set_preserveTreePrototypeLayers_Injected_m480E422934C2C89192315B51A176E593831EE6E4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::set_preserveTreePrototypeLayers_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107648
+// Method Definition Index: 107693
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_activeTerrain_Injected_m61F23FA7A9B82577E0F00775FF1249A0C9F3AE1F (const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_activeTerrain_Injected_m61F23FA7A9B82577E0F00775FF1249A0C9F3AE1F_ftn) ();
@@ -7300,7 +7300,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_activeTerrain_Injected_m
 	intptr_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 107649
+// Method Definition Index: 107694
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Internal_FillActiveTerrainList_Injected_mC989BC8884C1BA740B6E3AEC9AD3DC30C781C8C4 (RuntimeObject* ___0_terrainList, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_Internal_FillActiveTerrainList_Injected_mC989BC8884C1BA740B6E3AEC9AD3DC30C781C8C4_ftn) (RuntimeObject*);
@@ -7309,7 +7309,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_Internal_FillActiveTerrainList_I
 	_il2cpp_icall_func = (Terrain_Internal_FillActiveTerrainList_Injected_mC989BC8884C1BA740B6E3AEC9AD3DC30C781C8C4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Terrain::Internal_FillActiveTerrainList_Injected(System.Object)");
 	_il2cpp_icall_func(___0_terrainList);
 }
-// Method Definition Index: 107650
+// Method Definition Index: 107695
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_CreateTerrainGameObject_Injected_mC2A713F618BD7447BFA622373AB526377578081D (intptr_t ___0_assignTerrain, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_CreateTerrainGameObject_Injected_mC2A713F618BD7447BFA622373AB526377578081D_ftn) (intptr_t);
@@ -7319,7 +7319,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_CreateTerrainGameObject_Inje
 	intptr_t icallRetVal = _il2cpp_icall_func(___0_assignTerrain);
 	return icallRetVal;
 }
-// Method Definition Index: 107651
+// Method Definition Index: 107696
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_leftNeighbor_Injected_mC5B2966F043EC998B42A6AA5B8E6A1B4A862A4B7 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_leftNeighbor_Injected_mC5B2966F043EC998B42A6AA5B8E6A1B4A862A4B7_ftn) (intptr_t);
@@ -7329,7 +7329,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_leftNeighbor_Injected_mC
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107652
+// Method Definition Index: 107697
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_rightNeighbor_Injected_mD65A5E2A11BA2092959AECEB2C5329F800B57385 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_rightNeighbor_Injected_mD65A5E2A11BA2092959AECEB2C5329F800B57385_ftn) (intptr_t);
@@ -7339,7 +7339,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_rightNeighbor_Injected_m
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107653
+// Method Definition Index: 107698
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_topNeighbor_Injected_mC377A2F7F49E18B6711BA058F8768861204A86E5 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_topNeighbor_Injected_mC377A2F7F49E18B6711BA058F8768861204A86E5_ftn) (intptr_t);
@@ -7349,7 +7349,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_topNeighbor_Injected_mC3
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107654
+// Method Definition Index: 107699
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_bottomNeighbor_Injected_mD3E3671DE1954E4B012873F01A994F5472C69DE1 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Terrain_get_bottomNeighbor_Injected_mD3E3671DE1954E4B012873F01A994F5472C69DE1_ftn) (intptr_t);
@@ -7359,7 +7359,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Terrain_get_bottomNeighbor_Injected_
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107655
+// Method Definition Index: 107700
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Terrain_get_renderingLayerMask_Injected_mF0D90A072685F8A9F9CB4F546F074D2E4014D77C (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef uint32_t (*Terrain_get_renderingLayerMask_Injected_mF0D90A072685F8A9F9CB4F546F074D2E4014D77C_ftn) (intptr_t);
@@ -7369,7 +7369,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Terrain_get_renderingLayerMask_Injec
 	uint32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107656
+// Method Definition Index: 107701
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_renderingLayerMask_Injected_mB4228BEAE35DE5066E0CF6E52DA28E982390D420 (intptr_t ___0__unity_self, uint32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Terrain_set_renderingLayerMask_Injected_mB4228BEAE35DE5066E0CF6E52DA28E982390D420_ftn) (intptr_t, uint32_t);
@@ -7394,7 +7394,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Terrain_set_renderingLayerMask_Injected_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107657
+// Method Definition Index: 107702
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCallbacks_InvokeHeightmapChangedCallback_m731ED939CBD563CCCE503062602DF5908205AD04 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* ___0_terrainData, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___1_heightRegion, bool ___2_synched, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7462,7 +7462,7 @@ IL_0037:
 		return;
 	}
 }
-// Method Definition Index: 107658
+// Method Definition Index: 107703
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCallbacks_InvokeTextureChangedCallback_mB508E8B7A884854AA01AE5B88AB33E1AE40F4318 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* ___0_terrainData, String_t* ___1_textureName, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___2_texelRegion, bool ___3_synched, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7561,7 +7561,7 @@ void HeightmapChangedCallback_Invoke_m63C1C93709641DBE02DCE9F71B7895C5793AF875_O
 	typedef void (*FunctionPointerType) (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667*, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr)(___0_terrain, ___1_heightRegion, ___2_synched, method);
 }
-// Method Definition Index: 107659
+// Method Definition Index: 107704
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HeightmapChangedCallback__ctor_m6A7E4189E0A7A1B70EE73818B93B0FC9F613648C (HeightmapChangedCallback_tDF97623B4D5F5E1F3F7F75CC922345B098036EC0* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -7598,7 +7598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HeightmapChangedCallback__ctor_m6A7E4189
 	}
 	__this->___extra_arg = (intptr_t)&HeightmapChangedCallback_Invoke_m63C1C93709641DBE02DCE9F71B7895C5793AF875_Multicast;
 }
-// Method Definition Index: 107660
+// Method Definition Index: 107705
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HeightmapChangedCallback_Invoke_m63C1C93709641DBE02DCE9F71B7895C5793AF875 (HeightmapChangedCallback_tDF97623B4D5F5E1F3F7F75CC922345B098036EC0* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_terrain, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___1_heightRegion, bool ___2_synched, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667*, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8, bool, const RuntimeMethod*);
@@ -7634,7 +7634,7 @@ void TextureChangedCallback_Invoke_m1194A44102843272B51A70C302EBDBC8214647DE_Ope
 	typedef void (*FunctionPointerType) (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667*, String_t*, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr)(___0_terrain, ___1_textureName, ___2_texelRegion, ___3_synched, method);
 }
-// Method Definition Index: 107661
+// Method Definition Index: 107706
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextureChangedCallback__ctor_m64076D799FEB79E3D6BE2C4EB33CD081A398F0EF (TextureChangedCallback_tA2D79601BF5AFEC6C8674AA03DAD28844CE69D2F* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -7671,7 +7671,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextureChangedCallback__ctor_m64076D799F
 	}
 	__this->___extra_arg = (intptr_t)&TextureChangedCallback_Invoke_m1194A44102843272B51A70C302EBDBC8214647DE_Multicast;
 }
-// Method Definition Index: 107662
+// Method Definition Index: 107707
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextureChangedCallback_Invoke_m1194A44102843272B51A70C302EBDBC8214647DE (TextureChangedCallback_tA2D79601BF5AFEC6C8674AA03DAD28844CE69D2F* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_terrain, String_t* ___1_textureName, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___2_texelRegion, bool ___3_synched, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667*, String_t*, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8, bool, const RuntimeMethod*);
@@ -7739,7 +7739,7 @@ IL2CPP_EXTERN_C void TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D_mar
 IL2CPP_EXTERN_C void TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D_marshal_com_cleanup(TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 107663
+// Method Definition Index: 107708
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* TreePrototype_get_prefab_mCE1630C35B09770D35B2ECA45B98D1CB6D5AC67C (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, const RuntimeMethod* method) 
 {
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
@@ -7755,7 +7755,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107664
+// Method Definition Index: 107709
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TreePrototype_get_bendFactor_mC78774070395FFBEF5588233ED4C40D253F2B087 (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -7771,7 +7771,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107665
+// Method Definition Index: 107710
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TreePrototype_get_navMeshLod_m68F7C292A64B7560076E09BF0B3AB6D681886C6C (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -7787,7 +7787,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107666
+// Method Definition Index: 107711
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TreePrototype__ctor_m319858B89E2F9AF0FD4009A015E2A34776F6CAC5 (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7795,7 +7795,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TreePrototype__ctor_m319858B89E2F9AF0FD4
 		return;
 	}
 }
-// Method Definition Index: 107667
+// Method Definition Index: 107712
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TreePrototype_Equals_m50E85BD703A2633D4ECA590DB0F1B803EE192F9A (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7819,7 +7819,7 @@ IL_0010:
 		return L_2;
 	}
 }
-// Method Definition Index: 107668
+// Method Definition Index: 107713
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TreePrototype_GetHashCode_m3E71334805650043E1C12F1FD6228D6281560E91 (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -7836,7 +7836,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107669
+// Method Definition Index: 107714
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TreePrototype_Equals_m6F39B894827A28E1ADBF4403922FFCA8CF55E265 (TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* __this, TreePrototype_tA221EF2DEEEF8152E67DC6C07B55EACFDF2AF07D* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8039,7 +8039,7 @@ IL2CPP_EXTERN_C void DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B_m
 IL2CPP_EXTERN_C void DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B_marshal_com_cleanup(DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 107670
+// Method Definition Index: 107715
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DetailPrototype__ctor_m9157B5DBD1A80AF51E9090177A751EB401247103 (DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8077,7 +8077,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DetailPrototype__ctor_m9157B5DBD1A80AF51
 		return;
 	}
 }
-// Method Definition Index: 107671
+// Method Definition Index: 107716
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DetailPrototype_Equals_m4366EA36A57FC1391A85828835FD5B493A573E93 (DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8101,7 +8101,7 @@ IL_0010:
 		return L_2;
 	}
 }
-// Method Definition Index: 107672
+// Method Definition Index: 107717
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DetailPrototype_GetHashCode_m7C87FF388D92F7A9396DC46F1F4DB4AC436D9ED0 (DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -8118,7 +8118,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107673
+// Method Definition Index: 107718
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DetailPrototype_Equals_mDCF0B4B10AB82B883A1B1EE9F286D92A99636B20 (DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B* __this, DetailPrototype_t131E17755ED167435F60BA3F70869DA3876E254B* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8381,7 +8381,7 @@ IL_015b:
 		return L_64;
 	}
 }
-// Method Definition Index: 107674
+// Method Definition Index: 107719
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DetailPrototype__cctor_m5D5A4C448F2584173CF5618DD3CB725B16F6406F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8464,7 +8464,7 @@ IL2CPP_EXTERN_C void SplatPrototype_t111B5B35A39EAF28A52C3CB2EFBA5F18ECA09BA8_ma
 IL2CPP_EXTERN_C void SplatPrototype_t111B5B35A39EAF28A52C3CB2EFBA5F18ECA09BA8_marshal_com_cleanup(SplatPrototype_t111B5B35A39EAF28A52C3CB2EFBA5F18ECA09BA8_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 107675
+// Method Definition Index: 107720
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SplatPrototype__ctor_m8F453C42984513A7B33BD5E9B728F4082B7D57A5 (SplatPrototype_t111B5B35A39EAF28A52C3CB2EFBA5F18ECA09BA8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8525,7 +8525,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SplatPrototype__ctor_m8F453C42984513A7B3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107676
+// Method Definition Index: 107721
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_GetBoundaryValue_mA9217CC15BBC958C9F7071B96CE74769EFDC322E (int32_t ___0_type, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_GetBoundaryValue_mA9217CC15BBC958C9F7071B96CE74769EFDC322E_ftn) (int32_t);
@@ -8535,7 +8535,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_GetBoundaryValue_mA9217CC
 	int32_t icallRetVal = _il2cpp_icall_func(___0_type);
 	return icallRetVal;
 }
-// Method Definition Index: 107677
+// Method Definition Index: 107722
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData__ctor_m1B68EB89248D5706C2528F47279812F824E27A2E (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8553,7 +8553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData__ctor_m1B68EB89248D5706C2528
 		return;
 	}
 }
-// Method Definition Index: 107678
+// Method Definition Index: 107723
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_Create_m79BF764CFF5F49D17E2BFC8B20F60B4CF70BE4E1 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* ___0_terrainData, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_Create_m79BF764CFF5F49D17E2BFC8B20F60B4CF70BE4E1_ftn) (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24*);
@@ -8562,7 +8562,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_Create_m79BF764CFF5
 	_il2cpp_icall_func = (TerrainData_Internal_Create_m79BF764CFF5F49D17E2BFC8B20F60B4CF70BE4E1_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_Create(UnityEngine.TerrainData)");
 	_il2cpp_icall_func(___0_terrainData);
 }
-// Method Definition Index: 107679
+// Method Definition Index: 107724
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_UpdateDirtyRegion_m6A9D35DED10DC4E5BD43B27D01022E697D6E5E11 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, int32_t ___2_width, int32_t ___3_height, bool ___4_syncHeightmapTextureImmediately, const RuntimeMethod* method) 
 {
 	RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 G_B2_0;
@@ -8614,7 +8614,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 107680
+// Method Definition Index: 107725
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_heightmapWidth_mBD11F8B3F89DD66B275CA91759534A22DCE070A6 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8623,7 +8623,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_heightmapWidth_mBD11F
 		return L_0;
 	}
 }
-// Method Definition Index: 107681
+// Method Definition Index: 107726
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_heightmapHeight_mDCB90912307BA444DCB3B21648050812E5278757 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8632,7 +8632,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_heightmapHeight_mDCB9
 		return L_0;
 	}
 }
-// Method Definition Index: 107682
+// Method Definition Index: 107727
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* TerrainData_get_heightmapTexture_m26CB863455F0048CEA74741C71BF3021576FF8CE (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8673,7 +8673,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107683
+// Method Definition Index: 107728
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_heightmapResolution_m39FE9A5C31A80B28021F8E2484EF5F2664798836 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -8690,7 +8690,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107684
+// Method Definition Index: 107729
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_heightmapResolution_m2E5AA9451129E9460D9573CCA899DC1F3CFFDD21 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8762,7 +8762,7 @@ IL_0049:
 		return;
 	}
 }
-// Method Definition Index: 107685
+// Method Definition Index: 107730
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_internalHeightmapResolution_m83C6A32499AAAAFDD57DF73BA460CBCF02F98118 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8800,7 +8800,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107686
+// Method Definition Index: 107731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_internalHeightmapResolution_m18F96875BE176D13F26A55AEBB0343902D5C1B5A (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8838,7 +8838,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107687
+// Method Definition Index: 107732
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 TerrainData_get_heightmapScale_m4B6AB6495384109BA54955CA52B883A118015188 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8878,7 +8878,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107688
+// Method Definition Index: 107733
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700* TerrainData_get_holesTexture_m967249F842D3BFC631ED03C847C41EE4D0A56912 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -8914,7 +8914,7 @@ IL_001f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107689
+// Method Definition Index: 107734
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_get_enableHolesTextureCompression_m6BA8BB7840CEF3B832D7C64D91689BECBBA1E920 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8952,7 +8952,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107690
+// Method Definition Index: 107735
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_enableHolesTextureCompression_mDD73FBE3EA89453DB6FA3BA236FB527B2F71EE7C (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8990,7 +8990,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107691
+// Method Definition Index: 107736
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* TerrainData_get_holesRenderTexture_m953821042F6D4FF04EB1FD861BBA604DED1F1A74 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* V_0 = NULL;
@@ -9007,7 +9007,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107692
+// Method Definition Index: 107737
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_IsHolesTextureCompressed_mBFE653BBF59360E5382F66592EF1F3E48ED4057D (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9045,7 +9045,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107693
+// Method Definition Index: 107738
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* TerrainData_GetHolesTexture_mE1BC7A225983716A760BA8ACEFEC6DEFF6EA572A (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9086,7 +9086,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107694
+// Method Definition Index: 107739
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* TerrainData_GetCompressedHolesTexture_m219472651551DC5C4613B441C27E504DA693411F (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9127,7 +9127,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107695
+// Method Definition Index: 107740
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_holesResolution_m9DE109FB3A0874F7F4706543D0903AFA12D1BC53 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9136,7 +9136,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_holesResolution_m9DE1
 		return ((int32_t)il2cpp_codegen_subtract(L_0, 1));
 	}
 }
-// Method Definition Index: 107696
+// Method Definition Index: 107741
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 TerrainData_get_size_mCD3977F344B9DEBFF61DD537D03FEB9473838DA5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9176,7 +9176,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107697
+// Method Definition Index: 107742
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_size_m4F3EF9EDDF9BE2E0903FE3A5121D8F4ABDA46DC1 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9213,7 +9213,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107698
+// Method Definition Index: 107743
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 TerrainData_get_bounds_m9CE9B3BF067EA06A837AB98B5BC6C0C4669B5A32 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9253,7 +9253,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107699
+// Method Definition Index: 107744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_thickness_m7B81848297CCC307A8D171AAAF49F950A287F237 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -9268,14 +9268,14 @@ IL_0009:
 		return L_0;
 	}
 }
-// Method Definition Index: 107700
+// Method Definition Index: 107745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_thickness_m5D4165CE2D3C2952DB0EB26EBEF4AC75F5B03781 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 107701
+// Method Definition Index: 107746
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetHeight_mC0FAC93E5B8128D5B918EDDDFEE55F6E3E23E8D5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9315,7 +9315,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107702
+// Method Definition Index: 107747
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetInterpolatedHeight_m30AAF72C79B6BE19E23962304DB80B21023B5752 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_x, float ___1_y, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9355,7 +9355,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107703
+// Method Definition Index: 107748
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* TerrainData_GetInterpolatedHeights_mF8E7DEF026AB7676FC3BC35CE413A80D7A4DA648 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_xBase, float ___1_yBase, int32_t ___2_xCount, int32_t ___3_yCount, float ___4_xInterval, float ___5_yInterval, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9426,7 +9426,7 @@ IL_004f:
 		return L_19;
 	}
 }
-// Method Definition Index: 107704
+// Method Definition Index: 107749
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetInterpolatedHeights_mC8D6FE42800B4480E1863D795445A4D1630D0E57 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* ___0_results, int32_t ___1_resultXOffset, int32_t ___2_resultYOffset, float ___3_xBase, float ___4_yBase, int32_t ___5_xCount, int32_t ___6_yCount, float ___7_xInterval, float ___8_yInterval, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -9580,7 +9580,7 @@ IL_008a:
 		return;
 	}
 }
-// Method Definition Index: 107705
+// Method Definition Index: 107750
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetInterpolatedHeights_m4794EE72628D345B4F3A7571806BCA0BE61B11AF (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* ___0_results, int32_t ___1_resultXDimension, int32_t ___2_resultXOffset, int32_t ___3_resultYOffset, float ___4_xBase, float ___5_yBase, int32_t ___6_xCount, int32_t ___7_yCount, float ___8_xInterval, float ___9_yInterval, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9697,7 +9697,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 107706
+// Method Definition Index: 107751
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* TerrainData_GetHeights_m3E5C109E98E72A23E39B92F7DF48D87888B2D488 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -9790,7 +9790,7 @@ IL_004e:
 		return L_19;
 	}
 }
-// Method Definition Index: 107707
+// Method Definition Index: 107752
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* TerrainData_Internal_GetHeights_mEDF77233265AFA8901DE8FB61661385337B70810 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9832,7 +9832,7 @@ IL_000f:
 		return L_6;
 	}
 }
-// Method Definition Index: 107708
+// Method Definition Index: 107753
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetHeights_m104C6E5C4E4A12223AA0E2E123E0557302097F23 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* ___2_heights, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -9972,7 +9972,7 @@ IL_0091:
 		return;
 	}
 }
-// Method Definition Index: 107709
+// Method Definition Index: 107754
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHeights_m8E3E77B7A38E85521BF693D7EB3B9E277CDBE12E (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* ___4_heights, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10124,7 +10124,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 107710
+// Method Definition Index: 107755
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PatchExtentsU5BU5D_tA31F13F7C5F2F8726998CFA38395494EEAEFB63B* TerrainData_GetPatchMinMaxHeights_mF44EB92C548A6218079F957B1387919E7C5B0334 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10192,7 +10192,7 @@ IL_0025:
 		return L_3;
 	}
 }
-// Method Definition Index: 107711
+// Method Definition Index: 107756
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_OverrideMinMaxPatchHeights_m6C6C7B6DC573747776B0E4DB710CAFF410AC9E4B (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, PatchExtentsU5BU5D_tA31F13F7C5F2F8726998CFA38395494EEAEFB63B* ___0_minMaxHeights, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10247,7 +10247,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107712
+// Method Definition Index: 107757
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* TerrainData_GetMaximumHeightError_m9BB2B3C5FFBDE5C38F4A858F75E1FF056BC66706 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10315,7 +10315,7 @@ IL_0025:
 		return L_3;
 	}
 }
-// Method Definition Index: 107713
+// Method Definition Index: 107758
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_OverrideMaximumHeightError_mEE18F9EF4470CD87A4130D37936975D2E4B7CDEC (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___0_maxError, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10370,7 +10370,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107714
+// Method Definition Index: 107759
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetHeightsDelayLOD_m72A8BE616AC1D0CFF5834ABE2654F8C172EA3FF1 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* ___2_heights, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -10532,7 +10532,7 @@ IL_00b0:
 		return;
 	}
 }
-// Method Definition Index: 107715
+// Method Definition Index: 107760
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHeightsDelayLOD_m9DA0CBE8DE96316DC8AA8EBD652ECC42459B3658 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* ___4_heights, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10684,7 +10684,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 107716
+// Method Definition Index: 107761
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_IsHole_m1C0EDB14F8EDCBF6AB6CFEFC52485B3E8FD04A7B (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -10757,7 +10757,7 @@ IL_003c:
 		return L_11;
 	}
 }
-// Method Definition Index: 107717
+// Method Definition Index: 107762
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* TerrainData_GetHoles_mE81BB7B6E8764586CC5BA130AC075536D0617318 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -10848,7 +10848,7 @@ IL_004a:
 		return L_17;
 	}
 }
-// Method Definition Index: 107718
+// Method Definition Index: 107763
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetHoles_mDC03D926A9AD88D971A74C0343C4B0D765B612FA (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* ___2_holes, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -11000,7 +11000,7 @@ IL_00a4:
 		return;
 	}
 }
-// Method Definition Index: 107719
+// Method Definition Index: 107764
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetHolesDelayLOD_m8397B5D2F861B7F41835E28D96E23CA7141B588B (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* ___2_holes, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -11146,7 +11146,7 @@ IL_00a4:
 		return;
 	}
 }
-// Method Definition Index: 107720
+// Method Definition Index: 107765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHoles_m212D61E07A95ECAC00950284E590D6CAED57EC66 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* ___4_holes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11298,7 +11298,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 107721
+// Method Definition Index: 107766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* TerrainData_Internal_GetHoles_m13EE36473247F7D4E96C627CE8A4CBF0D4C329C8 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11340,7 +11340,7 @@ IL_000f:
 		return L_6;
 	}
 }
-// Method Definition Index: 107722
+// Method Definition Index: 107767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_Internal_IsHole_mF0ADC1C43497B05375BBAC01FD9764C86F7DA109 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11380,7 +11380,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107723
+// Method Definition Index: 107768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHolesDelayLOD_m00B8068FAA00FC46BC464B19A58082F8BD05F6BC (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* ___4_holes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11532,7 +11532,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 107724
+// Method Definition Index: 107769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetSteepness_mA0AD10DFEA5D97CF63DBDB34D99E7A43640D93B9 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_x, float ___1_y, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11572,7 +11572,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107725
+// Method Definition Index: 107770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 TerrainData_GetInterpolatedNormal_m2925F25FF12A4DC2F2CDD9331F3E2A55D42D7DCE (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_x, float ___1_y, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11614,7 +11614,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107726
+// Method Definition Index: 107771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_GetAdjustedSize_m17561CC6F50D3E0B7DBA34CA7D8C4F2D57ED5514 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_size, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11653,7 +11653,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107727
+// Method Definition Index: 107772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassStrength_mEE2A93E488F4349999D85D55DD6CD9DB626FF373 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11691,7 +11691,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107728
+// Method Definition Index: 107773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassStrength_m40D1A37A911BD8E430E0CE2FB20A1BDD7E899776 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11729,7 +11729,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107729
+// Method Definition Index: 107774
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassAmount_mAE3A3E9E51DEE6F3062064D55F5FE90105FA18EA (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11767,7 +11767,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107730
+// Method Definition Index: 107775
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassAmount_m42B701F18798FEFCFF39AA29855D12A946AB47CC (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11805,7 +11805,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107731
+// Method Definition Index: 107776
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassSpeed_m4528E32081633762C16079370ADA8DDE1794AB75 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11843,7 +11843,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107732
+// Method Definition Index: 107777
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassSpeed_m45C0014ECD806D1B8877B734F80BBF0E87D7A7D5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11881,7 +11881,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107733
+// Method Definition Index: 107778
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F TerrainData_get_wavingGrassTint_m9D14E1262509149850E101ABF9A4515AD44CFAE7 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11921,7 +11921,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107734
+// Method Definition Index: 107779
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassTint_m5BC16B415EAB6493D1E8541FC8391E23E8E06F74 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11958,7 +11958,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107735
+// Method Definition Index: 107780
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailWidth_m145CC1C91FF8C752907B80338DF03440E53AEBB4 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11996,7 +11996,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107736
+// Method Definition Index: 107781
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailHeight_m1DBBB1664689DD08F64A9AF4023248F23865D304 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12034,7 +12034,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107737
+// Method Definition Index: 107782
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_maxDetailScatterPerRes_m026B44FFA5D74E2AFEEC745D597244B473502851 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12072,7 +12072,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107738
+// Method Definition Index: 107783
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailResolution_mB4D4C5E5AAACFBB2C624006D93CA04FA22CDA76E (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_detailResolution, int32_t ___1_resolutionPerPatch, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12219,7 +12219,7 @@ IL_00cf:
 		return;
 	}
 }
-// Method Definition Index: 107739
+// Method Definition Index: 107784
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailResolution_mF138086D635E5D45AF0357589B4107706DD624D3 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_patchCount, int32_t ___1_resolutionPerPatch, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12258,7 +12258,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107740
+// Method Definition Index: 107785
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailScatterMode_m4567232EA53D4B143108ECC6DBA4438BB28ECB33 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_scatterMode, const RuntimeMethod* method) 
 {
 	{
@@ -12267,7 +12267,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailScatterMode_m456723
 		return;
 	}
 }
-// Method Definition Index: 107741
+// Method Definition Index: 107786
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailScatterMode_mB43FA9629CA81B76A47545BD841E5CB622AFEB68 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_scatterMode, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12305,7 +12305,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107742
+// Method Definition Index: 107787
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailPatchCount_m40F4FD2CE4A805B134F39CFD3C2602301A355B4D (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12343,7 +12343,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107743
+// Method Definition Index: 107788
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailResolution_m999CE72D34D858E7D35182FA8DA05CE3C92F8D72 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12381,7 +12381,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107744
+// Method Definition Index: 107789
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailResolutionPerPatch_mFB05C93330007A6A3121327D203F404AD0600622 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12419,7 +12419,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107745
+// Method Definition Index: 107790
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailScatterMode_m31914761E09DA99C2C34709C9BD76609F1077051 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12457,7 +12457,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107746
+// Method Definition Index: 107791
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_ResetDirtyDetails_m9A648A3CBA741F3B7621B07B58F51C3B0F95C2F8 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12494,7 +12494,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107747
+// Method Definition Index: 107792
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RefreshPrototypes_mCB97A38BE96FAC08C2F2E8C1F38E88C7450CADBC (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12531,7 +12531,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107748
+// Method Definition Index: 107793
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7* TerrainData_get_detailPrototypes_m057F428D22C9FCCD36C6BE6768263DE777C6B2C4 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12569,7 +12569,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107749
+// Method Definition Index: 107794
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_detailPrototypes_m9C9DDFE5DBC3B789A70DAD6D06326C1140057A31 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12607,7 +12607,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107750
+// Method Definition Index: 107795
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* TerrainData_GetSupportedLayers_m207D3CF276D6D6CC2F2E6BEF2271245C1DB99BD5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_totalWidth, int32_t ___3_totalHeight, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12679,7 +12679,7 @@ IL_002a:
 		return L_7;
 	}
 }
-// Method Definition Index: 107751
+// Method Definition Index: 107796
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* TerrainData_GetSupportedLayers_mCE73B4AE3DAE8CC3F53771E6FE67BE34E9E78205 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___0_positionBase, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___1_size, const RuntimeMethod* method) 
 {
 	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* V_0 = NULL;
@@ -12704,7 +12704,7 @@ IL_0026:
 		return L_5;
 	}
 }
-// Method Definition Index: 107752
+// Method Definition Index: 107797
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* TerrainData_GetDetailLayer_m8EB9B85C8CE8836E10D4D54B3A43BFE9AF888591 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_width, int32_t ___3_height, int32_t ___4_layer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12747,7 +12747,7 @@ IL_000f:
 		return L_7;
 	}
 }
-// Method Definition Index: 107753
+// Method Definition Index: 107798
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* TerrainData_GetDetailLayer_m9B343FA7ABE6C0F24714474A22CDBC7BF94204CC (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___0_positionBase, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___1_size, int32_t ___2_layer, const RuntimeMethod* method) 
 {
 	Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* V_0 = NULL;
@@ -12773,7 +12773,7 @@ IL_0027:
 		return L_6;
 	}
 }
-// Method Definition Index: 107754
+// Method Definition Index: 107799
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DetailInstanceTransformU5BU5D_t0CC31B0E422EE00635027CFB8D1605057176CB54* TerrainData_ComputeDetailInstanceTransforms_m81F9EE9500D1C8F2777ADDFFC7D526B5FF445848 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_patchX, int32_t ___1_patchY, int32_t ___2_layer, float ___3_density, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___4_bounds, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12846,7 +12846,7 @@ IL_002c:
 		return L_8;
 	}
 }
-// Method Definition Index: 107755
+// Method Definition Index: 107800
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_ComputeDetailCoverage_mBE71CDF1F8B277AD7EDFB335C3C05FA0575A6038 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_detailPrototypeIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12885,7 +12885,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107756
+// Method Definition Index: 107801
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailLayer_m03F76CB703CB3277723319EBF29B4924E22ED84B (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_layer, Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* ___3_details, const RuntimeMethod* method) 
 {
 	{
@@ -12905,7 +12905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailLayer_m03F76CB703CB
 		return;
 	}
 }
-// Method Definition Index: 107757
+// Method Definition Index: 107802
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailLayer_mD4072ED0A4C79BB8A62DE669F75610DEBF442003 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___0_basePosition, int32_t ___1_layer, Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* ___2_details, const RuntimeMethod* method) 
 {
 	{
@@ -12919,7 +12919,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetDetailLayer_mD4072ED0A4C7
 		return;
 	}
 }
-// Method Definition Index: 107758
+// Method Definition Index: 107803
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailLayer_m782D0D38E2A1BDAEAF1F3E3C2D0282991019899F (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_xBase, int32_t ___1_yBase, int32_t ___2_totalWidth, int32_t ___3_totalHeight, int32_t ___4_detailIndex, Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* ___5_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13082,7 +13082,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 107759
+// Method Definition Index: 107804
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreeInstanceU5BU5D_tA728320FD1360BBC648153584A156DB0B90C2429* TerrainData_get_treeInstances_mDAB68FD1F3677BD5CB122EA943493D5FC94B2147 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	TreeInstanceU5BU5D_tA728320FD1360BBC648153584A156DB0B90C2429* V_0 = NULL;
@@ -13099,7 +13099,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107760
+// Method Definition Index: 107805
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_treeInstances_m4B62FA8A516D3839829AA50209897EDB7647F65D (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, TreeInstanceU5BU5D_tA728320FD1360BBC648153584A156DB0B90C2429* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -13108,7 +13108,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_treeInstances_m4B62FA8A5
 		return;
 	}
 }
-// Method Definition Index: 107761
+// Method Definition Index: 107806
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreeInstanceU5BU5D_tA728320FD1360BBC648153584A156DB0B90C2429* TerrainData_Internal_GetTreeInstances_m0DCDC4D93E2CEC457C5BD8D0FE898B5A632E8347 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13176,7 +13176,7 @@ IL_0025:
 		return L_3;
 	}
 }
-// Method Definition Index: 107762
+// Method Definition Index: 107807
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetTreeInstances_m536FA2F30FE5085FCFB05F7BE8D26943214EAA02 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, TreeInstanceU5BU5D_tA728320FD1360BBC648153584A156DB0B90C2429* ___0_instances, bool ___1_snapToHeightmap, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13246,7 +13246,7 @@ IL_001e:
 		return;
 	}
 }
-// Method Definition Index: 107763
+// Method Definition Index: 107808
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreeInstance_t382B018173ED020660D262061EA9424682614F50 TerrainData_GetTreeInstance_m7D234B2CC46149BCA0F6B8D79BB749D8C61CC500 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -13303,7 +13303,7 @@ IL_002d:
 		return L_7;
 	}
 }
-// Method Definition Index: 107764
+// Method Definition Index: 107809
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreeInstance_t382B018173ED020660D262061EA9424682614F50 TerrainData_Internal_GetTreeInstance_mB86AC8651E537E859C80986BF9B9124177B74CBA (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13344,7 +13344,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107765
+// Method Definition Index: 107810
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetTreeInstance_mADB51401F25DA608A9B9A0E21726BAEFCB2741A3 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_index, TreeInstance_t382B018173ED020660D262061EA9424682614F50 ___1_instance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13382,7 +13382,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107766
+// Method Definition Index: 107811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_treeInstanceCount_mB09A8EC0638DC245D035E2B864EAFEB7EB161982 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13420,7 +13420,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107767
+// Method Definition Index: 107812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A* TerrainData_get_treePrototypes_m0A43789B50E554DACB5DF88C86DA23B89DB33EEB (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13458,7 +13458,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107768
+// Method Definition Index: 107813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_treePrototypes_m5F309E7FFEB234DA8450C4CBD43EB7045C33BCAA (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13496,7 +13496,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107769
+// Method Definition Index: 107814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RemoveTreePrototype_mC1BA50DFCA75319E365AF435F518D11608D32EF0 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13534,7 +13534,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107770
+// Method Definition Index: 107815
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RemoveDetailPrototype_m8D48BCD1F68B474E2D2017F57E24793CFB8C2B52 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13572,7 +13572,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107771
+// Method Definition Index: 107816
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_NeedUpgradeScaledTreePrototypes_mEAA3D3CDB2DB734F6A8B7BD6D9A564203103F6DB (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13610,7 +13610,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107772
+// Method Definition Index: 107817
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_UpgradeScaledTreePrototype_m3A266EA86CFE29A26FC989EDD1DF24C1FAB7E8F7 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13647,7 +13647,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107773
+// Method Definition Index: 107818
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapLayers_mF8A0A4F157F7C56354C5A6E3FABF9F230F410F69 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13685,7 +13685,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107774
+// Method Definition Index: 107819
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* TerrainData_GetAlphamaps_m2DEF5D2068D54BDAE78661483C1FC4936B06EA01 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, int32_t ___2_width, int32_t ___3_height, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -13756,7 +13756,7 @@ IL_0032:
 		return L_11;
 	}
 }
-// Method Definition Index: 107775
+// Method Definition Index: 107820
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* TerrainData_Internal_GetAlphamaps_m6891C19FF72B4394D6BAC3B098A3FCAC1FC6BF36 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, int32_t ___2_width, int32_t ___3_height, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13798,7 +13798,7 @@ IL_000f:
 		return L_6;
 	}
 }
-// Method Definition Index: 107776
+// Method Definition Index: 107821
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapResolution_mC5D1C8FF4A5AFFCCFCF1382FED0D1AD46563D6F8 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -13815,7 +13815,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107777
+// Method Definition Index: 107822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_alphamapResolution_mECF82D6CF9A3C640B18AB6DE14666BF380E03389 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13910,7 +13910,7 @@ IL_0075:
 		return;
 	}
 }
-// Method Definition Index: 107778
+// Method Definition Index: 107823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetAlphamapResolutionInternal_m5C312434763B8F0BD8DE760ACF439DFEFAC2F3E5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13948,7 +13948,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107779
+// Method Definition Index: 107824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_Internal_alphamapResolution_mDA8EF6055A2022B3E1E4E6ECBF8DF4387DE8A930 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13986,7 +13986,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107780
+// Method Definition Index: 107825
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_Internal_alphamapResolution_mA33B7F95DF603037846D76F6061355DDD1C8E556 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14024,7 +14024,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107781
+// Method Definition Index: 107826
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapWidth_m07E5B04B08E87AC9F66D766B363000F94C8612D4 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -14041,7 +14041,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107782
+// Method Definition Index: 107827
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapHeight_m4A8273D6E0E3526A31E2669FBAB240353C086AED (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -14058,7 +14058,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107783
+// Method Definition Index: 107828
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_baseMapResolution_mCD5E59C7A2778009CD4A4CA571B6B85CC0993C0C (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -14075,7 +14075,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 107784
+// Method Definition Index: 107829
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_baseMapResolution_mB1F3A79E687A45F695A716B8B7417B35E77C19A7 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14170,7 +14170,7 @@ IL_0075:
 		return;
 	}
 }
-// Method Definition Index: 107785
+// Method Definition Index: 107830
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_Internal_baseMapResolution_m160A9621FE9E5BE642C8CE8C8DA64A07DDF5830F (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14208,7 +14208,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107786
+// Method Definition Index: 107831
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_Internal_baseMapResolution_mB7C108582B3A0100033DAA477D55A687405B5DD8 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14246,7 +14246,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107787
+// Method Definition Index: 107832
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetAlphamaps_m2FA8E29ADF4D1B2B8286ED0FE61E0CEB1663E423 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* ___2_map, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -14293,7 +14293,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 107788
+// Method Definition Index: 107833
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetAlphamaps_m87D35A2FED5E274AEBDF3ADB00A7FA477861E8FD (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, int32_t ___2_width, int32_t ___3_height, SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* ___4_map, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14445,7 +14445,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 107789
+// Method Definition Index: 107834
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetBaseMapDirty_m71323D916BC5353D2A357E91C5ECE55E65700618 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14482,7 +14482,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107790
+// Method Definition Index: 107835
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* TerrainData_GetAlphamapTexture_mFA6A25F6C09FE64114F69D528046E78B1581366C (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14524,7 +14524,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107791
+// Method Definition Index: 107836
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapTextureCount_mF378908EA58CA135A4D58D586179418F1A6F14CD (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14562,7 +14562,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107792
+// Method Definition Index: 107837
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2DU5BU5D_t05332F1E3F7D4493E304C702201F9BE4F9236191* TerrainData_get_alphamapTextures_m82B7287C772D95D4E3D6A5793A8B9A15745D8C45 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14621,7 +14621,7 @@ IL_002d:
 		return L_11;
 	}
 }
-// Method Definition Index: 107793
+// Method Definition Index: 107838
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A* TerrainData_get_splatPrototypes_m349F72923854A74F3EE20D2F09452ED73852923E (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14659,7 +14659,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107794
+// Method Definition Index: 107839
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_splatPrototypes_m66D557939D09A1116BBAA1CD2E650EE68E0505E0 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14697,7 +14697,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107795
+// Method Definition Index: 107840
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0* TerrainData_get_terrainLayers_m3B436DF37DDD9F18A46DD6BF112925AD5B8857C8 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14735,7 +14735,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107796
+// Method Definition Index: 107841
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_terrainLayers_m8FC80DAB5CD38A11CDB082F94DBD3186CD434671 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14773,7 +14773,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107797
+// Method Definition Index: 107842
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_AddTree_m3DA41B91351531F932E4172A5E1DA1A5359FEA96 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___0_tree, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14811,7 +14811,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107798
+// Method Definition Index: 107843
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_RemoveTrees_m6600E1C337753D0C6B1B08AC2B4C1E6C46A314E4 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_position, float ___1_radius, int32_t ___2_prototypeIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14851,7 +14851,7 @@ IL_000f:
 		return L_4;
 	}
 }
-// Method Definition Index: 107799
+// Method Definition Index: 107844
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_CopyActiveRenderTextureToHeightmap_m431A62A0EC8B28CE9CA58FB081A58123060EB378 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___0_rect, int32_t ___1_destX, int32_t ___2_destY, int32_t ___3_syncControl, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14891,7 +14891,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107800
+// Method Definition Index: 107845
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_DirtyHeightmapRegion_mF080B77155696B5E1E0715540DE8031A3F421FC4 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, int32_t ___2_width, int32_t ___3_height, int32_t ___4_syncControl, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14933,7 +14933,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107801
+// Method Definition Index: 107846
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SyncHeightmap_mD8D77E9DD9063B7201D062C810CFEAF2BE743267 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14970,7 +14970,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107802
+// Method Definition Index: 107847
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_CopyActiveRenderTextureToHoles_m3181CE7CD4B40E3EB42B571E3489A2226C6E0A1A (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___0_rect, int32_t ___1_destX, int32_t ___2_destY, bool ___3_allowDelayedCPUSync, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15010,7 +15010,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107803
+// Method Definition Index: 107848
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_DirtyHolesRegion_mBC52464648FFA679E45C579BCC3B9FFF68DD3EBA (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_x, int32_t ___1_y, int32_t ___2_width, int32_t ___3_height, bool ___4_allowDelayedCPUSync, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15052,7 +15052,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107804
+// Method Definition Index: 107849
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SyncHoles_m536B2E7102335849E42E867DB27166BB55FED0F6 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15089,7 +15089,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107805
+// Method Definition Index: 107850
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_MarkAlphamapDirtyRegion_mB212FE00063E5391813EA3C57C71AF5669F9C064 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_alphamapIndex, int32_t ___1_x, int32_t ___2_y, int32_t ___3_width, int32_t ___4_height, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15131,7 +15131,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107806
+// Method Definition Index: 107851
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_ClearAlphamapDirtyRegion_m570C14031954B78348B93B24361EB0B570622588 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, int32_t ___0_alphamapIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15169,7 +15169,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107807
+// Method Definition Index: 107852
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SyncAlphamaps_mFDFD1F09BB38C77A2F408331299CCF586FDC0A33 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15206,7 +15206,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107808
+// Method Definition Index: 107853
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_atlasFormat_m68777C54DF215D47A6249076DD2A2CC0E123DAA9 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15244,7 +15244,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107809
+// Method Definition Index: 107854
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* TerrainData_get_users_m0C569F1AD5853CEBF3C572723A1CAD04AC8433C4 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15282,7 +15282,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107810
+// Method Definition Index: 107855
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_get_SupportsCopyTextureBetweenRTAndTexture_mE93A6D23586EABCFC4B1267F66E98A8C6C7E35BE (const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -15299,7 +15299,7 @@ IL_0010:
 		return L_1;
 	}
 }
-// Method Definition Index: 107811
+// Method Definition Index: 107856
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_CopyActiveRenderTextureToHeightmap_m36D01BB8242D02F3E319271CA2BC2A6B5C428EE5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___0_sourceRect, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___1_dest, int32_t ___2_syncControl, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15510,7 +15510,7 @@ IL_00c9:
 		return;
 	}
 }
-// Method Definition Index: 107812
+// Method Definition Index: 107857
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_DirtyHeightmapRegion_m92C3A0182EE87E484316B0514F25C3D106349AB7 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___0_region, int32_t ___1_syncControl, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15705,7 +15705,7 @@ IL_00a8:
 		return;
 	}
 }
-// Method Definition Index: 107813
+// Method Definition Index: 107858
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TerrainData_get_AlphamapTextureName_mC3E6B77E19252385A78C74D853F7CA4375A51882 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15718,7 +15718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TerrainData_get_AlphamapTextureName
 		return _stringLiteralEE54A69A932C178902C12FFD21DF5107332C0191;
 	}
 }
-// Method Definition Index: 107814
+// Method Definition Index: 107859
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TerrainData_get_HolesTextureName_m050635081E2E26FDE05BFD35253710DE84E7A12F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15731,7 +15731,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TerrainData_get_HolesTextureName_m0
 		return _stringLiteral3A06B02EFE196FE18D42203175AC0AD263D2C7B6;
 	}
 }
-// Method Definition Index: 107815
+// Method Definition Index: 107860
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_CopyActiveRenderTextureToTexture_mC6FBAB316DCFA11F9A51A32F2943B01B0AA79A74 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, String_t* ___0_textureName, int32_t ___1_textureIndex, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___2_sourceRect, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___3_dest, bool ___4_allowDelayedCPUSync, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16332,7 +16332,7 @@ IL_0390:
 		return;
 	}
 }
-// Method Definition Index: 107816
+// Method Definition Index: 107861
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_DirtyTextureRegion_mB66EE109AB4B647EDDC49E3B7A2C8F1CA0215FA5 (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, String_t* ___0_textureName, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___1_region, bool ___2_allowDelayedCPUSync, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16652,7 +16652,7 @@ IL_0183:
 		return;
 	}
 }
-// Method Definition Index: 107817
+// Method Definition Index: 107862
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SyncTexture_m4799EFAE1FACCB344F25855A7190C0CC3F8C9B2D (TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* __this, String_t* ___0_textureName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16754,7 +16754,7 @@ IL_0074:
 		return;
 	}
 }
-// Method Definition Index: 107818
+// Method Definition Index: 107863
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData__cctor_m525F8AF6DEDDACF640BD2D24767502121ED6D9B0 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16791,7 +16791,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData__cctor_m525F8AF6DEDDACF640BD
 		return;
 	}
 }
-// Method Definition Index: 107819
+// Method Definition Index: 107864
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_get_heightmapTexture_Injected_m17A2DFA5BA141D992B9D51E00F7F9F6FA5394724 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainData_get_heightmapTexture_Injected_m17A2DFA5BA141D992B9D51E00F7F9F6FA5394724_ftn) (intptr_t);
@@ -16801,7 +16801,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_get_heightmapTexture_Inj
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107820
+// Method Definition Index: 107865
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_internalHeightmapResolution_Injected_m01BDB29E6009C6494632E3056F313A6B025CB5DF (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_internalHeightmapResolution_Injected_m01BDB29E6009C6494632E3056F313A6B025CB5DF_ftn) (intptr_t);
@@ -16811,7 +16811,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_internalHeightmapReso
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107821
+// Method Definition Index: 107866
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_internalHeightmapResolution_Injected_mA2ADBDA3A10E208E4A64381E4E5F810CDA65D89E (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_internalHeightmapResolution_Injected_mA2ADBDA3A10E208E4A64381E4E5F810CDA65D89E_ftn) (intptr_t, int32_t);
@@ -16820,7 +16820,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_internalHeightmapResolut
 	_il2cpp_icall_func = (TerrainData_set_internalHeightmapResolution_Injected_mA2ADBDA3A10E208E4A64381E4E5F810CDA65D89E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_internalHeightmapResolution_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107822
+// Method Definition Index: 107867
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_heightmapScale_Injected_m372D0D2A81B575955E4F6FAC5BCB7D5F7F948124 (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_get_heightmapScale_Injected_m372D0D2A81B575955E4F6FAC5BCB7D5F7F948124_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -16829,7 +16829,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_heightmapScale_Injected_
 	_il2cpp_icall_func = (TerrainData_get_heightmapScale_Injected_m372D0D2A81B575955E4F6FAC5BCB7D5F7F948124_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::get_heightmapScale_Injected(System.IntPtr,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107823
+// Method Definition Index: 107868
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_get_enableHolesTextureCompression_Injected_m7333C43CCD74033E50D6B5792902EEB44DBD5EBB (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*TerrainData_get_enableHolesTextureCompression_Injected_m7333C43CCD74033E50D6B5792902EEB44DBD5EBB_ftn) (intptr_t);
@@ -16839,7 +16839,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_get_enableHolesTextureCompre
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107824
+// Method Definition Index: 107869
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_enableHolesTextureCompression_Injected_mDC55F3AF1E7B193273B89D133589D46F1AC96F9C (intptr_t ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_enableHolesTextureCompression_Injected_mDC55F3AF1E7B193273B89D133589D46F1AC96F9C_ftn) (intptr_t, bool);
@@ -16848,7 +16848,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_enableHolesTextureCompre
 	_il2cpp_icall_func = (TerrainData_set_enableHolesTextureCompression_Injected_mDC55F3AF1E7B193273B89D133589D46F1AC96F9C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_enableHolesTextureCompression_Injected(System.IntPtr,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107825
+// Method Definition Index: 107870
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_IsHolesTextureCompressed_Injected_m43D4624715852AB12B9FF5F09E3385C6008A123F (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*TerrainData_IsHolesTextureCompressed_Injected_m43D4624715852AB12B9FF5F09E3385C6008A123F_ftn) (intptr_t);
@@ -16858,7 +16858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_IsHolesTextureCompressed_Inj
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107826
+// Method Definition Index: 107871
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_GetHolesTexture_Injected_m4A31282EF3E41A2AE0DDBDE7990BD495E6787FF6 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainData_GetHolesTexture_Injected_m4A31282EF3E41A2AE0DDBDE7990BD495E6787FF6_ftn) (intptr_t);
@@ -16868,7 +16868,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_GetHolesTexture_Injected
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107827
+// Method Definition Index: 107872
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_GetCompressedHolesTexture_Injected_m3FA88DC53E65C8F0A73A6F33DFB4A262C2604200 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainData_GetCompressedHolesTexture_Injected_m3FA88DC53E65C8F0A73A6F33DFB4A262C2604200_ftn) (intptr_t);
@@ -16878,7 +16878,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_GetCompressedHolesTextur
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107828
+// Method Definition Index: 107873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_size_Injected_m1C82C60B85758AF5A59AF1B717FCA64D4593D00B (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_get_size_Injected_m1C82C60B85758AF5A59AF1B717FCA64D4593D00B_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -16887,7 +16887,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_size_Injected_m1C82C60B8
 	_il2cpp_icall_func = (TerrainData_get_size_Injected_m1C82C60B85758AF5A59AF1B717FCA64D4593D00B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::get_size_Injected(System.IntPtr,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107829
+// Method Definition Index: 107874
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_size_Injected_mDE86BAFDAB6685C24B04D01809F7F3A978FD5ECB (intptr_t ___0__unity_self, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_size_Injected_mDE86BAFDAB6685C24B04D01809F7F3A978FD5ECB_ftn) (intptr_t, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -16896,7 +16896,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_size_Injected_mDE86BAFDA
 	_il2cpp_icall_func = (TerrainData_set_size_Injected_mDE86BAFDAB6685C24B04D01809F7F3A978FD5ECB_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_size_Injected(System.IntPtr,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107830
+// Method Definition Index: 107875
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_bounds_Injected_mB621D096862AADA98E5E83D7B452237A6C8A9206 (intptr_t ___0__unity_self, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_get_bounds_Injected_mB621D096862AADA98E5E83D7B452237A6C8A9206_ftn) (intptr_t, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3*);
@@ -16905,7 +16905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_bounds_Injected_mB621D09
 	_il2cpp_icall_func = (TerrainData_get_bounds_Injected_mB621D096862AADA98E5E83D7B452237A6C8A9206_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::get_bounds_Injected(System.IntPtr,UnityEngine.Bounds&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107831
+// Method Definition Index: 107876
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetHeight_Injected_mB9AEB1D10567FF8BB4EB148F2898485D5233AB04 (intptr_t ___0__unity_self, int32_t ___1_x, int32_t ___2_y, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_GetHeight_Injected_mB9AEB1D10567FF8BB4EB148F2898485D5233AB04_ftn) (intptr_t, int32_t, int32_t);
@@ -16915,7 +16915,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetHeight_Injected_mB9AEB1D
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y);
 	return icallRetVal;
 }
-// Method Definition Index: 107832
+// Method Definition Index: 107877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetInterpolatedHeight_Injected_m0853CF34E1F1FA48F922CE944598899A6452A776 (intptr_t ___0__unity_self, float ___1_x, float ___2_y, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_GetInterpolatedHeight_Injected_m0853CF34E1F1FA48F922CE944598899A6452A776_ftn) (intptr_t, float, float);
@@ -16925,7 +16925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetInterpolatedHeight_Injec
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y);
 	return icallRetVal;
 }
-// Method Definition Index: 107833
+// Method Definition Index: 107878
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetInterpolatedHeights_Injected_m18ACD9E184A66EB37243C71CD976DA27D6949DCD (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_results, int32_t ___2_resultXDimension, int32_t ___3_resultXOffset, int32_t ___4_resultYOffset, float ___5_xBase, float ___6_yBase, int32_t ___7_xCount, int32_t ___8_yCount, float ___9_xInterval, float ___10_yInterval, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_GetInterpolatedHeights_Injected_m18ACD9E184A66EB37243C71CD976DA27D6949DCD_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*, int32_t, int32_t, int32_t, float, float, int32_t, int32_t, float, float);
@@ -16934,7 +16934,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetInterpolatedHeig
 	_il2cpp_icall_func = (TerrainData_Internal_GetInterpolatedHeights_Injected_m18ACD9E184A66EB37243C71CD976DA27D6949DCD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_GetInterpolatedHeights_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,System.Int32,System.Int32,System.Single,System.Single,System.Int32,System.Int32,System.Single,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_results, ___2_resultXDimension, ___3_resultXOffset, ___4_resultYOffset, ___5_xBase, ___6_yBase, ___7_xCount, ___8_yCount, ___9_xInterval, ___10_yInterval);
 }
-// Method Definition Index: 107834
+// Method Definition Index: 107879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* TerrainData_Internal_GetHeights_Injected_m16CFA342081D23754D11174646449DE640C30832 (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, const RuntimeMethod* method) 
 {
 	typedef SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* (*TerrainData_Internal_GetHeights_Injected_m16CFA342081D23754D11174646449DE640C30832_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t);
@@ -16944,7 +16944,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED3
 	SingleU5BU2CU5D_t8C95DA2D5056EB0490FC7DCB1ED30E33DE1D53F4* icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height);
 	return icallRetVal;
 }
-// Method Definition Index: 107835
+// Method Definition Index: 107880
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHeights_Injected_m07175D5AF21E3520E2DEEF668A24D05FD6A92B2F (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___5_heights, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetHeights_Injected_m07175D5AF21E3520E2DEEF668A24D05FD6A92B2F_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -16953,7 +16953,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHeights_Injected
 	_il2cpp_icall_func = (TerrainData_Internal_SetHeights_Injected_m07175D5AF21E3520E2DEEF668A24D05FD6A92B2F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetHeights_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height, ___5_heights);
 }
-// Method Definition Index: 107836
+// Method Definition Index: 107881
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetPatchMinMaxHeights_Injected_m553811B5ED759C100BD335A203536817B8D8B4F3 (intptr_t ___0__unity_self, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_GetPatchMinMaxHeights_Injected_m553811B5ED759C100BD335A203536817B8D8B4F3_ftn) (intptr_t, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59*);
@@ -16962,7 +16962,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetPatchMinMaxHeights_Inject
 	_il2cpp_icall_func = (TerrainData_GetPatchMinMaxHeights_Injected_m553811B5ED759C100BD335A203536817B8D8B4F3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetPatchMinMaxHeights_Injected(System.IntPtr,UnityEngine.Bindings.BlittableArrayWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107837
+// Method Definition Index: 107882
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_OverrideMinMaxPatchHeights_Injected_m28AC41AB0EAF5D025B209E2BA283F861C07EE9B3 (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_minMaxHeights, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_OverrideMinMaxPatchHeights_Injected_m28AC41AB0EAF5D025B209E2BA283F861C07EE9B3_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -16971,7 +16971,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_OverrideMinMaxPatchHeights_I
 	_il2cpp_icall_func = (TerrainData_OverrideMinMaxPatchHeights_Injected_m28AC41AB0EAF5D025B209E2BA283F861C07EE9B3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::OverrideMinMaxPatchHeights_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_minMaxHeights);
 }
-// Method Definition Index: 107838
+// Method Definition Index: 107883
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetMaximumHeightError_Injected_m3F8407C12295331152F2D60D560FCA641A04841F (intptr_t ___0__unity_self, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_GetMaximumHeightError_Injected_m3F8407C12295331152F2D60D560FCA641A04841F_ftn) (intptr_t, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59*);
@@ -16980,7 +16980,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetMaximumHeightError_Inject
 	_il2cpp_icall_func = (TerrainData_GetMaximumHeightError_Injected_m3F8407C12295331152F2D60D560FCA641A04841F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetMaximumHeightError_Injected(System.IntPtr,UnityEngine.Bindings.BlittableArrayWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107839
+// Method Definition Index: 107884
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_OverrideMaximumHeightError_Injected_m2315378FC426817716FD18F557B038AADBADBF5C (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_maxError, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_OverrideMaximumHeightError_Injected_m2315378FC426817716FD18F557B038AADBADBF5C_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -16989,7 +16989,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_OverrideMaximumHeightError_I
 	_il2cpp_icall_func = (TerrainData_OverrideMaximumHeightError_Injected_m2315378FC426817716FD18F557B038AADBADBF5C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::OverrideMaximumHeightError_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_maxError);
 }
-// Method Definition Index: 107840
+// Method Definition Index: 107885
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHeightsDelayLOD_Injected_mC45BFD8897C1C4FF6185A8ED870CB96E1F9BF7F9 (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___5_heights, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetHeightsDelayLOD_Injected_mC45BFD8897C1C4FF6185A8ED870CB96E1F9BF7F9_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -16998,7 +16998,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHeightsDelayLOD_
 	_il2cpp_icall_func = (TerrainData_Internal_SetHeightsDelayLOD_Injected_mC45BFD8897C1C4FF6185A8ED870CB96E1F9BF7F9_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetHeightsDelayLOD_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height, ___5_heights);
 }
-// Method Definition Index: 107841
+// Method Definition Index: 107886
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHoles_Injected_m336591FE1A8C414B6810BAFEE57E86877AF476DE (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___5_holes, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetHoles_Injected_m336591FE1A8C414B6810BAFEE57E86877AF476DE_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -17007,7 +17007,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHoles_Injected_m
 	_il2cpp_icall_func = (TerrainData_Internal_SetHoles_Injected_m336591FE1A8C414B6810BAFEE57E86877AF476DE_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetHoles_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height, ___5_holes);
 }
-// Method Definition Index: 107842
+// Method Definition Index: 107887
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* TerrainData_Internal_GetHoles_Injected_m7FEF9084682AC0FC2B6B4BBF78EED80236B215B9 (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, const RuntimeMethod* method) 
 {
 	typedef BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* (*TerrainData_Internal_GetHoles_Injected_m7FEF9084682AC0FC2B6B4BBF78EED80236B215B9_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t);
@@ -17017,7 +17017,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A71971
 	BooleanU5BU2CU5D_t0A96EF7DC71D7FB5C1757A719712D1DFB2D571B6* icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height);
 	return icallRetVal;
 }
-// Method Definition Index: 107843
+// Method Definition Index: 107888
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_Internal_IsHole_Injected_m36CD00E6A59CFD5AE9C8D8DFEFAC09238950ED94 (intptr_t ___0__unity_self, int32_t ___1_x, int32_t ___2_y, const RuntimeMethod* method) 
 {
 	typedef bool (*TerrainData_Internal_IsHole_Injected_m36CD00E6A59CFD5AE9C8D8DFEFAC09238950ED94_ftn) (intptr_t, int32_t, int32_t);
@@ -17027,7 +17027,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_Internal_IsHole_Injected_m36
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y);
 	return icallRetVal;
 }
-// Method Definition Index: 107844
+// Method Definition Index: 107889
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHolesDelayLOD_Injected_mA3CE1ED1279E0683E7B4A2C3CD4290AD93DE6AB4 (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___5_holes, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetHolesDelayLOD_Injected_mA3CE1ED1279E0683E7B4A2C3CD4290AD93DE6AB4_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -17036,7 +17036,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetHolesDelayLOD_In
 	_il2cpp_icall_func = (TerrainData_Internal_SetHolesDelayLOD_Injected_mA3CE1ED1279E0683E7B4A2C3CD4290AD93DE6AB4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetHolesDelayLOD_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height, ___5_holes);
 }
-// Method Definition Index: 107845
+// Method Definition Index: 107890
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetSteepness_Injected_m15C1904BF92D3DEDC76217C6A2C530B6EDB18277 (intptr_t ___0__unity_self, float ___1_x, float ___2_y, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_GetSteepness_Injected_m15C1904BF92D3DEDC76217C6A2C530B6EDB18277_ftn) (intptr_t, float, float);
@@ -17046,7 +17046,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetSteepness_Injected_m15C1
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y);
 	return icallRetVal;
 }
-// Method Definition Index: 107846
+// Method Definition Index: 107891
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetInterpolatedNormal_Injected_m65CF000C6ACDA7E238DCB7B36E7C33BC6569DED5 (intptr_t ___0__unity_self, float ___1_x, float ___2_y, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___3_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_GetInterpolatedNormal_Injected_m65CF000C6ACDA7E238DCB7B36E7C33BC6569DED5_ftn) (intptr_t, float, float, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
@@ -17055,7 +17055,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetInterpolatedNormal_Inject
 	_il2cpp_icall_func = (TerrainData_GetInterpolatedNormal_Injected_m65CF000C6ACDA7E238DCB7B36E7C33BC6569DED5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetInterpolatedNormal_Injected(System.IntPtr,System.Single,System.Single,UnityEngine.Vector3&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y, ___3_ret);
 }
-// Method Definition Index: 107847
+// Method Definition Index: 107892
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_GetAdjustedSize_Injected_m740D2E4568E5219D169E38094D505722C6776EA7 (intptr_t ___0__unity_self, int32_t ___1_size, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_GetAdjustedSize_Injected_m740D2E4568E5219D169E38094D505722C6776EA7_ftn) (intptr_t, int32_t);
@@ -17065,7 +17065,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_GetAdjustedSize_Injected_
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_size);
 	return icallRetVal;
 }
-// Method Definition Index: 107848
+// Method Definition Index: 107893
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassStrength_Injected_mB973194542FF0817C73FA7EDDF127A3EED93824C (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_get_wavingGrassStrength_Injected_mB973194542FF0817C73FA7EDDF127A3EED93824C_ftn) (intptr_t);
@@ -17075,7 +17075,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassStrength_Inj
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107849
+// Method Definition Index: 107894
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassStrength_Injected_mC228BAC5B67EE48B7F5BC835860B046DC64A17A2 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_wavingGrassStrength_Injected_mC228BAC5B67EE48B7F5BC835860B046DC64A17A2_ftn) (intptr_t, float);
@@ -17084,7 +17084,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassStrength_Inje
 	_il2cpp_icall_func = (TerrainData_set_wavingGrassStrength_Injected_mC228BAC5B67EE48B7F5BC835860B046DC64A17A2_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_wavingGrassStrength_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107850
+// Method Definition Index: 107895
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassAmount_Injected_m4794F77E950F8EFAD9950F1114795EF430D16BD0 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_get_wavingGrassAmount_Injected_m4794F77E950F8EFAD9950F1114795EF430D16BD0_ftn) (intptr_t);
@@ -17094,7 +17094,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassAmount_Injec
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107851
+// Method Definition Index: 107896
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassAmount_Injected_m11D63036E8C9906742C7B99FA4EE3E5ADC796950 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_wavingGrassAmount_Injected_m11D63036E8C9906742C7B99FA4EE3E5ADC796950_ftn) (intptr_t, float);
@@ -17103,7 +17103,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassAmount_Inject
 	_il2cpp_icall_func = (TerrainData_set_wavingGrassAmount_Injected_m11D63036E8C9906742C7B99FA4EE3E5ADC796950_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_wavingGrassAmount_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107852
+// Method Definition Index: 107897
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassSpeed_Injected_mE27E6B66893F9AA2308E53FF41D99983B44C9490 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_get_wavingGrassSpeed_Injected_mE27E6B66893F9AA2308E53FF41D99983B44C9490_ftn) (intptr_t);
@@ -17113,7 +17113,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_get_wavingGrassSpeed_Inject
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107853
+// Method Definition Index: 107898
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassSpeed_Injected_m651145948BADC0F87399188980589EC43351D0D3 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_wavingGrassSpeed_Injected_m651145948BADC0F87399188980589EC43351D0D3_ftn) (intptr_t, float);
@@ -17122,7 +17122,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassSpeed_Injecte
 	_il2cpp_icall_func = (TerrainData_set_wavingGrassSpeed_Injected_m651145948BADC0F87399188980589EC43351D0D3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_wavingGrassSpeed_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107854
+// Method Definition Index: 107899
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_wavingGrassTint_Injected_m2A6464D100649A26AA2C99301B9DB18B00E2A89C (intptr_t ___0__unity_self, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_get_wavingGrassTint_Injected_m2A6464D100649A26AA2C99301B9DB18B00E2A89C_ftn) (intptr_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*);
@@ -17131,7 +17131,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_get_wavingGrassTint_Injected
 	_il2cpp_icall_func = (TerrainData_get_wavingGrassTint_Injected_m2A6464D100649A26AA2C99301B9DB18B00E2A89C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::get_wavingGrassTint_Injected(System.IntPtr,UnityEngine.Color&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107855
+// Method Definition Index: 107900
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassTint_Injected_mAE18AB74F205C021C1C04DA068DAA21934387D45 (intptr_t ___0__unity_self, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_wavingGrassTint_Injected_mAE18AB74F205C021C1C04DA068DAA21934387D45_ftn) (intptr_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*);
@@ -17140,7 +17140,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_wavingGrassTint_Injected
 	_il2cpp_icall_func = (TerrainData_set_wavingGrassTint_Injected_mAE18AB74F205C021C1C04DA068DAA21934387D45_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_wavingGrassTint_Injected(System.IntPtr,UnityEngine.Color&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107856
+// Method Definition Index: 107901
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailWidth_Injected_m30172B53B1344F1D0B41606D3F7906113CA8D432 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_detailWidth_Injected_m30172B53B1344F1D0B41606D3F7906113CA8D432_ftn) (intptr_t);
@@ -17150,7 +17150,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailWidth_Injected_
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107857
+// Method Definition Index: 107902
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailHeight_Injected_mA11A938180BA364E255050E177E49C394FC336A9 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_detailHeight_Injected_mA11A938180BA364E255050E177E49C394FC336A9_ftn) (intptr_t);
@@ -17160,7 +17160,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailHeight_Injected
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107858
+// Method Definition Index: 107903
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_maxDetailScatterPerRes_Injected_mAB401D9E4E831EB62BDC620C3A773A6F1E8F8D63 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_maxDetailScatterPerRes_Injected_mAB401D9E4E831EB62BDC620C3A773A6F1E8F8D63_ftn) (intptr_t);
@@ -17170,7 +17170,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_maxDetailScatterPerRe
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107859
+// Method Definition Index: 107904
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailResolution_Injected_mBF373FF95369992B886ACB208A31FAFCC6620900 (intptr_t ___0__unity_self, int32_t ___1_patchCount, int32_t ___2_resolutionPerPatch, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetDetailResolution_Injected_mBF373FF95369992B886ACB208A31FAFCC6620900_ftn) (intptr_t, int32_t, int32_t);
@@ -17179,7 +17179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailResolution
 	_il2cpp_icall_func = (TerrainData_Internal_SetDetailResolution_Injected_mBF373FF95369992B886ACB208A31FAFCC6620900_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetDetailResolution_Injected(System.IntPtr,System.Int32,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_patchCount, ___2_resolutionPerPatch);
 }
-// Method Definition Index: 107860
+// Method Definition Index: 107905
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailScatterMode_Injected_mF6D15705A2C8E11737094CF3EACC236A43C5D10D (intptr_t ___0__unity_self, int32_t ___1_scatterMode, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetDetailScatterMode_Injected_mF6D15705A2C8E11737094CF3EACC236A43C5D10D_ftn) (intptr_t, int32_t);
@@ -17188,7 +17188,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailScatterMod
 	_il2cpp_icall_func = (TerrainData_Internal_SetDetailScatterMode_Injected_mF6D15705A2C8E11737094CF3EACC236A43C5D10D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetDetailScatterMode_Injected(System.IntPtr,UnityEngine.DetailScatterMode)");
 	_il2cpp_icall_func(___0__unity_self, ___1_scatterMode);
 }
-// Method Definition Index: 107861
+// Method Definition Index: 107906
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailPatchCount_Injected_m3A3DA811C66341E4C5A18898EC31965FF149FA9E (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_detailPatchCount_Injected_m3A3DA811C66341E4C5A18898EC31965FF149FA9E_ftn) (intptr_t);
@@ -17198,7 +17198,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailPatchCount_Inje
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107862
+// Method Definition Index: 107907
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailResolution_Injected_mCAE7123310D54A9CA19456816B708A1BBC109B16 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_detailResolution_Injected_mCAE7123310D54A9CA19456816B708A1BBC109B16_ftn) (intptr_t);
@@ -17208,7 +17208,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailResolution_Inje
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107863
+// Method Definition Index: 107908
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailResolutionPerPatch_Injected_mE1035D708CA38E917E3A7B6292FC527ECEC18B2F (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_detailResolutionPerPatch_Injected_mE1035D708CA38E917E3A7B6292FC527ECEC18B2F_ftn) (intptr_t);
@@ -17218,7 +17218,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailResolutionPerPa
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107864
+// Method Definition Index: 107909
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailScatterMode_Injected_mBC930DD649F90FD9912664841E9FCAC1EAABE763 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_detailScatterMode_Injected_mBC930DD649F90FD9912664841E9FCAC1EAABE763_ftn) (intptr_t);
@@ -17228,7 +17228,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_detailScatterMode_Inj
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107865
+// Method Definition Index: 107910
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_ResetDirtyDetails_Injected_m47FEAD0A7A5FB63C5BF12B05ACE499026CE67038 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_ResetDirtyDetails_Injected_m47FEAD0A7A5FB63C5BF12B05ACE499026CE67038_ftn) (intptr_t);
@@ -17237,7 +17237,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_ResetDirtyDetails_Injected_m
 	_il2cpp_icall_func = (TerrainData_ResetDirtyDetails_Injected_m47FEAD0A7A5FB63C5BF12B05ACE499026CE67038_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::ResetDirtyDetails_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107866
+// Method Definition Index: 107911
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RefreshPrototypes_Injected_m62ADB6E7582A50F4895CD8135BCC9AA5D76C6960 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_RefreshPrototypes_Injected_m62ADB6E7582A50F4895CD8135BCC9AA5D76C6960_ftn) (intptr_t);
@@ -17246,7 +17246,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RefreshPrototypes_Injected_m
 	_il2cpp_icall_func = (TerrainData_RefreshPrototypes_Injected_m62ADB6E7582A50F4895CD8135BCC9AA5D76C6960_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::RefreshPrototypes_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107867
+// Method Definition Index: 107912
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7* TerrainData_get_detailPrototypes_Injected_m7CE751402F85550CF57E42E66E025AA92D313DC0 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7* (*TerrainData_get_detailPrototypes_Injected_m7CE751402F85550CF57E42E66E025AA92D313DC0_ftn) (intptr_t);
@@ -17256,7 +17256,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8
 	DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7* icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107868
+// Method Definition Index: 107913
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_detailPrototypes_Injected_m48668044D99E75C2038C957B0C4C000B91099C85 (intptr_t ___0__unity_self, DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_detailPrototypes_Injected_m48668044D99E75C2038C957B0C4C000B91099C85_ftn) (intptr_t, DetailPrototypeU5BU5D_tB9391EFBDD64B38867DFB8179C6C0E8C81998AB7*);
@@ -17265,7 +17265,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_detailPrototypes_Injecte
 	_il2cpp_icall_func = (TerrainData_set_detailPrototypes_Injected_m48668044D99E75C2038C957B0C4C000B91099C85_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_detailPrototypes_Injected(System.IntPtr,UnityEngine.DetailPrototype[])");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107869
+// Method Definition Index: 107914
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetSupportedLayers_Injected_m8B5EB802D7302396849F56F925C2ED71332DAE4D (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_totalWidth, int32_t ___4_totalHeight, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* ___5_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_GetSupportedLayers_Injected_m8B5EB802D7302396849F56F925C2ED71332DAE4D_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59*);
@@ -17274,7 +17274,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_GetSupportedLayers_Injected_
 	_il2cpp_icall_func = (TerrainData_GetSupportedLayers_Injected_m8B5EB802D7302396849F56F925C2ED71332DAE4D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetSupportedLayers_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.BlittableArrayWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_totalWidth, ___4_totalHeight, ___5_ret);
 }
-// Method Definition Index: 107870
+// Method Definition Index: 107915
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* TerrainData_GetDetailLayer_Injected_mEB8262D9AF51D647E6ACA969CAED381EA19CC057 (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_width, int32_t ___4_height, int32_t ___5_layer, const RuntimeMethod* method) 
 {
 	typedef Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* (*TerrainData_GetDetailLayer_Injected_mEB8262D9AF51D647E6ACA969CAED381EA19CC057_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, int32_t);
@@ -17284,7 +17284,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE
 	Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_width, ___4_height, ___5_layer);
 	return icallRetVal;
 }
-// Method Definition Index: 107871
+// Method Definition Index: 107916
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_ComputeDetailInstanceTransforms_Injected_mB475B5ABF9F2E4D32499561DD374EDF67D195D0D (intptr_t ___0__unity_self, int32_t ___1_patchX, int32_t ___2_patchY, int32_t ___3_layer, float ___4_density, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___5_bounds, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* ___6_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_ComputeDetailInstanceTransforms_Injected_mB475B5ABF9F2E4D32499561DD374EDF67D195D0D_ftn) (intptr_t, int32_t, int32_t, int32_t, float, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3*, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59*);
@@ -17293,7 +17293,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_ComputeDetailInstanceTransfo
 	_il2cpp_icall_func = (TerrainData_ComputeDetailInstanceTransforms_Injected_mB475B5ABF9F2E4D32499561DD374EDF67D195D0D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::ComputeDetailInstanceTransforms_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Single,UnityEngine.Bounds&,UnityEngine.Bindings.BlittableArrayWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_patchX, ___2_patchY, ___3_layer, ___4_density, ___5_bounds, ___6_ret);
 }
-// Method Definition Index: 107872
+// Method Definition Index: 107917
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_ComputeDetailCoverage_Injected_mEE6BC5B4ED8D8734E3CD98BDDCF952BC9C99DD32 (intptr_t ___0__unity_self, int32_t ___1_detailPrototypeIndex, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_ComputeDetailCoverage_Injected_mEE6BC5B4ED8D8734E3CD98BDDCF952BC9C99DD32_ftn) (intptr_t, int32_t);
@@ -17303,7 +17303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_ComputeDetailCoverage_Injec
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_detailPrototypeIndex);
 	return icallRetVal;
 }
-// Method Definition Index: 107873
+// Method Definition Index: 107918
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailLayer_Injected_m7F50508358AA3DAD32BDE739A01808F07BF7DD82 (intptr_t ___0__unity_self, int32_t ___1_xBase, int32_t ___2_yBase, int32_t ___3_totalWidth, int32_t ___4_totalHeight, int32_t ___5_detailIndex, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___6_data, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetDetailLayer_Injected_m7F50508358AA3DAD32BDE739A01808F07BF7DD82_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, int32_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -17312,7 +17312,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetDetailLayer_Inje
 	_il2cpp_icall_func = (TerrainData_Internal_SetDetailLayer_Injected_m7F50508358AA3DAD32BDE739A01808F07BF7DD82_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetDetailLayer_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_xBase, ___2_yBase, ___3_totalWidth, ___4_totalHeight, ___5_detailIndex, ___6_data);
 }
-// Method Definition Index: 107874
+// Method Definition Index: 107919
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetTreeInstances_Injected_m2A054E7C15AF9D981DF220CFDE58C9424FCC8E24 (intptr_t ___0__unity_self, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_GetTreeInstances_Injected_m2A054E7C15AF9D981DF220CFDE58C9424FCC8E24_ftn) (intptr_t, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59*);
@@ -17321,7 +17321,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetTreeInstances_In
 	_il2cpp_icall_func = (TerrainData_Internal_GetTreeInstances_Injected_m2A054E7C15AF9D981DF220CFDE58C9424FCC8E24_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_GetTreeInstances_Injected(System.IntPtr,UnityEngine.Bindings.BlittableArrayWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107875
+// Method Definition Index: 107920
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetTreeInstances_Injected_m779777D3E92658F46CC6493F6CB236473C5F27BE (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_instances, bool ___2_snapToHeightmap, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_SetTreeInstances_Injected_m779777D3E92658F46CC6493F6CB236473C5F27BE_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*, bool);
@@ -17330,7 +17330,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetTreeInstances_Injected_m7
 	_il2cpp_icall_func = (TerrainData_SetTreeInstances_Injected_m779777D3E92658F46CC6493F6CB236473C5F27BE_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::SetTreeInstances_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_instances, ___2_snapToHeightmap);
 }
-// Method Definition Index: 107876
+// Method Definition Index: 107921
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetTreeInstance_Injected_mF80293C84A26D3FF0E4E1DEF8C6CED44023EBF6B (intptr_t ___0__unity_self, int32_t ___1_index, TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___2_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_GetTreeInstance_Injected_mF80293C84A26D3FF0E4E1DEF8C6CED44023EBF6B_ftn) (intptr_t, int32_t, TreeInstance_t382B018173ED020660D262061EA9424682614F50*);
@@ -17339,7 +17339,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_GetTreeInstance_Inj
 	_il2cpp_icall_func = (TerrainData_Internal_GetTreeInstance_Injected_mF80293C84A26D3FF0E4E1DEF8C6CED44023EBF6B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_GetTreeInstance_Injected(System.IntPtr,System.Int32,UnityEngine.TreeInstance&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_index, ___2_ret);
 }
-// Method Definition Index: 107877
+// Method Definition Index: 107922
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetTreeInstance_Injected_m5B151B682668F2B72054E14B281DB0C1E5C84FED (intptr_t ___0__unity_self, int32_t ___1_index, TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___2_instance, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_SetTreeInstance_Injected_m5B151B682668F2B72054E14B281DB0C1E5C84FED_ftn) (intptr_t, int32_t, TreeInstance_t382B018173ED020660D262061EA9424682614F50*);
@@ -17348,7 +17348,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetTreeInstance_Injected_m5B
 	_il2cpp_icall_func = (TerrainData_SetTreeInstance_Injected_m5B151B682668F2B72054E14B281DB0C1E5C84FED_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::SetTreeInstance_Injected(System.IntPtr,System.Int32,UnityEngine.TreeInstance&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_index, ___2_instance);
 }
-// Method Definition Index: 107878
+// Method Definition Index: 107923
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_treeInstanceCount_Injected_m5A9F9B87619ABECAEA844E645A2A8A1A57A91335 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_treeInstanceCount_Injected_m5A9F9B87619ABECAEA844E645A2A8A1A57A91335_ftn) (intptr_t);
@@ -17358,7 +17358,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_treeInstanceCount_Inj
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107879
+// Method Definition Index: 107924
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A* TerrainData_get_treePrototypes_Injected_mA27F28E8B9317919537A3C963E3F88E6F0942865 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A* (*TerrainData_get_treePrototypes_Injected_mA27F28E8B9317919537A3C963E3F88E6F0942865_ftn) (intptr_t);
@@ -17368,7 +17368,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA5
 	TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A* icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107880
+// Method Definition Index: 107925
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_treePrototypes_Injected_mDD5066D0CF8DAB85DC8001E7155620EC59B7281A (intptr_t ___0__unity_self, TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_treePrototypes_Injected_mDD5066D0CF8DAB85DC8001E7155620EC59B7281A_ftn) (intptr_t, TreePrototypeU5BU5D_tB0255CA167F991C2C9BA3BA55DF7417168D93B7A*);
@@ -17377,7 +17377,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_treePrototypes_Injected_
 	_il2cpp_icall_func = (TerrainData_set_treePrototypes_Injected_mDD5066D0CF8DAB85DC8001E7155620EC59B7281A_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_treePrototypes_Injected(System.IntPtr,UnityEngine.TreePrototype[])");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107881
+// Method Definition Index: 107926
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RemoveTreePrototype_Injected_m201C57F4CA5531D039FC11775230B4308150191A (intptr_t ___0__unity_self, int32_t ___1_index, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_RemoveTreePrototype_Injected_m201C57F4CA5531D039FC11775230B4308150191A_ftn) (intptr_t, int32_t);
@@ -17386,7 +17386,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RemoveTreePrototype_Injected
 	_il2cpp_icall_func = (TerrainData_RemoveTreePrototype_Injected_m201C57F4CA5531D039FC11775230B4308150191A_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::RemoveTreePrototype_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_index);
 }
-// Method Definition Index: 107882
+// Method Definition Index: 107927
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RemoveDetailPrototype_Injected_m4E1BDF6475F0395DC6662878BA96D555531F1447 (intptr_t ___0__unity_self, int32_t ___1_index, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_RemoveDetailPrototype_Injected_m4E1BDF6475F0395DC6662878BA96D555531F1447_ftn) (intptr_t, int32_t);
@@ -17395,7 +17395,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_RemoveDetailPrototype_Inject
 	_il2cpp_icall_func = (TerrainData_RemoveDetailPrototype_Injected_m4E1BDF6475F0395DC6662878BA96D555531F1447_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::RemoveDetailPrototype_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_index);
 }
-// Method Definition Index: 107883
+// Method Definition Index: 107928
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_NeedUpgradeScaledTreePrototypes_Injected_mC99AD6EE8B6026C17028DDB08550EB11F1FE8871 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*TerrainData_NeedUpgradeScaledTreePrototypes_Injected_mC99AD6EE8B6026C17028DDB08550EB11F1FE8871_ftn) (intptr_t);
@@ -17405,7 +17405,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainData_NeedUpgradeScaledTreePrototy
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107884
+// Method Definition Index: 107929
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_UpgradeScaledTreePrototype_Injected_m0E1475EA8F8F35472806CB5CE3C9EB4FB71748DD (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_UpgradeScaledTreePrototype_Injected_m0E1475EA8F8F35472806CB5CE3C9EB4FB71748DD_ftn) (intptr_t);
@@ -17414,7 +17414,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_UpgradeScaledTreePrototype_I
 	_il2cpp_icall_func = (TerrainData_UpgradeScaledTreePrototype_Injected_m0E1475EA8F8F35472806CB5CE3C9EB4FB71748DD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::UpgradeScaledTreePrototype_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107885
+// Method Definition Index: 107930
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapLayers_Injected_m895AE789D0772FD526A91191B0631E43BFBDE901 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_alphamapLayers_Injected_m895AE789D0772FD526A91191B0631E43BFBDE901_ftn) (intptr_t);
@@ -17424,7 +17424,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapLayers_Inject
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107886
+// Method Definition Index: 107931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* TerrainData_Internal_GetAlphamaps_Injected_mFE5FDFF8F7B8D7363113E3C9197F550FA740A229 (intptr_t ___0__unity_self, int32_t ___1_x, int32_t ___2_y, int32_t ___3_width, int32_t ___4_height, const RuntimeMethod* method) 
 {
 	typedef SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* (*TerrainData_Internal_GetAlphamaps_Injected_mFE5FDFF8F7B8D7363113E3C9197F550FA740A229_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t);
@@ -17434,7 +17434,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB47
 	SingleU5BU2CU2CU5D_tE902E5192C7283A470AAADB477117789A9682488* icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y, ___3_width, ___4_height);
 	return icallRetVal;
 }
-// Method Definition Index: 107887
+// Method Definition Index: 107932
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetAlphamapResolutionInternal_Injected_m0AF40441EE82CBFBAC88B685252DA41404DA510C (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainData_GetAlphamapResolutionInternal_Injected_m0AF40441EE82CBFBAC88B685252DA41404DA510C_ftn) (intptr_t);
@@ -17444,7 +17444,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainData_GetAlphamapResolutionIntern
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107888
+// Method Definition Index: 107933
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_Internal_alphamapResolution_Injected_mCAF1A5C5397A7CBDA532F4E1FCAA5B00D8CD90A2 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_Internal_alphamapResolution_Injected_mCAF1A5C5397A7CBDA532F4E1FCAA5B00D8CD90A2_ftn) (intptr_t);
@@ -17454,7 +17454,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_Internal_alphamapReso
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107889
+// Method Definition Index: 107934
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_Internal_alphamapResolution_Injected_m3E5D3B7C11C5D7C4565043C2A2898AA012F3B61D (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_Internal_alphamapResolution_Injected_m3E5D3B7C11C5D7C4565043C2A2898AA012F3B61D_ftn) (intptr_t, int32_t);
@@ -17463,7 +17463,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_Internal_alphamapResolut
 	_il2cpp_icall_func = (TerrainData_set_Internal_alphamapResolution_Injected_m3E5D3B7C11C5D7C4565043C2A2898AA012F3B61D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_Internal_alphamapResolution_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107890
+// Method Definition Index: 107935
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_Internal_baseMapResolution_Injected_mF6EE17C5BF8B0C06270CEA512C2D3D2EDE2D00AC (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_Internal_baseMapResolution_Injected_mF6EE17C5BF8B0C06270CEA512C2D3D2EDE2D00AC_ftn) (intptr_t);
@@ -17473,7 +17473,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_Internal_baseMapResol
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107891
+// Method Definition Index: 107936
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_Internal_baseMapResolution_Injected_m8B5D4EAFBD2BADFF80CEC85BCCE97F3BB8069C1F (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_Internal_baseMapResolution_Injected_m8B5D4EAFBD2BADFF80CEC85BCCE97F3BB8069C1F_ftn) (intptr_t, int32_t);
@@ -17482,7 +17482,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_Internal_baseMapResoluti
 	_il2cpp_icall_func = (TerrainData_set_Internal_baseMapResolution_Injected_m8B5D4EAFBD2BADFF80CEC85BCCE97F3BB8069C1F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_Internal_baseMapResolution_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107892
+// Method Definition Index: 107937
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetAlphamaps_Injected_m8683126A47BBBC5CB4C5FE8FA3B63DC213945D94 (intptr_t ___0__unity_self, int32_t ___1_x, int32_t ___2_y, int32_t ___3_width, int32_t ___4_height, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___5_map, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SetAlphamaps_Injected_m8683126A47BBBC5CB4C5FE8FA3B63DC213945D94_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -17491,7 +17491,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SetAlphamaps_Inject
 	_il2cpp_icall_func = (TerrainData_Internal_SetAlphamaps_Injected_m8683126A47BBBC5CB4C5FE8FA3B63DC213945D94_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SetAlphamaps_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y, ___3_width, ___4_height, ___5_map);
 }
-// Method Definition Index: 107893
+// Method Definition Index: 107938
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetBaseMapDirty_Injected_m2D37C9DAD2C2118DB55255197A3FE780DA9E2668 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_SetBaseMapDirty_Injected_m2D37C9DAD2C2118DB55255197A3FE780DA9E2668_ftn) (intptr_t);
@@ -17500,7 +17500,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SetBaseMapDirty_Injected_m2D
 	_il2cpp_icall_func = (TerrainData_SetBaseMapDirty_Injected_m2D37C9DAD2C2118DB55255197A3FE780DA9E2668_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::SetBaseMapDirty_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107894
+// Method Definition Index: 107939
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_GetAlphamapTexture_Injected_m2E0CFCCA30097A5BDEF529993B92CF249E5C390D (intptr_t ___0__unity_self, int32_t ___1_index, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainData_GetAlphamapTexture_Injected_m2E0CFCCA30097A5BDEF529993B92CF249E5C390D_ftn) (intptr_t, int32_t);
@@ -17510,7 +17510,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainData_GetAlphamapTexture_Injec
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_index);
 	return icallRetVal;
 }
-// Method Definition Index: 107895
+// Method Definition Index: 107940
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapTextureCount_Injected_m768BC81C365EE0EB0816E63AC5D533599BE77933 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_alphamapTextureCount_Injected_m768BC81C365EE0EB0816E63AC5D533599BE77933_ftn) (intptr_t);
@@ -17520,7 +17520,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_alphamapTextureCount_
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107896
+// Method Definition Index: 107941
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A* TerrainData_get_splatPrototypes_Injected_m5C80F4159D42038957CC0387D65C1ED0F44B0A98 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A* (*TerrainData_get_splatPrototypes_Injected_m5C80F4159D42038957CC0387D65C1ED0F44B0A98_ftn) (intptr_t);
@@ -17530,7 +17530,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E7
 	SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A* icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107897
+// Method Definition Index: 107942
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_splatPrototypes_Injected_m4DB844F010B2C862A9FA9702C3C3ED7B7FC6B2A8 (intptr_t ___0__unity_self, SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_splatPrototypes_Injected_m4DB844F010B2C862A9FA9702C3C3ED7B7FC6B2A8_ftn) (intptr_t, SplatPrototypeU5BU5D_t18109FC049B8FCFB38634E75365FC4A87109AF1A*);
@@ -17539,7 +17539,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_splatPrototypes_Injected
 	_il2cpp_icall_func = (TerrainData_set_splatPrototypes_Injected_m4DB844F010B2C862A9FA9702C3C3ED7B7FC6B2A8_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_splatPrototypes_Injected(System.IntPtr,UnityEngine.SplatPrototype[])");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107898
+// Method Definition Index: 107943
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0* TerrainData_get_terrainLayers_Injected_mCB06AD16454A8E85618F5BAE3BF9C196F7513B9D (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0* (*TerrainData_get_terrainLayers_Injected_mCB06AD16454A8E85618F5BAE3BF9C196F7513B9D_ftn) (intptr_t);
@@ -17549,7 +17549,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainLayerU5BU5D_t259E391D6115F121FCD284E79
 	TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0* icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107899
+// Method Definition Index: 107944
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_terrainLayers_Injected_mC699FA9D56592690A55B751A3960179FA58E23A3 (intptr_t ___0__unity_self, TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_set_terrainLayers_Injected_mC699FA9D56592690A55B751A3960179FA58E23A3_ftn) (intptr_t, TerrainLayerU5BU5D_t259E391D6115F121FCD284E79F62012D70956EB0*);
@@ -17558,7 +17558,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_set_terrainLayers_Injected_m
 	_il2cpp_icall_func = (TerrainData_set_terrainLayers_Injected_mC699FA9D56592690A55B751A3960179FA58E23A3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::set_terrainLayers_Injected(System.IntPtr,UnityEngine.TerrainLayer[])");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107900
+// Method Definition Index: 107945
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_AddTree_Injected_mDAF4CEEE106C638785EF51FCA82C30B779F0E855 (intptr_t ___0__unity_self, TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___1_tree, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_AddTree_Injected_mDAF4CEEE106C638785EF51FCA82C30B779F0E855_ftn) (intptr_t, TreeInstance_t382B018173ED020660D262061EA9424682614F50*);
@@ -17567,7 +17567,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_AddTree_Injected_mDAF4CEEE10
 	_il2cpp_icall_func = (TerrainData_AddTree_Injected_mDAF4CEEE106C638785EF51FCA82C30B779F0E855_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::AddTree_Injected(System.IntPtr,UnityEngine.TreeInstance&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_tree);
 }
-// Method Definition Index: 107901
+// Method Definition Index: 107946
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_RemoveTrees_Injected_mD33290EFBE1358D3A6F0F58FC70567FC58982C67 (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_position, float ___2_radius, int32_t ___3_prototypeIndex, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_RemoveTrees_Injected_mD33290EFBE1358D3A6F0F58FC70567FC58982C67_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*, float, int32_t);
@@ -17577,7 +17577,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_RemoveTrees_Injected_mD33
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_position, ___2_radius, ___3_prototypeIndex);
 	return icallRetVal;
 }
-// Method Definition Index: 107902
+// Method Definition Index: 107947
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_CopyActiveRenderTextureToHeightmap_Injected_m57C2BE80FE35F555952B4F43EA1120E46EFECEFD (intptr_t ___0__unity_self, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8* ___1_rect, int32_t ___2_destX, int32_t ___3_destY, int32_t ___4_syncControl, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_CopyActiveRenderTextureToHeightmap_Injected_m57C2BE80FE35F555952B4F43EA1120E46EFECEFD_ftn) (intptr_t, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8*, int32_t, int32_t, int32_t);
@@ -17586,7 +17586,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_CopyActiveRenderTex
 	_il2cpp_icall_func = (TerrainData_Internal_CopyActiveRenderTextureToHeightmap_Injected_m57C2BE80FE35F555952B4F43EA1120E46EFECEFD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_CopyActiveRenderTextureToHeightmap_Injected(System.IntPtr,UnityEngine.RectInt&,System.Int32,System.Int32,UnityEngine.TerrainHeightmapSyncControl)");
 	_il2cpp_icall_func(___0__unity_self, ___1_rect, ___2_destX, ___3_destY, ___4_syncControl);
 }
-// Method Definition Index: 107903
+// Method Definition Index: 107948
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_DirtyHeightmapRegion_Injected_m670238E635EB1A3D728318A48A5CCDB563F97B58 (intptr_t ___0__unity_self, int32_t ___1_x, int32_t ___2_y, int32_t ___3_width, int32_t ___4_height, int32_t ___5_syncControl, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_DirtyHeightmapRegion_Injected_m670238E635EB1A3D728318A48A5CCDB563F97B58_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, int32_t);
@@ -17595,7 +17595,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_DirtyHeightmapRegio
 	_il2cpp_icall_func = (TerrainData_Internal_DirtyHeightmapRegion_Injected_m670238E635EB1A3D728318A48A5CCDB563F97B58_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_DirtyHeightmapRegion_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.TerrainHeightmapSyncControl)");
 	_il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y, ___3_width, ___4_height, ___5_syncControl);
 }
-// Method Definition Index: 107904
+// Method Definition Index: 107949
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SyncHeightmap_Injected_m8454FCD65E864076421E4B4603D71F85B9230DF6 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_SyncHeightmap_Injected_m8454FCD65E864076421E4B4603D71F85B9230DF6_ftn) (intptr_t);
@@ -17604,7 +17604,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_SyncHeightmap_Injected_m8454
 	_il2cpp_icall_func = (TerrainData_SyncHeightmap_Injected_m8454FCD65E864076421E4B4603D71F85B9230DF6_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::SyncHeightmap_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107905
+// Method Definition Index: 107950
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_CopyActiveRenderTextureToHoles_Injected_m788CA253FB89BB497031CA55B29143ADDB5D2117 (intptr_t ___0__unity_self, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8* ___1_rect, int32_t ___2_destX, int32_t ___3_destY, bool ___4_allowDelayedCPUSync, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_CopyActiveRenderTextureToHoles_Injected_m788CA253FB89BB497031CA55B29143ADDB5D2117_ftn) (intptr_t, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8*, int32_t, int32_t, bool);
@@ -17613,7 +17613,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_CopyActiveRenderTex
 	_il2cpp_icall_func = (TerrainData_Internal_CopyActiveRenderTextureToHoles_Injected_m788CA253FB89BB497031CA55B29143ADDB5D2117_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_CopyActiveRenderTextureToHoles_Injected(System.IntPtr,UnityEngine.RectInt&,System.Int32,System.Int32,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_rect, ___2_destX, ___3_destY, ___4_allowDelayedCPUSync);
 }
-// Method Definition Index: 107906
+// Method Definition Index: 107951
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_DirtyHolesRegion_Injected_m678683662065538E2E17C73BCF0EE720F5C36ADB (intptr_t ___0__unity_self, int32_t ___1_x, int32_t ___2_y, int32_t ___3_width, int32_t ___4_height, bool ___5_allowDelayedCPUSync, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_DirtyHolesRegion_Injected_m678683662065538E2E17C73BCF0EE720F5C36ADB_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, bool);
@@ -17622,7 +17622,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_DirtyHolesRegion_In
 	_il2cpp_icall_func = (TerrainData_Internal_DirtyHolesRegion_Injected_m678683662065538E2E17C73BCF0EE720F5C36ADB_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_DirtyHolesRegion_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)");
 	_il2cpp_icall_func(___0__unity_self, ___1_x, ___2_y, ___3_width, ___4_height, ___5_allowDelayedCPUSync);
 }
-// Method Definition Index: 107907
+// Method Definition Index: 107952
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SyncHoles_Injected_mB7FD76E7ECBD5E9467560C0870C46DBAE3497386 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SyncHoles_Injected_mB7FD76E7ECBD5E9467560C0870C46DBAE3497386_ftn) (intptr_t);
@@ -17631,7 +17631,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SyncHoles_Injected_
 	_il2cpp_icall_func = (TerrainData_Internal_SyncHoles_Injected_mB7FD76E7ECBD5E9467560C0870C46DBAE3497386_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SyncHoles_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107908
+// Method Definition Index: 107953
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_MarkAlphamapDirtyRegion_Injected_m50F1B15D752A2F629BC8EC781E96AB31777FF759 (intptr_t ___0__unity_self, int32_t ___1_alphamapIndex, int32_t ___2_x, int32_t ___3_y, int32_t ___4_width, int32_t ___5_height, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_MarkAlphamapDirtyRegion_Injected_m50F1B15D752A2F629BC8EC781E96AB31777FF759_ftn) (intptr_t, int32_t, int32_t, int32_t, int32_t, int32_t);
@@ -17640,7 +17640,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_MarkAlphamapDirtyRe
 	_il2cpp_icall_func = (TerrainData_Internal_MarkAlphamapDirtyRegion_Injected_m50F1B15D752A2F629BC8EC781E96AB31777FF759_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_MarkAlphamapDirtyRegion_Injected(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_alphamapIndex, ___2_x, ___3_y, ___4_width, ___5_height);
 }
-// Method Definition Index: 107909
+// Method Definition Index: 107954
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_ClearAlphamapDirtyRegion_Injected_mA89FEAF4116A6B5EDDEFA8BE302FBE97A01858B8 (intptr_t ___0__unity_self, int32_t ___1_alphamapIndex, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_ClearAlphamapDirtyRegion_Injected_mA89FEAF4116A6B5EDDEFA8BE302FBE97A01858B8_ftn) (intptr_t, int32_t);
@@ -17649,7 +17649,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_ClearAlphamapDirtyR
 	_il2cpp_icall_func = (TerrainData_Internal_ClearAlphamapDirtyRegion_Injected_mA89FEAF4116A6B5EDDEFA8BE302FBE97A01858B8_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_ClearAlphamapDirtyRegion_Injected(System.IntPtr,System.Int32)");
 	_il2cpp_icall_func(___0__unity_self, ___1_alphamapIndex);
 }
-// Method Definition Index: 107910
+// Method Definition Index: 107955
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SyncAlphamaps_Injected_m4476982A796D740D857C86C2F5188DC19ACBBD99 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainData_Internal_SyncAlphamaps_Injected_m4476982A796D740D857C86C2F5188DC19ACBBD99_ftn) (intptr_t);
@@ -17658,7 +17658,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainData_Internal_SyncAlphamaps_Injec
 	_il2cpp_icall_func = (TerrainData_Internal_SyncAlphamaps_Injected_m4476982A796D740D857C86C2F5188DC19ACBBD99_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::Internal_SyncAlphamaps_Injected(System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self);
 }
-// Method Definition Index: 107911
+// Method Definition Index: 107956
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_atlasFormat_Injected_m146D9BE081F56CFFB23F0521F065752160B790D5 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainData_get_atlasFormat_Injected_m146D9BE081F56CFFB23F0521F065752160B790D5_ftn) (intptr_t);
@@ -17668,7 +17668,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainData_get_atlasFormat_Injected_
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107912
+// Method Definition Index: 107957
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* TerrainData_get_users_Injected_m611BB0CB4A97F4E083D4A4855EDF05B6375E6535 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* (*TerrainData_get_users_Injected_m611BB0CB4A97F4E083D4A4855EDF05B6375E6535_ftn) (intptr_t);
@@ -17730,7 +17730,7 @@ IL2CPP_EXTERN_C void TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9_mars
 IL2CPP_EXTERN_C void TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9_marshal_com_cleanup(TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 107913
+// Method Definition Index: 107958
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer__ctor_m3B6D12B4296D98B5813C08DF87D09022BD8FDC74 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17746,7 +17746,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer__ctor_m3B6D12B4296D98B5813C
 		return;
 	}
 }
-// Method Definition Index: 107914
+// Method Definition Index: 107959
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_Internal_Create_mA5EB262D9B9D9B3180705A14040FBEAA4257D3E1 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* ___0_layer, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_Internal_Create_mA5EB262D9B9D9B3180705A14040FBEAA4257D3E1_ftn) (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9*);
@@ -17755,7 +17755,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_Internal_Create_mA5EB262D9B
 	_il2cpp_icall_func = (TerrainLayer_Internal_Create_mA5EB262D9B9D9B3180705A14040FBEAA4257D3E1_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::Internal_Create(UnityEngine.TerrainLayer)");
 	_il2cpp_icall_func(___0_layer);
 }
-// Method Definition Index: 107915
+// Method Definition Index: 107960
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* TerrainLayer_get_diffuseTexture_mAF75D09F08293C26B26D7D422B4A0ACC9732DD31 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17794,7 +17794,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107916
+// Method Definition Index: 107961
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseTexture_mC21DEF81B6B58FD1BA8FA381FD569E2DB6173C53 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17833,7 +17833,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107917
+// Method Definition Index: 107962
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* TerrainLayer_get_normalMapTexture_mCBC9DFA1E5243F5227A99A2D7CBF53BE259E9620 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17872,7 +17872,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107918
+// Method Definition Index: 107963
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_normalMapTexture_m6E4BC16FFD3E9C2351E208F38CB1C8B99DD3F5AE (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17911,7 +17911,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107919
+// Method Definition Index: 107964
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* TerrainLayer_get_maskMapTexture_m184F1143BA11213B5B6E1D3487BCDF8A747954EA (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17950,7 +17950,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 107920
+// Method Definition Index: 107965
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapTexture_m7A5384131F06DF24AB8F9B2D0E8C7A8510A17F78 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17989,7 +17989,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107921
+// Method Definition Index: 107966
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 TerrainLayer_get_tileSize_mF6313141BE22D6AC7362DA9A40FB41236458E0A3 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18027,7 +18027,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107922
+// Method Definition Index: 107967
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_tileSize_m53D498E2704EF4B92B11588CF47C726923D57F84 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18062,7 +18062,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107923
+// Method Definition Index: 107968
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 TerrainLayer_get_tileOffset_m1E81B6D002E91BE4EF402337C595227221E8163D (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18100,7 +18100,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107924
+// Method Definition Index: 107969
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_tileOffset_m259D3D0F278A65D405923BF0338766BDA79556A9 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18135,7 +18135,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107925
+// Method Definition Index: 107970
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F TerrainLayer_get_specular_m14209D88524F3739C026F906A8D34B3597EEE07A (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18173,7 +18173,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107926
+// Method Definition Index: 107971
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_specular_mE0E85F57BCD6D771826D57562E6EADDA4E14F538 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18208,7 +18208,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107927
+// Method Definition Index: 107972
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_metallic_m99FCD988D3CE9CADBDD23C9E0C92095DB66F2EE8 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18244,7 +18244,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107928
+// Method Definition Index: 107973
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_metallic_mAD23C76C3953D3A6D54CFC9B399A13841F8F1E87 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18280,7 +18280,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107929
+// Method Definition Index: 107974
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_smoothness_m79BBB46810976A88A0BADB0D52A0C028781C7120 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18316,7 +18316,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107930
+// Method Definition Index: 107975
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_smoothness_mB79F6272E5AA2F3F103B22382A2FFEB418EB1172 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18352,7 +18352,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107931
+// Method Definition Index: 107976
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_normalScale_m63EA677D87ABD1DCF0195D35A8B9738B80C70B3C (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18388,7 +18388,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107932
+// Method Definition Index: 107977
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_normalScale_m0758116D1F0B171EDB48B4E2A13490C1A5703991 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18424,7 +18424,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107933
+// Method Definition Index: 107978
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 TerrainLayer_get_diffuseRemapMin_m949BAC51C5758A977052835D009CC8A2949E9F98 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18462,7 +18462,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107934
+// Method Definition Index: 107979
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseRemapMin_m5899CADEF34D6193180D9B79B1E86E38C05869A9 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18497,7 +18497,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107935
+// Method Definition Index: 107980
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 TerrainLayer_get_diffuseRemapMax_mCA5648C5150800713F24E7D2AB96B4D548E2D4BC (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18535,7 +18535,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107936
+// Method Definition Index: 107981
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseRemapMax_mEFA03F94C12ECEFEC2060901D966DD15BDA89D3C (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18570,7 +18570,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107937
+// Method Definition Index: 107982
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 TerrainLayer_get_maskMapRemapMin_m7DF5C3CD76EA311585C8AC7102DF8FE843465368 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18608,7 +18608,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107938
+// Method Definition Index: 107983
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapRemapMin_mD8778273503FD0FD05869EB86DB6EADDA553856F (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18643,7 +18643,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107939
+// Method Definition Index: 107984
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 TerrainLayer_get_maskMapRemapMax_mE05D91C74E45DE9F2A5AB6ABE75B2BC561ED6342 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18681,7 +18681,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107940
+// Method Definition Index: 107985
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapRemapMax_m7E81C871C9AABC01E2F743E690FD3E9002DB008C (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18716,7 +18716,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107941
+// Method Definition Index: 107986
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainLayer_get_smoothnessSource_m0BCE9193C793C10C7DC142CDDE3C327D64587434 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18752,7 +18752,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 107942
+// Method Definition Index: 107987
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_smoothnessSource_mA80EB172154EF9768404F5D6F422254CF01CBAA6 (TerrainLayer_t52E14A94A0CF76B0B5509B7FDFDE64FF8A9FEFF9* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18788,7 +18788,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 107943
+// Method Definition Index: 107988
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainLayer_get_diffuseTexture_Injected_m8A71C85C52DCD92A21503BD10ECD372D9CE4A314 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainLayer_get_diffuseTexture_Injected_m8A71C85C52DCD92A21503BD10ECD372D9CE4A314_ftn) (intptr_t);
@@ -18798,7 +18798,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainLayer_get_diffuseTexture_Inje
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107944
+// Method Definition Index: 107989
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseTexture_Injected_m6B5B7D48D05571F60E365DD3B23D7A9ED0A7C3C6 (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_diffuseTexture_Injected_m6B5B7D48D05571F60E365DD3B23D7A9ED0A7C3C6_ftn) (intptr_t, intptr_t);
@@ -18807,7 +18807,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseTexture_Injected
 	_il2cpp_icall_func = (TerrainLayer_set_diffuseTexture_Injected_m6B5B7D48D05571F60E365DD3B23D7A9ED0A7C3C6_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_diffuseTexture_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107945
+// Method Definition Index: 107990
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainLayer_get_normalMapTexture_Injected_m69E24C519A9614388A2EAF9661025D49F4D3260C (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainLayer_get_normalMapTexture_Injected_m69E24C519A9614388A2EAF9661025D49F4D3260C_ftn) (intptr_t);
@@ -18817,7 +18817,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainLayer_get_normalMapTexture_In
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107946
+// Method Definition Index: 107991
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_normalMapTexture_Injected_m03679C246D48540BFF5619A5226E8063777F9B4C (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_normalMapTexture_Injected_m03679C246D48540BFF5619A5226E8063777F9B4C_ftn) (intptr_t, intptr_t);
@@ -18826,7 +18826,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_normalMapTexture_Inject
 	_il2cpp_icall_func = (TerrainLayer_set_normalMapTexture_Injected_m03679C246D48540BFF5619A5226E8063777F9B4C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_normalMapTexture_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107947
+// Method Definition Index: 107992
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainLayer_get_maskMapTexture_Injected_mBDD4E290D1AAEFB5B58C322491A37FCDD2A5CEE6 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainLayer_get_maskMapTexture_Injected_mBDD4E290D1AAEFB5B58C322491A37FCDD2A5CEE6_ftn) (intptr_t);
@@ -18836,7 +18836,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainLayer_get_maskMapTexture_Inje
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107948
+// Method Definition Index: 107993
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapTexture_Injected_m535316C0C0E4D28E53D5DE5E30CBBD6310FC6583 (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_maskMapTexture_Injected_m535316C0C0E4D28E53D5DE5E30CBBD6310FC6583_ftn) (intptr_t, intptr_t);
@@ -18845,7 +18845,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapTexture_Injected
 	_il2cpp_icall_func = (TerrainLayer_set_maskMapTexture_Injected_m535316C0C0E4D28E53D5DE5E30CBBD6310FC6583_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_maskMapTexture_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107949
+// Method Definition Index: 107994
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_tileSize_Injected_m19470153D26038D4DA59FA399CD9D56BB95E0C59 (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_tileSize_Injected_m19470153D26038D4DA59FA399CD9D56BB95E0C59_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*);
@@ -18854,7 +18854,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_tileSize_Injected_m1947
 	_il2cpp_icall_func = (TerrainLayer_get_tileSize_Injected_m19470153D26038D4DA59FA399CD9D56BB95E0C59_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_tileSize_Injected(System.IntPtr,UnityEngine.Vector2&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107950
+// Method Definition Index: 107995
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_tileSize_Injected_mDDA72299440CD250BA58812D3A69F1448727C9D7 (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_tileSize_Injected_mDDA72299440CD250BA58812D3A69F1448727C9D7_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*);
@@ -18863,7 +18863,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_tileSize_Injected_mDDA7
 	_il2cpp_icall_func = (TerrainLayer_set_tileSize_Injected_mDDA72299440CD250BA58812D3A69F1448727C9D7_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_tileSize_Injected(System.IntPtr,UnityEngine.Vector2&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107951
+// Method Definition Index: 107996
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_tileOffset_Injected_m23817219A06ED31B5B8A144BDECD195C09210E8B (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_tileOffset_Injected_m23817219A06ED31B5B8A144BDECD195C09210E8B_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*);
@@ -18872,7 +18872,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_tileOffset_Injected_m23
 	_il2cpp_icall_func = (TerrainLayer_get_tileOffset_Injected_m23817219A06ED31B5B8A144BDECD195C09210E8B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_tileOffset_Injected(System.IntPtr,UnityEngine.Vector2&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107952
+// Method Definition Index: 107997
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_tileOffset_Injected_mBADEA1C4AB2922CA7896A2FCBA3D4E75CB654CDC (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_tileOffset_Injected_mBADEA1C4AB2922CA7896A2FCBA3D4E75CB654CDC_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*);
@@ -18881,7 +18881,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_tileOffset_Injected_mBA
 	_il2cpp_icall_func = (TerrainLayer_set_tileOffset_Injected_mBADEA1C4AB2922CA7896A2FCBA3D4E75CB654CDC_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_tileOffset_Injected(System.IntPtr,UnityEngine.Vector2&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107953
+// Method Definition Index: 107998
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_specular_Injected_mD775947578EA15B525F65E8C5FBB8EABCCAF4B7E (intptr_t ___0__unity_self, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_specular_Injected_mD775947578EA15B525F65E8C5FBB8EABCCAF4B7E_ftn) (intptr_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*);
@@ -18890,7 +18890,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_specular_Injected_mD775
 	_il2cpp_icall_func = (TerrainLayer_get_specular_Injected_mD775947578EA15B525F65E8C5FBB8EABCCAF4B7E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_specular_Injected(System.IntPtr,UnityEngine.Color&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107954
+// Method Definition Index: 107999
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_specular_Injected_m4BEDC697B5CA3583E1560541A7832956A257A863 (intptr_t ___0__unity_self, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_specular_Injected_m4BEDC697B5CA3583E1560541A7832956A257A863_ftn) (intptr_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*);
@@ -18899,7 +18899,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_specular_Injected_m4BED
 	_il2cpp_icall_func = (TerrainLayer_set_specular_Injected_m4BEDC697B5CA3583E1560541A7832956A257A863_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_specular_Injected(System.IntPtr,UnityEngine.Color&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107955
+// Method Definition Index: 108000
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_metallic_Injected_mF484D49133F74374C17706D4BCAC479183A99B04 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainLayer_get_metallic_Injected_mF484D49133F74374C17706D4BCAC479183A99B04_ftn) (intptr_t);
@@ -18909,7 +18909,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_metallic_Injected_mF48
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107956
+// Method Definition Index: 108001
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_metallic_Injected_mE65038D85AF50D001D3F94FD39FFC00DF807024B (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_metallic_Injected_mE65038D85AF50D001D3F94FD39FFC00DF807024B_ftn) (intptr_t, float);
@@ -18918,7 +18918,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_metallic_Injected_mE650
 	_il2cpp_icall_func = (TerrainLayer_set_metallic_Injected_mE65038D85AF50D001D3F94FD39FFC00DF807024B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_metallic_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107957
+// Method Definition Index: 108002
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_smoothness_Injected_mED9EEA86A51969AD498096E23DBFBC662B3D3428 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainLayer_get_smoothness_Injected_mED9EEA86A51969AD498096E23DBFBC662B3D3428_ftn) (intptr_t);
@@ -18928,7 +18928,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_smoothness_Injected_mE
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107958
+// Method Definition Index: 108003
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_smoothness_Injected_m336A8A2F366B1ECAE8311A46246323E11DA13405 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_smoothness_Injected_m336A8A2F366B1ECAE8311A46246323E11DA13405_ftn) (intptr_t, float);
@@ -18937,7 +18937,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_smoothness_Injected_m33
 	_il2cpp_icall_func = (TerrainLayer_set_smoothness_Injected_m336A8A2F366B1ECAE8311A46246323E11DA13405_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_smoothness_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107959
+// Method Definition Index: 108004
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_normalScale_Injected_m78AB2BA2F9F4C0D20908A083490CAD8DE7A9B497 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*TerrainLayer_get_normalScale_Injected_m78AB2BA2F9F4C0D20908A083490CAD8DE7A9B497_ftn) (intptr_t);
@@ -18947,7 +18947,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TerrainLayer_get_normalScale_Injected_m
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107960
+// Method Definition Index: 108005
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_normalScale_Injected_m3F0A649FCEE7D48836ED680591135F2909506E15 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_normalScale_Injected_m3F0A649FCEE7D48836ED680591135F2909506E15_ftn) (intptr_t, float);
@@ -18956,7 +18956,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_normalScale_Injected_m3
 	_il2cpp_icall_func = (TerrainLayer_set_normalScale_Injected_m3F0A649FCEE7D48836ED680591135F2909506E15_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_normalScale_Injected(System.IntPtr,System.Single)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107961
+// Method Definition Index: 108006
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_diffuseRemapMin_Injected_m3D0BEB770F591F0DD0E2AFDC08F6F0BF789DC5AA (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_diffuseRemapMin_Injected_m3D0BEB770F591F0DD0E2AFDC08F6F0BF789DC5AA_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -18965,7 +18965,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_diffuseRemapMin_Injecte
 	_il2cpp_icall_func = (TerrainLayer_get_diffuseRemapMin_Injected_m3D0BEB770F591F0DD0E2AFDC08F6F0BF789DC5AA_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_diffuseRemapMin_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107962
+// Method Definition Index: 108007
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseRemapMin_Injected_m204967115631EE20A05F2374BD1A366522C36988 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_diffuseRemapMin_Injected_m204967115631EE20A05F2374BD1A366522C36988_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -18974,7 +18974,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseRemapMin_Injecte
 	_il2cpp_icall_func = (TerrainLayer_set_diffuseRemapMin_Injected_m204967115631EE20A05F2374BD1A366522C36988_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_diffuseRemapMin_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107963
+// Method Definition Index: 108008
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_diffuseRemapMax_Injected_m10DB572932A992AE3A4B0291196355984ECBB327 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_diffuseRemapMax_Injected_m10DB572932A992AE3A4B0291196355984ECBB327_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -18983,7 +18983,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_diffuseRemapMax_Injecte
 	_il2cpp_icall_func = (TerrainLayer_get_diffuseRemapMax_Injected_m10DB572932A992AE3A4B0291196355984ECBB327_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_diffuseRemapMax_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107964
+// Method Definition Index: 108009
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseRemapMax_Injected_m4F401FE535DA537581CAFF956CF215B9A20A8AE7 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_diffuseRemapMax_Injected_m4F401FE535DA537581CAFF956CF215B9A20A8AE7_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -18992,7 +18992,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_diffuseRemapMax_Injecte
 	_il2cpp_icall_func = (TerrainLayer_set_diffuseRemapMax_Injected_m4F401FE535DA537581CAFF956CF215B9A20A8AE7_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_diffuseRemapMax_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107965
+// Method Definition Index: 108010
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_maskMapRemapMin_Injected_m286A8A4225F5A964A639D158B963C730EA3C8063 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_maskMapRemapMin_Injected_m286A8A4225F5A964A639D158B963C730EA3C8063_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -19001,7 +19001,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_maskMapRemapMin_Injecte
 	_il2cpp_icall_func = (TerrainLayer_get_maskMapRemapMin_Injected_m286A8A4225F5A964A639D158B963C730EA3C8063_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_maskMapRemapMin_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107966
+// Method Definition Index: 108011
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapRemapMin_Injected_m8B6A49438AD1B79271CABE3C61A2A6987E83AAA5 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_maskMapRemapMin_Injected_m8B6A49438AD1B79271CABE3C61A2A6987E83AAA5_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -19010,7 +19010,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapRemapMin_Injecte
 	_il2cpp_icall_func = (TerrainLayer_set_maskMapRemapMin_Injected_m8B6A49438AD1B79271CABE3C61A2A6987E83AAA5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_maskMapRemapMin_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107967
+// Method Definition Index: 108012
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_maskMapRemapMax_Injected_m28675FA058E9DCD09A0551A56AA4C232B416CB51 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_get_maskMapRemapMax_Injected_m28675FA058E9DCD09A0551A56AA4C232B416CB51_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -19019,7 +19019,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_get_maskMapRemapMax_Injecte
 	_il2cpp_icall_func = (TerrainLayer_get_maskMapRemapMax_Injected_m28675FA058E9DCD09A0551A56AA4C232B416CB51_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::get_maskMapRemapMax_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 107968
+// Method Definition Index: 108013
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapRemapMax_Injected_m4F681E55355E816D05632B967C12EFC113329017 (intptr_t ___0__unity_self, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_maskMapRemapMax_Injected_m4F681E55355E816D05632B967C12EFC113329017_ftn) (intptr_t, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*);
@@ -19028,7 +19028,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_maskMapRemapMax_Injecte
 	_il2cpp_icall_func = (TerrainLayer_set_maskMapRemapMax_Injected_m4F681E55355E816D05632B967C12EFC113329017_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainLayer::set_maskMapRemapMax_Injected(System.IntPtr,UnityEngine.Vector4&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 107969
+// Method Definition Index: 108014
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainLayer_get_smoothnessSource_Injected_m704C2DD7F863B921E9ECEECC1B7EB96ACC570092 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TerrainLayer_get_smoothnessSource_Injected_m704C2DD7F863B921E9ECEECC1B7EB96ACC570092_ftn) (intptr_t);
@@ -19038,7 +19038,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainLayer_get_smoothnessSource_Inj
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 107970
+// Method Definition Index: 108015
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_smoothnessSource_Injected_m5182C59F36277AC7DBBF6BB297A444EA565D8B45 (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainLayer_set_smoothnessSource_Injected_m5182C59F36277AC7DBBF6BB297A444EA565D8B45_ftn) (intptr_t, int32_t);
@@ -19063,7 +19063,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainLayer_set_smoothnessSource_Inject
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107971
+// Method Definition Index: 108016
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainTileCoord__ctor_m6B6744655B9C3BA9B1A92076F07002B4B4EB899A (TerrainTileCoord_t2181DDF40A8A428A84817957CB7FB19A314F4F09* __this, int32_t ___0_tileX, int32_t ___1_tileZ, const RuntimeMethod* method) 
 {
 	{
@@ -19089,7 +19089,7 @@ IL2CPP_EXTERN_C  void TerrainTileCoord__ctor_m6B6744655B9C3BA9B1A92076F07002B4B4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107972
+// Method Definition Index: 108017
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* TerrainMap_GetTerrain_mFF9C935F05859DF70E95994E727565BD67CDD6FC (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, int32_t ___0_tileX, int32_t ___1_tileZ, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19122,7 +19122,7 @@ IL_001c:
 		return L_6;
 	}
 }
-// Method Definition Index: 107973
+// Method Definition Index: 108018
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* TerrainMap_CreateFromPlacement_mC7822A5F4FC2A2CB119259A48F19D364ACEC5AE7 (Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_originTerrain, Predicate_1_tF9C1F3093AD3E74A0F6BE3895143021CAFB64055* ___1_filter, bool ___2_fullValidation, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19299,7 +19299,7 @@ IL_00cb:
 		return L_42;
 	}
 }
-// Method Definition Index: 107974
+// Method Definition Index: 108019
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* TerrainMap_CreateFromPlacement_m64B90ADBC1D3A1AE18CEC7D0B452377E10B2BCB5 (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_gridOrigin, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_gridSize, Predicate_1_tF9C1F3093AD3E74A0F6BE3895143021CAFB64055* ___2_filter, bool ___3_fullValidation, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19545,7 +19545,7 @@ IL_0102:
 		return L_53;
 	}
 }
-// Method Definition Index: 107975
+// Method Definition Index: 108020
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t5C5FBA59FA0804C53874B619629A7AF7EA74A119* TerrainMap_get_terrainTiles_m9EAA8FCB972C834E2093DDD49B26DBBA2E74A2AB (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -19553,7 +19553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t5C5FBA59FA0804C53874B619629A7AF
 		return L_0;
 	}
 }
-// Method Definition Index: 107976
+// Method Definition Index: 108021
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainMap__ctor_mCDB47BA50D9D54E65754028F9CF8F91828FE616F (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19573,7 +19573,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainMap__ctor_mCDB47BA50D9D54E6575402
 		return;
 	}
 }
-// Method Definition Index: 107977
+// Method Definition Index: 108022
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainMap_AddTerrainInternal_m507CE3A3F880B33CA2330F69464E3511D5B9BD71 (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, int32_t ___0_x, int32_t ___1_z, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___2_terrain, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19651,7 +19651,7 @@ IL_0052:
 		return;
 	}
 }
-// Method Definition Index: 107978
+// Method Definition Index: 108023
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainMap_TryToAddTerrain_m03A05C883F317FD2E6956ADD6625409E8A90BE15 (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, int32_t ___0_tileX, int32_t ___1_tileZ, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___2_terrain, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19745,7 +19745,7 @@ IL_0058:
 		return L_18;
 	}
 }
-// Method Definition Index: 107979
+// Method Definition Index: 108024
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainMap_ValidateTerrain_m8D9B035B3851E0ED8BB5877BD11F63BA85029653 (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, int32_t ___0_tileX, int32_t ___1_tileZ, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20181,7 +20181,7 @@ IL_026d:
 		return;
 	}
 }
-// Method Definition Index: 107980
+// Method Definition Index: 108025
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TerrainMap_Validate_mAFBB4A2D0290E25D59902A1BD5DA1EBC2ACD1326 (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20277,7 +20277,7 @@ IL_0055:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107981
+// Method Definition Index: 108026
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass3_0__ctor_mAFD4AEF760F5CC7CE66BAD750DAD3697397E8945 (U3CU3Ec__DisplayClass3_0_t5A3BA129A3DFF96B5C0658B95E1ED4A678218CC3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20285,7 +20285,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass3_0__ctor_mAFD4AEF7
 		return;
 	}
 }
-// Method Definition Index: 107982
+// Method Definition Index: 108027
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass3_0_U3CCreateFromPlacementU3Eb__0_m703A4D4E3D378C9896199B70A89FCDF1A07C737B (U3CU3Ec__DisplayClass3_0_t5A3BA129A3DFF96B5C0658B95E1ED4A678218CC3* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_x, const RuntimeMethod* method) 
 {
 	{
@@ -20305,7 +20305,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass3_0_U3CCreateFromPl
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107983
+// Method Definition Index: 108028
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainUtility_ValidTerrainsExist_m0DD08E4CEC739929A9AEBCEA849EDFE79985A207 (const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -20343,7 +20343,7 @@ IL_0017:
 		return L_2;
 	}
 }
-// Method Definition Index: 107984
+// Method Definition Index: 108029
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainUtility_ClearConnectivity_m7448E42CD3F2941EF02C10DE358778EEAF9B0AA9 (const RuntimeMethod* method) 
 {
 	TerrainU5BU5D_t89E2F0565563C3D9005990300ADEDD183F1823FE* V_0 = NULL;
@@ -20403,7 +20403,7 @@ IL_002b:
 		return;
 	}
 }
-// Method Definition Index: 107985
+// Method Definition Index: 108030
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t2A7962936E35A63A01CBCE08C2732E037C7FCF4C* TerrainUtility_CollectTerrains_mDFCA0AFA00FFD16CEC8B4EFA9C55E3B7B6803EC4 (bool ___0_onlyAutoConnectedTerrains, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20632,7 +20632,7 @@ IL_00f5:
 		return L_46;
 	}
 }
-// Method Definition Index: 107986
+// Method Definition Index: 108031
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainUtility_AutoConnect_m3E435D139BE402DC495248EDD1FF2C1E9377A897 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20875,7 +20875,7 @@ IL_013a:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107987
+// Method Definition Index: 108032
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_0__ctor_m4C022C4675BA4CFC7E7AAA5692979CDE6CD8E611 (U3CU3Ec__DisplayClass2_0_t0E9CE80E29A8238529BFBB9FCD0C8D0AAD68A57E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20891,7 +20891,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_0__ctor_m4C022C46
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107988
+// Method Definition Index: 108033
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_1__ctor_mA329ED5B221AE8787EAEA1124A2A95675FDD1695 (U3CU3Ec__DisplayClass2_1_t550F5BA64A779BA6B1FDFAC1457F462892D2A951* __this, const RuntimeMethod* method) 
 {
 	{
@@ -20899,7 +20899,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_1__ctor_mA329ED5B
 		return;
 	}
 }
-// Method Definition Index: 107989
+// Method Definition Index: 108034
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass2_1_U3CCollectTerrainsU3Eb__0_m57E871EB2399E5FB7DF78B3C9EBFBF152116AC2C (U3CU3Ec__DisplayClass2_1_t550F5BA64A779BA6B1FDFAC1457F462892D2A951* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_x, const RuntimeMethod* method) 
 {
 	int32_t G_B4_0 = 0;
@@ -20965,7 +20965,7 @@ IL_002c:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 107990
+// Method Definition Index: 108035
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpeedTreeWindManager_UpdateWindAndWriteBufferWindParams_m23A5F63BB153D53BFFC964F460A96FBCED2E2365 (ReadOnlySpan_1_t6190994DF094ABDFA6908C2C3FB347457E8E4282 ___0_renderersID, SpeedTreeWindParamsBufferIterator_t1A1ABDB77C12F567E52E4779294882FD6099D8BA ___1_windParams, bool ___2_history, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20996,7 +20996,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpeedTreeWindManager_UpdateWindAndWriteB
 		return;
 	}
 }
-// Method Definition Index: 107991
+// Method Definition Index: 108036
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpeedTreeWindManager_UpdateWindAndWriteBufferWindParams_Injected_mD0F1307B49EF30CE91F21648F9D72849EA26A693 (ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___0_renderersID, SpeedTreeWindParamsBufferIterator_t1A1ABDB77C12F567E52E4779294882FD6099D8BA* ___1_windParams, bool ___2_history, const RuntimeMethod* method) 
 {
 	typedef void (*SpeedTreeWindManager_UpdateWindAndWriteBufferWindParams_Injected_mD0F1307B49EF30CE91F21648F9D72849EA26A693_ftn) (ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*, SpeedTreeWindParamsBufferIterator_t1A1ABDB77C12F567E52E4779294882FD6099D8BA*, bool);
@@ -21034,13 +21034,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t BindingsMarshaller_Conve
 		return L_1;
 	}
 }
-// Method Definition Index: 107660
+// Method Definition Index: 107705
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void HeightmapChangedCallback_Invoke_m63C1C93709641DBE02DCE9F71B7895C5793AF875_inline (HeightmapChangedCallback_tDF97623B4D5F5E1F3F7F75CC922345B098036EC0* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_terrain, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___1_heightRegion, bool ___2_synched, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667*, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_terrain, ___1_heightRegion, ___2_synched, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 107662
+// Method Definition Index: 107707
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TextureChangedCallback_Invoke_m1194A44102843272B51A70C302EBDBC8214647DE_inline (TextureChangedCallback_tA2D79601BF5AFEC6C8674AA03DAD28844CE69D2F* __this, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667* ___0_terrain, String_t* ___1_textureName, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___2_texelRegion, bool ___3_synched, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667*, String_t*, RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8, bool, const RuntimeMethod*);
@@ -21311,7 +21311,7 @@ IL_0035:
 		return L_10;
 	}
 }
-// Method Definition Index: 107975
+// Method Definition Index: 108020
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Dictionary_2_t5C5FBA59FA0804C53874B619629A7AF7EA74A119* TerrainMap_get_terrainTiles_m9EAA8FCB972C834E2093DDD49B26DBBA2E74A2AB_inline (TerrainMap_t6E07590E3151F47FFC6D5536635AC428ABDA79EB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21319,7 +21319,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Dictionary_2_t5C5FBA59FA0804C5387
 		return L_0;
 	}
 }
-// Method Definition Index: 49036
+// Method Definition Index: 49041
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t MarshalledUnityObject_MarshalNotNull_TisRuntimeObject_mEB1AA6B672D00242BB9DCE007056EC0E9C8DB075_gshared_inline (RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	intptr_t V_0;
@@ -21338,7 +21338,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 49808
+// Method Definition Index: 49813
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Unmarshal_UnmarshalUnityObject_TisRuntimeObject_m2B04FEB8E4BB254DD6F827F3111C91F2AF16D04A_gshared_inline (intptr_t ___0_gcHandlePtr, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -21386,7 +21386,7 @@ IL_0036:
 		return L_8;
 	}
 }
-// Method Definition Index: 49035
+// Method Definition Index: 49040
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t MarshalledUnityObject_Marshal_TisRuntimeObject_m286B34400A212037E8EBD53DBFEAD7D23CDE8051_gshared_inline (RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -21422,7 +21422,7 @@ IL_001f:
 		return L_4;
 	}
 }
-// Method Definition Index: 49816
+// Method Definition Index: 49821
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BlittableArrayWrapper_Unmarshal_TisPatchExtents_t9F583D220D8803058584E983C416D5706242A2CE_m1D4D0D34770A069E107E7CFB154261CC22E61D47_gshared_inline (BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* __this, PatchExtentsU5BU5D_tA31F13F7C5F2F8726998CFA38395494EEAEFB63B** ___0_array, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -21581,7 +21581,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Span_1_get_Length_m6A1AFA
 		return L_0;
 	}
 }
-// Method Definition Index: 49816
+// Method Definition Index: 49821
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BlittableArrayWrapper_Unmarshal_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m784D839177D7F17CDDD6FA7463118B5EEE65EFEC_gshared_inline (BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* __this, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C** ___0_array, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -21739,7 +21739,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Span_1_get_Length_mED1112
 		return L_0;
 	}
 }
-// Method Definition Index: 49816
+// Method Definition Index: 49821
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BlittableArrayWrapper_Unmarshal_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m88F93E68A8FE645681F98A43BF42F80258A24243_gshared_inline (BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* __this, Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C** ___0_array, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -21849,7 +21849,7 @@ IL_0085:
 		return;
 	}
 }
-// Method Definition Index: 49816
+// Method Definition Index: 49821
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BlittableArrayWrapper_Unmarshal_TisDetailInstanceTransform_tEB502B1ADBA1163147FA4A4FCB6BDCC57EC07EC4_mB9F75E9F58D21466B9EC527A47BC03631E3867D1_gshared_inline (BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* __this, DetailInstanceTransformU5BU5D_t0CC31B0E422EE00635027CFB8D1605057176CB54** ___0_array, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -21959,7 +21959,7 @@ IL_0085:
 		return;
 	}
 }
-// Method Definition Index: 49816
+// Method Definition Index: 49821
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BlittableArrayWrapper_Unmarshal_TisTreeInstance_t382B018173ED020660D262061EA9424682614F50_m7A71BBD4B924DB0C7D594D8ED3127EFE05A33B66_gshared_inline (BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* __this, TreeInstanceU5BU5D_tA728320FD1360BBC648153584A156DB0B90C2429** ___0_array, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -22297,7 +22297,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool IntPtr_op_Equality_m7D9CDCDE
 		return (bool)((((intptr_t)L_0) == ((intptr_t)L_1))? 1 : 0);
 	}
 }
-// Method Definition Index: 49809
+// Method Definition Index: 49814
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC Unmarshal_FromIntPtrUnsafe_mB304834C5EC431CC0FBE13C6BB97066F222BC55C_inline (intptr_t ___0_gcHandle, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

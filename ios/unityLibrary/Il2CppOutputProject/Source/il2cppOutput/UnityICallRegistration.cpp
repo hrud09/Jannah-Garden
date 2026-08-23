@@ -7678,6 +7678,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_PlayerPrefs_TrySetInt_Injected();
 		Register_UnityEngine_PlayerPrefs_TrySetInt_Injected();
 
+		//System.Boolean UnityEngine.PlayerPrefs::TrySetSetString_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
+		void Register_UnityEngine_PlayerPrefs_TrySetSetString_Injected();
+		Register_UnityEngine_PlayerPrefs_TrySetSetString_Injected();
+
 		//System.Int32 UnityEngine.PlayerPrefs::GetInt_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32)
 		void Register_UnityEngine_PlayerPrefs_GetInt_Injected();
 		Register_UnityEngine_PlayerPrefs_GetInt_Injected();
@@ -7689,6 +7693,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.PlayerPrefs::DeleteAll()
 		void Register_UnityEngine_PlayerPrefs_DeleteAll();
 		Register_UnityEngine_PlayerPrefs_DeleteAll();
+
+		//System.Void UnityEngine.PlayerPrefs::GetString_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
+		void Register_UnityEngine_PlayerPrefs_GetString_Injected();
+		Register_UnityEngine_PlayerPrefs_GetString_Injected();
 
 		//System.Void UnityEngine.PlayerPrefs::Save()
 		void Register_UnityEngine_PlayerPrefs_Save();

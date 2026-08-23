@@ -28,14 +28,14 @@ static Il2CppMethodPointer s_methodPointers[8] =
 };
 static const int32_t s_InvokerIndices[8] = 
 {
-	18211,
-	14226,
+	18228,
+	14238,
 	2184,
 	1343,
-	18463,
-	29891,
-	26754,
-	19503,
+	18480,
+	29909,
+	26772,
+	19520,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_TerrainPhysicsModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_TerrainPhysicsModule_CodeGenModule = 
