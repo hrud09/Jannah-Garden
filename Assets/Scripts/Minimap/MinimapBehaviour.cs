@@ -1,15 +1,18 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
 
-public class MinimapBehaviour : MonoBehaviour
+public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("UI References")]
     [SerializeField] private RectTransform minimapPanel;
     [SerializeField] private Button expandButton;
     [SerializeField] private Button collapseButton;
+    [Tooltip("Only visible while expanded. Snaps the minimap camera back to its default position over the player.")]
+    [SerializeField] private Button recenterButton;
 
     [Header("Camera References & Settings")]
     [SerializeField] private Camera minimapCamera;
@@ -30,6 +33,12 @@ public class MinimapBehaviour : MonoBehaviour
         new Keyframe(1f, 1f, 0f, 0f)         // Settle perfectly at 1.0
     );
 
+    [Header("Pan Limits")]
+    [Tooltip("World-space X/Z minimum the minimap camera can be dragged to. Defaults to the terrain's min corner.")]
+    [SerializeField] private Vector2 panMin = new Vector2(-100f, -100f);
+    [Tooltip("World-space X/Z maximum the minimap camera can be dragged to. Defaults to the terrain's max corner.")]
+    [SerializeField] private Vector2 panMax = new Vector2(100f, 100f);
+
     [Header("Outside Tap Settings")]
     [Tooltip("When expanded, tapping/clicking anywhere outside the minimap collapses it.")]
     [SerializeField] private bool collapseOnOutsideTap = true;
@@ -40,6 +49,12 @@ public class MinimapBehaviour : MonoBehaviour
     private Coroutine transitionCoroutine;
     private Canvas rootCanvas;
     private int lastStateChangeFrame = -1;
+
+    // Drag-to-pan (only active while expanded; collapsing resets it)
+    private Transform cameraFollowTarget;
+    private Vector3 cameraBaseLocalOffset;
+    private Vector3 panOffset;
+    private Vector2 lastDragLocalPoint;
 
     public bool IsExpanded => isExpanded;
 
@@ -62,14 +77,84 @@ public class MinimapBehaviour : MonoBehaviour
             collapseButton.onClick.AddListener(CollapseMinimap);
         }
 
+        if (recenterButton != null)
+        {
+            recenterButton.onClick.AddListener(RecenterMinimap);
+        }
+
         // Cache the canvas so outside-tap hit tests use the correct event camera
         Canvas canvas = minimapPanel != null
             ? minimapPanel.GetComponentInParent<Canvas>()
             : GetComponentInParent<Canvas>();
         rootCanvas = canvas != null ? canvas.rootCanvas : null;
 
+        // Cache the minimap camera's resting offset from its follow target (usually the player)
+        // so dragging can pan it away and CollapseMinimap can snap it back.
+        if (minimapCamera != null)
+        {
+            cameraFollowTarget = minimapCamera.transform.parent;
+            cameraBaseLocalOffset = minimapCamera.transform.localPosition;
+        }
+
         // Apply initial state without animation
         UpdateMinimapState(false);
+    }
+
+    private void LateUpdate()
+    {
+        // Re-centers the minimap camera on its follow target every frame (as parenting normally
+        // would) while adding the world-space pan offset from dragging on top.
+        if (minimapCamera == null || cameraFollowTarget == null) return;
+
+        Vector3 restPosition = cameraFollowTarget.position + cameraBaseLocalOffset;
+        Vector3 position = restPosition + panOffset;
+        position.x = Mathf.Clamp(position.x, panMin.x, panMax.x);
+        position.z = Mathf.Clamp(position.z, panMin.y, panMax.y);
+
+        // Re-derive panOffset from the clamped position so it never overshoots the limits — this
+        // keeps dragging back off an edge immediately responsive instead of lagging behind.
+        panOffset = position - restPosition;
+
+        minimapCamera.transform.position = position;
+    }
+
+    /// <summary>
+    /// Begins tracking a drag gesture on the minimap. Only pans while expanded.
+    /// </summary>
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (!isExpanded || minimapPanel == null) return;
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(minimapPanel, eventData.position, GetEventCamera(), out lastDragLocalPoint);
+    }
+
+    /// <summary>
+    /// Pans the minimap camera opposite to the pointer delta so the map content follows the drag.
+    /// </summary>
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!isExpanded || minimapPanel == null || minimapCamera == null) return;
+
+        Vector2 currentLocalPoint;
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(minimapPanel, eventData.position, GetEventCamera(), out currentLocalPoint)) return;
+
+        Vector2 localDelta = currentLocalPoint - lastDragLocalPoint;
+        lastDragLocalPoint = currentLocalPoint;
+
+        float panelSize = minimapPanel.rect.height;
+        if (panelSize <= 0f) return;
+
+        float worldUnitsPerLocalUnit = (2f * GetCurrentCameraSize()) / panelSize;
+
+        // The camera can be rotated (e.g. it turns with the player), so screen-right/screen-up
+        // aren't fixed world axes — use the camera's current axes to convert the drag correctly.
+        Transform camTransform = minimapCamera.transform;
+        Vector3 worldDelta = (camTransform.right * localDelta.x + camTransform.up * localDelta.y) * worldUnitsPerLocalUnit;
+        panOffset -= worldDelta;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
     }
 
     private void Update()
@@ -107,6 +192,11 @@ public class MinimapBehaviour : MonoBehaviour
         {
             collapseButton.onClick.RemoveListener(CollapseMinimap);
         }
+
+        if (recenterButton != null)
+        {
+            recenterButton.onClick.RemoveListener(RecenterMinimap);
+        }
     }
 
     /// <summary>
@@ -132,7 +222,16 @@ public class MinimapBehaviour : MonoBehaviour
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.MinimapCollapse);
         isExpanded = false;
         lastStateChangeFrame = Time.frameCount;
+        panOffset = Vector3.zero;
         UpdateMinimapState(true);
+    }
+
+    /// <summary>
+    /// Snaps the minimap camera back to its default position over the player.
+    /// </summary>
+    public void RecenterMinimap()
+    {
+        panOffset = Vector3.zero;
     }
 
     /// <summary>
@@ -183,6 +282,9 @@ public class MinimapBehaviour : MonoBehaviour
 
         if (expandButton != null &&
             ContainsScreenPoint(expandButton.transform as RectTransform, screenPosition, eventCamera)) return true;
+
+        if (recenterButton != null &&
+            ContainsScreenPoint(recenterButton.transform as RectTransform, screenPosition, eventCamera)) return true;
 
         if (additionalInsideRects != null)
         {
@@ -238,6 +340,12 @@ public class MinimapBehaviour : MonoBehaviour
         if (collapseButton != null)
         {
             collapseButton.gameObject.SetActive(isExpanded);
+        }
+
+        // The recenter button is only useful (and only visible) while expanded
+        if (recenterButton != null)
+        {
+            recenterButton.gameObject.SetActive(isExpanded);
         }
     }
 

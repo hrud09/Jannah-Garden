@@ -17692,6 +17692,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f8e0aa312b32ee4fab7ba2c2845e399, type: 3}
+--- !u!20 &1584342953 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5838885171091738056, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+  m_PrefabInstance: {fileID: 520649522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1585593491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26126,6 +26131,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5795708068829139970, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
+      propertyPath: panMax.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795708068829139970, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
+      propertyPath: panMax.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795708068829139970, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
+      propertyPath: panMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795708068829139970, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
+      propertyPath: panMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795708068829139970, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
+      propertyPath: minimapCamera
+      value: 
+      objectReference: {fileID: 1584342953}
     - target: {fileID: 9163683240308011074, guid: a03cb9e3bf543d742a63e9347cf5242c, type: 3}
       propertyPath: m_Name
       value: Minimap Holder
