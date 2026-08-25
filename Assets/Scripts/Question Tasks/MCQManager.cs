@@ -537,7 +537,8 @@ public class MCQManager : MonoBehaviour
     {
         if (tmpTextUI == null) return;
 
-        bool rtl = LocalizationManager.Instance != null && LocalizationManager.Instance.IsRightToLeft;
-        tmpTextUI.text = rtl ? ArabicTextShaper.Shape(text) : text;
+        if (LocalizationManager.Instance == null) { tmpTextUI.text = text; return; }
+
+        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale);
     }
 }

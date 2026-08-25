@@ -207,7 +207,7 @@ MonoBehaviour:
   selectedSprite: {fileID: 21300000, guid: 48c6252ea190e4d9cba63c866af35588, type: 3}
   correctSprite: {fileID: 21300000, guid: b7322759767544856963bfa1e25d944e, type: 3}
   wrongSprite: {fileID: 21300000, guid: 06c4797756f6d4329a91c6fe452602fd, type: 3}
-  questionFile: {fileID: 4900000, guid: 9563fe66ae2f58243ba3c93219785644, type: 3}
+  questionFile: {fileID: 0}
 --- !u!1 &3311928264638029011
 GameObject:
   m_ObjectHideFlags: 0

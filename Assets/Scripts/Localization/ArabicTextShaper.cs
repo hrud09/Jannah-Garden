@@ -65,6 +65,20 @@ public static class ArabicTextShaper
         { 'و', new ushort[] { 0xFEED, 0, 0, 0xFEEE } },                // WAW
         { 'ى', new ushort[] { 0xFEEF, 0, 0, 0xFEF0 } },                // ALEF MAKSURA
         { 'ي', new ushort[] { 0xFEF1, 0xFEF3, 0xFEF4, 0xFEF2 } },      // YEH
+
+        // Perso-Arabic extension letters needed for Urdu (not used by Arabic itself). Presentation forms
+        // confirmed against the Unicode Character Database's compatibility decomposition for each codepoint
+        // (e.g. U+FB56 decomposes as "<isolated> 067E") and cross-checked against Noto Sans Arabic's cmap.
+        { 'پ', new ushort[] { 0xFB56, 0xFB58, 0xFB59, 0xFB57 } },      // PEH
+        { 'ٹ', new ushort[] { 0xFB66, 0xFB68, 0xFB69, 0xFB67 } },      // TTEHEH
+        { 'چ', new ushort[] { 0xFB7A, 0xFB7C, 0xFB7D, 0xFB7B } },      // TCHEH
+        { 'ڈ', new ushort[] { 0xFB88, 0, 0, 0xFB89 } },                // DDAL
+        { 'ڑ', new ushort[] { 0xFB8C, 0, 0, 0xFB8D } },                // RREH
+        { 'ژ', new ushort[] { 0xFB8A, 0, 0, 0xFB8B } },                // JEH
+        { 'گ', new ushort[] { 0xFB92, 0xFB94, 0xFB95, 0xFB93 } },      // GAF
+        { 'ں', new ushort[] { 0xFB9E, 0, 0, 0xFB9F } },                // NOON GHUNNA
+        { 'ھ', new ushort[] { 0xFBAA, 0xFBAC, 0xFBAD, 0xFBAB } },      // HEH DOACHASHMEE
+        { 'ے', new ushort[] { 0xFBAE, 0, 0, 0xFBAF } },                // YEH BARREE
     };
 
     // Lam-Alef ligatures: LAM followed by one of the four Alef forms collapses into a single glyph.

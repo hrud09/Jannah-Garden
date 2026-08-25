@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25dbf6697a80402fb1b2aa78fd6ebe7, type: 3}
+  m_Name: HarfBuzzFontRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::HarfBuzzFontRegistry
+  bengaliFontAsset: {fileID: 11400000, guid: c205270867f664e9cbf1272f2fadfd81, type: 2}
+  arabicFontAsset: {fileID: 11400000, guid: 0e0ff04b94d2e441b9a719b04c37d8e8, type: 2}

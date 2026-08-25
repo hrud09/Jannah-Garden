@@ -185,7 +185,7 @@ public class InGameShopManager : MonoBehaviour
                     TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
                     if (txt != null)
                     {
-                        txt.text = ShopTaxonomy.GetCategoryName(cat);
+                        LocalizedRendering.SetText(txt, ShopTaxonomy.GetCategoryName(cat));
                     }
 
                     RectTransform rect = tab.tabButton.GetComponent<RectTransform>();

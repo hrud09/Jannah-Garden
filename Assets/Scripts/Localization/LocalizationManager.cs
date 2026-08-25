@@ -58,6 +58,20 @@ public class LocalizationManager : MonoBehaviour
     /// script either, but it is still left-to-right.</summary>
     public bool IsRightToLeft => CurrentLocale == AppLocale.ar || CurrentLocale == AppLocale.ur;
 
+    /// <summary>
+    /// Runs <paramref name="text"/> through whichever script shaper the active locale needs before it
+    /// reaches a TMP_Text — <see cref="ArabicTextShaper"/> for Arabic/Urdu, <see cref="BengaliTextShaper"/>
+    /// for Bengali, or unchanged for everything else. TMP has no complex-script shaping of its own, so
+    /// every label showing localized or user-facing content should go through this rather than assigning
+    /// raw strings directly.
+    /// </summary>
+    public string ShapeForDisplay(string text)
+    {
+        if (IsRightToLeft) return ArabicTextShaper.Shape(text);
+        if (CurrentLocale == AppLocale.bn) return BengaliTextShaper.Shape(text);
+        return text;
+    }
+
     private Dictionary<string, string> _activeTable = new Dictionary<string, string>();
     private Dictionary<string, string> _fallbackTable = new Dictionary<string, string>();
 
@@ -107,9 +121,14 @@ public class LocalizationManager : MonoBehaviour
         if (notify) OnLocaleChanged?.Invoke();
     }
 
+    /// <summary>Languages the game actually ships content for. Any other locale — including "ur", which
+    /// still exists in the AppLocale enum for its unused data files — falls back to English.</summary>
+    private static readonly AppLocale[] SupportedLocales = { AppLocale.en, AppLocale.ar, AppLocale.bn };
+
     /// <summary>
     /// Accepts both short codes ("ar") and the longer forms a host app might send ("ar-SA", "ar_AE").
-    /// Anything unrecognised falls back to English rather than leaving the game in a broken state.
+    /// Anything unrecognised or unsupported falls back to English rather than leaving the game in a
+    /// broken state.
     /// </summary>
     private static AppLocale ParseLocale(string code)
     {
@@ -119,10 +138,11 @@ public class LocalizationManager : MonoBehaviour
             int separator = normalized.IndexOfAny(new[] { '-', '_' });
             if (separator > 0) normalized = normalized.Substring(0, separator);
 
-            if (Enum.TryParse(normalized, ignoreCase: true, out AppLocale locale)) return locale;
+            if (Enum.TryParse(normalized, ignoreCase: true, out AppLocale locale) && Array.IndexOf(SupportedLocales, locale) >= 0)
+                return locale;
         }
 
-        Debug.LogWarning($"[LocalizationManager] Unrecognised locale '{code}' — using {FallbackLocale}.");
+        Debug.LogWarning($"[LocalizationManager] Unrecognised or unsupported locale '{code}' — using {FallbackLocale}.");
         return FallbackLocale;
     }
 

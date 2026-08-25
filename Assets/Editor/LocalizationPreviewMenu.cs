@@ -11,6 +11,7 @@ public static class LocalizationPreviewMenu
     [MenuItem("Tools/Localization/Preview Locale/English", true)]
     [MenuItem("Tools/Localization/Preview Locale/Arabic", true)]
     [MenuItem("Tools/Localization/Preview Locale/Bengali", true)]
+    [MenuItem("Tools/Localization/Preview Locale/Urdu", true)]
     private static bool ValidatePreview() => Application.isPlaying && LocalizationManager.Instance != null;
 
     [MenuItem("Tools/Localization/Preview Locale/English")]
@@ -21,6 +22,9 @@ public static class LocalizationPreviewMenu
 
     [MenuItem("Tools/Localization/Preview Locale/Bengali")]
     private static void PreviewBengali() => SetLocale("bn");
+
+    [MenuItem("Tools/Localization/Preview Locale/Urdu")]
+    private static void PreviewUrdu() => SetLocale("ur");
 
     private static void SetLocale(string code)
     {

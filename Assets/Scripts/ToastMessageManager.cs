@@ -48,8 +48,8 @@ public class ToastMessageManager : MonoBehaviour
 
         if (messageText != null)
         {
-            messageText.text = message;
             messageText.color = textColor;
+            LocalizedRendering.SetText(messageText, message);
         }
         
         if (messageHolder != null) 

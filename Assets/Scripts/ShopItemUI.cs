@@ -197,8 +197,8 @@ public class ShopItemUI : MonoBehaviour
 
         if (itemCategoryText != null)
         {
-            itemCategoryText.text = ShopTaxonomy.GetCategoryName(category);
             itemCategoryText.color = categoryColor;
+            LocalizedRendering.SetText(itemCategoryText, ShopTaxonomy.GetCategoryName(category));
         }
 
         if (itemCategoryAccentImg != null)
@@ -217,8 +217,8 @@ public class ShopItemUI : MonoBehaviour
             itemTierText.gameObject.SetActive(hasTier);
             if (hasTier)
             {
-                itemTierText.text = ShopTaxonomy.GetTierLabel(tier);
                 if (tintTierVisuals) itemTierText.color = tierColor;
+                LocalizedRendering.SetText(itemTierText, ShopTaxonomy.GetTierLabel(tier));
             }
         }
 

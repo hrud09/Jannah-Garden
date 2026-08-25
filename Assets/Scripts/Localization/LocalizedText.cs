@@ -8,6 +8,12 @@ using UnityEngine;
 ///
 /// For Arabic, this also right-aligns the label and runs its text through <see cref="ArabicTextShaper"/>
 /// so it renders as joined, right-to-left script rather than isolated LTR letterforms.
+///
+/// Bengali is handled differently: instead of the hand-rolled <see cref="BengaliTextShaper"/> (which only
+/// reorders pre-base vowel signs and can't form conjuncts), this swaps in a lazily-created
+/// <see cref="ShapedTextGraphic"/> child that renders via real HarfBuzz shaping — see
+/// Assets/Scripts/Localization/HarfBuzzShaper.cs. Arabic/English stay on the TMP_Text path for now;
+/// only Bengali had the conjunct-rendering problem HarfBuzz was brought in to fix.
 /// </summary>
 [RequireComponent(typeof(TMP_Text))]
 public class LocalizedText : MonoBehaviour
@@ -42,10 +48,11 @@ public class LocalizedText : MonoBehaviour
         if (_label == null || LocalizationManager.Instance == null || string.IsNullOrEmpty(key)) return;
 
         string value = LocalizationManager.Instance.Get(key);
+        AppLocale locale = LocalizationManager.Instance.CurrentLocale;
         bool rtl = LocalizationManager.Instance.IsRightToLeft;
 
-        _label.text = rtl ? ArabicTextShaper.Shape(value) : value;
         _label.alignment = rtl ? MirrorAlignment(leftToRightAlignment) : leftToRightAlignment;
+        LocalizedRendering.SetText(_label, value, locale);
     }
 
     /// <summary>Changes which key this label shows at runtime (e.g. a shop item card being re-populated).</summary>
@@ -55,17 +62,23 @@ public class LocalizedText : MonoBehaviour
         Apply();
     }
 
+    /// <summary>Swaps the Left/Right half of the alignment (TMP encodes it in the low byte) while leaving
+    /// the vertical component (high byte — Top/Middle/Bottom/Baseline/Geometry/Capline) untouched. Handles
+    /// every Left/Right pairing this way — TopLeft/TopRight, BaselineLeft/BaselineRight, MidlineLeft/
+    /// MidlineRight, CaplineLeft/CaplineRight, etc. — instead of only the three enumerated by hand
+    /// previously. Center/Justified/Flush/Geometry read the same in both directions, so they pass through.</summary>
     private static TextAlignmentOptions MirrorAlignment(TextAlignmentOptions alignment)
     {
-        switch (alignment)
+        int horizontal = (int)alignment & 0xFF;
+        int vertical = (int)alignment & 0xFF00;
+
+        int mirroredHorizontal = horizontal switch
         {
-            case TextAlignmentOptions.TopLeft: return TextAlignmentOptions.TopRight;
-            case TextAlignmentOptions.Left: return TextAlignmentOptions.Right;
-            case TextAlignmentOptions.BottomLeft: return TextAlignmentOptions.BottomRight;
-            case TextAlignmentOptions.TopRight: return TextAlignmentOptions.TopLeft;
-            case TextAlignmentOptions.Right: return TextAlignmentOptions.Left;
-            case TextAlignmentOptions.BottomRight: return TextAlignmentOptions.BottomLeft;
-            default: return alignment; // Center/Justified variants don't need mirroring.
-        }
+            (int)HorizontalAlignmentOptions.Left => (int)HorizontalAlignmentOptions.Right,
+            (int)HorizontalAlignmentOptions.Right => (int)HorizontalAlignmentOptions.Left,
+            _ => horizontal,
+        };
+
+        return (TextAlignmentOptions)(mirroredHorizontal | vertical);
     }
 }
