@@ -15,6 +15,7 @@ public class HarfBuzzFontRegistry : ScriptableObject
 
     [SerializeField] private TMP_FontAsset bengaliFontAsset;
     [SerializeField] private TMP_FontAsset arabicFontAsset;
+    [SerializeField] private TMP_FontAsset englishFontAsset;
 
     private static HarfBuzzFontRegistry _instance;
 
@@ -38,6 +39,7 @@ public class HarfBuzzFontRegistry : ScriptableObject
             case AppLocale.bn: return instance.bengaliFontAsset;
             case AppLocale.ar:
             case AppLocale.ur: return instance.arabicFontAsset;
+            case AppLocale.en: return instance.englishFontAsset;
             default: return null;
         }
     }

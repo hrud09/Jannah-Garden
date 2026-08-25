@@ -22,7 +22,8 @@ public struct ShapedGlyph
 ///
 /// One <see cref="hb_font_t"/> is created per font and kept for the process's lifetime — creating it
 /// re-parses the font's cmap/GSUB/GPOS tables, which is wasted work to repeat per call given this
-/// game only ever shapes against two faces (Bengali, Arabic).
+/// game only ever shapes against a handful of faces (Bengali, Arabic, and Latin for untranslated/
+/// numeric runs embedded in shaped content).
 /// </summary>
 public static class HarfBuzzShaper
 {
@@ -34,6 +35,7 @@ public static class HarfBuzzShaper
         { AppLocale.bn, "Fonts/NotoSansBengali-Regular" },
         { AppLocale.ar, "Fonts/NotoSansArabic-Regular" },
         { AppLocale.ur, "Fonts/NotoSansArabic-Regular" }, // Urdu content uses the Arabic face today
+        { AppLocale.en, "Fonts/LiberationSans-Regular" }, // untranslated/Latin runs embedded in shaped content
     };
 
     private static readonly Dictionary<AppLocale, uint> ScriptByLocale = new Dictionary<AppLocale, uint>
@@ -41,6 +43,7 @@ public static class HarfBuzzShaper
         { AppLocale.bn, HarfBuzzNative.HB_SCRIPT_BENGALI },
         { AppLocale.ar, HarfBuzzNative.HB_SCRIPT_ARABIC },
         { AppLocale.ur, HarfBuzzNative.HB_SCRIPT_ARABIC },
+        { AppLocale.en, HarfBuzzNative.HB_SCRIPT_LATIN },
     };
 
     private static readonly Dictionary<AppLocale, int> DirectionByLocale = new Dictionary<AppLocale, int>
@@ -48,6 +51,7 @@ public static class HarfBuzzShaper
         { AppLocale.bn, HarfBuzzNative.HB_DIRECTION_LTR },
         { AppLocale.ar, HarfBuzzNative.HB_DIRECTION_RTL },
         { AppLocale.ur, HarfBuzzNative.HB_DIRECTION_RTL },
+        { AppLocale.en, HarfBuzzNative.HB_DIRECTION_LTR },
     };
 
     /// <summary>Design-space units per em for the font backing this locale — divide advance/offset

@@ -36,8 +36,9 @@ using UnityEngine.UI;
 ///    points, so wrapping never re-shapes a word differently than it would on an unbroken line. A
 ///    single word wider than the rect hard-breaks mid-word rather than overflowing forever. No
 ///    auto-size: overflow when even the smallest piece can't fit is accepted, not shrunk to fit.
-///  - Script-run splitting only recognizes Bengali and Arabic (this component's only two real script
-///    inputs today — see LocalizedRendering) and only reorders which FONT a run uses, not which VISUAL
+///  - Script-run splitting recognizes Bengali, Arabic, and Latin (see <see cref="ScriptRunSplitter"/> —
+///    the last is for untranslated fallback text and plain-ASCII numeral strings, not a real "en UI
+///    locale" input; see LocalizedRendering) and only reorders which FONT a run uses, not which VISUAL
 ///    POSITION a run appears at: runs stay in their logical left-to-right order. That's correct for a
 ///    Bengali-primary (LTR) line with an embedded Arabic (RTL) run — full paragraph-level bidi
 ///    reordering (UAX #9) would only matter for an Arabic-primary line with embedded Bengali, which

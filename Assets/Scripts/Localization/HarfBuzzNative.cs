@@ -26,9 +26,10 @@ internal static class HarfBuzzNative
     internal const int HB_DIRECTION_LTR = 4;
     internal const int HB_DIRECTION_RTL = 5;
 
-    // hb_script_t — HB_TAG('B','e','n','g') / HB_TAG('A','r','a','b')
+    // hb_script_t — HB_TAG('B','e','n','g') / HB_TAG('A','r','a','b') / HB_TAG('L','a','t','n')
     internal const uint HB_SCRIPT_BENGALI = 0x42656e67;
     internal const uint HB_SCRIPT_ARABIC = 0x41726162;
+    internal const uint HB_SCRIPT_LATIN = 0x4c61746e;
 
     [StructLayout(LayoutKind.Sequential)]
     internal struct HbGlyphInfo

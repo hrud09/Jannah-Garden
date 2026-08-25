@@ -18,7 +18,7 @@ public struct ScriptRun
 /// single font just produces tofu boxes for whichever script that font doesn't cover (e.g. "ﷺ" shaped
 /// against the Bengali face).
 ///
-/// Deliberately simple: a "neutral" character (whitespace, digits, punctuation) always extends the
+/// Deliberately simple: a "neutral" character (whitespace, punctuation) always extends the
 /// current run rather than starting a new one, so a lone hyphen or space at a script boundary doesn't
 /// spawn a needless extra run. This matches how a space-delimited embedded word/symbol (the actual
 /// content pattern in this game, e.g. "নবী ﷺ প্রথম") behaves correctly; a neutral character directly
@@ -27,8 +27,16 @@ public struct ScriptRun
 /// documented simplification for the actual content this project ships (mirroring how
 /// <see cref="ArabicTextShaper"/> already simplifies bidi rather than implementing UAX #9 in full).
 ///
-/// Only Bengali and Arabic are recognized as distinct scripts here — this project's other locale (en)
-/// never reaches this path (see LocalizedRendering), so there's no "switch to Latin" case to handle.
+/// Bengali, Arabic, and Latin (ASCII letters/digits) are recognized as distinct scripts. Latin exists
+/// so untranslated fallback content (e.g. a locale-suffixed data file that doesn't have a Bengali
+/// translation yet, so the English source string leaks through) and plain numeral strings (e.g. a
+/// dhikr counter, which is always formatted with plain ASCII digits, not localized numerals) still get
+/// shaped against a Latin face instead of being folded into the surrounding Bengali/Arabic run and
+/// mis-shaped against a font whose script-specific OpenType rules don't apply to them. ASCII digits are
+/// treated as strong Latin (not neutral) specifically so a pure-digit string with no other strong
+/// character anywhere in it — the dhikr counter case — resolves to Latin instead of falling back to
+/// <paramref name="baseLocale"/>. This project's third locale (en) never reaches this path as a whole
+/// line (see LocalizedRendering) — Latin only shows up here as an embedded run within Bengali content.
 /// </summary>
 public static class ScriptRunSplitter
 {
@@ -40,6 +48,9 @@ public static class ScriptRunSplitter
         (c >= 'ﹰ' && c <= '﻿');    // Arabic Presentation Forms-B
 
     private static bool IsBengali(char c) => c >= 'ঀ' && c <= '৿';
+
+    private static bool IsLatin(char c) =>
+        (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
 
     /// <summary>Splits <paramref name="line"/> into script runs, defaulting to <paramref name="baseLocale"/>
     /// for neutral characters that appear before any strong-script character is seen.</summary>
@@ -56,7 +67,7 @@ public static class ScriptRunSplitter
         for (int i = 0; i < line.Length; i++)
         {
             char c = line[i];
-            AppLocale? strong = IsArabic(c) ? AppLocale.ar : IsBengali(c) ? AppLocale.bn : (AppLocale?)null;
+            AppLocale? strong = IsArabic(c) ? AppLocale.ar : IsBengali(c) ? AppLocale.bn : IsLatin(c) ? AppLocale.en : (AppLocale?)null;
 
             if (strong.HasValue && haveContent && strong.Value != currentLocale)
             {
