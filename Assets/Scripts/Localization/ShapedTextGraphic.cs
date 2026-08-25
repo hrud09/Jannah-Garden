@@ -59,7 +59,7 @@ public class ShapedTextGraphic : MaskableGraphic
 
     [SerializeField] private float paddingLeft;
     [SerializeField] private float paddingRight;
-    [SerializeField] private float paddingTop = 100f;
+    [SerializeField] private float paddingTop;
     [SerializeField] private float paddingBottom;
 
     private Material _instanceMaterial;
@@ -427,6 +427,14 @@ public class ShapedTextGraphic : MaskableGraphic
         var result = new List<PositionedGlyph>();
         foreach (ScriptRun run in ScriptRunSplitter.Split(sourceLine, locale))
         {
+            // The atlas is populated dynamically (see HarfBuzzFontRegistry), but only stock TMP_Text
+            // triggers that on its own — this component reads glyphLookupTable directly (see class doc),
+            // so any character never rendered by a normal TMP_Text first (e.g. digits in Bengali/Arabic
+            // strings) would otherwise shape to a valid glyph ID that's simply missing from the atlas,
+            // silently eating its advance width as blank space instead of drawing anything.
+            TMP_FontAsset runFont = run.Locale == locale ? fontAsset : HarfBuzzFontRegistry.GetFontAsset(run.Locale);
+            if (runFont != null) runFont.TryAddCharacters(run.Text, out _);
+
             foreach (ShapedGlyph g in HarfBuzzShaper.Shape(run.Text, run.Locale))
             {
                 ShapedGlyph offsetGlyph = g;
