@@ -45,7 +45,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses:
   - SRPDEFAULTUNLIT
@@ -128,7 +128,7 @@ Material:
     - _Cull: 2
     - _Cutout: 0
     - _CutoutCutoff: 0.5
-    - _DestBlend: 0
+    - _DestBlend: 10
     - _DetailBlend: 2
     - _DetailBrightness: 1
     - _DetailContrast: 1
@@ -190,7 +190,7 @@ Material:
     - _PlantSwayAmount: 0.15
     - _PlantSwaySpeed: 1
     - _PlantType: 0
-    - _Preset: 0
+    - _Preset: 1
     - _Reflection: 0
     - _ReflectionAmount: 1
     - _ReflectionRim: 0
@@ -207,7 +207,7 @@ Material:
     - _ShadowOverlaySpeedV: 0.03
     - _ShadowOverlaySwayAmount: 0.01
     - _ShadowsEnabled: 1
-    - _SourceBlend: 1
+    - _SourceBlend: 5
     - _Specular: 1
     - _SpecularBrightness: 0.5
     - _SpecularHair: 0
@@ -238,12 +238,12 @@ Material:
     - _VertexColorsContrast: 1
     - _ZOffset: 0
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
     - _AnimeColor1: {r: 1, g: 1, b: 1, a: 1}
     - _AnimeColor2: {r: 1.35, g: 1.35, b: 1.35, a: 1}
     - _AnimeColor3: {r: 2, g: 2, b: 2, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.75}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emissive: {r: 1, g: 1, b: 1, a: 1}
     - _HeightColorsColor: {r: 1, g: 1, b: 1, a: 1}
