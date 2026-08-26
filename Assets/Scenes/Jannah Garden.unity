@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: ffb777b6c60362f4c91c6e29cd23f381, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5d5eebce588f65f418757d3cfaa9563c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1954,6 +1954,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7508004933227241077, guid: b58e673bb8fe1a34ca92d7a89efc1470, type: 3}
   m_PrefabInstance: {fileID: 159397545}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &170096667
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LilitaOne-Regular Outline 64 SDFMaterial (Instance)
+  m_Shader: {fileID: 4800000, guid: 48bb5f55d8670e349b6e614913f9d910, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FaceTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 542168a59ebb940cc91d3c3ec1325445, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _CullMode: 0
+    - _MaskSoftnessX: 0
+    - _MaskSoftnessY: 0
+    - _Padding: 10
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _VertexOffsetX: 0
+    - _VertexOffsetY: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &170253155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3292,7 @@ MonoBehaviour:
   maxIntensity: 1
   daySkybox: {fileID: 2100000, guid: 5d5eebce588f65f418757d3cfaa9563c, type: 2}
   timeMultiplier: 2
-  currentTimeInHours: 0
+  currentTimeInHours: 12
   currentTimeString: 
   timeText: {fileID: 631529150}
 --- !u!4 &291004743
@@ -9780,7 +9830,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9842,7 +9892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855445490}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.9241723, y: -0, z: -0, w: -0.38197595}
+  m_LocalRotation: {x: 0.6408564, y: 0.29883626, z: -0.29883626, w: 0.6408564}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23950,9 +24000,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
     - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_fontMaterial
+      value: 
+      objectReference: {fileID: 170096667}
+    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2517202264660172603, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
+    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_fontMaterials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: 'm_fontMaterials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 170096667}
+    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_fontSharedMaterials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: 'm_fontSharedMaterials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 170096667}
     - target: {fileID: 3412380362851296346, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_Enabled
       value: 0

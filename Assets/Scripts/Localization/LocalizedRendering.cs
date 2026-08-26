@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Shared "TMP vs HarfBuzz-shaped" toggle logic, factored out so <see cref="LocalizedText"/>,
@@ -24,8 +25,10 @@ public static class LocalizedRendering
     /// switching to a shaped renderer child for Bengali and back to plain TMP otherwise. Uses
     /// <paramref name="tmpText"/>'s current <c>alignment</c> for the shaped label too — callers that
     /// need RTL alignment mirroring (as <see cref="LocalizedText"/> does) should set that on
-    /// <paramref name="tmpText"/> before calling this.</summary>
-    public static void SetText(TMP_Text tmpText, string text, AppLocale locale)
+    /// <paramref name="tmpText"/> before calling this. <paramref name="shapedTopPadding"/> is applied to
+    /// the shaped child only (plain TMP is unaffected) — callers whose shaped label needs breathing room
+    /// above the glyphs (e.g. <see cref="DhikrManager"/>'s dhikr/count labels) pass it explicitly.</summary>
+    public static void SetText(TMP_Text tmpText, string text, AppLocale locale, float shapedTopPadding = 0f)
     {
         if (locale == AppLocale.bn)
         {
@@ -36,16 +39,41 @@ public static class LocalizedRendering
             shaped.FontSize = tmpText.fontSize;
             shaped.Alignment = tmpText.alignment;
             shaped.color = tmpText.color;
+            shaped.PaddingTop = shapedTopPadding;
             shaped.SetText(text, locale);
+            SyncContentSizeFitter(tmpText, shaped);
             return;
         }
 
         Transform existingShaped = tmpText.transform.Find(ShapedChildName);
         if (existingShaped != null) existingShaped.gameObject.SetActive(false);
 
+        LayoutElement sizeOverride = tmpText.GetComponent<LayoutElement>();
+        if (sizeOverride != null) sizeOverride.enabled = false;
+
         tmpText.enabled = true;
         bool rtl = locale == AppLocale.ar || locale == AppLocale.ur;
         tmpText.text = rtl ? ArabicTextShaper.Shape(text) : text;
+    }
+
+    /// <summary>A ContentSizeFitter sitting on <paramref name="tmpText"/>'s own GameObject (as the
+    /// toast's "Message Text (TMP)" has, to grow its background bubble around the message) only ever
+    /// looks at ILayoutElements on that same GameObject — and once <paramref name="tmpText"/> is disabled
+    /// for shaped-text locales, its own contribution is skipped entirely (Unity's layout system ignores
+    /// disabled Behaviours), which would otherwise collapse the fitter to zero size. A LayoutElement
+    /// mirroring <paramref name="shaped"/>'s measured size stands in for it while shaped text is showing.
+    /// No-op for callers whose text object isn't fitted (e.g. MCQ/Dhikr/shop labels, which wrap within a
+    /// fixed box instead), so this only ever changes behavior for text that already opted into fitting.</summary>
+    private static void SyncContentSizeFitter(TMP_Text tmpText, ShapedTextGraphic shaped)
+    {
+        if (tmpText.GetComponent<ContentSizeFitter>() == null) return;
+
+        LayoutElement sizeOverride = tmpText.GetComponent<LayoutElement>();
+        if (sizeOverride == null) sizeOverride = tmpText.gameObject.AddComponent<LayoutElement>();
+
+        sizeOverride.enabled = true;
+        sizeOverride.preferredWidth = shaped.PreferredWidth;
+        sizeOverride.preferredHeight = shaped.PreferredHeight;
     }
 
     private static ShapedTextGraphic EnsureShapedChild(Transform parent)

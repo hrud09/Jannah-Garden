@@ -320,12 +320,17 @@ public class DhikrManager : MonoBehaviour
         }
     }
 
+    // Both the dhikr instruction label and the count label get 100 units of top padding on their
+    // shaped (Bengali) child by default, so the shaped glyphs don't render flush against the panel's
+    // top edge the way plain TMP's own vertical centering would allow.
+    private const float ShapedTextTopPadding = 100f;
+
     private void SetText(TextMeshProUGUI tmpTextUI, string text)
     {
         if (tmpTextUI == null) return;
 
         if (LocalizationManager.Instance == null) { tmpTextUI.text = text; return; }
 
-        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale);
+        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale, ShapedTextTopPadding);
     }
 }

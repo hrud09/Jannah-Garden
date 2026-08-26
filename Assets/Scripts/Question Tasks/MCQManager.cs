@@ -274,14 +274,14 @@ public class MCQManager : MonoBehaviour
             questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
         }
 
-        SetText(questionTextUI, qData.questionText);
+        SetText(questionTextUI, qData.questionText, QuestionShapedTextTopPadding);
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
             if (i < qData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]]);
+                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]], QuestionShapedTextTopPadding);
                 
                 if (reshuffle)
                 {
@@ -366,7 +366,7 @@ public class MCQManager : MonoBehaviour
             // Show congratulations message
             if (questionTextUI != null)
             {
-                SetText(questionTextUI, LocalizationManager.Instance.Get("quiz.correct"));
+                SetText(questionTextUI, LocalizationManager.Instance.Get("quiz.correct"), QuestionShapedTextTopPadding);
                 questionTextUI.transform.DOKill();
                 questionTextUI.transform.localScale = Vector3.one;
                 questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -533,12 +533,18 @@ public class MCQManager : MonoBehaviour
         }
     }
 
-    private void SetText(TextMeshProUGUI tmpTextUI, string text)
+    // The question label and each MCQ option label get 50 units of top padding on their shaped
+    // (Bengali) child by default, so the shaped glyphs don't render flush against the panel's top
+    // edge the way plain TMP's own vertical centering would allow. Opt-in per call rather than baked
+    // into the shared wrapper, since not every SetText caller (e.g. countdown text) wants it.
+    private const float QuestionShapedTextTopPadding = 50f;
+
+    private void SetText(TextMeshProUGUI tmpTextUI, string text, float shapedTopPadding = 0f)
     {
         if (tmpTextUI == null) return;
 
         if (LocalizationManager.Instance == null) { tmpTextUI.text = text; return; }
 
-        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale);
+        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale, shapedTopPadding);
     }
 }

@@ -67,6 +67,14 @@ public class ShapedTextGraphic : MaskableGraphic
     private readonly List<ShapedTextGraphic> _runChildren = new List<ShapedTextGraphic>();
     private readonly List<DrawBatch> _baseBatches = new List<DrawBatch>();
 
+    /// <summary>Natural (unwrapped-by-anything-but-the-current-rect) size of the last shaped layout,
+    /// padding included — mirrors what a TMP_Text's own <c>preferredWidth</c>/<c>preferredHeight</c>
+    /// would report, for callers (see <see cref="LocalizedRendering"/>) that need to drive a
+    /// ContentSizeFitter sitting on a sibling/parent object this component can't reach through Unity's
+    /// own layout system (a ContentSizeFitter only ever looks at ILayoutElements on its own GameObject).</summary>
+    public float PreferredWidth { get; private set; }
+    public float PreferredHeight { get; private set; }
+
     /// <summary>One shaped glyph plus which script/locale (and therefore which font) it came from —
     /// only meaningful while laying out a mixed-script line; not used once split into per-run batches.</summary>
     private struct PositionedGlyph
@@ -238,6 +246,8 @@ public class ShapedTextGraphic : MaskableGraphic
 
         if (fontAsset == null || string.IsNullOrEmpty(rawText))
         {
+            PreferredWidth = 0f;
+            PreferredHeight = 0f;
             DeactivateRunChildren(0);
             SetVerticesDirty();
             return;
@@ -265,10 +275,13 @@ public class ShapedTextGraphic : MaskableGraphic
         float totalHeight = visualLines.Count * lineHeight;
         float penY = rect.yMax - VerticalOffset(totalHeight, rect.height);
 
+        float maxLineWidth = 0f;
+
         foreach (List<PositionedGlyph> visualLine in visualLines)
         {
             float lineWidth = 0f;
             foreach (PositionedGlyph pg in visualLine) lineWidth += pg.Glyph.XAdvance * (fontSize / HarfBuzzShaper.UnitsPerEm(pg.Locale));
+            if (lineWidth > maxLineWidth) maxLineWidth = lineWidth;
             float penX = rect.xMin + HorizontalOffset(lineWidth, rect.width);
 
             int i = 0;
@@ -323,6 +336,9 @@ public class ShapedTextGraphic : MaskableGraphic
 
             penY -= lineHeight;
         }
+
+        PreferredWidth = maxLineWidth + paddingLeft + paddingRight;
+        PreferredHeight = totalHeight + paddingTop + paddingBottom;
 
         DeactivateRunChildren(childCount);
         SetVerticesDirty();
