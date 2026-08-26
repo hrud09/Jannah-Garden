@@ -48,6 +48,8 @@ public class GameOnboardingManager : MonoBehaviour
     public RectTransform instructionPanel;
     public TMP_Text instructionText;
     public Button primaryActionButton;
+    [Tooltip("Lets the player skip the remainder of the current onboarding section (jumps ahead to the next flow, or finishes onboarding if already in the last one). Shown on every tutorial panel since it's a child of instructionPanel.")]
+    public Button skipButton;
 
     [Header("Gated Buttons (no public accessor elsewhere - wired directly)")]
     public Button inspectorModeButton;
@@ -113,6 +115,12 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (dimOverlay != null) dimOverlay.gameObject.SetActive(false);
         SetInstructionPanelVisible(false);
+
+        if (skipButton != null)
+        {
+            skipButton.onClick.RemoveAllListeners();
+            skipButton.onClick.AddListener(SkipCurrentSection);
+        }
 
         RunMigrationCheckIfNeeded();
 
@@ -804,6 +812,43 @@ public class GameOnboardingManager : MonoBehaviour
     private void HidePrimaryButton()
     {
         if (primaryActionButton != null) primaryActionButton.gameObject.SetActive(false);
+    }
+
+    /// <summary>Jumps straight to the next flow (or finishes onboarding if already in the last one),
+    /// bypassing whatever gameplay action the current section was waiting on. Mirrors the same
+    /// stage transitions used when a section completes normally (see <see cref="HandleXPChartToggled"/>
+    /// and <see cref="HandleFlow2Complete"/>) so skipped players end up in an identical state to
+    /// players who finished the section the intended way.</summary>
+    private void SkipCurrentSection()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+
+        StopPulse();
+        RestoreHighlightSorting();
+
+        switch (stage)
+        {
+            case OnboardingStage.NotStarted:
+            case OnboardingStage.Flow1InProgress:
+                flow1Sub = Flow1SubStep.None;
+                UnblockAllShopCards();
+                SetInstructionPanelVisible(false);
+                SetStage(OnboardingStage.Flow2InProgress);
+                BeginPhotoModeStep();
+                break;
+
+            case OnboardingStage.Flow2InProgress:
+                flow2Sub = Flow2SubStep.None;
+                SetInstructionPanelVisible(false);
+                SetStage(OnboardingStage.Flow3InProgress);
+                BeginOuterGardenStep();
+                break;
+
+            default:
+                ShowDimAndPanel(false);
+                SetStage(OnboardingStage.Completed);
+                break;
+        }
     }
 
     private static void SetActive(Component component, bool active)
