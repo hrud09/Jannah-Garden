@@ -3,33 +3,51 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Scatters Shop Item prefabs across a grid of area chunks to produce an example decorated
 /// garden layout. Purely an editor-time authoring tool: it bakes plain, static GameObjects into
 /// the open scene, then removes each instance's <see cref="PlaceableItem"/> component, since
 /// generated dressing isn't a player-owned economy item and doesn't need growth timers,
-/// save/load, or the relocate/return flow.
+/// save/load, or the relocate/return flow. A <see cref="PrePlacedAsset"/> marker takes its place
+/// so the player can still look at the dressing and get pointed at the Shop instead.
 /// </summary>
 public class EnvironmentGeneratorWindow : EditorWindow
 {
     private const string ShopItemsRootFolder = "Assets/Prefabs/Shop Items";
     private const string GeneratedRootName = "Environment Generated";
 
+    // Deliberately NOT StaticEditorFlags.OccluderStatic, unlike JannahGardenPrefabGenerator's
+    // StaticFlags constant that this otherwise matches: feeding small/high-poly decorative props
+    // (some Shop Item meshes run into the millions of triangles) into Umbra's occluder computation
+    // as occluders — geometry meant to BLOCK visibility of other things — crashes the bake with
+    // "Error occurred in occluder data computation" / "Failure in split phase". Garden dressing
+    // should only ever be an occludee (something that CAN be hidden); only large simple closed
+    // shapes like terrain/walls/buildings should ever be occluders.
+#pragma warning disable 618
+    private const StaticEditorFlags GeneratedStaticFlags =
+        StaticEditorFlags.OccludeeStatic |
+        StaticEditorFlags.NavigationStatic |
+        StaticEditorFlags.OffMeshLinkGeneration |
+        StaticEditorFlags.ReflectionProbeStatic;
+#pragma warning restore 618
+
     private class CategoryEntry
     {
         public string name;
         public bool enabled = true;
+        public int minCountPerChunk = 1;
+        public int maxCountPerChunk = 1;
         public readonly List<GameObject> prefabs = new List<GameObject>();
     }
 
     private Terrain terrain;
-    private int gridSizeX = 4;
-    private int gridSizeZ = 4;
-    private int minItemsPerChunk = 2;
-    private int maxItemsPerChunk = 5;
-    private float minSpacing = 3f;
+    private int gridSizeX = 6;
+    private int gridSizeZ = 6;
+    private float minSpacing = 5f;
     private float edgeMargin = 1.5f;
     private int randomSeed = 12345;
     private Vector2 uniformScaleJitter = new Vector2(0.9f, 1.1f);
@@ -59,12 +77,23 @@ public class EnvironmentGeneratorWindow : EditorWindow
 
     private void RefreshCategories()
     {
+        List<CategoryEntry> previous = categories;
         categories = new List<CategoryEntry>();
         if (!AssetDatabase.IsValidFolder(ShopItemsRootFolder)) return;
 
         foreach (string categoryFolder in AssetDatabase.GetSubFolders(ShopItemsRootFolder))
         {
-            var entry = new CategoryEntry { name = Path.GetFileName(categoryFolder) };
+            string categoryName = Path.GetFileName(categoryFolder);
+            CategoryEntry existing = previous?.Find(c => c.name == categoryName);
+            (int defaultMin, int defaultMax) = GetDefaultCountRange(categoryName);
+
+            var entry = new CategoryEntry
+            {
+                name = categoryName,
+                enabled = existing?.enabled ?? true,
+                minCountPerChunk = existing?.minCountPerChunk ?? defaultMin,
+                maxCountPerChunk = existing?.maxCountPerChunk ?? defaultMax,
+            };
 
             foreach (string guid in AssetDatabase.FindAssets("t:Prefab", new[] { categoryFolder }))
             {
@@ -74,6 +103,12 @@ public class EnvironmentGeneratorWindow : EditorWindow
 
             if (entry.prefabs.Count > 0) categories.Add(entry);
         }
+    }
+
+    /// <summary>Default per-chunk item count for a freshly-discovered category — PlantsAndGardens reads as dense ground cover, everything else as a sparser accent.</summary>
+    private static (int min, int max) GetDefaultCountRange(string categoryName)
+    {
+        return categoryName == "PlantsAndGardens" ? (10, 20) : (1, 1);
     }
 
     private void SelectAll()
@@ -139,7 +174,9 @@ public class EnvironmentGeneratorWindow : EditorWindow
         EditorGUILayout.HelpBox(
             "Scatters Shop Item prefabs across a grid of area chunks as example garden dressing. " +
             "Generated instances are plain decoration — the PlaceableItem component (growth timer, " +
-            "save/load, relocate/return) is stripped after placement, leaving just the mesh and collider.",
+            "save/load, relocate/return) is stripped after placement, leaving just the mesh and collider " +
+            "plus a PrePlacedAsset marker so looking at one still offers a \"manage\" prompt that points " +
+            "the player at the Shop.",
             MessageType.Info);
 
         EditorGUI.BeginChangeCheck();
@@ -171,15 +208,7 @@ public class EnvironmentGeneratorWindow : EditorWindow
         DrawChunkSelectionGrid();
 
         EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Scatter", EditorStyles.boldLabel);
-        using (new EditorGUILayout.HorizontalScope())
-        {
-            minItemsPerChunk = EditorGUILayout.IntField("Min Items / Chunk", minItemsPerChunk);
-            maxItemsPerChunk = EditorGUILayout.IntField("Max Items / Chunk", maxItemsPerChunk);
-        }
-        minItemsPerChunk = Mathf.Max(0, minItemsPerChunk);
-        maxItemsPerChunk = Mathf.Max(minItemsPerChunk, maxItemsPerChunk);
-
+        EditorGUILayout.LabelField("Placement", EditorStyles.boldLabel);
         minSpacing = EditorGUILayout.FloatField("Min Spacing", minSpacing);
         edgeMargin = EditorGUILayout.FloatField("Chunk Edge Margin", edgeMargin);
         uniformScaleJitter = EditorGUILayout.Vector2Field("Scale Jitter (min, max)", uniformScaleJitter);
@@ -188,7 +217,10 @@ public class EnvironmentGeneratorWindow : EditorWindow
         if (EditorGUI.EndChangeCheck()) SceneView.RepaintAll();
 
         EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Categories", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Asset Usage Per Folder", EditorStyles.boldLabel);
+        EditorGUILayout.HelpBox(
+            "Min/Max is how many items from that folder get scattered into each selected chunk.",
+            MessageType.None);
         if (categories == null || categories.Count == 0)
         {
             EditorGUILayout.HelpBox($"No prefabs found under {ShopItemsRootFolder}.", MessageType.Warning);
@@ -197,7 +229,22 @@ public class EnvironmentGeneratorWindow : EditorWindow
         {
             foreach (CategoryEntry category in categories)
             {
-                category.enabled = EditorGUILayout.ToggleLeft($"{category.name} ({category.prefabs.Count})", category.enabled);
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    category.enabled = EditorGUILayout.ToggleLeft(
+                        $"{category.name} ({category.prefabs.Count})", category.enabled, GUILayout.MinWidth(160));
+
+                    using (new EditorGUI.DisabledScope(!category.enabled))
+                    {
+                        GUILayout.Label("Min", GUILayout.Width(28));
+                        category.minCountPerChunk = EditorGUILayout.IntField(category.minCountPerChunk, GUILayout.Width(32));
+                        GUILayout.Label("Max", GUILayout.Width(28));
+                        category.maxCountPerChunk = EditorGUILayout.IntField(category.maxCountPerChunk, GUILayout.Width(32));
+                    }
+                }
+
+                category.minCountPerChunk = Mathf.Max(0, category.minCountPerChunk);
+                category.maxCountPerChunk = Mathf.Max(category.minCountPerChunk, category.maxCountPerChunk);
             }
         }
 
@@ -209,6 +256,23 @@ public class EnvironmentGeneratorWindow : EditorWindow
             if (GUILayout.Button("Generate", GUILayout.Height(32))) Generate();
         }
         if (GUILayout.Button("Clear Generated")) ClearGenerated();
+
+        if (GUILayout.Button(new GUIContent(
+            "Tag Existing Generated As Pre-Placed",
+            "Adds the PrePlacedAsset marker to dressing generated before this marker existed, without " +
+            "re-rolling any layout. Safe to run any time — instances that already have it are skipped.")))
+        {
+            TagExistingGeneratedAsPrePlaced();
+        }
+
+        if (GUILayout.Button(new GUIContent(
+            "Mark Generated Static",
+            "Sets Editor static flags (occludee/navigation/off-mesh-link/reflection-probe) on the " +
+            "whole generated hierarchy, matching how the rest of the project's Shop Item scenery is " +
+            "marked, for batching/lightmapping/reflection probes.")))
+        {
+            MarkGeneratedStatic();
+        }
 
         EditorGUILayout.EndScrollView();
     }
@@ -264,12 +328,11 @@ public class EnvironmentGeneratorWindow : EditorWindow
             return;
         }
 
-        List<GameObject> enabledPrefabs = categories
-            .Where(c => c.enabled)
-            .SelectMany(c => c.prefabs)
+        List<CategoryEntry> enabledCategories = categories
+            .Where(c => c.enabled && c.prefabs.Count > 0)
             .ToList();
 
-        if (enabledPrefabs.Count == 0)
+        if (enabledCategories.Count == 0)
         {
             EditorUtility.DisplayDialog("Environment Generator", "No Shop Item prefabs available — enable at least one category.", "OK");
             return;
@@ -306,13 +369,13 @@ public class EnvironmentGeneratorWindow : EditorWindow
                 // Unselected chunks are only cleared, never regenerated — they stay empty.
                 if (!selectedChunks.Contains(new Vector2Int(cx, cz))) continue;
 
-                GenerateChunk(root.transform, chunkName, cx, cz, origin, chunkWidth, chunkDepth, enabledPrefabs, rng);
+                GenerateChunk(root.transform, chunkName, cx, cz, origin, chunkWidth, chunkDepth, enabledCategories, rng);
             }
         }
     }
 
     private void GenerateChunk(Transform root, string chunkName, int cx, int cz, Vector3 origin, float chunkWidth, float chunkDepth,
-        List<GameObject> enabledPrefabs, System.Random rng)
+        List<CategoryEntry> enabledCategories, System.Random rng)
     {
         var chunkGo = new GameObject(chunkName);
         Undo.RegisterCreatedObjectUndo(chunkGo, "Generate Environment");
@@ -324,28 +387,35 @@ public class EnvironmentGeneratorWindow : EditorWindow
         float usableWidth = Mathf.Max(0f, chunkWidth - edgeMargin * 2f);
         float usableDepth = Mathf.Max(0f, chunkDepth - edgeMargin * 2f);
 
-        int count = rng.Next(minItemsPerChunk, maxItemsPerChunk + 1);
         var placedXZ = new List<Vector3>();
 
-        for (int i = 0; i < count; i++)
+        // Each folder's item count is rolled independently, so usage per category is tunable
+        // rather than every prefab in the pool having an equal chance regardless of folder size.
+        foreach (CategoryEntry category in enabledCategories)
         {
-            if (!TryFindSpot(chunkMin, edgeMargin, usableWidth, usableDepth, minSpacing, placedXZ, rng, out Vector3 spotXZ))
-                continue;
+            int count = rng.Next(category.minCountPerChunk, category.maxCountPerChunk + 1);
 
-            placedXZ.Add(spotXZ);
+            for (int i = 0; i < count; i++)
+            {
+                if (!TryFindSpot(chunkMin, edgeMargin, usableWidth, usableDepth, minSpacing, placedXZ, rng, out Vector3 spotXZ))
+                    continue;
 
-            GameObject prefab = enabledPrefabs[rng.Next(enabledPrefabs.Count)];
-            float groundY = terrain.SampleHeight(spotXZ) + terrain.transform.position.y;
-            Vector3 worldPos = new Vector3(spotXZ.x, groundY, spotXZ.z);
+                placedXZ.Add(spotXZ);
 
-            var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
-            Undo.RegisterCreatedObjectUndo(instance, "Generate Environment");
-            instance.transform.SetParent(chunkGo.transform, false);
-            instance.transform.position = worldPos;
-            instance.transform.rotation = Quaternion.Euler(0f, (float)rng.NextDouble() * 360f, 0f);
-            instance.transform.localScale *= Mathf.Lerp(uniformScaleJitter.x, uniformScaleJitter.y, (float)rng.NextDouble());
+                GameObject prefab = category.prefabs[rng.Next(category.prefabs.Count)];
+                float groundY = terrain.SampleHeight(spotXZ) + terrain.transform.position.y;
+                Vector3 worldPos = new Vector3(spotXZ.x, groundY, spotXZ.z);
 
-            StripPlaceable(instance);
+                var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+                Undo.RegisterCreatedObjectUndo(instance, "Generate Environment");
+                instance.transform.SetParent(chunkGo.transform, false);
+                instance.transform.position = worldPos;
+                instance.transform.rotation = Quaternion.Euler(0f, (float)rng.NextDouble() * 360f, 0f);
+                instance.transform.localScale *= Mathf.Lerp(uniformScaleJitter.x, uniformScaleJitter.y, (float)rng.NextDouble());
+
+                StripPlaceable(instance);
+                AddPrePlacedMarker(instance);
+            }
         }
     }
 
@@ -403,6 +473,46 @@ public class EnvironmentGeneratorWindow : EditorWindow
         Undo.DestroyObjectImmediate(placeable);
     }
 
+    /// <summary>
+    /// Adds the <see cref="PrePlacedAsset"/> marker that lets the interaction system recognize this
+    /// instance as example dressing — see <see cref="TagExistingGeneratedAsPrePlaced"/> for backfilling
+    /// dressing generated before this marker existed.
+    /// </summary>
+    private static void AddPrePlacedMarker(GameObject instance)
+    {
+        if (instance.GetComponent<PrePlacedAsset>() != null) return;
+        Undo.AddComponent<PrePlacedAsset>(instance);
+    }
+
+    /// <summary>
+    /// Walks whatever is already sitting under <see cref="GeneratedRootName"/> and adds the
+    /// PrePlacedAsset marker to any item instance that doesn't have one yet — for dressing generated
+    /// before the marker existed, without re-rolling the layout by regenerating from scratch.
+    /// </summary>
+    private static void TagExistingGeneratedAsPrePlaced()
+    {
+        GameObject root = GameObject.Find(GeneratedRootName);
+        if (root == null)
+        {
+            EditorUtility.DisplayDialog("Environment Generator", "Nothing generated yet — click Generate first.", "OK");
+            return;
+        }
+
+        int tagged = 0;
+        foreach (Transform chunk in root.transform)
+        {
+            foreach (Transform item in chunk)
+            {
+                if (item.GetComponent<PrePlacedAsset>() != null) continue;
+
+                Undo.AddComponent<PrePlacedAsset>(item.gameObject);
+                tagged++;
+            }
+        }
+
+        EditorUtility.DisplayDialog("Environment Generator", $"Tagged {tagged} generated item(s) as pre-placed.", "OK");
+    }
+
     private static void ClearGenerated()
     {
         GameObject root = GameObject.Find(GeneratedRootName);
@@ -413,5 +523,37 @@ public class EnvironmentGeneratorWindow : EditorWindow
             return;
 
         Undo.DestroyObjectImmediate(root);
+    }
+
+    /// <summary>
+    /// Marks the whole generated hierarchy as static scenery (occludee/navigation/off-mesh-link/
+    /// reflection-probe), matching how the rest of the project's Shop Item scenery is marked, for
+    /// batching/lightmapping/reflection probes. No culling mechanism is wired up here — Unity's baked
+    /// occlusion culling (Umbra) reproducibly crashes on this scene regardless of generated content
+    /// (a pre-existing engine/scene issue), and distance-based culling via RuntimeEnvironmentGenerator
+    /// was tried and then removed.
+    /// </summary>
+    private static void MarkGeneratedStatic()
+    {
+        GameObject root = GameObject.Find(GeneratedRootName);
+        if (root == null)
+        {
+            EditorUtility.DisplayDialog("Environment Generator", "Nothing generated yet — click Generate first.", "OK");
+            return;
+        }
+
+        Transform[] all = root.GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in all)
+        {
+            GameObject go = t.gameObject;
+            Undo.RecordObject(go, "Mark Generated Static");
+            GameObjectUtility.SetStaticEditorFlags(go, GeneratedStaticFlags);
+            EditorUtility.SetDirty(go);
+        }
+
+        Debug.Log($"[EnvironmentGeneratorWindow] Marked {all.Length} generated GameObjects static.");
+
+        Scene scene = root.scene;
+        if (!string.IsNullOrEmpty(scene.path)) EditorSceneManager.SaveScene(scene);
     }
 }

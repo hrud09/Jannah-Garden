@@ -15,7 +15,8 @@ public enum InteractionTargetType
     None,
     TreasureBox,
     QuestionOrb,
-    PlacedItem
+    PlacedItem,
+    PrePlacedAsset
 }
 
 public class PlayersInteractionManager : MonoBehaviour
@@ -58,6 +59,7 @@ public class PlayersInteractionManager : MonoBehaviour
     public TreasureBox currentTargetBox = null;
     public QuestionMarkOrb currentTargetOrb = null;
     public PlaceableItem currentTargetPlaceable = null;
+    public PrePlacedAsset currentTargetPrePlaced = null;
     private Camera mainCam;
 
     private bool isInteracting = false;
@@ -73,6 +75,7 @@ public class PlayersInteractionManager : MonoBehaviour
             if (currentTargetBox != null) return InteractionTargetType.TreasureBox;
             if (currentTargetOrb != null) return InteractionTargetType.QuestionOrb;
             if (currentTargetPlaceable != null) return InteractionTargetType.PlacedItem;
+            if (currentTargetPrePlaced != null) return InteractionTargetType.PrePlacedAsset;
             return InteractionTargetType.None;
         }
     }
@@ -190,6 +193,22 @@ public class PlayersInteractionManager : MonoBehaviour
                     PlacedItemActionsUI.Instance.Show(currentTargetPlaceable);
                 }
                 break;
+
+            case InteractionTargetType.PrePlacedAsset:
+                ShowPrePlacedAssetInfo();
+                break;
+        }
+    }
+
+    /// <summary>
+    /// The "manage" prompt in front of example garden dressing has nothing to relocate or return —
+    /// it points the player at the Shop instead, where the same kind of asset can be bought and placed.
+    /// </summary>
+    private void ShowPrePlacedAssetInfo()
+    {
+        if (ToastMessageManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast("You can buy assets like this and place them from the Shop!");
         }
     }
 
@@ -317,9 +336,12 @@ public class PlayersInteractionManager : MonoBehaviour
 
         // Placed assets are the lowest-priority target: a treasure box standing in front of a tree is
         // still what the player means.
-        PlaceableItem detectedPlaceable = (currentTargetBox == null && currentTargetOrb == null)
-            ? FindTargetedPlacedItem(ray)
-            : null;
+        PlaceableItem detectedPlaceable = null;
+        PrePlacedAsset detectedPrePlaced = null;
+        if (currentTargetBox == null && currentTargetOrb == null)
+        {
+            FindTargetedPlacedOrPrePlaced(ray, out detectedPlaceable, out detectedPrePlaced);
+        }
 
         if (detectedPlaceable != currentTargetPlaceable)
         {
@@ -333,6 +355,21 @@ public class PlayersInteractionManager : MonoBehaviour
             if (currentTargetPlaceable != null)
             {
                 currentTargetPlaceable.SetHighlight(true);
+            }
+        }
+
+        if (detectedPrePlaced != currentTargetPrePlaced)
+        {
+            isInteracting = false;
+            if (currentTargetPrePlaced != null)
+            {
+                currentTargetPrePlaced.SetHighlight(false);
+            }
+
+            currentTargetPrePlaced = detectedPrePlaced;
+            if (currentTargetPrePlaced != null)
+            {
+                currentTargetPrePlaced.SetHighlight(true);
             }
         }
 
@@ -377,6 +414,7 @@ public class PlayersInteractionManager : MonoBehaviour
                 return orbInteractButton != null ? orbInteractButton : itemInteractButton;
 
             case InteractionTargetType.PlacedItem:
+            case InteractionTargetType.PrePlacedAsset:
                 return placedItemInteractButton != null ? placedItemInteractButton : itemInteractButton;
 
             default:
@@ -404,32 +442,53 @@ public class PlayersInteractionManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Looks for a placed asset under the crosshair. Runs as its own raycast because placed items sit on
-    /// the default layer, which <see cref="interactionLayerMask"/> deliberately excludes.
+    /// Looks for a placed asset — either one the player owns (<see cref="PlaceableItem"/>) or example
+    /// dressing baked in by the Environment Generator (<see cref="PrePlacedAsset"/>) — under the
+    /// crosshair. Runs as its own raycast because placed items sit on the default layer, which
+    /// <see cref="interactionLayerMask"/> deliberately excludes. The two are mutually exclusive on any
+    /// given instance, so only one of the two out parameters is ever set.
     /// </summary>
-    private PlaceableItem FindTargetedPlacedItem(Ray ray)
+    private void FindTargetedPlacedOrPrePlaced(Ray ray, out PlaceableItem placeable, out PrePlacedAsset prePlaced)
     {
-        if (!allowPlacedItemManagement) return null;
+        placeable = null;
+        prePlaced = null;
+
+        if (!allowPlacedItemManagement) return;
 
         // Nothing to offer while an item is already following the crosshair, or while the options for
         // another item are open.
-        if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing) return null;
-        if (PlacedItemActionsUI.Instance != null && PlacedItemActionsUI.Instance.IsOpen) return null;
+        if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing) return;
+        if (PlacedItemActionsUI.Instance != null && PlacedItemActionsUI.Instance.IsOpen) return;
 
         if (!Physics.Raycast(ray, out RaycastHit hit, maxInteractionDistance, placedItemLayerMask,
                              QueryTriggerInteraction.Ignore))
         {
-            return null;
+            return;
         }
 
-        PlaceableItem placeable = hit.collider.GetComponent<PlaceableItem>();
-        if (placeable == null)
+        PlaceableItem hitPlaceable = hit.collider.GetComponent<PlaceableItem>();
+        if (hitPlaceable == null)
         {
-            placeable = hit.collider.GetComponentInParent<PlaceableItem>();
+            hitPlaceable = hit.collider.GetComponentInParent<PlaceableItem>();
         }
 
         // A ghost being positioned has its PlaceableItem disabled — it is not a target.
-        return (placeable != null && placeable.enabled) ? placeable : null;
+        if (hitPlaceable != null && hitPlaceable.enabled)
+        {
+            placeable = hitPlaceable;
+            return;
+        }
+
+        PrePlacedAsset hitPrePlaced = hit.collider.GetComponent<PrePlacedAsset>();
+        if (hitPrePlaced == null)
+        {
+            hitPrePlaced = hit.collider.GetComponentInParent<PrePlacedAsset>();
+        }
+
+        if (hitPrePlaced != null && hitPrePlaced.enabled)
+        {
+            prePlaced = hitPrePlaced;
+        }
     }
 
     private void DetectOrbClick()
@@ -524,6 +583,12 @@ public class PlayersInteractionManager : MonoBehaviour
         {
             currentTargetPlaceable.SetHighlight(false);
             currentTargetPlaceable = null;
+        }
+
+        if (currentTargetPrePlaced != null)
+        {
+            currentTargetPrePlaced.SetHighlight(false);
+            currentTargetPrePlaced = null;
         }
 
         HideAllButtons();
