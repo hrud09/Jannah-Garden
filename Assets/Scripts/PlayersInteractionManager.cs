@@ -160,7 +160,12 @@ public class PlayersInteractionManager : MonoBehaviour
 
     private void OnOrbButtonClicked() => BeginInteraction(InteractionTargetType.QuestionOrb);
 
-    private void OnPlacedItemButtonClicked() => BeginInteraction(InteractionTargetType.PlacedItem);
+    /// <summary>
+    /// This button is shared between two target kinds — an owned <see cref="PlaceableItem"/> and example
+    /// dressing (<see cref="PrePlacedAsset"/>), see <see cref="GetButtonFor"/> — so it defers to whichever
+    /// is actually targeted rather than assuming one, the same way <see cref="OnSharedButtonClicked"/> does.
+    /// </summary>
+    private void OnPlacedItemButtonClicked() => BeginInteraction(CurrentTargetType);
 
     /// <summary>The fallback button, standing in for whichever kind has no button of its own.</summary>
     private void OnSharedButtonClicked() => BeginInteraction(CurrentTargetType);
@@ -206,7 +211,11 @@ public class PlayersInteractionManager : MonoBehaviour
     /// </summary>
     private void ShowPrePlacedAssetInfo()
     {
-        if (ToastMessageManager.Instance != null)
+        if (PrePlacedAssetInfoPanel.Instance != null)
+        {
+            PrePlacedAssetInfoPanel.Instance.Show();
+        }
+        else if (ToastMessageManager.Instance != null)
         {
             ToastMessageManager.Instance.ShowToast("You can buy assets like this and place them from the Shop!");
         }
@@ -390,6 +399,10 @@ public class PlayersInteractionManager : MonoBehaviour
         {
             target = InteractionTargetType.None;
         }
+        if (PrePlacedAssetInfoPanel.Instance != null && PrePlacedAssetInfoPanel.Instance.IsOpen)
+        {
+            target = InteractionTargetType.None;
+        }
 
         Button wanted = GetButtonFor(target);
 
@@ -459,6 +472,7 @@ public class PlayersInteractionManager : MonoBehaviour
         // another item are open.
         if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing) return;
         if (PlacedItemActionsUI.Instance != null && PlacedItemActionsUI.Instance.IsOpen) return;
+        if (PrePlacedAssetInfoPanel.Instance != null && PrePlacedAssetInfoPanel.Instance.IsOpen) return;
 
         if (!Physics.Raycast(ray, out RaycastHit hit, maxInteractionDistance, placedItemLayerMask,
                              QueryTriggerInteraction.Ignore))
