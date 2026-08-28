@@ -410,7 +410,8 @@ public class ShapedTextGraphic : MaskableGraphic
             else
             {
                 Debug.LogWarning($"[ShapedTextGraphic] Glyph id {g.GlyphId} is not in '{fontAsset.name}''s glyph " +
-                                  "table — likely needs the Static-mode coverage rebuild.");
+                                  "table and could not be added dynamically — Static population mode, or the atlas " +
+                                  "is out of space with Multi Atlas Textures disabled.");
             }
 
             penX += g.XAdvance * hbScale;
@@ -453,12 +454,38 @@ public class ShapedTextGraphic : MaskableGraphic
 
             foreach (ShapedGlyph g in HarfBuzzShaper.Shape(run.Text, run.Locale))
             {
+                // TryAddCharacters above only rasterizes each codepoint's nominal cmap glyph — the
+                // conjunct/ligature forms HarfBuzz's GSUB pass substitutes in (Bengali "স্ব", "চ্ছ", …)
+                // have no codepoint of their own, so each shaped glyph ID must also be ensured by INDEX.
+                if (runFont != null) EnsureGlyphInAtlas(runFont, g.GlyphId);
+
                 ShapedGlyph offsetGlyph = g;
                 offsetGlyph.Cluster = (uint)(run.StartIndex + (int)g.Cluster);
                 result.Add(new PositionedGlyph { Glyph = offsetGlyph, Locale = run.Locale });
             }
         }
         return result;
+    }
+
+    private static System.Reflection.MethodInfo s_tryAddGlyphByIndex;
+
+    /// <summary>
+    /// Rasterizes one glyph into <paramref name="font"/>'s dynamic atlas by glyph INDEX. Needed because
+    /// TMP's only public population API (<see cref="TMP_FontAsset.TryAddCharacters(string, out string, bool)"/>)
+    /// goes through the font's cmap, and the conjunct/ligature glyphs OpenType shaping substitutes in are
+    /// not in the cmap at all — they're reachable only by index. TMP itself can do this (its runtime
+    /// ligature support depends on TryAddGlyphInternal, which also handles atlas-page overflow and editor
+    /// persistence) but doesn't expose it, hence the cached reflection. Static-population assets are
+    /// skipped — they can't take new glyphs, and DrawGlyphLine's warning already reports that case.
+    /// </summary>
+    private static void EnsureGlyphInAtlas(TMP_FontAsset font, uint glyphId)
+    {
+        if (font.atlasPopulationMode == AtlasPopulationMode.Static || font.glyphLookupTable.ContainsKey(glyphId)) return;
+
+        if (s_tryAddGlyphByIndex == null)
+            s_tryAddGlyphByIndex = typeof(TMP_FontAsset).GetMethod("TryAddGlyphInternal",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+        s_tryAddGlyphByIndex?.Invoke(font, new object[] { glyphId, null });
     }
 
     /// <summary>

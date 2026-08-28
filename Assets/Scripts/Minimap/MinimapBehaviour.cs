@@ -13,6 +13,8 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     [SerializeField] private Button collapseButton;
     [Tooltip("Only visible while expanded. Snaps the minimap camera back to its default position over the player.")]
     [SerializeField] private Button recenterButton;
+    [Tooltip("Only visible while expanded. Points the direction arrow toward the next available treasure box.")]
+    [SerializeField] private Button showTreasureBoxButton;
 
     [Header("Camera References & Settings")]
     [SerializeField] private Camera minimapCamera;
@@ -80,6 +82,11 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         if (recenterButton != null)
         {
             recenterButton.onClick.AddListener(RecenterMinimap);
+        }
+
+        if (showTreasureBoxButton != null)
+        {
+            showTreasureBoxButton.onClick.AddListener(ShowTreasureBox);
         }
 
         // Cache the canvas so outside-tap hit tests use the correct event camera
@@ -197,6 +204,11 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             recenterButton.onClick.RemoveListener(RecenterMinimap);
         }
+
+        if (showTreasureBoxButton != null)
+        {
+            showTreasureBoxButton.onClick.RemoveListener(ShowTreasureBox);
+        }
     }
 
     /// <summary>
@@ -232,6 +244,19 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     public void RecenterMinimap()
     {
         panOffset = Vector3.zero;
+    }
+
+    /// <summary>
+    /// Points the direction arrow toward the next available treasure box for the current tier.
+    /// </summary>
+    public void ShowTreasureBox()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TreasureBoxShow);
+
+        if (TreasureBoxManager.Instance != null)
+        {
+            TreasureBoxManager.Instance.PlayShowAnimationForTier(TreasureBoxManager.Instance.GetUpcomingTier());
+        }
     }
 
     /// <summary>
@@ -285,6 +310,9 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         if (recenterButton != null &&
             ContainsScreenPoint(recenterButton.transform as RectTransform, screenPosition, eventCamera)) return true;
+
+        if (showTreasureBoxButton != null &&
+            ContainsScreenPoint(showTreasureBoxButton.transform as RectTransform, screenPosition, eventCamera)) return true;
 
         if (additionalInsideRects != null)
         {
@@ -346,6 +374,12 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         if (recenterButton != null)
         {
             recenterButton.gameObject.SetActive(isExpanded);
+        }
+
+        // The show-treasure-box button is only useful (and only visible) while expanded
+        if (showTreasureBoxButton != null)
+        {
+            showTreasureBoxButton.gameObject.SetActive(isExpanded);
         }
     }
 
