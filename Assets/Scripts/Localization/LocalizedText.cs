@@ -51,7 +51,7 @@ public class LocalizedText : MonoBehaviour
         AppLocale locale = LocalizationManager.Instance.CurrentLocale;
         bool rtl = LocalizationManager.Instance.IsRightToLeft;
 
-        _label.alignment = rtl ? MirrorAlignment(leftToRightAlignment) : leftToRightAlignment;
+        _label.alignment = rtl ? LocalizedRendering.MirrorAlignment(leftToRightAlignment) : leftToRightAlignment;
         LocalizedRendering.SetText(_label, value, locale);
     }
 
@@ -60,25 +60,5 @@ public class LocalizedText : MonoBehaviour
     {
         key = newKey;
         Apply();
-    }
-
-    /// <summary>Swaps the Left/Right half of the alignment (TMP encodes it in the low byte) while leaving
-    /// the vertical component (high byte — Top/Middle/Bottom/Baseline/Geometry/Capline) untouched. Handles
-    /// every Left/Right pairing this way — TopLeft/TopRight, BaselineLeft/BaselineRight, MidlineLeft/
-    /// MidlineRight, CaplineLeft/CaplineRight, etc. — instead of only the three enumerated by hand
-    /// previously. Center/Justified/Flush/Geometry read the same in both directions, so they pass through.</summary>
-    private static TextAlignmentOptions MirrorAlignment(TextAlignmentOptions alignment)
-    {
-        int horizontal = (int)alignment & 0xFF;
-        int vertical = (int)alignment & 0xFF00;
-
-        int mirroredHorizontal = horizontal switch
-        {
-            (int)HorizontalAlignmentOptions.Left => (int)HorizontalAlignmentOptions.Right,
-            (int)HorizontalAlignmentOptions.Right => (int)HorizontalAlignmentOptions.Left,
-            _ => horizontal,
-        };
-
-        return (TextAlignmentOptions)(mirroredHorizontal | vertical);
     }
 }

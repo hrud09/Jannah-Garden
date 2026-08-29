@@ -826,7 +826,7 @@ inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112945
+// Method Definition Index: 113059
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t886B660896B747DCB7EA2B7AC26DD7AAF677F9E8 UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m3A7DCD782C10D2045D64E762F42F065618A737C0 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -860,7 +860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t886B660896B747DCB7EA2B7AC26DD
 		return L_6;
 	}
 }
-// Method Definition Index: 112946
+// Method Definition Index: 113060
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m6DC13BAF03B589E28A9570C6B1AA2E9D55889E0A (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tD2D2EA0CA13C280CE0BE6084B367221F477FDEE1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -946,37 +946,37 @@ IL2CPP_EXTERN_C void MonoScriptData_t886B660896B747DCB7EA2B7AC26DD7AAF677F9E8_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112947
+// Method Definition Index: 113061
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_NextEffect_m94EF66A3322CB9B857A8217260CFCEDD06FC56D2 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:19>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:19>
 		int32_t L_0 = __this->___index;
 		__this->___index = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:20>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:20>
 		CFXR_Demo_WrapIndex_m82B44BE735AEBAE58FC762F9638EDCD5F86CD648(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:21>
 		CFXR_Demo_PlayAtIndex_m9015D10CB7D122067A50B951740F04A5B9BC1112(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:22>
 		return;
 	}
 }
-// Method Definition Index: 112948
+// Method Definition Index: 113062
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_PreviousEffect_m3CE1D987622FFB1BF325D8278D4A480764E4317C (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:26>
 		int32_t L_0 = __this->___index;
 		__this->___index = ((int32_t)il2cpp_codegen_subtract(L_0, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:27>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:27>
 		CFXR_Demo_WrapIndex_m82B44BE735AEBAE58FC762F9638EDCD5F86CD648(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:28>
 		CFXR_Demo_PlayAtIndex_m9015D10CB7D122067A50B951740F04A5B9BC1112(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:29>
 		return;
 	}
 }
-// Method Definition Index: 112949
+// Method Definition Index: 113063
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleSlowMo_mE657E27920989DF0E13DB44CCC026A7AAF1A0083 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -987,10 +987,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleSlowMo_mE657E27920989DF0
 	float G_B6_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B6_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:33>
 		bool L_0 = __this->___slowMotion;
 		__this->___slowMotion = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:35>
 		bool L_1 = __this->___slowMotion;
 		if (L_1)
 		{
@@ -1010,11 +1010,11 @@ IL_001e:
 IL_0023:
 	{
 		Time_set_timeScale_mEF84EE4B2376A458387648079B426B267862D331(G_B3_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:37>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		L_2 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		V_0 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:38>
 		bool L_3 = __this->___slowMotion;
 		if (L_3)
 		{
@@ -1038,21 +1038,21 @@ IL_003f:
 IL_0044:
 	{
 		G_B6_1->___a = G_B6_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:39>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_4 = __this->___btnSlowMotion;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_5 = V_0;
 		NullCheck(L_4);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_4, L_5);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:40>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_6 = __this->___lblSlowMotion;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_7 = V_0;
 		NullCheck(L_6);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_6, L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:41>
 		return;
 	}
 }
-// Method Definition Index: 112950
+// Method Definition Index: 113064
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleCamera_mDF2E6E2EA9F515F46A3EB6E4D0B0CB4C98A6E09B (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -1062,14 +1062,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleCamera_mDF2E6E2EA9F515F4
 	float G_B3_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B3_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:45>
 		bool L_0 = __this->___rotateCamera;
 		__this->___rotateCamera = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:47>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		L_1 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		V_0 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:48>
 		bool L_2 = __this->___rotateCamera;
 		if (L_2)
 		{
@@ -1093,21 +1093,21 @@ IL_0026:
 IL_002b:
 	{
 		G_B3_1->___a = G_B3_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:49>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_3 = __this->___btnCameraRotation;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_4 = V_0;
 		NullCheck(L_3);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_3, L_4);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:50>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___lblCameraRotation;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6 = V_0;
 		NullCheck(L_5);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_5, L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:51>
 		return;
 	}
 }
-// Method Definition Index: 112951
+// Method Definition Index: 113065
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleGround_m62681F628E827CFDE43E262B6FB8E3A12B310F10 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -1117,19 +1117,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleGround_m62681F628E827CFD
 	float G_B3_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B3_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:55>
 		bool L_0 = __this->___showGround;
 		__this->___showGround = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:57>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___ground;
 		bool L_2 = __this->___showGround;
 		NullCheck(L_1);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_1, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:59>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3;
 		L_3 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:60>
 		bool L_4 = __this->___showGround;
 		if (L_4)
 		{
@@ -1153,21 +1153,21 @@ IL_0037:
 IL_003c:
 	{
 		G_B3_1->___a = G_B3_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:61>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_5 = __this->___btnShowGround;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6 = V_0;
 		NullCheck(L_5);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_5, L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:62>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_7 = __this->___lblShowGround;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_8 = V_0;
 		NullCheck(L_7);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_7, L_8);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:63>
 		return;
 	}
 }
-// Method Definition Index: 112952
+// Method Definition Index: 113066
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleCameraShake_mDC6F268EB4FB616BEF0250B802883EEB74EFDEE1 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1183,14 +1183,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleCameraShake_mDC6F268EB4F
 	float G_B3_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B3_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:67>
 		bool L_0 = ((CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_StaticFields*)il2cpp_codegen_static_fields_for(CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_il2cpp_TypeInfo_var))->___GlobalDisableCameraShake;
 		((CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_StaticFields*)il2cpp_codegen_static_fields_for(CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_il2cpp_TypeInfo_var))->___GlobalDisableCameraShake = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:69>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		L_1 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		V_0 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:70>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:70>
 		bool L_2 = ((CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_StaticFields*)il2cpp_codegen_static_fields_for(CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_il2cpp_TypeInfo_var))->___GlobalDisableCameraShake;
 		if (L_2)
 		{
@@ -1214,21 +1214,21 @@ IL_0023:
 IL_0028:
 	{
 		G_B3_1->___a = G_B3_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:71>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_3 = __this->___btnCamShake;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_4 = V_0;
 		NullCheck(L_3);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_3, L_4);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:72>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:72>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___lblCamShake;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6 = V_0;
 		NullCheck(L_5);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_5, L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:73>
 		return;
 	}
 }
-// Method Definition Index: 112953
+// Method Definition Index: 113067
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleEffectsLights_mF9BB908B8FE3402630FB19DEBC1C954E9BC195F2 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1244,14 +1244,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleEffectsLights_mF9BB908B8
 	float G_B3_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B3_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:77>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:77>
 		bool L_0 = ((CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_StaticFields*)il2cpp_codegen_static_fields_for(CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_il2cpp_TypeInfo_var))->___GlobalDisableLights;
 		((CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_StaticFields*)il2cpp_codegen_static_fields_for(CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_il2cpp_TypeInfo_var))->___GlobalDisableLights = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:79>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		L_1 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		V_0 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:80>
 		bool L_2 = ((CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_StaticFields*)il2cpp_codegen_static_fields_for(CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_il2cpp_TypeInfo_var))->___GlobalDisableLights;
 		if (L_2)
 		{
@@ -1275,21 +1275,21 @@ IL_0023:
 IL_0028:
 	{
 		G_B3_1->___a = G_B3_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:81>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:81>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_3 = __this->___btnLights;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_4 = V_0;
 		NullCheck(L_3);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_3, L_4);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:82>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___lblLights;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6 = V_0;
 		NullCheck(L_5);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_5, L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:83>
 		return;
 	}
 }
-// Method Definition Index: 112954
+// Method Definition Index: 113068
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleBloom_m5AA98EF1D19188D31FC1132501037E5AC5A47194 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -1299,7 +1299,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleBloom_m5AA98EF1D19188D31
 	float G_B3_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B3_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:87>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_0 = __this->___bloom;
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_1 = __this->___bloom;
 		NullCheck(L_1);
@@ -1307,11 +1307,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ToggleBloom_m5AA98EF1D19188D31
 		L_2 = Behaviour_get_enabled_mAAC9F15E9EBF552217A5AE2681589CC0BFA300C1(L_1, NULL);
 		NullCheck(L_0);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_0, (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:89>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3;
 		L_3 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:90>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_4 = __this->___bloom;
 		NullCheck(L_4);
 		bool L_5;
@@ -1338,25 +1338,25 @@ IL_0035:
 IL_003a:
 	{
 		G_B3_1->___a = G_B3_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:91>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_6 = __this->___btnBloom;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_7 = V_0;
 		NullCheck(L_6);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_6, L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:92>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:92>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_8 = __this->___lblBloom;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_9 = V_0;
 		NullCheck(L_8);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_8, L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:93>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:93>
 		return;
 	}
 }
-// Method Definition Index: 112955
+// Method Definition Index: 113069
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ResetCam_m7968B3A10B9F4D3FF40B670580884C1DA2CEAA0B (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:97>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_0;
 		L_0 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		NullCheck(L_0);
@@ -1365,7 +1365,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ResetCam_m7968B3A10B9F4D3FF40B
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = __this->___camInitialPosition;
 		NullCheck(L_1);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_1, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:98>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:98>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_3;
 		L_3 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		NullCheck(L_3);
@@ -1374,11 +1374,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_ResetCam_m7968B3A10B9F4D3FF40B
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_5 = __this->___camInitialRotation;
 		NullCheck(L_4);
 		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_4, L_5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:99>
 		return;
 	}
 }
-// Method Definition Index: 112956
+// Method Definition Index: 113070
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Awake_m269164F22777A36B8368C605A3C7EFDCAB9BD0DF (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1397,7 +1397,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Awake_m269164F22777A36B8368C60
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_2 = NULL;
 	CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A* V_3 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:141>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:141>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_0;
 		L_0 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		NullCheck(L_0);
@@ -1407,7 +1407,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Awake_m269164F22777A36B8368C60
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
 		L_2 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_1, NULL);
 		__this->___camInitialPosition = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:142>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_3;
 		L_3 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		NullCheck(L_3);
@@ -1417,18 +1417,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Awake_m269164F22777A36B8368C60
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_5;
 		L_5 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_4, NULL);
 		__this->___camInitialRotation = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:144>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:144>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_6 = (List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B*)il2cpp_codegen_object_new(List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B_il2cpp_TypeInfo_var);
 		List_1__ctor_m447372C1EF7141193B93090A77395B786C72C7BC(L_6, List_1__ctor_m447372C1EF7141193B93090A77395B786C72C7BC_RuntimeMethod_var);
 		V_0 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:145>
 		V_1 = 0;
 		goto IL_0068;
 	}
 
 IL_0034:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:147>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_7;
 		L_7 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		int32_t L_8 = V_1;
@@ -1439,18 +1439,18 @@ IL_0034:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10;
 		L_10 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_9, NULL);
 		V_2 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:148>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:148>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_11 = V_0;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = V_2;
 		NullCheck(L_11);
 		List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_inline(L_11, L_12, List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:150>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = V_2;
 		NullCheck(L_13);
 		CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A* L_14;
 		L_14 = GameObject_GetComponent_TisCFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_mD8E1686899533C63709C20FF8BDB43633DED998D(L_13, GameObject_GetComponent_TisCFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_mD8E1686899533C63709C20FF8BDB43633DED998D_RuntimeMethod_var);
 		V_3 = L_14;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:151>
 		CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A* L_15 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_16;
@@ -1461,7 +1461,7 @@ IL_0034:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:151>
 		CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A* L_17 = V_3;
 		NullCheck(L_17);
 		L_17->___clearBehavior = 1;
@@ -1469,14 +1469,14 @@ IL_0034:
 
 IL_0064:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:145>
 		int32_t L_18 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_18, 1));
 	}
 
 IL_0068:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:145>
 		int32_t L_19 = V_1;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_20;
 		L_20 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
@@ -1489,22 +1489,22 @@ IL_0068:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:153>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:153>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_22 = V_0;
 		NullCheck(L_22);
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_23;
 		L_23 = List_1_ToArray_m9237E7439BAF0FDCFB325D21398E459BEDB3432C(L_22, List_1_ToArray_m9237E7439BAF0FDCFB325D21398E459BEDB3432C_RuntimeMethod_var);
 		__this->___effectsList = L_23;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___effectsList), (void*)L_23);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:155>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:155>
 		CFXR_Demo_PlayAtIndex_m9015D10CB7D122067A50B951740F04A5B9BC1112(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:156>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:156>
 		CFXR_Demo_UpdateLabels_mE424EDA24B9F0ACE70AA011E9966DDD6AC5C34D7(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:157>
 		return;
 	}
 }
-// Method Definition Index: 112957
+// Method Definition Index: 113071
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Update_m9A55C3BA95AAE759CC901A345356ADCC54E71DCD (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1533,7 +1533,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Update_m9A55C3BA95AAE759CC901A
 	memset((&G_B30_1), 0, sizeof(G_B30_1));
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* G_B30_2 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:161>
 		bool L_0 = __this->___rotateCamera;
 		if (!L_0)
 		{
@@ -1541,7 +1541,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Update_m9A55C3BA95AAE759CC901A
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:163>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1 = __this->___demoCamera;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
 		L_2 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
@@ -1556,7 +1556,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Update_m9A55C3BA95AAE759CC901A
 
 IL_0029:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:166>
 		bool L_6;
 		L_6 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(((int32_t)32), NULL);
 		if (!L_6)
@@ -1565,7 +1565,7 @@ IL_0029:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:168>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->___currentEffect;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -1576,13 +1576,13 @@ IL_0029:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:170>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___currentEffect;
 		NullCheck(L_9);
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_10;
 		L_10 = GameObject_GetComponent_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_m5C3C1AA51E25BAFDD8D40BA1EDC7DA8871AF29AA(L_9, GameObject_GetComponent_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_m5C3C1AA51E25BAFDD8D40BA1EDC7DA8871AF29AA_RuntimeMethod_var);
 		V_1 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:171>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_11 = V_1;
 		NullCheck(L_11);
 		bool L_12;
@@ -1593,7 +1593,7 @@ IL_0029:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:173>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_13 = V_1;
 		NullCheck(L_13);
 		ParticleSystem_Stop_m6CA855033D5CE2D3AF7927B6709BC65DBCD632DF(L_13, (bool)1, NULL);
@@ -1602,7 +1602,7 @@ IL_0029:
 
 IL_005d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:177>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___currentEffect;
 		NullCheck(L_14);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15;
@@ -1616,7 +1616,7 @@ IL_005d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:179>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->___currentEffect;
 		NullCheck(L_17);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_17, (bool)1, NULL);
@@ -1625,16 +1625,16 @@ IL_005d:
 
 IL_007d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:183>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:183>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_18 = V_1;
 		NullCheck(L_18);
 		ParticleSystem_Play_m4A59E0A2C7CA49EF75287A067305ABB314A16E62(L_18, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:184>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19 = __this->___currentEffect;
 		NullCheck(L_19);
 		CFXR_EffectU5BU5D_t77DDA5EBA474FE690699DFECA868F462EFED87CD* L_20;
 		L_20 = GameObject_GetComponentsInChildren_TisCFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_m7298B4F90C049C78FED0FA41A2610C8268480135(L_19, GameObject_GetComponentsInChildren_TisCFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A_m7298B4F90C049C78FED0FA41A2610C8268480135_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:185>
 		V_2 = L_20;
 		V_3 = 0;
 		goto IL_00a0;
@@ -1642,13 +1642,13 @@ IL_007d:
 
 IL_0094:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:185>
 		CFXR_EffectU5BU5D_t77DDA5EBA474FE690699DFECA868F462EFED87CD* L_21 = V_2;
 		int32_t L_22 = V_3;
 		NullCheck(L_21);
 		int32_t L_23 = L_22;
 		CFXR_Effect_t3017EDCEABB0C70663A82AAA961EE597C0AF743A* L_24 = (L_21)->GetAt(static_cast<il2cpp_array_size_t>(L_23));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:187>
 		NullCheck(L_24);
 		CFXR_Effect_ResetState_m610E43E011438C9B8496202AC20150A8A296C1FF(L_24, NULL);
 		int32_t L_25 = V_3;
@@ -1657,7 +1657,7 @@ IL_0094:
 
 IL_00a0:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:185>
 		int32_t L_26 = V_3;
 		CFXR_EffectU5BU5D_t77DDA5EBA474FE690699DFECA868F462EFED87CD* L_27 = V_2;
 		NullCheck(L_27);
@@ -1669,7 +1669,7 @@ IL_00a0:
 
 IL_00a6:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:194>
 		bool L_28;
 		L_28 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(((int32_t)127), NULL);
 		if (L_28)
@@ -1688,7 +1688,7 @@ IL_00a6:
 
 IL_00b7:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:196>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:196>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30 = __this->___currentEffect;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_31;
@@ -1699,11 +1699,11 @@ IL_00b7:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:198>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:198>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32 = __this->___currentEffect;
 		NullCheck(L_32);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_32, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:199>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:199>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_33 = __this->___currentEffect;
 		NullCheck(L_33);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_33, (bool)1, NULL);
@@ -1711,7 +1711,7 @@ IL_00b7:
 
 IL_00dd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:203>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:203>
 		bool L_34;
 		L_34 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(((int32_t)276), NULL);
 		if (!L_34)
@@ -1720,13 +1720,13 @@ IL_00dd:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:205>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:205>
 		CFXR_Demo_PreviousEffect_m3CE1D987622FFB1BF325D8278D4A480764E4317C(__this, NULL);
 	}
 
 IL_00ef:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:208>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:208>
 		bool L_35;
 		L_35 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(((int32_t)275), NULL);
 		if (!L_35)
@@ -1735,13 +1735,13 @@ IL_00ef:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:210>
 		CFXR_Demo_NextEffect_m94EF66A3322CB9B857A8217260CFCEDD06FC56D2(__this, NULL);
 	}
 
 IL_0101:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:213>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:213>
 		bool L_36;
 		L_36 = Input_GetMouseButtonDown_m8DFC792D15FFF15D311614D5CC6C5D055E5A1DE3(0, NULL);
 		if (!L_36)
@@ -1750,7 +1750,7 @@ IL_0101:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:215>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_37 = __this->___demoCamera;
 		NullCheck(L_37);
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_38;
@@ -1760,7 +1760,7 @@ IL_0101:
 		NullCheck(L_38);
 		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_40;
 		L_40 = Camera_ScreenPointToRay_m2887B9A49880B7AB670C57D66B67D6A6689FE315(L_38, L_39, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:216>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:216>
 		il2cpp_codegen_runtime_class_init_inline(Physics_t1244C2983AEAFA149425AFFC3DF53BC91C18ED56_il2cpp_TypeInfo_var);
 		bool L_41;
 		L_41 = Physics_Raycast_mDB89EB287ED040E534F6A933683A070D29DC14D3(L_40, NULL);
@@ -1770,7 +1770,7 @@ IL_0101:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:218>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:218>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_42 = __this->___currentEffect;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_43;
@@ -1781,11 +1781,11 @@ IL_0101:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:220>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:220>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44 = __this->___currentEffect;
 		NullCheck(L_44);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_44, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:221>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_45 = __this->___currentEffect;
 		NullCheck(L_45);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_45, (bool)1, NULL);
@@ -1793,7 +1793,7 @@ IL_0101:
 
 IL_014b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:226>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:226>
 		bool L_46;
 		L_46 = Input_GetMouseButtonDown_m8DFC792D15FFF15D311614D5CC6C5D055E5A1DE3(1, NULL);
 		if (L_46)
@@ -1812,17 +1812,17 @@ IL_014b:
 
 IL_015b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:228>
 		CFXR_Demo_ResetCam_m7968B3A10B9F4D3FF40B670580884C1DA2CEAA0B(__this, NULL);
 	}
 
 IL_0161:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:231>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:231>
 		float L_48;
 		L_48 = Input_GetAxis_m10372E6C5FF591668D2DC5F58C58D213CC598A62(_stringLiteralFC6687DC37346CD2569888E29764F727FAF530E0, NULL);
 		V_0 = L_48;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:232>
 		float L_49 = V_0;
 		if ((((float)L_49) == ((float)(0.0f))))
 		{
@@ -1830,7 +1830,7 @@ IL_0161:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:234>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_50;
 		L_50 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		NullCheck(L_50);
@@ -1875,11 +1875,11 @@ IL_0197:
 
 IL_01ad:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:236>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:236>
 		return;
 	}
 }
-// Method Definition Index: 112958
+// Method Definition Index: 113072
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_PlayAtIndex_m9015D10CB7D122067A50B951740F04A5B9BC1112 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1889,7 +1889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_PlayAtIndex_m9015D10CB7D122067
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:240>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___currentEffect;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -1900,7 +1900,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_PlayAtIndex_m9015D10CB7D122067
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:242>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:242>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___currentEffect;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -1908,7 +1908,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_PlayAtIndex_m9015D10CB7D122067
 
 IL_001a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:245>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:245>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_3 = __this->___effectsList;
 		int32_t L_4 = __this->___index;
 		NullCheck(L_3);
@@ -1916,21 +1916,21 @@ IL_001a:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
 		__this->___currentEffect = L_6;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentEffect), (void*)L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:246>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:246>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->___currentEffect;
 		NullCheck(L_7);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_7, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:248>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:248>
 		CFXR_Demo_UpdateLabels_mE424EDA24B9F0ACE70AA011E9966DDD6AC5C34D7(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:249>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:249>
 		return;
 	}
 }
-// Method Definition Index: 112959
+// Method Definition Index: 113073
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_WrapIndex_m82B44BE735AEBAE58FC762F9638EDCD5F86CD648 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:253>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:253>
 		int32_t L_0 = __this->___index;
 		if ((((int32_t)L_0) >= ((int32_t)0)))
 		{
@@ -1938,7 +1938,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_WrapIndex_m82B44BE735AEBAE58FC
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:253>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:253>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_1 = __this->___effectsList;
 		NullCheck(L_1);
 		__this->___index = ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_1)->max_length)), 1));
@@ -1946,7 +1946,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_WrapIndex_m82B44BE735AEBAE58FC
 
 IL_0019:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:254>
 		int32_t L_2 = __this->___index;
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_3 = __this->___effectsList;
 		NullCheck(L_3);
@@ -1956,17 +1956,17 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:254>
 		__this->___index = 0;
 	}
 
 IL_0030:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:255>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:255>
 		return;
 	}
 }
-// Method Definition Index: 112960
+// Method Definition Index: 113074
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_UpdateLabels_mE424EDA24B9F0ACE70AA011E9966DDD6AC5C34D7 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1976,7 +1976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_UpdateLabels_mE424EDA24B9F0ACE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:259>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:259>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_0 = __this->___labelEffect;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___currentEffect;
 		NullCheck(L_1);
@@ -1984,7 +1984,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_UpdateLabels_mE424EDA24B9F0ACE
 		L_2 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_1, NULL);
 		NullCheck(L_0);
 		VirtualActionInvoker1< String_t* >::Invoke(75, L_0, L_2);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:260>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:260>
 		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_3 = __this->___labelIndex;
 		int32_t L_4 = __this->___index;
 		int32_t L_5 = ((int32_t)il2cpp_codegen_add(L_4, 1));
@@ -1997,19 +1997,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_UpdateLabels_mE424EDA24B9F0ACE
 		L_10 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteral7ACA34FD81900767B6FAD748BAAEF3F03C87EF79, L_6, L_9, NULL);
 		NullCheck(L_3);
 		VirtualActionInvoker1< String_t* >::Invoke(75, L_3, L_10);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:261>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:261>
 		return;
 	}
 }
-// Method Definition Index: 112961
+// Method Definition Index: 113075
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo__ctor_mEF21647C89A2F37F19A4260FE182AF7CF93210F8 (CFXR_Demo_tC798392D488F2E202DFEB3464B0A5EFEC019BE6C* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:123>
 		__this->___rotationSpeed = (10.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:124>
 		__this->___zoomFactor = (1.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo.cs:128>
 		__this->___showGround = (bool)1;
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -2023,7 +2023,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo__ctor_mEF21647C89A2F37F19A4260
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112962
+// Method Definition Index: 113076
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_OnEnable_mC06DD5667D3AE1B9277E74BFFD36BF4F6E64028C (CFXR_Demo_RandomText_tB7CB0F92E3314B0191539364EDA60CAA9C39A163* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2033,13 +2033,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_OnEnable_mC06DD5667
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:14>
 		MonoBehaviour_InvokeRepeating_mF208501E0E4918F9168BBBA5FC50D8F80D01514D(__this, _stringLiteral761ADE297935FA4E7A49DA2B3A4BB7191FC127FF, (0.0f), (1.5f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:15>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:15>
 		return;
 	}
 }
-// Method Definition Index: 112963
+// Method Definition Index: 113077
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_OnDisable_m44AA8E7D1D8324B12234EB3CF539CDCF96092DC0 (CFXR_Demo_RandomText_tB7CB0F92E3314B0191539364EDA60CAA9C39A163* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2049,17 +2049,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_OnDisable_m44AA8E7D
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:19>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:19>
 		MonoBehaviour_CancelInvoke_m268FFD58AFF64C07FD4C9B9B8B85F58BD86F3A01(__this, _stringLiteral761ADE297935FA4E7A49DA2B3A4BB7191FC127FF, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:20>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:20>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_0 = __this->___particles;
 		NullCheck(L_0);
 		ParticleSystem_Clear_m26F18A1A58006417A0F66688E3124CFD1E880E11(L_0, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:21>
 		return;
 	}
 }
-// Method Definition Index: 112964
+// Method Definition Index: 113078
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_SetRandomText_m4DBC05A09A3B90941162D5043B15664F8E0C2D1E (CFXR_Demo_RandomText_tB7CB0F92E3314B0191539364EDA60CAA9C39A163* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2080,23 +2080,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_SetRandomText_m4DBC
 	Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F32C6FE75 V_6;
 	memset((&V_6), 0, sizeof(V_6));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:28>
 		int32_t L_0;
 		L_0 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(((int32_t)10), ((int32_t)1000), NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:29>
 		String_t* L_1;
 		L_1 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_0), NULL);
 		V_1 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:30>
 		int32_t L_2 = V_0;
 		V_2 = ((float)(((float)L_2)/(1000.0f)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:31>
 		float L_3 = V_2;
 		float L_4;
 		L_4 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline((0.800000012f), (1.29999995f), L_3, NULL);
 		V_3 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:32>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_5;
 		L_5 = Color_get_red_mA2E53E7173FDC97E68E335049AB0FAAEE43A844D_inline(NULL);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6;
@@ -2105,7 +2105,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_SetRandomText_m4DBC
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_8;
 		L_8 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_5, L_6, L_7, NULL);
 		V_4 = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:33>
 		CFXR_ParticleText_t4E5797B5E79E3513E6901E6C7CD8ACB5891EA1D3* L_9 = __this->___dynamicParticleText;
 		String_t* L_10 = V_1;
 		float L_11 = V_3;
@@ -2124,15 +2124,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText_SetRandomText_m4DBC
 		Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F32C6FE75 L_17 = V_6;
 		NullCheck(L_9);
 		CFXR_ParticleText_UpdateText_mD2C7936B4CC8542E63286C45474607CA6DC581D3(L_9, L_10, L_12, L_14, L_15, L_16, L_17, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:35>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_18 = __this->___particles;
 		NullCheck(L_18);
 		ParticleSystem_Play_m4A59E0A2C7CA49EF75287A067305ABB314A16E62(L_18, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_RandomText.cs:36>
 		return;
 	}
 }
-// Method Definition Index: 112965
+// Method Definition Index: 113079
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText__ctor_mB6FB55A76038D88E5BBF54B1E8A1430529C933E7 (CFXR_Demo_RandomText_tB7CB0F92E3314B0191539364EDA60CAA9C39A163* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2148,11 +2148,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_RandomText__ctor_mB6FB55A76038
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112966
+// Method Definition Index: 113080
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Rotate_Update_m75A2742B1AA849A4A8A23A116B47D7BFAAF42346 (CFXR_Demo_Rotate_tC9BF71B92F879B0DC058EC49386E2B596A3021F2* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:18>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:18>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___center;
@@ -2162,20 +2162,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Rotate_Update_m75A2742B1AA849A
 		L_4 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		NullCheck(L_0);
 		Transform_RotateAround_m489C5BE8B8B15D0A5F4863DE6D23FF2CC8FA76C6(L_0, L_1, L_2, ((float)il2cpp_codegen_multiply(L_3, L_4)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:19>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:19>
 		return;
 	}
 }
-// Method Definition Index: 112967
+// Method Definition Index: 113081
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Rotate__ctor_mB669EB6BEC9244C858AFE4D8739184771161DCDD (CFXR_Demo_Rotate_tC9BF71B92F879B0DC058EC49386E2B596A3021F2* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:12>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:12>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0;
 		memset((&L_0), 0, sizeof(L_0));
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_0), (0.0f), (1.0f), (0.0f), NULL);
 		__this->___axis = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Rotate.cs:14>
 		__this->___speed = (1.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -2189,11 +2189,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Rotate__ctor_mB669EB6BEC9244C8
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112968
+// Method Definition Index: 113082
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_Awake_m2E13757C3B4901D3D03E45F0EC35D92B2262E23F (CFXR_Demo_Translate_t95CB6CDBAE93F397B9CA608E9B233BAB8C7FB891* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:21>
 		bool L_0 = __this->___initialized;
 		if (L_0)
 		{
@@ -2201,9 +2201,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_Awake_m2E13757C3B490
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:23>
 		__this->___initialized = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:24>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1;
 		L_1 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_1);
@@ -2214,21 +2214,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_Awake_m2E13757C3B490
 
 IL_0020:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:26>
 		return;
 	}
 }
-// Method Definition Index: 112969
+// Method Definition Index: 113083
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_OnEnable_mC821E4225DE439D7668DEB5F1A32AA67933E5829 (CFXR_Demo_Translate_t95CB6CDBAE93F397B9CA608E9B233BAB8C7FB891* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:30>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___initialPosition;
 		NullCheck(L_0);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_0, L_1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:31>
 		bool L_2 = __this->___randomRotation;
 		if (!L_2)
 		{
@@ -2236,7 +2236,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_OnEnable_mC821E4225D
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:33>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
 		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
@@ -2255,15 +2255,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_OnEnable_mC821E4225D
 
 IL_0042:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:35>
 		return;
 	}
 }
-// Method Definition Index: 112970
+// Method Definition Index: 113084
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_Update_m15580A236CE7D056694B5A61452170CDEF4D559E (CFXR_Demo_Translate_t95CB6CDBAE93F397B9CA608E9B233BAB8C7FB891* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:39>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___direction;
@@ -2273,15 +2273,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate_Update_m15580A236CE7
 		L_3 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_1, L_2, NULL);
 		NullCheck(L_0);
 		Transform_Translate_m018D015E89C8CB743C54A21B4A1C5202EBF6297A(L_0, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:40>
 		return;
 	}
 }
-// Method Definition Index: 112971
+// Method Definition Index: 113085
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CFXR_Demo_Translate__ctor_m584FD684223379377628B35DF5320D0C137DEF8F (CFXR_Demo_Translate_t95CB6CDBAE93F397B9CA608E9B233BAB8C7FB891* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:12>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR_Demo_Translate.cs:12>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0;
 		memset((&L_0), 0, sizeof(L_0));
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_0), (0.0f), (1.0f), (0.0f), NULL);

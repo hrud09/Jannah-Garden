@@ -513,7 +513,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeHelpers_InitializeArray_m751372AA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112996
+// Method Definition Index: 113110
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Start_mADD88F57069CCBFDF879EEBD31AFAE7C282D7F48 (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -537,7 +537,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Start_mADD88F570
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* V_2 = NULL;
 	String_t* V_3 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:49>
 		List_1_t965177FD45821EB806E8821610414D4B57FBA6D7* L_0 = __this->___texturesToAnimate;
 		if (L_0)
 		{
@@ -545,13 +545,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Start_mADD88F570
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:50>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:52>
 		Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* L_1;
 		L_1 = Component_GetComponent_TisRenderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF_mC91ACC92AD57CA6CA00991DAF1DB3830BCE07AF8(__this, Component_GetComponent_TisRenderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF_mC91ACC92AD57CA6CA00991DAF1DB3830BCE07AF8_RuntimeMethod_var);
 		NullCheck(L_1);
@@ -559,7 +559,7 @@ IL_0009:
 		L_2 = Renderer_get_materials_m43D33328432700524EAEAB093C67AE5689976118(L_1, NULL);
 		__this->___mats = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___mats), (void*)L_2);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:53>
 		List_1_t965177FD45821EB806E8821610414D4B57FBA6D7* L_3 = __this->___texturesToAnimate;
 		NullCheck(L_3);
 		Enumerator_t91C0226DDF4688F509BA6136EE16732D271E67D4 L_4;
@@ -584,11 +584,11 @@ FINALLY_00f6:
 
 IL_002b_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:53>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:53>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_5;
 				L_5 = Enumerator_get_Current_m4B85AEF4DBA879C5FCB37160943567CD65B69689_inline((&V_0), Enumerator_get_Current_m4B85AEF4DBA879C5FCB37160943567CD65B69689_RuntimeMethod_var);
 				V_1 = L_5;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:54>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:54>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_6 = V_1;
 				NullCheck(L_6);
 				int32_t L_7 = L_6->___matIndex;
@@ -611,11 +611,11 @@ IL_002b_1:
 
 IL_004c_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:55>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:55>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_11 = V_1;
 				NullCheck(L_11);
 				L_11->___textureID = (-1);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:56>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:56>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_12 = V_1;
 				NullCheck(L_12);
 				int32_t* L_13 = (int32_t*)(&L_12->___matIndex);
@@ -625,13 +625,13 @@ IL_004c_1:
 				L_15 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralFF535A906F3950576101539388E066ADB16AC1EC, L_14, NULL);
 				il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 				Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_15, NULL);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:57>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:57>
 				goto IL_00e8_1;
 			}
 
 IL_006f_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:59>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:59>
 				MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_16 = __this->___mats;
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_17 = V_1;
 				NullCheck(L_17);
@@ -640,7 +640,7 @@ IL_006f_1:
 				int32_t L_19 = L_18;
 				Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_20 = (L_16)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
 				V_2 = L_20;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:60>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:60>
 				Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_21 = V_2;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				bool L_22;
@@ -651,7 +651,7 @@ IL_006f_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:61>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:61>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_23 = V_1;
 				NullCheck(L_23);
 				int32_t* L_24 = (int32_t*)(&L_23->___matIndex);
@@ -661,20 +661,20 @@ IL_006f_1:
 				L_26 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralFC069B4B69628103D61F548CCC7DCD372E6E47B1, L_25, NULL);
 				il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 				Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_26, NULL);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:62>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:62>
 				goto IL_00e8_1;
 			}
 
 IL_00a2_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:66>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:66>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_27 = V_1;
 				NullCheck(L_27);
 				int32_t L_28 = L_27->___texture;
 				String_t* L_29;
 				L_29 = OmniShadeAnimateTexture_GetTextureName_m246623C2A672B893A8CFB252CD1E3839DFEC82B7(__this, L_28, NULL);
 				V_3 = L_29;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:67>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:67>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_30 = V_1;
 				Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_31 = V_2;
 				NullCheck(L_31);
@@ -688,14 +688,14 @@ IL_00a2_1:
 				L_34 = String_Contains_m6D77B121FADA7CA5F397C0FABB65DA62DF03B6C3(L_33, _stringLiteralF620ED5F2D1A418DA832F6F066494CBEE5B4F145, NULL);
 				NullCheck(L_30);
 				L_30->___isTriplanar = L_34;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:68>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:68>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_35 = V_1;
 				String_t* L_36 = V_3;
 				int32_t L_37;
 				L_37 = Shader_PropertyToID_mE98523D50F5656CAE89B30695C458253EB8956CA(L_36, NULL);
 				NullCheck(L_35);
 				L_35->___textureID = L_37;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:69>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:69>
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_38 = V_1;
 				Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_39 = V_2;
 				AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_40 = V_1;
@@ -710,7 +710,7 @@ IL_00a2_1:
 
 IL_00e8_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:53>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:53>
 				bool L_43;
 				L_43 = Enumerator_MoveNext_m88B5EB1027FA9209E49895CA0BA08A4EC0E35C35((&V_0), Enumerator_MoveNext_m88B5EB1027FA9209E49895CA0BA08A4EC0E35C35_RuntimeMethod_var);
 				if (L_43)
@@ -730,11 +730,11 @@ IL_00e8_1:
 
 IL_0104:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:71>
 		return;
 	}
 }
-// Method Definition Index: 112997
+// Method Definition Index: 113111
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Update_m8AF96535F2686E2EF77EDD08190EE8ECC353CDE3 (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -757,7 +757,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Update_m8AF96535
 	int32_t V_7 = 0;
 	int32_t G_B12_0 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:74>
 		List_1_t965177FD45821EB806E8821610414D4B57FBA6D7* L_0 = __this->___texturesToAnimate;
 		if (L_0)
 		{
@@ -765,27 +765,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture_Update_m8AF96535
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:75>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:75>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:78>
 		V_0 = 0;
 		goto IL_0174;
 	}
 
 IL_0010:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:79>
 		List_1_t965177FD45821EB806E8821610414D4B57FBA6D7* L_1 = __this->___texturesToAnimate;
 		int32_t L_2 = V_0;
 		NullCheck(L_1);
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_3;
 		L_3 = List_1_get_Item_mD11629EC0B2588326A369DA65F8E2D678226299F(L_1, L_2, List_1_get_Item_mD11629EC0B2588326A369DA65F8E2D678226299F_RuntimeMethod_var);
 		V_1 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:80>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_4 = V_1;
 		NullCheck(L_4);
 		int32_t L_5 = L_4->___textureID;
@@ -795,7 +795,7 @@ IL_0010:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:82>
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_6 = __this->___mats;
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_7 = V_1;
 		NullCheck(L_7);
@@ -804,7 +804,7 @@ IL_0010:
 		int32_t L_9 = L_8;
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_10 = (L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
 		V_2 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:83>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_11 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_12;
@@ -815,7 +815,7 @@ IL_0010:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:87>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_13 = V_1;
 		NullCheck(L_13);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_14 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_13->___speed);
@@ -838,17 +838,17 @@ IL_0010:
 
 IL_006a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:88>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_19 = V_1;
 		NullCheck(L_19);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_20 = L_19->___currentUV;
 		V_3 = L_20;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:89>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_21 = V_1;
 		NullCheck(L_21);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_22 = L_21->___speed;
 		V_4 = L_22;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:90>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_23 = V_1;
 		NullCheck(L_23);
 		bool L_24 = L_23->___pingPong;
@@ -858,7 +858,7 @@ IL_006a:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:91>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_25 = V_4;
 		float L_26;
 		L_26 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
@@ -874,7 +874,7 @@ IL_006a:
 
 IL_009b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:92>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:92>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_31 = V_3;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_32 = V_4;
 		float L_33;
@@ -884,7 +884,7 @@ IL_009b:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_35;
 		L_35 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_31, L_34, NULL);
 		V_3 = L_35;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:94>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_36 = V_1;
 		NullCheck(L_36);
 		bool L_37 = L_36->___isTriplanar;
@@ -906,24 +906,24 @@ IL_00b9:
 IL_00bb:
 	{
 		V_5 = ((float)G_B12_0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:95>
 		float* L_38 = (float*)(&(&V_3)->___x);
 		float* L_39 = L_38;
 		float L_40 = *((float*)L_39);
 		float L_41 = V_5;
 		*((float*)L_39) = (float)(fmodf(L_40, L_41));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:96>
 		float* L_42 = (float*)(&(&V_3)->___y);
 		float* L_43 = L_42;
 		float L_44 = *((float*)L_43);
 		float L_45 = V_5;
 		*((float*)L_43) = (float)(fmodf(L_44, L_45));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:98>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:98>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_46 = V_1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_47 = V_3;
 		NullCheck(L_46);
 		L_46->___currentUV = L_47;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:99>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_48 = V_2;
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_49 = V_1;
 		NullCheck(L_49);
@@ -935,7 +935,7 @@ IL_00bb:
 
 IL_00ec:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:103>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_52 = V_1;
 		NullCheck(L_52);
 		Texture2DU5BU5D_t05332F1E3F7D4493E304C702201F9BE4F9236191* L_53 = L_52->___frames;
@@ -955,12 +955,12 @@ IL_00ec:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:104>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_56 = V_1;
 		NullCheck(L_56);
 		int32_t L_57 = L_56->___FPS;
 		V_6 = ((float)((1.0f)/((float)L_57)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:105>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_58 = V_1;
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_59 = L_58;
 		NullCheck(L_59);
@@ -969,13 +969,13 @@ IL_00ec:
 		L_61 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		NullCheck(L_59);
 		L_59->___currentFrameTime = ((float)il2cpp_codegen_add(L_60, L_61));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:106>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_62 = V_1;
 		NullCheck(L_62);
 		float L_63 = L_62->___currentFrameTime;
 		float L_64 = V_6;
 		V_7 = il2cpp_codegen_cast_double_to_int<int32_t>(((float)(L_63/L_64)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:107>
 		int32_t L_65 = V_7;
 		if ((((int32_t)L_65) <= ((int32_t)0)))
 		{
@@ -983,7 +983,7 @@ IL_00ec:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:108>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_66 = V_1;
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_67 = V_1;
 		NullCheck(L_67);
@@ -995,7 +995,7 @@ IL_00ec:
 		NullCheck(L_71);
 		NullCheck(L_66);
 		L_66->___currentFrame = ((int32_t)(((int32_t)il2cpp_codegen_add(L_68, L_69))%((int32_t)(((RuntimeArray*)L_71)->max_length))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:109>
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_72 = V_1;
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_73 = L_72;
 		NullCheck(L_73);
@@ -1003,7 +1003,7 @@ IL_00ec:
 		float L_75 = V_6;
 		NullCheck(L_73);
 		L_73->___currentFrameTime = (fmodf(L_74, L_75));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:110>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_76 = V_2;
 		AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* L_77 = V_1;
 		NullCheck(L_77);
@@ -1023,14 +1023,14 @@ IL_00ec:
 
 IL_0170:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:78>
 		int32_t L_85 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_85, 1));
 	}
 
 IL_0174:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:78>
 		int32_t L_86 = V_0;
 		List_1_t965177FD45821EB806E8821610414D4B57FBA6D7* L_87 = __this->___texturesToAnimate;
 		NullCheck(L_87);
@@ -1042,11 +1042,11 @@ IL_0174:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:114>
 		return;
 	}
 }
-// Method Definition Index: 112998
+// Method Definition Index: 113112
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* OmniShadeAnimateTexture_GetTextureName_m246623C2A672B893A8CFB252CD1E3839DFEC82B7 (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, int32_t ___0_texture, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1060,7 +1060,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* OmniShadeAnimateTexture_GetTextureN
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OmniShade/Scripts/OmniShadeAnimateTexture.cs:117>
 		Il2CppFakeBox<int32_t> L_0(OmniShadeTexture_t51E35B3B477ABB2BDEE8A87EC1E3FB0EB98DAB1A_il2cpp_TypeInfo_var, (&___0_texture));
 		String_t* L_1;
 		L_1 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_0), NULL);
@@ -1075,7 +1075,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* OmniShadeAnimateTexture_GetTextureN
 		return L_4;
 	}
 }
-// Method Definition Index: 112999
+// Method Definition Index: 113113
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture__ctor_mCDDE1282290426CCAAC03AE8FA99DCCD76E47E0B (OmniShadeAnimateTexture_t4B8CC839933CFE4BF802FE3B84DC1DEE883232D0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1099,7 +1099,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OmniShadeAnimateTexture__ctor_mCDDE12822
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 113000
+// Method Definition Index: 113114
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatedTexture__ctor_mE9A6D01F9B0FAC0A9558B5153E7FC86975728192 (AnimatedTexture_tA0C70B364EEF2132DE42B5A4356A17D5546153D4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1115,7 +1115,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatedTexture__ctor_mE9A6D01F9B0FAC0A9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 113001
+// Method Definition Index: 113115
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t1EC30544FDC17BFC61768E8935D0DAE32B437D66 UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m8B23451E2F8CCC8494D4190E0DA0EA2C0EBC829D (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1149,7 +1149,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t1EC30544FDC17BFC61768E8935D0D
 		return L_6;
 	}
 }
-// Method Definition Index: 113002
+// Method Definition Index: 113116
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mAAD7CA3B536CF153EB36B6B4005AB6505D9B9836 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_t5BEAA00352549348F411CDCBA5B2A1F65E358B3B* __this, const RuntimeMethod* method) 
 {
 	{

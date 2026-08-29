@@ -53,7 +53,37 @@ public static class LocalizedRendering
 
         tmpText.enabled = true;
         bool rtl = locale == AppLocale.ar || locale == AppLocale.ur;
+
+        // The shaper emits joined letterforms in logical order and relies on TMP's RTL mode for the
+        // right-to-left layout (that split is what keeps word-wrapped lines in the correct order — see
+        // ArabicTextShaper). RTL mode is gated on the text actually containing Arabic script, because an
+        // untranslated English fallback string under an RTL locale must not be rendered reversed.
+        bool rtlRender = rtl && ArabicTextShaper.ContainsArabic(text);
+        tmpText.isRightToLeftText = rtlRender;
+
+        // TMP looks kerning pairs up in string order but applies the adjustment to the visually reversed
+        // glyphs in RTL mode, which shoves some presentation-form pairs (e.g. reh + alef) into each other.
+        tmpText.enableKerning = !rtlRender;
+
         tmpText.text = rtl ? ArabicTextShaper.Shape(text) : text;
+    }
+
+    /// <summary>Swaps the Left/Right half of a TMP alignment (encoded in the low byte) while leaving the
+    /// vertical component (high byte) untouched — Center/Justified/Flush/Geometry read the same in both
+    /// directions and pass through. Used by every label that mirrors its layout for RTL locales.</summary>
+    public static TextAlignmentOptions MirrorAlignment(TextAlignmentOptions alignment)
+    {
+        int horizontal = (int)alignment & 0xFF;
+        int vertical = (int)alignment & 0xFF00;
+
+        int mirroredHorizontal = horizontal switch
+        {
+            (int)HorizontalAlignmentOptions.Left => (int)HorizontalAlignmentOptions.Right,
+            (int)HorizontalAlignmentOptions.Right => (int)HorizontalAlignmentOptions.Left,
+            _ => horizontal,
+        };
+
+        return (TextAlignmentOptions)(mirroredHorizontal | vertical);
     }
 
     /// <summary>A ContentSizeFitter sitting on <paramref name="tmpText"/>'s own GameObject (as the

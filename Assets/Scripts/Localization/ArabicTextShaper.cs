@@ -5,10 +5,15 @@ using System.Text.RegularExpressions;
 /// <summary>
 /// Stock TextMeshPro draws Arabic text as isolated letterforms in logical (left-to-right) order — wrong
 /// on both counts: Arabic letters must join into their initial/medial/final presentation forms, and the
-/// whole run must be laid out right-to-left. This class fixes both before a string reaches a TMP_Text.
+/// whole run must be laid out right-to-left. This class fixes the joining by substituting presentation
+/// forms; the right-to-left layout comes from TMP's own RTL mode, so every label showing this output
+/// MUST also have <c>isRightToLeftText</c> enabled (see <see cref="LocalizedRendering.SetText"/>, which
+/// pairs the two). Letting TMP do the reversal — rather than reversing the string here — is what keeps
+/// word-wrapped lines in the correct top-to-bottom order on long strings.
 ///
 /// Scope (deliberately kept lightweight rather than a full Unicode BiDi/shaping engine):
-///  - Covers the standard Arabic letters + Lam-Alef ligatures (Arabic Presentation Forms-B block).
+///  - Covers the standard Arabic letters + Lam-Alef ligatures (Arabic Presentation Forms-B block) and
+///    the Perso-Arabic letters Urdu adds (Presentation Forms-A block).
 ///  - Leaves runs of digits/Latin characters inside an Arabic sentence in their own reading order, so
 ///    "٣ items" style mixed content doesn't come out backwards.
 ///  - Rich-text tags (&lt;color=...&gt;, &lt;b&gt;, …) are only handled when they wrap a whole *line*
@@ -79,6 +84,11 @@ public static class ArabicTextShaper
         { 'ں', new ushort[] { 0xFB9E, 0, 0, 0xFB9F } },                // NOON GHUNNA
         { 'ھ', new ushort[] { 0xFBAA, 0xFBAC, 0xFBAD, 0xFBAB } },      // HEH DOACHASHMEE
         { 'ے', new ushort[] { 0xFBAE, 0, 0, 0xFBAF } },                // YEH BARREE
+        { 'ک', new ushort[] { 0xFB8E, 0xFB90, 0xFB91, 0xFB8F } },      // KEHEH
+        { 'ی', new ushort[] { 0xFBFC, 0xFBFE, 0xFBFF, 0xFBFD } },      // FARSI YEH
+        { 'ہ', new ushort[] { 0xFBA6, 0xFBA8, 0xFBA9, 0xFBA7 } },      // HEH GOAL
+        { 'ۃ', new ushort[] { 0xFBA4, 0, 0, 0xFBA5 } },                // TEH MARBUTA GOAL
+        { 'ۓ', new ushort[] { 0xFBB0, 0, 0, 0xFBB1 } },                // YEH BARREE WITH HAMZA
     };
 
     // Lam-Alef ligatures: LAM followed by one of the four Alef forms collapses into a single glyph.
@@ -93,9 +103,18 @@ public static class ArabicTextShaper
 
     private const char Lam = 'ل';
 
+    /// <summary>True when <paramref name="text"/> contains any Arabic-script character. Callers use this
+    /// to decide whether a label should get <c>isRightToLeftText</c> — an untranslated English fallback
+    /// string shown under an RTL locale must NOT be rendered reversed.</summary>
+    public static bool ContainsArabic(string text)
+    {
+        return !string.IsNullOrEmpty(text) && ArabicRangeRegex.IsMatch(text);
+    }
+
     /// <summary>
-    /// Reshapes and visually reorders Arabic content for TMP display. Safe to call on any string —
-    /// text with no Arabic characters is returned unchanged, so callers don't need to check first.
+    /// Reshapes Arabic content into its joined presentation forms, in logical order, for a TMP label with
+    /// <c>isRightToLeftText</c> enabled. Safe to call on any string — text with no Arabic characters is
+    /// returned unchanged, so callers don't need to check first.
     /// </summary>
     public static string Shape(string text)
     {
@@ -204,14 +223,15 @@ public static class ArabicTextShaper
     private static bool ConnectsForward(ushort[] forms) => forms[1] != 0 || forms[2] != 0;
 
     /// <summary>
-    /// Reverses the shaped characters into right-to-left visual order, except for runs of digits/Latin
-    /// letters, which are reversed back in place so numbers and English fragments still read left-to-right
-    /// within the Arabic sentence.
+    /// Prepares the shaped characters for TMP's native RTL renderer (<c>isRightToLeftText = true</c>),
+    /// which draws each rendered line's characters in reverse order. Arabic stays in logical order — TMP's
+    /// own per-line reversal is what makes word-wrapped lines come out in the correct top-to-bottom order,
+    /// which a whole-string reversal cannot do. Runs of digits/Latin are pre-reversed so TMP's reversal
+    /// restores their left-to-right reading order, and paired brackets outside those runs are mirrored so
+    /// they still open toward their content after the visual flip.
     /// </summary>
     private static string ReorderForDisplay(List<char> shaped)
     {
-        shaped.Reverse();
-
         int count = shaped.Count;
         bool[] isStrongLtr = new bool[count];
         bool[] isNeutral = new bool[count];
@@ -261,8 +281,30 @@ public static class ArabicTextShaper
         }
 
         var sb = new StringBuilder(count);
-        foreach (char c in shaped) sb.Append(c);
+        for (int i = 0; i < count; i++)
+        {
+            char c = shaped[i];
+            sb.Append(isLtrRun[i] ? c : MirrorBracket(c));
+        }
         return sb.ToString();
+    }
+
+    /// <summary>Swaps paired brackets for the RTL visual flip — TMP has no BiDi mirroring of its own,
+    /// so an unswapped "(" would end up on the wrong side of its content, opening away from it.</summary>
+    private static char MirrorBracket(char c)
+    {
+        return c switch
+        {
+            '(' => ')',
+            ')' => '(',
+            '[' => ']',
+            ']' => '[',
+            '{' => '}',
+            '}' => '{',
+            '«' => '»',
+            '»' => '«',
+            _ => c,
+        };
     }
 
     /// <summary>Punctuation/space that should stay attached to a flanking LTR run rather than floating free.</summary>

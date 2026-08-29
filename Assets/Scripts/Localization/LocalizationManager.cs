@@ -61,9 +61,10 @@ public class LocalizationManager : MonoBehaviour
     /// <summary>
     /// Runs <paramref name="text"/> through whichever script shaper the active locale needs before it
     /// reaches a TMP_Text — <see cref="ArabicTextShaper"/> for Arabic/Urdu, <see cref="BengaliTextShaper"/>
-    /// for Bengali, or unchanged for everything else. TMP has no complex-script shaping of its own, so
-    /// every label showing localized or user-facing content should go through this rather than assigning
-    /// raw strings directly.
+    /// for Bengali, or unchanged for everything else. Note the Arabic/Urdu output is in logical order and
+    /// only displays correctly on a label with <c>isRightToLeftText</c> enabled — prefer
+    /// <see cref="LocalizedRendering.SetText"/>, which pairs the two (and swaps in the HarfBuzz child for
+    /// Bengali), over calling this and assigning the string yourself.
     /// </summary>
     public string ShapeForDisplay(string text)
     {
@@ -121,9 +122,8 @@ public class LocalizationManager : MonoBehaviour
         if (notify) OnLocaleChanged?.Invoke();
     }
 
-    /// <summary>Languages the game actually ships content for. Any other locale — including "ur", which
-    /// still exists in the AppLocale enum for its unused data files — falls back to English.</summary>
-    private static readonly AppLocale[] SupportedLocales = { AppLocale.en, AppLocale.ar, AppLocale.bn };
+    /// <summary>Languages the game actually ships content for. Any other locale falls back to English.</summary>
+    private static readonly AppLocale[] SupportedLocales = { AppLocale.en, AppLocale.ar, AppLocale.bn, AppLocale.ur };
 
     /// <summary>
     /// Accepts both short codes ("ar") and the longer forms a host app might send ("ar-SA", "ar_AE").

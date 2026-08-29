@@ -1405,7 +1405,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Shader_PropertyToID_mE98523D50F5656CA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112249
+// Method Definition Index: 112363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tAB869088B09E8F246DE4DF62623B3C7AFABF0DAF UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m740935C8F05A4BA624517391631492AEEC759628 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1439,7 +1439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tAB869088B09E8F246DE4DF62623B3
 		return L_6;
 	}
 }
-// Method Definition Index: 112250
+// Method Definition Index: 112364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mC51E58EFBED06EA991CAA3CBBE5D4E492E9E50B5 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tB369787DF63C55DAB053B3EA8203ED422B747585* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1525,34 +1525,34 @@ IL2CPP_EXTERN_C void MonoScriptData_tAB869088B09E8F246DE4DF62623B3C7AFABF0DAF_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112251
+// Method Definition Index: 112365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* WeatherManager_get_CurrentState_m15F91926F781501FC2658F5B14FA831F189E81DB (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:46>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = __this->____currentState;
 		return L_0;
 	}
 }
-// Method Definition Index: 112252
+// Method Definition Index: 112366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WeatherManager_get_IsTransitioning_m0063183345BA37657AB26A9174C70D406AC8DCE4 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:49>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____activeTransition;
 		return (bool)((!(((RuntimeObject*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)L_0) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
 	}
 }
-// Method Definition Index: 112253
+// Method Definition Index: 112367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WeatherManager_get_TransitionProgress_m381B11E59B7E4DD0EACA5D8FA50BED795E4B6164 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:55>
 		float L_0 = __this->____transitionProgress;
 		return L_0;
 	}
 }
-// Method Definition Index: 112254
+// Method Definition Index: 112368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Awake_m72451755988DB3CB2CCE16FEAA362D50F766A682 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1564,12 +1564,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Awake_m72451755988DB3CB2C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:61>
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_0;
 		L_0 = Component_GetComponentsInChildren_TisWeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513_m1CF03B4A126205D7BECB767008B83CFBFB980074(__this, (bool)1, Component_GetComponentsInChildren_TisWeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513_m1CF03B4A126205D7BECB767008B83CFBFB980074_RuntimeMethod_var);
 		__this->____modules = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____modules), (void*)L_0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:63>
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_1 = __this->____modules;
 		NullCheck(L_1);
 		if ((((RuntimeArray*)L_1)->max_length))
@@ -1578,19 +1578,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Awake_m72451755988DB3CB2C
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:64>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:65>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteral121E726EB4774FD69267D9ACD66C9273A724B134, __this, NULL);
 	}
 
 IL_0021:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:66>
 		return;
 	}
 }
-// Method Definition Index: 112255
+// Method Definition Index: 112369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Start_mDE43CF10C4BB9A9A35E0362466AAAF04916E22E9 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1600,7 +1600,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Start_mDE43CF10C4BB9A9A35
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:70>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:70>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = __this->___initialState;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -1611,39 +1611,39 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Start_mDE43CF10C4BB9A9A35
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:71>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_2 = __this->___initialState;
 		WeatherManager_SetWeather_m058E1E7D111A473B55E7B01B4A96579AB6938C8A(__this, L_2, (0.0f), NULL);
 	}
 
 IL_001f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:72>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:72>
 		return;
 	}
 }
-// Method Definition Index: 112256
+// Method Definition Index: 112370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_OnDestroy_mB06B9B49082C5FBF59264F17E6EEB9EB7DC7087C (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:76>
 		WeatherManager_DestroySnapshot_mA571AD95477F8ACE3160A1FB2C66FB46A85261B7(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:77>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:77>
 		return;
 	}
 }
-// Method Definition Index: 112257
+// Method Definition Index: 112371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m3E6BCCE2246B1DDA56A0E025946D2F349431FD3B (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:85>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_state;
 		float L_1 = __this->___defaultTransitionDuration;
 		WeatherManager_SetWeather_m058E1E7D111A473B55E7B01B4A96579AB6938C8A(__this, L_0, L_1, NULL);
 		return;
 	}
 }
-// Method Definition Index: 112258
+// Method Definition Index: 112372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m058E1E7D111A473B55E7B01B4A96579AB6938C8A (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, float ___1_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1655,7 +1655,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m058E1E7D111A4
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:95>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_state;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -1666,17 +1666,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m058E1E7D111A4
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:97>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:98>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:98>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteral27B0234F6BCAE560B23E37CCF7446EC6B7C7D1F7, __this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:99>
 		return;
 	}
 
 IL_0015:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:104>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2 = __this->____activeTransition;
 		if (!L_2)
 		{
@@ -1684,13 +1684,13 @@ IL_0015:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:106>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_3 = __this->____activeTransition;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:107>
 		__this->____activeTransition = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____activeTransition), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:108>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_4 = __this->____fromState;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_5 = __this->____currentState;
 		float L_6 = __this->____transitionProgress;
@@ -1703,7 +1703,7 @@ IL_0015:
 
 IL_0050:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:112>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_8 = __this->____currentState;
 		__this->____fromState = L_8;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____fromState), (void*)L_8);
@@ -1711,13 +1711,13 @@ IL_0050:
 
 IL_005c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:115>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_9 = ___0_state;
 		__this->____currentState = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____currentState), (void*)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:116>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:116>
 		__this->____transitionProgress = (0.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:118>
 		float L_10 = ___1_duration;
 		if ((((float)L_10) <= ((float)(0.0f))))
 		{
@@ -1737,16 +1737,16 @@ IL_005c:
 
 IL_0084:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:120>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_13 = ___0_state;
 		WeatherManager_ApplyToAll_m3B9EC87D062C6FBFFE3A798C8B452280CFEFAEED(__this, L_13, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:121>
 		return;
 	}
 
 IL_008c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:124>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_14 = __this->____fromState;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_15 = ___0_state;
 		float L_16 = ___1_duration;
@@ -1756,11 +1756,11 @@ IL_008c:
 		L_18 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_17, NULL);
 		__this->____activeTransition = L_18;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____activeTransition), (void*)L_18);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:125>
 		return;
 	}
 }
-// Method Definition Index: 112259
+// Method Definition Index: 112373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* WeatherManager_TransitionRoutine_mE0C3404E742794D5D3BE56345A9902D1F024744E (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1793,7 +1793,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* WeatherManager_TransitionRouti
 		return L_6;
 	}
 }
-// Method Definition Index: 112260
+// Method Definition Index: 112374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_ApplyToAll_m3B9EC87D062C6FBFFE3A798C8B452280CFEFAEED (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1806,7 +1806,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_ApplyToAll_m3B9EC87D062C6
 	int32_t V_1 = 0;
 	WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* V_2 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:159>
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_0 = __this->____modules;
 		V_0 = L_0;
 		V_1 = 0;
@@ -1815,14 +1815,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_ApplyToAll_m3B9EC87D062C6
 
 IL_000b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:159>
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_1 = V_0;
 		int32_t L_2 = V_1;
 		NullCheck(L_1);
 		int32_t L_3 = L_2;
 		WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* L_4 = (L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
 		V_2 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:161>
 		WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* L_5 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -1833,7 +1833,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:162>
 		WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* L_7 = V_2;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_8 = ___0_state;
 		NullCheck(L_7);
@@ -1848,7 +1848,7 @@ IL_001f:
 
 IL_0023:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:159>
 		int32_t L_10 = V_1;
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_11 = V_0;
 		NullCheck(L_11);
@@ -1858,11 +1858,11 @@ IL_0023:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:164>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:164>
 		return;
 	}
 }
-// Method Definition Index: 112261
+// Method Definition Index: 112375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_BlendAll_m9FC3054422880E526C914610831138064BCAB05E (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1875,7 +1875,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_BlendAll_m9FC3054422880E5
 	int32_t V_1 = 0;
 	WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* V_2 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:168>
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_0 = __this->____modules;
 		V_0 = L_0;
 		V_1 = 0;
@@ -1884,14 +1884,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_BlendAll_m9FC3054422880E5
 
 IL_000b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:168>
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_1 = V_0;
 		int32_t L_2 = V_1;
 		NullCheck(L_1);
 		int32_t L_3 = L_2;
 		WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* L_4 = (L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
 		V_2 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:170>
 		WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* L_5 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -1902,7 +1902,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:171>
 		WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* L_7 = V_2;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_8 = ___0_from;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_9 = ___1_to;
@@ -1919,7 +1919,7 @@ IL_0021:
 
 IL_0025:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:168>
 		int32_t L_12 = V_1;
 		WeatherModuleU5BU5D_tD88F750B2A148ABF964FD888C6F58381972BF3DA* L_13 = V_0;
 		NullCheck(L_13);
@@ -1929,11 +1929,11 @@ IL_0025:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:173>
 		return;
 	}
 }
-// Method Definition Index: 112262
+// Method Definition Index: 112376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* WeatherManager_CreateSnapshot_mD21FC1A693F138EBE454D15113D463D4188A7DDC (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1953,7 +1953,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B
 	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* G_B8_0 = NULL;
 	WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* G_B8_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:181>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:181>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_from;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -1964,26 +1964,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:181>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:181>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_2 = ___1_to;
 		return L_2;
 	}
 
 IL_000b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:183>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:183>
 		WeatherManager_DestroySnapshot_mA571AD95477F8ACE3160A1FB2C66FB46A85261B7(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:185>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_3;
 		L_3 = ScriptableObject_CreateInstance_TisWeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33_m3E9BA644E2D6DBC475CC8472E6274506DA3A8D8D(ScriptableObject_CreateInstance_TisWeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33_m3E9BA644E2D6DBC475CC8472E6274506DA3A8D8D_RuntimeMethod_var);
 		__this->____runtimeSnapshot = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____runtimeSnapshot), (void*)L_3);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:186>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_4 = __this->____runtimeSnapshot;
 		NullCheck(L_4);
 		L_4->___stateName = _stringLiteralFE4AEE75F3A0B8B18F7D2020DDBA8473E4040162;
 		Il2CppCodeGenWriteBarrier((void**)(&L_4->___stateName), (void*)_stringLiteralFE4AEE75F3A0B8B18F7D2020DDBA8473E4040162);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:187>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_5 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_6 = ___0_from;
 		NullCheck(L_6);
@@ -1996,7 +1996,7 @@ IL_000b:
 		L_11 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_7, L_9, L_10, NULL);
 		NullCheck(L_5);
 		L_5->___lightColor = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:188>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_12 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_13 = ___0_from;
 		NullCheck(L_13);
@@ -2009,7 +2009,7 @@ IL_000b:
 		L_18 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_14, L_16, L_17, NULL);
 		NullCheck(L_12);
 		L_12->___lightIntensity = L_18;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:189>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_19 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_20 = ___0_from;
 		NullCheck(L_20);
@@ -2022,7 +2022,7 @@ IL_000b:
 		L_25 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_21, L_23, L_24, NULL);
 		NullCheck(L_19);
 		L_19->___ambientColor = L_25;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:190>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_26 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_27 = ___0_from;
 		NullCheck(L_27);
@@ -2035,7 +2035,7 @@ IL_000b:
 		L_32 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_28, L_30, L_31, NULL);
 		NullCheck(L_26);
 		L_26->___fogColor = L_32;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:191>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:191>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_33 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_34 = ___0_from;
 		NullCheck(L_34);
@@ -2048,7 +2048,7 @@ IL_000b:
 		L_39 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_35, L_37, L_38, NULL);
 		NullCheck(L_33);
 		L_33->___fogDensity = L_39;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:193>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:193>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_40 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_41 = ___0_from;
 		NullCheck(L_41);
@@ -2079,7 +2079,7 @@ IL_00d4:
 	{
 		NullCheck(G_B5_1);
 		G_B5_1->___fogEnabled = (bool)G_B5_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:194>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_45 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_46 = ___0_from;
 		NullCheck(L_46);
@@ -2092,7 +2092,7 @@ IL_00d4:
 		L_51 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_47, L_49, L_50, NULL);
 		NullCheck(L_45);
 		L_45->___rainIntensity = L_51;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:195>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:195>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_52 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_53 = ___0_from;
 		NullCheck(L_53);
@@ -2105,7 +2105,7 @@ IL_00d4:
 		L_58 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_54, L_56, L_57, NULL);
 		NullCheck(L_52);
 		L_52->___rainColor = L_58;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:196>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:196>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_59 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_60 = ___0_from;
 		NullCheck(L_60);
@@ -2118,7 +2118,7 @@ IL_00d4:
 		L_65 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_61, L_63, L_64, NULL);
 		NullCheck(L_59);
 		L_59->___rainSpeed = L_65;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:197>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:197>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_66 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_67 = ___0_from;
 		NullCheck(L_67);
@@ -2131,7 +2131,7 @@ IL_00d4:
 		L_72 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_68, L_70, L_71, NULL);
 		NullCheck(L_66);
 		L_66->___skyboxTint = L_72;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:198>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:198>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_73 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_74 = ___0_from;
 		NullCheck(L_74);
@@ -2144,7 +2144,7 @@ IL_00d4:
 		L_79 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_75, L_77, L_78, NULL);
 		NullCheck(L_73);
 		L_73->___skyboxExposure = L_79;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:201>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:201>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_80 = __this->____runtimeSnapshot;
 		float L_81 = ___2_t;
 		if ((((float)L_81) < ((float)(0.5f))))
@@ -2177,7 +2177,7 @@ IL_0186:
 		NullCheck(G_B8_1);
 		G_B8_1->___ambientClip = G_B8_0;
 		Il2CppCodeGenWriteBarrier((void**)(&G_B8_1->___ambientClip), (void*)G_B8_0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:202>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_86 = __this->____runtimeSnapshot;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_87 = ___0_from;
 		NullCheck(L_87);
@@ -2190,12 +2190,12 @@ IL_0186:
 		L_92 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_88, L_90, L_91, NULL);
 		NullCheck(L_86);
 		L_86->___ambientVolume = L_92;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:204>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:204>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_93 = __this->____runtimeSnapshot;
 		return L_93;
 	}
 }
-// Method Definition Index: 112263
+// Method Definition Index: 112377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_DestroySnapshot_mA571AD95477F8ACE3160A1FB2C66FB46A85261B7 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2205,7 +2205,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_DestroySnapshot_mA571AD95
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:209>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:209>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = __this->____runtimeSnapshot;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -2216,29 +2216,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_DestroySnapshot_mA571AD95
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:211>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_2 = __this->____runtimeSnapshot;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:212>
 		__this->____runtimeSnapshot = (WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____runtimeSnapshot), (void*)(WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33*)NULL);
 	}
 
 IL_0020:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:214>
 		return;
 	}
 }
-// Method Definition Index: 112264
+// Method Definition Index: 112378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager__ctor_m2CBC44A43EF52E56F4959C2222A6455A18796011 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:28>
 		__this->___defaultTransitionDuration = (2.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:32>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:33>
 		AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* L_0;
 		L_0 = AnimationCurve_EaseInOut_m01DD06E6C8962F8F62F293C9EAE491C3D3F2CAF3((0.0f), (0.0f), (1.0f), (1.0f), NULL);
 		__this->___transitionCurve = L_0;
@@ -2255,7 +2255,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager__ctor_m2CBC44A43EF52E56F4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112265
+// Method Definition Index: 112379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20__ctor_mE611EEDBA3EE12D03CA9DEFB9130AB0A8304835D (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -2265,14 +2265,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20__ctor_mE611
 		return;
 	}
 }
-// Method Definition Index: 112266
+// Method Definition Index: 112380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20_System_IDisposable_Dispose_mBE9E0239BCB6C9529193F2F50ACAD372DC950169 (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 112267
+// Method Definition Index: 112381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CTransitionRoutineU3Ed__20_MoveNext_m1E2C2585B170DDAF3420E9F3606F6724D933C52F (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2313,8 +2313,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CTransitionRoutineU3Ed__20_MoveNext_m1
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:131>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:132>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_4 = __this->___from;
 		NullCheck(L_4);
 		String_t* L_5 = L_4->___stateName;
@@ -2330,25 +2330,25 @@ IL_001a:
 		L_12 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralE723774DC180B83790915BED398988FEC177CEE3, L_11, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:134>
 		__this->___U3CelapsedU3E5__2 = (0.0f);
 		goto IL_00ce;
 	}
 
 IL_0068:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:138>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:138>
 		float L_13 = __this->___U3CelapsedU3E5__2;
 		float L_14;
 		L_14 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CelapsedU3E5__2 = ((float)il2cpp_codegen_add(L_13, L_14));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:139>
 		float L_15 = __this->___U3CelapsedU3E5__2;
 		float L_16 = __this->___duration;
 		float L_17;
 		L_17 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(((float)(L_15/L_16)), NULL);
 		V_2 = L_17;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:140>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_18 = V_1;
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_19 = V_1;
 		NullCheck(L_19);
@@ -2359,7 +2359,7 @@ IL_0068:
 		L_22 = AnimationCurve_Evaluate_m50B857043DE251A186032ADBCBB4CEF817F4EE3C(L_20, L_21, NULL);
 		NullCheck(L_18);
 		L_18->____transitionProgress = L_22;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:142>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_23 = V_1;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_24 = __this->___from;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_25 = __this->___to;
@@ -2368,7 +2368,7 @@ IL_0068:
 		float L_27 = L_26->____transitionProgress;
 		NullCheck(L_23);
 		WeatherManager_BlendAll_m9FC3054422880E526C914610831138064BCAB05E(L_23, L_24, L_25, L_27, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:143>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:143>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -2382,7 +2382,7 @@ IL_00c7:
 
 IL_00ce:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:136>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:136>
 		float L_28 = __this->___U3CelapsedU3E5__2;
 		float L_29 = __this->___duration;
 		if ((((float)L_28) < ((float)L_29)))
@@ -2391,25 +2391,25 @@ IL_00ce:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:147>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_30 = V_1;
 		NullCheck(L_30);
 		L_30->____transitionProgress = (1.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:148>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:148>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_31 = V_1;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_32 = __this->___to;
 		NullCheck(L_31);
 		WeatherManager_ApplyToAll_m3B9EC87D062C6FBFFE3A798C8B452280CFEFAEED(L_31, L_32, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:149>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_33 = V_1;
 		NullCheck(L_33);
 		L_33->____activeTransition = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_33->____activeTransition), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:152>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:152>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_34 = V_1;
 		NullCheck(L_34);
 		WeatherManager_DestroySnapshot_mA571AD95477F8ACE3160A1FB2C66FB46A85261B7(L_34, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:154>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:154>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_35 = __this->___to;
 		NullCheck(L_35);
 		String_t* L_36 = L_35->___stateName;
@@ -2417,11 +2417,11 @@ IL_00ce:
 		L_37 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteralD85ABBFBD62A4F1245EE938E2614D51B0CF4CD34, L_36, _stringLiteral3371C9C28E563AFD0A683CA126F078F3F07B7306, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_37, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:155>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:155>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 112268
+// Method Definition Index: 112382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8CF6EC9A5A29BDA11FF9A034C6535146466B11F1 (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2429,7 +2429,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_S
 		return L_0;
 	}
 }
-// Method Definition Index: 112269
+// Method Definition Index: 112383
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20_System_Collections_IEnumerator_Reset_m73FB88FEB4729B8899E7D60CF4F8C5B761395793 (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2438,7 +2438,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20_System_Coll
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CTransitionRoutineU3Ed__20_System_Collections_IEnumerator_Reset_m73FB88FEB4729B8899E7D60CF4F8C5B761395793_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 112270
+// Method Definition Index: 112384
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_System_Collections_IEnumerator_get_Current_mFB7236D70AB6F4322E1FD1444B3952CA5748BECD (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2454,18 +2454,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_S
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112271
+// Method Definition Index: 112385
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule_Apply_m5BB7A3DDFF61CAFB9BF12C003500D8CAE83D4BCE (WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherModule.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherModule.cs:21>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_state;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_1 = ___0_state;
 		VirtualActionInvoker3< WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33*, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33*, float >::Invoke(4, __this, L_0, L_1, (1.0f));
 		return;
 	}
 }
-// Method Definition Index: 112273
+// Method Definition Index: 112387
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule__ctor_m627101E8A15508ABB1B037CD7F3B921087FF7B79 (WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2481,7 +2481,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule__ctor_m627101E8A15508ABB1B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112274
+// Method Definition Index: 112388
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherStateData__ctor_mA117980BE3E8901FC44B4CB7F5598C631F347C93 (WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2491,41 +2491,41 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherStateData__ctor_mA117980BE3E8901F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:17>
 		__this->___stateName = _stringLiteralFD11670C8C44413D9DBF45598487ED02C415B634;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___stateName), (void*)_stringLiteralFD11670C8C44413D9DBF45598487ED02C415B634);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:24>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
 		memset((&L_0), 0, sizeof(L_0));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_0), (0.5f), (0.5f), (0.5f), (1.0f), NULL);
 		__this->___fogColor = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:28>
 		__this->___fogDensity = (0.0199999996f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:32>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		L_1 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		__this->___lightColor = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:36>
 		__this->___lightIntensity = (1.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:40>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		memset((&L_2), 0, sizeof(L_2));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_2), (0.200000003f), (0.200000003f), (0.25f), (1.0f), NULL);
 		__this->___ambientColor = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:45>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3;
 		L_3 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		__this->___skyboxTint = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:50>
 		__this->___skyboxExposure = (1.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:60>
 		__this->___ambientVolume = (0.5f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:69>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_4;
 		memset((&L_4), 0, sizeof(L_4));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_4), (0.699999988f), (0.800000012f), (0.899999976f), (0.400000006f), NULL);
 		__this->___rainColor = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherStateData.cs:73>
 		__this->___rainSpeed = (8.0f);
 		ScriptableObject__ctor_mD037FDB0B487295EA47F79A4DB1BF1846C9087FF(__this, NULL);
 		return;
@@ -2539,7 +2539,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherStateData__ctor_mA117980BE3E8901F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112275
+// Method Definition Index: 112389
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_Awake_mD8090F68B8D0C67FF57E31781010F7A137F7BB25 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2550,7 +2550,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_Awake_mD8090F68B8D0C67FF57
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:47>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_0 = __this->___weatherManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -2561,7 +2561,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_Awake_mD8090F68B8D0C67FF57
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:48>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_2;
 		L_2 = Object_FindAnyObjectByType_TisWeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80_m54757B6C0751950F81C61B3AC98AAA2C6AD5780F(Object_FindAnyObjectByType_TisWeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80_m54757B6C0751950F81C61B3AC98AAA2C6AD5780F_RuntimeMethod_var);
@@ -2571,11 +2571,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_Awake_mD8090F68B8D0C67FF57
 
 IL_0019:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:49>
 		return;
 	}
 }
-// Method Definition Index: 112276
+// Method Definition Index: 112390
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_OnGUI_mBFDADA259AC0F310E2352EA71DBAB83F3E99BAC3 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2597,53 +2597,53 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_OnGUI_mBFDADA259AC0F310E23
 	Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:53>
 		WeatherDemoUI_InitStyles_m25BF7C271E896A32DD4C329139B49B2E7A7C15ED(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:59>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:60>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:61>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:62>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:63>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:64>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:65>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:66>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:67>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:68>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:69>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:70>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:71>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:72>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:73>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:74>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:75>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:70>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:72>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:75>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:76>
 		V_0 = (406.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:79>
 		float L_0 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23_inline((&V_1), (20.0f), (20.0f), (264.0f), L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:82>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		L_1 = GUI_get_backgroundColor_mCAA42085DAB8A1B71E2D0C6C8D86F93CD311FA33(NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:83>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		memset((&L_2), 0, sizeof(L_2));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_2), (0.0500000007f), (0.0599999987f), (0.129999995f), (0.920000017f), NULL);
 		GUI_set_backgroundColor_m4ED80300A7DE3EAF923E3344E22D6682FA75B264(L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:84>
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_3 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(GUIContent_t15E48D4BEB1E6B6044F7DEB5E350800F511C2ED2_il2cpp_TypeInfo_var);
 		GUIContent_t15E48D4BEB1E6B6044F7DEB5E350800F511C2ED2* L_4 = ((GUIContent_t15E48D4BEB1E6B6044F7DEB5E350800F511C2ED2_StaticFields*)il2cpp_codegen_static_fields_for(GUIContent_t15E48D4BEB1E6B6044F7DEB5E350800F511C2ED2_il2cpp_TypeInfo_var))->___none;
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_5 = __this->____panelStyle;
 		GUI_Box_m4A53BAE78DC7C6724F50E54D9BEB7135BAA0DA0C(L_3, L_4, L_5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:85>
 		GUI_set_backgroundColor_m4ED80300A7DE3EAF923E3344E22D6682FA75B264(L_1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:87>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:88>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:89>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:90>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:91>
 		float L_6;
 		L_6 = Rect_get_x_mB267B718E0D067F2BAE31BA477647FBF964916EB_inline((&V_1), NULL);
 		float L_7;
@@ -2653,63 +2653,63 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_OnGUI_mBFDADA259AC0F310E23
 		memset((&L_9), 0, sizeof(L_9));
 		Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23_inline((&L_9), ((float)il2cpp_codegen_add(L_6, (20.0f))), ((float)il2cpp_codegen_add(L_7, (20.0f))), (224.0f), ((float)il2cpp_codegen_subtract(L_8, (40.0f))), NULL);
 		GUILayout_BeginArea_m4D894562C97A0F6793450A0DF379B63F60121F64(L_9, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:94>
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_10 = __this->____titleStyle;
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_11;
 		L_11 = Array_Empty_TisGUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14_mC7F345AC4C0CA86560FAA00174268F70FBBE577F_inline(Array_Empty_TisGUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14_mC7F345AC4C0CA86560FAA00174268F70FBBE577F_RuntimeMethod_var);
 		GUILayout_Label_mE33EEB92B7A630E684A6A6D815908DD908C64EF7(_stringLiteral84D25829FE7FEE91C9A80B305A0160F99D9B05ED, L_10, L_11, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:95>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((10.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:96>
 		il2cpp_codegen_runtime_class_init_inline(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var);
 		WeatherDemoUI_DrawSeparator_m95BDAAD79D010526C8181B62D4B05110C85953B6((224.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:97>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((10.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:100>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_12 = __this->___presetClear;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_13 = ((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Clear;
 		WeatherDemoUI_DrawPresetButton_mC32070B4D472FF22CCF0F20B0EC41D4A1B537014(__this, _stringLiteral1D8BE65F4D775FA68F7EA356CD9EF08F2666FC54, L_12, L_13, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:101>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((6.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:102>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_14 = __this->___presetRain;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_15 = ((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Rain;
 		WeatherDemoUI_DrawPresetButton_mC32070B4D472FF22CCF0F20B0EC41D4A1B537014(__this, _stringLiteral167F417984230EE473DB244F99F326591E8F4310, L_14, L_15, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:103>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((6.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:104>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_16 = __this->___presetFog;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_17 = ((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Fog;
 		WeatherDemoUI_DrawPresetButton_mC32070B4D472FF22CCF0F20B0EC41D4A1B537014(__this, _stringLiteral24B8E5E27FE5190B3255508B8E706D80B6C42A2B, L_16, L_17, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:105>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((6.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:106>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_18 = __this->___presetStorm;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_19 = ((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Storm;
 		WeatherDemoUI_DrawPresetButton_mC32070B4D472FF22CCF0F20B0EC41D4A1B537014(__this, _stringLiteralA81E26F11E640171FE5D80FEEDAB597EEA117628, L_18, L_19, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:108>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((14.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:109>
 		WeatherDemoUI_DrawSeparator_m95BDAAD79D010526C8181B62D4B05110C85953B6((224.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:110>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((14.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:113>
 		WeatherDemoUI_DrawDurationRow_mF06626CFEDAB77D68AF46E35DB38A6310FE569BF(__this, (224.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:115>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((14.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:116>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:116>
 		WeatherDemoUI_DrawSeparator_m95BDAAD79D010526C8181B62D4B05110C85953B6((224.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:117>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((14.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:120>
 		WeatherDemoUI_DrawStateDisplay_mED18FB7FA63BA92F7C2F6A6229FE0898F315921A(__this, (224.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:122>
 		GUILayout_EndArea_m3A9C6B4D373E8A871A71E0D8D2D9249D9F62F079(NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:123>
 		return;
 	}
 }
-// Method Definition Index: 112277
+// Method Definition Index: 112391
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawPresetButton_mC32070B4D472FF22CCF0F20B0EC41D4A1B537014 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, String_t* ___0_label, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_preset, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___2_accent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2733,7 +2733,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawPresetButton_mC32070B4
 	WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* G_B14_0 = NULL;
 	WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* G_B13_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:129>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:129>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___1_preset;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -2744,13 +2744,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawPresetButton_mC32070B4
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:129>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:129>
 		return;
 	}
 
 IL_000a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:131>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_2 = __this->___weatherManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -2780,7 +2780,7 @@ IL_002b:
 
 IL_002c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:133>
 		int32_t L_8 = G_B5_0;
 		if (L_8)
 		{
@@ -2806,14 +2806,14 @@ IL_0037:
 IL_003d:
 	{
 		V_0 = G_B8_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:134>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_11;
 		L_11 = GUI_get_backgroundColor_mCAA42085DAB8A1B71E2D0C6C8D86F93CD311FA33(NULL);
 		V_1 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:135>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:136>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:137>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:135>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:136>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:137>
 		if (G_B8_1)
 		{
 			goto IL_0076;
@@ -2851,7 +2851,7 @@ IL_00a4:
 	{
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		GUI_set_backgroundColor_m4ED80300A7DE3EAF923E3344E22D6682FA75B264(G_B11_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:139>
 		String_t* L_26 = ___0_label;
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_27 = V_0;
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_28 = (GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2*)(GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2*)SZArrayNew(GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2_il2cpp_TypeInfo_var, (uint32_t)1);
@@ -2868,7 +2868,7 @@ IL_00a4:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:140>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_32 = __this->___weatherManager;
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_33 = L_32;
 		if (L_33)
@@ -2892,15 +2892,15 @@ IL_00d1:
 
 IL_00dd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:142>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_36 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		GUI_set_backgroundColor_m4ED80300A7DE3EAF923E3344E22D6682FA75B264(L_36, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:143>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:143>
 		return;
 	}
 }
-// Method Definition Index: 112278
+// Method Definition Index: 112392
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFEDAB77D68AF46E35DB38A6310FE569BF (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, float ___0_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2913,11 +2913,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:147>
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_0;
 		L_0 = Array_Empty_TisGUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14_mC7F345AC4C0CA86560FAA00174268F70FBBE577F_inline(Array_Empty_TisGUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14_mC7F345AC4C0CA86560FAA00174268F70FBBE577F_RuntimeMethod_var);
 		GUILayout_BeginHorizontal_m1BBD7EE29640BF48BED72DE582702809E6B22219(L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:148>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:148>
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_1 = __this->____sublabelStyle;
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_2 = (GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2*)(GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2*)SZArrayNew(GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2_il2cpp_TypeInfo_var, (uint32_t)1);
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_3 = L_2;
@@ -2926,8 +2926,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFE
 		NullCheck(L_3);
 		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(0), (GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14*)L_4);
 		GUILayout_Label_mE33EEB92B7A630E684A6A6D815908DD908C64EF7(_stringLiteralCD444BB2FB0B21493A7D6581BF6B7AFC93A5C552, L_1, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:149>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:150>
 		float L_5 = __this->___transitionDuration;
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_6 = (GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2*)(GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2*)SZArrayNew(GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2_il2cpp_TypeInfo_var, (uint32_t)1);
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_7 = L_6;
@@ -2939,7 +2939,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFE
 		float L_10;
 		L_10 = GUILayout_HorizontalSlider_mBEA9D057700379B0A570BD573DC0C42BEF523E41(L_5, (0.5f), (12.0f), L_7, NULL);
 		__this->___transitionDuration = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:151>
 		float L_11 = __this->___transitionDuration;
 		float L_12 = L_11;
 		RuntimeObject* L_13 = Box(il2cpp_defaults.single_class, &L_12);
@@ -2953,13 +2953,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFE
 		NullCheck(L_17);
 		(L_17)->SetAt(static_cast<il2cpp_array_size_t>(0), (GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14*)L_18);
 		GUILayout_Label_mE33EEB92B7A630E684A6A6D815908DD908C64EF7(L_14, L_15, L_17, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:152>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:152>
 		GUILayout_EndHorizontal_m694C622FEE40FFF0DD77EFFD026F899C193507C0(NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:153>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:153>
 		return;
 	}
 }
-// Method Definition Index: 112279
+// Method Definition Index: 112393
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawStateDisplay_mED18FB7FA63BA92F7C2F6A6229FE0898F315921A (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, float ___0_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3002,7 +3002,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawStateDisplay_mED18FB7F
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F G_B19_0;
 	memset((&G_B19_0), 0, sizeof(G_B19_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:157>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_0 = __this->___weatherManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -3013,27 +3013,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawStateDisplay_mED18FB7F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:157>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:159>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_2 = __this->___weatherManager;
 		NullCheck(L_2);
 		bool L_3;
 		L_3 = WeatherManager_get_IsTransitioning_m0063183345BA37657AB26A9174C70D406AC8DCE4(L_2, NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:160>
 		WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* L_4 = __this->___weatherManager;
 		NullCheck(L_4);
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_5;
 		L_5 = WeatherManager_get_CurrentState_m15F91926F781501FC2658F5B14FA831F189E81DB_inline(L_4, NULL);
 		V_1 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:162>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:163>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:164>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:164>
 		bool L_6 = V_0;
 		if (L_6)
 		{
@@ -3115,14 +3115,14 @@ IL_005c:
 
 IL_0061:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:166>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_16;
 		L_16 = GUI_get_contentColor_m32B15C8D6BEEFEBCE667ECD3CF664C83224F103F(NULL);
 		V_2 = L_16;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:167>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:168>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:169>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:169>
 		bool L_17 = V_0;
 		if (L_17)
 		{
@@ -3153,23 +3153,23 @@ IL_0094:
 	{
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		GUI_set_contentColor_m3CDC4D626AC8B6D487AD19765D79C593B98AEF26(G_B15_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:170>
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_20 = __this->____sublabelStyle;
 		GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2* L_21;
 		L_21 = Array_Empty_TisGUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14_mC7F345AC4C0CA86560FAA00174268F70FBBE577F_inline(Array_Empty_TisGUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14_mC7F345AC4C0CA86560FAA00174268F70FBBE577F_RuntimeMethod_var);
 		GUILayout_Label_mE33EEB92B7A630E684A6A6D815908DD908C64EF7(G_B15_1, L_20, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:171>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_22 = V_2;
 		GUI_set_contentColor_m3CDC4D626AC8B6D487AD19765D79C593B98AEF26(L_22, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:174>
 		GUILayout_Space_m9254FBF173F9260DDB6C83C0066447FC9D9CA597((4.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:175>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:175>
 		float L_23 = ___0_width;
 		il2cpp_codegen_runtime_class_init_inline(GUILayoutUtility_t48D00CD11CFC1E09E8EC2E51D59E735F5D24836F_il2cpp_TypeInfo_var);
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_24;
 		L_24 = GUILayoutUtility_GetRect_mDBE9C05578A77C699C6CF2A95BF0FDB7F97F7FDA(L_23, (7.0f), NULL);
 		V_3 = L_24;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:177>
 		bool L_25 = V_0;
 		if (L_25)
 		{
@@ -3193,21 +3193,21 @@ IL_00cf:
 IL_00da:
 	{
 		V_4 = G_B18_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:179>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_28;
 		L_28 = GUI_get_color_m15488B4AD785D10DEB5C66398D0FA9A0C0EA7ABB(NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:182>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:182>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_29;
 		memset((&L_29), 0, sizeof(L_29));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_29), (0.100000001f), (0.119999997f), (0.200000003f), (1.0f), NULL);
 		GUI_set_color_mA44927D3F2ACB1E228815F10042A6F62B7645648(L_29, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:183>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:183>
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_30 = V_3;
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_31;
 		L_31 = Texture2D_get_whiteTexture_m3A243ED388F9EF0EC515015A6E0E50FD261D2FA1(NULL);
 		GUI_DrawTexture_mEA112F138EB225F3722CFF9338DB4D14AAC8C7E6(L_30, L_31, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:186>
 		float L_32 = V_4;
 		if ((!(((float)L_32) > ((float)(0.0f)))))
 		{
@@ -3217,15 +3217,15 @@ IL_00da:
 		G_B19_0 = L_28;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:188>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_33;
 		memset((&L_33), 0, sizeof(L_33));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_33), (0.280000001f), (0.680000007f), (1.0f), (1.0f), NULL);
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		GUI_set_color_mA44927D3F2ACB1E228815F10042A6F62B7645648(L_33, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:189>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:190>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:191>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:191>
 		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		float L_34;
 		L_34 = Rect_get_x_mB267B718E0D067F2BAE31BA477647FBF964916EB_inline((&V_3), NULL);
@@ -3247,14 +3247,14 @@ IL_00da:
 
 IL_015f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:194>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		GUI_set_color_mA44927D3F2ACB1E228815F10042A6F62B7645648(G_B20_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:195>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:195>
 		return;
 	}
 }
-// Method Definition Index: 112280
+// Method Definition Index: 112394
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawSeparator_m95BDAAD79D010526C8181B62D4B05110C85953B6 (float ___0_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3267,33 +3267,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawSeparator_m95BDAAD79D0
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:199>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:199>
 		float L_0 = ___0_width;
 		il2cpp_codegen_runtime_class_init_inline(GUILayoutUtility_t48D00CD11CFC1E09E8EC2E51D59E735F5D24836F_il2cpp_TypeInfo_var);
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_1;
 		L_1 = GUILayoutUtility_GetRect_mDBE9C05578A77C699C6CF2A95BF0FDB7F97F7FDA(L_0, (1.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:200>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		L_2 = GUI_get_color_m15488B4AD785D10DEB5C66398D0FA9A0C0EA7ABB(NULL);
 		V_0 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:201>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:201>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3;
 		memset((&L_3), 0, sizeof(L_3));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_3), (0.219999999f), (0.25999999f), (0.360000014f), (0.699999988f), NULL);
 		GUI_set_color_mA44927D3F2ACB1E228815F10042A6F62B7645648(L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:202>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_4;
 		L_4 = Texture2D_get_whiteTexture_m3A243ED388F9EF0EC515015A6E0E50FD261D2FA1(NULL);
 		GUI_DrawTexture_mEA112F138EB225F3722CFF9338DB4D14AAC8C7E6(L_1, L_4, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:203>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:203>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_5 = V_0;
 		GUI_set_color_mA44927D3F2ACB1E228815F10042A6F62B7645648(L_5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:204>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:204>
 		return;
 	}
 }
-// Method Definition Index: 112281
+// Method Definition Index: 112395
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_InitStyles_m25BF7C271E896A32DD4C329139B49B2E7A7C15ED (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3306,7 +3306,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_InitStyles_m25BF7C271E896A
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:210>
 		bool L_0 = __this->____stylesReady;
 		if (!L_0)
 		{
@@ -3314,16 +3314,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_InitStyles_m25BF7C271E896A
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:210>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:212>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:213>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:214>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:213>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:215>
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		GUISkin_t8C65CE1424D4B5D8D73022E266BDAD3BDE8612D9* L_1;
 		L_1 = GUI_get_skin_m97EC9EB4628B311C0DB7DF9FB19FAD82D6790A1B(NULL);
@@ -3346,13 +3346,13 @@ IL_0009:
 		GUIStyleState_set_background_mD92FC76F8956A8EBB022C3E8EA02822D79F451C4(L_5, L_7, NULL);
 		__this->____panelStyle = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____panelStyle), (void*)L_4);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:217>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:218>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:219>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:220>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:221>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:222>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:223>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:218>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:220>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:222>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:223>
 		GUISkin_t8C65CE1424D4B5D8D73022E266BDAD3BDE8612D9* L_8;
 		L_8 = GUI_get_skin_m97EC9EB4628B311C0DB7DF9FB19FAD82D6790A1B(NULL);
 		NullCheck(L_8);
@@ -3380,16 +3380,16 @@ IL_0009:
 		GUIStyleState_set_textColor_m5868D12858E6402247953BCCDDA7A543BE6084F1(L_15, L_16, NULL);
 		__this->____titleStyle = L_14;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____titleStyle), (void*)L_14);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:225>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:226>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:227>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:228>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:229>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:230>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:231>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:232>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:233>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:225>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:226>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:227>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:229>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:231>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:234>
 		GUISkin_t8C65CE1424D4B5D8D73022E266BDAD3BDE8612D9* L_17;
 		L_17 = GUI_get_skin_m97EC9EB4628B311C0DB7DF9FB19FAD82D6790A1B(NULL);
 		NullCheck(L_17);
@@ -3438,11 +3438,11 @@ IL_0009:
 		GUIStyleState_set_textColor_m5868D12858E6402247953BCCDDA7A543BE6084F1(L_32, L_33, NULL);
 		__this->____buttonStyle = L_31;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____buttonStyle), (void*)L_31);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:236>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:237>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:238>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:239>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:236>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:238>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:239>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:240>
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_34 = __this->____buttonStyle;
 		GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* L_35 = (GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580*)il2cpp_codegen_object_new(GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_il2cpp_TypeInfo_var);
 		GUIStyle__ctor_m17492C8BACB0D28C7701C11500A7132F11B5F04E(L_35, L_34, NULL);
@@ -3464,12 +3464,12 @@ IL_0009:
 		GUIStyleState_set_textColor_m5868D12858E6402247953BCCDDA7A543BE6084F1(L_40, L_41, NULL);
 		__this->____buttonActiveStyle = L_39;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____buttonActiveStyle), (void*)L_39);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:242>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:243>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:244>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:245>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:246>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:247>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:242>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:243>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:244>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:245>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:246>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:247>
 		GUISkin_t8C65CE1424D4B5D8D73022E266BDAD3BDE8612D9* L_42;
 		L_42 = GUI_get_skin_m97EC9EB4628B311C0DB7DF9FB19FAD82D6790A1B(NULL);
 		NullCheck(L_42);
@@ -3494,12 +3494,12 @@ IL_0009:
 		GUIStyleState_set_textColor_m5868D12858E6402247953BCCDDA7A543BE6084F1(L_48, L_49, NULL);
 		__this->____labelStyle = L_47;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____labelStyle), (void*)L_47);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:249>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:250>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:251>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:252>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:253>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:249>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:250>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:251>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:253>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:254>
 		GUISkin_t8C65CE1424D4B5D8D73022E266BDAD3BDE8612D9* L_50;
 		L_50 = GUI_get_skin_m97EC9EB4628B311C0DB7DF9FB19FAD82D6790A1B(NULL);
 		NullCheck(L_50);
@@ -3524,13 +3524,13 @@ IL_0009:
 		GUIStyleState_set_textColor_m5868D12858E6402247953BCCDDA7A543BE6084F1(L_56, L_57, NULL);
 		__this->____sublabelStyle = L_55;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____sublabelStyle), (void*)L_55);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:256>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:256>
 		__this->____stylesReady = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:257>
 		return;
 	}
 }
-// Method Definition Index: 112282
+// Method Definition Index: 112396
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* WeatherDemoUI_MakePixel_mC3B30B05DDFF4AD0F958CA9CEBB50AE4DC16E320 (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_color, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3540,33 +3540,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:261>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:261>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_0 = (Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4*)il2cpp_codegen_object_new(Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4_il2cpp_TypeInfo_var);
 		Texture2D__ctor_m3BA82E87442B7F69E118477069AE11101B9DF796(L_0, 1, 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:262>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:262>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_1 = L_0;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2 = ___0_color;
 		NullCheck(L_1);
 		Texture2D_SetPixel_m2CCFC5F729135D59DC4A697C2605A3FC5C8574DB(L_1, 0, 0, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:263>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:263>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_3 = L_1;
 		NullCheck(L_3);
 		Texture2D_Apply_mA014182C9EE0BBF6EEE3B286854F29E50EB972DC(L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:264>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:264>
 		return L_3;
 	}
 }
-// Method Definition Index: 112283
+// Method Definition Index: 112397
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__ctor_m3DAD61AC56C1D8CC70EB39C13D488A111C202788 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:29>
 		__this->___transitionDuration = (3.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}
 }
-// Method Definition Index: 112284
+// Method Definition Index: 112398
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__cctor_m2FBBAAB83DC2E0A08C5062C5129718A1CCE82998 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3576,22 +3576,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__cctor_m2FBBAAB83DC2E0A08C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:40>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
 		memset((&L_0), 0, sizeof(L_0));
 		Color__ctor_mCD6889CDE39F18704CD6EA8E2EFBFA48BA3E13B0_inline((&L_0), (1.0f), (0.839999974f), (0.25f), NULL);
 		((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Clear = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:41>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		memset((&L_1), 0, sizeof(L_1));
 		Color__ctor_mCD6889CDE39F18704CD6EA8E2EFBFA48BA3E13B0_inline((&L_1), (0.280000001f), (0.600000024f), (1.0f), NULL);
 		((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Rain = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:42>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		memset((&L_2), 0, sizeof(L_2));
 		Color__ctor_mCD6889CDE39F18704CD6EA8E2EFBFA48BA3E13B0_inline((&L_2), (0.639999986f), (0.680000007f), (0.75999999f), NULL);
 		((WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_StaticFields*)il2cpp_codegen_static_fields_for(WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF_il2cpp_TypeInfo_var))->___C_Fog = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Demo/WeatherDemoUI.cs:43>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3;
 		memset((&L_3), 0, sizeof(L_3));
 		Color__ctor_mCD6889CDE39F18704CD6EA8E2EFBFA48BA3E13B0_inline((&L_3), (0.449999988f), (0.280000001f), (0.720000029f), NULL);
@@ -3607,7 +3607,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__cctor_m2FBBAAB83DC2E0A08C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112285
+// Method Definition Index: 112399
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Awake_m13DE8293F2E1EBD6F364AA2214511C0331B14020 (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3618,21 +3618,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Awake_m13DE8293F2E1EBD6F364A
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:40>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0;
 		L_0 = AudioModule_CreateAudioSource_m6970E528595A6AA7682F747EEE7EBC8E5F685779(__this, _stringLiteral07CE853769408E6915AE6C22EE87EE89E5708859, NULL);
 		__this->____sourceA = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____sourceA), (void*)L_0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:41>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1;
 		L_1 = AudioModule_CreateAudioSource_m6970E528595A6AA7682F747EEE7EBC8E5F685779(__this, _stringLiteral7B6CEEDDDA9BDBACDB8A9B3CD565B7CA8F7698AC, NULL);
 		__this->____sourceB = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____sourceB), (void*)L_1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:42>
 		return;
 	}
 }
-// Method Definition Index: 112286
+// Method Definition Index: 112400
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Blend_m40C25BF42F2F7D498ABAD8D8EF8F0354390798A1 (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3643,8 +3643,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Blend_m40C25BF42F2F7D498ABAD
 	}
 	int32_t G_B3_0 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:48>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:49>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_from;
 		NullCheck(L_0);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_1 = L_0->___ambientClip;
@@ -3676,14 +3676,14 @@ IL_0026:
 
 IL_0027:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:51>
 		if (!G_B3_0)
 		{
 			goto IL_0059;
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:53>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_8 = ___0_from;
 		NullCheck(L_8);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_9 = L_8->___ambientClip;
@@ -3694,13 +3694,13 @@ IL_0027:
 		NullCheck(L_12);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_13 = L_12->___ambientClip;
 		AudioModule_InitializeCrossfade_m28D4EB1CAC1685B72A129627C29CAAF2498E400E(__this, L_9, L_11, L_13, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:54>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_14 = ___0_from;
 		NullCheck(L_14);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_15 = L_14->___ambientClip;
 		__this->____trackedFrom = L_15;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____trackedFrom), (void*)L_15);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:55>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_16 = ___1_to;
 		NullCheck(L_16);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_17 = L_16->___ambientClip;
@@ -3710,7 +3710,7 @@ IL_0027:
 
 IL_0059:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:58>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_18 = ___0_from;
 		NullCheck(L_18);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_19 = L_18->___ambientClip;
@@ -3726,11 +3726,11 @@ IL_0059:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:61>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_23 = __this->____sourceA;
 		NullCheck(L_23);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_23, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:62>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_24 = __this->____sourceB;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_25 = ___0_from;
 		NullCheck(L_25);
@@ -3749,7 +3749,7 @@ IL_0059:
 
 IL_00a1:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:67>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_32 = __this->____sourceA;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_33 = ___0_from;
 		NullCheck(L_33);
@@ -3760,7 +3760,7 @@ IL_00a1:
 		float L_37 = __this->___masterVolume;
 		NullCheck(L_32);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_32, ((float)il2cpp_codegen_multiply(L_36, L_37)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:68>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_38 = __this->____sourceB;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_39 = ___1_to;
 		NullCheck(L_39);
@@ -3771,11 +3771,11 @@ IL_00a1:
 		float L_43 = __this->___masterVolume;
 		NullCheck(L_38);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_38, ((float)il2cpp_codegen_multiply(L_42, L_43)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:70>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:70>
 		return;
 	}
 }
-// Method Definition Index: 112287
+// Method Definition Index: 112401
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_InitializeCrossfade_m28D4EB1CAC1685B72A129627C29CAAF2498E400E (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___0_fromClip, float ___1_fromVolume, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___2_toClip, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3785,13 +3785,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_InitializeCrossfade_m28D4EB1
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:82>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->____sourceA;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_1 = ___0_fromClip;
 		float L_2 = ___1_fromVolume;
 		float L_3 = __this->___masterVolume;
 		AudioModule_SetupSource_mBD016E3F4A3F72FA2915795F60E492FFDE129B14(L_0, L_1, ((float)il2cpp_codegen_multiply(L_2, L_3)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:85>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_4 = __this->____sourceB;
 		NullCheck(L_4);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_5;
@@ -3806,20 +3806,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_InitializeCrossfade_m28D4EB1
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:87>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_8 = __this->____sourceB;
 		NullCheck(L_8);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_8, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:88>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_9 = __this->____sourceB;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_10 = ___2_toClip;
 		NullCheck(L_9);
 		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_9, L_10, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:89>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_11 = __this->____sourceB;
 		NullCheck(L_11);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_11, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:91>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_12 = ___2_toClip;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -3830,7 +3830,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_InitializeCrossfade_m28D4EB1
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:92>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:92>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_14 = __this->____sourceB;
 		NullCheck(L_14);
 		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_14, NULL);
@@ -3839,7 +3839,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_InitializeCrossfade_m28D4EB1
 
 IL_0063:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:94>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_15 = ___2_toClip;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_16;
@@ -3860,11 +3860,11 @@ IL_0063:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:96>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_19 = __this->____sourceB;
 		NullCheck(L_19);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_19, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:97>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_20 = __this->____sourceB;
 		NullCheck(L_20);
 		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_20, NULL);
@@ -3872,11 +3872,11 @@ IL_0063:
 
 IL_0094:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:99>
 		return;
 	}
 }
-// Method Definition Index: 112288
+// Method Definition Index: 112402
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_SetupSource_mBD016E3F4A3F72FA2915795F60E492FFDE129B14 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___0_source, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___1_clip, float ___2_volume, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3886,7 +3886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_SetupSource_mBD016E3F4A3F72F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:107>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = ___0_source;
 		NullCheck(L_0);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_1;
@@ -3901,16 +3901,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_SetupSource_mBD016E3F4A3F72F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:109>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_4 = ___0_source;
 		NullCheck(L_4);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_4, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:110>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = ___0_source;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_6 = ___1_clip;
 		NullCheck(L_5);
 		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_5, L_6, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:112>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_7 = ___1_clip;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -3921,12 +3921,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_SetupSource_mBD016E3F4A3F72F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:114>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_9 = ___0_source;
 		float L_10 = ___2_volume;
 		NullCheck(L_9);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_9, L_10, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:115>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_11 = ___0_source;
 		NullCheck(L_11);
 		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_11, NULL);
@@ -3935,7 +3935,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_SetupSource_mBD016E3F4A3F72F
 
 IL_0032:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:118>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_12 = ___1_clip;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -3946,12 +3946,12 @@ IL_0032:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:120>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_14 = ___0_source;
 		float L_15 = ___2_volume;
 		NullCheck(L_14);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_14, L_15, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:122>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_16 = ___0_source;
 		NullCheck(L_16);
 		bool L_17;
@@ -3962,7 +3962,7 @@ IL_0032:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:123>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_18 = ___0_source;
 		NullCheck(L_18);
 		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_18, NULL);
@@ -3971,7 +3971,7 @@ IL_0032:
 
 IL_0051:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:128>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_19 = ___0_source;
 		NullCheck(L_19);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_19, NULL);
@@ -3979,11 +3979,11 @@ IL_0051:
 
 IL_0057:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:130>
 		return;
 	}
 }
-// Method Definition Index: 112289
+// Method Definition Index: 112403
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* AudioModule_CreateAudioSource_m6970E528595A6AA7682F747EEE7EBC8E5F685779 (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, String_t* ___0_sourceName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3994,11 +3994,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:134>
 		String_t* L_0 = ___0_sourceName;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_1, L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:135>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:135>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = L_1;
 		NullCheck(L_2);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
@@ -4007,7 +4007,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B
 		L_4 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_3);
 		Transform_SetParent_m6677538B60246D958DD91F931C50F969CCBB5250(L_3, L_4, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:136>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:136>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = L_2;
 		NullCheck(L_5);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
@@ -4016,39 +4016,39 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B
 		L_7 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		NullCheck(L_6);
 		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_6, L_7, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:138>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:138>
 		NullCheck(L_5);
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_8;
 		L_8 = GameObject_AddComponent_TisAudioSource_t871AC2272F896738252F04EE949AEF5B241D3299_m0E8EFDB9B3D8DF1ADE10C56D3168A9C1BA19BF14(L_5, GameObject_AddComponent_TisAudioSource_t871AC2272F896738252F04EE949AEF5B241D3299_m0E8EFDB9B3D8DF1ADE10C56D3168A9C1BA19BF14_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:139>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_9 = L_8;
 		NullCheck(L_9);
 		AudioSource_set_loop_m834A590939D8456008C0F897FD80B0ECFFB7FE56(L_9, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:140>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_10 = L_9;
 		NullCheck(L_10);
 		AudioSource_set_playOnAwake_m7EACC6ECEF12D7BA86A4E5A53603F1C8F9E11949(L_10, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:141>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:141>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_11 = L_10;
 		NullCheck(L_11);
 		AudioSource_set_spatialBlend_mCEE7A3E87A8C146E048B2CA3413FDC7BDB7BE001(L_11, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:142>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_12 = L_11;
 		NullCheck(L_12);
 		AudioSource_set_priority_mD1AB7ED858D8A1233642F5DBA81AEFBE35DD4B40(L_12, ((int32_t)128), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:143>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:143>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_13 = L_12;
 		NullCheck(L_13);
 		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_13, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:145>
 		return L_13;
 	}
 }
-// Method Definition Index: 112290
+// Method Definition Index: 112404
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule__ctor_mB62206581C918236FD209B0E4FB180DA5AB7851F (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/AudioModule.cs:25>
 		__this->___masterVolume = (1.0f);
 		WeatherModule__ctor_m627101E8A15508ABB1B037CD7F3B921087FF7B79(__this, NULL);
 		return;
@@ -4062,14 +4062,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule__ctor_mB62206581C918236FD209
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112291
+// Method Definition Index: 112405
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FogModule_Blend_m0CAA92A2F8F32178AD3AE3834484E701449292B3 (FogModule_tA43F6E444827464E1AE12F68D33BB8F6C8C79833* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	int32_t G_B5_0 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:26>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:27>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:27>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:28>
 		float L_0 = ___2_t;
 		if ((((float)L_0) < ((float)(1.0f))))
 		{
@@ -4109,11 +4109,11 @@ IL_0020:
 
 IL_0021:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:30>
 		RenderSettings_set_fog_m3CB80EC4A17400AF2D6D7CBE6B541E01D8E2AA0E((bool)G_B5_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:31>
 		RenderSettings_set_fogMode_m9D67706DC8DB33B69479A6D47CEC2131E93363C0(3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:32>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_7 = ___0_from;
 		NullCheck(L_7);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_8 = L_7->___fogColor;
@@ -4124,7 +4124,7 @@ IL_0021:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_12;
 		L_12 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_8, L_10, L_11, NULL);
 		RenderSettings_set_fogColor_mBBD12EC3492195F85F583CAF4FAE4A973227639B(L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:33>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_13 = ___0_from;
 		NullCheck(L_13);
 		float L_14 = L_13->___fogDensity;
@@ -4135,11 +4135,11 @@ IL_0021:
 		float L_18;
 		L_18 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_14, L_16, L_17, NULL);
 		RenderSettings_set_fogDensity_mFB0FD753E90E0B9E33EB4D813B4095BF04D1F5B5(L_18, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/FogModule.cs:34>
 		return;
 	}
 }
-// Method Definition Index: 112292
+// Method Definition Index: 112406
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FogModule__ctor_m37E157EACD0BD52BE87298C056614F116582D522 (FogModule_tA43F6E444827464E1AE12F68D33BB8F6C8C79833* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4155,7 +4155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FogModule__ctor_m37E157EACD0BD52BE87298C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112293
+// Method Definition Index: 112407
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Reset_m97529E63C8276CCB6B287AEC0C8BDB5A8F1E8F43 (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4169,11 +4169,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Reset_m97529E63C8276CCB6B287
 	int32_t V_1 = 0;
 	Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* V_2 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:25>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		LightU5BU5D_tDA7C763E668D91E53318509D94BC0CF10B8AB990* L_0;
 		L_0 = Object_FindObjectsByType_TisLight_t1E68479B7782AF2050FAA02A5DC612FD034F18F3_m79BC5CB672C29928E4DBB55B1B01FA8BC18A0E5B(0, Object_FindObjectsByType_TisLight_t1E68479B7782AF2050FAA02A5DC612FD034F18F3_m79BC5CB672C29928E4DBB55B1B01FA8BC18A0E5B_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:26>
 		V_0 = L_0;
 		V_1 = 0;
 		goto IL_0024;
@@ -4181,14 +4181,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Reset_m97529E63C8276CCB6B287
 
 IL_000b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:26>
 		LightU5BU5D_tDA7C763E668D91E53318509D94BC0CF10B8AB990* L_1 = V_0;
 		int32_t L_2 = V_1;
 		NullCheck(L_1);
 		int32_t L_3 = L_2;
 		Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* L_4 = (L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
 		V_2 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:28>
 		Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* L_5 = V_2;
 		NullCheck(L_5);
 		int32_t L_6;
@@ -4199,11 +4199,11 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:30>
 		Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* L_7 = V_2;
 		__this->___directionalLight = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___directionalLight), (void*)L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:31>
 		return;
 	}
 
@@ -4215,7 +4215,7 @@ IL_0020:
 
 IL_0024:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:26>
 		int32_t L_9 = V_1;
 		LightU5BU5D_tDA7C763E668D91E53318509D94BC0CF10B8AB990* L_10 = V_0;
 		NullCheck(L_10);
@@ -4225,29 +4225,29 @@ IL_0024:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:34>
 		return;
 	}
 }
-// Method Definition Index: 112294
+// Method Definition Index: 112408
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Blend_m90C63C2019D5552508C7B9BA7F4F204A1382F5C4 (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:38>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_from;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_1 = ___1_to;
 		float L_2 = ___2_t;
 		LightModule_BlendDirectionalLight_mC27E6369E4716BBA9D50B3D17AC46E1F5661DA1B(__this, L_0, L_1, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:39>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_3 = ___0_from;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_4 = ___1_to;
 		float L_5 = ___2_t;
 		LightModule_BlendAmbientLight_m1277CB7932816FAB30711AEB7E424F2D3E84127D(__this, L_3, L_4, L_5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:40>
 		return;
 	}
 }
-// Method Definition Index: 112295
+// Method Definition Index: 112409
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendDirectionalLight_mC27E6369E4716BBA9D50B3D17AC46E1F5661DA1B (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4259,7 +4259,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendDirectionalLight_mC27E6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:44>
 		Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* L_0 = __this->___directionalLight;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -4270,17 +4270,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendDirectionalLight_mC27E6
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:46>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:47>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteral8DF2966114796293BF08AB1993095AE179B67B31, __this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:48>
 		return;
 	}
 
 IL_001a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:51>
 		Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* L_2 = __this->___directionalLight;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_3 = ___0_from;
 		NullCheck(L_3);
@@ -4293,7 +4293,7 @@ IL_001a:
 		L_8 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_4, L_6, L_7, NULL);
 		NullCheck(L_2);
 		Light_set_color_m242F09E22904E0A20D5B032A0749678B0796A87C(L_2, L_8, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:52>
 		Light_t1E68479B7782AF2050FAA02A5DC612FD034F18F3* L_9 = __this->___directionalLight;
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_10 = ___0_from;
 		NullCheck(L_10);
@@ -4306,17 +4306,17 @@ IL_001a:
 		L_15 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_11, L_13, L_14, NULL);
 		NullCheck(L_9);
 		Light_set_intensity_mE4820C7F39F490B92ED5EA0C3AADA7C0775BE854(L_9, L_15, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:53>
 		return;
 	}
 }
-// Method Definition Index: 112296
+// Method Definition Index: 112410
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendAmbientLight_m1277CB7932816FAB30711AEB7E424F2D3E84127D (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:57>
 		RenderSettings_set_ambientMode_mDC8C4F62B1BCDDBFA69E9398213B926E39D512FC(3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:58>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = ___0_from;
 		NullCheck(L_0);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1 = L_0->___ambientColor;
@@ -4327,11 +4327,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendAmbientLight_m1277CB793
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_5;
 		L_5 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_1, L_3, L_4, NULL);
 		RenderSettings_set_ambientLight_m44E42CEB67937FC0CFC86767CB07D93D8E780880(L_5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/LightModule.cs:59>
 		return;
 	}
 }
-// Method Definition Index: 112297
+// Method Definition Index: 112411
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule__ctor_mC55759BAFE95B7017BF675C22E966D494968756E (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4347,7 +4347,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule__ctor_mC55759BAFE95B7017BF67
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112298
+// Method Definition Index: 112412
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Awake_m4F964679F08F6EEE4C9BD53B8BE27D586FCCBE4E (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4360,7 +4360,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Awake_m4F964679F08F6EEE4C9BD5
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:52>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_0 = __this->___rainParticles;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -4371,7 +4371,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Awake_m4F964679F08F6EEE4C9BD5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:53>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_2;
 		L_2 = Component_GetComponentInChildren_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_m3042C7C9500AD4751B999B89E6D00E4773BC4CA4(__this, (bool)1, Component_GetComponentInChildren_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_m3042C7C9500AD4751B999B89E6D00E4773BC4CA4_RuntimeMethod_var);
 		__this->___rainParticles = L_2;
@@ -4380,7 +4380,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Awake_m4F964679F08F6EEE4C9BD5
 
 IL_001b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:55>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_3 = __this->___rainParticles;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -4391,7 +4391,7 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:56>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_5;
 		L_5 = RainModule_CreateParticleSystemObject_m54BF89EE76FEEF6B64A8CF03EF4BA7506008A1FB(__this, NULL);
 		__this->___rainParticles = L_5;
@@ -4400,13 +4400,13 @@ IL_001b:
 
 IL_0035:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:58>
 		RainModule_ConfigureParticleSystem_m942C64C0640D9E9C34B2BC240441CEF44C3052A6(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:59>
 		RainModule_CacheModules_m9EA1279EF0A544895CD171E992AC09931C83D8E7(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:60>
 		__this->____isReady = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:62>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6 = __this->___followTarget;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
@@ -4428,7 +4428,7 @@ IL_0035:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:63>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_10;
 		L_10 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		NullCheck(L_10);
@@ -4440,7 +4440,7 @@ IL_0035:
 
 IL_0073:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:65>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_12 = __this->___followTarget;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -4451,19 +4451,19 @@ IL_0073:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:66>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:67>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteralDFD9F76454A34C1A83FE5F362AE0AEB62638AF12, __this, NULL);
 	}
 
 IL_008c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:68>
 		return;
 	}
 }
-// Method Definition Index: 112299
+// Method Definition Index: 112413
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Reset_m7E21795C6397C705F02DF54713F6C660EEC235CB (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4473,16 +4473,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Reset_m7E21795C6397C705F02DF5
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:73>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_0;
 		L_0 = Component_GetComponentInChildren_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_m3042C7C9500AD4751B999B89E6D00E4773BC4CA4(__this, (bool)1, Component_GetComponentInChildren_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_m3042C7C9500AD4751B999B89E6D00E4773BC4CA4_RuntimeMethod_var);
 		__this->___rainParticles = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___rainParticles), (void*)L_0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:74>
 		return;
 	}
 }
-// Method Definition Index: 112300
+// Method Definition Index: 112414
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_LateUpdate_m43C7DD19FE34EB61D60F187A96673C226F87DFAB (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4494,7 +4494,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_LateUpdate_m43C7DD19FE34EB61D
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:78>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___followTarget;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -4514,35 +4514,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_LateUpdate_m43C7DD19FE34EB61D
 
 IL_0016:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:78>
 		return;
 	}
 
 IL_0017:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:82>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = __this->___followTarget;
 		NullCheck(L_3);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
 		L_4 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_3, NULL);
 		V_0 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:83>
 		float* L_5 = (float*)(&(&V_0)->___y);
 		float* L_6 = L_5;
 		float L_7 = *((float*)L_6);
 		float L_8 = __this->___spawnHeight;
 		*((float*)L_6) = (float)((float)il2cpp_codegen_add(L_7, L_8));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:84>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9;
 		L_9 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10 = V_0;
 		NullCheck(L_9);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_9, L_10, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:85>
 		return;
 	}
 }
-// Method Definition Index: 112301
+// Method Definition Index: 112415
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_OnDestroy_mEB7D3B0694DBE0BD886DCC0386D878D2EC771AF7 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4552,7 +4552,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_OnDestroy_mEB7D3B0694DBE0BD88
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:89>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_0 = __this->____runtimeMaterial;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -4563,7 +4563,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_OnDestroy_mEB7D3B0694DBE0BD88
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:90>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_2 = __this->____runtimeMaterial;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
@@ -4571,11 +4571,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_OnDestroy_mEB7D3B0694DBE0BD88
 
 IL_0019:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:91>
 		return;
 	}
 }
-// Method Definition Index: 112302
+// Method Definition Index: 112416
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Blend_mBF5008A8DA55D83D5E488FD0A42ADCAFE39E6D05 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -4583,7 +4583,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Blend_mBF5008A8DA55D83D5E488F
 	memset((&V_1), 0, sizeof(V_1));
 	float V_2 = 0.0f;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:97>
 		bool L_0 = __this->____isReady;
 		if (L_0)
 		{
@@ -4591,13 +4591,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Blend_mBF5008A8DA55D83D5E488F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:97>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:99>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_1 = ___0_from;
 		NullCheck(L_1);
 		float L_2 = L_1->___rainIntensity;
@@ -4608,7 +4608,7 @@ IL_0009:
 		float L_6;
 		L_6 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_2, L_4, L_5, NULL);
 		V_0 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:100>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_7 = ___0_from;
 		NullCheck(L_7);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_8 = L_7->___rainColor;
@@ -4619,7 +4619,7 @@ IL_0009:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_12;
 		L_12 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_8, L_10, L_11, NULL);
 		V_1 = L_12;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:101>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_13 = ___0_from;
 		NullCheck(L_13);
 		float L_14 = L_13->___rainSpeed;
@@ -4630,21 +4630,21 @@ IL_0009:
 		float L_18;
 		L_18 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_14, L_16, L_17, NULL);
 		V_2 = L_18;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:103>
 		float L_19 = V_0;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_20 = V_1;
 		float L_21 = V_2;
 		RainModule_ApplyRain_mEAC3B6AC8E6EE14D4D12678B846FBC3D0EFC51CF(__this, L_19, L_20, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:104>
 		return;
 	}
 }
-// Method Definition Index: 112303
+// Method Definition Index: 112417
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ApplyRain_mEAC3B6AC8E6EE14D4D12678B846FBC3D0EFC51CF (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, float ___0_intensity, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, float ___2_speed, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:110>
 		float L_0 = ___0_intensity;
 		if ((!(((float)L_0) <= ((float)(0.00100000005f)))))
 		{
@@ -4652,32 +4652,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ApplyRain_mEAC3B6AC8E6EE14D4D
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:113>
 		EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678* L_1 = (EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678*)(&__this->____emission);
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_2;
 		L_2 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086((0.0f), NULL);
 		EmissionModule_set_rateOverTime_m71BF3C0A80EA572CD87EFF5944E8FA680F51DC20(L_1, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:114>
 		return;
 	}
 
 IL_001e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:118>
 		float L_3 = ___2_speed;
 		float L_4;
 		L_4 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline((0.5f), L_3, NULL);
 		V_0 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:119>
 		VelocityOverLifetimeModule_tB4A3291E3D2E850257EE3F8344AAEDA06D7FCE56* L_5 = (VelocityOverLifetimeModule_tB4A3291E3D2E850257EE3F8344AAEDA06D7FCE56*)(&__this->____velocityOverLifetime);
 		float L_6 = V_0;
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_7;
 		memset((&L_7), 0, sizeof(L_7));
 		MinMaxCurve__ctor_m1D3846251475D7BBC7B128CCD7DFF40B16AAEF9E((&L_7), ((-L_6)), NULL);
 		VelocityOverLifetimeModule_set_y_m4B08D16D7F274567CC18790702C8F3C53A443089(L_5, L_7, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:122>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:123>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:124>
 		MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* L_8 = (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*)(&__this->____main);
 		float L_9 = __this->___spawnHeight;
 		float L_10 = V_0;
@@ -4687,13 +4687,13 @@ IL_001e:
 		memset((&L_13), 0, sizeof(L_13));
 		MinMaxCurve__ctor_m02A81CDCC1009C0D466A4A59ED57CD3371A89E7B((&L_13), ((float)(L_9/L_10)), ((float)il2cpp_codegen_multiply(((float)(L_11/L_12)), (1.29999995f))), NULL);
 		MainModule_set_startLifetime_mDFC2433853CB12C0C93C8BF16FEDB4EA2E0B3514(L_8, L_13, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:127>
 		MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* L_14 = (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*)(&__this->____main);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_15 = ___1_color;
 		MinMaxGradient_tFF31B8EC2855D0074AB86E8B37BEA6609070AC69 L_16;
 		L_16 = MinMaxGradient_op_Implicit_mAA6154D6644E72BBA49EB34DC957538EE929DE02(L_15, NULL);
 		MainModule_set_startColor_m504911284CAC53A7C1B97B5D01BBDD2FA67D0E7A(L_14, L_16, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:130>
 		EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678* L_17 = (EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678*)(&__this->____emission);
 		float L_18 = ___0_intensity;
 		int32_t L_19 = __this->___maxEmissionRate;
@@ -4702,7 +4702,7 @@ IL_001e:
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_21;
 		L_21 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086(((float)L_20), NULL);
 		EmissionModule_set_rateOverTime_m71BF3C0A80EA572CD87EFF5944E8FA680F51DC20(L_17, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:132>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_22 = __this->___rainParticles;
 		NullCheck(L_22);
 		bool L_23;
@@ -4713,7 +4713,7 @@ IL_001e:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:133>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_24 = __this->___rainParticles;
 		NullCheck(L_24);
 		ParticleSystem_Play_mD943E601BFE16CB9BB5D1F5E6AED5C36F5F11EF5(L_24, NULL);
@@ -4721,40 +4721,40 @@ IL_001e:
 
 IL_00aa:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:134>
 		return;
 	}
 }
-// Method Definition Index: 112304
+// Method Definition Index: 112418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_CacheModules_m9EA1279EF0A544895CD171E992AC09931C83D8E7 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:138>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:138>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_0 = __this->___rainParticles;
 		NullCheck(L_0);
 		EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678 L_1;
 		L_1 = ParticleSystem_get_emission_mD9402CE632A3607DA0B0486F9F58F7FB2B44CF08(L_0, NULL);
 		__this->____emission = L_1;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____emission))->___m_ParticleSystem), (void*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:139>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_2 = __this->___rainParticles;
 		NullCheck(L_2);
 		MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9 L_3;
 		L_3 = ParticleSystem_get_main_mD86DFCD96150E2CE760CD2F37052BB3BCA33C189(L_2, NULL);
 		__this->____main = L_3;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____main))->___m_ParticleSystem), (void*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:140>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_4 = __this->___rainParticles;
 		NullCheck(L_4);
 		VelocityOverLifetimeModule_tB4A3291E3D2E850257EE3F8344AAEDA06D7FCE56 L_5;
 		L_5 = ParticleSystem_get_velocityOverLifetime_m84189E42E4B97EF44B66BC1FBB9FA0F15F05B535(L_4, NULL);
 		__this->____velocityOverLifetime = L_5;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____velocityOverLifetime))->___m_ParticleSystem), (void*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:141>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:141>
 		return;
 	}
 }
-// Method Definition Index: 112305
+// Method Definition Index: 112419
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* RainModule_CreateParticleSystemObject_m54BF89EE76FEEF6B64A8CF03EF4BA7506008A1FB (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4766,10 +4766,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAF
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:147>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_0, _stringLiteral4B73284F673ACDA5467393B528FA2F2CE2AAB408, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:148>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:148>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = L_0;
 		NullCheck(L_1);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2;
@@ -4778,7 +4778,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAF
 		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_2);
 		Transform_SetParent_m6677538B60246D958DD91F931C50F969CCBB5250(L_2, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:149>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = L_1;
 		NullCheck(L_4);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
@@ -4787,7 +4787,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAF
 		L_6 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		NullCheck(L_5);
 		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_5, L_6, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:150>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = L_4;
 		NullCheck(L_7);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8;
@@ -4796,14 +4796,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAF
 		L_9 = Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline(NULL);
 		NullCheck(L_8);
 		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_8, L_9, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:151>
 		NullCheck(L_7);
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_10;
 		L_10 = GameObject_AddComponent_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_mB314D473090ABA262973402E33A61D8017704EA8(L_7, GameObject_AddComponent_TisParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1_mB314D473090ABA262973402E33A61D8017704EA8_RuntimeMethod_var);
 		return L_10;
 	}
 }
-// Method Definition Index: 112306
+// Method Definition Index: 112420
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ConfigureParticleSystem_m942C64C0640D9E9C34B2BC240441CEF44C3052A6 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4822,119 +4822,119 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ConfigureParticleSystem_m942C
 	memset((&V_3), 0, sizeof(V_3));
 	ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* V_4 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:157>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_0 = __this->___rainParticles;
 		NullCheck(L_0);
 		MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9 L_1;
 		L_1 = ParticleSystem_get_main_mD86DFCD96150E2CE760CD2F37052BB3BCA33C189(L_0, NULL);
 		V_0 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:158>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:158>
 		MainModule_set_loop_mB3FC83A6DA8D248D15C53388D6B9B7711ADD89BE((&V_0), (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:159>
 		MainModule_set_playOnAwake_mC86DBF96156C8783FAC2AD1628529F354FB1C6D8((&V_0), (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:160>
 		MainModule_set_simulationSpace_m23D533E66925AABF0C336894FBF2FF03FF3891BC((&V_0), 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:161>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_2;
 		L_2 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086((0.0f), NULL);
 		MainModule_set_startSpeed_mE6041E4BA54F01117AF6B81B1E53C5C9C669AC75((&V_0), L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:162>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_3;
 		memset((&L_3), 0, sizeof(L_3));
 		MinMaxCurve__ctor_m02A81CDCC1009C0D466A4A59ED57CD3371A89E7B((&L_3), (0.0149999997f), (0.0299999993f), NULL);
 		MainModule_set_startSize_m44C3A39EAF1AE9A526A126D93160128223BE827B((&V_0), L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:163>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_4;
 		memset((&L_4), 0, sizeof(L_4));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_4), (0.699999988f), (0.800000012f), (0.899999976f), (0.400000006f), NULL);
 		MinMaxGradient_tFF31B8EC2855D0074AB86E8B37BEA6609070AC69 L_5;
 		L_5 = MinMaxGradient_op_Implicit_mAA6154D6644E72BBA49EB34DC957538EE929DE02(L_4, NULL);
 		MainModule_set_startColor_m504911284CAC53A7C1B97B5D01BBDD2FA67D0E7A((&V_0), L_5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:164>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:164>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_6;
 		L_6 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086((0.0f), NULL);
 		MainModule_set_gravityModifier_m398D2C7F10E389C0EA365640A54D2C0C151A42A7((&V_0), L_6, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:165>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:165>
 		MainModule_set_maxParticles_mF9E7A56D7E1A528904BE1A8C0E14F15C3AF0F748((&V_0), ((int32_t)3000), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:166>
 		float L_7 = __this->___spawnHeight;
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_8;
 		L_8 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086(((float)(L_7/(8.0f))), NULL);
 		MainModule_set_startLifetime_mDFC2433853CB12C0C93C8BF16FEDB4EA2E0B3514((&V_0), L_8, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:169>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:169>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_9 = __this->___rainParticles;
 		NullCheck(L_9);
 		EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678 L_10;
 		L_10 = ParticleSystem_get_emission_mD9402CE632A3607DA0B0486F9F58F7FB2B44CF08(L_9, NULL);
 		V_1 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:170>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_11;
 		L_11 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086((0.0f), NULL);
 		EmissionModule_set_rateOverTime_m71BF3C0A80EA572CD87EFF5944E8FA680F51DC20((&V_1), L_11, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:173>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_12 = __this->___rainParticles;
 		NullCheck(L_12);
 		ShapeModule_tAA38A0C5305DF2F9D96F89D4B8F762E2D034D8B2 L_13;
 		L_13 = ParticleSystem_get_shape_mD7F072CC18587858138AA7B3A882995493AA7C80(L_12, NULL);
 		V_2 = L_13;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:174>
 		ShapeModule_set_shapeType_m4B5D1EA91037AD7065FE1D23652D919FED4D6D7F((&V_2), 5, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:175>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:175>
 		float L_14 = __this->___spawnRadius;
 		float L_15 = __this->___spawnRadius;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
 		memset((&L_16), 0, sizeof(L_16));
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_16), ((float)il2cpp_codegen_multiply(L_14, (2.0f))), (0.5f), ((float)il2cpp_codegen_multiply(L_15, (2.0f))), NULL);
 		ShapeModule_set_scale_mDA84B80016FDA6B6EE181B108C3E59A2FFF9143D((&V_2), L_16, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:178>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:178>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_17 = __this->___rainParticles;
 		NullCheck(L_17);
 		VelocityOverLifetimeModule_tB4A3291E3D2E850257EE3F8344AAEDA06D7FCE56 L_18;
 		L_18 = ParticleSystem_get_velocityOverLifetime_m84189E42E4B97EF44B66BC1FBB9FA0F15F05B535(L_17, NULL);
 		V_3 = L_18;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:179>
 		VelocityOverLifetimeModule_set_enabled_m51615A28ABE90C2535928EA53410DDDF22758F47((&V_3), (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:180>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:180>
 		VelocityOverLifetimeModule_set_space_mF83B9ADF51257F5DB3D657FA3D446A479E10A0AE((&V_3), 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:181>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:181>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_19;
 		L_19 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086((0.0f), NULL);
 		VelocityOverLifetimeModule_set_x_m667368604CF8D09F133E552E21CBD3DC344281A0((&V_3), L_19, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:182>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:182>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_20;
 		memset((&L_20), 0, sizeof(L_20));
 		MinMaxCurve__ctor_m1D3846251475D7BBC7B128CCD7DFF40B16AAEF9E((&L_20), (-8.0f), NULL);
 		VelocityOverLifetimeModule_set_y_m4B08D16D7F274567CC18790702C8F3C53A443089((&V_3), L_20, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:183>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:183>
 		MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23 L_21;
 		L_21 = MinMaxCurve_op_Implicit_m133028E91CF2F823F5E20F6B19A3332A02404086((0.0f), NULL);
 		VelocityOverLifetimeModule_set_z_m8B5A03C2D6E06CD7C6177BD321E9121E96D1D889((&V_3), L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:186>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_22 = __this->___rainParticles;
 		NullCheck(L_22);
 		ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* L_23;
 		L_23 = Component_GetComponent_TisParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4_mDB29DD32DF46B9659262256BDBD5B4F1BB805023(L_22, Component_GetComponent_TisParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4_mDB29DD32DF46B9659262256BDBD5B4F1BB805023_RuntimeMethod_var);
 		V_4 = L_23;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:187>
 		ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* L_24 = V_4;
 		NullCheck(L_24);
 		ParticleSystemRenderer_set_renderMode_mB2FE8134522E19C9C0C2E8DE371303BCE834016F(L_24, 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:188>
 		ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* L_25 = V_4;
 		NullCheck(L_25);
 		ParticleSystemRenderer_set_velocityScale_mA1DB4F7A8E093F8E12D7A8523A733752B25D862F(L_25, (0.0799999982f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:189>
 		ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* L_26 = V_4;
 		NullCheck(L_26);
 		ParticleSystemRenderer_set_lengthScale_mBC3566F36C55B29E8CB53DFB9E18E397F34A0861(L_26, (1.5f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:191>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:191>
 		ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* L_27 = V_4;
 		RainModule_AssignMaterial_m30BDA342749110CE31DEE3D13893F982484ED617(__this, L_27, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:192>
 		return;
 	}
 }
-// Method Definition Index: 112307
+// Method Definition Index: 112421
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_AssignMaterial_m30BDA342749110CE31DEE3D13893F982484ED617 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* ___0_rend, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4955,11 +4955,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_AssignMaterial_m30BDA34274911
 	}
 	Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* V_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:200>
 		Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* L_0;
 		L_0 = Shader_Find_m183AA54F78320212DDEC811592F98456898A41C5(_stringLiteral49425CF51EF67FBFD8AA098A16B840096305BF92, NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:202>
 		Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* L_1 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -4984,21 +4984,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_AssignMaterial_m30BDA34274911
 
 IL_0026:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:204>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:205>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:204>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:205>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteralA01CEE43863700996F9B4FC07AEDB9C84CB927E4, __this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:206>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:206>
 		return;
 	}
 
 IL_0032:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:209>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:210>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:211>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:212>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:213>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:209>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:213>
 		Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* L_6 = V_0;
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_7 = (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)il2cpp_codegen_object_new(Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_il2cpp_TypeInfo_var);
 		Material__ctor_m7FDF47105D66D19591BE505A0C42B0F90D88C9BF(L_7, L_6, NULL);
@@ -5010,40 +5010,40 @@ IL_0032:
 		Material_set_renderQueue_mFBB72A781DCCF0D4B85670B597788EC2D02D1C14(L_9, ((int32_t)3000), NULL);
 		__this->____runtimeMaterial = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____runtimeMaterial), (void*)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:216>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:216>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_10 = __this->____runtimeMaterial;
 		NullCheck(L_10);
 		Material_SetFloat_m879CF81D740BAE6F23C9822400679F4D16365836(L_10, _stringLiteral6B6E6FD1DAB7427F6F1992161B3C7F2C61BCDA0C, (1.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:217>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_11 = __this->____runtimeMaterial;
 		NullCheck(L_11);
 		Material_SetFloat_m879CF81D740BAE6F23C9822400679F4D16365836(L_11, _stringLiteralB9F78F9FB8C2CC12CFE4E7C2095C7F178F12EF5D, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:218>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:218>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_12 = __this->____runtimeMaterial;
 		NullCheck(L_12);
 		Material_SetFloat_m879CF81D740BAE6F23C9822400679F4D16365836(L_12, _stringLiteralB25CF1C6B74339FBFCE846454A70688CE58C094C, (0.0f), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:219>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_13 = __this->____runtimeMaterial;
 		NullCheck(L_13);
 		Material_EnableKeyword_mE8523EF6CF694284DF976D47ADEDE9363A1174AC(L_13, _stringLiteral99047461202765202274922C6338EF9DC6A8CA1F, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:221>
 		ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* L_14 = ___0_rend;
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_15 = __this->____runtimeMaterial;
 		NullCheck(L_14);
 		Renderer_set_material_m21E88977071E0A914D62F3D9CFF0193B3117C45A(L_14, L_15, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:222>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:222>
 		return;
 	}
 }
-// Method Definition Index: 112308
+// Method Definition Index: 112422
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule__ctor_mD9CD1DEB6536F62F8C39182FBBE5CA683D0F239F (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:26>
 		__this->___maxEmissionRate = ((int32_t)400);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:29>
 		__this->___spawnHeight = (15.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/RainModule.cs:32>
 		__this->___spawnRadius = (25.0f);
 		WeatherModule__ctor_m627101E8A15508ABB1B037CD7F3B921087FF7B79(__this, NULL);
 		return;
@@ -5057,7 +5057,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule__ctor_mD9CD1DEB6536F62F8C3918
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112309
+// Method Definition Index: 112423
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Awake_mCAEF476D2D5DCCB61BF68A5E98698E289D74D087 (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5072,11 +5072,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Awake_mCAEF476D2D5DCCB61BF68A5
 	}
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* V_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:42>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_0;
 		L_0 = RenderSettings_get_skybox_m1738CCDBAFAA20797D174DB97066440B10FBCE6F(NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:44>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_1 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -5087,21 +5087,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Awake_mCAEF476D2D5DCCB61BF68A5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:46>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:47>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteral85A40921B2B73C94385A14CF6A5A9EEDF3732780, __this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:48>
 		return;
 	}
 
 IL_001b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:52>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_3 = V_0;
 		__this->____originalSkybox = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____originalSkybox), (void*)L_3);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:53>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_4 = V_0;
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_5 = (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)il2cpp_codegen_object_new(Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_il2cpp_TypeInfo_var);
 		Material__ctor_mFCC42FB90257F1E8F7516A8640A79C465A39961C(L_5, L_4, NULL);
@@ -5116,18 +5116,18 @@ IL_001b:
 		Object_set_name_mC79E6DC8FFD72479C90F0C4CC7F42A0FEAF5AE47(L_6, L_9, NULL);
 		__this->____skyboxInstance = L_6;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____skyboxInstance), (void*)L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:54>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_10 = __this->____skyboxInstance;
 		RenderSettings_set_skybox_m7988CC3217B1456CA0A7294127527BFC18EEC872(L_10, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:56>
 		SkyModule_DetectProperties_m44E1702D2943D709A610E80DD2C1B620731B679D(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:57>
 		__this->____isReady = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:58>
 		return;
 	}
 }
-// Method Definition Index: 112310
+// Method Definition Index: 112424
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_OnDestroy_m921456CDC1FBFBF64AA9B9B6CD03D68D9125882B (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5137,7 +5137,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_OnDestroy_m921456CDC1FBFBF64AA
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:63>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_0 = __this->____originalSkybox;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -5148,14 +5148,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_OnDestroy_m921456CDC1FBFBF64AA
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:64>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_2 = __this->____originalSkybox;
 		RenderSettings_set_skybox_m7988CC3217B1456CA0A7294127527BFC18EEC872(L_2, NULL);
 	}
 
 IL_0019:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:66>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_3 = __this->____skyboxInstance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -5166,7 +5166,7 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:67>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_5 = __this->____skyboxInstance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_5, NULL);
@@ -5174,18 +5174,18 @@ IL_0019:
 
 IL_0032:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:68>
 		return;
 	}
 }
-// Method Definition Index: 112311
+// Method Definition Index: 112425
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Blend_mC3A2C4B3028CB839141683FEFDAC002DC252E31F (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	float V_1 = 0.0f;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:74>
 		bool L_0 = __this->____isReady;
 		if (L_0)
 		{
@@ -5193,13 +5193,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Blend_mC3A2C4B3028CB839141683F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:74>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:76>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_1 = ___0_from;
 		NullCheck(L_1);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2 = L_1->___skyboxTint;
@@ -5210,7 +5210,7 @@ IL_0009:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_6;
 		L_6 = Color_Lerp_mE79F87889843ECDC188E4CB5B5E1F1B2256E5EBE_inline(L_2, L_4, L_5, NULL);
 		V_0 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:77>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:77>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_7 = ___0_from;
 		NullCheck(L_7);
 		float L_8 = L_7->___skyboxExposure;
@@ -5221,15 +5221,15 @@ IL_0009:
 		float L_12;
 		L_12 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_8, L_10, L_11, NULL);
 		V_1 = L_12;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:79>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_13 = V_0;
 		float L_14 = V_1;
 		SkyModule_ApplySky_m843B763ABE4922DF789FD4A3A62551596E042750(__this, L_13, L_14, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:80>
 		return;
 	}
 }
-// Method Definition Index: 112312
+// Method Definition Index: 112426
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_ApplySky_m843B763ABE4922DF789FD4A3A62551596E042750 (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_tint, float ___1_exposure, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5239,7 +5239,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_ApplySky_m843B763ABE4922DF789F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:86>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:86>
 		bool L_0 = __this->____hasTint;
 		if (!L_0)
 		{
@@ -5247,7 +5247,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_ApplySky_m843B763ABE4922DF789F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:87>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_1 = __this->____skyboxInstance;
 		int32_t L_2 = __this->____activeTintPropertyId;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3 = ___0_tint;
@@ -5257,7 +5257,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_ApplySky_m843B763ABE4922DF789F
 
 IL_001a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:89>
 		bool L_4 = __this->____hasExposure;
 		if (!L_4)
 		{
@@ -5265,7 +5265,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:90>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_5 = __this->____skyboxInstance;
 		il2cpp_codegen_runtime_class_init_inline(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var);
 		int32_t L_6 = ((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___ExposureId;
@@ -5276,11 +5276,11 @@ IL_001a:
 
 IL_0033:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:91>
 		return;
 	}
 }
-// Method Definition Index: 112313
+// Method Definition Index: 112427
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_DetectProperties_m44E1702D2943D709A610E80DD2C1B620731B679D (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5293,7 +5293,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_DetectProperties_m44E1702D2943
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:100>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_0 = __this->____skyboxInstance;
 		il2cpp_codegen_runtime_class_init_inline(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var);
 		int32_t L_1 = ((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___TintId;
@@ -5306,9 +5306,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_DetectProperties_m44E1702D2943
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:102>
 		__this->____hasTint = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:103>
 		il2cpp_codegen_runtime_class_init_inline(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var);
 		int32_t L_3 = ((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___TintId;
 		__this->____activeTintPropertyId = L_3;
@@ -5317,7 +5317,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_DetectProperties_m44E1702D2943
 
 IL_0026:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:106>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_4 = __this->____skyboxInstance;
 		il2cpp_codegen_runtime_class_init_inline(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var);
 		int32_t L_5 = ((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___SkyTintId;
@@ -5330,9 +5330,9 @@ IL_0026:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:108>
 		__this->____hasTint = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:109>
 		il2cpp_codegen_runtime_class_init_inline(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var);
 		int32_t L_7 = ((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___SkyTintId;
 		__this->____activeTintPropertyId = L_7;
@@ -5341,15 +5341,15 @@ IL_0026:
 
 IL_004c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:113>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:114>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteral5872697EC9C031C0ED5400E41C2206A119121206, __this, NULL);
 	}
 
 IL_0057:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:117>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_8 = __this->____skyboxInstance;
 		il2cpp_codegen_runtime_class_init_inline(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var);
 		int32_t L_9 = ((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___ExposureId;
@@ -5357,7 +5357,7 @@ IL_0057:
 		bool L_10;
 		L_10 = Material_HasProperty_m52E2D3BC3049B8B228149E023CD73C34B05A5222(L_8, L_9, NULL);
 		__this->____hasExposure = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:119>
 		bool L_11 = __this->____hasExposure;
 		if (L_11)
 		{
@@ -5365,19 +5365,19 @@ IL_0057:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:121>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:122>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(_stringLiteral37B9B1C1B61428829B8D7D97663A4D7C5B67A0FC, __this, NULL);
 	}
 
 IL_0080:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:124>
 		return;
 	}
 }
-// Method Definition Index: 112314
+// Method Definition Index: 112428
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__ctor_mBCFECAFC167164B56B7645FF72ADF52EBE769863 (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5385,7 +5385,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__ctor_mBCFECAFC167164B56B7645F
 		return;
 	}
 }
-// Method Definition Index: 112315
+// Method Definition Index: 112429
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__cctor_mA8EA834131E281ED700587828E90D7F7526F8B37 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5398,15 +5398,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__cctor_mA8EA834131E281ED700587
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:25>
 		int32_t L_0;
 		L_0 = Shader_PropertyToID_mE98523D50F5656CAE89B30695C458253EB8956CA(_stringLiteralECA169E2C11BA4F71637D2E1BF1D8ECAA03E8BF6, NULL);
 		((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___TintId = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:26>
 		int32_t L_1;
 		L_1 = Shader_PropertyToID_mE98523D50F5656CAE89B30695C458253EB8956CA(_stringLiteralD10AAC263EF036088E07DAAD2E19907890583F10, NULL);
 		((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___SkyTintId = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:27>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Modules/SkyModule.cs:27>
 		int32_t L_2;
 		L_2 = Shader_PropertyToID_mE98523D50F5656CAE89B30695C458253EB8956CA(_stringLiteralEB9A43A207EECF86B5802D65091B5C82B984E052, NULL);
 		((SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_StaticFields*)il2cpp_codegen_static_fields_for(SkyModule_t026396A6200B27FC8AD46D928E612B383C006780_il2cpp_TypeInfo_var))->___ExposureId = L_2;
@@ -5621,11 +5621,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_y_mC733E8D49F3CE21
 		return L_0;
 	}
 }
-// Method Definition Index: 112251
+// Method Definition Index: 112365
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* WeatherManager_get_CurrentState_m15F91926F781501FC2658F5B14FA831F189E81DB_inline (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:46>
 		WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* L_0 = __this->____currentState;
 		return L_0;
 	}
@@ -5644,11 +5644,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_mCD6889CDE39F187
 		return;
 	}
 }
-// Method Definition Index: 112253
+// Method Definition Index: 112367
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float WeatherManager_get_TransitionProgress_m381B11E59B7E4DD0EACA5D8FA50BED795E4B6164_inline (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/DynamicWeatherSystem/Runtime/Core/WeatherManager.cs:55>
 		float L_0 = __this->____transitionProgress;
 		return L_0;
 	}

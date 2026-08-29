@@ -15,9 +15,9 @@ assumes).
 The Unity game now has full localization support:
 
 - **English, Arabic, and Urdu** — all 500 trivia questions, fully translated, every level.
-- **Bengali** — partially translated (Levels 1–3 complete, Level 4 partial). The game automatically shows
+- **Bengali** — 499 of 500 questions translated (only `L5-PR-2` is missing). The game automatically shows
   English for any question that isn't translated yet, so switching to Bengali is always safe — it never
-  leaves a level empty, some questions just read in English until translation catches up.
+  leaves a level empty, a missing question just reads in English until translation catches up.
 - **Right-to-left layout and Arabic-script letter joining** for Arabic and Urdu — handled entirely inside
   Unity. You never send a text-direction flag, only the locale code.
 
@@ -186,8 +186,8 @@ Use this same helper for both call sites in §4 and §5 so they can never drift 
    - While the garden is open, change language in Settings without closing the game, and confirm the UI and
      an open (or newly opened) trivia question switch live.
    - Specifically check Arabic and Urdu render right-to-left and Bengali does not.
-   - Specifically try a Level 4–10 question in Bengali and confirm it shows readable English rather than a
-     blank/broken question — this is expected today (see §1), not a bug.
+   - In Bengali, every question should read in Bengali except one (`L5-PR-2`, a Level 5 Prophets question),
+     which shows readable English — this is expected today (see §1), not a bug.
 3. **Backgrounding.** Put the app in the background mid-game, change the system/app language, and resume —
    confirm the next `UNITY_READY` handshake (§4) picks up the new language.
 

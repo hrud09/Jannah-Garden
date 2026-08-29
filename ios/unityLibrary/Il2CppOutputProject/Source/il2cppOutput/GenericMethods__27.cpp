@@ -41,13 +41,16 @@ struct List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206;
 struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
 struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
 struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
 struct TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB;
 struct Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07;
 struct Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235;
 struct BurstCompilerOptions_t5F93118F305E1B0C950C6F9AF8BCA74033DA01C9;
 struct Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3;
+struct CullingAllocationInfo_tB260F5CD0B290F74E145EB16E54B901CC68D9D5A;
 struct Delegate_t;
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
+struct EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8;
 struct IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121;
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
 struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB;
@@ -120,6 +123,12 @@ struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
 {
+};
+struct ArraySlice_1_t173FD3ACCC2631A439B59982D6322FFDC51B753B 
+{
+	uint8_t* ___m_Buffer;
+	int32_t ___m_Stride;
+	int32_t ___m_Length;
 };
 struct HashCode32_1_tD2DD63035F543FDD8643588FA88CD9475D8107B9 
 {
@@ -3411,6 +3420,18 @@ struct HashCode64_1_t25B99E9F7F998CC07CCA13124E03920779BFF803
 		uint8_t HashCode64_1_t9A0E69580DAA2D2CCB4BA575308077FCCE5F2E6E__padding[1];
 	};
 };
+struct AttachmentIndexArray_tDC550BA2CD14AFB3B5545B02331C26903ADA90B5 
+{
+	int32_t ___a0;
+	int32_t ___a1;
+	int32_t ___a2;
+	int32_t ___a3;
+	int32_t ___a4;
+	int32_t ___a5;
+	int32_t ___a6;
+	int32_t ___a7;
+	int32_t ___activeAttachments;
+};
 struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22 
 {
 	bool ___m_value;
@@ -3488,6 +3509,22 @@ struct Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B
 		};
 	};
 };
+struct DepthState_t798415D2C1D9202E555FEE5D4C5FDF6B3A077255 
+{
+	uint8_t ___m_WriteEnabled;
+	int8_t ___m_CompareFunction;
+};
+struct EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 
+{
+	union
+	{
+		struct
+		{
+			int32_t ___m_Data;
+		};
+		uint8_t EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8__padding[4];
+	};
+};
 struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
 {
 };
@@ -3497,6 +3534,43 @@ struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
 struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
 {
 };
+#pragma pack(push, tp, 1)
+struct FixedBytes16Align8_t94D49B0852778B92D3912ABC4979B11ADF6ECEE4 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+				#pragma pack(push, tp, 1)
+				struct
+				{
+					uint64_t ___byte0000;
+				};
+				#pragma pack(pop, tp)
+				struct
+				{
+					uint64_t ___byte0000_forAlignmentOnly;
+				};
+				#pragma pack(push, tp, 1)
+				struct
+				{
+					char ___byte0008_OffsetPadding[8];
+					uint64_t ___byte0008;
+				};
+				#pragma pack(pop, tp)
+				struct
+				{
+					char ___byte0008_OffsetPadding_forAlignmentOnly[8];
+					uint64_t ___byte0008_forAlignmentOnly;
+				};
+			};
+		};
+		uint8_t FixedBytes16Align8_t94D49B0852778B92D3912ABC4979B11ADF6ECEE4__padding[16];
+	};
+};
+#pragma pack(pop, tp)
 struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
 {
 	int32_t ___m_value;
@@ -3533,6 +3607,36 @@ struct Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6
 	float ___m23;
 	float ___m33;
 };
+struct MeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E 
+{
+	uint32_t ___m_IndexStart;
+	uint32_t ___m_IndexCount;
+};
+struct MetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937 
+{
+	int32_t ___NameID;
+	uint32_t ___Value;
+};
+struct Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354 
+{
+	String_t* ___name;
+	int32_t ___utf8ByteCount;
+};
+struct Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354_marshaled_pinvoke
+{
+	char* ___name;
+	int32_t ___utf8ByteCount;
+};
+struct Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354_marshaled_com
+{
+	Il2CppChar* ___name;
+	int32_t ___utf8ByteCount;
+};
+struct PatchExtents_t9F583D220D8803058584E983C416D5706242A2CE 
+{
+	float ___m_min;
+	float ___m_max;
+};
 struct PhysicsBody_tDCDAC059BCC8FF8A057AD9B683E04545D3B191A7 
 {
 	int32_t ___m_Index1;
@@ -3558,12 +3662,132 @@ struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974
 	float ___z;
 	float ___w;
 };
+struct ReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F 
+{
+	void* ___Buffer;
+	int64_t ___Offset;
+	int64_t ___Size;
+};
 struct Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D 
 {
 	float ___m_XMin;
 	float ___m_YMin;
 	float ___m_Width;
 	float ___m_Height;
+};
+struct RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71 
+{
+	int32_t ___m_LowerBound;
+	int32_t ___m_UpperBound;
+};
+struct RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 
+{
+	uint8_t ___m_WriteMask;
+	uint8_t ___m_SourceColorBlendMode;
+	uint8_t ___m_DestinationColorBlendMode;
+	uint8_t ___m_SourceAlphaBlendMode;
+	uint8_t ___m_DestinationAlphaBlendMode;
+	uint8_t ___m_ColorBlendOperation;
+	uint8_t ___m_AlphaBlendOperation;
+	uint8_t ___m_Padding;
+};
+struct ResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC 
+{
+	int32_t ___passId;
+	int32_t ___inputSlot;
+};
+struct ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC 
+{
+	bool ___written;
+	int32_t ___writePassId;
+	int32_t ___numReaders;
+};
+struct ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC_marshaled_pinvoke
+{
+	int32_t ___written;
+	int32_t ___writePassId;
+	int32_t ___numReaders;
+};
+struct ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC_marshaled_com
+{
+	int32_t ___written;
+	int32_t ___writePassId;
+	int32_t ___numReaders;
+};
+struct ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0 
+{
+	int32_t ___m_Id;
+};
+struct SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692 
+{
+	int32_t ___U3CindexU3Ek__BackingField;
+};
+struct Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C 
+{
+	float ___m_value;
+};
+struct SortingLayerRange_t96D04CFB4E8824978FEB2CFFFCFEAC37E56D52C9 
+{
+	int16_t ___m_LowerBound;
+	int16_t ___m_UpperBound;
+};
+struct SphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2 
+{
+	float ___shr0;
+	float ___shr1;
+	float ___shr2;
+	float ___shr3;
+	float ___shr4;
+	float ___shr5;
+	float ___shr6;
+	float ___shr7;
+	float ___shr8;
+	float ___shg0;
+	float ___shg1;
+	float ___shg2;
+	float ___shg3;
+	float ___shg4;
+	float ___shg5;
+	float ___shg6;
+	float ___shg7;
+	float ___shg8;
+	float ___shb0;
+	float ___shb1;
+	float ___shb2;
+	float ___shb3;
+	float ___shb4;
+	float ___shb5;
+	float ___shb6;
+	float ___shb7;
+	float ___shb8;
+};
+struct StencilState_tBE5F7C1134E50C5E93B45A626D4FB4690F1C91A9 
+{
+	uint8_t ___m_Enabled;
+	uint8_t ___m_ReadMask;
+	uint8_t ___m_WriteMask;
+	uint8_t ___m_Padding;
+	uint8_t ___m_CompareFunctionFront;
+	uint8_t ___m_PassOperationFront;
+	uint8_t ___m_FailOperationFront;
+	uint8_t ___m_ZFailOperationFront;
+	uint8_t ___m_CompareFunctionBack;
+	uint8_t ___m_PassOperationBack;
+	uint8_t ___m_FailOperationBack;
+	uint8_t ___m_ZFailOperationBack;
+};
+struct StringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE 
+{
+	int32_t ___Value;
+};
+struct SubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026 
+{
+	int32_t ___cullingSplitIndex;
+	int32_t ___occluderSubviewIndex;
+};
+struct UInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455 
+{
+	uint16_t ___m_value;
 };
 struct UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B 
 {
@@ -3572,6 +3796,10 @@ struct UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B
 struct UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF 
 {
 	uint64_t ___m_value;
+};
+struct UIntPtr_t 
+{
+	void* ____pointer;
 };
 struct Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 
 {
@@ -3671,6 +3899,17 @@ struct ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229
 {
 	void* ___ptr;
 };
+struct U3CshaderPassNamesU3Ee__FixedBuffer_t5EDC823777BDDC9D50E55FF3779FBC1B3820126D 
+{
+	union
+	{
+		struct
+		{
+			int32_t ___FixedElementField;
+		};
+		uint8_t U3CshaderPassNamesU3Ee__FixedBuffer_t5EDC823777BDDC9D50E55FF3779FBC1B3820126D__padding[64];
+	};
+};
 struct SplitInfo_t708E0734C9BC407BA5882105A9721756605C913A 
 {
 	int32_t ___packetCount;
@@ -3680,6 +3919,50 @@ struct GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977
 	uint32_t ___refCount;
 	uint32_t ___hash;
 	int32_t ___geoSlotHandle;
+};
+struct U3C_InvViewProjMatrixU3Ee__FixedBuffer_t84BA561C0A390D42FB00B35F6BE1C962C6F74476 
+{
+	union
+	{
+		struct
+		{
+			float ___FixedElementField;
+		};
+		uint8_t U3C_InvViewProjMatrixU3Ee__FixedBuffer_t84BA561C0A390D42FB00B35F6BE1C962C6F74476__padding[384];
+	};
+};
+struct U3C_MipOffsetAndSizeU3Ee__FixedBuffer_t19F7DC806EA002CD5FAB22FF5C56BA6996373997 
+{
+	union
+	{
+		struct
+		{
+			uint32_t ___FixedElementField;
+		};
+		uint8_t U3C_MipOffsetAndSizeU3Ee__FixedBuffer_t19F7DC806EA002CD5FAB22FF5C56BA6996373997__padding[80];
+	};
+};
+struct U3C_SilhouettePlanesU3Ee__FixedBuffer_t138533E2CBC2A8352DC298BD5645D4B1DC7B0553 
+{
+	union
+	{
+		struct
+		{
+			float ___FixedElementField;
+		};
+		uint8_t U3C_SilhouettePlanesU3Ee__FixedBuffer_t138533E2CBC2A8352DC298BD5645D4B1DC7B0553__padding[96];
+	};
+};
+struct U3C_SrcOffsetU3Ee__FixedBuffer_tB1B1C9C345AE115D9BA814505D76E71BC515BB1E 
+{
+	union
+	{
+		struct
+		{
+			uint32_t ___FixedElementField;
+		};
+		uint8_t U3C_SrcOffsetU3Ee__FixedBuffer_tB1B1C9C345AE115D9BA814505D76E71BC515BB1E__padding[96];
+	};
 };
 struct OccluderContextSlot_t963DBFFF1612E4108D0BEB42369F78758BE71D5D 
 {
@@ -3698,6 +3981,72 @@ struct OccluderContextSlot_t963DBFFF1612E4108D0BEB42369F78758BE71D5D_marshaled_c
 	int32_t ___valid;
 	int32_t ___lastUsedFrameIndex;
 	int32_t ___viewInstanceID;
+};
+struct U3C_FacingDirWorldSpaceU3Ee__FixedBuffer_t2195F26FDAB952B9A94C6FC1F36CD4A370DE00F6 
+{
+	union
+	{
+		struct
+		{
+			float ___FixedElementField;
+		};
+		uint8_t U3C_FacingDirWorldSpaceU3Ee__FixedBuffer_t2195F26FDAB952B9A94C6FC1F36CD4A370DE00F6__padding[96];
+	};
+};
+struct U3C_OccluderMipBoundsU3Ee__FixedBuffer_t369A0CC0F2EADA636FAF26E88452A11643E481EF 
+{
+	union
+	{
+		struct
+		{
+			uint32_t ___FixedElementField;
+		};
+		uint8_t U3C_OccluderMipBoundsU3Ee__FixedBuffer_t369A0CC0F2EADA636FAF26E88452A11643E481EF__padding[128];
+	};
+};
+struct U3C_RadialDirWorldSpaceU3Ee__FixedBuffer_t4F19C8EE6486E94F0A21112400CC138E955DCFF9 
+{
+	union
+	{
+		struct
+		{
+			float ___FixedElementField;
+		};
+		uint8_t U3C_RadialDirWorldSpaceU3Ee__FixedBuffer_t4F19C8EE6486E94F0A21112400CC138E955DCFF9__padding[96];
+	};
+};
+struct U3C_ViewOriginWorldSpaceU3Ee__FixedBuffer_tAA15F0CD1A812C5CB25868532F7F022903331B69 
+{
+	union
+	{
+		struct
+		{
+			float ___FixedElementField;
+		};
+		uint8_t U3C_ViewOriginWorldSpaceU3Ee__FixedBuffer_tAA15F0CD1A812C5CB25868532F7F022903331B69__padding[96];
+	};
+};
+struct U3C_ViewProjMatrixU3Ee__FixedBuffer_t0AA43098E17D71DCD19AFE4EA8D150954292017F 
+{
+	union
+	{
+		struct
+		{
+			float ___FixedElementField;
+		};
+		uint8_t U3C_ViewProjMatrixU3Ee__FixedBuffer_t0AA43098E17D71DCD19AFE4EA8D150954292017F__padding[384];
+	};
+};
+struct U3C_OccluderMipBoundsU3Ee__FixedBuffer_tF1478CF3899AC0E5325B5284FBE53B0FF2454A55 
+{
+	union
+	{
+		struct
+		{
+			uint32_t ___FixedElementField;
+		};
+		uint8_t U3C_OccluderMipBoundsU3Ee__FixedBuffer_tF1478CF3899AC0E5325B5284FBE53B0FF2454A55__padding[128];
+	};
 };
 struct ContactId_t3A8A09CF8F109FB8BFA43C877969F29EDEEF467B 
 {
@@ -3726,6 +4075,17 @@ struct CompiledResourceInfo_t22204344249241C372CFC608709931F7EEEF733C_marshaled_
 	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___consumers;
 	int32_t ___refCount;
 	int32_t ___imported;
+};
+struct U3Cm_CullingPlanesU3Ee__FixedBuffer_tC12F25D54F08F8DA4BD1129A6E4B09385A888B62 
+{
+	union
+	{
+		struct
+		{
+			uint8_t ___FixedElementField;
+		};
+		uint8_t U3Cm_CullingPlanesU3Ee__FixedBuffer_tC12F25D54F08F8DA4BD1129A6E4B09385A888B62__padding[160];
+	};
 };
 struct Slot_tA2F29CF08EAE46C3E2B6D96DCD7C96BF887A6127 
 {
@@ -3779,50 +4139,6 @@ struct U3CdeltasU3Ee__FixedBuffer_t9189F6C63FB9299F51BF1DC871063D115B1BBE6E
 		uint8_t U3CdeltasU3Ee__FixedBuffer_t9189F6C63FB9299F51BF1DC871063D115B1BBE6E__padding[32];
 	};
 };
-struct U3CpadU3Ee__FixedBuffer_tE1F0808687A85B405FBC6386F9E573A3C1479CB9 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CpadU3Ee__FixedBuffer_tE1F0808687A85B405FBC6386F9E573A3C1479CB9__padding[32];
-	};
-};
-struct U3CshapeOU3Ee__FixedBuffer_t67C12CF2E107A64DB6C84D6B0C92DB3AB4E50E3B 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CshapeOU3Ee__FixedBuffer_t67C12CF2E107A64DB6C84D6B0C92DB3AB4E50E3B__padding[32];
-	};
-};
-struct U3CshapeXU3Ee__FixedBuffer_tC3B7180863255786C189752D64FDE7018270DAB1 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CshapeXU3Ee__FixedBuffer_tC3B7180863255786C189752D64FDE7018270DAB1__padding[32];
-	};
-};
-struct U3CstrideXU3Ee__FixedBuffer_t7A18DEA50EE59E076255D35A4DACD7CEC42F455B 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CstrideXU3Ee__FixedBuffer_t7A18DEA50EE59E076255D35A4DACD7CEC42F455B__padding[32];
-	};
-};
 struct U3CoutputShapeU3Ee__FixedBuffer_t21A74D733C9FDC6188239B1C39490395B5B972F9 
 {
 	union
@@ -3845,57 +4161,51 @@ struct U3CoutputShapeU3Ee__FixedBuffer_t0F32BE15E4EB3733BDC54DC98220403C6952657F
 		uint8_t U3CoutputShapeU3Ee__FixedBuffer_t0F32BE15E4EB3733BDC54DC98220403C6952657F__padding[12];
 	};
 };
-struct U3CsizeU3Ee__FixedBuffer_tABB83B4D5E8B7D73944DF5352BC4BDB28D3E579E 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CsizeU3Ee__FixedBuffer_tABB83B4D5E8B7D73944DF5352BC4BDB28D3E579E__padding[32];
-	};
-};
-struct U3CstrideU3Ee__FixedBuffer_t113BA6AAB5B5213DF3703465A897B0DA3E25AF26 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CstrideU3Ee__FixedBuffer_t113BA6AAB5B5213DF3703465A897B0DA3E25AF26__padding[32];
-	};
-};
-struct U3CcountsU3Ee__FixedBuffer_t5BBA1FD2FF3E7420E376F88FFB74E7D4E71C5723 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CcountsU3Ee__FixedBuffer_t5BBA1FD2FF3E7420E376F88FFB74E7D4E71C5723__padding[32];
-	};
-};
-struct U3CstridesU3Ee__FixedBuffer_t6151165D39279EB8BD8734AC5C678BE415DB15A2 
-{
-	union
-	{
-		struct
-		{
-			int32_t ___FixedElementField;
-		};
-		uint8_t U3CstridesU3Ee__FixedBuffer_t6151165D39279EB8BD8734AC5C678BE415DB15A2__padding[32];
-	};
-};
 struct FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA39BB4AEDECFCB2 
 {
 	intptr_t ____ptr;
 };
+struct NativeCustomSlice_1_t00144D7121E64139E2BBFAEB4BA01FB646F1A71B 
+{
+	intptr_t ___data;
+	int32_t ___length;
+	int32_t ___stride;
+};
+struct NativeCustomSlice_1_t0D6722C6A546C76474543C10D2E576E494D019A8 
+{
+	intptr_t ___data;
+	int32_t ___length;
+	int32_t ___stride;
+};
+struct NativeCustomSlice_1_tB3DF9F46AA60E8412DC5B89CC7878A4BE49ABA45 
+{
+	intptr_t ___data;
+	int32_t ___length;
+	int32_t ___stride;
+};
+struct NativeCustomSlice_1_t553B89694440B1C5C7DF7F314D7A0711AE7A0783 
+{
+	intptr_t ___data;
+	int32_t ___length;
+	int32_t ___stride;
+};
+struct NativeCustomSlice_1_t1BD4A99A5C57F16086ACE5EED91D969C19693921 
+{
+	intptr_t ___data;
+	int32_t ___length;
+	int32_t ___stride;
+};
 struct UnsafeList_1_t5C65DCA6782B7C9860C859C2F0C07A2C497E822D 
 {
 	uint8_t* ___Ptr;
+	int32_t ___m_length;
+	int32_t ___m_capacity;
+	AllocatorHandle_t3CA09720B1F89F91A8DDBA95E74C28A1EC3E3148 ___Allocator;
+	int32_t ___padding;
+};
+struct UnsafeList_1_t239C74D869DA59B0CA5E63716E71208DEC68A70B 
+{
+	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8* ___Ptr;
 	int32_t ___m_length;
 	int32_t ___m_capacity;
 	AllocatorHandle_t3CA09720B1F89F91A8DDBA95E74C28A1EC3E3148 ___Allocator;
@@ -3909,6 +4219,14 @@ struct UnsafeList_1_tBB6961066733E78B8C22E5C4D4D5FF9A581981D1
 	AllocatorHandle_t3CA09720B1F89F91A8DDBA95E74C28A1EC3E3148 ___Allocator;
 	int32_t ___padding;
 };
+struct AccessFlags_tB7D400C853C05A1DB9C6B56DF14E43721F0B1739 
+{
+	int32_t ___value__;
+};
+struct Allocator_t996642592271AAD9EE688F142741D512C07B5824 
+{
+	int32_t ___value__;
+};
 struct AsyncGPUReadbackRequest_t6A735D3E0F1DEF8F43EBD0E6FE550FAE564519C7 
 {
 	intptr_t ___m_Ptr;
@@ -3918,16 +4236,30 @@ struct BatchCullingViewType_tAC2682BF9A489DF44A8960693303B47248C252CF
 {
 	int32_t ___value__;
 };
+struct BlendState_tC9B817349E49EF26CBCDC8FCE02789A661DC2630 
+{
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState0;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState1;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState2;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState3;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState4;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState5;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState6;
+	RenderTargetBlendState_t51229A3F09EE698F8E49731F1BC5BB77DBEDC4C7 ___m_BlendState7;
+	uint8_t ___m_SeparateMRTBlendStates;
+	uint8_t ___m_AlphaToMask;
+	int16_t ___m_Padding;
+};
 struct Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Center;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Extents;
 };
-struct CallingConvention_tCACC30B83FAF3EA430B143C8D8F9A9B7D41A05C6 
+struct BuiltinRenderTextureType_t3D56813CAC7C6E4AC3B438039BD1CE7E62FE7C4E 
 {
 	int32_t ___value__;
 };
-struct CenterPointBox_t9C4EAC7AD81FE5914074C0D6D1574DA35843277D 
+struct CallingConvention_tCACC30B83FAF3EA430B143C8D8F9A9B7D41A05C6 
 {
 	int32_t ___value__;
 };
@@ -3949,6 +4281,19 @@ struct ColorPage_t7C2B8995DE8D27CED5E55F7BFE4E6C70C971FAE0_marshaled_com
 struct CoordTransformMode_tED178C7E6F1EAAEAAA0211F9DB152AA31C440A74 
 {
 	int32_t ___value__;
+};
+struct CubemapFace_t300D6E2CD7DF60D44AA28338748B607677ED1D1B 
+{
+	int32_t ___value__;
+};
+struct CullMode_t049B71889E4E981866E205A3F71DC8B856306D50 
+{
+	int32_t ___value__;
+};
+struct CullingResults_tD6B7EF20B68D47DFF3A99EB2EA73F47F1D460267 
+{
+	intptr_t ___ptr;
+	CullingAllocationInfo_tB260F5CD0B290F74E145EB16E54B901CC68D9D5A* ___m_AllocationInfo;
 };
 struct DataType_t465FE87B58C13D0EFE69CECA5741ADC8CF3FECC7 
 {
@@ -4001,6 +4346,14 @@ struct Delegate_t_marshaled_com
 	MethodInfo_t* ___original_method_info;
 	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
 	int32_t ___method_is_virtual;
+};
+struct DistanceMetric_t071B9815BB961E33F7CA2C553CA725F61AE09EDE 
+{
+	int32_t ___value__;
+};
+struct DrawRendererFlags_t3AD0574208BFF93F323D5E1E92012F19EAE972CD 
+{
+	int32_t ___value__;
 };
 struct Exception_t  : public RuntimeObject
 {
@@ -4063,11 +4416,62 @@ struct ExtendedFeatureFlags_t736CECC24E1DDF78CDF8A2B134DFF9B1CA2BE01F
 {
 	int32_t ___value__;
 };
+struct FilteringSettings_t75860B12A7BCF9A0E2F13CB2C2E5DCD9E1EEAD9F 
+{
+	RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71 ___m_RenderQueueRange;
+	int32_t ___m_LayerMask;
+	uint32_t ___m_RenderingLayerMask;
+	uint32_t ___m_BatchLayerMask;
+	int32_t ___m_ExcludeMotionVectorObjects;
+	int32_t ___m_ForceAllMotionVectorObjects;
+	SortingLayerRange_t96D04CFB4E8824978FEB2CFFFCFEAC37E56D52C9 ___m_SortingLayerRange;
+};
+#pragma pack(push, tp, 1)
+struct FixedBytes32Align8_t07C7D543B487721FF9B88AD85209956AE423A779 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+				#pragma pack(push, tp, 1)
+				struct
+				{
+					FixedBytes16Align8_t94D49B0852778B92D3912ABC4979B11ADF6ECEE4 ___offset0000;
+				};
+				#pragma pack(pop, tp)
+				struct
+				{
+					FixedBytes16Align8_t94D49B0852778B92D3912ABC4979B11ADF6ECEE4 ___offset0000_forAlignmentOnly;
+				};
+				#pragma pack(push, tp, 1)
+				struct
+				{
+					char ___offset0016_OffsetPadding[16];
+					FixedBytes16Align8_t94D49B0852778B92D3912ABC4979B11ADF6ECEE4 ___offset0016;
+				};
+				#pragma pack(pop, tp)
+				struct
+				{
+					char ___offset0016_OffsetPadding_forAlignmentOnly[16];
+					FixedBytes16Align8_t94D49B0852778B92D3912ABC4979B11ADF6ECEE4 ___offset0016_forAlignmentOnly;
+				};
+			};
+		};
+		uint8_t FixedBytes32Align8_t07C7D543B487721FF9B88AD85209956AE423A779__padding[32];
+	};
+};
+#pragma pack(pop, tp)
 struct GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC 
 {
 	intptr_t ___handle;
 };
 struct GraphicsFenceType_t8C3F229DC2BE62FA78724BA3D35FFCB3A64F7E0A 
+{
+	int32_t ___value__;
+};
+struct GraphicsFormat_tC3D1898F3F3F1F57256C7F3FFD6BA9A37AE7E713 
 {
 	int32_t ___value__;
 };
@@ -4083,11 +4487,112 @@ struct LightType_t2D4D43054E7473EECEB54493C0055AE074780234
 {
 	int32_t ___value__;
 };
-struct OcclusionTest_tFF967683F812A2788B5C8A9A220B83B43060435E 
+struct LoadReason_t6890871E119ACAB707211201A00DE631CA266CF9 
 {
 	int32_t ___value__;
 };
-struct PadMode_t661A40B9229C31243DE2577F0322BCD39E921ABA 
+struct MeshTopology_t815FF5CF04D62195A23E2DF8A5C0A071F11FBCBF 
+{
+	int32_t ___value__;
+};
+struct MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___normal;
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___uv;
+};
+struct ModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960 
+{
+	intptr_t ___actor;
+	intptr_t ___otherActor;
+	intptr_t ___shape;
+	intptr_t ___otherShape;
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___otherRotation;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___otherPosition;
+	int32_t ___numContacts;
+	intptr_t ___contacts;
+};
+struct MotionVectorGenerationMode_tE87C61556749260EF5429A0F8FE55DAD30EEAFCB 
+{
+	int32_t ___value__;
+};
+struct NudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022 
+{
+	intptr_t ___headSrc;
+	intptr_t ___headDst;
+	int32_t ___headCount;
+	intptr_t ___tailSrc;
+	intptr_t ___tailDst;
+	int32_t ___tailCount;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___transform;
+};
+struct OccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627 
+{
+	U3C_InvViewProjMatrixU3Ee__FixedBuffer_t84BA561C0A390D42FB00B35F6BE1C962C6F74476 ____InvViewProjMatrix;
+	U3C_SilhouettePlanesU3Ee__FixedBuffer_t138533E2CBC2A8352DC298BD5645D4B1DC7B0553 ____SilhouettePlanes;
+	U3C_SrcOffsetU3Ee__FixedBuffer_tB1B1C9C345AE115D9BA814505D76E71BC515BB1E ____SrcOffset;
+	U3C_MipOffsetAndSizeU3Ee__FixedBuffer_t19F7DC806EA002CD5FAB22FF5C56BA6996373997 ____MipOffsetAndSize;
+	uint32_t ____OccluderMipLayoutSizeX;
+	uint32_t ____OccluderMipLayoutSizeY;
+	uint32_t ____OccluderDepthPyramidPad0;
+	uint32_t ____OccluderDepthPyramidPad1;
+	uint32_t ____SrcSliceIndices;
+	uint32_t ____DstSubviewIndices;
+	uint32_t ____MipCount;
+	uint32_t ____SilhouettePlaneCount;
+};
+struct OccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933 
+{
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___viewProjMatrix;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___viewOriginWorldSpace;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___radialDirWorldSpace;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___facingDirWorldSpace;
+};
+struct OccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB 
+{
+	Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___offset;
+	Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___size;
+};
+struct OccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7 
+{
+	int32_t ___subviewIndex;
+	int32_t ___depthSliceIndex;
+	Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___depthOffset;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___viewMatrix;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___invViewMatrix;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___gpuProjMatrix;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___viewOffsetWorldSpace;
+};
+struct OcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74 
+{
+	U3C_OccluderMipBoundsU3Ee__FixedBuffer_t369A0CC0F2EADA636FAF26E88452A11643E481EF ____OccluderMipBounds;
+	U3C_ViewProjMatrixU3Ee__FixedBuffer_t0AA43098E17D71DCD19AFE4EA8D150954292017F ____ViewProjMatrix;
+	U3C_ViewOriginWorldSpaceU3Ee__FixedBuffer_tAA15F0CD1A812C5CB25868532F7F022903331B69 ____ViewOriginWorldSpace;
+	U3C_FacingDirWorldSpaceU3Ee__FixedBuffer_t2195F26FDAB952B9A94C6FC1F36CD4A370DE00F6 ____FacingDirWorldSpace;
+	U3C_RadialDirWorldSpaceU3Ee__FixedBuffer_t4F19C8EE6486E94F0A21112400CC138E955DCFF9 ____RadialDirWorldSpace;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ____DepthSizeInOccluderPixels;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ____OccluderDepthPyramidSize;
+	uint32_t ____OccluderMipLayoutSizeX;
+	uint32_t ____OccluderMipLayoutSizeY;
+	uint32_t ____OcclusionTestDebugFlags;
+	uint32_t ____OcclusionCullingCommonPad0;
+	int32_t ____OcclusionTestCount;
+	int32_t ____OccluderSubviewIndices;
+	int32_t ____CullingSplitIndices;
+	int32_t ____CullingSplitMask;
+};
+struct OcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185 
+{
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ____DepthSizeInOccluderPixels;
+	U3C_OccluderMipBoundsU3Ee__FixedBuffer_tF1478CF3899AC0E5325B5284FBE53B0FF2454A55 ____OccluderMipBounds;
+	uint32_t ____OccluderMipLayoutSizeX;
+	uint32_t ____OccluderMipLayoutSizeY;
+	uint32_t ____OcclusionCullingDebugPad0;
+	uint32_t ____OcclusionCullingDebugPad1;
+};
+struct OcclusionTest_tFF967683F812A2788B5C8A9A220B83B43060435E 
 {
 	int32_t ___value__;
 };
@@ -4095,9 +4600,92 @@ struct PaddingMode_tF78D70D92FED02EE1192234C4028453B29E06D57
 {
 	int32_t ___value__;
 };
+struct PassBreakReason_t57DD36F9EC4ED3DA89A4740BE8C32987018CF808 
+{
+	int32_t ___value__;
+};
+struct PassMergeState_t7815130D2990D177421E7CB405CE173EC704A117 
+{
+	int32_t ___value__;
+};
+struct PerObjectData_t04DDCBE9ABF1113E8F9BAFCF4A7F94DD841B9CC9 
+{
+	int32_t ___value__;
+};
+struct PerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0 
+{
+	int32_t ___deformVerticesStartPos;
+	int2_tF4AC25F87943DC0B2BB3456B0B919B3B42A9432A ___bindPosesIndex;
+	int2_tF4AC25F87943DC0B2BB3456B0B919B3B42A9432A ___verticesIndex;
+};
 struct PhysicsRotate_tC2E9C9A6A76056D2DA0765D0FF6D3A4AA3EE0A0F 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___direction;
+};
+struct Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Normal;
+	float ___m_Distance;
+};
+struct PositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___tangent;
+};
+struct PositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+};
+struct RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Point;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Normal;
+	uint32_t ___m_FaceID;
+	float ___m_Distance;
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_UV;
+	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___m_Collider;
+};
+struct RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA 
+{
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_Centroid;
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_Point;
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_Normal;
+	float ___m_Distance;
+	float ___m_Fraction;
+	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___m_Collider;
+};
+struct RenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551 
+{
+	int32_t ___m_RenderTextureInstanceID;
+	intptr_t ___m_BufferPtr;
+};
+struct RenderBufferLoadAction_t3333B2CABABAC39DA0CDC25602E5E4FD93C2CB0E 
+{
+	int32_t ___value__;
+};
+struct RenderBufferStoreAction_t87683F22C09634E24A574F21F42037C953A2C8B7 
+{
+	int32_t ___value__;
+};
+struct RenderGraphPassType_tD00EC2DAA135C660EE7E71652291A4672104EA2D 
+{
+	int32_t ___value__;
+};
+struct RenderGraphResourceType_t5F552AF06E38DEC5775B77F13C8783A895FCD086 
+{
+	int32_t ___value__;
+};
+struct RenderStateMask_tC9C95BF62EADEE4D622D4E16CDE1DF94E2A9EF57 
+{
+	int32_t ___value__;
+};
+struct RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 
+{
+	uintptr_t ___context;
+	uint32_t ___index;
+	uint32_t ___frame;
+	uint32_t ___type;
+	uint32_t ___contextID;
 };
 struct RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B 
 {
@@ -4106,6 +4694,100 @@ struct RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B
 struct ScaleMode_t16AD656758EE54C56B3DA34FE4F2033C9C2EE13D 
 {
 	int32_t ___value__;
+};
+struct ShadingRateCombiner_tF7F5DDD676DF45F67B2A7BC7F14373F4DFAD2B1C 
+{
+	int32_t ___value__;
+};
+struct ShadingRateFragmentSize_tE61BBA9B957F4537F04519746FCABE0F5FA94C9F 
+{
+	int32_t ___value__;
+};
+struct ShadowCastingMode_tF30806698B37CF120A1A506BD7549EAF308E7C6D 
+{
+	int32_t ___value__;
+};
+struct ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF 
+{
+	int32_t ___m_CullingPlaneCount;
+	U3Cm_CullingPlanesU3Ee__FixedBuffer_tC12F25D54F08F8DA4BD1129A6E4B09385A888B62 ___m_CullingPlanes;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___m_CullingSphere;
+	float ___m_ShadowCascadeBlendCullingFactor;
+	float ___m_CullingNearPlane;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___m_CullingMatrix;
+};
+struct SortingCriteria_t4907D221CB6E6AA4A32C1ED7B5D17103FD3E7C39 
+{
+	int32_t ___value__;
+};
+struct StoreReason_tB71F110DFEED47ED8929B7874BE46BD4AFA9D5AC 
+{
+	int32_t ___value__;
+};
+struct SubPassFlags_tB4066DF82B36110B6163EB5C3A48F49FD4DD3AE5 
+{
+	int32_t ___value__;
+};
+struct TextCoreVertex_t012334F340F916622ED5237971E8BA32198060E4 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___color;
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___uv0;
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___uv2;
+};
+struct TextureUVOriginSelection_t885C52C74C02CA1A0D3D9FDB10D05A1BFBCD7F81 
+{
+	int32_t ___value__;
+};
+struct TransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18 
+{
+	float4_t89D9A294E7A79BD81BFBDD18654508532958555E ___localToWorld0;
+	float4_t89D9A294E7A79BD81BFBDD18654508532958555E ___localToWorld1;
+	float4_t89D9A294E7A79BD81BFBDD18654508532958555E ___localToWorld2;
+};
+struct TreeInstance_t382B018173ED020660D262061EA9424682614F50 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+	float ___widthScale;
+	float ___heightScale;
+	float ___rotation;
+	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___color;
+	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___lightmapColor;
+	int32_t ___prototypeIndex;
+	float ___temporaryDistance;
+};
+struct UCircle_tC29A5FA379CDA3DB1DC29260A1A6F2998CFE8C6A 
+{
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___center;
+	float ___radius;
+};
+struct UEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95 
+{
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___a;
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___b;
+	int32_t ___index;
+};
+struct UEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48 
+{
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___a;
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___b;
+	int32_t ___idx;
+	int32_t ___type;
+};
+struct UHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE 
+{
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___a;
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___b;
+	int32_t ___idx;
+	ArraySlice_1_t173FD3ACCC2631A439B59982D6322FFDC51B753B ___ilarray;
+	int32_t ___ilcount;
+	ArraySlice_1_t173FD3ACCC2631A439B59982D6322FFDC51B753B ___iuarray;
+	int32_t ___iucount;
+};
+struct UStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9 
+{
+	ArraySlice_1_t173FD3ACCC2631A439B59982D6322FFDC51B753B ___points;
+	int32_t ___pointCount;
 };
 struct Vertex_t016AC68A2E6C62576E65412BEC71544AFC01AFC7 
 {
@@ -4603,34 +5285,6 @@ struct MelWeightMatrixJob_t6EC61E51F60FE83ADBBC94AB7002C191335E7160
 	float ___melStep;
 	int32_t ___sampleRate;
 };
-struct MishJob_t86023F361852454073185EE5B7A697DE7A757D1F 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct PadParameters_tA9449C98448343723C4C462CA5A6CC030821662F 
-{
-	U3CshapeXU3Ee__FixedBuffer_tC3B7180863255786C189752D64FDE7018270DAB1 ___shapeX;
-	U3CshapeOU3Ee__FixedBuffer_t67C12CF2E107A64DB6C84D6B0C92DB3AB4E50E3B ___shapeO;
-	U3CstrideXU3Ee__FixedBuffer_t7A18DEA50EE59E076255D35A4DACD7CEC42F455B ___strideX;
-	U3CpadU3Ee__FixedBuffer_tE1F0808687A85B405FBC6386F9E573A3C1479CB9 ___pad;
-	int32_t ___lastIndex;
-};
 struct RandomNormalJob_t08D6922F50C78F3F3589F390FCCEDABC5140E3A6 
 {
 	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
@@ -4657,149 +5311,6 @@ struct RangeIntJob_tA1E9F335823734524CB496FA200FB310330F8BE2
 	int32_t ___start;
 	int32_t ___delta;
 };
-struct ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-	float ___normalization;
-};
-struct ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-	float ___normalization;
-};
-struct ReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct ReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct Relu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct ReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
 struct ResizeLinearJob_t064E997E23B439E5C807B64756E7227127D8FBF6 
 {
 	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
@@ -4818,154 +5329,10 @@ struct ResizeNearestJob_t13E28F4736F67A383CD47305173AD0FBB8BC826A
 	int32_t ___inputSize;
 	U3CoutputShapeU3Ee__FixedBuffer_t0F32BE15E4EB3733BDC54DC98220403C6952657F ___outputShape;
 };
-struct RoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct RsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct ScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	float ___s;
-	float ___b;
-};
-struct ScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___s;
-	int32_t ___b;
-};
-struct SeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	float ___alpha;
-	float ___gamma;
-};
 struct SetJob_t6AB5B0B64C8502F38ECFF8FDF86DE73520FE0504 
 {
 	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
 	int32_t ___memValue;
-};
-struct ShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	float ___bias;
-	float ___lambd;
-};
-struct SigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SinJob_t9629A92338DE2387D236C2707B378E6009DC46EA 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SliceParameters_tF1900EBD82F29BD36E323BD3380BE695792D8FFF 
-{
-	U3CsizeU3Ee__FixedBuffer_tABB83B4D5E8B7D73944DF5352BC4BDB28D3E579E ___size;
-	U3CstrideU3Ee__FixedBuffer_t113BA6AAB5B5213DF3703465A897B0DA3E25AF26 ___stride;
-	int32_t ___offset;
-	int32_t ___rank;
-};
-struct SoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___reduceLength;
-	int32_t ___innerLength;
-};
-struct SoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct SwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	float ___alpha;
-};
-struct TanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct TanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct ThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	float ___alpha;
-};
-struct TransposeIterator_tBE5F9DBA957B86872BA6C684FAE3C32C55A9A004 
-{
-	U3CcountsU3Ee__FixedBuffer_t5BBA1FD2FF3E7420E376F88FFB74E7D4E71C5723 ___counts;
-	U3CstridesU3Ee__FixedBuffer_t6151165D39279EB8BD8734AC5C678BE415DB15A2 ___strides;
-	uint32_t ___lastIndex;
-};
-struct TruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-};
-struct UpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___inputHeight;
-	int32_t ___inputWidth;
-	int32_t ___scaleHeight;
-	int32_t ___scaleWidth;
 };
 struct PlanePacket4_t2954005DBF78AC180CF45B652536CC2F5158D54B 
 {
@@ -5071,10 +5438,6 @@ struct SettingsOptions_t935A71692F21EE9D959FCAC00574AA018F8BA2CB
 {
 	uint16_t ___value__;
 };
-struct Mode_t50207B564B373B2C291160840C043226FD4E03E8 
-{
-	int32_t ___value__;
-};
 struct PointElement_tFE435D22E766645936C545EC265D1E41C047D9DE 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___position;
@@ -5082,16 +5445,408 @@ struct PointElement_tFE435D22E766645936C545EC265D1E41C047D9DE
 	float ___elementDepth;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___color;
 };
+struct FixedList32Bytes_1_t02D797FE0EF11E83016BA95DD7B282490C8A472E 
+{
+	alignas(8) FixedBytes32Align8_t07C7D543B487721FF9B88AD85209956AE423A779 ___data;
+};
+struct NativeArray_1_t0AB49EE6A37F6BC668C15EDFBE9BE92A22B2F0DB 
+{
+	void* ___m_Buffer;
+	int32_t ___m_Length;
+	int32_t ___m_AllocatorLabel;
+};
+struct NativeArray_1_t5576C5C8F17BB3E1BA11BBA3EC50A55FC1246445 
+{
+	void* ___m_Buffer;
+	int32_t ___m_Length;
+	int32_t ___m_AllocatorLabel;
+};
+struct NativeArray_1_t9B7A94FA050F43A3996B812B9164E7885F38ADC3 
+{
+	void* ___m_Buffer;
+	int32_t ___m_Length;
+	int32_t ___m_AllocatorLabel;
+};
 struct GraphicsFence_t199180163AEDE0C1BE868F8E1314A47610B1FABB 
 {
 	intptr_t ___m_Ptr;
 	int32_t ___m_Version;
 	int32_t ___m_FenceType;
 };
+struct LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C 
+{
+	int32_t ___reason;
+	int32_t ___passId;
+};
+struct NativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9 
+{
+	int32_t ___glyphID;
+	TextCoreVertex_t012334F340F916622ED5237971E8BA32198060E4 ___bottomLeft;
+	TextCoreVertex_t012334F340F916622ED5237971E8BA32198060E4 ___topLeft;
+	TextCoreVertex_t012334F340F916622ED5237971E8BA32198060E4 ___topRight;
+	TextCoreVertex_t012334F340F916622ED5237971E8BA32198060E4 ___bottomRight;
+};
+struct PassBreakAudit_t86F0837A5B639D308588333370DEB00AB5933A76 
+{
+	int32_t ___reason;
+	int32_t ___breakPass;
+};
+struct PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD 
+{
+	int32_t ___passId;
+	int32_t ___type;
+	bool ___hasFoveatedRasterization;
+	int32_t ___extendedFeatureFlags;
+	int32_t ___tag;
+	int32_t ___shadingRateFragmentSize;
+	int32_t ___primitiveShadingRateCombiner;
+	int32_t ___fragmentShadingRateCombiner;
+	int32_t ___mergeState;
+	int32_t ___nativePassIndex;
+	int32_t ___nativeSubPassIndex;
+	int32_t ___firstInput;
+	int32_t ___numInputs;
+	int32_t ___firstOutput;
+	int32_t ___numOutputs;
+	int32_t ___firstFragment;
+	int32_t ___numFragments;
+	int32_t ___firstFragmentInput;
+	int32_t ___numFragmentInputs;
+	int32_t ___firstSampledOnlyRaster;
+	int32_t ___numSampledOnlyRaster;
+	int32_t ___firstRandomAccessResource;
+	int32_t ___numRandomAccessResources;
+	int32_t ___firstCreate;
+	int32_t ___numCreated;
+	int32_t ___firstDestroy;
+	int32_t ___numDestroyed;
+	int32_t ___shadingRateImageIndex;
+	int32_t ___fragmentInfoWidth;
+	int32_t ___fragmentInfoHeight;
+	int32_t ___fragmentInfoVolumeDepth;
+	int32_t ___fragmentInfoSamples;
+	int32_t ___waitOnGraphicsFencePassId;
+	int32_t ___awaitingMyGraphicsFencePassId;
+	bool ___asyncCompute;
+	bool ___hasSideEffects;
+	bool ___culled;
+	bool ___beginNativeSubpass;
+	bool ___fragmentInfoValid;
+	bool ___fragmentInfoHasDepth;
+	bool ___insertGraphicsFence;
+	bool ___hasShadingRateStates;
+};
+struct PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD_marshaled_pinvoke
+{
+	int32_t ___passId;
+	int32_t ___type;
+	int32_t ___hasFoveatedRasterization;
+	int32_t ___extendedFeatureFlags;
+	int32_t ___tag;
+	int32_t ___shadingRateFragmentSize;
+	int32_t ___primitiveShadingRateCombiner;
+	int32_t ___fragmentShadingRateCombiner;
+	int32_t ___mergeState;
+	int32_t ___nativePassIndex;
+	int32_t ___nativeSubPassIndex;
+	int32_t ___firstInput;
+	int32_t ___numInputs;
+	int32_t ___firstOutput;
+	int32_t ___numOutputs;
+	int32_t ___firstFragment;
+	int32_t ___numFragments;
+	int32_t ___firstFragmentInput;
+	int32_t ___numFragmentInputs;
+	int32_t ___firstSampledOnlyRaster;
+	int32_t ___numSampledOnlyRaster;
+	int32_t ___firstRandomAccessResource;
+	int32_t ___numRandomAccessResources;
+	int32_t ___firstCreate;
+	int32_t ___numCreated;
+	int32_t ___firstDestroy;
+	int32_t ___numDestroyed;
+	int32_t ___shadingRateImageIndex;
+	int32_t ___fragmentInfoWidth;
+	int32_t ___fragmentInfoHeight;
+	int32_t ___fragmentInfoVolumeDepth;
+	int32_t ___fragmentInfoSamples;
+	int32_t ___waitOnGraphicsFencePassId;
+	int32_t ___awaitingMyGraphicsFencePassId;
+	int32_t ___asyncCompute;
+	int32_t ___hasSideEffects;
+	int32_t ___culled;
+	int32_t ___beginNativeSubpass;
+	int32_t ___fragmentInfoValid;
+	int32_t ___fragmentInfoHasDepth;
+	int32_t ___insertGraphicsFence;
+	int32_t ___hasShadingRateStates;
+};
+struct PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD_marshaled_com
+{
+	int32_t ___passId;
+	int32_t ___type;
+	int32_t ___hasFoveatedRasterization;
+	int32_t ___extendedFeatureFlags;
+	int32_t ___tag;
+	int32_t ___shadingRateFragmentSize;
+	int32_t ___primitiveShadingRateCombiner;
+	int32_t ___fragmentShadingRateCombiner;
+	int32_t ___mergeState;
+	int32_t ___nativePassIndex;
+	int32_t ___nativeSubPassIndex;
+	int32_t ___firstInput;
+	int32_t ___numInputs;
+	int32_t ___firstOutput;
+	int32_t ___numOutputs;
+	int32_t ___firstFragment;
+	int32_t ___numFragments;
+	int32_t ___firstFragmentInput;
+	int32_t ___numFragmentInputs;
+	int32_t ___firstSampledOnlyRaster;
+	int32_t ___numSampledOnlyRaster;
+	int32_t ___firstRandomAccessResource;
+	int32_t ___numRandomAccessResources;
+	int32_t ___firstCreate;
+	int32_t ___numCreated;
+	int32_t ___firstDestroy;
+	int32_t ___numDestroyed;
+	int32_t ___shadingRateImageIndex;
+	int32_t ___fragmentInfoWidth;
+	int32_t ___fragmentInfoHeight;
+	int32_t ___fragmentInfoVolumeDepth;
+	int32_t ___fragmentInfoSamples;
+	int32_t ___waitOnGraphicsFencePassId;
+	int32_t ___awaitingMyGraphicsFencePassId;
+	int32_t ___asyncCompute;
+	int32_t ___hasSideEffects;
+	int32_t ___culled;
+	int32_t ___beginNativeSubpass;
+	int32_t ___fragmentInfoValid;
+	int32_t ___fragmentInfoHasDepth;
+	int32_t ___insertGraphicsFence;
+	int32_t ___hasShadingRateStates;
+};
 struct PhysicsTransform_tC034E6903DE863628D032D2452AD049859CE9F6F 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___position;
 	PhysicsRotate_tC2E9C9A6A76056D2DA0765D0FF6D3A4AA3EE0A0F ___rotation;
+};
+struct RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C 
+{
+	uint8_t ___layer;
+	uint32_t ___renderingLayerMask;
+	int32_t ___motionMode;
+	int32_t ___shadowCastingMode;
+	bool ___staticShadowCaster;
+	int32_t ___rendererPriority;
+	bool ___supportsIndirect;
+};
+struct RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C_marshaled_pinvoke
+{
+	uint8_t ___layer;
+	uint32_t ___renderingLayerMask;
+	int32_t ___motionMode;
+	int32_t ___shadowCastingMode;
+	int32_t ___staticShadowCaster;
+	int32_t ___rendererPriority;
+	int32_t ___supportsIndirect;
+};
+struct RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C_marshaled_com
+{
+	uint8_t ___layer;
+	uint32_t ___renderingLayerMask;
+	int32_t ___motionMode;
+	int32_t ___shadowCastingMode;
+	int32_t ___staticShadowCaster;
+	int32_t ___rendererPriority;
+	int32_t ___supportsIndirect;
+};
+struct RasterState_tA30E8336EA5D1E2152A6C7252F15384985B98A26 
+{
+	int32_t ___m_CullingMode;
+	int32_t ___m_OffsetUnits;
+	float ___m_OffsetFactor;
+	uint8_t ___m_DepthClip;
+	uint8_t ___m_Conservative;
+	uint8_t ___m_Padding1;
+	uint8_t ___m_Padding2;
+};
+struct RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B 
+{
+	int32_t ___m_Type;
+	int32_t ___m_NameID;
+	int32_t ___m_InstanceID;
+	intptr_t ___m_BufferPointer;
+	int32_t ___m_MipLevel;
+	int32_t ___m_CubeFace;
+	int32_t ___m_DepthSlice;
+};
+struct RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68 
+{
+	RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 ___rendererList;
+	bool ___isActive;
+};
+struct RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68_marshaled_pinvoke
+{
+	RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 ___rendererList;
+	int32_t ___isActive;
+};
+struct RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68_marshaled_com
+{
+	RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 ___rendererList;
+	int32_t ___isActive;
+};
+struct ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C 
+{
+	uint32_t ___m_Value;
+	int32_t ___m_Version;
+	int32_t ___m_Type;
+};
+struct ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC 
+{
+	bool ___isImported;
+	bool ___isShared;
+	int32_t ___tag;
+	int32_t ___lastUsePassID;
+	int32_t ___lastWritePassID;
+	int32_t ___firstUsePassID;
+	bool ___memoryLess;
+	int32_t ___width;
+	int32_t ___height;
+	int32_t ___volumeDepth;
+	int32_t ___msaaSamples;
+	int32_t ___graphicsFormat;
+	int32_t ___latestVersionNumber;
+	bool ___clear;
+	bool ___discard;
+	bool ___bindMS;
+	int32_t ___textureUVOrigin;
+};
+struct ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC_marshaled_pinvoke
+{
+	int32_t ___isImported;
+	int32_t ___isShared;
+	int32_t ___tag;
+	int32_t ___lastUsePassID;
+	int32_t ___lastWritePassID;
+	int32_t ___firstUsePassID;
+	int32_t ___memoryLess;
+	int32_t ___width;
+	int32_t ___height;
+	int32_t ___volumeDepth;
+	int32_t ___msaaSamples;
+	int32_t ___graphicsFormat;
+	int32_t ___latestVersionNumber;
+	int32_t ___clear;
+	int32_t ___discard;
+	int32_t ___bindMS;
+	int32_t ___textureUVOrigin;
+};
+struct ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC_marshaled_com
+{
+	int32_t ___isImported;
+	int32_t ___isShared;
+	int32_t ___tag;
+	int32_t ___lastUsePassID;
+	int32_t ___lastWritePassID;
+	int32_t ___firstUsePassID;
+	int32_t ___memoryLess;
+	int32_t ___width;
+	int32_t ___height;
+	int32_t ___volumeDepth;
+	int32_t ___msaaSamples;
+	int32_t ___graphicsFormat;
+	int32_t ___latestVersionNumber;
+	int32_t ___clear;
+	int32_t ___discard;
+	int32_t ___bindMS;
+	int32_t ___textureUVOrigin;
+};
+struct ShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20 
+{
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___viewMatrix;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___projectionMatrix;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___shadowTransform;
+	int32_t ___offsetX;
+	int32_t ___offsetY;
+	int32_t ___resolution;
+	ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF ___splitData;
+};
+struct SortingSettings_t506C3B318FDFD3C2B1620E9B951829C631137E72 
+{
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___m_WorldToCameraMatrix;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_CameraPosition;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_CustomAxis;
+	int32_t ___m_Criteria;
+	int32_t ___m_DistanceMetric;
+};
+struct SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4 
+{
+	NativeCustomSlice_1_t553B89694440B1C5C7DF7F314D7A0711AE7A0783 ___vertices;
+	NativeCustomSlice_1_t00144D7121E64139E2BBFAEB4BA01FB646F1A71B ___boneWeights;
+	NativeCustomSlice_1_tB3DF9F46AA60E8412DC5B89CC7878A4BE49ABA45 ___bindPoses;
+	NativeCustomSlice_1_t1BD4A99A5C57F16086ACE5EED91D969C19693921 ___tangents;
+	bool ___hasTangents;
+	int32_t ___spriteVertexStreamSize;
+	int32_t ___spriteVertexCount;
+	int32_t ___tangentVertexOffset;
+	int32_t ___deformVerticesStartPos;
+	int32_t ___previousDeformVerticesStartPos;
+	int32_t ___transformId;
+	NativeCustomSlice_1_t0D6722C6A546C76474543C10D2E576E494D019A8 ___boneTransformId;
+};
+struct SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4_marshaled_pinvoke
+{
+	NativeCustomSlice_1_t553B89694440B1C5C7DF7F314D7A0711AE7A0783 ___vertices;
+	NativeCustomSlice_1_t00144D7121E64139E2BBFAEB4BA01FB646F1A71B ___boneWeights;
+	NativeCustomSlice_1_tB3DF9F46AA60E8412DC5B89CC7878A4BE49ABA45 ___bindPoses;
+	NativeCustomSlice_1_t1BD4A99A5C57F16086ACE5EED91D969C19693921 ___tangents;
+	int32_t ___hasTangents;
+	int32_t ___spriteVertexStreamSize;
+	int32_t ___spriteVertexCount;
+	int32_t ___tangentVertexOffset;
+	int32_t ___deformVerticesStartPos;
+	int32_t ___previousDeformVerticesStartPos;
+	int32_t ___transformId;
+	NativeCustomSlice_1_t0D6722C6A546C76474543C10D2E576E494D019A8 ___boneTransformId;
+};
+struct SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4_marshaled_com
+{
+	NativeCustomSlice_1_t553B89694440B1C5C7DF7F314D7A0711AE7A0783 ___vertices;
+	NativeCustomSlice_1_t00144D7121E64139E2BBFAEB4BA01FB646F1A71B ___boneWeights;
+	NativeCustomSlice_1_tB3DF9F46AA60E8412DC5B89CC7878A4BE49ABA45 ___bindPoses;
+	NativeCustomSlice_1_t1BD4A99A5C57F16086ACE5EED91D969C19693921 ___tangents;
+	int32_t ___hasTangents;
+	int32_t ___spriteVertexStreamSize;
+	int32_t ___spriteVertexCount;
+	int32_t ___tangentVertexOffset;
+	int32_t ___deformVerticesStartPos;
+	int32_t ___previousDeformVerticesStartPos;
+	int32_t ___transformId;
+	NativeCustomSlice_1_t0D6722C6A546C76474543C10D2E576E494D019A8 ___boneTransformId;
+};
+struct StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 
+{
+	int32_t ___reason;
+	int32_t ___passId;
+	int32_t ___msaaReason;
+	int32_t ___msaaPassId;
+};
+struct SubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934 
+{
+	Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 ___U3CboundsU3Ek__BackingField;
+	int32_t ___U3CtopologyU3Ek__BackingField;
+	int32_t ___U3CindexStartU3Ek__BackingField;
+	int32_t ___U3CindexCountU3Ek__BackingField;
+	int32_t ___U3CbaseVertexU3Ek__BackingField;
+	int32_t ___U3CfirstVertexU3Ek__BackingField;
+	int32_t ___U3CvertexCountU3Ek__BackingField;
+};
+struct SubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9 
+{
+	AttachmentIndexArray_tDC550BA2CD14AFB3B5545B02331C26903ADA90B5 ___inputs;
+	AttachmentIndexArray_tDC550BA2CD14AFB3B5545B02331C26903ADA90B5 ___colorOutputs;
+	int32_t ___flags;
 };
 struct SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295  : public Exception_t
 {
@@ -5099,6 +5854,15 @@ struct SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295  : public Excep
 struct Type_t  : public MemberInfo_t
 {
 	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ____impl;
+};
+struct UTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E 
+{
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___va;
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___vb;
+	float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA ___vc;
+	UCircle_tC29A5FA379CDA3DB1DC29260A1A6F2998CFE8C6A ___c;
+	float ___area;
+	int3_t1D01D28AA6D32890A228297EBADD9BB1A960E2BF ___indices;
 };
 struct UnmanagedFunctionPointerAttribute_t9305303B86AAE7DFF3B996E83D3ADF2435F93833  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
 {
@@ -5271,52 +6035,6 @@ struct GridSample3DJob_t81C121520BCEA810CA6A20C94E20B7840B6B07AF_marshaled_com
 	int32_t ___outChannels;
 	int32_t ___outSpatialSize;
 };
-struct NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___numBoxes;
-	float ___iouThreshold;
-	int32_t ___centerPointBox;
-};
-struct PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___padMode;
-	int32_t ___constant;
-	PadParameters_tA9449C98448343723C4C462CA5A6CC030821662F ___padParams;
-};
-struct Resize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	int32_t ___innerLength;
-	int32_t ___outerLength;
-	int32_t ___inputWidth;
-	int32_t ___outputWidth;
-	float ___scale;
-	float ___bias;
-	int32_t ___mode;
-};
-struct SliceJob_t98CB2471680DD941A454D645873FA340B6C404BE 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	SliceParameters_tF1900EBD82F29BD36E323BD3380BE695792D8FFF ___sliceParams;
-};
-struct SliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	SliceParameters_tF1900EBD82F29BD36E323BD3380BE695792D8FFF ___sliceParams;
-};
-struct TransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880 
-{
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___U3CXU3Ek__BackingField;
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___U3COU3Ek__BackingField;
-	TransposeIterator_tBE5F9DBA957B86872BA6C684FAE3C32C55A9A004 ___iteratorX;
-};
 struct PerCameraInstanceDataArrays_tA74F6F16B77B98DDC6E582A261525D7ECD12C07E 
 {
 	UnsafeList_1_t5C65DCA6782B7C9860C859C2F0C07A2C497E822D ___meshLods;
@@ -5464,8 +6182,155 @@ struct TriggerEndTarget_tE04F3C90BD5BD9EADC98FFFDDA469061A72A3CD9
 {
 	TriggerEndEvent_t7FEED3B9C48823CEE1DBB1B83E237B5D485F0FD5 ___m_EndEvent;
 };
+struct FixedAttachmentArray_1_t74727BB5F586B5A943D14A73DE3B503914222023 
+{
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a0;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a1;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a2;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a3;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a4;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a5;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a6;
+	LoadAudit_t417FC3BB0E7799755F8AD6FF4AB6386508CB7D0C ___a7;
+	int32_t ___activeAttachments;
+};
+struct FixedAttachmentArray_1_t6EACA4660BC8F4A12B49791F310286827E4B8906 
+{
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a0;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a1;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a2;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a3;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a4;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a5;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a6;
+	StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292 ___a7;
+	int32_t ___activeAttachments;
+};
+struct Nullable_1_tEB29AC5A73D1D1AF8DE0D726A51B415DC226387C 
+{
+	bool ___hasValue;
+	NativeArray_1_t0AB49EE6A37F6BC668C15EDFBE9BE92A22B2F0DB ___value;
+};
+struct Nullable_1_t791F8A662AA857374FA6AFEEEA22B1F1E103327B 
+{
+	bool ___hasValue;
+	NativeArray_1_t5576C5C8F17BB3E1BA11BBA3EC50A55FC1246445 ___value;
+};
+struct DrawingSettings_t3B64EB029DB6F94A1F2A9B2D19D2969AE361BB49 
+{
+	SortingSettings_t506C3B318FDFD3C2B1620E9B951829C631137E72 ___m_SortingSettings;
+	U3CshaderPassNamesU3Ee__FixedBuffer_t5EDC823777BDDC9D50E55FF3779FBC1B3820126D ___shaderPassNames;
+	int32_t ___m_PerObjectData;
+	int32_t ___m_Flags;
+	int32_t ___m_OverrideShaderID;
+	int32_t ___m_OverrideShaderPassIndex;
+	int32_t ___m_OverrideMaterialInstanceId;
+	int32_t ___m_OverrideMaterialPassIndex;
+	int32_t ___m_fallbackMaterialInstanceId;
+	int32_t ___m_MainLightIndex;
+	int32_t ___m_UseSrpBatcher;
+	int32_t ___m_LodCrossFadeStencilMask;
+};
 struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB  : public SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295
 {
+};
+struct NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___handle;
+	int32_t ___loadAction;
+	int32_t ___storeAction;
+	bool ___memoryless;
+	int32_t ___mipLevel;
+	int32_t ___depthSlice;
+};
+struct NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4_marshaled_pinvoke
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___handle;
+	int32_t ___loadAction;
+	int32_t ___storeAction;
+	int32_t ___memoryless;
+	int32_t ___mipLevel;
+	int32_t ___depthSlice;
+};
+struct NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4_marshaled_com
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___handle;
+	int32_t ___loadAction;
+	int32_t ___storeAction;
+	int32_t ___memoryless;
+	int32_t ___mipLevel;
+	int32_t ___depthSlice;
+};
+struct PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C 
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___resource;
+	int32_t ___accessFlags;
+	int32_t ___mipLevel;
+	int32_t ___depthSlice;
+};
+struct PassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE 
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___resource;
+};
+struct PassOutputData_t8EA364E560775D19D285839BA06710B337503E0D 
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___resource;
+};
+struct PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B 
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___resource;
+	int32_t ___index;
+	bool ___preserveCounterValue;
+};
+struct PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B_marshaled_pinvoke
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___resource;
+	int32_t ___index;
+	int32_t ___preserveCounterValue;
+};
+struct PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B_marshaled_com
+{
+	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___resource;
+	int32_t ___index;
+	int32_t ___preserveCounterValue;
+};
+struct RenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733 
+{
+	BlendState_tC9B817349E49EF26CBCDC8FCE02789A661DC2630 ___m_BlendState;
+	RasterState_tA30E8336EA5D1E2152A6C7252F15384985B98A26 ___m_RasterState;
+	DepthState_t798415D2C1D9202E555FEE5D4C5FDF6B3A077255 ___m_DepthState;
+	StencilState_tBE5F7C1134E50C5E93B45A626D4FB4690F1C91A9 ___m_StencilState;
+	int32_t ___m_StencilReference;
+	int32_t ___m_Mask;
+};
+struct SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE 
+{
+	FixedList32Bytes_1_t02D797FE0EF11E83016BA95DD7B282490C8A472E ___m_FixedArray;
+	UnsafeList_1_t239C74D869DA59B0CA5E63716E71208DEC68A70B ___m_List;
+	bool ___m_IsEmbedded;
+	bool ___U3CValidU3Ek__BackingField;
+	int32_t ___Length;
+};
+struct SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE_marshaled_pinvoke
+{
+	FixedList32Bytes_1_t02D797FE0EF11E83016BA95DD7B282490C8A472E ___m_FixedArray;
+	UnsafeList_1_t239C74D869DA59B0CA5E63716E71208DEC68A70B ___m_List;
+	int32_t ___m_IsEmbedded;
+	int32_t ___U3CValidU3Ek__BackingField;
+	int32_t ___Length;
+};
+struct SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE_marshaled_com
+{
+	FixedList32Bytes_1_t02D797FE0EF11E83016BA95DD7B282490C8A472E ___m_FixedArray;
+	UnsafeList_1_t239C74D869DA59B0CA5E63716E71208DEC68A70B ___m_List;
+	int32_t ___m_IsEmbedded;
+	int32_t ___U3CValidU3Ek__BackingField;
+	int32_t ___Length;
+};
+struct URPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9 
+{
+	NativeArray_1_t9B7A94FA050F43A3996B812B9164E7885F38ADC3 ___slices;
+	uint32_t ___slicesValidMask;
 };
 struct AddFloatJob_tB60BF670865BF30DB2A99584543CABBD0526B7D5 
 {
@@ -5931,6 +6796,60 @@ struct PolygonGeometryElement_t6C8FF21F16A40EA03BE69163226AF7366F22DCFD
 	int32_t ___drawFillOptions;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___color;
 };
+struct FixedAttachmentArray_1_tEFFF2A913823035718F09AB3C6DD33263A082714 
+{
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a0;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a1;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a2;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a3;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a4;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a5;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a6;
+	NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4 ___a7;
+	int32_t ___activeAttachments;
+};
+struct FixedAttachmentArray_1_t097F263B4BA144B4ACC3DC76BEBD68D2B99E582C 
+{
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a0;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a1;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a2;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a3;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a4;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a5;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a6;
+	PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C ___a7;
+	int32_t ___activeAttachments;
+};
+struct RendererListParams_t13F72282BCE2DC255747FE7694C6BBC3377944B1 
+{
+	CullingResults_tD6B7EF20B68D47DFF3A99EB2EA73F47F1D460267 ___cullingResults;
+	DrawingSettings_t3B64EB029DB6F94A1F2A9B2D19D2969AE361BB49 ___drawSettings;
+	FilteringSettings_t75860B12A7BCF9A0E2F13CB2C2E5DCD9E1EEAD9F ___filteringSettings;
+	ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0 ___tagName;
+	bool ___isPassTagName;
+	Nullable_1_t791F8A662AA857374FA6AFEEEA22B1F1E103327B ___tagValues;
+	Nullable_1_tEB29AC5A73D1D1AF8DE0D726A51B415DC226387C ___stateBlocks;
+};
+struct RendererListParams_t13F72282BCE2DC255747FE7694C6BBC3377944B1_marshaled_pinvoke
+{
+	CullingResults_tD6B7EF20B68D47DFF3A99EB2EA73F47F1D460267 ___cullingResults;
+	DrawingSettings_t3B64EB029DB6F94A1F2A9B2D19D2969AE361BB49 ___drawSettings;
+	FilteringSettings_t75860B12A7BCF9A0E2F13CB2C2E5DCD9E1EEAD9F ___filteringSettings;
+	ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0 ___tagName;
+	int32_t ___isPassTagName;
+	Nullable_1_t791F8A662AA857374FA6AFEEEA22B1F1E103327B ___tagValues;
+	Nullable_1_tEB29AC5A73D1D1AF8DE0D726A51B415DC226387C ___stateBlocks;
+};
+struct RendererListParams_t13F72282BCE2DC255747FE7694C6BBC3377944B1_marshaled_com
+{
+	CullingResults_tD6B7EF20B68D47DFF3A99EB2EA73F47F1D460267 ___cullingResults;
+	DrawingSettings_t3B64EB029DB6F94A1F2A9B2D19D2969AE361BB49 ___drawSettings;
+	FilteringSettings_t75860B12A7BCF9A0E2F13CB2C2E5DCD9E1EEAD9F ___filteringSettings;
+	ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0 ___tagName;
+	int32_t ___isPassTagName;
+	Nullable_1_t791F8A662AA857374FA6AFEEEA22B1F1E103327B ___tagValues;
+	Nullable_1_tEB29AC5A73D1D1AF8DE0D726A51B415DC226387C ___stateBlocks;
+};
 struct BodyUpdateTarget_t6DFEB7E2EB41937A4D139AAA98A0B2FEF61145DC 
 {
 	BodyUpdateEvent_t82660EC0D1983A12F9407C4977880BD84E5360D9 ___m_BodyUpdateEvent;
@@ -5942,6 +6861,96 @@ struct BodyUpdateTarget_t6DFEB7E2EB41937A4D139AAA98A0B2FEF61145DC_marshaled_pinv
 struct BodyUpdateTarget_t6DFEB7E2EB41937A4D139AAA98A0B2FEF61145DC_marshaled_com
 {
 	BodyUpdateEvent_t82660EC0D1983A12F9407C4977880BD84E5360D9_marshaled_com ___m_BodyUpdateEvent;
+};
+struct NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2 
+{
+	FixedAttachmentArray_1_t74727BB5F586B5A943D14A73DE3B503914222023 ___loadAudit;
+	FixedAttachmentArray_1_t6EACA4660BC8F4A12B49791F310286827E4B8906 ___storeAudit;
+	PassBreakAudit_t86F0837A5B639D308588333370DEB00AB5933A76 ___breakAudit;
+	FixedAttachmentArray_1_t097F263B4BA144B4ACC3DC76BEBD68D2B99E582C ___fragments;
+	FixedAttachmentArray_1_tEFFF2A913823035718F09AB3C6DD33263A082714 ___attachments;
+	int32_t ___firstGraphPass;
+	int32_t ___lastGraphPass;
+	int32_t ___numGraphPasses;
+	int32_t ___firstNativeSubPass;
+	int32_t ___numNativeSubPasses;
+	int32_t ___width;
+	int32_t ___height;
+	int32_t ___volumeDepth;
+	int32_t ___samples;
+	int32_t ___shadingRateImageIndex;
+	bool ___hasDepth;
+	bool ___hasFoveatedRasterization;
+	bool ___hasShadingRateStates;
+	int32_t ___extendedFeatureFlags;
+	int32_t ___shadingRateFragmentSize;
+	int32_t ___primitiveShadingRateCombiner;
+	int32_t ___fragmentShadingRateCombiner;
+};
+struct NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2_marshaled_pinvoke
+{
+	FixedAttachmentArray_1_t74727BB5F586B5A943D14A73DE3B503914222023 ___loadAudit;
+	FixedAttachmentArray_1_t6EACA4660BC8F4A12B49791F310286827E4B8906 ___storeAudit;
+	PassBreakAudit_t86F0837A5B639D308588333370DEB00AB5933A76 ___breakAudit;
+	FixedAttachmentArray_1_t097F263B4BA144B4ACC3DC76BEBD68D2B99E582C ___fragments;
+	FixedAttachmentArray_1_tEFFF2A913823035718F09AB3C6DD33263A082714 ___attachments;
+	int32_t ___firstGraphPass;
+	int32_t ___lastGraphPass;
+	int32_t ___numGraphPasses;
+	int32_t ___firstNativeSubPass;
+	int32_t ___numNativeSubPasses;
+	int32_t ___width;
+	int32_t ___height;
+	int32_t ___volumeDepth;
+	int32_t ___samples;
+	int32_t ___shadingRateImageIndex;
+	int32_t ___hasDepth;
+	int32_t ___hasFoveatedRasterization;
+	int32_t ___hasShadingRateStates;
+	int32_t ___extendedFeatureFlags;
+	int32_t ___shadingRateFragmentSize;
+	int32_t ___primitiveShadingRateCombiner;
+	int32_t ___fragmentShadingRateCombiner;
+};
+struct NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2_marshaled_com
+{
+	FixedAttachmentArray_1_t74727BB5F586B5A943D14A73DE3B503914222023 ___loadAudit;
+	FixedAttachmentArray_1_t6EACA4660BC8F4A12B49791F310286827E4B8906 ___storeAudit;
+	PassBreakAudit_t86F0837A5B639D308588333370DEB00AB5933A76 ___breakAudit;
+	FixedAttachmentArray_1_t097F263B4BA144B4ACC3DC76BEBD68D2B99E582C ___fragments;
+	FixedAttachmentArray_1_tEFFF2A913823035718F09AB3C6DD33263A082714 ___attachments;
+	int32_t ___firstGraphPass;
+	int32_t ___lastGraphPass;
+	int32_t ___numGraphPasses;
+	int32_t ___firstNativeSubPass;
+	int32_t ___numNativeSubPasses;
+	int32_t ___width;
+	int32_t ___height;
+	int32_t ___volumeDepth;
+	int32_t ___samples;
+	int32_t ___shadingRateImageIndex;
+	int32_t ___hasDepth;
+	int32_t ___hasFoveatedRasterization;
+	int32_t ___hasShadingRateStates;
+	int32_t ___extendedFeatureFlags;
+	int32_t ___shadingRateFragmentSize;
+	int32_t ___primitiveShadingRateCombiner;
+	int32_t ___fragmentShadingRateCombiner;
+};
+struct RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214 
+{
+	RendererListParams_t13F72282BCE2DC255747FE7694C6BBC3377944B1 ___desc;
+	RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 ___rendererList;
+};
+struct RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214_marshaled_pinvoke
+{
+	RendererListParams_t13F72282BCE2DC255747FE7694C6BBC3377944B1_marshaled_pinvoke ___desc;
+	RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 ___rendererList;
+};
+struct RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214_marshaled_com
+{
+	RendererListParams_t13F72282BCE2DC255747FE7694C6BBC3377944B1_marshaled_com ___desc;
+	RendererList_t608CE60421616EF4211F5B8AC62E3C36D4BDDF85 ___rendererList;
 };
 struct BurstCompiler_t2715484E1FF256726FC4D4D8E17C35A4C8DFA2B8_StaticFields
 {
@@ -7283,6 +8292,22 @@ struct IntPtr_t_StaticFields
 {
 	intptr_t ___Zero;
 };
+struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_StaticFields
+{
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___identityQuaternion;
+};
+struct Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_StaticFields
+{
+	Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___kZero;
+};
+struct ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0_StaticFields
+{
+	ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0 ___none;
+};
+struct SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692_StaticFields
+{
+	SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692 ___Invalid;
+};
 struct Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_StaticFields
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___zeroVector;
@@ -7359,6 +8384,10 @@ struct GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977_StaticFields
 {
 	GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977 ___Invalid;
 };
+struct ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF_StaticFields
+{
+	int32_t ___maximumCullingPlaneCount;
+};
 struct Vertex_t016AC68A2E6C62576E65412BEC71544AFC01AFC7_StaticFields
 {
 	float ___nearZ;
@@ -7375,6 +8404,19 @@ struct quaternion_tD6BCBECAF088B9EBAE2345EC8534C7A1A4C910D4_StaticFields
 struct MelWeightMatrixJob_t6EC61E51F60FE83ADBBC94AB7002C191335E7160_StaticFields
 {
 	float3_t4AB5D88249ADB24F69FFD0793E8ED25E1CC3745E ___kOffsets;
+};
+struct RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B_StaticFields
+{
+	RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B ___Invalid;
+};
+struct ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C_StaticFields
+{
+	uint32_t ___s_CurrentValidBit;
+	uint32_t ___s_SharedResourceValidBit;
+};
+struct StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292_StaticFields
+{
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___StoreReasonMessages;
 };
 struct Type_t_StaticFields
 {
@@ -7600,127 +8642,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9_m65A575670BC183A05B6FF072CE6E4828FA412B1E_gshared (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4_mD65D9FB39681F43AADCB136C5A7FBC97BE409315_gshared (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_m7BE429F86B8A74A3D6246689EB4935BD9968E581_gshared (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m4D0640F53751EF0F536E8266067D558A8C4DF21E_gshared (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m02FB00631E3B9951F3DFC61085B0AC55C8897DEF_gshared (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_mD48783A83C07E78DCBAB39466F4EB5430732A9EF_gshared (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_m67F70459FFE454A5C334C7EA75C8B058101BF2EF_gshared (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA42076D83859C8FF6679F9C72DE6047E727893A8_gshared (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m271050705A86A3C451B89187318DB3DB1639CAB2_gshared (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_mFFF2443CEE13E41A5890A18203393633FC895246_gshared (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_m582C9A792C66BA7869EAE3695E7B3CEC4ECE825C_gshared (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_m763D497D6EC0366996375596A005235435B394E7_gshared (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m480DA9F75C7A585F695B76F6F220E8ECCFA9DE2A_gshared (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m98388B0A1585C3DA91A86E393FD02465C4E7C717_gshared (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m164C6951101EA8575F0B3EA1CCA823EBF49DE525_gshared (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_mAE8210053178C3C651DCAB30D41C664CCE7909A6_gshared (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_m41C0C3F8BB6123A5EA3CB8742471AFB9359D6E75_gshared (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m5EC59767051247EC34A727A911E14F94FDCFF533_gshared (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_mA2C4A301A11C27297FEF668C4DCBE746A6021D21_gshared (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D_mE2A87F71CAA626950B8D44BEE6464646C6C73A06_gshared (ReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459_m94D84B9D9FCDC6F800FB693C3127A17AF82B44ED_gshared (ReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249_mEE6B497D42B4F57FBB0D3267E8C545312B340C2B_gshared (ReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516_m4C90B2A0E92401C0071C8F97D9E50EA89F195C00_gshared (ReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E_m8427521F666AA3D77E3E7A361F4594359981FA9B_gshared (ReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB_mE1F807CAFB0840F20D4DE7860E83AD30AEF27C18_gshared (ReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06_m642B574181BED5509E33474E2C5AA008A015F248_gshared (ReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8_m58A9A54456EF8944C02D12C16CF984256C7CBACF_gshared (ReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4_m0A65A766E73C638F706FAB84D510CACA0EFB05E7_gshared (ReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisRelu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10_m84EA26160F1CA33FA9D4938F216C6C13CDC27643_gshared (Relu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A_m5F762DC13E4B3309A8E8A9441ADB30A61F63C235_gshared (ReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisResize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F_mF114C6F4131F29ED7FABB536840353F186A4F0D9_gshared (Resize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisRoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE_m73740BFD913BCBD329AAD1A11F2B4D76B575B15D_gshared (RoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisRsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963_mCC81F39E6D4581614E1BA314E71E881C04CDD849_gshared (RsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B_mD3493D2024692D601BDB309607D2DC7E564E7914_gshared (ScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5_mC8B348A9F544CF53FEF5B81A8AD7704364038F20_gshared (ScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1_m06A581369ADFCDA690E74A877E39BEDF2D5DEC6E_gshared (SeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6_m10CC1FA60324FCED7C2207BE00AE47B76ACB9B20_gshared (ShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5_m0223064C05AC8649C79C69AB66AFD8F0076FBAA9_gshared (SigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7_mEE1C7F5445BDFA8DAD8FB2F2921BE18219CCAD35_gshared (SignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4_m53046ED7B8A76BDD41EC068F1C8ED11BEBA4FB5B_gshared (SignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinJob_t9629A92338DE2387D236C2707B378E6009DC46EA_mFAEEAF4EA256FC46A5BC7CD7D299E02E028E44B5_gshared (SinJob_t9629A92338DE2387D236C2707B378E6009DC46EA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010_mD0C46B8D62ED9DAC838C96C5A890C68675E6B4CD_gshared (SinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceJob_t98CB2471680DD941A454D645873FA340B6C404BE_mCD0E8204D71B6528C2B9029714C7FE3112ACA301_gshared (SliceJob_t98CB2471680DD941A454D645873FA340B6C404BE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141_m46EAF1E6129A146DED68E7A7274E38F73A137677_gshared (SliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958_m916230F699E9FDFA419FB18FA803318133556A66_gshared (SoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9_mE851C258763253490AE9AE28B91F1D0AA043B41B_gshared (SoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125_m83866F0E7FBE77FEE6AF352A3718D583284A8B28_gshared (SoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB_m3E46F2976C540FCA7C63412F46C0378A91580B61_gshared (SqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51_m8ECAFFFF3BDAC7E31337BD2BF9061E62229C37EC_gshared (SquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC_m4BE358631B88BEA8CC304537573443ADF49E93D2_gshared (SquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C_m9277C0BE06B27876E9A3B20B6C31D6D2AB470891_gshared (SwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D_m6105A801E0D5398C15FC180A9061E465C4853B17_gshared (TanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A_m8E8EB12C1E0B35F1226CCD3B30F4E4887882A317_gshared (TanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38_mFA7A99F84B0E93127AF9DAE03CBD7E086ADFCA3E_gshared (ThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880_m2B3AE893ABD7B695E3F7450A260D56E3DB8F2428_gshared (TransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216_m274F19C5977F23ECB22A3F9997344C86DEAFCB8F_gshared (TruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisUpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B_m3AFB24AE63F8F81B8ECA710E371117461957BB13_gshared (UpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD_mCA03A17B2B7934206A32B6C449DBBA6FCF14F0F7_gshared (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044_m5683C1CB56F546906B64F1CDF60567DB98425531_gshared (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7_m7BC7E2A223B2F90C8BB761C01D79874C4C0B2813_gshared (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0_m91BEA7AE3D412B988B3DD9650CF653C0E70A182A_gshared (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258_mDDF0DAA6F10A3482EAAC36F7A1CD1AEFD4ED6BD7_gshared (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3_m9156BCB0CA4E02B17F80E91634B70F37BB1FEE1B_gshared (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6_mCB9D29D9FD64770CBBCF60815AA564F383E73BC9_gshared (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6_m5FB85B8BC6204F3DA4DD4CEBC04816A42B8D72DE_gshared (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1_mE188D9596C52B07FAE58C4CCF98DBEB38B7A5737_gshared (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256_m49381F8D70095E423CCD0DDCC767D171C613019A_gshared (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54_m5CDDE613FCF588255E72D7CBB67EA06C22E83840_gshared (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68_m9FE64D67F8F7CA640541E7815E1A44400219131B_gshared (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51_m052100A9921158F5129300955314CA4B40D31B57_gshared (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24_mE0E598C8D2DDE6334E4646CF87F6C1003EB8E891_gshared (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425_m5446323BABAFC18D6B00ABE71228ADAF5204303F_gshared (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247_mB12B46B1078C324694E62FB8D42D89C9029109B0_gshared (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32_mB75E1FE479789A001AA173EF0D6B03CC2C6823A4_gshared (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E_m9C7A4F6F7D508EC2E5095AF7C46A14E4DD606AB5_gshared (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisBernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D_m927D47DB44A99DC4A0E4A251BC7C30D190411A24_gshared (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisBitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A_m546207D59BD7A383654070A38C12C7788CCE759D_gshared (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1_m3146F2499E584FBB5564AD5A152BA9C2898790F7_gshared (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10_m30B65C66CA6BA1F79CC5B3B05CAE6542482893DD_gshared (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3_m003CC0263D66B29D452C2DBD791E7391953CAD76_gshared (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56_mF100BBBE8B960905E633F07B207ABA3FCEF5CD57_gshared (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497_m6F03FF8062A027B0E9351557766E2653761E5C75_gshared (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A_mF80B4355ADFFC04AFBA7BF33090109375EB8A1AF_gshared (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523_mCE7385F6C8FED78B08FF390E0B2C1723EB9CFE7E_gshared (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D_m3EEECD21A71CF1A1773AE27A710FA83360A7BDAC_gshared (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A_m2B7CC0CB0CF5020EBB8FA8DC22D7CF0B58B876F1_gshared (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisDequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D_m33F6C668FEFD60B4E1983C9E812CC18A35D45B2D_gshared (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisEluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0_m3828463F6FC3DB32E2CF81638396E42C3B71FE2A_gshared (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A_mE4E75C32D67293520131F34E296522EA5E706F85_gshared (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343_m991D7A14243FF4C2C4897D34AB5D73D0FDEEF054_gshared (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisExpm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414_mF5D158F3CF728512A51677AF75FEB6F01D5D66B5_gshared (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisFloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511_m4158F53551D911ADBFA596EFCB6C933D0AE249D3_gshared (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisGeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2_m99E1D0A97C25ABBC36BFBF4062DDF340F5F80D90_gshared (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisGeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B_m0D62260F5F3513D38DCEF9C259915C93D15AF251_gshared (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624_m742E47DF9A12599A46D07E652BA82CA840FFE381_gshared (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C_m406134839D9A3B6889763E288BB8C1DC4B36C752_gshared (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019_m39BA0EDC3DD1C37E28A7CBB413DBBCB3E9B058D5_gshared (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB_m42ADAB58DA259050941573B478CEFA1D8EF99CD7_gshared (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisIsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64_m6B749FB9CEC510F141C8A8353151427FEF0647BD_gshared (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisIsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC_mF190F712FBB94FABEB032487FF7D1BC8A99CDC33_gshared (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38_m550B58B431F8005CCA2286F9DC4E0F3FBF15D0D1_gshared (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLog10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378_mAD0D737B4873CA94E61BB22057A9FCF9C2894CA7_gshared (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLog1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1_m09312C302BE85093C59792031757B7428EEB793D_gshared (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLog2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127_mAE57E0AA9D901006409533D626CABDB2E5DF8BFD_gshared (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554_mE7840C329EA6C43EDEF749AF0E456426FBDEDE16_gshared (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9_m1EF910DB2CB51831EB86F7C9C48E5E52DC3194D2_gshared (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisMaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4_m27636D99DD41CCB5C70C61EE9558D708F23440A0_gshared (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_mDDFF6BA09F562B27EAA4658A00FD21D51B708FF1_gshared (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m354D599CFEB7932907E765FBB1ADE8B456F8CAE2_gshared (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m64B66F65CF87F9D9FA4179B10DCBB4994E57ED3C_gshared (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_m14A6307E5B323EBDC3930B2D86CCCA4EA1EB5A36_gshared (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_mF04BA4C39BC99D47B1E51E2CA2CCC5C6060F6B43_gshared (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA5CB315106778633DE7682C6BAA858E72437CFC6_gshared (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m075B9470B94C3C57C2BAAD670A5EF40F88E1F7F8_gshared (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_m7736D195215505A0DC2C84B8184E5997BD25541C_gshared (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_mD61173B57D3E54263D1702A42B5853886E638AC2_gshared (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_mB0DEA2EC7276AF318D85B1D6E4A46D71A0380E35_gshared (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m8829F0977D6CB70F6870E99E7C54C38C613093AA_gshared (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m2BC2E19F93A4408FA9ECB7E790517CE2CA2120A4_gshared (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m99EC6E53F7D9A2C84D5A0A1446A090F733618170_gshared (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_m292B0D0A094E7546C732C782E44AE019F8F06F7A_gshared (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_mDB8AFEAA241E38D1A6509D9412D7C8B1E5CF7487_gshared (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m49025A6E9A8286956B49AB904C1031E7F1126B5A_gshared (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_m1C3F4CBC2980C52133A902F9BE12259C954380EB_gshared (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method) ;
 
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3 (uint8_t* ___0_dest, uint8_t* ___1_src, uint32_t ___2_len, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57 (RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ___0_handle, const RuntimeMethod* method) ;
@@ -8607,623 +9528,2174 @@ inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper
 {
 	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_m7BE429F86B8A74A3D6246689EB4935BD9968E581_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
 }
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m4D0640F53751EF0F536E8266067D558A8C4DF21E (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m4D0640F53751EF0F536E8266067D558A8C4DF21E_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m02FB00631E3B9951F3DFC61085B0AC55C8897DEF (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m02FB00631E3B9951F3DFC61085B0AC55C8897DEF_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_mD48783A83C07E78DCBAB39466F4EB5430732A9EF (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_mD48783A83C07E78DCBAB39466F4EB5430732A9EF_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_m67F70459FFE454A5C334C7EA75C8B058101BF2EF (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_m67F70459FFE454A5C334C7EA75C8B058101BF2EF_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA42076D83859C8FF6679F9C72DE6047E727893A8 (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA42076D83859C8FF6679F9C72DE6047E727893A8_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m271050705A86A3C451B89187318DB3DB1639CAB2 (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m271050705A86A3C451B89187318DB3DB1639CAB2_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_mFFF2443CEE13E41A5890A18203393633FC895246 (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_mFFF2443CEE13E41A5890A18203393633FC895246_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_m582C9A792C66BA7869EAE3695E7B3CEC4ECE825C (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_m582C9A792C66BA7869EAE3695E7B3CEC4ECE825C_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_m763D497D6EC0366996375596A005235435B394E7 (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_m763D497D6EC0366996375596A005235435B394E7_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m480DA9F75C7A585F695B76F6F220E8ECCFA9DE2A (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m480DA9F75C7A585F695B76F6F220E8ECCFA9DE2A_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m98388B0A1585C3DA91A86E393FD02465C4E7C717 (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m98388B0A1585C3DA91A86E393FD02465C4E7C717_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m164C6951101EA8575F0B3EA1CCA823EBF49DE525 (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m164C6951101EA8575F0B3EA1CCA823EBF49DE525_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_mAE8210053178C3C651DCAB30D41C664CCE7909A6 (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_mAE8210053178C3C651DCAB30D41C664CCE7909A6_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_m41C0C3F8BB6123A5EA3CB8742471AFB9359D6E75 (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_m41C0C3F8BB6123A5EA3CB8742471AFB9359D6E75_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m5EC59767051247EC34A727A911E14F94FDCFF533 (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m5EC59767051247EC34A727A911E14F94FDCFF533_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_mA2C4A301A11C27297FEF668C4DCBE746A6021D21 (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_mA2C4A301A11C27297FEF668C4DCBE746A6021D21_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D_mE2A87F71CAA626950B8D44BEE6464646C6C73A06 (ReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D_mE2A87F71CAA626950B8D44BEE6464646C6C73A06_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459_m94D84B9D9FCDC6F800FB693C3127A17AF82B44ED (ReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459_m94D84B9D9FCDC6F800FB693C3127A17AF82B44ED_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249_mEE6B497D42B4F57FBB0D3267E8C545312B340C2B (ReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249_mEE6B497D42B4F57FBB0D3267E8C545312B340C2B_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516_m4C90B2A0E92401C0071C8F97D9E50EA89F195C00 (ReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516_m4C90B2A0E92401C0071C8F97D9E50EA89F195C00_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E_m8427521F666AA3D77E3E7A361F4594359981FA9B (ReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E_m8427521F666AA3D77E3E7A361F4594359981FA9B_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB_mE1F807CAFB0840F20D4DE7860E83AD30AEF27C18 (ReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB_mE1F807CAFB0840F20D4DE7860E83AD30AEF27C18_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06_m642B574181BED5509E33474E2C5AA008A015F248 (ReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06_m642B574181BED5509E33474E2C5AA008A015F248_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8_m58A9A54456EF8944C02D12C16CF984256C7CBACF (ReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8_m58A9A54456EF8944C02D12C16CF984256C7CBACF_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4_m0A65A766E73C638F706FAB84D510CACA0EFB05E7 (ReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4_m0A65A766E73C638F706FAB84D510CACA0EFB05E7_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisRelu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10_m84EA26160F1CA33FA9D4938F216C6C13CDC27643 (Relu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Relu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisRelu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10_m84EA26160F1CA33FA9D4938F216C6C13CDC27643_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A_m5F762DC13E4B3309A8E8A9441ADB30A61F63C235 (ReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A_m5F762DC13E4B3309A8E8A9441ADB30A61F63C235_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisResize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F_mF114C6F4131F29ED7FABB536840353F186A4F0D9 (Resize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Resize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisResize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F_mF114C6F4131F29ED7FABB536840353F186A4F0D9_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisRoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE_m73740BFD913BCBD329AAD1A11F2B4D76B575B15D (RoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (RoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisRoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE_m73740BFD913BCBD329AAD1A11F2B4D76B575B15D_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisRsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963_mCC81F39E6D4581614E1BA314E71E881C04CDD849 (RsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (RsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisRsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963_mCC81F39E6D4581614E1BA314E71E881C04CDD849_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B_mD3493D2024692D601BDB309607D2DC7E564E7914 (ScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B_mD3493D2024692D601BDB309607D2DC7E564E7914_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5_mC8B348A9F544CF53FEF5B81A8AD7704364038F20 (ScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5_mC8B348A9F544CF53FEF5B81A8AD7704364038F20_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1_m06A581369ADFCDA690E74A877E39BEDF2D5DEC6E (SeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1_m06A581369ADFCDA690E74A877E39BEDF2D5DEC6E_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6_m10CC1FA60324FCED7C2207BE00AE47B76ACB9B20 (ShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6_m10CC1FA60324FCED7C2207BE00AE47B76ACB9B20_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5_m0223064C05AC8649C79C69AB66AFD8F0076FBAA9 (SigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5_m0223064C05AC8649C79C69AB66AFD8F0076FBAA9_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7_mEE1C7F5445BDFA8DAD8FB2F2921BE18219CCAD35 (SignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7_mEE1C7F5445BDFA8DAD8FB2F2921BE18219CCAD35_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4_m53046ED7B8A76BDD41EC068F1C8ED11BEBA4FB5B (SignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4_m53046ED7B8A76BDD41EC068F1C8ED11BEBA4FB5B_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinJob_t9629A92338DE2387D236C2707B378E6009DC46EA_mFAEEAF4EA256FC46A5BC7CD7D299E02E028E44B5 (SinJob_t9629A92338DE2387D236C2707B378E6009DC46EA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SinJob_t9629A92338DE2387D236C2707B378E6009DC46EA*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinJob_t9629A92338DE2387D236C2707B378E6009DC46EA_mFAEEAF4EA256FC46A5BC7CD7D299E02E028E44B5_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010_mD0C46B8D62ED9DAC838C96C5A890C68675E6B4CD (SinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010_mD0C46B8D62ED9DAC838C96C5A890C68675E6B4CD_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceJob_t98CB2471680DD941A454D645873FA340B6C404BE_mCD0E8204D71B6528C2B9029714C7FE3112ACA301 (SliceJob_t98CB2471680DD941A454D645873FA340B6C404BE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SliceJob_t98CB2471680DD941A454D645873FA340B6C404BE*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceJob_t98CB2471680DD941A454D645873FA340B6C404BE_mCD0E8204D71B6528C2B9029714C7FE3112ACA301_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141_m46EAF1E6129A146DED68E7A7274E38F73A137677 (SliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141_m46EAF1E6129A146DED68E7A7274E38F73A137677_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958_m916230F699E9FDFA419FB18FA803318133556A66 (SoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958_m916230F699E9FDFA419FB18FA803318133556A66_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9_mE851C258763253490AE9AE28B91F1D0AA043B41B (SoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9_mE851C258763253490AE9AE28B91F1D0AA043B41B_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125_m83866F0E7FBE77FEE6AF352A3718D583284A8B28 (SoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125_m83866F0E7FBE77FEE6AF352A3718D583284A8B28_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB_m3E46F2976C540FCA7C63412F46C0378A91580B61 (SqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB_m3E46F2976C540FCA7C63412F46C0378A91580B61_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51_m8ECAFFFF3BDAC7E31337BD2BF9061E62229C37EC (SquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51_m8ECAFFFF3BDAC7E31337BD2BF9061E62229C37EC_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC_m4BE358631B88BEA8CC304537573443ADF49E93D2 (SquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC_m4BE358631B88BEA8CC304537573443ADF49E93D2_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisSwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C_m9277C0BE06B27876E9A3B20B6C31D6D2AB470891 (SwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (SwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisSwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C_m9277C0BE06B27876E9A3B20B6C31D6D2AB470891_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D_m6105A801E0D5398C15FC180A9061E465C4853B17 (TanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (TanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D_m6105A801E0D5398C15FC180A9061E465C4853B17_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A_m8E8EB12C1E0B35F1226CCD3B30F4E4887882A317 (TanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (TanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A_m8E8EB12C1E0B35F1226CCD3B30F4E4887882A317_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38_mFA7A99F84B0E93127AF9DAE03CBD7E086ADFCA3E (ThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38_mFA7A99F84B0E93127AF9DAE03CBD7E086ADFCA3E_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880_m2B3AE893ABD7B695E3F7450A260D56E3DB8F2428 (TransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (TransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisTransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880_m2B3AE893ABD7B695E3F7450A260D56E3DB8F2428_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisTruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216_m274F19C5977F23ECB22A3F9997344C86DEAFCB8F (TruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (TruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisTruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216_m274F19C5977F23ECB22A3F9997344C86DEAFCB8F_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisUpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B_m3AFB24AE63F8F81B8ECA710E371117461957BB13 (UpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (UpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B*, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, void*, void*, int32_t, int32_t, const RuntimeMethod*))BurstSchedulingHelper_ScheduleBatchXOInternal_TisUpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B_m3AFB24AE63F8F81B8ECA710E371117461957BB13_gshared)(___0_jobData, ___1_fenceBeforeJobStart, ___2_ptrX, ___3_ptrO, ___4_arrayLength, ___5_innerloopBatchCount, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsFloatJob_set_X_m809FD4A77C56E1B4A41EF6BA1A2492F7C53BC655_inline (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsFloatJob_set_O_m96110E040F0A48242F530652B6FC922C628DA967_inline (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD_mCA03A17B2B7934206A32B6C449DBBA6FCF14F0F7 (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD_mCA03A17B2B7934206A32B6C449DBBA6FCF14F0F7_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsIntJob_set_X_m3FCADE4518463E7503459F0C4B6970CB6F001F85_inline (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsIntJob_set_O_m1EBCE2CDC81C5313E34B5659D1C5DBFB8F9C82E9_inline (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044_m5683C1CB56F546906B64F1CDF60567DB98425531 (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044_m5683C1CB56F546906B64F1CDF60567DB98425531_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcosJob_set_X_mEBF87447280F2C8A8077D5ED31B4E2CB3BCDF90A_inline (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcosJob_set_O_m017A57DB32A7F927AC2507DD68FDD0CF17AAB89E_inline (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7_m7BC7E2A223B2F90C8BB761C01D79874C4C0B2813 (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7_m7BC7E2A223B2F90C8BB761C01D79874C4C0B2813_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcoshJob_set_X_m30EDE379C67104B9BB527257AEEF56128AB9B77D_inline (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcoshJob_set_O_m162B1BE7DC80AE3BE737F1869E1BE616D67A8222_inline (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0_m91BEA7AE3D412B988B3DD9650CF653C0E70A182A (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0_m91BEA7AE3D412B988B3DD9650CF653C0E70A182A_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatFirstJob_set_X_m7EBC48A60CE26108E807A3014A9680EAC90EAEE9_inline (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatFirstJob_set_O_mA733DD71F906EF0576C46F1F95F564394AEBFD6D_inline (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258_mDDF0DAA6F10A3482EAAC36F7A1CD1AEFD4ED6BD7 (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258_mDDF0DAA6F10A3482EAAC36F7A1CD1AEFD4ED6BD7_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatLastJob_set_X_m43ABFEF6836D85FB4CCF5CDA8E03A73AB2A739F5_inline (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatLastJob_set_O_mF16132B18B432FED37D95B4C3FDC4A24B215CC08_inline (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3_m9156BCB0CA4E02B17F80E91634B70F37BB1FEE1B (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3_m9156BCB0CA4E02B17F80E91634B70F37BB1FEE1B_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntFirstJob_set_X_m046824BC5E6B7A61F921CCCB472D673DBD5AD11C_inline (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntFirstJob_set_O_m9B3692DB4BAE0563715EA675DE56336B33438EBF_inline (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6_mCB9D29D9FD64770CBBCF60815AA564F383E73BC9 (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6_mCB9D29D9FD64770CBBCF60815AA564F383E73BC9_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntLastJob_set_X_mB576D652543292068D2C2AD29236714A65F991EB_inline (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntLastJob_set_O_mBC075C78D167794D3616F1A1BDA4AF5EF18DFDB5_inline (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6_m5FB85B8BC6204F3DA4DD4CEBC04816A42B8D72DE (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6_m5FB85B8BC6204F3DA4DD4CEBC04816A42B8D72DE_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatFirstJob_set_X_m0AF77D2AF6446C30A59CD0DD86EF959E494403BC_inline (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatFirstJob_set_O_m5CA516C8CF79D5A6DA3DCC379865F4B9CCB71E68_inline (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1_mE188D9596C52B07FAE58C4CCF98DBEB38B7A5737 (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1_mE188D9596C52B07FAE58C4CCF98DBEB38B7A5737_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatLastJob_set_X_m7D7002F3044A379B1CE37768274CC9946BAB5A2D_inline (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatLastJob_set_O_mD6DF9C8C7796A831AD92DAAE43AE8C2B22FA525A_inline (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256_m49381F8D70095E423CCD0DDCC767D171C613019A (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256_m49381F8D70095E423CCD0DDCC767D171C613019A_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntFirstJob_set_X_mA6D7FD1E205EF2340D39DCCBB59EDDCF4C7133DF_inline (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntFirstJob_set_O_m76CD3044563FF09A736C48D73B7C353C999679AC_inline (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54_m5CDDE613FCF588255E72D7CBB67EA06C22E83840 (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54_m5CDDE613FCF588255E72D7CBB67EA06C22E83840_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntLastJob_set_X_m8E778D0B230B1BC863B6240F391ECA3A392FE2E2_inline (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntLastJob_set_O_mB21F331453D8DB37171356005ED1CB7ADF816F77_inline (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68_m9FE64D67F8F7CA640541E7815E1A44400219131B (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68_m9FE64D67F8F7CA640541E7815E1A44400219131B_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinJob_set_X_m05AD104ECEB5932311CE2F6C0CC0DB37546C972F_inline (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinJob_set_O_m6B4E76788616185748AF040FDDA164C6651EE5C5_inline (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51_m052100A9921158F5129300955314CA4B40D31B57 (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51_m052100A9921158F5129300955314CA4B40D31B57_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinhJob_set_X_m7E81BBD197B8759C21014ED1D71AC7F790EFA53C_inline (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinhJob_set_O_m2AF89376B2EE497D1CD5B6EAAAD37501136032ED_inline (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24_mE0E598C8D2DDE6334E4646CF87F6C1003EB8E891 (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24_mE0E598C8D2DDE6334E4646CF87F6C1003EB8E891_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanJob_set_X_mD56480CE0AFC09F61CD942C2253A36DD3E091BFC_inline (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanJob_set_O_mE3FBFD74FC11EF91E192B75209C215BEE8D1FB24_inline (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425_m5446323BABAFC18D6B00ABE71228ADAF5204303F (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425_m5446323BABAFC18D6B00ABE71228ADAF5204303F_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanhJob_set_X_m915F915373BE233ED7D67617958E899B1B20CFB2_inline (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanhJob_set_O_mFBE25C16C49ACC22A332052F60AE1F1E10F1266A_inline (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247_mB12B46B1078C324694E62FB8D42D89C9029109B0 (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247_mB12B46B1078C324694E62FB8D42D89C9029109B0_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool2DJob_set_X_m78E5B41F3DE56810CA355E804BBE5C265D211C3B_inline (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool2DJob_set_O_mD0061BD4A74C86750B1A6DE0CCFB99744B048098_inline (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32_mB75E1FE479789A001AA173EF0D6B03CC2C6823A4 (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32_mB75E1FE479789A001AA173EF0D6B03CC2C6823A4_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool3DJob_set_X_m91CB52A8F771D5D9289335BC0F92676BBFAEF51C_inline (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool3DJob_set_O_mB9414157C67950DF201CACAB58321CC78CDD0466_inline (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisAveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E_m9C7A4F6F7D508EC2E5095AF7C46A14E4DD606AB5 (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisAveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E_m9C7A4F6F7D508EC2E5095AF7C46A14E4DD606AB5_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BernoulliJob_set_X_m1A74D378EE1E54B539A0A5501C7E7753AF98FD5D_inline (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BernoulliJob_set_O_m2D3653E83BD757182E2A5854613E73ED4A44895E_inline (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisBernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D_m927D47DB44A99DC4A0E4A251BC7C30D190411A24 (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisBernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D_m927D47DB44A99DC4A0E4A251BC7C30D190411A24_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BitwiseNotJob_set_X_m01ADDC651C470411714324630C5FE3557FD3F800_inline (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BitwiseNotJob_set_O_mCB44E653304393F5296F912C7433F840979F1FF9_inline (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisBitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A_m546207D59BD7A383654070A38C12C7788CCE759D (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisBitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A_m546207D59BD7A383654070A38C12C7788CCE759D_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastFloatToIntJob_set_X_m5DD531DD64680E4682E482DA453E58288AEEEFA8_inline (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastFloatToIntJob_set_O_mAF0C34A73CA8DB1315CB66B32F1A85C32BE77202_inline (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1_m3146F2499E584FBB5564AD5A152BA9C2898790F7 (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1_m3146F2499E584FBB5564AD5A152BA9C2898790F7_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastHalfToFloatJob_set_X_m93A31A42D7642D765AF4B479B310A1FB45971516_inline (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastHalfToFloatJob_set_O_m57EE30B95573263FFEB617A8AD6195BF778B12B3_inline (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10_m30B65C66CA6BA1F79CC5B3B05CAE6542482893DD (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10_m30B65C66CA6BA1F79CC5B3B05CAE6542482893DD_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastIntToFloatJob_set_X_m73BF422CF53111081CADF90E7C023003EA8C4751_inline (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastIntToFloatJob_set_O_mA7C4098D7658D8AF6B15AF39ABDE47ED7C244D70_inline (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3_m003CC0263D66B29D452C2DBD791E7391953CAD76 (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3_m003CC0263D66B29D452C2DBD791E7391953CAD76_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeilJob_set_X_mF721EDF367881109F060EE9B7ADE32B6BC0DB17B_inline (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeilJob_set_O_m643678504D688061E472642A633FCEABFA286D2F_inline (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56_mF100BBBE8B960905E633F07B207ABA3FCEF5CD57 (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56_mF100BBBE8B960905E633F07B207ABA3FCEF5CD57_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeluJob_set_X_mF2B8CFDF6DB98075FA837A2765894FBBDC5E7E00_inline (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeluJob_set_O_m02242997B575376C70617EDF68AD02C2D147AA5B_inline (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497_m6F03FF8062A027B0E9351557766E2653761E5C75 (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497_m6F03FF8062A027B0E9351557766E2653761E5C75_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CosJob_set_X_mC5740A89D9BA017147999642E75CA572C11C63BD_inline (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CosJob_set_O_mC97F0AD508D6827392A92A950F9AF33E226A3893_inline (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A_mF80B4355ADFFC04AFBA7BF33090109375EB8A1AF (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A_mF80B4355ADFFC04AFBA7BF33090109375EB8A1AF_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CoshJob_set_X_m08A28DC84107E3B267C5B049ACF9CBE0EA1AF4AB_inline (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CoshJob_set_O_m389B43012952597CBB2D72EACC05F904130969FB_inline (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523_mCE7385F6C8FED78B08FF390E0B2C1723EB9CFE7E (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523_mCE7385F6C8FED78B08FF390E0B2C1723EB9CFE7E_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumFloatJob_set_X_m0A87F3FDE21C8EFA9820BFEB28CC8C97649187EA_inline (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumFloatJob_set_O_m82ADF76095BD9EC05D6820E109689B6B9EC33CF4_inline (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D_m3EEECD21A71CF1A1773AE27A710FA83360A7BDAC (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D_m3EEECD21A71CF1A1773AE27A710FA83360A7BDAC_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumIntJob_set_X_mD6C78C6D4130C9E9CB645633EADBB25D0D6FB1B1_inline (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumIntJob_set_O_m7F940C2D960E2AC1391F6C7BDD851202E96EF55E_inline (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisCumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A_m2B7CC0CB0CF5020EBB8FA8DC22D7CF0B58B876F1 (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisCumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A_m2B7CC0CB0CF5020EBB8FA8DC22D7CF0B58B876F1_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void DequantizeUint8Job_set_X_mAC4F9128ADFB66682B44DD89C38A9A5DCFDFC9B4_inline (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void DequantizeUint8Job_set_O_m2023336116F2B0A7CDBBF3C330EF61AB69F92453_inline (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisDequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D_m33F6C668FEFD60B4E1983C9E812CC18A35D45B2D (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisDequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D_m33F6C668FEFD60B4E1983C9E812CC18A35D45B2D_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void EluJob_set_X_m92CB3472F8220CFB2791FCE2BE9E4C1E62E2E5C6_inline (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void EluJob_set_O_m4152A696B7E79BD3F2925AD1BC697C04E8A3B479_inline (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisEluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0_m3828463F6FC3DB32E2CF81638396E42C3B71FE2A (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisEluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0_m3828463F6FC3DB32E2CF81638396E42C3B71FE2A_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ErfJob_set_X_m702A7AFC12F2AFCCA24EB29CB5E5FCEE06C48AEB_inline (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ErfJob_set_O_m73013F0E2DC9D73EB851FCBB48CB090CC0D6852E_inline (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A_mE4E75C32D67293520131F34E296522EA5E706F85 (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A_mE4E75C32D67293520131F34E296522EA5E706F85_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ExpJob_set_X_m2DE47BAF34B9B75CEE9B0D669F594AFFC8695DAA_inline (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ExpJob_set_O_m19EB60D96BE46E90EAF51B9292EE14C5145B7318_inline (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343_m991D7A14243FF4C2C4897D34AB5D73D0FDEEF054 (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343_m991D7A14243FF4C2C4897D34AB5D73D0FDEEF054_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Expm1Job_set_X_m59C0D9E1DC842DEF7730A229C90B76A807237D8B_inline (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Expm1Job_set_O_m70E00BB9F68C1472F3E2E5BB9E1101829E4E3803_inline (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisExpm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414_mF5D158F3CF728512A51677AF75FEB6F01D5D66B5 (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisExpm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414_mF5D158F3CF728512A51677AF75FEB6F01D5D66B5_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void FloorJob_set_X_m1443FD699D745BF3F6D21577D4A79038C83225BB_inline (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void FloorJob_set_O_m163AA915FE4194F970CF5330EDCEDAFE9D0E4990_inline (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisFloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511_m4158F53551D911ADBFA596EFCB6C933D0AE249D3 (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisFloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511_m4158F53551D911ADBFA596EFCB6C933D0AE249D3_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluFastJob_set_X_m507DADDC573A76B6ADA1D2DB8E1B9162B47540BE_inline (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluFastJob_set_O_m50E4CDF2F0284228CE6F3E06EBCF2398C7EFE528_inline (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisGeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2_m99E1D0A97C25ABBC36BFBF4062DDF340F5F80D90 (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisGeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2_m99E1D0A97C25ABBC36BFBF4062DDF340F5F80D90_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluJob_set_X_m056DFD0D457838CD489E82C11C884D6EFC99396D_inline (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluJob_set_O_m64C2BC073933C85ADB1BA8E59419A8F8E34531CB_inline (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisGeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B_m0D62260F5F3513D38DCEF9C259915C93D15AF251 (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisGeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B_m0D62260F5F3513D38DCEF9C259915C93D15AF251_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSigmoidJob_set_X_m7C27C68FFDDF566C7AA6E449460AA740C88DE202_inline (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSigmoidJob_set_O_mA0845AA753FCFCC031BA78EDD682A6C7C05C4E58_inline (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624_m742E47DF9A12599A46D07E652BA82CA840FFE381 (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisHardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624_m742E47DF9A12599A46D07E652BA82CA840FFE381_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSwishJob_set_X_m5A241FE9AA71BA89B59D4DC9EEE5F82466411259_inline (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSwishJob_set_O_m5EAED311C3867A515F2D2612D55372FB4ACEA759_inline (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C_m406134839D9A3B6889763E288BB8C1DC4B36C752 (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisHardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C_m406134839D9A3B6889763E288BB8C1DC4B36C752_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardTanhJob_set_X_m3ADCB8BB5ADB32877A30216D460225B3BD4CC78D_inline (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardTanhJob_set_O_mBE7FD054CA410801F4753C27205EA178A4DD19F7_inline (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019_m39BA0EDC3DD1C37E28A7CBB413DBBCB3E9B058D5 (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisHardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019_m39BA0EDC3DD1C37E28A7CBB413DBBCB3E9B058D5_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardmaxJob_set_X_mDB853ABD4600390BE6AF6D2B11B7C9E3FD0D08AF_inline (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardmaxJob_set_O_m8545428093B417F9A74BE6BBCB7A124E86766555_inline (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisHardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB_m42ADAB58DA259050941573B478CEFA1D8EF99CD7 (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisHardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB_m42ADAB58DA259050941573B478CEFA1D8EF99CD7_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsInfJob_set_X_mBA3A60BE7D81CEBC20F8A5FEA4448DD674048486_inline (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsInfJob_set_O_m283B8632FAD5E78DD05151C74A619EF18E05A7F5_inline (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisIsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64_m6B749FB9CEC510F141C8A8353151427FEF0647BD (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisIsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64_m6B749FB9CEC510F141C8A8353151427FEF0647BD_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsNaNJob_set_X_m327D1D66343C6ED210B274F07EEDAFC5209FC7AA_inline (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsNaNJob_set_O_mCD3C3A5E6F01B53F842730D2420411A078FC8FAD_inline (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisIsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC_mF190F712FBB94FABEB032487FF7D1BC8A99CDC33 (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisIsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC_mF190F712FBB94FABEB032487FF7D1BC8A99CDC33_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LeakyReluJob_set_X_m32332348C8F03FE57C2673B39635FC1A62F41686_inline (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LeakyReluJob_set_O_mBF1AC1F863E7C3AE2B5025996CEBD3A676BCC792_inline (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38_m550B58B431F8005CCA2286F9DC4E0F3FBF15D0D1 (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisLeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38_m550B58B431F8005CCA2286F9DC4E0F3FBF15D0D1_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log10Job_set_X_m62126BA175A9842D3BF265A7FE2ECA3825F231F4_inline (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log10Job_set_O_m953996C1EEF4842B521039AE633D5968C44C8BE8_inline (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLog10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378_mAD0D737B4873CA94E61BB22057A9FCF9C2894CA7 (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisLog10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378_mAD0D737B4873CA94E61BB22057A9FCF9C2894CA7_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log1pJob_set_X_m2FD53909E533DAF0E02D2E43C9F93EB5075A7A98_inline (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log1pJob_set_O_mA86EBC619804AF3619458DEE9B88D1B35330B343_inline (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLog1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1_m09312C302BE85093C59792031757B7428EEB793D (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisLog1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1_m09312C302BE85093C59792031757B7428EEB793D_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log2Job_set_X_mFCEC8404DD30B03101AA88E9E404FECBD47B403E_inline (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log2Job_set_O_m63291BFA39F85B268DC87D7A5D7B3EBA48756593_inline (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLog2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127_mAE57E0AA9D901006409533D626CABDB2E5DF8BFD (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisLog2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127_mAE57E0AA9D901006409533D626CABDB2E5DF8BFD_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogJob_set_X_mDD6F8E1F8EC4B67F10754A0DDAB07AAF43DC0499_inline (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogJob_set_O_m6B5F4B0E5FD087A1A1108364525A555818F0E89C_inline (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554_mE7840C329EA6C43EDEF749AF0E456426FBDEDE16 (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisLogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554_mE7840C329EA6C43EDEF749AF0E456426FBDEDE16_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogSoftmaxJob_set_X_m991586F90D61C69E1ECB1A1F9ECEE46181659A37_inline (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogSoftmaxJob_set_O_m6E79FD7562D4D66DDAE05539977DE6B29816B988_inline (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisLogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9_m1EF910DB2CB51831EB86F7C9C48E5E52DC3194D2 (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisLogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9_m1EF910DB2CB51831EB86F7C9C48E5E52DC3194D2_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool2DJob_set_X_m5C67365660A44F7C6E0B84613FC73B858326DAE6_inline (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool2DJob_set_O_m40964DCCB0D208C952DFFF0AD4422DD19288B9A0_inline (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisMaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4_m27636D99DD41CCB5C70C61EE9558D708F23440A0 (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisMaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4_m27636D99DD41CCB5C70C61EE9558D708F23440A0_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool3DJob_set_X_m12538BB1491AB21726BD082D340831D7324EDFA3_inline (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool3DJob_set_O_m92ED7FBC8241564DB91698327E86126F646EEE9D_inline (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_mDDFF6BA09F562B27EAA4658A00FD21D51B708FF1 (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_mDDFF6BA09F562B27EAA4658A00FD21D51B708FF1_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MishJob_set_X_m1A88CAF8A8C7BB849D3F5364BBC054413416AD05_inline (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MishJob_set_O_m3D432EFDCD3CC39EFA9782D0C983269081657079_inline (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m354D599CFEB7932907E765FBB1ADE8B456F8CAE2 (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m354D599CFEB7932907E765FBB1ADE8B456F8CAE2_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NMSBitmaskJob_set_X_mE6BFF8B352A84B0BF5A753B76B74EEAC54AF31CA_inline (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NMSBitmaskJob_set_O_mB808CA8D12F5AB58A81ACE5A39E05DF594E62293_inline (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m64B66F65CF87F9D9FA4179B10DCBB4994E57ED3C (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m64B66F65CF87F9D9FA4179B10DCBB4994E57ED3C_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegFloatJob_set_X_mC04A2C7E7BC017EC1F3923821E28CE0E38051388_inline (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegFloatJob_set_O_m335244B793635FB5B55776527FF82E8CBCB5357C_inline (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_m14A6307E5B323EBDC3930B2D86CCCA4EA1EB5A36 (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_m14A6307E5B323EBDC3930B2D86CCCA4EA1EB5A36_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegIntJob_set_X_m5742C96837AB9D089905B32DCF1ED9A3B2F64A29_inline (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegIntJob_set_O_m33E774BD876DAA9AD115574F544A6B69F8349A81_inline (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_mF04BA4C39BC99D47B1E51E2CA2CCC5C6060F6B43 (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_mF04BA4C39BC99D47B1E51E2CA2CCC5C6060F6B43_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NotJob_set_X_m78A75184A8AF64F67141D8D6A011B758417465BE_inline (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NotJob_set_O_m4A9FF5276AB7F51F3C6926D36CD170AA7CBAF867_inline (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA5CB315106778633DE7682C6BAA858E72437CFC6 (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA5CB315106778633DE7682C6BAA858E72437CFC6_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void PadJob_set_X_m5E2A30A118D862DCBE02306F7D2DCF69E9A5DDB3_inline (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void PadJob_set_O_mF25F7BFF48A476E083EF290AC5E90F2A6B22AAC0_inline (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m075B9470B94C3C57C2BAAD670A5EF40F88E1F7F8 (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m075B9470B94C3C57C2BAAD670A5EF40F88E1F7F8_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReciprocalJob_set_X_mF5BEDEE570BDD4551710A03AA41F5DC7D479C4EE_inline (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReciprocalJob_set_O_mB98934577EC66DBD3574A28CA12F2A237FE0DEEC_inline (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_m7736D195215505A0DC2C84B8184E5997BD25541C (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_m7736D195215505A0DC2C84B8184E5997BD25541C_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1FloatJob_set_X_m2D97C84020B4890AD65C277333B9E94A5E6743F5_inline (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1FloatJob_set_O_mBE9960F4EF3AC8655324CCD27F163D942F087F87_inline (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_mD61173B57D3E54263D1702A42B5853886E638AC2 (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_mD61173B57D3E54263D1702A42B5853886E638AC2_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1IntJob_set_X_m49DD2F98E6DD45E44052485C055871144324E860_inline (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1IntJob_set_O_mE30D2C19600C2218E2D34C4FF76EE8D497F6E14A_inline (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_mB0DEA2EC7276AF318D85B1D6E4A46D71A0380E35 (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_mB0DEA2EC7276AF318D85B1D6E4A46D71A0380E35_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL2FloatJob_set_X_mAE52F77DC030F20A2518F0A14CC9B945A08FFC89_inline (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL2FloatJob_set_O_m5D591418003AA2936E2D6FADEDC151FA7DA87C92_inline (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m8829F0977D6CB70F6870E99E7C54C38C613093AA (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m8829F0977D6CB70F6870E99E7C54C38C613093AA_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumExpFloatJob_set_X_m05C3EC2C1AA3E33763939744A16BD855041B7BDC_inline (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumExpFloatJob_set_O_m52DC20336555C5E657274CB8580B2F89386974A5_inline (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m2BC2E19F93A4408FA9ECB7E790517CE2CA2120A4 (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m2BC2E19F93A4408FA9ECB7E790517CE2CA2120A4_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumFloatJob_set_X_mFECA4A6A9B0FD3101EBF56BCA617614222ABA157_inline (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumFloatJob_set_O_mE04277D464885F1BCD29CE0F2B615FCBDE6CB5D5_inline (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m99EC6E53F7D9A2C84D5A0A1446A090F733618170 (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m99EC6E53F7D9A2C84D5A0A1446A090F733618170_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxFloatJob_set_X_m955928D48A92BED6A12C41D4C93BEA7592C865B8_inline (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxFloatJob_set_O_mF99CF99C44CEEA886D149340F60C97F2409A7507_inline (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_m292B0D0A094E7546C732C782E44AE019F8F06F7A (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_m292B0D0A094E7546C732C782E44AE019F8F06F7A_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxIntJob_set_X_m6189979366E07C9A31F28C326574CB7B996246B1_inline (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxIntJob_set_O_m871025D61243BA3A80DDD978B68AEE297BC76D45_inline (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_mDB8AFEAA241E38D1A6509D9412D7C8B1E5CF7487 (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_mDB8AFEAA241E38D1A6509D9412D7C8B1E5CF7487_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanFloatJob_set_X_m6F9C7D11D2D2BCA6CFC916A79178816C26040017_inline (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanFloatJob_set_O_m72982D51C387D7A5E29EC182341D888E3C08E64B_inline (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m49025A6E9A8286956B49AB904C1031E7F1126B5A (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m49025A6E9A8286956B49AB904C1031E7F1126B5A_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanSquareFloatJob_set_X_mA89BC46128F31FACBF67814761CB85B39A919423_inline (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanSquareFloatJob_set_O_m2EB18D1199B3C474641493C0873AFCF798CFAF10_inline (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) ;
-inline JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_m1C3F4CBC2980C52133A902F9BE12259C954380EB (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* ___0_jobData, int32_t ___1_arrayLength, int32_t ___2_innerloopBatchCount, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___3_dependsOn, const RuntimeMethod* method)
-{
-	return ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_m1C3F4CBC2980C52133A902F9BE12259C954380EB_gshared)(___0_jobData, ___1_arrayLength, ___2_innerloopBatchCount, ___3_dependsOn, method);
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisMeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E_m6212DC59D136B8FAA87466C3495D0F4B7B3762BC_gshared (MeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E* ___0_destination, MeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		MeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		MeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<MeshLodRange_t3DABC0BD42B8551AB24A3F27E672D8C89979143E>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_m0995C56174D25FEB52DFEA3A266FB0793ECFAC97_gshared (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* ___0_destination, MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisMetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937_m9CC9BB5524CD97C8007D1EEBE09C53ED6D819499_gshared (MetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937* ___0_destination, MetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		MetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		MetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<MetadataValue_tB24D1ECC62550B3B37D7BFA11B02907047E7F937>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960_m23A0A1DC27829526256D3EA18AF15897CD688CB4_gshared (ModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960* ___0_destination, ModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ModifiableContactPair_t8D3CA3E20AF1718A5421A6098D633DDA67399960>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisName_t9E47EF25D1808C27515EB99D71DB90E187AC1354_m8A9793514C049D29935B8879F1ABE6C9ADB6728B_gshared (Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354* ___0_destination, Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+		goto IL_002f;
+	}
+
+IL_002f:
+	{
+		Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_2 = L_1;
+		uint8_t* L_2 = V_2;
+		Name_t9E47EF25D1808C27515EB99D71DB90E187AC1354* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_1 = L_4;
+		uint8_t* L_5 = V_1;
+		V_3 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_3;
+		uint64_t L_7 = ___2_elementCount;
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_8 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(method->rgctx_data, 3)) };
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_defaults.systemtype_class);
+		Type_t* L_9;
+		L_9 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_8, NULL);
+		NullCheck(L_9);
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_10;
+		L_10 = VirtualFuncInvoker0< RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B >::Invoke(112, L_9);
+		V_4 = L_10;
+		intptr_t L_11;
+		L_11 = RuntimeTypeHandle_get_Value_mDC366CF36C3E21505134EAEE72BD7629107D762A_inline((&V_4), NULL);
+		RuntimeImports_Memmove_wbarrier_m8487273EE6161DB248FB65BB931279FF04F3CA79((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)(uint32_t)L_7), L_11, NULL);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisNativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4_m92D158431A5BC9D2B05C80575A0DDA8B5ED9B213_gshared (NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4* ___0_destination, NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<NativePassAttachment_t55DBA5EF1FDFC2F35EF13D395908A90497585ED4>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisNativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2_m7877A89A8912BD549B31F67DAC4FEEE193752C28_gshared (NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2* ___0_destination, NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<NativePassData_tC0F1669A8ED49F7203325B91DF9C473D65AA9CD2>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisNativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9_m718F6BA93DE096A72722F7717D6DF440848E00B6_gshared (NativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9* ___0_destination, NativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		NativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		NativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<NativeTextElementInfo_t22D74EF7B1ACD2E352A7F6EBEB13B6421F0916A9>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisNudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022_m1344A30C8C64641C8CB6DB508EC56FE1BF15F736_gshared (NudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022* ___0_destination, NudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		NudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		NudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<NudgeJobData_tC303DCF7D6A8683AA414D05AA13CB6FAD4BB4022>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRuntimeObject_mD13EEA1538F26A567D15A7615D8851A427DFD15A_gshared (RuntimeObject** ___0_destination, RuntimeObject** ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+		goto IL_002f;
+	}
+
+IL_002f:
+	{
+		RuntimeObject** L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_2 = L_1;
+		uint8_t* L_2 = V_2;
+		RuntimeObject** L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_1 = L_4;
+		uint8_t* L_5 = V_1;
+		V_3 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_3;
+		uint64_t L_7 = ___2_elementCount;
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_8 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(method->rgctx_data, 3)) };
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_defaults.systemtype_class);
+		Type_t* L_9;
+		L_9 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_8, NULL);
+		NullCheck(L_9);
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_10;
+		L_10 = VirtualFuncInvoker0< RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B >::Invoke(112, L_9);
+		V_4 = L_10;
+		intptr_t L_11;
+		L_11 = RuntimeTypeHandle_get_Value_mDC366CF36C3E21505134EAEE72BD7629107D762A_inline((&V_4), NULL);
+		RuntimeImports_Memmove_wbarrier_m8487273EE6161DB248FB65BB931279FF04F3CA79((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)(uint32_t)L_7), L_11, NULL);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisOccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627_m43F8A4AC2388A9F0C27AB0A185085F53623608CA_gshared (OccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627* ___0_destination, OccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		OccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		OccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<OccluderDepthPyramidConstants_t299096B4539EC7AB7A58FC8D7636C0E3280E4627>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisOccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933_m5A003E688413079C66237DE790878F634A60F8EB_gshared (OccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933* ___0_destination, OccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		OccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		OccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<OccluderDerivedData_tF558D611762DC3E3DDB33625EEC5CF5A07F18933>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisOccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB_mC6AFBBAA2DFE1E74FF820515977ACF76A6F110EC_gshared (OccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB* ___0_destination, OccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		OccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		OccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<OccluderMipBounds_t8054D1DF47047C9BFC6D7C77F703BCE6EA4779BB>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisOccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7_mED6034C6AE7A91FD3482A1B2F2F57DC6CAEC124F_gshared (OccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7* ___0_destination, OccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		OccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		OccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<OccluderSubviewUpdate_t0F6F2469118EFD70CCA43057AEDD76AF2EF4DBB7>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisOcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74_mB35746D9853EBB9E5ABDFA095D7C5B7C58C8B51F_gshared (OcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74* ___0_destination, OcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		OcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		OcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<OcclusionCullingCommonShaderVariables_t88F2739D504549F7A5FF95DD1D3598F6062FFF74>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisOcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185_m0E5023F31322576D419474CB9F7795E2E5D7688C_gshared (OcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185* ___0_destination, OcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		OcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		OcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<OcclusionCullingDebugShaderVariables_tC6B7F442582F6F91DEBADAE753DB8490464FE185>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD_m2C86E0E5D4E10481221216636DD7BC3BDD8A5214_gshared (PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD* ___0_destination, PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PassData_t88911D47229A306D70A3F6A7D3B2FC8FF12F8BAD>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C_m41BC15726CAB8F70CD000CB3674D3128237FE452_gshared (PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C* ___0_destination, PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PassFragmentData_t67D0B4EC16AF3DBC4233CC7537B93A27C78BFA8C>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE_m1C1B67C346EEED0CD456B9E87D080590068B3082_gshared (PassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE* ___0_destination, PassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PassInputData_tA1B8624F31DDB24770D8E0C8FA54189A567FC2DE>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPassOutputData_t8EA364E560775D19D285839BA06710B337503E0D_m9E7E2846C3D4BCC5B682D0E2EAEABACFEEE1845E_gshared (PassOutputData_t8EA364E560775D19D285839BA06710B337503E0D* ___0_destination, PassOutputData_t8EA364E560775D19D285839BA06710B337503E0D* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PassOutputData_t8EA364E560775D19D285839BA06710B337503E0D* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PassOutputData_t8EA364E560775D19D285839BA06710B337503E0D* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PassOutputData_t8EA364E560775D19D285839BA06710B337503E0D>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B_m39B28318F5BDEAE4BD94956E767CC9704364FEE2_gshared (PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B* ___0_destination, PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PassRandomWriteData_t5C298F6D2CA84B027F3D8A145304B0DCFDA1961B>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPatchExtents_t9F583D220D8803058584E983C416D5706242A2CE_m7E81162628ACF808BF1E8AD0A8685BE6C0267704_gshared (PatchExtents_t9F583D220D8803058584E983C416D5706242A2CE* ___0_destination, PatchExtents_t9F583D220D8803058584E983C416D5706242A2CE* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PatchExtents_t9F583D220D8803058584E983C416D5706242A2CE* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PatchExtents_t9F583D220D8803058584E983C416D5706242A2CE* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PatchExtents_t9F583D220D8803058584E983C416D5706242A2CE>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0_mFFA415BC5699C28FB7D9351423688F092CD77B8A_gshared (PerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0* ___0_destination, PerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PerSkinJobData_t12269B9BCDB1CA26111CF0EC8C1410DEB10863A0>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPlane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C_mF75DD2DBA33D1083E63B1A29456B4085A1CC079F_gshared (Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C* ___0_destination, Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C_m98F8F240CF9617ADC53CB29DC7D50C943055F818_gshared (PositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C* ___0_destination, PositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PositionTangentVertex_t2A3AA7C428755E24BA9ECCBD89F67D0828D6555C>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12_m52BBDC9369F0B2213AC12BE9396E3416598DB060_gshared (PositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12* ___0_destination, PositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		PositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		PositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<PositionVertex_tE2E9C13E829C47759FB1722B0548D2D8925C4D12>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisQuaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_m0CD197E2DFBC77DF284D8F5CAD832F7CEAEBC8FA_gshared (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___0_destination, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C_mFFD97FF079AD2A975D7DF2A78BA8D205567AB2FD_gshared (RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C* ___0_destination, RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RangeKey_t6D4869B364ADC52DCAE541898513EF33CEE8878C>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5_m0759F2B6F8E40AFE146E9082633904BC26CBCCD7_gshared (RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* ___0_destination, RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA_mA76873E6FBF3E2A2C2C393A6FBA33ACF4BB2323E_gshared (RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA* ___0_destination, RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F_m79B934C6299FBEAD050C8623DEECA5910C785A77_gshared (ReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F* ___0_destination, ReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ReadCommand_t5DB46BD58D686FDDFBD8AB7600B9CF676DC7D97F>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_m92FE1E0AD06DBA4DEAFD8CF4FCB25C5206BE61BA_gshared (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* ___0_destination, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551_m3FD4B33EDB99E32742062A1966754DC9F1E5090B_gshared (RenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551* ___0_destination, RenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RenderBuffer_tBE7B342979EF2FA36E24C8A7F9242212F5B89551>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733_m6894206E85F92C7E4AF252F3E44348C8831A8A95_gshared (RenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733* ___0_destination, RenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RenderStateBlock_tFC570EF2C8F3A817FECD578E385D18CEEEA06733>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B_m3E9036AC6B2F145C0BD1D5BF478C68862E3D162D_gshared (RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B* ___0_destination, RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RenderTargetIdentifier_tA528663AC6EB3911D8E91AA40F7070FA5455442B>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68_mCC5FE82DA6115518D0515F505693D2403D91255F_gshared (RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68* ___0_destination, RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RendererListLegacyResource_tEF05A444F7845E04F5E6568549AF26D434AD1B68>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisRendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214_m8C5EFDBB84C3693069DECF855A3A029189508D96_gshared (RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214* ___0_destination, RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<RendererListResource_tCB75EF1874F8A294101A45F937987CC314B92214>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C_mE56E868D1E861AD9139DDD68E2FC6520686F0235_gshared (ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C* ___0_destination, ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC_m487A364CEA8D45CA1019912E652DBE060211AD52_gshared (ResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC* ___0_destination, ResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ResourceReaderData_t1B57A9C4CC76875899745E115AA53FF40C6412EC>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC_m7A2C6E00E5CCE631EFDFD1737985A5805815B52F_gshared (ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC* ___0_destination, ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ResourceUnversionedData_t3F4B539E7806E513C53A94EAABF5F969AAA384CC>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC_mDEF8860657F738E1C37779358F5FC2EC8B4F795D_gshared (ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC* ___0_destination, ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ResourceVersionedData_tC935A106FCF6C0800974D2C98DBE14E19A19B1DC>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0_mCCC311A9CB3BBFDF387DB99FA39A44D1D64A739F_gshared (ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0* ___0_destination, ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ShaderTagId_t453E2085B5EE9448FF75E550CAB111EFF690ECB0>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20_m44539DB4218E8B9D6803A1DB854D6A394284EC2F_gshared (ShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20* ___0_destination, ShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ShadowSliceData_t1BCFEDC63BECA994949FE1F4245CEE930EE69E20>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF_mB33B125C7A1AC219217D2366979A4B5E8EEEB129_gshared (ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF* ___0_destination, ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<ShadowSplitData_tC276A96F461DD73CFF6D94DB557D42A1643640DF>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692_m94E6E2313F69F3768A56E42612429E5C38D5FAA2_gshared (SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692* ___0_destination, SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SharedInstanceHandle_tC3415E5C355DF902D26BACE70048BB60426A3692>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m8E65A20A53C662400685CE50AE11C2A80FBC6D7C_gshared (float* ___0_destination, float* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		float* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		float* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<float>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE_m01603F46DAFDBDC35E4B269A54C4EF5DB23FF32D_gshared (SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE* ___0_destination, SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SmallEntityIdArray_t60189E3B3EEF42ED87B04DBA8511AAED039018EE>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2_m7994A64D0123C15A209C4D252F012167DEEFCA46_gshared (SphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2* ___0_destination, SphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SphericalHarmonicsL2_tCBFB646455D2069E738976E5B745C6DF023B6BA2>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4_mC763D241ED329703E317A747036299F8CBB5044C_gshared (SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4* ___0_destination, SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SpriteSkinData_tAF363C091096E80EF5A98430D5738204C2CEF4A4>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisStoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292_mF8CA7DBA4C0513981099CE00AEC5A00DBBF590CB_gshared (StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292* ___0_destination, StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<StoreAudit_t9E8FF144788FDFF9C68E912C5BB87C533F860292>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisStringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE_m87801FD2801CB732EB606CE836166276C6CF8BBE_gshared (StringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE* ___0_destination, StringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		StringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		StringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<StringOffset_t429FFE4819A3944F4D1176FF9582DBADA89A1DDE>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934_m5673359DA14F42D418757E17AA8B63D5D9CCC337_gshared (SubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934* ___0_destination, SubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SubMeshDescriptor_t699E32E3F27A97CF89B0030F74C82D5FB7DEF934>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9_mF6F7C1814773F69C958C41B232379EBD4896E28F_gshared (SubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9* ___0_destination, SubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SubPassDescriptor_t912FE0FF4C99BF293A1E4442353C35B2BB8997A9>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisSubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026_m32A23337029ABE0E84B9CF615FBDADE927B6BC4F_gshared (SubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026* ___0_destination, SubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		SubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		SubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<SubviewOcclusionTest_t4C10094E5EF2C745723FEFE4E5749FBB75CAA026>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisTransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18_mB9203CCBA27231FC655442726FF84EF63FA9164C_gshared (TransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18* ___0_destination, TransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		TransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		TransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<TransformUpdatePacket_t056014168D7AE17359B1BD85E70A6E1B43C3AB18>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisTreeInstance_t382B018173ED020660D262061EA9424682614F50_mE91C4ADA1AE307FF2921B6CED63BFBBF9B18745B_gshared (TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___0_destination, TreeInstance_t382B018173ED020660D262061EA9424682614F50* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		TreeInstance_t382B018173ED020660D262061EA9424682614F50* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		TreeInstance_t382B018173ED020660D262061EA9424682614F50* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<TreeInstance_t382B018173ED020660D262061EA9424682614F50>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95_m5E22A8DBFA1EB5078D226A7573488E8D4F29150D_gshared (UEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95* ___0_destination, UEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		UEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		UEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<UEncroachingSegment_t4B5747FEABEE5473FDE3D8FD80213DAF038BFB95>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48_m18AFD09C3FE27B8C36C9DF3C60BA229EF8B0F9AE_gshared (UEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48* ___0_destination, UEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		UEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		UEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<UEvent_tAA238B4F530A2AB0CA3D77B5D6AB2BA12E5D1F48>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE_m7EAB6440554D87A8B7A4F45C2FA7D7F068BDC9B8_gshared (UHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE* ___0_destination, UHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		UHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		UHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<UHull_t120C7AC3AB30ADD49845481C37359ADE2DB360EE>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mE48DFFFA4D52B03F4ACA304FD485E78F4BFF0E42_gshared (uint16_t* ___0_destination, uint16_t* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		uint16_t* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		uint16_t* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<uint16_t>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mEC6A6EF02BD38F45F23336F48D35B9DC2BC187FD_gshared (uint32_t* ___0_destination, uint32_t* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		uint32_t* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		uint32_t* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<uint32_t>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m4482A7BD91B51B22F471D785B1D22FAE110CD908_gshared (uint64_t* ___0_destination, uint64_t* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		uint64_t* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		uint64_t* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<uint64_t>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisURPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9_mA5606AC3FC8189982A0ACF7B89C9843420DFB899_gshared (URPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9* ___0_destination, URPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		URPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		URPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<URPLightShadowCullingInfos_t8EBC5966B6C0C703C739850EA3B585324022F0E9>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9_m92E3E23114DB2D2D46E537DEB6502584A51CEA20_gshared (UStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9* ___0_destination, UStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		UStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		UStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<UStar_t2600D12793B74BE9DBE602129A44F9970E5B8CD9>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
+}
+// Method Definition Index: 3459
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisUTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E_m042125B6EC91F7C9508BA1183BE6F9D076ED7A54_gshared (UTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E* ___0_destination, UTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
+{
+	uint8_t* V_0 = NULL;
+	uint8_t* V_1 = NULL;
+	uint8_t* V_2 = NULL;
+	uint8_t* V_3 = NULL;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B V_4;
+	memset((&V_4), 0, sizeof(V_4));
+	{
+	}
+	{
+		UTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E* L_0 = ___0_destination;
+		uint8_t* L_1;
+		L_1 = il2cpp_unsafe_as_ref<uint8_t>(L_0);
+		V_1 = L_1;
+		uint8_t* L_2 = V_1;
+		UTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E* L_3 = ___1_source;
+		uint8_t* L_4;
+		L_4 = il2cpp_unsafe_as_ref<uint8_t>(L_3);
+		V_2 = L_4;
+		uint8_t* L_5 = V_2;
+		V_0 = (uint8_t*)((uintptr_t)L_5);
+		uint8_t* L_6 = V_0;
+		uint64_t L_7 = ___2_elementCount;
+		int32_t L_8;
+		L_8 = il2cpp_unsafe_sizeof<UTriangle_t8058F44B73B054F659C538A0787B0A3DCEF08A3E>();
+		Buffer_Memmove_mAA31A45BF1B1FA6490F0913B7FB59537767E5EF3((uint8_t*)((uintptr_t)L_2), L_6, (uint32_t)((int32_t)il2cpp_codegen_multiply(((int32_t)(uint32_t)L_7), L_8)), NULL);
+		V_1 = (uint8_t*)((uintptr_t)0);
+		V_2 = (uint8_t*)((uintptr_t)0);
+		return;
+	}
 }
 // Method Definition Index: 3459
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_m121CA4B55102E3C616B73459B4EB23BEE8C327CB_gshared (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___0_destination, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_source, uint64_t ___2_elementCount, const RuntimeMethod* method) 
@@ -11102,7 +13574,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memmove_TisPolygonGeometryElement
 		return;
 	}
 }
-// Method Definition Index: 94159
+// Method Definition Index: 94273
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* BurstCompiler_CompileDelegate_TisRuntimeObject_mB4980C27A8A7811AFE1E3DD48A5EA8F4F8EFDC19_gshared (RuntimeObject* ___0_delegateMethod, bool ___1_deterministicCompilation, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -11132,7 +13604,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* BurstCompiler_CompileDelegate_
 		return ((RuntimeObject*)Castclass((RuntimeObject*)L_6, il2cpp_rgctx_data(method->rgctx_data, 0)));
 	}
 }
-// Method Definition Index: 94167
+// Method Definition Index: 94281
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA39BB4AEDECFCB2 BurstCompiler_CompileFunctionPointer_TisRuntimeObject_m9AB9AE50036FBC10C6765A0FAC83200CAEC21384_gshared (RuntimeObject* ___0_delegateMethod, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -11156,7 +13628,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA
 		return L_3;
 	}
 }
-// Method Definition Index: 94161
+// Method Definition Index: 94275
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BurstCompiler_VerifyDelegateHasCorrectUnmanagedFunctionPointerAttribute_TisRuntimeObject_m4B6D0A0C15F61050E88A3C96EF07E76C4EF5DC85_gshared (RuntimeObject* ___0_delegateMethod, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11218,7 +13690,7 @@ IL_0041:
 		return;
 	}
 }
-// Method Definition Index: 94160
+// Method Definition Index: 94274
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BurstCompiler_VerifyDelegateIsNotMulticast_TisRuntimeObject_m5BEC9A691C1152B254CAE08B153BDB2E1344D5A5_gshared (RuntimeObject* ___0_delegateMethod, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11256,7 +13728,7 @@ IL_002b:
 		return;
 	}
 }
-// Method Definition Index: 94261
+// Method Definition Index: 94375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t BurstRuntime_GetHashCode32_TisIl2CppFullySharedGenericAny_m668EC99E5F95164E178998B9A0D2FAEC5D229CD3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11267,7 +13739,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t BurstRuntime_GetHashCode32_TisIl2CppF
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t97F62BD9B81457B3C951E4731A189682A75B0618_m452E81BDA5B4D572CBC1C0B2FA4D5609D578A502_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11278,7 +13750,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t4B219CBD450518068824DE0C112518BC2384C721_mE16070B428834E590A710A12F880FFDB3DE9F24F_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11289,7 +13761,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t2D0A24921EF91E7ECCFCEC7F881A27622B8F2A70_mB967F2697C91AB840A9202023B02D8465000F449_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11300,7 +13772,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_tDEDFF5AAAAB5E27B5407F785CADB44D5C49A5569_m9998B05F2190180A10643F6ED92B83742FC8B0C1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11311,7 +13783,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t22F6437423C8358C2B339F95765F78F5F8BD4F53_m4B2F414EE8C82B5AF5DC54337C5C551542E9357F_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11322,7 +13794,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t5416C130E1EB160356EDEFA984F1EFBBC000B619_mDB20CC8747BA2E67840C9176B33262FB3005A551_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11333,7 +13805,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t58F74E58E137EF1DE356A985ABA4748586462B89_mF8D2B2184797A3249B22C20E9CE3037E58760AB5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11344,7 +13816,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t69439B0894C33F9B27AD85917AD7E0DAE9016112_mAF531E97828F6EA873611A4571BDDD25F990D368_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11355,7 +13827,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t655382769C4282682A84F553F5FF0B1AB97370EA_m9ACB4FE7846789D8E3F49F5DED3B35839E51B0E6_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11366,7 +13838,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t3E06B0B953E3304DB73E71071FC7DB2646022C2C_mAB129228331E6149CB76835022FC9F8E60D2B347_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11377,7 +13849,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t18FA6B9845CACA8547C4FAEAC0C5FF7C6E487DAF_m5764084E845D08310A8F59782C5314965084EFE7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11388,7 +13860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t1CDF7FDFE988A5218A7D870586CD04293F25682E_mB3F1D65A7AF0C35CE47E0AAD490420B640CF00C1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11399,7 +13871,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_tE8D83243564C34800FF950A808D4733A2ACB852D_mB6A684433C5061494098A9D16C1215872FC44AB3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11410,7 +13882,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobParallelForBatchProducer_1_t93B90034EC7615CA68546F4CF38E2C812CB52105_m0460A39EC62EA75F5D6D35DE720B842933C70F79_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11421,7 +13893,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisJobPara
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t9CC13410998B726172AE9BD1E18EF691A7556D6E_m461DBC406E1C6681432487E9BC7DC1A94E0D9E02_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11432,7 +13904,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t8114F93AE87A8CB19B82E35F0EF0199D1B631F27_m72786179D35BC41FCB3485373E7AA0D481643AA3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11443,7 +13915,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD83884FCF620B2018AF439EA429FC8E82D3C2EB6_mD2F2CBADF9ACDE9208BD87B27EA3D41628836186_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11454,7 +13926,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA42F4DB7C4A5200DF8BBC0FE8E8254BC12BD6E4C_m054BE2D13146630829AD91AA6734E96BF585D43C_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11465,7 +13937,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t15EC5151CB27674CE619E6720F8037E3034065C1_mC3CB4E329E6FBB924EC4A64AB334493D4872D576_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11476,7 +13948,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t98FFCE13CC282E43ADB46A249121CB380D55ABD1_mD4D1D6AD2C9271CC715125A533A8A3ECC3CF9801_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11487,7 +13959,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD840459ABBED2D2393C113583BB3D64D18046EAA_m0B96825C338BBD0954E604102550C20C10637425_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11498,7 +13970,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t89883955ACB3A8FAE9EEB784A6488D6C01D4AE0E_mEA6AEF6EE4F335F06903BB87CE708DB65C70BC0C_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11509,7 +13981,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4AC833CAAB854C64E3A363868C28E24DF92A9A78_m1DC2BC7516B4CC4B9938BCA331EB34CEDB536F42_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11520,7 +13992,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t8A04D7E281A105D3CBB38C9F60698821775E1332_m6B5D4722B86CEABD64FF3E20C437DE80AF47BCC2_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11531,7 +14003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF6A1B40A1B2F15DEA104469F2064FD99005AD5C1_mDFB2AC781C9045ED33815A0D0201AD5BFE7D0685_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11542,7 +14014,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t8C7A97E8BF9B9555C9CB024131A70C72B4CABF97_m1387F9EF814330A60B00AFA2D375E153A1D3BE6B_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11553,7 +14025,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE520DBB0BD47BA132516BC2EFD4E545F0C554F1C_mE6B82156695B06EFFE908C248CA78A9D4D7C54C9_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11564,7 +14036,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE6308410952568ABF899CB0647677822ABA1A1F6_m4364A87745132BC2953989F07A54FA01625F6126_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11575,7 +14047,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t9B49D63BE7E8E91C036A1C3EAC439F64624C04D1_mF03C099B8440901775081A38F15AF2996DBEED9D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11586,7 +14058,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2D6FA204F614735D9CC7CCD283A656E537BBE4F6_m01BFA034C4D2F54372F537C9A45FD72B77A1EC72_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11597,7 +14069,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4EBC377676D3EB03C093F646012902F512C3415E_m6624D8309BD3C0744A6A183CA390ED25DF3363D9_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11608,7 +14080,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3D339F89387B7686F1854AB3CE698309F0C64EE5_m074954538BA63B4BEEF178BB0C58DCFB23FFD51E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11619,7 +14091,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t02CE7155B8032FEE5F58E9165065233547C2BFC5_m1916E3A06318C13339303129C8109065EC905BF6_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11630,7 +14102,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF77340DFFCB49B34D46A2A85593D49F42247F4F4_mDD4E3BAC61A12A2F10ACBE7D636583025653C337_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11641,7 +14113,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t550D9E25829E706A91CEEB045A9AC9FBE5E95C29_mE06BDBB905F7A0E9E19BA7A679701822734AE147_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11652,7 +14124,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t5D2E3145E3D47605255932BBAF78FF2367390078_m777C65DB10B2C85412377F65A07146700E927EE9_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11663,7 +14135,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tFCBE46211BC0AF9AF42B598F27A397AC25028251_m441B9D4EA6B9FF69BF4E27C656ECA13464FD0A74_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11674,7 +14146,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t42CCDD304D3DC22411CEA5475D2005D287BD3E2F_mFDA67F61F342C40BF6E47C223558439FCAD52558_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11685,7 +14157,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA9F09BB8DA3E86532D1BFBDFEBD6EF00BFB6F4A1_m58513C42776EDC46793AC67C2332D5108A55FA37_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11696,7 +14168,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t44EBE03E0CB1F594140F04A61363E0FD55B375EB_m8AE0D7B8791960925527D5DF3EFFADAC3233C6FE_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11707,7 +14179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t52510E77F781B82BD4310EC76FBD9E503F75D43C_m81664FAFF68C44CD5BB326AEA5455B13523A4EA5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11718,7 +14190,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3E068E6D0DF9A7C65D4D6589C5D9CF6136EAE885_m4FE89E5062B62ACEFB9777D8DDFDC7712EBF4962_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11729,7 +14201,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t564005D59BC611A74126CD3B56616A4F804C90A7_mEC8EB1D31DC1BB2C927DB14649FA587EE8E9D364_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11740,7 +14212,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t315BB719BA8ABBB52C799C04B87FB77AB258A765_m37105C0D8A2E1A2A3CDC872F9BC63281D10713BF_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11751,7 +14223,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t8CA0CE038017A258C45C1395D951106458999A34_m0268072BED10E9FD823CDE07B75562E3C08F9DA5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11762,7 +14234,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2DBC011A6F15CD2B3D25C36B07E685F31452B637_m0F8745057DF3818A54432B69B0DD1813BFC5F433_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11773,7 +14245,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE96BFD21D3E17ABB04BFE3B0FA85CB9F7AF79EE5_m721F01F2B9691AD18E7F8E1ED9C8A9C5FBCBC2C1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11784,7 +14256,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t7947885E000808222F840607DD9D1BC01B94608D_m74971ECEE205E28663FAF196B78D94D523FDBB62_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11795,7 +14267,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB3029E5CB51B896C1811173CD8088074E43B932A_m2FB8F5D46E84FEF84269F63EDA8BFC61F423C360_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11806,7 +14278,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t94A536EDF0D924D8604EB3E890811F7F66991D51_mBB9D77020D6379B67593D554AFAF3D85FB90E570_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11817,7 +14289,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t751F962EF777E3F12010B9B77C0047DF8BF85A98_m8BAB83001A69EF1D9DC330229E04C8A9D6BC8DB5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11828,7 +14300,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBCD33296A520FA06B2556A424F41BC6DC8D64B82_m9AFC7E11EEBE607DD62ADAB984217E56459C6E22_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11839,7 +14311,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t90DF4B8C09FE72639B6BF10DCAC559870FDBBBDE_mC45B9D47758B1BA128AE91543B70C909DE8D88CE_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11850,7 +14322,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE5E53231A8FE5CAFE213D7BBD4AFB45385D91513_mBA1B892DD2C14D04559FEB81C4F42ABC5CE13F25_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11861,7 +14333,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t61A28F73879AE7358939EF1A09DDE4C03563DF6E_m66DB3ABBCEEA22919D3669E045A2BCA0D16A764C_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11872,7 +14344,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA0B88F384728801643EE357AEECBDB45DD4862B0_mBF37B87F0C4857804707191F764FDD671B7BFE90_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11883,7 +14355,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t7AB4E9FBB76C8A5519514679039FAF713FDD6B62_m6EC81A4A3A7588B05346770EC3D4FF797B168B12_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11894,7 +14366,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t6095D904368B9B3D1B2EE19799306E192AF88E8A_m0767729182441F0BD050B1DFB11ED78F83E177B0_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11905,7 +14377,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBCEF03A7E9AC301429685B0FF27C6FC4651DF5F0_mDA6EC4FE1B727D706BACC4F82760CC78CB24BDF6_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11916,7 +14388,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2040EB9FEC42420911CFEAE4C8CA0A71FE7E48F9_m86365E78AF7CE3FDF5C7C8602277A983AA21C8E0_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11927,7 +14399,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t956B17BB56170D9E34AFF173AE7C8A223A78D372_mABE4E5612FBA7E0CAA1C61CFC307EC7FD9248FEC_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11938,7 +14410,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t29AD4B70C6B23FBD5E7431E58305F817C298CA53_mADA32B3C5FA8407AAA2A52F6B173248ADCADCD64_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11949,7 +14421,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB848FE7A6AAF2F84DD304C74B200F528A118FE4E_m966BB17441610EB199BCBA3587D248E485D5581A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11960,7 +14432,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t274364845DDD05A49C60B61EFFAF1C28516BB184_m069153DCB2250343A37A2416582ADE0EC985E676_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11971,7 +14443,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD25B94902A24DECC807C6C1BCF302038C671FC53_m6F5151C2D0CABBD9C36D65408E4F7A202565C975_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11982,7 +14454,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t9CBF701DB41D4DAFE2870E5F9BBCCD84B0DAFF17_m4EC279CA4EF8209064DAC7E7D78904F1808D9BBF_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -11993,7 +14465,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tCB7CC6DF29F0AB7726412FBED2E48D8564A0FF1A_m10003937D27A18CC6478E349896F0BF0BE3DB150_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12004,7 +14476,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB2DC5582366E3B942D237036251007C49A99416F_mE519F8B47DAA1D9F8B0FA321994C6930194B58BB_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12015,7 +14487,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t0D0E3772BA381A7EFC6163C690CC6D22CB7AACB8_m9B199A871405CB225DE0F6A1F9268E17C695849A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12026,7 +14498,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t45A3433A33B3E154E1989BC3CE6646E59FFC73FC_mB94A0AF79B3FA4FC0B0AC66C373362CFCEB0F17D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12037,7 +14509,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t57724A227A5C3F1ABD0C79B3EDB219D6D26CF943_mCCC181DAA6E9B5FD608E3F713F62F295379037A5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12048,7 +14520,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t60B5792FCAD95B70A2A37D75AC449A3D4643CB00_m84F205642168077A402E464D1D2CB5163DE02AB8_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12059,7 +14531,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2CEA5F56C192BA7FD2A47CB01768152E6432D78F_mC10FED8FCD0FFE6724D0B86E49BD601003B756D1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12070,7 +14542,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t152E4BC509E47DDCFA352AEE286BBA4767B9B2EA_mA6936F5623E4C776E80BB434CBC1BB726E174CBE_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12081,7 +14553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA2CA20BBE9EFC690F5C0328D441B4057AAC2E00F_m2194F2E521B1ACB4E1DC5FE494187CD6C4A1446A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12092,7 +14564,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tDB95F963D56432A8A881FFA0649239CAC12091AA_mB4ED9CCE65FF8FB16B5A884495E5ECF666B6A78B_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12103,7 +14575,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tC97C73BD474FDAC32A0D796EDE9A60F3279CBDB0_m43C1967FB35324B11ADA9D884D7FCA8B42C12628_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12114,7 +14586,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2863BB6CBAB3A6BCF8C08C7C69A4DAF10204E59E_m5C8424F3D1C652B4FB80BC678F5D6D87E7AC53B2_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12125,7 +14597,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD20000AD4BA760DDD0CDFEE08AF814958A8C0590_m3B4FA5A6B46E2758307888795691AAC3DAEF0A25_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12136,7 +14608,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2B3E8CD6F21037F16A44EAAA0869A454E82C2608_mE158FE5EC8EF90895883E61ECC03C6D745EE03CF_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12147,7 +14619,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3A4F94EA781D2916A37D442F19E0E651A5330C3E_m7625666C65D12C22BB711261FE30DF899D678024_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12158,7 +14630,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBC618B57B873940F4694A5E170A47D8205960CC7_mBB2D2D96D3B0D4B24C984D9BE4C608D154672652_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12169,7 +14641,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2FE28F634A25CF86FFED7235E86F878C75F15944_mB65B4E2484FA8926D0B2E976EE74AC621A81802D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12180,7 +14652,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB22C4C046B1E1C86A1C465529247E531E5120539_mC13224356E2EC991FD17737410EFC923A04B6B33_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12191,7 +14663,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4819A55F4CDA19B9D6BE30B10335E841848B775C_mCEB2966C102CC915A6FE0991C8C7B64E03B57A08_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12202,7 +14674,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3FEA860B8565725102A620ED75F3CCD2D78B81E3_mA7C7C9DCE734FBE8FDE97B77FCF710CA26EA5EE7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12213,7 +14685,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE95A48D20C0AE75FF90E7E1C034817D4EE77C678_m66D1F292F88B23E77F8D2B94745A6A341DD5D34A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12224,7 +14696,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t5E99A2A9D973FA7C303975BEFF61FB6691A0CE4A_mD84E524D3211E040E76F1880D96C4E34E9398331_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12235,7 +14707,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE8E3CF0FB53F335AABBC661929544FF6335C4CBE_m2AEFA05C6FC4720237C5A0DED532BEF0A991A282_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12246,7 +14718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t918EAAE98FD3279778CD10A2633EB5E60A3CD898_m7C88777CDE97911104A7F69F751BDD737DD4A6D7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12257,7 +14729,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t9555CFB5C92883B13EFCECF74937ABB4A002B585_m58B0A7EE749E80086397834BE7581F928649DDEB_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12268,7 +14740,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF36E16DD0F868CF8FFD9F9E52089F1E9EFFAC031_mDBE32ABC4BCAE3C97CB47E3FCA611CD7BAE412D7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12279,7 +14751,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t16473FA8C0FCA86D1D64B8EAEADFF636FDC44097_m2BA6084E14345F41F149B113B8215CBBAB25BFE2_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12290,7 +14762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t8F5A55C14961626155A61E3FF9DF4999B1E0B323_m435001830A6E17A91D41A72B3C002B222333BF10_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12301,7 +14773,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA9AD7CA6E664EB4DD95DE1A85F9F683B7B51DBB7_m6C2A9DB5AC43F4723211FFE42015775EA5EA51C8_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12312,7 +14784,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t14BA4200D4061200F9E3567C9511E991C096973A_mE99A8149213D2FA8A4BFC96B99004C4A7B69F9CB_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12323,7 +14795,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tC6F53E171CF49BCC150B9258A16E8FA4C330AE27_m363EF739B78FE69C354104944315734370124FDB_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12334,7 +14806,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tFEA0C3CB6352832C07FC511596658598BF58DAD5_m52C21F05C6D5C1A469DB6208C42225C52E2218B4_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12345,7 +14817,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t24CED0E970E992B0E1BAB6901EA4A974CFECFCA3_mD5ECAD8B718F7563788E6F56603079E78DFE3BA1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12356,7 +14828,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t424894798170668B652F9FAED60C990ADE546592_mCA12AF39E5B3D3585E79DDF907F39FD5DBC41344_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12367,7 +14839,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tC966A4DC2E7C86A8BBFCEDF9B2EEFED632B8E411_m4FE884511B576B5C72ED4FC3143C21960680DF64_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12378,7 +14850,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tCDADF5F249F50B96984C026DDFB9C842332E9AE7_mEEBF2FBC038EF128D5E84B8D1154687CAABF6B65_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12389,7 +14861,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t28CAA971577F98D29AE9C05A4DA291AC83E58CDE_m42D522AB984A6F3C9BF5604C94CFC0AB7076D867_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12400,7 +14872,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB9BB9158BB1BED84CCDF969D952DEA555DCED07F_m8C22FF712CD2A93E4AB9D6122EFCE94F125B9EA3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12411,7 +14883,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB5682D2F3191EA1FE6906A0DDAAE0988D2443707_m1F9515C976ACDE7842CDAD4C94319926819EFCCD_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12422,7 +14894,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tFD23F800774DC012AE36E01DBDCA06F52596AB2C_m3145B1B71735F1760B33CE4439EC52B5F451314E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12433,7 +14905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t359E4D1184B5BEB4CC0B055A3EA8C405A13A86CC_m06637CE069A3BCF7D5D59C1C8FC1C858DF1D412B_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12444,7 +14916,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tC1CA7BD294859C39E6B1A3FE71144D5C25A687B5_mCCE459D85662C04083D6DA19B849F57F4FD94C0E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12455,7 +14927,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t90C4D6AE251F180199B38CB7EFA92AC16F41E48E_m7E046905B19CE6E4AF0280EEBB86E2D4E16D67A8_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12466,7 +14938,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t914A84C8A47914F5EDE58C212F8DB08AA1F7837A_m304796E27634169938B918E145359DCFCCEFA414_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12477,7 +14949,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t370D035C7BC0E067305DC70E0B2EFD201FE5E6C8_m1983EA705FE61A226FF6BAAA07590DDD71C202F2_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12488,7 +14960,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE2A873EDE64B621989EBA0F8813C738BD4B08A55_m85C2ABA15A3EC73D3A7A6F1103D186C155001396_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12499,7 +14971,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBCBF98C8945C4B8DDF7E0A011F5B8235B44AD660_m56DBC39BE9143711C5434FD6CC24FFCF2623EE9C_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12510,7 +14982,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA11C6BA3A9DE26B31A4E67997BEF4F552FC2D47B_m2793658621F52A1B7341D7079665232F64F71250_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12521,7 +14993,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t9F76327745E646E088B84CDCE92DA63B9B62F1E0_mD651979D5696E91C37F20D6A9E181CFBEA6D1B38_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12532,7 +15004,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4BB000E91C6A08E615FEA885EA0EACE6D474CC9F_m8CA33967566129221A9C9B25F9C666B727EF530E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12543,7 +15015,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t84E2F8A791D9ED17C0B4F59718DAF840F7B65605_m9FF3F24FC4CBC4ABF6ED153F2CB0CA34A3B5B88D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12554,7 +15026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3D046E970D0D0200CFF0A98CF42EF925F33CBB15_m8DC3721B80DFDCC82358D59258DF59BEFBCC5258_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12565,7 +15037,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD7B9806D356D1810A1C0539843620920BD693643_mCF3B47B00C9A887727B3809E90A0C80413E31943_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12576,7 +15048,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3D520ADC0DE11A7400B5AEAEEA9533F9F819906B_mFCA78A56DA747B9CE4E5D3B7EFA06C2F3A095469_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12587,7 +15059,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t394C6B29C7A1C5A0606BAAC5E8EB2BC8858A4024_mD6E5274CFF4BCD6E3E9FE4E3E3F5A353FD9D1B1E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12598,7 +15070,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t6F1A6B6C8424F3BA3DAD8B98CD218E4499D0EA56_mBF7B36B7FF004504749231414F099A8656410284_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12609,7 +15081,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tDB69EBE3359D2446AAA0B93DEF32DA9F1A0DE2A1_mCC12CD287FC1F30F28005F1BD5AEBB4DE0914D01_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12620,7 +15092,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t331CE9411583D3DE342253F8B6DB59EA0660BD6B_mE83BF92ED7D94FAF281F8238557C6A7F33837A2D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12631,7 +15103,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF45DA07ADDC019595EC65C5CE79CF0DDA1139BA0_m65DEE1FB50A8164A0DA600CF3E0F1F888DF14C10_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12642,7 +15114,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t19C7729CBBD47240E1BF9F465574B832441BFADD_mEC6F33221A45361C3BE20FD46282350F569F0AE1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12653,7 +15125,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tAA3DC73A48388B8E53A3E8E689BAA445DB282B69_m6A6AA4F4B8C39FD724ABEC6490F266D49E95863F_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12664,7 +15136,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF9F7AF3E6AEA7EF1EE61969B6E04A9D404146C1C_m4A1E8D9703FC20AC2FAAA9D895260BE5190769EB_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12675,7 +15147,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2510067F3565FDC6132DF668CAD484DBE2330CEC_m78158CB75398C924F81C8CE39B387F861ABA9FCF_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12686,7 +15158,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB698EF456470FE2F901A8E82EDD43AF03DC469A6_mA1B86EB7AF12B65030D73A253A08F202675A27FE_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12697,7 +15169,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBF7C58CCD8FF112DE72B2670517BED8AE9872B29_m29EE4F9E1C72742F0C0965F86CEAF669C4C6B60E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12708,7 +15180,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF96B6F4B9D53F233234ED4AFC712F933D1C35849_mB10A2166ED36D1FEBDFEFF0A5110B5F2CCEB58F7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12719,7 +15191,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t67FBD8DE36F5B982B6E4AE4FEA48512B11EED3ED_m02D47C1D91575136E6B3850936E72543FA917D3B_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12730,7 +15202,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t879E38A95263258B33695CD75E5B502363123616_m52D2C89B3555439411F27284CEFF22513D0F72E6_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12741,7 +15213,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3BACE034CDB03836C4C49F724F73B705E3E1CF72_mE7F496BCE2BA0062FA5E479F6A6859D03ECC916D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12752,7 +15224,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t81E4432551EA246D9EEEED60248CFAF359D218DD_m73FB34140B949FC7D5DFF246877B6D10E7F12FB3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12763,7 +15235,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4505C03BE1AA13C2AB9488D806E7CF52BC52E5BA_m2D3CB1070EEF15590DED281958B9D489818C9D99_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12774,7 +15246,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tECCA99DA3558622CF6E711927FBC3F431C3C6ED2_m6ED221097546FCD5AC021D2B8C50FCA39588D538_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12785,7 +15257,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t813F8109BFCD76D3E93FEFC99D7F311E692B4522_m556F82412F29D73EE30ABA0EEE8FE7E3E0C2E2DA_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12796,7 +15268,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t98A3642BE68A32B7BE03A5CDFDBA7DAEA3491517_mF5BEC78B8847559223EBFEACEF36AF5782064689_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12807,7 +15279,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t175FBFEDF30267A9737BCDC41AF2C42527395B94_m6A7DD8324A991B7CB5BE8031380626B196614E7D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12818,7 +15290,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBFFA1DB7C60B6D9A210FCFFFAC87E08825B51EF6_m42E864C3D46887E29BC3A076984327406B17C932_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12829,7 +15301,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t86DFF7696DFF041A05564CF0546D0EB5053091FA_mFB788B63662CD988B5CE73585DDDA0D02C519B54_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12840,7 +15312,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t20094DD1CC19FEC64DDBC294B869AB59AD5A70C8_m9CB80585BC569BB13979379F64D7D3509FC4DA21_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12851,7 +15323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF8528528B4E1ABBAA15C325CCB895F64E3F76728_m1DEE52F4F0CFB3C3E7FC81383F0A8B7FBC9B4905_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12862,7 +15334,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t8FB7E75DABEE2A1B3B079173E2E6CE356FE01BB4_m9C9F304AA1E4A655A5DB9681103F3AC31E0F2C8B_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12873,7 +15345,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB2319D84A351EBFA146631ED7A7B8B0547C3C85D_m543CDDC6C12BBC45C5B48AC9DAF89D4970948792_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12884,7 +15356,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t697489DE089D31B32074954EB413500415F72DD0_mB13A3828789BBD790AFF3A4BDDCBAE7B608F350C_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12895,7 +15367,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t30CD0BC3398F538ACFE1992751FAC43E9875C6AA_mF1A861E920961B3F299BEEA40D39A5B241EDC36A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12906,7 +15378,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t36945CD24E59EFDD7962B720837BB9A4ABBE5366_m6231935A1477F2A68E968E492E297AA0362E6D89_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12917,7 +15389,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE7F533E1DAFB62D1A1BA67ED5D7606F8898B135D_m405D83EB48E7CC3FDFAFEB9BF7436A834DA77523_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12928,7 +15400,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2EA6C1B95200065D92D63F8471AA2790D0E04919_mE3FEE1AD5A2CD3EE5705F9FCC66DB1CDB5370CF1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12939,7 +15411,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBB8EDFA1D1D89C7ABD5341FE80FC67D71C82242E_m9565115D30609E18840E944334440675218C6810_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12950,7 +15422,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t320AC9CA3E8EBA0E8341EFC974F4523A5DB9BD01_mC943F35E34C8710354860396ACD83EA5C42EF042_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12961,7 +15433,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t3047FEA70EF7259D06065E96772F6751793E53F2_m9DD12EAEA3CA84614ADD576C10780162359A3927_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12972,7 +15444,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t5E4C4A2308D82DDAB2D0470112A6734639F3FAC5_m673EB237F156D486FA5D5898E1AC10E58B9FBFF9_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12983,7 +15455,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t514A2CE963C32C2B6CF8E6412C6A0D004B7AF3AD_m863F43D93E9D148E40B05529416D80E8120E2C15_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -12994,7 +15466,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t6F21A9B439921D7115B9311A467D4CF5EEE68E37_m12E93CE671DEDDD4F09192E2989B0C77DB4501D3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13005,7 +15477,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t189934B227F6C162FE8A92FE68DC9BEFB57387BC_mBDE4A1DD21C4ED34B2B1C01CD09A81D10B39AEBF_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13016,7 +15488,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tAC4163E5C8DA76B1E1CADAFCE4804AEB815C3927_m8702F84179141A0D0C7537703CB68235C489C416_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13027,7 +15499,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4287446DD64A4F10CA682EC6CF84C68F83DA041B_mF8AB43527DF5561617E70CB1594D579C8CB20825_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13038,7 +15510,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t9EE714363034785D0875001FF8D6E943066A0D0B_mF1151BCBD5FD43E3C319BC2952BB4B4546A40C59_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13049,7 +15521,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE7835C67FD527DEA514D487DECBA79AEA7E49D83_mC082035926DF523FDFD16CB4916E434945101BD9_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13060,7 +15532,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2E7385DF004655A912606CEE0EA5ED9ECD62002D_m874457398BA0DB1562DDE5A1CF2B13CE48BA12CF_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13071,7 +15543,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t0BC9B08FEFBAD2859B54CCA7CC3F0AC9E4BACB93_mCB8D2AA8FD32EA0C8693C42FC74DF7AC482F8EB8_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13082,7 +15554,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tC128E45196177738F30EA73380CC4F1D4E0176DE_m8B67BF89ACEA05C62079DB706071236FE25AA2D5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13093,7 +15565,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tBFAF7B5AEFF276E6EFB67873152D2BA9EFD6FCF6_m2E1F024C0D2EEC283D86FB67224E2D0C36FD131D_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13104,7 +15576,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t932AC9957F8585B2850A17DCB9A32218B11D596A_mC8DF357177474E6BF0CE5F688C44AC3AC13771E5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13115,7 +15587,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t495FBE4E5CAD6BB9D05A2D37CB939B658ED75063_m78FFFA423950D35042BCC1155B27C3DA3A917E96_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13126,7 +15598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tB46BC6A856515F93A5B34311BE47D536C3D65D41_m87382020FFAD79C7072A0AE1480BD7CB0B4CBC8F_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13137,7 +15609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t23438293E748D152BB81FE41CD1468CD93350028_m6B0546C3DD7D0135B5AF5A1969730AAFEEC36200_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13148,7 +15620,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD801F2507D37390F32E69E5E296F1BB4C38FB210_mB87DCB8DFCB7B940911D584A4EA3CDB844D104BD_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13159,7 +15631,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t0358FAC279F477B5A007823AA35D37BB76E1FA34_mDDDA818F5DF626E7DC99B7200BEB1069558885D7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13170,7 +15642,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t902E24D9CEB62CE6DF2F8BDCAFF878718CBA7B6D_mF0D6AF5AE6B827922274B82978E5A020868DA54B_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13181,7 +15653,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tCE3C65F6C6287ABD910CCB7BEE5E54AF83F81AF0_mC4A5E5F6BC58665AE9C187985EE9253FDFD96E10_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13192,7 +15664,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tFF34BB68216A91E78425B7444F0EF9D603C178F0_m8DC9067464F19E7914004665EE100748C2EFF565_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13203,7 +15675,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t2E4FD5D106F7A39E93C03133CCACDDE0B532F513_mBDA761C9A6B5E8640041DDB008251EFBDC39C749_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13214,7 +15686,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t0E0A987B1DA222814DB016F68EC736CF1150CA7C_mAFEDBF25D6B15DF48A1D085812D14B01BC36B8A1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13225,7 +15697,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tFB75137EDB4D637DEAAB44DF4EFC973124EFF86B_m7D1074C50D1CFC74CF33CD6171FAFF1E05BFC9C3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13236,7 +15708,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t75AEC0AC9CAB6A91DA1C273B6F19EFD7B9AB030F_mC96419122CEA3E8E10927B4084C02EDA8407C107_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13247,7 +15719,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tED99E0A6C159D70A7E2B9C5AE01E0FB9556F5AED_m4A6EAE320408EDAE3608D5086052DA8B477AD90E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13258,7 +15730,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tC327C43A0AB7068A3D2BBCD503B4531FE2C15080_m6864AB231ABC3BF60FE74256A20B7360533633B3_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13269,7 +15741,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF584EB79503AAAB60076B8E8C15E42C016EF6D6F_mC071EF5340A0F715222C53490BC8EAE18514E292_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13280,7 +15752,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4026DE6F598778D9F2D61D12D2C156D297413605_m1FFD397685A02E58FBBF0C5ABEBF569DBEA48A0A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13291,7 +15763,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tD94EB10E941BC3C7E4888A16623F82A0DBF2165E_m87B4EA4FD7E907A908D911618124CCEE07A1C05C_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13302,7 +15774,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t4469DFC6E4FDA5EC2302A3482D027E694416F356_mEE35A6C3F6B231356664DC85D552E41839BC54A5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13313,7 +15785,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_t98E56079B8EEE9D4DABDEF2D5E23C684DE438A6E_m1BEE88F157F1F9A3FC5A8346E403741F5B003E2A_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13324,7 +15796,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tE7E553B413BB039F1FBD6792F0A6AEE65F94741B_m00067EE22A121C645FF606FFA1A0CCE87A352301_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13335,7 +15807,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tF86E31EE7B18DE61160B730D2987982C4945DFF3_mC4F7805A83DD8A2FAFE8CE348CC90D8867BD895E_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13346,7 +15818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParallelForBatchJobStruct_1_tA1F45336B37250B6B818A787A74D20198D176041_mD821ED90BA62C6B069F5E611EEFB1F1D9B2E8DD7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -13357,7 +15829,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisParalle
 		return L_0;
 	}
 }
-// Method Definition Index: 94263
+// Method Definition Index: 94377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_TisIl2CppFullySharedGenericAny_mDBD3D49859D60324F44B9713584BA42CD4CCB3A5_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -23176,4466 +25648,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE0
 		return L_12;
 	}
 }
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_mD2E6C97498B693EC2C082B9DC313C88538AEC303_gshared (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m4D0640F53751EF0F536E8266067D558A8C4DF21E(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m7A764B492B58525EB7BF20C2EA47E20713B48D53_gshared (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m02FB00631E3B9951F3DFC61085B0AC55C8897DEF(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_mD407D9C13E13B57504A483E2A1492A869F7E9973_gshared (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_mD48783A83C07E78DCBAB39466F4EB5430732A9EF(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_m227FA859AEC72C8FDD8BBBAF572761E142AA79D5_gshared (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_m67F70459FFE454A5C334C7EA75C8B058101BF2EF(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_m34CAEFEB45AA93ACB70B5EA43D81352766F13D07_gshared (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA42076D83859C8FF6679F9C72DE6047E727893A8(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m473752B54C559B7AE5C4F89802725F9F2C5A577A_gshared (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m271050705A86A3C451B89187318DB3DB1639CAB2(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_mC2D99189DE91E50A46F6CA2CE4161A3B0945120A_gshared (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_mFFF2443CEE13E41A5890A18203393633FC895246(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_mDB371A9A9ABEC12596B4AE6522E56E149D70C4BB_gshared (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_m582C9A792C66BA7869EAE3695E7B3CEC4ECE825C(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_m4DA0F4BC4554BFFFCDB2772B25D301B6520D0938_gshared (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_m763D497D6EC0366996375596A005235435B394E7(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m1309DD58B25671E59AAD9DAD8DB99BD586B1017D_gshared (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m480DA9F75C7A585F695B76F6F220E8ECCFA9DE2A(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m49E52B3841ACA4FADD020E4255354AB9FA084516_gshared (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m98388B0A1585C3DA91A86E393FD02465C4E7C717(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_mA3893E8A6AD73EBC539F1E307DA8268E29006DBA_gshared (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m164C6951101EA8575F0B3EA1CCA823EBF49DE525(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_m2F8C2D31F5AC2008F7869BD417F461B126ED1C2A_gshared (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_mAE8210053178C3C651DCAB30D41C664CCE7909A6(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_mA0EE3AE6EF104290B180B865B9440FAE9E3CC0F9_gshared (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_m41C0C3F8BB6123A5EA3CB8742471AFB9359D6E75(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_mDE3FC1894EA433304248B2FA1E0EBDBF6040DB55_gshared (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m5EC59767051247EC34A727A911E14F94FDCFF533(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_mF6EBBAC27A34B6BFF5DF592FF3C95796D37287B8_gshared (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_mA2C4A301A11C27297FEF668C4DCBE746A6021D21(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D_m8EF7B5FC7550E1DEB3313F86862C0ADC9CADC6BC_gshared (ReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinFloatJob_t0DD534A7D94282F99A1DC12BF03EF9E9F27D428D_mE2A87F71CAA626950B8D44BEE6464646C6C73A06(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459_mBC844A600D79D882428786D7BE5414FA2AC59036_gshared (ReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMinIntJob_t065DCE40A487C4934B71F2E8C62BF39E5A681459_m94D84B9D9FCDC6F800FB693C3127A17AF82B44ED(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249_mCAD31A528280E2DC9C7918BF7FC05FED228B01D4_gshared (ReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdFloatJob_t58861753DE5D453009FFCA19E09E7C6C3F232249_mEE6B497D42B4F57FBB0D3267E8C545312B340C2B(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516_m365493AB95C760D3C4F865DB9F8B5286F95A1053_gshared (ReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceProdIntJob_t632E57A26A9BF8AA3C8213B749D628806CF95516_m4C90B2A0E92401C0071C8F97D9E50EA89F195C00(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E_mAC5CECE139972A1BB9013F37FA5CDF170344B821_gshared (ReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSqrtFloatJob_t9413FBCA23F3917102B759DF702CC51D4570DF8E_m8427521F666AA3D77E3E7A361F4594359981FA9B(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB_m5914B6195BF3F64F2098BB9DAB651D2DD253032D_gshared (ReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumFloatJob_t06822DCF32C497D3699417CD715EBFC73EA04EBB_mE1F807CAFB0840F20D4DE7860E83AD30AEF27C18(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06_m4F6735418E391DF8FFD4CC8B9DEF830D9D22AF99_gshared (ReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumIntJob_tD6767C69E0AC382BA8D1D4632911A54C09F2AA06_m642B574181BED5509E33474E2C5AA008A015F248(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8_mB23A64E79AD25FEF6BB1E28D74F9F8A0150917B8_gshared (ReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareFloatJob_tBABFCBE7597AFFC4DACEE42BC5A8E2FD6B2C33C8_m58A9A54456EF8944C02D12C16CF984256C7CBACF(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4_m682E57FCBBA1AA73AD4FB16974582D6C8A29F8B7_gshared (ReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceSumSquareIntJob_tC6705881CF786FAF156A5164B2202F4C47A301F4_m0A65A766E73C638F706FAB84D510CACA0EFB05E7(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisRelu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10_m257C95A0B0864EF6556A5266D4D08E8D0F408F67_gshared (Relu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		Relu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisRelu6Job_tF9C11B740BF1C3BA8CC2A819FE6E3AD154A12E10_m84EA26160F1CA33FA9D4938F216C6C13CDC27643(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A_m4F2126A3EFD6CD942ACB612A41EF64935DDC4255_gshared (ReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisReluJob_t2F15104929ACCB4868D69181D5C0E96F68751F4A_m5F762DC13E4B3309A8E8A9441ADB30A61F63C235(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisResize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F_m8BEB140590BAF9E6BFDC1A4C75D08547C707D92F_gshared (Resize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		Resize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisResize1DJob_tDAEB1F9717E7AB88DB2A8B6343D7EC8698A45D8F_mF114C6F4131F29ED7FABB536840353F186A4F0D9(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisRoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE_mFEE1107B6B445FD9C934E800E02FA334159F45F3_gshared (RoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		RoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisRoundJob_tDB44C48F032BF44EAE180979C5891BD413B010BE_m73740BFD913BCBD329AAD1A11F2B4D76B575B15D(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisRsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963_mFEA6D8222A3902B26EC1FF15762BB62B4DF2774A_gshared (RsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		RsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisRsqrtJob_t334F647E7A936B150BF1BE7F3739E03929BB9963_mCC81F39E6D4581614E1BA314E71E881C04CDD849(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B_m50B233E3D967E044B7F261046C028D703DB6CF21_gshared (ScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadFloatJob_tB22EFDC222CDA1AA454291DD4AFA540E13B5004B_mD3493D2024692D601BDB309607D2DC7E564E7914(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5_m48C0D8E6EF63E182FEAA1DB29622D6377A7F686D_gshared (ScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisScalarMadIntJob_t5A2FBCAD5EBBF17F0CDBC1EE1283574C930512C5_mC8B348A9F544CF53FEF5B81A8AD7704364038F20(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1_m3D8A75C9090BCF4DE0723BF0CA8347A9E6A57081_gshared (SeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSeluJob_tB70D439A12EF36EDB46F7C90891EB1E01DC69CC1_m06A581369ADFCDA690E74A877E39BEDF2D5DEC6E(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6_mFBD867DF726898F5BB9E2F732B067B35CBBD128B_gshared (ShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisShrinkJob_t11C1EC436F1E4B105044475438D2813D2B7771B6_m10CC1FA60324FCED7C2207BE00AE47B76ACB9B20(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5_m79F4D0ABF29EADA703DBCD5B7E84100DF4633254_gshared (SigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSigmoidJob_t805233738B1A025B04B1C83E59B4157236947EC5_m0223064C05AC8649C79C69AB66AFD8F0076FBAA9(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7_m7A864B036F6DC9912FBD5A4A2CC7B0D0068E8F3D_gshared (SignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignFloatJob_t5041D0A64BE9A815D1C5A36AA8DF5A7A612557F7_mEE1C7F5445BDFA8DAD8FB2F2921BE18219CCAD35(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4_mADB3BCA1274A10F493CEED708C0CAB9DEF6EB18A_gshared (SignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSignIntJob_t4CA10B01B19B2D667EE0EF573BBC3CE4316688E4_m53046ED7B8A76BDD41EC068F1C8ED11BEBA4FB5B(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSinJob_t9629A92338DE2387D236C2707B378E6009DC46EA_m7F82090FEC8EF22F1A4CE750C8BF8B90AAF29CC7_gshared (SinJob_t9629A92338DE2387D236C2707B378E6009DC46EA* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SinJob_t9629A92338DE2387D236C2707B378E6009DC46EA* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinJob_t9629A92338DE2387D236C2707B378E6009DC46EA_mFAEEAF4EA256FC46A5BC7CD7D299E02E028E44B5(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010_mC32C799176401352DB5513132ECD30FAE0D0A926_gshared (SinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSinhJob_t5FC079A1B3930B5720C0CB57CB79D97DF29E0010_mD0C46B8D62ED9DAC838C96C5A890C68675E6B4CD(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSliceJob_t98CB2471680DD941A454D645873FA340B6C404BE_mC35F028F278FDF30E756D8B7DAFAF05B0D2903DD_gshared (SliceJob_t98CB2471680DD941A454D645873FA340B6C404BE* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SliceJob_t98CB2471680DD941A454D645873FA340B6C404BE* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceJob_t98CB2471680DD941A454D645873FA340B6C404BE_mCD0E8204D71B6528C2B9029714C7FE3112ACA301(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141_m1DDA73298781D3D2D5EF62826A900CFE009A3F57_gshared (SliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSliceSetJob_tBC0DF3B385DC1EC8A892DA44396D757D04CBF141_m46EAF1E6129A146DED68E7A7274E38F73A137677(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958_mA4C72299083AEABAE766D413447339AB7ED5F424_gshared (SoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftmaxJob_t12AC75A42BD67CCDEEBBA4D07C412A4B90628958_m916230F699E9FDFA419FB18FA803318133556A66(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9_m090389487142B3A7612A8164F271BF1CBD203AD3_gshared (SoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftplusJob_t90B4184EAFDD9BB4DF4635919458634C6C9241B9_mE851C258763253490AE9AE28B91F1D0AA043B41B(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125_m009EE19A89363749ACCFF3E87E32186D9B34464A_gshared (SoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSoftsignJob_tD510CC47CF9B59BE11372117A91603E70526C125_m83866F0E7FBE77FEE6AF352A3718D583284A8B28(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB_m3BE4E55C185CEE5EB61F507F204B1619DE6600E7_gshared (SqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSqrtJob_t6A17BE8468C25554B3688413F25B90479622B3EB_m3E46F2976C540FCA7C63412F46C0378A91580B61(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51_m9BC0534670E9DF5C7CB2E6C8F2B0FBD629411FD0_gshared (SquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareFloatJob_t4FDB23FE0F26EBA8F3B9A5FFE59D374662326F51_m8ECAFFFF3BDAC7E31337BD2BF9061E62229C37EC(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC_m51C4975EC814DC476E2EDC69460E2FBF1DB346D8_gshared (SquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSquareIntJob_t4FF8CEF3609091B6225115AEA268C34B73F2DAEC_m4BE358631B88BEA8CC304537573443ADF49E93D2(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisSwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C_mA16F34C5D8379A32DF540DD71DAF52C032865F06_gshared (SwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		SwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisSwishJob_t87EF525490C1C45F1308DA77E2FE985E8C1A8A7C_m9277C0BE06B27876E9A3B20B6C31D6D2AB470891(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisTanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D_mBA93DCC91257A00C6EDED269682434BFFA6A977E_gshared (TanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		TanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanJob_t9D1AEDD23E6FF9FB7A43A4A2038987EE09AF895D_m6105A801E0D5398C15FC180A9061E465C4853B17(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisTanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A_mF04489EF751E3A5C94BB31A5820904454E0B66F2_gshared (TanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		TanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisTanhJob_tBB132930972EC59B01BF45378F66C6F33B12C66A_m8E8EB12C1E0B35F1226CCD3B30F4E4887882A317(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38_m0C102A2B0C8936FC65C2ED256DD32AB39FC1B829_gshared (ThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		ThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisThresholdedReluJob_tDCE4C11152D81A10EE50D34CFAFD1EF8E50BBF38_mFA7A99F84B0E93127AF9DAE03CBD7E086ADFCA3E(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisTransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880_m5FF2F6892B53A544A30CE0B61542E71DEE1F2129_gshared (TransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		TransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisTransposeJob_tF712550633FB1B7910E3939EC9B1BAD44FD8C880_m2B3AE893ABD7B695E3F7450A260D56E3DB8F2428(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisTruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216_mBCDA3136AA9C68E03E91553E2961550A01103BA5_gshared (TruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		TruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisTruncJob_tF5500F9B002EA6372DBC3F34966AB67FBC2BB216_m274F19C5977F23ECB22A3F9997344C86DEAFCB8F(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27076
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXO_TisUpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B_m6F9905DF3925792BDF038982A035C068C9C53A6D_gshared (UpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B* ___0_jobData, RuntimeObject* ___1_X, RuntimeObject* ___2_O, int32_t ___3_arrayLength, int32_t ___4_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	if (!il2cpp_rgctx_is_initialized(method))
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var);
-		il2cpp_rgctx_method_init(method);
-	}
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:379>
-		RuntimeObject* L_0 = ___1_X;
-		RuntimeObject* L_1 = ___2_O;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_2;
-		L_2 = BurstSchedulingHelper_GetFenceBeforeJobStartXO_m81A2225321ECFCED749A4D895859CD63F1FC502D(L_0, L_1, NULL);
-		V_0 = L_2;
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:380>
-		UpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B* L_3 = ___0_jobData;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_4 = V_0;
-		RuntimeObject* L_5 = ___1_X;
-		NullCheck(L_5);
-		void* L_6;
-		L_6 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_5);
-		RuntimeObject* L_7 = ___2_O;
-		NullCheck(L_7);
-		void* L_8;
-		L_8 = InterfaceFuncInvoker0< void* >::Invoke(4, IDependableMemoryResource_t64B41F08A7AF07DC7C7166F07D1832CEF6278121_il2cpp_TypeInfo_var, L_7);
-		int32_t L_9 = ___3_arrayLength;
-		int32_t L_10 = ___4_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11;
-		L_11 = BurstSchedulingHelper_ScheduleBatchXOInternal_TisUpsampleNearest2DJob_t3768DBA0DBE666EB9120AEF03756C0953715467B_m3AFB24AE63F8F81B8ECA710E371117461957BB13(L_3, L_4, L_6, L_8, L_9, L_10, il2cpp_rgctx_method(method->rgctx_data, 1));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:381>
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12 = L_11;
-		RuntimeObject* L_13 = ___1_X;
-		RuntimeObject* L_14 = ___2_O;
-		BurstSchedulingHelper_SetXOFences_m57A22443C21551E383CF918322BF1C250FAF8A4D(L_12, L_13, L_14, NULL);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:382>
-		return L_12;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisIl2CppFullySharedGenericStruct_mB44D4CFE921749E12A3D8AA539E6A698DF53E847_gshared (Il2CppFullySharedGenericStruct* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	void* L_3 = alloca(Il2CppFakeBoxBuffer::SizeNeededFor(il2cpp_rgctx_data(method->rgctx_data, 1)));
-	void* L_7 = alloca(Il2CppFakeBoxBuffer::SizeNeededFor(il2cpp_rgctx_data(method->rgctx_data, 1)));
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		Il2CppFullySharedGenericStruct* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ConstrainedActionInvoker1< ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 >::Invoke(il2cpp_rgctx_data(method->rgctx_data, 1), il2cpp_rgctx_method(method->rgctx_data, 2), L_3, (void*)L_0, L_2);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		Il2CppFullySharedGenericStruct* L_4 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_5 = ___3_ptrO;
-		(&V_1)->___ptr = L_5;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_6 = V_1;
-		ConstrainedActionInvoker1< ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 >::Invoke(il2cpp_rgctx_data(method->rgctx_data, 1), il2cpp_rgctx_method(method->rgctx_data, 3), L_7, (void*)L_4, L_6);
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		Il2CppFullySharedGenericStruct* L_8 = ___0_jobData;
-		int32_t L_9 = ___4_arrayLength;
-		int32_t L_10 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_11 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_12;
-		L_12 = ((  JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 (*) (Il2CppFullySharedGenericStruct*, int32_t, int32_t, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08, const RuntimeMethod*))il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 4)))(L_8, L_9, L_10, L_11, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_12;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD_mC88F19CB1B3D62C64244C557E730717F711024ED_gshared (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AbsFloatJob_set_X_m809FD4A77C56E1B4A41EF6BA1A2492F7C53BC655_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AbsFloatJob_set_O_m96110E040F0A48242F530652B6FC922C628DA967_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD_mCA03A17B2B7934206A32B6C449DBBA6FCF14F0F7(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044_m23BAF6858EF5F7F49C4BA1A01B8D0E9E217A51A9_gshared (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AbsIntJob_set_X_m3FCADE4518463E7503459F0C4B6970CB6F001F85_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AbsIntJob_set_O_m1EBCE2CDC81C5313E34B5659D1C5DBFB8F9C82E9_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044_m5683C1CB56F546906B64F1CDF60567DB98425531(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7_mD3D298D865C097F43C10ACA2BE723EC071EB7BD8_gshared (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AcosJob_set_X_mEBF87447280F2C8A8077D5ED31B4E2CB3BCDF90A_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AcosJob_set_O_m017A57DB32A7F927AC2507DD68FDD0CF17AAB89E_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7_m7BC7E2A223B2F90C8BB761C01D79874C4C0B2813(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0_m3EA2FC6145531FC93CE3814606B6BD762DB77AEA_gshared (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AcoshJob_set_X_m30EDE379C67104B9BB527257AEEF56128AB9B77D_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AcoshJob_set_O_m162B1BE7DC80AE3BE737F1869E1BE616D67A8222_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0_m91BEA7AE3D412B988B3DD9650CF653C0E70A182A(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258_mCC2798B6A64C4138A3FB448DC09F51E84F091DB7_gshared (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMaxFloatFirstJob_set_X_m7EBC48A60CE26108E807A3014A9680EAC90EAEE9_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMaxFloatFirstJob_set_O_mA733DD71F906EF0576C46F1F95F564394AEBFD6D_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258_mDDF0DAA6F10A3482EAAC36F7A1CD1AEFD4ED6BD7(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3_m3ABA2B1F8F7984A0191DEFB18DD4C7EFE0BFA795_gshared (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMaxFloatLastJob_set_X_m43ABFEF6836D85FB4CCF5CDA8E03A73AB2A739F5_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMaxFloatLastJob_set_O_mF16132B18B432FED37D95B4C3FDC4A24B215CC08_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3_m9156BCB0CA4E02B17F80E91634B70F37BB1FEE1B(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6_mD1696CA24F502FD2723A8F2BCDBF55F6E2B936EA_gshared (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMaxIntFirstJob_set_X_m046824BC5E6B7A61F921CCCB472D673DBD5AD11C_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMaxIntFirstJob_set_O_m9B3692DB4BAE0563715EA675DE56336B33438EBF_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6_mCB9D29D9FD64770CBBCF60815AA564F383E73BC9(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6_m00F0661096ADD0306A633DAF882289CCA302E766_gshared (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMaxIntLastJob_set_X_mB576D652543292068D2C2AD29236714A65F991EB_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMaxIntLastJob_set_O_mBC075C78D167794D3616F1A1BDA4AF5EF18DFDB5_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6_m5FB85B8BC6204F3DA4DD4CEBC04816A42B8D72DE(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1_m860AAB34BD5E5C12BCCD434202EB5083F552A59E_gshared (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMinFloatFirstJob_set_X_m0AF77D2AF6446C30A59CD0DD86EF959E494403BC_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMinFloatFirstJob_set_O_m5CA516C8CF79D5A6DA3DCC379865F4B9CCB71E68_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1_mE188D9596C52B07FAE58C4CCF98DBEB38B7A5737(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256_mA7CF9635731EC998021A227E02875DCCE6C69477_gshared (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMinFloatLastJob_set_X_m7D7002F3044A379B1CE37768274CC9946BAB5A2D_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMinFloatLastJob_set_O_mD6DF9C8C7796A831AD92DAAE43AE8C2B22FA525A_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256_m49381F8D70095E423CCD0DDCC767D171C613019A(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54_mB4B99ABCB07A39262E7E46435F4A67E1E469F915_gshared (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMinIntFirstJob_set_X_mA6D7FD1E205EF2340D39DCCBB59EDDCF4C7133DF_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMinIntFirstJob_set_O_m76CD3044563FF09A736C48D73B7C353C999679AC_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54_m5CDDE613FCF588255E72D7CBB67EA06C22E83840(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68_m84F145DBF58F8607F12B522F222B737951E2EA3C_gshared (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ArgMinIntLastJob_set_X_m8E778D0B230B1BC863B6240F391ECA3A392FE2E2_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ArgMinIntLastJob_set_O_mB21F331453D8DB37171356005ED1CB7ADF816F77_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68_m9FE64D67F8F7CA640541E7815E1A44400219131B(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51_m7BC66E7614EE1F2B2DA7D4F65F69CAC152C528CA_gshared (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AsinJob_set_X_m05AD104ECEB5932311CE2F6C0CC0DB37546C972F_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AsinJob_set_O_m6B4E76788616185748AF040FDDA164C6651EE5C5_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51_m052100A9921158F5129300955314CA4B40D31B57(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24_mA67BF6703D15651227E37D275143B5FC8E31C9DC_gshared (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AsinhJob_set_X_m7E81BBD197B8759C21014ED1D71AC7F790EFA53C_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AsinhJob_set_O_m2AF89376B2EE497D1CD5B6EAAAD37501136032ED_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24_mE0E598C8D2DDE6334E4646CF87F6C1003EB8E891(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425_m8864AF2F7EC7D65DF60EFD3D1F4AB0998952B85F_gshared (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AtanJob_set_X_mD56480CE0AFC09F61CD942C2253A36DD3E091BFC_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AtanJob_set_O_mE3FBFD74FC11EF91E192B75209C215BEE8D1FB24_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425_m5446323BABAFC18D6B00ABE71228ADAF5204303F(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247_m4D93A992DF8CE56F9D34A26E060C3EADF0FAD2B8_gshared (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AtanhJob_set_X_m915F915373BE233ED7D67617958E899B1B20CFB2_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AtanhJob_set_O_mFBE25C16C49ACC22A332052F60AE1F1E10F1266A_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247_mB12B46B1078C324694E62FB8D42D89C9029109B0(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32_mC4B6BC9D24CB67B9079569724F207F49956B0076_gshared (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AveragePool2DJob_set_X_m78E5B41F3DE56810CA355E804BBE5C265D211C3B_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AveragePool2DJob_set_O_mD0061BD4A74C86750B1A6DE0CCFB99744B048098_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32_mB75E1FE479789A001AA173EF0D6B03CC2C6823A4(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisAveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E_m3FA767E7C9BB7050136420B946C9F1DDA6E64C55_gshared (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		AveragePool3DJob_set_X_m91CB52A8F771D5D9289335BC0F92676BBFAEF51C_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		AveragePool3DJob_set_O_mB9414157C67950DF201CACAB58321CC78CDD0466_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisAveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E_m9C7A4F6F7D508EC2E5095AF7C46A14E4DD606AB5(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisBernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D_m934B901D115AAE169CA6FC55B771DB43152F29B8_gshared (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		BernoulliJob_set_X_m1A74D378EE1E54B539A0A5501C7E7753AF98FD5D_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		BernoulliJob_set_O_m2D3653E83BD757182E2A5854613E73ED4A44895E_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisBernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D_m927D47DB44A99DC4A0E4A251BC7C30D190411A24(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisBitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A_m8B83730E7331137C0B8972CCA4BB69F87DC9F650_gshared (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		BitwiseNotJob_set_X_m01ADDC651C470411714324630C5FE3557FD3F800_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		BitwiseNotJob_set_O_mCB44E653304393F5296F912C7433F840979F1FF9_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisBitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A_m546207D59BD7A383654070A38C12C7788CCE759D(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1_m16FDE7CB8B641BDB8DE1FF5CC898C86A263774E5_gshared (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CastFloatToIntJob_set_X_m5DD531DD64680E4682E482DA453E58288AEEEFA8_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CastFloatToIntJob_set_O_mAF0C34A73CA8DB1315CB66B32F1A85C32BE77202_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1_m3146F2499E584FBB5564AD5A152BA9C2898790F7(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10_m564D63DFF284EF78D9492942A5C9E3912BB3A475_gshared (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CastHalfToFloatJob_set_X_m93A31A42D7642D765AF4B479B310A1FB45971516_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CastHalfToFloatJob_set_O_m57EE30B95573263FFEB617A8AD6195BF778B12B3_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10_m30B65C66CA6BA1F79CC5B3B05CAE6542482893DD(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3_m08D77EA95288AACD8B3B5DA299C2E69A10CD897D_gshared (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CastIntToFloatJob_set_X_m73BF422CF53111081CADF90E7C023003EA8C4751_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CastIntToFloatJob_set_O_mA7C4098D7658D8AF6B15AF39ABDE47ED7C244D70_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3_m003CC0263D66B29D452C2DBD791E7391953CAD76(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56_m900D15D54D14518896DFF36D6D4DB953C8ED71FB_gshared (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CeilJob_set_X_mF721EDF367881109F060EE9B7ADE32B6BC0DB17B_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CeilJob_set_O_m643678504D688061E472642A633FCEABFA286D2F_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56_mF100BBBE8B960905E633F07B207ABA3FCEF5CD57(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497_m86EF46662EC1238EFB855E44CCA2221FEF911030_gshared (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CeluJob_set_X_mF2B8CFDF6DB98075FA837A2765894FBBDC5E7E00_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CeluJob_set_O_m02242997B575376C70617EDF68AD02C2D147AA5B_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497_m6F03FF8062A027B0E9351557766E2653761E5C75(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A_mB4C2237D536D57ADB154A9B83C8F4851A62BE755_gshared (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CosJob_set_X_mC5740A89D9BA017147999642E75CA572C11C63BD_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CosJob_set_O_mC97F0AD508D6827392A92A950F9AF33E226A3893_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A_mF80B4355ADFFC04AFBA7BF33090109375EB8A1AF(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523_m171C6FA12D32D1BE7341D64A1448E1F57672E4D7_gshared (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CoshJob_set_X_m08A28DC84107E3B267C5B049ACF9CBE0EA1AF4AB_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CoshJob_set_O_m389B43012952597CBB2D72EACC05F904130969FB_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523_mCE7385F6C8FED78B08FF390E0B2C1723EB9CFE7E(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D_m1511AA7AEA599046FEE0C03A5C5331C6F44A15D0_gshared (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CumSumFloatJob_set_X_m0A87F3FDE21C8EFA9820BFEB28CC8C97649187EA_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CumSumFloatJob_set_O_m82ADF76095BD9EC05D6820E109689B6B9EC33CF4_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D_m3EEECD21A71CF1A1773AE27A710FA83360A7BDAC(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisCumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A_m775AF9FC4BDEAAE0F538586B6CB0D956783DD68D_gshared (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		CumSumIntJob_set_X_mD6C78C6D4130C9E9CB645633EADBB25D0D6FB1B1_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		CumSumIntJob_set_O_m7F940C2D960E2AC1391F6C7BDD851202E96EF55E_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisCumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A_m2B7CC0CB0CF5020EBB8FA8DC22D7CF0B58B876F1(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisDequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D_m5822100E5E4A8F50648F4014F46656F28D212994_gshared (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		DequantizeUint8Job_set_X_mAC4F9128ADFB66682B44DD89C38A9A5DCFDFC9B4_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		DequantizeUint8Job_set_O_m2023336116F2B0A7CDBBF3C330EF61AB69F92453_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisDequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D_m33F6C668FEFD60B4E1983C9E812CC18A35D45B2D(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisEluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0_m36AAF9FF51EFACA9EA5F10CDE55E9DC2E10B0431_gshared (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		EluJob_set_X_m92CB3472F8220CFB2791FCE2BE9E4C1E62E2E5C6_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		EluJob_set_O_m4152A696B7E79BD3F2925AD1BC697C04E8A3B479_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisEluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0_m3828463F6FC3DB32E2CF81638396E42C3B71FE2A(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A_m89C565B8ABA1E94CA7621B2F895B300D7974C437_gshared (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ErfJob_set_X_m702A7AFC12F2AFCCA24EB29CB5E5FCEE06C48AEB_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ErfJob_set_O_m73013F0E2DC9D73EB851FCBB48CB090CC0D6852E_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A_mE4E75C32D67293520131F34E296522EA5E706F85(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343_mF08603508AFFA58DDF3F53538FAE637F3CEE420C_gshared (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ExpJob_set_X_m2DE47BAF34B9B75CEE9B0D669F594AFFC8695DAA_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ExpJob_set_O_m19EB60D96BE46E90EAF51B9292EE14C5145B7318_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343_m991D7A14243FF4C2C4897D34AB5D73D0FDEEF054(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisExpm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414_m3D8DB6599993A8AD21D22911CB8F07B3D060C98D_gshared (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		Expm1Job_set_X_m59C0D9E1DC842DEF7730A229C90B76A807237D8B_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		Expm1Job_set_O_m70E00BB9F68C1472F3E2E5BB9E1101829E4E3803_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisExpm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414_mF5D158F3CF728512A51677AF75FEB6F01D5D66B5(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisFloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511_mCD20D42F751350B7105FA91AD6B864D7B399CCD2_gshared (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		FloorJob_set_X_m1443FD699D745BF3F6D21577D4A79038C83225BB_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		FloorJob_set_O_m163AA915FE4194F970CF5330EDCEDAFE9D0E4990_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisFloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511_m4158F53551D911ADBFA596EFCB6C933D0AE249D3(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisGeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2_mDEE35186CD2D87C8952A4DE208A794148824FD81_gshared (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		GeluFastJob_set_X_m507DADDC573A76B6ADA1D2DB8E1B9162B47540BE_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		GeluFastJob_set_O_m50E4CDF2F0284228CE6F3E06EBCF2398C7EFE528_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisGeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2_m99E1D0A97C25ABBC36BFBF4062DDF340F5F80D90(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisGeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B_m5CC75D2A4DA1EC92E36B974699F61F1413541134_gshared (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		GeluJob_set_X_m056DFD0D457838CD489E82C11C884D6EFC99396D_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		GeluJob_set_O_m64C2BC073933C85ADB1BA8E59419A8F8E34531CB_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisGeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B_m0D62260F5F3513D38DCEF9C259915C93D15AF251(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisHardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624_mC78436CAEA9FB2489A462B3F36DEC2CA4CFDE212_gshared (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		HardSigmoidJob_set_X_m7C27C68FFDDF566C7AA6E449460AA740C88DE202_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		HardSigmoidJob_set_O_mA0845AA753FCFCC031BA78EDD682A6C7C05C4E58_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisHardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624_m742E47DF9A12599A46D07E652BA82CA840FFE381(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisHardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C_m84DDA739A57ADA7717A117CEEA3DD249C5EAB353_gshared (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		HardSwishJob_set_X_m5A241FE9AA71BA89B59D4DC9EEE5F82466411259_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		HardSwishJob_set_O_m5EAED311C3867A515F2D2612D55372FB4ACEA759_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisHardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C_m406134839D9A3B6889763E288BB8C1DC4B36C752(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisHardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019_mE947B9FB555650433E61A9975581AD333719AE16_gshared (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		HardTanhJob_set_X_m3ADCB8BB5ADB32877A30216D460225B3BD4CC78D_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		HardTanhJob_set_O_mBE7FD054CA410801F4753C27205EA178A4DD19F7_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisHardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019_m39BA0EDC3DD1C37E28A7CBB413DBBCB3E9B058D5(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisHardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB_m69A03AAE71E34535194193F136AED1EB39838BE8_gshared (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		HardmaxJob_set_X_mDB853ABD4600390BE6AF6D2B11B7C9E3FD0D08AF_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		HardmaxJob_set_O_m8545428093B417F9A74BE6BBCB7A124E86766555_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisHardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB_m42ADAB58DA259050941573B478CEFA1D8EF99CD7(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisIsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64_mD4787B010BF1DAA893002CA1D56EF6F967C89283_gshared (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		IsInfJob_set_X_mBA3A60BE7D81CEBC20F8A5FEA4448DD674048486_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		IsInfJob_set_O_m283B8632FAD5E78DD05151C74A619EF18E05A7F5_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisIsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64_m6B749FB9CEC510F141C8A8353151427FEF0647BD(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisIsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC_mFD3E4B88F9DEA2A32FDF713E976EECC0C77C0330_gshared (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		IsNaNJob_set_X_m327D1D66343C6ED210B274F07EEDAFC5209FC7AA_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		IsNaNJob_set_O_mCD3C3A5E6F01B53F842730D2420411A078FC8FAD_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisIsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC_mF190F712FBB94FABEB032487FF7D1BC8A99CDC33(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38_m810F8E0E0D295F052A454ADC41C498DE86D164E8_gshared (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		LeakyReluJob_set_X_m32332348C8F03FE57C2673B39635FC1A62F41686_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		LeakyReluJob_set_O_mBF1AC1F863E7C3AE2B5025996CEBD3A676BCC792_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisLeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38_m550B58B431F8005CCA2286F9DC4E0F3FBF15D0D1(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLog10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378_m4A93AEA225B2983B9F5B2C53AF78F92E7DE73F66_gshared (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		Log10Job_set_X_m62126BA175A9842D3BF265A7FE2ECA3825F231F4_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		Log10Job_set_O_m953996C1EEF4842B521039AE633D5968C44C8BE8_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisLog10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378_mAD0D737B4873CA94E61BB22057A9FCF9C2894CA7(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLog1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1_m0C5F763B3EFDAFC247FD858AEB1AF77172F7D738_gshared (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		Log1pJob_set_X_m2FD53909E533DAF0E02D2E43C9F93EB5075A7A98_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		Log1pJob_set_O_mA86EBC619804AF3619458DEE9B88D1B35330B343_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisLog1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1_m09312C302BE85093C59792031757B7428EEB793D(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLog2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127_m126C937C68D0BC3650A750F06A2022C7551DBB2D_gshared (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		Log2Job_set_X_mFCEC8404DD30B03101AA88E9E404FECBD47B403E_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		Log2Job_set_O_m63291BFA39F85B268DC87D7A5D7B3EBA48756593_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisLog2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127_mAE57E0AA9D901006409533D626CABDB2E5DF8BFD(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554_mAA84587D7093FE75C8D910649BD530F4BF1DFEFE_gshared (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		LogJob_set_X_mDD6F8E1F8EC4B67F10754A0DDAB07AAF43DC0499_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		LogJob_set_O_m6B5F4B0E5FD087A1A1108364525A555818F0E89C_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisLogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554_mE7840C329EA6C43EDEF749AF0E456426FBDEDE16(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisLogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9_m65A575670BC183A05B6FF072CE6E4828FA412B1E_gshared (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		LogSoftmaxJob_set_X_m991586F90D61C69E1ECB1A1F9ECEE46181659A37_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		LogSoftmaxJob_set_O_m6E79FD7562D4D66DDAE05539977DE6B29816B988_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisLogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9_m1EF910DB2CB51831EB86F7C9C48E5E52DC3194D2(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4_mD65D9FB39681F43AADCB136C5A7FBC97BE409315_gshared (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		MaxPool2DJob_set_X_m5C67365660A44F7C6E0B84613FC73B858326DAE6_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		MaxPool2DJob_set_O_m40964DCCB0D208C952DFFF0AD4422DD19288B9A0_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisMaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4_m27636D99DD41CCB5C70C61EE9558D708F23440A0(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_m7BE429F86B8A74A3D6246689EB4935BD9968E581_gshared (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		MaxPool3DJob_set_X_m12538BB1491AB21726BD082D340831D7324EDFA3_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		MaxPool3DJob_set_O_m92ED7FBC8241564DB91698327E86126F646EEE9D_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisMaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1_mDDFF6BA09F562B27EAA4658A00FD21D51B708FF1(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m4D0640F53751EF0F536E8266067D558A8C4DF21E_gshared (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		MishJob_set_X_m1A88CAF8A8C7BB849D3F5364BBC054413416AD05_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		MishJob_set_O_m3D432EFDCD3CC39EFA9782D0C983269081657079_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisMishJob_t86023F361852454073185EE5B7A697DE7A757D1F_m354D599CFEB7932907E765FBB1ADE8B456F8CAE2(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m02FB00631E3B9951F3DFC61085B0AC55C8897DEF_gshared (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		NMSBitmaskJob_set_X_mE6BFF8B352A84B0BF5A753B76B74EEAC54AF31CA_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		NMSBitmaskJob_set_O_mB808CA8D12F5AB58A81ACE5A39E05DF594E62293_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisNMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9_m64B66F65CF87F9D9FA4179B10DCBB4994E57ED3C(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_mD48783A83C07E78DCBAB39466F4EB5430732A9EF_gshared (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		NegFloatJob_set_X_mC04A2C7E7BC017EC1F3923821E28CE0E38051388_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		NegFloatJob_set_O_m335244B793635FB5B55776527FF82E8CBCB5357C_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisNegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625_m14A6307E5B323EBDC3930B2D86CCCA4EA1EB5A36(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_m67F70459FFE454A5C334C7EA75C8B058101BF2EF_gshared (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		NegIntJob_set_X_m5742C96837AB9D089905B32DCF1ED9A3B2F64A29_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		NegIntJob_set_O_m33E774BD876DAA9AD115574F544A6B69F8349A81_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisNegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA_mF04BA4C39BC99D47B1E51E2CA2CCC5C6060F6B43(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA42076D83859C8FF6679F9C72DE6047E727893A8_gshared (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		NotJob_set_X_m78A75184A8AF64F67141D8D6A011B758417465BE_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		NotJob_set_O_m4A9FF5276AB7F51F3C6926D36CD170AA7CBAF867_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisNotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2_mA5CB315106778633DE7682C6BAA858E72437CFC6(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m271050705A86A3C451B89187318DB3DB1639CAB2_gshared (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		PadJob_set_X_m5E2A30A118D862DCBE02306F7D2DCF69E9A5DDB3_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		PadJob_set_O_mF25F7BFF48A476E083EF290AC5E90F2A6B22AAC0_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisPadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE_m075B9470B94C3C57C2BAAD670A5EF40F88E1F7F8(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_mFFF2443CEE13E41A5890A18203393633FC895246_gshared (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReciprocalJob_set_X_mF5BEDEE570BDD4551710A03AA41F5DC7D479C4EE_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReciprocalJob_set_O_mB98934577EC66DBD3574A28CA12F2A237FE0DEEC_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA_m7736D195215505A0DC2C84B8184E5997BD25541C(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_m582C9A792C66BA7869EAE3695E7B3CEC4ECE825C_gshared (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceL1FloatJob_set_X_m2D97C84020B4890AD65C277333B9E94A5E6743F5_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceL1FloatJob_set_O_mBE9960F4EF3AC8655324CCD27F163D942F087F87_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4_mD61173B57D3E54263D1702A42B5853886E638AC2(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_m763D497D6EC0366996375596A005235435B394E7_gshared (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceL1IntJob_set_X_m49DD2F98E6DD45E44052485C055871144324E860_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceL1IntJob_set_O_mE30D2C19600C2218E2D34C4FF76EE8D497F6E14A_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2_mB0DEA2EC7276AF318D85B1D6E4A46D71A0380E35(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m480DA9F75C7A585F695B76F6F220E8ECCFA9DE2A_gshared (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceL2FloatJob_set_X_mAE52F77DC030F20A2518F0A14CC9B945A08FFC89_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceL2FloatJob_set_O_m5D591418003AA2936E2D6FADEDC151FA7DA87C92_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399_m8829F0977D6CB70F6870E99E7C54C38C613093AA(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m98388B0A1585C3DA91A86E393FD02465C4E7C717_gshared (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceLogSumExpFloatJob_set_X_m05C3EC2C1AA3E33763939744A16BD855041B7BDC_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceLogSumExpFloatJob_set_O_m52DC20336555C5E657274CB8580B2F89386974A5_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E_m2BC2E19F93A4408FA9ECB7E790517CE2CA2120A4(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m164C6951101EA8575F0B3EA1CCA823EBF49DE525_gshared (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceLogSumFloatJob_set_X_mFECA4A6A9B0FD3101EBF56BCA617614222ABA157_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceLogSumFloatJob_set_O_mE04277D464885F1BCD29CE0F2B615FCBDE6CB5D5_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC_m99EC6E53F7D9A2C84D5A0A1446A090F733618170(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_mAE8210053178C3C651DCAB30D41C664CCE7909A6_gshared (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceMaxFloatJob_set_X_m955928D48A92BED6A12C41D4C93BEA7592C865B8_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceMaxFloatJob_set_O_mF99CF99C44CEEA886D149340F60C97F2409A7507_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53_m292B0D0A094E7546C732C782E44AE019F8F06F7A(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_m41C0C3F8BB6123A5EA3CB8742471AFB9359D6E75_gshared (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceMaxIntJob_set_X_m6189979366E07C9A31F28C326574CB7B996246B1_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceMaxIntJob_set_O_m871025D61243BA3A80DDD978B68AEE297BC76D45_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D_mDB8AFEAA241E38D1A6509D9412D7C8B1E5CF7487(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m5EC59767051247EC34A727A911E14F94FDCFF533_gshared (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceMeanFloatJob_set_X_m6F9C7D11D2D2BCA6CFC916A79178816C26040017_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceMeanFloatJob_set_O_m72982D51C387D7A5E29EC182341D888E3C08E64B_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7_m49025A6E9A8286956B49AB904C1031E7F1126B5A(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
-// Method Definition Index: 27052
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 BurstSchedulingHelper_ScheduleBatchXOInternal_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_mA2C4A301A11C27297FEF668C4DCBE746A6021D21_gshared (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* ___0_jobData, JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 ___1_fenceBeforeJobStart, void* ___2_ptrX, void* ___3_ptrO, int32_t ___4_arrayLength, int32_t ___5_innerloopBatchCount, const RuntimeMethod* method) 
-{
-	il2cpp_rgctx_method_init(method);
-	ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:125>
-		ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* L_0 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_0), sizeof(ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156));
-		void* L_1 = ___2_ptrX;
-		(&V_0)->___ptr = L_1;
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_2 = V_0;
-		ReduceMeanSquareFloatJob_set_X_mA89BC46128F31FACBF67814761CB85B39A919423_inline(L_0, L_2, il2cpp_rgctx_method(method->rgctx_data, 2));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:126>
-		ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* L_3 = ___0_jobData;
-		il2cpp_codegen_initobj((&V_1), sizeof(ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229));
-		void* L_4 = ___3_ptrO;
-		(&V_1)->___ptr = L_4;
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_5 = V_1;
-		ReduceMeanSquareFloatJob_set_O_m2EB18D1199B3C474641493C0873AFCF798CFAF10_inline(L_3, L_5, il2cpp_rgctx_method(method->rgctx_data, 3));
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs:127>
-		ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* L_6 = ___0_jobData;
-		int32_t L_7 = ___4_arrayLength;
-		int32_t L_8 = ___5_innerloopBatchCount;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_9 = ___1_fenceBeforeJobStart;
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_10;
-		L_10 = IParallelForBatchExtensions_ScheduleBatch_TisReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735_m1C3F4CBC2980C52133A902F9BE12259C954380EB(L_6, L_7, L_8, L_9, il2cpp_rgctx_method(method->rgctx_data, 4));
-		return L_10;
-	}
-}
 // Method Definition Index: 4048
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t RuntimeTypeHandle_get_Value_mDC366CF36C3E21505134EAEE72BD7629107D762A_inline (RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B* __this, const RuntimeMethod* method) 
 {
@@ -29311,1347 +27323,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void XorJob_set_
 		return;
 	}
 }
-// Method Definition Index: 26582
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsFloatJob_set_X_m809FD4A77C56E1B4A41EF6BA1A2492F7C53BC655_inline (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:911>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26585
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsFloatJob_set_O_m96110E040F0A48242F530652B6FC922C628DA967_inline (AbsFloatJob_t59ADD86C258C81A0A72C86037E72281761C4D9FD* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:912>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26574
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsIntJob_set_X_m3FCADE4518463E7503459F0C4B6970CB6F001F85_inline (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:892>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26577
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AbsIntJob_set_O_m1EBCE2CDC81C5313E34B5659D1C5DBFB8F9C82E9_inline (AbsIntJob_t206190EEA16553C855B3767D6FA6C46239D75044* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:893>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26470
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcosJob_set_X_mEBF87447280F2C8A8077D5ED31B4E2CB3BCDF90A_inline (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:645>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26473
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcosJob_set_O_m017A57DB32A7F927AC2507DD68FDD0CF17AAB89E_inline (AcosJob_t341D027CAB2DACBFDF4E9FA071E68967439B43B7* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:646>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26478
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcoshJob_set_X_m30EDE379C67104B9BB527257AEEF56128AB9B77D_inline (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:664>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26481
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AcoshJob_set_O_m162B1BE7DC80AE3BE737F1869E1BE616D67A8222_inline (AcoshJob_tAEA1ECD5A9A8854FE07A35D1D489AE5E1AC310A0* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:665>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26938
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatFirstJob_set_X_m7EBC48A60CE26108E807A3014A9680EAC90EAEE9_inline (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2530>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26941
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatFirstJob_set_O_mA733DD71F906EF0576C46F1F95F564394AEBFD6D_inline (ArgMaxFloatFirstJob_tE820768A362CB2D757AD72B542A78382BDDCE258* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2531>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26970
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatLastJob_set_X_m43ABFEF6836D85FB4CCF5CDA8E03A73AB2A739F5_inline (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2998>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26973
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxFloatLastJob_set_O_mF16132B18B432FED37D95B4C3FDC4A24B215CC08_inline (ArgMaxFloatLastJob_tA206D6D884460E8713448602ECAC9728711B9DA3* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2999>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26954
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntFirstJob_set_X_m046824BC5E6B7A61F921CCCB472D673DBD5AD11C_inline (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2764>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26957
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntFirstJob_set_O_m9B3692DB4BAE0563715EA675DE56336B33438EBF_inline (ArgMaxIntFirstJob_t780CA5CBD900EB49A7FE64590541DF9751BA01A6* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2765>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26986
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntLastJob_set_X_mB576D652543292068D2C2AD29236714A65F991EB_inline (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3226>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26989
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMaxIntLastJob_set_O_mBC075C78D167794D3616F1A1BDA4AF5EF18DFDB5_inline (ArgMaxIntLastJob_t902ADDF6BC66A329956E4799471EAE500E7A55C6* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3227>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26946
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatFirstJob_set_X_m0AF77D2AF6446C30A59CD0DD86EF959E494403BC_inline (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2647>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26949
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatFirstJob_set_O_m5CA516C8CF79D5A6DA3DCC379865F4B9CCB71E68_inline (ArgMinFloatFirstJob_t65CE6DF5C1071B96472CCA587DA24BC5F9A473E1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2648>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26978
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatLastJob_set_X_m7D7002F3044A379B1CE37768274CC9946BAB5A2D_inline (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3112>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26981
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinFloatLastJob_set_O_mD6DF9C8C7796A831AD92DAAE43AE8C2B22FA525A_inline (ArgMinFloatLastJob_t16A090187306BD1144A42EFAB985A8BCE1B78256* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3113>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26962
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntFirstJob_set_X_mA6D7FD1E205EF2340D39DCCBB59EDDCF4C7133DF_inline (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2881>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26965
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntFirstJob_set_O_m76CD3044563FF09A736C48D73B7C353C999679AC_inline (ArgMinIntFirstJob_t0778CA45412913B97940799EF39494938998AA54* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2882>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26994
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntLastJob_set_X_m8E778D0B230B1BC863B6240F391ECA3A392FE2E2_inline (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3340>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26997
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ArgMinIntLastJob_set_O_mB21F331453D8DB37171356005ED1CB7ADF816F77_inline (ArgMinIntLastJob_tAAA7EC995703EDC0C7BCBA55DE92651102C28E68* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3341>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26486
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinJob_set_X_m05AD104ECEB5932311CE2F6C0CC0DB37546C972F_inline (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:683>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26489
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinJob_set_O_m6B4E76788616185748AF040FDDA164C6651EE5C5_inline (AsinJob_t69FD2CA4B811D017B16E4D98101E9D63BB0BEE51* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:684>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26494
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinhJob_set_X_m7E81BBD197B8759C21014ED1D71AC7F790EFA53C_inline (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:702>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26497
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AsinhJob_set_O_m2AF89376B2EE497D1CD5B6EAAAD37501136032ED_inline (AsinhJob_t3A28A7CA77A6C6D00F3990E870E87A550DB99D24* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:703>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26502
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanJob_set_X_mD56480CE0AFC09F61CD942C2253A36DD3E091BFC_inline (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:721>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26505
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanJob_set_O_mE3FBFD74FC11EF91E192B75209C215BEE8D1FB24_inline (AtanJob_tC1D4925765CC6E1772950E9F239151CD021DA425* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:722>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26510
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanhJob_set_X_m915F915373BE233ED7D67617958E899B1B20CFB2_inline (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:740>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26513
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AtanhJob_set_O_mFBE25C16C49ACC22A332052F60AE1F1E10F1266A_inline (AtanhJob_t4B787751CD56DC2AEEA980B85D72E93543C9E247* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:741>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26757
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool2DJob_set_X_m78E5B41F3DE56810CA355E804BBE5C265D211C3B_inline (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:430>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26760
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool2DJob_set_O_mD0061BD4A74C86750B1A6DE0CCFB99744B048098_inline (AveragePool2DJob_t6089D913340566EBF52C8FF602BDCCA11AD32E32* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:431>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26764
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool3DJob_set_X_m91CB52A8F771D5D9289335BC0F92676BBFAEF51C_inline (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:615>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26767
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void AveragePool3DJob_set_O_mB9414157C67950DF201CACAB58321CC78CDD0466_inline (AveragePool3DJob_t6D7F3BFB6E2D9EDEA3461AADB9AAEF916388B70E* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:617>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 25911
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BernoulliJob_set_X_m1A74D378EE1E54B539A0A5501C7E7753AF98FD5D_inline (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Other.cs:262>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 25914
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BernoulliJob_set_O_m2D3653E83BD757182E2A5854613E73ED4A44895E_inline (BernoulliJob_t6328B25818F3F0C5331F53CDEC23EF9B93AD6D6D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Other.cs:263>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26694
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BitwiseNotJob_set_X_m01ADDC651C470411714324630C5FE3557FD3F800_inline (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1185>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26697
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void BitwiseNotJob_set_O_mCB44E653304393F5296F912C7433F840979F1FF9_inline (BitwiseNotJob_t255BBA0B200D0F37A61831204FAECF4543A41C1A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1186>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26638
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastFloatToIntJob_set_X_m5DD531DD64680E4682E482DA453E58288AEEEFA8_inline (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1044>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26641
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastFloatToIntJob_set_O_mAF0C34A73CA8DB1315CB66B32F1A85C32BE77202_inline (CastFloatToIntJob_tEF0DB65577A684878459B0427D31D07D6D1462A1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1045>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26646
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastHalfToFloatJob_set_X_m93A31A42D7642D765AF4B479B310A1FB45971516_inline (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1063>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26649
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastHalfToFloatJob_set_O_m57EE30B95573263FFEB617A8AD6195BF778B12B3_inline (CastHalfToFloatJob_t8FC01157E72F3A1E5DDCAE35FF770E653F1E0C10* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1064>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26630
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastIntToFloatJob_set_X_m73BF422CF53111081CADF90E7C023003EA8C4751_inline (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1025>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26633
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CastIntToFloatJob_set_O_mA7C4098D7658D8AF6B15AF39ABDE47ED7C244D70_inline (CastIntToFloatJob_t8C5A63F08F86EE97E739463A14F0D653A447A1A3* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1026>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26366
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeilJob_set_X_mF721EDF367881109F060EE9B7ADE32B6BC0DB17B_inline (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:398>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26369
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeilJob_set_O_m643678504D688061E472642A633FCEABFA286D2F_inline (CeilJob_t21105DA4ED74BF5B4E6E9FF0D72BF02DB7E59C56* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:399>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26318
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeluJob_set_X_mF2B8CFDF6DB98075FA837A2765894FBBDC5E7E00_inline (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:269>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26321
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CeluJob_set_O_m02242997B575376C70617EDF68AD02C2D147AA5B_inline (CeluJob_t1915DF65FA19031BB323EA2AEDD0660CC3560497* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:270>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26518
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CosJob_set_X_mC5740A89D9BA017147999642E75CA572C11C63BD_inline (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:759>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26521
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CosJob_set_O_mC97F0AD508D6827392A92A950F9AF33E226A3893_inline (CosJob_t9B4C2182EA262C1FE63AC6EC243E26C4EE23440A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:760>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26526
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CoshJob_set_X_m08A28DC84107E3B267C5B049ACF9CBE0EA1AF4AB_inline (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:778>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26529
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CoshJob_set_O_m389B43012952597CBB2D72EACC05F904130969FB_inline (CoshJob_tB6C12BC6DA38A7D435CEE3E436072AA17E2C2523* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:779>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26924
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumFloatJob_set_X_m0A87F3FDE21C8EFA9820BFEB28CC8C97649187EA_inline (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2193>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26927
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumFloatJob_set_O_m82ADF76095BD9EC05D6820E109689B6B9EC33CF4_inline (CumSumFloatJob_t02D68947BA4078E0C43B235A8EC003359758698D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2194>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26931
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumIntJob_set_X_mD6C78C6D4130C9E9CB645633EADBB25D0D6FB1B1_inline (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2361>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26934
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void CumSumIntJob_set_O_m7F940C2D960E2AC1391F6C7BDD851202E96EF55E_inline (CumSumIntJob_t3E8CE2689AD71E5C08486042FF5946DB900DE88A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2362>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26654
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void DequantizeUint8Job_set_X_mAC4F9128ADFB66682B44DD89C38A9A5DCFDFC9B4_inline (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1087>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26657
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void DequantizeUint8Job_set_O_m2023336116F2B0A7CDBBF3C330EF61AB69F92453_inline (DequantizeUint8Job_tE919094E493DE8A17AC6750C4885177A0057892D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1088>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26342
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void EluJob_set_X_m92CB3472F8220CFB2791FCE2BE9E4C1E62E2E5C6_inline (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:339>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26345
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void EluJob_set_O_m4152A696B7E79BD3F2925AD1BC697C04E8A3B479_inline (EluJob_t4C8A45729A2E1D2BDBE4218D53DCAC9D5FF0EBD0* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:340>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26310
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ErfJob_set_X_m702A7AFC12F2AFCCA24EB29CB5E5FCEE06C48AEB_inline (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:235>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26313
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ErfJob_set_O_m73013F0E2DC9D73EB851FCBB48CB090CC0D6852E_inline (ErfJob_t706F5D0E8896F71D2976A3803660ADD196B4ED4A* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:236>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26406
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ExpJob_set_X_m2DE47BAF34B9B75CEE9B0D669F594AFFC8695DAA_inline (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:493>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26409
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ExpJob_set_O_m19EB60D96BE46E90EAF51B9292EE14C5145B7318_inline (ExpJob_tA9CB1A527E381C648B373FACDE65C55D56DED343* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:494>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26414
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Expm1Job_set_X_m59C0D9E1DC842DEF7730A229C90B76A807237D8B_inline (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:512>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26417
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Expm1Job_set_O_m70E00BB9F68C1472F3E2E5BB9E1101829E4E3803_inline (Expm1Job_t431C9F80FB1391D22AD0C56D38E70499E21FF414* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:513>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26374
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void FloorJob_set_X_m1443FD699D745BF3F6D21577D4A79038C83225BB_inline (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:417>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26377
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void FloorJob_set_O_m163AA915FE4194F970CF5330EDCEDAFE9D0E4990_inline (FloorJob_t71BF6271EC8FE092B14192F69B6AD0030E9C1511* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:418>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26286
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluFastJob_set_X_m507DADDC573A76B6ADA1D2DB8E1B9162B47540BE_inline (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:159>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26289
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluFastJob_set_O_m50E4CDF2F0284228CE6F3E06EBCF2398C7EFE528_inline (GeluFastJob_tB0D695B86BB81702B8AE531D3003C188B8F98AA2* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:160>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26302
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluJob_set_X_m056DFD0D457838CD489E82C11C884D6EFC99396D_inline (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:198>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26305
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void GeluJob_set_O_m64C2BC073933C85ADB1BA8E59419A8F8E34531CB_inline (GeluJob_t770CB07B93E049C00A10176021512ED6DB3BA52B* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:199>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26294
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSigmoidJob_set_X_m7C27C68FFDDF566C7AA6E449460AA740C88DE202_inline (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:178>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26297
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSigmoidJob_set_O_mA0845AA753FCFCC031BA78EDD682A6C7C05C4E58_inline (HardSigmoidJob_t0B2DB4FE18427D7939546E8E64B8182019E32624* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:179>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26566
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSwishJob_set_X_m5A241FE9AA71BA89B59D4DC9EEE5F82466411259_inline (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:873>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26569
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardSwishJob_set_O_m5EAED311C3867A515F2D2612D55372FB4ACEA759_inline (HardSwishJob_tA8E225D2EDA3BADF91ADEB21BAA5CBF6C27DF47C* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:874>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26702
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardTanhJob_set_X_m3ADCB8BB5ADB32877A30216D460225B3BD4CC78D_inline (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1204>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26705
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardTanhJob_set_O_mBE7FD054CA410801F4753C27205EA178A4DD19F7_inline (HardTanhJob_tF574F930E42DF3AC0454A618176FC58BA6227019* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1205>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 25961
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardmaxJob_set_X_mDB853ABD4600390BE6AF6D2B11B7C9E3FD0D08AF_inline (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Other.cs:507>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 25964
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void HardmaxJob_set_O_m8545428093B417F9A74BE6BBCB7A124E86766555_inline (HardmaxJob_t3AA4C3B2D504DCFA5DA7BCB058B394D4A6DD35AB* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Other.cs:508>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26662
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsInfJob_set_X_mBA3A60BE7D81CEBC20F8A5FEA4448DD674048486_inline (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1108>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26665
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsInfJob_set_O_m283B8632FAD5E78DD05151C74A619EF18E05A7F5_inline (IsInfJob_t55BC7D08842B08E15681290D7FD0BE74F7C79B64* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1109>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26622
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsNaNJob_set_X_m327D1D66343C6ED210B274F07EEDAFC5209FC7AA_inline (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1006>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26625
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void IsNaNJob_set_O_mCD3C3A5E6F01B53F842730D2420411A078FC8FAD_inline (IsNaNJob_tB4E801ABA732617A03BEAE3F0B3A05398D416CAC* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1007>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26230
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LeakyReluJob_set_X_m32332348C8F03FE57C2673B39635FC1A62F41686_inline (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:24>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26233
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LeakyReluJob_set_O_mBF1AC1F863E7C3AE2B5025996CEBD3A676BCC792_inline (LeakyReluJob_tE2DE056639624B7F8F9A5A536C67C202B2D9CE38* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:25>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26430
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log10Job_set_X_m62126BA175A9842D3BF265A7FE2ECA3825F231F4_inline (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:550>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26433
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log10Job_set_O_m953996C1EEF4842B521039AE633D5968C44C8BE8_inline (Log10Job_tF4B52DEE4EBA95EB642170649DFE77AD44E8B378* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:551>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26438
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log1pJob_set_X_m2FD53909E533DAF0E02D2E43C9F93EB5075A7A98_inline (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:569>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26441
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log1pJob_set_O_mA86EBC619804AF3619458DEE9B88D1B35330B343_inline (Log1pJob_tD726661C6D407B2D6815A18AFC613BA92D2671C1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:570>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26446
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log2Job_set_X_mFCEC8404DD30B03101AA88E9E404FECBD47B403E_inline (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:588>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26449
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void Log2Job_set_O_m63291BFA39F85B268DC87D7A5D7B3EBA48756593_inline (Log2Job_t853AD4064F48FD82997DD329BBBA5A8E7F1EF127* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:589>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26422
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogJob_set_X_mDD6F8E1F8EC4B67F10754A0DDAB07AAF43DC0499_inline (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:531>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26425
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogJob_set_O_m6B5F4B0E5FD087A1A1108364525A555818F0E89C_inline (LogJob_t9E7A25F5B94DBAA3BC4EBC44FF102EEA4ADD8554* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:532>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 27010
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogSoftmaxJob_set_X_m991586F90D61C69E1ECB1A1F9ECEE46181659A37_inline (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3550>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 27013
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void LogSoftmaxJob_set_O_m6E79FD7562D4D66DDAE05539977DE6B29816B988_inline (LogSoftmaxJob_tF03A082FF78F76E45DA9121E945DACF5E6CD1FE9* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3551>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26743
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool2DJob_set_X_m5C67365660A44F7C6E0B84613FC73B858326DAE6_inline (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:49>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26746
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool2DJob_set_O_m40964DCCB0D208C952DFFF0AD4422DD19288B9A0_inline (MaxPool2DJob_tD6918ED0B25009D736316D105A70C609E010A2B4* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:50>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26750
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool3DJob_set_X_m12538BB1491AB21726BD082D340831D7324EDFA3_inline (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:226>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26753
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MaxPool3DJob_set_O_m92ED7FBC8241564DB91698327E86126F646EEE9D_inline (MaxPool3DJob_t713207203AFBF0CBDF8A80930AF32D06DFA503C1* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pool.gen.cs:228>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26262
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MishJob_set_X_m1A88CAF8A8C7BB849D3F5364BBC054413416AD05_inline (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:102>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26265
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MishJob_set_O_m3D432EFDCD3CC39EFA9782D0C983269081657079_inline (MishJob_t86023F361852454073185EE5B7A697DE7A757D1F* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:103>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26162
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NMSBitmaskJob_set_X_mE6BFF8B352A84B0BF5A753B76B74EEAC54AF31CA_inline (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Other.cs:2388>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26165
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NMSBitmaskJob_set_O_mB808CA8D12F5AB58A81ACE5A39E05DF594E62293_inline (NMSBitmaskJob_t250126D15B89216059DB488F52A9E7E3E092D2F9* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Other.cs:2389>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26598
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegFloatJob_set_X_mC04A2C7E7BC017EC1F3923821E28CE0E38051388_inline (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:949>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26601
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegFloatJob_set_O_m335244B793635FB5B55776527FF82E8CBCB5357C_inline (NegFloatJob_tCE3B34B80A83E2B91150B38784AAAC402B351625* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:950>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26590
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegIntJob_set_X_m5742C96837AB9D089905B32DCF1ED9A3B2F64A29_inline (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:930>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26593
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NegIntJob_set_O_m33E774BD876DAA9AD115574F544A6B69F8349A81_inline (NegIntJob_tE22B745D5E161EF47C9B23B4273E88645579A6CA* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:931>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26686
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NotJob_set_X_m78A75184A8AF64F67141D8D6A011B758417465BE_inline (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1166>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26689
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void NotJob_set_O_m4A9FF5276AB7F51F3C6926D36CD170AA7CBAF867_inline (NotJob_t4C5DAA5BCEB2A941132C44ECF723FA7F9A8DCAC2* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:1167>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26212
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void PadJob_set_X_m5E2A30A118D862DCBE02306F7D2DCF69E9A5DDB3_inline (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pad.gen.cs:24>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26215
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void PadJob_set_O_mF25F7BFF48A476E083EF290AC5E90F2A6B22AAC0_inline (PadJob_t3872C6A52B16400D325DCE9A3F97422B9287D6CE* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pad.gen.cs:25>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26398
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReciprocalJob_set_X_mF5BEDEE570BDD4551710A03AA41F5DC7D479C4EE_inline (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:474>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26401
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReciprocalJob_set_O_mB98934577EC66DBD3574A28CA12F2A237FE0DEEC_inline (ReciprocalJob_t611951751DEE853163A44B674013083EF6AC97AA* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PointwiseUnary.gen.cs:475>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26879
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1FloatJob_set_X_m2D97C84020B4890AD65C277333B9E94A5E6743F5_inline (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1555>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26882
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1FloatJob_set_O_mBE9960F4EF3AC8655324CCD27F163D942F087F87_inline (ReduceL1FloatJob_tA26E9B152BADF28C31D01353DB94AAF6489D66E4* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1556>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26888
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1IntJob_set_X_m49DD2F98E6DD45E44052485C055871144324E860_inline (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1683>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26891
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL1IntJob_set_O_mE30D2C19600C2218E2D34C4FF76EE8D497F6E14A_inline (ReduceL1IntJob_tCAA731A07AF7866D29AD2B50A428221DAB7B87B2* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1684>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26897
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL2FloatJob_set_X_mAE52F77DC030F20A2518F0A14CC9B945A08FFC89_inline (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1811>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26900
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceL2FloatJob_set_O_m5D591418003AA2936E2D6FADEDC151FA7DA87C92_inline (ReduceL2FloatJob_t000E7D229400D7882910F338C056D1C06289B399* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1812>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 27018
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumExpFloatJob_set_X_m05C3EC2C1AA3E33763939744A16BD855041B7BDC_inline (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3647>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 27021
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumExpFloatJob_set_O_m52DC20336555C5E657274CB8580B2F89386974A5_inline (ReduceLogSumExpFloatJob_t3ECE9EBE264CE01036657AD73C10E2C839D0E88E* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:3648>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26915
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumFloatJob_set_X_mFECA4A6A9B0FD3101EBF56BCA617614222ABA157_inline (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2066>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26918
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceLogSumFloatJob_set_O_mE04277D464885F1BCD29CE0F2B615FCBDE6CB5D5_inline (ReduceLogSumFloatJob_t46C19119A13BD2B63E7B5F00C13F1C0E7602C9FC* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:2067>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26771
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxFloatJob_set_X_m955928D48A92BED6A12C41D4C93BEA7592C865B8_inline (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:24>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26774
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxFloatJob_set_O_mF99CF99C44CEEA886D149340F60C97F2409A7507_inline (ReduceMaxFloatJob_t01674191F615DBBCEC2B2378C4687487BD28FE53* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:25>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26780
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxIntJob_set_X_m6189979366E07C9A31F28C326574CB7B996246B1_inline (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:151>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26783
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMaxIntJob_set_O_m871025D61243BA3A80DDD978B68AEE297BC76D45_inline (ReduceMaxIntJob_t20BC7A3F30E02355EBC2D241DF4030657F81E23D* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:152>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26852
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanFloatJob_set_X_m6F9C7D11D2D2BCA6CFC916A79178816C26040017_inline (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1172>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26855
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanFloatJob_set_O_m72982D51C387D7A5E29EC182341D888E3C08E64B_inline (ReduceMeanFloatJob_t34D2F5A947AA38B19F7067C5F45649BC62F8C2A7* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1173>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26843
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanSquareFloatJob_set_X_mA89BC46128F31FACBF67814761CB85B39A919423_inline (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* IL2CPP_PARAMETER_RESTRICT __this, ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1042>
-		ReadOnlyMemResource_t345C20DF30DF8C56007A6D80EA78C1CD2B258156 L_0 = ___0_value;
-		__this->___U3CXU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 26846
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ReduceMeanSquareFloatJob_set_O_m2EB18D1199B3C474641493C0873AFCF798CFAF10_inline (ReduceMeanSquareFloatJob_tB3A004F1521E8C02CC7659B226A40A636818E735* IL2CPP_PARAMETER_RESTRICT __this, ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:./Library/PackageCache/com.unity.ai.inference@9a123aee5df7/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs:1043>
-		ReadWriteMemResource_t0597E22D47CFCE9BF8E4926213D82CDF79635229 L_0 = ___0_value;
-		__this->___U3COU3Ek__BackingField = L_0;
-		return;
-	}
-}
-// Method Definition Index: 94350
+// Method Definition Index: 94464
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FunctionPointer_1__ctor_mE2BD136AA4DB860E4183D3293D3AE1A04B978DA3_gshared_inline (FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA39BB4AEDECFCB2* __this, intptr_t ___0_ptr, const RuntimeMethod* method) 
 {
 	{

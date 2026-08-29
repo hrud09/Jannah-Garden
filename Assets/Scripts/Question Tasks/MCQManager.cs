@@ -89,6 +89,11 @@ public class MCQManager : MonoBehaviour
 
     void Start()
     {
+        // Long localized questions/options (Urdu and Arabic especially) wrap to several lines; let TMP
+        // shrink them to fit their boxes instead of overflowing the panel. The prefab's size is the max.
+        EnableAutoSize(questionTextUI, 26f);
+        foreach (var optionText in optionTextsUI) EnableAutoSize(optionText, 16f);
+
         LoadQuestions();
         LocalizationManager.OnLocaleChanged += LoadQuestions;
         if (submitButton != null)
@@ -539,12 +544,34 @@ public class MCQManager : MonoBehaviour
     // into the shared wrapper, since not every SetText caller (e.g. countdown text) wants it.
     private const float QuestionShapedTextTopPadding = 50f;
 
+    // The prefab authors every label's alignment for left-to-right locales; RTL locales mirror the
+    // horizontal half of that authored value (so option labels hug the right edge the way they hug the
+    // left in English). Cached on first use because SetText overwrites the live alignment per locale.
+    private readonly Dictionary<TMP_Text, TextAlignmentOptions> _authoredAlignments = new Dictionary<TMP_Text, TextAlignmentOptions>();
+
     private void SetText(TextMeshProUGUI tmpTextUI, string text, float shapedTopPadding = 0f)
     {
         if (tmpTextUI == null) return;
 
         if (LocalizationManager.Instance == null) { tmpTextUI.text = text; return; }
 
+        if (!_authoredAlignments.TryGetValue(tmpTextUI, out TextAlignmentOptions authored))
+        {
+            authored = tmpTextUI.alignment;
+            _authoredAlignments[tmpTextUI] = authored;
+        }
+        tmpTextUI.alignment = LocalizationManager.Instance.IsRightToLeft
+            ? LocalizedRendering.MirrorAlignment(authored)
+            : authored;
+
         LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale, shapedTopPadding);
+    }
+
+    private static void EnableAutoSize(TextMeshProUGUI label, float minSize)
+    {
+        if (label == null || label.enableAutoSizing) return;
+        label.fontSizeMax = label.fontSize;
+        label.fontSizeMin = minSize;
+        label.enableAutoSizing = true;
     }
 }

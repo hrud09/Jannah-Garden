@@ -297,8 +297,7 @@ public class LoadingScreenManager : MonoBehaviour
         if (progressBar != null)
             progressBar.value = _displayedProgress;
 
-        if (percentText != null)
-            percentText.text = Mathf.RoundToInt(_displayedProgress * 100f) + "%";
+        SafeSetText(percentText, Mathf.RoundToInt(_displayedProgress * 100f) + "%");
 
         // Animate spinner dots
         AnimateSpinner();
@@ -371,7 +370,7 @@ public class LoadingScreenManager : MonoBehaviour
         // Pick a random tip
         if (loadingTips != null && loadingTips.Length > 0 && tipsText != null)
         {
-            tipsText.text = loadingTips[Random.Range(0, loadingTips.Length)];
+            SafeSetText(tipsText, loadingTips[Random.Range(0, loadingTips.Length)]);
             tipsText.gameObject.SetActive(true);
         }
 
@@ -512,7 +511,7 @@ public class LoadingScreenManager : MonoBehaviour
         // Snap to 100%
         _displayedProgress = 1f;
         if (progressBar != null) progressBar.value = 1f;
-        if (percentText != null) percentText.text = "100%";
+        SafeSetText(percentText, "100%");
 
         SetStatusText("Preparing scene...");
 
@@ -624,8 +623,29 @@ public class LoadingScreenManager : MonoBehaviour
 
     private void SetStatusText(string text)
     {
-        if (statusText != null)
-            statusText.text = text;
+        SafeSetText(statusText, text);
+    }
+
+    /// <summary>
+    /// Assigns TMP_Text.text guarded against exceptions. A broken TextMeshPro runtime dependency
+    /// (e.g. a null TMP Settings singleton on some Android builds) throws a NullReferenceException
+    /// out of the text setter itself; if that happened from inside <see cref="LoadSceneRoutine"/>
+    /// directly (not from a per-frame Unity callback that swallows and retries), the coroutine would
+    /// die at that exact line and never reach its fade-out — stranding the player behind the loading
+    /// panel forever. Losing this one label is a far smaller failure than that.
+    /// </summary>
+    private static void SafeSetText(TMP_Text field, string value)
+    {
+        if (field == null) return;
+
+        try
+        {
+            field.text = value;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"[LoadingScreenManager] Failed to set text on '{field.name}': {e.Message}");
+        }
     }
 
     /// <summary>Whether the given scene name should be loaded via Addressables instead of SceneManager.</summary>

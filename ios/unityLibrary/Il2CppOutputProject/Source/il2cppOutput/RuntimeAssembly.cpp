@@ -2681,7 +2681,7 @@ inline void List_1_AddWithResize_m6BA81DB641DD46DF9C737AF12A2EE6B02A63AC9D (List
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109142
+// Method Definition Index: 109256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_PrintMeshInfo_m9336E80BFAEFC3F0CD95EE0DB89D015CD7A04520 (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2703,40 +2703,40 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_PrintMeshInfo_m9336E80BFAEFC3F0
 	Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* V_2 = NULL;
 	int32_t V_3 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:29>
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_0;
 		L_0 = Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623(__this, Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623_RuntimeMethod_var);
 		NullCheck(L_0);
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_1;
 		L_1 = MeshFilter_get_mesh_m13172D7EF6682861971817D0A47EE2BE49FBCB1C(L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:30>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral5F9516FD3C109C94E67BFA43BBBA67D6B1EDF473, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:32>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_2 = L_1;
 		NullCheck(L_2);
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_3;
 		L_3 = Mesh_get_vertices_mA3577F1B08EDDD54E26AEB3F8FFE4EC247D2ABB9(L_2, NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:33>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_4 = L_2;
 		NullCheck(L_4);
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_5;
 		L_5 = Mesh_get_normals_m2B6B159B799E6E235EA651FCAB2E18EE5B18ED62(L_4, NULL);
 		V_1 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:34>
 		NullCheck(L_4);
 		Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* L_6;
 		L_6 = Mesh_get_uv_mA47805C48AB3493FF3727922C43E77880E73519F(L_4, NULL);
 		V_2 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:36>
 		V_3 = 0;
 		goto IL_012b;
 	}
 
 IL_0030:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:38>
 		int32_t L_7 = V_3;
 		int32_t L_8 = L_7;
 		RuntimeObject* L_9 = Box(il2cpp_defaults.int32_class, &L_8);
@@ -2744,7 +2744,7 @@ IL_0030:
 		L_10 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral48DC26C55265CD62A649951DE59CB64F916B6793, L_9, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_10, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:39>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_11 = V_0;
 		int32_t L_12 = V_3;
 		NullCheck(L_11);
@@ -2766,7 +2766,7 @@ IL_0030:
 		String_t* L_26;
 		L_26 = String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C(_stringLiteral9EC316575CB40BD62070AFEA5EAA5722EF687BC2, L_15, L_20, L_25, NULL);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_26, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:40>
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_27 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)4);
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_28 = L_27;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_29 = V_1;
@@ -2812,7 +2812,7 @@ IL_0030:
 		String_t* L_52;
 		L_52 = String_Format_m918500C1EFB475181349A79989BB79BB36102894(_stringLiteralD917D0A93019965D323F4924D66828E73CAA48B5, L_46, NULL);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_52, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:41>
 		Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* L_53 = V_2;
 		int32_t L_54 = V_3;
 		NullCheck(L_53);
@@ -2828,16 +2828,16 @@ IL_0030:
 		String_t* L_63;
 		L_63 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteralDB009792A8417E6CE983D44CF7A83891FC3FD731, L_57, L_62, NULL);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_63, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:42>
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:36>
 		int32_t L_64 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_64, 1));
 	}
 
 IL_012b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:36>
 		int32_t L_65 = V_3;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_66 = V_0;
 		NullCheck(L_66);
@@ -2847,15 +2847,15 @@ IL_012b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:44>
 		return;
 	}
 }
-// Method Definition Index: 109143
+// Method Definition Index: 109257
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_CauseFracture_m5867D33E93A1FBD21A58016805F04C77D56740E2 (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:48>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_0 = __this->___callbackOptions;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1;
 		L_1 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
@@ -2866,13 +2866,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_CauseFracture_m5867D33E93A1FBD2
 		L_3 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_2, NULL);
 		NullCheck(L_0);
 		CallbackOptions_CallOnFracture_mEE0545F7A10F42B2AD012A88E74AE41AAD17CDF8(L_0, (Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76*)NULL, L_1, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:49>
 		Fracture_ComputeFracture_m44253CDD384F5BBE9A437FBC36254CE70CA4C99F(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:50>
 		return;
 	}
 }
-// Method Definition Index: 109144
+// Method Definition Index: 109258
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnValidate_m1FD137156A05F7CFD528C986993584A7094AFDEE (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2886,7 +2886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnValidate_m1FD137156A05F7CFD52
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:54>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_0);
@@ -2901,7 +2901,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnValidate_m1FD137156A05F7CFD52
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:59>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
 		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_3);
@@ -2911,7 +2911,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnValidate_m1FD137156A05F7CFD52
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5;
 		L_5 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_4, NULL);
 		V_0 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:60>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = V_0;
 		float L_7 = L_6.___x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8 = V_0;
@@ -2944,7 +2944,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnValidate_m1FD137156A05F7CFD52
 
 IL_004e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:62>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18;
 		L_18 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
@@ -2953,11 +2953,11 @@ IL_004e:
 
 IL_005e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:65>
 		return;
 	}
 }
-// Method Definition Index: 109145
+// Method Definition Index: 109259
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5309AB60969EB13C8F5C635D5337 (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* ___0_collision, const RuntimeMethod* method) 
 {
 	ContactPoint_t241857959C0D517C21F541BB04B63FA6C1EAB3F9 V_0;
@@ -2966,7 +2966,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:69>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_0 = __this->___triggerOptions;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___triggerType;
@@ -2976,7 +2976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:71>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_2 = ___0_collision;
 		NullCheck(L_2);
 		int32_t L_3;
@@ -2987,7 +2987,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:74>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_4 = ___0_collision;
 		NullCheck(L_4);
 		ContactPointU5BU5D_t3570603E8D0685B71B3D8BA07031674B00C5E411* L_5;
@@ -2996,7 +2996,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		int32_t L_6 = 0;
 		ContactPoint_t241857959C0D517C21F541BB04B63FA6C1EAB3F9 L_7 = (L_5)->GetAt(static_cast<il2cpp_array_size_t>(L_6));
 		V_0 = L_7;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:75>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:75>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_8 = ___0_collision;
 		NullCheck(L_8);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_9;
@@ -3006,7 +3006,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		L_10 = Vector3_get_magnitude_mF0D6017E90B345F1F52D1CC564C640F1A847AF2D_inline((&V_2), NULL);
 		float L_11;
 		L_11 = Time_get_fixedDeltaTime_m43136893D00AF5D5FE80AD05609558F6E2381381(NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:78>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_12 = __this->___triggerOptions;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_13;
 		L_13 = ContactPoint_get_otherCollider_m717D0758D578C93C6CA26E2BA87325682B6C2550((&V_0), NULL);
@@ -3020,8 +3020,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		bool L_16;
 		L_16 = TriggerOptions_IsTagAllowed_m014166E0F679A965746BAA679C3E1875FE63D71F(L_12, L_15, NULL);
 		V_1 = L_16;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:82>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:83>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_17 = __this->___triggerOptions;
 		NullCheck(L_17);
 		float L_18 = L_17->___minimumCollisionForce;
@@ -3041,7 +3041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:85>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_22 = __this->___callbackOptions;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_23;
 		L_23 = ContactPoint_get_otherCollider_m717D0758D578C93C6CA26E2BA87325682B6C2550((&V_0), NULL);
@@ -3051,22 +3051,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnCollisionEnter_m0310A60BD17A5
 		L_25 = ContactPoint_get_point_mCCDFDACC5D8DB469898060A56A3CC45132911208((&V_0), NULL);
 		NullCheck(L_22);
 		CallbackOptions_CallOnFracture_mEE0545F7A10F42B2AD012A88E74AE41AAD17CDF8(L_22, L_23, L_24, L_25, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:86>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:86>
 		Fracture_ComputeFracture_m44253CDD384F5BBE9A437FBC36254CE70CA4C99F(__this, NULL);
 	}
 
 IL_0098:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:90>
 		return;
 	}
 }
-// Method Definition Index: 109146
+// Method Definition Index: 109260
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnTriggerEnter_m9E215B189FAC8C574F4A82D9CCECA9CFB7F31C2D (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_collider, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:94>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_0 = __this->___triggerOptions;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___triggerType;
@@ -3076,7 +3076,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnTriggerEnter_m9E215B189FAC8C5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:97>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_2 = __this->___triggerOptions;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_3 = ___0_collider;
 		NullCheck(L_3);
@@ -3089,7 +3089,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnTriggerEnter_m9E215B189FAC8C5
 		bool L_6;
 		L_6 = TriggerOptions_IsTagAllowed_m014166E0F679A965746BAA679C3E1875FE63D71F(L_2, L_5, NULL);
 		V_0 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:99>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_7 = __this->___triggerOptions;
 		NullCheck(L_7);
 		bool L_8 = L_7->___filterCollisionsByTag;
@@ -3100,7 +3100,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnTriggerEnter_m9E215B189FAC8C5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:101>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_10 = __this->___callbackOptions;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_11 = ___0_collider;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12;
@@ -3112,21 +3112,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_OnTriggerEnter_m9E215B189FAC8C5
 		L_14 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_13, NULL);
 		NullCheck(L_10);
 		CallbackOptions_CallOnFracture_mEE0545F7A10F42B2AD012A88E74AE41AAD17CDF8(L_10, L_11, L_12, L_14, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:102>
 		Fracture_ComputeFracture_m44253CDD384F5BBE9A437FBC36254CE70CA4C99F(__this, NULL);
 	}
 
 IL_0057:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:105>
 		return;
 	}
 }
-// Method Definition Index: 109147
+// Method Definition Index: 109261
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_Update_m759FC1D313C439286DD078BC88DCAEC6AA8DA4E1 (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:109>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_0 = __this->___triggerOptions;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___triggerType;
@@ -3136,7 +3136,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_Update_m759FC1D313C439286DD078B
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:111>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_2 = __this->___triggerOptions;
 		NullCheck(L_2);
 		int32_t L_3 = L_2->___triggerKey;
@@ -3148,7 +3148,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_Update_m759FC1D313C439286DD078B
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:113>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_5 = __this->___callbackOptions;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
 		L_6 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
@@ -3159,17 +3159,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_Update_m759FC1D313C439286DD078B
 		L_8 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_7, NULL);
 		NullCheck(L_5);
 		CallbackOptions_CallOnFracture_mEE0545F7A10F42B2AD012A88E74AE41AAD17CDF8(L_5, (Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76*)NULL, L_6, L_8, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:114>
 		Fracture_ComputeFracture_m44253CDD384F5BBE9A437FBC36254CE70CA4C99F(__this, NULL);
 	}
 
 IL_0043:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:117>
 		return;
 	}
 }
-// Method Definition Index: 109148
+// Method Definition Index: 109262
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5BBE9A437FBC36254CE70CA4C99F (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3194,13 +3194,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:125>
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_2;
 		L_2 = Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623(__this, Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623_RuntimeMethod_var);
 		NullCheck(L_2);
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_3;
 		L_3 = MeshFilter_get_sharedMesh_mE4ED3E7E31C1DE5097E4980DA996E620F7D7CB8C(L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:127>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
@@ -3210,7 +3210,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:130>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___fragmentRoot;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -3221,7 +3221,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:133>
 		String_t* L_7;
 		L_7 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(__this, NULL);
 		String_t* L_8;
@@ -3230,7 +3230,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_9, L_8, NULL);
 		__this->___fragmentRoot = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___fragmentRoot), (void*)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:134>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___fragmentRoot;
 		NullCheck(L_10);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11;
@@ -3242,7 +3242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		L_13 = Transform_get_parent_m65354E28A4C94EC00EBCF03532F7B0718380791E(L_12, NULL);
 		NullCheck(L_11);
 		Transform_SetParent_m6677538B60246D958DD91F931C50F969CCBB5250(L_11, L_13, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:137>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:137>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___fragmentRoot;
 		NullCheck(L_14);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15;
@@ -3254,7 +3254,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		L_17 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_16, NULL);
 		NullCheck(L_15);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_15, L_17, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:138>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:138>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___fragmentRoot;
 		NullCheck(L_18);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19;
@@ -3266,7 +3266,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 		L_21 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_20, NULL);
 		NullCheck(L_19);
 		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_19, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:139>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = __this->___fragmentRoot;
 		NullCheck(L_22);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_23;
@@ -3279,14 +3279,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_ComputeFracture_m44253CDD384F5B
 
 IL_00b5:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:142>
 		U3CU3Ec__DisplayClass12_0_tA43CC6F5C868B6E2FEC52D87D423AA942ABB03D8* L_25 = V_0;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_26;
 		L_26 = Fracture_CreateFragmentTemplate_m84ED9C1DA5DA93EC7323BC3B541283BAD1D6FB99(__this, NULL);
 		NullCheck(L_25);
 		L_25->___fragmentTemplate = L_26;
 		Il2CppCodeGenWriteBarrier((void**)(&L_25->___fragmentTemplate), (void*)L_26);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:144>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:144>
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_27 = __this->___fractureOptions;
 		NullCheck(L_27);
 		bool L_28 = L_27->___asynchronous;
@@ -3296,30 +3296,30 @@ IL_00b5:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:146>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:147>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:148>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:149>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:150>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:151>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:152>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:153>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:154>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:155>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:156>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:157>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:158>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:159>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:160>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:161>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:162>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:163>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:164>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:165>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:166>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:167>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:168>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:169>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:146>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:148>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:152>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:153>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:154>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:155>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:156>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:158>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:164>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:165>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:169>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_29;
 		L_29 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_30 = __this->___fractureOptions;
@@ -3342,10 +3342,10 @@ IL_00b5:
 
 IL_0104:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:173>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:174>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:175>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:175>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:176>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39;
 		L_39 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_40 = __this->___fractureOptions;
@@ -3357,19 +3357,19 @@ IL_0104:
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44;
 		L_44 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_43, NULL);
 		Fragmenter_Fracture_m2475906BBD3C7F54C337D0E280C65B6AD8A9B0D1(L_39, L_40, L_42, L_44, (bool)0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:179>
 		U3CU3Ec__DisplayClass12_0_tA43CC6F5C868B6E2FEC52D87D423AA942ABB03D8* L_45 = V_0;
 		NullCheck(L_45);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_46 = L_45->___fragmentTemplate;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_46, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:182>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:182>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_47;
 		L_47 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		NullCheck(L_47);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_47, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:185>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:186>
 		int32_t L_48 = __this->___currentRefractureCount;
 		if (!L_48)
 		{
@@ -3395,7 +3395,7 @@ IL_0104:
 
 IL_0161:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:188>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_52 = __this->___callbackOptions;
 		NullCheck(L_52);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_53 = L_52->___onCompleted;
@@ -3405,7 +3405,7 @@ IL_0161:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:190>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_54 = __this->___callbackOptions;
 		NullCheck(L_54);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_55 = L_54->___onCompleted;
@@ -3415,11 +3415,11 @@ IL_0161:
 
 IL_017e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:195>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:195>
 		return;
 	}
 }
-// Method Definition Index: 109149
+// Method Definition Index: 109263
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Fracture_CreateFragmentTemplate_m84ED9C1DA5DA93EC7323BC3B541283BAD1D6FB99 (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3441,34 +3441,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 	Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* V_1 = NULL;
 	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* V_2 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:206>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:206>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m7D0340DE160786E6EFA8DABD39EC3B694DA30AAD(L_0, NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:207>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:207>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = V_0;
 		NullCheck(L_1);
 		Object_set_name_mC79E6DC8FFD72479C90F0C4CC7F42A0FEAF5AE47(L_1, _stringLiteral9A08A617FCF06FDA3322DF86E11EDAFE8DAE2A18, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:208>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:208>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = V_0;
 		String_t* L_3;
 		L_3 = Component_get_tag_m7561A81116CAB82B8A459E934662BFC2039FB7EF(__this, NULL);
 		NullCheck(L_2);
 		GameObject_set_tag_m0A41528AFD8C83E1CEC5D769921159897CDD2B24(L_2, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:211>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = V_0;
 		NullCheck(L_4);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_5;
 		L_5 = GameObject_AddComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mEAB8177A64DF1A50BB7996ACEEEADCD65358AC94(L_4, GameObject_AddComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mEAB8177A64DF1A50BB7996ACEEEADCD65358AC94_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:214>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = V_0;
 		NullCheck(L_6);
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_7;
 		L_7 = GameObject_AddComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_mCDD3E77673305199F52C772AE8C7952F3864740D(L_6, GameObject_AddComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_mCDD3E77673305199F52C772AE8C7952F3864740D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:215>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:216>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:217>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:218>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:216>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:218>
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_8 = (MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D*)(MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D*)SZArrayNew(MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D_il2cpp_TypeInfo_var, (uint32_t)2);
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_9 = L_8;
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_10;
@@ -3488,20 +3488,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(1), (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)L_14);
 		NullCheck(L_7);
 		Renderer_set_sharedMaterials_m665ADE4190214CC2AC52490B4A7373D7EE75DEB2(L_7, L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:221>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_15;
 		L_15 = Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14(__this, Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14_RuntimeMethod_var);
 		V_1 = L_15;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:222>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:222>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = V_0;
 		NullCheck(L_16);
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_17;
 		L_17 = GameObject_AddComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_mFE0E36B3C1670C308B04C39EDC76838DD59826B7(L_16, GameObject_AddComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_mFE0E36B3C1670C308B04C39EDC76838DD59826B7_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:223>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:223>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_18 = L_17;
 		NullCheck(L_18);
 		MeshCollider_set_convex_m20482D687240D0921BA76B77983403E55A2E3CE1(L_18, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:224>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:224>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_19 = L_18;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_20 = V_1;
 		NullCheck(L_20);
@@ -3509,23 +3509,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_21 = Collider_get_sharedMaterial_m436FD38D7193330BE4FA630AB7F184BE952FDFFE(L_20, NULL);
 		NullCheck(L_19);
 		Collider_set_sharedMaterial_mA67DC663BEEBE9315F3B91A0B74B31D33579CD7D(L_19, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:225>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:225>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_22 = V_1;
 		NullCheck(L_22);
 		bool L_23;
 		L_23 = Collider_get_isTrigger_mFF457F6AA71D173F9A11BAF00C35E5AE12952F87(L_22, NULL);
 		NullCheck(L_19);
 		Collider_set_isTrigger_mFCD22F3EB5E28C97863956AB725D53F7F4B7CA78(L_19, L_23, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:228>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_24;
 		L_24 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(__this, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
 		V_2 = L_24;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:229>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:229>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = V_0;
 		NullCheck(L_25);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_26;
 		L_26 = GameObject_AddComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m03A761629A3F71B0248F1B26EF612F592B757093(L_25, GameObject_AddComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m03A761629A3F71B0248F1B26EF612F592B757093_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:230>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_27 = L_26;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_28 = V_2;
 		NullCheck(L_28);
@@ -3533,7 +3533,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_29 = Rigidbody_get_linearVelocity_m367F5415641E5FB968440A91BAE2FCB8CAEA2C8C(L_28, NULL);
 		NullCheck(L_27);
 		Rigidbody_set_linearVelocity_m29AE03D5FC079EAD4202FCF72E2AEBDC19363985(L_27, L_29, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:231>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:231>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_30 = L_27;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_31 = V_2;
 		NullCheck(L_31);
@@ -3541,7 +3541,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_32 = Rigidbody_get_angularVelocity_m4EACCFCF15CA441CCD53B24322C2E7B8EEBDF6A8(L_31, NULL);
 		NullCheck(L_30);
 		Rigidbody_set_angularVelocity_m23266B4E52BF0D2E65CC984AC73CC40B8D4A27E0(L_30, L_32, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:232>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_33 = L_30;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_34 = V_2;
 		NullCheck(L_34);
@@ -3549,7 +3549,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_35 = Rigidbody_get_linearDamping_m9A75A439BEDC39A14ADDDBEA9BF3BE08805DA7F2(L_34, NULL);
 		NullCheck(L_33);
 		Rigidbody_set_linearDamping_m42BB8ADA5D26250A11256502D08BDC2DAB980242(L_33, L_35, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:233>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_36 = L_33;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_37 = V_2;
 		NullCheck(L_37);
@@ -3557,15 +3557,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_38 = Rigidbody_get_angularDamping_mEC4083A962F81EA9BD610CC259951DA1DEC9C6DC(L_37, NULL);
 		NullCheck(L_36);
 		Rigidbody_set_angularDamping_m2763171B779080FC724173D87C34015ABED51671(L_36, L_38, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:234>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_39 = V_2;
 		NullCheck(L_39);
 		bool L_40;
 		L_40 = Rigidbody_get_useGravity_mBDA227BDCB0F9A81B61A6592929EE43EDDEE7D16(L_39, NULL);
 		NullCheck(L_36);
 		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_36, L_40, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:237>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:238>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:238>
 		RefractureOptions_tD5F2F9AFC291E2C56F6CAE80BA2F08A73C8E72DE* L_41 = __this->___refractureOptions;
 		NullCheck(L_41);
 		bool L_42 = L_41->___enableRefracturing;
@@ -3585,19 +3585,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:240>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_46 = V_0;
 		Fracture_CopyFractureComponent_mC4480EC17DE0F5F472D498B4FE3E442D8C2D0A58(__this, L_46, NULL);
 	}
 
 IL_00eb:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:243>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:243>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_47 = V_0;
 		return L_47;
 	}
 }
-// Method Definition Index: 109150
+// Method Definition Index: 109264
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_CopyFractureComponent_mC4480EC17DE0F5F472D498B4FE3E442D8C2D0A58 (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3607,50 +3607,50 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture_CopyFractureComponent_mC4480EC1
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:252>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_obj;
 		NullCheck(L_0);
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_1;
 		L_1 = GameObject_AddComponent_TisFracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F_m08158C820301267173C5E07CA453C2F7C6E3C5CA(L_0, GameObject_AddComponent_TisFracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F_m08158C820301267173C5E07CA453C2F7C6E3C5CA_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:254>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_2 = L_1;
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_3 = __this->___triggerOptions;
 		NullCheck(L_2);
 		L_2->___triggerOptions = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&L_2->___triggerOptions), (void*)L_3);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:255>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:255>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_4 = L_2;
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_5 = __this->___fractureOptions;
 		NullCheck(L_4);
 		L_4->___fractureOptions = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&L_4->___fractureOptions), (void*)L_5);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:256>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:256>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_6 = L_4;
 		RefractureOptions_tD5F2F9AFC291E2C56F6CAE80BA2F08A73C8E72DE* L_7 = __this->___refractureOptions;
 		NullCheck(L_6);
 		L_6->___refractureOptions = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&L_6->___refractureOptions), (void*)L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:257>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_8 = L_6;
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_9 = __this->___callbackOptions;
 		NullCheck(L_8);
 		L_8->___callbackOptions = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&L_8->___callbackOptions), (void*)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:258>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:258>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_10 = L_8;
 		int32_t L_11 = __this->___currentRefractureCount;
 		NullCheck(L_10);
 		L_10->___currentRefractureCount = ((int32_t)il2cpp_codegen_add(L_11, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:259>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:259>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___fragmentRoot;
 		NullCheck(L_10);
 		L_10->___fragmentRoot = L_12;
 		Il2CppCodeGenWriteBarrier((void**)(&L_10->___fragmentRoot), (void*)L_12);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:260>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:260>
 		return;
 	}
 }
-// Method Definition Index: 109151
+// Method Definition Index: 109265
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture__ctor_mEEA4D6F568973E67BB6A27363DFFF0F57EC2F0EB (Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3666,7 +3666,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fracture__ctor_mEEA4D6F568973E67BB6A2736
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109152
+// Method Definition Index: 109266
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass12_0__ctor_m333940D212418DD9B11FDBA681EEA78A0494E9DE (U3CU3Ec__DisplayClass12_0_tA43CC6F5C868B6E2FEC52D87D423AA942ABB03D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3674,7 +3674,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass12_0__ctor_m333940D
 		return;
 	}
 }
-// Method Definition Index: 109153
+// Method Definition Index: 109267
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass12_0_U3CComputeFractureU3Eb__0_mDE7D24150EA0223D0F513B87032A58876A55C59B (U3CU3Ec__DisplayClass12_0_tA43CC6F5C868B6E2FEC52D87D423AA942ABB03D8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3684,19 +3684,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass12_0_U3CComputeFrac
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:154>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:154>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___fragmentTemplate;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:157>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_1 = __this->___U3CU3E4__this;
 		NullCheck(L_1);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_1, NULL);
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:160>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:161>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_3 = __this->___U3CU3E4__this;
 		NullCheck(L_3);
 		int32_t L_4 = L_3->___currentRefractureCount;
@@ -3728,7 +3728,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass12_0_U3CComputeFrac
 
 IL_0049:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:163>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_10 = __this->___U3CU3E4__this;
 		NullCheck(L_10);
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_11 = L_10->___callbackOptions;
@@ -3740,7 +3740,7 @@ IL_0049:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:165>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:165>
 		Fracture_t518CE2DC9573064C2FC9E664AD26522B7562B67F* L_13 = __this->___U3CU3E4__this;
 		NullCheck(L_13);
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_14 = L_13->___callbackOptions;
@@ -3752,7 +3752,7 @@ IL_0049:
 
 IL_0070:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fracture.cs:168>
 		return;
 	}
 }
@@ -3764,23 +3764,23 @@ IL_0070:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109154
+// Method Definition Index: 109268
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__ctor_mE44FB2E2C16BE5B1A3FB2D4F8AA118638D9EE2FF (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* ___0_inputPoints, List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* ___1_constraints, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_normal, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:66>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_0 = ___0_inputPoints;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = ___2_normal;
 		Triangulator__ctor_m07A1F4039045AEB9ACFCCAE6FA1F9A5D63D5923B(__this, L_0, L_1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:68>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_2 = ___1_constraints;
 		__this->___constraints = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___constraints), (void*)L_2);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:69>
 		return;
 	}
 }
-// Method Definition Index: 109155
+// Method Definition Index: 109269
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ConstrainedTriangulator_Triangulate_m14F15BA4BCF65ABF8E2F4299E09F575919D704FD (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3797,7 +3797,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:78>
 		int32_t L_0 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___N;
 		if ((((int32_t)L_0) >= ((int32_t)3)))
 		{
@@ -3805,21 +3805,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:80>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)0);
 		return L_1;
 	}
 
 IL_0010:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:83>
 		Triangulator_AddSuperTriangle_m975430FC27A6360B97E11B6F8E4133FA40EBA0AE(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:84>
 		Triangulator_NormalizeCoordinates_mB32913B3A352749B36D4768A69E6FB9FD2C0C379(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:85>
 		bool L_2;
 		L_2 = Triangulator_ComputeTriangulation_m65BE3F2484112CCBB6B7B2A2021496CE2DAD6ABC(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:87>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_3 = __this->___constraints;
 		NullCheck(L_3);
 		int32_t L_4;
@@ -3830,29 +3830,29 @@ IL_0010:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:89>
 		ConstrainedTriangulator_ApplyConstraints_mFCD8B14F7C6CC1B131A4836B0302B4797BC9A6C4(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:90>
 		ConstrainedTriangulator_DiscardTrianglesViolatingConstraints_m8F33035885D6F1C41FB23CDCEE45BAEEBB2F1B06(__this, NULL);
 	}
 
 IL_003d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:93>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:93>
 		Triangulator_DiscardTrianglesWithSuperTriangleVertices_m49517CB774350338E44A570C5F097E57FD24583A(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:95>
 		int32_t L_5 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangleCount;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_6 = (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)il2cpp_codegen_object_new(List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73_il2cpp_TypeInfo_var);
 		List_1__ctor_m30DD6F0F8DFBA9856BF7220A3CDB1C89ECEC0D98(L_6, ((int32_t)il2cpp_codegen_multiply(3, L_5)), List_1__ctor_m30DD6F0F8DFBA9856BF7220A3CDB1C89ECEC0D98_RuntimeMethod_var);
 		V_0 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:96>
 		V_1 = 0;
 		goto IL_009c;
 	}
 
 IL_0055:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:99>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_7 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___skipTriangle;
 		int32_t L_8 = V_1;
 		NullCheck(L_7);
@@ -3864,7 +3864,7 @@ IL_0055:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:101>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_11 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_12 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_13 = V_1;
@@ -3873,7 +3873,7 @@ IL_0055:
 		L_14 = (L_12)->GetAt(L_13, 0);
 		NullCheck(L_11);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_11, L_14, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:102>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_15 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_16 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_17 = V_1;
@@ -3882,7 +3882,7 @@ IL_0055:
 		L_18 = (L_16)->GetAt(L_17, 1);
 		NullCheck(L_15);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_15, L_18, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:103>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_19 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_20 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_21 = V_1;
@@ -3895,14 +3895,14 @@ IL_0055:
 
 IL_0098:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:96>
 		int32_t L_23 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_23, 1));
 	}
 
 IL_009c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:96>
 		int32_t L_24 = V_1;
 		int32_t L_25 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangleCount;
 		if ((((int32_t)L_24) < ((int32_t)L_25)))
@@ -3911,7 +3911,7 @@ IL_009c:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:107>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_26 = V_0;
 		NullCheck(L_26);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_27;
@@ -3919,7 +3919,7 @@ IL_009c:
 		return L_27;
 	}
 }
-// Method Definition Index: 109156
+// Method Definition Index: 109270
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_ApplyConstraints_mFCD8B14F7C6CC1B131A4836B0302B4797BC9A6C4 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3939,7 +3939,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_ApplyConstraints
 	EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* V_2 = NULL;
 	Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* V_3 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:115>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_0 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		NullCheck((RuntimeArray*)L_0);
 		int32_t L_1;
@@ -3947,19 +3947,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_ApplyConstraints
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_2 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)L_1);
 		__this->___visited = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___visited), (void*)L_2);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:118>
 		int32_t L_3 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___N;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_4 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)il2cpp_codegen_add(L_3, 3)));
 		__this->___vertexTriangles = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___vertexTriangles), (void*)L_4);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:119>
 		V_0 = 0;
 		goto IL_0071;
 	}
 
 IL_002e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:121>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_5 = __this->___vertexTriangles;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_6 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_7 = V_0;
@@ -3969,7 +3969,7 @@ IL_002e:
 		int32_t L_9 = V_0;
 		NullCheck(L_5);
 		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(L_8), (int32_t)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:122>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_10 = __this->___vertexTriangles;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_11 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_12 = V_0;
@@ -3979,7 +3979,7 @@ IL_002e:
 		int32_t L_14 = V_0;
 		NullCheck(L_10);
 		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(L_13), (int32_t)L_14);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:123>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_15 = __this->___vertexTriangles;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_16 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_17 = V_0;
@@ -3989,14 +3989,14 @@ IL_002e:
 		int32_t L_19 = V_0;
 		NullCheck(L_15);
 		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(L_18), (int32_t)L_19);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:119>
 		int32_t L_20 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_20, 1));
 	}
 
 IL_0071:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:119>
 		int32_t L_21 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_22 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		NullCheck((RuntimeArray*)L_22);
@@ -4008,7 +4008,7 @@ IL_0071:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:127>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_24 = __this->___constraints;
 		NullCheck(L_24);
 		Enumerator_t83A7AFAD7C812C952AEE0302AAB0B26E872F4346 L_25;
@@ -4033,11 +4033,11 @@ FINALLY_00c5:
 
 IL_008e_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:127>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:127>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_26;
 				L_26 = Enumerator_get_Current_m7D470F16AA439C3D0BC56F8DB361A53912636116_inline((&V_1), Enumerator_get_Current_m7D470F16AA439C3D0BC56F8DB361A53912636116_RuntimeMethod_var);
 				V_2 = L_26;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:129>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:129>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_27 = V_2;
 				NullCheck(L_27);
 				int32_t L_28 = L_27->___v1;
@@ -4050,13 +4050,13 @@ IL_008e_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:134>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:134>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_31 = V_2;
 				Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_32 = __this->___vertexTriangles;
 				Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_33;
 				L_33 = ConstrainedTriangulator_FindIntersectingEdges_mB9978C0AC4D548C600230CA86DE4EE8B6CAFE2A3(__this, L_31, L_32, NULL);
 				V_3 = L_33;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:135>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:135>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_34 = V_2;
 				Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_35 = V_3;
 				ConstrainedTriangulator_RemoveIntersectingEdges_mE93962E7B4E6D193BB27F8FFB4B33377846FBA74(__this, L_34, L_35, NULL);
@@ -4064,7 +4064,7 @@ IL_008e_1:
 
 IL_00ba_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:127>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:127>
 				bool L_36;
 				L_36 = Enumerator_MoveNext_mBE229FDAB78D072FBF52EC70E883F00B4F898547((&V_1), Enumerator_MoveNext_mBE229FDAB78D072FBF52EC70E883F00B4F898547_RuntimeMethod_var);
 				if (L_36)
@@ -4084,11 +4084,11 @@ IL_00ba_1:
 
 IL_00d3:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:137>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:137>
 		return;
 	}
 }
-// Method Definition Index: 109157
+// Method Definition Index: 109271
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* ConstrainedTriangulator_FindIntersectingEdges_mB9978C0AC4D548C600230CA86DE4EE8B6CAFE2A3 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___0_constraint, Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___1_vertexTriangles, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4122,11 +4122,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A
 	EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* V_12 = NULL;
 	EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* V_13 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:145>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_0 = (Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3*)il2cpp_codegen_object_new(Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3_il2cpp_TypeInfo_var);
 		Queue_1__ctor_mD93759E183D9946F189245C6454510378BE90391(L_0, Queue_1__ctor_mD93759E183D9946F189245C6454510378BE90391_RuntimeMethod_var);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:149>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = ___1_vertexTriangles;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_2 = ___0_constraint;
 		bool L_3;
@@ -4137,7 +4137,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:151>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_4 = V_0;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_5 = V_1;
 		NullCheck(L_4);
@@ -4147,37 +4147,37 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A
 
 IL_001b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:155>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:155>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_6 = V_0;
 		return L_6;
 	}
 
 IL_001d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:159>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_7 = V_1;
 		NullCheck(L_7);
 		int32_t L_8 = L_7->___t1;
 		V_2 = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:160>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_9 = V_1;
 		NullCheck(L_9);
 		int32_t L_10 = L_9->___t1Edge;
 		V_3 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:161>
 		int32_t L_11 = V_2;
 		V_4 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:162>
 		V_5 = (bool)0;
 		goto IL_01fa;
 	}
 
 IL_0036:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:166>
 		int32_t L_12 = V_2;
 		V_4 = L_12;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:167>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_13 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_14 = V_2;
 		int32_t L_15 = V_3;
@@ -4185,7 +4185,7 @@ IL_0036:
 		int32_t L_16;
 		L_16 = (L_13)->GetAt(L_14, L_15);
 		V_2 = L_16;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:170>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_17 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_18 = ___0_constraint;
 		NullCheck(L_18);
@@ -4196,7 +4196,7 @@ IL_0036:
 		NullCheck(L_21);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_22 = L_21->___coords;
 		V_6 = L_22;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:171>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_23 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_24 = ___0_constraint;
 		NullCheck(L_24);
@@ -4207,7 +4207,7 @@ IL_0036:
 		NullCheck(L_27);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_28 = L_27->___coords;
 		V_7 = L_28;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:172>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:172>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_29 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_30 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_31 = V_2;
@@ -4220,7 +4220,7 @@ IL_0036:
 		NullCheck(L_34);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_35 = L_34->___coords;
 		V_8 = L_35;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:173>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_36 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_37 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_38 = V_2;
@@ -4233,7 +4233,7 @@ IL_0036:
 		NullCheck(L_41);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_42 = L_41->___coords;
 		V_9 = L_42;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:174>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_43 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_44 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_45 = V_2;
@@ -4246,7 +4246,7 @@ IL_0036:
 		NullCheck(L_48);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_49 = L_48->___coords;
 		V_10 = L_49;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:177>
 		int32_t L_50 = V_2;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_51 = ___0_constraint;
 		NullCheck(L_51);
@@ -4259,14 +4259,14 @@ IL_0036:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:179>
 		V_5 = (bool)1;
 		goto IL_01fa;
 	}
 
 IL_00d7:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:182>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:182>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_54 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_55 = V_2;
 		NullCheck(L_54);
@@ -4291,9 +4291,9 @@ IL_00d7:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:184>
 		V_3 = 3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:185>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_63 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_64 = V_2;
 		NullCheck(L_63);
@@ -4314,7 +4314,7 @@ IL_00d7:
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_74 = (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)il2cpp_codegen_object_new(EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var);
 		EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635(L_74, L_65, L_68, L_69, L_72, L_73, NULL);
 		V_11 = L_74;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:186>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_75 = V_0;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_76 = V_11;
 		NullCheck(L_75);
@@ -4324,7 +4324,7 @@ IL_00d7:
 
 IL_0136:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:188>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_77 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_78 = V_2;
 		NullCheck(L_77);
@@ -4349,9 +4349,9 @@ IL_0136:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:190>
 		V_3 = 4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:191>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:191>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_86 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_87 = V_2;
 		NullCheck(L_86);
@@ -4372,7 +4372,7 @@ IL_0136:
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_97 = (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)il2cpp_codegen_object_new(EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var);
 		EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635(L_97, L_88, L_91, L_92, L_95, L_96, NULL);
 		V_12 = L_97;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:192>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_98 = V_0;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_99 = V_12;
 		NullCheck(L_98);
@@ -4382,7 +4382,7 @@ IL_0136:
 
 IL_0192:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:194>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_100 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_101 = V_2;
 		NullCheck(L_100);
@@ -4407,9 +4407,9 @@ IL_0192:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:196>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:196>
 		V_3 = 5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:197>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:197>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_109 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_110 = V_2;
 		NullCheck(L_109);
@@ -4430,7 +4430,7 @@ IL_0192:
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_120 = (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)il2cpp_codegen_object_new(EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var);
 		EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635(L_120, L_111, L_114, L_115, L_118, L_119, NULL);
 		V_13 = L_120;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:198>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:198>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_121 = V_0;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_122 = V_13;
 		NullCheck(L_121);
@@ -4440,16 +4440,16 @@ IL_0192:
 
 IL_01ee:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:203>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:203>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteral1A79B8988A73B8DE6C81205BED43B16981496FD9, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:204>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:204>
 		goto IL_0201;
 	}
 
 IL_01fa:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:163>
 		bool L_123 = V_5;
 		if (!L_123)
 		{
@@ -4459,12 +4459,12 @@ IL_01fa:
 
 IL_0201:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:208>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:208>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_124 = V_0;
 		return L_124;
 	}
 }
-// Method Definition Index: 109158
+// Method Definition Index: 109272
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindStartingEdge_mC6284D88B17CDC554518E0ABE27F42EAA3EA32E5 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___0_vertexTriangles, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___1_constraint, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4** ___2_startingEdge, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4487,48 +4487,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindStartingEdge
 	int32_t V_10 = 0;
 	int32_t V_11 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:218>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:218>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4** L_0 = ___2_startingEdge;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_1 = (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)il2cpp_codegen_object_new(EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var);
 		EdgeConstraint__ctor_m3CA2AE314AA1DDFE7036A0BAAE9FD614A61F9ECC(L_1, (-1), (-1), NULL);
 		*((RuntimeObject**)L_0) = (RuntimeObject*)L_1;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_0, (void*)(RuntimeObject*)L_1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:221>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_2 = ___1_constraint;
 		NullCheck(L_2);
 		int32_t L_3 = L_2->___v1;
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:222>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:222>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_4 = ___1_constraint;
 		NullCheck(L_4);
 		int32_t L_5 = L_4->___v2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:225>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:225>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_6 = ___0_vertexTriangles;
 		int32_t L_7 = V_0;
 		NullCheck(L_6);
 		int32_t L_8 = L_7;
 		int32_t L_9 = (L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_8));
 		V_1 = L_9;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:228>
 		V_8 = 0;
 		goto IL_0030;
 	}
 
 IL_0020:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:230>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_10 = __this->___visited;
 		int32_t L_11 = V_8;
 		NullCheck(L_10);
 		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(L_11), (bool)0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:228>
 		int32_t L_12 = V_8;
 		V_8 = ((int32_t)il2cpp_codegen_add(L_12, 1));
 	}
 
 IL_0030:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:228>
 		int32_t L_13 = V_8;
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_14 = __this->___visited;
 		NullCheck(L_14);
@@ -4538,23 +4538,23 @@ IL_0030:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:235>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:235>
 		V_2 = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:236>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:236>
 		V_3 = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:237>
 		V_4 = 3;
 		goto IL_0101;
 	}
 
 IL_0048:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:241>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:241>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_15 = __this->___visited;
 		int32_t L_16 = V_1;
 		NullCheck(L_15);
 		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(L_16), (bool)1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:244>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:244>
 		int32_t L_17 = V_1;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_18 = ___1_constraint;
 		bool L_19;
@@ -4565,13 +4565,13 @@ IL_0048:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:246>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:246>
 		return (bool)0;
 	}
 
 IL_005d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:249>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:249>
 		int32_t L_20 = V_1;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_21 = ___1_constraint;
 		bool L_22;
@@ -4582,36 +4582,36 @@ IL_005d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:251>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:251>
 		V_2 = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:252>
 		goto IL_010a;
 	}
 
 IL_0070:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:255>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:255>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_23 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_24 = V_1;
 		NullCheck(L_23);
 		int32_t L_25;
 		L_25 = (L_23)->GetAt(L_24, 3);
 		V_5 = L_25;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:256>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:256>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_26 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_27 = V_1;
 		NullCheck(L_26);
 		int32_t L_28;
 		L_28 = (L_26)->GetAt(L_27, 4);
 		V_6 = L_28;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:257>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_29 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_30 = V_1;
 		NullCheck(L_29);
 		int32_t L_31;
 		L_31 = (L_29)->GetAt(L_30, 5);
 		V_7 = L_31;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:261>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:261>
 		int32_t L_32 = V_5;
 		if ((((int32_t)L_32) == ((int32_t)(-1))))
 		{
@@ -4640,7 +4640,7 @@ IL_0070:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:263>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:263>
 		int32_t L_40 = V_5;
 		V_1 = L_40;
 		goto IL_0101;
@@ -4648,7 +4648,7 @@ IL_0070:
 
 IL_00bd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:265>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:265>
 		int32_t L_41 = V_6;
 		if ((((int32_t)L_41) == ((int32_t)(-1))))
 		{
@@ -4677,7 +4677,7 @@ IL_00bd:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:267>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:267>
 		int32_t L_49 = V_6;
 		V_1 = L_49;
 		goto IL_0101;
@@ -4685,7 +4685,7 @@ IL_00bd:
 
 IL_00dd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:269>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:269>
 		int32_t L_50 = V_7;
 		if ((((int32_t)L_50) == ((int32_t)(-1))))
 		{
@@ -4714,7 +4714,7 @@ IL_00dd:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:271>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:271>
 		int32_t L_58 = V_7;
 		V_1 = L_58;
 		goto IL_0101;
@@ -4722,15 +4722,15 @@ IL_00dd:
 
 IL_00fd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:275>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:275>
 		V_3 = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:276>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:276>
 		goto IL_010a;
 	}
 
 IL_0101:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:239>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:239>
 		bool L_59 = V_2;
 		if (L_59)
 		{
@@ -4747,7 +4747,7 @@ IL_0101:
 
 IL_010a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:280>
 		bool L_61 = V_2;
 		if (!L_61)
 		{
@@ -4755,7 +4755,7 @@ IL_010a:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:282>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:282>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_62 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_63 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var);
@@ -4768,7 +4768,7 @@ IL_010a:
 		int32_t L_68;
 		L_68 = (L_62)->GetAt(L_63, L_67);
 		V_9 = L_68;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:283>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:283>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_69 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_70 = V_1;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_71 = ((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___edgeVertex2;
@@ -4780,7 +4780,7 @@ IL_010a:
 		int32_t L_75;
 		L_75 = (L_69)->GetAt(L_70, L_74);
 		V_10 = L_75;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:284>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:284>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_76 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_77 = V_1;
 		int32_t L_78 = V_4;
@@ -4788,7 +4788,7 @@ IL_010a:
 		int32_t L_79;
 		L_79 = (L_76)->GetAt(L_77, L_78);
 		V_11 = L_79;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:285>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:285>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4** L_80 = ___2_startingEdge;
 		int32_t L_81 = V_9;
 		int32_t L_82 = V_10;
@@ -4799,17 +4799,17 @@ IL_010a:
 		EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635(L_86, L_81, L_82, L_83, L_84, L_85, NULL);
 		*((RuntimeObject**)L_80) = (RuntimeObject*)L_86;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_80, (void*)(RuntimeObject*)L_86);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:287>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:287>
 		return (bool)1;
 	}
 
 IL_015b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:291>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:291>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109159
+// Method Definition Index: 109273
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_RemoveIntersectingEdges_mE93962E7B4E6D193BB27F8FFB4B33377846FBA74 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___0_constraint, Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* ___1_intersectingEdges, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4832,24 +4832,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_RemoveIntersecti
 	Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 V_4;
 	memset((&V_4), 0, sizeof(V_4));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:304>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:304>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_0 = (List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC*)il2cpp_codegen_object_new(List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC_il2cpp_TypeInfo_var);
 		List_1__ctor_m1F1CFD656F2741288CAEDE2F1DCDB5B13E5971FC(L_0, List_1__ctor_m1F1CFD656F2741288CAEDE2F1DCDB5B13E5971FC_RuntimeMethod_var);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:310>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:310>
 		V_3 = 0;
 		goto IL_0126;
 	}
 
 IL_000d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:316>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:316>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_1 = ___1_intersectingEdges;
 		NullCheck(L_1);
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_2;
 		L_2 = Queue_1_Dequeue_m39E815BDF3DE34DD2D890C13F7653C0BEF77081B(L_1, Queue_1_Dequeue_m39E815BDF3DE34DD2D890C13F7653C0BEF77081B_RuntimeMethod_var);
 		V_1 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:319>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:319>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_3 = V_1;
 		NullCheck(L_3);
 		int32_t L_4 = L_3->___t1;
@@ -4864,10 +4864,10 @@ IL_000d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:323>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:324>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:325>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:326>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:323>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:324>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:325>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:326>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_8 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_9 = V_4;
 		int32_t L_10 = L_9.___q4;
@@ -4908,13 +4908,13 @@ IL_000d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:329>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:329>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_33 = V_4;
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_34 = ___1_intersectingEdges;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_35 = V_0;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_36 = __this->___constraints;
 		ConstrainedTriangulator_SwapQuadDiagonal_m8E552ED657F36CCF80298E1EB01A69B7F28F509D(__this, L_33, L_34, L_35, L_36, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:332>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:332>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_37 = V_4;
 		int32_t L_38 = L_37.___q3;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_39 = V_4;
@@ -4926,10 +4926,10 @@ IL_000d:
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_45 = (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)il2cpp_codegen_object_new(EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var);
 		EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635(L_45, L_38, L_40, L_42, L_44, 5, NULL);
 		V_2 = L_45;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:336>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:337>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:338>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:339>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:336>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:337>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:338>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:339>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_46 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_47 = ___0_constraint;
 		NullCheck(L_47);
@@ -4972,7 +4972,7 @@ IL_000d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:341>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:341>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_71 = ___1_intersectingEdges;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_72 = V_2;
 		NullCheck(L_71);
@@ -4982,9 +4982,9 @@ IL_000d:
 
 IL_0110:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:346>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:346>
 		V_3 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:347>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:347>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_73 = V_0;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_74 = V_2;
 		NullCheck(L_73);
@@ -4994,7 +4994,7 @@ IL_0110:
 
 IL_011b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:352>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:352>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_75 = ___1_intersectingEdges;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_76 = V_1;
 		NullCheck(L_75);
@@ -5003,14 +5003,14 @@ IL_011b:
 
 IL_0122:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:356>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:356>
 		int32_t L_77 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_77, 1));
 	}
 
 IL_0126:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:314>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:314>
 		Queue_1_t0492492D48F59A13363D2AD0AF45FF02308A1BF3* L_78 = ___1_intersectingEdges;
 		NullCheck(L_78);
 		int32_t L_79;
@@ -5034,7 +5034,7 @@ IL_0126:
 
 IL_013b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:361>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:361>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_83 = V_0;
 		NullCheck(L_83);
 		int32_t L_84;
@@ -5045,7 +5045,7 @@ IL_013b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:363>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:363>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_85 = ___0_constraint;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_86 = V_0;
 		ConstrainedTriangulator_RestoreConstrainedDelauneyTriangulation_m0F64B5CB522B68179AAD2C99993AF64DAF285E87(__this, L_85, L_86, NULL);
@@ -5053,11 +5053,11 @@ IL_013b:
 
 IL_014c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:365>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:365>
 		return;
 	}
 }
-// Method Definition Index: 109160
+// Method Definition Index: 109274
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_RestoreConstrainedDelauneyTriangulation_m0F64B5CB522B68179AAD2C99993AF64DAF285E87 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___0_constraint, List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* ___1_newEdges, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5078,35 +5078,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_RestoreConstrain
 	int32_t V_5 = 0;
 	int32_t V_6 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:375>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:375>
 		V_0 = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:376>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:376>
 		V_1 = 0;
 		goto IL_00ea;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:379>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:379>
 		int32_t L_0 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:380>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:380>
 		V_0 = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:382>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:382>
 		V_2 = 0;
 		goto IL_00de;
 	}
 
 IL_0016:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:384>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:384>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_1 = ___1_newEdges;
 		int32_t L_2 = V_2;
 		NullCheck(L_1);
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_3;
 		L_3 = List_1_get_Item_mF8170C6B68C3B1599B0F30E14291D2EA2C6F661F(L_1, L_2, List_1_get_Item_mF8170C6B68C3B1599B0F30E14291D2EA2C6F661F_RuntimeMethod_var);
 		V_3 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:387>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:387>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_4 = V_3;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_5 = ___0_constraint;
 		bool L_6;
@@ -5117,7 +5117,7 @@ IL_0016:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:393>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:393>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_7 = V_3;
 		NullCheck(L_7);
 		int32_t L_8 = L_7->___t1;
@@ -5132,7 +5132,7 @@ IL_0016:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:395>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:395>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_12 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_13 = V_4;
 		int32_t L_14 = L_13.___q1;
@@ -5173,20 +5173,20 @@ IL_0016:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:397>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:397>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_37 = V_4;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_38 = ___1_newEdges;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_39 = __this->___constraints;
 		ConstrainedTriangulator_SwapQuadDiagonal_m8E552ED657F36CCF80298E1EB01A69B7F28F509D(__this, L_37, L_38, L_39, (RuntimeObject*)NULL, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:400>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:400>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_40 = V_4;
 		int32_t L_41 = L_40.___q3;
 		V_5 = L_41;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:401>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:401>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_42 = V_4;
 		int32_t L_43 = L_42.___q4;
 		V_6 = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:402>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:402>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_44 = ___1_newEdges;
 		int32_t L_45 = V_2;
 		int32_t L_46 = V_5;
@@ -5199,20 +5199,20 @@ IL_0016:
 		EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635(L_52, L_46, L_47, L_49, L_51, 5, NULL);
 		NullCheck(L_44);
 		List_1_set_Item_mC41E8046D9718D4F5D1DF33FEE4D0EBE37A31800(L_44, L_45, L_52, List_1_set_Item_mC41E8046D9718D4F5D1DF33FEE4D0EBE37A31800_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:404>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:404>
 		V_0 = (bool)1;
 	}
 
 IL_00da:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:382>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:382>
 		int32_t L_53 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_53, 1));
 	}
 
 IL_00de:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:382>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:382>
 		int32_t L_54 = V_2;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_55 = ___1_newEdges;
 		NullCheck(L_55);
@@ -5226,7 +5226,7 @@ IL_00de:
 
 IL_00ea:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:377>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:377>
 		bool L_57 = V_0;
 		if (L_57)
 		{
@@ -5234,11 +5234,11 @@ IL_00ea:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:409>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:409>
 		return;
 	}
 }
-// Method Definition Index: 109161
+// Method Definition Index: 109275
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_DiscardTrianglesViolatingConstraints_m8F33035885D6F1C41FB23CDCEE45BAEEBB2F1B06 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5274,26 +5274,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_DiscardTriangles
 	int32_t V_12 = 0;
 	int32_t V_13 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:417>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:417>
 		V_8 = 0;
 		goto IL_0015;
 	}
 
 IL_0005:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:419>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:419>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_0 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___skipTriangle;
 		int32_t L_1 = V_8;
 		NullCheck(L_0);
 		(L_0)->SetAt(static_cast<il2cpp_array_size_t>(L_1), (bool)1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:417>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:417>
 		int32_t L_2 = V_8;
 		V_8 = ((int32_t)il2cpp_codegen_add(L_2, 1));
 	}
 
 IL_0015:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:417>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:417>
 		int32_t L_3 = V_8;
 		int32_t L_4 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangleCount;
 		if ((((int32_t)L_3) < ((int32_t)L_4)))
@@ -5302,25 +5302,25 @@ IL_0015:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:423>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:423>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_5 = (HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE*)il2cpp_codegen_object_new(HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE_il2cpp_TypeInfo_var);
 		HashSet_1__ctor_mA18628733C6A598189C5B71E0DDC2DCF27ED01FB(L_5, HashSet_1__ctor_mA18628733C6A598189C5B71E0DDC2DCF27ED01FB_RuntimeMethod_var);
 		V_0 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:424>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:424>
 		V_9 = 0;
 		goto IL_0059;
 	}
 
 IL_002a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:426>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:426>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_6 = __this->___constraints;
 		int32_t L_7 = V_9;
 		NullCheck(L_6);
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_8;
 		L_8 = List_1_get_Item_mF8170C6B68C3B1599B0F30E14291D2EA2C6F661F(L_6, L_7, List_1_get_Item_mF8170C6B68C3B1599B0F30E14291D2EA2C6F661F_RuntimeMethod_var);
 		V_10 = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:427>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:427>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_9 = V_0;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_10 = V_10;
 		NullCheck(L_10);
@@ -5334,14 +5334,14 @@ IL_002a:
 		NullCheck(L_9);
 		bool L_15;
 		L_15 = HashSet_1_Add_mE7B6D4715FC7BBC49D7EB7F06694578A78F3134B(L_9, L_14, HashSet_1_Add_mE7B6D4715FC7BBC49D7EB7F06694578A78F3134B_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:424>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:424>
 		int32_t L_16 = V_9;
 		V_9 = ((int32_t)il2cpp_codegen_add(L_16, 1));
 	}
 
 IL_0059:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:424>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:424>
 		int32_t L_17 = V_9;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_18 = __this->___constraints;
 		NullCheck(L_18);
@@ -5353,26 +5353,26 @@ IL_0059:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:431>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:431>
 		V_11 = 0;
 		goto IL_007d;
 	}
 
 IL_006d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:433>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:433>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_20 = __this->___visited;
 		int32_t L_21 = V_11;
 		NullCheck(L_20);
 		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(L_21), (bool)0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:431>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:431>
 		int32_t L_22 = V_11;
 		V_11 = ((int32_t)il2cpp_codegen_add(L_22, 1));
 	}
 
 IL_007d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:431>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:431>
 		int32_t L_23 = V_11;
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_24 = __this->___visited;
 		NullCheck(L_24);
@@ -5382,18 +5382,18 @@ IL_007d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:437>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:437>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_25 = (Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E*)il2cpp_codegen_object_new(Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E_il2cpp_TypeInfo_var);
 		Queue_1__ctor_mCFD83A65B216389290AEF3479047C9FBD933BF5D(L_25, Queue_1__ctor_mCFD83A65B216389290AEF3479047C9FBD933BF5D_RuntimeMethod_var);
 		V_1 = L_25;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:441>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:441>
 		V_12 = 0;
 		goto IL_024c;
 	}
 
 IL_0097:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:444>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:444>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_26 = __this->___visited;
 		int32_t L_27 = V_12;
 		NullCheck(L_26);
@@ -5405,28 +5405,28 @@ IL_0097:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:449>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:449>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_30 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_31 = V_12;
 		NullCheck(L_30);
 		int32_t L_32;
 		L_32 = (L_30)->GetAt(L_31, 0);
 		V_2 = L_32;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:450>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:450>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_33 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_34 = V_12;
 		NullCheck(L_33);
 		int32_t L_35;
 		L_35 = (L_33)->GetAt(L_34, 1);
 		V_3 = L_35;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:451>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:451>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_36 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_37 = V_12;
 		NullCheck(L_36);
 		int32_t L_38;
 		L_38 = (L_36)->GetAt(L_37, 2);
 		V_4 = L_38;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:452>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:452>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_39 = V_0;
 		int32_t L_40 = V_2;
 		int32_t L_41 = V_3;
@@ -5437,7 +5437,7 @@ IL_0097:
 		bool L_43;
 		L_43 = HashSet_1_Contains_m1A8CF249E8F6EAE9FBEDC6CAC762F7790301942A(L_39, L_42, HashSet_1_Contains_m1A8CF249E8F6EAE9FBEDC6CAC762F7790301942A_RuntimeMethod_var);
 		V_5 = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:453>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:453>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_44 = V_0;
 		int32_t L_45 = V_3;
 		int32_t L_46 = V_4;
@@ -5448,7 +5448,7 @@ IL_0097:
 		bool L_48;
 		L_48 = HashSet_1_Contains_m1A8CF249E8F6EAE9FBEDC6CAC762F7790301942A(L_44, L_47, HashSet_1_Contains_m1A8CF249E8F6EAE9FBEDC6CAC762F7790301942A_RuntimeMethod_var);
 		V_6 = L_48;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:454>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:454>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_49 = V_0;
 		int32_t L_50 = V_4;
 		int32_t L_51 = V_2;
@@ -5459,7 +5459,7 @@ IL_0097:
 		bool L_53;
 		L_53 = HashSet_1_Contains_m1A8CF249E8F6EAE9FBEDC6CAC762F7790301942A(L_49, L_52, HashSet_1_Contains_m1A8CF249E8F6EAE9FBEDC6CAC762F7790301942A_RuntimeMethod_var);
 		V_7 = L_53;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:457>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:457>
 		bool L_54 = V_5;
 		bool L_55 = V_6;
 		bool L_56 = V_7;
@@ -5469,16 +5469,16 @@ IL_0097:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:459>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:459>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_57 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___skipTriangle;
 		int32_t L_58 = V_12;
 		NullCheck(L_57);
 		(L_57)->SetAt(static_cast<il2cpp_array_size_t>(L_58), (bool)0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:462>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:462>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_59 = V_1;
 		NullCheck(L_59);
 		Queue_1_Clear_mF9C62216146F40E17E678C66BDFD0672A6A2BFA1(L_59, Queue_1_Clear_mF9C62216146F40E17E678C66BDFD0672A6A2BFA1_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:463>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:463>
 		bool L_60 = V_5;
 		if (L_60)
 		{
@@ -5486,7 +5486,7 @@ IL_0097:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:465>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:465>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_61 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_62 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_63 = V_12;
@@ -5499,7 +5499,7 @@ IL_0097:
 
 IL_0137:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:467>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:467>
 		bool L_65 = V_6;
 		if (L_65)
 		{
@@ -5507,7 +5507,7 @@ IL_0137:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:469>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:469>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_66 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_67 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_68 = V_12;
@@ -5520,7 +5520,7 @@ IL_0137:
 
 IL_014f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:471>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:471>
 		bool L_70 = V_7;
 		if (L_70)
 		{
@@ -5528,7 +5528,7 @@ IL_014f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:473>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:473>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_71 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_72 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_73 = V_12;
@@ -5542,13 +5542,13 @@ IL_014f:
 
 IL_016f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:480>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:480>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_75 = V_1;
 		NullCheck(L_75);
 		int32_t L_76;
 		L_76 = Queue_1_Dequeue_mF8CBF6CA268A863994D198E7FB69116D39C9D650(L_75, Queue_1_Dequeue_mF8CBF6CA268A863994D198E7FB69116D39C9D650_RuntimeMethod_var);
 		V_13 = L_76;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:482>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:482>
 		int32_t L_77 = V_13;
 		if ((((int32_t)L_77) == ((int32_t)(-1))))
 		{
@@ -5567,38 +5567,38 @@ IL_016f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:487>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:487>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_82 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___skipTriangle;
 		int32_t L_83 = V_13;
 		NullCheck(L_82);
 		(L_82)->SetAt(static_cast<il2cpp_array_size_t>(L_83), (bool)0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:488>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:488>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_84 = __this->___visited;
 		int32_t L_85 = V_13;
 		NullCheck(L_84);
 		(L_84)->SetAt(static_cast<il2cpp_array_size_t>(L_85), (bool)1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:490>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:490>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_86 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_87 = V_13;
 		NullCheck(L_86);
 		int32_t L_88;
 		L_88 = (L_86)->GetAt(L_87, 0);
 		V_2 = L_88;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:491>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:491>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_89 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_90 = V_13;
 		NullCheck(L_89);
 		int32_t L_91;
 		L_91 = (L_89)->GetAt(L_90, 1);
 		V_3 = L_91;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:492>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:492>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_92 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_93 = V_13;
 		NullCheck(L_92);
 		int32_t L_94;
 		L_94 = (L_92)->GetAt(L_93, 2);
 		V_4 = L_94;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:495>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:495>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_95 = V_0;
 		int32_t L_96 = V_2;
 		int32_t L_97 = V_3;
@@ -5614,7 +5614,7 @@ IL_016f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:497>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:497>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_100 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_101 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_102 = V_13;
@@ -5627,7 +5627,7 @@ IL_016f:
 
 IL_01f2:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:499>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:499>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_104 = V_0;
 		int32_t L_105 = V_3;
 		int32_t L_106 = V_4;
@@ -5643,7 +5643,7 @@ IL_01f2:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:501>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:501>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_109 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_110 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_111 = V_13;
@@ -5656,7 +5656,7 @@ IL_01f2:
 
 IL_0216:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:503>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:503>
 		HashSet_1_tC81A4E1D45342B6C216BBBF16118C7611A1719EE* L_113 = V_0;
 		int32_t L_114 = V_4;
 		int32_t L_115 = V_2;
@@ -5672,7 +5672,7 @@ IL_0216:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:505>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:505>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_118 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_119 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_120 = V_13;
@@ -5685,7 +5685,7 @@ IL_0216:
 
 IL_023a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:478>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:478>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_122 = V_1;
 		NullCheck(L_122);
 		int32_t L_123;
@@ -5698,14 +5698,14 @@ IL_023a:
 
 IL_0246:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:441>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:441>
 		int32_t L_124 = V_12;
 		V_12 = ((int32_t)il2cpp_codegen_add(L_124, 1));
 	}
 
 IL_024c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:441>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:441>
 		int32_t L_125 = V_12;
 		int32_t L_126 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangleCount;
 		if ((((int32_t)L_125) < ((int32_t)L_126)))
@@ -5714,16 +5714,16 @@ IL_024c:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:510>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:510>
 		return;
 	}
 }
-// Method Definition Index: 109162
+// Method Definition Index: 109276
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_TriangleContainsConstraint_mAD995EFA96930D2C9C4F2F7CDF81B2AD80320D49 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, int32_t ___0_t, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___1_constraint, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:520>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:521>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:520>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:521>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_0 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_1 = ___0_t;
 		NullCheck(L_0);
@@ -5817,7 +5817,7 @@ IL_0081:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109163
+// Method Definition Index: 109277
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIntersectsTriangle_mAAEC8905360404AFDCA92F30D8663F57B708694D (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, int32_t ___0_t, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___1_constraint, int32_t* ___2_intersectingEdgeIndex, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -5831,7 +5831,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_4;
 	memset((&V_4), 0, sizeof(V_4));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:533>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:533>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_0 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_1 = ___1_constraint;
 		NullCheck(L_1);
@@ -5842,7 +5842,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 		NullCheck(L_4);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_5 = L_4->___coords;
 		V_0 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:534>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:534>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_6 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_7 = ___1_constraint;
 		NullCheck(L_7);
@@ -5853,7 +5853,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 		NullCheck(L_10);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_11 = L_10->___coords;
 		V_1 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:535>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:535>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_12 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_13 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_14 = ___0_t;
@@ -5866,7 +5866,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 		NullCheck(L_17);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_18 = L_17->___coords;
 		V_2 = L_18;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:536>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:536>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_19 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_20 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_21 = ___0_t;
@@ -5879,7 +5879,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 		NullCheck(L_24);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_25 = L_24->___coords;
 		V_3 = L_25;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:537>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:537>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_26 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_27 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_28 = ___0_t;
@@ -5892,7 +5892,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 		NullCheck(L_31);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_32 = L_31->___coords;
 		V_4 = L_32;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:539>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:539>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_33 = V_0;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_34 = V_1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_35 = V_2;
@@ -5905,16 +5905,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_EdgeConstraintIn
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:541>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:541>
 		int32_t* L_38 = ___2_intersectingEdgeIndex;
 		*((int32_t*)L_38) = (int32_t)3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:542>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:542>
 		return (bool)1;
 	}
 
 IL_0085:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:544>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:544>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_39 = V_0;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_40 = V_1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_41 = V_3;
@@ -5927,16 +5927,16 @@ IL_0085:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:546>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:546>
 		int32_t* L_44 = ___2_intersectingEdgeIndex;
 		*((int32_t*)L_44) = (int32_t)4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:547>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:547>
 		return (bool)1;
 	}
 
 IL_0096:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:549>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:549>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_45 = V_0;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_46 = V_1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_47 = V_4;
@@ -5949,23 +5949,23 @@ IL_0096:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:551>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:551>
 		int32_t* L_50 = ___2_intersectingEdgeIndex;
 		*((int32_t*)L_50) = (int32_t)5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:552>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:552>
 		return (bool)1;
 	}
 
 IL_00a7:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:556>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:556>
 		int32_t* L_51 = ___2_intersectingEdgeIndex;
 		*((int32_t*)L_51) = (int32_t)(-1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:557>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:557>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109164
+// Method Definition Index: 109278
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindQuadFromSharedEdge_m00746DD364AA241BFEA9CD82D7EC96549AF918B6 (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, int32_t ___0_t1, int32_t ___1_t1SharedEdge, Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434* ___2_quad, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5985,7 +5985,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindQuadFromShar
 	int32_t V_8 = 0;
 	int32_t V_9 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:586>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:586>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_0 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_1 = ___0_t1;
 		int32_t L_2 = ___1_t1SharedEdge;
@@ -5993,7 +5993,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindQuadFromShar
 		int32_t L_3;
 		L_3 = (L_0)->GetAt(L_1, L_2);
 		V_8 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:588>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:588>
 		int32_t L_4 = V_8;
 		int32_t L_5 = ___0_t1;
 		bool L_6;
@@ -6004,7 +6004,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindQuadFromShar
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:591>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:591>
 		int32_t L_7 = V_9;
 		if ((!(((uint32_t)L_7) == ((uint32_t)3))))
 		{
@@ -6012,21 +6012,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindQuadFromShar
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:593>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:593>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_8 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_9 = V_8;
 		NullCheck(L_8);
 		int32_t L_10;
 		L_10 = (L_8)->GetAt(L_9, 0);
 		V_1 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:594>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:594>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_11 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_12 = V_8;
 		NullCheck(L_11);
 		int32_t L_13;
 		L_13 = (L_11)->GetAt(L_12, 1);
 		V_0 = L_13;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:595>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:595>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_14 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_15 = V_8;
 		NullCheck(L_14);
@@ -6038,7 +6038,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstrainedTriangulator_FindQuadFromShar
 
 IL_0053:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:597>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:597>
 		int32_t L_17 = V_9;
 		if ((!(((uint32_t)L_17) == ((uint32_t)4))))
 		{
@@ -6046,21 +6046,21 @@ IL_0053:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:599>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:599>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_18 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_19 = V_8;
 		NullCheck(L_18);
 		int32_t L_20;
 		L_20 = (L_18)->GetAt(L_19, 1);
 		V_1 = L_20;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:600>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:600>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_21 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_22 = V_8;
 		NullCheck(L_21);
 		int32_t L_23;
 		L_23 = (L_21)->GetAt(L_22, 2);
 		V_0 = L_23;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:601>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:601>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_24 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_25 = V_8;
 		NullCheck(L_24);
@@ -6072,21 +6072,21 @@ IL_0053:
 
 IL_0087:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:605>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:605>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_27 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_28 = V_8;
 		NullCheck(L_27);
 		int32_t L_29;
 		L_29 = (L_27)->GetAt(L_28, 2);
 		V_1 = L_29;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:606>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:606>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_30 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_31 = V_8;
 		NullCheck(L_30);
 		int32_t L_32;
 		L_32 = (L_30)->GetAt(L_31, 0);
 		V_0 = L_32;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:607>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:607>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_33 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_34 = V_8;
 		NullCheck(L_33);
@@ -6097,7 +6097,7 @@ IL_0087:
 
 IL_00b4:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:611>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:611>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_36 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_37 = ___0_t1;
 		il2cpp_codegen_runtime_class_init_inline(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var);
@@ -6110,7 +6110,7 @@ IL_00b4:
 		int32_t L_42;
 		L_42 = (L_36)->GetAt(L_37, L_41);
 		V_3 = L_42;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:614>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:614>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_43 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_44 = ___0_t1;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_45 = ((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___previousEdge;
@@ -6122,7 +6122,7 @@ IL_00b4:
 		int32_t L_49;
 		L_49 = (L_43)->GetAt(L_44, L_48);
 		V_4 = L_49;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:615>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:615>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_50 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_51 = ___0_t1;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_52 = ((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___nextEdge;
@@ -6134,7 +6134,7 @@ IL_00b4:
 		int32_t L_56;
 		L_56 = (L_50)->GetAt(L_51, L_55);
 		V_5 = L_56;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:616>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:616>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_57 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_58 = V_8;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_59 = ((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___nextEdge;
@@ -6146,7 +6146,7 @@ IL_00b4:
 		int32_t L_63;
 		L_63 = (L_57)->GetAt(L_58, L_62);
 		V_6 = L_63;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:617>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:617>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_64 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_65 = V_8;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_66 = ((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___previousEdge;
@@ -6158,7 +6158,7 @@ IL_00b4:
 		int32_t L_70;
 		L_70 = (L_64)->GetAt(L_65, L_69);
 		V_7 = L_70;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:619>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:619>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434* L_71 = ___2_quad;
 		int32_t L_72 = V_0;
 		int32_t L_73 = V_1;
@@ -6174,20 +6174,20 @@ IL_00b4:
 		memset((&L_82), 0, sizeof(L_82));
 		Quad__ctor_m8F6BD5FB3B8CA4AADB78AB4125F935302F80F0EF((&L_82), L_72, L_73, L_74, L_75, L_76, L_77, L_78, L_79, L_80, L_81, NULL);
 		*(Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434*)L_71 = L_82;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:621>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:621>
 		return (bool)1;
 	}
 
 IL_013c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:624>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:624>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434* L_83 = ___2_quad;
 		il2cpp_codegen_initobj(L_83, sizeof(Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:626>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:626>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109165
+// Method Definition Index: 109279
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_SwapQuadDiagonal_m8E552ED657F36CCF80298E1EB01A69B7F28F509D (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 ___0_quad, RuntimeObject* ___1_edges1, RuntimeObject* ___2_edges2, RuntimeObject* ___3_edges3, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -6197,119 +6197,119 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_SwapQuadDiagonal
 	int32_t V_4 = 0;
 	int32_t V_5 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:665>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:665>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_0 = ___0_quad;
 		int32_t L_1 = L_0.___t1;
 		V_0 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:666>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:666>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_2 = ___0_quad;
 		int32_t L_3 = L_2.___t2;
 		V_1 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:667>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:667>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_4 = ___0_quad;
 		int32_t L_5 = L_4.___t1R;
 		V_2 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:668>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:668>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_6 = ___0_quad;
 		int32_t L_7 = L_6.___t1L;
 		V_3 = L_7;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:669>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:669>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_8 = ___0_quad;
 		int32_t L_9 = L_8.___t2R;
 		V_4 = L_9;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:670>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:670>
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_10 = ___0_quad;
 		int32_t L_11 = L_10.___t2L;
 		V_5 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:673>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:673>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_12 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_13 = V_0;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_14 = ___0_quad;
 		int32_t L_15 = L_14.___q4;
 		NullCheck(L_12);
 		(L_12)->SetAt(L_13, 0, L_15);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:674>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:674>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_16 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_17 = V_0;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_18 = ___0_quad;
 		int32_t L_19 = L_18.___q1;
 		NullCheck(L_16);
 		(L_16)->SetAt(L_17, 1, L_19);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:675>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:675>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_20 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_21 = V_0;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_22 = ___0_quad;
 		int32_t L_23 = L_22.___q3;
 		NullCheck(L_20);
 		(L_20)->SetAt(L_21, 2, L_23);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:677>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:677>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_24 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_25 = V_1;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_26 = ___0_quad;
 		int32_t L_27 = L_26.___q4;
 		NullCheck(L_24);
 		(L_24)->SetAt(L_25, 0, L_27);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:678>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:678>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_28 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_29 = V_1;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_30 = ___0_quad;
 		int32_t L_31 = L_30.___q3;
 		NullCheck(L_28);
 		(L_28)->SetAt(L_29, 1, L_31);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:679>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:679>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_32 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_33 = V_1;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_34 = ___0_quad;
 		int32_t L_35 = L_34.___q2;
 		NullCheck(L_32);
 		(L_32)->SetAt(L_33, 2, L_35);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:681>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:681>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_36 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_37 = V_0;
 		int32_t L_38 = V_3;
 		NullCheck(L_36);
 		(L_36)->SetAt(L_37, 3, L_38);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:682>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:682>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_39 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_40 = V_0;
 		int32_t L_41 = V_5;
 		NullCheck(L_39);
 		(L_39)->SetAt(L_40, 4, L_41);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:683>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:683>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_42 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_43 = V_0;
 		int32_t L_44 = V_1;
 		NullCheck(L_42);
 		(L_42)->SetAt(L_43, 5, L_44);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:685>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:685>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_45 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_46 = V_1;
 		int32_t L_47 = V_0;
 		NullCheck(L_45);
 		(L_45)->SetAt(L_46, 3, L_47);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:686>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:686>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_48 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_49 = V_1;
 		int32_t L_50 = V_4;
 		NullCheck(L_48);
 		(L_48)->SetAt(L_49, 4, L_50);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:687>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:687>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_51 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)__this)->___triangulation;
 		int32_t L_52 = V_1;
 		int32_t L_53 = V_2;
 		NullCheck(L_51);
 		(L_51)->SetAt(L_52, 5, L_53);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:690>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:690>
 		int32_t L_54 = V_5;
 		int32_t L_55 = V_1;
 		int32_t L_56 = V_0;
 		Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D(__this, L_54, L_55, L_56, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:691>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:691>
 		int32_t L_57 = V_2;
 		int32_t L_58 = V_0;
 		int32_t L_59 = V_1;
 		Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D(__this, L_57, L_58, L_59, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:694>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:694>
 		RuntimeObject* L_60 = ___1_edges1;
 		int32_t L_61 = V_0;
 		int32_t L_62 = V_1;
@@ -6318,7 +6318,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_SwapQuadDiagonal
 		int32_t L_65 = V_5;
 		int32_t L_66 = V_4;
 		ConstrainedTriangulator_UpdateEdgesAfterSwap_mD129F30E7A89F864A082AEDCF0E74BF59205A33E(__this, L_60, L_61, L_62, L_63, L_64, L_65, L_66, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:695>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:695>
 		RuntimeObject* L_67 = ___2_edges2;
 		int32_t L_68 = V_0;
 		int32_t L_69 = V_1;
@@ -6327,7 +6327,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_SwapQuadDiagonal
 		int32_t L_72 = V_5;
 		int32_t L_73 = V_4;
 		ConstrainedTriangulator_UpdateEdgesAfterSwap_mD129F30E7A89F864A082AEDCF0E74BF59205A33E(__this, L_67, L_68, L_69, L_70, L_71, L_72, L_73, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:696>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:696>
 		RuntimeObject* L_74 = ___3_edges3;
 		int32_t L_75 = V_0;
 		int32_t L_76 = V_1;
@@ -6336,25 +6336,25 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_SwapQuadDiagonal
 		int32_t L_79 = V_5;
 		int32_t L_80 = V_4;
 		ConstrainedTriangulator_UpdateEdgesAfterSwap_mD129F30E7A89F864A082AEDCF0E74BF59205A33E(__this, L_74, L_75, L_76, L_77, L_78, L_79, L_80, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:700>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:700>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_81 = __this->___vertexTriangles;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_82 = ___0_quad;
 		int32_t L_83 = L_82.___q1;
 		int32_t L_84 = V_0;
 		NullCheck(L_81);
 		(L_81)->SetAt(static_cast<il2cpp_array_size_t>(L_83), (int32_t)L_84);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:701>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:701>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_85 = __this->___vertexTriangles;
 		Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434 L_86 = ___0_quad;
 		int32_t L_87 = L_86.___q2;
 		int32_t L_88 = V_1;
 		NullCheck(L_85);
 		(L_85)->SetAt(static_cast<il2cpp_array_size_t>(L_87), (int32_t)L_88);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:702>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:702>
 		return;
 	}
 }
-// Method Definition Index: 109166
+// Method Definition Index: 109280
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_UpdateEdgesAfterSwap_mD129F30E7A89F864A082AEDCF0E74BF59205A33E (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* __this, RuntimeObject* ___0_edges, int32_t ___1_t1, int32_t ___2_t2, int32_t ___3_t1L, int32_t ___4_t1R, int32_t ___5_t2L, int32_t ___6_t2R, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6369,7 +6369,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_UpdateEdgesAfter
 	RuntimeObject* V_0 = NULL;
 	EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* V_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:716>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:716>
 		RuntimeObject* L_0 = ___0_edges;
 		if (L_0)
 		{
@@ -6377,13 +6377,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator_UpdateEdgesAfter
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:718>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:718>
 		return;
 	}
 
 IL_0004:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:722>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:722>
 		RuntimeObject* L_1 = ___0_edges;
 		NullCheck(L_1);
 		RuntimeObject* L_2;
@@ -6423,13 +6423,13 @@ IL_0120:
 
 IL_0010_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:722>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:722>
 				RuntimeObject* L_5 = V_0;
 				NullCheck(L_5);
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_6;
 				L_6 = InterfaceFuncInvoker0< EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* >::Invoke(0, IEnumerator_1_tB40D55221BBBDE100A179D87116BD8DE03065411_il2cpp_TypeInfo_var, L_5);
 				V_1 = L_6;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:724>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:724>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_7 = V_1;
 				NullCheck(L_7);
 				int32_t L_8 = L_7->___t1;
@@ -6450,17 +6450,17 @@ IL_0010_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:726>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:726>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_13 = V_1;
 				int32_t L_14 = ___2_t2;
 				NullCheck(L_13);
 				L_13->___t1 = L_14;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:727>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:727>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_15 = V_1;
 				int32_t L_16 = ___4_t1R;
 				NullCheck(L_15);
 				L_15->___t2 = L_16;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:728>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:728>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_17 = V_1;
 				NullCheck(L_17);
 				L_17->___t1Edge = 5;
@@ -6469,7 +6469,7 @@ IL_0010_1:
 
 IL_0045_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:730>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:730>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_18 = V_1;
 				NullCheck(L_18);
 				int32_t L_19 = L_18->___t1;
@@ -6490,7 +6490,7 @@ IL_0045_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:733>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:733>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_24 = V_1;
 				NullCheck(L_24);
 				L_24->___t1Edge = 3;
@@ -6499,7 +6499,7 @@ IL_0045_1:
 
 IL_0064_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:735>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:735>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_25 = V_1;
 				NullCheck(L_25);
 				int32_t L_26 = L_25->___t1;
@@ -6520,7 +6520,7 @@ IL_0064_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:737>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:737>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_31 = V_1;
 				int32_t L_32 = ___2_t2;
 				NullCheck(L_31);
@@ -6530,7 +6530,7 @@ IL_0064_1:
 
 IL_0083_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:739>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:739>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_33 = V_1;
 				NullCheck(L_33);
 				int32_t L_34 = L_33->___t1;
@@ -6553,7 +6553,7 @@ IL_0083_1:
 
 IL_0096_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:743>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:743>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_39 = V_1;
 				NullCheck(L_39);
 				int32_t L_40 = L_39->___t1;
@@ -6574,7 +6574,7 @@ IL_0096_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:746>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:746>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_45 = V_1;
 				NullCheck(L_45);
 				L_45->___t1Edge = 4;
@@ -6583,7 +6583,7 @@ IL_0096_1:
 
 IL_00b2_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:748>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:748>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_46 = V_1;
 				NullCheck(L_46);
 				int32_t L_47 = L_46->___t1;
@@ -6604,17 +6604,17 @@ IL_00b2_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:750>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:750>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_52 = V_1;
 				int32_t L_53 = ___1_t1;
 				NullCheck(L_52);
 				L_52->___t1 = L_53;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:751>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:751>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_54 = V_1;
 				int32_t L_55 = ___5_t2L;
 				NullCheck(L_54);
 				L_54->___t2 = L_55;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:752>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:752>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_56 = V_1;
 				NullCheck(L_56);
 				L_56->___t1Edge = 4;
@@ -6623,7 +6623,7 @@ IL_00b2_1:
 
 IL_00dd_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:754>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:754>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_57 = V_1;
 				NullCheck(L_57);
 				int32_t L_58 = L_57->___t1;
@@ -6646,7 +6646,7 @@ IL_00dd_1:
 
 IL_00f0_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:758>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:758>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_63 = V_1;
 				NullCheck(L_63);
 				int32_t L_64 = L_63->___t1;
@@ -6667,7 +6667,7 @@ IL_00f0_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:760>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:760>
 				EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_69 = V_1;
 				int32_t L_70 = ___1_t1;
 				NullCheck(L_69);
@@ -6676,7 +6676,7 @@ IL_00f0_1:
 
 IL_010a_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:722>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:722>
 				RuntimeObject* L_71 = V_0;
 				NullCheck(L_71);
 				bool L_72;
@@ -6698,11 +6698,11 @@ IL_010a_1:
 
 IL_0121:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:763>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:763>
 		return;
 	}
 }
-// Method Definition Index: 109167
+// Method Definition Index: 109281
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__cctor_m5844A537B3223532A029E9DCFF52A2C4FFAFC2B8 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6715,7 +6715,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__cctor_m5844A537
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:14>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_0 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)6);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = L_0;
 		NullCheck(L_1);
@@ -6725,7 +6725,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__cctor_m5844A537
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(5), (int32_t)2);
 		((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___edgeVertex1 = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___edgeVertex1), (void*)L_2);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:20>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:20>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_3 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)6);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_4 = L_3;
 		NullCheck(L_4);
@@ -6735,7 +6735,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__cctor_m5844A537
 		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(4), (int32_t)2);
 		((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___edgeVertex2 = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___edgeVertex2), (void*)L_5);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:26>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_6 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)6);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_7 = L_6;
 		NullCheck(L_7);
@@ -6745,14 +6745,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__cctor_m5844A537
 		(L_8)->SetAt(static_cast<il2cpp_array_size_t>(5), (int32_t)1);
 		((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___oppositePoint = L_8;
 		Il2CppCodeGenWriteBarrier((void**)(&((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___oppositePoint), (void*)L_8);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:32>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_9 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)6);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_10 = L_9;
 		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_11 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t8DE7FC4FCA987F920FFA49982C200408C07A3F9E____29B9A1F05A07D9DEDB7E50C977033CF7349EA9DEE046C76108602819E6DCA8F3_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_m751372AA3F24FBF6DA9B9D687CBFA2DE436CAB9B((RuntimeArray*)L_10, L_11, NULL);
 		((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___nextEdge = L_10;
 		Il2CppCodeGenWriteBarrier((void**)(&((ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_StaticFields*)il2cpp_codegen_static_fields_for(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var))->___nextEdge), (void*)L_10);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/ConstrainedTriangulator.cs:38>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_12 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)6);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_13 = L_12;
 		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_14 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t8DE7FC4FCA987F920FFA49982C200408C07A3F9E____B98FD2F141ED233EE8A460EEDCF36D83547583682C76B3E8B09E608C8C83527E_FieldInfo_var) };
@@ -6770,52 +6770,52 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstrainedTriangulator__cctor_m5844A537
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109168
+// Method Definition Index: 109282
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EdgeConstraint__ctor_m3CA2AE314AA1DDFE7036A0BAAE9FD614A61F9ECC (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* __this, int32_t ___0_v1, int32_t ___1_v2, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:36>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:38>
 		int32_t L_0 = ___0_v1;
 		__this->___v1 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:39>
 		int32_t L_1 = ___1_v2;
 		__this->___v2 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:40>
 		__this->___t1 = (-1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:41>
 		__this->___t2 = (-1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:42>
 		return;
 	}
 }
-// Method Definition Index: 109169
+// Method Definition Index: 109283
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EdgeConstraint__ctor_m7AEEB7F3E5375E905DAF3D092B3890BE5ABE8635 (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* __this, int32_t ___0_v1, int32_t ___1_v2, int32_t ___2_triangle1, int32_t ___3_triangle2, int32_t ___4_edge1, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:47>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:49>
 		int32_t L_0 = ___0_v1;
 		__this->___v1 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:50>
 		int32_t L_1 = ___1_v2;
 		__this->___v2 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:51>
 		int32_t L_2 = ___2_triangle1;
 		__this->___t1 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:52>
 		int32_t L_3 = ___3_triangle2;
 		__this->___t2 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:53>
 		int32_t L_4 = ___4_edge1;
 		__this->___t1Edge = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:54>
 		return;
 	}
 }
-// Method Definition Index: 109170
+// Method Definition Index: 109284
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_Equals_m37E1AC97F5B8A7CBFF1F14696E2C4AE36D5EF4C2 (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6826,7 +6826,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_Equals_m37E1AC97F5B8A7CBF
 	}
 	EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* V_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:58>
 		RuntimeObject* L_0 = ___0_obj;
 		if (!((EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)IsInstClass((RuntimeObject*)L_0, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var)))
 		{
@@ -6834,11 +6834,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_Equals_m37E1AC97F5B8A7CBF
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:60>
 		RuntimeObject* L_1 = ___0_obj;
 		V_0 = ((EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4*)CastclassClass((RuntimeObject*)L_1, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4_il2cpp_TypeInfo_var));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:61>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:62>
 		int32_t L_2 = __this->___v1;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_3 = V_0;
 		NullCheck(L_3);
@@ -6890,11 +6890,11 @@ IL_004a:
 
 IL_004c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:64>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109171
+// Method Definition Index: 109285
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t EdgeConstraint_GetHashCode_m4111DBDC0C9A7E0AC7870311FFF529378D1E31A7 (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6907,7 +6907,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t EdgeConstraint_GetHashCode_m4111DBDC0
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:69>
 		int32_t L_0 = __this->___v1;
 		int32_t L_1 = __this->___v2;
 		U3CU3Ef__AnonymousType0_2_t05819F956D6B42204F0792F968F7DAC36D183F8B* L_2 = (U3CU3Ef__AnonymousType0_2_t05819F956D6B42204F0792F968F7DAC36D183F8B*)il2cpp_codegen_object_new(U3CU3Ef__AnonymousType0_2_t05819F956D6B42204F0792F968F7DAC36D183F8B_il2cpp_TypeInfo_var);
@@ -6925,11 +6925,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t EdgeConstraint_GetHashCode_m4111DBDC0
 		return ((int32_t)il2cpp_codegen_add(L_3, L_7));
 	}
 }
-// Method Definition Index: 109172
+// Method Definition Index: 109286
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_op_Equality_m41DC251DE1944A470F930688834ACF37401A995F (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___0_lhs, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___1_rhs, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:74>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_0 = ___0_lhs;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_1 = ___1_rhs;
 		NullCheck(L_0);
@@ -6938,11 +6938,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_op_Equality_m41DC251DE194
 		return L_2;
 	}
 }
-// Method Definition Index: 109173
+// Method Definition Index: 109287
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_op_Inequality_m747CD03EBB383CB6133515D5028213219CD78143 (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___0_lhs, EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* ___1_rhs, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:79>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_0 = ___0_lhs;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_1 = ___1_rhs;
 		NullCheck(L_0);
@@ -6951,7 +6951,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EdgeConstraint_op_Inequality_m747CD03EBB
 		return (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 109174
+// Method Definition Index: 109288
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* EdgeConstraint_ToString_m8719D1D707F5A674AE509E67424DD13A4376DB3C (EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6962,7 +6962,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* EdgeConstraint_ToString_m8719D1D707
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/EdgeConstraint.cs:85>
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)4);
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = L_0;
 		int32_t L_2 = __this->___t1;
@@ -7013,7 +7013,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* EdgeConstraint_ToString_m8719D1D707
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109175
+// Method Definition Index: 109289
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t FragmentData_get_triangleCount_mCE0F07AF9BA65E51E8A9B92A0D5FADD832854BBF (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7025,16 +7025,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t FragmentData_get_triangleCount_mCE0F0
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:54>
 		V_0 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:55>
 		V_1 = 0;
 		goto IL_001a;
 	}
 
 IL_0006:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:57>
 		int32_t L_0 = V_0;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_1 = __this->___Triangles;
 		int32_t L_2 = V_1;
@@ -7045,14 +7045,14 @@ IL_0006:
 		int32_t L_5;
 		L_5 = List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_inline(L_4, List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_RuntimeMethod_var);
 		V_0 = ((int32_t)il2cpp_codegen_add(L_0, L_5));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:55>
 		int32_t L_6 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_6, 1));
 	}
 
 IL_001a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:55>
 		int32_t L_7 = V_1;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_8 = __this->___Triangles;
 		NullCheck(L_8);
@@ -7062,12 +7062,12 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:59>
 		int32_t L_9 = V_0;
 		return L_9;
 	}
 }
-// Method Definition Index: 109176
+// Method Definition Index: 109290
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t FragmentData_get_vertexCount_mDA8A6BA7F75AC36D748FBC7B76D597AB4F11668C (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7077,7 +7077,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t FragmentData_get_vertexCount_mDA8A6BA
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:71>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_0 = __this->___Vertices;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -7089,7 +7089,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t FragmentData_get_vertexCount_mDA8A6BA
 		return ((int32_t)il2cpp_codegen_add(L_1, L_3));
 	}
 }
-// Method Definition Index: 109177
+// Method Definition Index: 109291
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m7A407B28896B02B3BFE006D99DF4FC82989EFEAB (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, int32_t ___0_vertexCount, int32_t ___1_triangleCount, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7106,24 +7106,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m7A407B28896B02B3BFE0
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:81>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:81>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:83>
 		int32_t L_0 = ___0_vertexCount;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_1 = (List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4*)il2cpp_codegen_object_new(List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4_il2cpp_TypeInfo_var);
 		List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98(L_1, L_0, List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98_RuntimeMethod_var);
 		__this->___Vertices = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___Vertices), (void*)L_1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:84>
 		int32_t L_2 = ___0_vertexCount;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_3 = (List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4*)il2cpp_codegen_object_new(List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4_il2cpp_TypeInfo_var);
 		List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98(L_3, ((int32_t)(L_2/((int32_t)10))), List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98_RuntimeMethod_var);
 		__this->___CutVertices = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___CutVertices), (void*)L_3);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:87>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:88>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:89>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:90>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_4 = (List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)SZArrayNew(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206_il2cpp_TypeInfo_var, (uint32_t)2);
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_5 = L_4;
 		int32_t L_6 = ___1_triangleCount;
@@ -7141,21 +7141,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m7A407B28896B02B3BFE0
 		(L_8)->SetAt(static_cast<il2cpp_array_size_t>(1), (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)L_10);
 		__this->___Triangles = L_8;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___Triangles), (void*)L_8);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:92>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:92>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_11 = (List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC*)il2cpp_codegen_object_new(List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC_il2cpp_TypeInfo_var);
 		List_1__ctor_m1F1CFD656F2741288CAEDE2F1DCDB5B13E5971FC(L_11, List_1__ctor_m1F1CFD656F2741288CAEDE2F1DCDB5B13E5971FC_RuntimeMethod_var);
 		__this->___Constraints = L_11;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___Constraints), (void*)L_11);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:93>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:93>
 		int32_t L_12 = ___0_vertexCount;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_13 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)L_12);
 		__this->___IndexMap = L_13;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___IndexMap), (void*)L_13);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:94>
 		return;
 	}
 }
-// Method Definition Index: 109178
+// Method Definition Index: 109292
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m42F0DBF1EAC97651C61A39CE5302AA7C594818B7 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* ___0_mesh, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7178,27 +7178,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m42F0DBF1EAC97651C61A
 	Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* V_2 = NULL;
 	int32_t V_3 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:100>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:102>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_0 = ___0_mesh;
 		NullCheck(L_0);
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_1;
 		L_1 = Mesh_get_vertices_mA3577F1B08EDDD54E26AEB3F8FFE4EC247D2ABB9(L_0, NULL);
 		V_0 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:103>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_2 = ___0_mesh;
 		NullCheck(L_2);
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_3;
 		L_3 = Mesh_get_normals_m2B6B159B799E6E235EA651FCAB2E18EE5B18ED62(L_2, NULL);
 		V_1 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:104>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_4 = ___0_mesh;
 		NullCheck(L_4);
 		Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* L_5;
 		L_5 = Mesh_get_uv_mA47805C48AB3493FF3727922C43E77880E73519F(L_4, NULL);
 		V_2 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:106>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_6 = ___0_mesh;
 		NullCheck(L_6);
 		int32_t L_7;
@@ -7207,7 +7207,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m42F0DBF1EAC97651C61A
 		List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98(L_8, L_7, List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98_RuntimeMethod_var);
 		__this->___Vertices = L_8;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___Vertices), (void*)L_8);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:107>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_9 = ___0_mesh;
 		NullCheck(L_9);
 		int32_t L_10;
@@ -7216,25 +7216,25 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData__ctor_m42F0DBF1EAC97651C61A
 		List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98(L_11, ((int32_t)(L_10/((int32_t)10))), List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98_RuntimeMethod_var);
 		__this->___CutVertices = L_11;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___CutVertices), (void*)L_11);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:108>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_12 = (List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC*)il2cpp_codegen_object_new(List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC_il2cpp_TypeInfo_var);
 		List_1__ctor_m1F1CFD656F2741288CAEDE2F1DCDB5B13E5971FC(L_12, List_1__ctor_m1F1CFD656F2741288CAEDE2F1DCDB5B13E5971FC_RuntimeMethod_var);
 		__this->___Constraints = L_12;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___Constraints), (void*)L_12);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:109>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_13 = V_0;
 		NullCheck(L_13);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_14 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_13)->max_length)));
 		__this->___IndexMap = L_14;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___IndexMap), (void*)L_14);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:112>
 		V_3 = 0;
 		goto IL_0086;
 	}
 
 IL_005d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:114>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_15 = __this->___Vertices;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_16 = V_0;
 		int32_t L_17 = V_3;
@@ -7256,14 +7256,14 @@ IL_005d:
 		MeshVertex__ctor_m4C6288980B6B0D156A7DA1839A927C9DB80798B2((&L_28), L_19, L_23, L_27, NULL);
 		NullCheck(L_15);
 		List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_inline(L_15, L_28, List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:112>
 		int32_t L_29 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_29, 1));
 	}
 
 IL_0086:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:112>
 		int32_t L_30 = V_3;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_31 = V_0;
 		NullCheck(L_31);
@@ -7273,11 +7273,11 @@ IL_0086:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:118>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_32 = (List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)SZArrayNew(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206_il2cpp_TypeInfo_var, (uint32_t)2);
 		__this->___Triangles = L_32;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___Triangles), (void*)L_32);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:119>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_33 = __this->___Triangles;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_34 = ___0_mesh;
 		NullCheck(L_34);
@@ -7288,7 +7288,7 @@ IL_0086:
 		NullCheck(L_33);
 		ArrayElementTypeCheck (L_33, L_36);
 		(L_33)->SetAt(static_cast<il2cpp_array_size_t>(0), (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)L_36);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:121>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_37 = ___0_mesh;
 		NullCheck(L_37);
 		int32_t L_38;
@@ -7299,7 +7299,7 @@ IL_0086:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:123>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_39 = __this->___Triangles;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_40 = ___0_mesh;
 		NullCheck(L_40);
@@ -7315,7 +7315,7 @@ IL_0086:
 
 IL_00cb:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:127>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_43 = __this->___Triangles;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_44 = ___0_mesh;
 		NullCheck(L_44);
@@ -7331,13 +7331,13 @@ IL_00cb:
 
 IL_00e3:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:130>
 		FragmentData_CalculateBounds_mCD4BD5A37304F5524EB4A36044DC3AC7693D3017(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:131>
 		return;
 	}
 }
-// Method Definition Index: 109179
+// Method Definition Index: 109293
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddCutFaceVertex_mAE7A46633F62873879F50427E5FEEAE987D8AB59 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_normal, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_uv, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7349,26 +7349,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddCutFaceVertex_mAE7A46633
 	MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:142>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_position;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = ___1_normal;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___2_uv;
 		MeshVertex__ctor_m4C6288980B6B0D156A7DA1839A927C9DB80798B2((&V_0), L_0, L_1, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:147>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_3 = __this->___Vertices;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_4 = V_0;
 		NullCheck(L_3);
 		List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_inline(L_3, L_4, List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:148>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:148>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_5 = __this->___CutVertices;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_6 = V_0;
 		NullCheck(L_5);
 		List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_inline(L_5, L_6, List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:149>
 		return;
 	}
 }
-// Method Definition Index: 109180
+// Method Definition Index: 109294
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedVertex_mE9EEA13C89C84B4DF02567D3426D4B31D357ADB0 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 ___0_vertex, int32_t ___1_sourceIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7379,12 +7379,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedVertex_mE9EEA13C89
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:158>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:158>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_0 = __this->___Vertices;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_1 = ___0_vertex;
 		NullCheck(L_0);
 		List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_inline(L_0, L_1, List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:159>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:159>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_2 = __this->___IndexMap;
 		int32_t L_3 = ___1_sourceIndex;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_4 = __this->___Vertices;
@@ -7393,11 +7393,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedVertex_mE9EEA13C89
 		L_5 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_4, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		NullCheck(L_2);
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(L_3), (int32_t)((int32_t)il2cpp_codegen_subtract(L_5, 1)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:160>
 		return;
 	}
 }
-// Method Definition Index: 109181
+// Method Definition Index: 109295
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, int32_t ___0_v1, int32_t ___1_v2, int32_t ___2_v3, int32_t ___3_subMesh, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7407,7 +7407,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddTriangle_m4DA441F982FFA8
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:172>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:172>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_0 = __this->___Triangles;
 		int32_t L_1 = ___3_subMesh;
 		NullCheck(L_0);
@@ -7416,7 +7416,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddTriangle_m4DA441F982FFA8
 		int32_t L_4 = ___0_v1;
 		NullCheck(L_3);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_3, L_4, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:173>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_5 = __this->___Triangles;
 		int32_t L_6 = ___3_subMesh;
 		NullCheck(L_5);
@@ -7425,7 +7425,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddTriangle_m4DA441F982FFA8
 		int32_t L_9 = ___1_v2;
 		NullCheck(L_8);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_8, L_9, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:174>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_10 = __this->___Triangles;
 		int32_t L_11 = ___3_subMesh;
 		NullCheck(L_10);
@@ -7434,11 +7434,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddTriangle_m4DA441F982FFA8
 		int32_t L_14 = ___2_v3;
 		NullCheck(L_13);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_13, L_14, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:175>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:175>
 		return;
 	}
 }
-// Method Definition Index: 109182
+// Method Definition Index: 109296
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedTriangle_mDCAC6E2242161366A1D931FBF3F15EAD0B4283A6 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, int32_t ___0_v1, int32_t ___1_v2, int32_t ___2_v3, int32_t ___3_subMesh, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7448,7 +7448,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedTriangle_mDCAC6E22
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:187>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_0 = __this->___Triangles;
 		int32_t L_1 = ___3_subMesh;
 		NullCheck(L_0);
@@ -7461,7 +7461,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedTriangle_mDCAC6E22
 		int32_t L_7 = (L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_6));
 		NullCheck(L_3);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_3, L_7, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:188>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_8 = __this->___Triangles;
 		int32_t L_9 = ___3_subMesh;
 		NullCheck(L_8);
@@ -7474,7 +7474,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedTriangle_mDCAC6E22
 		int32_t L_15 = (L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_14));
 		NullCheck(L_11);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_11, L_15, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:189>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_16 = __this->___Triangles;
 		int32_t L_17 = ___3_subMesh;
 		NullCheck(L_16);
@@ -7487,11 +7487,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_AddMappedTriangle_mDCAC6E22
 		int32_t L_23 = (L_20)->GetAt(static_cast<il2cpp_array_size_t>(L_22));
 		NullCheck(L_19);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_19, L_23, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:190>
 		return;
 	}
 }
-// Method Definition Index: 109183
+// Method Definition Index: 109297
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_WeldCutFaceVertices_mD2CCC2329224090821D436C4962DABF1E12FAAB4 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7518,7 +7518,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_WeldCutFaceVertices_mD2CCC2
 	int32_t V_6 = 0;
 	EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* V_7 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:200>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_0 = __this->___CutVertices;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -7526,32 +7526,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_WeldCutFaceVertices_mD2CCC2
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_2 = (List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4*)il2cpp_codegen_object_new(List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4_il2cpp_TypeInfo_var);
 		List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98(L_2, L_1, List_1__ctor_mBF44C7BF4B76827E9787DE32D7615624A52CAB98_RuntimeMethod_var);
 		V_0 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:204>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:204>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_3 = __this->___CutVertices;
 		NullCheck(L_3);
 		int32_t L_4;
 		L_4 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_3, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_5 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)L_4);
 		V_1 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:207>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:207>
 		V_2 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:212>
 		V_3 = 0;
 		goto IL_0091;
 	}
 
 IL_0028:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:214>
 		V_4 = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:215>
 		V_5 = 0;
 		goto IL_0065;
 	}
 
 IL_0030:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:217>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_6 = __this->___CutVertices;
 		int32_t L_7 = V_3;
 		NullCheck(L_6);
@@ -7572,28 +7572,28 @@ IL_0030:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:219>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_15 = V_1;
 		int32_t L_16 = V_3;
 		int32_t L_17 = V_5;
 		NullCheck(L_15);
 		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(L_16), (int32_t)L_17);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:220>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:220>
 		V_4 = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:221>
 		goto IL_006f;
 	}
 
 IL_005f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:215>
 		int32_t L_18 = V_5;
 		V_5 = ((int32_t)il2cpp_codegen_add(L_18, 1));
 	}
 
 IL_0065:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:215>
 		int32_t L_19 = V_5;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_20 = V_0;
 		NullCheck(L_20);
@@ -7607,7 +7607,7 @@ IL_0065:
 
 IL_006f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:225>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:225>
 		bool L_22 = V_4;
 		if (L_22)
 		{
@@ -7615,7 +7615,7 @@ IL_006f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:227>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:227>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_23 = V_0;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_24 = __this->___CutVertices;
 		int32_t L_25 = V_3;
@@ -7624,27 +7624,27 @@ IL_006f:
 		L_26 = List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0(L_24, L_25, List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0_RuntimeMethod_var);
 		NullCheck(L_23);
 		List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_inline(L_23, L_26, List_1_Add_m8F4CD1C5A01FAF67610966216D7B84D1CC6A0512_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:228>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_27 = V_1;
 		int32_t L_28 = V_3;
 		int32_t L_29 = V_2;
 		NullCheck(L_27);
 		(L_27)->SetAt(static_cast<il2cpp_array_size_t>(L_28), (int32_t)L_29);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:229>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:229>
 		int32_t L_30 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_30, 1));
 	}
 
 IL_008d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:212>
 		int32_t L_31 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_31, 1));
 	}
 
 IL_0091:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:212>
 		int32_t L_32 = V_3;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_33 = __this->___CutVertices;
 		NullCheck(L_33);
@@ -7656,21 +7656,21 @@ IL_0091:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:234>
 		V_6 = 0;
 		goto IL_00d9;
 	}
 
 IL_00a4:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:236>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:236>
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_35 = __this->___Constraints;
 		int32_t L_36 = V_6;
 		NullCheck(L_35);
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_37;
 		L_37 = List_1_get_Item_mF8170C6B68C3B1599B0F30E14291D2EA2C6F661F(L_35, L_36, List_1_get_Item_mF8170C6B68C3B1599B0F30E14291D2EA2C6F661F_RuntimeMethod_var);
 		V_7 = L_37;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:237>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_38 = V_7;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_39 = V_1;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_40 = V_7;
@@ -7681,7 +7681,7 @@ IL_00a4:
 		int32_t L_43 = (L_39)->GetAt(static_cast<il2cpp_array_size_t>(L_42));
 		NullCheck(L_38);
 		L_38->___v1 = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:238>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:238>
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_44 = V_7;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_45 = V_1;
 		EdgeConstraint_t414A6356524DC2F339072262EBE9D8A546E5E3D4* L_46 = V_7;
@@ -7692,14 +7692,14 @@ IL_00a4:
 		int32_t L_49 = (L_45)->GetAt(static_cast<il2cpp_array_size_t>(L_48));
 		NullCheck(L_44);
 		L_44->___v2 = L_49;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:234>
 		int32_t L_50 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_50, 1));
 	}
 
 IL_00d9:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:234>
 		int32_t L_51 = V_6;
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_52 = __this->___Constraints;
 		NullCheck(L_52);
@@ -7711,21 +7711,21 @@ IL_00d9:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:241>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:241>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_54 = V_0;
 		NullCheck(L_54);
 		List_1_TrimExcess_m62E66A4CE031FC7CA81361788DC41F2E7CF13521(L_54, List_1_TrimExcess_m62E66A4CE031FC7CA81361788DC41F2E7CF13521_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:244>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:244>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_55 = V_0;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_56 = (List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4*)il2cpp_codegen_object_new(List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4_il2cpp_TypeInfo_var);
 		List_1__ctor_mF739F830508C11D809ADC4EA52E9AAD3EB7C5F3F(L_56, L_55, List_1__ctor_mF739F830508C11D809ADC4EA52E9AAD3EB7C5F3F_RuntimeMethod_var);
 		__this->___CutVertices = L_56;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___CutVertices), (void*)L_56);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:245>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:245>
 		return;
 	}
 }
-// Method Definition Index: 109184
+// Method Definition Index: 109298
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* FragmentData_GetTriangles_mBC4C9B025EE40D7905C5CAE338051C52766AD7BF (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, int32_t ___0_subMeshIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7735,7 +7735,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:254>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_0 = __this->___Triangles;
 		int32_t L_1 = ___0_subMeshIndex;
 		NullCheck(L_0);
@@ -7747,7 +7747,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 		return L_4;
 	}
 }
-// Method Definition Index: 109185
+// Method Definition Index: 109299
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_CalculateBounds_mCD4BD5A37304F5524EB4A36044DC3AC7693D3017 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7769,16 +7769,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FragmentData_CalculateBounds_mCD4BD5A373
 	MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 V_3;
 	memset((&V_3), 0, sizeof(V_3));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:262>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:262>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_0 = __this->___Vertices;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_0, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:263>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:263>
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_0), ((std::numeric_limits<float>::max)()), ((std::numeric_limits<float>::max)()), ((std::numeric_limits<float>::max)()), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:264>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:264>
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_1), (-(std::numeric_limits<float>::max)()), (-(std::numeric_limits<float>::max)()), (-(std::numeric_limits<float>::max)()), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:268>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:268>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_2 = __this->___Vertices;
 		NullCheck(L_2);
 		Enumerator_tA5515149671F3C2026549062A5D4D7D8CBF5A06E L_3;
@@ -7803,11 +7803,11 @@ FINALLY_013d:
 
 IL_0049_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:268>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:268>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_4;
 				L_4 = Enumerator_get_Current_mB31C0679CE9194F9AFF9F231FDED7C5B6ABE55A6_inline((&V_2), Enumerator_get_Current_mB31C0679CE9194F9AFF9F231FDED7C5B6ABE55A6_RuntimeMethod_var);
 				V_3 = L_4;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:270>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:270>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_5 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = L_5.___position;
 				float L_7 = L_6.___x;
@@ -7819,7 +7819,7 @@ IL_0049_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:270>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:270>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_10 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11 = L_10.___position;
 				float L_12 = L_11.___x;
@@ -7828,7 +7828,7 @@ IL_0049_1:
 
 IL_0076_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:271>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:271>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_13 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_14 = L_13.___position;
 				float L_15 = L_14.___y;
@@ -7840,7 +7840,7 @@ IL_0076_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:271>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:271>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_18 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_19 = L_18.___position;
 				float L_20 = L_19.___y;
@@ -7849,7 +7849,7 @@ IL_0076_1:
 
 IL_009b_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:272>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:272>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_21 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_22 = L_21.___position;
 				float L_23 = L_22.___z;
@@ -7861,7 +7861,7 @@ IL_009b_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:272>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:272>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_26 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_27 = L_26.___position;
 				float L_28 = L_27.___z;
@@ -7870,7 +7870,7 @@ IL_009b_1:
 
 IL_00c0_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:273>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:273>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_29 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30 = L_29.___position;
 				float L_31 = L_30.___x;
@@ -7882,7 +7882,7 @@ IL_00c0_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:273>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:273>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_34 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_35 = L_34.___position;
 				float L_36 = L_35.___x;
@@ -7891,7 +7891,7 @@ IL_00c0_1:
 
 IL_00e5_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:274>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:274>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_37 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_38 = L_37.___position;
 				float L_39 = L_38.___y;
@@ -7903,7 +7903,7 @@ IL_00e5_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:274>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:274>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_42 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_43 = L_42.___position;
 				float L_44 = L_43.___y;
@@ -7912,7 +7912,7 @@ IL_00e5_1:
 
 IL_010a_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:275>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:275>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_45 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_46 = L_45.___position;
 				float L_47 = L_46.___z;
@@ -7924,7 +7924,7 @@ IL_010a_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:275>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:275>
 				MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_50 = V_3;
 				Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_51 = L_50.___position;
 				float L_52 = L_51.___z;
@@ -7933,7 +7933,7 @@ IL_010a_1:
 
 IL_012f_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:268>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:268>
 				bool L_53;
 				L_53 = Enumerator_MoveNext_m2E7D92B36F22EA5A1917530CAF9E5B6B35A43035((&V_2), Enumerator_MoveNext_m2E7D92B36F22EA5A1917530CAF9E5B6B35A43035_RuntimeMethod_var);
 				if (L_53)
@@ -7953,7 +7953,7 @@ IL_012f_1:
 
 IL_014b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:278>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:278>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_54 = V_1;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_55 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_56;
@@ -7968,11 +7968,11 @@ IL_014b:
 		memset((&L_61), 0, sizeof(L_61));
 		Bounds__ctor_mAF7B238B9FBF90C495E5D7951760085A93119C5A_inline((&L_61), L_57, L_60, NULL);
 		__this->___Bounds = L_61;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:279>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:279>
 		return;
 	}
 }
-// Method Definition Index: 109186
+// Method Definition Index: 109300
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* FragmentData_ToMesh_m047850C536A3638C7B48A0778183C23C018BF166 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7992,16 +7992,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D
 	int32_t V_3 = 0;
 	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* V_4 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:287>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:287>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_0 = (Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4*)il2cpp_codegen_object_new(Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4_il2cpp_TypeInfo_var);
 		Mesh__ctor_m5A9AECEDDAFFD84811ED8928012BDE97A9CEBD00(L_0, NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:289>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:290>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:291>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:292>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:293>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:294>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:289>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:290>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:291>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:292>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:293>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:294>
 		VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2* L_1 = (VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2*)(VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2*)SZArrayNew(VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2_il2cpp_TypeInfo_var, (uint32_t)3);
 		VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2* L_2 = L_1;
 		VertexAttributeDescriptor_tD4231FBF57335465D16308D2A18E8E83D36BFA76 L_3;
@@ -8022,20 +8022,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D
 		NullCheck(L_6);
 		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(2), (VertexAttributeDescriptor_tD4231FBF57335465D16308D2A18E8E83D36BFA76)L_7);
 		V_1 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:296>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:296>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_8 = V_0;
 		int32_t L_9;
 		L_9 = FragmentData_get_triangleCount_mCE0F07AF9BA65E51E8A9B92A0D5FADD832854BBF(__this, NULL);
 		NullCheck(L_8);
 		Mesh_SetIndexBufferParams_mAE7DB809B7C946C44B2BF1F5E4A2A273C0767CAC(L_8, L_9, 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:297>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:297>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_10 = V_0;
 		int32_t L_11;
 		L_11 = FragmentData_get_vertexCount_mDA8A6BA7F75AC36D748FBC7B76D597AB4F11668C(__this, NULL);
 		VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2* L_12 = V_1;
 		NullCheck(L_10);
 		Mesh_SetVertexBufferParams_m8033EB85082C142DCE8B69FFBAD26D7DFB0330B2(L_10, L_11, L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:298>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:298>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_13 = V_0;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_14 = __this->___Vertices;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_15 = __this->___Vertices;
@@ -8044,7 +8044,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D
 		L_16 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_15, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		NullCheck(L_13);
 		Mesh_SetVertexBufferData_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_m7C8FF1FFA4E83D121AA7AC35BE25120EBF49F4F0(L_13, L_14, 0, 0, L_16, 0, 0, Mesh_SetVertexBufferData_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_m7C8FF1FFA4E83D121AA7AC35BE25120EBF49F4F0_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:299>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:299>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_17 = V_0;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_18 = __this->___CutVertices;
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_19 = __this->___Vertices;
@@ -8057,29 +8057,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D
 		L_22 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_21, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		NullCheck(L_17);
 		Mesh_SetVertexBufferData_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_m7C8FF1FFA4E83D121AA7AC35BE25120EBF49F4F0(L_17, L_18, 0, L_20, L_22, 0, 0, Mesh_SetVertexBufferData_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_m7C8FF1FFA4E83D121AA7AC35BE25120EBF49F4F0_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:301>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:301>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_23 = V_0;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_24 = __this->___Triangles;
 		NullCheck(L_24);
 		NullCheck(L_23);
 		Mesh_set_subMeshCount_m8E4DB392DB0621F7DFF8543FF3943A13072B8A28(L_23, ((int32_t)(((RuntimeArray*)L_24)->max_length)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:302>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:302>
 		V_2 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:303>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:303>
 		V_3 = 0;
 		goto IL_00eb;
 	}
 
 IL_00ab:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:305>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:305>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_25 = __this->___Triangles;
 		int32_t L_26 = V_3;
 		NullCheck(L_25);
 		int32_t L_27 = L_26;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_28 = (L_25)->GetAt(static_cast<il2cpp_array_size_t>(L_27));
 		V_4 = L_28;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:306>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:306>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_29 = V_0;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_30 = V_4;
 		int32_t L_31 = V_2;
@@ -8089,7 +8089,7 @@ IL_00ab:
 		L_33 = List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_inline(L_32, List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_RuntimeMethod_var);
 		NullCheck(L_29);
 		Mesh_SetIndexBufferData_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mECB03C3999FE65D9CCB012CCB212E95EA7B052EC(L_29, L_30, 0, L_31, L_33, 0, Mesh_SetIndexBufferData_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mECB03C3999FE65D9CCB012CCB212E95EA7B052EC_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:307>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:307>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_34 = V_0;
 		int32_t L_35 = V_3;
 		int32_t L_36 = V_2;
@@ -8102,21 +8102,21 @@ IL_00ab:
 		SubMeshDescriptor__ctor_m5234E625F44FA9B04F41BD9DC013E47C2C628D66((&L_39), L_36, L_38, 0, NULL);
 		NullCheck(L_34);
 		Mesh_SetSubMesh_m8ECC394430DD2D521412479314D75C5B89DD4A65(L_34, L_35, L_39, 0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:308>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:308>
 		int32_t L_40 = V_2;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_41 = V_4;
 		NullCheck(L_41);
 		int32_t L_42;
 		L_42 = List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_inline(L_41, List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_RuntimeMethod_var);
 		V_2 = ((int32_t)il2cpp_codegen_add(L_40, L_42));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:303>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:303>
 		int32_t L_43 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_43, 1));
 	}
 
 IL_00eb:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:303>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:303>
 		int32_t L_44 = V_3;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_45 = __this->___Triangles;
 		NullCheck(L_45);
@@ -8126,11 +8126,11 @@ IL_00eb:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:311>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:311>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_46 = V_0;
 		NullCheck(L_46);
 		Mesh_RecalculateBounds_mA9B293F57C6CD298AE2D2DB19061FC23B05AB90B(L_46, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:313>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/FragmentData.cs:313>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_47 = V_0;
 		return L_47;
 	}
@@ -8143,7 +8143,7 @@ IL_00eb:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109187
+// Method Definition Index: 109301
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Fracture_m2475906BBD3C7F54C337D0E280C65B6AD8A9B0D1 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_sourceObject, FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* ___1_options, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___2_fragmentTemplate, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___3_parent, bool ___4_saveToDisk, String_t* ___5_saveFolderPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8194,7 +8194,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Fracture_m2475906BBD3C7F54C33
 	float G_B10_2 = 0.0f;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* G_B10_3 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:32>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_sourceObject;
 		NullCheck(L_0);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_1;
@@ -8205,11 +8205,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Fracture_m2475906BBD3C7F54C33
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_3 = (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8*)il2cpp_codegen_object_new(FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8_il2cpp_TypeInfo_var);
 		FragmentData__ctor_m42F0DBF1EAC97651C61A39CE5302AA7C594818B7(L_3, L_2, NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:36>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_4 = (Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE*)il2cpp_codegen_object_new(Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE_il2cpp_TypeInfo_var);
 		Queue_1__ctor_m52DB203575A543675B801D9E04CD0D0F1F39F7C2(L_4, Queue_1__ctor_m52DB203575A543675B801D9E04CD0D0F1F39F7C2_RuntimeMethod_var);
 		V_1 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:37>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_5 = V_1;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_6 = V_0;
 		NullCheck(L_5);
@@ -8219,20 +8219,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Fracture_m2475906BBD3C7F54C33
 
 IL_0023:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:43>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_7 = V_1;
 		NullCheck(L_7);
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_8;
 		L_8 = Queue_1_Dequeue_mB31055565E8C8D8ED904697993A20C9F542BEF08(L_7, Queue_1_Dequeue_mB31055565E8C8D8ED904697993A20C9F542BEF08_RuntimeMethod_var);
 		V_5 = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:44>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_9 = V_5;
 		NullCheck(L_9);
 		FragmentData_CalculateBounds_mCD4BD5A37304F5524EB4A36044DC3AC7693D3017(L_9, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:47>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:48>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:49>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:50>
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_10 = ___1_options;
 		NullCheck(L_10);
 		bool L_11 = L_10->___xAxis;
@@ -8324,13 +8324,13 @@ IL_007f:
 IL_008e:
 	{
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline(G_B10_3, G_B10_2, G_B10_1, G_B10_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:53>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:54>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:55>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:56>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:57>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:58>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:59>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_19 = V_5;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20 = V_6;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_21 = V_5;
@@ -8345,12 +8345,12 @@ IL_008e:
 		NullCheck(L_26);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_27 = L_26->___textureOffset;
 		MeshSlicer_Slice_mA3622B7C868AC517A5A61095BDA158D6EE0D156D(L_19, L_20, L_23, L_25, L_27, (&V_2), (&V_3), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:61>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_28 = V_1;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_29 = V_2;
 		NullCheck(L_28);
 		Queue_1_Enqueue_mB27F80C6DA3CA8F9EFB64F83CBED4EB58749B1DD(L_28, L_29, Queue_1_Enqueue_mB27F80C6DA3CA8F9EFB64F83CBED4EB58749B1DD_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:62>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_30 = V_1;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_31 = V_3;
 		NullCheck(L_30);
@@ -8359,7 +8359,7 @@ IL_008e:
 
 IL_00c6:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:41>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_32 = V_1;
 		NullCheck(L_32);
 		int32_t L_33;
@@ -8373,9 +8373,9 @@ IL_00c6:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:65>
 		V_4 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:66>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_36 = V_1;
 		NullCheck(L_36);
 		Enumerator_tE4801B90A0A42B3BA0963C429697C0D2DCCEA514 L_37;
@@ -8400,17 +8400,17 @@ FINALLY_010a:
 
 IL_00e4_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:66>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:66>
 				FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_38;
 				L_38 = Enumerator_get_Current_m2CCE0E6D5899D9D429B2AEE243588A90B6BE5305((&V_7), Enumerator_get_Current_m2CCE0E6D5899D9D429B2AEE243588A90B6BE5305_RuntimeMethod_var);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:68>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:69>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:70>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:71>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:72>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:73>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:74>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:75>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:68>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:69>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:70>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:71>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:72>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:73>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:74>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:75>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39 = ___0_sourceObject;
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_40 = ___2_fragmentTemplate;
 				Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41 = ___3_parent;
@@ -8424,7 +8424,7 @@ IL_00e4_1:
 
 IL_00ff_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:66>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:66>
 				bool L_46;
 				L_46 = Enumerator_MoveNext_m1B7BFB3751DEB748B018403842E7106E43D1F422((&V_7), Enumerator_MoveNext_m1B7BFB3751DEB748B018403842E7106E43D1F422_RuntimeMethod_var);
 				if (L_46)
@@ -8444,11 +8444,11 @@ IL_00ff_1:
 
 IL_0118:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:77>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:77>
 		return;
 	}
 }
-// Method Definition Index: 109188
+// Method Definition Index: 109302
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Fragmenter_FractureAsync_m78EE9D565E1A1FF458CADF1AE145D22793A1B039 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_sourceObject, FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* ___1_options, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___2_fragmentTemplate, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___3_parent, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___4_onCompletion, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8488,7 +8488,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Fragmenter_FractureAsync_m78EE
 		return L_9;
 	}
 }
-// Method Definition Index: 109189
+// Method Definition Index: 109303
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA4D577B71A1469DC786 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_sourceObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_sliceNormal, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_sliceOrigin, SliceOptions_t9487C4C1BC769948517C8CC1D6F1BF67E0ED09BD* ___3_options, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___4_fragmentTemplate, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___5_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8503,7 +8503,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA
 	FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* V_1 = NULL;
 	int32_t V_2 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:166>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_sourceObject;
 		NullCheck(L_0);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_1;
@@ -8513,13 +8513,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA
 		L_2 = MeshFilter_get_sharedMesh_mE4ED3E7E31C1DE5097E4980DA996E620F7D7CB8C(L_1, NULL);
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_3 = (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8*)il2cpp_codegen_object_new(FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8_il2cpp_TypeInfo_var);
 		FragmentData__ctor_m42F0DBF1EAC97651C61A39CE5302AA7C594818B7(L_3, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:171>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:172>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:173>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:174>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:175>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:176>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:172>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:173>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:174>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:175>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:177>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4 = ___1_sliceNormal;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5 = ___2_sliceOrigin;
 		SliceOptions_t9487C4C1BC769948517C8CC1D6F1BF67E0ED09BD* L_6 = ___3_options;
@@ -8529,16 +8529,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA
 		NullCheck(L_8);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_9 = L_8->___textureOffset;
 		MeshSlicer_Slice_mA3622B7C868AC517A5A61095BDA158D6EE0D156D(L_3, L_4, L_5, L_7, L_9, (&V_0), (&V_1), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:179>
 		V_2 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:180>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:181>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:182>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:183>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:184>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:185>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:186>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:180>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:181>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:182>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:183>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:187>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_10 = V_0;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = ___0_sourceObject;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = ___4_fragmentTemplate;
@@ -8547,14 +8547,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA
 		NullCheck(L_14);
 		bool L_15 = L_14->___detectFloatingFragments;
 		Fragmenter_CreateFragment_m59DAB89A71604AD86056CBF0EC0FD1D76B964D62(L_10, L_11, L_12, L_13, (bool)0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, L_15, (&V_2), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:189>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:190>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:191>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:192>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:193>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:194>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:195>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:196>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:190>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:191>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:193>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:195>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:196>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_16 = V_1;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = ___0_sourceObject;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = ___4_fragmentTemplate;
@@ -8563,11 +8563,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA
 		NullCheck(L_20);
 		bool L_21 = L_20->___detectFloatingFragments;
 		Fragmenter_CreateFragment_m59DAB89A71604AD86056CBF0EC0FD1D76B964D62(L_16, L_17, L_18, L_19, (bool)0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, L_21, (&V_2), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:197>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:197>
 		return;
 	}
 }
-// Method Definition Index: 109190
+// Method Definition Index: 109304
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_CreateFragment_m59DAB89A71604AD86056CBF0EC0FD1D76B964D62 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___0_fragmentMeshData, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_sourceObject, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___2_fragmentTemplate, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___3_parent, bool ___4_saveToDisk, String_t* ___5_saveFolderPath, bool ___6_detectFloatingFragments, int32_t* ___7_i, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8599,7 +8599,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_CreateFragment_m59DAB89A71604
 	Guid_t V_9;
 	memset((&V_9), 0, sizeof(V_9));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:217>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_0 = ___0_fragmentMeshData;
 		NullCheck(L_0);
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_1 = L_0->___Triangles;
@@ -8610,19 +8610,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fragmenter_CreateFragment_m59DAB89A71604
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:219>
 		return;
 	}
 
 IL_000a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:223>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:223>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_2 = ___0_fragmentMeshData;
 		NullCheck(L_2);
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_3;
 		L_3 = FragmentData_ToMesh_m047850C536A3638C7B48A0778183C23C018BF166(L_2, NULL);
 		V_1 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:228>
 		bool L_4 = ___6_detectFloatingFragments;
 		if (!L_4)
 		{
@@ -8630,7 +8630,7 @@ IL_000a:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:230>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_5 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(MeshUtils_tC9337A2922275E0E4389E7BEF6C47B78A4B081C8_il2cpp_TypeInfo_var);
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_6;
@@ -8641,7 +8641,7 @@ IL_000a:
 
 IL_001e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:234>
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_7 = (MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689*)(MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689*)SZArrayNew(MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689_il2cpp_TypeInfo_var, (uint32_t)1);
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_8 = L_7;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_9 = V_1;
@@ -8652,7 +8652,7 @@ IL_001e:
 
 IL_0029:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:237>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = ___1_sourceObject;
 		NullCheck(L_10);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_11;
@@ -8667,7 +8667,7 @@ IL_0029:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_14;
 		L_14 = Bounds_get_size_m0699A53A55A78B3201D7270D6F338DFA91B6FAD4_inline((&V_4), NULL);
 		V_2 = L_14;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:238>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:238>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = ___1_sourceObject;
 		NullCheck(L_15);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_16;
@@ -8676,21 +8676,21 @@ IL_0029:
 		float L_17;
 		L_17 = Rigidbody_get_mass_m09DDDDC437499B83B3BD0D77C134BFDC3E667054(L_16, NULL);
 		V_3 = L_17;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:240>
 		V_5 = 0;
 		goto IL_016c;
 	}
 
 IL_0057:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:242>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:242>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = ___2_fragmentTemplate;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19 = ___3_parent;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20;
 		L_20 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m58C654F1134533E29502629CA67645682B404811(L_18, L_19, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m58C654F1134533E29502629CA67645682B404811_RuntimeMethod_var);
 		V_6 = L_20;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:243>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:243>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = V_6;
 		int32_t* L_22 = ___7_i;
 		int32_t L_23 = *((int32_t*)L_22);
@@ -8700,7 +8700,7 @@ IL_0057:
 		L_26 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral2D0588E905E0B94FBAD023EE2FD33E764DADCE30, L_25, NULL);
 		NullCheck(L_21);
 		Object_set_name_mC79E6DC8FFD72479C90F0C4CC7F42A0FEAF5AE47(L_21, L_26, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:244>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:244>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_27 = V_6;
 		NullCheck(L_27);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_28;
@@ -8709,7 +8709,7 @@ IL_0057:
 		L_29 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		NullCheck(L_28);
 		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_28, L_29, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:245>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:245>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30 = V_6;
 		NullCheck(L_30);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_31;
@@ -8718,7 +8718,7 @@ IL_0057:
 		L_32 = Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline(NULL);
 		NullCheck(L_31);
 		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_31, L_32, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:246>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:246>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_33 = V_6;
 		NullCheck(L_33);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_34;
@@ -8732,7 +8732,7 @@ IL_0057:
 		L_37 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_36, NULL);
 		NullCheck(L_34);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_34, L_37, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:248>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:248>
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_38 = V_0;
 		int32_t L_39 = V_5;
 		NullCheck(L_38);
@@ -8745,12 +8745,12 @@ IL_0057:
 		L_43 = Guid_ToString_m2BFFD5FA726E03FA707AAFCCF065896C46D5290C((&V_9), NULL);
 		NullCheck(L_41);
 		Object_set_name_mC79E6DC8FFD72479C90F0C4CC7F42A0FEAF5AE47(L_41, L_43, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:251>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:251>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44 = V_6;
 		NullCheck(L_44);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_45;
 		L_45 = GameObject_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mDF6525BCE37B444313BE0AA2305BDF4EB8B92FE8(L_44, GameObject_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mDF6525BCE37B444313BE0AA2305BDF4EB8B92FE8_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:252>
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_46 = V_0;
 		int32_t L_47 = V_5;
 		NullCheck(L_46);
@@ -8758,12 +8758,12 @@ IL_0057:
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_49 = (L_46)->GetAt(static_cast<il2cpp_array_size_t>(L_48));
 		NullCheck(L_45);
 		MeshFilter_set_sharedMesh_m946F7E3F583761982642BDA4753784AF1DF6E16F(L_45, L_49, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:254>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_50 = V_6;
 		NullCheck(L_50);
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_51;
 		L_51 = GameObject_GetComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_m21E4C15ED89B2D1A80F393D96CF4464B16E9F1F9(L_50, GameObject_GetComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_m21E4C15ED89B2D1A80F393D96CF4464B16E9F1F9_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:257>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_52 = L_51;
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_53 = V_0;
 		int32_t L_54 = V_5;
@@ -8772,11 +8772,11 @@ IL_0057:
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_56 = (L_53)->GetAt(static_cast<il2cpp_array_size_t>(L_55));
 		NullCheck(L_52);
 		MeshCollider_set_sharedMesh_m05F87B9AC04139285EBBCC159F77B51C6940E79C(L_52, L_56, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:258>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:258>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_57 = L_52;
 		NullCheck(L_57);
 		MeshCollider_set_convex_m20482D687240D0921BA76B77983403E55A2E3CE1(L_57, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:259>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:259>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_58 = V_6;
 		NullCheck(L_58);
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_59;
@@ -8786,17 +8786,17 @@ IL_0057:
 		L_60 = Collider_get_sharedMaterial_m436FD38D7193330BE4FA630AB7F184BE952FDFFE(L_59, NULL);
 		NullCheck(L_57);
 		Collider_set_sharedMaterial_mA67DC663BEEBE9315F3B91A0B74B31D33579CD7D(L_57, L_60, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:262>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:262>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_61 = ___1_sourceObject;
 		NullCheck(L_61);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_62;
 		L_62 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_61, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:263>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:263>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_63 = V_6;
 		NullCheck(L_63);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_64;
 		L_64 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_63, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:265>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:265>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_65 = V_1;
 		NullCheck(L_65);
 		Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 L_66;
@@ -8805,7 +8805,7 @@ IL_0057:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_67;
 		L_67 = Bounds_get_size_m0699A53A55A78B3201D7270D6F338DFA91B6FAD4_inline((&V_4), NULL);
 		V_7 = L_67;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:266>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:266>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_68 = V_2;
 		float L_69 = L_68.___x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_70 = V_2;
@@ -8814,7 +8814,7 @@ IL_0057:
 		float L_73 = L_72.___z;
 		float L_74 = V_3;
 		V_8 = ((float)(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_69, L_71)), L_73))/L_74));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:267>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:267>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_75 = V_7;
 		float L_76 = L_75.___x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_77 = V_7;
@@ -8824,19 +8824,19 @@ IL_0057:
 		float L_81 = V_8;
 		NullCheck(L_64);
 		Rigidbody_set_mass_mC7F886DEDB57C742A16F8B6B779F69AFE164CA4B(L_64, ((float)(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_76, L_78)), L_80))/L_81)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:278>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:278>
 		int32_t* L_82 = ___7_i;
 		int32_t* L_83 = ___7_i;
 		int32_t L_84 = *((int32_t*)L_83);
 		*((int32_t*)L_82) = (int32_t)((int32_t)il2cpp_codegen_add(L_84, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:240>
 		int32_t L_85 = V_5;
 		V_5 = ((int32_t)il2cpp_codegen_add(L_85, 1));
 	}
 
 IL_016c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:240>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:240>
 		int32_t L_86 = V_5;
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_87 = V_0;
 		NullCheck(L_87);
@@ -8846,7 +8846,7 @@ IL_016c:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:280>
 		return;
 	}
 }
@@ -8858,7 +8858,7 @@ IL_016c:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109191
+// Method Definition Index: 109305
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFractureAsyncU3Ed__1__ctor_mF3E02153C975B62F71114086617F8AC681C9A8A5 (U3CFractureAsyncU3Ed__1_tB41326CA1D75FB57AD6DB2C1B21B9EC89C067655* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -8868,14 +8868,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFractureAsyncU3Ed__1__ctor_mF3E02153C
 		return;
 	}
 }
-// Method Definition Index: 109192
+// Method Definition Index: 109306
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFractureAsyncU3Ed__1_System_IDisposable_Dispose_m66CF02C7F07BBD1C658D9CA8C6FDF6063342C0AD (U3CFractureAsyncU3Ed__1_tB41326CA1D75FB57AD6DB2C1B21B9EC89C067655* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 109193
+// Method Definition Index: 109307
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFractureAsyncU3Ed__1_MoveNext_m55119BFA051F13D9B0B0C875F19DDD891453055B (U3CFractureAsyncU3Ed__1_tB41326CA1D75FB57AD6DB2C1B21B9EC89C067655* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8949,7 +8949,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFractureAsyncU3Ed__1_MoveNext_m55119B
 IL_0013:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:95>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___sourceObject;
 		NullCheck(L_3);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_4;
@@ -8960,12 +8960,12 @@ IL_0013:
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_6 = (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8*)il2cpp_codegen_object_new(FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8_il2cpp_TypeInfo_var);
 		FragmentData__ctor_m42F0DBF1EAC97651C61A39CE5302AA7C594818B7(L_6, L_5, NULL);
 		V_1 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:99>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_7 = (Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE*)il2cpp_codegen_object_new(Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE_il2cpp_TypeInfo_var);
 		Queue_1__ctor_m52DB203575A543675B801D9E04CD0D0F1F39F7C2(L_7, Queue_1__ctor_m52DB203575A543675B801D9E04CD0D0F1F39F7C2_RuntimeMethod_var);
 		__this->___U3CfragmentsU3E5__2 = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CfragmentsU3E5__2), (void*)L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:100>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_8 = __this->___U3CfragmentsU3E5__2;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_9 = V_1;
 		NullCheck(L_8);
@@ -8975,20 +8975,20 @@ IL_0013:
 
 IL_004c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:106>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_10 = __this->___U3CfragmentsU3E5__2;
 		NullCheck(L_10);
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_11;
 		L_11 = Queue_1_Dequeue_mB31055565E8C8D8ED904697993A20C9F542BEF08(L_10, Queue_1_Dequeue_mB31055565E8C8D8ED904697993A20C9F542BEF08_RuntimeMethod_var);
 		V_3 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:107>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_12 = V_3;
 		NullCheck(L_12);
 		FragmentData_CalculateBounds_mCD4BD5A37304F5524EB4A36044DC3AC7693D3017(L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:110>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:111>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:112>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:113>
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_13 = __this->___options;
 		NullCheck(L_13);
 		bool L_14 = L_13->___xAxis;
@@ -9080,13 +9080,13 @@ IL_00ba:
 IL_00c9:
 	{
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline(G_B13_3, G_B13_2, G_B13_1, G_B13_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:116>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:117>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:118>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:119>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:120>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:121>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:116>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:122>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_22 = V_3;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23 = V_4;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_24 = V_3;
@@ -9103,7 +9103,7 @@ IL_00c9:
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_31 = (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8**)(&__this->___U3CtopSliceU3E5__3);
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_32 = (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8**)(&__this->___U3CbottomSliceU3E5__4);
 		MeshSlicer_Slice_mA3622B7C868AC517A5A61095BDA158D6EE0D156D(L_22, L_23, L_26, L_28, L_30, L_31, L_32, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:125>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -9113,12 +9113,12 @@ IL_00c9:
 IL_0113:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:127>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_33 = __this->___U3CfragmentsU3E5__2;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_34 = __this->___U3CtopSliceU3E5__3;
 		NullCheck(L_33);
 		Queue_1_Enqueue_mB27F80C6DA3CA8F9EFB64F83CBED4EB58749B1DD(L_33, L_34, Queue_1_Enqueue_mB27F80C6DA3CA8F9EFB64F83CBED4EB58749B1DD_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:128>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_35 = __this->___U3CfragmentsU3E5__2;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_36 = __this->___U3CbottomSliceU3E5__4;
 		NullCheck(L_35);
@@ -9127,7 +9127,7 @@ IL_0113:
 
 IL_013c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:104>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_37 = __this->___U3CfragmentsU3E5__2;
 		NullCheck(L_37);
 		int32_t L_38;
@@ -9141,9 +9141,9 @@ IL_013c:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:131>
 		V_2 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:132>
 		Queue_1_t71D61D7B2CEE6408BD7C20D5C48E48CE95336EEE* L_41 = __this->___U3CfragmentsU3E5__2;
 		NullCheck(L_41);
 		Enumerator_tE4801B90A0A42B3BA0963C429697C0D2DCCEA514 L_42;
@@ -9168,17 +9168,17 @@ FINALLY_01a4:
 
 IL_0168_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:132>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:132>
 				FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_43;
 				L_43 = Enumerator_get_Current_m2CCE0E6D5899D9D429B2AEE243588A90B6BE5305((&V_5), Enumerator_get_Current_m2CCE0E6D5899D9D429B2AEE243588A90B6BE5305_RuntimeMethod_var);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:134>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:135>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:136>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:137>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:138>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:139>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:140>
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:141>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:134>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:135>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:136>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:137>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:138>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:139>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:140>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:141>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44 = __this->___sourceObject;
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_45 = __this->___fragmentTemplate;
 				Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_46 = __this->___parent;
@@ -9190,7 +9190,7 @@ IL_0168_1:
 
 IL_0199_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:132>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:132>
 				bool L_49;
 				L_49 = Enumerator_MoveNext_m1B7BFB3751DEB748B018403842E7106E43D1F422((&V_5), Enumerator_MoveNext_m1B7BFB3751DEB748B018403842E7106E43D1F422_RuntimeMethod_var);
 				if (L_49)
@@ -9210,7 +9210,7 @@ IL_0199_1:
 
 IL_01b2:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:144>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:144>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_50 = __this->___onCompletion;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_51 = L_50;
 		if (L_51)
@@ -9232,11 +9232,11 @@ IL_01be:
 
 IL_01c3:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Fragmenter.cs:145>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109194
+// Method Definition Index: 109308
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFractureAsyncU3Ed__1_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m50C2070D67A23370122A1F7A0C52D7EFBFBF9E82 (U3CFractureAsyncU3Ed__1_tB41326CA1D75FB57AD6DB2C1B21B9EC89C067655* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9244,7 +9244,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFractureAsyncU3Ed__1_System
 		return L_0;
 	}
 }
-// Method Definition Index: 109195
+// Method Definition Index: 109309
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFractureAsyncU3Ed__1_System_Collections_IEnumerator_Reset_mE4C2DC6CD55DA84B46D0B8B0365B1AF24B143594 (U3CFractureAsyncU3Ed__1_tB41326CA1D75FB57AD6DB2C1B21B9EC89C067655* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9253,7 +9253,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFractureAsyncU3Ed__1_System_Collectio
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFractureAsyncU3Ed__1_System_Collections_IEnumerator_Reset_mE4C2DC6CD55DA84B46D0B8B0365B1AF24B143594_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 109196
+// Method Definition Index: 109310
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFractureAsyncU3Ed__1_System_Collections_IEnumerator_get_Current_mBE012F6D9331FF155D9201FD4BCD092E9DD9E872 (U3CFractureAsyncU3Ed__1_tB41326CA1D75FB57AD6DB2C1B21B9EC89C067655* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9269,7 +9269,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFractureAsyncU3Ed__1_System
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109197
+// Method Definition Index: 109311
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_Slice_mA3622B7C868AC517A5A61095BDA158D6EE0D156D (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___0_meshData, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_sliceNormal, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_sliceOrigin, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___3_textureScale, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___4_textureOffset, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** ___5_topSlice, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** ___6_bottomSlice, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9292,7 +9292,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_Slice_mA3622B7C868AC517A5A610
 	FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* G_B4_0 = NULL;
 	FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* G_B10_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:27>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:27>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_0 = ___5_topSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_1 = ___0_meshData;
 		NullCheck(L_1);
@@ -9306,7 +9306,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_Slice_mA3622B7C868AC517A5A610
 		FragmentData__ctor_m7A407B28896B02B3BFE006D99DF4FC82989EFEAB(L_5, L_2, L_4, NULL);
 		*((RuntimeObject**)L_0) = (RuntimeObject*)L_5;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_0, (void*)(RuntimeObject*)L_5);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:28>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_6 = ___6_bottomSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_7 = ___0_meshData;
 		NullCheck(L_7);
@@ -9320,21 +9320,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_Slice_mA3622B7C868AC517A5A610
 		FragmentData__ctor_m7A407B28896B02B3BFE006D99DF4FC82989EFEAB(L_11, L_8, L_10, NULL);
 		*((RuntimeObject**)L_6) = (RuntimeObject*)L_11;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_6, (void*)(RuntimeObject*)L_11);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:31>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_12 = ___0_meshData;
 		NullCheck(L_12);
 		int32_t L_13;
 		L_13 = FragmentData_get_vertexCount_mDA8A6BA7F75AC36D748FBC7B76D597AB4F11668C(L_12, NULL);
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_14 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)L_13);
 		V_0 = L_14;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:34>
 		V_2 = 0;
 		goto IL_006d;
 	}
 
 IL_0038:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:36>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_15 = ___0_meshData;
 		NullCheck(L_15);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_16 = L_15->___Vertices;
@@ -9343,7 +9343,7 @@ IL_0038:
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_18;
 		L_18 = List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0(L_16, L_17, List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0_RuntimeMethod_var);
 		V_3 = L_18;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:37>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_19 = V_0;
 		int32_t L_20 = V_2;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_21 = V_3;
@@ -9354,7 +9354,7 @@ IL_0038:
 		L_25 = Vector3Extensions_IsAbovePlane_m98E1CA8BA3D17E30A4DFF3F5FFD2E201B38A83CA(L_22, L_23, L_24, NULL);
 		NullCheck(L_19);
 		(L_19)->SetAt(static_cast<il2cpp_array_size_t>(L_20), (bool)L_25);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:38>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_26 = V_0;
 		int32_t L_27 = V_2;
 		NullCheck(L_26);
@@ -9381,19 +9381,19 @@ IL_005f:
 
 IL_0062:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:39>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_34 = V_3;
 		int32_t L_35 = V_2;
 		NullCheck(G_B4_0);
 		FragmentData_AddMappedVertex_mE9EEA13C89C84B4DF02567D3426D4B31D357ADB0(G_B4_0, L_34, L_35, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:34>
 		int32_t L_36 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_36, 1));
 	}
 
 IL_006d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:34>
 		int32_t L_37 = V_2;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_38 = ___0_meshData;
 		NullCheck(L_38);
@@ -9407,7 +9407,7 @@ IL_006d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:42>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_41 = ___0_meshData;
 		NullCheck(L_41);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_42 = L_41->___Vertices;
@@ -9415,14 +9415,14 @@ IL_006d:
 		int32_t L_43;
 		L_43 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_42, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_1 = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:43>
 		V_4 = 0;
 		goto IL_00d0;
 	}
 
 IL_008c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:45>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_44 = ___0_meshData;
 		NullCheck(L_44);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_45 = L_44->___CutVertices;
@@ -9431,7 +9431,7 @@ IL_008c:
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_47;
 		L_47 = List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0(L_45, L_46, List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0_RuntimeMethod_var);
 		V_5 = L_47;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:46>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_48 = V_0;
 		int32_t L_49 = V_4;
 		int32_t L_50 = V_1;
@@ -9443,7 +9443,7 @@ IL_008c:
 		L_55 = Vector3Extensions_IsAbovePlane_m98E1CA8BA3D17E30A4DFF3F5FFD2E201B38A83CA(L_52, L_53, L_54, NULL);
 		NullCheck(L_48);
 		(L_48)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_49, L_50))), (bool)L_55);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:47>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_56 = V_0;
 		int32_t L_57 = V_4;
 		int32_t L_58 = V_1;
@@ -9471,20 +9471,20 @@ IL_00bc:
 
 IL_00bf:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:48>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_65 = V_5;
 		int32_t L_66 = V_4;
 		int32_t L_67 = V_1;
 		NullCheck(G_B10_0);
 		FragmentData_AddMappedVertex_mE9EEA13C89C84B4DF02567D3426D4B31D357ADB0(G_B10_0, L_65, ((int32_t)il2cpp_codegen_add(L_66, L_67)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:43>
 		int32_t L_68 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_68, 1));
 	}
 
 IL_00d0:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:43>
 		int32_t L_69 = V_4;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_70 = ___0_meshData;
 		NullCheck(L_70);
@@ -9498,7 +9498,7 @@ IL_00d0:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:51>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_73 = ___0_meshData;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_74 = ___5_topSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_75 = *((FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8**)L_74);
@@ -9508,7 +9508,7 @@ IL_00d0:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_79 = ___2_sliceOrigin;
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_80 = V_0;
 		MeshSlicer_SplitTriangles_m923F24DDF8BD2DC771808A883F12D225BB248FD5(L_73, L_75, L_77, L_78, L_79, L_80, 0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:52>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_81 = ___0_meshData;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_82 = ___5_topSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_83 = *((FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8**)L_82);
@@ -9518,7 +9518,7 @@ IL_00d0:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_87 = ___2_sliceOrigin;
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_88 = V_0;
 		MeshSlicer_SplitTriangles_m923F24DDF8BD2DC771808A883F12D225BB248FD5(L_81, L_83, L_85, L_86, L_87, L_88, 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:58>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_89 = ___5_topSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_90 = *((FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8**)L_89);
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8** L_91 = ___6_bottomSlice;
@@ -9529,11 +9529,11 @@ IL_00d0:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_95 = ___3_textureScale;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_96 = ___4_textureOffset;
 		MeshSlicer_FillCutFaces_m6D3E21944ED695289E3E9962525636EBE1BB635A(L_90, L_92, L_94, L_95, L_96, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:59>
 		return;
 	}
 }
-// Method Definition Index: 109198
+// Method Definition Index: 109312
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_FillCutFaces_m6D3E21944ED695289E3E9962525636EBE1BB635A (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___0_topSlice, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___1_bottomSlice, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_sliceNormal, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___3_textureScale, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___4_textureOffset, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9559,11 +9559,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_FillCutFaces_m6D3E21944ED6952
 	memset((&V_8), 0, sizeof(V_8));
 	int32_t V_9 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:81>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:81>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_0 = ___0_topSlice;
 		NullCheck(L_0);
 		FragmentData_WeldCutFaceVertices_mD2CCC2329224090821D436C4962DABF1E12FAAB4(L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:84>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_1 = ___0_topSlice;
 		NullCheck(L_1);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_2 = L_1->___CutVertices;
@@ -9576,13 +9576,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_FillCutFaces_m6D3E21944ED6952
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:84>
 		return;
 	}
 
 IL_0015:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:87>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_4 = ___0_topSlice;
 		NullCheck(L_4);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_5 = L_4->___CutVertices;
@@ -9593,20 +9593,20 @@ IL_0015:
 		ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* L_9 = (ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71*)il2cpp_codegen_object_new(ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71_il2cpp_TypeInfo_var);
 		ConstrainedTriangulator__ctor_mE44FB2E2C16BE5B1A3FB2D4F8AA118638D9EE2FF(L_9, L_5, L_7, L_8, NULL);
 		V_0 = L_9;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:88>
 		ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* L_10 = V_0;
 		NullCheck(L_10);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_11;
 		L_11 = VirtualFuncInvoker0< Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* >::Invoke(4, L_10);
 		V_1 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:91>
 		V_4 = 0;
 		goto IL_00ea;
 	}
 
 IL_0037:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:93>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:93>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_12 = ___0_topSlice;
 		NullCheck(L_12);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_13 = L_12->___CutVertices;
@@ -9614,7 +9614,7 @@ IL_0037:
 		NullCheck(L_13);
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_15;
 		L_15 = List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0(L_13, L_14, List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:94>
 		ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* L_16 = V_0;
 		NullCheck(L_16);
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_17 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)L_16)->___points;
@@ -9623,9 +9623,9 @@ IL_0037:
 		int32_t L_19 = L_18;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_20 = (L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
 		V_5 = L_20;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:99>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:100>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:101>
 		ConstrainedTriangulator_t603D7929D57DED7A7413291E4F81765D767A2B71* L_21 = V_0;
 		NullCheck(L_21);
 		float L_22 = ((Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793*)L_21)->___normalizationScaleFactor;
@@ -9649,26 +9649,26 @@ IL_0037:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_37 = ___4_textureOffset;
 		float L_38 = L_37.___y;
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_6), ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_22, L_25)), L_27)), L_29)), ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_31, L_34)), L_36)), L_38)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:104>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_39 = L_15;
 		V_7 = L_39;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:105>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_40 = ___2_sliceNormal;
 		(&V_7)->___normal = L_40;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:106>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_41 = V_6;
 		(&V_7)->___uv = L_41;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:108>
 		V_8 = L_39;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:109>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_42 = ___2_sliceNormal;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_43;
 		L_43 = Vector3_op_UnaryNegation_m5450829F333BD2A88AF9A592C4EE331661225915_inline(L_42, NULL);
 		(&V_8)->___normal = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:110>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_44 = V_6;
 		(&V_8)->___uv = L_44;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:112>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_45 = ___0_topSlice;
 		NullCheck(L_45);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_46 = L_45->___CutVertices;
@@ -9676,7 +9676,7 @@ IL_0037:
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_48 = V_7;
 		NullCheck(L_46);
 		List_1_set_Item_mE83942091AF3CC32590144C15572FFD85E047949(L_46, L_47, L_48, List_1_set_Item_mE83942091AF3CC32590144C15572FFD85E047949_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:113>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_49 = ___1_bottomSlice;
 		NullCheck(L_49);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_50 = L_49->___CutVertices;
@@ -9684,14 +9684,14 @@ IL_0037:
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_52 = V_8;
 		NullCheck(L_50);
 		List_1_set_Item_mE83942091AF3CC32590144C15572FFD85E047949(L_50, L_51, L_52, List_1_set_Item_mE83942091AF3CC32590144C15572FFD85E047949_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:91>
 		int32_t L_53 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_53, 1));
 	}
 
 IL_00ea:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:91>
 		int32_t L_54 = V_4;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_55 = ___0_topSlice;
 		NullCheck(L_55);
@@ -9705,7 +9705,7 @@ IL_00ea:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:117>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_58 = ___0_topSlice;
 		NullCheck(L_58);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_59 = L_58->___Vertices;
@@ -9713,7 +9713,7 @@ IL_00ea:
 		int32_t L_60;
 		L_60 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_59, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_2 = L_60;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:118>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_61 = ___1_bottomSlice;
 		NullCheck(L_61);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_62 = L_61->___Vertices;
@@ -9721,18 +9721,18 @@ IL_00ea:
 		int32_t L_63;
 		L_63 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_62, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_3 = L_63;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:119>
 		V_9 = 0;
 		goto IL_0159;
 	}
 
 IL_0119:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:121>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:122>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:123>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:124>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:125>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_64 = ___0_topSlice;
 		int32_t L_65 = V_2;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_66 = V_1;
@@ -9754,11 +9754,11 @@ IL_0119:
 		int32_t L_79 = (L_76)->GetAt(static_cast<il2cpp_array_size_t>(L_78));
 		NullCheck(L_64);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_64, ((int32_t)il2cpp_codegen_add(L_65, L_69)), ((int32_t)il2cpp_codegen_add(L_70, L_74)), ((int32_t)il2cpp_codegen_add(L_75, L_79)), 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:127>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:128>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:129>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:130>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:129>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:131>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_80 = ___1_bottomSlice;
 		int32_t L_81 = V_3;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_82 = V_1;
@@ -9780,14 +9780,14 @@ IL_0119:
 		int32_t L_95 = (L_92)->GetAt(static_cast<il2cpp_array_size_t>(L_94));
 		NullCheck(L_80);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_80, ((int32_t)il2cpp_codegen_add(L_81, L_85)), ((int32_t)il2cpp_codegen_add(L_86, L_90)), ((int32_t)il2cpp_codegen_add(L_91, L_95)), 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:119>
 		int32_t L_96 = V_9;
 		V_9 = ((int32_t)il2cpp_codegen_add(L_96, 3));
 	}
 
 IL_0159:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:119>
 		int32_t L_97 = V_9;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_98 = V_1;
 		NullCheck(L_98);
@@ -9797,11 +9797,11 @@ IL_0159:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:133>
 		return;
 	}
 }
-// Method Definition Index: 109199
+// Method Definition Index: 109313
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_SplitTriangles_m923F24DDF8BD2DC771808A883F12D225BB248FD5 (FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___0_meshData, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___1_topSlice, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___2_bottomSlice, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___3_sliceNormal, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___4_sliceOrigin, BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* ___5_side, int32_t ___6_subMesh, const RuntimeMethod* method) 
 {
 	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* V_0 = NULL;
@@ -9810,42 +9810,42 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_SplitTriangles_m923F24DDF8BD2
 	int32_t V_3 = 0;
 	int32_t V_4 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:153>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:153>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_0 = ___0_meshData;
 		int32_t L_1 = ___6_subMesh;
 		NullCheck(L_0);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_2;
 		L_2 = FragmentData_GetTriangles_mBC4C9B025EE40D7905C5CAE338051C52766AD7BF(L_0, L_1, NULL);
 		V_0 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:157>
 		V_4 = 0;
 		goto IL_0150;
 	}
 
 IL_0011:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:160>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_3 = V_0;
 		int32_t L_4 = V_4;
 		NullCheck(L_3);
 		int32_t L_5 = L_4;
 		int32_t L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
 		V_1 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:161>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_7 = V_0;
 		int32_t L_8 = V_4;
 		NullCheck(L_7);
 		int32_t L_9 = ((int32_t)il2cpp_codegen_add(L_8, 1));
 		int32_t L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
 		V_2 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:162>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:162>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_11 = V_0;
 		int32_t L_12 = V_4;
 		NullCheck(L_11);
 		int32_t L_13 = ((int32_t)il2cpp_codegen_add(L_12, 2));
 		int32_t L_14 = (L_11)->GetAt(static_cast<il2cpp_array_size_t>(L_13));
 		V_3 = L_14;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:165>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:165>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_15 = ___5_side;
 		int32_t L_16 = V_1;
 		NullCheck(L_15);
@@ -9879,7 +9879,7 @@ IL_0011:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:167>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_27 = ___1_topSlice;
 		int32_t L_28 = V_1;
 		int32_t L_29 = V_2;
@@ -9892,7 +9892,7 @@ IL_0011:
 
 IL_0046:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:170>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_32 = ___5_side;
 		int32_t L_33 = V_1;
 		NullCheck(L_32);
@@ -9926,7 +9926,7 @@ IL_0046:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:172>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:172>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_44 = ___2_bottomSlice;
 		int32_t L_45 = V_1;
 		int32_t L_46 = V_2;
@@ -9939,7 +9939,7 @@ IL_0046:
 
 IL_0068:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:178>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:178>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_49 = ___5_side;
 		int32_t L_50 = V_2;
 		NullCheck(L_49);
@@ -9973,7 +9973,7 @@ IL_0068:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:180>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:180>
 		int32_t L_61 = V_2;
 		int32_t L_62 = V_3;
 		int32_t L_63 = V_1;
@@ -9989,7 +9989,7 @@ IL_0068:
 
 IL_0090:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:182>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:182>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_70 = ___5_side;
 		int32_t L_71 = V_3;
 		NullCheck(L_70);
@@ -10023,7 +10023,7 @@ IL_0090:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:184>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:184>
 		int32_t L_82 = V_3;
 		int32_t L_83 = V_1;
 		int32_t L_84 = V_2;
@@ -10039,7 +10039,7 @@ IL_0090:
 
 IL_00b8:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:186>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_91 = ___5_side;
 		int32_t L_92 = V_1;
 		NullCheck(L_91);
@@ -10073,7 +10073,7 @@ IL_00b8:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:188>
 		int32_t L_103 = V_1;
 		int32_t L_104 = V_2;
 		int32_t L_105 = V_3;
@@ -10089,7 +10089,7 @@ IL_00b8:
 
 IL_00dd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:191>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:191>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_112 = ___5_side;
 		int32_t L_113 = V_2;
 		NullCheck(L_112);
@@ -10123,7 +10123,7 @@ IL_00dd:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:193>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:193>
 		int32_t L_124 = V_2;
 		int32_t L_125 = V_3;
 		int32_t L_126 = V_1;
@@ -10139,7 +10139,7 @@ IL_00dd:
 
 IL_0102:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:195>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:195>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_133 = ___5_side;
 		int32_t L_134 = V_3;
 		NullCheck(L_133);
@@ -10173,7 +10173,7 @@ IL_0102:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:197>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:197>
 		int32_t L_145 = V_3;
 		int32_t L_146 = V_1;
 		int32_t L_147 = V_2;
@@ -10189,7 +10189,7 @@ IL_0102:
 
 IL_0127:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:199>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:199>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_154 = ___5_side;
 		int32_t L_155 = V_1;
 		NullCheck(L_154);
@@ -10223,7 +10223,7 @@ IL_0127:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:201>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:201>
 		int32_t L_166 = V_1;
 		int32_t L_167 = V_2;
 		int32_t L_168 = V_3;
@@ -10238,14 +10238,14 @@ IL_0127:
 
 IL_014a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:157>
 		int32_t L_175 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_175, 3));
 	}
 
 IL_0150:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:157>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:157>
 		int32_t L_176 = V_4;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_177 = V_0;
 		NullCheck(L_177);
@@ -10255,11 +10255,11 @@ IL_0150:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:205>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:205>
 		return;
 	}
 }
-// Method Definition Index: 109200
+// Method Definition Index: 109314
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_SplitTriangle_m895072DCFC4F22D2156C72C96929494E6C51690A (int32_t ___0_v1_idx, int32_t ___1_v2_idx, int32_t ___2_v3_idx, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___3_sliceNormal, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___4_sliceOrigin, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___5_meshData, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___6_topSlice, FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* ___7_bottomSlice, int32_t ___8_subMesh, bool ___9_v3BelowCutPlane, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10304,7 +10304,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshSlicer_SplitTriangle_m895072DCFC4F22
 	MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 G_B9_0;
 	memset((&G_B9_0), 0, sizeof(G_B9_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:265>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:265>
 		int32_t L_0 = ___0_v1_idx;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_1 = ___5_meshData;
 		NullCheck(L_1);
@@ -10350,7 +10350,7 @@ IL_002b:
 IL_0038:
 	{
 		V_4 = G_B3_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:266>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:266>
 		int32_t L_15 = ___1_v2_idx;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_16 = ___5_meshData;
 		NullCheck(L_16);
@@ -10396,7 +10396,7 @@ IL_0065:
 IL_0072:
 	{
 		V_5 = G_B6_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:267>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:267>
 		int32_t L_30 = ___2_v3_idx;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_31 = ___5_meshData;
 		NullCheck(L_31);
@@ -10442,8 +10442,8 @@ IL_009f:
 IL_00ac:
 	{
 		V_6 = G_B9_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:269>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:270>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:269>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:270>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_45 = V_4;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_46 = L_45.___position;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_47 = V_6;
@@ -10472,7 +10472,7 @@ IL_00ac:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:273>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:273>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_59 = V_4;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_60 = L_59.___normal;
 		float L_61 = V_0;
@@ -10490,7 +10490,7 @@ IL_00ac:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_69;
 		L_69 = Vector3_get_normalized_m736BBF65D5CDA7A18414370D15B4DFCC1E466F07_inline((&V_15), NULL);
 		V_7 = L_69;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:274>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:274>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_70 = V_5;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_71 = L_70.___normal;
 		float L_72 = V_1;
@@ -10508,7 +10508,7 @@ IL_00ac:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_80;
 		L_80 = Vector3_get_normalized_m736BBF65D5CDA7A18414370D15B4DFCC1E466F07_inline((&V_15), NULL);
 		V_8 = L_80;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:275>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:275>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_81 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_82 = L_81.___uv;
 		float L_83 = V_0;
@@ -10523,7 +10523,7 @@ IL_00ac:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_90;
 		L_90 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_82, L_89, NULL);
 		V_9 = L_90;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:276>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:276>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_91 = V_5;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_92 = L_91.___uv;
 		float L_93 = V_1;
@@ -10538,35 +10538,35 @@ IL_00ac:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_100;
 		L_100 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_92, L_99, NULL);
 		V_10 = L_100;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:279>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:279>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_101 = ___6_topSlice;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_102 = V_2;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_103 = V_7;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_104 = V_9;
 		NullCheck(L_101);
 		FragmentData_AddCutFaceVertex_mAE7A46633F62873879F50427E5FEEAE987D8AB59(L_101, L_102, L_103, L_104, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:280>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_105 = ___6_topSlice;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_106 = V_3;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_107 = V_8;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_108 = V_10;
 		NullCheck(L_105);
 		FragmentData_AddCutFaceVertex_mAE7A46633F62873879F50427E5FEEAE987D8AB59(L_105, L_106, L_107, L_108, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:281>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:281>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_109 = ___7_bottomSlice;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_110 = V_2;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_111 = V_7;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_112 = V_9;
 		NullCheck(L_109);
 		FragmentData_AddCutFaceVertex_mAE7A46633F62873879F50427E5FEEAE987D8AB59(L_109, L_110, L_111, L_112, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:282>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:282>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_113 = ___7_bottomSlice;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_114 = V_3;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_115 = V_8;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_116 = V_10;
 		NullCheck(L_113);
 		FragmentData_AddCutFaceVertex_mAE7A46633F62873879F50427E5FEEAE987D8AB59(L_113, L_114, L_115, L_116, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:285>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:285>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_117 = ___6_topSlice;
 		NullCheck(L_117);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_118 = L_117->___Vertices;
@@ -10574,7 +10574,7 @@ IL_00ac:
 		int32_t L_119;
 		L_119 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_118, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_11 = ((int32_t)il2cpp_codegen_subtract(L_119, 2));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:286>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:286>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_120 = ___6_topSlice;
 		NullCheck(L_120);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_121 = L_120->___Vertices;
@@ -10582,7 +10582,7 @@ IL_00ac:
 		int32_t L_122;
 		L_122 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_121, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_12 = ((int32_t)il2cpp_codegen_subtract(L_122, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:287>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:287>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_123 = ___7_bottomSlice;
 		NullCheck(L_123);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_124 = L_123->___Vertices;
@@ -10590,7 +10590,7 @@ IL_00ac:
 		int32_t L_125;
 		L_125 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_124, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_13 = ((int32_t)il2cpp_codegen_subtract(L_125, 2));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:288>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:288>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_126 = ___7_bottomSlice;
 		NullCheck(L_126);
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_127 = L_126->___Vertices;
@@ -10598,7 +10598,7 @@ IL_00ac:
 		int32_t L_128;
 		L_128 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_127, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		V_14 = ((int32_t)il2cpp_codegen_subtract(L_128, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:290>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:290>
 		bool L_129 = ___9_v3BelowCutPlane;
 		if (!L_129)
 		{
@@ -10606,7 +10606,7 @@ IL_00ac:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:293>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:293>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_130 = ___6_topSlice;
 		int32_t L_131 = V_12;
 		int32_t L_132 = V_11;
@@ -10620,7 +10620,7 @@ IL_00ac:
 		int32_t L_138 = ___8_subMesh;
 		NullCheck(L_130);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_130, L_131, L_132, L_137, L_138, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:294>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:294>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_139 = ___6_topSlice;
 		int32_t L_140 = V_11;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_141 = ___6_topSlice;
@@ -10640,7 +10640,7 @@ IL_00ac:
 		int32_t L_151 = ___8_subMesh;
 		NullCheck(L_139);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_139, L_140, L_145, L_150, L_151, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:297>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:297>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_152 = ___7_bottomSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_153 = ___7_bottomSlice;
 		NullCheck(L_153);
@@ -10654,7 +10654,7 @@ IL_00ac:
 		int32_t L_160 = ___8_subMesh;
 		NullCheck(L_152);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_152, L_157, L_158, L_159, L_160, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:300>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:300>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_161 = ___6_topSlice;
 		NullCheck(L_161);
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_162 = L_161->___Constraints;
@@ -10674,7 +10674,7 @@ IL_00ac:
 		EdgeConstraint__ctor_m3CA2AE314AA1DDFE7036A0BAAE9FD614A61F9ECC(L_169, ((int32_t)il2cpp_codegen_subtract(L_165, 2)), ((int32_t)il2cpp_codegen_subtract(L_168, 1)), NULL);
 		NullCheck(L_162);
 		List_1_Add_m0F817312E9811995A76F41D1CD7161A9FA938DC6_inline(L_162, L_169, List_1_Add_m0F817312E9811995A76F41D1CD7161A9FA938DC6_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:301>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:301>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_170 = ___7_bottomSlice;
 		NullCheck(L_170);
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_171 = L_170->___Constraints;
@@ -10699,7 +10699,7 @@ IL_00ac:
 
 IL_02b5:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:306>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:306>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_179 = ___6_topSlice;
 		int32_t L_180 = V_11;
 		int32_t L_181 = V_12;
@@ -10713,7 +10713,7 @@ IL_02b5:
 		int32_t L_187 = ___8_subMesh;
 		NullCheck(L_179);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_179, L_180, L_181, L_186, L_187, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:309>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:309>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_188 = ___7_bottomSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_189 = ___7_bottomSlice;
 		NullCheck(L_189);
@@ -10733,7 +10733,7 @@ IL_02b5:
 		int32_t L_200 = ___8_subMesh;
 		NullCheck(L_188);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_188, L_193, L_198, L_199, L_200, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:310>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:310>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_201 = ___7_bottomSlice;
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_202 = ___7_bottomSlice;
 		NullCheck(L_202);
@@ -10747,7 +10747,7 @@ IL_02b5:
 		int32_t L_209 = ___8_subMesh;
 		NullCheck(L_201);
 		FragmentData_AddTriangle_m4DA441F982FFA8416A7DC0648968B4C015272FA6(L_201, L_206, L_207, L_208, L_209, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:313>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:313>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_210 = ___6_topSlice;
 		NullCheck(L_210);
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_211 = L_210->___Constraints;
@@ -10767,7 +10767,7 @@ IL_02b5:
 		EdgeConstraint__ctor_m3CA2AE314AA1DDFE7036A0BAAE9FD614A61F9ECC(L_218, ((int32_t)il2cpp_codegen_subtract(L_214, 1)), ((int32_t)il2cpp_codegen_subtract(L_217, 2)), NULL);
 		NullCheck(L_211);
 		List_1_Add_m0F817312E9811995A76F41D1CD7161A9FA938DC6_inline(L_211, L_218, List_1_Add_m0F817312E9811995A76F41D1CD7161A9FA938DC6_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:314>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:314>
 		FragmentData_t1AD6CF7BD9843FD45643468674402548E11737F8* L_219 = ___7_bottomSlice;
 		NullCheck(L_219);
 		List_1_t634049DE150FF9BC0FDCB9E54E2326DBE9D8D4CC* L_220 = L_219->___Constraints;
@@ -10791,7 +10791,7 @@ IL_02b5:
 
 IL_0358:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:317>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshSlicer.cs:317>
 		return;
 	}
 }
@@ -10803,22 +10803,22 @@ IL_0358:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109201
+// Method Definition Index: 109315
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshVertex__ctor_m03C11FD95B014B1A2475BD3B40AED40322281315 (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:15>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:15>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_position;
 		__this->___position = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:16>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:16>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
 		L_1 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		__this->___normal = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:17>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2;
 		L_2 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		__this->___uv = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:18>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:18>
 		return;
 	}
 }
@@ -10829,20 +10829,20 @@ IL2CPP_EXTERN_C  void MeshVertex__ctor_m03C11FD95B014B1A2475BD3B40AED40322281315
 	_thisAdjusted = reinterpret_cast<MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43*>(__this + _offset);
 	MeshVertex__ctor_m03C11FD95B014B1A2475BD3B40AED40322281315(_thisAdjusted, ___0_position, method);
 }
-// Method Definition Index: 109202
+// Method Definition Index: 109316
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshVertex__ctor_m4C6288980B6B0D156A7DA1839A927C9DB80798B2 (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_normal, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_uv, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:22>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_position;
 		__this->___position = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:23>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = ___1_normal;
 		__this->___normal = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:24>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___2_uv;
 		__this->___uv = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:25>
 		return;
 	}
 }
@@ -10853,7 +10853,7 @@ IL2CPP_EXTERN_C  void MeshVertex__ctor_m4C6288980B6B0D156A7DA1839A927C9DB80798B2
 	_thisAdjusted = reinterpret_cast<MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43*>(__this + _offset);
 	MeshVertex__ctor_m4C6288980B6B0D156A7DA1839A927C9DB80798B2(_thisAdjusted, ___0_position, ___1_normal, ___2_uv, method);
 }
-// Method Definition Index: 109203
+// Method Definition Index: 109317
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_Equals_m1CB94FBBDB288BA4F096337BAF75C84A2DB6037F (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10865,7 +10865,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_Equals_m1CB94FBBDB288BA4F0963
 	MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:29>
 		RuntimeObject* L_0 = ___0_obj;
 		if (((RuntimeObject*)IsInstSealed((RuntimeObject*)L_0, MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_il2cpp_TypeInfo_var)))
 		{
@@ -10873,13 +10873,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_Equals_m1CB94FBBDB288BA4F0963
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:29>
 		return (bool)0;
 	}
 
 IL_000a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:31>
 		RuntimeObject* L_1 = ___0_obj;
 		V_0 = ((*(MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43*)UnBox(L_1, MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_il2cpp_TypeInfo_var)));
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_2 = (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)(&(&V_0)->___position);
@@ -10898,7 +10898,7 @@ IL2CPP_EXTERN_C  bool MeshVertex_Equals_m1CB94FBBDB288BA4F096337BAF75C84A2DB6037
 	_returnValue = MeshVertex_Equals_m1CB94FBBDB288BA4F096337BAF75C84A2DB6037F(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 109204
+// Method Definition Index: 109318
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_op_Equality_m00B6835DF584A5EEDB77B4DB74520510E0AB3FB8 (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 ___0_lhs, MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 ___1_rhs, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10908,7 +10908,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_op_Equality_m00B6835DF584A5EE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:36>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_0 = ___1_rhs;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_1 = L_0;
 		RuntimeObject* L_2 = Box(MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_il2cpp_TypeInfo_var, &L_1);
@@ -10917,7 +10917,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_op_Equality_m00B6835DF584A5EE
 		return L_3;
 	}
 }
-// Method Definition Index: 109205
+// Method Definition Index: 109319
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_op_Inequality_m07B28A3F65C20D1165FFE2BEC59586CE003B1284 (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 ___0_lhs, MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 ___1_rhs, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10927,7 +10927,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_op_Inequality_m07B28A3F65C20D
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:41>
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_0 = ___1_rhs;
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_1 = L_0;
 		RuntimeObject* L_2 = Box(MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_il2cpp_TypeInfo_var, &L_1);
@@ -10936,11 +10936,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MeshVertex_op_Inequality_m07B28A3F65C20D
 		return (bool)((((int32_t)L_3) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 109206
+// Method Definition Index: 109320
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t MeshVertex_GetHashCode_m808A58FE42787322738B555A5190828EA304D65F (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:46>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_0 = (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)(&__this->___position);
 		int32_t L_1;
 		L_1 = Vector3_GetHashCode_mB08429DC931A85BD29CE11B9ABC77DE7E0E46327_inline(L_0, NULL);
@@ -10956,7 +10956,7 @@ IL2CPP_EXTERN_C  int32_t MeshVertex_GetHashCode_m808A58FE42787322738B555A5190828
 	_returnValue = MeshVertex_GetHashCode_m808A58FE42787322738B555A5190828EA304D65F(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 109207
+// Method Definition Index: 109321
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MeshVertex_ToString_mF1CD9AEDACCC9ECF8A832E8858A29858480EAE39 (MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10968,7 +10968,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MeshVertex_ToString_mF1CD9AEDACCC9E
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/MeshVertex.cs:52>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = __this->___position;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = L_0;
 		RuntimeObject* L_2 = Box(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var, &L_1);
@@ -11000,41 +11000,41 @@ IL2CPP_EXTERN_C  String_t* MeshVertex_ToString_mF1CD9AEDACCC9ECF8A832E8858A29858
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109208
+// Method Definition Index: 109322
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Quad__ctor_m8F6BD5FB3B8CA4AADB78AB4125F935302F80F0EF (Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434* __this, int32_t ___0_q1, int32_t ___1_q2, int32_t ___2_q3, int32_t ___3_q4, int32_t ___4_t1, int32_t ___5_t2, int32_t ___6_t1L, int32_t ___7_t1R, int32_t ___8_t2L, int32_t ___9_t2R, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:39>
 		int32_t L_0 = ___0_q1;
 		__this->___q1 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:40>
 		int32_t L_1 = ___1_q2;
 		__this->___q2 = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:41>
 		int32_t L_2 = ___2_q3;
 		__this->___q3 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:42>
 		int32_t L_3 = ___3_q4;
 		__this->___q4 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:43>
 		int32_t L_4 = ___4_t1;
 		__this->___t1 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:44>
 		int32_t L_5 = ___5_t2;
 		__this->___t2 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:45>
 		int32_t L_6 = ___6_t1L;
 		__this->___t1L = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:46>
 		int32_t L_7 = ___7_t1R;
 		__this->___t1R = L_7;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:47>
 		int32_t L_8 = ___8_t2L;
 		__this->___t2L = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:48>
 		int32_t L_9 = ___9_t2R;
 		__this->___t2R = L_9;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:49>
 		return;
 	}
 }
@@ -11045,7 +11045,7 @@ IL2CPP_EXTERN_C  void Quad__ctor_m8F6BD5FB3B8CA4AADB78AB4125F935302F80F0EF_Adjus
 	_thisAdjusted = reinterpret_cast<Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434*>(__this + _offset);
 	Quad__ctor_m8F6BD5FB3B8CA4AADB78AB4125F935302F80F0EF(_thisAdjusted, ___0_q1, ___1_q2, ___2_q3, ___3_q4, ___4_t1, ___5_t2, ___6_t1L, ___7_t1R, ___8_t2L, ___9_t2R, method);
 }
-// Method Definition Index: 109209
+// Method Definition Index: 109323
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Quad_ToString_m2291CEABE9C51ED4887954C7719FE250CB1354AE (Quad_tBC6C7D8DB0DBA532684BCEA4DF94A667E69AC434* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11056,7 +11056,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Quad_ToString_m2291CEABE9C51ED48879
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Quad.cs:54>
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)6);
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = L_0;
 		int32_t L_2 = __this->___t1;
@@ -11122,42 +11122,42 @@ IL2CPP_EXTERN_C  String_t* Quad_ToString_m2291CEABE9C51ED4887954C7719FE250CB1354
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109210
+// Method Definition Index: 109324
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TriangulationPoint_get_bin_m5D1D743EDC42C2F2A5C5BF1E4B4564FC0E5DD02A (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
 		int32_t L_0 = __this->___U3CbinU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 109211
+// Method Definition Index: 109325
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TriangulationPoint_set_bin_mEF923FE3E69026DEDACAC0B3B184233556292CD4 (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
 		int32_t L_0 = ___0_value;
 		__this->___U3CbinU3Ek__BackingField = L_0;
 		return;
 	}
 }
-// Method Definition Index: 109212
+// Method Definition Index: 109326
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TriangulationPoint__ctor_mCA840746F5016128F5A38F3853772B8663DA8BD1 (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* __this, int32_t ___0_index, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_coords, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:29>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:31>
 		int32_t L_0 = ___0_index;
 		__this->___index = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:32>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1 = ___1_coords;
 		__this->___coords = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:33>
 		return;
 	}
 }
-// Method Definition Index: 109213
+// Method Definition Index: 109327
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TriangulationPoint_ToString_mA451D67FC14D4B613EDB79BF1AFB28C33501C9E1 (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11168,7 +11168,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TriangulationPoint_ToString_mA451D6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:38>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = __this->___coords;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1 = L_0;
 		RuntimeObject* L_2 = Box(Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_il2cpp_TypeInfo_var, &L_1);
@@ -11189,7 +11189,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TriangulationPoint_ToString_mA451D6
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109214
+// Method Definition Index: 109328
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator__ctor_m07A1F4039045AEB9ACFCCAE6FA1F9A5D63D5923B (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* ___0_inputPoints, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_normal, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11217,11 +11217,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator__ctor_m07A1F4039045AEB9ACFC
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_6;
 	memset((&V_6), 0, sizeof(V_6));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:44>
 		__this->___normalizationScaleFactor = (1.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:51>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:54>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_0 = ___0_inputPoints;
 		if (!L_0)
 		{
@@ -11241,41 +11241,41 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator__ctor_m07A1F4039045AEB9ACFC
 
 IL_001d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:56>
 		return;
 	}
 
 IL_001e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:59>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_3 = ___0_inputPoints;
 		NullCheck(L_3);
 		int32_t L_4;
 		L_4 = List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_inline(L_3, List_1_get_Count_m5C85FB9F8976385F0EADA296F28C5AC0ECD40C85_RuntimeMethod_var);
 		__this->___N = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:60>
 		int32_t L_5 = __this->___N;
 		__this->___triangleCount = ((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_multiply(2, L_5)), 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:61>
 		int32_t L_6 = __this->___triangleCount;
 		il2cpp_array_size_t L_8[] = { (il2cpp_array_size_t)L_6, (il2cpp_array_size_t)6 };
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_7 = (Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F*)GenArrayNew(Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F_il2cpp_TypeInfo_var, L_8);
 		__this->___triangulation = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___triangulation), (void*)L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:62>
 		int32_t L_9 = __this->___triangleCount;
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_10 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)L_9);
 		__this->___skipTriangle = L_10;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___skipTriangle), (void*)L_10);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:63>
 		int32_t L_11 = __this->___N;
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_12 = (TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E*)(TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E*)SZArrayNew(TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E_il2cpp_TypeInfo_var, (uint32_t)((int32_t)il2cpp_codegen_add(L_11, 3)));
 		__this->___points = L_12;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___points), (void*)L_12);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:64>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13 = ___1_normal;
 		__this->___normal = L_13;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:67>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_14 = ___0_inputPoints;
 		NullCheck(L_14);
 		MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43 L_15;
@@ -11292,11 +11292,11 @@ IL_001e:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_21;
 		L_21 = Vector3_get_normalized_m736BBF65D5CDA7A18414370D15B4DFCC1E466F07_inline((&V_3), NULL);
 		V_0 = L_21;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:68>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_22;
 		L_22 = Vector3_get_normalized_m736BBF65D5CDA7A18414370D15B4DFCC1E466F07_inline((&___1_normal), NULL);
 		V_1 = L_22;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:69>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_24 = V_1;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25;
@@ -11305,14 +11305,14 @@ IL_001e:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26;
 		L_26 = Vector3_get_normalized_m736BBF65D5CDA7A18414370D15B4DFCC1E466F07_inline((&V_3), NULL);
 		V_2 = L_26;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:74>
 		V_4 = 0;
 		goto IL_00f8;
 	}
 
 IL_00ba:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:76>
 		List_1_t8FAA95C299F8C7C882C16591A03B751B4966C3B4* L_27 = ___0_inputPoints;
 		int32_t L_28 = V_4;
 		NullCheck(L_27);
@@ -11320,7 +11320,7 @@ IL_00ba:
 		L_29 = List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0(L_27, L_28, List_1_get_Item_m1CC668E55E055D7A2424F190973EEA2006FE59A0_RuntimeMethod_var);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30 = L_29.___position;
 		V_5 = L_30;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:77>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:77>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_31 = V_5;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_32 = V_0;
 		float L_33;
@@ -11330,7 +11330,7 @@ IL_00ba:
 		float L_36;
 		L_36 = Vector3_Dot_mBB86BB940AA0A32FA7D3C02AC42E5BC7095A5D52_inline(L_34, L_35, NULL);
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_6), L_33, L_36, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:78>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:78>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_37 = __this->___points;
 		int32_t L_38 = V_4;
 		int32_t L_39 = V_4;
@@ -11340,14 +11340,14 @@ IL_00ba:
 		NullCheck(L_37);
 		ArrayElementTypeCheck (L_37, L_41);
 		(L_37)->SetAt(static_cast<il2cpp_array_size_t>(L_38), (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49*)L_41);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:74>
 		int32_t L_42 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_42, 1));
 	}
 
 IL_00f8:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:74>
 		int32_t L_43 = V_4;
 		int32_t L_44 = __this->___N;
 		if ((((int32_t)L_43) < ((int32_t)L_44)))
@@ -11356,11 +11356,11 @@ IL_00f8:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:80>
 		return;
 	}
 }
-// Method Definition Index: 109215
+// Method Definition Index: 109329
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* Triangulator_Triangulate_mE286027AA434523BC111F55C6B345EA6B796AABE (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11376,7 +11376,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:89>
 		int32_t L_0 = __this->___N;
 		if ((((int32_t)L_0) >= ((int32_t)3)))
 		{
@@ -11384,35 +11384,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:91>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)0);
 		return L_1;
 	}
 
 IL_0010:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:94>
 		Triangulator_AddSuperTriangle_m975430FC27A6360B97E11B6F8E4133FA40EBA0AE(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:95>
 		Triangulator_NormalizeCoordinates_mB32913B3A352749B36D4768A69E6FB9FD2C0C379(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:96>
 		bool L_2;
 		L_2 = Triangulator_ComputeTriangulation_m65BE3F2484112CCBB6B7B2A2021496CE2DAD6ABC(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:97>
 		Triangulator_DiscardTrianglesWithSuperTriangleVertices_m49517CB774350338E44A570C5F097E57FD24583A(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:99>
 		int32_t L_3 = __this->___triangleCount;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_4 = (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)il2cpp_codegen_object_new(List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73_il2cpp_TypeInfo_var);
 		List_1__ctor_m30DD6F0F8DFBA9856BF7220A3CDB1C89ECEC0D98(L_4, ((int32_t)il2cpp_codegen_multiply(3, L_3)), List_1__ctor_m30DD6F0F8DFBA9856BF7220A3CDB1C89ECEC0D98_RuntimeMethod_var);
 		V_0 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:100>
 		V_1 = 0;
 		goto IL_0082;
 	}
 
 IL_003b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:103>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_5 = __this->___skipTriangle;
 		int32_t L_6 = V_1;
 		NullCheck(L_5);
@@ -11424,7 +11424,7 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:105>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_9 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_10 = __this->___triangulation;
 		int32_t L_11 = V_1;
@@ -11433,7 +11433,7 @@ IL_003b:
 		L_12 = (L_10)->GetAt(L_11, 0);
 		NullCheck(L_9);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_9, L_12, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:106>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_13 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_14 = __this->___triangulation;
 		int32_t L_15 = V_1;
@@ -11442,7 +11442,7 @@ IL_003b:
 		L_16 = (L_14)->GetAt(L_15, 1);
 		NullCheck(L_13);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_13, L_16, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:107>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_17 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_18 = __this->___triangulation;
 		int32_t L_19 = V_1;
@@ -11455,14 +11455,14 @@ IL_003b:
 
 IL_007e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:100>
 		int32_t L_21 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_21, 1));
 	}
 
 IL_0082:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:100>
 		int32_t L_22 = V_1;
 		int32_t L_23 = __this->___triangleCount;
 		if ((((int32_t)L_22) < ((int32_t)L_23)))
@@ -11471,7 +11471,7 @@ IL_0082:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:111>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_24 = V_0;
 		NullCheck(L_24);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_25;
@@ -11479,7 +11479,7 @@ IL_0082:
 		return L_25;
 	}
 }
-// Method Definition Index: 109216
+// Method Definition Index: 109330
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_NormalizeCoordinates_mB32913B3A352749B36D4768A69E6FB9FD2C0C379 (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -11493,29 +11493,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_NormalizeCoordinates_mB3291
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_8;
 	memset((&V_8), 0, sizeof(V_8));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:122>
 		V_0 = ((std::numeric_limits<float>::max)());
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:123>
 		V_1 = (-(std::numeric_limits<float>::max)());
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:124>
 		V_2 = ((std::numeric_limits<float>::max)());
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:125>
 		V_3 = (-(std::numeric_limits<float>::max)());
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:128>
 		V_4 = 0;
 		goto IL_00a1;
 	}
 
 IL_0020:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:130>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_0 = __this->___points;
 		int32_t L_1 = V_4;
 		NullCheck(L_0);
 		int32_t L_2 = L_1;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_3 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_2));
 		V_5 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:131>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_4 = V_5;
 		NullCheck(L_4);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_5 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_4->___coords);
@@ -11527,7 +11527,7 @@ IL_0020:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:131>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_8 = V_5;
 		NullCheck(L_8);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_9 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_8->___coords);
@@ -11537,7 +11537,7 @@ IL_0020:
 
 IL_0047:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:132>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_11 = V_5;
 		NullCheck(L_11);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_12 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_11->___coords);
@@ -11549,7 +11549,7 @@ IL_0047:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:132>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_15 = V_5;
 		NullCheck(L_15);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_16 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_15->___coords);
@@ -11559,7 +11559,7 @@ IL_0047:
 
 IL_0063:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:133>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_18 = V_5;
 		NullCheck(L_18);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_19 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_18->___coords);
@@ -11571,7 +11571,7 @@ IL_0063:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:133>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:133>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_22 = V_5;
 		NullCheck(L_22);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_23 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_22->___coords);
@@ -11581,7 +11581,7 @@ IL_0063:
 
 IL_007f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:134>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_25 = V_5;
 		NullCheck(L_25);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_26 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_25->___coords);
@@ -11593,7 +11593,7 @@ IL_007f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:134>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_29 = V_5;
 		NullCheck(L_29);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_30 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_29->___coords);
@@ -11603,14 +11603,14 @@ IL_007f:
 
 IL_009b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:128>
 		int32_t L_32 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_32, 1));
 	}
 
 IL_00a1:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:128>
 		int32_t L_33 = V_4;
 		int32_t L_34 = __this->___N;
 		if ((((int32_t)L_33) < ((int32_t)L_34)))
@@ -11619,7 +11619,7 @@ IL_00a1:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:139>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:139>
 		float L_35 = V_1;
 		float L_36 = V_0;
 		float L_37 = V_3;
@@ -11627,23 +11627,23 @@ IL_00a1:
 		float L_39;
 		L_39 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline(((float)il2cpp_codegen_subtract(L_35, L_36)), ((float)il2cpp_codegen_subtract(L_37, L_38)), NULL);
 		__this->___normalizationScaleFactor = L_39;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:142>
 		V_6 = 0;
 		goto IL_0116;
 	}
 
 IL_00c4:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:144>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:144>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_40 = __this->___points;
 		int32_t L_41 = V_6;
 		NullCheck(L_40);
 		int32_t L_42 = L_41;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_43 = (L_40)->GetAt(static_cast<il2cpp_array_size_t>(L_42));
 		V_7 = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:145>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:146>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:146>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:147>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_44 = V_7;
 		NullCheck(L_44);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_45 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_44->___coords);
@@ -11657,7 +11657,7 @@ IL_00c4:
 		float L_52 = V_2;
 		float L_53 = __this->___normalizationScaleFactor;
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_8), ((float)(((float)il2cpp_codegen_subtract(L_46, L_47))/L_48)), ((float)(((float)il2cpp_codegen_subtract(L_51, L_52))/L_53)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:149>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_54 = __this->___points;
 		int32_t L_55 = V_6;
 		NullCheck(L_54);
@@ -11666,14 +11666,14 @@ IL_00c4:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_58 = V_8;
 		NullCheck(L_57);
 		L_57->___coords = L_58;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:142>
 		int32_t L_59 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_59, 1));
 	}
 
 IL_0116:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:142>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:142>
 		int32_t L_60 = V_6;
 		int32_t L_61 = __this->___N;
 		if ((((int32_t)L_60) < ((int32_t)L_61)))
@@ -11682,11 +11682,11 @@ IL_0116:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:151>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:151>
 		return;
 	}
 }
-// Method Definition Index: 109217
+// Method Definition Index: 109331
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* Triangulator_SortPointsIntoBins_m4021C9F7DEA5F163222F2284252181543F8C3E74 (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11702,46 +11702,46 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE
 	int32_t V_4 = 0;
 	int32_t V_5 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:160>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:160>
 		int32_t L_0 = __this->___N;
 		float L_1;
 		L_1 = powf(((float)L_0), (0.25f));
 		int32_t L_2;
 		L_2 = Mathf_RoundToInt_m60F8B66CF27F1FA75AA219342BD184B75771EB4B_inline(L_1, NULL);
 		V_0 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:163>
 		int32_t L_3 = V_0;
 		int32_t L_4 = V_0;
 		V_1 = ((int32_t)il2cpp_codegen_multiply(L_3, L_4));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:167>
 		V_2 = 0;
 		goto IL_006a;
 	}
 
 IL_001f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:169>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:169>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_5 = __this->___points;
 		int32_t L_6 = V_2;
 		NullCheck(L_5);
 		int32_t L_7 = L_6;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_8 = (L_5)->GetAt(static_cast<il2cpp_array_size_t>(L_7));
 		V_3 = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:170>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:170>
 		int32_t L_9 = V_0;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_10 = V_3;
 		NullCheck(L_10);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_11 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_10->___coords);
 		float L_12 = L_11->___y;
 		V_4 = il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((0.99000001f), ((float)L_9))), L_12)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:171>
 		int32_t L_13 = V_0;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_14 = V_3;
 		NullCheck(L_14);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_15 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_14->___coords);
 		float L_16 = L_15->___x;
 		V_5 = il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((0.99000001f), ((float)L_13))), L_16)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:172>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:172>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_17 = V_3;
 		int32_t L_18 = V_4;
 		int32_t L_19 = V_5;
@@ -11750,14 +11750,14 @@ IL_001f:
 		L_21 = BinSort_GetBinNumber_mF189DC9E72CFE702B4089F82B256EF424A2C0F62(L_18, L_19, L_20, NULL);
 		NullCheck(L_17);
 		TriangulationPoint_set_bin_mEF923FE3E69026DEDACAC0B3B184233556292CD4_inline(L_17, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:167>
 		int32_t L_22 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_22, 1));
 	}
 
 IL_006a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:167>
 		int32_t L_23 = V_2;
 		int32_t L_24 = __this->___N;
 		if ((((int32_t)L_23) < ((int32_t)L_24)))
@@ -11766,7 +11766,7 @@ IL_006a:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:175>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:175>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_25 = __this->___points;
 		int32_t L_26 = __this->___N;
 		int32_t L_27 = V_1;
@@ -11775,7 +11775,7 @@ IL_006a:
 		return L_28;
 	}
 }
-// Method Definition Index: 109218
+// Method Definition Index: 109332
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_ComputeTriangulation_m65BE3F2484112CCBB6B7B2A2021496CE2DAD6ABC (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -11792,38 +11792,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_ComputeTriangulation_m65BE3
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_9;
 	memset((&V_9), 0, sizeof(V_9));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:185>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:185>
 		V_0 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:187>
 		V_1 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:189>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_0;
 		L_0 = Triangulator_SortPointsIntoBins_m4021C9F7DEA5F163222F2284252181543F8C3E74(__this, NULL);
 		V_2 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:192>
 		V_3 = 0;
 		goto IL_010b;
 	}
 
 IL_0012:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:194>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:194>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_1 = V_2;
 		int32_t L_2 = V_3;
 		NullCheck(L_1);
 		int32_t L_3 = L_2;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_4 = (L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
 		V_4 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:198>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:198>
 		V_5 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:199>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:199>
 		V_6 = (bool)0;
 		goto IL_0100;
 	}
 
 IL_0022:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:202>
 		int32_t L_5 = V_5;
 		int32_t L_6 = L_5;
 		V_5 = ((int32_t)il2cpp_codegen_add(L_6, 1));
@@ -11841,7 +11841,7 @@ IL_0022:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:208>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:208>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_9 = __this->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_10 = __this->___triangulation;
 		int32_t L_11 = V_0;
@@ -11854,7 +11854,7 @@ IL_0022:
 		NullCheck(L_14);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_15 = L_14->___coords;
 		V_7 = L_15;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:209>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:209>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_16 = __this->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_17 = __this->___triangulation;
 		int32_t L_18 = V_0;
@@ -11867,7 +11867,7 @@ IL_0022:
 		NullCheck(L_21);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_22 = L_21->___coords;
 		V_8 = L_22;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:210>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_23 = __this->___points;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_24 = __this->___triangulation;
 		int32_t L_25 = V_0;
@@ -11880,7 +11880,7 @@ IL_0022:
 		NullCheck(L_28);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_29 = L_28->___coords;
 		V_9 = L_29;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:215>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:215>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_30 = V_7;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_31 = V_8;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_32 = V_4;
@@ -11894,7 +11894,7 @@ IL_0022:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:217>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_35 = __this->___triangulation;
 		int32_t L_36 = V_0;
 		NullCheck(L_35);
@@ -11906,7 +11906,7 @@ IL_0022:
 
 IL_00a9:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:219>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_38 = V_8;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_39 = V_9;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_40 = V_4;
@@ -11920,7 +11920,7 @@ IL_00a9:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:221>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_43 = __this->___triangulation;
 		int32_t L_44 = V_0;
 		NullCheck(L_43);
@@ -11932,7 +11932,7 @@ IL_00a9:
 
 IL_00cb:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:223>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:223>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_46 = V_9;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_47 = V_7;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_48 = V_4;
@@ -11946,7 +11946,7 @@ IL_00cb:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:225>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:225>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_51 = __this->___triangulation;
 		int32_t L_52 = V_0;
 		NullCheck(L_51);
@@ -11958,24 +11958,24 @@ IL_00cb:
 
 IL_00ed:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:230>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_54 = V_4;
 		int32_t L_55 = V_0;
 		int32_t L_56 = V_1;
 		Triangulator_InsertPointIntoTriangle_m8A053D400EA7FC62B27C450F48764DFC66B96BBA(__this, L_54, L_55, L_56, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:231>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:231>
 		int32_t L_57 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_57, 2));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:232>
 		int32_t L_58 = V_1;
 		V_0 = L_58;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:233>
 		V_6 = (bool)1;
 	}
 
 IL_0100:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:200>
 		bool L_59 = V_6;
 		if (!L_59)
 		{
@@ -11985,14 +11985,14 @@ IL_0100:
 
 IL_0107:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:192>
 		int32_t L_60 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_60, 1));
 	}
 
 IL_010b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:192>
 		int32_t L_61 = V_3;
 		int32_t L_62 = __this->___N;
 		if ((((int32_t)L_61) < ((int32_t)L_62)))
@@ -12001,11 +12001,11 @@ IL_010b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:238>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:238>
 		return (bool)1;
 	}
 }
-// Method Definition Index: 109219
+// Method Definition Index: 109333
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_AddSuperTriangle_m975430FC27A6360B97E11B6F8E4133FA40EBA0AE (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12015,7 +12015,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_AddSuperTriangle_m975430FC2
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:247>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:247>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_0 = __this->___points;
 		int32_t L_1 = __this->___N;
 		int32_t L_2 = __this->___N;
@@ -12027,7 +12027,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_AddSuperTriangle_m975430FC2
 		NullCheck(L_0);
 		ArrayElementTypeCheck (L_0, L_4);
 		(L_0)->SetAt(static_cast<il2cpp_array_size_t>(L_1), (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49*)L_4);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:248>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:248>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_5 = __this->___points;
 		int32_t L_6 = __this->___N;
 		int32_t L_7 = __this->___N;
@@ -12039,7 +12039,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_AddSuperTriangle_m975430FC2
 		NullCheck(L_5);
 		ArrayElementTypeCheck (L_5, L_9);
 		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_6, 1))), (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49*)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:249>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:249>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_10 = __this->___points;
 		int32_t L_11 = __this->___N;
 		int32_t L_12 = __this->___N;
@@ -12051,54 +12051,54 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_AddSuperTriangle_m975430FC2
 		NullCheck(L_10);
 		ArrayElementTypeCheck (L_10, L_14);
 		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_11, 2))), (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49*)L_14);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:252>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_15 = __this->___triangulation;
 		int32_t L_16 = __this->___N;
 		NullCheck(L_15);
 		(L_15)->SetAt(0, 0, L_16);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:253>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:253>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_17 = __this->___triangulation;
 		int32_t L_18 = __this->___N;
 		NullCheck(L_17);
 		(L_17)->SetAt(0, 1, ((int32_t)il2cpp_codegen_add(L_18, 1)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:254>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_19 = __this->___triangulation;
 		int32_t L_20 = __this->___N;
 		NullCheck(L_19);
 		(L_19)->SetAt(0, 2, ((int32_t)il2cpp_codegen_add(L_20, 2)));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:257>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_21 = __this->___triangulation;
 		NullCheck(L_21);
 		(L_21)->SetAt(0, 3, (-1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:258>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:258>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_22 = __this->___triangulation;
 		NullCheck(L_22);
 		(L_22)->SetAt(0, 4, (-1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:259>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:259>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_23 = __this->___triangulation;
 		NullCheck(L_23);
 		(L_23)->SetAt(0, 5, (-1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:260>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:260>
 		return;
 	}
 }
-// Method Definition Index: 109220
+// Method Definition Index: 109334
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A053D400EA7FC62B27C450F48764DFC66B96BBA (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* ___0_p, int32_t ___1_t, int32_t ___2_triangleCount, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	int32_t V_2 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:288>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:288>
 		int32_t L_0 = ___1_t;
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:289>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:289>
 		int32_t L_1 = ___2_triangleCount;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_1, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:290>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:290>
 		int32_t L_2 = ___2_triangleCount;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_2, 2));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:295>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:295>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_3 = __this->___triangulation;
 		int32_t L_4 = V_1;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_5 = ___0_p;
@@ -12106,7 +12106,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		int32_t L_6 = L_5->___index;
 		NullCheck(L_3);
 		(L_3)->SetAt(L_4, 0, L_6);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:296>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:296>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_7 = __this->___triangulation;
 		int32_t L_8 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_9 = __this->___triangulation;
@@ -12116,7 +12116,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_11 = (L_9)->GetAt(L_10, 1);
 		NullCheck(L_7);
 		(L_7)->SetAt(L_8, 1, L_11);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:297>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:297>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_12 = __this->___triangulation;
 		int32_t L_13 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_14 = __this->___triangulation;
@@ -12126,13 +12126,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_16 = (L_14)->GetAt(L_15, 2);
 		NullCheck(L_12);
 		(L_12)->SetAt(L_13, 2, L_16);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:299>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:299>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_17 = __this->___triangulation;
 		int32_t L_18 = V_1;
 		int32_t L_19 = V_2;
 		NullCheck(L_17);
 		(L_17)->SetAt(L_18, 3, L_19);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:300>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:300>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_20 = __this->___triangulation;
 		int32_t L_21 = V_1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_22 = __this->___triangulation;
@@ -12142,13 +12142,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_24 = (L_22)->GetAt(L_23, 4);
 		NullCheck(L_20);
 		(L_20)->SetAt(L_21, 4, L_24);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:301>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:301>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_25 = __this->___triangulation;
 		int32_t L_26 = V_1;
 		int32_t L_27 = V_0;
 		NullCheck(L_25);
 		(L_25)->SetAt(L_26, 5, L_27);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:303>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:303>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_28 = __this->___triangulation;
 		int32_t L_29 = V_2;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_30 = ___0_p;
@@ -12156,7 +12156,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		int32_t L_31 = L_30->___index;
 		NullCheck(L_28);
 		(L_28)->SetAt(L_29, 0, L_31);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:304>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:304>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_32 = __this->___triangulation;
 		int32_t L_33 = V_2;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_34 = __this->___triangulation;
@@ -12166,7 +12166,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_36 = (L_34)->GetAt(L_35, 0);
 		NullCheck(L_32);
 		(L_32)->SetAt(L_33, 1, L_36);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:305>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:305>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_37 = __this->___triangulation;
 		int32_t L_38 = V_2;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_39 = __this->___triangulation;
@@ -12176,13 +12176,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_41 = (L_39)->GetAt(L_40, 1);
 		NullCheck(L_37);
 		(L_37)->SetAt(L_38, 2, L_41);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:307>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:307>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_42 = __this->___triangulation;
 		int32_t L_43 = V_2;
 		int32_t L_44 = V_0;
 		NullCheck(L_42);
 		(L_42)->SetAt(L_43, 3, L_44);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:308>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:308>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_45 = __this->___triangulation;
 		int32_t L_46 = V_2;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_47 = __this->___triangulation;
@@ -12192,13 +12192,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_49 = (L_47)->GetAt(L_48, 3);
 		NullCheck(L_45);
 		(L_45)->SetAt(L_46, 4, L_49);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:309>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:309>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_50 = __this->___triangulation;
 		int32_t L_51 = V_2;
 		int32_t L_52 = V_1;
 		NullCheck(L_50);
 		(L_50)->SetAt(L_51, 5, L_52);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:312>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:312>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_53 = __this->___triangulation;
 		int32_t L_54 = ___1_t;
 		NullCheck(L_53);
@@ -12207,7 +12207,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		int32_t L_56 = ___1_t;
 		int32_t L_57 = V_2;
 		Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D(__this, L_55, L_56, L_57, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:313>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:313>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_58 = __this->___triangulation;
 		int32_t L_59 = ___1_t;
 		NullCheck(L_58);
@@ -12216,7 +12216,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		int32_t L_61 = ___1_t;
 		int32_t L_62 = V_1;
 		Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D(__this, L_60, L_61, L_62, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:316>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:316>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_63 = __this->___triangulation;
 		int32_t L_64 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_65 = __this->___triangulation;
@@ -12226,7 +12226,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_67 = (L_65)->GetAt(L_66, 2);
 		NullCheck(L_63);
 		(L_63)->SetAt(L_64, 1, L_67);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:317>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:317>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_68 = __this->___triangulation;
 		int32_t L_69 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_70 = __this->___triangulation;
@@ -12236,7 +12236,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_72 = (L_70)->GetAt(L_71, 0);
 		NullCheck(L_68);
 		(L_68)->SetAt(L_69, 2, L_72);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:318>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:318>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_73 = __this->___triangulation;
 		int32_t L_74 = V_0;
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_75 = ___0_p;
@@ -12244,7 +12244,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		int32_t L_76 = L_75->___index;
 		NullCheck(L_73);
 		(L_73)->SetAt(L_74, 0, L_76);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:320>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:320>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_77 = __this->___triangulation;
 		int32_t L_78 = V_0;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_79 = __this->___triangulation;
@@ -12254,29 +12254,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_InsertPointIntoTriangle_m8A
 		L_81 = (L_79)->GetAt(L_80, 5);
 		NullCheck(L_77);
 		(L_77)->SetAt(L_78, 4, L_81);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:321>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:321>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_82 = __this->___triangulation;
 		int32_t L_83 = V_0;
 		int32_t L_84 = V_1;
 		NullCheck(L_82);
 		(L_82)->SetAt(L_83, 3, L_84);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:322>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:322>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_85 = __this->___triangulation;
 		int32_t L_86 = V_0;
 		int32_t L_87 = V_2;
 		NullCheck(L_85);
 		(L_85)->SetAt(L_86, 5, L_87);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:325>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:325>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_88 = ___0_p;
 		int32_t L_89 = V_0;
 		int32_t L_90 = V_1;
 		int32_t L_91 = V_2;
 		Triangulator_RestoreDelauneyTriangulation_mEA207D1821A968379BBEE1E7A02623A30D446E60(__this, L_88, L_89, L_90, L_91, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:326>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:326>
 		return;
 	}
 }
-// Method Definition Index: 109221
+// Method Definition Index: 109335
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_RestoreDelauneyTriangulation_mEA207D1821A968379BBEE1E7A02623A30D446E60 (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* ___0_p, int32_t ___1_t1, int32_t ___2_t2, int32_t ___3_t3, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12293,11 +12293,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_RestoreDelauneyTriangulatio
 	int32_t V_0 = 0;
 	Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* V_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:338>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:338>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_0 = (Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0*)il2cpp_codegen_object_new(Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0_il2cpp_TypeInfo_var);
 		Stack_1__ctor_m15AA6BCAA89D1677FAAB3066BD50868D45D87CE8(L_0, Stack_1__ctor_m15AA6BCAA89D1677FAAB3066BD50868D45D87CE8_RuntimeMethod_var);
 		V_1 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:340>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:340>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_1 = V_1;
 		int32_t L_2 = ___1_t1;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_3 = __this->___triangulation;
@@ -12310,7 +12310,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_RestoreDelauneyTriangulatio
 		ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477((&L_6), L_2, L_5, ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477_RuntimeMethod_var);
 		NullCheck(L_1);
 		Stack_1_Push_mAD568A239742EC730D02CF40821C9295347F2EB9(L_1, L_6, Stack_1_Push_mAD568A239742EC730D02CF40821C9295347F2EB9_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:341>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:341>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_7 = V_1;
 		int32_t L_8 = ___2_t2;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_9 = __this->___triangulation;
@@ -12323,7 +12323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_RestoreDelauneyTriangulatio
 		ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477((&L_12), L_8, L_11, ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477_RuntimeMethod_var);
 		NullCheck(L_7);
 		Stack_1_Push_mAD568A239742EC730D02CF40821C9295347F2EB9(L_7, L_12, Stack_1_Push_mAD568A239742EC730D02CF40821C9295347F2EB9_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:342>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:342>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_13 = V_1;
 		int32_t L_14 = ___3_t3;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_15 = __this->___triangulation;
@@ -12341,7 +12341,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_RestoreDelauneyTriangulatio
 
 IL_0055:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:349>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:349>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_19 = V_1;
 		NullCheck(L_19);
 		ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D L_20;
@@ -12351,7 +12351,7 @@ IL_0055:
 		___1_t1 = L_22;
 		int32_t L_23 = L_21.___Item2;
 		___2_t2 = L_23;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:351>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:351>
 		int32_t L_24 = ___2_t2;
 		if ((((int32_t)L_24) == ((int32_t)(-1))))
 		{
@@ -12359,7 +12359,7 @@ IL_0055:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:357>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:357>
 		TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* L_25 = ___0_p;
 		NullCheck(L_25);
 		int32_t L_26 = L_25->___index;
@@ -12373,7 +12373,7 @@ IL_0055:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:361>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:361>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_30 = V_1;
 		int32_t L_31 = ___1_t1;
 		int32_t L_32 = ___3_t3;
@@ -12382,7 +12382,7 @@ IL_0055:
 		ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477((&L_33), L_31, L_32, ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477_RuntimeMethod_var);
 		NullCheck(L_30);
 		Stack_1_Push_mAD568A239742EC730D02CF40821C9295347F2EB9(L_30, L_33, Stack_1_Push_mAD568A239742EC730D02CF40821C9295347F2EB9_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:362>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:362>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_34 = V_1;
 		int32_t L_35 = ___2_t2;
 		int32_t L_36 = V_0;
@@ -12395,7 +12395,7 @@ IL_0055:
 
 IL_009d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:344>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:344>
 		Stack_1_tC567C3F1F0F97D06C9156782DD0BDF1A353AD2C0* L_38 = V_1;
 		NullCheck(L_38);
 		int32_t L_39;
@@ -12406,11 +12406,11 @@ IL_009d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:365>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:365>
 		return;
 	}
 }
-// Method Definition Index: 109222
+// Method Definition Index: 109336
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapQuadDiagonalIfNeeded_mAE7AAB4D8B7F9ED5A943BB212A516D4E9100ADF9 (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, int32_t ___0_p, int32_t ___1_t1, int32_t ___2_t2, int32_t* ___3_t3, int32_t* ___4_t4, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -12418,10 +12418,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapQuadDiagonalIfNeeded_mA
 	int32_t V_2 = 0;
 	int32_t V_3 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:405>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:405>
 		int32_t L_0 = ___0_p;
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:412>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:412>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_1 = __this->___triangulation;
 		int32_t L_2 = ___2_t2;
 		NullCheck(L_1);
@@ -12434,28 +12434,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapQuadDiagonalIfNeeded_mA
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:414>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:414>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_5 = __this->___triangulation;
 		int32_t L_6 = ___2_t2;
 		NullCheck(L_5);
 		int32_t L_7;
 		L_7 = (L_5)->GetAt(L_6, 1);
 		V_1 = L_7;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:415>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:415>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_8 = __this->___triangulation;
 		int32_t L_9 = ___2_t2;
 		NullCheck(L_8);
 		int32_t L_10;
 		L_10 = (L_8)->GetAt(L_9, 0);
 		V_2 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:416>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:416>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_11 = __this->___triangulation;
 		int32_t L_12 = ___2_t2;
 		NullCheck(L_11);
 		int32_t L_13;
 		L_13 = (L_11)->GetAt(L_12, 2);
 		V_3 = L_13;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:418>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:418>
 		int32_t* L_14 = ___3_t3;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_15 = __this->___triangulation;
 		int32_t L_16 = ___2_t2;
@@ -12463,7 +12463,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapQuadDiagonalIfNeeded_mA
 		int32_t L_17;
 		L_17 = (L_15)->GetAt(L_16, 4);
 		*((int32_t*)L_14) = (int32_t)L_17;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:419>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:419>
 		int32_t* L_18 = ___4_t4;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_19 = __this->___triangulation;
 		int32_t L_20 = ___2_t2;
@@ -12476,7 +12476,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapQuadDiagonalIfNeeded_mA
 
 IL_0061:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:421>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:421>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_22 = __this->___triangulation;
 		int32_t L_23 = ___2_t2;
 		NullCheck(L_22);
@@ -12489,28 +12489,28 @@ IL_0061:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:423>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:423>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_26 = __this->___triangulation;
 		int32_t L_27 = ___2_t2;
 		NullCheck(L_26);
 		int32_t L_28;
 		L_28 = (L_26)->GetAt(L_27, 2);
 		V_1 = L_28;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:424>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:424>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_29 = __this->___triangulation;
 		int32_t L_30 = ___2_t2;
 		NullCheck(L_29);
 		int32_t L_31;
 		L_31 = (L_29)->GetAt(L_30, 1);
 		V_2 = L_31;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:425>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:425>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_32 = __this->___triangulation;
 		int32_t L_33 = ___2_t2;
 		NullCheck(L_32);
 		int32_t L_34;
 		L_34 = (L_32)->GetAt(L_33, 0);
 		V_3 = L_34;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:427>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:427>
 		int32_t* L_35 = ___3_t3;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_36 = __this->___triangulation;
 		int32_t L_37 = ___2_t2;
@@ -12518,7 +12518,7 @@ IL_0061:
 		int32_t L_38;
 		L_38 = (L_36)->GetAt(L_37, 5);
 		*((int32_t*)L_35) = (int32_t)L_38;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:428>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:428>
 		int32_t* L_39 = ___4_t4;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_40 = __this->___triangulation;
 		int32_t L_41 = ___2_t2;
@@ -12531,28 +12531,28 @@ IL_0061:
 
 IL_00bd:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:432>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:432>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_43 = __this->___triangulation;
 		int32_t L_44 = ___2_t2;
 		NullCheck(L_43);
 		int32_t L_45;
 		L_45 = (L_43)->GetAt(L_44, 0);
 		V_1 = L_45;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:433>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:433>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_46 = __this->___triangulation;
 		int32_t L_47 = ___2_t2;
 		NullCheck(L_46);
 		int32_t L_48;
 		L_48 = (L_46)->GetAt(L_47, 2);
 		V_2 = L_48;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:434>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:434>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_49 = __this->___triangulation;
 		int32_t L_50 = ___2_t2;
 		NullCheck(L_49);
 		int32_t L_51;
 		L_51 = (L_49)->GetAt(L_50, 1);
 		V_3 = L_51;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:436>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:436>
 		int32_t* L_52 = ___3_t3;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_53 = __this->___triangulation;
 		int32_t L_54 = ___2_t2;
@@ -12560,7 +12560,7 @@ IL_00bd:
 		int32_t L_55;
 		L_55 = (L_53)->GetAt(L_54, 3);
 		*((int32_t*)L_52) = (int32_t)L_55;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:437>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:437>
 		int32_t* L_56 = ___4_t4;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_57 = __this->___triangulation;
 		int32_t L_58 = ___2_t2;
@@ -12572,7 +12572,7 @@ IL_00bd:
 
 IL_0107:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:441>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:441>
 		TriangulationPointU5BU5D_t4F5CF6E517FD05B44FE71503ADB3FB1913A2CF5E* L_60 = __this->___points;
 		int32_t L_61 = V_1;
 		NullCheck(L_60);
@@ -12609,13 +12609,13 @@ IL_0107:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:444>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:444>
 		int32_t* L_81 = ___3_t3;
 		int32_t L_82 = *((int32_t*)L_81);
 		int32_t L_83 = ___2_t2;
 		int32_t L_84 = ___1_t1;
 		Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D(__this, L_82, L_83, L_84, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:445>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:445>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_85 = __this->___triangulation;
 		int32_t L_86 = ___1_t1;
 		NullCheck(L_85);
@@ -12624,56 +12624,56 @@ IL_0107:
 		int32_t L_88 = ___1_t1;
 		int32_t L_89 = ___2_t2;
 		Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D(__this, L_87, L_88, L_89, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:448>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:448>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_90 = __this->___triangulation;
 		int32_t L_91 = ___1_t1;
 		int32_t L_92 = V_0;
 		NullCheck(L_90);
 		(L_90)->SetAt(L_91, 0, L_92);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:449>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:449>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_93 = __this->___triangulation;
 		int32_t L_94 = ___1_t1;
 		int32_t L_95 = V_1;
 		NullCheck(L_93);
 		(L_93)->SetAt(L_94, 1, L_95);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:450>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:450>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_96 = __this->___triangulation;
 		int32_t L_97 = ___1_t1;
 		int32_t L_98 = V_3;
 		NullCheck(L_96);
 		(L_96)->SetAt(L_97, 2, L_98);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:452>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:452>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_99 = __this->___triangulation;
 		int32_t L_100 = ___2_t2;
 		int32_t L_101 = V_0;
 		NullCheck(L_99);
 		(L_99)->SetAt(L_100, 0, L_101);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:453>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:453>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_102 = __this->___triangulation;
 		int32_t L_103 = ___2_t2;
 		int32_t L_104 = V_3;
 		NullCheck(L_102);
 		(L_102)->SetAt(L_103, 1, L_104);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:454>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:454>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_105 = __this->___triangulation;
 		int32_t L_106 = ___2_t2;
 		int32_t L_107 = V_2;
 		NullCheck(L_105);
 		(L_105)->SetAt(L_106, 2, L_107);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:458>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:458>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_108 = __this->___triangulation;
 		int32_t L_109 = ___2_t2;
 		int32_t L_110 = ___1_t1;
 		NullCheck(L_108);
 		(L_108)->SetAt(L_109, 3, L_110);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:459>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:459>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_111 = __this->___triangulation;
 		int32_t L_112 = ___2_t2;
 		int32_t* L_113 = ___4_t4;
 		int32_t L_114 = *((int32_t*)L_113);
 		NullCheck(L_111);
 		(L_111)->SetAt(L_112, 4, L_114);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:460>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:460>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_115 = __this->___triangulation;
 		int32_t L_116 = ___2_t2;
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_117 = __this->___triangulation;
@@ -12683,44 +12683,44 @@ IL_0107:
 		L_119 = (L_117)->GetAt(L_118, 5);
 		NullCheck(L_115);
 		(L_115)->SetAt(L_116, 5, L_119);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:463>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:463>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_120 = __this->___triangulation;
 		int32_t L_121 = ___1_t1;
 		int32_t* L_122 = ___3_t3;
 		int32_t L_123 = *((int32_t*)L_122);
 		NullCheck(L_120);
 		(L_120)->SetAt(L_121, 4, L_123);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:464>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:464>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_124 = __this->___triangulation;
 		int32_t L_125 = ___1_t1;
 		int32_t L_126 = ___2_t2;
 		NullCheck(L_124);
 		(L_124)->SetAt(L_125, 5, L_126);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:466>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:466>
 		return (bool)1;
 	}
 
 IL_0212:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:470>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:470>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109223
+// Method Definition Index: 109337
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_DiscardTrianglesWithSuperTriangleVertices_m49517CB774350338E44A570C5F097E57FD24583A (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:479>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:479>
 		V_0 = 0;
 		goto IL_0042;
 	}
 
 IL_0004:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:482>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:483>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:484>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:482>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:483>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:484>
 		int32_t L_0 = V_0;
 		int32_t L_1 = __this->___N;
 		bool L_2;
@@ -12753,7 +12753,7 @@ IL_0004:
 
 IL_0035:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:486>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:486>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_9 = __this->___skipTriangle;
 		int32_t L_10 = V_0;
 		NullCheck(L_9);
@@ -12762,14 +12762,14 @@ IL_0035:
 
 IL_003e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:479>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:479>
 		int32_t L_11 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_11, 1));
 	}
 
 IL_0042:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:479>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:479>
 		int32_t L_12 = V_0;
 		int32_t L_13 = __this->___triangleCount;
 		if ((((int32_t)L_12) < ((int32_t)L_13)))
@@ -12778,11 +12778,11 @@ IL_0042:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:489>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:489>
 		return;
 	}
 }
-// Method Definition Index: 109224
+// Method Definition Index: 109338
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapTest_m74D4ADEB7454E0860439B3860B1486BA4922A187 (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_v1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_v2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_v3, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___3_v4, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -12797,67 +12797,67 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapTest_m74D4ADEB7454E0860
 	float V_9 = 0.0f;
 	float V_10 = 0.0f;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:501>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:501>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___0_v1;
 		float L_1 = L_0.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___2_v3;
 		float L_3 = L_2.___x;
 		V_0 = ((float)il2cpp_codegen_subtract(L_1, L_3));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:502>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:502>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_4 = ___1_v2;
 		float L_5 = L_4.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_6 = ___2_v3;
 		float L_7 = L_6.___x;
 		V_1 = ((float)il2cpp_codegen_subtract(L_5, L_7));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:503>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:503>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8 = ___0_v1;
 		float L_9 = L_8.___y;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_10 = ___2_v3;
 		float L_11 = L_10.___y;
 		V_2 = ((float)il2cpp_codegen_subtract(L_9, L_11));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:504>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:504>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_12 = ___1_v2;
 		float L_13 = L_12.___y;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_14 = ___2_v3;
 		float L_15 = L_14.___y;
 		V_3 = ((float)il2cpp_codegen_subtract(L_13, L_15));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:505>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:505>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_16 = ___0_v1;
 		float L_17 = L_16.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_18 = ___3_v4;
 		float L_19 = L_18.___x;
 		V_4 = ((float)il2cpp_codegen_subtract(L_17, L_19));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:506>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:506>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_20 = ___1_v2;
 		float L_21 = L_20.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_22 = ___3_v4;
 		float L_23 = L_22.___x;
 		V_5 = ((float)il2cpp_codegen_subtract(L_21, L_23));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:507>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:507>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_24 = ___0_v1;
 		float L_25 = L_24.___y;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_26 = ___3_v4;
 		float L_27 = L_26.___y;
 		V_6 = ((float)il2cpp_codegen_subtract(L_25, L_27));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:508>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:508>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_28 = ___1_v2;
 		float L_29 = L_28.___y;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_30 = ___3_v4;
 		float L_31 = L_30.___y;
 		V_7 = ((float)il2cpp_codegen_subtract(L_29, L_31));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:510>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:510>
 		float L_32 = V_0;
 		float L_33 = V_1;
 		float L_34 = V_2;
 		float L_35 = V_3;
 		V_8 = ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_32, L_33)), ((float)il2cpp_codegen_multiply(L_34, L_35))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:511>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:511>
 		float L_36 = V_5;
 		float L_37 = V_4;
 		float L_38 = V_7;
 		float L_39 = V_6;
 		V_9 = ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_36, L_37)), ((float)il2cpp_codegen_multiply(L_38, L_39))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:513>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:513>
 		float L_40 = V_8;
 		if ((!(((float)L_40) >= ((float)(0.0f)))))
 		{
@@ -12872,13 +12872,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_SwapTest_m74D4ADEB7454E0860
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:515>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:515>
 		return (bool)0;
 	}
 
 IL_00a2:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:517>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:517>
 		float L_42 = V_8;
 		if ((!(((float)L_42) < ((float)(0.0f)))))
 		{
@@ -12893,36 +12893,36 @@ IL_00a2:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:519>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:519>
 		return (bool)1;
 	}
 
 IL_00b6:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:523>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:523>
 		float L_44 = V_0;
 		float L_45 = V_3;
 		float L_46 = V_1;
 		float L_47 = V_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:524>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:524>
 		float L_48 = V_5;
 		float L_49 = V_6;
 		float L_50 = V_4;
 		float L_51 = V_7;
 		V_10 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(L_48, L_49)), ((float)il2cpp_codegen_multiply(L_50, L_51))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:525>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:525>
 		float L_52 = V_9;
 		float L_53 = V_10;
 		float L_54 = V_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:526>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:526>
 		return (bool)((((float)((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(L_44, L_45)), ((float)il2cpp_codegen_multiply(L_46, L_47)))), L_52)), ((float)il2cpp_codegen_multiply(L_53, L_54))))) < ((float)(0.0f)))? 1 : 0);
 	}
 }
-// Method Definition Index: 109225
+// Method Definition Index: 109339
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_TriangleContainsVertex_m67C23BC71301476866450D923D724FE6850E252E (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, int32_t ___0_t, int32_t ___1_v, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:538>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:538>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_0 = __this->___triangulation;
 		int32_t L_1 = ___0_t;
 		NullCheck(L_0);
@@ -12961,12 +12961,12 @@ IL_0031:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 109226
+// Method Definition Index: 109340
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_UpdateAdjacency_m63AA28168B453712ED1EEF635930D775F62B510D (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, int32_t ___0_t, int32_t ___1_tOld, int32_t ___2_tNew, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:552>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:552>
 		int32_t L_0 = ___0_t;
 		if ((!(((uint32_t)L_0) == ((uint32_t)(-1)))))
 		{
@@ -12974,13 +12974,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Triangulator_UpdateAdjacency_m63AA28168B
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:554>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:554>
 		return;
 	}
 
 IL_0005:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:556>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:556>
 		int32_t L_1 = ___0_t;
 		int32_t L_2 = ___1_tOld;
 		bool L_3;
@@ -12991,7 +12991,7 @@ IL_0005:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:558>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:558>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_4 = __this->___triangulation;
 		int32_t L_5 = ___0_t;
 		int32_t L_6 = V_0;
@@ -13002,18 +13002,18 @@ IL_0005:
 
 IL_001f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:560>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:560>
 		return;
 	}
 }
-// Method Definition Index: 109227
+// Method Definition Index: 109341
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_FindSharedEdge_mAD0A2190AB0B5A38D4959AD0F9A6E43614C25B2A (Triangulator_tA9CF1328BE05EB83C3696F9A789E0D0E7EE24793* __this, int32_t ___0_tOrigin, int32_t ___1_tAdjacent, int32_t* ___2_edgeIndex, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:573>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:573>
 		int32_t* L_0 = ___2_edgeIndex;
 		*((int32_t*)L_0) = (int32_t)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:575>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:575>
 		int32_t L_1 = ___0_tOrigin;
 		if ((!(((uint32_t)L_1) == ((uint32_t)(-1)))))
 		{
@@ -13021,13 +13021,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Triangulator_FindSharedEdge_mAD0A2190AB0
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:577>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:577>
 		return (bool)0;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:579>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:579>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_2 = __this->___triangulation;
 		int32_t L_3 = ___0_tOrigin;
 		NullCheck(L_2);
@@ -13040,16 +13040,16 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:581>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:581>
 		int32_t* L_6 = ___2_edgeIndex;
 		*((int32_t*)L_6) = (int32_t)3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:582>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:582>
 		return (bool)1;
 	}
 
 IL_001e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:584>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:584>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_7 = __this->___triangulation;
 		int32_t L_8 = ___0_tOrigin;
 		NullCheck(L_7);
@@ -13062,16 +13062,16 @@ IL_001e:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:586>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:586>
 		int32_t* L_11 = ___2_edgeIndex;
 		*((int32_t*)L_11) = (int32_t)4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:587>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:587>
 		return (bool)1;
 	}
 
 IL_0033:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:589>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:589>
 		Int32U5BU2CU5D_t46F2694E7DAD7B2B05C940EC5B9DE04E40D0516F* L_12 = __this->___triangulation;
 		int32_t L_13 = ___0_tOrigin;
 		NullCheck(L_12);
@@ -13084,16 +13084,16 @@ IL_0033:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:591>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:591>
 		int32_t* L_16 = ___2_edgeIndex;
 		*((int32_t*)L_16) = (int32_t)5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:592>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:592>
 		return (bool)1;
 	}
 
 IL_0048:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:596>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/Triangulator.cs:596>
 		return (bool)0;
 	}
 }
@@ -13105,7 +13105,7 @@ IL_0048:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109228
+// Method Definition Index: 109342
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_OnCollisionEnter_m74C8522B770F55C0C652C2D056E3047081F53443 (UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* __this, Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* ___0_collision, const RuntimeMethod* method) 
 {
 	ContactPoint_t241857959C0D517C21F541BB04B63FA6C1EAB3F9 V_0;
@@ -13114,7 +13114,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_OnCollisionEnter_m74C85
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:20>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:20>
 		bool L_0 = __this->___isFrozen;
 		if (L_0)
 		{
@@ -13122,13 +13122,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_OnCollisionEnter_m74C85
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:22>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:25>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_1 = ___0_collision;
 		NullCheck(L_1);
 		int32_t L_2;
@@ -13139,7 +13139,7 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:28>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_3 = ___0_collision;
 		NullCheck(L_3);
 		ContactPointU5BU5D_t3570603E8D0685B71B3D8BA07031674B00C5E411* L_4;
@@ -13148,7 +13148,7 @@ IL_0009:
 		int32_t L_5 = 0;
 		ContactPoint_t241857959C0D517C21F541BB04B63FA6C1EAB3F9 L_6 = (L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
 		V_0 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:29>
 		Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* L_7 = ___0_collision;
 		NullCheck(L_7);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8;
@@ -13158,7 +13158,7 @@ IL_0009:
 		L_9 = Vector3_get_magnitude_mF0D6017E90B345F1F52D1CC564C640F1A847AF2D_inline((&V_2), NULL);
 		float L_10;
 		L_10 = Time_get_fixedDeltaTime_m43136893D00AF5D5FE80AD05609558F6E2381381(NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:32>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_11 = __this->___triggerOptions;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_12;
 		L_12 = ContactPoint_get_otherCollider_m717D0758D578C93C6CA26E2BA87325682B6C2550((&V_0), NULL);
@@ -13172,8 +13172,8 @@ IL_0009:
 		bool L_15;
 		L_15 = TriggerOptions_IsTagAllowed_m014166E0F679A965746BAA679C3E1875FE63D71F(L_11, L_14, NULL);
 		V_1 = L_15;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:36>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:37>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_16 = __this->___triggerOptions;
 		NullCheck(L_16);
 		float L_17 = L_16->___minimumCollisionForce;
@@ -13193,21 +13193,21 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:39>
 		UnfreezeFragment_Unfreeze_mE4B1EAF1754B8117CB74B305AF38EC01591DC9CB(__this, NULL);
 	}
 
 IL_0075:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:42>
 		return;
 	}
 }
-// Method Definition Index: 109229
+// Method Definition Index: 109343
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_OnTriggerEnter_mB051F525AD5235FD0B39874A10BA27BD1FC17908 (UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_collider, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:46>
 		bool L_0 = __this->___isFrozen;
 		if (L_0)
 		{
@@ -13215,13 +13215,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_OnTriggerEnter_mB051F52
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:48>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:51>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_1 = __this->___triggerOptions;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_2 = ___0_collider;
 		NullCheck(L_2);
@@ -13233,7 +13233,7 @@ IL_0009:
 		NullCheck(L_1);
 		bool L_5;
 		L_5 = TriggerOptions_IsTagAllowed_m014166E0F679A965746BAA679C3E1875FE63D71F(L_1, L_4, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:52>
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_6 = __this->___triggerOptions;
 		NullCheck(L_6);
 		bool L_7 = L_6->___filterCollisionsByTag;
@@ -13262,17 +13262,17 @@ IL_0009:
 
 IL_0045:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:54>
 		UnfreezeFragment_Unfreeze_mE4B1EAF1754B8117CB74B305AF38EC01591DC9CB(__this, NULL);
 	}
 
 IL_004b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:56>
 		return;
 	}
 }
-// Method Definition Index: 109230
+// Method Definition Index: 109344
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_Unfreeze_mE4B1EAF1754B8117CB74B305AF38EC01591DC9CB (UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13284,7 +13284,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_Unfreeze_mE4B1EAF1754B8
 	UnfreezeFragmentU5BU5D_t6381AD6460B71B1F2E98BD7E64F87EA8A7DDE962* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:60>
 		bool L_0 = __this->___unfreezeAll;
 		if (!L_0)
 		{
@@ -13292,7 +13292,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_Unfreeze_mE4B1EAF1754B8
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:62>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1;
 		L_1 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_1);
@@ -13308,13 +13308,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_Unfreeze_mE4B1EAF1754B8
 
 IL_001d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:62>
 		UnfreezeFragmentU5BU5D_t6381AD6460B71B1F2E98BD7E64F87EA8A7DDE962* L_4 = V_0;
 		int32_t L_5 = V_1;
 		NullCheck(L_4);
 		int32_t L_6 = L_5;
 		UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* L_7 = (L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_6));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:64>
 		NullCheck(L_7);
 		UnfreezeFragment_UnfreezeThis_m6871775CC08734D5F34A0F08BC58DD4D9F0DDB32(L_7, NULL);
 		int32_t L_8 = V_1;
@@ -13323,7 +13323,7 @@ IL_001d:
 
 IL_0029:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:62>
 		int32_t L_9 = V_1;
 		UnfreezeFragmentU5BU5D_t6381AD6460B71B1F2E98BD7E64F87EA8A7DDE962* L_10 = V_0;
 		NullCheck(L_10);
@@ -13338,13 +13338,13 @@ IL_0029:
 
 IL_0031:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:69>
 		UnfreezeFragment_UnfreezeThis_m6871775CC08734D5F34A0F08BC58DD4D9F0DDB32(__this, NULL);
 	}
 
 IL_0037:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:72>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:72>
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_11 = __this->___onFractureCompleted;
 		if (!L_11)
 		{
@@ -13352,7 +13352,7 @@ IL_0037:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:74>
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_12 = __this->___onFractureCompleted;
 		NullCheck(L_12);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(L_12, NULL);
@@ -13360,11 +13360,11 @@ IL_0037:
 
 IL_004a:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:76>
 		return;
 	}
 }
-// Method Definition Index: 109231
+// Method Definition Index: 109345
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_UnfreezeThis_m6871775CC08734D5F34A0F08BC58DD4D9F0DDB32 (UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13374,24 +13374,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment_UnfreezeThis_m6871775CC
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:80>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_0;
 		L_0 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(__this, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
 		NullCheck(L_0);
 		Rigidbody_set_constraints_mE81BF0DAEB980E320538231E092CA4663885A9A3(L_0, 0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:81>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:81>
 		__this->___isFrozen = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:82>
 		return;
 	}
 }
-// Method Definition Index: 109232
+// Method Definition Index: 109346
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment__ctor_mB61A0DC9E5B5CA3C046CE10765D30A16E4975B9C (UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:10>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:10>
 		__this->___unfreezeAll = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:16>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/UnfreezeFragment.cs:16>
 		__this->___isFrozen = (bool)1;
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -13405,20 +13405,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnfreezeFragment__ctor_mB61A0DC9E5B5CA3C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109233
+// Method Definition Index: 109347
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallbackOptions__ctor_m05F4C0092654144CADF333D2EFCA634184681A3F (CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:15>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:15>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:17>
 		__this->___onCompleted = (UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___onCompleted), (void*)(UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:18>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:18>
 		return;
 	}
 }
-// Method Definition Index: 109234
+// Method Definition Index: 109348
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallbackOptions_CallOnFracture_mEE0545F7A10F42B2AD012A88E74AE41AAD17CDF8 (CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_instigator, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_fracturedObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_point, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13430,7 +13430,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallbackOptions_CallOnFracture_mEE0545F7
 	UnityEvent_3_t4187AAD7BB0AE84FD632FD1256BCBB46CBBE0785* G_B2_0 = NULL;
 	UnityEvent_3_t4187AAD7BB0AE84FD632FD1256BCBB46CBBE0785* G_B1_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:22>
 		UnityEvent_3_t4187AAD7BB0AE84FD632FD1256BCBB46CBBE0785* L_0 = __this->___onFracture;
 		UnityEvent_3_t4187AAD7BB0AE84FD632FD1256BCBB46CBBE0785* L_1 = L_0;
 		if (L_1)
@@ -13451,7 +13451,7 @@ IL_000b:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4 = ___2_point;
 		NullCheck(G_B2_0);
 		UnityEvent_3_Invoke_mC142F211294BF6AFAFCCDCB237C54459CBDAA11A(G_B2_0, L_2, L_3, L_4, UnityEvent_3_Invoke_mC142F211294BF6AFAFCCDCB237C54459CBDAA11A_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/CallbackOptions.cs:23>
 		return;
 	}
 }
@@ -13463,36 +13463,36 @@ IL_000b:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109235
+// Method Definition Index: 109349
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FractureOptions__ctor_m9D4BDA37208F313CA20E8323BB9074869F1D8C0A (FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:38>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:40>
 		__this->___fragmentCount = ((int32_t)10);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:41>
 		__this->___xAxis = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:42>
 		__this->___yAxis = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:43>
 		__this->___zAxis = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:44>
 		__this->___detectFloatingFragments = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:45>
 		__this->___asynchronous = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:46>
 		__this->___insideMaterial = (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___insideMaterial), (void*)(Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:47>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0;
 		L_0 = Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline(NULL);
 		__this->___textureScale = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:48>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1;
 		L_1 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		__this->___textureOffset = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/FractureOptions.cs:49>
 		return;
 	}
 }
@@ -13504,7 +13504,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FractureOptions__ctor_m9D4BDA37208F313CA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109236
+// Method Definition Index: 109350
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PrefractureOptions__ctor_m54B605619BC040D2D361DB0AC04C0E1D945EC8C3 (PrefractureOptions_tD9568EAE453D0269EE83CC20F7A15482C965B0FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13514,16 +13514,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PrefractureOptions__ctor_m54B605619BC040
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:19>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:19>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:21>
 		__this->___unfreezeAll = (bool)1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:22>
 		__this->___saveFragmentsToDisk = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:23>
 		__this->___saveLocation = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___saveLocation), (void*)_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/PrefractureOptions.cs:24>
 		return;
 	}
 }
@@ -13535,19 +13535,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PrefractureOptions__ctor_m54B605619BC040
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109237
+// Method Definition Index: 109351
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RefractureOptions__ctor_m321BA38283CFC27FA0874537A3176E2582EFA3B4 (RefractureOptions_tD5F2F9AFC291E2C56F6CAE80BA2F08A73C8E72DE* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:21>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:23>
 		__this->___enableRefracturing = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:24>
 		__this->___maxRefractureCount = 1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:25>
 		__this->___invokeCallbacks = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/RefractureOptions.cs:26>
 		return;
 	}
 }
@@ -13559,30 +13559,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RefractureOptions__ctor_m321BA38283CFC27
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109238
+// Method Definition Index: 109352
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SliceOptions__ctor_m58178699DE1D23A433EBF896FDD31AE6E7A1F9F4 (SliceOptions_t9487C4C1BC769948517C8CC1D6F1BF67E0ED09BD* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:30>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:32>
 		__this->___enableReslicing = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:33>
 		__this->___maxResliceCount = 1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:34>
 		__this->___insideMaterial = (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___insideMaterial), (void*)(Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:35>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0;
 		L_0 = Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline(NULL);
 		__this->___textureScale = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:36>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1;
 		L_1 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		__this->___textureOffset = L_1;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:37>
 		__this->___invokeCallbacks = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/SliceOptions.cs:38>
 		return;
 	}
 }
@@ -13602,7 +13602,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SliceOptions__ctor_m58178699DE1D23A433EB
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109239
+// Method Definition Index: 109353
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TriggerOptions__ctor_m61427549EAC1273EDD9FC32F881AB04B5AE0DE52 (TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13613,26 +13613,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TriggerOptions__ctor_m61427549EAC1273EDD
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:30>
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:32>
 		__this->___triggerType = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:33>
 		__this->___minimumCollisionForce = (0.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:34>
 		__this->___filterCollisionsByTag = (bool)0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:35>
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_0 = (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*)il2cpp_codegen_object_new(List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD_il2cpp_TypeInfo_var);
 		List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E(L_0, List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E_RuntimeMethod_var);
 		__this->___triggerAllowedTags = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___triggerAllowedTags), (void*)L_0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:36>
 		__this->___triggerKey = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:37>
 		return;
 	}
 }
-// Method Definition Index: 109240
+// Method Definition Index: 109354
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TriggerOptions_IsTagAllowed_m014166E0F679A965746BAA679C3E1875FE63D71F (TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* __this, String_t* ___0_tag, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13642,7 +13642,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TriggerOptions_IsTagAllowed_m014166E0F67
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Options/TriggerOptions.cs:46>
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_0 = __this->___triggerAllowedTags;
 		String_t* L_1 = ___0_tag;
 		NullCheck(L_0);
@@ -13659,7 +13659,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TriggerOptions_IsTagAllowed_m014166E0F67
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109241
+// Method Definition Index: 109355
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_OnValidate_m0ADAC6381744F1434416DB8C77D07BB00B3F1D21 (Prefracture_tC2647A3E02E43090373BB8D2FF45DED0D163FFCD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13673,7 +13673,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_OnValidate_m0ADAC6381744F143
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:22>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_0);
@@ -13688,7 +13688,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_OnValidate_m0ADAC6381744F143
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:27>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:27>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
 		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_3);
@@ -13698,7 +13698,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_OnValidate_m0ADAC6381744F143
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5;
 		L_5 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_4, NULL);
 		V_0 = L_5;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:28>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:28>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = V_0;
 		float L_7 = L_6.___x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8 = V_0;
@@ -13731,7 +13731,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_OnValidate_m0ADAC6381744F143
 
 IL_004e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:30>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18;
 		L_18 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
@@ -13740,11 +13740,11 @@ IL_004e:
 
 IL_005e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:33>
 		return;
 	}
 }
-// Method Definition Index: 109242
+// Method Definition Index: 109356
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_ComputeFracture_m01194C01D1E8603753E028FCEBB74687BAB77D55 (Prefracture_tC2647A3E02E43090373BB8D2FF45DED0D163FFCD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13759,7 +13759,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_ComputeFracture_m01194C01D1E
 	}
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:44>
 		il2cpp_codegen_runtime_class_init_inline(Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
 		bool L_0;
 		L_0 = Application_get_isEditor_mEAC51E3ACE6DCE438087FB14BD75A3C219D354D0(NULL);
@@ -13780,19 +13780,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture_ComputeFracture_m01194C01D1E
 
 IL_000e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:44>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:46>
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_2;
 		L_2 = Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623(__this, Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623_RuntimeMethod_var);
 		NullCheck(L_2);
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_3;
 		L_3 = MeshFilter_get_sharedMesh_mE4ED3E7E31C1DE5097E4980DA996E620F7D7CB8C(L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:48>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
@@ -13802,7 +13802,7 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:51>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___fragmentRoot;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -13813,7 +13813,7 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:54>
 		String_t* L_7;
 		L_7 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(__this, NULL);
 		String_t* L_8;
@@ -13822,7 +13822,7 @@ IL_000f:
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_9, L_8, NULL);
 		__this->___fragmentRoot = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___fragmentRoot), (void*)L_9);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:55>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___fragmentRoot;
 		NullCheck(L_10);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11;
@@ -13834,7 +13834,7 @@ IL_000f:
 		L_13 = Transform_get_parent_m65354E28A4C94EC00EBCF03532F7B0718380791E(L_12, NULL);
 		NullCheck(L_11);
 		Transform_SetParent_m6677538B60246D958DD91F931C50F969CCBB5250(L_11, L_13, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:58>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___fragmentRoot;
 		NullCheck(L_14);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15;
@@ -13846,7 +13846,7 @@ IL_000f:
 		L_17 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_16, NULL);
 		NullCheck(L_15);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_15, L_17, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:59>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___fragmentRoot;
 		NullCheck(L_18);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19;
@@ -13858,7 +13858,7 @@ IL_000f:
 		L_21 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_20, NULL);
 		NullCheck(L_19);
 		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_19, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:60>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = __this->___fragmentRoot;
 		NullCheck(L_22);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_23;
@@ -13871,16 +13871,16 @@ IL_000f:
 
 IL_00b7:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:63>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25;
 		L_25 = Prefracture_CreateFragmentTemplate_mE00215E87AD246FBD2E6BAC94C9BABD0E3CE6CFF(__this, NULL);
 		V_0 = L_25;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:65>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:66>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:67>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:68>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:69>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:70>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:70>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_26;
 		L_26 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		FractureOptions_tD96C5DCDB17B11AEEDCF3B08971D72BE580DF98A* L_27 = __this->___fractureOptions;
@@ -13896,16 +13896,16 @@ IL_00b7:
 		NullCheck(L_33);
 		String_t* L_34 = L_33->___saveLocation;
 		Fragmenter_Fracture_m2475906BBD3C7F54C337D0E280C65B6AD8A9B0D1(L_26, L_27, L_28, L_30, L_32, L_34, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:73>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_35 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DestroyImmediate_m6336EBC83591A5DB64EC70C92132824C6E258705(L_35, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:76>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_36;
 		L_36 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		NullCheck(L_36);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_36, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:79>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_37 = __this->___callbackOptions;
 		NullCheck(L_37);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_38 = L_37->___onCompleted;
@@ -13915,7 +13915,7 @@ IL_00b7:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:81>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:81>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_39 = __this->___callbackOptions;
 		NullCheck(L_39);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_40 = L_39->___onCompleted;
@@ -13925,11 +13925,11 @@ IL_00b7:
 
 IL_0120:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:84>
 		return;
 	}
 }
-// Method Definition Index: 109243
+// Method Definition Index: 109357
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Prefracture_CreateFragmentTemplate_mE00215E87AD246FBD2E6BAC94C9BABD0E3CE6CFF (Prefracture_tC2647A3E02E43090373BB8D2FF45DED0D163FFCD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13951,34 +13951,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
 	Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* V_1 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:94>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m7D0340DE160786E6EFA8DABD39EC3B694DA30AAD(L_0, NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:95>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = V_0;
 		NullCheck(L_1);
 		Object_set_name_mC79E6DC8FFD72479C90F0C4CC7F42A0FEAF5AE47(L_1, _stringLiteral9A08A617FCF06FDA3322DF86E11EDAFE8DAE2A18, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:96>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = V_0;
 		String_t* L_3;
 		L_3 = Component_get_tag_m7561A81116CAB82B8A459E934662BFC2039FB7EF(__this, NULL);
 		NullCheck(L_2);
 		GameObject_set_tag_m0A41528AFD8C83E1CEC5D769921159897CDD2B24(L_2, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:99>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = V_0;
 		NullCheck(L_4);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_5;
 		L_5 = GameObject_AddComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mEAB8177A64DF1A50BB7996ACEEEADCD65358AC94(L_4, GameObject_AddComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mEAB8177A64DF1A50BB7996ACEEEADCD65358AC94_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:102>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = V_0;
 		NullCheck(L_6);
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_7;
 		L_7 = GameObject_AddComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_mCDD3E77673305199F52C772AE8C7952F3864740D(L_6, GameObject_AddComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_mCDD3E77673305199F52C772AE8C7952F3864740D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:103>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:104>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:105>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:106>
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_8 = (MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D*)(MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D*)SZArrayNew(MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D_il2cpp_TypeInfo_var, (uint32_t)2);
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_9 = L_8;
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_10;
@@ -13998,20 +13998,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(1), (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)L_14);
 		NullCheck(L_7);
 		Renderer_set_sharedMaterials_m665ADE4190214CC2AC52490B4A7373D7EE75DEB2(L_7, L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:109>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:109>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_15;
 		L_15 = Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14(__this, Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14_RuntimeMethod_var);
 		V_1 = L_15;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:110>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = V_0;
 		NullCheck(L_16);
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_17;
 		L_17 = GameObject_AddComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_mFE0E36B3C1670C308B04C39EDC76838DD59826B7(L_16, GameObject_AddComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_mFE0E36B3C1670C308B04C39EDC76838DD59826B7_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:111>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_18 = L_17;
 		NullCheck(L_18);
 		MeshCollider_set_convex_m20482D687240D0921BA76B77983403E55A2E3CE1(L_18, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:112>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:112>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_19 = L_18;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_20 = V_1;
 		NullCheck(L_20);
@@ -14019,23 +14019,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_21 = Collider_get_sharedMaterial_m436FD38D7193330BE4FA630AB7F184BE952FDFFE(L_20, NULL);
 		NullCheck(L_19);
 		Collider_set_sharedMaterial_mA67DC663BEEBE9315F3B91A0B74B31D33579CD7D(L_19, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:113>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_22 = V_1;
 		NullCheck(L_22);
 		bool L_23;
 		L_23 = Collider_get_isTrigger_mFF457F6AA71D173F9A11BAF00C35E5AE12952F87(L_22, NULL);
 		NullCheck(L_19);
 		Collider_set_isTrigger_mFCD22F3EB5E28C97863956AB725D53F7F4B7CA78(L_19, L_23, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:116>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:116>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = V_0;
 		NullCheck(L_24);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_25;
 		L_25 = GameObject_AddComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m03A761629A3F71B0248F1B26EF612F592B757093(L_24, GameObject_AddComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m03A761629A3F71B0248F1B26EF612F592B757093_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:118>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_26 = L_25;
 		NullCheck(L_26);
 		Rigidbody_set_constraints_mE81BF0DAEB980E320538231E092CA4663885A9A3(L_26, ((int32_t)126), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:119>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:119>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_27 = L_26;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_28;
 		L_28 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(__this, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
@@ -14044,7 +14044,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_29 = Rigidbody_get_linearDamping_m9A75A439BEDC39A14ADDDBEA9BF3BE08805DA7F2(L_28, NULL);
 		NullCheck(L_27);
 		Rigidbody_set_linearDamping_m42BB8ADA5D26250A11256502D08BDC2DAB980242(L_27, L_29, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:120>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_30 = L_27;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_31;
 		L_31 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(__this, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
@@ -14053,7 +14053,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_32 = Rigidbody_get_angularDamping_mEC4083A962F81EA9BD610CC259951DA1DEC9C6DC(L_31, NULL);
 		NullCheck(L_30);
 		Rigidbody_set_angularDamping_m2763171B779080FC724173D87C34015ABED51671(L_30, L_32, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:121>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_33;
 		L_33 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(__this, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
 		NullCheck(L_33);
@@ -14061,37 +14061,37 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_34 = Rigidbody_get_useGravity_mBDA227BDCB0F9A81B61A6592929EE43EDDEE7D16(L_33, NULL);
 		NullCheck(L_30);
 		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_30, L_34, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:123>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_35 = V_0;
 		NullCheck(L_35);
 		UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* L_36;
 		L_36 = GameObject_AddComponent_TisUnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E_m3F99AD79D4508135B76378D5C799200AED891FB6(L_35, GameObject_AddComponent_TisUnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E_m3F99AD79D4508135B76378D5C799200AED891FB6_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:124>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:124>
 		UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* L_37 = L_36;
 		PrefractureOptions_tD9568EAE453D0269EE83CC20F7A15482C965B0FB* L_38 = __this->___prefractureOptions;
 		NullCheck(L_38);
 		bool L_39 = L_38->___unfreezeAll;
 		NullCheck(L_37);
 		L_37->___unfreezeAll = L_39;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:125>
 		UnfreezeFragment_t91D4C1ACAF0B29447E68D343687CB417532E3E2E* L_40 = L_37;
 		TriggerOptions_t8840153426E5B15416CF1BEACB5A46AC859AA7E4* L_41 = __this->___triggerOptions;
 		NullCheck(L_40);
 		L_40->___triggerOptions = L_41;
 		Il2CppCodeGenWriteBarrier((void**)(&L_40->___triggerOptions), (void*)L_41);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:126>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:126>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_42 = __this->___callbackOptions;
 		NullCheck(L_42);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_43 = L_42->___onCompleted;
 		NullCheck(L_40);
 		L_40->___onFractureCompleted = L_43;
 		Il2CppCodeGenWriteBarrier((void**)(&L_40->___onFractureCompleted), (void*)L_43);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Prefracture.cs:128>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44 = V_0;
 		return L_44;
 	}
 }
-// Method Definition Index: 109244
+// Method Definition Index: 109358
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture__ctor_m0E7FEB2EA37C39B4A1BBD44A302F481E26BC43CA (Prefracture_tC2647A3E02E43090373BB8D2FF45DED0D163FFCD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14107,7 +14107,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Prefracture__ctor_m0E7FEB2EA37C39B4A1BBD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109245
+// Method Definition Index: 109359
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C456400F0C7146754A896 (Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_sliceNormalWorld, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_sliceOriginWorld, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14125,13 +14125,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:29>
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_0;
 		L_0 = Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623(__this, Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623_RuntimeMethod_var);
 		NullCheck(L_0);
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_1;
 		L_1 = MeshFilter_get_sharedMesh_mE4ED3E7E31C1DE5097E4980DA996E620F7D7CB8C(L_0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:31>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
 		L_2 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_1, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
@@ -14141,7 +14141,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:34>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___fragmentRoot;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -14152,7 +14152,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:37>
 		String_t* L_5;
 		L_5 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(__this, NULL);
 		String_t* L_6;
@@ -14161,7 +14161,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_7, L_6, NULL);
 		__this->___fragmentRoot = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___fragmentRoot), (void*)L_7);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:38>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___fragmentRoot;
 		NullCheck(L_8);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9;
@@ -14173,7 +14173,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 		L_11 = Transform_get_parent_m65354E28A4C94EC00EBCF03532F7B0718380791E(L_10, NULL);
 		NullCheck(L_9);
 		Transform_SetParent_m6677538B60246D958DD91F931C50F969CCBB5250(L_9, L_11, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:41>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___fragmentRoot;
 		NullCheck(L_12);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_13;
@@ -14185,7 +14185,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 		L_15 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_14, NULL);
 		NullCheck(L_13);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_13, L_15, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:42>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = __this->___fragmentRoot;
 		NullCheck(L_16);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
@@ -14197,7 +14197,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 		L_19 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_18, NULL);
 		NullCheck(L_17);
 		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_17, L_19, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:43>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = __this->___fragmentRoot;
 		NullCheck(L_20);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_21;
@@ -14210,11 +14210,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_ComputeSlice_mAC286F1977B71290A38C
 
 IL_00a8:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:46>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23;
 		L_23 = Slice_CreateSliceTemplate_m97133BB94622A2FC141B2EEFEC36966957A47FE4(__this, NULL);
 		V_0 = L_23;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:47>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24;
 		L_24 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25 = ___0_sliceNormalWorld;
@@ -14222,7 +14222,7 @@ IL_00a8:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26;
 		L_26 = Transform_InverseTransformDirection_m69C077B881A98B08C7F231EFC49429C906FBC575(L_24, L_25, NULL);
 		V_1 = L_26;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:48>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_27;
 		L_27 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_28 = ___1_sliceOriginWorld;
@@ -14230,12 +14230,12 @@ IL_00a8:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_29;
 		L_29 = Transform_InverseTransformPoint_m18CD395144D9C78F30E15A5B82B6670E792DBA5D(L_27, L_28, NULL);
 		V_2 = L_29;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:50>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:51>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:52>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:53>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:54>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:55>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30;
 		L_30 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_31 = V_1;
@@ -14247,16 +14247,16 @@ IL_00a8:
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_36;
 		L_36 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_35, NULL);
 		Fragmenter_Slice_m9CC6045ECC5AA2FE5905AA4D577B71A1469DC786(L_30, L_31, L_32, L_33, L_34, L_36, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:58>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_37 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_37, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:61>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38;
 		L_38 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		NullCheck(L_38);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_38, (bool)0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:64>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_39 = __this->___callbackOptions;
 		NullCheck(L_39);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_40 = L_39->___onCompleted;
@@ -14266,7 +14266,7 @@ IL_00a8:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:66>
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_41 = __this->___callbackOptions;
 		NullCheck(L_41);
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_42 = L_41->___onCompleted;
@@ -14276,11 +14276,11 @@ IL_00a8:
 
 IL_0117:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:69>
 		return;
 	}
 }
-// Method Definition Index: 109246
+// Method Definition Index: 109360
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Slice_CreateSliceTemplate_m97133BB94622A2FC141B2EEFEC36966957A47FE4 (Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14302,34 +14302,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 	Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* V_1 = NULL;
 	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* V_2 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:79>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m7D0340DE160786E6EFA8DABD39EC3B694DA30AAD(L_0, NULL);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:80>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = V_0;
 		NullCheck(L_1);
 		Object_set_name_mC79E6DC8FFD72479C90F0C4CC7F42A0FEAF5AE47(L_1, _stringLiteral3546251C082281F77B37FD6207F52C8A275D6311, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:81>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:81>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = V_0;
 		String_t* L_3;
 		L_3 = Component_get_tag_m7561A81116CAB82B8A459E934662BFC2039FB7EF(__this, NULL);
 		NullCheck(L_2);
 		GameObject_set_tag_m0A41528AFD8C83E1CEC5D769921159897CDD2B24(L_2, L_3, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:84>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = V_0;
 		NullCheck(L_4);
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_5;
 		L_5 = GameObject_AddComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mEAB8177A64DF1A50BB7996ACEEEADCD65358AC94(L_4, GameObject_AddComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mEAB8177A64DF1A50BB7996ACEEEADCD65358AC94_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:87>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = V_0;
 		NullCheck(L_6);
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_7;
 		L_7 = GameObject_AddComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_mCDD3E77673305199F52C772AE8C7952F3864740D(L_6, GameObject_AddComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_mCDD3E77673305199F52C772AE8C7952F3864740D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:88>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:89>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:90>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:91>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:91>
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_8 = (MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D*)(MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D*)SZArrayNew(MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D_il2cpp_TypeInfo_var, (uint32_t)2);
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_9 = L_8;
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_10;
@@ -14349,20 +14349,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(1), (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)L_14);
 		NullCheck(L_7);
 		Renderer_set_sharedMaterials_m665ADE4190214CC2AC52490B4A7373D7EE75DEB2(L_7, L_12, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:94>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_15;
 		L_15 = Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14(__this, Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14_RuntimeMethod_var);
 		V_1 = L_15;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:95>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:95>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = V_0;
 		NullCheck(L_16);
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_17;
 		L_17 = GameObject_AddComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_mFE0E36B3C1670C308B04C39EDC76838DD59826B7(L_16, GameObject_AddComponent_TisMeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455_mFE0E36B3C1670C308B04C39EDC76838DD59826B7_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:96>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_18 = L_17;
 		NullCheck(L_18);
 		MeshCollider_set_convex_m20482D687240D0921BA76B77983403E55A2E3CE1(L_18, (bool)1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:97>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:97>
 		MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455* L_19 = L_18;
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_20 = V_1;
 		NullCheck(L_20);
@@ -14370,23 +14370,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_21 = Collider_get_sharedMaterial_m436FD38D7193330BE4FA630AB7F184BE952FDFFE(L_20, NULL);
 		NullCheck(L_19);
 		Collider_set_sharedMaterial_mA67DC663BEEBE9315F3B91A0B74B31D33579CD7D(L_19, L_21, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:98>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:98>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_22 = V_1;
 		NullCheck(L_22);
 		bool L_23;
 		L_23 = Collider_get_isTrigger_mFF457F6AA71D173F9A11BAF00C35E5AE12952F87(L_22, NULL);
 		NullCheck(L_19);
 		Collider_set_isTrigger_mFCD22F3EB5E28C97863956AB725D53F7F4B7CA78(L_19, L_23, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:101>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:101>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_24;
 		L_24 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(__this, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
 		V_2 = L_24;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:102>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = V_0;
 		NullCheck(L_25);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_26;
 		L_26 = GameObject_AddComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m03A761629A3F71B0248F1B26EF612F592B757093(L_25, GameObject_AddComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m03A761629A3F71B0248F1B26EF612F592B757093_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:103>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:103>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_27 = L_26;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_28 = V_2;
 		NullCheck(L_28);
@@ -14394,7 +14394,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_29 = Rigidbody_get_linearVelocity_m367F5415641E5FB968440A91BAE2FCB8CAEA2C8C(L_28, NULL);
 		NullCheck(L_27);
 		Rigidbody_set_linearVelocity_m29AE03D5FC079EAD4202FCF72E2AEBDC19363985(L_27, L_29, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:104>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_30 = L_27;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_31 = V_2;
 		NullCheck(L_31);
@@ -14402,7 +14402,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_32 = Rigidbody_get_angularVelocity_m4EACCFCF15CA441CCD53B24322C2E7B8EEBDF6A8(L_31, NULL);
 		NullCheck(L_30);
 		Rigidbody_set_angularVelocity_m23266B4E52BF0D2E65CC984AC73CC40B8D4A27E0(L_30, L_32, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:105>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_33 = L_30;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_34 = V_2;
 		NullCheck(L_34);
@@ -14410,7 +14410,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_35 = Rigidbody_get_linearDamping_m9A75A439BEDC39A14ADDDBEA9BF3BE08805DA7F2(L_34, NULL);
 		NullCheck(L_33);
 		Rigidbody_set_linearDamping_m42BB8ADA5D26250A11256502D08BDC2DAB980242(L_33, L_35, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:106>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_36 = L_33;
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_37 = V_2;
 		NullCheck(L_37);
@@ -14418,15 +14418,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		L_38 = Rigidbody_get_angularDamping_mEC4083A962F81EA9BD610CC259951DA1DEC9C6DC(L_37, NULL);
 		NullCheck(L_36);
 		Rigidbody_set_angularDamping_m2763171B779080FC724173D87C34015ABED51671(L_36, L_38, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:107>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_39 = V_2;
 		NullCheck(L_39);
 		bool L_40;
 		L_40 = Rigidbody_get_useGravity_mBDA227BDCB0F9A81B61A6592929EE43EDDEE7D16(L_39, NULL);
 		NullCheck(L_36);
 		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_36, L_40, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:110>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:111>
 		SliceOptions_t9487C4C1BC769948517C8CC1D6F1BF67E0ED09BD* L_41 = __this->___sliceOptions;
 		NullCheck(L_41);
 		bool L_42 = L_41->___enableReslicing;
@@ -14446,19 +14446,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:113>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_46 = V_0;
 		Slice_CopySliceComponent_m7F1CA526466E98F257F6AA8EA77AF7B563F08F38(__this, L_46, NULL);
 	}
 
 IL_00eb:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:116>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:116>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_47 = V_0;
 		return L_47;
 	}
 }
-// Method Definition Index: 109247
+// Method Definition Index: 109361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_CopySliceComponent_m7F1CA526466E98F257F6AA8EA77AF7B563F08F38 (Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14468,38 +14468,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice_CopySliceComponent_m7F1CA526466E98
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:125>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_obj;
 		NullCheck(L_0);
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_1;
 		L_1 = GameObject_AddComponent_TisSlice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7_m964119D1812D7E90E95BD3F16DE8D792D77969D9(L_0, GameObject_AddComponent_TisSlice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7_m964119D1812D7E90E95BD3F16DE8D792D77969D9_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:127>
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_2 = L_1;
 		SliceOptions_t9487C4C1BC769948517C8CC1D6F1BF67E0ED09BD* L_3 = __this->___sliceOptions;
 		NullCheck(L_2);
 		L_2->___sliceOptions = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&L_2->___sliceOptions), (void*)L_3);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:128>
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_4 = L_2;
 		CallbackOptions_tE88786BE9215C5F30F7D097E607C57BE26A0D17D* L_5 = __this->___callbackOptions;
 		NullCheck(L_4);
 		L_4->___callbackOptions = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&L_4->___callbackOptions), (void*)L_5);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:129>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:129>
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_6 = L_4;
 		int32_t L_7 = __this->___currentSliceCount;
 		NullCheck(L_6);
 		L_6->___currentSliceCount = ((int32_t)il2cpp_codegen_add(L_7, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:130>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___fragmentRoot;
 		NullCheck(L_6);
 		L_6->___fragmentRoot = L_8;
 		Il2CppCodeGenWriteBarrier((void**)(&L_6->___fragmentRoot), (void*)L_8);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slice.cs:131>
 		return;
 	}
 }
-// Method Definition Index: 109248
+// Method Definition Index: 109362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice__ctor_m5C59B28D3BEEF061D46AE35F2BD942BD145AD600 (Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14515,7 +14515,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slice__ctor_m5C59B28D3BEEF061D46AE35F2BD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109249
+// Method Definition Index: 109363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerStay_m32E78B97272C1DE6373A0BA5A9D5DBA5AE6F38D3 (PlaneSlicer_t583F265790D03DEB73A7A3552659087FA488DF02* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_collider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14529,7 +14529,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerStay_m32E78B97272C1
 	}
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* V_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:11>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:11>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_0 = ___0_collider;
 		NullCheck(L_0);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1;
@@ -14541,7 +14541,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerStay_m32E78B97272C1
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_3;
 		L_3 = Renderer_get_material_m5BA2A00816C4CC66580D4B2E409CF10718C15656(L_2, NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:12>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:12>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_4 = V_0;
 		NullCheck(L_4);
 		String_t* L_5;
@@ -14555,7 +14555,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerStay_m32E78B97272C1
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:14>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_7 = V_0;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8;
 		L_8 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
@@ -14566,7 +14566,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerStay_m32E78B97272C1
 		L_10 = Vector4_op_Implicit_m2ECA73F345A7AD84144133E9E51657204002B12D_inline(L_9, NULL);
 		NullCheck(L_7);
 		Material_SetVector_m69444B8040D955821F241113446CC8713C9E12D1(L_7, _stringLiteral492140E77FD2F5CBE1121BFF66DC4E9F060AC66A, L_10, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:15>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:15>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_11 = V_0;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_12;
 		L_12 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
@@ -14581,11 +14581,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerStay_m32E78B97272C1
 
 IL_0059:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:17>
 		return;
 	}
 }
-// Method Definition Index: 109250
+// Method Definition Index: 109364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerExit_mED2F25A97CF61E76854240E980483C8618506BBD (PlaneSlicer_t583F265790D03DEB73A7A3552659087FA488DF02* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_collider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14598,7 +14598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerExit_mED2F25A97CF61
 	}
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* V_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:21>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_0 = ___0_collider;
 		NullCheck(L_0);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1;
@@ -14610,7 +14610,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerExit_mED2F25A97CF61
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_3;
 		L_3 = Renderer_get_material_m5BA2A00816C4CC66580D4B2E409CF10718C15656(L_2, NULL);
 		V_0 = L_3;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:22>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_4 = V_0;
 		NullCheck(L_4);
 		String_t* L_5;
@@ -14624,7 +14624,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerExit_mED2F25A97CF61
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:24>
 		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_7 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8;
 		L_8 = Vector3_get_positiveInfinity_mE0C7AA87B375383EA62F6084761DAE8197147D23_inline(NULL);
@@ -14636,11 +14636,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_OnTriggerExit_mED2F25A97CF61
 
 IL_0038:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:26>
 		return;
 	}
 }
-// Method Definition Index: 109251
+// Method Definition Index: 109365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_Update_m26B995981B0B9275A87C7E71033E63519D7B032B (PlaneSlicer_t583F265790D03DEB73A7A3552659087FA488DF02* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14666,7 +14666,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_Update_m26B995981B0B9275A87C
 	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* G_B9_0 = NULL;
 	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* G_B8_0 = NULL;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:31>
 		bool L_0;
 		L_0 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)113), NULL);
 		if (!L_0)
@@ -14675,7 +14675,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_Update_m26B995981B0B9275A87C
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:33>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1;
 		L_1 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
@@ -14687,7 +14687,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer_Update_m26B995981B0B9275A87C
 
 IL_0020:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:35>
 		bool L_4;
 		L_4 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)101), NULL);
 		if (!L_4)
@@ -14696,7 +14696,7 @@ IL_0020:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:37>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
 		L_5 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
@@ -14708,7 +14708,7 @@ IL_0020:
 
 IL_0041:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:40>
 		bool L_8;
 		L_8 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(((int32_t)304), NULL);
 		if (!L_8)
@@ -14717,13 +14717,13 @@ IL_0041:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:42>
 		MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* L_9;
 		L_9 = Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623(__this, Component_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mB82F66059DFB5715DD85BDED1D90BC03A6C9E623_RuntimeMethod_var);
 		NullCheck(L_9);
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_10;
 		L_10 = MeshFilter_get_sharedMesh_mE4ED3E7E31C1DE5097E4980DA996E620F7D7CB8C(L_9, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:43>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_11 = L_10;
 		NullCheck(L_11);
 		Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 L_12;
@@ -14731,7 +14731,7 @@ IL_0041:
 		V_1 = L_12;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13;
 		L_13 = Bounds_get_center_m5B05F81CB835EB6DD8628FDA24B638F477984DC3_inline((&V_1), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:44>
 		NullCheck(L_11);
 		Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 L_14;
 		L_14 = Mesh_get_bounds_m9E3A46226824676703990270A722A89A4860A100(L_11, NULL);
@@ -14739,9 +14739,9 @@ IL_0041:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
 		L_15 = Bounds_get_extents_mFE6DC407FCE2341BE2C750CB554055D211281D25_inline((&V_1), NULL);
 		V_0 = L_15;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:46>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:47>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:48>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16 = V_0;
 		float L_17 = L_16.___x;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18;
@@ -14767,7 +14767,7 @@ IL_0041:
 		L_29 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_28, NULL);
 		float L_30 = L_29.___z;
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_0), ((float)il2cpp_codegen_multiply(L_17, L_20)), ((float)il2cpp_codegen_multiply(L_22, L_25)), ((float)il2cpp_codegen_multiply(L_27, L_30)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:51>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_31;
 		L_31 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_31);
@@ -14789,7 +14789,7 @@ IL_0041:
 		il2cpp_codegen_runtime_class_init_inline(Physics_t1244C2983AEAFA149425AFFC3DF53BC91C18ED56_il2cpp_TypeInfo_var);
 		RaycastHitU5BU5D_t008B8309DE422FE7567068D743D68054D5EBF1A8* L_40;
 		L_40 = Physics_BoxCastAll_m1A4C4A3BDD6FD43BE27047490A543E732FCEE2CC(L_32, L_33, L_35, L_37, L_39, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:53>
 		V_2 = L_40;
 		V_3 = 0;
 		goto IL_0163;
@@ -14797,25 +14797,25 @@ IL_0041:
 
 IL_00f6:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:53>
 		RaycastHitU5BU5D_t008B8309DE422FE7567068D743D68054D5EBF1A8* L_41 = V_2;
 		int32_t L_42 = V_3;
 		NullCheck(L_41);
 		int32_t L_43 = L_42;
 		RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 L_44 = (L_41)->GetAt(static_cast<il2cpp_array_size_t>(L_43));
 		V_4 = L_44;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:55>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_45;
 		L_45 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_4), NULL);
 		NullCheck(L_45);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_46;
 		L_46 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_45, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:56>
 		NullCheck(L_46);
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_47;
 		L_47 = GameObject_GetComponent_TisSlice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7_m7208B4E1299AEDC51A77819601999BCE66049916(L_46, GameObject_GetComponent_TisSlice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7_m7208B4E1299AEDC51A77819601999BCE66049916_RuntimeMethod_var);
 		V_5 = L_47;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:58>
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_48 = V_5;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_49;
@@ -14826,7 +14826,7 @@ IL_00f6:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:60>
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_50 = V_5;
 		NullCheck(L_50);
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_51;
@@ -14858,7 +14858,7 @@ IL_0129:
 
 IL_0142:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:61>
 		Slice_t2AC8BEA47D927D39DB8D1C967C7789F7E06D57D7* L_56 = V_5;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_57;
 		L_57 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
@@ -14882,7 +14882,7 @@ IL_015f:
 
 IL_0163:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:53>
 		int32_t L_62 = V_3;
 		RaycastHitU5BU5D_t008B8309DE422FE7567068D743D68054D5EBF1A8* L_63 = V_2;
 		NullCheck(L_63);
@@ -14894,15 +14894,15 @@ IL_0163:
 
 IL_0169:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:65>
 		return;
 	}
 }
-// Method Definition Index: 109252
+// Method Definition Index: 109366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer__ctor_mACC15914EAA64B345054F0A420F7346DE2777C33 (PlaneSlicer_t583F265790D03DEB73A7A3552659087FA488DF02* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:7>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Slicers/PlaneSlicer.cs:7>
 		__this->___RotationSensitivity = (1.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -14916,19 +14916,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlaneSlicer__ctor_mACC15914EAA64B345054F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109253
+// Method Definition Index: 109367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Start_m1BFF743878AC24D87AD79D92D39BC2593BDE7C7C (CameraController_t52B1FFBEC1CCA9B2BBAE616BA46AC33C7CE91851* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:21>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:21>
 		float L_0;
 		L_0 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
 		__this->___startTime = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:22>
 		return;
 	}
 }
-// Method Definition Index: 109254
+// Method Definition Index: 109368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Update_m0E55C4CB8FCAC3FDC5885B207660EFD8D6D94EF1 (CameraController_t52B1FFBEC1CCA9B2BBAE616BA46AC33C7CE91851* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14943,17 +14943,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Update_m0E55C4CB8FCAC3F
 	float V_2 = 0.0f;
 	float V_3 = 0.0f;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:26>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:26>
 		float L_0;
 		L_0 = Input_GetAxis_m10372E6C5FF591668D2DC5F58C58D213CC598A62(_stringLiteral88BEE283254D7094E258B3A88730F4CC4F1E4AC7, NULL);
 		float L_1 = __this->___mouseSensitivity;
 		V_0 = ((float)il2cpp_codegen_multiply(L_0, L_1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:27>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:27>
 		float L_2;
 		L_2 = Input_GetAxis_m10372E6C5FF591668D2DC5F58C58D213CC598A62(_stringLiteral16DD21BE77B115D392226EB71A2D3A9FDC29E3F0, NULL);
 		float L_3 = __this->___mouseSensitivity;
 		V_1 = ((float)il2cpp_codegen_multiply(L_2, L_3));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:29>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:29>
 		float L_4 = __this->___elapsedTime;
 		if ((!(((float)L_4) > ((float)(0.5f)))))
 		{
@@ -14961,7 +14961,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Update_m0E55C4CB8FCAC3F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:31>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
 		L_5 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_5);
@@ -14972,7 +14972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Update_m0E55C4CB8FCAC3F
 		float L_8 = V_0;
 		NullCheck(L_6);
 		Transform_Rotate_m35B44707FE16FF8015D519D8C162C0B4A85D6D1F(L_6, L_7, L_8, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:34>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:34>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9;
 		L_9 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_9);
@@ -14980,7 +14980,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Update_m0E55C4CB8FCAC3F
 		L_10 = Transform_get_eulerAngles_mCAAF48EFCF628F1ED91C2FFE75A4FD19C039DD6A(L_9, NULL);
 		float L_11 = L_10.___x;
 		V_2 = L_11;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:35>
 		float L_12 = V_2;
 		if ((!(((float)L_12) > ((float)(180.0f)))))
 		{
@@ -14988,20 +14988,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_Update_m0E55C4CB8FCAC3F
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:35>
 		float L_13 = V_2;
 		V_2 = ((float)il2cpp_codegen_subtract(L_13, (360.0f)));
 	}
 
 IL_0068:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:36>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:36>
 		float L_14 = V_2;
 		float L_15 = V_1;
 		float L_16;
 		L_16 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(((float)il2cpp_codegen_subtract(L_14, L_15)), (-80.0f), (80.0f), NULL);
 		V_3 = L_16;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:37>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
 		L_17 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		float L_18 = V_3;
@@ -15015,16 +15015,16 @@ IL_0068:
 
 IL_0097:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:41>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:41>
 		float L_20;
 		L_20 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
 		float L_21 = __this->___startTime;
 		__this->___elapsedTime = ((float)il2cpp_codegen_subtract(L_20, L_21));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:43>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:43>
 		return;
 	}
 }
-// Method Definition Index: 109255
+// Method Definition Index: 109369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_FixedUpdate_mA459FB14D5B80A7DEB5E079C13C3DF1622F40ABF (CameraController_t52B1FFBEC1CCA9B2BBAE616BA46AC33C7CE91851* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15039,7 +15039,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_FixedUpdate_mA459FB14D5
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:50>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:50>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_0);
@@ -15049,7 +15049,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_FixedUpdate_mA459FB14D5
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_2;
 		L_2 = Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8(L_1, Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var);
 		V_0 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:51>
 		bool L_3;
 		L_3 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)119), NULL);
 		if (!L_3)
@@ -15058,7 +15058,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_FixedUpdate_mA459FB14D5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:53>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_4 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5;
 		L_5 = Vector3_get_forward_mAA55A7034304DF8B2152EAD49AE779FC4CA2EB4A_inline(NULL);
@@ -15071,7 +15071,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_FixedUpdate_mA459FB14D5
 
 IL_0031:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:55>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:55>
 		bool L_8;
 		L_8 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)97), NULL);
 		if (!L_8)
@@ -15080,7 +15080,7 @@ IL_0031:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:57>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_9 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10;
 		L_10 = Vector3_get_left_m8C1116485A9E689760AEE1142F5977852278B7E1_inline(NULL);
@@ -15093,7 +15093,7 @@ IL_0031:
 
 IL_0051:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:59>
 		bool L_13;
 		L_13 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)115), NULL);
 		if (!L_13)
@@ -15102,7 +15102,7 @@ IL_0051:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:61>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_14 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
 		L_15 = Vector3_get_back_mCA5A84170E8DE5CE38C0551B4CCAD647BF215E57_inline(NULL);
@@ -15115,7 +15115,7 @@ IL_0051:
 
 IL_0071:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:63>
 		bool L_18;
 		L_18 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)100), NULL);
 		if (!L_18)
@@ -15124,7 +15124,7 @@ IL_0071:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:65>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_19 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20;
 		L_20 = Vector3_get_right_mFF573AFBBB2186E7AFA1BA7CA271A78DF67E4EA0_inline(NULL);
@@ -15137,7 +15137,7 @@ IL_0071:
 
 IL_0091:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:69>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:69>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_23 = V_0;
 		NullCheck(L_23);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_24;
@@ -15149,7 +15149,7 @@ IL_0091:
 		L_27 = Rigidbody_get_linearVelocity_m367F5415641E5FB968440A91BAE2FCB8CAEA2C8C(L_26, NULL);
 		float L_28 = L_27.___z;
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_1), L_25, L_28, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:70>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:70>
 		float L_29;
 		L_29 = Vector2_get_magnitude_m5C59B4056420AEFDB291AD0914A3F675330A75CE_inline((&V_1), NULL);
 		float L_30 = __this->___maxSpeed;
@@ -15159,14 +15159,14 @@ IL_0091:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:72>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:72>
 		float L_31 = __this->___maxSpeed;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_32;
 		L_32 = Vector2_get_normalized_mF6722883AEFB5027690A778DF8ACC20F0FA65297_inline((&V_1), NULL);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_33;
 		L_33 = Vector2_op_Multiply_mC53581E703768BA2512A7C65283657C331994353_inline(L_31, L_32, NULL);
 		V_2 = L_33;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:73>
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_34 = V_0;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_35 = V_2;
 		float L_36 = L_35.___x;
@@ -15186,19 +15186,19 @@ IL_0091:
 
 IL_00f2:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:75>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:75>
 		return;
 	}
 }
-// Method Definition Index: 109256
+// Method Definition Index: 109370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController__ctor_m42C46A2D63307812A0688C695723A1487DBC5F6E (CameraController_t52B1FFBEC1CCA9B2BBAE616BA46AC33C7CE91851* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:8>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:8>
 		__this->___acceleration = (100.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:11>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:11>
 		__this->___maxSpeed = (5.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/CameraController.cs:14>
 		__this->___mouseSensitivity = (5.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -15212,7 +15212,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController__ctor_m42C46A2D63307812
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109257
+// Method Definition Index: 109371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Projectile_Update_m2F9A276A6A8D1202A05A1A512EDBE4FCA3BF15BD (Projectile_tF4A7F97141DB643F8E9E7BBA2711840F14DE4EE0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15227,7 +15227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Projectile_Update_m2F9A276A6A8D1202A05A1
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:14>
 		int32_t L_0 = __this->___FireKey;
 		bool L_1;
 		L_1 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(L_0, NULL);
@@ -15237,7 +15237,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Projectile_Update_m2F9A276A6A8D1202A05A1
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:17>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_2;
 		L_2 = GameObject_FindGameObjectsWithTag_mB8AA805DA664EF0221BB338446014F662771B4E3(_stringLiteralC00C36D0E5E4DEE3EE46C5BBA529B7DA5B5C005F, NULL);
 		V_0 = L_2;
@@ -15247,13 +15247,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Projectile_Update_m2F9A276A6A8D1202A05A1
 
 IL_001c:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:17>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_3 = V_0;
 		int32_t L_4 = V_1;
 		NullCheck(L_3);
 		int32_t L_5 = L_4;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:19>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:19>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_6, NULL);
 		int32_t L_7 = V_1;
@@ -15262,7 +15262,7 @@ IL_001c:
 
 IL_0028:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:17>
 		int32_t L_8 = V_1;
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_9 = V_0;
 		NullCheck(L_9);
@@ -15272,7 +15272,7 @@ IL_0028:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:22>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:22>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___projectile;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11;
 		L_11 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
@@ -15284,7 +15284,7 @@ IL_0028:
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14;
 		L_14 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4(L_10, L_12, L_13, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:23>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:23>
 		NullCheck(L_14);
 		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_15;
 		L_15 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_14, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
@@ -15302,11 +15302,11 @@ IL_0028:
 
 IL_0069:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/Projectile.cs:25>
 		return;
 	}
 }
-// Method Definition Index: 109258
+// Method Definition Index: 109372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Projectile__ctor_m5049EA92DDC4A559374E69EA6E70CEC6ECF91ED6 (Projectile_tF4A7F97141DB643F8E9E7BBA2711840F14DE4EE0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15322,11 +15322,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Projectile__ctor_m5049EA92DDC4A559374E69
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109259
+// Method Definition Index: 109373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ToggleText_Update_m27CAD8EFFC12CB2267EC51A093BF19038E767548 (ToggleText_tE695BACCFE3D00C9FFE1CBBD802BB3CF76A1B000* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/ToggleText.cs:12>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/ToggleText.cs:12>
 		int32_t L_0 = __this->___toggleKey;
 		bool L_1;
 		L_1 = Input_GetKeyDown_mB237DEA6244132670D38990BAB77D813FBB028D2(L_0, NULL);
@@ -15336,7 +15336,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ToggleText_Update_m27CAD8EFFC12CB2267EC5
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/ToggleText.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/ToggleText.cs:14>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___textObject;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___textObject;
 		NullCheck(L_3);
@@ -15348,11 +15348,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ToggleText_Update_m27CAD8EFFC12CB2267EC5
 
 IL_0026:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/ToggleText.cs:16>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/ToggleText.cs:16>
 		return;
 	}
 }
-// Method Definition Index: 109260
+// Method Definition Index: 109374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ToggleText__ctor_mB75BE718DBDFA4D76E0404A0F93200E05090453E (ToggleText_tE695BACCFE3D00C9FFE1CBBD802BB3CF76A1B000* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15368,7 +15368,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ToggleText__ctor_mB75BE718DBDFA4D76E0404
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109261
+// Method Definition Index: 109375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UniqueMaterial_Start_m04AB2EE3079CF088F5FBA84E2AF07C85F4F87262 (UniqueMaterial_tEDFF9D22038E667026276E750255375927A00FDD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15378,7 +15378,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UniqueMaterial_Start_m04AB2EE3079CF088F5
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/UniqueMaterial.cs:11>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/UniqueMaterial.cs:11>
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_0;
 		L_0 = Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB(__this, Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB_RuntimeMethod_var);
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_1;
@@ -15388,11 +15388,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UniqueMaterial_Start_m04AB2EE3079CF088F5
 		L_2 = Renderer_get_material_m5BA2A00816C4CC66580D4B2E409CF10718C15656(L_1, NULL);
 		NullCheck(L_0);
 		Renderer_set_material_m21E88977071E0A914D62F3D9CFF0193B3117C45A(L_0, L_2, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/UniqueMaterial.cs:12>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Support/UniqueMaterial.cs:12>
 		return;
 	}
 }
-// Method Definition Index: 109262
+// Method Definition Index: 109376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UniqueMaterial__ctor_mF9D7CB4B929FD37CE5A117B8965139D00CA7F406 (UniqueMaterial_tEDFF9D22038E667026276E750255375927A00FDD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15408,11 +15408,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UniqueMaterial__ctor_mF9D7CB4B929FD37CE5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109265
+// Method Definition Index: 109379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t BinSort_GetBinNumber_mF189DC9E72CFE702B4089F82B256EF424A2C0F62 (int32_t ___0_i, int32_t ___1_j, int32_t ___2_n, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/BinSort.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/BinSort.cs:37>
 		int32_t L_0 = ___0_i;
 		if (!((int32_t)(L_0%2)))
 		{
@@ -15434,7 +15434,7 @@ IL_000f:
 		return ((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_multiply(L_4, L_5)), L_6));
 	}
 }
-// Method Definition Index: 109267
+// Method Definition Index: 109381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinSort__ctor_mF793E6AD559D06188CD98C81C715AD2A5A6E4834 (BinSort_tFAEAB3E0CDDC9E712251B0CEE042B39DEF39E6E7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15450,11 +15450,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinSort__ctor_mF793E6AD559D06188CD98C81C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109268
+// Method Definition Index: 109382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_IsQuadConvex_m0BF118E82551BC0E1485171429C824339AFDD94C (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_a2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_b1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___3_b2, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:18>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:18>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___0_a1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1 = ___1_a2;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___2_b1;
@@ -15464,11 +15464,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_IsQuadConvex_m0BF118E82551BC0E
 		return L_4;
 	}
 }
-// Method Definition Index: 109269
+// Method Definition Index: 109383
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersect_mA0FF7C6693CAF17559A32FCC45325A1E3111E2E4 (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_a2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_b1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___3_b2, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:31>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___0_a1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1 = ___1_a2;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___2_b1;
@@ -15478,7 +15478,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersect_mA0FF7C6693CAF1
 		return L_4;
 	}
 }
-// Method Definition Index: 109270
+// Method Definition Index: 109384
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersectInternal_mDDF14CA7BF4E0892BC7FB58984D0AB6100A04E52 (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_a2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_b1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___3_b2, bool ___4_includeSharedEndpoints, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -15490,7 +15490,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersectInternal_mDDF14C
 	float V_4 = 0.0f;
 	float V_5 = 0.0f;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:44>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___1_a2;
 		float L_1 = L_0.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___0_a1;
@@ -15500,7 +15500,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersectInternal_mDDF14C
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_6 = ___0_a1;
 		float L_7 = L_6.___y;
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_0), ((float)il2cpp_codegen_subtract(L_1, L_3)), ((float)il2cpp_codegen_subtract(L_5, L_7)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:45>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8 = ___3_b2;
 		float L_9 = L_8.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_10 = ___2_b1;
@@ -15510,7 +15510,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersectInternal_mDDF14C
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_14 = ___2_b1;
 		float L_15 = L_14.___y;
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_1), ((float)il2cpp_codegen_subtract(L_9, L_11)), ((float)il2cpp_codegen_subtract(L_13, L_15)), NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:49>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_16 = ___0_a1;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_17 = ___2_b1;
 		bool L_18;
@@ -15553,14 +15553,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinesIntersectInternal_mDDF14C
 
 IL_0066:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:51>
 		bool L_28 = ___4_includeSharedEndpoints;
 		return L_28;
 	}
 
 IL_0069:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:57>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:57>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_29 = ___0_a1;
 		float L_30 = L_29.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_31 = ___2_b1;
@@ -15574,7 +15574,7 @@ IL_0069:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_39 = V_1;
 		float L_40 = L_39.___x;
 		V_2 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_30, L_32)), L_34)), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_36, L_38)), L_40))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:58>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_41 = ___1_a2;
 		float L_42 = L_41.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_43 = ___2_b1;
@@ -15588,7 +15588,7 @@ IL_0069:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_51 = V_1;
 		float L_52 = L_51.___x;
 		V_3 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_42, L_44)), L_46)), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_48, L_50)), L_52))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:59>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_53 = ___2_b1;
 		float L_54 = L_53.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_55 = ___0_a1;
@@ -15602,7 +15602,7 @@ IL_0069:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_63 = V_0;
 		float L_64 = L_63.___x;
 		V_4 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_54, L_56)), L_58)), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_60, L_62)), L_64))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:60>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_65 = ___3_b2;
 		float L_66 = L_65.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_67 = ___0_a1;
@@ -15616,8 +15616,8 @@ IL_0069:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_75 = V_0;
 		float L_76 = L_75.___x;
 		V_5 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_66, L_68)), L_70)), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_72, L_74)), L_76))));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:65>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:66>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:66>
 		float L_77 = V_2;
 		if ((!(((float)L_77) >= ((float)(0.0f)))))
 		{
@@ -15692,19 +15692,19 @@ IL_015f:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109271
+// Method Definition Index: 109385
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinePlaneIntersection_mB45E60CC85998ACB13DC25BB38A539CD19CFB418 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_n, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___3_p0, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___4_x, float* ___5_s, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:88>
 		float* L_0 = ___5_s;
 		*((float*)L_0) = (float)(0.0f);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:89>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_1 = ___4_x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
 		L_2 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		*(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)L_1 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:92>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:92>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3 = ___0_a;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4 = ___1_b;
 		bool L_5;
@@ -15715,13 +15715,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_LinePlaneIntersection_mB45E60C
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:94>
 		return (bool)0;
 	}
 
 IL_001f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:96>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:96>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = ___2_n;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_7;
 		L_7 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
@@ -15733,13 +15733,13 @@ IL_001f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:98>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:98>
 		return (bool)0;
 	}
 
 IL_002e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:102>
 		float* L_9 = ___5_s;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10 = ___3_p0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11 = ___0_a;
@@ -15756,7 +15756,7 @@ IL_002e:
 		float L_19;
 		L_19 = Vector3_Dot_mBB86BB940AA0A32FA7D3C02AC42E5BC7095A5D52_inline(L_17, L_18, NULL);
 		*((float*)L_9) = (float)((float)(L_14/L_19));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:104>
 		float* L_20 = ___5_s;
 		float L_21 = *((float*)L_20);
 		if ((!(((float)L_21) >= ((float)(0.0f)))))
@@ -15773,7 +15773,7 @@ IL_002e:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:106>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_24 = ___4_x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25 = ___0_a;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26 = ___1_b;
@@ -15787,21 +15787,21 @@ IL_002e:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_32;
 		L_32 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_25, L_31, NULL);
 		*(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)L_24 = L_32;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:107>
 		return (bool)1;
 	}
 
 IL_007e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:110>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:110>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 109272
+// Method Definition Index: 109386
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_IsPointOnRightSideOfLine_m47A0E48A3BD0A84B88248AE336E279B791F01153 (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_b, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_c, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MathUtils.cs:125>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___1_b;
 		float L_1 = L_0.___x;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ___0_a;
@@ -15829,7 +15829,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MathUtils_IsPointOnRightSideOfLine_m47A0
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109273
+// Method Definition Index: 109387
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* MeshUtils_FindDisconnectedMeshes_m520E6F6F7F79950F2DE6F893A112028B7D05B3CD (Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* ___0_mesh, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15917,42 +15917,42 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F9
 	int32_t V_47 = 0;
 	int32_t V_48 = 0;
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:25>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:25>
 		List_1_t43FB89B126C93A6B04630BC64C751BBE95AFEAF4* L_0 = (List_1_t43FB89B126C93A6B04630BC64C751BBE95AFEAF4*)il2cpp_codegen_object_new(List_1_t43FB89B126C93A6B04630BC64C751BBE95AFEAF4_il2cpp_TypeInfo_var);
 		List_1__ctor_mCE9A346DD934EB013274F9CABE1C5B887A7B7D47(L_0, List_1__ctor_mCE9A346DD934EB013274F9CABE1C5B887A7B7D47_RuntimeMethod_var);
 		V_0 = L_0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:30>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_1 = ___0_mesh;
 		NullCheck(L_1);
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_2;
 		L_2 = Mesh_get_vertices_mA3577F1B08EDDD54E26AEB3F8FFE4EC247D2ABB9(L_1, NULL);
 		V_1 = L_2;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:31>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:31>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_3 = ___0_mesh;
 		NullCheck(L_3);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_4;
 		L_4 = Mesh_get_triangles_m33E39B4A383CC613C760FA7E297AC417A433F24B(L_3, NULL);
 		V_2 = L_4;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:32>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_5 = ___0_mesh;
 		NullCheck(L_5);
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_6;
 		L_6 = Mesh_get_normals_m2B6B159B799E6E235EA651FCAB2E18EE5B18ED62(L_5, NULL);
 		V_3 = L_6;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:33>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:33>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_7 = ___0_mesh;
 		NullCheck(L_7);
 		Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* L_8;
 		L_8 = Mesh_get_uv_mA47805C48AB3493FF3727922C43E77880E73519F(L_7, NULL);
 		V_4 = L_8;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:37>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:37>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_9 = V_2;
 		NullCheck(L_9);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_10 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((int32_t)(((RuntimeArray*)L_9)->max_length))/3)));
 		V_5 = L_10;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:38>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:38>
 		V_6 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:39>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:39>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_11 = ___0_mesh;
 		int32_t L_12 = V_6;
 		NullCheck(L_11);
@@ -15960,14 +15960,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F9
 		L_13 = Mesh_GetTriangles_m2B70A746EE624B60BF9BA4528E4239B47EF42E16(L_11, L_12, NULL);
 		NullCheck(L_13);
 		V_7 = ((int32_t)(((int32_t)(((RuntimeArray*)L_13)->max_length))/3));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:40>
 		V_21 = 0;
 		goto IL_006f;
 	}
 
 IL_0045:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:42>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:42>
 		int32_t L_14 = V_21;
 		int32_t L_15 = V_7;
 		if ((((int32_t)L_14) < ((int32_t)L_15)))
@@ -15976,10 +15976,10 @@ IL_0045:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:44>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:44>
 		int32_t L_16 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_16, 1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:45>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:45>
 		int32_t L_17 = V_7;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_18 = ___0_mesh;
 		int32_t L_19 = V_6;
@@ -15992,20 +15992,20 @@ IL_0045:
 
 IL_0062:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:47>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_21 = V_5;
 		int32_t L_22 = V_21;
 		int32_t L_23 = V_6;
 		NullCheck(L_21);
 		(L_21)->SetAt(static_cast<il2cpp_array_size_t>(L_22), (int32_t)L_23);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:40>
 		int32_t L_24 = V_21;
 		V_21 = ((int32_t)il2cpp_codegen_add(L_24, 1));
 	}
 
 IL_006f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:40>
 		int32_t L_25 = V_21;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_26 = V_2;
 		NullCheck(L_26);
@@ -16015,19 +16015,19 @@ IL_006f:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:51>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_27 = V_1;
 		NullCheck(L_27);
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_28 = (List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)SZArrayNew(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_27)->max_length)));
 		V_8 = L_28;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:52>
 		V_22 = 0;
 		goto IL_0097;
 	}
 
 IL_0087:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:54>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:54>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_29 = V_8;
 		int32_t L_30 = V_22;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_31 = (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)il2cpp_codegen_object_new(List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73_il2cpp_TypeInfo_var);
@@ -16035,14 +16035,14 @@ IL_0087:
 		NullCheck(L_29);
 		ArrayElementTypeCheck (L_29, L_31);
 		(L_29)->SetAt(static_cast<il2cpp_array_size_t>(L_30), (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)L_31);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:52>
 		int32_t L_32 = V_22;
 		V_22 = ((int32_t)il2cpp_codegen_add(L_32, 1));
 	}
 
 IL_0097:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:52>
 		int32_t L_33 = V_22;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_34 = V_1;
 		NullCheck(L_34);
@@ -16052,21 +16052,21 @@ IL_0097:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:56>
 		V_23 = 0;
 		goto IL_00f5;
 	}
 
 IL_00a3:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:58>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_35 = V_1;
 		int32_t L_36 = V_23;
 		NullCheck(L_35);
 		int32_t L_37 = L_36;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_38 = (L_35)->GetAt(static_cast<il2cpp_array_size_t>(L_37));
 		V_24 = L_38;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:59>
 		int32_t L_39 = V_23;
 		V_25 = ((int32_t)il2cpp_codegen_add(L_39, 1));
 		goto IL_00e8;
@@ -16074,14 +16074,14 @@ IL_00a3:
 
 IL_00b5:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:61>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_40 = V_1;
 		int32_t L_41 = V_25;
 		NullCheck(L_40);
 		int32_t L_42 = L_41;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_43 = (L_40)->GetAt(static_cast<il2cpp_array_size_t>(L_42));
 		V_26 = L_43;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:62>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:62>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_44 = V_24;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_45 = V_26;
 		bool L_46;
@@ -16092,7 +16092,7 @@ IL_00b5:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:64>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:64>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_47 = V_8;
 		int32_t L_48 = V_25;
 		NullCheck(L_47);
@@ -16101,7 +16101,7 @@ IL_00b5:
 		int32_t L_51 = V_23;
 		NullCheck(L_50);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_50, L_51, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:65>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_52 = V_8;
 		int32_t L_53 = V_23;
 		NullCheck(L_52);
@@ -16114,14 +16114,14 @@ IL_00b5:
 
 IL_00e2:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:59>
 		int32_t L_57 = V_25;
 		V_25 = ((int32_t)il2cpp_codegen_add(L_57, 1));
 	}
 
 IL_00e8:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:59>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:59>
 		int32_t L_58 = V_25;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_59 = V_1;
 		NullCheck(L_59);
@@ -16131,14 +16131,14 @@ IL_00e8:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:56>
 		int32_t L_60 = V_23;
 		V_23 = ((int32_t)il2cpp_codegen_add(L_60, 1));
 	}
 
 IL_00f5:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:56>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:56>
 		int32_t L_61 = V_23;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_62 = V_1;
 		NullCheck(L_62);
@@ -16148,19 +16148,19 @@ IL_00f5:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:71>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_63 = V_1;
 		NullCheck(L_63);
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_64 = (List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206*)SZArrayNew(List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_63)->max_length)));
 		V_9 = L_64;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:73>
 		V_27 = 0;
 		goto IL_011b;
 	}
 
 IL_010b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:75>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:75>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_65 = V_9;
 		int32_t L_66 = V_27;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_67 = (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)il2cpp_codegen_object_new(List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73_il2cpp_TypeInfo_var);
@@ -16168,14 +16168,14 @@ IL_010b:
 		NullCheck(L_65);
 		ArrayElementTypeCheck (L_65, L_67);
 		(L_65)->SetAt(static_cast<il2cpp_array_size_t>(L_66), (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*)L_67);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:73>
 		int32_t L_68 = V_27;
 		V_27 = ((int32_t)il2cpp_codegen_add(L_68, 1));
 	}
 
 IL_011b:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:73>
 		int32_t L_69 = V_27;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_70 = V_1;
 		NullCheck(L_70);
@@ -16185,38 +16185,38 @@ IL_011b:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:79>
 		V_28 = 0;
 		goto IL_016d;
 	}
 
 IL_0127:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:82>
 		int32_t L_71 = V_28;
 		V_29 = ((int32_t)(L_71/3));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:84>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:84>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_72 = V_2;
 		int32_t L_73 = V_28;
 		NullCheck(L_72);
 		int32_t L_74 = L_73;
 		int32_t L_75 = (L_72)->GetAt(static_cast<il2cpp_array_size_t>(L_74));
 		V_10 = L_75;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:85>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_76 = V_2;
 		int32_t L_77 = V_28;
 		NullCheck(L_76);
 		int32_t L_78 = ((int32_t)il2cpp_codegen_add(L_77, 1));
 		int32_t L_79 = (L_76)->GetAt(static_cast<il2cpp_array_size_t>(L_78));
 		V_11 = L_79;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:86>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:86>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_80 = V_2;
 		int32_t L_81 = V_28;
 		NullCheck(L_80);
 		int32_t L_82 = ((int32_t)il2cpp_codegen_add(L_81, 2));
 		int32_t L_83 = (L_80)->GetAt(static_cast<il2cpp_array_size_t>(L_82));
 		V_12 = L_83;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:88>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_84 = V_9;
 		int32_t L_85 = V_10;
 		NullCheck(L_84);
@@ -16225,7 +16225,7 @@ IL_0127:
 		int32_t L_88 = V_29;
 		NullCheck(L_87);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_87, L_88, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:89>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:89>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_89 = V_9;
 		int32_t L_90 = V_11;
 		NullCheck(L_89);
@@ -16234,7 +16234,7 @@ IL_0127:
 		int32_t L_93 = V_29;
 		NullCheck(L_92);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_92, L_93, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:90>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_94 = V_9;
 		int32_t L_95 = V_12;
 		NullCheck(L_94);
@@ -16243,14 +16243,14 @@ IL_0127:
 		int32_t L_98 = V_29;
 		NullCheck(L_97);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_97, L_98, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:79>
 		int32_t L_99 = V_28;
 		V_28 = ((int32_t)il2cpp_codegen_add(L_99, 3));
 	}
 
 IL_016d:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:79>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:79>
 		int32_t L_100 = V_28;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_101 = V_2;
 		NullCheck(L_101);
@@ -16260,39 +16260,39 @@ IL_016d:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:106>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:106>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_102 = V_1;
 		NullCheck(L_102);
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_103 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_102)->max_length)));
 		V_13 = L_103;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:107>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_104 = V_2;
 		NullCheck(L_104);
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_105 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_104)->max_length)));
 		V_14 = L_105;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:108>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_106 = (Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E*)il2cpp_codegen_object_new(Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E_il2cpp_TypeInfo_var);
 		Queue_1__ctor_mCFD83A65B216389290AEF3479047C9FBD933BF5D(L_106, Queue_1__ctor_mCFD83A65B216389290AEF3479047C9FBD933BF5D_RuntimeMethod_var);
 		V_15 = L_106;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:111>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_107 = V_1;
 		NullCheck(L_107);
 		NativeArray_1__ctor_mBE4272BDAF41F7B08F3B52B72E4B6F0DBB1A7D48((&V_16), ((int32_t)(((RuntimeArray*)L_107)->max_length)), 2, 0, NativeArray_1__ctor_mBE4272BDAF41F7B08F3B52B72E4B6F0DBB1A7D48_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:114>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_108 = ___0_mesh;
 		NullCheck(L_108);
 		int32_t L_109;
 		L_109 = Mesh_get_subMeshCount_mC0141293D0F339D8D721CCA2612B32E6FD7E3F8B(L_108, NULL);
 		Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E* L_110 = (Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E*)(Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E*)SZArrayNew(Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E_il2cpp_TypeInfo_var, (uint32_t)L_109);
 		V_17 = L_110;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:115>
 		V_30 = 0;
 		goto IL_01c0;
 	}
 
 IL_01ad:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:117>
 		Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E* L_111 = V_17;
 		int32_t L_112 = V_30;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_113 = V_2;
@@ -16300,14 +16300,14 @@ IL_01ad:
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_114 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_113)->max_length)));
 		NullCheck(L_111);
 		(L_111)->SetAt(static_cast<il2cpp_array_size_t>(L_112), (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)L_114);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:115>
 		int32_t L_115 = V_30;
 		V_30 = ((int32_t)il2cpp_codegen_add(L_115, 1));
 	}
 
 IL_01c0:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:115>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:115>
 		int32_t L_116 = V_30;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_117 = ___0_mesh;
 		NullCheck(L_117);
@@ -16319,25 +16319,25 @@ IL_01c0:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:121>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:121>
 		V_18 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:122>
 		V_19 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:123>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:123>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_119 = ___0_mesh;
 		NullCheck(L_119);
 		int32_t L_120;
 		L_120 = Mesh_get_subMeshCount_mC0141293D0F339D8D721CCA2612B32E6FD7E3F8B(L_119, NULL);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_121 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)L_120);
 		V_20 = L_121;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:125>
 		V_31 = 0;
 		goto IL_0435;
 	}
 
 IL_01e5:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:127>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:127>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_122 = V_13;
 		int32_t L_123 = V_31;
 		NullCheck(L_122);
@@ -16349,30 +16349,30 @@ IL_01e5:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:130>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:130>
 		V_18 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:131>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:131>
 		V_19 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:132>
 		V_33 = 0;
 		goto IL_0206;
 	}
 
 IL_01fa:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:134>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_126 = V_20;
 		int32_t L_127 = V_33;
 		NullCheck(L_126);
 		(L_126)->SetAt(static_cast<il2cpp_array_size_t>(L_127), (int32_t)0);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:132>
 		int32_t L_128 = V_33;
 		V_33 = ((int32_t)il2cpp_codegen_add(L_128, 1));
 	}
 
 IL_0206:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:132>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:132>
 		int32_t L_129 = V_33;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_130 = ___0_mesh;
 		NullCheck(L_130);
@@ -16384,36 +16384,36 @@ IL_0206:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:140>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_132 = V_15;
 		int32_t L_133 = V_31;
 		NullCheck(L_132);
 		Queue_1_Enqueue_mD0BFD1A401EF2D3489D09B60C30E3468601BBA0A(L_132, L_133, Queue_1_Enqueue_mD0BFD1A401EF2D3489D09B60C30E3468601BBA0A_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:143>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:143>
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_134 = V_1;
 		NullCheck(L_134);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_135 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_134)->max_length)));
 		V_32 = L_135;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:145>
 		V_34 = 0;
 		goto IL_0234;
 	}
 
 IL_0228:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:147>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:147>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_136 = V_32;
 		int32_t L_137 = V_34;
 		NullCheck(L_136);
 		(L_136)->SetAt(static_cast<il2cpp_array_size_t>(L_137), (int32_t)(-1));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:145>
 		int32_t L_138 = V_34;
 		V_34 = ((int32_t)il2cpp_codegen_add(L_138, 1));
 	}
 
 IL_0234:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:145>
 		int32_t L_139 = V_34;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_140 = V_1;
 		NullCheck(L_140);
@@ -16428,13 +16428,13 @@ IL_0234:
 
 IL_0240:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:152>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:152>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_141 = V_15;
 		NullCheck(L_141);
 		int32_t L_142;
 		L_142 = Queue_1_Dequeue_mF8CBF6CA268A863994D198E7FB69116D39C9D650(L_141, Queue_1_Dequeue_mF8CBF6CA268A863994D198E7FB69116D39C9D650_RuntimeMethod_var);
 		V_35 = L_142;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:155>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:155>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_143 = V_13;
 		int32_t L_144 = V_35;
 		NullCheck(L_143);
@@ -16446,18 +16446,18 @@ IL_0240:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:161>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:161>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_147 = V_13;
 		int32_t L_148 = V_35;
 		NullCheck(L_147);
 		(L_147)->SetAt(static_cast<il2cpp_array_size_t>(L_148), (bool)1);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:167>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_149 = V_32;
 		int32_t L_150 = V_35;
 		int32_t L_151 = V_18;
 		NullCheck(L_149);
 		(L_149)->SetAt(static_cast<il2cpp_array_size_t>(L_150), (int32_t)L_151);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:168>
 		int32_t L_152 = V_18;
 		int32_t L_153 = L_152;
 		V_18 = ((int32_t)il2cpp_codegen_add(L_153, 1));
@@ -16480,7 +16480,7 @@ IL_0240:
 		memset((&L_166), 0, sizeof(L_166));
 		MeshVertex__ctor_m4C6288980B6B0D156A7DA1839A927C9DB80798B2((&L_166), L_157, L_161, L_165, NULL);
 		IL2CPP_NATIVEARRAY_SET_ITEM(MeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43, ((&V_16))->___m_Buffer, L_153, (L_166));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:171>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:171>
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_167 = V_9;
 		int32_t L_168 = V_35;
 		NullCheck(L_167);
@@ -16509,11 +16509,11 @@ FINALLY_0350:
 
 IL_029d_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:171>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:171>
 				int32_t L_172;
 				L_172 = Enumerator_get_Current_mB49912FF111A954F2C326BF4FA29A53C1027187B_inline((&V_36), Enumerator_get_Current_mB49912FF111A954F2C326BF4FA29A53C1027187B_RuntimeMethod_var);
 				V_37 = L_172;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:174>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:174>
 				BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_173 = V_14;
 				int32_t L_174 = V_37;
 				NullCheck(L_173);
@@ -16525,12 +16525,12 @@ IL_029d_1:
 				}
 			}
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:176>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:176>
 				BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_177 = V_14;
 				int32_t L_178 = V_37;
 				NullCheck(L_177);
 				(L_177)->SetAt(static_cast<il2cpp_array_size_t>(L_178), (bool)1);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:180>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:180>
 				int32_t L_179 = V_37;
 				V_38 = ((int32_t)il2cpp_codegen_multiply(L_179, 3));
 				goto IL_0335_1;
@@ -16538,21 +16538,21 @@ IL_029d_1:
 
 IL_02be_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:182>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:182>
 				Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_180 = V_2;
 				int32_t L_181 = V_38;
 				NullCheck(L_180);
 				int32_t L_182 = L_181;
 				int32_t L_183 = (L_180)->GetAt(static_cast<il2cpp_array_size_t>(L_182));
 				V_39 = L_183;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:183>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:183>
 				Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_184 = V_5;
 				int32_t L_185 = V_37;
 				NullCheck(L_184);
 				int32_t L_186 = L_185;
 				int32_t L_187 = (L_184)->GetAt(static_cast<il2cpp_array_size_t>(L_186));
 				V_6 = L_187;
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:184>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:184>
 				Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E* L_188 = V_17;
 				int32_t L_189 = V_6;
 				NullCheck(L_188);
@@ -16570,15 +16570,15 @@ IL_02be_1:
 				int32_t L_198 = V_39;
 				NullCheck(L_191);
 				(L_191)->SetAt(static_cast<il2cpp_array_size_t>(L_197), (int32_t)L_198);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:185>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:185>
 				int32_t L_199 = V_19;
 				V_19 = ((int32_t)il2cpp_codegen_add(L_199, 1));
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:187>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:187>
 				Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_200 = V_15;
 				int32_t L_201 = V_39;
 				NullCheck(L_200);
 				Queue_1_Enqueue_mD0BFD1A401EF2D3489D09B60C30E3468601BBA0A(L_200, L_201, Queue_1_Enqueue_mD0BFD1A401EF2D3489D09B60C30E3468601BBA0A_RuntimeMethod_var);
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:190>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:190>
 				List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_202 = V_8;
 				int32_t L_203 = V_39;
 				NullCheck(L_202);
@@ -16607,11 +16607,11 @@ FINALLY_0321_1:
 
 IL_0304_2:
 					{
-						//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:190>
+						//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:190>
 						int32_t L_207;
 						L_207 = Enumerator_get_Current_mB49912FF111A954F2C326BF4FA29A53C1027187B_inline((&V_41), Enumerator_get_Current_mB49912FF111A954F2C326BF4FA29A53C1027187B_RuntimeMethod_var);
 						V_42 = L_207;
-						//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:192>
+						//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:192>
 						Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_208 = V_15;
 						int32_t L_209 = V_42;
 						NullCheck(L_208);
@@ -16620,7 +16620,7 @@ IL_0304_2:
 
 IL_0316_2:
 					{
-						//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:190>
+						//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:190>
 						bool L_210;
 						L_210 = Enumerator_MoveNext_m39C71A39758E2B4A04F44F20FCEFAF7009D5F312((&V_41), Enumerator_MoveNext_m39C71A39758E2B4A04F44F20FCEFAF7009D5F312_RuntimeMethod_var);
 						if (L_210)
@@ -16640,14 +16640,14 @@ IL_0316_2:
 
 IL_032f_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:180>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:180>
 				int32_t L_211 = V_38;
 				V_38 = ((int32_t)il2cpp_codegen_add(L_211, 1));
 			}
 
 IL_0335_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:180>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:180>
 				int32_t L_212 = V_38;
 				int32_t L_213 = V_37;
 				if ((((int32_t)L_212) < ((int32_t)((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_multiply(L_213, 3)), 3)))))
@@ -16658,7 +16658,7 @@ IL_0335_1:
 
 IL_0342_1:
 			{
-				//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:171>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:171>
 				bool L_214;
 				L_214 = Enumerator_MoveNext_m39C71A39758E2B4A04F44F20FCEFAF7009D5F312((&V_36), Enumerator_MoveNext_m39C71A39758E2B4A04F44F20FCEFAF7009D5F312_RuntimeMethod_var);
 				if (L_214)
@@ -16678,7 +16678,7 @@ IL_0342_1:
 
 IL_035e:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:150>
 		Queue_1_tCA24E420CB13C6411AEFC3ECE9E62219F7937A1E* L_215 = V_15;
 		NullCheck(L_215);
 		int32_t L_216;
@@ -16689,7 +16689,7 @@ IL_035e:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:200>
 		int32_t L_217 = V_18;
 		if ((((int32_t)L_217) <= ((int32_t)0)))
 		{
@@ -16697,29 +16697,29 @@ IL_035e:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:202>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_218 = (Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4*)il2cpp_codegen_object_new(Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4_il2cpp_TypeInfo_var);
 		Mesh__ctor_m5A9AECEDDAFFD84811ED8928012BDE97A9CEBD00(L_218, NULL);
 		V_43 = L_218;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:204>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:204>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_219 = V_43;
 		int32_t L_220 = V_19;
 		NullCheck(L_219);
 		Mesh_SetIndexBufferParams_mAE7DB809B7C946C44B2BF1F5E4A2A273C0767CAC(L_219, L_220, 1, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:205>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:205>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_221 = V_43;
 		int32_t L_222 = V_18;
 		il2cpp_codegen_runtime_class_init_inline(MeshUtils_tC9337A2922275E0E4389E7BEF6C47B78A4B081C8_il2cpp_TypeInfo_var);
 		VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2* L_223 = ((MeshUtils_tC9337A2922275E0E4389E7BEF6C47B78A4B081C8_StaticFields*)il2cpp_codegen_static_fields_for(MeshUtils_tC9337A2922275E0E4389E7BEF6C47B78A4B081C8_il2cpp_TypeInfo_var))->___layout;
 		NullCheck(L_221);
 		Mesh_SetVertexBufferParams_m8033EB85082C142DCE8B69FFBAD26D7DFB0330B2(L_221, L_222, L_223, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:206>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:206>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_224 = V_43;
 		NativeArray_1_t4EC88F58CDC883870B2A348D0F584E7A66A9F59A L_225 = V_16;
 		int32_t L_226 = V_18;
 		NullCheck(L_224);
 		Mesh_SetVertexBufferData_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_mD74A7C6EFFB74A8CF9E82AA905978DBF93767838(L_224, L_225, 0, 0, L_226, 0, 0, Mesh_SetVertexBufferData_TisMeshVertex_t379BB104543A2A1A5F1E3F9B2FDC866536CDBF43_mD74A7C6EFFB74A8CF9E82AA905978DBF93767838_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:209>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:209>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_227 = V_43;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_228 = ___0_mesh;
 		NullCheck(L_228);
@@ -16727,44 +16727,44 @@ IL_035e:
 		L_229 = Mesh_get_subMeshCount_mC0141293D0F339D8D721CCA2612B32E6FD7E3F8B(L_228, NULL);
 		NullCheck(L_227);
 		Mesh_set_subMeshCount_m8E4DB392DB0621F7DFF8543FF3943A13072B8A28(L_227, L_229, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:210>
 		V_44 = 0;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:211>
 		V_6 = 0;
 		goto IL_0416;
 	}
 
 IL_03b6:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:213>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:213>
 		Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E* L_230 = V_17;
 		int32_t L_231 = V_6;
 		NullCheck(L_230);
 		int32_t L_232 = L_231;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_233 = (L_230)->GetAt(static_cast<il2cpp_array_size_t>(L_232));
 		V_45 = L_233;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:214>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_234 = V_20;
 		int32_t L_235 = V_6;
 		NullCheck(L_234);
 		int32_t L_236 = L_235;
 		int32_t L_237 = (L_234)->GetAt(static_cast<il2cpp_array_size_t>(L_236));
 		V_46 = L_237;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:217>
 		V_47 = 0;
 		goto IL_03e0;
 	}
 
 IL_03c9:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:219>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_238 = V_45;
 		int32_t L_239 = V_47;
 		NullCheck(L_238);
 		int32_t L_240 = L_239;
 		int32_t L_241 = (L_238)->GetAt(static_cast<il2cpp_array_size_t>(L_240));
 		V_48 = L_241;
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:220>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:220>
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_242 = V_45;
 		int32_t L_243 = V_47;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_244 = V_32;
@@ -16774,14 +16774,14 @@ IL_03c9:
 		int32_t L_247 = (L_244)->GetAt(static_cast<il2cpp_array_size_t>(L_246));
 		NullCheck(L_242);
 		(L_242)->SetAt(static_cast<il2cpp_array_size_t>(L_243), (int32_t)L_247);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:217>
 		int32_t L_248 = V_47;
 		V_47 = ((int32_t)il2cpp_codegen_add(L_248, 1));
 	}
 
 IL_03e0:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:217>
 		int32_t L_249 = V_47;
 		int32_t L_250 = V_46;
 		if ((((int32_t)L_249) < ((int32_t)L_250)))
@@ -16790,14 +16790,14 @@ IL_03e0:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:224>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:224>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_251 = V_43;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_252 = V_45;
 		int32_t L_253 = V_44;
 		int32_t L_254 = V_46;
 		NullCheck(L_251);
 		Mesh_SetIndexBufferData_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m39BEFBE3B93E66EC8C747EE4C764D86BBF97E896(L_251, L_252, 0, L_253, L_254, 0, Mesh_SetIndexBufferData_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m39BEFBE3B93E66EC8C747EE4C764D86BBF97E896_RuntimeMethod_var);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:225>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:225>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_255 = V_43;
 		int32_t L_256 = V_6;
 		int32_t L_257 = V_44;
@@ -16807,18 +16807,18 @@ IL_03e0:
 		SubMeshDescriptor__ctor_m5234E625F44FA9B04F41BD9DC013E47C2C628D66((&L_259), L_257, L_258, 0, NULL);
 		NullCheck(L_255);
 		Mesh_SetSubMesh_m8ECC394430DD2D521412479314D75C5B89DD4A65(L_255, L_256, L_259, 0, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:227>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:227>
 		int32_t L_260 = V_44;
 		int32_t L_261 = V_46;
 		V_44 = ((int32_t)il2cpp_codegen_add(L_260, L_261));
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:211>
 		int32_t L_262 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_262, 1));
 	}
 
 IL_0416:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:211>
 		int32_t L_263 = V_6;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_264 = ___0_mesh;
 		NullCheck(L_264);
@@ -16830,11 +16830,11 @@ IL_0416:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:230>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:230>
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_266 = V_43;
 		NullCheck(L_266);
 		Mesh_RecalculateBounds_mA9B293F57C6CD298AE2D2DB19061FC23B05AB90B(L_266, NULL);
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:232>
 		List_1_t43FB89B126C93A6B04630BC64C751BBE95AFEAF4* L_267 = V_0;
 		Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* L_268 = V_43;
 		NullCheck(L_267);
@@ -16843,14 +16843,14 @@ IL_0416:
 
 IL_042f:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:125>
 		int32_t L_269 = V_31;
 		V_31 = ((int32_t)il2cpp_codegen_add(L_269, 1));
 	}
 
 IL_0435:
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:125>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:125>
 		int32_t L_270 = V_31;
 		Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* L_271 = V_1;
 		NullCheck(L_271);
@@ -16860,7 +16860,7 @@ IL_0435:
 		}
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:237>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:237>
 		List_1_t43FB89B126C93A6B04630BC64C751BBE95AFEAF4* L_272 = V_0;
 		NullCheck(L_272);
 		MeshU5BU5D_t178CA36422FC397211E68FB7E39C5B2F95619689* L_273;
@@ -16868,7 +16868,7 @@ IL_0435:
 		return L_273;
 	}
 }
-// Method Definition Index: 109274
+// Method Definition Index: 109388
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshUtils__cctor_mB755B167A1FB890B40D81FBD110658B70CB06880 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16879,12 +16879,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshUtils__cctor_mB755B167A1FB890B40D81F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:9>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:10>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:11>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:12>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:13>
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:14>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:9>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:10>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:11>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:12>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:13>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/MeshUtils.cs:14>
 		VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2* L_0 = (VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2*)(VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2*)SZArrayNew(VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2_il2cpp_TypeInfo_var, (uint32_t)3);
 		VertexAttributeDescriptorU5BU5D_t5D10E60612F12777F59B7E33939F9075DB0E02B2* L_1 = L_0;
 		VertexAttributeDescriptor_tD4231FBF57335465D16308D2A18E8E83D36BFA76 L_2;
@@ -16917,11 +16917,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MeshUtils__cctor_mB755B167A1FB890B40D81F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109275
+// Method Definition Index: 109389
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Vector3Extensions_IsAbovePlane_m98E1CA8BA3D17E30A4DFF3F5FFD2E201B38A83CA (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_p, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_n, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_o, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/Vector3Extensions.cs:20>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Utilities/Vector3Extensions.cs:20>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___1_n;
 		float L_1 = L_0.___x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = ___0_p;
@@ -16951,7 +16951,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Vector3Extensions_IsAbovePlane_m98E1CA8B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 109276
+// Method Definition Index: 109390
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8BEA8F5D8894FDA9A62FE4A04A7E35FC24BCD280 UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m46BE4F27B06CAD9EB9AF1AFC3DD67EE4DBDF6521 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16985,7 +16985,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8BEA8F5D8894FDA9A62FE4A04A7E3
 		return L_6;
 	}
 }
-// Method Definition Index: 109277
+// Method Definition Index: 109391
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m27590FD3E7A089B4974BA7C73A0C805BB5699C64 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tEA2E9C1B15C8B9EA60EC0ACC0B4BAE7B829638E4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -17551,11 +17551,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector3_GetHashCode_mB084
 		return ((int32_t)(((int32_t)(L_1^((int32_t)(L_3<<2))))^((int32_t)(L_5>>2))));
 	}
 }
-// Method Definition Index: 109210
+// Method Definition Index: 109324
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t TriangulationPoint_get_bin_m5D1D743EDC42C2F2A5C5BF1E4B4564FC0E5DD02A_inline (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
 		int32_t L_0 = __this->___U3CbinU3Ek__BackingField;
 		return L_0;
 	}
@@ -17679,11 +17679,11 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 109211
+// Method Definition Index: 109325
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TriangulationPoint_set_bin_mEF923FE3E69026DEDACAC0B3B184233556292CD4_inline (TriangulationPoint_t3C8EE1A3A18CB89F134A41E90E38CC8B11755E49* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:/Users/Shared/All Projects/Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Packs and Plugins/OpenFracture-main/Runtime/Scripts/Fragment/TriangulationPoint.cs:17>
 		int32_t L_0 = ___0_value;
 		__this->___U3CbinU3Ek__BackingField = L_0;
 		return;

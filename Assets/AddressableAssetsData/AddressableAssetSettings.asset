@@ -63,6 +63,7 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: ad9812f088954da4a92ebabe263374ea, type: 2}
   - {fileID: 11400000, guid: aa8d110e2b4024d4f9b4d0a630f99711, type: 2}
+  - {fileID: 11400000, guid: 4d65cbd9d28589440b2da0805cbcffab, type: 2}
   - {fileID: 11400000, guid: 2359027fc317ab14e8a1c896ae817980, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
