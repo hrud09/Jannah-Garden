@@ -1405,7 +1405,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Shader_PropertyToID_mE98523D50F5656CA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112363
+// Method Definition Index: 112373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tAB869088B09E8F246DE4DF62623B3C7AFABF0DAF UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m740935C8F05A4BA624517391631492AEEC759628 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1439,7 +1439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tAB869088B09E8F246DE4DF62623B3
 		return L_6;
 	}
 }
-// Method Definition Index: 112364
+// Method Definition Index: 112374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mC51E58EFBED06EA991CAA3CBBE5D4E492E9E50B5 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tB369787DF63C55DAB053B3EA8203ED422B747585* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1525,7 +1525,7 @@ IL2CPP_EXTERN_C void MonoScriptData_tAB869088B09E8F246DE4DF62623B3C7AFABF0DAF_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112365
+// Method Definition Index: 112375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* WeatherManager_get_CurrentState_m15F91926F781501FC2658F5B14FA831F189E81DB (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1534,7 +1534,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B
 		return L_0;
 	}
 }
-// Method Definition Index: 112366
+// Method Definition Index: 112376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WeatherManager_get_IsTransitioning_m0063183345BA37657AB26A9174C70D406AC8DCE4 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1543,7 +1543,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WeatherManager_get_IsTransitioning_m0063
 		return (bool)((!(((RuntimeObject*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)L_0) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
 	}
 }
-// Method Definition Index: 112367
+// Method Definition Index: 112377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WeatherManager_get_TransitionProgress_m381B11E59B7E4DD0EACA5D8FA50BED795E4B6164 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1552,7 +1552,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float WeatherManager_get_TransitionProgress_m
 		return L_0;
 	}
 }
-// Method Definition Index: 112368
+// Method Definition Index: 112378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Awake_m72451755988DB3CB2CCE16FEAA362D50F766A682 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1590,7 +1590,7 @@ IL_0021:
 		return;
 	}
 }
-// Method Definition Index: 112369
+// Method Definition Index: 112379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_Start_mDE43CF10C4BB9A9A35E0362466AAAF04916E22E9 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1622,7 +1622,7 @@ IL_001f:
 		return;
 	}
 }
-// Method Definition Index: 112370
+// Method Definition Index: 112380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_OnDestroy_mB06B9B49082C5FBF59264F17E6EEB9EB7DC7087C (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1632,7 +1632,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_OnDestroy_mB06B9B49082C5F
 		return;
 	}
 }
-// Method Definition Index: 112371
+// Method Definition Index: 112381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m3E6BCCE2246B1DDA56A0E025946D2F349431FD3B (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, const RuntimeMethod* method) 
 {
 	{
@@ -1643,7 +1643,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m3E6BCCE2246B1
 		return;
 	}
 }
-// Method Definition Index: 112372
+// Method Definition Index: 112382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_SetWeather_m058E1E7D111A473B55E7B01B4A96579AB6938C8A (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, float ___1_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1760,7 +1760,7 @@ IL_008c:
 		return;
 	}
 }
-// Method Definition Index: 112373
+// Method Definition Index: 112383
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* WeatherManager_TransitionRoutine_mE0C3404E742794D5D3BE56345A9902D1F024744E (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1793,7 +1793,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* WeatherManager_TransitionRouti
 		return L_6;
 	}
 }
-// Method Definition Index: 112374
+// Method Definition Index: 112384
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_ApplyToAll_m3B9EC87D062C6FBFFE3A798C8B452280CFEFAEED (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1862,7 +1862,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 112375
+// Method Definition Index: 112385
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_BlendAll_m9FC3054422880E526C914610831138064BCAB05E (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1933,7 +1933,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 112376
+// Method Definition Index: 112386
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* WeatherManager_CreateSnapshot_mD21FC1A693F138EBE454D15113D463D4188A7DDC (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2195,7 +2195,7 @@ IL_0186:
 		return L_93;
 	}
 }
-// Method Definition Index: 112377
+// Method Definition Index: 112387
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager_DestroySnapshot_mA571AD95477F8ACE3160A1FB2C66FB46A85261B7 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2231,7 +2231,7 @@ IL_0020:
 		return;
 	}
 }
-// Method Definition Index: 112378
+// Method Definition Index: 112388
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager__ctor_m2CBC44A43EF52E56F4959C2222A6455A18796011 (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2255,7 +2255,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherManager__ctor_m2CBC44A43EF52E56F4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112379
+// Method Definition Index: 112389
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20__ctor_mE611EEDBA3EE12D03CA9DEFB9130AB0A8304835D (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -2265,14 +2265,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20__ctor_mE611
 		return;
 	}
 }
-// Method Definition Index: 112380
+// Method Definition Index: 112390
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20_System_IDisposable_Dispose_mBE9E0239BCB6C9529193F2F50ACAD372DC950169 (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 112381
+// Method Definition Index: 112391
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CTransitionRoutineU3Ed__20_MoveNext_m1E2C2585B170DDAF3420E9F3606F6724D933C52F (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2421,7 +2421,7 @@ IL_00ce:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 112382
+// Method Definition Index: 112392
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8CF6EC9A5A29BDA11FF9A034C6535146466B11F1 (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2429,7 +2429,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_S
 		return L_0;
 	}
 }
-// Method Definition Index: 112383
+// Method Definition Index: 112393
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20_System_Collections_IEnumerator_Reset_m73FB88FEB4729B8899E7D60CF4F8C5B761395793 (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2438,7 +2438,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTransitionRoutineU3Ed__20_System_Coll
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CTransitionRoutineU3Ed__20_System_Collections_IEnumerator_Reset_m73FB88FEB4729B8899E7D60CF4F8C5B761395793_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 112384
+// Method Definition Index: 112394
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_System_Collections_IEnumerator_get_Current_mFB7236D70AB6F4322E1FD1444B3952CA5748BECD (U3CTransitionRoutineU3Ed__20_t1B9124EC949F528A5871F817DDED6AEED0FA52D8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2454,7 +2454,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTransitionRoutineU3Ed__20_S
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112385
+// Method Definition Index: 112395
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule_Apply_m5BB7A3DDFF61CAFB9BF12C003500D8CAE83D4BCE (WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_state, const RuntimeMethod* method) 
 {
 	{
@@ -2465,7 +2465,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule_Apply_m5BB7A3DDFF61CAFB9BF
 		return;
 	}
 }
-// Method Definition Index: 112387
+// Method Definition Index: 112397
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule__ctor_m627101E8A15508ABB1B037CD7F3B921087FF7B79 (WeatherModule_t341877C5D8E2C7C4355673B026BBE3927A1E4513* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2481,7 +2481,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherModule__ctor_m627101E8A15508ABB1B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112388
+// Method Definition Index: 112398
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherStateData__ctor_mA117980BE3E8901FC44B4CB7F5598C631F347C93 (WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2539,7 +2539,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherStateData__ctor_mA117980BE3E8901F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112389
+// Method Definition Index: 112399
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_Awake_mD8090F68B8D0C67FF57E31781010F7A137F7BB25 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2575,7 +2575,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 112390
+// Method Definition Index: 112400
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_OnGUI_mBFDADA259AC0F310E2352EA71DBAB83F3E99BAC3 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2709,7 +2709,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_OnGUI_mBFDADA259AC0F310E23
 		return;
 	}
 }
-// Method Definition Index: 112391
+// Method Definition Index: 112401
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawPresetButton_mC32070B4D472FF22CCF0F20B0EC41D4A1B537014 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, String_t* ___0_label, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_preset, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___2_accent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2900,7 +2900,7 @@ IL_00dd:
 		return;
 	}
 }
-// Method Definition Index: 112392
+// Method Definition Index: 112402
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFEDAB77D68AF46E35DB38A6310FE569BF (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, float ___0_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2959,7 +2959,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawDurationRow_mF06626CFE
 		return;
 	}
 }
-// Method Definition Index: 112393
+// Method Definition Index: 112403
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawStateDisplay_mED18FB7FA63BA92F7C2F6A6229FE0898F315921A (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, float ___0_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3254,7 +3254,7 @@ IL_015f:
 		return;
 	}
 }
-// Method Definition Index: 112394
+// Method Definition Index: 112404
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawSeparator_m95BDAAD79D010526C8181B62D4B05110C85953B6 (float ___0_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3293,7 +3293,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_DrawSeparator_m95BDAAD79D0
 		return;
 	}
 }
-// Method Definition Index: 112395
+// Method Definition Index: 112405
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI_InitStyles_m25BF7C271E896A32DD4C329139B49B2E7A7C15ED (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3530,7 +3530,7 @@ IL_0009:
 		return;
 	}
 }
-// Method Definition Index: 112396
+// Method Definition Index: 112406
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* WeatherDemoUI_MakePixel_mC3B30B05DDFF4AD0F958CA9CEBB50AE4DC16E320 (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_color, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3556,7 +3556,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11
 		return L_3;
 	}
 }
-// Method Definition Index: 112397
+// Method Definition Index: 112407
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__ctor_m3DAD61AC56C1D8CC70EB39C13D488A111C202788 (WeatherDemoUI_t93ACB4B553F73573155B742609D62786980635BF* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3566,7 +3566,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__ctor_m3DAD61AC56C1D8CC70E
 		return;
 	}
 }
-// Method Definition Index: 112398
+// Method Definition Index: 112408
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__cctor_m2FBBAAB83DC2E0A08C5062C5129718A1CCE82998 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3607,7 +3607,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WeatherDemoUI__cctor_m2FBBAAB83DC2E0A08C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112399
+// Method Definition Index: 112409
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Awake_m13DE8293F2E1EBD6F364AA2214511C0331B14020 (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3632,7 +3632,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Awake_m13DE8293F2E1EBD6F364A
 		return;
 	}
 }
-// Method Definition Index: 112400
+// Method Definition Index: 112410
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_Blend_m40C25BF42F2F7D498ABAD8D8EF8F0354390798A1 (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3775,7 +3775,7 @@ IL_00a1:
 		return;
 	}
 }
-// Method Definition Index: 112401
+// Method Definition Index: 112411
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_InitializeCrossfade_m28D4EB1CAC1685B72A129627C29CAAF2498E400E (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___0_fromClip, float ___1_fromVolume, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___2_toClip, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3876,7 +3876,7 @@ IL_0094:
 		return;
 	}
 }
-// Method Definition Index: 112402
+// Method Definition Index: 112412
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule_SetupSource_mBD016E3F4A3F72FA2915795F60E492FFDE129B14 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___0_source, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___1_clip, float ___2_volume, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3983,7 +3983,7 @@ IL_0057:
 		return;
 	}
 }
-// Method Definition Index: 112403
+// Method Definition Index: 112413
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* AudioModule_CreateAudioSource_m6970E528595A6AA7682F747EEE7EBC8E5F685779 (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, String_t* ___0_sourceName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4044,7 +4044,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B
 		return L_13;
 	}
 }
-// Method Definition Index: 112404
+// Method Definition Index: 112414
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule__ctor_mB62206581C918236FD209B0E4FB180DA5AB7851F (AudioModule_t405F0AE5B3AB2121A2F39F2D1A266B3A38F22DD9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4062,7 +4062,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioModule__ctor_mB62206581C918236FD209
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112405
+// Method Definition Index: 112415
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FogModule_Blend_m0CAA92A2F8F32178AD3AE3834484E701449292B3 (FogModule_tA43F6E444827464E1AE12F68D33BB8F6C8C79833* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	int32_t G_B5_0 = 0;
@@ -4139,7 +4139,7 @@ IL_0021:
 		return;
 	}
 }
-// Method Definition Index: 112406
+// Method Definition Index: 112416
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FogModule__ctor_m37E157EACD0BD52BE87298C056614F116582D522 (FogModule_tA43F6E444827464E1AE12F68D33BB8F6C8C79833* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4155,7 +4155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FogModule__ctor_m37E157EACD0BD52BE87298C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112407
+// Method Definition Index: 112417
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Reset_m97529E63C8276CCB6B287AEC0C8BDB5A8F1E8F43 (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4229,7 +4229,7 @@ IL_0024:
 		return;
 	}
 }
-// Method Definition Index: 112408
+// Method Definition Index: 112418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Blend_m90C63C2019D5552508C7B9BA7F4F204A1382F5C4 (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	{
@@ -4247,7 +4247,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_Blend_m90C63C2019D5552508C7B
 		return;
 	}
 }
-// Method Definition Index: 112409
+// Method Definition Index: 112419
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendDirectionalLight_mC27E6369E4716BBA9D50B3D17AC46E1F5661DA1B (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4310,7 +4310,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 112410
+// Method Definition Index: 112420
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendAmbientLight_m1277CB7932816FAB30711AEB7E424F2D3E84127D (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	{
@@ -4331,7 +4331,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule_BlendAmbientLight_m1277CB793
 		return;
 	}
 }
-// Method Definition Index: 112411
+// Method Definition Index: 112421
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule__ctor_mC55759BAFE95B7017BF675C22E966D494968756E (LightModule_tC0E051CD4BAEE220C5961D4D70FBFEE6DDDBEEC8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4347,7 +4347,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightModule__ctor_mC55759BAFE95B7017BF67
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112412
+// Method Definition Index: 112422
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Awake_m4F964679F08F6EEE4C9BD53B8BE27D586FCCBE4E (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4463,7 +4463,7 @@ IL_008c:
 		return;
 	}
 }
-// Method Definition Index: 112413
+// Method Definition Index: 112423
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Reset_m7E21795C6397C705F02DF54713F6C660EEC235CB (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4482,7 +4482,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Reset_m7E21795C6397C705F02DF5
 		return;
 	}
 }
-// Method Definition Index: 112414
+// Method Definition Index: 112424
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_LateUpdate_m43C7DD19FE34EB61D60F187A96673C226F87DFAB (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4542,7 +4542,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 112415
+// Method Definition Index: 112425
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_OnDestroy_mEB7D3B0694DBE0BD886DCC0386D878D2EC771AF7 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4575,7 +4575,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 112416
+// Method Definition Index: 112426
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_Blend_mBF5008A8DA55D83D5E488FD0A42ADCAFE39E6D05 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -4639,7 +4639,7 @@ IL_0009:
 		return;
 	}
 }
-// Method Definition Index: 112417
+// Method Definition Index: 112427
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ApplyRain_mEAC3B6AC8E6EE14D4D12678B846FBC3D0EFC51CF (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, float ___0_intensity, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, float ___2_speed, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -4725,7 +4725,7 @@ IL_00aa:
 		return;
 	}
 }
-// Method Definition Index: 112418
+// Method Definition Index: 112428
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_CacheModules_m9EA1279EF0A544895CD171E992AC09931C83D8E7 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4754,7 +4754,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_CacheModules_m9EA1279EF0A5448
 		return;
 	}
 }
-// Method Definition Index: 112419
+// Method Definition Index: 112429
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* RainModule_CreateParticleSystemObject_m54BF89EE76FEEF6B64A8CF03EF4BA7506008A1FB (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4803,7 +4803,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ParticleSystem_tB19986EE308BD63D36FB6025EEEAF
 		return L_10;
 	}
 }
-// Method Definition Index: 112420
+// Method Definition Index: 112430
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ConfigureParticleSystem_m942C64C0640D9E9C34B2BC240441CEF44C3052A6 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4934,7 +4934,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_ConfigureParticleSystem_m942C
 		return;
 	}
 }
-// Method Definition Index: 112421
+// Method Definition Index: 112431
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule_AssignMaterial_m30BDA342749110CE31DEE3D13893F982484ED617 (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, ParticleSystemRenderer_t576C271A363A738A6C576D4C6AEFB3B5B23E46C4* ___0_rend, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5035,7 +5035,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 112422
+// Method Definition Index: 112432
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule__ctor_mD9CD1DEB6536F62F8C39182FBBE5CA683D0F239F (RainModule_t7D95293E366793313B02A40FFEA3D865CD28120B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5057,7 +5057,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RainModule__ctor_mD9CD1DEB6536F62F8C3918
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112423
+// Method Definition Index: 112433
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Awake_mCAEF476D2D5DCCB61BF68A5E98698E289D74D087 (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5127,7 +5127,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 112424
+// Method Definition Index: 112434
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_OnDestroy_m921456CDC1FBFBF64AA9B9B6CD03D68D9125882B (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5178,7 +5178,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 112425
+// Method Definition Index: 112435
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_Blend_mC3A2C4B3028CB839141683FEFDAC002DC252E31F (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___0_from, WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -5229,7 +5229,7 @@ IL_0009:
 		return;
 	}
 }
-// Method Definition Index: 112426
+// Method Definition Index: 112436
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_ApplySky_m843B763ABE4922DF789FD4A3A62551596E042750 (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_tint, float ___1_exposure, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5280,7 +5280,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 112427
+// Method Definition Index: 112437
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule_DetectProperties_m44E1702D2943D709A610E80DD2C1B620731B679D (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5377,7 +5377,7 @@ IL_0080:
 		return;
 	}
 }
-// Method Definition Index: 112428
+// Method Definition Index: 112438
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__ctor_mBCFECAFC167164B56B7645FF72ADF52EBE769863 (SkyModule_t026396A6200B27FC8AD46D928E612B383C006780* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5385,7 +5385,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__ctor_mBCFECAFC167164B56B7645F
 		return;
 	}
 }
-// Method Definition Index: 112429
+// Method Definition Index: 112439
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkyModule__cctor_mA8EA834131E281ED700587828E90D7F7526F8B37 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5621,7 +5621,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_y_mC733E8D49F3CE21
 		return L_0;
 	}
 }
-// Method Definition Index: 112365
+// Method Definition Index: 112375
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR WeatherStateData_t5D7721CBE2D18AF7F626CCA4E3B492A068C93D33* WeatherManager_get_CurrentState_m15F91926F781501FC2658F5B14FA831F189E81DB_inline (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5644,7 +5644,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_mCD6889CDE39F187
 		return;
 	}
 }
-// Method Definition Index: 112367
+// Method Definition Index: 112377
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float WeatherManager_get_TransitionProgress_m381B11E59B7E4DD0EACA5D8FA50BED795E4B6164_inline (WeatherManager_t37A94D18825DE68CE5DAA4FF29EE6CAB076EEE80* __this, const RuntimeMethod* method) 
 {
 	{

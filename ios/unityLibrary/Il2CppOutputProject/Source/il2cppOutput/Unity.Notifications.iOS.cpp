@@ -2027,7 +2027,7 @@ IL2CPP_EXTERN_C void DEFAULT_CALL _OpenNotificationSettings();
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111503
+// Method Definition Index: 111513
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tE2F86CD91405E09B0A0E2C592AE6A8D1FC05C914 UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m08FABC63328861B98E9100E628E5EBC872C670B7 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2061,7 +2061,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tE2F86CD91405E09B0A0E2C592AE6A
 		return L_6;
 	}
 }
-// Method Definition Index: 111504
+// Method Definition Index: 111514
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m51CA90369C3E64AEB048E64E329C6A2A5F90391D (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_t45269705F45CA55C817203AB74B211907013995B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2209,7 +2209,7 @@ IL2CPP_EXTERN_C void iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111505
+// Method Definition Index: 111515
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthorizationRequest_get_IsFinished_mE33F31C34C68CF41E031401ED94107F635611786 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, const RuntimeMethod* method) 
 {
 	AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* V_0 = NULL;
@@ -2266,7 +2266,7 @@ IL_001f:
 		return L_4;
 	}
 }
-// Method Definition Index: 111506
+// Method Definition Index: 111516
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_IsFinished_m9AF9F366ABC34678151252ECFC3B4FF6959E6ED9 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2277,7 +2277,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_IsFinished_m9AF
 		return;
 	}
 }
-// Method Definition Index: 111507
+// Method Definition Index: 111517
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthorizationRequest_get_Granted_mECDFFF68D2DEAF78D4E7C5376ED0E2550D5EF164 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, const RuntimeMethod* method) 
 {
 	AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* V_0 = NULL;
@@ -2334,7 +2334,7 @@ IL_001f:
 		return L_4;
 	}
 }
-// Method Definition Index: 111508
+// Method Definition Index: 111518
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Granted_mFC66547317A168FF388E5AFA19A4A1F31AAF7033 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2345,7 +2345,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Granted_mFC6654
 		return;
 	}
 }
-// Method Definition Index: 111509
+// Method Definition Index: 111519
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthorizationRequest_get_Error_m24A9600E64700A0C659F82D034EA076393C04660 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, const RuntimeMethod* method) 
 {
 	AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* V_0 = NULL;
@@ -2402,7 +2402,7 @@ IL_001f:
 		return L_4;
 	}
 }
-// Method Definition Index: 111510
+// Method Definition Index: 111520
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Error_m0310B101EB0CDE8DEF8FAA58E69513A810AF5F41 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2414,7 +2414,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Error_m0310B101
 		return;
 	}
 }
-// Method Definition Index: 111511
+// Method Definition Index: 111521
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthorizationRequest_get_DeviceToken_m37FEE181AD1306710096FA6FD68CA0C7DB3082FE (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, const RuntimeMethod* method) 
 {
 	AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* V_0 = NULL;
@@ -2471,7 +2471,7 @@ IL_001f:
 		return L_4;
 	}
 }
-// Method Definition Index: 111512
+// Method Definition Index: 111522
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_DeviceToken_mDF3A4418B4B1D213AE14E590BCB36BD3C5FADAE3 (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2483,7 +2483,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_set_DeviceToken_mDF
 		return;
 	}
 }
-// Method Definition Index: 111513
+// Method Definition Index: 111523
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest__cctor_m79A3F9A51C73D573D6140DECD00F26458A13B6EA (const RuntimeMethod* method) 
 {
 	{
@@ -2493,7 +2493,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest__cctor_m79A3F9A51C7
 		return;
 	}
 }
-// Method Definition Index: 111514
+// Method Definition Index: 111524
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest__ctor_mA2D61FE2CE62D08FAFF0C98BE07CDDB3AA61C57E (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, int32_t ___0_authorizationOption, bool ___1_registerForRemoteNotifications, const RuntimeMethod* method) 
 {
 	{
@@ -2512,7 +2512,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest__ctor_mA2D61FE2CE62
 		return;
 	}
 }
-// Method Definition Index: 111515
+// Method Definition Index: 111525
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_OnAuthorizationRequestCompleted_m9A40CB3464048A5E0EE673AC50FF9AB462B7CD3E (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___0_requestData, const RuntimeMethod* method) 
 {
 	AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* V_0 = NULL;
@@ -2579,7 +2579,7 @@ IL_0046:
 		return;
 	}
 }
-// Method Definition Index: 111516
+// Method Definition Index: 111526
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_OnAuthorizationRequestCompleted_m0F1A24F99EF966055A145B95406B0DE10ACF92A8 (intptr_t ___0_request, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___1_requestData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2637,7 +2637,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 111517
+// Method Definition Index: 111527
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthorizationRequest_get_RegisteredForRemoteNotifications_m10F1F2384A5F638A50280203F731A70386C09CF7 (const RuntimeMethod* method) 
 {
 	{
@@ -2647,7 +2647,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthorizationRequest_get_RegisteredForRe
 		return L_0;
 	}
 }
-// Method Definition Index: 111518
+// Method Definition Index: 111528
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_UnregisterForRemoteNotifications_m7B6B975A513A532398921D3587BAC8B4EC6E8E95 (const RuntimeMethod* method) 
 {
 	{
@@ -2657,7 +2657,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_UnregisterForRemote
 		return;
 	}
 }
-// Method Definition Index: 111519
+// Method Definition Index: 111529
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest_Dispose_mA7CA814C1D0F2C5B60913802FDF7923ABF8319DF (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2903,7 +2903,7 @@ IL2CPP_EXTERN_C void iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111520
+// Method Definition Index: 111530
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Identifier_mD29BD041CBA7DBBC52AE1F8B96A611C4D225FE29 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2913,7 +2913,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Identifier_mD29
 		return L_1;
 	}
 }
-// Method Definition Index: 111521
+// Method Definition Index: 111531
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Identifier_mE3145BABCFC0000F3C9AB6AD49DE7D784570635D (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2926,7 +2926,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Identifier_mE3145BAB
 		return;
 	}
 }
-// Method Definition Index: 111522
+// Method Definition Index: 111532
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_CategoryIdentifier_m9D78200F00E25A3ED9BDD67E39FEF80E4DFB16CA (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2936,7 +2936,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_CategoryIdentif
 		return L_1;
 	}
 }
-// Method Definition Index: 111523
+// Method Definition Index: 111533
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_CategoryIdentifier_mE805009CDA125BD6038146FB774B1AAD213E7283 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2949,7 +2949,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_CategoryIdentifier_m
 		return;
 	}
 }
-// Method Definition Index: 111524
+// Method Definition Index: 111534
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_ThreadIdentifier_m765A116B9C88CD4AB59BD2BCB351520FB0D68EFC (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2959,7 +2959,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_ThreadIdentifie
 		return L_1;
 	}
 }
-// Method Definition Index: 111525
+// Method Definition Index: 111535
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_ThreadIdentifier_m1DB3535D83AC1CD4EBD5E0C84A40AB43D311E303 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2972,7 +2972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_ThreadIdentifier_m1D
 		return;
 	}
 }
-// Method Definition Index: 111526
+// Method Definition Index: 111536
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Title_m32E658B0736C29D716D6026439297FD6C3E9943D (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2982,7 +2982,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Title_m32E658B0
 		return L_1;
 	}
 }
-// Method Definition Index: 111527
+// Method Definition Index: 111537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Title_mAAB437F0A9964DB9ACC46E386CB158E554287832 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -2995,7 +2995,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Title_mAAB437F0A9964
 		return;
 	}
 }
-// Method Definition Index: 111528
+// Method Definition Index: 111538
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Subtitle_mEDAAFF7725FB813021524C43F21B9894D711EDFD (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3005,7 +3005,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Subtitle_mEDAAF
 		return L_1;
 	}
 }
-// Method Definition Index: 111529
+// Method Definition Index: 111539
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Subtitle_m7B1A7683AAF8E53C4F07C8D16D68F5F94DE4F69A (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3018,7 +3018,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Subtitle_m7B1A7683AA
 		return;
 	}
 }
-// Method Definition Index: 111530
+// Method Definition Index: 111540
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Body_m5CD84B7FB13E4E1FD3E0D116523EDF9DEEA33A7A (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3028,7 +3028,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Body_m5CD84B7FB
 		return L_1;
 	}
 }
-// Method Definition Index: 111531
+// Method Definition Index: 111541
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Body_m5AE05A830B4B0D56C09DE9BEDC210C5F1316DB92 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3041,7 +3041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Body_m5AE05A830B4B0D
 		return;
 	}
 }
-// Method Definition Index: 111532
+// Method Definition Index: 111542
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotification_get_ShowInForeground_m0201CF79F451C45ADCB84A397D6A8FF72A92E438 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3078,7 +3078,7 @@ IL_0020:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 111533
+// Method Definition Index: 111543
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_ShowInForeground_mB8363BB4B0C40234B565A24F6A979641DBA5A8D8 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3132,7 +3132,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 111534
+// Method Definition Index: 111544
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_ForegroundPresentationOption_m9EDF9BE96A123B4727010D00AC4B72823721923E (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3201,7 +3201,7 @@ IL_0026:
 		return L_5;
 	}
 }
-// Method Definition Index: 111535
+// Method Definition Index: 111545
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_ForegroundPresentationOption_mE95C0D442FB78AC8ED3137CA19BF4C12963D2D57 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3225,7 +3225,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_ForegroundPresentati
 		return;
 	}
 }
-// Method Definition Index: 111536
+// Method Definition Index: 111546
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_Badge_m2C4F12C4F17C2D68BF2453C9006BF5AF43126796 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3235,7 +3235,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_Badge_m2C4F12C4F1
 		return L_1;
 	}
 }
-// Method Definition Index: 111537
+// Method Definition Index: 111547
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Badge_m91BE817449342EA5AAA3B0616B60363FFF39DCDD (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3247,7 +3247,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Badge_m91BE817449342
 		return;
 	}
 }
-// Method Definition Index: 111538
+// Method Definition Index: 111548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_SoundType_mB80CA22658B237E46E82FDFB85050DBFFD1F4408 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3257,7 +3257,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_SoundType_mB80CA2
 		return (int32_t)(L_1);
 	}
 }
-// Method Definition Index: 111539
+// Method Definition Index: 111549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_SoundType_mDE3D3DB3FFC5038B9423B2673A4A22833B50A8FA (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3269,7 +3269,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_SoundType_mDE3D3DB3F
 		return;
 	}
 }
-// Method Definition Index: 111540
+// Method Definition Index: 111550
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_SoundName_mEF8B3E1A0C30CD3F9B949508CB22D23BE75106A4 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3279,7 +3279,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_SoundName_mEF8B
 		return L_1;
 	}
 }
-// Method Definition Index: 111541
+// Method Definition Index: 111551
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_SoundName_mA964836E50E96430BFD8928DC15608FCA552F4BD (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3292,7 +3292,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_SoundName_mA964836E5
 		return;
 	}
 }
-// Method Definition Index: 111542
+// Method Definition Index: 111552
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F32C6FE75 iOSNotification_get_SoundVolume_m78AE382CC86FF14B9F75B8AF12490A6724DF1DA0 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3301,7 +3301,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F3
 		return L_0;
 	}
 }
-// Method Definition Index: 111543
+// Method Definition Index: 111553
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_SoundVolume_m5C6E7D60E10041CCC6DB4336389175B199AE2DA3 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F32C6FE75 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3311,7 +3311,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_SoundVolume_m5C6E7D6
 		return;
 	}
 }
-// Method Definition Index: 111544
+// Method Definition Index: 111554
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_InterruptionLevel_mE8C5B67EBAE5566E3FB463C9C82C089FED9BE48C (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3321,7 +3321,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotification_get_InterruptionLevel
 		return (int32_t)(L_1);
 	}
 }
-// Method Definition Index: 111545
+// Method Definition Index: 111555
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_InterruptionLevel_m5002199C8A5587D57D03283520AB5F19FCACBD10 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3333,7 +3333,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_InterruptionLevel_m5
 		return;
 	}
 }
-// Method Definition Index: 111546
+// Method Definition Index: 111556
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double iOSNotification_get_RelevanceScore_mB14753EFFB247D77B18ABCC74D2D87CE53206C77 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3343,7 +3343,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double iOSNotification_get_RelevanceScore_mB1
 		return L_1;
 	}
 }
-// Method Definition Index: 111547
+// Method Definition Index: 111557
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_RelevanceScore_mD639A6AE30BFA773E4205FD8ACB6376316EB9DD6 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, double ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3355,7 +3355,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_RelevanceScore_mD639
 		return;
 	}
 }
-// Method Definition Index: 111548
+// Method Definition Index: 111558
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Data_m047F0F45855B536B32217502912BEAB3FB080FAF (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3377,7 +3377,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_get_Data_m047F0F458
 		return L_2;
 	}
 }
-// Method Definition Index: 111549
+// Method Definition Index: 111559
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Data_mDDEDDFDC4DA023124B7CC8D0AA882F3EFD6C334A (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3397,7 +3397,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Data_mDDEDDFDC4DA023
 		return;
 	}
 }
-// Method Definition Index: 111550
+// Method Definition Index: 111560
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* iOSNotification_get_UserInfo_m92F60A3EC7460F6AD8B0CD93461EC425ED527237 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3406,7 +3406,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F31
 		return L_0;
 	}
 }
-// Method Definition Index: 111551
+// Method Definition Index: 111561
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* iOSNotification_get_Attachments_m54CA2BC5B43417D01136FE5A72B0A0BD2636549D (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3415,7 +3415,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tC74F654247ABF5958BE119A0484FED155A4FA
 		return L_0;
 	}
 }
-// Method Definition Index: 111552
+// Method Definition Index: 111562
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Attachments_m93E8FB777A55F4C6AB38922DBD0A0C8E9890D15C (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3426,7 +3426,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Attachments_m93E8FB7
 		return;
 	}
 }
-// Method Definition Index: 111553
+// Method Definition Index: 111563
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification_set_Trigger_m87A4F53B6CB98FE11AD98A5952F0CB2E95BCF52F (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, RuntimeObject* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4069,7 +4069,7 @@ IL_032d:
 		return;
 	}
 }
-// Method Definition Index: 111554
+// Method Definition Index: 111564
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* iOSNotification_get_Trigger_m3C54C255331E7A1FF8F2B159D3546EEEF8247649 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4547,7 +4547,7 @@ IL_0354:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_126, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSNotification_get_Trigger_m3C54C255331E7A1FF8F2B159D3546EEEF8247649_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 111555
+// Method Definition Index: 111565
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_GenerateUniqueID_mD6A35B90F34C752248B213A19EDCDC720EBF9C45 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4581,7 +4581,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotification_GenerateUniqueID_mD
 		return L_4;
 	}
 }
-// Method Definition Index: 111556
+// Method Definition Index: 111566
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification__ctor_m7CFB3CF88F34E88EDC2CA56EC15F3510B1AAD69B (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4593,7 +4593,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification__ctor_m7CFB3CF88F34E88ED
 		return;
 	}
 }
-// Method Definition Index: 111557
+// Method Definition Index: 111567
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification__ctor_m1EC6737F4C8ACFEA13E12E9F5F51C2F808AFEC58 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, String_t* ___0_identifier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4663,7 +4663,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification__ctor_m1EC6737F4C8ACFEA1
 		return;
 	}
 }
-// Method Definition Index: 111558
+// Method Definition Index: 111568
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification__ctor_m480637048FB144A8C2E4014549FFEE9D4299F6E8 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -4705,7 +4705,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotification__ctor_m480637048FB144A8C
 		return;
 	}
 }
-// Method Definition Index: 111559
+// Method Definition Index: 111569
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 iOSNotification_GetDataForSending_m389ADA195D034D80F017CE145C149AFD66996B69 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4831,7 +4831,7 @@ IL_0058:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111560
+// Method Definition Index: 111570
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_Id_m2EDC9A71F4912737711EAE8C9B09D8D496A3E3FA (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4840,7 +4840,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_Id_m2EDC9
 		return L_0;
 	}
 }
-// Method Definition Index: 111561
+// Method Definition Index: 111571
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Id_m0D72F28EC32CAC70BBDB5DB38ADC2AD0919F9A14 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -4851,7 +4851,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Id_m0D72F28EC3
 		return;
 	}
 }
-// Method Definition Index: 111562
+// Method Definition Index: 111572
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_Title_m44DF5E056FD6A12373E6AA43A2841BE2DB3EE012 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4860,7 +4860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_Title_m44
 		return L_0;
 	}
 }
-// Method Definition Index: 111563
+// Method Definition Index: 111573
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Title_mCFCB94D7A5C1CF60342BD4E7C9B7FBE07A4554C0 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -4871,7 +4871,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Title_mCFCB94D
 		return;
 	}
 }
-// Method Definition Index: 111564
+// Method Definition Index: 111574
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationAction_get_Options_mEEDBE525091EDE4B06F7638293682C1AB9DFC65D (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4880,7 +4880,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationAction_get_Options_mEE
 		return L_0;
 	}
 }
-// Method Definition Index: 111565
+// Method Definition Index: 111575
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Options_mB57570C3425E330D6D74528777D0D78E3FBDFF96 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -4890,7 +4890,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Options_mB5757
 		return;
 	}
 }
-// Method Definition Index: 111566
+// Method Definition Index: 111576
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_SystemImageName_m9334531447E7E9A1EFC4274630EBCB9F19EE1A91 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4911,7 +4911,7 @@ IL_000b:
 		return L_1;
 	}
 }
-// Method Definition Index: 111567
+// Method Definition Index: 111577
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_SystemImageName_m572766AC066E2A57FF0D93E204FEC1F29CF28ED9 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -4925,7 +4925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_SystemImageNam
 		return;
 	}
 }
-// Method Definition Index: 111568
+// Method Definition Index: 111578
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_TemplateImageName_m638E426026278A8679372FE9789F882CD2CA151B (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4946,7 +4946,7 @@ IL_000b:
 		return L_1;
 	}
 }
-// Method Definition Index: 111569
+// Method Definition Index: 111579
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_TemplateImageName_mA90EB95821E2D9616AD5175771E7FADD6D05205F (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -4960,7 +4960,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction_set_TemplateImageN
 		return;
 	}
 }
-// Method Definition Index: 111570
+// Method Definition Index: 111580
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction__ctor_m566C1EBCE6E24B9526C97579AD5F7FC7A1595BEE (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_id, String_t* ___1_title, const RuntimeMethod* method) 
 {
 	{
@@ -4972,7 +4972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction__ctor_m566C1EBCE6E
 		return;
 	}
 }
-// Method Definition Index: 111571
+// Method Definition Index: 111581
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction__ctor_m862B26CBE20DCA2F658AB3D1FE495B8A7DB6ACD1 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_id, String_t* ___1_title, int32_t ___2_options, const RuntimeMethod* method) 
 {
 	{
@@ -4991,7 +4991,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAction__ctor_m862B26CBE20
 		return;
 	}
 }
-// Method Definition Index: 111572
+// Method Definition Index: 111582
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationAction_CreateUNNotificationAction_m698604E70CF8536008644C3EB53667E63A696E88 (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5017,7 +5017,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationAction_CreateUNNotifi
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111573
+// Method Definition Index: 111583
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificationAction_get_TextInputButtonTitle_m6FA9D43FEB99BE97A9047CBC0E030C8E2EB94818 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5026,7 +5026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificationAction_get_
 		return L_0;
 	}
 }
-// Method Definition Index: 111574
+// Method Definition Index: 111584
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction_set_TextInputButtonTitle_m56A810611C4AA5BDCD082632FB9CF85B6F5E6F85 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5037,7 +5037,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction_set_TextI
 		return;
 	}
 }
-// Method Definition Index: 111575
+// Method Definition Index: 111585
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificationAction_get_TextInputPlaceholder_m23B1AFC4970F84F64A1EAB498CEED1316DA719F9 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5046,7 +5046,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificationAction_get_
 		return L_0;
 	}
 }
-// Method Definition Index: 111576
+// Method Definition Index: 111586
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction_set_TextInputPlaceholder_m8F20AF7F3EF65BEFF3A7EF0FE93FEBCB3B4CC7D0 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5057,7 +5057,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction_set_TextI
 		return;
 	}
 }
-// Method Definition Index: 111577
+// Method Definition Index: 111587
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction__ctor_m74B3BC9B30E81A3C82AC1D69AF860E92D081D944 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, String_t* ___0_id, String_t* ___1_title, String_t* ___2_buttonTitle, const RuntimeMethod* method) 
 {
 	{
@@ -5072,7 +5072,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction__ctor_m74
 		return;
 	}
 }
-// Method Definition Index: 111578
+// Method Definition Index: 111588
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction__ctor_mB5EFA7F1A107A2362087A87BBEA233406EF1BC19 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, String_t* ___0_id, String_t* ___1_title, int32_t ___2_options, String_t* ___3_buttonTitle, const RuntimeMethod* method) 
 {
 	{
@@ -5088,7 +5088,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction__ctor_mB5
 		return;
 	}
 }
-// Method Definition Index: 111579
+// Method Definition Index: 111589
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSTextInputNotificationAction_CreateUNNotificationAction_m62D82C09FB196F73F28FC432B3CF09ED83B0FB82 (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5156,7 +5156,7 @@ IL2CPP_EXTERN_C void iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D
 	il2cpp_codegen_marshal_free_bstring(marshaled.___U3CUrlU3Ek__BackingField);
 	marshaled.___U3CUrlU3Ek__BackingField = NULL;
 }
-// Method Definition Index: 111580
+// Method Definition Index: 111590
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAttachment_get_Id_m8A551CB233C83D05BDDACF9688CBECAAF9846C15 (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5174,7 +5174,7 @@ IL2CPP_EXTERN_C  String_t* iOSNotificationAttachment_get_Id_m8A551CB233C83D05BDD
 	_returnValue = iOSNotificationAttachment_get_Id_m8A551CB233C83D05BDDACF9688CBECAAF9846C15_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111581
+// Method Definition Index: 111591
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAttachment_set_Id_m7401F5705B3B4ADDC0DA5B372FE4579418891E7E (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5192,7 +5192,7 @@ IL2CPP_EXTERN_C  void iOSNotificationAttachment_set_Id_m7401F5705B3B4ADDC0DA5B37
 	_thisAdjusted = reinterpret_cast<iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933*>(__this + _offset);
 	iOSNotificationAttachment_set_Id_m7401F5705B3B4ADDC0DA5B372FE4579418891E7E_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111582
+// Method Definition Index: 111592
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationAttachment_get_Url_mE0C69FB858552B293B9C0BDDFF2894FC6EBE9BF0 (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5210,7 +5210,7 @@ IL2CPP_EXTERN_C  String_t* iOSNotificationAttachment_get_Url_mE0C69FB858552B293B
 	_returnValue = iOSNotificationAttachment_get_Url_mE0C69FB858552B293B9C0BDDFF2894FC6EBE9BF0_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111583
+// Method Definition Index: 111593
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationAttachment_set_Url_m4F0B407457097EC2DEFDCD296E07CDDF624DE202 (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5244,7 +5244,7 @@ IL2CPP_EXTERN_C  void iOSNotificationAttachment_set_Url_m4F0B407457097EC2DEFDCD2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111584
+// Method Definition Index: 111594
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_Id_m6A4071B537F6E5B51DA11DCB43613BBD691CFBA9 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5253,7 +5253,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_Id_m6A4
 		return L_0;
 	}
 }
-// Method Definition Index: 111585
+// Method Definition Index: 111595
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_Id_mEDA4B676B8D390208CF1AE47350C5C80B5169400 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5264,7 +5264,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_Id_mEDA4B676
 		return;
 	}
 }
-// Method Definition Index: 111586
+// Method Definition Index: 111596
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationActionU5BU5D_t18A4AEF543002EF5A58DFB73858B184FFD525757* iOSNotificationCategory_get_Actions_m9958D87CD035EA242CEAB3BAC116C43B0CD8F895 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5282,7 +5282,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationActionU5BU5D_t18A4AEF543002EF5
 		return L_1;
 	}
 }
-// Method Definition Index: 111587
+// Method Definition Index: 111597
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* iOSNotificationCategory_get_IntentIdentifiers_m91CA55C622A693C0AAF6C5CE75322E3084B50FAC (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5300,7 +5300,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		return L_1;
 	}
 }
-// Method Definition Index: 111588
+// Method Definition Index: 111598
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_HiddenPreviewsBodyPlaceholder_mCC5DF780F51E1AC578873FE372067DF14800A1C2 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5309,7 +5309,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_HiddenP
 		return L_0;
 	}
 }
-// Method Definition Index: 111589
+// Method Definition Index: 111599
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_HiddenPreviewsBodyPlaceholder_mE4236373C03680A332BD46906446FCC6575B8706 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5320,7 +5320,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_HiddenPrevie
 		return;
 	}
 }
-// Method Definition Index: 111590
+// Method Definition Index: 111600
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_SummaryFormat_m6835C27643601AFBCD4F51CA3E28C72E850164CB (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5329,7 +5329,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_Summary
 		return L_0;
 	}
 }
-// Method Definition Index: 111591
+// Method Definition Index: 111601
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_SummaryFormat_m1F6BD8A0239C10732E501E9656F80395830975E6 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5340,7 +5340,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_SummaryForma
 		return;
 	}
 }
-// Method Definition Index: 111592
+// Method Definition Index: 111602
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationCategory_get_Options_m93741379CF2DF82295080957832C1D37D3DFC961 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5349,7 +5349,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationCategory_get_Options_m
 		return L_0;
 	}
 }
-// Method Definition Index: 111593
+// Method Definition Index: 111603
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_Options_mBD7D5BCEB04A37420BEA6F83BDB389A504901A4D (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5359,7 +5359,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_Options_mBD7
 		return;
 	}
 }
-// Method Definition Index: 111594
+// Method Definition Index: 111604
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory__ctor_m810EE5490EA8ACE99B8A0150269489A02E6FBD73 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_id, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5391,7 +5391,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory__ctor_m810EE5490
 		return;
 	}
 }
-// Method Definition Index: 111595
+// Method Definition Index: 111605
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory__ctor_m86E79D1605C4B92D4F489AB30CD1996F8B5BDB44 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_id, RuntimeObject* ___1_actions, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5425,7 +5425,7 @@ IL_0016:
 		return;
 	}
 }
-// Method Definition Index: 111596
+// Method Definition Index: 111606
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory__ctor_mA9EF06509B1E8EFC55CD89B7E1C953732B805C08 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_id, RuntimeObject* ___1_actions, RuntimeObject* ___2_intentIdentifiers, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5460,7 +5460,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 111597
+// Method Definition Index: 111607
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_AddAction_m69C2674E73A8123159783E521E3E29869B1A22D3 (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* ___0_action, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5495,7 +5495,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 111598
+// Method Definition Index: 111608
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_AddActions_mC4F68982BE6E1EEDF9A8B28D92168DC3F73E53BF (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, RuntimeObject* ___0_actions, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5530,7 +5530,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 111599
+// Method Definition Index: 111609
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_AddIntentIdentifier_mACFFCA6D3AFFB27A45AA710F6CA6FC45716BFB5C (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_identifier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5565,7 +5565,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 111600
+// Method Definition Index: 111610
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCategory_AddIntentIdentifiers_m39C87755E7FC4A520627B5A06B7540C797FCFC7A (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, RuntimeObject* ___0_identifiers, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5608,7 +5608,7 @@ IL_000e:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111601
+// Method Definition Index: 111611
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_add_OnNotificationReceived_mBDDFEE1D07C6758432146DA63D549BBD9B6E478D (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5644,7 +5644,7 @@ IL_0012:
 		return;
 	}
 }
-// Method Definition Index: 111602
+// Method Definition Index: 111612
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_remove_OnNotificationReceived_m68E9DB4B4DB9FF09B19C26A62219B2D5452CF141 (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5662,7 +5662,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_remove_OnNotificat
 		return;
 	}
 }
-// Method Definition Index: 111603
+// Method Definition Index: 111613
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_add_s_OnNotificationReceived_m4E29F2436D73946B1BD36ADF023FA48785C1997E (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5707,7 +5707,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 111604
+// Method Definition Index: 111614
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_remove_s_OnNotificationReceived_m01505A43D8ED03C0D14073AB63B2B88B8EDB1F1E (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5752,7 +5752,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 111605
+// Method Definition Index: 111615
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_add_OnRemoteNotificationReceived_m9792696D830ECDBB207C6CA3D7DCE50EB440D8BC (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5788,7 +5788,7 @@ IL_0012:
 		return;
 	}
 }
-// Method Definition Index: 111606
+// Method Definition Index: 111616
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_remove_OnRemoteNotificationReceived_m5908F7C44697E4A75DE9997F299AE1B0E2BA4E27 (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5806,7 +5806,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_remove_OnRemoteNot
 		return;
 	}
 }
-// Method Definition Index: 111607
+// Method Definition Index: 111617
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_add_s_OnRemoteNotificationReceived_m577446E53F345EF66CE3D3125AE7E536260D101D (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5851,7 +5851,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 111608
+// Method Definition Index: 111618
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_remove_s_OnRemoteNotificationReceived_m1A329A760E5952FDD06221C8687D9ACBF569FBE9 (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5896,7 +5896,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 111609
+// Method Definition Index: 111619
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationCenter_get_ApplicationBadge_m69557DCB222CA139BD795427419EADB7E91D33D5 (const RuntimeMethod* method) 
 {
 	{
@@ -5906,7 +5906,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationCenter_get_Application
 		return L_0;
 	}
 }
-// Method Definition Index: 111610
+// Method Definition Index: 111620
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_set_ApplicationBadge_mF99E5A0665BE591B48DCA64D37AC8B1947B2F6E4 (int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5917,7 +5917,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_set_ApplicationBad
 		return;
 	}
 }
-// Method Definition Index: 111611
+// Method Definition Index: 111621
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationCenter_Initialize_m3ABD98E821A5025EDC2B8D97F5851194A336DA5F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5951,7 +5951,7 @@ IL_0009:
 		return (bool)L_1;
 	}
 }
-// Method Definition Index: 111612
+// Method Definition Index: 111622
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_ScheduleNotification_m12235032140F0EEDBCAA2B0F29876E8FE9AA5995 (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___0_notification, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5987,7 +5987,7 @@ IL_0008:
 		return;
 	}
 }
-// Method Definition Index: 111613
+// Method Definition Index: 111623
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationU5BU5D_t8419969AA363CFD4EBC7780AD306C62E50221415* iOSNotificationCenter_GetScheduledNotifications_m7F18ECEC26EC2E07A1B6A74BD581913E9B427EF5 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6006,7 +6006,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationU5BU5D_t8419969AA363CFD4EBC778
 		return L_1;
 	}
 }
-// Method Definition Index: 111614
+// Method Definition Index: 111624
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationU5BU5D_t8419969AA363CFD4EBC7780AD306C62E50221415* iOSNotificationCenter_GetDeliveredNotifications_m7431E0C0A6E89392CB6A614AA315ACF46AFC7AE6 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6025,7 +6025,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationU5BU5D_t8419969AA363CFD4EBC778
 		return L_1;
 	}
 }
-// Method Definition Index: 111615
+// Method Definition Index: 111625
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationU5BU5D_t8419969AA363CFD4EBC7780AD306C62E50221415* iOSNotificationCenter_NotificationDataToNotifications_m082DCD2CE4FD2A32888F8ADD01E8AB1D1CDA6848 (iOSNotificationWithUserInfoU5BU5D_tA10CD6260B4DF620F1E5B924B93D77510CBB1F09* ___0_notificationData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6104,7 +6104,7 @@ IL_0026:
 		return L_13;
 	}
 }
-// Method Definition Index: 111616
+// Method Definition Index: 111626
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* iOSNotificationCenter_GetLastRespondedNotification_m2684388B10EA120284FD99B1CD59AA4CD4B83530 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6145,7 +6145,7 @@ IL_0011:
 		return L_3;
 	}
 }
-// Method Definition Index: 111617
+// Method Definition Index: 111627
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCenter_GetLastRespondedNotificationAction_m856545B89FEB056FC3165FFAD0C18B8C071143C3 (const RuntimeMethod* method) 
 {
 	{
@@ -6155,7 +6155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCenter_GetLastRespon
 		return L_0;
 	}
 }
-// Method Definition Index: 111618
+// Method Definition Index: 111628
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCenter_GetLastRespondedNotificationUserText_m760683BA8850297627E01CDADC5A48276E4168E7 (const RuntimeMethod* method) 
 {
 	{
@@ -6165,7 +6165,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationCenter_GetLastRespon
 		return L_0;
 	}
 }
-// Method Definition Index: 111619
+// Method Definition Index: 111629
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* iOSNotificationCenter_QueryLastRespondedNotification_mB192D4E880E41135DF77CBB138B1609A56E4950E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6181,7 +6181,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR QueryLastRespondedNotificationOp_t5C3989F363E
 		return L_0;
 	}
 }
-// Method Definition Index: 111620
+// Method Definition Index: 111630
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_RemoveScheduledNotification_m6E4905A8B1F0A8EC617B07B656D2615AE4AF990B (String_t* ___0_identifier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6212,7 +6212,7 @@ IL_000d:
 		return;
 	}
 }
-// Method Definition Index: 111621
+// Method Definition Index: 111631
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_RemoveDeliveredNotification_m161648F9386D35C17747738FDA8CF7F82FF3E0A1 (String_t* ___0_identifier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6243,7 +6243,7 @@ IL_000d:
 		return;
 	}
 }
-// Method Definition Index: 111622
+// Method Definition Index: 111632
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_RemoveAllScheduledNotifications_m44068D9155DC22C114EE5C11CDEE34F747B3EE3F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6273,7 +6273,7 @@ IL_000c:
 		return;
 	}
 }
-// Method Definition Index: 111623
+// Method Definition Index: 111633
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_RemoveAllDeliveredNotifications_m853D9D2A75A28AEDDB7F5FD383C8E6FECB3B995F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6303,7 +6303,7 @@ IL_000c:
 		return;
 	}
 }
-// Method Definition Index: 111624
+// Method Definition Index: 111634
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21 iOSNotificationCenter_GetNotificationSettings_m554B4E26A8B1E0E67F3457ED4DE894E7BF9F43BC (const RuntimeMethod* method) 
 {
 	{
@@ -6313,7 +6313,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationSettings_tBDCE6AE27851787C044F
 		return L_0;
 	}
 }
-// Method Definition Index: 111625
+// Method Definition Index: 111635
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_SetNotificationCategories_m86DF5C1D40AA31AA4EAA19E75316BBA126282AD0 (RuntimeObject* ___0_categories, const RuntimeMethod* method) 
 {
 	{
@@ -6324,7 +6324,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_SetNotificationCat
 		return;
 	}
 }
-// Method Definition Index: 111626
+// Method Definition Index: 111636
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_OnReceivedRemoteNotification_mC510FFDD28917371EB9312D7F6E2F63CDE03FC22 (iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6351,7 +6351,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_OnReceivedRemoteNo
 		return;
 	}
 }
-// Method Definition Index: 111627
+// Method Definition Index: 111637
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_OnSentNotification_m544D0B4C4887048904106DE1C463663A6DC3A906 (iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6378,7 +6378,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_OnSentNotification
 		return;
 	}
 }
-// Method Definition Index: 111628
+// Method Definition Index: 111638
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_OpenNotificationSettings_mC178DE775D715AD5195B51904B7B18B684212DF5 (const RuntimeMethod* method) 
 {
 	{
@@ -6388,7 +6388,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter_OpenNotificationSe
 		return;
 	}
 }
-// Method Definition Index: 111629
+// Method Definition Index: 111639
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter__ctor_mF73974FEE231D6B65C5E541C4D2EDBE76548A508 (iOSNotificationCenter_t74DF080370FA0C88E42962A44D1F9EC025B84E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6396,7 +6396,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter__ctor_mF73974FEE23
 		return;
 	}
 }
-// Method Definition Index: 111630
+// Method Definition Index: 111640
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCenter__cctor_m20CD6B08F2DFAFAF231368FC496254EA680228FC (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6476,7 +6476,7 @@ void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B
 	NullCheck(___0_notification);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_notification);
 }
-// Method Definition Index: 111631
+// Method Definition Index: 111641
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_mF2B904C1330647023D5E7ECE08EDA8266BE8F55E (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -6529,20 +6529,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_mF2B9
 	}
 	__this->___extra_arg = (intptr_t)&NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_Multicast;
 }
-// Method Definition Index: 111632
+// Method Definition Index: 111642
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36 (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___0_notification, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_notification, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111633
+// Method Definition Index: 111643
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NotificationReceivedCallback_BeginInvoke_m59412CBB479AEA8DF40C3E026C34C1DD27B78514 (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___0_notification, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_notification;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 111634
+// Method Definition Index: 111644
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback_EndInvoke_m26AA6848E0200067BB8CA843BB443238C8853EF1 (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -6590,7 +6590,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_AuthorizationRequestCompletedCallba
 	iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC_marshal_pinvoke_cleanup(____0_data_marshaled);
 
 }
-// Method Definition Index: 111635
+// Method Definition Index: 111645
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback__ctor_mB21FEDE67BB8EDD8633799508079A0E001006C73 (AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -6619,13 +6619,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback__c
 	}
 	__this->___extra_arg = (intptr_t)&AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_Multicast;
 }
-// Method Definition Index: 111636
+// Method Definition Index: 111646
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0 (AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___0_data, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_data, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111637
+// Method Definition Index: 111647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AuthorizationRequestCompletedCallback_BeginInvoke_mC2FFC41F4A01C89D767E816C07AE6C36C265C5D9 (AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___0_data, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6638,7 +6638,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AuthorizationRequestCompletedC
 	__d_args[0] = Box(iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC_il2cpp_TypeInfo_var, &___0_data);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 111638
+// Method Definition Index: 111648
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback_EndInvoke_m6CF913603412CEAFA26D79B0CCC4FBB15AC12D46 (AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -6651,7 +6651,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback_En
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111639
+// Method Definition Index: 111649
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mBC9ECF1831C6FFC9ACD710C25890BDBF554081AB (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6668,7 +6668,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mBC9ECF1831C6FFC9ACD710C2
 		return;
 	}
 }
-// Method Definition Index: 111640
+// Method Definition Index: 111650
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m4E1D6DB8C20ABB34DA458F6F8EAAEACD25B2208B (U3CU3Ec_t4BB034961FECB1AD65FD080CE469C198E6FE36EE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6676,7 +6676,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m4E1D6DB8C20ABB34DA458F6F8
 		return;
 	}
 }
-// Method Definition Index: 111641
+// Method Definition Index: 111651
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec_U3C_cctorU3Eb__39_0_m05EA6478603D2A4CF490874D90EF5BB5AE2CCDA9 (U3CU3Ec_t4BB034961FECB1AD65FD080CE469C198E6FE36EE* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___0_U3Cp0U3E, const RuntimeMethod* method) 
 {
 	{
@@ -6684,7 +6684,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec_U3C_cctorU3Eb__39_0_m05EA6478603
 		return;
 	}
 }
-// Method Definition Index: 111642
+// Method Definition Index: 111652
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec_U3C_cctorU3Eb__39_1_m6C2531BC1C6085EBF20A4DD4D58EFA5337DEE47D (U3CU3Ec_t4BB034961FECB1AD65FD080CE469C198E6FE36EE* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___0_U3Cp0U3E, const RuntimeMethod* method) 
 {
 	{
@@ -6732,7 +6732,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec_U3C_cctorU3Eb__39_1_m6C2531BC1C6
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111643
+// Method Definition Index: 111653
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_AuthorizationStatus_m86A3FC2E443F732C3882C199476EFBD4DFF8A191 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6750,7 +6750,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_AuthorizationStatus_m86A3FC
 	_returnValue = iOSNotificationSettings_get_AuthorizationStatus_m86A3FC2E443F732C3882C199476EFBD4DFF8A191_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111644
+// Method Definition Index: 111654
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_NotificationCenterSetting_m6D6259430B3E5D958FFE6AD9DF676CFD9ACBEFC6 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6768,7 +6768,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_NotificationCenterSetting_m
 	_returnValue = iOSNotificationSettings_get_NotificationCenterSetting_m6D6259430B3E5D958FFE6AD9DF676CFD9ACBEFC6_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111645
+// Method Definition Index: 111655
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_LockScreenSetting_mFC83E2FB7BA192A3ABF02171E9063628B6F04ED0 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6786,7 +6786,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_LockScreenSetting_mFC83E2FB
 	_returnValue = iOSNotificationSettings_get_LockScreenSetting_mFC83E2FB7BA192A3ABF02171E9063628B6F04ED0_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111646
+// Method Definition Index: 111656
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_CarPlaySetting_mBDE163089C469E1E0A0FEAC5F7ACD3FB60A3D882 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6804,7 +6804,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_CarPlaySetting_mBDE163089C4
 	_returnValue = iOSNotificationSettings_get_CarPlaySetting_mBDE163089C469E1E0A0FEAC5F7ACD3FB60A3D882_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111647
+// Method Definition Index: 111657
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_AlertSetting_mE45B9D8C6057D4C7D9D368B018D61EBFEC60F7A7 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6822,7 +6822,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_AlertSetting_mE45B9D8C6057D
 	_returnValue = iOSNotificationSettings_get_AlertSetting_mE45B9D8C6057D4C7D9D368B018D61EBFEC60F7A7_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111648
+// Method Definition Index: 111658
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_BadgeSetting_m45FDA40AB94C8571CF748C429E4E083410A63693 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6840,7 +6840,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_BadgeSetting_m45FDA40AB94C8
 	_returnValue = iOSNotificationSettings_get_BadgeSetting_m45FDA40AB94C8571CF748C429E4E083410A63693_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111649
+// Method Definition Index: 111659
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_SoundSetting_m1D8F98A6C4BFB9A6982C0E0A8DD86302FB0E4353 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6858,7 +6858,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_SoundSetting_m1D8F98A6C4BFB
 	_returnValue = iOSNotificationSettings_get_SoundSetting_m1D8F98A6C4BFB9A6982C0E0A8DD86302FB0E4353_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111650
+// Method Definition Index: 111660
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_AlertStyle_m5ABA83D2E27559F94EE19316F46FE94CFDCCB927 (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6876,7 +6876,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationSettings_get_AlertStyle_m5ABA83D2E27559F
 	_returnValue = iOSNotificationSettings_get_AlertStyle_m5ABA83D2E27559F94EE19316F46FE94CFDCCB927_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111651
+// Method Definition Index: 111661
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_ShowPreviewsSetting_m7C554A6BBBA9DC9AF7368C14F3F34FBF185736FE (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7033,7 +7033,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_iOSNotificationsWrapper_Recei
 	iOSNotificationsWrapper_ReceiveUNNotificationAttachment_mF8194BDA3434E46D10AF292C61D4F3E00B654652(___0_array, ____1_id_unmarshaled, ____2_url_unmarshaled, NULL);
 
 }
-// Method Definition Index: 111652
+// Method Definition Index: 111662
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RequestAuthorization_mEA8CA44C7AA697DB3EA9D2C460924997CC075315 (intptr_t ___0_request, int32_t ___1_options, bool ___2_registerForRemote, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, int32_t, int32_t);
@@ -7041,7 +7041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RequestAuthoriz
 	reinterpret_cast<PInvokeFunc>(_RequestAuthorization)(___0_request, ___1_options, static_cast<int32_t>(___2_registerForRemote));
 
 }
-// Method Definition Index: 111653
+// Method Definition Index: 111663
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper__RegisteredForRemoteNotifications_m7074DD3AC9D6067AA3181B38DE45A5A88888D6D7 (const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -7050,7 +7050,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper__RegisteredFo
 
 	return returnValue;
 }
-// Method Definition Index: 111654
+// Method Definition Index: 111664
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__UnregisterForRemoteNotifications_m44C6C0542E80A9B534E9443A56E679EA44CCDEC4 (const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) ();
@@ -7058,7 +7058,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__UnregisterForRe
 	reinterpret_cast<PInvokeFunc>(_UnregisterForRemoteNotifications)();
 
 }
-// Method Definition Index: 111655
+// Method Definition Index: 111665
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ScheduleLocalNotification_mD2CC306854403F4BBE98648D761A41726BC75F7C (iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___0_data, const RuntimeMethod* method) 
 {
 
@@ -7073,7 +7073,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ScheduleLocalNo
 	iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED_marshal_pinvoke_cleanup(____0_data_marshaled);
 
 }
-// Method Definition Index: 111656
+// Method Definition Index: 111666
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetNotificationReceivedDelegate_m7EF790D86C1B8E585CFBD1872FABA96171D07A3A (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* ___0_callback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (Il2CppMethodPointer);
@@ -7084,7 +7084,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetNotification
 	reinterpret_cast<PInvokeFunc>(_SetNotificationReceivedDelegate)(____0_callback_marshaled);
 
 }
-// Method Definition Index: 111657
+// Method Definition Index: 111667
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetRemoteNotificationReceivedDelegate_mABF9B547DD1F0D569E1E8B202FC8312DA876EBA1 (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* ___0_callback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (Il2CppMethodPointer);
@@ -7095,7 +7095,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetRemoteNotifi
 	reinterpret_cast<PInvokeFunc>(_SetRemoteNotificationReceivedDelegate)(____0_callback_marshaled);
 
 }
-// Method Definition Index: 111658
+// Method Definition Index: 111668
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetAuthorizationRequestReceivedDelegate_m88B1999865C9603B8A628DC185980C62A11E1731 (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* ___0_callback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (Il2CppMethodPointer);
@@ -7106,7 +7106,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetAuthorizatio
 	reinterpret_cast<PInvokeFunc>(_SetAuthorizationRequestReceivedDelegate)(____0_callback_marshaled);
 
 }
-// Method Definition Index: 111659
+// Method Definition Index: 111669
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21 iOSNotificationsWrapper__GetNotificationSettings_m8DF3328D33595477ADD49C37CC36DA7553BF1077 (const RuntimeMethod* method) 
 {
 	typedef iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21 (DEFAULT_CALL *PInvokeFunc) ();
@@ -7115,7 +7115,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationSettings_tBDCE6AE27851787C044F
 
 	return returnValue;
 }
-// Method Definition Index: 111660
+// Method Definition Index: 111670
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__GetScheduledNotificationDataArray_m17748B95E93D87E25DF727C4A77348CAF8686457 (int32_t* ___0_count, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (int32_t*);
@@ -7124,7 +7124,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__GetSchedule
 
 	return returnValue;
 }
-// Method Definition Index: 111661
+// Method Definition Index: 111671
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__GetDeliveredNotificationDataArray_m9416BEB875EA2D48C0927E85288E603D38AD92C0 (int32_t* ___0_count, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (int32_t*);
@@ -7133,7 +7133,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__GetDelivere
 
 	return returnValue;
 }
-// Method Definition Index: 111662
+// Method Definition Index: 111672
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveScheduledNotification_m3D085E61FFCE3BBBBEE2C455F0D4757BD9FD4F6F (String_t* ___0_identifier, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (char*);
@@ -7147,7 +7147,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveScheduled
 	____0_identifier_marshaled = NULL;
 
 }
-// Method Definition Index: 111663
+// Method Definition Index: 111673
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveAllScheduledNotifications_m9B342D2C0E7C7824E1B2A386D16C1E8C306C9607 (const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) ();
@@ -7155,7 +7155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveAllSchedu
 	reinterpret_cast<PInvokeFunc>(_RemoveAllScheduledNotifications)();
 
 }
-// Method Definition Index: 111664
+// Method Definition Index: 111674
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveDeliveredNotification_m08D8941EED5B8205A4271B3DC67D67D3E8C2AD53 (String_t* ___0_identifier, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (char*);
@@ -7169,7 +7169,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveDelivered
 	____0_identifier_marshaled = NULL;
 
 }
-// Method Definition Index: 111665
+// Method Definition Index: 111675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetApplicationBadge_m425633D16CA2A2A7AB652ADC723F37D499B64FF7 (int32_t ___0_badge, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (int32_t);
@@ -7177,7 +7177,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetApplicationB
 	reinterpret_cast<PInvokeFunc>(_SetApplicationBadge)(___0_badge);
 
 }
-// Method Definition Index: 111666
+// Method Definition Index: 111676
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper__GetApplicationBadge_m53F1F38D3652F65C75E4ED7AE669F23B9D9628BC (const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -7186,7 +7186,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper__GetApplicati
 
 	return returnValue;
 }
-// Method Definition Index: 111667
+// Method Definition Index: 111677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper__GetAppOpenedUsingNotification_m2CD558EB08930A7AB5644328298888AA13850DB3 (const RuntimeMethod* method) 
 {
 	typedef int32_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -7195,7 +7195,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper__GetAppOpened
 
 	return returnValue;
 }
-// Method Definition Index: 111668
+// Method Definition Index: 111678
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveAllDeliveredNotifications_m23751F2136004EBC7AF50B4E95988D203FD520B5 (const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) ();
@@ -7203,7 +7203,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__RemoveAllDelive
 	reinterpret_cast<PInvokeFunc>(_RemoveAllDeliveredNotifications)();
 
 }
-// Method Definition Index: 111669
+// Method Definition Index: 111679
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__GetLastNotificationData_mBDAFB058A017C90FFD50DE741698BE38F832A4D6 (const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -7212,7 +7212,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__GetLastNoti
 
 	return returnValue;
 }
-// Method Definition Index: 111670
+// Method Definition Index: 111680
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper__GetLastRespondedNotificationAction_mB6983CAFA2D834C868567F605F55CB844702BFF1 (const RuntimeMethod* method) 
 {
 	typedef char* (DEFAULT_CALL *PInvokeFunc) ();
@@ -7227,7 +7227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper__GetLastRes
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 111671
+// Method Definition Index: 111681
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper__GetLastRespondedNotificationUserText_m39B79F2BDFA59A8780D852E5C8BBB4086E3A609B (const RuntimeMethod* method) 
 {
 	typedef char* (DEFAULT_CALL *PInvokeFunc) ();
@@ -7242,7 +7242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper__GetLastRes
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 111672
+// Method Definition Index: 111682
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__FreeUnmanagediOSNotificationDataArray_m9BBE43390A00107B926480FA5C2062B81A8F1B1A (intptr_t ___0_ptr, int32_t ___1_count, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, int32_t);
@@ -7250,7 +7250,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__FreeUnmanagediO
 	reinterpret_cast<PInvokeFunc>(_FreeUnmanagediOSNotificationDataArray)(___0_ptr, ___1_count);
 
 }
-// Method Definition Index: 111673
+// Method Definition Index: 111683
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddItemToNSDictionary_m3798785725CBF97127669F924EE9E35B336D41A5 (intptr_t ___0_dict, String_t* ___1_key, String_t* ___2_value, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, char*, char*);
@@ -7271,7 +7271,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddItemToNS
 
 	return returnValue;
 }
-// Method Definition Index: 111674
+// Method Definition Index: 111684
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddAttachmentToNSArray_m84054FBACB7477A05721E119B028523ACA016F16 (intptr_t ___0_atts, String_t* ___1_id, String_t* ___2_url, intptr_t* ___3_error, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, char*, char*, intptr_t*);
@@ -7292,7 +7292,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddAttachme
 
 	return returnValue;
 }
-// Method Definition Index: 111675
+// Method Definition Index: 111685
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ReadNSDictionary_m1C436D4473181385D91702AAF13FB7D28A70F714 (intptr_t ___0_handle, intptr_t ___1_nsDict, ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* ___2_callback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t, Il2CppMethodPointer);
@@ -7303,7 +7303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ReadNSDictionar
 	reinterpret_cast<PInvokeFunc>(_ReadNSDictionary)(___0_handle, ___1_nsDict, ____2_callback_marshaled);
 
 }
-// Method Definition Index: 111676
+// Method Definition Index: 111686
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ReadAttachmentsNSArray_m493603B5A3AC41CA7E9366B21F3A11F3E0F2DED4 (intptr_t ___0_handle, intptr_t ___1_nsArray, ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* ___2_callback, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t, Il2CppMethodPointer);
@@ -7314,7 +7314,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ReadAttachments
 	reinterpret_cast<PInvokeFunc>(_ReadAttachmentsNSArray)(___0_handle, ___1_nsArray, ____2_callback_marshaled);
 
 }
-// Method Definition Index: 111677
+// Method Definition Index: 111687
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__CreateUNNotificationAction_m04EA43D32BFCCC435B32F9313DAD1708A5E1EAA2 (String_t* ___0_id, String_t* ___1_title, int32_t ___2_options, int32_t ___3_iconType, String_t* ___4_icon, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (char*, char*, int32_t, int32_t, char*);
@@ -7341,7 +7341,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__CreateUNNot
 
 	return returnValue;
 }
-// Method Definition Index: 111678
+// Method Definition Index: 111688
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__CreateUNTextInputNotificationAction_mBEFFD80A7DE8204A20A8215E880FFC7456B625B8 (String_t* ___0_id, String_t* ___1_title, int32_t ___2_options, int32_t ___3_iconType, String_t* ___4_icon, String_t* ___5_buttonTitle, String_t* ___6_placeholder, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (char*, char*, int32_t, int32_t, char*, char*, char*);
@@ -7380,7 +7380,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__CreateUNTex
 
 	return returnValue;
 }
-// Method Definition Index: 111679
+// Method Definition Index: 111689
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ReleaseNSObject_mFFAD0F85055C706E8A5479A81B66A663831368FE (intptr_t ___0_obj, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -7388,7 +7388,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ReleaseNSObject
 	reinterpret_cast<PInvokeFunc>(_ReleaseNSObject)(___0_obj);
 
 }
-// Method Definition Index: 111680
+// Method Definition Index: 111690
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper__NSErrorToMessage_m621C81B674107D57D52569733B5F7FAD29869C69 (intptr_t ___0_error, const RuntimeMethod* method) 
 {
 	typedef char* (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -7403,7 +7403,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper__NSErrorToM
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 111681
+// Method Definition Index: 111691
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddActionToNSArray_m686DFC012EFD29CFFD1BD4BF119F800C2FD29BCD (intptr_t ___0_actions, intptr_t ___1_action, int32_t ___2_capacity, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t, int32_t);
@@ -7412,7 +7412,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddActionTo
 
 	return returnValue;
 }
-// Method Definition Index: 111682
+// Method Definition Index: 111692
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__CreateUNNotificationCategory_m11D21B22ED4FDF28B5F08E37EFC108A10D1415CE (String_t* ___0_id, String_t* ___1_hiddenPreviewsBodyPlaceholder, String_t* ___2_summaryFormat, int32_t ___3_options, intptr_t ___4_actions, intptr_t ___5_intentIdentifiers, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (char*, char*, char*, int32_t, intptr_t, intptr_t);
@@ -7439,7 +7439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__CreateUNNot
 
 	return returnValue;
 }
-// Method Definition Index: 111683
+// Method Definition Index: 111693
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddCategoryToCategorySet_m358D50AFD799BB064CD2F079A7F2B89E04C1AEE4 (intptr_t ___0_categorySet, intptr_t ___1_category, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t);
@@ -7448,7 +7448,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddCategory
 
 	return returnValue;
 }
-// Method Definition Index: 111684
+// Method Definition Index: 111694
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetNotificationCategories_mD43856530598B70C8E32AF49A3D75E646484B46A (intptr_t ___0_categorySet, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -7456,7 +7456,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__SetNotification
 	reinterpret_cast<PInvokeFunc>(_SetNotificationCategories)(___0_categorySet);
 
 }
-// Method Definition Index: 111685
+// Method Definition Index: 111695
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddStringToNSArray_m0BAB7C567291148EBE50227723B436D2066988AC (intptr_t ___0_array, String_t* ___1_str, int32_t ___2_capacity, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, char*, int32_t);
@@ -7471,7 +7471,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper__AddStringTo
 
 	return returnValue;
 }
-// Method Definition Index: 111686
+// Method Definition Index: 111696
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__OpenNotificationSettings_m290E8631FF477F88F9D37727CD73F41A31ECD857 (const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) ();
@@ -7479,7 +7479,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__OpenNotificatio
 	reinterpret_cast<PInvokeFunc>(_OpenNotificationSettings)();
 
 }
-// Method Definition Index: 111687
+// Method Definition Index: 111697
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RegisterAuthorizationRequestCallback_mCA40A1376B88E5CB45368F1814B8E29C82E16502 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7498,7 +7498,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RegisterAuthoriz
 		return;
 	}
 }
-// Method Definition Index: 111688
+// Method Definition Index: 111698
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RegisterOnReceivedRemoteNotificationCallback_m771FE0AD91B59443803548F9404C40C695A964DE (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7517,7 +7517,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RegisterOnReceiv
 		return;
 	}
 }
-// Method Definition Index: 111689
+// Method Definition Index: 111699
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RegisterOnReceivedCallback_m44AE9926E98242E6F356EBA0281584623627B436 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7536,7 +7536,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RegisterOnReceiv
 		return;
 	}
 }
-// Method Definition Index: 111690
+// Method Definition Index: 111700
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_AuthorizationRequestReceived_m4A6C75E5BFEA2C3E529F2F8CEEA8A813F428B3CD (intptr_t ___0_request, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___1_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7555,7 +7555,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_AuthorizationReq
 		return;
 	}
 }
-// Method Definition Index: 111691
+// Method Definition Index: 111701
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RemoteNotificationReceived_mBF44180FD060AC5811C9979FE6E771650AA35212 (iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7575,7 +7575,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RemoteNotificati
 		return;
 	}
 }
-// Method Definition Index: 111692
+// Method Definition Index: 111702
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_NotificationReceived_mB7F4859AF321D5AF115D70F4BD8AB131543D7524 (iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7595,7 +7595,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_NotificationRece
 		return;
 	}
 }
-// Method Definition Index: 111693
+// Method Definition Index: 111703
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 iOSNotificationsWrapper_NotificationDataToDataWithUserInfo_mF4B498474102C537FAE4B24B8B1AE8613285A797 (iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___0_data, const RuntimeMethod* method) 
 {
 	iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 V_0;
@@ -7645,7 +7645,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfo_tEBF7E61C8AC189D8
 		return L_8;
 	}
 }
-// Method Definition Index: 111694
+// Method Definition Index: 111704
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_ReceiveNSDictionaryKeyValue_m57E371B7275602846E05E0770BFA78C6641BC856 (intptr_t ___0_dict, String_t* ___1_key, String_t* ___2_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7692,7 +7692,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 111695
+// Method Definition Index: 111705
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_ReceiveUNNotificationAttachment_mF8194BDA3434E46D10AF292C61D4F3E00B654652 (intptr_t ___0_array, String_t* ___1_id, String_t* ___2_url, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7749,7 +7749,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 111696
+// Method Definition Index: 111706
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RequestAuthorization_mC1062AF0F279E5610F4559CFA756401291648BFA (intptr_t ___0_request, int32_t ___1_options, bool ___2_registerRemote, const RuntimeMethod* method) 
 {
 	{
@@ -7762,7 +7762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RequestAuthoriza
 		return;
 	}
 }
-// Method Definition Index: 111697
+// Method Definition Index: 111707
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationsWrapper_RegisteredForRemoteNotifications_m63E81DBA2DF45724D6DF88C02593BBED67C091CB (const RuntimeMethod* method) 
 {
 	{
@@ -7772,7 +7772,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationsWrapper_RegisteredForRem
 		return (bool)((!(((uint32_t)L_0) <= ((uint32_t)0)))? 1 : 0);
 	}
 }
-// Method Definition Index: 111698
+// Method Definition Index: 111708
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_UnregisterForRemoteNotifications_m4D22E416A859059AA1AD803C97E18CBC5036BB11 (const RuntimeMethod* method) 
 {
 	{
@@ -7782,7 +7782,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_UnregisterForRem
 		return;
 	}
 }
-// Method Definition Index: 111699
+// Method Definition Index: 111709
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21 iOSNotificationsWrapper_GetNotificationSettings_m659C38E583D6A52DA9747BBB5707432A5CECC797 (const RuntimeMethod* method) 
 {
 	{
@@ -7792,7 +7792,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationSettings_tBDCE6AE27851787C044F
 		return L_0;
 	}
 }
-// Method Definition Index: 111700
+// Method Definition Index: 111710
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_ScheduleLocalNotification_m2C66F2E8B8E6A438424896D297650C6AF4228361 (iOSNotificationWithUserInfo_tEBF7E61C8AC189D82F3EE4C40FF137812F6399E5 ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -7818,7 +7818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_ScheduleLocalNot
 		return;
 	}
 }
-// Method Definition Index: 111701
+// Method Definition Index: 111711
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfoU5BU5D_tA10CD6260B4DF620F1E5B924B93D77510CBB1F09* iOSNotificationsWrapper_GetDeliveredNotificationData_m6570276DA5405AE52F6B5FB81CE3646052DB69E9 (const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -7833,7 +7833,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfoU5BU5D_tA10CD6260B
 		return L_2;
 	}
 }
-// Method Definition Index: 111702
+// Method Definition Index: 111712
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper_GetLastRespondedNotificationAction_mDE70405A1228FF1C25E14A0819F2624EB009EDD9 (const RuntimeMethod* method) 
 {
 	{
@@ -7843,7 +7843,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper_GetLastResp
 		return L_0;
 	}
 }
-// Method Definition Index: 111703
+// Method Definition Index: 111713
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper_GetLastRespondedNotificationUserText_mD7981FE4DC78ED85B7B7987875ED5CF30ADC4BE6 (const RuntimeMethod* method) 
 {
 	{
@@ -7853,7 +7853,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSNotificationsWrapper_GetLastResp
 		return L_0;
 	}
 }
-// Method Definition Index: 111704
+// Method Definition Index: 111714
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfoU5BU5D_tA10CD6260B4DF620F1E5B924B93D77510CBB1F09* iOSNotificationsWrapper_GetScheduledNotificationData_m570771802615E6B7C2F423A59F24A5FF3D1AE4D1 (const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -7868,7 +7868,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfoU5BU5D_tA10CD6260B
 		return L_2;
 	}
 }
-// Method Definition Index: 111705
+// Method Definition Index: 111715
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationWithUserInfoU5BU5D_tA10CD6260B4DF620F1E5B924B93D77510CBB1F09* iOSNotificationsWrapper_MarshalAndFreeNotificationDataArray_m99000C4908D655F245E2EC76029B2B9718D7E491 (intptr_t ___0_ptr, int32_t ___1_count, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8023,7 +8023,7 @@ IL_00a0:
 		return L_37;
 	}
 }
-// Method Definition Index: 111706
+// Method Definition Index: 111716
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper_CsDictionaryToObjC_mB8AE5486D42735F580154E24CFB8A024A8E47CE9 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* ___0_userInfo, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8127,7 +8127,7 @@ IL_004e:
 		return L_9;
 	}
 }
-// Method Definition Index: 111707
+// Method Definition Index: 111717
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t iOSNotificationsWrapper_CsAttachmentsToObjc_m8EF0E9BAFFCCEE6A5EEC8C7D371C4BA1C5E15BF2 (List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* ___0_attachments, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8279,7 +8279,7 @@ IL_0084:
 		return L_19;
 	}
 }
-// Method Definition Index: 111708
+// Method Definition Index: 111718
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* iOSNotificationsWrapper_NSDictionaryToCs_m5A2FBC09A16627FC083C2EC31150C87ED4112D79 (intptr_t ___0_dict, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8316,7 +8316,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F31
 		return L_1;
 	}
 }
-// Method Definition Index: 111709
+// Method Definition Index: 111719
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* iOSNotificationsWrapper_AttachmentsNSArrayToCs_mC89DB0002C5D4E8E443C2353E2FDB80190784128 (intptr_t ___0_array, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8369,7 +8369,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 111710
+// Method Definition Index: 111720
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_SetApplicationBadge_m340452ADA2F0E0C35F2E034B97AAE8F86827893B (int32_t ___0_badge, const RuntimeMethod* method) 
 {
 	{
@@ -8380,7 +8380,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_SetApplicationBa
 		return;
 	}
 }
-// Method Definition Index: 111711
+// Method Definition Index: 111721
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper_GetApplicationBadge_m0F9963248235DCA8F8D178390907819931B3FA79 (const RuntimeMethod* method) 
 {
 	{
@@ -8390,7 +8390,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationsWrapper_GetApplicatio
 		return L_0;
 	}
 }
-// Method Definition Index: 111712
+// Method Definition Index: 111722
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationsWrapper_GetAppOpenedUsingNotification_mD1DA7C06CE90D72977577DAC717BB2FCA85EEC07 (const RuntimeMethod* method) 
 {
 	{
@@ -8400,7 +8400,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationsWrapper_GetAppOpenedUsin
 		return (bool)((!(((uint32_t)L_0) <= ((uint32_t)0)))? 1 : 0);
 	}
 }
-// Method Definition Index: 111713
+// Method Definition Index: 111723
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tE7C41C3C4F3877D5835C9E9568BDAADAD8FA67A8 iOSNotificationsWrapper_GetLastNotificationData_mEB08C18777114E3BD6197FC86C1BA4F6CBE3B3C0 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8503,7 +8503,7 @@ IL_008d:
 		return L_20;
 	}
 }
-// Method Definition Index: 111714
+// Method Definition Index: 111724
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_SetNotificationCategories_m9874163A141115A2CAC03E821E582B70A48A4AEA (RuntimeObject* ___0_categories, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8983,7 +8983,7 @@ IL_01ae:
 		return;
 	}
 }
-// Method Definition Index: 111715
+// Method Definition Index: 111725
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper__ctor_m62AE738599FAE8E65ABE3947FDCD7D80F6911F27 (iOSNotificationsWrapper_t03E2DC53BCC5038CF3B2643C4C2EB105AFB28975* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9034,7 +9034,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_AuthorizationRequestCallback_tA51CE
 	iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC_marshal_pinvoke_cleanup(____1_data_marshaled);
 
 }
-// Method Definition Index: 111716
+// Method Definition Index: 111726
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCallback__ctor_mE709FAE919D090ACC25038070BD2145F520DA0FE (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -9063,13 +9063,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCallback__ctor_mE709
 	}
 	__this->___extra_arg = (intptr_t)&AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_Multicast;
 }
-// Method Definition Index: 111717
+// Method Definition Index: 111727
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6 (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, intptr_t ___0_request, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___1_data, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_request, ___1_data, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111718
+// Method Definition Index: 111728
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AuthorizationRequestCallback_BeginInvoke_m56E6685C3FDB6DE1B9EDB57B74C0AECBAD0D7C94 (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, intptr_t ___0_request, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___1_data, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9083,7 +9083,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AuthorizationRequestCallback_B
 	__d_args[1] = Box(iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC_il2cpp_TypeInfo_var, &___1_data);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 111719
+// Method Definition Index: 111729
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCallback_EndInvoke_m9729CF16A7A9D3A0AED0A6CEFAB7EF0D03BB04AD (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -9131,7 +9131,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_NotificationReceivedCallback_t7455A
 	iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED_marshal_pinvoke_cleanup(____0_notificationData_marshaled);
 
 }
-// Method Definition Index: 111720
+// Method Definition Index: 111730
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_m3448352ED953E95C4E5BAAE13D4C576B7161B772 (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -9160,13 +9160,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_m3448
 	}
 	__this->___extra_arg = (intptr_t)&NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_Multicast;
 }
-// Method Definition Index: 111721
+// Method Definition Index: 111731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___0_notificationData, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_notificationData, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111722
+// Method Definition Index: 111732
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NotificationReceivedCallback_BeginInvoke_m2761EDAB89EF2DDDA676E6E6D10E670A33D7EF3C (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___0_notificationData, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9179,7 +9179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NotificationReceivedCallback_B
 	__d_args[0] = Box(iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED_il2cpp_TypeInfo_var, &___0_notificationData);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 111723
+// Method Definition Index: 111733
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback_EndInvoke_m9BF63A09CC75F3D0C011EBD83B30853859E93403 (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -9232,7 +9232,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ReceiveNSDictionaryKeyValueCallback
 	____2_value_marshaled = NULL;
 
 }
-// Method Definition Index: 111724
+// Method Definition Index: 111734
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveNSDictionaryKeyValueCallback__ctor_m7E31544BB059836C992783780D71576AA277A22D (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -9261,13 +9261,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveNSDictionaryKeyValueCallback__cto
 	}
 	__this->___extra_arg = (intptr_t)&ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_Multicast;
 }
-// Method Definition Index: 111725
+// Method Definition Index: 111735
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, intptr_t ___0_dict, String_t* ___1_key, String_t* ___2_value, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, String_t*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_dict, ___1_key, ___2_value, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111726
+// Method Definition Index: 111736
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ReceiveNSDictionaryKeyValueCallback_BeginInvoke_m4E1F15FD4C7C6D8EBA83F4C099FAD543D0A23A67 (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, intptr_t ___0_dict, String_t* ___1_key, String_t* ___2_value, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___3_callback, RuntimeObject* ___4_object, const RuntimeMethod* method) 
 {
 	void *__d_args[4] = {0};
@@ -9276,7 +9276,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ReceiveNSDictionaryKeyValueCal
 	__d_args[2] = ___2_value;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___3_callback, (RuntimeObject*)___4_object);
 }
-// Method Definition Index: 111727
+// Method Definition Index: 111737
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveNSDictionaryKeyValueCallback_EndInvoke_m6CD82AA54B05005C6FD7C7ACE5BA0A6CC81E5607 (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -9329,7 +9329,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ReceiveUNNotificationAttachmentCall
 	____2_url_marshaled = NULL;
 
 }
-// Method Definition Index: 111728
+// Method Definition Index: 111738
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveUNNotificationAttachmentCallback__ctor_m205C4D08A16088C9897995C35D865C64EDC016FC (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -9358,13 +9358,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveUNNotificationAttachmentCallback_
 	}
 	__this->___extra_arg = (intptr_t)&ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_Multicast;
 }
-// Method Definition Index: 111729
+// Method Definition Index: 111739
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2 (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, intptr_t ___0_array, String_t* ___1_id, String_t* ___2_url, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, intptr_t, String_t*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_array, ___1_id, ___2_url, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111730
+// Method Definition Index: 111740
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ReceiveUNNotificationAttachmentCallback_BeginInvoke_m1A7C1AB7B3B1A13D08C114A70D7C205710B5D31E (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, intptr_t ___0_array, String_t* ___1_id, String_t* ___2_url, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___3_callback, RuntimeObject* ___4_object, const RuntimeMethod* method) 
 {
 	void *__d_args[4] = {0};
@@ -9373,7 +9373,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ReceiveUNNotificationAttachmen
 	__d_args[2] = ___2_url;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___3_callback, (RuntimeObject*)___4_object);
 }
-// Method Definition Index: 111731
+// Method Definition Index: 111741
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveUNNotificationAttachmentCallback_EndInvoke_m97F641224DC257A91203EC4F9B68D9EE6CF7E79F (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -9460,7 +9460,7 @@ IL2CPP_EXTERN_C void iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173F
 IL2CPP_EXTERN_C void iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48_marshal_com_cleanup(iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 111733
+// Method Definition Index: 111743
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationLocationTrigger_get_Type_m95AD5724B07112816285A5B3F9D72025C31D7B73 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9477,7 +9477,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationLocationTrigger_get_Type_m95AD5724B07112
 	_returnValue = iOSNotificationLocationTrigger_get_Type_m95AD5724B07112816285A5B3F9D72025C31D7B73(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111734
+// Method Definition Index: 111744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 iOSNotificationLocationTrigger_get_Center_mB1ED06211B4770C1C71DCE235011C89DF531620B (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9501,7 +9501,7 @@ IL2CPP_EXTERN_C  Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 iOSNotificati
 	_returnValue = iOSNotificationLocationTrigger_get_Center_mB1ED06211B4770C1C71DCE235011C89DF531620B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111735
+// Method Definition Index: 111745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Center_mA06C5E4FA9A108BA1C88AE3C392EA8027E357280 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9524,7 +9524,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_Center_mA06C5E4FA9A108B
 	_thisAdjusted = reinterpret_cast<iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48*>(__this + _offset);
 	iOSNotificationLocationTrigger_set_Center_mA06C5E4FA9A108BA1C88AE3C392EA8027E357280(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111736
+// Method Definition Index: 111746
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double iOSNotificationLocationTrigger_get_Latitude_m4DE69E4FEA40E9BEECBE69F3B4087929B9D097C7 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9542,7 +9542,7 @@ IL2CPP_EXTERN_C  double iOSNotificationLocationTrigger_get_Latitude_m4DE69E4FEA4
 	_returnValue = iOSNotificationLocationTrigger_get_Latitude_m4DE69E4FEA40E9BEECBE69F3B4087929B9D097C7_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111737
+// Method Definition Index: 111747
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Latitude_m2EA923D04F1F2261FB4826F6F04A42C3974169E5 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, double ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9559,7 +9559,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_Latitude_m2EA923D04F1F2
 	_thisAdjusted = reinterpret_cast<iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48*>(__this + _offset);
 	iOSNotificationLocationTrigger_set_Latitude_m2EA923D04F1F2261FB4826F6F04A42C3974169E5_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111738
+// Method Definition Index: 111748
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double iOSNotificationLocationTrigger_get_Longitude_mA6F70FD2BDD9797246165AC7FE98447E5AD4DF00 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9577,7 +9577,7 @@ IL2CPP_EXTERN_C  double iOSNotificationLocationTrigger_get_Longitude_mA6F70FD2BD
 	_returnValue = iOSNotificationLocationTrigger_get_Longitude_mA6F70FD2BDD9797246165AC7FE98447E5AD4DF00_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111739
+// Method Definition Index: 111749
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Longitude_m175F18008A6389FD90753FAB63482D92BBE23DF7 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, double ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9594,7 +9594,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_Longitude_m175F18008A63
 	_thisAdjusted = reinterpret_cast<iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48*>(__this + _offset);
 	iOSNotificationLocationTrigger_set_Longitude_m175F18008A6389FD90753FAB63482D92BBE23DF7_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111740
+// Method Definition Index: 111750
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float iOSNotificationLocationTrigger_get_Radius_m0C88F4129F152878B4992FBCC5F74209168C6065 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9612,7 +9612,7 @@ IL2CPP_EXTERN_C  float iOSNotificationLocationTrigger_get_Radius_m0C88F4129F1528
 	_returnValue = iOSNotificationLocationTrigger_get_Radius_m0C88F4129F152878B4992FBCC5F74209168C6065_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111741
+// Method Definition Index: 111751
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Radius_m7E204030C195EBB4800EE17D31616F22274AD019 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9629,7 +9629,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_Radius_m7E204030C195EBB
 	_thisAdjusted = reinterpret_cast<iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48*>(__this + _offset);
 	iOSNotificationLocationTrigger_set_Radius_m7E204030C195EBB4800EE17D31616F22274AD019_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111742
+// Method Definition Index: 111752
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigger_get_NotifyOnEntry_m1CAB623B32CC86E1D88991D5D8D6610524C5F010 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9647,7 +9647,7 @@ IL2CPP_EXTERN_C  bool iOSNotificationLocationTrigger_get_NotifyOnEntry_m1CAB623B
 	_returnValue = iOSNotificationLocationTrigger_get_NotifyOnEntry_m1CAB623B32CC86E1D88991D5D8D6610524C5F010_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111743
+// Method Definition Index: 111753
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_NotifyOnEntry_m451DBDBF73879CBF7B5D26402B45519BD34913D9 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9664,7 +9664,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_NotifyOnEntry_m451DBDBF
 	_thisAdjusted = reinterpret_cast<iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48*>(__this + _offset);
 	iOSNotificationLocationTrigger_set_NotifyOnEntry_m451DBDBF73879CBF7B5D26402B45519BD34913D9_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111744
+// Method Definition Index: 111754
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigger_get_NotifyOnExit_m8D0AAD323FAF46CA0DFCCE6FFE6C496A398E3FD6 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9682,7 +9682,7 @@ IL2CPP_EXTERN_C  bool iOSNotificationLocationTrigger_get_NotifyOnExit_m8D0AAD323
 	_returnValue = iOSNotificationLocationTrigger_get_NotifyOnExit_m8D0AAD323FAF46CA0DFCCE6FFE6C496A398E3FD6_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111745
+// Method Definition Index: 111755
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_NotifyOnExit_m62C37F50D48DB3D9DE6C6D75BDDF065D807448D3 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9699,7 +9699,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_NotifyOnExit_m62C37F50D
 	_thisAdjusted = reinterpret_cast<iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48*>(__this + _offset);
 	iOSNotificationLocationTrigger_set_NotifyOnExit_m62C37F50D48DB3D9DE6C6D75BDDF065D807448D3_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111746
+// Method Definition Index: 111756
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigger_get_Repeats_m8C0B2F1321CE19C7BEC39F45685502FE66D7A9D5 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9717,7 +9717,7 @@ IL2CPP_EXTERN_C  bool iOSNotificationLocationTrigger_get_Repeats_m8C0B2F1321CE19
 	_returnValue = iOSNotificationLocationTrigger_get_Repeats_m8C0B2F1321CE19C7BEC39F45685502FE66D7A9D5_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111747
+// Method Definition Index: 111757
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Repeats_mC51DF79A311E96A29EF969F4D9D91D111DA8AE70 (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9742,7 +9742,7 @@ IL2CPP_EXTERN_C  void iOSNotificationLocationTrigger_set_Repeats_mC51DF79A311E96
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111748
+// Method Definition Index: 111758
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationPushTrigger_get_Type_m1DCD9C5923AD6284A690BAD62CDEA77253CE7340 (iOSNotificationPushTrigger_t6BAE77C353D7013A9821FDEB266CF0040811FEE5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9801,7 +9801,7 @@ IL2CPP_EXTERN_C void iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A
 IL2CPP_EXTERN_C void iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649_marshal_com_cleanup(iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 111749
+// Method Definition Index: 111759
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationTimeIntervalTrigger_get_Type_mC688FDD7770A276C2FE0862FB3208D07CA1A6849 (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9818,7 +9818,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationTimeIntervalTrigger_get_Type_mC688FDD777
 	_returnValue = iOSNotificationTimeIntervalTrigger_get_Type_mC688FDD7770A276C2FE0862FB3208D07CA1A6849(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111750
+// Method Definition Index: 111760
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A iOSNotificationTimeIntervalTrigger_get_TimeInterval_mF10F7EEE7AA273B280E29DD5535AE576147D1EB4 (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9845,7 +9845,7 @@ IL2CPP_EXTERN_C  TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A iOSNotificat
 	_returnValue = iOSNotificationTimeIntervalTrigger_get_TimeInterval_mF10F7EEE7AA273B280E29DD5535AE576147D1EB4(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111751
+// Method Definition Index: 111761
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationTimeIntervalTrigger_set_TimeInterval_m8DDE94D778C187DAC0F82E324AF795E64E005130 (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9887,7 +9887,7 @@ IL2CPP_EXTERN_C  void iOSNotificationTimeIntervalTrigger_set_TimeInterval_m8DDE9
 	_thisAdjusted = reinterpret_cast<iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649*>(__this + _offset);
 	iOSNotificationTimeIntervalTrigger_set_TimeInterval_m8DDE94D778C187DAC0F82E324AF795E64E005130(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111752
+// Method Definition Index: 111762
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationTimeIntervalTrigger_get_Repeats_mFE259880B9E33257AC4D52608430BE18906C7EBD (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9905,7 +9905,7 @@ IL2CPP_EXTERN_C  bool iOSNotificationTimeIntervalTrigger_get_Repeats_mFE259880B9
 	_returnValue = iOSNotificationTimeIntervalTrigger_get_Repeats_mFE259880B9E33257AC4D52608430BE18906C7EBD_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111753
+// Method Definition Index: 111763
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationTimeIntervalTrigger_set_Repeats_m7A9109F22E610DF25D696DD1CDEED9B311FBE5B9 (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -9984,7 +9984,7 @@ IL2CPP_EXTERN_C void iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636
 IL2CPP_EXTERN_C void iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C_marshal_com_cleanup(iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 111754
+// Method Definition Index: 111764
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t iOSNotificationCalendarTrigger_get_Type_mB3B8E3E49566CDA04FD16B12BDDD8F53CDEB0EBA (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10001,7 +10001,7 @@ IL2CPP_EXTERN_C  int32_t iOSNotificationCalendarTrigger_get_Type_mB3B8E3E49566CD
 	_returnValue = iOSNotificationCalendarTrigger_get_Type_mB3B8E3E49566CDA04FD16B12BDDD8F53CDEB0EBA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111755
+// Method Definition Index: 111765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Year_m374E19995A7D455F538AD624B45038314F67A552 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10019,7 +10019,7 @@ IL2CPP_EXTERN_C  Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotific
 	_returnValue = iOSNotificationCalendarTrigger_get_Year_m374E19995A7D455F538AD624B45038314F67A552_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111756
+// Method Definition Index: 111766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Year_m4990382171B1A2F2BA9E8EF70EE3BA3780A7C580 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10036,7 +10036,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Year_m4990382171B1A2F2B
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Year_m4990382171B1A2F2BA9E8EF70EE3BA3780A7C580_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111757
+// Method Definition Index: 111767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Month_mDB1FF22A26190D324FA2E318A568DADD8052B880 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10054,7 +10054,7 @@ IL2CPP_EXTERN_C  Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotific
 	_returnValue = iOSNotificationCalendarTrigger_get_Month_mDB1FF22A26190D324FA2E318A568DADD8052B880_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111758
+// Method Definition Index: 111768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Month_m6A0717CC00C5710782F55B6E8F235A8CCA783FCC (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10071,7 +10071,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Month_m6A0717CC00C57107
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Month_m6A0717CC00C5710782F55B6E8F235A8CCA783FCC_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111759
+// Method Definition Index: 111769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Day_mC4F7971F8793F44ABC30D0EF92ACB3E48764E0AB (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10089,7 +10089,7 @@ IL2CPP_EXTERN_C  Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotific
 	_returnValue = iOSNotificationCalendarTrigger_get_Day_mC4F7971F8793F44ABC30D0EF92ACB3E48764E0AB_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111760
+// Method Definition Index: 111770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Day_m8FB648F44C32FF032448CA475F56AF12FC7E760B (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10106,7 +10106,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Day_m8FB648F44C32FF0324
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Day_m8FB648F44C32FF032448CA475F56AF12FC7E760B_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111761
+// Method Definition Index: 111771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Hour_mCD81C83676F017602B51D1F20874004DCA39FF6F (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10124,7 +10124,7 @@ IL2CPP_EXTERN_C  Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotific
 	_returnValue = iOSNotificationCalendarTrigger_get_Hour_mCD81C83676F017602B51D1F20874004DCA39FF6F_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111762
+// Method Definition Index: 111772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Hour_m3322D5351F9E8EFC284E552E55BF145355F8CF60 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10141,7 +10141,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Hour_m3322D5351F9E8EFC2
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Hour_m3322D5351F9E8EFC284E552E55BF145355F8CF60_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111763
+// Method Definition Index: 111773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Minute_m97CA25E0086BCBCA95CFE75393756A0831B32124 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10159,7 +10159,7 @@ IL2CPP_EXTERN_C  Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotific
 	_returnValue = iOSNotificationCalendarTrigger_get_Minute_m97CA25E0086BCBCA95CFE75393756A0831B32124_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111764
+// Method Definition Index: 111774
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Minute_mF59941F1A7D0B027AACDAB8445DAC99DAE9AEE82 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10176,7 +10176,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Minute_mF59941F1A7D0B02
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Minute_mF59941F1A7D0B027AACDAB8445DAC99DAE9AEE82_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111765
+// Method Definition Index: 111775
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Second_m676B6BFE09F0C90AFF8CF222D4C8D859C9DA184F (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10194,7 +10194,7 @@ IL2CPP_EXTERN_C  Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotific
 	_returnValue = iOSNotificationCalendarTrigger_get_Second_m676B6BFE09F0C90AFF8CF222D4C8D859C9DA184F_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111766
+// Method Definition Index: 111776
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Second_m2347F668195B9C4773D4B0B3B297221FF8561F7D (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10211,7 +10211,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Second_m2347F668195B9C4
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Second_m2347F668195B9C4773D4B0B3B297221FF8561F7D_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111767
+// Method Definition Index: 111777
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationCalendarTrigger_get_UtcTime_m5AA0A42A0D637AEC93FEE561A327E1910AE88E90 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10229,7 +10229,7 @@ IL2CPP_EXTERN_C  bool iOSNotificationCalendarTrigger_get_UtcTime_m5AA0A42A0D637A
 	_returnValue = iOSNotificationCalendarTrigger_get_UtcTime_m5AA0A42A0D637AEC93FEE561A327E1910AE88E90_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111768
+// Method Definition Index: 111778
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_UtcTime_m59C6E06208F57EA735F80A33A486EC98A05CFDB2 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10246,7 +10246,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_UtcTime_m59C6E06208F57E
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_UtcTime_m59C6E06208F57EA735F80A33A486EC98A05CFDB2_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111769
+// Method Definition Index: 111779
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSNotificationCalendarTrigger_get_Repeats_m9F42C284F442180685A54C0108DFF7C3DBEC909E (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10264,7 +10264,7 @@ IL2CPP_EXTERN_C  bool iOSNotificationCalendarTrigger_get_Repeats_m9F42C284F44218
 	_returnValue = iOSNotificationCalendarTrigger_get_Repeats_m9F42C284F442180685A54C0108DFF7C3DBEC909E_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111770
+// Method Definition Index: 111780
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Repeats_m61C090AF21271FBAEB5E30E8A37F349BE822AE07 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -10281,7 +10281,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_set_Repeats_m61C090AF21271F
 	_thisAdjusted = reinterpret_cast<iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C*>(__this + _offset);
 	iOSNotificationCalendarTrigger_set_Repeats_m61C090AF21271FBAEB5E30E8A37F349BE822AE07_inline(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 111771
+// Method Definition Index: 111781
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C iOSNotificationCalendarTrigger_ToUtc_mFC629A17E3B38EF5BFF057332D736CB26B80DAC3 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10345,7 +10345,7 @@ IL2CPP_EXTERN_C  iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E
 	_returnValue = iOSNotificationCalendarTrigger_ToUtc_mFC629A17E3B38EF5BFF057332D736CB26B80DAC3(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111772
+// Method Definition Index: 111782
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C iOSNotificationCalendarTrigger_ToLocal_mBC366DC7F7F9ADBF2C219BE19B0B4A14D5E8E573 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10409,7 +10409,7 @@ IL2CPP_EXTERN_C  iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E
 	_returnValue = iOSNotificationCalendarTrigger_ToLocal_mBC366DC7F7F9ADBF2C219BE19B0B4A14D5E8E573(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 111773
+// Method Definition Index: 111783
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D iOSNotificationCalendarTrigger_AssignDateTimeComponents_m864EC2AF260C484E6B16FC7ECBFD51647255021C (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___0_dt, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10684,7 +10684,7 @@ IL2CPP_EXTERN_C  DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D iOSNotificat
 	_returnValue = iOSNotificationCalendarTrigger_AssignDateTimeComponents_m864EC2AF260C484E6B16FC7ECBFD51647255021C(_thisAdjusted, ___0_dt, method);
 	return _returnValue;
 }
-// Method Definition Index: 111774
+// Method Definition Index: 111784
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_AssignNonEmptyComponents_m048DBA5747F815A27EB4106983CFA0426D4569F4 (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___0_dt, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10869,7 +10869,7 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_AssignNonEmptyComponents_m0
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 111775
+// Method Definition Index: 111785
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool QueryLastRespondedNotificationOp_get_keepWaiting_m79348651F15A39A3AD97BE3AF1776230E1FC53F0 (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10880,7 +10880,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool QueryLastRespondedNotificationOp_get_kee
 		return (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 111776
+// Method Definition Index: 111786
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t QueryLastRespondedNotificationOp_get_State_m087C795664DABB0799F7DCA896A379E2900DFFA2 (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10889,7 +10889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t QueryLastRespondedNotificationOp_get_
 		return L_0;
 	}
 }
-// Method Definition Index: 111777
+// Method Definition Index: 111787
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* QueryLastRespondedNotificationOp_get_Notification_mDACF7467BA10C671FE56043C723D6C38D799C836 (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10900,7 +10900,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0
 		return L_0;
 	}
 }
-// Method Definition Index: 111778
+// Method Definition Index: 111788
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* QueryLastRespondedNotificationOp_get_ActionId_mCF578CA735A0F7B0A55865C881F6F144E647F7CB (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10911,7 +10911,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* QueryLastRespondedNotificationOp_ge
 		return L_0;
 	}
 }
-// Method Definition Index: 111779
+// Method Definition Index: 111789
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* QueryLastRespondedNotificationOp_get_UserText_m8DE55A35272A4DC3B4CFA2F1BCFE833E78887538 (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10922,7 +10922,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* QueryLastRespondedNotificationOp_ge
 		return L_0;
 	}
 }
-// Method Definition Index: 111780
+// Method Definition Index: 111790
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void QueryLastRespondedNotificationOp__ctor_m253D7EE81B6FEF19F99656EAFAB956BEAF9F707B (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10936,7 +10936,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void QueryLastRespondedNotificationOp__ctor_m
 		return;
 	}
 }
-// Method Definition Index: 111781
+// Method Definition Index: 111791
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void QueryLastRespondedNotificationOp_UpdateState_m542F5B61E863BC63A11B7DC26AAB658EE2ACED33 (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11059,7 +11059,7 @@ IL_0068:
 		return;
 	}
 }
-// Method Definition Index: 111782
+// Method Definition Index: 111792
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void QueryLastRespondedNotificationOp_CheckHaveNotification_mFFB0D393321FEF80D0E16C58A1CB5470ED46DB98 (QueryLastRespondedNotificationOp_t5C3989F363E0B24C6DA39C183C1F63A4F1F6B8E0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11112,7 +11112,7 @@ IL_0019:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 111506
+// Method Definition Index: 111516
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_IsFinished_m9AF9F366ABC34678151252ECFC3B4FF6959E6ED9_inline (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11123,7 +11123,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_IsF
 		return;
 	}
 }
-// Method Definition Index: 111508
+// Method Definition Index: 111518
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Granted_mFC66547317A168FF388E5AFA19A4A1F31AAF7033_inline (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11134,7 +11134,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Gra
 		return;
 	}
 }
-// Method Definition Index: 111510
+// Method Definition Index: 111520
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Error_m0310B101EB0CDE8DEF8FAA58E69513A810AF5F41_inline (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11146,7 +11146,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_Err
 		return;
 	}
 }
-// Method Definition Index: 111512
+// Method Definition Index: 111522
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_DeviceToken_mDF3A4418B4B1D213AE14E590BCB36BD3C5FADAE3_inline (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11200,7 +11200,7 @@ IL_002c:
 		return L_7;
 	}
 }
-// Method Definition Index: 111752
+// Method Definition Index: 111762
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationTimeIntervalTrigger_get_Repeats_mFE259880B9E33257AC4D52608430BE18906C7EBD_inline (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11209,7 +11209,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationTimeIntervalT
 		return L_0;
 	}
 }
-// Method Definition Index: 111767
+// Method Definition Index: 111777
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationCalendarTrigger_get_UtcTime_m5AA0A42A0D637AEC93FEE561A327E1910AE88E90_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11218,7 +11218,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationCalendarTrigg
 		return L_0;
 	}
 }
-// Method Definition Index: 111755
+// Method Definition Index: 111765
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Year_m374E19995A7D455F538AD624B45038314F67A552_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11227,7 +11227,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 111757
+// Method Definition Index: 111767
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Month_mDB1FF22A26190D324FA2E318A568DADD8052B880_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11236,7 +11236,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 111759
+// Method Definition Index: 111769
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Day_mC4F7971F8793F44ABC30D0EF92ACB3E48764E0AB_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11245,7 +11245,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 111761
+// Method Definition Index: 111771
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Hour_mCD81C83676F017602B51D1F20874004DCA39FF6F_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11254,7 +11254,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 111763
+// Method Definition Index: 111773
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Minute_m97CA25E0086BCBCA95CFE75393756A0831B32124_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11263,7 +11263,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 111765
+// Method Definition Index: 111775
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 iOSNotificationCalendarTrigger_get_Second_m676B6BFE09F0C90AFF8CF222D4C8D859C9DA184F_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11272,7 +11272,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 111769
+// Method Definition Index: 111779
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationCalendarTrigger_get_Repeats_m9F42C284F442180685A54C0108DFF7C3DBEC909E_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11281,7 +11281,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationCalendarTrigg
 		return L_0;
 	}
 }
-// Method Definition Index: 111736
+// Method Definition Index: 111746
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR double iOSNotificationLocationTrigger_get_Latitude_m4DE69E4FEA40E9BEECBE69F3B4087929B9D097C7_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11290,7 +11290,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR double iOSNotificationLocationTri
 		return L_0;
 	}
 }
-// Method Definition Index: 111738
+// Method Definition Index: 111748
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR double iOSNotificationLocationTrigger_get_Longitude_mA6F70FD2BDD9797246165AC7FE98447E5AD4DF00_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11299,7 +11299,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR double iOSNotificationLocationTri
 		return L_0;
 	}
 }
-// Method Definition Index: 111742
+// Method Definition Index: 111752
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigger_get_NotifyOnEntry_m1CAB623B32CC86E1D88991D5D8D6610524C5F010_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11308,7 +11308,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigg
 		return L_0;
 	}
 }
-// Method Definition Index: 111744
+// Method Definition Index: 111754
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigger_get_NotifyOnExit_m8D0AAD323FAF46CA0DFCCE6FFE6C496A398E3FD6_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11317,7 +11317,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigg
 		return L_0;
 	}
 }
-// Method Definition Index: 111740
+// Method Definition Index: 111750
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float iOSNotificationLocationTrigger_get_Radius_m0C88F4129F152878B4992FBCC5F74209168C6065_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11326,7 +11326,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float iOSNotificationLocationTrig
 		return L_0;
 	}
 }
-// Method Definition Index: 111746
+// Method Definition Index: 111756
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigger_get_Repeats_m8C0B2F1321CE19C7BEC39F45685502FE66D7A9D5_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11335,7 +11335,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool iOSNotificationLocationTrigg
 		return L_0;
 	}
 }
-// Method Definition Index: 111753
+// Method Definition Index: 111763
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationTimeIntervalTrigger_set_Repeats_m7A9109F22E610DF25D696DD1CDEED9B311FBE5B9_inline (iOSNotificationTimeIntervalTrigger_t593870D7C4B3A93D9395C1A58DC4F98B445B2649* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11345,7 +11345,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationTimeIntervalT
 		return;
 	}
 }
-// Method Definition Index: 111756
+// Method Definition Index: 111766
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Year_m4990382171B1A2F2BA9E8EF70EE3BA3780A7C580_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11355,7 +11355,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111758
+// Method Definition Index: 111768
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Month_m6A0717CC00C5710782F55B6E8F235A8CCA783FCC_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11365,7 +11365,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111760
+// Method Definition Index: 111770
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Day_m8FB648F44C32FF032448CA475F56AF12FC7E760B_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11375,7 +11375,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111762
+// Method Definition Index: 111772
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Hour_m3322D5351F9E8EFC284E552E55BF145355F8CF60_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11385,7 +11385,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111764
+// Method Definition Index: 111774
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Minute_mF59941F1A7D0B027AACDAB8445DAC99DAE9AEE82_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11395,7 +11395,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111766
+// Method Definition Index: 111776
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Second_m2347F668195B9C4773D4B0B3B297221FF8561F7D_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11405,7 +11405,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111768
+// Method Definition Index: 111778
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_UtcTime_m59C6E06208F57EA735F80A33A486EC98A05CFDB2_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11415,7 +11415,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111770
+// Method Definition Index: 111780
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigger_set_Repeats_m61C090AF21271FBAEB5E30E8A37F349BE822AE07_inline (iOSNotificationCalendarTrigger_tFBBE4331865F1CDB941E7B2B636906E5642C283C* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11425,7 +11425,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCalendarTrigg
 		return;
 	}
 }
-// Method Definition Index: 111737
+// Method Definition Index: 111747
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Latitude_m2EA923D04F1F2261FB4826F6F04A42C3974169E5_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, double ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11435,7 +11435,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigg
 		return;
 	}
 }
-// Method Definition Index: 111739
+// Method Definition Index: 111749
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Longitude_m175F18008A6389FD90753FAB63482D92BBE23DF7_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, double ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11445,7 +11445,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigg
 		return;
 	}
 }
-// Method Definition Index: 111741
+// Method Definition Index: 111751
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Radius_m7E204030C195EBB4800EE17D31616F22274AD019_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11455,7 +11455,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigg
 		return;
 	}
 }
-// Method Definition Index: 111743
+// Method Definition Index: 111753
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_NotifyOnEntry_m451DBDBF73879CBF7B5D26402B45519BD34913D9_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11465,7 +11465,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigg
 		return;
 	}
 }
-// Method Definition Index: 111745
+// Method Definition Index: 111755
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_NotifyOnExit_m62C37F50D48DB3D9DE6C6D75BDDF065D807448D3_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11475,7 +11475,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigg
 		return;
 	}
 }
-// Method Definition Index: 111747
+// Method Definition Index: 111757
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigger_set_Repeats_mC51DF79A311E96A29EF969F4D9D91D111DA8AE70_inline (iOSNotificationLocationTrigger_tA27CD1A09F1B72EC07D3E67173FDD25C8A914B48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11485,7 +11485,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationLocationTrigg
 		return;
 	}
 }
-// Method Definition Index: 111552
+// Method Definition Index: 111562
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotification_set_Attachments_m93E8FB777A55F4C6AB38922DBD0A0C8E9890D15C_inline (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11496,7 +11496,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotification_set_Attachme
 		return;
 	}
 }
-// Method Definition Index: 111542
+// Method Definition Index: 111552
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F32C6FE75 iOSNotification_get_SoundVolume_m78AE382CC86FF14B9F75B8AF12490A6724DF1DA0_inline (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11505,7 +11505,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_t3D746CBB6123D4569FF4D
 		return L_0;
 	}
 }
-// Method Definition Index: 111551
+// Method Definition Index: 111561
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* iOSNotification_get_Attachments_m54CA2BC5B43417D01136FE5A72B0A0BD2636549D_inline (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11514,7 +11514,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR List_1_tC74F654247ABF5958BE119A04
 		return L_0;
 	}
 }
-// Method Definition Index: 111561
+// Method Definition Index: 111571
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Id_m0D72F28EC32CAC70BBDB5DB38ADC2AD0919F9A14_inline (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11525,7 +11525,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Id
 		return;
 	}
 }
-// Method Definition Index: 111563
+// Method Definition Index: 111573
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Title_mCFCB94D7A5C1CF60342BD4E7C9B7FBE07A4554C0_inline (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11536,7 +11536,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Ti
 		return;
 	}
 }
-// Method Definition Index: 111565
+// Method Definition Index: 111575
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Options_mB57570C3425E330D6D74528777D0D78E3FBDFF96_inline (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11546,7 +11546,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAction_set_Op
 		return;
 	}
 }
-// Method Definition Index: 111560
+// Method Definition Index: 111570
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_Id_m2EDC9A71F4912737711EAE8C9B09D8D496A3E3FA_inline (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11555,7 +11555,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_g
 		return L_0;
 	}
 }
-// Method Definition Index: 111562
+// Method Definition Index: 111572
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_get_Title_m44DF5E056FD6A12373E6AA43A2841BE2DB3EE012_inline (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11564,7 +11564,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAction_g
 		return L_0;
 	}
 }
-// Method Definition Index: 111564
+// Method Definition Index: 111574
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationAction_get_Options_mEEDBE525091EDE4B06F7638293682C1AB9DFC65D_inline (iOSNotificationAction_tD8E5D341A875E263D6879512F6663003431FA319* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11573,7 +11573,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationAction_get
 		return L_0;
 	}
 }
-// Method Definition Index: 111574
+// Method Definition Index: 111584
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSTextInputNotificationAction_set_TextInputButtonTitle_m56A810611C4AA5BDCD082632FB9CF85B6F5E6F85_inline (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11584,7 +11584,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSTextInputNotificationActi
 		return;
 	}
 }
-// Method Definition Index: 111573
+// Method Definition Index: 111583
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificationAction_get_TextInputButtonTitle_m6FA9D43FEB99BE97A9047CBC0E030C8E2EB94818_inline (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11593,7 +11593,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificatio
 		return L_0;
 	}
 }
-// Method Definition Index: 111575
+// Method Definition Index: 111585
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificationAction_get_TextInputPlaceholder_m23B1AFC4970F84F64A1EAB498CEED1316DA719F9_inline (iOSTextInputNotificationAction_tDEE99C2E12E44B75192FE89E445D5BFAC84D6A82* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11602,7 +11602,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSTextInputNotificatio
 		return L_0;
 	}
 }
-// Method Definition Index: 111580
+// Method Definition Index: 111590
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAttachment_get_Id_m8A551CB233C83D05BDDACF9688CBECAAF9846C15_inline (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11611,7 +11611,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAttachme
 		return L_0;
 	}
 }
-// Method Definition Index: 111581
+// Method Definition Index: 111591
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAttachment_set_Id_m7401F5705B3B4ADDC0DA5B372FE4579418891E7E_inline (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11622,7 +11622,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAttachment_se
 		return;
 	}
 }
-// Method Definition Index: 111582
+// Method Definition Index: 111592
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAttachment_get_Url_mE0C69FB858552B293B9C0BDDFF2894FC6EBE9BF0_inline (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11631,7 +11631,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationAttachme
 		return L_0;
 	}
 }
-// Method Definition Index: 111583
+// Method Definition Index: 111593
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAttachment_set_Url_m4F0B407457097EC2DEFDCD296E07CDDF624DE202_inline (iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11642,7 +11642,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationAttachment_se
 		return;
 	}
 }
-// Method Definition Index: 111585
+// Method Definition Index: 111595
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_Id_mEDA4B676B8D390208CF1AE47350C5C80B5169400_inline (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11653,13 +11653,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void iOSNotificationCategory_set_
 		return;
 	}
 }
-// Method Definition Index: 111632
+// Method Definition Index: 111642
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_inline (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___0_notification, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_notification, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 111643
+// Method Definition Index: 111653
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_AuthorizationStatus_m86A3FC2E443F732C3882C199476EFBD4DFF8A191_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11668,7 +11668,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111644
+// Method Definition Index: 111654
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_NotificationCenterSetting_m6D6259430B3E5D958FFE6AD9DF676CFD9ACBEFC6_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11677,7 +11677,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111645
+// Method Definition Index: 111655
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_LockScreenSetting_mFC83E2FB7BA192A3ABF02171E9063628B6F04ED0_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11686,7 +11686,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111646
+// Method Definition Index: 111656
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_CarPlaySetting_mBDE163089C469E1E0A0FEAC5F7ACD3FB60A3D882_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11695,7 +11695,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111647
+// Method Definition Index: 111657
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_AlertSetting_mE45B9D8C6057D4C7D9D368B018D61EBFEC60F7A7_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11704,7 +11704,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111648
+// Method Definition Index: 111658
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_BadgeSetting_m45FDA40AB94C8571CF748C429E4E083410A63693_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11713,7 +11713,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111649
+// Method Definition Index: 111659
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_SoundSetting_m1D8F98A6C4BFB9A6982C0E0A8DD86302FB0E4353_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11722,7 +11722,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111650
+// Method Definition Index: 111660
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_AlertStyle_m5ABA83D2E27559F94EE19316F46FE94CFDCCB927_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11731,7 +11731,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_g
 		return (int32_t)(L_0);
 	}
 }
-// Method Definition Index: 111651
+// Method Definition Index: 111661
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationSettings_get_ShowPreviewsSetting_m7C554A6BBBA9DC9AF7368C14F3F34FBF185736FE_inline (iOSNotificationSettings_tBDCE6AE27851787C044FEBC52ED202D4BBD24B21* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11758,7 +11758,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool IntPtr_op_Inequality_m90EFC9
 		return (bool)((((int32_t)((((intptr_t)L_0) == ((intptr_t)L_1))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 111584
+// Method Definition Index: 111594
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_Id_m6A4071B537F6E5B51DA11DCB43613BBD691CFBA9_inline (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11767,7 +11767,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory
 		return L_0;
 	}
 }
-// Method Definition Index: 111588
+// Method Definition Index: 111598
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_HiddenPreviewsBodyPlaceholder_mCC5DF780F51E1AC578873FE372067DF14800A1C2_inline (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11776,7 +11776,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory
 		return L_0;
 	}
 }
-// Method Definition Index: 111590
+// Method Definition Index: 111600
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory_get_SummaryFormat_m6835C27643601AFBCD4F51CA3E28C72E850164CB_inline (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11785,7 +11785,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* iOSNotificationCategory
 		return L_0;
 	}
 }
-// Method Definition Index: 111592
+// Method Definition Index: 111602
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t iOSNotificationCategory_get_Options_m93741379CF2DF82295080957832C1D37D3DFC961_inline (iOSNotificationCategory_tA1484A3FB74ADB6798FDF886440E28EB19DEB89F* __this, const RuntimeMethod* method) 
 {
 	{

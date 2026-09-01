@@ -609,6 +609,7 @@ extern void LoadingScreenManager_ShowImmediate_m9E65CAB42FA71898BA3BA4376748D313
 extern void LoadingScreenManager_HideImmediate_m9FCBF8B36B38B03E717225B6533D1DDD8DD9DDAB (void);
 extern void LoadingScreenManager_AnimateSpinner_m11F55D289F82C5ED2E05DB3E7917E6DD357736B4 (void);
 extern void LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C (void);
+extern void LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9 (void);
 extern void LoadingScreenManager_IsAddressableScene_m0FA2336537EC4775F7599A5F805278F45A54C60B (void);
 extern void LoadingScreenManager_ApplyLogoForScene_mA0EFC29DD19FBC51A0BBFBD7E041317767F06328 (void);
 extern void LoadingScreenManager_GetLogoForScene_m0B677D44F6ED21B2AAF743F3500AB151F14D11F9 (void);
@@ -956,10 +957,19 @@ extern void PrePlacedAssetInfoPanel_Hide_m7B0C39BB7DB4668E6AD908A6FB542C93AEBF49
 extern void PrePlacedAssetInfoPanel_OnOpenShopClicked_m37A511ECFB70191CE00E43DED28704605D75AA58 (void);
 extern void PrePlacedAssetInfoPanel__ctor_m0CAE44210DD263A463F8B77AD7D8EE425DA58326 (void);
 extern void PrePlacedAssetSpawner_Start_mF6AA324B8F6F9BF57008473D9D9600A9E6BB8B4A (void);
+extern void PrePlacedAssetSpawner_SpawnAllRoutine_m83365C58AF0D64BD97EFC3F2530F00C01DAAF692 (void);
 extern void PrePlacedAssetSpawner_SpawnOne_m52BB9C6F0F5D519BCC507FA37DD2F3A31727CAB3 (void);
 extern void PrePlacedAssetSpawner__ctor_mE420B0C3D71286199A9CB583F18903B0F807C95B (void);
-extern void U3CU3Ec__DisplayClass3_0__ctor_mF35566C710F829266101B3FD8F2CD63CD2DB22E9 (void);
-extern void U3CU3Ec__DisplayClass3_0_U3CStartU3Eb__0_m1439A029A70C7885EE9CD01FF410E36CAD2B4994 (void);
+extern void U3CU3Ec__DisplayClass4_0__ctor_mD4E67365215298F66E72FEBAAB70A1F81071EE49 (void);
+extern void U3CU3Ec__DisplayClass4_0_U3CSpawnAllRoutineU3Eb__0_mDE93D64C42694DC569063779A30CE3B97D7B842B (void);
+extern void U3CSpawnAllRoutineU3Ed__4__ctor_m3A73AE31BBDE59BF5478653334B46184E2117FC0 (void);
+extern void U3CSpawnAllRoutineU3Ed__4_System_IDisposable_Dispose_m9DBDF77ABE77F7FC1C77D2D6CF5E9C13378A0260 (void);
+extern void U3CSpawnAllRoutineU3Ed__4_MoveNext_mFDBFAB1ACBC191120F51BBB4E940D5E1DA927B70 (void);
+extern void U3CSpawnAllRoutineU3Ed__4_U3CU3Em__Finally1_mF31C5A9DE05876F801739937808ACE356760788F (void);
+extern void U3CSpawnAllRoutineU3Ed__4_U3CU3Em__Finally2_m85172C9386E1C0DFDFE01E86CDA2D6D25C29E868 (void);
+extern void U3CSpawnAllRoutineU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3A7E0157F19FBC99F61B3A1DBF05D21917CE4F1E (void);
+extern void U3CSpawnAllRoutineU3Ed__4_System_Collections_IEnumerator_Reset_m2BAACBAD8D0AB66CF9DD509D9B57E455E47E83ED (void);
+extern void U3CSpawnAllRoutineU3Ed__4_System_Collections_IEnumerator_get_Current_m967C9A624B47F20AF26F7BEC660218C3B70C58AB (void);
 extern void PrePlacedLayoutData__ctor_m7E25C717DCF98B12A3E3BC16EFC56F0E4C26357A (void);
 extern void DhikrList_GetDhikrs_m0FE885CDC2D6D4E214EFCFCE90B8BB3A52D8A2E6 (void);
 extern void DhikrList__ctor_mF31D13ED52F4A7F4A814AA8C5561180F2F0FADC8 (void);
@@ -2100,7 +2110,7 @@ extern void VegetationBendControl__ctor_mAE30E170652B941D97B14458DBFB36EAC0F186A
 extern void WindControl_OnValidate_m9938687E723F19045F371D3466A5900938ECD4B5 (void);
 extern void WindControl__ctor_m4F3C859526190A2A90486EED900CD8F4DCBD4EE8 (void);
 extern void U3CPrivateImplementationDetailsU3E_ComputeStringHash_m6EA1F233618497AEFF8902A5EDFA24C74E2F2876 (void);
-static Il2CppMethodPointer s_methodPointers[2098] = 
+static Il2CppMethodPointer s_methodPointers[2108] = 
 {
 	SendToFlutter_Send_mC3EEBDA79530F83C75829EFC506B20AF3C9B16AE,
 	SendToFlutter_FlutterEmbedUnityIos_sendToFlutter_m4A6E88FFCD7AABBB3EB16123964F15B28EC4C438,
@@ -2700,6 +2710,7 @@ static Il2CppMethodPointer s_methodPointers[2098] =
 	LoadingScreenManager_HideImmediate_m9FCBF8B36B38B03E717225B6533D1DDD8DD9DDAB,
 	LoadingScreenManager_AnimateSpinner_m11F55D289F82C5ED2E05DB3E7917E6DD357736B4,
 	LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C,
+	LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9,
 	LoadingScreenManager_IsAddressableScene_m0FA2336537EC4775F7599A5F805278F45A54C60B,
 	LoadingScreenManager_ApplyLogoForScene_mA0EFC29DD19FBC51A0BBFBD7E041317767F06328,
 	LoadingScreenManager_GetLogoForScene_m0B677D44F6ED21B2AAF743F3500AB151F14D11F9,
@@ -3047,10 +3058,19 @@ static Il2CppMethodPointer s_methodPointers[2098] =
 	PrePlacedAssetInfoPanel_OnOpenShopClicked_m37A511ECFB70191CE00E43DED28704605D75AA58,
 	PrePlacedAssetInfoPanel__ctor_m0CAE44210DD263A463F8B77AD7D8EE425DA58326,
 	PrePlacedAssetSpawner_Start_mF6AA324B8F6F9BF57008473D9D9600A9E6BB8B4A,
+	PrePlacedAssetSpawner_SpawnAllRoutine_m83365C58AF0D64BD97EFC3F2530F00C01DAAF692,
 	PrePlacedAssetSpawner_SpawnOne_m52BB9C6F0F5D519BCC507FA37DD2F3A31727CAB3,
 	PrePlacedAssetSpawner__ctor_mE420B0C3D71286199A9CB583F18903B0F807C95B,
-	U3CU3Ec__DisplayClass3_0__ctor_mF35566C710F829266101B3FD8F2CD63CD2DB22E9,
-	U3CU3Ec__DisplayClass3_0_U3CStartU3Eb__0_m1439A029A70C7885EE9CD01FF410E36CAD2B4994,
+	U3CU3Ec__DisplayClass4_0__ctor_mD4E67365215298F66E72FEBAAB70A1F81071EE49,
+	U3CU3Ec__DisplayClass4_0_U3CSpawnAllRoutineU3Eb__0_mDE93D64C42694DC569063779A30CE3B97D7B842B,
+	U3CSpawnAllRoutineU3Ed__4__ctor_m3A73AE31BBDE59BF5478653334B46184E2117FC0,
+	U3CSpawnAllRoutineU3Ed__4_System_IDisposable_Dispose_m9DBDF77ABE77F7FC1C77D2D6CF5E9C13378A0260,
+	U3CSpawnAllRoutineU3Ed__4_MoveNext_mFDBFAB1ACBC191120F51BBB4E940D5E1DA927B70,
+	U3CSpawnAllRoutineU3Ed__4_U3CU3Em__Finally1_mF31C5A9DE05876F801739937808ACE356760788F,
+	U3CSpawnAllRoutineU3Ed__4_U3CU3Em__Finally2_m85172C9386E1C0DFDFE01E86CDA2D6D25C29E868,
+	U3CSpawnAllRoutineU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3A7E0157F19FBC99F61B3A1DBF05D21917CE4F1E,
+	U3CSpawnAllRoutineU3Ed__4_System_Collections_IEnumerator_Reset_m2BAACBAD8D0AB66CF9DD509D9B57E455E47E83ED,
+	U3CSpawnAllRoutineU3Ed__4_System_Collections_IEnumerator_get_Current_m967C9A624B47F20AF26F7BEC660218C3B70C58AB,
 	PrePlacedLayoutData__ctor_m7E25C717DCF98B12A3E3BC16EFC56F0E4C26357A,
 	DhikrList_GetDhikrs_m0FE885CDC2D6D4E214EFCFCE90B8BB3A52D8A2E6,
 	DhikrList__ctor_mF31D13ED52F4A7F4A814AA8C5561180F2F0FADC8,
@@ -4207,12 +4227,12 @@ extern void SerializableQuaternion__ctor_m67D8B7BBCE4E09BCF53AB62EF8E52F044C8CF2
 extern void SerializableQuaternion_ToQuaternion_mF8B8846E28747024A59E538B08AAED63281C0848_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[4] = 
 {
-	{ 0x0600042E, SerializableVector3__ctor_mDC41E4156CC8A78EB898E77B8490FEC15DBCEDBC_AdjustorThunk },
-	{ 0x0600042F, SerializableVector3_ToVector3_m34B0AA6CC8CB3BFC4AA47314259A28F089797E5D_AdjustorThunk },
-	{ 0x06000432, SerializableQuaternion__ctor_m67D8B7BBCE4E09BCF53AB62EF8E52F044C8CF212_AdjustorThunk },
-	{ 0x06000433, SerializableQuaternion_ToQuaternion_mF8B8846E28747024A59E538B08AAED63281C0848_AdjustorThunk },
+	{ 0x06000438, SerializableVector3__ctor_mDC41E4156CC8A78EB898E77B8490FEC15DBCEDBC_AdjustorThunk },
+	{ 0x06000439, SerializableVector3_ToVector3_m34B0AA6CC8CB3BFC4AA47314259A28F089797E5D_AdjustorThunk },
+	{ 0x0600043C, SerializableQuaternion__ctor_m67D8B7BBCE4E09BCF53AB62EF8E52F044C8CF212_AdjustorThunk },
+	{ 0x0600043D, SerializableQuaternion_ToQuaternion_mF8B8846E28747024A59E538B08AAED63281C0848_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[2098] = 
+static const int32_t s_InvokerIndices[2108] = 
 {
 	30701,
 	30701,
@@ -4812,6 +4832,7 @@ static const int32_t s_InvokerIndices[2098] =
 	18597,
 	18597,
 	14322,
+	27108,
 	10247,
 	14322,
 	12240,
@@ -5159,10 +5180,19 @@ static const int32_t s_InvokerIndices[2098] =
 	18597,
 	18597,
 	18597,
+	12240,
 	7485,
 	18597,
 	18597,
 	14322,
+	14249,
+	18597,
+	18111,
+	18597,
+	18597,
+	18343,
+	18597,
+	18343,
 	18597,
 	18343,
 	18597,
@@ -6315,17 +6345,17 @@ static const int32_t s_InvokerIndices[2098] =
 };
 static const Il2CppTokenIndexMethodTuple s_reversePInvokeIndices[5] = 
 {
-	{ 0x060006AC, 7,  (void**)&GA_NativeLogger_OnNativeLog_m8A6402481DDF95AFFE64DE1827A2984984E3CA20_RuntimeMethod_var, 0 },
-	{ 0x060007DE, 13,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerNotDetermined_m7E35735CF604EF79F0B0D28B5A7BC8D8D17BB66C_RuntimeMethod_var, 0 },
-	{ 0x060007DF, 14,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerRestricted_m9286982DB6A8B1F1B0ABEA93D0A12F7E3B76C54B_RuntimeMethod_var, 0 },
-	{ 0x060007E0, 12,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerDenied_mA88DCD5D26E65062891546B56917FCEF2AD097C0_RuntimeMethod_var, 0 },
-	{ 0x060007E1, 11,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerAuthorized_mB0CEB3B6406783A3145FE653A5682E71C97C469B_RuntimeMethod_var, 0 },
+	{ 0x060006B6, 7,  (void**)&GA_NativeLogger_OnNativeLog_m8A6402481DDF95AFFE64DE1827A2984984E3CA20_RuntimeMethod_var, 0 },
+	{ 0x060007E8, 13,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerNotDetermined_m7E35735CF604EF79F0B0D28B5A7BC8D8D17BB66C_RuntimeMethod_var, 0 },
+	{ 0x060007E9, 14,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerRestricted_m9286982DB6A8B1F1B0ABEA93D0A12F7E3B76C54B_RuntimeMethod_var, 0 },
+	{ 0x060007EA, 12,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerDenied_mA88DCD5D26E65062891546B56917FCEF2AD097C0_RuntimeMethod_var, 0 },
+	{ 0x060007EB, 11,  (void**)&GameAnalyticsATTClient_GameAnalyticsATTListenerAuthorized_mB0CEB3B6406783A3145FE653A5682E71C97C469B_RuntimeMethod_var, 0 },
 };
 static const Il2CppTokenRangePair s_rgctxIndices[3] = 
 {
 	{ 0x0600015E, { 0, 6 } },
-	{ 0x06000429, { 6, 1 } },
-	{ 0x0600042A, { 7, 1 } },
+	{ 0x06000433, { 6, 1 } },
+	{ 0x06000434, { 7, 1 } },
 };
 extern const uint32_t g_rgctx_IList_1_tF396B276F89F89881DA046ABE4B4CB064695FDD3;
 extern const uint32_t g_rgctx_ICollection_1_tB744A8346ED352CA09BE4AF1BD7EC5F8BDDE84DC;
@@ -6350,7 +6380,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	2098,
+	2108,
 	s_methodPointers,
 	4,
 	s_adjustorThunks,

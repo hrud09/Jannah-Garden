@@ -1238,7 +1238,7 @@ IL2CPP_EXTERN_C void TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04
 IL2CPP_EXTERN_C void TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3_marshal_com_cleanup(TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 112791
+// Method Definition Index: 112801
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareColors_m29E454405FB3871CA77CC7F94DAB1B4320BD5E53 (TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_left, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_right, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -1316,7 +1316,7 @@ IL2CPP_EXTERN_C  bool TextGenerationSettings_CompareColors_m29E454405FB3871CA77C
 	_returnValue = TextGenerationSettings_CompareColors_m29E454405FB3871CA77CC7F94DAB1B4320BD5E53(_thisAdjusted, ___0_left, ___1_right, method);
 	return _returnValue;
 }
-// Method Definition Index: 112792
+// Method Definition Index: 112802
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareVector2_mF3EE374922B2ECE13BA7B01B26199494A30C2E2E (TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_left, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_right, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -1370,7 +1370,7 @@ IL2CPP_EXTERN_C  bool TextGenerationSettings_CompareVector2_mF3EE374922B2ECE13BA
 	_returnValue = TextGenerationSettings_CompareVector2_mF3EE374922B2ECE13BA7B01B26199494A30C2E2E(_thisAdjusted, ___0_left, ___1_right, method);
 	return _returnValue;
 }
-// Method Definition Index: 112793
+// Method Definition Index: 112803
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m04DE9655555622E3A4EECC2EAB3BC36B38E20840 (TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3* __this, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1638,7 +1638,7 @@ IL2CPP_EXTERN_C void TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC_mar
 IL2CPP_EXTERN_C void TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC_marshal_com_cleanup(TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC_marshaled_com& marshaled)
 {
 }
-// Method Definition Index: 112794
+// Method Definition Index: 112804
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator__ctor_m2BFF25B11D7FD0FA4F8E1B04D107219A30E8A187 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1646,7 +1646,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator__ctor_m2BFF25B11D7FD0FA4F8
 		return;
 	}
 }
-// Method Definition Index: 112795
+// Method Definition Index: 112805
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator__ctor_m05E7CFDC682F880A590F4AA840F81647844A0A32 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, int32_t ___0_initialCapacity, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1682,7 +1682,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator__ctor_m05E7CFDC682F880A590
 		return;
 	}
 }
-// Method Definition Index: 112796
+// Method Definition Index: 112806
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Finalize_mD3C40A16FD4661E4712C85586430041C72E914F7 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1719,7 +1719,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 112797
+// Method Definition Index: 112807
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_System_IDisposable_Dispose_m5B2B52DA9C73CE736E908030738002D6D860227F (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -1745,7 +1745,7 @@ IL_002e:
 		return;
 	}
 }
-// Method Definition Index: 112798
+// Method Definition Index: 112808
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCountVisible_m407C344C5A13A26471315449899B927FF3D3CDFC (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1754,7 +1754,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCountVisib
 		return ((int32_t)il2cpp_codegen_subtract(L_0, 1));
 	}
 }
-// Method Definition Index: 112799
+// Method Definition Index: 112809
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 TextGenerator_ValidatedSettings_mAE5128305E953EE41E5E655675323896EF1154AE (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___0_settings, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1942,7 +1942,7 @@ IL_00d8:
 		return L_39;
 	}
 }
-// Method Definition Index: 112800
+// Method Definition Index: 112810
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Invalidate_m999CE96E2F02E326092DFEB53EE8BC08CAAF8260 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1950,7 +1950,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Invalidate_m999CE96E2F02E3
 		return;
 	}
 }
-// Method Definition Index: 112801
+// Method Definition Index: 112811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetCharacters_mB7956402E0C66D9F9D51A3ADFCA84BE83BB54D90 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, List_1_t67A1600A303BB89506DFD21B59687088B7E0675B* ___0_characters, const RuntimeMethod* method) 
 {
 	{
@@ -1959,7 +1959,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetCharacters_mB7956402E0C
 		return;
 	}
 }
-// Method Definition Index: 112802
+// Method Definition Index: 112812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetLines_mFA8508172C251E1E4BBB1FBB734C82C81EF9330F (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, List_1_t9209B29AC606399207E97BDCD817DEA5B6C63CA5* ___0_lines, const RuntimeMethod* method) 
 {
 	{
@@ -1968,7 +1968,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetLines_mFA8508172C251E1E
 		return;
 	}
 }
-// Method Definition Index: 112803
+// Method Definition Index: 112813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetVertices_m97C7D4CB9B122A10BA5921BC38F83A245EB1B97E (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, List_1_t09F8990ACE8783E311B473B0090859BA9C00FC2A* ___0_vertices, const RuntimeMethod* method) 
 {
 	{
@@ -1977,7 +1977,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetVertices_m97C7D4CB9B122
 		return;
 	}
 }
-// Method Definition Index: 112804
+// Method Definition Index: 112814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TextGenerator_GetPreferredWidth_mDDE43A5C8BDD7BBD235AE740C4C2A293A92BD28E (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___1_settings, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2013,7 +2013,7 @@ IL_0033:
 		return L_5;
 	}
 }
-// Method Definition Index: 112805
+// Method Definition Index: 112815
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TextGenerator_GetPreferredHeight_m0EAF7CE0F503C97F4D35D0EE4A3AD923B472F89E (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___1_settings, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2048,7 +2048,7 @@ IL_002b:
 		return L_5;
 	}
 }
-// Method Definition Index: 112806
+// Method Definition Index: 112816
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_PopulateWithErrors_m0E56C12E9D7714F4B8772422AAB2CAC9EA10F834 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___1_settings, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___2_context, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2142,7 +2142,7 @@ IL_0066:
 		return L_19;
 	}
 }
-// Method Definition Index: 112807
+// Method Definition Index: 112817
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_m5620AF6DBC180FC3FBE3E5F5930CF7CB65DD3CE2 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___1_settings, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -2164,7 +2164,7 @@ IL_0011:
 		return L_4;
 	}
 }
-// Method Definition Index: 112808
+// Method Definition Index: 112818
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_PopulateWithError_m0F7C1CE45F372D80603C28F1E01F6FF796B95E02 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___1_settings, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -2233,7 +2233,7 @@ IL_004b:
 		return L_12;
 	}
 }
-// Method Definition Index: 112809
+// Method Definition Index: 112819
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_PopulateAlways_mA99FFC0276B51F8DED3EABD1FF660130BE803EDA (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 ___1_settings, const RuntimeMethod* method) 
 {
 	TextGenerationSettings_tBB6E86AC0B348D19158D6721BE790865B04993F3 V_0;
@@ -2307,7 +2307,7 @@ IL_00b4:
 		return L_44;
 	}
 }
-// Method Definition Index: 112810
+// Method Definition Index: 112820
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TextGenerator_get_verts_mA197E8944ABE4831B93275662BB66EC53DE349D8 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -2340,7 +2340,7 @@ IL_002d:
 		return L_4;
 	}
 }
-// Method Definition Index: 112811
+// Method Definition Index: 112821
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TextGenerator_get_characters_mDA07F7108C6EF6F5DF61C478FDF3EB18DCE6B34A (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -2373,7 +2373,7 @@ IL_002d:
 		return L_4;
 	}
 }
-// Method Definition Index: 112812
+// Method Definition Index: 112822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TextGenerator_get_lines_m52DAB15921DC96120CA6C21A3FEB2406D4A76064 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -2406,7 +2406,7 @@ IL_002d:
 		return L_4;
 	}
 }
-// Method Definition Index: 112813
+// Method Definition Index: 112823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D TextGenerator_get_rectExtents_m55100375428EFAA89F3AC1B528E8716E615F9F2C (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D V_0;
@@ -2438,7 +2438,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112814
+// Method Definition Index: 112824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCount_mD4FD13BBBEDA2AB495C045160693754E4C106FFF (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	intptr_t G_B2_0;
@@ -2468,7 +2468,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112815
+// Method Definition Index: 112825
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_lineCount_mC568C375C85695478DD054B296CBEAB11D3C4108 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, const RuntimeMethod* method) 
 {
 	intptr_t G_B2_0;
@@ -2498,7 +2498,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112816
+// Method Definition Index: 112826
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TextGenerator_Internal_Create_m66701C08DAE160892766930F831D2AB1EB4E998C (const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TextGenerator_Internal_Create_m66701C08DAE160892766930F831D2AB1EB4E998C_ftn) ();
@@ -2508,7 +2508,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TextGenerator_Internal_Create_m66701
 	intptr_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 112817
+// Method Definition Index: 112827
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Internal_Destroy_m0AE3865A6886503BAE5798E6D9899EF59A0285A7 (intptr_t ___0_ptr, const RuntimeMethod* method) 
 {
 	typedef void (*TextGenerator_Internal_Destroy_m0AE3865A6886503BAE5798E6D9899EF59A0285A7_ftn) (intptr_t);
@@ -2517,7 +2517,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Internal_Destroy_m0AE3865A
 	_il2cpp_icall_func = (TextGenerator_Internal_Destroy_m0AE3865A6886503BAE5798E6D9899EF59A0285A7_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::Internal_Destroy(System.IntPtr)");
 	_il2cpp_icall_func(___0_ptr);
 }
-// Method Definition Index: 112818
+// Method Definition Index: 112828
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_m74A216D58183B4069BFBD6CDF624CB97A9EC4CAA (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___1_font, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___2_color, int32_t ___3_fontSize, float ___4_scaleFactor, float ___5_lineSpacing, int32_t ___6_style, bool ___7_richText, bool ___8_resizeTextForBestFit, int32_t ___9_resizeTextMinSize, int32_t ___10_resizeTextMaxSize, int32_t ___11_verticalOverFlow, int32_t ___12_horizontalOverflow, bool ___13_updateBounds, int32_t ___14_anchor, float ___15_extentsX, float ___16_extentsY, float ___17_pivotX, float ___18_pivotY, bool ___19_generateOutOfBounds, bool ___20_alignByGeometry, uint32_t* ___21_error, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2639,7 +2639,7 @@ IL_0076:
 		return L_31;
 	}
 }
-// Method Definition Index: 112819
+// Method Definition Index: 112829
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_m4DF908756A1AC26B04AC8AB12A004203366B294B (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, String_t* ___0_str, Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___1_font, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___2_color, int32_t ___3_fontSize, float ___4_scaleFactor, float ___5_lineSpacing, int32_t ___6_style, bool ___7_richText, bool ___8_resizeTextForBestFit, int32_t ___9_resizeTextMinSize, int32_t ___10_resizeTextMaxSize, int32_t ___11_verticalOverFlow, int32_t ___12_horizontalOverflow, bool ___13_updateBounds, int32_t ___14_anchor, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___15_extents, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___16_pivot, bool ___17_generateOutOfBounds, bool ___18_alignByGeometry, int32_t* ___19_error, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2716,7 +2716,7 @@ IL_0063:
 		return L_33;
 	}
 }
-// Method Definition Index: 112820
+// Method Definition Index: 112830
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetVerticesInternal_m8BB7AB760D1071709A584FD9371D7549DA2A1B21 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, RuntimeObject* ___0_vertices, const RuntimeMethod* method) 
 {
 	intptr_t G_B2_0;
@@ -2746,7 +2746,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 112821
+// Method Definition Index: 112831
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetCharactersInternal_mB5157BBD4E1C42ACEDCC696D718E656BDD5E2398 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, RuntimeObject* ___0_characters, const RuntimeMethod* method) 
 {
 	intptr_t G_B2_0;
@@ -2776,7 +2776,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 112822
+// Method Definition Index: 112832
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetLinesInternal_mDAC83E88FD1FD79CCCE294E49E02ED748CFC8E12 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* __this, RuntimeObject* ___0_lines, const RuntimeMethod* method) 
 {
 	intptr_t G_B2_0;
@@ -2806,7 +2806,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 112823
+// Method Definition Index: 112833
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_get_rectExtents_Injected_mE70DFB2720C23AD997733158D7BD220BFC30C06E (intptr_t ___0__unity_self, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TextGenerator_get_rectExtents_Injected_mE70DFB2720C23AD997733158D7BD220BFC30C06E_ftn) (intptr_t, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D*);
@@ -2815,7 +2815,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_get_rectExtents_Injected_m
 	_il2cpp_icall_func = (TextGenerator_get_rectExtents_Injected_mE70DFB2720C23AD997733158D7BD220BFC30C06E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::get_rectExtents_Injected(System.IntPtr,UnityEngine.Rect&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 112824
+// Method Definition Index: 112834
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCount_Injected_m85C7A016C1F680A2BD6585235CC8858B0C718CB8 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TextGenerator_get_characterCount_Injected_m85C7A016C1F680A2BD6585235CC8858B0C718CB8_ftn) (intptr_t);
@@ -2825,7 +2825,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCount_Inje
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112825
+// Method Definition Index: 112835
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_lineCount_Injected_mF2C9067B7A2E5466BE99F6A9104F2FBCB36761AF (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*TextGenerator_get_lineCount_Injected_mF2C9067B7A2E5466BE99F6A9104F2FBCB36761AF_ftn) (intptr_t);
@@ -2835,7 +2835,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_lineCount_Injected_
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112826
+// Method Definition Index: 112836
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_Injected_m79206EFC5017F0450703B7B246C0C0DE1F23B8E7 (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_str, intptr_t ___2_font, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* ___3_color, int32_t ___4_fontSize, float ___5_scaleFactor, float ___6_lineSpacing, int32_t ___7_style, bool ___8_richText, bool ___9_resizeTextForBestFit, int32_t ___10_resizeTextMinSize, int32_t ___11_resizeTextMaxSize, int32_t ___12_verticalOverFlow, int32_t ___13_horizontalOverflow, bool ___14_updateBounds, int32_t ___15_anchor, float ___16_extentsX, float ___17_extentsY, float ___18_pivotX, float ___19_pivotY, bool ___20_generateOutOfBounds, bool ___21_alignByGeometry, uint32_t* ___22_error, const RuntimeMethod* method) 
 {
 	typedef bool (*TextGenerator_Populate_Internal_Injected_m79206EFC5017F0450703B7B246C0C0DE1F23B8E7_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*, intptr_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*, int32_t, float, float, int32_t, bool, bool, int32_t, int32_t, int32_t, int32_t, bool, int32_t, float, float, float, float, bool, bool, uint32_t*);
@@ -2845,7 +2845,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_Injected
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_str, ___2_font, ___3_color, ___4_fontSize, ___5_scaleFactor, ___6_lineSpacing, ___7_style, ___8_richText, ___9_resizeTextForBestFit, ___10_resizeTextMinSize, ___11_resizeTextMaxSize, ___12_verticalOverFlow, ___13_horizontalOverflow, ___14_updateBounds, ___15_anchor, ___16_extentsX, ___17_extentsY, ___18_pivotX, ___19_pivotY, ___20_generateOutOfBounds, ___21_alignByGeometry, ___22_error);
 	return icallRetVal;
 }
-// Method Definition Index: 112827
+// Method Definition Index: 112837
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetVerticesInternal_Injected_mDF2ACA7C58E4055EA2A1C696C7B5D321B36D6E95 (intptr_t ___0__unity_self, RuntimeObject* ___1_vertices, const RuntimeMethod* method) 
 {
 	typedef void (*TextGenerator_GetVerticesInternal_Injected_mDF2ACA7C58E4055EA2A1C696C7B5D321B36D6E95_ftn) (intptr_t, RuntimeObject*);
@@ -2854,7 +2854,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetVerticesInternal_Inject
 	_il2cpp_icall_func = (TextGenerator_GetVerticesInternal_Injected_mDF2ACA7C58E4055EA2A1C696C7B5D321B36D6E95_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::GetVerticesInternal_Injected(System.IntPtr,System.Object)");
 	_il2cpp_icall_func(___0__unity_self, ___1_vertices);
 }
-// Method Definition Index: 112828
+// Method Definition Index: 112838
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetCharactersInternal_Injected_m007C3E062501293E5D4969D51689224CD6C5AB65 (intptr_t ___0__unity_self, RuntimeObject* ___1_characters, const RuntimeMethod* method) 
 {
 	typedef void (*TextGenerator_GetCharactersInternal_Injected_m007C3E062501293E5D4969D51689224CD6C5AB65_ftn) (intptr_t, RuntimeObject*);
@@ -2863,7 +2863,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetCharactersInternal_Inje
 	_il2cpp_icall_func = (TextGenerator_GetCharactersInternal_Injected_m007C3E062501293E5D4969D51689224CD6C5AB65_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::GetCharactersInternal_Injected(System.IntPtr,System.Object)");
 	_il2cpp_icall_func(___0__unity_self, ___1_characters);
 }
-// Method Definition Index: 112829
+// Method Definition Index: 112839
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetLinesInternal_Injected_m6B6CFC076A64DF1E7250EB5C32A0A126FDD6AF2E (intptr_t ___0__unity_self, RuntimeObject* ___1_lines, const RuntimeMethod* method) 
 {
 	typedef void (*TextGenerator_GetLinesInternal_Injected_m6B6CFC076A64DF1E7250EB5C32A0A126FDD6AF2E_ftn) (intptr_t, RuntimeObject*);
@@ -2880,7 +2880,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_GetLinesInternal_Injected_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112830
+// Method Definition Index: 112840
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t BindingsMarshaller_ConvertToNative_m442CA777D48EC9F618E6EDACB4F95565D8717650 (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* ___0_textGenerator, const RuntimeMethod* method) 
 {
 	{
@@ -3032,7 +3032,7 @@ IL2CPP_EXTERN_C void CharacterInfo_t211705CECE52870AEC4DBD0574D581AF765BB889_mar
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112831
+// Method Definition Index: 112841
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIVertex__cctor_mF98CC8F21D6CD8703B47E168E976BBE15E0F6C62 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3088,7 +3088,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIVertex__cctor_mF98CC8F21D6CD8703B47E16
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112832
+// Method Definition Index: 112842
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_add_textureRebuilt_m0BBB44846C17A580B078599DA5AE231DA9D6DAD7 (Action_1_tD91E4D0ED3C2E385D3BDD4B3EA48B5F99D39F1DC* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3131,7 +3131,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 112833
+// Method Definition Index: 112843
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_remove_textureRebuilt_mB7EF9EEE803E9C70AF4217190B49C83FE287904A (Action_1_tD91E4D0ED3C2E385D3BDD4B3EA48B5F99D39F1DC* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3174,7 +3174,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 112834
+// Method Definition Index: 112844
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_add_m_FontTextureRebuildCallback_mA82EF5F0C5CB58F31BFF773A718140DF1AD83A54 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3217,7 +3217,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 112835
+// Method Definition Index: 112845
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_remove_m_FontTextureRebuildCallback_m91ABF9F0D9500493DAC69A3AB6175B52305D526C (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3260,7 +3260,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 112836
+// Method Definition Index: 112846
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* Font_get_material_m61ABDEC14C6D659DDC5A4F080023699116C17364 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3299,7 +3299,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 112837
+// Method Definition Index: 112847
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_material_m5A40979A00FF8E5038A716D1BD30A0BBF781789A (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3338,7 +3338,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 112838
+// Method Definition Index: 112848
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Font_get_fontNames_mA6C670A31716B63FA98E7B3E84D25ABFBD5820DD (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3374,7 +3374,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112839
+// Method Definition Index: 112849
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_fontNames_mBAFE40DD1D13DF54CD833AE1999C019205AD58E3 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3410,7 +3410,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 112840
+// Method Definition Index: 112850
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_get_dynamic_m5231258BFEAABA3B3EA6AB5D8C2FDCBC2AD1371C (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3446,7 +3446,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112841
+// Method Definition Index: 112851
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_ascent_mE45D411D51A31A7F8B20C0A3C5ADDAE03B8E1F9B (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3482,7 +3482,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112842
+// Method Definition Index: 112852
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_fontSize_m02C2F5C7A7C89A878F04C2087248DD46BBF9E26B (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3518,7 +3518,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112843
+// Method Definition Index: 112853
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CharacterInfoU5BU5D_t8D535CD59E6552E27A51D78A0AC6401B6E401F1C* Font_get_characterInfo_mEF860463BBDF0BEEA7FD115FB358CE8640F3C0C6 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3584,7 +3584,7 @@ IL_0025:
 		return L_3;
 	}
 }
-// Method Definition Index: 112844
+// Method Definition Index: 112854
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_characterInfo_m4F451478BB8ABA9011C0A87235E1F01750CCBAA5 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, CharacterInfoU5BU5D_t8D535CD59E6552E27A51D78A0AC6401B6E401F1C* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3637,7 +3637,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 112845
+// Method Definition Index: 112855
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_lineHeight_m430CF5758E4AE2A6BF417140BFB86499AEE17790 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3673,7 +3673,7 @@ IL_000f:
 		return L_2;
 	}
 }
-// Method Definition Index: 112846
+// Method Definition Index: 112856
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* Font_get_textureRebuildCallback_m6020278C184DF0A87FFA572C95200A19AC153848 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* V_0 = NULL;
@@ -3689,7 +3689,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 112847
+// Method Definition Index: 112857
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_textureRebuildCallback_mE252170CFF8D476470DB7F586788675D22B046CC (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3699,7 +3699,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_textureRebuildCallback_mE252170
 		return;
 	}
 }
-// Method Definition Index: 112848
+// Method Definition Index: 112858
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_m9106C7F312AE77F6721001A5A3143951201AC841 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3715,7 +3715,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_m9106C7F312AE77F6721001A5A314
 		return;
 	}
 }
-// Method Definition Index: 112849
+// Method Definition Index: 112859
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_mEBD3D047AEAFE39BB56C9F71668EB626FED841C2 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, String_t* ___0_name, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3763,7 +3763,7 @@ IL_0030:
 		return;
 	}
 }
-// Method Definition Index: 112850
+// Method Definition Index: 112860
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_m9F4256214EE9A4A3F9C8287C21ABCAA0BCCBA461 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_names, int32_t ___1_size, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3781,7 +3781,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_m9F4256214EE9A4A3F9C8287C21AB
 		return;
 	}
 }
-// Method Definition Index: 112851
+// Method Definition Index: 112861
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Font_tC95270EA3198038970422D78B74A7F2E218A96B6* Font_CreateDynamicFontFromOSFont_m3DF4B7A70F4AD6918FC44195252D9A645B3C5D62 (String_t* ___0_fontname, int32_t ___1_size, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3811,7 +3811,7 @@ IL_0014:
 		return L_5;
 	}
 }
-// Method Definition Index: 112852
+// Method Definition Index: 112862
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Font_tC95270EA3198038970422D78B74A7F2E218A96B6* Font_CreateDynamicFontFromOSFont_m3A62128B393F57EE1C15A100A96F591FBFFCAFE6 (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_fontnames, int32_t ___1_size, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3836,7 +3836,7 @@ IL_000b:
 		return L_3;
 	}
 }
-// Method Definition Index: 112853
+// Method Definition Index: 112863
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_InvokeTextureRebuilt_Internal_m874D1025267C908E5FCD437B41929E4DE248B01B (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___0_font, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3898,7 +3898,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 112854
+// Method Definition Index: 112864
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_GetMaxVertsForString_mA4D7EB68D13A9258D1FC755CC0A24529D03A8549 (String_t* ___0_str, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -3917,7 +3917,7 @@ IL_000e:
 		return L_2;
 	}
 }
-// Method Definition Index: 112855
+// Method Definition Index: 112865
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Font_tC95270EA3198038970422D78B74A7F2E218A96B6* Font_GetDefault_m93A1C993B4D5B93D1F5A334A4F1407B4C1DA4DC6 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3934,7 +3934,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Font_tC95270EA3198038970422D78B74A7F2E218A96B
 		return L_1;
 	}
 }
-// Method Definition Index: 112856
+// Method Definition Index: 112866
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_HasCharacter_m71A84FE036055880E1543D79A38FEFA495AD200B (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, Il2CppChar ___0_c, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -3952,7 +3952,7 @@ IL_000b:
 		return L_2;
 	}
 }
-// Method Definition Index: 112857
+// Method Definition Index: 112867
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_HasCharacter_mAB838A26F002CB5E4B4DB297F7D6836A28625B18 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, int32_t ___0_c, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3989,7 +3989,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 112858
+// Method Definition Index: 112868
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Font_GetOSInstalledFontNames_m0C3D5751862D10A13CA25B9DE98C0EAE8A686B75 (const RuntimeMethod* method) 
 {
 	typedef StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*Font_GetOSInstalledFontNames_m0C3D5751862D10A13CA25B9DE98C0EAE8A686B75_ftn) ();
@@ -3999,7 +3999,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 112859
+// Method Definition Index: 112869
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Font_GetPathsToOSFonts_mF2EB5A086E0313B02C22666C9C0E980FE0EB60B8 (const RuntimeMethod* method) 
 {
 	typedef StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*Font_GetPathsToOSFonts_mF2EB5A086E0313B02C22666C9C0E980FE0EB60B8_ftn) ();
@@ -4009,7 +4009,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 112860
+// Method Definition Index: 112870
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Font_GetOSFallbacks_mB3FE14E050081E45B0855EF5699B0A1D93B17A78 (const RuntimeMethod* method) 
 {
 	typedef StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*Font_GetOSFallbacks_mB3FE14E050081E45B0855EF5699B0A1D93B17A78_ftn) ();
@@ -4019,7 +4019,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 112861
+// Method Definition Index: 112871
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_IsFontSmoothingEnabled_m5F94685D8C603EB37D40399E58C78E672BB972FC (const RuntimeMethod* method) 
 {
 	typedef bool (*Font_IsFontSmoothingEnabled_m5F94685D8C603EB37D40399E58C78E672BB972FC_ftn) ();
@@ -4029,7 +4029,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_IsFontSmoothingEnabled_m5F94685D8C6
 	bool icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 112862
+// Method Definition Index: 112872
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFont_m97CB036BAA033DDAD87E14F9D3493A3A2D9C72B1 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___0_self, String_t* ___1_name, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4102,7 +4102,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 112863
+// Method Definition Index: 112873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFontFromPath_m533A80BFC47F5313ACBFE9A4514BB7D34AC2FDB4 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___0_self, String_t* ___1_fontPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4175,7 +4175,7 @@ IL_0038:
 		return;
 	}
 }
-// Method Definition Index: 112864
+// Method Definition Index: 112874
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateDynamicFont_m5252E98E214E0B9B2D42C70A67A9A446341E050E (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___0_self, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1__names, int32_t ___2_size, const RuntimeMethod* method) 
 {
 	typedef void (*Font_Internal_CreateDynamicFont_m5252E98E214E0B9B2D42C70A67A9A446341E050E_ftn) (Font_tC95270EA3198038970422D78B74A7F2E218A96B6*, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*, int32_t);
@@ -4184,7 +4184,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateDynamicFont_m5252E98
 	_il2cpp_icall_func = (Font_Internal_CreateDynamicFont_m5252E98E214E0B9B2D42C70A67A9A446341E050E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::Internal_CreateDynamicFont(UnityEngine.Font,System.String[],System.Int32)");
 	_il2cpp_icall_func(___0_self, ___1__names, ___2_size);
 }
-// Method Definition Index: 112865
+// Method Definition Index: 112875
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_GetCharacterInfo_m66CF18A6ECA8A877CA793DCC733DCF9659F398E8 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, Il2CppChar ___0_ch, CharacterInfo_t211705CECE52870AEC4DBD0574D581AF765BB889* ___1_info, int32_t ___2_size, int32_t ___3_style, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4224,7 +4224,7 @@ IL_000f:
 		return L_6;
 	}
 }
-// Method Definition Index: 112866
+// Method Definition Index: 112876
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_GetCharacterInfo_m16CAF16CA4CAEA2CCC7A1DB4211F78A76040FBAA (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, Il2CppChar ___0_ch, CharacterInfo_t211705CECE52870AEC4DBD0574D581AF765BB889* ___1_info, int32_t ___2_size, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -4244,7 +4244,7 @@ IL_000e:
 		return L_4;
 	}
 }
-// Method Definition Index: 112867
+// Method Definition Index: 112877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_GetCharacterInfo_mEC706A59008A40BEFD7448A2F06589747E138EDB (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, Il2CppChar ___0_ch, CharacterInfo_t211705CECE52870AEC4DBD0574D581AF765BB889* ___1_info, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -4263,7 +4263,7 @@ IL_000e:
 		return L_3;
 	}
 }
-// Method Definition Index: 112868
+// Method Definition Index: 112878
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_RequestCharactersInTexture_m87509ABBEDF61305BA10B2DC65B565E57FF6DDD4 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, String_t* ___0_characters, int32_t ___1_size, int32_t ___2_style, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4361,7 +4361,7 @@ IL_0049:
 		return;
 	}
 }
-// Method Definition Index: 112869
+// Method Definition Index: 112879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_RequestCharactersInTexture_mED1DC6B4C7FD29226A1A42AE003F4D2C3F0F0031 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, String_t* ___0_characters, int32_t ___1_size, const RuntimeMethod* method) 
 {
 	{
@@ -4371,7 +4371,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_RequestCharactersInTexture_mED1DC6B
 		return;
 	}
 }
-// Method Definition Index: 112870
+// Method Definition Index: 112880
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_RequestCharactersInTexture_mB331838B63AEAF610A9EF70815F60ECB255D7C38 (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* __this, String_t* ___0_characters, const RuntimeMethod* method) 
 {
 	{
@@ -4380,7 +4380,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_RequestCharactersInTexture_mB331838
 		return;
 	}
 }
-// Method Definition Index: 112871
+// Method Definition Index: 112881
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Font_get_material_Injected_mFD3477FFA6CA61152AC98B142DFE004137D231F7 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Font_get_material_Injected_mFD3477FFA6CA61152AC98B142DFE004137D231F7_ftn) (intptr_t);
@@ -4390,7 +4390,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Font_get_material_Injected_mFD3477FF
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112872
+// Method Definition Index: 112882
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_material_Injected_mAAA3A7A616CEE7B390F5E715F64FF3A6CD9D2168 (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Font_set_material_Injected_mAAA3A7A616CEE7B390F5E715F64FF3A6CD9D2168_ftn) (intptr_t, intptr_t);
@@ -4399,7 +4399,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_material_Injected_mAAA3A7A616CE
 	_il2cpp_icall_func = (Font_set_material_Injected_mAAA3A7A616CEE7B390F5E715F64FF3A6CD9D2168_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::set_material_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 112873
+// Method Definition Index: 112883
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Font_get_fontNames_Injected_mEAEB3665D65E5E52BD1E03886FE47593E2D1BB50 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*Font_get_fontNames_Injected_mEAEB3665D65E5E52BD1E03886FE47593E2D1BB50_ftn) (intptr_t);
@@ -4409,7 +4409,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112874
+// Method Definition Index: 112884
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_fontNames_Injected_m50933DAB9350339FBB9620A85E2B709DBCA78622 (intptr_t ___0__unity_self, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Font_set_fontNames_Injected_m50933DAB9350339FBB9620A85E2B709DBCA78622_ftn) (intptr_t, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*);
@@ -4418,7 +4418,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_fontNames_Injected_m50933DAB935
 	_il2cpp_icall_func = (Font_set_fontNames_Injected_m50933DAB9350339FBB9620A85E2B709DBCA78622_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::set_fontNames_Injected(System.IntPtr,System.String[])");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 112875
+// Method Definition Index: 112885
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_get_dynamic_Injected_mE1610EDFBB9092E562D21E9FC5A4AAFA89696690 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef bool (*Font_get_dynamic_Injected_mE1610EDFBB9092E562D21E9FC5A4AAFA89696690_ftn) (intptr_t);
@@ -4428,7 +4428,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_get_dynamic_Injected_mE1610EDFBB909
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112876
+// Method Definition Index: 112886
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_ascent_Injected_m5140592A28AFB4C3334BCEA28BD20EFB8E290F97 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Font_get_ascent_Injected_m5140592A28AFB4C3334BCEA28BD20EFB8E290F97_ftn) (intptr_t);
@@ -4438,7 +4438,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_ascent_Injected_m5140592A28A
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112877
+// Method Definition Index: 112887
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_fontSize_Injected_m34A9893F1D744CC3CE823AE7BF0902957C8A268E (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Font_get_fontSize_Injected_m34A9893F1D744CC3CE823AE7BF0902957C8A268E_ftn) (intptr_t);
@@ -4448,7 +4448,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_fontSize_Injected_m34A9893F1
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112878
+// Method Definition Index: 112888
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_get_characterInfo_Injected_m3945DBB75E4C063420046D828C9CC9F3C6A2442E (intptr_t ___0__unity_self, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59* ___1_ret, const RuntimeMethod* method) 
 {
 	typedef void (*Font_get_characterInfo_Injected_m3945DBB75E4C063420046D828C9CC9F3C6A2442E_ftn) (intptr_t, BlittableArrayWrapper_t1512FE0506F4BD7778410D562DBA6FE2DDEE4F59*);
@@ -4457,7 +4457,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_get_characterInfo_Injected_m3945DBB
 	_il2cpp_icall_func = (Font_get_characterInfo_Injected_m3945DBB75E4C063420046D828C9CC9F3C6A2442E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::get_characterInfo_Injected(System.IntPtr,UnityEngine.Bindings.BlittableArrayWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_ret);
 }
-// Method Definition Index: 112879
+// Method Definition Index: 112889
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_characterInfo_Injected_m1C45F2FA9840EE999F9CF4E3D5724547334E43A1 (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*Font_set_characterInfo_Injected_m1C45F2FA9840EE999F9CF4E3D5724547334E43A1_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -4466,7 +4466,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_set_characterInfo_Injected_m1C45F2F
 	_il2cpp_icall_func = (Font_set_characterInfo_Injected_m1C45F2FA9840EE999F9CF4E3D5724547334E43A1_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::set_characterInfo_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 112880
+// Method Definition Index: 112890
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_lineHeight_Injected_m612ABB2CD139E4747C7AEEC0E51D71B7522C0F27 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef int32_t (*Font_get_lineHeight_Injected_m612ABB2CD139E4747C7AEEC0E51D71B7522C0F27_ftn) (intptr_t);
@@ -4476,7 +4476,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_lineHeight_Injected_m612ABB2
 	int32_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 112881
+// Method Definition Index: 112891
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Font_GetDefault_Injected_m05B5D4A46A7C5D8988B952D892482D4C5BA56D5B (const RuntimeMethod* method) 
 {
 	typedef intptr_t (*Font_GetDefault_Injected_m05B5D4A46A7C5D8988B952D892482D4C5BA56D5B_ftn) ();
@@ -4486,7 +4486,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Font_GetDefault_Injected_m05B5D4A46A
 	intptr_t icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
-// Method Definition Index: 112882
+// Method Definition Index: 112892
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_HasCharacter_Injected_mCCBE7842CC556C3C1693FA8148B1928B5321151B (intptr_t ___0__unity_self, int32_t ___1_c, const RuntimeMethod* method) 
 {
 	typedef bool (*Font_HasCharacter_Injected_mCCBE7842CC556C3C1693FA8148B1928B5321151B_ftn) (intptr_t, int32_t);
@@ -4496,7 +4496,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_HasCharacter_Injected_mCCBE7842CC55
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_c);
 	return icallRetVal;
 }
-// Method Definition Index: 112883
+// Method Definition Index: 112893
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFont_Injected_mCE3C0EE5FA346C2703391929A1D88ABC1B2A10FA (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___0_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_name, const RuntimeMethod* method) 
 {
 	typedef void (*Font_Internal_CreateFont_Injected_mCE3C0EE5FA346C2703391929A1D88ABC1B2A10FA_ftn) (Font_tC95270EA3198038970422D78B74A7F2E218A96B6*, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -4505,7 +4505,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFont_Injected_mCE3C0
 	_il2cpp_icall_func = (Font_Internal_CreateFont_Injected_mCE3C0EE5FA346C2703391929A1D88ABC1B2A10FA_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::Internal_CreateFont_Injected(UnityEngine.Font,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0_self, ___1_name);
 }
-// Method Definition Index: 112884
+// Method Definition Index: 112894
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFontFromPath_Injected_mDCB8C4EECDA1A3B76BE65F116F943D97F29FAF1B (Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___0_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_fontPath, const RuntimeMethod* method) 
 {
 	typedef void (*Font_Internal_CreateFontFromPath_Injected_mDCB8C4EECDA1A3B76BE65F116F943D97F29FAF1B_ftn) (Font_tC95270EA3198038970422D78B74A7F2E218A96B6*, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*);
@@ -4514,7 +4514,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFontFromPath_Injecte
 	_il2cpp_icall_func = (Font_Internal_CreateFontFromPath_Injected_mDCB8C4EECDA1A3B76BE65F116F943D97F29FAF1B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::Internal_CreateFontFromPath_Injected(UnityEngine.Font,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0_self, ___1_fontPath);
 }
-// Method Definition Index: 112885
+// Method Definition Index: 112895
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_GetCharacterInfo_Injected_mE80925965362A3244A71AECC6D6A2006B3DDC223 (intptr_t ___0__unity_self, Il2CppChar ___1_ch, CharacterInfo_t211705CECE52870AEC4DBD0574D581AF765BB889* ___2_info, int32_t ___3_size, int32_t ___4_style, const RuntimeMethod* method) 
 {
 	typedef bool (*Font_GetCharacterInfo_Injected_mE80925965362A3244A71AECC6D6A2006B3DDC223_ftn) (intptr_t, Il2CppChar, CharacterInfo_t211705CECE52870AEC4DBD0574D581AF765BB889*, int32_t, int32_t);
@@ -4524,7 +4524,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_GetCharacterInfo_Injected_mE8092596
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_ch, ___2_info, ___3_size, ___4_style);
 	return icallRetVal;
 }
-// Method Definition Index: 112886
+// Method Definition Index: 112896
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_RequestCharactersInTexture_Injected_mD4BF3A3E7A768B52AEA090A952BB716E98314559 (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_characters, int32_t ___2_size, int32_t ___3_style, const RuntimeMethod* method) 
 {
 	typedef void (*Font_RequestCharactersInTexture_Injected_mD4BF3A3E7A768B52AEA090A952BB716E98314559_ftn) (intptr_t, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E*, int32_t, int32_t);
@@ -4569,7 +4569,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_FontTextureRebuildCallback_t76D5E17
 	il2cppPInvokeFunc();
 
 }
-// Method Definition Index: 112887
+// Method Definition Index: 112897
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback__ctor_m1AF27FC83F3136E493F47015F99CE7A4E6BCA0BC (FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -4598,7 +4598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback__ctor_m1AF27F
 	}
 	__this->___extra_arg = (intptr_t)&FontTextureRebuildCallback_Invoke_m8B52C3F4823ADBB80062209E6BA2B33202AE958D_Multicast;
 }
-// Method Definition Index: 112888
+// Method Definition Index: 112898
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback_Invoke_m8B52C3F4823ADBB80062209E6BA2B33202AE958D (FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* __this, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
@@ -4668,7 +4668,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_height_mE1AA6C6C72
 		return L_0;
 	}
 }
-// Method Definition Index: 112830
+// Method Definition Index: 112840
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t BindingsMarshaller_ConvertToNative_m442CA777D48EC9F618E6EDACB4F95565D8717650_inline (TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* ___0_textGenerator, const RuntimeMethod* method) 
 {
 	{
@@ -4852,7 +4852,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60
 		return L_0;
 	}
 }
-// Method Definition Index: 112888
+// Method Definition Index: 112898
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FontTextureRebuildCallback_Invoke_m8B52C3F4823ADBB80062209E6BA2B33202AE958D_inline (FontTextureRebuildCallback_t76D5E172DF8AA57E67763D453AAC40F0961D09B1* __this, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
