@@ -275,7 +275,6 @@ struct NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4;
 struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 struct Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F;
-struct Outline_t9CF146E077DC65F441EDEC463AA6710374108084;
 struct PersistentCallGroup_tB826EDF15DC80F71BCBCD8E410FD959A04C33F25;
 struct PlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433;
 struct PlacedItemSaveData_tE9E74DC117ACCBF24BE63F373FDD12F237C21879;
@@ -292,7 +291,6 @@ struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A;
 struct Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712;
 struct SerializationInfo_t3C47F63E24BEB9FCE2DC6309E027F238DC5C5E37;
 struct Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692;
-struct Shadow_tCAA59FE9D6B0DC6DCC505E8E22D8D3C05BE6DE95;
 struct ShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77;
 struct ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89;
 struct ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25;
@@ -353,9 +351,9 @@ struct U3CU3Ec__DisplayClass89_1_t44B79FA1A3FE77B09198861517E81D0E47FCC6E3;
 struct U3CPushToCloudAfterDelayU3Ed__98_t90E623AA272844080A7449EE82845A98DB035737;
 struct U3CRebuildGardenAsyncU3Ed__89_tDDF546DAE422BC299C2B3DD33BAC546830F35EF6;
 struct U3CShowSlowLoadToastAfterDelayU3Ed__69_t01A77FB1EAC79AA5F824A395AD20A9241DC2DEA8;
-struct U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291;
-struct U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4;
-struct U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58;
+struct U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6;
+struct U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13;
+struct U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30;
 struct CullStateChangedEvent_t6073CD0D951EC1256BF74B8F9107D68FC89B99B8;
 struct ReapplyDrivenProperties_t3482EA130A01FF7EE2EEFE37F66A5215D08CFE24;
 struct CachedCodeEntry_tE201C3AD65C234AD9ED7A78C95025824A7A9FF39;
@@ -435,9 +433,9 @@ IL2CPP_EXTERN_C RuntimeClass* StringBuilder_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CPushToCloudAfterDelayU3Ed__98_t90E623AA272844080A7449EE82845A98DB035737_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CRebuildGardenAsyncU3Ed__89_tDDF546DAE422BC299C2B3DD33BAC546830F35EF6_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CShowSlowLoadToastAfterDelayU3Ed__69_t01A77FB1EAC79AA5F824A395AD20A9241DC2DEA8_il2cpp_TypeInfo_var;
@@ -559,7 +557,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralAF34E6E4B7785C63C8EC615C268EFB0E148AD149
 IL2CPP_EXTERN_C String_t* _stringLiteralB2EAB58C1C091731A1284CF4C674F7CE79561510;
 IL2CPP_EXTERN_C String_t* _stringLiteralB6F0795DD4F409C92875D0327F58FDEA357047F1;
 IL2CPP_EXTERN_C String_t* _stringLiteralB726CEA3A84CE54C03A929517D886415DA51FDE1;
-IL2CPP_EXTERN_C String_t* _stringLiteralB87AF0A696C683DC66CC526D5CB35289E1DC3A74;
 IL2CPP_EXTERN_C String_t* _stringLiteralBCCF6481E635F44D4C13564EB3EC6896EBA77275;
 IL2CPP_EXTERN_C String_t* _stringLiteralBD360491A9CA7CE7B3FB29DD247B82F4B5B4323D;
 IL2CPP_EXTERN_C String_t* _stringLiteralBD666961122D816FF3650F17DFF29FE40734B194;
@@ -652,7 +649,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisGraphicRaycaster
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisLayoutElement_tB1F24CC11AF4AA87015C8D8EE06D22349C5BF40A_mCAEF1A4C92D1C856A46417BA645409AE42F005D2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisLocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA_m9274CCC82207DCFB3FF7D0ED98DEFDAAEACF5DA6_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisOutline_t9CF146E077DC65F441EDEC463AA6710374108084_m8F6D80A0E755F0ADB855EB195B2DC0A5C82457E4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisPlaceableItem_t4D1565645CA6189F739DDA60F86AF437EF376433_m495683BF5D519D5AC8FDB15ECA893D3B1D40585F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77_m56BE5A4C221E9067D59897A75DB4A4DB9269B407_RuntimeMethod_var;
@@ -719,9 +715,9 @@ IL2CPP_EXTERN_C const RuntimeMethod* Resources_Load_TisTextAsset_t2C64E93DA366D9
 IL2CPP_EXTERN_C const RuntimeMethod* SaveSystem_Load_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_m27DF04684B78CE40329C426C9294572B1F92F90F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SaveSystem_Save_TisSaveStateCollection_tF924CC44EBEE09A0A69463E44018A1FCDC984CFB_mC54AD6906162FE11F2C46EC4570536B4F3D7553D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CCategoryTransitionRoutineU3Ed__76_System_Collections_IEnumerator_Reset_m649E695280105D574090DA69D63C323CC2FB1159_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeInU3Ed__57_System_Collections_IEnumerator_Reset_mC8A51A21B83D5B4E5D452953488308A92179A173_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeOutU3Ed__58_System_Collections_IEnumerator_Reset_m7A02B09B999F83A9446B1AB68C32AF5F7BC7A4A4_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_Reset_m632E8C4562217EF7E5CDA7C31C1502AB7B6C8DEF_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeInU3Ed__61_System_Collections_IEnumerator_Reset_m76527D9C7CFA869C13EFE6F93B370B25CBEBC56A_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeOutU3Ed__62_System_Collections_IEnumerator_Reset_mEE62424B9FC95E06AC51185730B63B94D444B072_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CLoadSceneRoutineU3Ed__60_System_Collections_IEnumerator_Reset_mB1D3103B7695D1F10B938FCBF8DEE5845CA2442C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CPushToCloudAfterDelayU3Ed__98_System_Collections_IEnumerator_Reset_mFB4C87BA17EAE0996B1497CCECED12B2F0B12B29_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CRebuildGardenAsyncU3Ed__89_System_Collections_IEnumerator_Reset_m58749C4F0CD3F14D6A90EC52F40674C72EF8CA08_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CShowSlowLoadToastAfterDelayU3Ed__69_System_Collections_IEnumerator_Reset_mEC96DB2CE6FA670C9DF48CBE42BF1322794EFE16_RuntimeMethod_var;
@@ -1149,14 +1145,14 @@ struct U3CShowSlowLoadToastAfterDelayU3Ed__69_t01A77FB1EAC79AA5F824A395AD20A9241
 	int32_t ___requestVersion;
 	ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ___U3CU3E4__this;
 };
-struct U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291  : public RuntimeObject
+struct U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
 	LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* ___U3CU3E4__this;
 	float ___U3CtU3E5__2;
 };
-struct U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4  : public RuntimeObject
+struct U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -2237,7 +2233,7 @@ struct Type_t81D6F138C2FC745112D5247CD91BD483EDFFC041
 {
 	int32_t ___value__;
 };
-struct U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58  : public RuntimeObject
+struct U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -3089,7 +3085,11 @@ struct LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48  : public 
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___backgroundColor;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___accentColor;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___secondaryTextColor;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___backgroundSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___progressBarTrackSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___progressBarFillSprite;
+	TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* ___uiFont;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___jannahGardenBackgroundSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___outerGardenBackgroundSprite;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___jannahGardenLogoSprite;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___outerGardenLogoSprite;
 	String_t* ___outerGardenSceneName;
@@ -3280,10 +3280,6 @@ struct ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95  : public M
 struct UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 };
-struct BaseMeshEffect_t87C453D6DAE52C072B2E613F65A5FE45C9B3990D  : public UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D
-{
-	Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___m_Graphic;
-};
 struct BaseRaycaster_t7DC8158FD3CA0193455344379DD5FF7CD5F1F832  : public UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D
 {
 	BaseRaycaster_t7DC8158FD3CA0193455344379DD5FF7CD5F1F832* ___m_RootRaycaster;
@@ -3387,12 +3383,6 @@ struct MaskableGraphic_tFC5B6BE351C90DE53744DF2A70940242774B361E  : public Graph
 	int32_t ___m_StencilValue;
 	Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* ___m_Corners;
 };
-struct Shadow_tCAA59FE9D6B0DC6DCC505E8E22D8D3C05BE6DE95  : public BaseMeshEffect_t87C453D6DAE52C072B2E613F65A5FE45C9B3990D
-{
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_EffectColor;
-	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_EffectDistance;
-	bool ___m_UseGraphicAlpha;
-};
 struct Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F  : public Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712
 {
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___m_FillRect;
@@ -3429,9 +3419,6 @@ struct Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E  : public MaskableGraphic
 	float ___m_PixelsPerUnitMultiplier;
 	float ___m_CachedReferencePixelsPerUnit;
 	SecondarySpriteTextureU5BU5D_tC322D73EA4B9A8B747013A3584DEFEAFC0D87192* ___m_SecondaryTextures;
-};
-struct Outline_t9CF146E077DC65F441EDEC463AA6710374108084  : public Shadow_tCAA59FE9D6B0DC6DCC505E8E22D8D3C05BE6DE95
-{
 };
 struct ShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77  : public MaskableGraphic_tFC5B6BE351C90DE53744DF2A70940242774B361E
 {
@@ -5173,13 +5160,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m030E01C24E294D6762F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9 (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___0_field, String_t* ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AnimateSpinner_m11F55D289F82C5ED2E05DB3E7917E6DD357736B4 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_LoadSceneRoutine_m7A463706054C1395A75AED29BF3F17799E3F6154 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56__ctor_mF58D04FDB8AE7C24135045DD27B2A528AE6C4C20 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57__ctor_m428C8EB2200AF0EC7C811860AC0305D9B23DA498 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58__ctor_mB8A4685BEF12AC40EDA519B55D02D292D21E3550 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__60__ctor_mCD19A9EE7DA30C3E6247634DDF35C9A96F57F3B6 (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__61__ctor_m0C6249D1779560A46E613D6D7FCF83B3B5D8A14D (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__62__ctor_mC6B9CCF330173464BC1812B7DC3B3634B2807DDC (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503 (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* Graphic_get_rectTransform_mF4752E8934267D630810E84CE02CDFB81EB1FD6D (Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m093934F71A9B351911EE46311674ED463B180006 (String_t* ___0_str0, String_t* ___1_str1, String_t* ___2_str2, String_t* ___3_str3, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* LoadingScreenManager_GetLogoForScene_m0B677D44F6ED21B2AAF743F3500AB151F14D11F9 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* LoadingScreenManager_GetBackgroundForScene_mD9BDB8E5506211483C7D1EDBEC48841FCFD94FAA (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_DestroyImmediate_m6336EBC83591A5DB64EC70C92132824C6E258705 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, String_t* ___0_name, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, bool ___1_worldPositionStays, const RuntimeMethod* method) ;
@@ -5195,6 +5185,7 @@ inline CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* GameObject_AddCom
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode_m064C83FFA35E2AED4E9FA7D5EC1AD19630D8FC2A_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, int32_t ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasScaler_set_referenceResolution_m793679B8505AF9BBF64F45D80AFE39F3F99FAB8D (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_screenMatchMode_m926C437B408D2F2CA4900723BEEEE09504A6768F_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, int32_t ___0_value, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, float ___0_value, const RuntimeMethod* method) ;
 inline GraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B* GameObject_AddComponent_TisGraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B_m308DCE149216D4787C3E6147729C0DF79423E1BF (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
 {
@@ -5215,8 +5206,6 @@ inline Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* GameObject_AddComponent_
 {
 	return ((  Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared)(__this, method);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* __this, int32_t ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3 (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
@@ -5231,6 +5220,7 @@ inline TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* GameObject_Add
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* __this, float ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* __this, int32_t ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8 (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_Text_set_font_mC55E4A8C1C09595031384B35F2C2FB2FC3479E83 (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* __this, TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9B61069E009E40641ADAC00488E444C1EB045C43 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildSpinner_mFAED31507DCCB4E8B22C32657D60BC6285186247 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_Text_set_enableWordWrapping_mFAEE849315B4723F9C86C127B1A59EF50BE1C12F (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* __this, bool ___0_value, const RuntimeMethod* method) ;
@@ -5242,15 +5232,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slider_set_minValue_mC4D1F7709276A9A418F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slider_set_maxValue_m43F3BF47C6D7063D80C578FD9B95AD88494203BE (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, float ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* __this, bool ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Selectable_set_transition_m67F9584736EB6891A314C9804489368C430F0F59 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* __this, int32_t ___0_value, const RuntimeMethod* method) ;
-inline Outline_t9CF146E077DC65F441EDEC463AA6710374108084* GameObject_AddComponent_TisOutline_t9CF146E077DC65F441EDEC463AA6710374108084_m8F6D80A0E755F0ADB855EB195B2DC0A5C82457E4 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
-{
-	return ((  Outline_t9CF146E077DC65F441EDEC463AA6710374108084* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared)(__this, method);
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Shadow_set_effectColor_mCCC5DB6B7D09C5DEE0C677DEB3B9B0C578F05AF1 (Shadow_tCAA59FE9D6B0DC6DCC505E8E22D8D3C05BE6DE95* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Shadow_set_effectDistance_m5E7B565C41CF2A8C84EC98319ACBF5C8E1FE47DA (Shadow_tCAA59FE9D6B0DC6DCC505E8E22D8D3C05BE6DE95* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9 (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_set_pixelsPerUnitMultiplier_m05DA43C7FD5B7B162FCB1ED6FCA850FD41AF7DC1 (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* __this, float ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Slider_set_fillRect_m2CB86D7C94EA17486DACA010B643F9FE308B6AA3 (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Selectable_set_targetGraphic_m23DB0DF4E5F2DABD50C662C708B4555162171FB9 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* __this, Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___0_value, const RuntimeMethod* method) ;
 inline void HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method)
@@ -5266,6 +5251,7 @@ inline void HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD (HashSet_1
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_text, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68 (int32_t ___0_minInclusive, int32_t ___1_maxExclusive, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ApplyLogoForScene_mA0EFC29DD19FBC51A0BBFBD7E041317767F06328 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ApplyBackgroundForScene_m817A2B4B45F420FCF6D396398B18557F8AC556EC (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeIn_m2DA61228B92DF84F2E307FDACB776B4D8F168B01 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_IsAddressableScene_m0FA2336537EC4775F7599A5F805278F45A54C60B (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) ;
 inline float AsyncOperationHandle_1_get_PercentComplete_m6CA42664C3166A6F7E5AB1A2A8205C7B541A3EAF (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* __this, const RuntimeMethod* method)
@@ -16603,7 +16589,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_set_Instance_mCECCE
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsLoading_m74C14BF37047FB4C005267CCC652382A3D96A771 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:131>
 		bool L_0 = __this->___U3CIsLoadingU3Ek__BackingField;
 		return L_0;
 	}
@@ -16612,7 +16598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsLoading_m74C1
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:131>
 		bool L_0 = ___0_value;
 		__this->___U3CIsLoadingU3Ek__BackingField = L_0;
 		return;
@@ -16628,7 +16614,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AddLoadHold_mA43763
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:185>
 		RuntimeObject* L_0 = ___0_token;
 		if (!L_0)
 		{
@@ -16636,7 +16622,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AddLoadHold_mA43763
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:167>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:185>
 		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_1 = __this->____loadHolds;
 		RuntimeObject* L_2 = ___0_token;
 		NullCheck(L_1);
@@ -16646,7 +16632,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AddLoadHold_mA43763
 
 IL_0010:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:168>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:186>
 		return;
 	}
 }
@@ -16660,7 +16646,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_RemoveLoadHold_mFD8
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:194>
 		RuntimeObject* L_0 = ___0_token;
 		if (!L_0)
 		{
@@ -16668,7 +16654,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_RemoveLoadHold_mFD8
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:194>
 		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_1 = __this->____loadHolds;
 		RuntimeObject* L_2 = ___0_token;
 		NullCheck(L_1);
@@ -16678,7 +16664,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_RemoveLoadHold_mFD8
 
 IL_0010:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:177>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:195>
 		return;
 	}
 }
@@ -16692,7 +16678,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Awake_m82E5135DB995
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:186>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:204>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_0;
 		L_0 = LoadingScreenManager_get_Instance_m7D3E2921C7D8B64F44BD4C284F04DCFE6C1242DE_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -16715,27 +16701,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Awake_m82E5135DB995
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:188>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:206>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
 		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:207>
 		return;
 	}
 
 IL_0026:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:192>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:210>
 		LoadingScreenManager_set_Instance_mCECCE56255105884CDD973FCBE6F68DE8E42A4D8_inline(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:193>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:211>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5;
 		L_5 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7(L_5, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:196>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:214>
 		LoadingScreenManager_FindUIReferences_m8E9CDEA0B72F60CD2BB3CC372D8FD2E38A13E3BF(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:199>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:217>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___loadingPanel;
 		bool L_7;
 		L_7 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
@@ -16745,15 +16731,15 @@ IL_0026:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:201>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:219>
 		LoadingScreenManager_BuildUI_mEAB8BD6851699841CF1612D06CF6042DDBCCFC5C(__this, NULL);
 	}
 
 IL_0051:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:205>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:223>
 		LoadingScreenManager_HideImmediate_m9FCBF8B36B38B03E717225B6533D1DDD8DD9DDAB(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:206>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:224>
 		return;
 	}
 }
@@ -16797,9 +16783,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_FindUIReferences_m8
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_10 = NULL;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_11 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:228>
 		V_0 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*)NULL;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:229>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_0 = __this->___targetCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -16810,7 +16796,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_FindUIReferences_m8
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:213>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:231>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_2 = __this->___targetCanvas;
 		NullCheck(L_2);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
@@ -16819,7 +16805,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_FindUIReferences_m8
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_4;
 		L_4 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_3, _stringLiteralEB50780728E9114D83AAC420CABCC9D9087F00EE, NULL);
 		V_0 = L_4;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:214>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:232>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_5 = __this->___targetCanvas;
 		__this->___loadingCanvas = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingCanvas), (void*)L_5);
@@ -16828,14 +16814,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_FindUIReferences_m8
 
 IL_0034:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:218>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:236>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
 		L_6 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_6);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_7;
 		L_7 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_6, _stringLiteralC83A24E517EABD8D2B4D4B52D33563A3DD8A9EFF, NULL);
 		V_1 = L_7;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:219>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:237>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_9;
@@ -16846,14 +16832,14 @@ IL_0034:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:239>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_10 = V_1;
 		NullCheck(L_10);
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_11;
 		L_11 = Component_GetComponent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m209BA4F663AB98A4504995B5BD3EADEDEFB92BF2(L_10, Component_GetComponent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m209BA4F663AB98A4504995B5BD3EADEDEFB92BF2_RuntimeMethod_var);
 		__this->___loadingCanvas = L_11;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingCanvas), (void*)L_11);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:222>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:240>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_12 = V_1;
 		NullCheck(L_12);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_13;
@@ -16863,7 +16849,7 @@ IL_0034:
 
 IL_0066:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:226>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:244>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_15;
@@ -16874,27 +16860,27 @@ IL_0066:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:246>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_16 = V_0;
 		NullCheck(L_16);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17;
 		L_17 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_16, NULL);
 		__this->___loadingPanel = L_17;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingPanel), (void*)L_17);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:229>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:247>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___loadingPanel;
 		NullCheck(L_18);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_19;
 		L_19 = GameObject_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m47C7F4214DFAAC752E331A1073AD1B7EA78DB3DD(L_18, GameObject_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m47C7F4214DFAAC752E331A1073AD1B7EA78DB3DD_RuntimeMethod_var);
 		__this->___canvasGroup = L_19;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___canvasGroup), (void*)L_19);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:232>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:250>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_20 = V_0;
 		NullCheck(L_20);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_21;
 		L_21 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_20, _stringLiteral5230F5FD1E0998B73530AA850D3A5872D61228EC, NULL);
 		V_2 = L_21;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:251>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_23;
@@ -16905,7 +16891,7 @@ IL_0066:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:251>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24 = V_2;
 		NullCheck(L_24);
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_25;
@@ -16916,13 +16902,13 @@ IL_0066:
 
 IL_00b0:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:235>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:253>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_26 = V_0;
 		NullCheck(L_26);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_27;
 		L_27 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_26, _stringLiteralB6F0795DD4F409C92875D0327F58FDEA357047F1, NULL);
 		V_3 = L_27;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:236>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:254>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_28 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_29;
@@ -16933,13 +16919,13 @@ IL_00b0:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:238>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:256>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_30 = V_3;
 		NullCheck(L_30);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_31;
 		L_31 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_30, _stringLiteral4B805E85BA5CA9EF7718945308872F9D0EE02CED, NULL);
 		V_5 = L_31;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:239>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:257>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_32 = V_5;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_33;
@@ -16950,7 +16936,7 @@ IL_00b0:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:239>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:257>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_34 = V_5;
 		NullCheck(L_34);
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_35;
@@ -16961,13 +16947,13 @@ IL_00b0:
 
 IL_00e9:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:242>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:260>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_36 = V_0;
 		NullCheck(L_36);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_37;
 		L_37 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_36, _stringLiteralAF0909A745B8E4FFF5CBA680017D83DBA5F6C6E4, NULL);
 		V_4 = L_37;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:243>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:261>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_38 = V_4;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_39;
@@ -16978,13 +16964,13 @@ IL_00e9:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:245>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:263>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_40 = V_4;
 		NullCheck(L_40);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41;
 		L_41 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_40, _stringLiteral771042EFC979D34A5C35B4109215E528A9306A2B, NULL);
 		V_6 = L_41;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:246>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:264>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_42 = V_6;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_43;
@@ -16995,7 +16981,7 @@ IL_00e9:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:246>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:264>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44 = V_6;
 		NullCheck(L_44);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_45;
@@ -17006,13 +16992,13 @@ IL_00e9:
 
 IL_0128:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:248>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:266>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_46 = V_4;
 		NullCheck(L_46);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_47;
 		L_47 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_46, _stringLiteral173C97FD1BA3FE26B18DB0C732C98C3B761532A8, NULL);
 		V_7 = L_47;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:249>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:267>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_48 = V_7;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_49;
@@ -17023,14 +17009,14 @@ IL_0128:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:251>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:269>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_50 = V_7;
 		NullCheck(L_50);
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_51;
 		L_51 = Component_GetComponent_TisSlider_t87EA570E3D6556CABF57456C2F3873FFD86E652F_mCE53A354B934E9BDB2E8D3094F4E33EBA8FFAFBA(L_50, Component_GetComponent_TisSlider_t87EA570E3D6556CABF57456C2F3873FFD86E652F_mCE53A354B934E9BDB2E8D3094F4E33EBA8FFAFBA_RuntimeMethod_var);
 		__this->___progressBar = L_51;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___progressBar), (void*)L_51);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:252>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:270>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_52 = __this->___progressBar;
 		NullCheck(L_52);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_53;
@@ -17044,7 +17030,7 @@ IL_0128:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:254>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:272>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_55 = __this->___progressBar;
 		NullCheck(L_55);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_56;
@@ -17058,13 +17044,13 @@ IL_0128:
 
 IL_0176:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:256>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:274>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_58 = V_7;
 		NullCheck(L_58);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_59;
 		L_59 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_58, _stringLiteral5230F5FD1E0998B73530AA850D3A5872D61228EC, NULL);
 		V_11 = L_59;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:275>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_60 = V_11;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_61;
@@ -17075,7 +17061,7 @@ IL_0176:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:257>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:275>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_62 = V_11;
 		NullCheck(L_62);
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_63;
@@ -17086,13 +17072,13 @@ IL_0176:
 
 IL_019b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:260>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:278>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_64 = V_4;
 		NullCheck(L_64);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_65;
 		L_65 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_64, _stringLiteral4691C9C4988EC311304474E3905CAB82486DCE94, NULL);
 		V_8 = L_65;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:261>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:279>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_66 = V_8;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_67;
@@ -17103,7 +17089,7 @@ IL_019b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:261>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:279>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_68 = V_8;
 		NullCheck(L_68);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_69;
@@ -17114,13 +17100,13 @@ IL_019b:
 
 IL_01c0:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:263>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:281>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_70 = V_4;
 		NullCheck(L_70);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_71;
 		L_71 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_70, _stringLiteralBD360491A9CA7CE7B3FB29DD247B82F4B5B4323D, NULL);
 		V_9 = L_71;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:264>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:282>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_72 = V_9;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_73;
@@ -17131,7 +17117,7 @@ IL_01c0:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:264>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:282>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_74 = V_9;
 		NullCheck(L_74);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_75;
@@ -17142,13 +17128,13 @@ IL_01c0:
 
 IL_01e5:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:266>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:284>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_76 = V_4;
 		NullCheck(L_76);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_77;
 		L_77 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_76, _stringLiteral2FD7F24E92EA095727378E3E8B475DF18D502CE4, NULL);
 		V_10 = L_77;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:267>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:285>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_78 = V_10;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_79;
@@ -17159,14 +17145,14 @@ IL_01e5:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:269>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:287>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_80 = V_10;
 		NullCheck(L_80);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_81;
 		L_81 = Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4(L_80, Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4_RuntimeMethod_var);
 		__this->___spinnerRoot = L_81;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___spinnerRoot), (void*)L_81);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:270>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:288>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_82 = V_10;
 		NullCheck(L_82);
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_83;
@@ -17177,7 +17163,7 @@ IL_01e5:
 
 IL_0218:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:274>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:292>
 		return;
 	}
 }
@@ -17195,7 +17181,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Start_m148170CC940A
 	Scene_tA1DC762B79745EB5140F054C884855B922318356 V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:279>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:297>
 		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
 		Scene_tA1DC762B79745EB5140F054C884855B922318356 L_0;
 		L_0 = SceneManager_GetActiveScene_m0B320EC4302F51A71495D1CCD1A0FF9C2ED1FDC8(NULL);
@@ -17203,7 +17189,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Start_m148170CC940A
 		String_t* L_1;
 		L_1 = Scene_get_name_m3C818DFA663E159274DAD823B780C7616C5E2A8C((&V_1), NULL);
 		V_0 = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:280>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:298>
 		bool L_2 = __this->___isInitScene;
 		if (L_2)
 		{
@@ -17234,16 +17220,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Start_m148170CC940A
 
 IL_0032:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:283>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:301>
 		LoadingScreenManager_ShowImmediate_m9E65CAB42FA71898BA3BA4376748D31395B196F0(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:284>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:302>
 		String_t* L_7 = __this->___sceneToLoadOnInit;
 		LoadingScreenManager_LoadScene_mAE984B6930768D6391687CE1BEB9AF4E2F895D02(__this, L_7, NULL);
 	}
 
 IL_0044:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:286>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:304>
 		return;
 	}
 }
@@ -17259,7 +17245,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Update_mF3F584D45AB
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:290>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:308>
 		bool L_0;
 		L_0 = LoadingScreenManager_get_IsLoading_m74C14BF37047FB4C005267CCC652382A3D96A771_inline(__this, NULL);
 		if (L_0)
@@ -17268,14 +17254,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_Update_mF3F584D45AB
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:290>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:308>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:293>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:294>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:311>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:312>
 		float L_1 = __this->____displayedProgress;
 		float L_2 = __this->____targetProgress;
 		float L_3;
@@ -17284,7 +17270,7 @@ IL_0009:
 		float L_5;
 		L_5 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_1, L_2, ((float)il2cpp_codegen_multiply(L_3, L_4)), NULL);
 		__this->____displayedProgress = L_5;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:297>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:315>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_6 = __this->___progressBar;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
@@ -17295,7 +17281,7 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:298>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:316>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_8 = __this->___progressBar;
 		float L_9 = __this->____displayedProgress;
 		NullCheck(L_8);
@@ -17304,7 +17290,7 @@ IL_0009:
 
 IL_004b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:300>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:318>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_10 = __this->___percentText;
 		float L_11 = __this->____displayedProgress;
 		int32_t L_12;
@@ -17315,9 +17301,9 @@ IL_004b:
 		String_t* L_14;
 		L_14 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_13, _stringLiteral6C066B34F4DB79023C0642AFBC43B25A5327F710, NULL);
 		LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9(L_10, L_14, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:303>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:321>
 		LoadingScreenManager_AnimateSpinner_m11F55D289F82C5ED2E05DB3E7917E6DD357736B4(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:304>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:322>
 		return;
 	}
 }
@@ -17325,7 +17311,7 @@ IL_004b:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_LoadScene_mAE984B6930768D6391687CE1BEB9AF4E2F895D02 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:332>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:350>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____loadRoutine;
 		if (!L_0)
 		{
@@ -17333,14 +17319,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_LoadScene_mAE984B69
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:334>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:352>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____loadRoutine;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_1, NULL);
 	}
 
 IL_0014:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:337>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:355>
 		String_t* L_2 = ___0_sceneName;
 		RuntimeObject* L_3;
 		L_3 = LoadingScreenManager_LoadSceneRoutine_m7A463706054C1395A75AED29BF3F17799E3F6154(__this, L_2, NULL);
@@ -17348,7 +17334,7 @@ IL_0014:
 		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		__this->____loadRoutine = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____loadRoutine), (void*)L_4);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:338>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:356>
 		return;
 	}
 }
@@ -17358,17 +17344,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_LoadScene
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* L_0 = (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58*)il2cpp_codegen_object_new(U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58_il2cpp_TypeInfo_var);
-		U3CLoadSceneRoutineU3Ed__56__ctor_mF58D04FDB8AE7C24135045DD27B2A528AE6C4C20(L_0, 0, NULL);
-		U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* L_1 = L_0;
+		U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* L_0 = (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30*)il2cpp_codegen_object_new(U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30_il2cpp_TypeInfo_var);
+		U3CLoadSceneRoutineU3Ed__60__ctor_mCD19A9EE7DA30C3E6247634DDF35C9A96F57F3B6(L_0, 0, NULL);
+		U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
-		U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* L_2 = L_1;
+		U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* L_2 = L_1;
 		String_t* L_3 = ___0_sceneName;
 		NullCheck(L_2);
 		L_2->___sceneName = L_3;
@@ -17382,13 +17368,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeIn_m2
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* L_0 = (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291*)il2cpp_codegen_object_new(U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291_il2cpp_TypeInfo_var);
-		U3CFadeInU3Ed__57__ctor_m428C8EB2200AF0EC7C811860AC0305D9B23DA498(L_0, 0, NULL);
-		U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* L_1 = L_0;
+		U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* L_0 = (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6*)il2cpp_codegen_object_new(U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6_il2cpp_TypeInfo_var);
+		U3CFadeInU3Ed__61__ctor_m0C6249D1779560A46E613D6D7FCF83B3B5D8A14D(L_0, 0, NULL);
+		U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
@@ -17401,13 +17387,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreenManager_FadeOut_m
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* L_0 = (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4*)il2cpp_codegen_object_new(U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4_il2cpp_TypeInfo_var);
-		U3CFadeOutU3Ed__58__ctor_mB8A4685BEF12AC40EDA519B55D02D292D21E3550(L_0, 0, NULL);
-		U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* L_1 = L_0;
+		U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* L_0 = (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13*)il2cpp_codegen_object_new(U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13_il2cpp_TypeInfo_var);
+		U3CFadeOutU3Ed__62__ctor_mC6B9CCF330173464BC1812B7DC3B3634B2807DDC(L_0, 0, NULL);
+		U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
@@ -17424,7 +17410,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ShowImmediate_m9E65
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:585>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:606>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___loadingPanel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -17435,7 +17421,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ShowImmediate_m9E65
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:585>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:606>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___loadingPanel;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)1, NULL);
@@ -17443,7 +17429,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ShowImmediate_m9E65
 
 IL_001a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:586>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:607>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_3 = __this->___canvasGroup;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -17454,7 +17440,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:586>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:607>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_5 = __this->___canvasGroup;
 		NullCheck(L_5);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_5, (1.0f), NULL);
@@ -17462,7 +17448,7 @@ IL_001a:
 
 IL_0038:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:587>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:608>
 		return;
 	}
 }
@@ -17476,7 +17462,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_HideImmediate_m9FCB
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:591>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:612>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_0 = __this->___canvasGroup;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -17487,7 +17473,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_HideImmediate_m9FCB
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:591>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:612>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_2 = __this->___canvasGroup;
 		NullCheck(L_2);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_2, (0.0f), NULL);
@@ -17495,7 +17481,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_HideImmediate_m9FCB
 
 IL_001e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:592>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:613>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___loadingPanel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -17506,7 +17492,7 @@ IL_001e:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:592>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:613>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___loadingPanel;
 		NullCheck(L_5);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_5, (bool)0, NULL);
@@ -17514,7 +17500,7 @@ IL_001e:
 
 IL_0038:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:593>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:614>
 		return;
 	}
 }
@@ -17533,7 +17519,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AnimateSpinner_m11F
 	memset((&V_2), 0, sizeof(V_2));
 	float V_3 = 0.0f;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:601>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:622>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_0 = __this->___spinnerDots;
 		if (L_0)
 		{
@@ -17541,20 +17527,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_AnimateSpinner_m11F
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:601>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:622>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:603>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:624>
 		V_0 = 0;
 		goto IL_00a8;
 	}
 
 IL_0010:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:605>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:626>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_1 = __this->___spinnerDots;
 		int32_t L_2 = V_0;
 		NullCheck(L_1);
@@ -17569,17 +17555,17 @@ IL_0010:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:608>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:629>
 		float L_6;
 		L_6 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
 		int32_t L_7 = V_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:609>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:630>
 		float L_8;
 		L_8 = sinf(((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_6, (3.0f))), ((float)il2cpp_codegen_multiply(((float)L_7), (0.699999988f))))));
 		float L_9;
 		L_9 = fabsf(L_8);
 		V_1 = L_9;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:610>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:631>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_10 = __this->___spinnerDots;
 		int32_t L_11 = V_0;
 		NullCheck(L_10);
@@ -17589,12 +17575,12 @@ IL_0010:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_14;
 		L_14 = VirtualFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(22, L_13);
 		V_2 = L_14;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:611>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:632>
 		float L_15 = V_1;
 		float L_16;
 		L_16 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline((0.25f), (1.0f), L_15, NULL);
 		(&V_2)->___a = L_16;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:612>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:633>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_17 = __this->___spinnerDots;
 		int32_t L_18 = V_0;
 		NullCheck(L_17);
@@ -17603,12 +17589,12 @@ IL_0010:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_21 = V_2;
 		NullCheck(L_20);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_20, L_21);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:615>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:636>
 		float L_22 = V_1;
 		float L_23;
 		L_23 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline((0.699999988f), (1.0f), L_22, NULL);
 		V_3 = L_23;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:616>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:637>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_24 = __this->___spinnerDots;
 		int32_t L_25 = V_0;
 		NullCheck(L_24);
@@ -17628,14 +17614,14 @@ IL_0010:
 
 IL_00a4:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:603>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:624>
 		int32_t L_32 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_32, 1));
 	}
 
 IL_00a8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:603>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:624>
 		int32_t L_33 = V_0;
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_34 = __this->___spinnerDots;
 		NullCheck(L_34);
@@ -17645,7 +17631,7 @@ IL_00a8:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:618>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:639>
 		return;
 	}
 }
@@ -17653,11 +17639,11 @@ IL_00a8:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_text, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:626>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:647>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___statusText;
 		String_t* L_1 = ___0_text;
 		LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9(L_0, L_1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:627>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:648>
 		return;
 	}
 }
@@ -17673,7 +17659,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_SafeSetText_m244276
 	Exception_t* V_0 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:639>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:660>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = ___0_field;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -17684,7 +17670,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_SafeSetText_m244276
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:639>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:660>
 		return;
 	}
 
@@ -17693,12 +17679,12 @@ IL_000a:
 	}
 	try
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:643>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:664>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2 = ___0_field;
 		String_t* L_3 = ___1_value;
 		NullCheck(L_2);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_2, L_3);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:644>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:665>
 		goto IL_0037;
 	}
 	catch(Il2CppExceptionWrapper& e)
@@ -17714,9 +17700,9 @@ IL_000a:
 CATCH_0014:
 	{
 		Exception_t* L_4 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:645>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:666>
 		V_0 = L_4;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:647>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:668>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_5 = ___0_field;
 		NullCheck(L_5);
 		String_t* L_6;
@@ -17729,14 +17715,14 @@ CATCH_0014:
 		L_9 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral5CCCBB6D7C658977C3677B277D84D78045778160)), L_6, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral9816E74B93E1C26A72AD4D2196C8A3C7A3C28924)), L_8, NULL);
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_9, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:648>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:669>
 		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_0037;
 	}
 
 IL_0037:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:649>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:670>
 		return;
 	}
 }
@@ -17745,7 +17731,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_IsAddressableScene_
 {
 	int32_t V_0 = 0;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:654>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:675>
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_0 = __this->___addressableSceneNames;
 		if (L_0)
 		{
@@ -17753,20 +17739,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LoadingScreenManager_IsAddressableScene_
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:654>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:675>
 		return (bool)0;
 	}
 
 IL_000a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:655>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:676>
 		V_0 = 0;
 		goto IL_0024;
 	}
 
 IL_000e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:657>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:678>
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_1 = __this->___addressableSceneNames;
 		int32_t L_2 = V_0;
 		NullCheck(L_1);
@@ -17781,20 +17767,20 @@ IL_000e:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:657>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:678>
 		return (bool)1;
 	}
 
 IL_0020:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:655>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:676>
 		int32_t L_7 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_7, 1));
 	}
 
 IL_0024:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:655>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:676>
 		int32_t L_8 = V_0;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9 = __this->___addressableSceneNames;
 		NullCheck(L_9);
@@ -17804,7 +17790,7 @@ IL_0024:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:659>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:680>
 		return (bool)0;
 	}
 }
@@ -17819,7 +17805,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ApplyLogoForScene_m
 	}
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:672>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:693>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_0 = __this->___logoImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -17830,18 +17816,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ApplyLogoForScene_m
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:672>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:693>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:674>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:695>
 		String_t* L_2 = ___0_sceneName;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_3;
 		L_3 = LoadingScreenManager_GetLogoForScene_m0B677D44F6ED21B2AAF743F3500AB151F14D11F9(__this, L_2, NULL);
 		V_0 = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:675>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:696>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_4 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -17852,12 +17838,12 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:677>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:698>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_6 = __this->___logoImage;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_7 = V_0;
 		NullCheck(L_6);
 		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_6, L_7, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:678>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:699>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_8 = __this->___logoImage;
 		NullCheck(L_8);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9;
@@ -17869,14 +17855,14 @@ IL_000f:
 
 IL_003e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:683>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:704>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_10 = __this->___logoImage;
 		NullCheck(L_10);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
 		L_11 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_10, NULL);
 		NullCheck(L_11);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:685>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:706>
 		return;
 	}
 }
@@ -17890,7 +17876,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:690>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:711>
 		String_t* L_0 = ___0_sceneName;
 		String_t* L_1 = __this->___outerGardenSceneName;
 		bool L_2;
@@ -17901,7 +17887,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:691>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:712>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_3 = __this->___outerGardenLogoSprite;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -17924,7 +17910,7 @@ IL_0023:
 
 IL_002a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:693>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:714>
 		String_t* L_7 = ___0_sceneName;
 		String_t* L_8 = __this->___jannahGardenSceneName;
 		bool L_9;
@@ -17935,7 +17921,7 @@ IL_002a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:694>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:715>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_10 = __this->___jannahGardenLogoSprite;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
@@ -17958,7 +17944,7 @@ IL_004d:
 
 IL_0054:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:697>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:718>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_14 = __this->___jannahGardenLogoSprite;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_15;
@@ -17980,6 +17966,182 @@ IL_0069:
 	}
 }
 // Method Definition Index: 89455
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_ApplyBackgroundForScene_m817A2B4B45F420FCF6D396398B18557F8AC556EC (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_0 = NULL;
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:731>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_0 = __this->___backgroundImage;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_000f;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:731>
+		return;
+	}
+
+IL_000f:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:733>
+		String_t* L_2 = ___0_sceneName;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_3;
+		L_3 = LoadingScreenManager_GetBackgroundForScene_mD9BDB8E5506211483C7D1EDBEC48841FCFD94FAA(__this, L_2, NULL);
+		V_0 = L_3;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:734>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_4 = V_0;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_5;
+		L_5 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_4, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_5)
+		{
+			goto IL_0049;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:736>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_6 = __this->___backgroundImage;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_7 = V_0;
+		NullCheck(L_6);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_6, L_7, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:737>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_8 = __this->___backgroundImage;
+		NullCheck(L_8);
+		Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF(L_8, 1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:738>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_9 = __this->___backgroundImage;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_10;
+		L_10 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
+		NullCheck(L_9);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_9, L_10);
+		return;
+	}
+
+IL_0049:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:742>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_11 = __this->___backgroundImage;
+		NullCheck(L_11);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_11, (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:743>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_12 = __this->___backgroundImage;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_13 = __this->___backgroundColor;
+		NullCheck(L_12);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_12, L_13);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:745>
+		return;
+	}
+}
+// Method Definition Index: 89456
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* LoadingScreenManager_GetBackgroundForScene_mD9BDB8E5506211483C7D1EDBEC48841FCFD94FAA (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:750>
+		String_t* L_0 = ___0_sceneName;
+		String_t* L_1 = __this->___outerGardenSceneName;
+		bool L_2;
+		L_2 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_0, L_1, NULL);
+		if (!L_2)
+		{
+			goto IL_002a;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:751>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_3 = __this->___outerGardenBackgroundSprite;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_4;
+		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_4)
+		{
+			goto IL_0023;
+		}
+	}
+	{
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_5 = __this->___jannahGardenBackgroundSprite;
+		return L_5;
+	}
+
+IL_0023:
+	{
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_6 = __this->___outerGardenBackgroundSprite;
+		return L_6;
+	}
+
+IL_002a:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:753>
+		String_t* L_7 = ___0_sceneName;
+		String_t* L_8 = __this->___jannahGardenSceneName;
+		bool L_9;
+		L_9 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_7, L_8, NULL);
+		if (!L_9)
+		{
+			goto IL_0054;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:754>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_10 = __this->___jannahGardenBackgroundSprite;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_11;
+		L_11 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_10, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_11)
+		{
+			goto IL_004d;
+		}
+	}
+	{
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_12 = __this->___outerGardenBackgroundSprite;
+		return L_12;
+	}
+
+IL_004d:
+	{
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_13 = __this->___jannahGardenBackgroundSprite;
+		return L_13;
+	}
+
+IL_0054:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:757>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_14 = __this->___jannahGardenBackgroundSprite;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_15;
+		L_15 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_14, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_15)
+		{
+			goto IL_0069;
+		}
+	}
+	{
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_16 = __this->___outerGardenBackgroundSprite;
+		return L_16;
+	}
+
+IL_0069:
+	{
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_17 = __this->___jannahGardenBackgroundSprite;
+		return L_17;
+	}
+}
+// Method Definition Index: 89457
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildUI_mEAB8BD6851699841CF1612D06CF6042DDBCCFC5C (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18013,25 +18175,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildUI_mEAB8BD6851
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_1 = NULL;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_2 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_3 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_4 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_5 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_6 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_4 = NULL;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_5 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_6 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_7 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_8 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_9 = NULL;
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_10 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_11 = NULL;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_10 = NULL;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_11 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_12 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B14_0 = NULL;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_13 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B12_0 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B17_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:710>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:770>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_0);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1;
 		L_1 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_0, _stringLiteralEB50780728E9114D83AAC420CABCC9D9087F00EE, NULL);
 		V_0 = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:711>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:771>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -18042,7 +18206,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildUI_mEAB8BD6851
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:713>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:773>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_4 = V_0;
 		NullCheck(L_4);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5;
@@ -18053,14 +18217,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildUI_mEAB8BD6851
 
 IL_0025:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:715>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:775>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
 		L_6 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_6);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_7;
 		L_7 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_6, _stringLiteralC83A24E517EABD8D2B4D4B52D33563A3DD8A9EFF, NULL);
 		V_1 = L_7;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:716>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:776>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_9;
@@ -18071,7 +18235,7 @@ IL_0025:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:718>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:778>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_10 = V_1;
 		NullCheck(L_10);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
@@ -18082,7 +18246,7 @@ IL_0025:
 
 IL_004a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:723>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:783>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_12 = __this->___targetCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -18093,7 +18257,7 @@ IL_004a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:727>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:787>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_14 = __this->___targetCanvas;
 		NullCheck(L_14);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15;
@@ -18101,9 +18265,9 @@ IL_004a:
 		NullCheck(L_15);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_16;
 		L_16 = Transform_Find_m3087032B0E1C5B96A2D2C27020BAEAE2DA08F932(L_15, _stringLiteralEB50780728E9114D83AAC420CABCC9D9087F00EE, NULL);
-		V_10 = L_16;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:728>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17 = V_10;
+		V_11 = L_16;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:788>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17 = V_11;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_18;
 		L_18 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_17, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
@@ -18113,8 +18277,8 @@ IL_004a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:730>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19 = V_10;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:790>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19 = V_11;
 		NullCheck(L_19);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20;
 		L_20 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_19, NULL);
@@ -18124,27 +18288,27 @@ IL_004a:
 
 IL_0085:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:732>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:792>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_21 = __this->___targetCanvas;
 		NullCheck(L_21);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22;
 		L_22 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_21, NULL);
 		V_2 = L_22;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:733>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:793>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_23 = __this->___targetCanvas;
 		__this->___loadingCanvas = L_23;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingCanvas), (void*)L_23);
-		goto IL_0127;
+		goto IL_012e;
 	}
 
 IL_00a2:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:738>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:798>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_24, _stringLiteralC83A24E517EABD8D2B4D4B52D33563A3DD8A9EFF, NULL);
-		V_11 = L_24;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:739>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = V_11;
+		V_12 = L_24;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:799>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = V_12;
 		NullCheck(L_25);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_26;
 		L_26 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_25, NULL);
@@ -18152,744 +18316,832 @@ IL_00a2:
 		L_27 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_26);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_26, L_27, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:741>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_28 = V_11;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:801>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_28 = V_12;
 		NullCheck(L_28);
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_29;
 		L_29 = GameObject_AddComponent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m13C85FD585C0679530F8B35D0B39D965702FD0F5(L_28, GameObject_AddComponent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m13C85FD585C0679530F8B35D0B39D965702FD0F5_RuntimeMethod_var);
 		__this->___loadingCanvas = L_29;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingCanvas), (void*)L_29);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:742>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:802>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_30 = __this->___loadingCanvas;
 		NullCheck(L_30);
 		Canvas_set_renderMode_mD73E953F8A115CF469508448A00D0EDAFAF5AB47(L_30, 0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:743>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:803>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_31 = __this->___loadingCanvas;
 		NullCheck(L_31);
 		Canvas_set_sortingOrder_m70D89DB61A3C0589C0FAB525E613DE9D0C799AAC(L_31, ((int32_t)999), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:745>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32 = V_11;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:805>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32 = V_12;
 		NullCheck(L_32);
 		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_33;
 		L_33 = GameObject_AddComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m1D199D3A55BF0356D541CB3048142A8D7E52521A(L_32, GameObject_AddComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m1D199D3A55BF0356D541CB3048142A8D7E52521A_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:746>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:806>
 		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_34 = L_33;
 		NullCheck(L_34);
 		CanvasScaler_set_uiScaleMode_m064C83FFA35E2AED4E9FA7D5EC1AD19630D8FC2A_inline(L_34, 1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:747>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:807>
 		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_35 = L_34;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_36;
 		memset((&L_36), 0, sizeof(L_36));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_36), (1920.0f), (1080.0f), NULL);
 		NullCheck(L_35);
 		CanvasScaler_set_referenceResolution_m793679B8505AF9BBF64F45D80AFE39F3F99FAB8D(L_35, L_36, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:748>
-		NullCheck(L_35);
-		CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline(L_35, (0.5f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:750>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_37 = V_11;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:808>
+		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_37 = L_35;
 		NullCheck(L_37);
-		GraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B* L_38;
-		L_38 = GameObject_AddComponent_TisGraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B_m308DCE149216D4787C3E6147729C0DF79423E1BF(L_37, GameObject_AddComponent_TisGraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B_m308DCE149216D4787C3E6147729C0DF79423E1BF_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:751>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39 = V_11;
-		NullCheck(L_39);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_40;
-		L_40 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_39, NULL);
-		V_2 = L_40;
+		CanvasScaler_set_screenMatchMode_m926C437B408D2F2CA4900723BEEEE09504A6768F_inline(L_37, 0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:809>
+		NullCheck(L_37);
+		CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline(L_37, (0.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:811>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38 = V_12;
+		NullCheck(L_38);
+		GraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B* L_39;
+		L_39 = GameObject_AddComponent_TisGraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B_m308DCE149216D4787C3E6147729C0DF79423E1BF(L_38, GameObject_AddComponent_TisGraphicRaycaster_t16FC39434AE5B47D3C2993134CDCF7F4AE6A6D7B_m308DCE149216D4787C3E6147729C0DF79423E1BF_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:812>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_40 = V_12;
+		NullCheck(L_40);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41;
+		L_41 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_40, NULL);
+		V_2 = L_41;
 	}
 
-IL_0127:
+IL_012e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:755>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_41 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_41, _stringLiteralEB50780728E9114D83AAC420CABCC9D9087F00EE, NULL);
-		__this->___loadingPanel = L_41;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingPanel), (void*)L_41);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:756>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_42 = __this->___loadingPanel;
-		NullCheck(L_42);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_43;
-		L_43 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_42, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44 = V_2;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:816>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_42 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_42, _stringLiteralEB50780728E9114D83AAC420CABCC9D9087F00EE, NULL);
+		__this->___loadingPanel = L_42;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingPanel), (void*)L_42);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:817>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = __this->___loadingPanel;
 		NullCheck(L_43);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_43, L_44, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:758>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_45 = __this->___loadingPanel;
-		NullCheck(L_45);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_46;
-		L_46 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_45, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:759>
-		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_46, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:761>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_47 = __this->___loadingPanel;
-		NullCheck(L_47);
-		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_48;
-		L_48 = GameObject_AddComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m1C004B58918BA839B892637D46D95AF04D69DADA(L_47, GameObject_AddComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m1C004B58918BA839B892637D46D95AF04D69DADA_RuntimeMethod_var);
-		__this->___canvasGroup = L_48;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___canvasGroup), (void*)L_48);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:762>
-		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_49 = __this->___canvasGroup;
-		NullCheck(L_49);
-		CanvasGroup_set_blocksRaycasts_m6C17F35782D16AE3FC42FCD1A4D68E1C4A4776E0(L_49, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:763>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44;
+		L_44 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_43, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_45 = V_2;
+		NullCheck(L_44);
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_44, L_45, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:819>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_46 = __this->___loadingPanel;
+		NullCheck(L_46);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_47;
+		L_47 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_46, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:820>
+		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_47, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:822>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_48 = __this->___loadingPanel;
+		NullCheck(L_48);
+		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_49;
+		L_49 = GameObject_AddComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m1C004B58918BA839B892637D46D95AF04D69DADA(L_48, GameObject_AddComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m1C004B58918BA839B892637D46D95AF04D69DADA_RuntimeMethod_var);
+		__this->___canvasGroup = L_49;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___canvasGroup), (void*)L_49);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:823>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_50 = __this->___canvasGroup;
 		NullCheck(L_50);
-		CanvasGroup_set_interactable_m86928BB0894EF3F06BC7BE63594272FBA0DAC757(L_50, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:766>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_51 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_51, _stringLiteral5230F5FD1E0998B73530AA850D3A5872D61228EC, NULL);
-		V_3 = L_51;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:767>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_52 = V_3;
-		NullCheck(L_52);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_53;
-		L_53 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_52, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_54 = __this->___loadingPanel;
-		NullCheck(L_54);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_55;
-		L_55 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_54, NULL);
+		CanvasGroup_set_blocksRaycasts_m6C17F35782D16AE3FC42FCD1A4D68E1C4A4776E0(L_50, (bool)1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:824>
+		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_51 = __this->___canvasGroup;
+		NullCheck(L_51);
+		CanvasGroup_set_interactable_m86928BB0894EF3F06BC7BE63594272FBA0DAC757(L_51, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:827>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_52 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_52, _stringLiteral5230F5FD1E0998B73530AA850D3A5872D61228EC, NULL);
+		V_3 = L_52;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:828>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_53 = V_3;
 		NullCheck(L_53);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_53, L_55, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:768>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_56 = V_3;
-		NullCheck(L_56);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_57;
-		L_57 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_56, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:769>
-		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_57, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:771>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_58 = V_3;
-		NullCheck(L_58);
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_59;
-		L_59 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_58, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
-		__this->___backgroundImage = L_59;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___backgroundImage), (void*)L_59);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:772>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_60 = __this->___backgroundImage;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_61 = __this->___backgroundColor;
-		NullCheck(L_60);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_60, L_61);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:773>
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_62 = __this->___backgroundSprite;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_54;
+		L_54 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_53, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_55 = __this->___loadingPanel;
+		NullCheck(L_55);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_56;
+		L_56 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_55, NULL);
+		NullCheck(L_54);
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_54, L_56, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:829>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_57 = V_3;
+		NullCheck(L_57);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_58;
+		L_58 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_57, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:830>
+		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_58, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:832>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_59 = V_3;
+		NullCheck(L_59);
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_60;
+		L_60 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_59, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
+		__this->___backgroundImage = L_60;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___backgroundImage), (void*)L_60);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:833>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_61 = __this->___backgroundImage;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_62 = __this->___backgroundColor;
+		NullCheck(L_61);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_61, L_62);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:834>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_63 = __this->___jannahGardenBackgroundSprite;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_63;
-		L_63 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_62, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_63)
+		bool L_64;
+		L_64 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_63, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_64)
 		{
-			goto IL_0207;
+			goto IL_01e9;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:775>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_64 = __this->___backgroundImage;
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_65 = __this->___backgroundSprite;
-		NullCheck(L_64);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_64, L_65, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:776>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_66 = __this->___backgroundImage;
-		NullCheck(L_66);
-		Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF(L_66, 1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:777>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_67 = __this->___backgroundImage;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_68;
-		L_68 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
-		NullCheck(L_67);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_67, L_68);
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_65 = __this->___outerGardenBackgroundSprite;
+		G_B12_0 = L_65;
+		goto IL_01ef;
 	}
 
-IL_0207:
+IL_01e9:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:781>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_69 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_69, _stringLiteralBD666961122D816FF3650F17DFF29FE40734B194, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:782>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_70 = L_69;
-		NullCheck(L_70);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_71;
-		L_71 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_70, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_72 = __this->___loadingPanel;
-		NullCheck(L_72);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_73;
-		L_73 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_72, NULL);
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_66 = __this->___jannahGardenBackgroundSprite;
+		G_B12_0 = L_66;
+	}
+
+IL_01ef:
+	{
+		V_4 = G_B12_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:835>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_67 = V_4;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_68;
+		L_68 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_67, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_68)
+		{
+			goto IL_0224;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:837>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_69 = __this->___backgroundImage;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_70 = V_4;
+		NullCheck(L_69);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_69, L_70, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:838>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_71 = __this->___backgroundImage;
 		NullCheck(L_71);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_71, L_73, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:783>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_74 = L_70;
-		NullCheck(L_74);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_75;
-		L_75 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_74, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:784>
-		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_75, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:785>
-		NullCheck(L_74);
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_76;
-		L_76 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_74, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:786>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_77 = L_76;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_78;
-		memset((&L_78), 0, sizeof(L_78));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_78), (0.0f), (0.0f), (0.0f), (0.150000006f), NULL);
+		Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF(L_71, 1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:839>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_72 = __this->___backgroundImage;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_73;
+		L_73 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
+		NullCheck(L_72);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_72, L_73);
+	}
+
+IL_0224:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:843>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_74 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_74, _stringLiteralBD666961122D816FF3650F17DFF29FE40734B194, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:844>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_75 = L_74;
+		NullCheck(L_75);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_76;
+		L_76 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_75, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_77 = __this->___loadingPanel;
 		NullCheck(L_77);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_77, L_78);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:787>
-		NullCheck(L_77);
-		VirtualActionInvoker1< bool >::Invoke(25, L_77, (bool)0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:790>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_79 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_79, _stringLiteralB6F0795DD4F409C92875D0327F58FDEA357047F1, NULL);
-		V_4 = L_79;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:791>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_80 = V_4;
-		NullCheck(L_80);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_81;
-		L_81 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_80, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_82 = __this->___loadingPanel;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_78;
+		L_78 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_77, NULL);
+		NullCheck(L_76);
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_76, L_78, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:845>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_79 = L_75;
+		NullCheck(L_79);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_80;
+		L_80 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_79, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:846>
+		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_80, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:847>
+		NullCheck(L_79);
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_81;
+		L_81 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_79, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:848>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_82 = L_81;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_83;
+		memset((&L_83), 0, sizeof(L_83));
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_83), (0.0f), (0.0f), (0.0f), (0.150000006f), NULL);
 		NullCheck(L_82);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_83;
-		L_83 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_82, NULL);
-		NullCheck(L_81);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_81, L_83, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:792>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_84 = V_4;
-		NullCheck(L_84);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_85;
-		L_85 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_84, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:793>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_86 = L_85;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_87;
-		memset((&L_87), 0, sizeof(L_87));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_87), (0.5f), (0.5f), NULL);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_82, L_83);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:849>
+		NullCheck(L_82);
+		VirtualActionInvoker1< bool >::Invoke(25, L_82, (bool)0);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:852>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_84 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_84, _stringLiteralB6F0795DD4F409C92875D0327F58FDEA357047F1, NULL);
+		V_5 = L_84;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:853>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_85 = V_5;
+		NullCheck(L_85);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_86;
+		L_86 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_85, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_87 = __this->___loadingPanel;
+		NullCheck(L_87);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_88;
+		L_88 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_87, NULL);
 		NullCheck(L_86);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_86, L_87, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:794>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_88 = L_86;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_89;
-		memset((&L_89), 0, sizeof(L_89));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_89), (0.5f), (0.5f), NULL);
-		NullCheck(L_88);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_88, L_89, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:795>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_90 = L_88;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_91;
-		memset((&L_91), 0, sizeof(L_91));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_91), (0.5f), (0.5f), NULL);
-		NullCheck(L_90);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_90, L_91, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:796>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_92 = L_90;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_93;
-		memset((&L_93), 0, sizeof(L_93));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_93), (500.0f), (400.0f), NULL);
-		NullCheck(L_92);
-		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_92, L_93, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:797>
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_86, L_88, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:854>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_89 = V_5;
+		NullCheck(L_89);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_90;
+		L_90 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_89, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:855>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_91 = L_90;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_92;
+		memset((&L_92), 0, sizeof(L_92));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_92), (0.5f), (0.5f), NULL);
+		NullCheck(L_91);
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_91, L_92, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:856>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_93 = L_91;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_94;
-		L_94 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
-		NullCheck(L_92);
-		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_92, L_94, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:802>
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_95 = __this->___jannahGardenLogoSprite;
+		memset((&L_94), 0, sizeof(L_94));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_94), (0.5f), (0.5f), NULL);
+		NullCheck(L_93);
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_93, L_94, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:857>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_95 = L_93;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_96;
+		memset((&L_96), 0, sizeof(L_96));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_96), (0.5f), (0.5f), NULL);
+		NullCheck(L_95);
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_95, L_96, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:858>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_97 = L_95;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_98;
+		memset((&L_98), 0, sizeof(L_98));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_98), (500.0f), (400.0f), NULL);
+		NullCheck(L_97);
+		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_97, L_98, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:859>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_99;
+		L_99 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
+		NullCheck(L_97);
+		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_97, L_99, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:864>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_100 = __this->___jannahGardenLogoSprite;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_96;
-		L_96 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_95, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (L_96)
+		bool L_101;
+		L_101 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_100, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_101)
 		{
-			goto IL_02fc;
+			goto IL_0319;
 		}
 	}
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_97 = __this->___outerGardenLogoSprite;
-		G_B14_0 = L_97;
-		goto IL_0302;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_102 = __this->___outerGardenLogoSprite;
+		G_B17_0 = L_102;
+		goto IL_031f;
 	}
 
-IL_02fc:
+IL_0319:
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_98 = __this->___jannahGardenLogoSprite;
-		G_B14_0 = L_98;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_103 = __this->___jannahGardenLogoSprite;
+		G_B17_0 = L_103;
 	}
 
-IL_0302:
+IL_031f:
 	{
-		V_5 = G_B14_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:803>
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_99 = V_5;
+		V_6 = G_B17_0;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:865>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_104 = V_6;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_100;
-		L_100 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_99, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_100)
+		bool L_105;
+		L_105 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_104, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_105)
 		{
-			goto IL_03cb;
+			goto IL_03e8;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:805>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_101 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_101, _stringLiteral4B805E85BA5CA9EF7718945308872F9D0EE02CED, NULL);
-		V_12 = L_101;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:806>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_102 = V_12;
-		NullCheck(L_102);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_103;
-		L_103 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_102, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_104 = V_4;
-		NullCheck(L_104);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_105;
-		L_105 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_104, NULL);
-		NullCheck(L_103);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_103, L_105, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:807>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_106 = V_12;
-		NullCheck(L_106);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_107;
-		L_107 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_106, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:808>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_108 = L_107;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_109;
-		memset((&L_109), 0, sizeof(L_109));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_109), (0.5f), (1.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:867>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_106 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_106, _stringLiteral4B805E85BA5CA9EF7718945308872F9D0EE02CED, NULL);
+		V_13 = L_106;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:868>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_107 = V_13;
+		NullCheck(L_107);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_108;
+		L_108 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_107, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_109 = V_5;
+		NullCheck(L_109);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_110;
+		L_110 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_109, NULL);
 		NullCheck(L_108);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_108, L_109, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:809>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_110 = L_108;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_111;
-		memset((&L_111), 0, sizeof(L_111));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_111), (0.5f), (1.0f), NULL);
-		NullCheck(L_110);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_110, L_111, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:810>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_112 = L_110;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_113;
-		memset((&L_113), 0, sizeof(L_113));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_113), (0.5f), (1.0f), NULL);
-		NullCheck(L_112);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_112, L_113, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:811>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_114 = L_112;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_115 = __this->___logoSize;
-		NullCheck(L_114);
-		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_114, L_115, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:812>
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_108, L_110, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:869>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_111 = V_13;
+		NullCheck(L_111);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_112;
+		L_112 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_111, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:870>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_113 = L_112;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_114;
+		memset((&L_114), 0, sizeof(L_114));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_114), (0.5f), (1.0f), NULL);
+		NullCheck(L_113);
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_113, L_114, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:871>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_115 = L_113;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_116;
 		memset((&L_116), 0, sizeof(L_116));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_116), (0.0f), (0.0f), NULL);
-		NullCheck(L_114);
-		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_114, L_116, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:814>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_117 = V_12;
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_116), (0.5f), (1.0f), NULL);
+		NullCheck(L_115);
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_115, L_116, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:872>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_117 = L_115;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_118;
+		memset((&L_118), 0, sizeof(L_118));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_118), (0.5f), (1.0f), NULL);
 		NullCheck(L_117);
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_118;
-		L_118 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_117, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
-		__this->___logoImage = L_118;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___logoImage), (void*)L_118);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:815>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_119 = __this->___logoImage;
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_120 = V_5;
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_117, L_118, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:873>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_119 = L_117;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_120 = __this->___logoSize;
 		NullCheck(L_119);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_119, L_120, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:816>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_121 = __this->___logoImage;
-		NullCheck(L_121);
-		Image_set_preserveAspect_mF465AFD1313C0F002B37C8B86C75F98CB72A4098(L_121, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:817>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_122 = __this->___logoImage;
+		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_119, L_120, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:874>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_121;
+		memset((&L_121), 0, sizeof(L_121));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_121), (0.0f), (0.0f), NULL);
+		NullCheck(L_119);
+		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_119, L_121, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:876>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_122 = V_13;
 		NullCheck(L_122);
-		VirtualActionInvoker1< bool >::Invoke(25, L_122, (bool)0);
-		goto IL_03d2;
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_123;
+		L_123 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_122, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
+		__this->___logoImage = L_123;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___logoImage), (void*)L_123);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:877>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_124 = __this->___logoImage;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_125 = V_6;
+		NullCheck(L_124);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_124, L_125, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:878>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_126 = __this->___logoImage;
+		NullCheck(L_126);
+		Image_set_preserveAspect_mF465AFD1313C0F002B37C8B86C75F98CB72A4098(L_126, (bool)1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:879>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_127 = __this->___logoImage;
+		NullCheck(L_127);
+		VirtualActionInvoker1< bool >::Invoke(25, L_127, (bool)0);
+		goto IL_03ef;
 	}
 
-IL_03cb:
+IL_03e8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:821>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:883>
 		__this->___logoImage = (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___logoImage), (void*)(Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E*)NULL);
 	}
 
-IL_03d2:
+IL_03ef:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:825>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_123 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_123, _stringLiteralAF0909A745B8E4FFF5CBA680017D83DBA5F6C6E4, NULL);
-		V_6 = L_123;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:826>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_124 = V_6;
-		NullCheck(L_124);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_125;
-		L_125 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_124, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_126 = __this->___loadingPanel;
-		NullCheck(L_126);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_127;
-		L_127 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_126, NULL);
-		NullCheck(L_125);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_125, L_127, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:827>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_128 = V_6;
-		NullCheck(L_128);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_129;
-		L_129 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_128, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:828>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_130 = L_129;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_131;
-		memset((&L_131), 0, sizeof(L_131));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_131), (0.5f), (0.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:887>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_128 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_128, _stringLiteralAF0909A745B8E4FFF5CBA680017D83DBA5F6C6E4, NULL);
+		V_7 = L_128;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:888>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_129 = V_7;
+		NullCheck(L_129);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_130;
+		L_130 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_129, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_131 = __this->___loadingPanel;
+		NullCheck(L_131);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_132;
+		L_132 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_131, NULL);
 		NullCheck(L_130);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_130, L_131, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:829>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_132 = L_130;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_133;
-		memset((&L_133), 0, sizeof(L_133));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_133), (0.5f), (0.0f), NULL);
-		NullCheck(L_132);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_132, L_133, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:830>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_134 = L_132;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_135;
-		memset((&L_135), 0, sizeof(L_135));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_135), (0.5f), (0.0f), NULL);
-		NullCheck(L_134);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_134, L_135, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:831>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_136 = L_134;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_137;
-		memset((&L_137), 0, sizeof(L_137));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_137), (600.0f), (200.0f), NULL);
-		NullCheck(L_136);
-		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_136, L_137, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:832>
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_130, L_132, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:889>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_133 = V_7;
+		NullCheck(L_133);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_134;
+		L_134 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_133, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:890>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_135 = L_134;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_136;
+		memset((&L_136), 0, sizeof(L_136));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_136), (0.5f), (0.0f), NULL);
+		NullCheck(L_135);
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_135, L_136, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:891>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_137 = L_135;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_138;
 		memset((&L_138), 0, sizeof(L_138));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_138), (0.0f), (60.0f), NULL);
-		NullCheck(L_136);
-		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_136, L_138, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:835>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_139 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_139, _stringLiteral771042EFC979D34A5C35B4109215E528A9306A2B, NULL);
-		V_7 = L_139;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:836>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_140 = V_7;
-		NullCheck(L_140);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_141;
-		L_141 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_140, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_142 = V_6;
-		NullCheck(L_142);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_143;
-		L_143 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_142, NULL);
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_138), (0.5f), (0.0f), NULL);
+		NullCheck(L_137);
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_137, L_138, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:892>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_139 = L_137;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_140;
+		memset((&L_140), 0, sizeof(L_140));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_140), (0.5f), (0.0f), NULL);
+		NullCheck(L_139);
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_139, L_140, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:893>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_141 = L_139;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_142;
+		memset((&L_142), 0, sizeof(L_142));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_142), (600.0f), (200.0f), NULL);
 		NullCheck(L_141);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_141, L_143, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:837>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_144 = V_7;
-		NullCheck(L_144);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_145;
-		L_145 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_144, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:838>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_146 = L_145;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_147;
-		memset((&L_147), 0, sizeof(L_147));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_147), (0.0f), (1.0f), NULL);
+		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_141, L_142, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:894>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_143;
+		memset((&L_143), 0, sizeof(L_143));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_143), (0.0f), (60.0f), NULL);
+		NullCheck(L_141);
+		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_141, L_143, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:897>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_144 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_144, _stringLiteral771042EFC979D34A5C35B4109215E528A9306A2B, NULL);
+		V_8 = L_144;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:898>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_145 = V_8;
+		NullCheck(L_145);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_146;
+		L_146 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_145, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_147 = V_7;
+		NullCheck(L_147);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_148;
+		L_148 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_147, NULL);
 		NullCheck(L_146);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_146, L_147, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:839>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_148 = L_146;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_149;
-		memset((&L_149), 0, sizeof(L_149));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_149), (1.0f), (1.0f), NULL);
-		NullCheck(L_148);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_148, L_149, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:840>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_150 = L_148;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_151;
-		memset((&L_151), 0, sizeof(L_151));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_151), (0.5f), (1.0f), NULL);
-		NullCheck(L_150);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_150, L_151, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:841>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_152 = L_150;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_153;
-		memset((&L_153), 0, sizeof(L_153));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_153), (0.0f), (35.0f), NULL);
-		NullCheck(L_152);
-		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_152, L_153, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:842>
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_146, L_148, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:899>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_149 = V_8;
+		NullCheck(L_149);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_150;
+		L_150 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_149, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:900>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_151 = L_150;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_152;
+		memset((&L_152), 0, sizeof(L_152));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_152), (0.0f), (1.0f), NULL);
+		NullCheck(L_151);
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_151, L_152, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:901>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_153 = L_151;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_154;
 		memset((&L_154), 0, sizeof(L_154));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_154), (0.0f), (0.0f), NULL);
-		NullCheck(L_152);
-		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_152, L_154, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:844>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_155 = V_7;
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_154), (1.0f), (1.0f), NULL);
+		NullCheck(L_153);
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_153, L_154, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:902>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_155 = L_153;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_156;
+		memset((&L_156), 0, sizeof(L_156));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_156), (0.5f), (1.0f), NULL);
 		NullCheck(L_155);
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_156;
-		L_156 = GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB(L_155, GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB_RuntimeMethod_var);
-		__this->___statusText = L_156;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___statusText), (void*)L_156);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:845>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_157 = __this->___statusText;
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_155, L_156, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:903>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_157 = L_155;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_158;
+		memset((&L_158), 0, sizeof(L_158));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_158), (0.0f), (35.0f), NULL);
 		NullCheck(L_157);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_157, _stringLiteralBE86F00232CDCD6B0AE55F07CC02A298271564FA);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:846>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_158 = __this->___statusText;
-		NullCheck(L_158);
-		TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD(L_158, (22.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:847>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_159 = __this->___statusText;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_160 = __this->___secondaryTextColor;
-		NullCheck(L_159);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_159, L_160);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:848>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_161 = __this->___statusText;
-		NullCheck(L_161);
-		TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A(L_161, ((int32_t)513), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:849>
+		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_157, L_158, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:904>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_159;
+		memset((&L_159), 0, sizeof(L_159));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_159), (0.0f), (0.0f), NULL);
+		NullCheck(L_157);
+		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_157, L_159, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:906>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_160 = V_8;
+		NullCheck(L_160);
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_161;
+		L_161 = GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB(L_160, GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB_RuntimeMethod_var);
+		__this->___statusText = L_161;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___statusText), (void*)L_161);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:907>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_162 = __this->___statusText;
 		NullCheck(L_162);
-		VirtualActionInvoker1< bool >::Invoke(25, L_162, (bool)0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:850>
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_162, _stringLiteralBE86F00232CDCD6B0AE55F07CC02A298271564FA);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:908>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_163 = __this->___statusText;
 		NullCheck(L_163);
-		TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8(L_163, 0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:853>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_164 = V_6;
+		TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD(L_163, (22.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:909>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_164 = __this->___statusText;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_165 = __this->___secondaryTextColor;
 		NullCheck(L_164);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_165;
-		L_165 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_164, NULL);
-		LoadingScreenManager_BuildProgressBar_m9B61069E009E40641ADAC00488E444C1EB045C43(__this, L_165, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:856>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_166 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_166, _stringLiteral4691C9C4988EC311304474E3905CAB82486DCE94, NULL);
-		V_8 = L_166;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:857>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_167 = V_8;
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_164, L_165);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:910>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_166 = __this->___statusText;
+		NullCheck(L_166);
+		TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A(L_166, ((int32_t)513), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:911>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_167 = __this->___statusText;
 		NullCheck(L_167);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_168;
-		L_168 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_167, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_169 = V_6;
-		NullCheck(L_169);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_170;
-		L_170 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_169, NULL);
+		VirtualActionInvoker1< bool >::Invoke(25, L_167, (bool)0);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:912>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_168 = __this->___statusText;
 		NullCheck(L_168);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_168, L_170, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:858>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_171 = V_8;
+		TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8(L_168, ((int32_t)16), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:913>
+		TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* L_169 = __this->___uiFont;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_170;
+		L_170 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_169, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_170)
+		{
+			goto IL_0597;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:913>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_171 = __this->___statusText;
+		TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* L_172 = __this->___uiFont;
 		NullCheck(L_171);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_172;
-		L_172 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_171, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:859>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_173 = L_172;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_174;
-		memset((&L_174), 0, sizeof(L_174));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_174), (1.0f), (1.0f), NULL);
+		TMP_Text_set_font_mC55E4A8C1C09595031384B35F2C2FB2FC3479E83(L_171, L_172, NULL);
+	}
+
+IL_0597:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:916>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_173 = V_7;
 		NullCheck(L_173);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_173, L_174, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:860>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_175 = L_173;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_176;
-		memset((&L_176), 0, sizeof(L_176));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_176), (1.0f), (1.0f), NULL);
-		NullCheck(L_175);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_175, L_176, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:861>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_177 = L_175;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_178;
-		memset((&L_178), 0, sizeof(L_178));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_178), (1.0f), (1.0f), NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_174;
+		L_174 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_173, NULL);
+		LoadingScreenManager_BuildProgressBar_m9B61069E009E40641ADAC00488E444C1EB045C43(__this, L_174, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:919>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_175 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_175, _stringLiteral4691C9C4988EC311304474E3905CAB82486DCE94, NULL);
+		V_9 = L_175;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:920>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_176 = V_9;
+		NullCheck(L_176);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_177;
+		L_177 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_176, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_178 = V_7;
+		NullCheck(L_178);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_179;
+		L_179 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_178, NULL);
 		NullCheck(L_177);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_177, L_178, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:862>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_179 = L_177;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_180;
-		memset((&L_180), 0, sizeof(L_180));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_180), (80.0f), (35.0f), NULL);
-		NullCheck(L_179);
-		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_179, L_180, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:863>
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_181;
-		memset((&L_181), 0, sizeof(L_181));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_181), (0.0f), (0.0f), NULL);
-		NullCheck(L_179);
-		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_179, L_181, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:865>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_182 = V_8;
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_177, L_179, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:921>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_180 = V_9;
+		NullCheck(L_180);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_181;
+		L_181 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_180, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:922>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_182 = L_181;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_183;
+		memset((&L_183), 0, sizeof(L_183));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_183), (1.0f), (1.0f), NULL);
 		NullCheck(L_182);
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_183;
-		L_183 = GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB(L_182, GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB_RuntimeMethod_var);
-		__this->___percentText = L_183;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___percentText), (void*)L_183);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:866>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_184 = __this->___percentText;
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_182, L_183, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:923>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_184 = L_182;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_185;
+		memset((&L_185), 0, sizeof(L_185));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_185), (1.0f), (1.0f), NULL);
 		NullCheck(L_184);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_184, _stringLiteral0DBBC7FCE9B44625B908FEB0F4ED4C87C7E8B9B3);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:867>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_185 = __this->___percentText;
-		NullCheck(L_185);
-		TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD(L_185, (22.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:868>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_186 = __this->___percentText;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_187 = __this->___accentColor;
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_184, L_185, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:924>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_186 = L_184;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_187;
+		memset((&L_187), 0, sizeof(L_187));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_187), (1.0f), (1.0f), NULL);
 		NullCheck(L_186);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_186, L_187);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:869>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_188 = __this->___percentText;
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_186, L_187, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:925>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_188 = L_186;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_189;
+		memset((&L_189), 0, sizeof(L_189));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_189), (80.0f), (35.0f), NULL);
 		NullCheck(L_188);
-		TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A(L_188, ((int32_t)516), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:870>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_189 = __this->___percentText;
-		NullCheck(L_189);
-		VirtualActionInvoker1< bool >::Invoke(25, L_189, (bool)0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:871>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_190 = __this->___percentText;
-		NullCheck(L_190);
-		TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8(L_190, 1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:874>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_191 = V_6;
+		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_188, L_189, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:926>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_190;
+		memset((&L_190), 0, sizeof(L_190));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_190), (0.0f), (0.0f), NULL);
+		NullCheck(L_188);
+		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_188, L_190, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:928>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_191 = V_9;
 		NullCheck(L_191);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_192;
-		L_192 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_191, NULL);
-		LoadingScreenManager_BuildSpinner_mFAED31507DCCB4E8B22C32657D60BC6285186247(__this, L_192, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:877>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_193 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_193, _stringLiteralBD360491A9CA7CE7B3FB29DD247B82F4B5B4323D, NULL);
-		V_9 = L_193;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:878>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_194 = V_9;
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_192;
+		L_192 = GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB(L_191, GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB_RuntimeMethod_var);
+		__this->___percentText = L_192;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___percentText), (void*)L_192);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:929>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_193 = __this->___percentText;
+		NullCheck(L_193);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_193, _stringLiteral0DBBC7FCE9B44625B908FEB0F4ED4C87C7E8B9B3);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:930>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_194 = __this->___percentText;
 		NullCheck(L_194);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_195;
-		L_195 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_194, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_196 = V_6;
-		NullCheck(L_196);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_197;
-		L_197 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_196, NULL);
+		TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD(L_194, (22.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:931>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_195 = __this->___percentText;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_196 = __this->___accentColor;
 		NullCheck(L_195);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_195, L_197, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:879>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_198 = V_9;
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_195, L_196);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:932>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_197 = __this->___percentText;
+		NullCheck(L_197);
+		TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A(L_197, ((int32_t)516), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:933>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_198 = __this->___percentText;
 		NullCheck(L_198);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_199;
-		L_199 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_198, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:880>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_200 = L_199;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_201;
-		memset((&L_201), 0, sizeof(L_201));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_201), (0.0f), (0.0f), NULL);
-		NullCheck(L_200);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_200, L_201, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:881>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_202 = L_200;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_203;
-		memset((&L_203), 0, sizeof(L_203));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_203), (1.0f), (0.0f), NULL);
+		VirtualActionInvoker1< bool >::Invoke(25, L_198, (bool)0);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:934>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_199 = __this->___percentText;
+		NullCheck(L_199);
+		TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8(L_199, 1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:935>
+		TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* L_200 = __this->___uiFont;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_201;
+		L_201 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_200, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_201)
+		{
+			goto IL_06b8;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:935>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_202 = __this->___percentText;
+		TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* L_203 = __this->___uiFont;
 		NullCheck(L_202);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_202, L_203, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:882>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_204 = L_202;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_205;
-		memset((&L_205), 0, sizeof(L_205));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_205), (0.5f), (1.0f), NULL);
+		TMP_Text_set_font_mC55E4A8C1C09595031384B35F2C2FB2FC3479E83(L_202, L_203, NULL);
+	}
+
+IL_06b8:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:938>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_204 = V_7;
 		NullCheck(L_204);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_204, L_205, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:883>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_206 = L_204;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_207;
-		memset((&L_207), 0, sizeof(L_207));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_207), (0.0f), (50.0f), NULL);
-		NullCheck(L_206);
-		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_206, L_207, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:884>
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_208;
-		memset((&L_208), 0, sizeof(L_208));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_208), (0.0f), (40.0f), NULL);
-		NullCheck(L_206);
-		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_206, L_208, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:886>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_209 = V_9;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_205;
+		L_205 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_204, NULL);
+		LoadingScreenManager_BuildSpinner_mFAED31507DCCB4E8B22C32657D60BC6285186247(__this, L_205, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:941>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_206 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_206, _stringLiteralBD360491A9CA7CE7B3FB29DD247B82F4B5B4323D, NULL);
+		V_10 = L_206;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:942>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_207 = V_10;
+		NullCheck(L_207);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_208;
+		L_208 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_207, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_209 = V_7;
 		NullCheck(L_209);
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_210;
-		L_210 = GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB(L_209, GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB_RuntimeMethod_var);
-		__this->___tipsText = L_210;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___tipsText), (void*)L_210);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:887>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_211 = __this->___tipsText;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_210;
+		L_210 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_209, NULL);
+		NullCheck(L_208);
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_208, L_210, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:943>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_211 = V_10;
 		NullCheck(L_211);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_211, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:888>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_212 = __this->___tipsText;
-		NullCheck(L_212);
-		TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD(L_212, (17.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:889>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_213 = __this->___tipsText;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_214 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___secondaryTextColor);
-		float L_215 = L_214->___r;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_216 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___secondaryTextColor);
-		float L_217 = L_216->___g;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_218 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___secondaryTextColor);
-		float L_219 = L_218->___b;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_220;
-		memset((&L_220), 0, sizeof(L_220));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_220), L_215, L_217, L_219, (0.699999988f), NULL);
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_212;
+		L_212 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_211, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:944>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_213 = L_212;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_214;
+		memset((&L_214), 0, sizeof(L_214));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_214), (0.0f), (0.0f), NULL);
 		NullCheck(L_213);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_213, L_220);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:890>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_221 = __this->___tipsText;
-		NullCheck(L_221);
-		TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A(L_221, ((int32_t)514), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:891>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_222 = __this->___tipsText;
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_213, L_214, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:945>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_215 = L_213;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_216;
+		memset((&L_216), 0, sizeof(L_216));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_216), (1.0f), (0.0f), NULL);
+		NullCheck(L_215);
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_215, L_216, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:946>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_217 = L_215;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_218;
+		memset((&L_218), 0, sizeof(L_218));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_218), (0.5f), (1.0f), NULL);
+		NullCheck(L_217);
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_217, L_218, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:947>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_219 = L_217;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_220;
+		memset((&L_220), 0, sizeof(L_220));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_220), (0.0f), (50.0f), NULL);
+		NullCheck(L_219);
+		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_219, L_220, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:948>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_221;
+		memset((&L_221), 0, sizeof(L_221));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_221), (0.0f), (40.0f), NULL);
+		NullCheck(L_219);
+		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_219, L_221, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:950>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_222 = V_10;
 		NullCheck(L_222);
-		TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8(L_222, 2, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:892>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_223 = __this->___tipsText;
-		NullCheck(L_223);
-		VirtualActionInvoker1< bool >::Invoke(25, L_223, (bool)0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:893>
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_223;
+		L_223 = GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB(L_222, GameObject_AddComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m15E50057DA76710B136ADF4E7CA55A463D9DA3EB_RuntimeMethod_var);
+		__this->___tipsText = L_223;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___tipsText), (void*)L_223);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:951>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_224 = __this->___tipsText;
 		NullCheck(L_224);
-		TMP_Text_set_enableWordWrapping_mFAEE849315B4723F9C86C127B1A59EF50BE1C12F(L_224, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:895>
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_225 = __this->___loadingTips;
-		if (!L_225)
-		{
-			goto IL_07a0;
-		}
-	}
-	{
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_226 = __this->___loadingTips;
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_224, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:952>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_225 = __this->___tipsText;
+		NullCheck(L_225);
+		TMP_Text_set_fontSize_m1C3A3BA2BC88E5E1D89375FD35A0AA91E75D3AAD(L_225, (17.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:953>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_226 = __this->___tipsText;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_227 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___secondaryTextColor);
+		float L_228 = L_227->___r;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_229 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___secondaryTextColor);
+		float L_230 = L_229->___g;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_231 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___secondaryTextColor);
+		float L_232 = L_231->___b;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_233;
+		memset((&L_233), 0, sizeof(L_233));
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_233), L_228, L_230, L_232, (0.699999988f), NULL);
 		NullCheck(L_226);
-		if ((((RuntimeArray*)L_226)->max_length))
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_226, L_233);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:954>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_234 = __this->___tipsText;
+		NullCheck(L_234);
+		TMP_Text_set_alignment_mE5216A28797987CC19927ED3CB8DFAC438C6B95A(L_234, ((int32_t)514), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:955>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_235 = __this->___tipsText;
+		NullCheck(L_235);
+		TMP_Text_set_fontStyle_m61931944B2E922D50087312D80F8685A2F29EBF8(L_235, 2, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:956>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_236 = __this->___tipsText;
+		NullCheck(L_236);
+		VirtualActionInvoker1< bool >::Invoke(25, L_236, (bool)0);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:957>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_237 = __this->___tipsText;
+		NullCheck(L_237);
+		TMP_Text_set_enableWordWrapping_mFAEE849315B4723F9C86C127B1A59EF50BE1C12F(L_237, (bool)1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:958>
+		TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* L_238 = __this->___uiFont;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_239;
+		L_239 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_238, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_239)
 		{
-			goto IL_07a8;
+			goto IL_080a;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:958>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_240 = __this->___tipsText;
+		TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* L_241 = __this->___uiFont;
+		NullCheck(L_240);
+		TMP_Text_set_font_mC55E4A8C1C09595031384B35F2C2FB2FC3479E83(L_240, L_241, NULL);
+	}
+
+IL_080a:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:960>
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_242 = __this->___loadingTips;
+		if (!L_242)
+		{
+			goto IL_081b;
+		}
+	}
+	{
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_243 = __this->___loadingTips;
+		NullCheck(L_243);
+		if ((((RuntimeArray*)L_243)->max_length))
+		{
+			goto IL_0823;
 		}
 	}
 
-IL_07a0:
+IL_081b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:897>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_227 = V_9;
-		NullCheck(L_227);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_227, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:962>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_244 = V_10;
+		NullCheck(L_244);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_244, (bool)0, NULL);
 	}
 
-IL_07a8:
+IL_0823:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:899>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:964>
 		return;
 	}
 }
-// Method Definition Index: 89456
+// Method Definition Index: 89458
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9B61069E009E40641ADAC00488E444C1EB045C43 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_AddComponent_TisOutline_t9CF146E077DC65F441EDEC463AA6710374108084_m8F6D80A0E755F0ADB855EB195B2DC0A5C82457E4_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_AddComponent_TisSlider_t87EA570E3D6556CABF57456C2F3873FFD86E652F_mD6B3E648BD439B3345E05EB75D0BA4761C61957C_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral173C97FD1BA3FE26B18DB0C732C98C3B761532A8);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5230F5FD1E0998B73530AA850D3A5872D61228EC);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5990507877B771C1A073BC8BA8D25A9573BC08C3);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA87494629332443BCB190D1BE4733B86174C509D);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB87AF0A696C683DC66CC526D5CB35289E1DC3A74);
 		s_Il2CppMethodInitialized = true;
 	}
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
@@ -18898,11 +19150,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_3 = NULL;
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* V_4 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:908>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:973>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_0, _stringLiteral173C97FD1BA3FE26B18DB0C732C98C3B761532A8, NULL);
 		V_0 = L_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:909>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:974>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = V_0;
 		NullCheck(L_1);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2;
@@ -18910,77 +19162,77 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = ___0_parent;
 		NullCheck(L_2);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_2, L_3, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:910>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:975>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = V_0;
 		NullCheck(L_4);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_5;
 		L_5 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_4, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:911>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:976>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_6 = L_5;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_7;
 		memset((&L_7), 0, sizeof(L_7));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_7), (0.0f), (1.0f), NULL);
 		NullCheck(L_6);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_6, L_7, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:912>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:977>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_8 = L_6;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_9;
 		memset((&L_9), 0, sizeof(L_9));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_9), (1.0f), (1.0f), NULL);
 		NullCheck(L_8);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_8, L_9, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:913>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:978>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_10 = L_8;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_11;
 		memset((&L_11), 0, sizeof(L_11));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_11), (0.5f), (1.0f), NULL);
 		NullCheck(L_10);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_10, L_11, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:914>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:979>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_12 = L_10;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_13;
 		memset((&L_13), 0, sizeof(L_13));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_13), (0.0f), (14.0f), NULL);
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_13), (0.0f), (40.0f), NULL);
 		NullCheck(L_12);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_12, L_13, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:915>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:980>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_14;
 		memset((&L_14), 0, sizeof(L_14));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_14), (0.0f), (-42.0f), NULL);
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_14), (0.0f), (-46.0f), NULL);
 		NullCheck(L_12);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_12, L_14, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:917>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:982>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = V_0;
 		NullCheck(L_15);
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_16;
 		L_16 = GameObject_AddComponent_TisSlider_t87EA570E3D6556CABF57456C2F3873FFD86E652F_mD6B3E648BD439B3345E05EB75D0BA4761C61957C(L_15, GameObject_AddComponent_TisSlider_t87EA570E3D6556CABF57456C2F3873FFD86E652F_mD6B3E648BD439B3345E05EB75D0BA4761C61957C_RuntimeMethod_var);
 		__this->___progressBar = L_16;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___progressBar), (void*)L_16);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:918>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:983>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_17 = __this->___progressBar;
 		NullCheck(L_17);
 		Slider_set_minValue_mC4D1F7709276A9A418F9284A04799FF767DEDC4F(L_17, (0.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:919>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:984>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_18 = __this->___progressBar;
 		NullCheck(L_18);
 		Slider_set_maxValue_m43F3BF47C6D7063D80C578FD9B95AD88494203BE(L_18, (1.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:920>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:985>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_19 = __this->___progressBar;
 		NullCheck(L_19);
 		VirtualActionInvoker1< float >::Invoke(47, L_19, (0.0f));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:921>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:986>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_20 = __this->___progressBar;
 		NullCheck(L_20);
 		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_20, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:922>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:987>
 		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_21 = __this->___progressBar;
 		NullCheck(L_21);
 		Selectable_set_transition_m67F9584736EB6891A314C9804489368C430F0F59(L_21, 0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:925>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:991>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_22, _stringLiteral5230F5FD1E0998B73530AA850D3A5872D61228EC, NULL);
 		V_1 = L_22;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:926>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:992>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = V_1;
 		NullCheck(L_23);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24;
@@ -18991,219 +19243,234 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildProgressBar_m9
 		L_26 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_25, NULL);
 		NullCheck(L_24);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_24, L_26, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:927>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:993>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_27 = V_1;
 		NullCheck(L_27);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_28;
 		L_28 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_27, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:928>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:994>
 		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_28, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:930>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:996>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_29 = V_1;
 		NullCheck(L_29);
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_30;
 		L_30 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_29, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
 		__this->___progressBarBackground = L_30;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___progressBarBackground), (void*)L_30);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:931>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_31 = __this->___progressBarBackground;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_32;
-		memset((&L_32), 0, sizeof(L_32));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_32), (1.0f), (1.0f), (1.0f), (0.0799999982f), NULL);
-		NullCheck(L_31);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_31, L_32);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:934>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_33 = V_1;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:997>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_31 = __this->___progressBarTrackSprite;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_32;
+		L_32 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_31, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_32)
+		{
+			goto IL_014b;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:999>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_33 = __this->___progressBarBackground;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_34 = __this->___progressBarTrackSprite;
 		NullCheck(L_33);
-		Outline_t9CF146E077DC65F441EDEC463AA6710374108084* L_34;
-		L_34 = GameObject_AddComponent_TisOutline_t9CF146E077DC65F441EDEC463AA6710374108084_m8F6D80A0E755F0ADB855EB195B2DC0A5C82457E4(L_33, GameObject_AddComponent_TisOutline_t9CF146E077DC65F441EDEC463AA6710374108084_m8F6D80A0E755F0ADB855EB195B2DC0A5C82457E4_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:935>
-		Outline_t9CF146E077DC65F441EDEC463AA6710374108084* L_35 = L_34;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_36;
-		memset((&L_36), 0, sizeof(L_36));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_36), (1.0f), (1.0f), (1.0f), (0.0299999993f), NULL);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_33, L_34, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1000>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_35 = __this->___progressBarBackground;
 		NullCheck(L_35);
-		Shadow_set_effectColor_mCCC5DB6B7D09C5DEE0C677DEB3B9B0C578F05AF1(L_35, L_36, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:936>
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_37;
-		memset((&L_37), 0, sizeof(L_37));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_37), (0.5f), (0.5f), NULL);
-		NullCheck(L_35);
-		Shadow_set_effectDistance_m5E7B565C41CF2A8C84EC98319ACBF5C8E1FE47DA(L_35, L_37, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:939>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_38, _stringLiteral5990507877B771C1A073BC8BA8D25A9573BC08C3, NULL);
-		V_2 = L_38;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:940>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39 = V_2;
-		NullCheck(L_39);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_40;
-		L_40 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_39, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_41 = V_0;
+		Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF(L_35, 1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1001>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_36 = __this->___progressBarBackground;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_37;
+		L_37 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
+		NullCheck(L_36);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_36, L_37);
+		goto IL_016f;
+	}
+
+IL_014b:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1005>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_38 = __this->___progressBarBackground;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_39;
+		memset((&L_39), 0, sizeof(L_39));
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_39), (1.0f), (1.0f), (1.0f), (0.0799999982f), NULL);
+		NullCheck(L_38);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_38, L_39);
+	}
+
+IL_016f:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1009>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_40 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_40, _stringLiteral5990507877B771C1A073BC8BA8D25A9573BC08C3, NULL);
+		V_2 = L_40;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1010>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_41 = V_2;
 		NullCheck(L_41);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_42;
 		L_42 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_41, NULL);
-		NullCheck(L_40);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_40, L_42, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:941>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = V_2;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = V_0;
 		NullCheck(L_43);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_44;
-		L_44 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_43, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:942>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_45 = L_44;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_46;
-		memset((&L_46), 0, sizeof(L_46));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_46), (0.0f), (0.0f), NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44;
+		L_44 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_43, NULL);
+		NullCheck(L_42);
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_42, L_44, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1011>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_45 = V_2;
 		NullCheck(L_45);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_45, L_46, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:943>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_47 = L_45;
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_46;
+		L_46 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_45, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1012>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_47 = L_46;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_48;
 		memset((&L_48), 0, sizeof(L_48));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_48), (1.0f), (1.0f), NULL);
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_48), (0.0f), (0.0f), NULL);
 		NullCheck(L_47);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_47, L_48, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:944>
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_47, L_48, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1013>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_49 = L_47;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_50;
 		memset((&L_50), 0, sizeof(L_50));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_50), (0.5f), (0.5f), NULL);
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_50), (1.0f), (1.0f), NULL);
 		NullCheck(L_49);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_49, L_50, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:945>
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_49, L_50, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1014>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_51 = L_49;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_52;
 		memset((&L_52), 0, sizeof(L_52));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_52), (2.0f), (2.0f), NULL);
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_52), (0.5f), (0.5f), NULL);
 		NullCheck(L_51);
-		RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9(L_51, L_52, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:946>
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_53;
-		memset((&L_53), 0, sizeof(L_53));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_53), (-2.0f), (-2.0f), NULL);
-		NullCheck(L_51);
-		RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D(L_51, L_53, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:949>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_54 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_54, _stringLiteralA87494629332443BCB190D1BE4733B86174C509D, NULL);
-		V_3 = L_54;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:950>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_55 = V_3;
-		NullCheck(L_55);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_56;
-		L_56 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_55, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_57 = V_2;
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_51, L_52, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1015>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_53 = L_51;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_54;
+		memset((&L_54), 0, sizeof(L_54));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_54), (4.0f), (4.0f), NULL);
+		NullCheck(L_53);
+		RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9(L_53, L_54, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1016>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_55;
+		memset((&L_55), 0, sizeof(L_55));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_55), (-4.0f), (-4.0f), NULL);
+		NullCheck(L_53);
+		RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D(L_53, L_55, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1020>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_56 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
+		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_56, _stringLiteralA87494629332443BCB190D1BE4733B86174C509D, NULL);
+		V_3 = L_56;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1021>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_57 = V_3;
 		NullCheck(L_57);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_58;
 		L_58 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_57, NULL);
-		NullCheck(L_56);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_56, L_58, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:951>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_59 = V_3;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_59 = V_2;
 		NullCheck(L_59);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_60;
-		L_60 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_59, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		V_4 = L_60;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:952>
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_61 = V_4;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_62;
-		L_62 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_60;
+		L_60 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_59, NULL);
+		NullCheck(L_58);
+		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_58, L_60, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1022>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_61 = V_3;
 		NullCheck(L_61);
-		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_61, L_62, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:953>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_62;
+		L_62 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_61, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
+		V_4 = L_62;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1023>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_63 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_64;
-		L_64 = Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline(NULL);
+		L_64 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_63);
-		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_63, L_64, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:954>
+		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_63, L_64, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1024>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_65 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_66;
-		memset((&L_66), 0, sizeof(L_66));
-		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_66), (0.5f), (0.5f), NULL);
+		L_66 = Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline(NULL);
 		NullCheck(L_65);
-		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_65, L_66, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:955>
+		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_65, L_66, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1025>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_67 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_68;
-		L_68 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
+		memset((&L_68), 0, sizeof(L_68));
+		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_68), (0.5f), (0.5f), NULL);
 		NullCheck(L_67);
-		RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9(L_67, L_68, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:956>
+		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_67, L_68, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1026>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_69 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_70;
 		L_70 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_69);
-		RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D(L_69, L_70, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:958>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_71 = V_3;
+		RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9(L_69, L_70, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1027>
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_71 = V_4;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_72;
+		L_72 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_71);
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_72;
-		L_72 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_71, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
-		__this->___progressBarFill = L_72;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___progressBarFill), (void*)L_72);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:959>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_73 = __this->___progressBarFill;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_74 = __this->___accentColor;
+		RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D(L_71, L_72, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1029>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_73 = V_3;
 		NullCheck(L_73);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_73, L_74);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:962>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_75 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
-		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_75, _stringLiteralB87AF0A696C683DC66CC526D5CB35289E1DC3A74, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:963>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_76 = L_75;
-		NullCheck(L_76);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_77;
-		L_77 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_76, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_78 = V_3;
-		NullCheck(L_78);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_79;
-		L_79 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_78, NULL);
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_74;
+		L_74 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_73, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
+		__this->___progressBarFill = L_74;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___progressBarFill), (void*)L_74);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1030>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_75 = __this->___progressBarFillSprite;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_76;
+		L_76 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_75, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_76)
+		{
+			goto IL_02be;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1032>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_77 = __this->___progressBarFill;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_78 = __this->___progressBarFillSprite;
 		NullCheck(L_77);
-		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_77, L_79, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:964>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_80 = L_76;
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_77, L_78, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1033>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_79 = __this->___progressBarFill;
+		NullCheck(L_79);
+		Image_set_type_mECB8D34772AA393FFBC867B03D18EA0F1A8546BF(L_79, 1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1034>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_80 = __this->___progressBarFill;
 		NullCheck(L_80);
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_81;
-		L_81 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_80, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:965>
-		LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C(L_81, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:966>
-		NullCheck(L_80);
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_82;
-		L_82 = GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0(L_80, GameObject_AddComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA327C9E1CA12BC531D587E7567F2067B96E6B6A0_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:967>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_83 = L_82;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_84 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___accentColor);
-		float L_85 = L_84->___r;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_86 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___accentColor);
-		float L_87 = L_86->___g;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_88 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&__this->___accentColor);
-		float L_89 = L_88->___b;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_90;
-		memset((&L_90), 0, sizeof(L_90));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_90), L_85, L_87, L_89, (0.300000012f), NULL);
+		Image_set_pixelsPerUnitMultiplier_m05DA43C7FD5B7B162FCB1ED6FCA850FD41AF7DC1(L_80, (6.0f), NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1035>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_81 = __this->___progressBarFill;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_82;
+		L_82 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
+		NullCheck(L_81);
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_81, L_82);
+		goto IL_02cf;
+	}
+
+IL_02be:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1039>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_83 = __this->___progressBarFill;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_84 = __this->___accentColor;
 		NullCheck(L_83);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_83, L_90);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:968>
-		NullCheck(L_83);
-		VirtualActionInvoker1< bool >::Invoke(25, L_83, (bool)0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:971>
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_91 = __this->___progressBar;
-		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_92 = V_4;
-		NullCheck(L_91);
-		Slider_set_fillRect_m2CB86D7C94EA17486DACA010B643F9FE308B6AA3(L_91, L_92, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:972>
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_93 = __this->___progressBar;
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_94 = __this->___progressBarFill;
-		NullCheck(L_93);
-		Selectable_set_targetGraphic_m23DB0DF4E5F2DABD50C662C708B4555162171FB9(L_93, L_94, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:973>
+		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_83, L_84);
+	}
+
+IL_02cf:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1043>
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_85 = __this->___progressBar;
+		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_86 = V_4;
+		NullCheck(L_85);
+		Slider_set_fillRect_m2CB86D7C94EA17486DACA010B643F9FE308B6AA3(L_85, L_86, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1044>
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_87 = __this->___progressBar;
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_88 = __this->___progressBarFill;
+		NullCheck(L_87);
+		Selectable_set_targetGraphic_m23DB0DF4E5F2DABD50C662C708B4555162171FB9(L_87, L_88, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1045>
 		return;
 	}
 }
-// Method Definition Index: 89457
+// Method Definition Index: 89459
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildSpinner_mFAED31507DCCB4E8B22C32657D60BC6285186247 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19223,11 +19490,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildSpinner_mFAED3
 	int32_t V_3 = 0;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_4 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:981>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1053>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_0, _stringLiteral2FD7F24E92EA095727378E3E8B475DF18D502CE4, NULL);
 		V_0 = L_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:982>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1054>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = V_0;
 		NullCheck(L_1);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2;
@@ -19235,65 +19502,65 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_BuildSpinner_mFAED3
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = ___0_parent;
 		NullCheck(L_2);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_2, L_3, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:983>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1055>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = V_0;
 		NullCheck(L_4);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_5;
 		L_5 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_4, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
 		__this->___spinnerRoot = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___spinnerRoot), (void*)L_5);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:984>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1056>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_6 = __this->___spinnerRoot;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_7;
 		memset((&L_7), 0, sizeof(L_7));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_7), (0.5f), (0.0f), NULL);
 		NullCheck(L_6);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_6, L_7, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:985>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1057>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_8 = __this->___spinnerRoot;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_9;
 		memset((&L_9), 0, sizeof(L_9));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_9), (0.5f), (0.0f), NULL);
 		NullCheck(L_8);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_8, L_9, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:986>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1058>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_10 = __this->___spinnerRoot;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_11;
 		memset((&L_11), 0, sizeof(L_11));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_11), (0.5f), (0.5f), NULL);
 		NullCheck(L_10);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_10, L_11, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:987>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1059>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_12 = __this->___spinnerRoot;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_13;
 		memset((&L_13), 0, sizeof(L_13));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_13), (80.0f), (20.0f), NULL);
 		NullCheck(L_12);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_12, L_13, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:988>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1060>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_14 = __this->___spinnerRoot;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_15;
 		memset((&L_15), 0, sizeof(L_15));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_15), (0.0f), (80.0f), NULL);
 		NullCheck(L_14);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_14, L_15, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:990>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1062>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_16 = (ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78*)(ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78*)SZArrayNew(ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78_il2cpp_TypeInfo_var, (uint32_t)3);
 		__this->___spinnerDots = L_16;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___spinnerDots), (void*)L_16);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:991>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1063>
 		V_1 = (24.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:992>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1064>
 		float L_17 = V_1;
 		V_2 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((-2.0f), L_17)), (0.5f)));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:994>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1066>
 		V_3 = 0;
 		goto IL_019b;
 	}
 
 IL_00cd:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:996>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1068>
 		int32_t L_18 = V_3;
 		int32_t L_19 = L_18;
 		RuntimeObject* L_20 = Box(il2cpp_defaults.int32_class, &L_19);
@@ -19302,7 +19569,7 @@ IL_00cd:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_22, L_21, NULL);
 		V_4 = L_22;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:997>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1069>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = V_4;
 		NullCheck(L_23);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24;
@@ -19313,40 +19580,40 @@ IL_00cd:
 		L_26 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_25, NULL);
 		NullCheck(L_24);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_24, L_26, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:998>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1070>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_27 = V_4;
 		NullCheck(L_27);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_28;
 		L_28 = GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388(L_27, GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:999>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1071>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_29 = L_28;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_30;
 		memset((&L_30), 0, sizeof(L_30));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_30), (0.5f), (0.5f), NULL);
 		NullCheck(L_29);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_29, L_30, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1000>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1072>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_31 = L_29;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_32;
 		memset((&L_32), 0, sizeof(L_32));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_32), (0.5f), (0.5f), NULL);
 		NullCheck(L_31);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_31, L_32, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1001>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1073>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_33 = L_31;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_34;
 		memset((&L_34), 0, sizeof(L_34));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_34), (0.5f), (0.5f), NULL);
 		NullCheck(L_33);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_33, L_34, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1002>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1074>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_35 = L_33;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_36;
 		memset((&L_36), 0, sizeof(L_36));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_36), (10.0f), (10.0f), NULL);
 		NullCheck(L_35);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_35, L_36, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1003>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1075>
 		float L_37 = V_2;
 		int32_t L_38 = V_3;
 		float L_39 = V_1;
@@ -19355,7 +19622,7 @@ IL_00cd:
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_40), ((float)il2cpp_codegen_add(L_37, ((float)il2cpp_codegen_multiply(((float)L_38), L_39)))), (0.0f), NULL);
 		NullCheck(L_35);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_35, L_40, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1005>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1077>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_41 = __this->___spinnerDots;
 		int32_t L_42 = V_3;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = V_4;
@@ -19365,7 +19632,7 @@ IL_00cd:
 		NullCheck(L_41);
 		ArrayElementTypeCheck (L_41, L_44);
 		(L_41)->SetAt(static_cast<il2cpp_array_size_t>(L_42), (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E*)L_44);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1006>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1078>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_45 = __this->___spinnerDots;
 		int32_t L_46 = V_3;
 		NullCheck(L_45);
@@ -19374,7 +19641,7 @@ IL_00cd:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_49 = __this->___accentColor;
 		NullCheck(L_48);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_48, L_49);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1007>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1079>
 		ImageU5BU5D_t8869694C217655DA7B1315DC02C80F1308B78B78* L_50 = __this->___spinnerDots;
 		int32_t L_51 = V_3;
 		NullCheck(L_50);
@@ -19382,14 +19649,14 @@ IL_00cd:
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_53 = (L_50)->GetAt(static_cast<il2cpp_array_size_t>(L_52));
 		NullCheck(L_53);
 		VirtualActionInvoker1< bool >::Invoke(25, L_53, (bool)0);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:994>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1066>
 		int32_t L_54 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_54, 1));
 	}
 
 IL_019b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:994>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1066>
 		int32_t L_55 = V_3;
 		if ((((int32_t)L_55) < ((int32_t)3)))
 		{
@@ -19397,50 +19664,50 @@ IL_019b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1009>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1081>
 		return;
 	}
 }
-// Method Definition Index: 89458
+// Method Definition Index: 89460
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager_StretchFull_m23F75A3300837FFF0A60231ED6217ABF8E8C240C (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_rt, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1018>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1090>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = ___0_rt;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1;
 		L_1 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_0);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_0, L_1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1019>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1091>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_2 = ___0_rt;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_3;
 		L_3 = Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline(NULL);
 		NullCheck(L_2);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_2, L_3, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1020>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1092>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_4 = ___0_rt;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_5;
 		memset((&L_5), 0, sizeof(L_5));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_5), (0.5f), (0.5f), NULL);
 		NullCheck(L_4);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_4, L_5, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1021>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1093>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_6 = ___0_rt;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_7;
 		L_7 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_6);
 		RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9(L_6, L_7, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1022>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1094>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_8 = ___0_rt;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_9;
 		L_9 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_8);
 		RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D(L_8, L_9, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1023>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:1095>
 		return;
 	}
 }
-// Method Definition Index: 89459
+// Method Definition Index: 89461
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager__ctor_mE31332B5B0F7414BB3C95D11FDB397E471D75C64 (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19461,38 +19728,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreenManager__ctor_mE31332B5B0F7
 		memset((&L_0), 0, sizeof(L_0));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_0), (0.0399999991f), (0.0599999987f), (0.100000001f), (1.0f), NULL);
 		__this->___backgroundColor = L_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:50>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_1;
 		memset((&L_1), 0, sizeof(L_1));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_1), (0.400000006f), (0.779999971f), (0.550000012f), (1.0f), NULL);
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_1), (1.0f), (0.943499982f), (0.448100001f), (1.0f), NULL);
 		__this->___accentColor = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:53>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		memset((&L_2), 0, sizeof(L_2));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_2), (0.649999976f), (0.699999988f), (0.779999971f), (1.0f), NULL);
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_2), (1.0f), (1.0f), (1.0f), (1.0f), NULL);
 		__this->___secondaryTextColor = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:83>
 		__this->___outerGardenSceneName = _stringLiteral8F6A3BEC67631D1DCB6FCF8E6E785124849D9D85;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___outerGardenSceneName), (void*)_stringLiteral8F6A3BEC67631D1DCB6FCF8E6E785124849D9D85);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:68>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:86>
 		__this->___jannahGardenSceneName = _stringLiteral2A949C0A5004551C7A72D614B6C9C6CB97D99623;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___jannahGardenSceneName), (void*)_stringLiteral2A949C0A5004551C7A72D614B6C9C6CB97D99623);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:76>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:94>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_3;
 		memset((&L_3), 0, sizeof(L_3));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_3), (180.0f), (180.0f), NULL);
 		__this->___logoSize = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:101>
 		__this->___minDisplayTime = (1.5f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:86>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:104>
 		__this->___fadeDuration = (0.400000006f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:108>
 		__this->___hideDelay = (0.300000012f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:112>
 		__this->___progressLerpSpeed = (3.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:117>
 		__this->___maxHoldTime = (30.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:158>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:176>
 		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_4 = (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885*)il2cpp_codegen_object_new(HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885_il2cpp_TypeInfo_var);
 		HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E(L_4, HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_RuntimeMethod_var);
 		__this->____loadHolds = L_4;
@@ -19571,8 +19838,8 @@ IL2CPP_EXTERN_C void AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89460
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57__ctor_m428C8EB2200AF0EC7C811860AC0305D9B23DA498 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+// Method Definition Index: 89462
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__61__ctor_m0C6249D1779560A46E613D6D7FCF83B3B5D8A14D (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -19581,15 +19848,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57__ctor_m428C8EB2200AF0E
 		return;
 	}
 }
-// Method Definition Index: 89461
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57_System_IDisposable_Dispose_m8BC5AFCCCE72E9F9351611909D360C652FD2C0C3 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89463
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__61_System_IDisposable_Dispose_mB476BA8D427126893B806AA68DA96CB0D791A12B (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 89462
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeInU3Ed__57_MoveNext_mDFB13B52E32C246724890673AE4E60DBCB32A5AF (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89464
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeInU3Ed__61_MoveNext_m84225A6812DBA8601CD66CB5FCD27C32C2642050 (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -19624,7 +19891,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeInU3Ed__57_MoveNext_mDFB13B52E32C
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:547>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:568>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_4 = V_1;
 		NullCheck(L_4);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = L_4->___loadingPanel;
@@ -19637,7 +19904,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:547>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:568>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_7 = V_1;
 		NullCheck(L_7);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = L_7->___loadingPanel;
@@ -19647,7 +19914,7 @@ IL_001a:
 
 IL_003b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:548>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:569>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_9 = V_1;
 		NullCheck(L_9);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_10 = L_9->___canvasGroup;
@@ -19660,31 +19927,31 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:548>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:569>
 		return (bool)0;
 	}
 
 IL_004b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:550>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:571>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_12 = V_1;
 		NullCheck(L_12);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_13 = L_12->___canvasGroup;
 		NullCheck(L_13);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_13, (0.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:551>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:572>
 		__this->___U3CtU3E5__2 = (0.0f);
 		goto IL_00b8;
 	}
 
 IL_0068:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:555>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:576>
 		float L_14 = __this->___U3CtU3E5__2;
 		float L_15;
 		L_15 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
 		__this->___U3CtU3E5__2 = ((float)il2cpp_codegen_add(L_14, L_15));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:556>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:577>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_16 = V_1;
 		NullCheck(L_16);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_17 = L_16->___canvasGroup;
@@ -19696,7 +19963,7 @@ IL_0068:
 		L_21 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((0.0f), (1.0f), ((float)(L_18/L_20)), NULL);
 		NullCheck(L_17);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_17, L_21, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:557>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:578>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -19710,7 +19977,7 @@ IL_00b1:
 
 IL_00b8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:553>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:574>
 		float L_22 = __this->___U3CtU3E5__2;
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_23 = V_1;
 		NullCheck(L_23);
@@ -19721,35 +19988,35 @@ IL_00b8:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:560>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:581>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_25 = V_1;
 		NullCheck(L_25);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_26 = L_25->___canvasGroup;
 		NullCheck(L_26);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_26, (1.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:561>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:582>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89463
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF953DFE9FC2358C36CFF27EAA70E0FEE86594F53 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89465
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__61_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m49093F0D6F95ED75262A2F7822AB9E41673D342E (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 89464
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__57_System_Collections_IEnumerator_Reset_mC8A51A21B83D5B4E5D452953488308A92179A173 (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89466
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeInU3Ed__61_System_Collections_IEnumerator_Reset_m76527D9C7CFA869C13EFE6F93B370B25CBEBC56A (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeInU3Ed__57_System_Collections_IEnumerator_Reset_mC8A51A21B83D5B4E5D452953488308A92179A173_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeInU3Ed__61_System_Collections_IEnumerator_Reset_m76527D9C7CFA869C13EFE6F93B370B25CBEBC56A_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 89465
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Collections_IEnumerator_get_Current_m251237D8C05AEE9E4FC91313E72CB16C2B77938F (U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89467
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__61_System_Collections_IEnumerator_get_Current_m67C5F221DBA744A300DB20B6D03177CA1F34B972 (U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -19764,8 +20031,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeInU3Ed__57_System_Colle
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89466
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58__ctor_mB8A4685BEF12AC40EDA519B55D02D292D21E3550 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+// Method Definition Index: 89468
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__62__ctor_mC6B9CCF330173464BC1812B7DC3B3634B2807DDC (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -19774,15 +20041,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58__ctor_mB8A4685BEF12AC
 		return;
 	}
 }
-// Method Definition Index: 89467
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58_System_IDisposable_Dispose_mB7C86FE6AB46AD937155DD043867AA79FD054B4E (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89469
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__62_System_IDisposable_Dispose_mEE1D487F451AF285C827AD35A01D371C59844EEB (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 89468
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeOutU3Ed__58_MoveNext_m1F2CFB1682AD14EF6C8E2D19A116A379649BA7A6 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89470
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeOutU3Ed__62_MoveNext_m99795D4DB25CB6BD565FDC7415ABE18036F4DEE8 (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -19817,7 +20084,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeOutU3Ed__58_MoveNext_m1F2CFB1682A
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:565>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:586>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_4 = V_1;
 		NullCheck(L_4);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_5 = L_4->___canvasGroup;
@@ -19830,25 +20097,25 @@ IL_0017:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:565>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:586>
 		return (bool)0;
 	}
 
 IL_002e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:567>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:588>
 		__this->___U3CtU3E5__2 = (0.0f);
 		goto IL_008b;
 	}
 
 IL_003b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:570>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:591>
 		float L_7 = __this->___U3CtU3E5__2;
 		float L_8;
 		L_8 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
 		__this->___U3CtU3E5__2 = ((float)il2cpp_codegen_add(L_7, L_8));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:571>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:592>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_9 = V_1;
 		NullCheck(L_9);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_10 = L_9->___canvasGroup;
@@ -19860,7 +20127,7 @@ IL_003b:
 		L_14 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((1.0f), (0.0f), ((float)(L_11/L_13)), NULL);
 		NullCheck(L_10);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_10, L_14, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:572>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:593>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -19874,7 +20141,7 @@ IL_0084:
 
 IL_008b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:568>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:589>
 		float L_15 = __this->___U3CtU3E5__2;
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_16 = V_1;
 		NullCheck(L_16);
@@ -19885,13 +20152,13 @@ IL_008b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:575>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:596>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_18 = V_1;
 		NullCheck(L_18);
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_19 = L_18->___canvasGroup;
 		NullCheck(L_19);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_19, (0.0f), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:576>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:597>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_20 = V_1;
 		NullCheck(L_20);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = L_20->___loadingPanel;
@@ -19904,7 +20171,7 @@ IL_008b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:576>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:597>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_23 = V_1;
 		NullCheck(L_23);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = L_23->___loadingPanel;
@@ -19914,29 +20181,29 @@ IL_008b:
 
 IL_00c3:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:577>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:598>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89469
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC105798E70E270E3CD6C7266417E1DD88FD0BF32 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89471
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__62_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mDCB93CAF7EE06F6C60B3914DB1F7C3ACC5AF8E5D (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 89470
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__58_System_Collections_IEnumerator_Reset_m7A02B09B999F83A9446B1AB68C32AF5F7BC7A4A4 (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89472
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeOutU3Ed__62_System_Collections_IEnumerator_Reset_mEE62424B9FC95E06AC51185730B63B94D444B072 (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeOutU3Ed__58_System_Collections_IEnumerator_Reset_m7A02B09B999F83A9446B1AB68C32AF5F7BC7A4A4_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeOutU3Ed__62_System_Collections_IEnumerator_Reset_mEE62424B9FC95E06AC51185730B63B94D444B072_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 89471
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Collections_IEnumerator_get_Current_m60D67EC024E8C1715F98122097D62C862386071E (U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89473
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__62_System_Collections_IEnumerator_get_Current_m496AE2472F3E2F509AB30FB9A97A43A7A3F25FA2 (U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -19951,8 +20218,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeOutU3Ed__58_System_Coll
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89472
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56__ctor_mF58D04FDB8AE7C24135045DD27B2A528AE6C4C20 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+// Method Definition Index: 89474
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__60__ctor_mCD19A9EE7DA30C3E6247634DDF35C9A96F57F3B6 (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -19961,15 +20228,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56__ctor_mF58D0
 		return;
 	}
 }
-// Method Definition Index: 89473
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56_System_IDisposable_Dispose_mEBF2C47DBC3AC72735A7AC445FCE5073C3BECBA4 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89475
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__60_System_IDisposable_Dispose_m94A70A965450D828F98EEB7D7C4120AD1F3FC9CA (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 89474
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneRoutineU3Ed__56_MoveNext_m99D1DD8BAA42F4B54C1A627B997CB521DA77CB8E (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89476
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneRoutineU3Ed__60_MoveNext_m06840CF7A7DB63541225858F4B610E7CFD0F968E (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -20020,10 +20287,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneRoutineU3Ed__56_MoveNext_m99
 	Enumerator_t4FD20F9F8A9E1F38460542875DDE3E374CC954FE V_12;
 	memset((&V_12), 0, sizeof(V_12));
 	AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* V_13 = NULL;
-	U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* G_B18_0 = NULL;
-	U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* G_B17_0 = NULL;
+	U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* G_B18_0 = NULL;
+	U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* G_B17_0 = NULL;
 	float G_B19_0 = 0.0f;
-	U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* G_B19_1 = NULL;
+	U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* G_B19_1 = NULL;
 	float G_B61_0 = 0.0f;
 	{
 		int32_t L_0 = __this->___U3CU3E1__state;
@@ -20039,51 +20306,51 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneRoutineU3Ed__56_MoveNext_m99
 			}
 			case 1:
 			{
-				goto IL_0171;
+				goto IL_017d;
 			}
 			case 2:
 			{
-				goto IL_0193;
+				goto IL_019f;
 			}
 			case 3:
 			{
-				goto IL_0222;
+				goto IL_022e;
 			}
 			case 4:
 			{
-				goto IL_02a4;
+				goto IL_02b0;
 			}
 			case 5:
 			{
-				goto IL_031a;
+				goto IL_0326;
 			}
 			case 6:
 			{
-				goto IL_0351;
+				goto IL_035d;
 			}
 			case 7:
 			{
-				goto IL_04b3;
+				goto IL_04bf;
 			}
 			case 8:
 			{
-				goto IL_0509;
+				goto IL_0515;
 			}
 			case 9:
 			{
-				goto IL_0523;
+				goto IL_052f;
 			}
 			case 10:
 			{
-				goto IL_05a7;
+				goto IL_05b3;
 			}
 			case 11:
 			{
-				goto IL_05f6;
+				goto IL_0602;
 			}
 			case 12:
 			{
-				goto IL_0619;
+				goto IL_0625;
 			}
 		}
 	}
@@ -20094,30 +20361,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneRoutineU3Ed__56_MoveNext_m99
 IL_004a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:346>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:364>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_3 = V_1;
 		NullCheck(L_3);
 		LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D_inline(L_3, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:347>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:365>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_4 = V_1;
 		NullCheck(L_4);
 		L_4->____displayedProgress = (0.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:348>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:366>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_5 = V_1;
 		NullCheck(L_5);
 		L_5->____targetProgress = (0.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:349>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:367>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_6 = V_1;
 		NullCheck(L_6);
 		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_7 = L_6->____loadHolds;
 		NullCheck(L_7);
 		HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD(L_7, HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:352>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:370>
 		AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5* L_8 = (AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5*)(&__this->___U3CactiveGroupU3E5__2);
 		il2cpp_codegen_initobj(L_8, sizeof(AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:353>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:371>
 		__this->___U3ChasSubScenesU3E5__3 = (bool)0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:354>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:372>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_9 = V_1;
 		NullCheck(L_9);
 		AdditiveSceneGroupU5BU5D_tC53B946EB561A522EDB681C210FBA24EEE930E6C* L_10 = L_9->___additiveSceneGroups;
@@ -20127,7 +20394,7 @@ IL_004a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:356>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:374>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_11 = V_1;
 		NullCheck(L_11);
 		AdditiveSceneGroupU5BU5D_tC53B946EB561A522EDB681C210FBA24EEE930E6C* L_12 = L_11->___additiveSceneGroups;
@@ -20138,14 +20405,14 @@ IL_004a:
 
 IL_00a0:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:356>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:374>
 		AdditiveSceneGroupU5BU5D_tC53B946EB561A522EDB681C210FBA24EEE930E6C* L_13 = V_3;
 		int32_t L_14 = V_4;
 		NullCheck(L_13);
 		int32_t L_15 = L_14;
 		AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5 L_16 = (L_13)->GetAt(static_cast<il2cpp_array_size_t>(L_15));
 		V_5 = L_16;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:358>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:376>
 		AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5 L_17 = V_5;
 		String_t* L_18 = L_17.___baseSceneName;
 		String_t* L_19 = __this->___sceneName;
@@ -20174,16 +20441,16 @@ IL_00a0:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:360>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:378>
 		AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5 L_25 = V_5;
 		__this->___U3CactiveGroupU3E5__2 = L_25;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3CactiveGroupU3E5__2))->___baseSceneName), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3CactiveGroupU3E5__2))->___subScenes), (void*)NULL);
 		#endif
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:361>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:379>
 		__this->___U3ChasSubScenesU3E5__3 = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:362>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:380>
 		goto IL_00ef;
 	}
 
@@ -20195,7 +20462,7 @@ IL_00e2:
 
 IL_00e8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:356>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:374>
 		int32_t L_27 = V_4;
 		AdditiveSceneGroupU5BU5D_tC53B946EB561A522EDB681C210FBA24EEE930E6C* L_28 = V_3;
 		NullCheck(L_28);
@@ -20207,11 +20474,11 @@ IL_00e8:
 
 IL_00ef:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:368>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:386>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_29 = V_1;
 		NullCheck(L_29);
 		LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C(L_29, _stringLiteral710EE52C22E76BDD8A672F79CAA8967EC39E365D, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:371>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:389>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_30 = V_1;
 		NullCheck(L_30);
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_31 = L_30->___loadingTips;
@@ -20243,7 +20510,7 @@ IL_00ef:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:373>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:391>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_37 = V_1;
 		NullCheck(L_37);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_38 = L_37->___tipsText;
@@ -20260,7 +20527,7 @@ IL_00ef:
 		int32_t L_44 = L_43;
 		String_t* L_45 = (L_40)->GetAt(static_cast<il2cpp_array_size_t>(L_44));
 		LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9(L_38, L_45, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:374>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:392>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_46 = V_1;
 		NullCheck(L_46);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_47 = L_46->___tipsText;
@@ -20273,449 +20540,454 @@ IL_00ef:
 
 IL_014a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:378>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:396>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_49 = V_1;
 		String_t* L_50 = __this->___sceneName;
 		NullCheck(L_49);
 		LoadingScreenManager_ApplyLogoForScene_mA0EFC29DD19FBC51A0BBFBD7E041317767F06328(L_49, L_50, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:381>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:399>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_51 = V_1;
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_52 = V_1;
-		NullCheck(L_52);
-		RuntimeObject* L_53;
-		L_53 = LoadingScreenManager_FadeIn_m2DA61228B92DF84F2E307FDACB776B4D8F168B01(L_52, NULL);
+		String_t* L_52 = __this->___sceneName;
 		NullCheck(L_51);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_54;
-		L_54 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_51, L_53, NULL);
-		__this->___U3CU3E2__current = L_54;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_54);
+		LoadingScreenManager_ApplyBackgroundForScene_m817A2B4B45F420FCF6D396398B18557F8AC556EC(L_51, L_52, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:402>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_53 = V_1;
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_54 = V_1;
+		NullCheck(L_54);
+		RuntimeObject* L_55;
+		L_55 = LoadingScreenManager_FadeIn_m2DA61228B92DF84F2E307FDACB776B4D8F168B01(L_54, NULL);
+		NullCheck(L_53);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_56;
+		L_56 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_53, L_55, NULL);
+		__this->___U3CU3E2__current = L_56;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_56);
 		__this->___U3CU3E1__state = 1;
 		return (bool)1;
 	}
 
-IL_0171:
+IL_017d:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:384>
-		float L_55;
-		L_55 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
-		__this->___U3CshowTimeU3E5__4 = L_55;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:387>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:405>
+		float L_57;
+		L_57 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
+		__this->___U3CshowTimeU3E5__4 = L_57;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:408>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 2;
 		return (bool)1;
 	}
 
-IL_0193:
+IL_019f:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:392>
-		bool L_56 = __this->___U3ChasSubScenesU3E5__3;
-		if (L_56)
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:413>
+		bool L_58 = __this->___U3ChasSubScenesU3E5__3;
+		if (L_58)
 		{
 			G_B18_0 = __this;
-			goto IL_01aa;
+			goto IL_01b6;
 		}
 		G_B17_0 = __this;
 	}
 	{
 		G_B19_0 = (1.0f);
 		G_B19_1 = G_B17_0;
-		goto IL_01af;
+		goto IL_01bb;
 	}
 
-IL_01aa:
+IL_01b6:
 	{
 		G_B19_0 = (0.5f);
 		G_B19_1 = G_B18_0;
 	}
 
-IL_01af:
+IL_01bb:
 	{
 		NullCheck(G_B19_1);
 		G_B19_1->___U3CbaseWeightU3E5__5 = G_B19_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:393>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_57 = V_1;
-		String_t* L_58 = __this->___sceneName;
-		NullCheck(L_57);
-		bool L_59;
-		L_59 = LoadingScreenManager_IsAddressableScene_m0FA2336537EC4775F7599A5F805278F45A54C60B(L_57, L_58, NULL);
-		__this->___U3CloadAsAddressableU3E5__6 = L_59;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:394>
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_60 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
-		il2cpp_codegen_initobj(L_60, sizeof(AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:396>
-		bool L_61 = __this->___U3CloadAsAddressableU3E5__6;
-		if (!L_61)
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:414>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_59 = V_1;
+		String_t* L_60 = __this->___sceneName;
+		NullCheck(L_59);
+		bool L_61;
+		L_61 = LoadingScreenManager_IsAddressableScene_m0FA2336537EC4775F7599A5F805278F45A54C60B(L_59, L_60, NULL);
+		__this->___U3CloadAsAddressableU3E5__6 = L_61;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:415>
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_62 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
+		il2cpp_codegen_initobj(L_62, sizeof(AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:417>
+		bool L_63 = __this->___U3CloadAsAddressableU3E5__6;
+		if (!L_63)
 		{
-			goto IL_02c4;
+			goto IL_02d0;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:398>
-		String_t* L_62 = __this->___sceneName;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:419>
+		String_t* L_64 = __this->___sceneName;
 		il2cpp_codegen_runtime_class_init_inline(Addressables_tB93529ED0B034BF1A8C7830710BAA45C20A0F7D6_il2cpp_TypeInfo_var);
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_63;
-		L_63 = Addressables_LoadSceneAsync_m1374E4805E617F9B1643DAE6CA652A3C4071FF5A(L_62, 0, (bool)0, ((int32_t)100), 0, NULL);
-		__this->___U3CnewAddressableHandleU3E5__7 = L_63;
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_65;
+		L_65 = Addressables_LoadSceneAsync_m1374E4805E617F9B1643DAE6CA652A3C4071FF5A(L_64, 0, (bool)0, ((int32_t)100), 0, NULL);
+		__this->___U3CnewAddressableHandleU3E5__7 = L_65;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3CnewAddressableHandleU3E5__7))->___m_InternalOp), (void*)NULL);
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3CnewAddressableHandleU3E5__7))->___m_LocationName), (void*)NULL);
 		#endif
-		goto IL_0229;
+		goto IL_0235;
 	}
 
-IL_01f5:
+IL_0201:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:402>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_64 = V_1;
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_65 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
-		float L_66;
-		L_66 = AsyncOperationHandle_1_get_PercentComplete_m6CA42664C3166A6F7E5AB1A2A8205C7B541A3EAF(L_65, AsyncOperationHandle_1_get_PercentComplete_m6CA42664C3166A6F7E5AB1A2A8205C7B541A3EAF_RuntimeMethod_var);
-		float L_67;
-		L_67 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(L_66, NULL);
-		float L_68 = __this->___U3CbaseWeightU3E5__5;
-		NullCheck(L_64);
-		L_64->____targetProgress = ((float)il2cpp_codegen_multiply(L_67, L_68));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:403>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:423>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_66 = V_1;
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_67 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
+		float L_68;
+		L_68 = AsyncOperationHandle_1_get_PercentComplete_m6CA42664C3166A6F7E5AB1A2A8205C7B541A3EAF(L_67, AsyncOperationHandle_1_get_PercentComplete_m6CA42664C3166A6F7E5AB1A2A8205C7B541A3EAF_RuntimeMethod_var);
+		float L_69;
+		L_69 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(L_68, NULL);
+		float L_70 = __this->___U3CbaseWeightU3E5__5;
+		NullCheck(L_66);
+		L_66->____targetProgress = ((float)il2cpp_codegen_multiply(L_69, L_70));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:424>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 3;
 		return (bool)1;
 	}
 
-IL_0222:
+IL_022e:
 	{
 		__this->___U3CU3E1__state = (-1);
 	}
 
-IL_0229:
+IL_0235:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:400>
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_69 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
-		bool L_70;
-		L_70 = AsyncOperationHandle_1_get_IsDone_mC7303D676C29C2DCC0EBEF9D20DD05EBD55EBCE7(L_69, AsyncOperationHandle_1_get_IsDone_mC7303D676C29C2DCC0EBEF9D20DD05EBD55EBCE7_RuntimeMethod_var);
-		if (!L_70)
-		{
-			goto IL_01f5;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:406>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:421>
 		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_71 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
-		int32_t L_72;
-		L_72 = AsyncOperationHandle_1_get_Status_mB2C20837E68ED79CFA659480BFB5B6ABB277C56E(L_71, AsyncOperationHandle_1_get_Status_mB2C20837E68ED79CFA659480BFB5B6ABB277C56E_RuntimeMethod_var);
-		if ((((int32_t)L_72) == ((int32_t)1)))
+		bool L_72;
+		L_72 = AsyncOperationHandle_1_get_IsDone_mC7303D676C29C2DCC0EBEF9D20DD05EBD55EBCE7(L_71, AsyncOperationHandle_1_get_IsDone_mC7303D676C29C2DCC0EBEF9D20DD05EBD55EBCE7_RuntimeMethod_var);
+		if (!L_72)
 		{
-			goto IL_0278;
+			goto IL_0201;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:408>
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:409>
-		String_t* L_73 = __this->___sceneName;
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_74 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
-		Exception_t* L_75;
-		L_75 = AsyncOperationHandle_1_get_OperationException_mAB42A8D9B22570CA39889319A1B33AEB5EB45755(L_74, AsyncOperationHandle_1_get_OperationException_mAB42A8D9B22570CA39889319A1B33AEB5EB45755_RuntimeMethod_var);
-		String_t* L_76;
-		L_76 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral23114468D04FA2B7A2DA455B545DB914D0A3ED94, L_75, NULL);
-		String_t* L_77;
-		L_77 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(_stringLiteral86B53E24EE91CC54AE272B1649E0E8FEF1C3BF01, L_73, _stringLiteral9816E74B93E1C26A72AD4D2196C8A3C7A3C28924, L_76, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:427>
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_73 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
+		int32_t L_74;
+		L_74 = AsyncOperationHandle_1_get_Status_mB2C20837E68ED79CFA659480BFB5B6ABB277C56E(L_73, AsyncOperationHandle_1_get_Status_mB2C20837E68ED79CFA659480BFB5B6ABB277C56E_RuntimeMethod_var);
+		if ((((int32_t)L_74) == ((int32_t)1)))
+		{
+			goto IL_0284;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:429>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:430>
+		String_t* L_75 = __this->___sceneName;
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_76 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
+		Exception_t* L_77;
+		L_77 = AsyncOperationHandle_1_get_OperationException_mAB42A8D9B22570CA39889319A1B33AEB5EB45755(L_76, AsyncOperationHandle_1_get_OperationException_mAB42A8D9B22570CA39889319A1B33AEB5EB45755_RuntimeMethod_var);
+		String_t* L_78;
+		L_78 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral23114468D04FA2B7A2DA455B545DB914D0A3ED94, L_77, NULL);
+		String_t* L_79;
+		L_79 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(_stringLiteral86B53E24EE91CC54AE272B1649E0E8FEF1C3BF01, L_75, _stringLiteral9816E74B93E1C26A72AD4D2196C8A3C7A3C28924, L_78, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_77, NULL);
-		goto IL_036c;
+		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_79, NULL);
+		goto IL_0378;
 	}
 
-IL_0278:
+IL_0284:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:413>
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_78 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
-		SceneInstance_t9D8203A59AA2C8EE21045B75AFA429EB1B6BF14A L_79;
-		L_79 = AsyncOperationHandle_1_get_Result_m3FF8FC76759077D4125CFC51C7F3558D19091A66(L_78, AsyncOperationHandle_1_get_Result_m3FF8FC76759077D4125CFC51C7F3558D19091A66_RuntimeMethod_var);
-		V_6 = L_79;
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_80;
-		L_80 = SceneInstance_ActivateAsync_mA5740ABD2A826DB7CCCA83C62F31AA8448DE08C6((&V_6), NULL);
-		__this->___U3CactivateOpU3E5__8 = L_80;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)L_80);
-		goto IL_02ab;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:434>
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5* L_80 = (AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5*)(&__this->___U3CnewAddressableHandleU3E5__7);
+		SceneInstance_t9D8203A59AA2C8EE21045B75AFA429EB1B6BF14A L_81;
+		L_81 = AsyncOperationHandle_1_get_Result_m3FF8FC76759077D4125CFC51C7F3558D19091A66(L_80, AsyncOperationHandle_1_get_Result_m3FF8FC76759077D4125CFC51C7F3558D19091A66_RuntimeMethod_var);
+		V_6 = L_81;
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_82;
+		L_82 = SceneInstance_ActivateAsync_mA5740ABD2A826DB7CCCA83C62F31AA8448DE08C6((&V_6), NULL);
+		__this->___U3CactivateOpU3E5__8 = L_82;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)L_82);
+		goto IL_02b7;
 	}
 
-IL_0294:
+IL_02a0:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:416>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:437>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 4;
 		return (bool)1;
 	}
 
-IL_02a4:
+IL_02b0:
 	{
 		__this->___U3CU3E1__state = (-1);
 	}
 
-IL_02ab:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:414>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_81 = __this->___U3CactivateOpU3E5__8;
-		NullCheck(L_81);
-		bool L_82;
-		L_82 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_81, NULL);
-		if (!L_82)
-		{
-			goto IL_0294;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:418>
-		__this->___U3CactivateOpU3E5__8 = (AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C*)NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)(AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C*)NULL);
-		goto IL_036c;
-	}
-
-IL_02c4:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:422>
-		String_t* L_83 = __this->___sceneName;
-		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_84;
-		L_84 = SceneManager_LoadSceneAsync_m84D316B1993A4E69F9E8CDE30531687B701F9300(L_83, NULL);
-		__this->___U3CactivateOpU3E5__8 = L_84;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)L_84);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:423>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_85 = __this->___U3CactivateOpU3E5__8;
-		NullCheck(L_85);
-		AsyncOperation_set_allowSceneActivation_mBD94FAB342455508CD7962D3CED490C64AF74522(L_85, (bool)0, NULL);
-		goto IL_0321;
-	}
-
-IL_02e3:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:428>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_86 = __this->___U3CactivateOpU3E5__8;
-		NullCheck(L_86);
-		float L_87;
-		L_87 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_86, NULL);
-		float L_88;
-		L_88 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(((float)(L_87/(0.899999976f))), NULL);
-		V_7 = L_88;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:429>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_89 = V_1;
-		float L_90 = V_7;
-		float L_91 = __this->___U3CbaseWeightU3E5__5;
-		NullCheck(L_89);
-		L_89->____targetProgress = ((float)il2cpp_codegen_multiply(L_90, L_91));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:430>
-		__this->___U3CU3E2__current = NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
-		__this->___U3CU3E1__state = 5;
-		return (bool)1;
-	}
-
-IL_031a:
-	{
-		__this->___U3CU3E1__state = (-1);
-	}
-
-IL_0321:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:426>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_92 = __this->___U3CactivateOpU3E5__8;
-		NullCheck(L_92);
-		float L_93;
-		L_93 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_92, NULL);
-		if ((((float)L_93) < ((float)(0.899999976f))))
-		{
-			goto IL_02e3;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:434>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_94 = __this->___U3CactivateOpU3E5__8;
-		NullCheck(L_94);
-		AsyncOperation_set_allowSceneActivation_mBD94FAB342455508CD7962D3CED490C64AF74522(L_94, (bool)1, NULL);
-		goto IL_0358;
-	}
-
-IL_0341:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:437>
-		__this->___U3CU3E2__current = NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
-		__this->___U3CU3E1__state = 6;
-		return (bool)1;
-	}
-
-IL_0351:
-	{
-		__this->___U3CU3E1__state = (-1);
-	}
-
-IL_0358:
+IL_02b7:
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:435>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_95 = __this->___U3CactivateOpU3E5__8;
-		NullCheck(L_95);
-		bool L_96;
-		L_96 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_95, NULL);
-		if (!L_96)
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_83 = __this->___U3CactivateOpU3E5__8;
+		NullCheck(L_83);
+		bool L_84;
+		L_84 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_83, NULL);
+		if (!L_84)
 		{
-			goto IL_0341;
+			goto IL_02a0;
 		}
 	}
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:439>
 		__this->___U3CactivateOpU3E5__8 = (AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)(AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C*)NULL);
+		goto IL_0378;
 	}
 
-IL_036c:
+IL_02d0:
 	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:443>
+		String_t* L_85 = __this->___sceneName;
+		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_86;
+		L_86 = SceneManager_LoadSceneAsync_m84D316B1993A4E69F9E8CDE30531687B701F9300(L_85, NULL);
+		__this->___U3CactivateOpU3E5__8 = L_86;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)L_86);
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:444>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_97 = V_1;
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_87 = __this->___U3CactivateOpU3E5__8;
+		NullCheck(L_87);
+		AsyncOperation_set_allowSceneActivation_mBD94FAB342455508CD7962D3CED490C64AF74522(L_87, (bool)0, NULL);
+		goto IL_032d;
+	}
+
+IL_02ef:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:449>
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_88 = __this->___U3CactivateOpU3E5__8;
+		NullCheck(L_88);
+		float L_89;
+		L_89 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_88, NULL);
+		float L_90;
+		L_90 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(((float)(L_89/(0.899999976f))), NULL);
+		V_7 = L_90;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:450>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_91 = V_1;
+		float L_92 = V_7;
+		float L_93 = __this->___U3CbaseWeightU3E5__5;
+		NullCheck(L_91);
+		L_91->____targetProgress = ((float)il2cpp_codegen_multiply(L_92, L_93));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:451>
+		__this->___U3CU3E2__current = NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
+		__this->___U3CU3E1__state = 5;
+		return (bool)1;
+	}
+
+IL_0326:
+	{
+		__this->___U3CU3E1__state = (-1);
+	}
+
+IL_032d:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:447>
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_94 = __this->___U3CactivateOpU3E5__8;
+		NullCheck(L_94);
+		float L_95;
+		L_95 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_94, NULL);
+		if ((((float)L_95) < ((float)(0.899999976f))))
+		{
+			goto IL_02ef;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:455>
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_96 = __this->___U3CactivateOpU3E5__8;
+		NullCheck(L_96);
+		AsyncOperation_set_allowSceneActivation_mBD94FAB342455508CD7962D3CED490C64AF74522(L_96, (bool)1, NULL);
+		goto IL_0364;
+	}
+
+IL_034d:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:458>
+		__this->___U3CU3E2__current = NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
+		__this->___U3CU3E1__state = 6;
+		return (bool)1;
+	}
+
+IL_035d:
+	{
+		__this->___U3CU3E1__state = (-1);
+	}
+
+IL_0364:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:456>
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_97 = __this->___U3CactivateOpU3E5__8;
 		NullCheck(L_97);
-		bool L_98 = L_97->____hasActiveAddressableSceneHandle;
+		bool L_98;
+		L_98 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_97, NULL);
 		if (!L_98)
 		{
-			goto IL_0388;
+			goto IL_034d;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:446>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:460>
+		__this->___U3CactivateOpU3E5__8 = (AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CactivateOpU3E5__8), (void*)(AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C*)NULL);
+	}
+
+IL_0378:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:465>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_99 = V_1;
 		NullCheck(L_99);
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_100 = L_99->____activeAddressableSceneHandle;
+		bool L_100 = L_99->____hasActiveAddressableSceneHandle;
+		if (!L_100)
+		{
+			goto IL_0394;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:467>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_101 = V_1;
+		NullCheck(L_101);
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_102 = L_101->____activeAddressableSceneHandle;
 		il2cpp_codegen_runtime_class_init_inline(Addressables_tB93529ED0B034BF1A8C7830710BAA45C20A0F7D6_il2cpp_TypeInfo_var);
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_101;
-		L_101 = Addressables_UnloadSceneAsync_m01ABFEE8878DE15A676284B2E1C998DE23EA8AA7(L_100, (bool)1, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:447>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_102 = V_1;
-		NullCheck(L_102);
-		L_102->____hasActiveAddressableSceneHandle = (bool)0;
-	}
-
-IL_0388:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:450>
-		bool L_103 = __this->___U3CloadAsAddressableU3E5__6;
-		if (!L_103)
-		{
-			goto IL_03a3;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:452>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_104 = V_1;
-		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_105 = __this->___U3CnewAddressableHandleU3E5__7;
-		NullCheck(L_104);
-		L_104->____activeAddressableSceneHandle = L_105;
-		Il2CppCodeGenWriteBarrier((void**)&(((&L_104->____activeAddressableSceneHandle))->___m_InternalOp), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&(((&L_104->____activeAddressableSceneHandle))->___m_LocationName), (void*)NULL);
-		#endif
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:453>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_106 = V_1;
-		NullCheck(L_106);
-		L_106->____hasActiveAddressableSceneHandle = (bool)1;
-	}
-
-IL_03a3:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:457>
-		bool L_107 = __this->___U3ChasSubScenesU3E5__3;
-		if (!L_107)
-		{
-			goto IL_04cc;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:459>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_108 = V_1;
-		NullCheck(L_108);
-		LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C(L_108, _stringLiteral68776B0C1BFEB3D107E57AA350AD09978975A2FC, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:460>
-		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_109 = (List_1_t395F30A4A969E319FABAF822E34341C6FD88A263*)il2cpp_codegen_object_new(List_1_t395F30A4A969E319FABAF822E34341C6FD88A263_il2cpp_TypeInfo_var);
-		List_1__ctor_mF2E6ADDF9615CCAC185AF80F9190E99651D10485(L_109, List_1__ctor_mF2E6ADDF9615CCAC185AF80F9190E99651D10485_RuntimeMethod_var);
-		__this->___U3CsubSceneOpsU3E5__9 = L_109;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CsubSceneOpsU3E5__9), (void*)L_109);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:463>
-		AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5* L_110 = (AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5*)(&__this->___U3CactiveGroupU3E5__2);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_111 = L_110->___subScenes;
-		V_8 = L_111;
-		V_4 = 0;
-		goto IL_03fa;
-	}
-
-IL_03d6:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:463>
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_112 = V_8;
-		int32_t L_113 = V_4;
-		NullCheck(L_112);
-		int32_t L_114 = L_113;
-		String_t* L_115 = (L_112)->GetAt(static_cast<il2cpp_array_size_t>(L_114));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:465>
-		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_116;
-		L_116 = SceneManager_LoadSceneAsync_m29D55D2C6CB7A019B26DA3F44C0881FF6AC491EC(L_115, 1, NULL);
-		V_9 = L_116;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:466>
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_117 = V_9;
-		if (!L_117)
-		{
-			goto IL_03f4;
-		}
-	}
-	{
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_103;
+		L_103 = Addressables_UnloadSceneAsync_m01ABFEE8878DE15A676284B2E1C998DE23EA8AA7(L_102, (bool)1, NULL);
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:468>
-		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_118 = __this->___U3CsubSceneOpsU3E5__9;
-		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_119 = V_9;
-		NullCheck(L_118);
-		List_1_Add_m3D9A1C5452A869DAFFB8F9F8C203910E65CD8DF3_inline(L_118, L_119, List_1_Add_m3D9A1C5452A869DAFFB8F9F8C203910E65CD8DF3_RuntimeMethod_var);
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_104 = V_1;
+		NullCheck(L_104);
+		L_104->____hasActiveAddressableSceneHandle = (bool)0;
 	}
 
-IL_03f4:
+IL_0394:
 	{
-		int32_t L_120 = V_4;
-		V_4 = ((int32_t)il2cpp_codegen_add(L_120, 1));
-	}
-
-IL_03fa:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:463>
-		int32_t L_121 = V_4;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_122 = V_8;
-		NullCheck(L_122);
-		if ((((int32_t)L_121) < ((int32_t)((int32_t)(((RuntimeArray*)L_122)->max_length)))))
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:471>
+		bool L_105 = __this->___U3CloadAsAddressableU3E5__6;
+		if (!L_105)
 		{
-			goto IL_03d6;
+			goto IL_03af;
 		}
 	}
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:473>
-		__this->___U3CallDoneU3E5__10 = (bool)0;
-		goto IL_04ba;
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_106 = V_1;
+		AsyncOperationHandle_1_t074166892865CF484A3C77A1E9FB6F5E83DA1DA5 L_107 = __this->___U3CnewAddressableHandleU3E5__7;
+		NullCheck(L_106);
+		L_106->____activeAddressableSceneHandle = L_107;
+		Il2CppCodeGenWriteBarrier((void**)&(((&L_106->____activeAddressableSceneHandle))->___m_InternalOp), (void*)NULL);
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&(((&L_106->____activeAddressableSceneHandle))->___m_LocationName), (void*)NULL);
+		#endif
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:474>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_108 = V_1;
+		NullCheck(L_108);
+		L_108->____hasActiveAddressableSceneHandle = (bool)1;
 	}
 
-IL_040e:
+IL_03af:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:476>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:478>
+		bool L_109 = __this->___U3ChasSubScenesU3E5__3;
+		if (!L_109)
+		{
+			goto IL_04d8;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:480>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_110 = V_1;
+		NullCheck(L_110);
+		LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C(L_110, _stringLiteral68776B0C1BFEB3D107E57AA350AD09978975A2FC, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:481>
+		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_111 = (List_1_t395F30A4A969E319FABAF822E34341C6FD88A263*)il2cpp_codegen_object_new(List_1_t395F30A4A969E319FABAF822E34341C6FD88A263_il2cpp_TypeInfo_var);
+		List_1__ctor_mF2E6ADDF9615CCAC185AF80F9190E99651D10485(L_111, List_1__ctor_mF2E6ADDF9615CCAC185AF80F9190E99651D10485_RuntimeMethod_var);
+		__this->___U3CsubSceneOpsU3E5__9 = L_111;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CsubSceneOpsU3E5__9), (void*)L_111);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:484>
+		AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5* L_112 = (AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5*)(&__this->___U3CactiveGroupU3E5__2);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_113 = L_112->___subScenes;
+		V_8 = L_113;
+		V_4 = 0;
+		goto IL_0406;
+	}
+
+IL_03e2:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:484>
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_114 = V_8;
+		int32_t L_115 = V_4;
+		NullCheck(L_114);
+		int32_t L_116 = L_115;
+		String_t* L_117 = (L_114)->GetAt(static_cast<il2cpp_array_size_t>(L_116));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:486>
+		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_118;
+		L_118 = SceneManager_LoadSceneAsync_m29D55D2C6CB7A019B26DA3F44C0881FF6AC491EC(L_117, 1, NULL);
+		V_9 = L_118;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:487>
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_119 = V_9;
+		if (!L_119)
+		{
+			goto IL_0400;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:489>
+		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_120 = __this->___U3CsubSceneOpsU3E5__9;
+		AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_121 = V_9;
+		NullCheck(L_120);
+		List_1_Add_m3D9A1C5452A869DAFFB8F9F8C203910E65CD8DF3_inline(L_120, L_121, List_1_Add_m3D9A1C5452A869DAFFB8F9F8C203910E65CD8DF3_RuntimeMethod_var);
+	}
+
+IL_0400:
+	{
+		int32_t L_122 = V_4;
+		V_4 = ((int32_t)il2cpp_codegen_add(L_122, 1));
+	}
+
+IL_0406:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:484>
+		int32_t L_123 = V_4;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_124 = V_8;
+		NullCheck(L_124);
+		if ((((int32_t)L_123) < ((int32_t)((int32_t)(((RuntimeArray*)L_124)->max_length)))))
+		{
+			goto IL_03e2;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:494>
+		__this->___U3CallDoneU3E5__10 = (bool)0;
+		goto IL_04c6;
+	}
+
+IL_041a:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:497>
 		__this->___U3CallDoneU3E5__10 = (bool)1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:477>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:498>
 		V_10 = (0.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:479>
-		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_123 = __this->___U3CsubSceneOpsU3E5__9;
-		NullCheck(L_123);
-		Enumerator_t4FD20F9F8A9E1F38460542875DDE3E374CC954FE L_124;
-		L_124 = List_1_GetEnumerator_m717D0C097189E015562835F4A3DCAEFE05134323(L_123, List_1_GetEnumerator_m717D0C097189E015562835F4A3DCAEFE05134323_RuntimeMethod_var);
-		V_12 = L_124;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:500>
+		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_125 = __this->___U3CsubSceneOpsU3E5__9;
+		NullCheck(L_125);
+		Enumerator_t4FD20F9F8A9E1F38460542875DDE3E374CC954FE L_126;
+		L_126 = List_1_GetEnumerator_m717D0C097189E015562835F4A3DCAEFE05134323(L_125, List_1_GetEnumerator_m717D0C097189E015562835F4A3DCAEFE05134323_RuntimeMethod_var);
+		V_12 = L_126;
 	}
 	{
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_045b:
+FINALLY_0467:
 			{
 				Enumerator_Dispose_m69520F88A09BAFB483C0D4057F7EAEDCF78B7BE1((&V_12), Enumerator_Dispose_m69520F88A09BAFB483C0D4057F7EAEDCF78B7BE1_RuntimeMethod_var);
 				return;
@@ -20724,49 +20996,49 @@ FINALLY_045b:
 		try
 		{
 			{
-				goto IL_0450_1;
+				goto IL_045c_1;
 			}
 
-IL_042b_1:
+IL_0437_1:
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:479>
-				AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_125;
-				L_125 = Enumerator_get_Current_m0780BCFB36518BA39937D0F66DAD3912FB79CC52_inline((&V_12), Enumerator_get_Current_m0780BCFB36518BA39937D0F66DAD3912FB79CC52_RuntimeMethod_var);
-				V_13 = L_125;
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:481>
-				float L_126 = V_10;
-				AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_127 = V_13;
-				NullCheck(L_127);
-				float L_128;
-				L_128 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_127, NULL);
-				V_10 = ((float)il2cpp_codegen_add(L_126, L_128));
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:482>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:500>
+				AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_127;
+				L_127 = Enumerator_get_Current_m0780BCFB36518BA39937D0F66DAD3912FB79CC52_inline((&V_12), Enumerator_get_Current_m0780BCFB36518BA39937D0F66DAD3912FB79CC52_RuntimeMethod_var);
+				V_13 = L_127;
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:502>
+				float L_128 = V_10;
 				AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_129 = V_13;
 				NullCheck(L_129);
-				bool L_130;
-				L_130 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_129, NULL);
-				if (L_130)
+				float L_130;
+				L_130 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_129, NULL);
+				V_10 = ((float)il2cpp_codegen_add(L_128, L_130));
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:503>
+				AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* L_131 = V_13;
+				NullCheck(L_131);
+				bool L_132;
+				L_132 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_131, NULL);
+				if (L_132)
 				{
-					goto IL_0450_1;
+					goto IL_045c_1;
 				}
 			}
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:484>
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:505>
 				__this->___U3CallDoneU3E5__10 = (bool)0;
 			}
 
-IL_0450_1:
+IL_045c_1:
 			{
-				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:479>
-				bool L_131;
-				L_131 = Enumerator_MoveNext_m018F65CB7565A1F608C4DFC4AD99C68CD8EB951E((&V_12), Enumerator_MoveNext_m018F65CB7565A1F608C4DFC4AD99C68CD8EB951E_RuntimeMethod_var);
-				if (L_131)
+				//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:500>
+				bool L_133;
+				L_133 = Enumerator_MoveNext_m018F65CB7565A1F608C4DFC4AD99C68CD8EB951E((&V_12), Enumerator_MoveNext_m018F65CB7565A1F608C4DFC4AD99C68CD8EB951E_RuntimeMethod_var);
+				if (L_133)
 				{
-					goto IL_042b_1;
+					goto IL_0437_1;
 				}
 			}
 			{
-				goto IL_0469;
+				goto IL_0475;
 			}
 		}
 		catch(Il2CppExceptionWrapper& e)
@@ -20775,309 +21047,309 @@ IL_0450_1:
 		}
 	}
 
-IL_0469:
+IL_0475:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:488>
-		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_132 = __this->___U3CsubSceneOpsU3E5__9;
-		NullCheck(L_132);
-		int32_t L_133;
-		L_133 = List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_inline(L_132, List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_RuntimeMethod_var);
-		if ((((int32_t)L_133) > ((int32_t)0)))
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:509>
+		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_134 = __this->___U3CsubSceneOpsU3E5__9;
+		NullCheck(L_134);
+		int32_t L_135;
+		L_135 = List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_inline(L_134, List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_RuntimeMethod_var);
+		if ((((int32_t)L_135) > ((int32_t)0)))
 		{
-			goto IL_047e;
+			goto IL_048a;
 		}
 	}
 	{
 		G_B61_0 = (1.0f);
-		goto IL_048d;
+		goto IL_0499;
 	}
 
-IL_047e:
+IL_048a:
 	{
-		float L_134 = V_10;
-		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_135 = __this->___U3CsubSceneOpsU3E5__9;
-		NullCheck(L_135);
-		int32_t L_136;
-		L_136 = List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_inline(L_135, List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_RuntimeMethod_var);
-		G_B61_0 = ((float)(L_134/((float)L_136)));
+		float L_136 = V_10;
+		List_1_t395F30A4A969E319FABAF822E34341C6FD88A263* L_137 = __this->___U3CsubSceneOpsU3E5__9;
+		NullCheck(L_137);
+		int32_t L_138;
+		L_138 = List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_inline(L_137, List_1_get_Count_m50849955EA7B9AFE23B81035A268FC37AC2BEE14_RuntimeMethod_var);
+		G_B61_0 = ((float)(L_136/((float)L_138)));
 	}
 
-IL_048d:
+IL_0499:
 	{
 		V_11 = G_B61_0;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:489>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_137 = V_1;
-		float L_138 = V_11;
-		NullCheck(L_137);
-		L_137->____targetProgress = ((float)il2cpp_codegen_add((0.5f), ((float)il2cpp_codegen_multiply(L_138, (0.5f)))));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:491>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:510>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_139 = V_1;
+		float L_140 = V_11;
+		NullCheck(L_139);
+		L_139->____targetProgress = ((float)il2cpp_codegen_add((0.5f), ((float)il2cpp_codegen_multiply(L_140, (0.5f)))));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:512>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 7;
 		return (bool)1;
 	}
 
-IL_04b3:
+IL_04bf:
 	{
 		__this->___U3CU3E1__state = (-1);
 	}
 
-IL_04ba:
+IL_04c6:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:474>
-		bool L_139 = __this->___U3CallDoneU3E5__10;
-		if (!L_139)
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:495>
+		bool L_141 = __this->___U3CallDoneU3E5__10;
+		if (!L_141)
 		{
-			goto IL_040e;
+			goto IL_041a;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:493>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:514>
 		__this->___U3CsubSceneOpsU3E5__9 = (List_1_t395F30A4A969E319FABAF822E34341C6FD88A263*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CsubSceneOpsU3E5__9), (void*)(List_1_t395F30A4A969E319FABAF822E34341C6FD88A263*)NULL);
 	}
 
-IL_04cc:
+IL_04d8:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:496>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_140 = V_1;
-		NullCheck(L_140);
-		L_140->____targetProgress = (1.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:499>
-		float L_141;
-		L_141 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
-		float L_142 = __this->___U3CshowTimeU3E5__4;
-		V_2 = ((float)il2cpp_codegen_subtract(L_141, L_142));
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:500>
-		float L_143 = V_2;
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_144 = V_1;
-		NullCheck(L_144);
-		float L_145 = L_144->___minDisplayTime;
-		if ((!(((float)L_143) < ((float)L_145))))
-		{
-			goto IL_052a;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:502>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:517>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_142 = V_1;
+		NullCheck(L_142);
+		L_142->____targetProgress = (1.0f);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:520>
+		float L_143;
+		L_143 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
+		float L_144 = __this->___U3CshowTimeU3E5__4;
+		V_2 = ((float)il2cpp_codegen_subtract(L_143, L_144));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:521>
+		float L_145 = V_2;
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_146 = V_1;
 		NullCheck(L_146);
 		float L_147 = L_146->___minDisplayTime;
-		float L_148 = V_2;
-		WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* L_149 = (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01*)il2cpp_codegen_object_new(WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01_il2cpp_TypeInfo_var);
-		WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F(L_149, ((float)il2cpp_codegen_subtract(L_147, L_148)), NULL);
-		__this->___U3CU3E2__current = L_149;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_149);
+		if ((!(((float)L_145) < ((float)L_147))))
+		{
+			goto IL_0536;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:523>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_148 = V_1;
+		NullCheck(L_148);
+		float L_149 = L_148->___minDisplayTime;
+		float L_150 = V_2;
+		WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* L_151 = (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01*)il2cpp_codegen_object_new(WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01_il2cpp_TypeInfo_var);
+		WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F(L_151, ((float)il2cpp_codegen_subtract(L_149, L_150)), NULL);
+		__this->___U3CU3E2__current = L_151;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_151);
 		__this->___U3CU3E1__state = 8;
 		return (bool)1;
 	}
 
-IL_0509:
+IL_0515:
 	{
 		__this->___U3CU3E1__state = (-1);
-		goto IL_052a;
+		goto IL_0536;
 	}
 
-IL_0512:
+IL_051e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:508>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:529>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = ((int32_t)9);
 		return (bool)1;
 	}
 
-IL_0523:
+IL_052f:
 	{
 		__this->___U3CU3E1__state = (-1);
 	}
 
-IL_052a:
+IL_0536:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:506>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_150 = V_1;
-		NullCheck(L_150);
-		float L_151 = L_150->____displayedProgress;
-		if ((((float)L_151) < ((float)(0.99000001f))))
-		{
-			goto IL_0512;
-		}
-	}
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:512>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:527>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_152 = V_1;
 		NullCheck(L_152);
-		L_152->____displayedProgress = (1.0f);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:513>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_153 = V_1;
-		NullCheck(L_153);
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_154 = L_153->___progressBar;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_155;
-		L_155 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_154, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_155)
+		float L_153 = L_152->____displayedProgress;
+		if ((((float)L_153) < ((float)(0.99000001f))))
 		{
-			goto IL_0560;
+			goto IL_051e;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:513>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_156 = V_1;
-		NullCheck(L_156);
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_157 = L_156->___progressBar;
-		NullCheck(L_157);
-		VirtualActionInvoker1< float >::Invoke(47, L_157, (1.0f));
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:533>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_154 = V_1;
+		NullCheck(L_154);
+		L_154->____displayedProgress = (1.0f);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:534>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_155 = V_1;
+		NullCheck(L_155);
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_156 = L_155->___progressBar;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_157;
+		L_157 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_156, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_157)
+		{
+			goto IL_056c;
+		}
 	}
-
-IL_0560:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:514>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:534>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_158 = V_1;
 		NullCheck(L_158);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_159 = L_158->___percentText;
-		LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9(L_159, _stringLiteralCD5DE54798BD9884BC611C55995CCDE28DA4E5EA, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:516>
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_159 = L_158->___progressBar;
+		NullCheck(L_159);
+		VirtualActionInvoker1< float >::Invoke(47, L_159, (1.0f));
+	}
+
+IL_056c:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:535>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_160 = V_1;
 		NullCheck(L_160);
-		LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C(L_160, _stringLiteralA83F1FA632F622CF055F0C71BE1E3C890FB062C3, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:521>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_161 = V_1;
-		NullCheck(L_161);
-		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_162 = L_161->____loadHolds;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_161 = L_160->___percentText;
+		LoadingScreenManager_SafeSetText_m2442760B7A0331B3C0BA44AD908909CD135837A9(L_161, _stringLiteralCD5DE54798BD9884BC611C55995CCDE28DA4E5EA, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:537>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_162 = V_1;
 		NullCheck(L_162);
-		int32_t L_163;
-		L_163 = HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_inline(L_162, HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_RuntimeMethod_var);
-		if ((((int32_t)L_163) <= ((int32_t)0)))
+		LoadingScreenManager_SetStatusText_mE12ACD5AAE01FD88426DAC09F7F5B1E405D9456C(L_162, _stringLiteralA83F1FA632F622CF055F0C71BE1E3C890FB062C3, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:542>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_163 = V_1;
+		NullCheck(L_163);
+		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_164 = L_163->____loadHolds;
+		NullCheck(L_164);
+		int32_t L_165;
+		L_165 = HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_inline(L_164, HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_RuntimeMethod_var);
+		if ((((int32_t)L_165) <= ((int32_t)0)))
 		{
-			goto IL_05db;
+			goto IL_05e7;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:523>
-		float L_164;
-		L_164 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
-		__this->___U3CholdStartU3E5__11 = L_164;
-		goto IL_05ae;
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:544>
+		float L_166;
+		L_166 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
+		__this->___U3CholdStartU3E5__11 = L_166;
+		goto IL_05ba;
 	}
 
-IL_0596:
+IL_05a2:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:526>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:547>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = ((int32_t)10);
 		return (bool)1;
 	}
 
-IL_05a7:
+IL_05b3:
 	{
 		__this->___U3CU3E1__state = (-1);
 	}
 
-IL_05ae:
+IL_05ba:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:524>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_165 = V_1;
-		NullCheck(L_165);
-		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_166 = L_165->____loadHolds;
-		NullCheck(L_166);
-		int32_t L_167;
-		L_167 = HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_inline(L_166, HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_RuntimeMethod_var);
-		if ((((int32_t)L_167) <= ((int32_t)0)))
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:545>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_167 = V_1;
+		NullCheck(L_167);
+		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_168 = L_167->____loadHolds;
+		NullCheck(L_168);
+		int32_t L_169;
+		L_169 = HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_inline(L_168, HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_RuntimeMethod_var);
+		if ((((int32_t)L_169) <= ((int32_t)0)))
 		{
-			goto IL_05d0;
+			goto IL_05dc;
 		}
 	}
 	{
-		float L_168;
-		L_168 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
-		float L_169 = __this->___U3CholdStartU3E5__11;
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_170 = V_1;
-		NullCheck(L_170);
-		float L_171 = L_170->___maxHoldTime;
-		if ((((float)((float)il2cpp_codegen_subtract(L_168, L_169))) < ((float)L_171)))
-		{
-			goto IL_0596;
-		}
-	}
-
-IL_05d0:
-	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:528>
+		float L_170;
+		L_170 = Time_get_unscaledTime_mAF4040B858903E1325D1C65B8BF1AC61460B2503(NULL);
+		float L_171 = __this->___U3CholdStartU3E5__11;
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_172 = V_1;
 		NullCheck(L_172);
-		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_173 = L_172->____loadHolds;
-		NullCheck(L_173);
-		HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD(L_173, HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD_RuntimeMethod_var);
+		float L_173 = L_172->___maxHoldTime;
+		if ((((float)((float)il2cpp_codegen_subtract(L_170, L_171))) < ((float)L_173)))
+		{
+			goto IL_05a2;
+		}
 	}
 
-IL_05db:
+IL_05dc:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:532>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:549>
 		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_174 = V_1;
 		NullCheck(L_174);
-		float L_175 = L_174->___hideDelay;
-		WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* L_176 = (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01*)il2cpp_codegen_object_new(WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01_il2cpp_TypeInfo_var);
-		WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F(L_176, L_175, NULL);
-		__this->___U3CU3E2__current = L_176;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_176);
+		HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* L_175 = L_174->____loadHolds;
+		NullCheck(L_175);
+		HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD(L_175, HashSet_1_Clear_m75A6528F0B47448EB3B3A05EC379260E9BDFC2DD_RuntimeMethod_var);
+	}
+
+IL_05e7:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:553>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_176 = V_1;
+		NullCheck(L_176);
+		float L_177 = L_176->___hideDelay;
+		WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* L_178 = (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01*)il2cpp_codegen_object_new(WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01_il2cpp_TypeInfo_var);
+		WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F(L_178, L_177, NULL);
+		__this->___U3CU3E2__current = L_178;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_178);
 		__this->___U3CU3E1__state = ((int32_t)11);
 		return (bool)1;
 	}
 
-IL_05f6:
+IL_0602:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:535>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_177 = V_1;
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_178 = V_1;
-		NullCheck(L_178);
-		RuntimeObject* L_179;
-		L_179 = LoadingScreenManager_FadeOut_m197FB328386AB27C0B6BCA0B2AAA0615B4612217(L_178, NULL);
-		NullCheck(L_177);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_180;
-		L_180 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_177, L_179, NULL);
-		__this->___U3CU3E2__current = L_180;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_180);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:556>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_179 = V_1;
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_180 = V_1;
+		NullCheck(L_180);
+		RuntimeObject* L_181;
+		L_181 = LoadingScreenManager_FadeOut_m197FB328386AB27C0B6BCA0B2AAA0615B4612217(L_180, NULL);
+		NullCheck(L_179);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_182;
+		L_182 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_179, L_181, NULL);
+		__this->___U3CU3E2__current = L_182;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_182);
 		__this->___U3CU3E1__state = ((int32_t)12);
 		return (bool)1;
 	}
 
-IL_0619:
+IL_0625:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:537>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_181 = V_1;
-		NullCheck(L_181);
-		LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D_inline(L_181, (bool)0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:538>
-		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_182 = V_1;
-		NullCheck(L_182);
-		L_182->____loadRoutine = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&L_182->____loadRoutine), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:539>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:558>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_183 = V_1;
+		NullCheck(L_183);
+		LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D_inline(L_183, (bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:559>
+		LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* L_184 = V_1;
+		NullCheck(L_184);
+		L_184->____loadRoutine = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&L_184->____loadRoutine), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:560>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89475
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mDEF683ABDFA07A345CA7319106F45306BD332C5A (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89477
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__60_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m59B764A5DC690AEDEB3601F3A4A99E77975DDD56 (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 89476
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_Reset_m632E8C4562217EF7E5CDA7C31C1502AB7B6C8DEF (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89478
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneRoutineU3Ed__60_System_Collections_IEnumerator_Reset_mB1D3103B7695D1F10B938FCBF8DEE5845CA2442C (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_Reset_m632E8C4562217EF7E5CDA7C31C1502AB7B6C8DEF_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CLoadSceneRoutineU3Ed__60_System_Collections_IEnumerator_Reset_mB1D3103B7695D1F10B938FCBF8DEE5845CA2442C_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 89477
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_System_Collections_IEnumerator_get_Current_mBE4C8FC46ADB11A23147DAED35B51E4DA533AE19 (U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58* __this, const RuntimeMethod* method) 
+// Method Definition Index: 89479
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__60_System_Collections_IEnumerator_get_Current_m337550AEDCB1E68DD7C814A82848604FDB501381 (U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -21092,7 +21364,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneRoutineU3Ed__56_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89478
+// Method Definition Index: 89480
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ArabicTextShaper_ContainsArabic_mD40D218253B81D39DF55C3FC2BEB414077654FC4 (String_t* ___0_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21126,7 +21398,7 @@ IL_0014:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89479
+// Method Definition Index: 89481
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ArabicTextShaper_Shape_mCBB66BA007AB313B853DC01622F584FC2D3C6BA3 (String_t* ___0_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21220,7 +21492,7 @@ IL_0034:
 		return L_19;
 	}
 }
-// Method Definition Index: 89480
+// Method Definition Index: 89482
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ArabicTextShaper_ShapeLineWithTags_mE629F3C11630E2BE7C4E72BAEB8E5A3AADB7CD2D (String_t* ___0_line, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21377,7 +21649,7 @@ IL_0067:
 		return L_36;
 	}
 }
-// Method Definition Index: 89481
+// Method Definition Index: 89483
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ArabicTextShaper_ShapeLine_m3F34F8A7E5F0201109AEE43FBEC3B1CE76B9000C (String_t* ___0_line, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21817,7 +22089,7 @@ IL_012f:
 		return L_91;
 	}
 }
-// Method Definition Index: 89482
+// Method Definition Index: 89484
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1 ArabicTextShaper_PreviousJoiningLetter_m0E6E6B98DF7A389ABBA10C6884F3F1AE06D1920A (String_t* ___0_line, int32_t ___1_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21911,7 +22183,7 @@ IL_0038:
 		return L_14;
 	}
 }
-// Method Definition Index: 89483
+// Method Definition Index: 89485
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ArabicTextShaper_NextIsJoinable_m4C3AADD145CF9ED191073F4EF8BBE1CC336F7DEB (String_t* ___0_line, int32_t ___1_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21998,7 +22270,7 @@ IL_002b:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89484
+// Method Definition Index: 89486
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ArabicTextShaper_IsArabicCombiningMark_m513CDB868B01C444FA88427F3D62A2D8AD45BF83 (Il2CppChar ___0_c, const RuntimeMethod* method) 
 {
 	{
@@ -22019,7 +22291,7 @@ IL_0014:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89485
+// Method Definition Index: 89487
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ArabicTextShaper_ConnectsForward_mEF2123FD1C191706476D1169AD4C12E9F3900FF4 (UInt16U5BU5D_tEB7C42D811D999D2AA815BADC3FCCDD9C67B3F83* ___0_forms, const RuntimeMethod* method) 
 {
 	{
@@ -22046,7 +22318,7 @@ IL_000c:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 89486
+// Method Definition Index: 89488
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ArabicTextShaper_ReorderForDisplay_mD6BD2FAFC415CFB5C93695EA139ECABB478508BD (List_1_t1FDED00FA37F39564E09D01CFDF33C22BCF5C8A7* ___0_shaped, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22600,7 +22872,7 @@ IL_015a:
 		return L_95;
 	}
 }
-// Method Definition Index: 89487
+// Method Definition Index: 89489
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Il2CppChar ArabicTextShaper_MirrorBracket_m2CDDE33093A32C22AE6C7D61C14FC3C804CEE191 (Il2CppChar ___0_c, const RuntimeMethod* method) 
 {
 	Il2CppChar V_0 = 0x0;
@@ -22781,7 +23053,7 @@ IL_0075:
 		return L_12;
 	}
 }
-// Method Definition Index: 89488
+// Method Definition Index: 89490
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ArabicTextShaper_IsJoiningNeutral_mF09F8F1AA2A8FDC9ED1A06A26D4AF1CC82231184 (Il2CppChar ___0_c, const RuntimeMethod* method) 
 {
 	{
@@ -22837,7 +23109,7 @@ IL_0024:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 89489
+// Method Definition Index: 89491
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArabicTextShaper__cctor_m8F081AEDE212EEF74DF821F9B25E2858578E2A79 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23444,7 +23716,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArabicTextShaper__cctor_m8F081AEDE212EEF
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89490
+// Method Definition Index: 89492
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BengaliTextShaper_Shape_m4491B2D2560010479107F0A450CE614D869C1FA9 (String_t* ___0_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23538,7 +23810,7 @@ IL_0034:
 		return L_19;
 	}
 }
-// Method Definition Index: 89491
+// Method Definition Index: 89493
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BengaliTextShaper_ShapeLineWithTags_m7A71E191E87418FDD8C8B244ABC0740550E93CA6 (String_t* ___0_line, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23695,7 +23967,7 @@ IL_0067:
 		return L_36;
 	}
 }
-// Method Definition Index: 89492
+// Method Definition Index: 89494
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BengaliTextShaper_ShapeLine_mF3C2D18BC2311D841AAE1900F323E0D3D058E3E4 (String_t* ___0_line, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23946,7 +24218,7 @@ IL_00c0:
 		return L_42;
 	}
 }
-// Method Definition Index: 89493
+// Method Definition Index: 89495
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BengaliTextShaper_DecomposeSplitVowels_mC09ECCED49372F5DC24CE50AE5BFA998AE9FED2A (String_t* ___0_line, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24094,7 +24366,7 @@ IL_008a:
 		return L_30;
 	}
 }
-// Method Definition Index: 89494
+// Method Definition Index: 89496
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool BengaliTextShaper_IsConsonant_mD94C260F6185504973F6FFF5A208FF84B596348C (Il2CppChar ___0_c, const RuntimeMethod* method) 
 {
 	{
@@ -24223,7 +24495,7 @@ IL_0064:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 89495
+// Method Definition Index: 89497
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool BengaliTextShaper_IsPreBaseMatra_m2FEF3EE42EFF93C2648EE7B43A8252E0889D7DB0 (Il2CppChar ___0_c, const RuntimeMethod* method) 
 {
 	{
@@ -24251,7 +24523,7 @@ IL_0019:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 89496
+// Method Definition Index: 89498
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BengaliTextShaper__cctor_m60BF39AE2A6DB3F28F3F94C075725F86A410FA18 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24291,7 +24563,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BengaliTextShaper__cctor_m60BF39AE2A6DB3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89497
+// Method Definition Index: 89499
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HarfBuzzFontRegistry_t883F6DDA5C1A01EB13AEB42E84FDB43DD7BBF800* HarfBuzzFontRegistry_get_Instance_mE42ABEE5BBBC30032D4F1F0F8050CF3BDF3ABA71 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24349,7 +24621,7 @@ IL_0033:
 		return L_5;
 	}
 }
-// Method Definition Index: 89498
+// Method Definition Index: 89500
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* HarfBuzzFontRegistry_GetFontAsset_m2AC5AD527AF02BA615CF577403EEF9C9111E3D06 (int32_t ___0_locale, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24439,7 +24711,7 @@ IL_003e:
 		return (TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160*)NULL;
 	}
 }
-// Method Definition Index: 89499
+// Method Definition Index: 89501
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzFontRegistry__ctor_m74CB99F5E0EC2EEEF67F3416B92F9771B18E2CFB (HarfBuzzFontRegistry_t883F6DDA5C1A01EB13AEB42E84FDB43DD7BBF800* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24455,7 +24727,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzFontRegistry__ctor_m74CB99F5E0EC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89500
+// Method Definition Index: 89502
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_blob_create_mA2F30A397D89781C1F76CC6AC5F180C292135C17 (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___0_data, uint32_t ___1_length, int32_t ___2_mode, intptr_t ___3_userData, intptr_t ___4_destroyFunc, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (uint8_t*, uint32_t, int32_t, intptr_t, intptr_t);
@@ -24470,7 +24742,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_blob_create_mA2F30
 
 	return returnValue;
 }
-// Method Definition Index: 89501
+// Method Definition Index: 89503
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_face_create_mF8288A99AA014323F87697C08C40FE13E01E391F (intptr_t ___0_blob, uint32_t ___1_index, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, uint32_t);
@@ -24479,7 +24751,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_face_create_mF8288
 
 	return returnValue;
 }
-// Method Definition Index: 89502
+// Method Definition Index: 89504
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_font_create_m0F707177635BFD4AB18473E7AE3939EF6C279B08 (intptr_t ___0_face, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24488,7 +24760,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_font_create_m0F707
 
 	return returnValue;
 }
-// Method Definition Index: 89503
+// Method Definition Index: 89505
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t HarfBuzzNative_hb_face_get_upem_m3A66D410CC65479180DF797FB2C7BF230BC5DB97 (intptr_t ___0_face, const RuntimeMethod* method) 
 {
 	typedef uint32_t (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24497,7 +24769,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t HarfBuzzNative_hb_face_get_upem_m3A6
 
 	return returnValue;
 }
-// Method Definition Index: 89504
+// Method Definition Index: 89506
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_font_set_scale_m4BF90CCF48345BC6380B67C93118906ACDAF39F6 (intptr_t ___0_font, int32_t ___1_xScale, int32_t ___2_yScale, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, int32_t, int32_t);
@@ -24505,7 +24777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_font_set_scale_m4BF90C
 	reinterpret_cast<PInvokeFunc>(hb_font_set_scale)(___0_font, ___1_xScale, ___2_yScale);
 
 }
-// Method Definition Index: 89505
+// Method Definition Index: 89507
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_buffer_create_mA81FB54BD462BF1A22C672E6AE4BE4A0C52E4CFD (const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) ();
@@ -24514,7 +24786,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_buffer_create_mA81
 
 	return returnValue;
 }
-// Method Definition Index: 89506
+// Method Definition Index: 89508
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_add_utf16_m727531B09A7BE2AE630C64810B9DD3DEF6099271 (intptr_t ___0_buffer, CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___1_text, int32_t ___2_textLength, uint32_t ___3_itemOffset, int32_t ___4_itemLength, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, Il2CppChar*, int32_t, uint32_t, int32_t);
@@ -24528,7 +24800,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_add_utf16_m7275
 	reinterpret_cast<PInvokeFunc>(hb_buffer_add_utf16)(___0_buffer, ____1_text_marshaled, ___2_textLength, ___3_itemOffset, ___4_itemLength);
 
 }
-// Method Definition Index: 89507
+// Method Definition Index: 89509
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_set_direction_mA2F4396EB0870A807DB8040879A1045BB2B24A50 (intptr_t ___0_buffer, int32_t ___1_direction, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, int32_t);
@@ -24536,7 +24808,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_set_direction_m
 	reinterpret_cast<PInvokeFunc>(hb_buffer_set_direction)(___0_buffer, ___1_direction);
 
 }
-// Method Definition Index: 89508
+// Method Definition Index: 89510
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_set_script_m905D341ECA5DD8C3F10CE80EC5B789B22D6CD859 (intptr_t ___0_buffer, uint32_t ___1_script, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, uint32_t);
@@ -24544,7 +24816,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_set_script_m905
 	reinterpret_cast<PInvokeFunc>(hb_buffer_set_script)(___0_buffer, ___1_script);
 
 }
-// Method Definition Index: 89509
+// Method Definition Index: 89511
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_set_language_mAD64AE510BEDB766B7CCEDEC8C94005D7172F332 (intptr_t ___0_buffer, intptr_t ___1_language, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t);
@@ -24552,7 +24824,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_set_language_mA
 	reinterpret_cast<PInvokeFunc>(hb_buffer_set_language)(___0_buffer, ___1_language);
 
 }
-// Method Definition Index: 89510
+// Method Definition Index: 89512
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_language_from_string_m7DF71FC47B7F391882E79DF9E906E51C34E8EF0F (String_t* ___0_str, int32_t ___1_len, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (char*, int32_t);
@@ -24567,7 +24839,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_language_from_stri
 
 	return returnValue;
 }
-// Method Definition Index: 89511
+// Method Definition Index: 89513
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_guess_segment_properties_mDEF57CD96389E8148F3ADAF3688FA56645B03F3C (intptr_t ___0_buffer, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24575,7 +24847,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_guess_segment_p
 	reinterpret_cast<PInvokeFunc>(hb_buffer_guess_segment_properties)(___0_buffer);
 
 }
-// Method Definition Index: 89512
+// Method Definition Index: 89514
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_shape_mD9048F786468FD0263176C03F0F7C8C675C4E808 (intptr_t ___0_font, intptr_t ___1_buffer, intptr_t ___2_features, uint32_t ___3_numFeatures, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t, intptr_t, intptr_t, uint32_t);
@@ -24583,7 +24855,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_shape_mD9048F786468FD0
 	reinterpret_cast<PInvokeFunc>(hb_shape)(___0_font, ___1_buffer, ___2_features, ___3_numFeatures);
 
 }
-// Method Definition Index: 89513
+// Method Definition Index: 89515
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_buffer_get_glyph_infos_mD59A0827E06EC607FC1E2965564275D569AF90B0 (intptr_t ___0_buffer, uint32_t* ___1_length, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, uint32_t*);
@@ -24592,7 +24864,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_buffer_get_glyph_i
 
 	return returnValue;
 }
-// Method Definition Index: 89514
+// Method Definition Index: 89516
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_buffer_get_glyph_positions_mE5F222DBE113FE7FAD46D3D6DD953317F3842665 (intptr_t ___0_buffer, uint32_t* ___1_length, const RuntimeMethod* method) 
 {
 	typedef intptr_t (DEFAULT_CALL *PInvokeFunc) (intptr_t, uint32_t*);
@@ -24601,7 +24873,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzNative_hb_buffer_get_glyph_p
 
 	return returnValue;
 }
-// Method Definition Index: 89515
+// Method Definition Index: 89517
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_destroy_mDB65EDC26CE0DE88188CA86870957513967389DF (intptr_t ___0_buffer, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24609,7 +24881,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_buffer_destroy_mDB65ED
 	reinterpret_cast<PInvokeFunc>(hb_buffer_destroy)(___0_buffer);
 
 }
-// Method Definition Index: 89516
+// Method Definition Index: 89518
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_font_destroy_m6AFA13274B9F995B294A717EB1E1F021B47066E1 (intptr_t ___0_font, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24617,7 +24889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_font_destroy_m6AFA1327
 	reinterpret_cast<PInvokeFunc>(hb_font_destroy)(___0_font);
 
 }
-// Method Definition Index: 89517
+// Method Definition Index: 89519
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_face_destroy_m327B68FEDA2231C6CDCE462D7702E050555F0197 (intptr_t ___0_face, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24625,7 +24897,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_face_destroy_m327B68FE
 	reinterpret_cast<PInvokeFunc>(hb_face_destroy)(___0_face);
 
 }
-// Method Definition Index: 89518
+// Method Definition Index: 89520
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_blob_destroy_m8D214740F21A58307BA32A3B01C0AFADB6BFAD29 (intptr_t ___0_blob, const RuntimeMethod* method) 
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (intptr_t);
@@ -24665,7 +24937,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzNative_hb_blob_destroy_m8D214740
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89519
+// Method Definition Index: 89521
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t HarfBuzzShaper_UnitsPerEm_mC5325B7E02D3718BC4E23E92F89E9ED9B9F6C361 (int32_t ___0_locale, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24699,7 +24971,7 @@ IL_0015:
 		return L_3;
 	}
 }
-// Method Definition Index: 89520
+// Method Definition Index: 89522
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HarfBuzzShaper_GetOrCreateFont_m9A568622625910694158481084567E11A71B05CA (int32_t ___0_locale, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24847,7 +25119,7 @@ IL_005b:
 		return L_37;
 	}
 }
-// Method Definition Index: 89521
+// Method Definition Index: 89523
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t6066426FF30311210587C151987946F7A95D0633* HarfBuzzShaper_Shape_mB998D0D1A5F64F4A758CF2D7BF8405E147D37CF4 (String_t* ___0_text, int32_t ___1_locale, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25083,7 +25355,7 @@ IL_0133:
 		return L_58;
 	}
 }
-// Method Definition Index: 89522
+// Method Definition Index: 89524
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzShaper__cctor_m9D52AA047923C099E1BE34B044F10D9BA4B6DB9D (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25205,7 +25477,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HarfBuzzShaper__cctor_m9D52AA047923C099E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89523
+// Method Definition Index: 89525
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationEntry__ctor_mE34F8920E4D98EFAF03C33614A058518568A0E54 (LocalizationEntry_t8914E156B5E0D531412D5B957334DE071578175E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25221,7 +25493,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationEntry__ctor_mE34F8920E4D98EF
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89524
+// Method Definition Index: 89526
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationTable__ctor_mB53DA546020CBCE8DD91174025071B920A97B0A3 (LocalizationTable_tBF5F7BE7147E80623509053E07F80C3D9A1EFCCA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25237,7 +25509,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationTable__ctor_mB53DA546020CBCE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89525
+// Method Definition Index: 89527
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* LocalizationManager_get_Instance_mC2CF946E43B8866E0611E1E681BA098A573FCFF8 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25253,7 +25525,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LocalizationManager_tFBE221DE3A02C297CFB8C59F
 		return L_0;
 	}
 }
-// Method Definition Index: 89526
+// Method Definition Index: 89528
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_set_Instance_m01B8CF0E292EDC8B79D968EF0D18C7A5604944D8 (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25271,7 +25543,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_set_Instance_m01B8CF
 		return;
 	}
 }
-// Method Definition Index: 89527
+// Method Definition Index: 89529
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_add_OnLocaleChanged_m195CB56419AA25A922E250BB57E49B177AF7475D (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25316,7 +25588,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89528
+// Method Definition Index: 89530
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_remove_OnLocaleChanged_mF4DF82982728B4CF7EC852722B865BD723A1BCD8 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25361,7 +25633,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89529
+// Method Definition Index: 89531
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LocalizationManager_get_CurrentLocale_mA4E69F7E56FDFC80C96AF9AA2CE7AE0A5671E27D (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25370,7 +25642,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LocalizationManager_get_CurrentLocale
 		return L_0;
 	}
 }
-// Method Definition Index: 89530
+// Method Definition Index: 89532
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_set_CurrentLocale_m8B20A4F5BC2BD21689D8A03DACACD696302A9C30 (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -25380,7 +25652,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_set_CurrentLocale_m8
 		return;
 	}
 }
-// Method Definition Index: 89531
+// Method Definition Index: 89533
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LocalizationManager_get_IsRightToLeft_mF410D47C6379F308BD4A8BFD243CA472D1C69E2F (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25403,7 +25675,7 @@ IL_0013:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 89532
+// Method Definition Index: 89534
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* LocalizationManager_ShapeForDisplay_m6DADB744D7B10CB23F6018C7073380EB803B0F04 (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, String_t* ___0_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25457,7 +25729,7 @@ IL_001f:
 		return L_6;
 	}
 }
-// Method Definition Index: 89533
+// Method Definition Index: 89535
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_Bootstrap_m279D6CC4F973D074785F1DF8002267F0EE96A344 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25501,7 +25773,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 89534
+// Method Definition Index: 89536
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_Awake_m54879E6AEE07A191DD3F864F360F35579DA4306B (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25604,7 +25876,7 @@ IL_004b:
 		return;
 	}
 }
-// Method Definition Index: 89535
+// Method Definition Index: 89537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager_SetLocale_m36D1459571CCEC044F6449383099407006A4DD9E (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, String_t* ___0_localeCode, bool ___1_notify, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25715,7 +25987,7 @@ IL_006a:
 		return;
 	}
 }
-// Method Definition Index: 89536
+// Method Definition Index: 89538
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LocalizationManager_ParseLocale_m61279130FF541B177C4DF5B94FCC97792897BDFF (String_t* ___0_code, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25826,7 +26098,7 @@ IL_0053:
 		return (int32_t)(0);
 	}
 }
-// Method Definition Index: 89537
+// Method Definition Index: 89539
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* LocalizationManager_LoadTable_mB79E6834E5EF88A8EC88B39ED9E632BF80A5C072 (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, int32_t ___0_locale, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26077,7 +26349,7 @@ IL_00c6:
 		return L_46;
 	}
 }
-// Method Definition Index: 89538
+// Method Definition Index: 89540
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* LocalizationManager_Get_m9A3B1986A86BAB20993A8022C1EC438A010FF2F7 (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, String_t* ___0_key, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26176,7 +26448,7 @@ IL_0042:
 		return L_17;
 	}
 }
-// Method Definition Index: 89539
+// Method Definition Index: 89541
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* LocalizationManager_LoadLocalizedTextAsset_m4EB7B431C851498DF33004D54374EF4EE4FC6957 (String_t* ___0_resourceBaseName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26280,7 +26552,7 @@ IL_0072:
 		return L_21;
 	}
 }
-// Method Definition Index: 89540
+// Method Definition Index: 89542
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* LocalizationManager_Get_m208A8E913E942D62D106793EEA25B73D0A6B9619 (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, String_t* ___0_key, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___1_args, const RuntimeMethod* method) 
 {
 	String_t* V_0 = NULL;
@@ -26363,7 +26635,7 @@ IL_0050:
 		return L_19;
 	}
 }
-// Method Definition Index: 89541
+// Method Definition Index: 89543
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager__ctor_m4FA456E63F3A78C43C5646C93035BDE0DD1C6DDA (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26388,7 +26660,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager__ctor_m4FA456E63F3A7
 		return;
 	}
 }
-// Method Definition Index: 89542
+// Method Definition Index: 89544
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager__cctor_m053249EBB62F34AF1E1FE569B0DB8AE247ACDF03 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26418,7 +26690,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizationManager__cctor_m053249EBB62F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89543
+// Method Definition Index: 89545
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizedRendering_SetText_mC8420E8DF4241FE1D11C534B2BD42456157832AD (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___0_tmpText, String_t* ___1_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26471,7 +26743,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 89544
+// Method Definition Index: 89546
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizedRendering_SetText_mEBCD6DC6EC0A97237CFFF59A8BE2ADE60277FCD3 (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___0_tmpText, String_t* ___1_text, int32_t ___2_locale, float ___3_shapedTopPadding, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26724,7 +26996,7 @@ IL_00ee:
 		return;
 	}
 }
-// Method Definition Index: 89545
+// Method Definition Index: 89547
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LocalizedRendering_MirrorAlignment_m6B4D4708F4C5D58CFAD0DE7EC78069234A64F195 (int32_t ___0_alignment, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -26789,7 +27061,7 @@ IL_0024:
 		return (int32_t)(((int32_t)(L_5|L_6)));
 	}
 }
-// Method Definition Index: 89546
+// Method Definition Index: 89548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocalizedRendering_SyncContentSizeFitter_mEACFC6CE234C3EB1ED364BF6E9BCECEBD3876C0D (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___0_tmpText, ShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77* ___1_shaped, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26877,7 +27149,7 @@ IL_002b:
 		return;
 	}
 }
-// Method Definition Index: 89547
+// Method Definition Index: 89549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77* LocalizedRendering_EnsureShapedChild_m514E6128A2F3AF7BEA1BC9309C1BFAA4194667F6 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26977,7 +27249,7 @@ IL_001c:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 89969
+// Method Definition Index: 89971
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ShopItemUI_get_ItemData_m2608FAD02DBE15440B44D660F555E1F765A3B0C8_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26986,7 +27258,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665
 		return L_0;
 	}
 }
-// Method Definition Index: 90005
+// Method Definition Index: 90007
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27178,7 +27450,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 98784
+// Method Definition Index: 98786
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27198,7 +27470,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InventoryItemUI_set_RewardIt
 		return;
 	}
 }
-// Method Definition Index: 90294
+// Method Definition Index: 90296
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27296,7 +27568,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 89630
+// Method Definition Index: 89632
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27486,7 +27758,7 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 90394
+// Method Definition Index: 90396
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B38BD53C756553BBF36860F0BE95* FlutterBridge_get_LatestGardenState_m4ED08B3B15ACFAA34ECB2621EB0413C7850A5346_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27501,7 +27773,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GardenStatePayload_t7EFAD73EC2C9B
 		return L_0;
 	}
 }
-// Method Definition Index: 90374
+// Method Definition Index: 90376
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27563,7 +27835,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void JannahGardenManager_set_Inst
 		return;
 	}
 }
-// Method Definition Index: 90165
+// Method Definition Index: 90167
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GameOnboardingManager_tAF1F86E0A50CF78BFB23488F4BB797AC816406AE* GameOnboardingManager_get_Instance_mA8DC9C0ADD8E6EC08E3D85F7F65A25F2F467E050_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27610,7 +27882,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadingScreenManager_set_Ins
 		return;
 	}
 }
-// Method Definition Index: 99900
+// Method Definition Index: 99902
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* Slider_get_fillRect_m35EE2868F52084F9543158A2EAD99476E5C13D9A_inline (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27623,12 +27895,22 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool LoadingScreenManager_get_IsLoading_m74C14BF37047FB4C005267CCC652382A3D96A771_inline (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:131>
 		bool L_0 = __this->___U3CIsLoadingU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 99377
+// Method Definition Index: 47858
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) 
+{
+	{
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
+		memset((&L_0), 0, sizeof(L_0));
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_0), (1.0f), (1.0f), (1.0f), (1.0f), NULL);
+		return L_0;
+	}
+}
+// Method Definition Index: 99379
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode_m064C83FFA35E2AED4E9FA7D5EC1AD19630D8FC2A_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -27640,6 +27922,17 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode
 	}
 }
 // Method Definition Index: 99387
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_screenMatchMode_m926C437B408D2F2CA4900723BEEEE09504A6768F_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:./Library/PackageCache/com.unity.ugui@bb329a87fcdc/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs:129>
+		int32_t L_0 = ___0_value;
+		__this->___m_ScreenMatchMode = L_0;
+		//<source_info:./Library/PackageCache/com.unity.ugui@bb329a87fcdc/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs:129>
+		return;
+	}
+}
+// Method Definition Index: 99389
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -27648,16 +27941,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_matchWidthO
 		__this->___m_MatchWidthOrHeight = L_0;
 		//<source_info:./Library/PackageCache/com.unity.ugui@bb329a87fcdc/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs:153>
 		return;
-	}
-}
-// Method Definition Index: 47858
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) 
-{
-	{
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
-		memset((&L_0), 0, sizeof(L_0));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_0), (1.0f), (1.0f), (1.0f), (1.0f), NULL);
-		return L_0;
 	}
 }
 // Method Definition Index: 47827
@@ -27736,7 +28019,7 @@ IL_0030:
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadingScreenManager_set_IsLoading_m49169B32E982B54259D6AFC6C7B8A1FB845DE95D_inline (LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/LoadingScreenManager.cs:131>
 		bool L_0 = ___0_value;
 		__this->___U3CIsLoadingU3Ek__BackingField = L_0;
 		return;
@@ -27750,7 +28033,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D
 		return L_0;
 	}
 }
-// Method Definition Index: 89529
+// Method Definition Index: 89531
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t LocalizationManager_get_CurrentLocale_mA4E69F7E56FDFC80C96AF9AA2CE7AE0A5671E27D_inline (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27759,7 +28042,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t LocalizationManager_get_C
 		return L_0;
 	}
 }
-// Method Definition Index: 89525
+// Method Definition Index: 89527
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* LocalizationManager_get_Instance_mC2CF946E43B8866E0611E1E681BA098A573FCFF8_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27775,7 +28058,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR LocalizationManager_tFBE221DE3A02
 		return L_0;
 	}
 }
-// Method Definition Index: 89526
+// Method Definition Index: 89528
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LocalizationManager_set_Instance_m01B8CF0E292EDC8B79D968EF0D18C7A5604944D8_inline (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27793,7 +28076,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LocalizationManager_set_Inst
 		return;
 	}
 }
-// Method Definition Index: 89530
+// Method Definition Index: 89532
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LocalizationManager_set_CurrentLocale_m8B20A4F5BC2BD21689D8A03DACACD696302A9C30_inline (LocalizationManager_tFBE221DE3A02C297CFB8C59F83F53214317849DA* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -27812,7 +28095,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float TMP_Text_get_fontSize_m13A8
 		return L_0;
 	}
 }
-// Method Definition Index: 89558
+// Method Definition Index: 89560
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float ShapedTextGraphic_get_PreferredWidth_mC131E235A2DE565D3F5A54E3D1EAAF3CFFB53B9D_inline (ShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27821,7 +28104,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float ShapedTextGraphic_get_Prefe
 		return L_0;
 	}
 }
-// Method Definition Index: 89560
+// Method Definition Index: 89562
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float ShapedTextGraphic_get_PreferredHeight_m5356992CF33541CDBA6913CC65E3E06B943270EC_inline (ShapedTextGraphic_t25EDF61FD63C5BB2383EC0F24401CAAAAA25BE77* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27932,7 +28215,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 94173
+// Method Definition Index: 94175
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) 
 {
 	{

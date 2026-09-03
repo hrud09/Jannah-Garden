@@ -6929,14 +6929,14 @@ struct DebugViewPrinter_t3EFC0E78E92DD59B7D0D218A1386C52B45E170BB  : public Runt
 struct U3CU3Ec_t480832E6E9C0D190B837CC90FB7A34286511D2E4  : public RuntimeObject
 {
 };
-struct U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291  : public RuntimeObject
+struct U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
 	LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48* ___U3CU3E4__this;
 	float ___U3CtU3E5__2;
 };
-struct U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4  : public RuntimeObject
+struct U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -32814,7 +32814,7 @@ struct LightProbesQueryDispose_t68E26394FECB132B3BDE49124B4B0D7CBEAEC2D0
 {
 	intptr_t ___m_LightProbeContextWrapper;
 };
-struct U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58  : public RuntimeObject
+struct U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -47782,7 +47782,11 @@ struct LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48  : public 
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___backgroundColor;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___accentColor;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___secondaryTextColor;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___backgroundSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___progressBarTrackSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___progressBarFillSprite;
+	TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160* ___uiFont;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___jannahGardenBackgroundSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___outerGardenBackgroundSprite;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___jannahGardenLogoSprite;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___outerGardenLogoSprite;
 	String_t* ___outerGardenSceneName;
@@ -64382,11 +64386,11 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize10144 = { sizeof(JannahGarde
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10145;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize10145 = { sizeof(AdditiveSceneGroup_t0E7E28D35ABE77116A4DA93F19A45AAC205CF7D5)+ sizeof(RuntimeObject), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10146;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize10146 = { sizeof(U3CFadeInU3Ed__57_t6BA95F9E70D35D86684F57D78D19C1B01E75F291), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize10146 = { sizeof(U3CFadeInU3Ed__61_t054027B0B2419B349AC3F04BB45AF68187A927F6), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10147;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize10147 = { sizeof(U3CFadeOutU3Ed__58_t5D99730DF1309D91C323128CFEB09C219CDFA6A4), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize10147 = { sizeof(U3CFadeOutU3Ed__62_t4F41F7621D19F4A9FD9E6C34E2C709998610CA13), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10148;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize10148 = { sizeof(U3CLoadSceneRoutineU3Ed__56_t9F1CF445F05432A61F16BB322706E3CE69862C58), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize10148 = { sizeof(U3CLoadSceneRoutineU3Ed__60_t7AFCC47732D30F2F1CB0AD4D8C4DEB12B6FEAB30), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10149;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize10149 = { sizeof(LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48), -1, sizeof(LoadingScreenManager_tB013C5661A310961AE997D7DB02474EA9A82BE48_StaticFields), 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10150;

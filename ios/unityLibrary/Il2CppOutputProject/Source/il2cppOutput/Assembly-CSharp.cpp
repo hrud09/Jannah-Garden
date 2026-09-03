@@ -31898,7 +31898,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_6;
 	}
 }
-// Method Definition Index: 100382
+// Method Definition Index: 100384
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PointerEventData_get_position_m5BE71C28EB72EFB8435749E4E6E839213AEF458C_inline (PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32323,7 +32323,7 @@ IL_0010:
 		return L_5;
 	}
 }
-// Method Definition Index: 90398
+// Method Definition Index: 90400
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FlutterBridge_get_RewardedAdReady_m5DD03387CBFB88F137A674E1B90B4E6B8CE5774A_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32338,7 +32338,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FlutterBridge_get_RewardedAd
 		return L_0;
 	}
 }
-// Method Definition Index: 90374
+// Method Definition Index: 90376
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32577,7 +32577,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance
 		return;
 	}
 }
-// Method Definition Index: 90396
+// Method Definition Index: 90398
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32592,7 +32592,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 90005
+// Method Definition Index: 90007
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32684,7 +32684,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowProfileData_tE64FB39268902B
 		return L_0;
 	}
 }
-// Method Definition Index: 90392
+// Method Definition Index: 90394
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowshipProfilesPayload_t009784E75B70678D078072CA951B8D961E880C12* FlutterBridge_get_LatestFellowshipProfiles_mC31A6DE61C0F223355E6F4681366C415717089F5_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32827,7 +32827,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 89630
+// Method Definition Index: 89632
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32874,7 +32874,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GameAnalyticsManager_set_Ins
 		return;
 	}
 }
-// Method Definition Index: 90294
+// Method Definition Index: 90296
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32914,7 +32914,7 @@ IL_000a:
 		return L_2;
 	}
 }
-// Method Definition Index: 90910
+// Method Definition Index: 90912
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float CameraMovement_get_SensitivityMultiplier_m1D06B05285918B00A0C8BE58C3C99DA2C9783549_inline (CameraMovement_t3CAC27BC0DF91F0A5E76193B3B929928FE39ACB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32974,7 +32974,7 @@ IL_001d:
 		return L_9;
 	}
 }
-// Method Definition Index: 99917
+// Method Definition Index: 99919
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SliderEvent_t92A82EF6C62E15AF92B640FE2D960E877E8C6555* Slider_get_onValueChanged_m4DA3FD0F8D7BB838F442C07F7796EEE584D0D4F6_inline (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32983,7 +32983,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SliderEvent_t92A82EF6C62E15AF92B6
 		return L_0;
 	}
 }
-// Method Definition Index: 98784
+// Method Definition Index: 98786
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33023,7 +33023,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InGameShopManager_set_Instan
 		return;
 	}
 }
-// Method Definition Index: 90917
+// Method Definition Index: 90919
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PlayerMovement_get_IsInspectorMode_m3A0CA375881D5AB7F86DE35838C08DBAA15CAB3A_inline (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33032,7 +33032,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PlayerMovement_get_IsInspect
 		return L_0;
 	}
 }
-// Method Definition Index: 89969
+// Method Definition Index: 89971
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ShopItemUI_get_ItemData_m2608FAD02DBE15440B44D660F555E1F765A3B0C8_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33056,7 +33056,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ItemPlacementManager_tF321BDE7C13
 		return L_0;
 	}
 }
-// Method Definition Index: 89971
+// Method Definition Index: 89973
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ShopItemUI_get_RewardItemData_mFC1196138E54B22CF152C0F8C0A000D520F0275A_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{

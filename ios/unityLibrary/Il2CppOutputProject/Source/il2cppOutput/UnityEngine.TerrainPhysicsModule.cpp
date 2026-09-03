@@ -288,7 +288,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void* IntPtr_op_Explicit_m2728CBA081E79B97DDC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 113059
+// Method Definition Index: 113061
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* TerrainCollider_get_terrainData_m4B39540CB704719FA710B1D3837D9D1CD39AC07A (TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -327,7 +327,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 113060
+// Method Definition Index: 113062
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider_set_terrainData_mF77FBF6CCEFBBE591D729E02E0873B58C2F2E0BE (TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* __this, TerrainData_t615A68EAC648066681875D47FC641496D12F2E24* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -366,7 +366,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 113061
+// Method Definition Index: 113063
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 TerrainCollider_Raycast_m35FB606FA5A477BFA22A3B30B9822ABA7CFF4A60 (TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* __this, Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 ___0_ray, float ___1_maxDistance, bool ___2_hitHoles, bool* ___3_hasHit, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -407,7 +407,7 @@ IL_000f:
 		return L_5;
 	}
 }
-// Method Definition Index: 113062
+// Method Definition Index: 113064
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TerrainCollider_Raycast_m1B165C5E60C20F895704BB4032CA0A36E3DAED2F (TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* __this, Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 ___0_ray, RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* ___1_hitInfo, float ___2_maxDistance, bool ___3_hitHoles, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -432,7 +432,7 @@ IL_0019:
 		return L_6;
 	}
 }
-// Method Definition Index: 113063
+// Method Definition Index: 113065
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider__ctor_mC7DD5783B65E6AB3F2CC52CEAD67ADCE9A95CBFE (TerrainCollider_tBCAC2FC868B0E00ACB88A0E8FEDDE44DABE6DA05* __this, const RuntimeMethod* method) 
 {
 	{
@@ -440,7 +440,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider__ctor_mC7DD5783B65E6AB3F
 		return;
 	}
 }
-// Method Definition Index: 113064
+// Method Definition Index: 113066
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainCollider_get_terrainData_Injected_mD0C2991615998A29FC3A91863C21F08CC97C9929 (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef intptr_t (*TerrainCollider_get_terrainData_Injected_mD0C2991615998A29FC3A91863C21F08CC97C9929_ftn) (intptr_t);
@@ -450,7 +450,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TerrainCollider_get_terrainData_Inje
 	intptr_t icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
 }
-// Method Definition Index: 113065
+// Method Definition Index: 113067
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider_set_terrainData_Injected_mAD64AE8F5491022F2FC81A458DBC8F8335EB4FC5 (intptr_t ___0__unity_self, intptr_t ___1_value, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainCollider_set_terrainData_Injected_mAD64AE8F5491022F2FC81A458DBC8F8335EB4FC5_ftn) (intptr_t, intptr_t);
@@ -459,7 +459,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider_set_terrainData_Injected
 	_il2cpp_icall_func = (TerrainCollider_set_terrainData_Injected_mAD64AE8F5491022F2FC81A458DBC8F8335EB4FC5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainCollider::set_terrainData_Injected(System.IntPtr,System.IntPtr)");
 	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
-// Method Definition Index: 113066
+// Method Definition Index: 113068
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TerrainCollider_Raycast_Injected_m9DAF4DBA2AF14BA8FCBD405C1E55305EE04B27D8 (intptr_t ___0__unity_self, Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* ___1_ray, float ___2_maxDistance, bool ___3_hitHoles, bool* ___4_hasHit, RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* ___5_ret, const RuntimeMethod* method) 
 {
 	typedef void (*TerrainCollider_Raycast_Injected_m9DAF4DBA2AF14BA8FCBD405C1E55305EE04B27D8_ftn) (intptr_t, Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00*, float, bool, bool*, RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5*);
