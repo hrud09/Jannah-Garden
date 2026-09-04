@@ -418,7 +418,7 @@ public class MCQManager : MonoBehaviour
                 currentOrb = null;
             }
 
-            StartCoroutine(HideQuizAfterDelay(5f));
+            HideQuizImmediately();
         }
         else
         {
@@ -485,25 +485,9 @@ public class MCQManager : MonoBehaviour
         ShowQuestion(currentQuestionIndex);
     }
 
-    private IEnumerator HideQuizAfterDelay(float delay)
+    private void HideQuizImmediately()
     {
-        if (countDownToHidePanel != null)
-        {
-            countDownToHidePanel.gameObject.SetActive(true);
-        }
-
-        float remainingTime = delay;
-        while (remainingTime > 0)
-        {
-            if (countDownToHidePanel != null)
-            {
-                countDownToHidePanel.text = Mathf.CeilToInt(remainingTime).ToString();
-            }
-            yield return new WaitForSeconds(1f);
-            remainingTime -= 1f;
-        }
-
-        if (quizPanel != null) 
+        if (quizPanel != null)
         {
             quizPanel.transform.DOKill();
             quizPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
