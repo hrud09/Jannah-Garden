@@ -44,7 +44,7 @@ public class ShopItemMakerWindow : EditorWindow
 
     private Vector2 scrollPos;
 
-    [MenuItem("Tools/Shop Item Maker")]
+    [MenuItem("Tools/Shop/Shop Item Maker")]
     public static void ShowWindow()
     {
         GetWindow<ShopItemMakerWindow>("Shop Item Maker");

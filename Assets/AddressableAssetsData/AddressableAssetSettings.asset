@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: e4c969e25699fa748a217637e850e16a
   m_currentHash:
     serializedVersion: 2
-    Hash: 530ad0b474b3b596a1d82761cec8355b
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   m_maxConcurrentWebRequests: 3
   m_UseUWRForLocalBundles: 0
   m_BundleTimeout: 0
-  m_BundleRetryCount: 0
+  m_BundleRetryCount: 3
   m_BundleRedirectLimit: -1
   m_SharedBundleSettings: 0
   m_SharedBundleSettingsCustomGroupIndex: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: ad9812f088954da4a92ebabe263374ea, type: 2}
   - {fileID: 11400000, guid: aa8d110e2b4024d4f9b4d0a630f99711, type: 2}
+  - {fileID: 11400000, guid: 4d65cbd9d28589440b2da0805cbcffab, type: 2}
   - {fileID: 11400000, guid: 2359027fc317ab14e8a1c896ae817980, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1

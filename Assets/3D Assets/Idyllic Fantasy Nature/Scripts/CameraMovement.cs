@@ -10,11 +10,22 @@ namespace IdyllicFantasyNature
     {
         [Range(1f, 10f)]
         [Tooltip("speed of the camera movement (Mouse)")]
-        [SerializeField] private float _mouseSensity = 1;
+        [SerializeField] private float _mouseSensity = 1f;
 
         [Range(0.01f, 5f)]
         [Tooltip("sensitivity of the mobile touch drag rotation")]
         [SerializeField] private float _touchDragSensitivity = 0.1f;
+
+        [Range(0.5f, 100f)]
+        [Tooltip("multiplier for touch drag and mouse sensitivity")]
+        [SerializeField] private float _sensitivityMultiplier = 1f;
+
+        public float SensitivityMultiplier => _sensitivityMultiplier;
+
+        public void SetSensitivityMultiplier(float multiplier)
+        {
+            _sensitivityMultiplier = Mathf.Clamp(multiplier, 0.5f, 100f);
+        }
 
         // mouse/touch rotation
         private float _xRotation;
@@ -32,6 +43,7 @@ namespace IdyllicFantasyNature
 
         private bool _isDraggingRotation = false;
         private int _activeTouchId = -1;
+        private Vector2 _lastTouchPosition;
 
         // Start is called before the first frame update
         private void Start()
@@ -40,13 +52,34 @@ namespace IdyllicFantasyNature
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            // Initialize rotation values from the current transform rotation to prevent snapping at start
-            Vector3 currentEuler = transform.eulerAngles;
-            _yRotation = currentEuler.y;
-            _xRotation = currentEuler.x;
+            // Auto-detect controller parent if not set
+            if (_controller == null && transform.parent != null)
+            {
+                _controller = transform.parent;
+            }
+
+            // Initialize rotation values from current transform state to prevent snapping
+            if (_controller != null)
+            {
+                _yRotation = _controller.eulerAngles.y;
+                _xRotation = transform.localEulerAngles.x;
+            }
+            else
+            {
+                Vector3 currentEuler = transform.eulerAngles;
+                _yRotation = currentEuler.y;
+                _xRotation = currentEuler.x;
+            }
+
             if (_xRotation > 180f)
             {
                 _xRotation -= 360f;
+            }
+
+            // Load look around speed sensitivity multiplier (defaults to the inspector-configured value if not saved yet)
+            if (PlayerPrefs.HasKey("LookAroundSpeed"))
+            {
+                _sensitivityMultiplier = Mathf.Clamp(PlayerPrefs.GetFloat("LookAroundSpeed"), 0.5f, 100f);
             }
         }
 
@@ -57,105 +90,154 @@ namespace IdyllicFantasyNature
             float rotateY = 0f;
 
 #if ENABLE_INPUT_SYSTEM
-            if (Touchscreen.current != null && Touchscreen.current.touches.Count > 0)
+            if (Touchscreen.current != null)
             {
-                // Touch Input (Mobile)
+                // Touch Input (Mobile with New Input System)
+                bool foundActiveTouch = false;
+
                 foreach (var touch in Touchscreen.current.touches)
                 {
-                    if (!touch.press.isPressed && !touch.isInProgress)
+                    var phase = touch.phase.ReadValue();
+                    if (phase == UnityEngine.InputSystem.TouchPhase.None)
                         continue;
 
-                    var phase = touch.phase.ReadValue();
                     int fingerId = touch.touchId.ReadValue();
-                    Vector2 deltaPosition = touch.delta.ReadValue();
+                    Vector2 touchPos = touch.position.ReadValue();
+                    Vector2 deltaPos = touch.delta.ReadValue();
+                    bool isPressed = touch.press.isPressed || touch.isInProgress;
 
-                    if (phase == UnityEngine.InputSystem.TouchPhase.Began)
+                    // If no touch is actively driving camera rotation, check if this touch can claim it
+                    if (_activeTouchId == -1)
                     {
-                        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(fingerId))
+                        if (isPressed && (phase == UnityEngine.InputSystem.TouchPhase.Began || phase == UnityEngine.InputSystem.TouchPhase.Moved))
                         {
-                            // Touched UI (like joystick), ignore this finger for rotation
-                            continue;
+                            if (!IsTouchOverBlockingUI(fingerId, touchPos))
+                            {
+                                _activeTouchId = fingerId;
+                                _isDraggingRotation = true;
+                                _lastTouchPosition = touchPos;
+                                foundActiveTouch = true;
+
+                                if (deltaPos.sqrMagnitude > 0.0001f)
+                                {
+                                    rotateX += deltaPos.x * _touchDragSensitivity;
+                                    rotateY += deltaPos.y * _touchDragSensitivity;
+                                }
+                            }
                         }
-                        _activeTouchId = fingerId;
-                        _isDraggingRotation = true;
                     }
                     else if (fingerId == _activeTouchId)
                     {
-                        if (phase == UnityEngine.InputSystem.TouchPhase.Moved)
-                        {
-                            rotateX += deltaPosition.x * _touchDragSensitivity;
-                            rotateY += deltaPosition.y * _touchDragSensitivity;
-                        }
-                        else if (phase == UnityEngine.InputSystem.TouchPhase.Ended || phase == UnityEngine.InputSystem.TouchPhase.Canceled)
+                        foundActiveTouch = true;
+
+                        if (phase == UnityEngine.InputSystem.TouchPhase.Ended || phase == UnityEngine.InputSystem.TouchPhase.Canceled || !isPressed)
                         {
                             _activeTouchId = -1;
                             _isDraggingRotation = false;
                         }
-                    }
-                }
-            }
-            else
-            {
-                // Mouse Input (PC / Editor / WebGL)
-                if (Mouse.current != null)
-                {
-                    if (Mouse.current.leftButton.wasPressedThisFrame)
-                    {
-                        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-                        {
-                            // Clicked UI (like joystick), ignore for rotation
-                            _isDraggingRotation = false;
-                        }
                         else
                         {
-                            _isDraggingRotation = true;
+                            // Calculate rotation delta (prefer direct delta, fallback to position difference)
+                            Vector2 effectiveDelta = deltaPos;
+                            if (effectiveDelta.sqrMagnitude < 0.0001f && _lastTouchPosition != Vector2.zero)
+                            {
+                                effectiveDelta = touchPos - _lastTouchPosition;
+                            }
+
+                            rotateX += effectiveDelta.x * _touchDragSensitivity;
+                            rotateY += effectiveDelta.y * _touchDragSensitivity;
+                            _lastTouchPosition = touchPos;
                         }
                     }
+                }
 
-                    if (_isDraggingRotation && Mouse.current.leftButton.isPressed)
-                    {
-                        Vector2 delta = Mouse.current.delta.ReadValue();
-                        // Scale to match normal mouse looking behavior
-                        rotateX += delta.x * _mouseSensity * 0.1f;
-                        rotateY += delta.y * _mouseSensity * 0.1f;
-                    }
-
-                    if (Mouse.current.leftButton.wasReleasedThisFrame)
+                // Safety: if the active touch vanished without sending Ended phase
+                if (_activeTouchId != -1 && !foundActiveTouch)
+                {
+                    _activeTouchId = -1;
+                    _isDraggingRotation = false;
+                }
+            }
+            
+            // Mouse Input (PC / Editor / WebGL)
+            if (Mouse.current != null)
+            {
+                if (Mouse.current.leftButton.wasPressedThisFrame)
+                {
+                    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                     {
                         _isDraggingRotation = false;
                     }
+                    else
+                    {
+                        _isDraggingRotation = true;
+                    }
+                }
+
+                if (_isDraggingRotation && Mouse.current.leftButton.isPressed)
+                {
+                    Vector2 delta = Mouse.current.delta.ReadValue();
+                    rotateX += delta.x * _mouseSensity * 0.1f;
+                    rotateY += delta.y * _mouseSensity * 0.1f;
+                }
+
+                if (Mouse.current.leftButton.wasReleasedThisFrame)
+                {
+                    _isDraggingRotation = false;
                 }
             }
 #else
             if (Input.touchSupported && Input.touchCount > 0)
             {
-                // Touch Input (Mobile)
+                // Touch Input (Mobile with Legacy Input)
+                bool foundActiveTouch = false;
+
                 for (int i = 0; i < Input.touchCount; i++)
                 {
                     Touch touch = Input.GetTouch(i);
-                    if (touch.phase == TouchPhase.Began)
+                    int fingerId = touch.fingerId;
+
+                    if (_activeTouchId == -1)
                     {
-                        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                        if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
                         {
-                            // Touched UI (like joystick), ignore this finger for rotation
-                            continue;
+                            if (!IsTouchOverBlockingUI(fingerId, touch.position))
+                            {
+                                _activeTouchId = fingerId;
+                                _isDraggingRotation = true;
+                                _lastTouchPosition = touch.position;
+                                foundActiveTouch = true;
+
+                                if (touch.phase == TouchPhase.Moved)
+                                {
+                                    rotateX += touch.deltaPosition.x * _touchDragSensitivity;
+                                    rotateY += touch.deltaPosition.y * _touchDragSensitivity;
+                                }
+                            }
                         }
-                        _activeTouchId = touch.fingerId;
-                        _isDraggingRotation = true;
                     }
-                    else if (touch.fingerId == _activeTouchId)
+                    else if (fingerId == _activeTouchId)
                     {
-                        if (touch.phase == TouchPhase.Moved)
-                        {
-                            rotateX += touch.deltaPosition.x * _touchDragSensitivity;
-                            rotateY += touch.deltaPosition.y * _touchDragSensitivity;
-                        }
-                        else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                        foundActiveTouch = true;
+
+                        if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
                         {
                             _activeTouchId = -1;
                             _isDraggingRotation = false;
                         }
+                        else if (touch.phase == TouchPhase.Moved)
+                        {
+                            rotateX += touch.deltaPosition.x * _touchDragSensitivity;
+                            rotateY += touch.deltaPosition.y * _touchDragSensitivity;
+                            _lastTouchPosition = touch.position;
+                        }
                     }
+                }
+
+                if (_activeTouchId != -1 && !foundActiveTouch)
+                {
+                    _activeTouchId = -1;
+                    _isDraggingRotation = false;
                 }
             }
             else
@@ -165,7 +247,6 @@ namespace IdyllicFantasyNature
                 {
                     if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                     {
-                        // Clicked UI (like joystick), ignore for rotation
                         _isDraggingRotation = false;
                     }
                     else
@@ -176,7 +257,6 @@ namespace IdyllicFantasyNature
 
                 if (_isDraggingRotation && Input.GetMouseButton(0))
                 {
-                    // Scale to match normal mouse looking behavior
                     rotateX += Input.GetAxis("Mouse X") * _mouseSensity * 5f;
                     rotateY += Input.GetAxis("Mouse Y") * _mouseSensity * 5f;
                 }
@@ -188,22 +268,55 @@ namespace IdyllicFantasyNature
             }
 #endif
 
+            // Apply sensitivity multiplier
+            rotateX *= _sensitivityMultiplier;
+            rotateY *= _sensitivityMultiplier;
+
+            // Apply accumulated rotation
             _yRotation += rotateX;
             _xRotation -= rotateY;
 
-            // limits camera rotation — wider range in Inspector Mode for bird's-eye view
+            // Limits camera pitch angle (wider range in Inspector Mode for bird's-eye view)
             float minPitch = unlockFullPitch ? -89f : -90f;
             float maxPitch = unlockFullPitch ? 89f : 90f;
             _xRotation = Mathf.Clamp(_xRotation, minPitch, maxPitch);
 
-            // rotates camera on the y- and x-axis
-            transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
-
-            // rotates the controller on the y-axis so that it is on the same rotation as the camera
+            // Separate Pitch and Yaw cleanly across hierarchy:
+            // 1. Controller parent rotates horizontally (Yaw) on the Y-axis
+            // 2. Camera child rotates vertically (Pitch) on local X-axis
             if (_controller != null)
             {
-                _controller.rotation = Quaternion.Euler(0, _yRotation, 0);
+                _controller.rotation = Quaternion.Euler(0f, _yRotation, 0f);
+                transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
             }
+            else
+            {
+                transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0f);
+            }
+        }
+
+        /// <summary>
+        /// Checks if a touch position/ID is over blocking UI (buttons, panels) or in the movement joystick area.
+        /// </summary>
+        private bool IsTouchOverBlockingUI(int fingerId, Vector2 screenPosition)
+        {
+            // The left side of the screen is dedicated to the movement joystick zone
+            if (screenPosition.x < Screen.width * 0.35f)
+            {
+                return true;
+            }
+
+            // Check if touch is over any UI elements (buttons, menus, popups)
+            if (EventSystem.current != null)
+            {
+                if (EventSystem.current.IsPointerOverGameObject(fingerId))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
+

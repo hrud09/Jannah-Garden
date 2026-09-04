@@ -42,10 +42,14 @@ public class ToastMessageManager : MonoBehaviour
 
     public void ShowToast(string message, Color textColor)
     {
-        if (messageText != null) 
+        // The tutorial's instruction panel sits in the same lower-screen area as the toast, so stay
+        // quiet while it's talking rather than popping up behind/over it.
+        if (GameOnboardingManager.IsInstructionPanelVisible) return;
+
+        if (messageText != null)
         {
-            messageText.text = message;
             messageText.color = textColor;
+            LocalizedRendering.SetText(messageText, message);
         }
         
         if (messageHolder != null) 

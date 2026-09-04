@@ -59,6 +59,8 @@ public class MCQManager : MonoBehaviour
     public Sprite wrongSprite;
 
     [Header("Data")]
+    [Tooltip("Optional explicit override. Leave empty to auto-load Resources/questions_{locale}.txt for " +
+             "the active locale (falling back to questions_en if that locale has no file yet).")]
     public TextAsset questionFile;
 
     private QuestionList allQuestions;
@@ -87,7 +89,13 @@ public class MCQManager : MonoBehaviour
 
     void Start()
     {
+        // Long localized questions/options (Urdu and Arabic especially) wrap to several lines; let TMP
+        // shrink them to fit their boxes instead of overflowing the panel. The prefab's size is the max.
+        EnableAutoSize(questionTextUI, 26f);
+        foreach (var optionText in optionTextsUI) EnableAutoSize(optionText, 16f);
+
         LoadQuestions();
+        LocalizationManager.OnLocaleChanged += LoadQuestions;
         if (submitButton != null)
         {
             submitButton.onClick.AddListener(CheckAnswer);
@@ -105,6 +113,11 @@ public class MCQManager : MonoBehaviour
             int index = i; // Local copy for closure
             optionButtons[i].onClick.AddListener(() => SelectOption(index));
         }
+    }
+
+    void OnDestroy()
+    {
+        LocalizationManager.OnLocaleChanged -= LoadQuestions;
     }
 
     public void StartQuiz(QuestionMarkOrb orb = null)
@@ -141,19 +154,51 @@ public class MCQManager : MonoBehaviour
 
     void LoadQuestions()
     {
-        if (questionFile == null)
-        {
-            questionFile = Resources.Load<TextAsset>("questions");
-        }
+        TextAsset asset = questionFile != null ? questionFile : LocalizationManager.LoadLocalizedTextAsset("questions");
 
-        if (questionFile != null)
+        if (asset != null)
         {
-            allQuestions = JsonUtility.FromJson<QuestionList>(questionFile.text);
+            allQuestions = JsonUtility.FromJson<QuestionList>(asset.text);
+            if (questionFile == null) FillMissingQuestionsFromEnglish();
         }
         else
         {
-            Debug.LogError("Question JSON file not assigned and 'questions' not found in Resources!");
+            Debug.LogError("Question JSON file not assigned and no 'questions_{locale}' found in Resources!");
         }
+    }
+
+    /// <summary>
+    /// Translation work lands incrementally, so a locale's questions_{locale}.txt can legitimately contain
+    /// fewer than the full 500 entries (e.g. Bengali currently covers Levels 1-4 only). Rather than leaving
+    /// every other level with zero questions for that locale, fill in any id missing from the active file
+    /// using the English original, so every level always has a full question pool while translations catch up.
+    /// </summary>
+    void FillMissingQuestionsFromEnglish()
+    {
+        if (LocalizationManager.Instance != null && LocalizationManager.Instance.CurrentLocale == AppLocale.en) return;
+        if (allQuestions?.questions == null) return;
+
+        TextAsset englishAsset = Resources.Load<TextAsset>("questions_en");
+        if (englishAsset == null) return;
+
+        QuestionList englishQuestions = JsonUtility.FromJson<QuestionList>(englishAsset.text);
+        if (englishQuestions?.questions == null) return;
+
+        var presentIds = new HashSet<string>();
+        foreach (var q in allQuestions.questions)
+        {
+            if (!string.IsNullOrEmpty(q.id)) presentIds.Add(q.id);
+        }
+
+        List<QuestionData> merged = null;
+        foreach (var enQ in englishQuestions.questions)
+        {
+            if (presentIds.Contains(enQ.id)) continue;
+            merged ??= new List<QuestionData>(allQuestions.questions);
+            merged.Add(enQ);
+        }
+
+        if (merged != null) allQuestions.questions = merged.ToArray();
     }
 
     public QuestionData[] GetQuestionsByLevel(int level)
@@ -234,14 +279,14 @@ public class MCQManager : MonoBehaviour
             questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
         }
 
-        SetText(questionTextUI, qData.questionText);
+        SetText(questionTextUI, qData.questionText, QuestionShapedTextTopPadding);
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
             if (i < qData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]]);
+                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]], QuestionShapedTextTopPadding);
                 
                 if (reshuffle)
                 {
@@ -326,7 +371,7 @@ public class MCQManager : MonoBehaviour
             // Show congratulations message
             if (questionTextUI != null)
             {
-                SetText(questionTextUI, "<color=#00FF88>Congratulations!</color>\nCorrect Answer!");
+                SetText(questionTextUI, LocalizationManager.Instance.Get("quiz.correct"), QuestionShapedTextTopPadding);
                 questionTextUI.transform.DOKill();
                 questionTextUI.transform.localScale = Vector3.one;
                 questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -349,18 +394,19 @@ public class MCQManager : MonoBehaviour
 
             if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
             {
+                LocalizationManager loc = LocalizationManager.Instance;
                 string toastMsg = "";
                 if (coinsEarned > 0)
                 {
-                    toastMsg += $"+{coinsEarned} Noor Coins ";
+                    toastMsg += loc.Get("reward.coins", coinsEarned) + " ";
                 }
                 if (coinsEarned > 0 && xpEarned > 0)
                 {
-                    toastMsg += "& ";
+                    toastMsg += loc.Get("reward.and") + " ";
                 }
                 if (xpEarned > 0)
                 {
-                    toastMsg += $"+{xpEarned} XP";
+                    toastMsg += loc.Get("reward.xp", xpEarned);
                 }
 
                 ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
@@ -392,7 +438,7 @@ public class MCQManager : MonoBehaviour
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(
-                    "Opps! Review the correct answer and try again to earn your Noor Coins.", Color.red);
+                    LocalizationManager.Instance.Get("quiz.wrong"), Color.red);
             }
             
             StartCoroutine(ResetQuizAfterDelay(5f));
@@ -492,10 +538,40 @@ public class MCQManager : MonoBehaviour
         }
     }
 
-    private void SetText(TextMeshProUGUI tmpTextUI, string text)
+    // The question label and each MCQ option label get 50 units of top padding on their shaped
+    // (Bengali) child by default, so the shaped glyphs don't render flush against the panel's top
+    // edge the way plain TMP's own vertical centering would allow. Opt-in per call rather than baked
+    // into the shared wrapper, since not every SetText caller (e.g. countdown text) wants it.
+    private const float QuestionShapedTextTopPadding = 50f;
+
+    // The prefab authors every label's alignment for left-to-right locales; RTL locales mirror the
+    // horizontal half of that authored value (so option labels hug the right edge the way they hug the
+    // left in English). Cached on first use because SetText overwrites the live alignment per locale.
+    private readonly Dictionary<TMP_Text, TextAlignmentOptions> _authoredAlignments = new Dictionary<TMP_Text, TextAlignmentOptions>();
+
+    private void SetText(TextMeshProUGUI tmpTextUI, string text, float shapedTopPadding = 0f)
     {
         if (tmpTextUI == null) return;
 
-        tmpTextUI.text = text;
+        if (LocalizationManager.Instance == null) { tmpTextUI.text = text; return; }
+
+        if (!_authoredAlignments.TryGetValue(tmpTextUI, out TextAlignmentOptions authored))
+        {
+            authored = tmpTextUI.alignment;
+            _authoredAlignments[tmpTextUI] = authored;
+        }
+        tmpTextUI.alignment = LocalizationManager.Instance.IsRightToLeft
+            ? LocalizedRendering.MirrorAlignment(authored)
+            : authored;
+
+        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale, shapedTopPadding);
+    }
+
+    private static void EnableAutoSize(TextMeshProUGUI label, float minSize)
+    {
+        if (label == null || label.enableAutoSizing) return;
+        label.fontSizeMax = label.fontSize;
+        label.fontSizeMin = minSize;
+        label.enableAutoSizing = true;
     }
 }

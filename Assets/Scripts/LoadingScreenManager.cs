@@ -45,14 +45,32 @@ public class LoadingScreenManager : MonoBehaviour
     [Tooltip("Background colour of the loading screen.")]
     public Color backgroundColor = new Color(0.04f, 0.06f, 0.10f, 1f);
 
-    [Tooltip("Accent colour used for the progress bar fill and percentage text.")]
-    public Color accentColor = new Color(0.40f, 0.78f, 0.55f, 1f);
+    [Tooltip("Accent colour used for the progress bar fallback fill, percentage text and spinner dots. " +
+             "Defaults to the gold used for stat counters elsewhere in the game's UI.")]
+    public Color accentColor = new Color(1f, 0.9435f, 0.4481f, 1f);
 
     [Tooltip("Secondary text colour (status label, tips).")]
-    public Color secondaryTextColor = new Color(0.65f, 0.70f, 0.78f, 1f);
+    public Color secondaryTextColor = new Color(1f, 1f, 1f, 1f);
 
-    [Tooltip("Optional background sprite. If null a solid colour is used.")]
-    public Sprite backgroundSprite;
+    [Header("Progress Bar & Text Style (matches game's UI)")]
+    [Tooltip("9-sliced sprite for the progress bar track/background, e.g. \"BaseFrame_Border_Rectangle_H50_Bg\". " +
+             "If null, a plain translucent-white bar is used instead.")]
+    public Sprite progressBarTrackSprite;
+
+    [Tooltip("9-sliced sprite for the progress bar fill, e.g. \"Slider_Basic01_Fill_Yellow\". " +
+             "If null, a plain accentColor-tinted bar is used instead.")]
+    public Sprite progressBarFillSprite;
+
+    [Tooltip("Font asset used for all loading-screen text, matching the game's UI font (e.g. Lilita One). " +
+             "If null, TMP's default font asset is used.")]
+    public TMP_FontAsset uiFont;
+
+    [FormerlySerializedAs("backgroundSprite")]
+    [Tooltip("Background sprite shown while the Jannah Garden scene loads. If null a solid colour is used.")]
+    public Sprite jannahGardenBackgroundSprite;
+
+    [Tooltip("Background sprite shown while the Outer Garden scene loads. If null a solid colour is used.")]
+    public Sprite outerGardenBackgroundSprite;
 
     [FormerlySerializedAs("logoSprite")]
     [Tooltip("Logo shown above the progress bar while the Jannah Garden scene loads.")]
@@ -297,8 +315,7 @@ public class LoadingScreenManager : MonoBehaviour
         if (progressBar != null)
             progressBar.value = _displayedProgress;
 
-        if (percentText != null)
-            percentText.text = Mathf.RoundToInt(_displayedProgress * 100f) + "%";
+        SafeSetText(percentText, Mathf.RoundToInt(_displayedProgress * 100f) + "%");
 
         // Animate spinner dots
         AnimateSpinner();
@@ -371,12 +388,15 @@ public class LoadingScreenManager : MonoBehaviour
         // Pick a random tip
         if (loadingTips != null && loadingTips.Length > 0 && tipsText != null)
         {
-            tipsText.text = loadingTips[Random.Range(0, loadingTips.Length)];
+            SafeSetText(tipsText, loadingTips[Random.Range(0, loadingTips.Length)]);
             tipsText.gameObject.SetActive(true);
         }
 
         // Show the logo that matches the scene being loaded
         ApplyLogoForScene(sceneName);
+
+        // Show the background that matches the scene being loaded
+        ApplyBackgroundForScene(sceneName);
 
         // Fade in
         yield return StartCoroutine(FadeIn());
@@ -512,7 +532,7 @@ public class LoadingScreenManager : MonoBehaviour
         // Snap to 100%
         _displayedProgress = 1f;
         if (progressBar != null) progressBar.value = 1f;
-        if (percentText != null) percentText.text = "100%";
+        SafeSetText(percentText, "100%");
 
         SetStatusText("Preparing scene...");
 
@@ -624,8 +644,29 @@ public class LoadingScreenManager : MonoBehaviour
 
     private void SetStatusText(string text)
     {
-        if (statusText != null)
-            statusText.text = text;
+        SafeSetText(statusText, text);
+    }
+
+    /// <summary>
+    /// Assigns TMP_Text.text guarded against exceptions. A broken TextMeshPro runtime dependency
+    /// (e.g. a null TMP Settings singleton on some Android builds) throws a NullReferenceException
+    /// out of the text setter itself; if that happened from inside <see cref="LoadSceneRoutine"/>
+    /// directly (not from a per-frame Unity callback that swallows and retries), the coroutine would
+    /// die at that exact line and never reach its fade-out — stranding the player behind the loading
+    /// panel forever. Losing this one label is a far smaller failure than that.
+    /// </summary>
+    private static void SafeSetText(TMP_Text field, string value)
+    {
+        if (field == null) return;
+
+        try
+        {
+            field.text = value;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"[LoadingScreenManager] Failed to set text on '{field.name}': {e.Message}");
+        }
     }
 
     /// <summary>Whether the given scene name should be loaded via Addressables instead of SceneManager.</summary>
@@ -677,6 +718,45 @@ public class LoadingScreenManager : MonoBehaviour
         return jannahGardenLogoSprite != null ? jannahGardenLogoSprite : outerGardenLogoSprite;
     }
 
+    // ─────────────────────────────────────────────
+    //  Per-Scene Background
+    // ─────────────────────────────────────────────
+
+    /// <summary>
+    /// Sets the background image to the sprite matching the scene being loaded,
+    /// falling back to a solid colour if no sprite is available for it.
+    /// </summary>
+    private void ApplyBackgroundForScene(string sceneName)
+    {
+        if (backgroundImage == null) return;
+
+        Sprite sprite = GetBackgroundForScene(sceneName);
+        if (sprite != null)
+        {
+            backgroundImage.sprite = sprite;
+            backgroundImage.type = Image.Type.Sliced;
+            backgroundImage.color = Color.white;
+        }
+        else
+        {
+            backgroundImage.sprite = null;
+            backgroundImage.color = backgroundColor;
+        }
+    }
+
+    /// <summary>Returns the background sprite configured for the given scene, with sensible fallbacks.</summary>
+    private Sprite GetBackgroundForScene(string sceneName)
+    {
+        if (sceneName == outerGardenSceneName)
+            return outerGardenBackgroundSprite != null ? outerGardenBackgroundSprite : jannahGardenBackgroundSprite;
+
+        if (sceneName == jannahGardenSceneName)
+            return jannahGardenBackgroundSprite != null ? jannahGardenBackgroundSprite : outerGardenBackgroundSprite;
+
+        // Any other scene: default to the Jannah Garden background.
+        return jannahGardenBackgroundSprite != null ? jannahGardenBackgroundSprite : outerGardenBackgroundSprite;
+    }
+
     // ═══════════════════════════════════════════════
     //  RUNTIME UI BUILDER
     //  Builds the entire loading screen UI hierarchy
@@ -725,7 +805,8 @@ public class LoadingScreenManager : MonoBehaviour
             CanvasScaler scaler = canvasGO.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920f, 1080f);
-            scaler.matchWidthOrHeight = 0.5f;
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0f;
 
             canvasGO.AddComponent<GraphicRaycaster>();
             parentTransform = canvasGO.transform;
@@ -750,9 +831,10 @@ public class LoadingScreenManager : MonoBehaviour
 
         backgroundImage = bgGO.AddComponent<Image>();
         backgroundImage.color = backgroundColor;
-        if (backgroundSprite != null)
+        Sprite defaultBackground = jannahGardenBackgroundSprite != null ? jannahGardenBackgroundSprite : outerGardenBackgroundSprite;
+        if (defaultBackground != null)
         {
-            backgroundImage.sprite = backgroundSprite;
+            backgroundImage.sprite = defaultBackground;
             backgroundImage.type = Image.Type.Sliced;
             backgroundImage.color = Color.white;
         }
@@ -827,7 +909,8 @@ public class LoadingScreenManager : MonoBehaviour
         statusText.color = secondaryTextColor;
         statusText.alignment = TextAlignmentOptions.Left;
         statusText.raycastTarget = false;
-        statusText.fontStyle = FontStyles.Normal;
+        statusText.fontStyle = FontStyles.UpperCase;
+        if (uiFont != null) statusText.font = uiFont;
 
         // ── 9. Progress bar ──
         BuildProgressBar(bottomGO.transform);
@@ -849,6 +932,7 @@ public class LoadingScreenManager : MonoBehaviour
         percentText.alignment = TextAlignmentOptions.Right;
         percentText.raycastTarget = false;
         percentText.fontStyle = FontStyles.Bold;
+        if (uiFont != null) percentText.font = uiFont;
 
         // ── 11. Spinner dots ──
         BuildSpinner(bottomGO.transform);
@@ -871,6 +955,7 @@ public class LoadingScreenManager : MonoBehaviour
         tipsText.fontStyle = FontStyles.Italic;
         tipsText.raycastTarget = false;
         tipsText.enableWordWrapping = true;
+        if (uiFont != null) tipsText.font = uiFont;
 
         if (loadingTips == null || loadingTips.Length == 0)
         {
@@ -891,8 +976,8 @@ public class LoadingScreenManager : MonoBehaviour
         sliderRT.anchorMin = new Vector2(0f, 1f);
         sliderRT.anchorMax = new Vector2(1f, 1f);
         sliderRT.pivot = new Vector2(0.5f, 1f);
-        sliderRT.sizeDelta = new Vector2(0f, 14f);
-        sliderRT.anchoredPosition = new Vector2(0f, -42f);
+        sliderRT.sizeDelta = new Vector2(0f, 40f);
+        sliderRT.anchoredPosition = new Vector2(0f, -46f);
 
         progressBar = sliderGO.AddComponent<Slider>();
         progressBar.minValue = 0f;
@@ -901,19 +986,24 @@ public class LoadingScreenManager : MonoBehaviour
         progressBar.interactable = false;
         progressBar.transition = Selectable.Transition.None;
 
-        // Background track
+        // Background track — 9-sliced pill frame matching the game's other UI (e.g. the XP bar),
+        // falling back to a plain translucent bar if no sprite is assigned.
         GameObject bgTrack = new GameObject("Background");
         bgTrack.transform.SetParent(sliderGO.transform, false);
         RectTransform bgTrackRT = bgTrack.AddComponent<RectTransform>();
         StretchFull(bgTrackRT);
 
         progressBarBackground = bgTrack.AddComponent<Image>();
-        progressBarBackground.color = new Color(1f, 1f, 1f, 0.08f);
-
-        // Create rounded look by adding outline
-        Outline bgOutline = bgTrack.AddComponent<Outline>();
-        bgOutline.effectColor = new Color(1f, 1f, 1f, 0.03f);
-        bgOutline.effectDistance = new Vector2(0.5f, 0.5f);
+        if (progressBarTrackSprite != null)
+        {
+            progressBarBackground.sprite = progressBarTrackSprite;
+            progressBarBackground.type = Image.Type.Sliced;
+            progressBarBackground.color = Color.white;
+        }
+        else
+        {
+            progressBarBackground.color = new Color(1f, 1f, 1f, 0.08f);
+        }
 
         // Fill area
         GameObject fillArea = new GameObject("Fill Area");
@@ -922,10 +1012,11 @@ public class LoadingScreenManager : MonoBehaviour
         fillAreaRT.anchorMin = new Vector2(0f, 0f);
         fillAreaRT.anchorMax = new Vector2(1f, 1f);
         fillAreaRT.pivot = new Vector2(0.5f, 0.5f);
-        fillAreaRT.offsetMin = new Vector2(2f, 2f);
-        fillAreaRT.offsetMax = new Vector2(-2f, -2f);
+        fillAreaRT.offsetMin = new Vector2(4f, 4f);
+        fillAreaRT.offsetMax = new Vector2(-4f, -4f);
 
-        // Fill image
+        // Fill image — 9-sliced pill fill matching the game's other UI (e.g. the XP bar),
+        // falling back to a plain accentColor-tinted bar if no sprite is assigned.
         GameObject fill = new GameObject("Fill");
         fill.transform.SetParent(fillArea.transform, false);
         RectTransform fillRT = fill.AddComponent<RectTransform>();
@@ -936,16 +1027,17 @@ public class LoadingScreenManager : MonoBehaviour
         fillRT.offsetMax = Vector2.zero;
 
         progressBarFill = fill.AddComponent<Image>();
-        progressBarFill.color = accentColor;
-
-        // Glow overlay on the fill
-        GameObject glow = new GameObject("Glow");
-        glow.transform.SetParent(fill.transform, false);
-        RectTransform glowRT = glow.AddComponent<RectTransform>();
-        StretchFull(glowRT);
-        Image glowImg = glow.AddComponent<Image>();
-        glowImg.color = new Color(accentColor.r, accentColor.g, accentColor.b, 0.3f);
-        glowImg.raycastTarget = false;
+        if (progressBarFillSprite != null)
+        {
+            progressBarFill.sprite = progressBarFillSprite;
+            progressBarFill.type = Image.Type.Sliced;
+            progressBarFill.pixelsPerUnitMultiplier = 6f;
+            progressBarFill.color = Color.white;
+        }
+        else
+        {
+            progressBarFill.color = accentColor;
+        }
 
         // Wire the slider
         progressBar.fillRect = fillRT;

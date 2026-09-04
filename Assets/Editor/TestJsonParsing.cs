@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class TestJsonParsing
 {
-    [MenuItem("Tools/Test JSON")]
+    [MenuItem("Tools/Misc/Test JSON")]
     public static void Test()
     {
         TextAsset ta = Resources.Load<TextAsset>("questions");

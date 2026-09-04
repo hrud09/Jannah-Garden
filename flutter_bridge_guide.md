@@ -12,6 +12,30 @@ Two things carry most of the traffic:
 
 ---
 
+## 🆕 New requirement: language switching (`SET_LOCALE`)
+
+**Unity now supports English, Arabic, Bengali, and Urdu — trivia questions and UI text — but nothing on the
+Flutter side sends the locale yet.** Until this is implemented, the game always shows its last cached
+language and never learns when the player changes language in the app. This is the one outstanding piece
+of work needed to make in-app language switching actually reach the game. Full details in §3 under
+**"Handling `SET_LOCALE`"**, Dart snippet in §6 — short version:
+
+1. Add one method to `UnityBridge`:
+   ```dart
+   static void setLocale(String localeCode) {
+     _send('SET_LOCALE', {'localeCode': localeCode});
+   }
+   ```
+2. Call it in **two places**:
+   - Right after handling `UNITY_READY` (send the app's current language).
+   - Anywhere the player changes language in your app's settings, even while the Unity view is open.
+3. Locale codes: `en`, `ar`, `bn`, `ur`.
+
+Nothing else changes on your side — no new UI, no new state to store. See §3/§6 for the full writeup,
+including current translation coverage and RTL notes.
+
+---
+
 ## 1. The contract in one picture
 
 ```
@@ -77,6 +101,7 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 | `REWARDED_AD_RESULT` | `{ status, source }` — how the ad you were asked for ended |
 | `UPDATE_GARDEN_STATE` | `{ hasData, savedAtUnix, revision, items: [...] }` — the player's garden, out of Firebase |
 | `PHOTO_ACTION_RESULT` | `{ action, success, message }` — how a photo share or gallery save ended. Optional |
+| `SET_LOCALE` 🆕 | `{ localeCode }` — the app's active language. **Not yet implemented on the Flutter side — see below.** |
 
 ### Unity → Flutter
 
@@ -238,6 +263,49 @@ case 'REQUEST_SUBSCRIBE':
 
 The `source` field (currently `"treasure_box"`) tells you what prompted the request, in case you want to
 tailor the subscribe screen or log analytics.
+
+#### 🆕 Handling `SET_LOCALE` (language switching) — REQUIRED, not yet implemented
+
+This is the **only** command that drives the game's language — there is no separate settings screen inside
+Unity, and no other way for the game to learn what language the player wants.
+
+```dart
+case 'onLanguageChanged': // wherever your app's language-change hook lives
+  UnityBridge.setLocale(newLocaleCode); // 'en' | 'ar' | 'bn' | 'ur'
+  break;
+```
+
+```dart
+static void setLocale(String localeCode) {
+  _send('SET_LOCALE', {'localeCode': localeCode});
+}
+```
+
+Send it in exactly two places:
+
+1. **Once, right after you see `UNITY_READY`** — alongside your `UPDATE_USER_PROFILE`/`UPDATE_COINS` reply.
+   Unity remembers the last locale it was set to (via `PlayerPrefs`) and shows that on its very first frame,
+   *before* Flutter's first message arrives — so if the player changed their language in your app's settings
+   while the Unity view was closed, Unity is still showing the old one until you send this.
+2. **Every time the player changes the language inside your app**, even while the Unity view is currently
+   open/paused. The game reloads its UI strings and trivia questions live — no restart, no re-entering the
+   garden required.
+
+Locale codes: **`en`, `ar`, `bn`, `ur`** (case-insensitive; `"ar-SA"` / `"ar_SA"`-style regional codes are
+also accepted — Unity trims at the `-`/`_`). Anything else, or anything sent before Unity's
+`LocalizationManager` exists, is logged and silently ignored — the game keeps whatever language it already
+had rather than crashing or blanking out.
+
+Two things worth knowing about current content coverage (as of this writing):
+
+- **Arabic and Urdu are fully translated** — all 500 trivia questions, every level.
+- **Bengali is partially translated** (Levels 1–3 complete, Level 4 partial). The game automatically fills
+  any untranslated question with its English text rather than leaving a level empty, so switching to `bn`
+  is always safe — some questions will just read in English until translation catches up. No Flutter-side
+  handling needed for this; it's entirely a Unity-side fallback.
+- Arabic and Urdu are both right-to-left. Bengali and English are left-to-right. Unity handles this
+  entirely on its own (mirrored layout, joined Arabic-script letterforms) — you only ever send the locale
+  code, never a text-direction flag.
 
 ---
 
@@ -405,6 +473,11 @@ class UnityBridge {
   static void sendCoins(int newBalance) {
     _send('UPDATE_COINS', {'newBalance': newBalance});
   }
+
+  // 🆕 REQUIRED for language switching — see §3, "Handling SET_LOCALE".
+  static void setLocale(String localeCode) {
+    _send('SET_LOCALE', {'localeCode': localeCode});
+  }
 }
 
 class Fellow {
@@ -447,6 +520,7 @@ EmbedUnity(
         // Arrives repeatedly until Unity has a coin balance — keep this handler side-effect free.
         UnityBridge.sendUserProfile(user.name, user.coins, user.avatarUrl);
         UnityBridge.sendFellowshipProfiles(await fetchFellows());
+        UnityBridge.setLocale(currentAppLocaleCode); // 🆕 'en' | 'ar' | 'bn' | 'ur' — see §3, SET_LOCALE
         break;
 
       case 'REQUEST_COIN_BALANCE':
@@ -589,3 +663,6 @@ Use it to confirm the payload shape before wiring up the Flutter side.
 | Sharing a photo does nothing | The game handles this itself now; look for `[NativePhoto]` in the device log rather than for a bridge message. |
 | The shared photo file is missing | You held the path and used it later. The game keeps only the most recent photos and deletes the rest as new ones are taken. |
 | The shared photo has the HUD in it | Not possible from the game's side — every canvas is switched off for the captured frame. Check you are not re-capturing the screen yourself in Flutter. |
+| 🆕 Game shows the wrong language on first open | `SET_LOCALE` was never sent after `UNITY_READY`. Unity shows its last cached language (from `PlayerPrefs`) until you send one. |
+| 🆕 Language doesn't change while the garden is open | Confirm you call `UnityBridge.setLocale(...)` from your app's language-change handler, not only at startup — Unity applies it live, no restart needed. |
+| 🆕 Some trivia questions show English while others are in the new language | Expected for Bengali right now — translation is partial (Levels 1–3 done, Level 4 partial); untranslated questions fall back to English on purpose rather than being missing. |

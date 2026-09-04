@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public static class TreasureBoxRewardAssigner
 {
-    [MenuItem("Tools/Assign Treasure Box Reward Items")]
+    [MenuItem("Tools/Treasure Box/Assign Reward Items")]
     public static void AssignRewardsToTreasureBoxes()
     {
         // 1. Find all TreasureBoxData assets

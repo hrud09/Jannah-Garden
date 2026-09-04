@@ -42,6 +42,8 @@ public class DhikrManager : MonoBehaviour
     public Button submitButton;
 
     [Header("Data")]
+    [Tooltip("Optional explicit override. Leave empty to auto-load Resources/dhikrs_{locale}.txt for the " +
+             "active locale (falling back to dhikrs_en if that locale has no file yet).")]
     public TextAsset dhikrFile;
     public int minDhikrCount = 33;
     public int maxDhikrCount = 100;
@@ -71,6 +73,7 @@ public class DhikrManager : MonoBehaviour
     void Start()
     {
         LoadDhikrs();
+        LocalizationManager.OnLocaleChanged += LoadDhikrs;
         if (submitButton != null)
         {
             submitButton.onClick.AddListener(SubmitDhikr);
@@ -88,6 +91,11 @@ public class DhikrManager : MonoBehaviour
         {
             minusButton.onClick.AddListener(DecrementCount);
         }
+    }
+
+    void OnDestroy()
+    {
+        LocalizationManager.OnLocaleChanged -= LoadDhikrs;
     }
 
     public void StartDhikr(QuestionMarkOrb orb = null)
@@ -118,7 +126,7 @@ public class DhikrManager : MonoBehaviour
                 currentDhikrName = currentDhikrs[currentDhikrIndex];
                 if (dhikrTextUI != null)
                 {
-                    SetText(dhikrTextUI, $"Dhikr \"{currentDhikrName}\" for {targetCount} times");
+                    SetText(dhikrTextUI, LocalizationManager.Instance.Get("dhikr.instruction", currentDhikrName, targetCount));
                 }
 
                 UpdateCountUI();
@@ -137,18 +145,15 @@ public class DhikrManager : MonoBehaviour
 
     void LoadDhikrs()
     {
-        if (dhikrFile == null)
-        {
-            dhikrFile = Resources.Load<TextAsset>("dhikrs");
-        }
+        TextAsset asset = dhikrFile != null ? dhikrFile : LocalizationManager.LoadLocalizedTextAsset("dhikrs");
 
-        if (dhikrFile != null)
+        if (asset != null)
         {
-            allDhikrs = JsonUtility.FromJson<DhikrList>(dhikrFile.text);
+            allDhikrs = JsonUtility.FromJson<DhikrList>(asset.text);
         }
         else
         {
-            Debug.LogError("Dhikr JSON file not assigned and 'dhikrs' not found in Resources!");
+            Debug.LogError("Dhikr JSON file not assigned and no 'dhikrs_{locale}' found in Resources!");
         }
     }
 
@@ -241,11 +246,12 @@ public class DhikrManager : MonoBehaviour
 
             if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
             {
+                LocalizationManager loc = LocalizationManager.Instance;
                 string toastMsg = "";
-                if (coinsEarned > 0) toastMsg += $"<color=#FFD700>+{coinsEarned} Noor Coins</color> ";
-                if (coinsEarned > 0 && xpEarned > 0) toastMsg += "& ";
-                if (xpEarned > 0) toastMsg += $"<color=#00FFFF>+{xpEarned} XP</color>";
-                
+                if (coinsEarned > 0) toastMsg += loc.Get("reward.coins_colored", coinsEarned) + " ";
+                if (coinsEarned > 0 && xpEarned > 0) toastMsg += loc.Get("reward.and") + " ";
+                if (xpEarned > 0) toastMsg += loc.Get("reward.xp_colored", xpEarned);
+
                 ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
             }
 
@@ -267,15 +273,16 @@ public class DhikrManager : MonoBehaviour
 
         if (dhikrTextUI != null)
         {
-            SetText(dhikrTextUI, "<color=#FFD700>Congratulations!</color>\nDhikr Completed!");
+            SetText(dhikrTextUI, LocalizationManager.Instance.Get("dhikr.completed"));
             dhikrTextUI.transform.DOKill();
             dhikrTextUI.transform.localScale = Vector3.one;
             dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
         }
 
+        // The count label is only as wide as the gap between the -/+ buttons, so it keeps
+        // showing the finished count — words put here wrap and spill over the panel.
         if (countTextUI != null)
         {
-            SetText(countTextUI, "Masha'Allah!");
             countTextUI.transform.DOKill();
             countTextUI.transform.localScale = Vector3.one;
             countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);
@@ -313,10 +320,17 @@ public class DhikrManager : MonoBehaviour
         }
     }
 
+    // Both the dhikr instruction label and the count label get 100 units of top padding on their
+    // shaped (Bengali) child by default, so the shaped glyphs don't render flush against the panel's
+    // top edge the way plain TMP's own vertical centering would allow.
+    private const float ShapedTextTopPadding = 100f;
+
     private void SetText(TextMeshProUGUI tmpTextUI, string text)
     {
         if (tmpTextUI == null) return;
 
-        tmpTextUI.text = text;
+        if (LocalizationManager.Instance == null) { tmpTextUI.text = text; return; }
+
+        LocalizedRendering.SetText(tmpTextUI, text, LocalizationManager.Instance.CurrentLocale, ShapedTextTopPadding);
     }
 }

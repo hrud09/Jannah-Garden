@@ -28,6 +28,11 @@ public class PhotoModeManager : MonoBehaviour
 {
     public static PhotoModeManager Instance { get; private set; }
 
+    /// <summary>Fired when the preview panel closes, regardless of whether the photo was shared or
+    /// saved first (neither auto-closes the panel). Onboarding hooks into this single event to know
+    /// when the player is done with the photo step.</summary>
+    public static event System.Action OnPreviewClosed;
+
     // ─── Inspector ────────────────────────────────────────────────────────────
 
     [Header("Trigger")]
@@ -184,6 +189,7 @@ public class PhotoModeManager : MonoBehaviour
         {
             _actionInFlight = true;
             NativePhotoService.Share(_photoPath, shareCaption, HandleNativeShareResult);
+            ClosePreview();
             return;
         }
 
@@ -191,6 +197,7 @@ public class PhotoModeManager : MonoBehaviour
         if (FlutterBridge.Instance != null)
         {
             FlutterBridge.Instance.RequestSharePhoto(BuildPayload());
+            ClosePreview();
             return;
         }
 
@@ -209,6 +216,7 @@ public class PhotoModeManager : MonoBehaviour
         // still testable from the Editor.
         _actionInFlight = true;
         NativePhotoService.SaveToGallery(_photoPath, galleryAlbumName, HandleNativeSaveResult);
+        ClosePreview();
     }
 
     /// <summary>Closes the preview. The file stays on the device until it ages out of the library.</summary>
@@ -225,6 +233,8 @@ public class PhotoModeManager : MonoBehaviour
 
         // The texture is only needed while it is on screen; a full-screen RGB24 grab is several MB.
         ReleasePhoto();
+
+        OnPreviewClosed?.Invoke();
     }
 
     // ─── Capture ──────────────────────────────────────────────────────────────

@@ -45,9 +45,26 @@ public class ItemPlacementManager : MonoBehaviour
     /// <summary>Fired when an item is taken out of the garden, whether returned to the store or picked up to be moved.</summary>
     public static event System.Action<PlaceableItem> OnItemRemoved;
 
+    /// <summary>
+    /// Fired when a placement's prefabs start downloading (true) and again when they finish, fail or are
+    /// cancelled (false). Shop cards listen so they can lock themselves for the duration: only one
+    /// placement can be in flight at a time, so a second tap supersedes the download the player is
+    /// already waiting on and strands it (see <see cref="InternalPreparePlacement"/>). Fires only on an
+    /// actual change of state — but note a cache hit still fires true then false within the same frame,
+    /// because the load resolves synchronously.
+    /// </summary>
+    public static event System.Action<bool> OnDownloadStateChanged;
+
     public RectTransform crosshairRect;
     public TerrainCollider terrainCollider;
     public Button placeButton;
+
+    [Header("Placement Radius")]
+    [Tooltip("Max horizontal distance from the player the ghost can be positioned. Looking further than " +
+             "this clamps the ghost to the radius edge along the same look direction, so an item can't " +
+             "be dropped somewhere unreachable (across a lake, through a mountain, etc). Looking inside " +
+             "the radius has no effect - the ghost tracks the crosshair/terrain intersection directly.")]
+    public float placementRadius = 15f;
 
     [Tooltip("Optional. Abandons the placement in progress. For a relocation the item goes back where " +
              "it was; for a fresh purchase the item is handed back the same way a return would.")]
@@ -132,6 +149,13 @@ public class ItemPlacementManager : MonoBehaviour
     /// still downloading (before the ghost even exists).
     /// </summary>
     public bool IsPlacing => currentPlacedObject != null || _isPreparingPlacement;
+
+    /// <summary>
+    /// True only for the download half of <see cref="IsPlacing"/> — a placement's prefabs are on the wire
+    /// and the ghost does not exist yet. Lets a card that spawns or re-enables mid-download catch up on a
+    /// state change it wasn't around to hear; see <see cref="OnDownloadStateChanged"/>.
+    /// </summary>
+    public bool IsDownloadingItem => _isPreparingPlacement;
 
     /// <summary>True when the placement in progress is moving an item that is already in the garden.</summary>
     public bool IsRelocating => _isRelocating;
@@ -291,6 +315,20 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     /// <summary>
+    /// The single write point for <see cref="_isPreparingPlacement"/>, so <see cref="OnDownloadStateChanged"/>
+    /// cannot drift out of sync with it — every path that starts, finishes, fails or cancels a load goes
+    /// through here. Idempotent, so the paths that unwind through more than one of those (a failure that
+    /// then clears the pending placement) still announce the state change exactly once.
+    /// </summary>
+    private void SetPreparingPlacement(bool preparing)
+    {
+        if (_isPreparingPlacement == preparing) return;
+
+        _isPreparingPlacement = preparing;
+        OnDownloadStateChanged?.Invoke(preparing);
+    }
+
+    /// <summary>
     /// Starts (or restarts) a placement: downloads the real and preview prefabs — a no-op if both are
     /// already cached from a previous download this session — then hands off to
     /// <see cref="FinishPreparingPlacement"/> once both resolve, or <see cref="HandlePlacementLoadFailure"/>
@@ -321,7 +359,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         _pendingItemPrefab = null;
         _pendingDuration = duration;
-        _isPreparingPlacement = true;
+        SetPreparingPlacement(true);
         int requestVersion = ++_placementRequestVersion;
 
         AssetReferenceGameObject effectivePreviewRef =
@@ -382,7 +420,7 @@ public class ItemPlacementManager : MonoBehaviour
     /// the real and preview prefabs have actually been resolved.</summary>
     private void FinishPreparingPlacement(GameObject prefab, GameObject previewPrefab, float duration)
     {
-        _isPreparingPlacement = false;
+        SetPreparingPlacement(false);
         _pendingItemPrefab = prefab;
         _pendingDuration = duration;
 
@@ -433,7 +471,7 @@ public class ItemPlacementManager : MonoBehaviour
     /// </summary>
     private void HandlePlacementLoadFailure()
     {
-        _isPreparingPlacement = false;
+        SetPreparingPlacement(false);
 
         if (ToastMessageManager.Instance != null)
         {
@@ -491,8 +529,42 @@ public class ItemPlacementManager : MonoBehaviour
         // Raycast specifically against the TerrainCollider
         if (terrainCollider.Raycast(ray, out hit, 1000f))
         {
-            currentPlacedObject.transform.position = hit.point;
+            currentPlacedObject.transform.position = ClampToPlacementRadius(hit.point);
         }
+    }
+
+    /// <summary>
+    /// Keeps the ghost within <see cref="placementRadius"/> of the player. A hit point inside the radius
+    /// is used as-is (the ghost tracks the crosshair/terrain intersection directly); a hit point beyond
+    /// it is pulled back along the same look direction to the radius edge, then re-sampled against the
+    /// terrain so it still sits on the ground at that clamped spot rather than at the original (likely
+    /// very different) hit height.
+    /// </summary>
+    private Vector3 ClampToPlacementRadius(Vector3 hitPoint)
+    {
+        Vector3 playerPos = transform.position;
+        Vector3 flatOffset = hitPoint - playerPos;
+        flatOffset.y = 0f;
+
+        float flatDistance = flatOffset.magnitude;
+        if (flatDistance <= placementRadius || flatDistance < 0.0001f)
+        {
+            return hitPoint;
+        }
+
+        Vector3 direction = flatOffset / flatDistance;
+        Vector3 clampedXZ = playerPos + direction * placementRadius;
+
+        Terrain terrain = terrainCollider != null ? terrainCollider.GetComponent<Terrain>() : null;
+        if (terrain != null)
+        {
+            float terrainY = terrain.SampleHeight(clampedXZ) + terrain.transform.position.y;
+            return new Vector3(clampedXZ.x, terrainY, clampedXZ.z);
+        }
+
+        // No Terrain component to resample height from - fall back to the original hit height rather
+        // than leaving the ghost floating or buried at the wrong elevation.
+        return new Vector3(clampedXZ.x, hitPoint.y, clampedXZ.z);
     }
 
     /// <summary>
@@ -677,7 +749,7 @@ public class ItemPlacementManager : MonoBehaviour
         _isRelocating = false;
         _relocateUniqueId = null;
         _relocateRemainingDuration = 0f;
-        _isPreparingPlacement = false;
+        SetPreparingPlacement(false);
         _placementRequestVersion++; // invalidate any in-flight load callbacks tied to the placement just cleared
 
         if (placeButton != null) placeButton.gameObject.SetActive(false);

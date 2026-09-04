@@ -53,31 +53,35 @@ public class JannahGardenManager : MonoBehaviour
 
     private void Start()
     {
-        EnsureTutorialManager();
+        EnsureGameOnboardingManager();
         SetupExitSystem();
     }
 
     /// <summary>
-    /// Adds a TutorialManager only when the scene has none. TutorialManager is a
-    /// scene-wide singleton, so checking this GameObject alone is not enough: with a
-    /// Tutorial Manager already placed in the scene, AddComponent runs the new
-    /// component's Awake, which hits the duplicate guard and rejects it.
+    /// Adds a GameOnboardingManager only when the scene has none. It is a scene-wide singleton, so
+    /// checking this GameObject alone is not enough: with one already placed in the scene, AddComponent
+    /// would run the new component's Awake, which hits the duplicate guard and rejects it.
+    ///
+    /// This fallback instance has none of its UI references wired (dimOverlay/instructionPanel/
+    /// primaryActionButton/gated buttons), so onboarding UI will silently no-op if it is ever the one
+    /// created - it exists only as a safety net for a corrupted/missing scene state. The properly-wired
+    /// "Game Onboarding Manager" GameObject placed in the scene is what actually drives onboarding.
     /// </summary>
-    private void EnsureTutorialManager()
+    private void EnsureGameOnboardingManager()
     {
-        if (TutorialManager.Instance != null)
+        if (GameOnboardingManager.Instance != null)
         {
             return;
         }
 
         // Instance is only assigned from Awake, so a manager sitting under a disabled
         // parent has not registered yet - include inactive objects in the search.
-        if (FindFirstObjectByType<TutorialManager>(FindObjectsInactive.Include) != null)
+        if (FindFirstObjectByType<GameOnboardingManager>(FindObjectsInactive.Include) != null)
         {
             return;
         }
 
-        gameObject.AddComponent<TutorialManager>();
+        gameObject.AddComponent<GameOnboardingManager>();
     }
 
     private void SetupExitSystem()

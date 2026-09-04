@@ -91,6 +91,11 @@ public class PlayerXPManager : MonoBehaviour
     public event Action<int, float, float> OnXPChanged;
     // signature: (newLevel, currentXP, xpToNextLevel)
 
+    /// <summary>Fired whenever the XP gain chart panel opens or closes. Onboarding waits for a close
+    /// before covering the screen again with its own dim overlay, so it never re-hides the chart the
+    /// player just opened to look at.</summary>
+    public static event Action<bool> OnChartToggled;
+
     private void Awake()
     {
         if (Instance == null)
@@ -173,6 +178,7 @@ public class PlayerXPManager : MonoBehaviour
         }
 
         _chartTransitionCoroutine = StartCoroutine(TransitionChart(_isChartOpen ? _chartOpenedPos : _chartClosedPos));
+        OnChartToggled?.Invoke(_isChartOpen);
     }
 
     private System.Collections.IEnumerator TransitionChart(Vector2 targetPos)

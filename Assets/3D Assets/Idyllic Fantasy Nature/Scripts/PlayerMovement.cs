@@ -181,10 +181,10 @@ namespace IdyllicFantasyNature
                 return;
             }
 
-            // stops the y velocity when player is on the ground and the velocity has reached 0
+            // Keeps the controller firmly grounded on terrain slopes and prevents air-state flickering
             if (characterController.isGrounded && _controllerVelocity.y < 0)
             {
-                _controllerVelocity.y = 0;
+                _controllerVelocity.y = -2f;
             }
 
             // get the movement input (joystick with keyboard fallback)
@@ -228,14 +228,6 @@ namespace IdyllicFantasyNature
                 return;
             }
 
-            characterController.Move(movement * _movementSpeed * Time.deltaTime);
-
-            // gravity affects the controller on the y-axis
-            _controllerVelocity.y += _gravity * Time.deltaTime;
-
-            // moves the controller on the y-axis
-            characterController.Move(_controllerVelocity * Time.deltaTime);
-
             // the controller is able to run
             bool runPressed = false;
 #if ENABLE_INPUT_SYSTEM
@@ -247,10 +239,15 @@ namespace IdyllicFantasyNature
             runPressed = Input.GetKey(KeyCode.LeftShift);
 #endif
 
-            if (runPressed)
-            {
-                characterController.Move(movement * Time.deltaTime * _runMultiplier);
-            }
+            float currentSpeed = runPressed ? (_movementSpeed + _runMultiplier) : _movementSpeed;
+            Vector3 totalVelocity = movement * currentSpeed;
+
+            // gravity affects the controller on the y-axis
+            _controllerVelocity.y += _gravity * Time.deltaTime;
+            totalVelocity.y = _controllerVelocity.y;
+
+            // Single move call per frame for optimal physics collision and terrain sliding
+            characterController.Move(totalVelocity * Time.deltaTime);
 
             // Handle player audio state
             bool isMoving = (moveX != 0f || moveZ != 0f);
@@ -624,6 +621,25 @@ namespace IdyllicFantasyNature
         public void SetInspectorVerticalInput(float value)
         {
             _inspectorVerticalInput = Mathf.Clamp(value, -1f, 1f);
+        }
+
+        // ═════════════════════════════════════════════════════════════
+        //  MOVEMENT SPEED SETTINGS API (Normal + Inspector Mode)
+        // ═════════════════════════════════════════════════════════════
+
+        /// <summary>Current Normal Mode movement speed.</summary>
+        public float MovementSpeed => _movementSpeed;
+
+        /// <summary>Sets Normal Mode movement speed (clamped to the same range as the inspector slider, 1-20).</summary>
+        public void SetMovementSpeed(float value)
+        {
+            _movementSpeed = Mathf.Clamp(value, 1f, 20f);
+        }
+
+        /// <summary>Sets Inspector Mode movement speed (clamped to the same range as the inspector slider, 5-50).</summary>
+        public void SetInspectorModeSpeed(float value)
+        {
+            inspectorModeSpeed = Mathf.Clamp(value, 5f, 50f);
         }
 
         private void StopAllMovementAudio()

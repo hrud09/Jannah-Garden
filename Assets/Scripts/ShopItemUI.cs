@@ -62,6 +62,11 @@ public class ShopItemUI : MonoBehaviour
     [Tooltip("Optional root (e.g. a progress bar container) shown only while a download is in progress.")]
     public GameObject downloadProgressRoot;
 
+    [Tooltip("Alpha applied to this card while some OTHER item is downloading, so it reads as "
+           + "temporarily unavailable. Set to 1 to disable the dimming and rely on the button alone.")]
+    [Range(0.2f, 1f)]
+    public float blockedCardAlpha = 0.5f;
+
 
     public ShopItemData ItemData { get; private set; }
     public TreasureBoxRewardItemData RewardItemData { get; private set; }
@@ -78,6 +83,13 @@ public class ShopItemUI : MonoBehaviour
 
     // 0–1 progress within the current download, driven by ItemPlacementManager's onProgress callback.
     private float downloadProgress01;
+
+    // True while an item is downloading somewhere — usually a different card, but also a treasure box
+    // reward or a relocate, neither of which has a card at all. Only one placement can be in flight at
+    // a time, so anything clickable here would just supersede the download already running. Kept apart
+    // from isDownloadPending so the card actually downloading keeps its own progress label and stays
+    // legible while every other card dims.
+    private bool isInteractionBlocked;
 
     // Throttles the daily-offer countdown to one refresh per second.
     private float countdownTimer;
@@ -185,8 +197,8 @@ public class ShopItemUI : MonoBehaviour
 
         if (itemCategoryText != null)
         {
-            itemCategoryText.text = ShopTaxonomy.GetCategoryName(category);
             itemCategoryText.color = categoryColor;
+            LocalizedRendering.SetText(itemCategoryText, ShopTaxonomy.GetCategoryName(category));
         }
 
         if (itemCategoryAccentImg != null)
@@ -205,8 +217,8 @@ public class ShopItemUI : MonoBehaviour
             itemTierText.gameObject.SetActive(hasTier);
             if (hasTier)
             {
-                itemTierText.text = ShopTaxonomy.GetTierLabel(tier);
                 if (tintTierVisuals) itemTierText.color = tierColor;
+                LocalizedRendering.SetText(itemTierText, ShopTaxonomy.GetTierLabel(tier));
             }
         }
 
@@ -251,6 +263,14 @@ public class ShopItemUI : MonoBehaviour
     {
         NoorCoinManager.OnBalanceChanged += OnBalanceChanged;
         DailyOfferManager.OnOffersChanged += OnOffersChanged;
+        ItemPlacementManager.OnDownloadStateChanged += SetInteractionBlocked;
+
+        // Catch up on a download that started before this card existed. Categories build their cards the
+        // first time they are opened, so a player who buys an item and then switches tabs mid-download
+        // would otherwise be handed a panel full of live buttons.
+        SetInteractionBlocked(ItemPlacementManager.Instance != null
+            && ItemPlacementManager.Instance.IsDownloadingItem);
+
         RefreshAffordabilityVisual();
     }
 
@@ -258,6 +278,7 @@ public class ShopItemUI : MonoBehaviour
     {
         NoorCoinManager.OnBalanceChanged -= OnBalanceChanged;
         DailyOfferManager.OnOffersChanged -= OnOffersChanged;
+        ItemPlacementManager.OnDownloadStateChanged -= SetInteractionBlocked;
     }
 
     private void OnBalanceChanged(int _) => RefreshAffordabilityVisual();
@@ -300,7 +321,35 @@ public class ShopItemUI : MonoBehaviour
         if (downloadProgressFillImg != null) downloadProgressFillImg.fillAmount = 0f;
         if (downloadProgressRoot != null) downloadProgressRoot.SetActive(pending);
 
+        // This card just became (or stopped being) the one downloading, which flips whether the shop-wide
+        // lock should be dimming it.
+        ApplyBlockedAlpha();
+
         RefreshAffordabilityVisual();
+    }
+
+    /// <summary>
+    /// Locks this card while any item's prefab is downloading, driven by
+    /// <see cref="ItemPlacementManager.OnDownloadStateChanged"/>. Only one placement can be in flight at
+    /// a time, so leaving the rest of the shop live means a second tap supersedes the download the player
+    /// is already waiting on — the old request is abandoned and its card is left stranded. Purely a UI
+    /// lock: the card keeps its own price and affordability label, it just cannot be clicked.
+    /// </summary>
+    public void SetInteractionBlocked(bool blocked)
+    {
+        isInteractionBlocked = blocked;
+
+        ApplyBlockedAlpha();
+        RefreshAffordabilityVisual();
+    }
+
+    /// <summary>
+    /// Dims this card while the shop-wide download lock is on — except on the card that is actually
+    /// downloading, which stays at full opacity so its live progress label remains readable.
+    /// </summary>
+    private void ApplyBlockedAlpha()
+    {
+        CanvasGroup.alpha = isInteractionBlocked && !isDownloadPending ? blockedCardAlpha : 1f;
     }
 
     /// <summary>
@@ -323,7 +372,13 @@ public class ShopItemUI : MonoBehaviour
     /// </summary>
     public void RefreshAffordabilityVisual()
     {
-        if (itemPriceText == null) return;
+        // A card prefab with no price label still has to obey the shop-wide download lock, so settle the
+        // button before bailing out of the label work.
+        if (itemPriceText == null)
+        {
+            SetButtonInteractable(true);
+            return;
+        }
 
         // A download in flight blocks the card regardless of what kind of item this is.
         if (isDownloadPending)
@@ -434,9 +489,14 @@ public class ShopItemUI : MonoBehaviour
             && !DailyOfferManager.Instance.IsOfferAvailable(ItemData);
     }
 
+    /// <summary>
+    /// The one place the purchase button's interactable state is set. A download in flight anywhere
+    /// always wins over whatever this card would otherwise allow, so every caller below can go on
+    /// reasoning about its own state alone.
+    /// </summary>
     private void SetButtonInteractable(bool interactable)
     {
-        if (purchaseButton != null) purchaseButton.interactable = interactable;
+        if (purchaseButton != null) purchaseButton.interactable = interactable && !isInteractionBlocked;
     }
 
     private void SetButtonLabel(string label)
