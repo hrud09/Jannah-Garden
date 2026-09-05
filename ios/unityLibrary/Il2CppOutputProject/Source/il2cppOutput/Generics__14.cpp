@@ -45,7 +45,7 @@ struct ArraySortHelper_1_t05AEB000AEB2BDA208021EF16C8EDCD794031B29;
 struct ArraySortHelper_1_t7B52335CEE4DAE3B8F42A6B17553C99320249C85;
 struct ArraySortHelper_1_tCD1AD11733203EE3423E870F8C1D6948BFD487BF;
 struct ArraySortHelper_1_t4A20DA659AA344D837E0971E6082E9473DA62390;
-struct ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE;
+struct ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368;
 struct Comparer_1_t31AFA64332324C7ACC2ED3890CBD4E7F97A2F092;
 struct Comparer_1_tAC9E13E24947C724FE22C16DEE46692EEDFFEDC2;
 struct Comparer_1_t83BB240F5840BD62CA43AFBDF10E51D6192FBE6C;
@@ -75,7 +75,7 @@ struct Comparer_1_t916EE4ED27A9C9BE359110135C2F831364374C7A;
 struct Comparer_1_t659668CCED748FC6B32994547C46FCB8ED57C18B;
 struct Comparer_1_t389ED164D46D85C2DEA7C292920C31C4FB6D414E;
 struct Comparer_1_tD177BC39B5F455F6DF133A5B9E9DCA4B08B7D513;
-struct Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738;
+struct Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841;
 struct Comparison_1_tC126A1DB2317CDCD96353C3DB19460E7A21F51EA;
 struct Comparison_1_t53C7968EAD02BE23D913BD2C7F7F58BBBDD8D096;
 struct Comparison_1_tC8BBA462D5337723AC34773EEE343018753C7FF3;
@@ -105,7 +105,7 @@ struct Comparison_1_tBA8E62E1D99117B29F57BB6477E7B2CEDD1B5158;
 struct Comparison_1_tAE1FB716ECBA976EF12A7E174CC4DAD1A22F3BF6;
 struct Comparison_1_t758F73D242ED056DDF06435BA032D8AB09C69DDC;
 struct Comparison_1_t9F167C473890596BE04A62A3AEC73FAC4926004E;
-struct Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB;
+struct Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F;
 struct Dictionary_2_t6682243BDABA638FCBE4F1D9875B5B1455A7686E;
 struct HashSet_1_t0F16759FF079A28DCA2DCF39BA6A61B5D502A475;
 struct IComparer_1_tC7B11970921887AC55237FA509FD00314F7C74F6;
@@ -137,7 +137,7 @@ struct IComparer_1_tFEC2309064BE096DA49D95D8636AEC29472F7434;
 struct IComparer_1_t2135072645BFC9E84F2A396D1100BE42B3991084;
 struct IComparer_1_t40E9EE459CD15647A7896A3E1FEA51BA33A61D8E;
 struct IComparer_1_t77A932A5111E54F07730EC4DB99DF6C7E74D5F13;
-struct IComparer_1_t9015B357F4019D018D527FF73E5929A5380714FC;
+struct IComparer_1_t0DE600E027ED2E4C7F2BB9B383146ACAEF7468BC;
 struct List_1_t4A80BCCFB0BC8742C8BB601365DB07226750573A;
 struct List_1_t70EE7982F45810D4B024CF720D910E67974A3094;
 struct List_1_tB0B308D151FBF226396B20253C1FF11CF7D10D3A;
@@ -179,7 +179,7 @@ struct SortedColumnStateU5BU5D_tD76039072018E258494F81C8D50F35EAC97118E6;
 struct RuntimeBuildLogU5BU5D_t38D8F77A5EDCF269781A6530D67BBA92CE052ED7;
 struct Painter2DJobDataU5BU5D_t357073CDDC47FE6B5DAC4A45876119B855E0BC44;
 struct ParticleU5BU5D_tE2CC7CC8844B6F592CC26DE7B533D8BC74C9BEC7;
-struct EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2;
+struct BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE;
 struct Awaitable_t690337FEC1C411606E233EA36A41337B931C23CB;
 struct Binding_tA1358A155852138C1926082E4F3245B6F631CBED;
 struct DecalCachedChunk_tDEF493C8A3A1F442BDEC1794BDDA0996B32DCACE;
@@ -243,7 +243,7 @@ struct SortedColumnStateU5BU5D_tD76039072018E258494F81C8D50F35EAC97118E6;
 struct RuntimeBuildLogU5BU5D_t38D8F77A5EDCF269781A6530D67BBA92CE052ED7;
 struct Painter2DJobDataU5BU5D_t357073CDDC47FE6B5DAC4A45876119B855E0BC44;
 struct ParticleU5BU5D_tE2CC7CC8844B6F592CC26DE7B533D8BC74C9BEC7;
-struct EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2;
+struct BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE;
 
 IL2CPP_EXTERN_C_BEGIN
 IL2CPP_EXTERN_C_END
@@ -340,7 +340,7 @@ struct ArraySortHelper_1_tCD1AD11733203EE3423E870F8C1D6948BFD487BF  : public Run
 struct ArraySortHelper_1_t4A20DA659AA344D837E0971E6082E9473DA62390  : public RuntimeObject
 {
 };
-struct ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE  : public RuntimeObject
+struct ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368  : public RuntimeObject
 {
 };
 struct Comparer_1_t31AFA64332324C7ACC2ED3890CBD4E7F97A2F092  : public RuntimeObject
@@ -430,7 +430,7 @@ struct Comparer_1_t389ED164D46D85C2DEA7C292920C31C4FB6D414E  : public RuntimeObj
 struct Comparer_1_tD177BC39B5F455F6DF133A5B9E9DCA4B08B7D513  : public RuntimeObject
 {
 };
-struct Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738  : public RuntimeObject
+struct Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841  : public RuntimeObject
 {
 };
 struct String_t  : public RuntimeObject
@@ -574,13 +574,6 @@ struct InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735_marshaled_com
 {
 	Il2CppChar* ___m_StringOriginalCase;
 	Il2CppChar* ___m_StringLowerCase;
-};
-struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 
-{
-	float ___x;
-	float ___y;
-	float ___z;
-	float ___w;
 };
 struct Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D 
 {
@@ -840,6 +833,12 @@ struct Output_t7A6747E925D1D50C2B5C4F52EE622EC5CBDDEF22_marshaled_com
 	Il2CppChar* ___name;
 	int32_t ___index;
 };
+struct BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B 
+{
+	int32_t ___x;
+	int32_t ___y;
+	int32_t ___z;
+};
 struct Allocator_t996642592271AAD9EE688F142741D512C07B5824 
 {
 	int32_t ___value__;
@@ -1086,27 +1085,6 @@ struct Particle_tF16C89682A98AB276CCBE4DA0A6E82F98500F79D
 	float ___m_EmitAccumulator0;
 	float ___m_EmitAccumulator1;
 	uint32_t ___m_Flags;
-};
-struct Entry_tB88A19650670F859239145C4E915FA27BEA8409A 
-{
-	String_t* ___assetGuid;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___scale;
-};
-struct Entry_tB88A19650670F859239145C4E915FA27BEA8409A_marshaled_pinvoke
-{
-	char* ___assetGuid;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___scale;
-};
-struct Entry_tB88A19650670F859239145C4E915FA27BEA8409A_marshaled_com
-{
-	Il2CppChar* ___assetGuid;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___scale;
 };
 struct SettingsOptions_t935A71692F21EE9D959FCAC00574AA018F8BA2CB 
 {
@@ -1960,7 +1938,7 @@ struct Comparison_1_tAE1FB716ECBA976EF12A7E174CC4DAD1A22F3BF6  : public Multicas
 struct Comparison_1_t9F167C473890596BE04A62A3AEC73FAC4926004E  : public MulticastDelegate_t
 {
 };
-struct Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB  : public MulticastDelegate_t
+struct Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F  : public MulticastDelegate_t
 {
 };
 struct DynamicTensorShape_t9059EB40BCBB9F8684F49C974C1F56D34E79038E 
@@ -2344,9 +2322,9 @@ struct ArraySortHelper_1_t4A20DA659AA344D837E0971E6082E9473DA62390_StaticFields
 {
 	ArraySortHelper_1_t4A20DA659AA344D837E0971E6082E9473DA62390* ___s_defaultArraySortHelper;
 };
-struct ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE_StaticFields
+struct ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368_StaticFields
 {
-	ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* ___s_defaultArraySortHelper;
+	ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* ___s_defaultArraySortHelper;
 };
 struct Comparer_1_t31AFA64332324C7ACC2ED3890CBD4E7F97A2F092_StaticFields
 {
@@ -2464,9 +2442,9 @@ struct Comparer_1_tD177BC39B5F455F6DF133A5B9E9DCA4B08B7D513_StaticFields
 {
 	Comparer_1_tD177BC39B5F455F6DF133A5B9E9DCA4B08B7D513* ___defaultComparer;
 };
-struct Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738_StaticFields
+struct Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841_StaticFields
 {
-	Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738* ___defaultComparer;
+	Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841* ___defaultComparer;
 };
 struct String_t_StaticFields
 {
@@ -3681,38 +3659,36 @@ struct ParticleU5BU5D_tE2CC7CC8844B6F592CC26DE7B533D8BC74C9BEC7  : public Runtim
 		m_Items[index] = value;
 	}
 };
-struct EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2  : public RuntimeArray
+struct BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE  : public RuntimeArray
 {
-	ALIGN_FIELD (8) Entry_tB88A19650670F859239145C4E915FA27BEA8409A m_Items[1];
+	ALIGN_FIELD (8) BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B m_Items[1];
 
-	inline Entry_tB88A19650670F859239145C4E915FA27BEA8409A GetAt(il2cpp_array_size_t index) const
+	inline BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B GetAt(il2cpp_array_size_t index) const
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		return m_Items[index];
 	}
-	inline Entry_tB88A19650670F859239145C4E915FA27BEA8409A* GetAddressAt(il2cpp_array_size_t index)
+	inline BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B* GetAddressAt(il2cpp_array_size_t index)
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		return m_Items + index;
 	}
-	inline void SetAt(il2cpp_array_size_t index, Entry_tB88A19650670F859239145C4E915FA27BEA8409A value)
+	inline void SetAt(il2cpp_array_size_t index, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B value)
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___assetGuid), (void*)NULL);
 	}
-	inline Entry_tB88A19650670F859239145C4E915FA27BEA8409A GetAtUnchecked(il2cpp_array_size_t index) const
+	inline BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B GetAtUnchecked(il2cpp_array_size_t index) const
 	{
 		return m_Items[index];
 	}
-	inline Entry_tB88A19650670F859239145C4E915FA27BEA8409A* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	inline BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B* GetAddressAtUnchecked(il2cpp_array_size_t index)
 	{
 		return m_Items + index;
 	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, Entry_tB88A19650670F859239145C4E915FA27BEA8409A value)
+	inline void SetAtUnchecked(il2cpp_array_size_t index, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B value)
 	{
 		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___assetGuid), (void*)NULL);
 	}
 };
 
@@ -4094,19 +4070,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartiti
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Swap_m3C61B74144B0FF222D2C8A301DA69099702985BD_gshared (ParticleU5BU5D_tE2CC7CC8844B6F592CC26DE7B533D8BC74C9BEC7* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_DownHeap_m7448EB3689B202F9744B54065267B517FD6B5B77_gshared (ParticleU5BU5D_tE2CC7CC8844B6F592CC26DE7B533D8BC74C9BEC7* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_t9F167C473890596BE04A62A3AEC73FAC4926004E* ___4_comparer, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__ctor_mFE521E1730FBCD835D8FD1DD9C73C0F36D609A8D_gshared (ArraySortHelper_1_t4A20DA659AA344D837E0971E6082E9473DA62390* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738* Comparer_1_get_Default_mDC118534BAAE75258FFA9D5B52326EE12609C93C_gshared (const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Comparison_1__ctor_m9E5F2C25A098665C973DB09E2FFBB4F398EABB5A_gshared (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntrospectiveSort_m21D675934A1B86C9F7A82E27F9946F60D7B76CC7_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_left, int32_t ___2_length, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_InternalBinarySearch_mF6DCC89A825D4D2D035BF0FC5691E406C2211E6F_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_array, int32_t ___1_index, int32_t ___2_length, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_gshared_inline (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* __this, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___0_x, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___1_y, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntroSort_m4AF9B2126D8DC416FDEA6D6FDA920CCD58125AE0_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, int32_t ___3_depthLimit, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___4_comparer, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___1_comparer, int32_t ___2_a, int32_t ___3_b, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_InsertionSort_mDEF49647EEF3B07C210FCBC0CA508C325C9CB2DF_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Heapsort_mA55BF18978D5224D8F5AC152CE0D13AEF6293928_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartition_m0DA6CB83106EC8B298695BEF6773BF7BC048A56D_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_DownHeap_m4628F549BCE6B06CB4F1D054E1889C66F709861D_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___4_comparer, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__ctor_m8EBABD19B1316F9195E1FDE24C8426519751E909_gshared (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841* Comparer_1_get_Default_m4CEB72D9F013561DEACBF8264B457F27E1A17A05_gshared (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Comparison_1__ctor_mB108F8FC979D67535574070660958071168EFCD5_gshared (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntrospectiveSort_mA27D9B8696C03F1BA45DEDDDB6F058DABB09B985_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_left, int32_t ___2_length, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_InternalBinarySearch_mF0B7DDEBCA5556D20BC7A7CE2A2AB8ED080CFC0A_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_array, int32_t ___1_index, int32_t ___2_length, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_gshared_inline (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* __this, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___0_x, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___1_y, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntroSort_mBC3C934BFBD9B1B0F8A8C1A6849E1ED616DD9FF3_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, int32_t ___3_depthLimit, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___4_comparer, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___1_comparer, int32_t ___2_a, int32_t ___3_b, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_InsertionSort_mC7354164A585FE85E8EBC5229AA234EBF9366DA8_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Heapsort_m5E2F474BEE4FDA13F64D8C87D71E63F195ABDEB1_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartition_m710FD64E85CBD28F22FDF796B6B8F12EB80DF1AA_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_DownHeap_m5A743DAA518933B26729932DE513595A2EE2393D_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___4_comparer, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__ctor_mD61AC22B65FCBB78EE5F9091655B766662656718_gshared (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* __this, const RuntimeMethod* method) ;
 
 inline Comparer_1_t31AFA64332324C7ACC2ED3890CBD4E7F97A2F092* Comparer_1_get_Default_m7EF78491823DAB31C0B6226E94640C68312370CF (const RuntimeMethod* method)
 {
@@ -5620,57 +5596,57 @@ inline void ArraySortHelper_1__ctor_mFE521E1730FBCD835D8FD1DD9C73C0F36D609A8D (A
 {
 	((  void (*) (ArraySortHelper_1_t4A20DA659AA344D837E0971E6082E9473DA62390*, const RuntimeMethod*))ArraySortHelper_1__ctor_mFE521E1730FBCD835D8FD1DD9C73C0F36D609A8D_gshared)(__this, method);
 }
-inline Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738* Comparer_1_get_Default_mDC118534BAAE75258FFA9D5B52326EE12609C93C (const RuntimeMethod* method)
+inline Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841* Comparer_1_get_Default_m4CEB72D9F013561DEACBF8264B457F27E1A17A05 (const RuntimeMethod* method)
 {
-	return ((  Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738* (*) (const RuntimeMethod*))Comparer_1_get_Default_mDC118534BAAE75258FFA9D5B52326EE12609C93C_gshared)(method);
+	return ((  Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841* (*) (const RuntimeMethod*))Comparer_1_get_Default_m4CEB72D9F013561DEACBF8264B457F27E1A17A05_gshared)(method);
 }
-inline void Comparison_1__ctor_m9E5F2C25A098665C973DB09E2FFBB4F398EABB5A (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method)
+inline void Comparison_1__ctor_mB108F8FC979D67535574070660958071168EFCD5 (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method)
 {
-	((  void (*) (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, RuntimeObject*, intptr_t, const RuntimeMethod*))Comparison_1__ctor_m9E5F2C25A098665C973DB09E2FFBB4F398EABB5A_gshared)(__this, ___0_object, ___1_method, method);
+	((  void (*) (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, RuntimeObject*, intptr_t, const RuntimeMethod*))Comparison_1__ctor_mB108F8FC979D67535574070660958071168EFCD5_gshared)(__this, ___0_object, ___1_method, method);
 }
-inline void ArraySortHelper_1_IntrospectiveSort_m21D675934A1B86C9F7A82E27F9946F60D7B76CC7 (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_left, int32_t ___2_length, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method)
+inline void ArraySortHelper_1_IntrospectiveSort_mA27D9B8696C03F1BA45DEDDDB6F058DABB09B985 (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_left, int32_t ___2_length, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, const RuntimeMethod*))ArraySortHelper_1_IntrospectiveSort_m21D675934A1B86C9F7A82E27F9946F60D7B76CC7_gshared)(___0_keys, ___1_left, ___2_length, ___3_comparer, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, const RuntimeMethod*))ArraySortHelper_1_IntrospectiveSort_mA27D9B8696C03F1BA45DEDDDB6F058DABB09B985_gshared)(___0_keys, ___1_left, ___2_length, ___3_comparer, method);
 }
-inline int32_t ArraySortHelper_1_InternalBinarySearch_mF6DCC89A825D4D2D035BF0FC5691E406C2211E6F (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_array, int32_t ___1_index, int32_t ___2_length, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method)
+inline int32_t ArraySortHelper_1_InternalBinarySearch_mF0B7DDEBCA5556D20BC7A7CE2A2AB8ED080CFC0A (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_array, int32_t ___1_index, int32_t ___2_length, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, Entry_tB88A19650670F859239145C4E915FA27BEA8409A, RuntimeObject*, const RuntimeMethod*))ArraySortHelper_1_InternalBinarySearch_mF6DCC89A825D4D2D035BF0FC5691E406C2211E6F_gshared)(___0_array, ___1_index, ___2_length, ___3_value, ___4_comparer, method);
+	return ((  int32_t (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B, RuntimeObject*, const RuntimeMethod*))ArraySortHelper_1_InternalBinarySearch_mF0B7DDEBCA5556D20BC7A7CE2A2AB8ED080CFC0A_gshared)(___0_array, ___1_index, ___2_length, ___3_value, ___4_comparer, method);
 }
-inline int32_t Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* __this, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___0_x, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___1_y, const RuntimeMethod* method)
+inline int32_t Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* __this, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___0_x, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___1_y, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, Entry_tB88A19650670F859239145C4E915FA27BEA8409A, Entry_tB88A19650670F859239145C4E915FA27BEA8409A, const RuntimeMethod*))Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_gshared_inline)(__this, ___0_x, ___1_y, method);
+	return ((  int32_t (*) (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B, const RuntimeMethod*))Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_gshared_inline)(__this, ___0_x, ___1_y, method);
 }
-inline void ArraySortHelper_1_IntroSort_m4AF9B2126D8DC416FDEA6D6FDA920CCD58125AE0 (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, int32_t ___3_depthLimit, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___4_comparer, const RuntimeMethod* method)
+inline void ArraySortHelper_1_IntroSort_mBC3C934BFBD9B1B0F8A8C1A6849E1ED616DD9FF3 (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, int32_t ___3_depthLimit, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___4_comparer, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, int32_t, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, const RuntimeMethod*))ArraySortHelper_1_IntroSort_m4AF9B2126D8DC416FDEA6D6FDA920CCD58125AE0_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_depthLimit, ___4_comparer, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, int32_t, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, const RuntimeMethod*))ArraySortHelper_1_IntroSort_mBC3C934BFBD9B1B0F8A8C1A6849E1ED616DD9FF3_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_depthLimit, ___4_comparer, method);
 }
-inline void ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87 (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___1_comparer, int32_t ___2_a, int32_t ___3_b, const RuntimeMethod* method)
+inline void ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___1_comparer, int32_t ___2_a, int32_t ___3_b, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, int32_t, int32_t, const RuntimeMethod*))ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87_gshared)(___0_keys, ___1_comparer, ___2_a, ___3_b, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, int32_t, int32_t, const RuntimeMethod*))ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF_gshared)(___0_keys, ___1_comparer, ___2_a, ___3_b, method);
 }
-inline void ArraySortHelper_1_InsertionSort_mDEF49647EEF3B07C210FCBC0CA508C325C9CB2DF (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method)
+inline void ArraySortHelper_1_InsertionSort_mC7354164A585FE85E8EBC5229AA234EBF9366DA8 (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, const RuntimeMethod*))ArraySortHelper_1_InsertionSort_mDEF49647EEF3B07C210FCBC0CA508C325C9CB2DF_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_comparer, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, const RuntimeMethod*))ArraySortHelper_1_InsertionSort_mC7354164A585FE85E8EBC5229AA234EBF9366DA8_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_comparer, method);
 }
-inline void ArraySortHelper_1_Heapsort_mA55BF18978D5224D8F5AC152CE0D13AEF6293928 (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method)
+inline void ArraySortHelper_1_Heapsort_m5E2F474BEE4FDA13F64D8C87D71E63F195ABDEB1 (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, const RuntimeMethod*))ArraySortHelper_1_Heapsort_mA55BF18978D5224D8F5AC152CE0D13AEF6293928_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_comparer, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, const RuntimeMethod*))ArraySortHelper_1_Heapsort_m5E2F474BEE4FDA13F64D8C87D71E63F195ABDEB1_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_comparer, method);
 }
-inline int32_t ArraySortHelper_1_PickPivotAndPartition_m0DA6CB83106EC8B298695BEF6773BF7BC048A56D (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method)
+inline int32_t ArraySortHelper_1_PickPivotAndPartition_m710FD64E85CBD28F22FDF796B6B8F12EB80DF1AA (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, const RuntimeMethod*))ArraySortHelper_1_PickPivotAndPartition_m0DA6CB83106EC8B298695BEF6773BF7BC048A56D_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_comparer, method);
+	return ((  int32_t (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, const RuntimeMethod*))ArraySortHelper_1_PickPivotAndPartition_m710FD64E85CBD28F22FDF796B6B8F12EB80DF1AA_gshared)(___0_keys, ___1_lo, ___2_hi, ___3_comparer, method);
 }
-inline void ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0 (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method)
+inline void ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, const RuntimeMethod*))ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0_gshared)(___0_a, ___1_i, ___2_j, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, const RuntimeMethod*))ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC_gshared)(___0_a, ___1_i, ___2_j, method);
 }
-inline void ArraySortHelper_1_DownHeap_m4628F549BCE6B06CB4F1D054E1889C66F709861D (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___4_comparer, const RuntimeMethod* method)
+inline void ArraySortHelper_1_DownHeap_m5A743DAA518933B26729932DE513595A2EE2393D (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___4_comparer, const RuntimeMethod* method)
 {
-	((  void (*) (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2*, int32_t, int32_t, int32_t, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*, const RuntimeMethod*))ArraySortHelper_1_DownHeap_m4628F549BCE6B06CB4F1D054E1889C66F709861D_gshared)(___0_keys, ___1_i, ___2_n, ___3_lo, ___4_comparer, method);
+	((  void (*) (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE*, int32_t, int32_t, int32_t, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*, const RuntimeMethod*))ArraySortHelper_1_DownHeap_m5A743DAA518933B26729932DE513595A2EE2393D_gshared)(___0_keys, ___1_i, ___2_n, ___3_lo, ___4_comparer, method);
 }
-inline void ArraySortHelper_1__ctor_m8EBABD19B1316F9195E1FDE24C8426519751E909 (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* __this, const RuntimeMethod* method)
+inline void ArraySortHelper_1__ctor_mD61AC22B65FCBB78EE5F9091655B766662656718 (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* __this, const RuntimeMethod* method)
 {
-	((  void (*) (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE*, const RuntimeMethod*))ArraySortHelper_1__ctor_m8EBABD19B1316F9195E1FDE24C8426519751E909_gshared)(__this, method);
+	((  void (*) (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368*, const RuntimeMethod*))ArraySortHelper_1__ctor_mD61AC22B65FCBB78EE5F9091655B766662656718_gshared)(__this, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -34794,7 +34770,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__cctor_mC67D967A0B955B
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // Method Definition Index: 11531
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Sort_m1A132F956D61DFB36D24FCF59B313B814A9AB514_gshared (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* __this, EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_index, int32_t ___2_length, RuntimeObject* ___3_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Sort_m7F4B18785632472A052835C4189DC3DE296BA65A_gshared (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* __this, BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_index, int32_t ___2_length, RuntimeObject* ___3_comparer, const RuntimeMethod* method) 
 {
 	Exception_t* V_0 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
@@ -34808,22 +34784,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Sort_m1A132F956D61DFB3
 			}
 		}
 		{
-			Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738* L_1;
-			L_1 = Comparer_1_get_Default_mDC118534BAAE75258FFA9D5B52326EE12609C93C(il2cpp_rgctx_method(method->klass->rgctx_data, 1));
+			Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841* L_1;
+			L_1 = Comparer_1_get_Default_m4CEB72D9F013561DEACBF8264B457F27E1A17A05(il2cpp_rgctx_method(method->klass->rgctx_data, 1));
 			___3_comparer = (RuntimeObject*)L_1;
 		}
 
 IL_000b_1:
 		{
-			EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_2 = ___0_keys;
+			BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_2 = ___0_keys;
 			int32_t L_3 = ___1_index;
 			int32_t L_4 = ___2_length;
 			RuntimeObject* L_5 = ___3_comparer;
 			RuntimeObject* L_6 = L_5;
-			Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_7 = (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB*)il2cpp_codegen_object_new(il2cpp_rgctx_data(method->klass->rgctx_data, 6));
-			Comparison_1__ctor_m9E5F2C25A098665C973DB09E2FFBB4F398EABB5A(L_7, (RuntimeObject*)L_6, (intptr_t)((void*)GetInterfaceMethodInfo(L_6, 0, il2cpp_rgctx_data(method->klass->rgctx_data, 0))), il2cpp_rgctx_method(method->klass->rgctx_data, 7));
+			Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_7 = (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F*)il2cpp_codegen_object_new(il2cpp_rgctx_data(method->klass->rgctx_data, 6));
+			Comparison_1__ctor_mB108F8FC979D67535574070660958071168EFCD5(L_7, (RuntimeObject*)L_6, (intptr_t)((void*)GetInterfaceMethodInfo(L_6, 0, il2cpp_rgctx_data(method->klass->rgctx_data, 0))), il2cpp_rgctx_method(method->klass->rgctx_data, 7));
 			il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->klass->rgctx_data, 9));
-			ArraySortHelper_1_IntrospectiveSort_m21D675934A1B86C9F7A82E27F9946F60D7B76CC7(L_2, L_3, L_4, L_7, il2cpp_rgctx_method(method->klass->rgctx_data, 8));
+			ArraySortHelper_1_IntrospectiveSort_mA27D9B8696C03F1BA45DEDDDB6F058DABB09B985(L_2, L_3, L_4, L_7, il2cpp_rgctx_method(method->klass->rgctx_data, 8));
 			goto IL_003d;
 		}
 	}
@@ -34879,7 +34855,7 @@ IL_003d:
 	}
 }
 // Method Definition Index: 11532
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_BinarySearch_m8A9FFC1B88037D768BB2E5A703FAE599D9A0DB27_gshared (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* __this, EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_array, int32_t ___1_index, int32_t ___2_length, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_BinarySearch_m720EDE0815F642E1019B86FB91C987928290CE72_gshared (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* __this, BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_array, int32_t ___1_index, int32_t ___2_length, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	Exception_t* V_1 = NULL;
@@ -34894,21 +34870,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_BinarySearch_m8A9FF
 			}
 		}
 		{
-			Comparer_1_t59C6951A73DAC13E6C02A565413709E10739B738* L_1;
-			L_1 = Comparer_1_get_Default_mDC118534BAAE75258FFA9D5B52326EE12609C93C(il2cpp_rgctx_method(method->klass->rgctx_data, 1));
+			Comparer_1_t64C39B390904CABF3EC1FC26D117347C4120A841* L_1;
+			L_1 = Comparer_1_get_Default_m4CEB72D9F013561DEACBF8264B457F27E1A17A05(il2cpp_rgctx_method(method->klass->rgctx_data, 1));
 			___4_comparer = (RuntimeObject*)L_1;
 		}
 
 IL_000b_1:
 		{
-			EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_2 = ___0_array;
+			BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_2 = ___0_array;
 			int32_t L_3 = ___1_index;
 			int32_t L_4 = ___2_length;
-			Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_5 = ___3_value;
+			BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_5 = ___3_value;
 			RuntimeObject* L_6 = ___4_comparer;
 			il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->klass->rgctx_data, 9));
 			int32_t L_7;
-			L_7 = ArraySortHelper_1_InternalBinarySearch_mF6DCC89A825D4D2D035BF0FC5691E406C2211E6F(L_2, L_3, L_4, L_5, L_6, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+			L_7 = ArraySortHelper_1_InternalBinarySearch_mF0B7DDEBCA5556D20BC7A7CE2A2AB8ED080CFC0A(L_2, L_3, L_4, L_5, L_6, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
 			V_0 = L_7;
 			goto IL_002a;
 		}
@@ -34952,18 +34928,18 @@ IL_002a:
 	}
 }
 // Method Definition Index: 11533
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Sort_mD9577A4E22AF73EDEB899E08AE3BF7C153E6B7A5_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_index, int32_t ___2_length, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Sort_mD71AF68A6A40286226609C455F65D1062B3C95C6_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_index, int32_t ___2_length, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) 
 {
 	Exception_t* V_0 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
 	try
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_0 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_0 = ___0_keys;
 		int32_t L_1 = ___1_index;
 		int32_t L_2 = ___2_length;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_3 = ___3_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_3 = ___3_comparer;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_IntrospectiveSort_m21D675934A1B86C9F7A82E27F9946F60D7B76CC7(L_0, L_1, L_2, L_3, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 8));
+		ArraySortHelper_1_IntrospectiveSort_mA27D9B8696C03F1BA45DEDDDB6F058DABB09B985(L_0, L_1, L_2, L_3, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 8));
 		goto IL_0024;
 	}
 	catch(Il2CppExceptionWrapper& e)
@@ -34989,7 +34965,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Sort_mD9577A4E22AF73ED
 CATCH_000b:
 	{
 		IndexOutOfRangeException_t7ECB35264FB6CA8FAA516BD958F4B2ADC78E8A82* L_4 = ((IndexOutOfRangeException_t7ECB35264FB6CA8FAA516BD958F4B2ADC78E8A82*)IL2CPP_GET_ACTIVE_EXCEPTION(IndexOutOfRangeException_t7ECB35264FB6CA8FAA516BD958F4B2ADC78E8A82*));;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_5 = ___3_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_5 = ___3_comparer;
 		IntrospectiveSortUtilities_ThrowOrIgnoreBadComparer_m119232371BEE9732FE70D22EE93B3818E577EFAF((RuntimeObject*)L_5, NULL);
 		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_0024;
@@ -35018,7 +34994,7 @@ IL_0024:
 	}
 }
 // Method Definition Index: 11534
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_InternalBinarySearch_mF6DCC89A825D4D2D035BF0FC5691E406C2211E6F_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_array, int32_t ___1_index, int32_t ___2_length, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_InternalBinarySearch_mF0B7DDEBCA5556D20BC7A7CE2A2AB8ED080CFC0A_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_array, int32_t ___1_index, int32_t ___2_length, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___3_value, RuntimeObject* ___4_comparer, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
@@ -35040,15 +35016,15 @@ IL_000a:
 		int32_t L_5 = V_0;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_3, ((int32_t)(((int32_t)il2cpp_codegen_subtract(L_4, L_5))>>1))));
 		RuntimeObject* L_6 = ___4_comparer;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_7 = ___0_array;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_7 = ___0_array;
 		int32_t L_8 = V_2;
 		NullCheck(L_7);
 		int32_t L_9 = L_8;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_11 = ___3_value;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_11 = ___3_value;
 		NullCheck(L_6);
 		int32_t L_12;
-		L_12 = InterfaceFuncInvoker2< int32_t, Entry_tB88A19650670F859239145C4E915FA27BEA8409A, Entry_tB88A19650670F859239145C4E915FA27BEA8409A >::Invoke(0, il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0), L_6, L_10, L_11);
+		L_12 = InterfaceFuncInvoker2< int32_t, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B >::Invoke(0, il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0), L_6, L_10, L_11);
 		V_3 = L_12;
 		int32_t L_13 = V_3;
 		if (L_13)
@@ -35096,9 +35072,9 @@ IL_0035:
 	}
 }
 // Method Definition Index: 11535
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___1_comparer, int32_t ___2_a, int32_t ___3_b, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___1_comparer, int32_t ___2_a, int32_t ___3_b, const RuntimeMethod* method) 
 {
-	Entry_tB88A19650670F859239145C4E915FA27BEA8409A V_0;
+	BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
 		int32_t L_0 = ___2_a;
@@ -35109,46 +35085,46 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_SwapIfGreater_mE6E0D54
 		}
 	}
 	{
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_2 = ___1_comparer;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_3 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_2 = ___1_comparer;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_3 = ___0_keys;
 		int32_t L_4 = ___2_a;
 		NullCheck(L_3);
 		int32_t L_5 = L_4;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_7 = ___0_keys;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_7 = ___0_keys;
 		int32_t L_8 = ___3_b;
 		NullCheck(L_7);
 		int32_t L_9 = L_8;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
 		NullCheck(L_2);
 		int32_t L_11;
-		L_11 = Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline(L_2, L_6, L_10, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
+		L_11 = Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline(L_2, L_6, L_10, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
 		if ((((int32_t)L_11) <= ((int32_t)0)))
 		{
 			goto IL_0039;
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_12 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_12 = ___0_keys;
 		int32_t L_13 = ___2_a;
 		NullCheck(L_12);
 		int32_t L_14 = L_13;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_15 = (L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_14));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_15 = (L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_14));
 		V_0 = L_15;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_16 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_16 = ___0_keys;
 		int32_t L_17 = ___2_a;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_18 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_18 = ___0_keys;
 		int32_t L_19 = ___3_b;
 		NullCheck(L_18);
 		int32_t L_20 = L_19;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_21 = (L_18)->GetAt(static_cast<il2cpp_array_size_t>(L_20));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_21 = (L_18)->GetAt(static_cast<il2cpp_array_size_t>(L_20));
 		NullCheck(L_16);
-		(L_16)->SetAt(static_cast<il2cpp_array_size_t>(L_17), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_21);
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_22 = ___0_keys;
+		(L_16)->SetAt(static_cast<il2cpp_array_size_t>(L_17), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_21);
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_22 = ___0_keys;
 		int32_t L_23 = ___3_b;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_24 = V_0;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_24 = V_0;
 		NullCheck(L_22);
-		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(L_23), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_24);
+		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(L_23), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_24);
 	}
 
 IL_0039:
@@ -35157,9 +35133,9 @@ IL_0039:
 	}
 }
 // Method Definition Index: 11536
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_a, int32_t ___1_i, int32_t ___2_j, const RuntimeMethod* method) 
 {
-	Entry_tB88A19650670F859239145C4E915FA27BEA8409A V_0;
+	BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
 		int32_t L_0 = ___1_i;
@@ -35170,26 +35146,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_2 = ___0_a;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_2 = ___0_a;
 		int32_t L_3 = ___1_i;
 		NullCheck(L_2);
 		int32_t L_4 = L_3;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
 		V_0 = L_5;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_6 = ___0_a;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_6 = ___0_a;
 		int32_t L_7 = ___1_i;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_8 = ___0_a;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_8 = ___0_a;
 		int32_t L_9 = ___2_j;
 		NullCheck(L_8);
 		int32_t L_10 = L_9;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
 		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_11);
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_12 = ___0_a;
+		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_11);
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_12 = ___0_a;
 		int32_t L_13 = ___2_j;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_14 = V_0;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_14 = V_0;
 		NullCheck(L_12);
-		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(L_13), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_14);
+		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(L_13), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_14);
 	}
 
 IL_0022:
@@ -35198,7 +35174,7 @@ IL_0022:
 	}
 }
 // Method Definition Index: 11537
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntrospectiveSort_m21D675934A1B86C9F7A82E27F9946F60D7B76CC7_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_left, int32_t ___2_length, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntrospectiveSort_mA27D9B8696C03F1BA45DEDDDB6F058DABB09B985_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_left, int32_t ___2_length, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) 
 {
 	{
 		int32_t L_0 = ___2_length;
@@ -35213,21 +35189,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntrospectiveSort_m21D
 
 IL_0005:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_1 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_1 = ___0_keys;
 		int32_t L_2 = ___1_left;
 		int32_t L_3 = ___2_length;
 		int32_t L_4 = ___1_left;
 		int32_t L_5 = ___2_length;
 		int32_t L_6;
 		L_6 = IntrospectiveSortUtilities_FloorLog2PlusOne_m33AC60574EC2B80A3B7084361A3736D4CFE91F6D(L_5, NULL);
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_7 = ___3_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_7 = ___3_comparer;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_IntroSort_m4AF9B2126D8DC416FDEA6D6FDA920CCD58125AE0(L_1, L_2, ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_3, L_4)), 1)), ((int32_t)il2cpp_codegen_multiply(2, L_6)), L_7, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 13));
+		ArraySortHelper_1_IntroSort_mBC3C934BFBD9B1B0F8A8C1A6849E1ED616DD9FF3(L_1, L_2, ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_3, L_4)), 1)), ((int32_t)il2cpp_codegen_multiply(2, L_6)), L_7, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 13));
 		return;
 	}
 }
 // Method Definition Index: 11538
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntroSort_m4AF9B2126D8DC416FDEA6D6FDA920CCD58125AE0_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, int32_t ___3_depthLimit, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___4_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_IntroSort_mBC3C934BFBD9B1B0F8A8C1A6849E1ED616DD9FF3_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, int32_t ___3_depthLimit, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___4_comparer, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
@@ -35266,12 +35242,12 @@ IL_0015:
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_5 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_6 = ___4_comparer;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_5 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_6 = ___4_comparer;
 		int32_t L_7 = ___1_lo;
 		int32_t L_8 = ___2_hi;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_5, L_6, L_7, L_8, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_5, L_6, L_7, L_8, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
 		return;
 	}
 
@@ -35284,33 +35260,33 @@ IL_0024:
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_10 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_11 = ___4_comparer;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_10 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_11 = ___4_comparer;
 		int32_t L_12 = ___1_lo;
 		int32_t L_13 = ___2_hi;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_10, L_11, L_12, ((int32_t)il2cpp_codegen_subtract(L_13, 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_14 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_15 = ___4_comparer;
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_10, L_11, L_12, ((int32_t)il2cpp_codegen_subtract(L_13, 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_14 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_15 = ___4_comparer;
 		int32_t L_16 = ___1_lo;
 		int32_t L_17 = ___2_hi;
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_14, L_15, L_16, L_17, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_18 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_19 = ___4_comparer;
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_14, L_15, L_16, L_17, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_18 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_19 = ___4_comparer;
 		int32_t L_20 = ___2_hi;
 		int32_t L_21 = ___2_hi;
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_18, L_19, ((int32_t)il2cpp_codegen_subtract(L_20, 1)), L_21, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_18, L_19, ((int32_t)il2cpp_codegen_subtract(L_20, 1)), L_21, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
 		return;
 	}
 
 IL_004b:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_22 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_22 = ___0_keys;
 		int32_t L_23 = ___1_lo;
 		int32_t L_24 = ___2_hi;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_25 = ___4_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_25 = ___4_comparer;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_InsertionSort_mDEF49647EEF3B07C210FCBC0CA508C325C9CB2DF(L_22, L_23, L_24, L_25, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 15));
+		ArraySortHelper_1_InsertionSort_mC7354164A585FE85E8EBC5229AA234EBF9366DA8(L_22, L_23, L_24, L_25, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 15));
 		return;
 	}
 
@@ -35323,12 +35299,12 @@ IL_0056:
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_27 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_27 = ___0_keys;
 		int32_t L_28 = ___1_lo;
 		int32_t L_29 = ___2_hi;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_30 = ___4_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_30 = ___4_comparer;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_Heapsort_mA55BF18978D5224D8F5AC152CE0D13AEF6293928(L_27, L_28, L_29, L_30, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 16));
+		ArraySortHelper_1_Heapsort_m5E2F474BEE4FDA13F64D8C87D71E63F195ABDEB1(L_27, L_28, L_29, L_30, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 16));
 		return;
 	}
 
@@ -35336,20 +35312,20 @@ IL_0064:
 	{
 		int32_t L_31 = ___3_depthLimit;
 		___3_depthLimit = ((int32_t)il2cpp_codegen_subtract(L_31, 1));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_32 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_32 = ___0_keys;
 		int32_t L_33 = ___1_lo;
 		int32_t L_34 = ___2_hi;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_35 = ___4_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_35 = ___4_comparer;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
 		int32_t L_36;
-		L_36 = ArraySortHelper_1_PickPivotAndPartition_m0DA6CB83106EC8B298695BEF6773BF7BC048A56D(L_32, L_33, L_34, L_35, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 17));
+		L_36 = ArraySortHelper_1_PickPivotAndPartition_m710FD64E85CBD28F22FDF796B6B8F12EB80DF1AA(L_32, L_33, L_34, L_35, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 17));
 		V_1 = L_36;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_37 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_37 = ___0_keys;
 		int32_t L_38 = V_1;
 		int32_t L_39 = ___2_hi;
 		int32_t L_40 = ___3_depthLimit;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_41 = ___4_comparer;
-		ArraySortHelper_1_IntroSort_m4AF9B2126D8DC416FDEA6D6FDA920CCD58125AE0(L_37, ((int32_t)il2cpp_codegen_add(L_38, 1)), L_39, L_40, L_41, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 13));
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_41 = ___4_comparer;
+		ArraySortHelper_1_IntroSort_mBC3C934BFBD9B1B0F8A8C1A6849E1ED616DD9FF3(L_37, ((int32_t)il2cpp_codegen_add(L_38, 1)), L_39, L_40, L_41, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 13));
 		int32_t L_42 = V_1;
 		___2_hi = ((int32_t)il2cpp_codegen_subtract(L_42, 1));
 	}
@@ -35368,10 +35344,10 @@ IL_0086:
 	}
 }
 // Method Definition Index: 11539
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartition_m0DA6CB83106EC8B298695BEF6773BF7BC048A56D_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartition_m710FD64E85CBD28F22FDF796B6B8F12EB80DF1AA_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
-	Entry_tB88A19650670F859239145C4E915FA27BEA8409A V_1;
+	BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	int32_t V_2 = 0;
 	int32_t V_3 = 0;
@@ -35380,32 +35356,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartiti
 		int32_t L_1 = ___2_hi;
 		int32_t L_2 = ___1_lo;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_0, ((int32_t)(((int32_t)il2cpp_codegen_subtract(L_1, L_2))/2))));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_3 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_4 = ___3_comparer;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_3 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_4 = ___3_comparer;
 		int32_t L_5 = ___1_lo;
 		int32_t L_6 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_3, L_4, L_5, L_6, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_7 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_8 = ___3_comparer;
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_3, L_4, L_5, L_6, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_7 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_8 = ___3_comparer;
 		int32_t L_9 = ___1_lo;
 		int32_t L_10 = ___2_hi;
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_7, L_8, L_9, L_10, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_11 = ___0_keys;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_12 = ___3_comparer;
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_7, L_8, L_9, L_10, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_11 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_12 = ___3_comparer;
 		int32_t L_13 = V_0;
 		int32_t L_14 = ___2_hi;
-		ArraySortHelper_1_SwapIfGreater_mE6E0D54B9FFE9EFD692B83D2B82D9BDB9AD02A87(L_11, L_12, L_13, L_14, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_15 = ___0_keys;
+		ArraySortHelper_1_SwapIfGreater_m11DA47A879432C607CB8D407AC0325E245FF5ADF(L_11, L_12, L_13, L_14, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_15 = ___0_keys;
 		int32_t L_16 = V_0;
 		NullCheck(L_15);
 		int32_t L_17 = L_16;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_18 = (L_15)->GetAt(static_cast<il2cpp_array_size_t>(L_17));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_18 = (L_15)->GetAt(static_cast<il2cpp_array_size_t>(L_17));
 		V_1 = L_18;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_19 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_19 = ___0_keys;
 		int32_t L_20 = V_0;
 		int32_t L_21 = ___2_hi;
-		ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0(L_19, L_20, ((int32_t)il2cpp_codegen_subtract(L_21, 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
+		ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC(L_19, L_20, ((int32_t)il2cpp_codegen_subtract(L_21, 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
 		int32_t L_22 = ___1_lo;
 		V_2 = L_22;
 		int32_t L_23 = ___2_hi;
@@ -35415,18 +35391,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArraySortHelper_1_PickPivotAndPartiti
 
 IL_003d:
 	{
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_24 = ___3_comparer;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_25 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_24 = ___3_comparer;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_25 = ___0_keys;
 		int32_t L_26 = V_2;
 		int32_t L_27 = ((int32_t)il2cpp_codegen_add(L_26, 1));
 		V_2 = L_27;
 		NullCheck(L_25);
 		int32_t L_28 = L_27;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_29 = (L_25)->GetAt(static_cast<il2cpp_array_size_t>(L_28));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_30 = V_1;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_29 = (L_25)->GetAt(static_cast<il2cpp_array_size_t>(L_28));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_30 = V_1;
 		NullCheck(L_24);
 		int32_t L_31;
-		L_31 = Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline(L_24, L_29, L_30, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
+		L_31 = Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline(L_24, L_29, L_30, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
 		if ((((int32_t)L_31) < ((int32_t)0)))
 		{
 			goto IL_003d;
@@ -35435,18 +35411,18 @@ IL_003d:
 
 IL_0052:
 	{
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_32 = ___3_comparer;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_33 = V_1;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_34 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_32 = ___3_comparer;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_33 = V_1;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_34 = ___0_keys;
 		int32_t L_35 = V_3;
 		int32_t L_36 = ((int32_t)il2cpp_codegen_subtract(L_35, 1));
 		V_3 = L_36;
 		NullCheck(L_34);
 		int32_t L_37 = L_36;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_38 = (L_34)->GetAt(static_cast<il2cpp_array_size_t>(L_37));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_38 = (L_34)->GetAt(static_cast<il2cpp_array_size_t>(L_37));
 		NullCheck(L_32);
 		int32_t L_39;
-		L_39 = Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline(L_32, L_33, L_38, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
+		L_39 = Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline(L_32, L_33, L_38, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
 		if ((((int32_t)L_39) < ((int32_t)0)))
 		{
 			goto IL_0052;
@@ -35461,11 +35437,11 @@ IL_0052:
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_42 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_42 = ___0_keys;
 		int32_t L_43 = V_2;
 		int32_t L_44 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0(L_42, L_43, L_44, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
+		ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC(L_42, L_43, L_44, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
 	}
 
 IL_0073:
@@ -35480,17 +35456,17 @@ IL_0073:
 
 IL_0077:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_47 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_47 = ___0_keys;
 		int32_t L_48 = V_2;
 		int32_t L_49 = ___2_hi;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0(L_47, L_48, ((int32_t)il2cpp_codegen_subtract(L_49, 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
+		ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC(L_47, L_48, ((int32_t)il2cpp_codegen_subtract(L_49, 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
 		int32_t L_50 = V_2;
 		return L_50;
 	}
 }
 // Method Definition Index: 11540
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Heapsort_mA55BF18978D5224D8F5AC152CE0D13AEF6293928_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Heapsort_m5E2F474BEE4FDA13F64D8C87D71E63F195ABDEB1_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
@@ -35506,13 +35482,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_Heapsort_mA55BF18978D5
 
 IL_000c:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_3 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_3 = ___0_keys;
 		int32_t L_4 = V_1;
 		int32_t L_5 = V_0;
 		int32_t L_6 = ___1_lo;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_7 = ___3_comparer;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_7 = ___3_comparer;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_DownHeap_m4628F549BCE6B06CB4F1D054E1889C66F709861D(L_3, L_4, L_5, L_6, L_7, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 19));
+		ArraySortHelper_1_DownHeap_m5A743DAA518933B26729932DE513595A2EE2393D(L_3, L_4, L_5, L_6, L_7, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 19));
 		int32_t L_8 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_subtract(L_8, 1));
 	}
@@ -35533,17 +35509,17 @@ IL_001a:
 
 IL_0022:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_11 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_11 = ___0_keys;
 		int32_t L_12 = ___1_lo;
 		int32_t L_13 = ___1_lo;
 		int32_t L_14 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_Swap_m74CF8F8B1AB52F1C0325DA4B2A8F751F2E3E10B0(L_11, L_12, ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_13, L_14)), 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_15 = ___0_keys;
+		ArraySortHelper_1_Swap_m235412E558534C73912B65AE5684FE28DF3137EC(L_11, L_12, ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_13, L_14)), 1)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 18));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_15 = ___0_keys;
 		int32_t L_16 = V_2;
 		int32_t L_17 = ___1_lo;
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_18 = ___3_comparer;
-		ArraySortHelper_1_DownHeap_m4628F549BCE6B06CB4F1D054E1889C66F709861D(L_15, 1, ((int32_t)il2cpp_codegen_subtract(L_16, 1)), L_17, L_18, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 19));
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_18 = ___3_comparer;
+		ArraySortHelper_1_DownHeap_m5A743DAA518933B26729932DE513595A2EE2393D(L_15, 1, ((int32_t)il2cpp_codegen_subtract(L_16, 1)), L_17, L_18, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 19));
 		int32_t L_19 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_subtract(L_19, 1));
 	}
@@ -35561,18 +35537,18 @@ IL_003e:
 	}
 }
 // Method Definition Index: 11541
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_DownHeap_m4628F549BCE6B06CB4F1D054E1889C66F709861D_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___4_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_DownHeap_m5A743DAA518933B26729932DE513595A2EE2393D_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_i, int32_t ___2_n, int32_t ___3_lo, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___4_comparer, const RuntimeMethod* method) 
 {
-	Entry_tB88A19650670F859239145C4E915FA27BEA8409A V_0;
+	BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	int32_t V_1 = 0;
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_0 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_0 = ___0_keys;
 		int32_t L_1 = ___3_lo;
 		int32_t L_2 = ___1_i;
 		NullCheck(L_0);
 		int32_t L_3 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_1, L_2)), 1));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_4 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_4 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
 		V_0 = L_4;
 		goto IL_0067;
 	}
@@ -35589,22 +35565,22 @@ IL_000e:
 		}
 	}
 	{
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_8 = ___4_comparer;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_9 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_8 = ___4_comparer;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_9 = ___0_keys;
 		int32_t L_10 = ___3_lo;
 		int32_t L_11 = V_1;
 		NullCheck(L_9);
 		int32_t L_12 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_10, L_11)), 1));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_13 = (L_9)->GetAt(static_cast<il2cpp_array_size_t>(L_12));
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_14 = ___0_keys;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_13 = (L_9)->GetAt(static_cast<il2cpp_array_size_t>(L_12));
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_14 = ___0_keys;
 		int32_t L_15 = ___3_lo;
 		int32_t L_16 = V_1;
 		NullCheck(L_14);
 		int32_t L_17 = ((int32_t)il2cpp_codegen_add(L_15, L_16));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_18 = (L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_17));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_18 = (L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_17));
 		NullCheck(L_8);
 		int32_t L_19;
-		L_19 = Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline(L_8, L_13, L_18, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
+		L_19 = Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline(L_8, L_13, L_18, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
 		if ((((int32_t)L_19) >= ((int32_t)0)))
 		{
 			goto IL_0038;
@@ -35617,34 +35593,34 @@ IL_000e:
 
 IL_0038:
 	{
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_21 = ___4_comparer;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_22 = V_0;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_23 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_21 = ___4_comparer;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_22 = V_0;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_23 = ___0_keys;
 		int32_t L_24 = ___3_lo;
 		int32_t L_25 = V_1;
 		NullCheck(L_23);
 		int32_t L_26 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_24, L_25)), 1));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_27 = (L_23)->GetAt(static_cast<il2cpp_array_size_t>(L_26));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_27 = (L_23)->GetAt(static_cast<il2cpp_array_size_t>(L_26));
 		NullCheck(L_21);
 		int32_t L_28;
-		L_28 = Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline(L_21, L_22, L_27, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
+		L_28 = Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline(L_21, L_22, L_27, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
 		if ((((int32_t)L_28) >= ((int32_t)0)))
 		{
 			goto IL_006d;
 		}
 	}
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_29 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_29 = ___0_keys;
 		int32_t L_30 = ___3_lo;
 		int32_t L_31 = ___1_i;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_32 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_32 = ___0_keys;
 		int32_t L_33 = ___3_lo;
 		int32_t L_34 = V_1;
 		NullCheck(L_32);
 		int32_t L_35 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_33, L_34)), 1));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_36 = (L_32)->GetAt(static_cast<il2cpp_array_size_t>(L_35));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_36 = (L_32)->GetAt(static_cast<il2cpp_array_size_t>(L_35));
 		NullCheck(L_29);
-		(L_29)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_30, L_31)), 1))), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_36);
+		(L_29)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_30, L_31)), 1))), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_36);
 		int32_t L_37 = V_1;
 		___1_i = L_37;
 	}
@@ -35661,21 +35637,21 @@ IL_0067:
 
 IL_006d:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_40 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_40 = ___0_keys;
 		int32_t L_41 = ___3_lo;
 		int32_t L_42 = ___1_i;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_43 = V_0;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_43 = V_0;
 		NullCheck(L_40);
-		(L_40)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_41, L_42)), 1))), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_43);
+		(L_40)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_add(L_41, L_42)), 1))), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_43);
 		return;
 	}
 }
 // Method Definition Index: 11542
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_InsertionSort_mDEF49647EEF3B07C210FCBC0CA508C325C9CB2DF_gshared (EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* ___3_comparer, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1_InsertionSort_mC7354164A585FE85E8EBC5229AA234EBF9366DA8_gshared (BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* ___0_keys, int32_t ___1_lo, int32_t ___2_hi, Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* ___3_comparer, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
-	Entry_tB88A19650670F859239145C4E915FA27BEA8409A V_2;
+	BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
 		int32_t L_0 = ___1_lo;
@@ -35687,26 +35663,26 @@ IL_0004:
 	{
 		int32_t L_1 = V_0;
 		V_1 = L_1;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_2 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_2 = ___0_keys;
 		int32_t L_3 = V_0;
 		NullCheck(L_2);
 		int32_t L_4 = ((int32_t)il2cpp_codegen_add(L_3, 1));
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
 		V_2 = L_5;
 		goto IL_0026;
 	}
 
 IL_0012:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_6 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_6 = ___0_keys;
 		int32_t L_7 = V_1;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_8 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_8 = ___0_keys;
 		int32_t L_9 = V_1;
 		NullCheck(L_8);
 		int32_t L_10 = L_9;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
 		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_7, 1))), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_11);
+		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_7, 1))), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_11);
 		int32_t L_12 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_subtract(L_12, 1));
 	}
@@ -35721,16 +35697,16 @@ IL_0026:
 		}
 	}
 	{
-		Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* L_15 = ___3_comparer;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_16 = V_2;
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_17 = ___0_keys;
+		Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* L_15 = ___3_comparer;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_16 = V_2;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_17 = ___0_keys;
 		int32_t L_18 = V_1;
 		NullCheck(L_17);
 		int32_t L_19 = L_18;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_20 = (L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_20 = (L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
 		NullCheck(L_15);
 		int32_t L_21;
-		L_21 = Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_inline(L_15, L_16, L_20, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
+		L_21 = Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_inline(L_15, L_16, L_20, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 12));
 		if ((((int32_t)L_21) < ((int32_t)0)))
 		{
 			goto IL_0012;
@@ -35739,11 +35715,11 @@ IL_0026:
 
 IL_003b:
 	{
-		EntryU5BU5D_tC1BCAB393E2B6E28F3056C85BD6FF53353C9DCE2* L_22 = ___0_keys;
+		BrickChunkAllocU5BU5D_t67316E3C7BB0F8E26AB0D8AD7B8CC62FD533F6AE* L_22 = ___0_keys;
 		int32_t L_23 = V_1;
-		Entry_tB88A19650670F859239145C4E915FA27BEA8409A L_24 = V_2;
+		BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B L_24 = V_2;
 		NullCheck(L_22);
-		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_23, 1))), (Entry_tB88A19650670F859239145C4E915FA27BEA8409A)L_24);
+		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(L_23, 1))), (BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B)L_24);
 		int32_t L_25 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_25, 1));
 	}
@@ -35762,16 +35738,16 @@ IL_0049:
 	}
 }
 // Method Definition Index: 11543
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* ArraySortHelper_1_get_Default_mE5EA6B683F4BB103AEA65DC7367F0D4FCE909DB4_gshared (const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* ArraySortHelper_1_get_Default_m5B46D23B48170C304C2A96D387D236F114D3C10A_gshared (const RuntimeMethod* method) 
 {
 	{
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9));
-		ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* L_0 = ((ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9)))->___s_defaultArraySortHelper;
+		ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* L_0 = ((ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9)))->___s_defaultArraySortHelper;
 		return L_0;
 	}
 }
 // Method Definition Index: 11544
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__ctor_m8EBABD19B1316F9195E1FDE24C8426519751E909_gshared (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* __this, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__ctor_mD61AC22B65FCBB78EE5F9091655B766662656718_gshared (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* __this, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
@@ -35779,13 +35755,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__ctor_m8EBABD19B1316F9
 	}
 }
 // Method Definition Index: 11545
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__cctor_m0ABA7F991B50772192DDC26B3222A15C62E65397_gshared (const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_1__cctor_m8CE7285D68278EB01673E92FE9DD8983582FC9FD_gshared (const RuntimeMethod* method) 
 {
 	{
-		ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE* L_0 = (ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE*)il2cpp_codegen_object_new(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 20));
-		ArraySortHelper_1__ctor_m8EBABD19B1316F9195E1FDE24C8426519751E909(L_0, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 21));
-		((ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9)))->___s_defaultArraySortHelper = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&((ArraySortHelper_1_t7929D23CC0496C6C135D0F5CBBA764884AD1CADE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9)))->___s_defaultArraySortHelper), (void*)L_0);
+		ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368* L_0 = (ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368*)il2cpp_codegen_object_new(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 20));
+		ArraySortHelper_1__ctor_mD61AC22B65FCBB78EE5F9091655B766662656718(L_0, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 21));
+		((ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9)))->___s_defaultArraySortHelper = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&((ArraySortHelper_1_tA13EDAC622C216E2EC120E1E418CA8AAD4C4F368_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 9)))->___s_defaultArraySortHelper), (void*)L_0);
 		return;
 	}
 }
@@ -35967,8 +35943,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Comparison_1_Invoke_m0E64
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_x, ___1_y, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
 // Method Definition Index: 917
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Comparison_1_Invoke_m80C9A1CDEA8C78BCF857668E6D718B099BEA7D9E_gshared_inline (Comparison_1_t61B88250372CBBE52D53A61D3ADF8BE894C503EB* __this, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___0_x, Entry_tB88A19650670F859239145C4E915FA27BEA8409A ___1_y, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Comparison_1_Invoke_m8137FD5949054E4AE871D21769B8E0AB222F614B_gshared_inline (Comparison_1_tB37367478ABE2FE5FD2203EA6868D24C205BA55F* __this, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___0_x, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B ___1_y, const RuntimeMethod* method) 
 {
-	typedef int32_t (*FunctionPointerType) (RuntimeObject*, Entry_tB88A19650670F859239145C4E915FA27BEA8409A, Entry_tB88A19650670F859239145C4E915FA27BEA8409A, const RuntimeMethod*);
+	typedef int32_t (*FunctionPointerType) (RuntimeObject*, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B, BrickChunkAlloc_t95EB283E186F5DA1E74A8DDE415EB8E7ABFDF51B, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_x, ___1_y, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }

@@ -9814,6 +9814,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Resources_GetBuiltinResource_Injected();
 		Register_UnityEngine_Resources_GetBuiltinResource_Injected();
 
+		//System.IntPtr UnityEngine.Resources::UnloadUnusedAssets_Injected()
+		void Register_UnityEngine_Resources_UnloadUnusedAssets_Injected();
+		Register_UnityEngine_Resources_UnloadUnusedAssets_Injected();
+
 	//End Registrations for type : UnityEngine.Resources
 
 	//Start Registrations for type : UnityEngine.ResourcesAPIInternal

@@ -261,36 +261,11 @@ public class DhikrManager : MonoBehaviour
                 currentOrb = null;
             }
 
-            StartCoroutine(CongratsAndCloseDhikrRoutine());
+            if (plusButton != null) plusButton.interactable = false;
+            if (minusButton != null) minusButton.interactable = false;
+
+            CloseDhikrDramaticallyInternal();
         }
-    }
-
-    private IEnumerator CongratsAndCloseDhikrRoutine()
-    {
-        if (plusButton != null) plusButton.interactable = false;
-        if (minusButton != null) minusButton.interactable = false;
-        if (submitButton != null) submitButton.interactable = false;
-
-        if (dhikrTextUI != null)
-        {
-            SetText(dhikrTextUI, LocalizationManager.Instance.Get("dhikr.completed"));
-            dhikrTextUI.transform.DOKill();
-            dhikrTextUI.transform.localScale = Vector3.one;
-            dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
-        }
-
-        // The count label is only as wide as the gap between the -/+ buttons, so it keeps
-        // showing the finished count — words put here wrap and spill over the panel.
-        if (countTextUI != null)
-        {
-            countTextUI.transform.DOKill();
-            countTextUI.transform.localScale = Vector3.one;
-            countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f, 10, 1f);
-        }
-
-        yield return new WaitForSeconds(3.0f);
-
-        CloseDhikrDramaticallyInternal();
     }
 
     public void CloseDhikrDramatically()

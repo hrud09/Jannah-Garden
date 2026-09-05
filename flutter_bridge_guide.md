@@ -12,6 +12,34 @@ Two things carry most of the traffic:
 
 ---
 
+## 🆕 Urgent: OOM crash ~4–5 minutes into a session, on both Android and iOS
+
+**The embedded game has been getting killed by the OS a few minutes into a session, on both real Android
+devices and iOS** — not a Unity exception, no error screen; the OS just terminates the process for memory.
+Full writeup in **§10**.
+
+**Android — one attribute needed on your side**, `android:largeHeap="true"` on the `<application>` tag in
+`android/app/src/main/AndroidManifest.xml`:
+
+```xml
+<application
+    android:label="Amal"
+    android:name="${applicationName}"
+    android:icon="@mipmap/launcher_icon"
+    android:extractNativeLibs="true"
+    android:largeHeap="true">   <!-- ← add this -->
+```
+
+**iOS — nothing needed on your side.** iOS has no equivalent flag; there's no way to ask the OS for more
+memory headroom. The fix there is entirely a Unity-side change (item meshes were being cached forever, plus
+now reacting to the OS's low-memory warning directly) that lands in the next `unityLibrary` export. See
+**§10** for the full picture and how to confirm it's fixed on each platform.
+
+The Android flag is unrelated to the existing `EnableImpeller=false` entry already in that file (that one's
+for a Vulkan shadow-rendering crash) — don't touch that one, this is an independent addition right below it.
+
+---
+
 ## 🆕 New requirement: language switching (`SET_LOCALE`)
 
 **Unity now supports English, Arabic, Bengali, and Urdu — trivia questions and UI text — but nothing on the
@@ -666,3 +694,77 @@ Use it to confirm the payload shape before wiring up the Flutter side.
 | 🆕 Game shows the wrong language on first open | `SET_LOCALE` was never sent after `UNITY_READY`. Unity shows its last cached language (from `PlayerPrefs`) until you send one. |
 | 🆕 Language doesn't change while the garden is open | Confirm you call `UnityBridge.setLocale(...)` from your app's language-change handler, not only at startup — Unity applies it live, no restart needed. |
 | 🆕 Some trivia questions show English while others are in the new language | Expected for Bengali right now — translation is partial (Levels 1–3 done, Level 4 partial); untranslated questions fall back to English on purpose rather than being missing. |
+| 🆕 Game (device only, not Editor) crashes with no warning ~4–5 minutes into a session | Not a Unity exception — the OS is killing the process for memory. See §10. |
+
+---
+
+## 10. 🆕 Android OOM crash after a few minutes of play
+
+### What was happening
+
+Every shop/treasure-box item is a Remote Addressable — its 3D prefab downloads the first time a player
+previews or places it. `AddressableItemLoader` on the Unity side cached each one **for the rest of the
+process's life** and never freed it — deliberate at the time, since nothing evicted it.
+
+That stopped being safe once the game's assets got as heavy as they are now: the Meshy AI item meshes run
+roughly 30 MB per bundle apiece even after compression. Browsing, buying, or returning even a handful of
+different items in one sitting can pull several hundred MB of mesh/texture data into memory that's never
+released — on top of the scene itself, **and on top of the Flutter/Impeller engine running in the same
+process** (this isn't a standalone Unity app; `flutter_embed_unity` runs both engines in one process, so
+they're competing for the same memory ceiling). On a mid-range Android device that combination can exceed
+the OS's per-app memory allowance around the 4–5 minute mark, and Android silently kills the process — which
+shows up to the player as "the game just closes," not as any kind of error screen or Unity log.
+
+### The fix has two parts, both needed
+
+**1. Unity side (done, not yours to touch).** `AddressableItemLoader` now keeps a bounded cache — the least-
+recently-used item prefab gets released once too many unused ones pile up, while anything actually standing
+in the player's garden (or mid-placement) is protected from eviction. This ships automatically the next time
+`android/unityLibrary` gets re-exported and dropped into this repo — nothing for you to do here beyond
+picking up that new export when it's ready.
+
+**2. Flutter side (yours) — `android:largeHeap="true"`.** Add it to the `<application>` tag in
+`android/app/src/main/AndroidManifest.xml` (shown in the callout above). This raises Android's declared
+memory class for the process, giving the combined Flutter+Unity heap more headroom before the OS decides
+to kill it.
+
+**Why both:** `largeHeap` affects the Java/ART heap and the OS's overall memory bookkeeping for the process;
+it does **not** touch Unity's native mesh/texture memory, which is where the actual growth was happening.
+Ship it without the Unity-side fix and you've only bought a bit more runway before the same crash returns
+with a slightly heavier session. Ship the Unity fix without `largeHeap` and it's still a meaningful
+improvement, but you're leaving free headroom on the table for no cost — it's a one-line, no-downside change.
+
+### How to verify, once both sides have landed
+
+Install a release build on a device, play past the 5-minute mark (browse/place/return several different
+shop items rather than sitting idle — that's the pattern that was triggering it), and watch for a kill
+signal while it's running:
+
+```bash
+adb logcat -c && adb logcat | grep -iE "lowmemorykiller|OutOfMemory|Unity.*Fatal"
+```
+
+A `lowmemorykiller` (or similar) line naming this app's process confirms it was memory pressure. No output
+and the app still standing at 10+ minutes is the fix working.
+
+### 🆕 It also happens on iOS — and `largeHeap` does nothing there
+
+Confirmed the same crash occurs on iOS builds too. That changes the priority of the two fixes:
+
+- **`android:largeHeap` is Android-only.** There is no iOS equivalent — iOS gives every app a hard,
+  device-dependent memory ceiling (roughly 1–3 GB depending on the model, less on older/cheaper phones)
+  and there is no manifest flag, entitlement, or Info.plist key that raises it. So on iOS, the manifest
+  change above buys nothing; **the Unity-side fix is the entire fix.**
+- Also just added on the Unity side: the game now listens for the OS's low-memory warning (iOS
+  `didReceiveMemoryWarning`, Android `onTrimMemory` — Unity surfaces both as one `Application.lowMemory`
+  event) and immediately drops every downloaded item prefab it isn't actively using, rather than waiting
+  for the next placement/return. Nothing for you to wire up — it's automatic once you're on the updated
+  `unityLibrary` export.
+- **Nothing is needed in `ios/Runner/Info.plist` for this.** No permission, no key. If you want to confirm
+  it's actually a memory kill (rather than a genuine crash) on an iOS device, look for a **Jetsam** /
+  `EXC_RESOURCE (RESOURCE_TYPE_MEMORY)` entry in the crash log — either from Xcode's **Window → Organizer →
+  Crashes** for a TestFlight build, or on the device itself under **Settings → Privacy & Security →
+  Analytics & Improvements → Analytics Data** (look for a report named after this app/`Runner`).
+- Worth testing on an **older or lower-RAM device** (e.g. an iPhone SE-class phone) if you have one —
+  iOS's ceiling is stricter there and has no override, so it'll hit this fastest and is the most convincing
+  proof the fix actually holds.

@@ -12,8 +12,7 @@ using UnityEngine.SceneManagement;
 /// garden layout. Purely an editor-time authoring tool: it bakes plain, static GameObjects into
 /// the open scene, then removes each instance's <see cref="PlaceableItem"/> component, since
 /// generated dressing isn't a player-owned economy item and doesn't need growth timers,
-/// save/load, or the relocate/return flow. A <see cref="PrePlacedAsset"/> marker takes its place
-/// so the player can still look at the dressing and get pointed at the Shop instead.
+/// save/load, or the relocate/return flow.
 /// </summary>
 public class EnvironmentGeneratorWindow : EditorWindow
 {
@@ -174,9 +173,7 @@ public class EnvironmentGeneratorWindow : EditorWindow
         EditorGUILayout.HelpBox(
             "Scatters Shop Item prefabs across a grid of area chunks as example garden dressing. " +
             "Generated instances are plain decoration — the PlaceableItem component (growth timer, " +
-            "save/load, relocate/return) is stripped after placement, leaving just the mesh and collider " +
-            "plus a PrePlacedAsset marker so looking at one still offers a \"manage\" prompt that points " +
-            "the player at the Shop.",
+            "save/load, relocate/return) is stripped after placement, leaving just the mesh and collider.",
             MessageType.Info);
 
         EditorGUI.BeginChangeCheck();
@@ -256,14 +253,6 @@ public class EnvironmentGeneratorWindow : EditorWindow
             if (GUILayout.Button("Generate", GUILayout.Height(32))) Generate();
         }
         if (GUILayout.Button("Clear Generated")) ClearGenerated();
-
-        if (GUILayout.Button(new GUIContent(
-            "Tag Existing Generated As Pre-Placed",
-            "Adds the PrePlacedAsset marker to dressing generated before this marker existed, without " +
-            "re-rolling any layout. Safe to run any time — instances that already have it are skipped.")))
-        {
-            TagExistingGeneratedAsPrePlaced();
-        }
 
         if (GUILayout.Button(new GUIContent(
             "Mark Generated Static",
@@ -414,7 +403,6 @@ public class EnvironmentGeneratorWindow : EditorWindow
                 instance.transform.localScale *= Mathf.Lerp(uniformScaleJitter.x, uniformScaleJitter.y, (float)rng.NextDouble());
 
                 StripPlaceable(instance);
-                AddPrePlacedMarker(instance);
             }
         }
     }
@@ -471,46 +459,6 @@ public class EnvironmentGeneratorWindow : EditorWindow
         if (timerArea != null) Undo.DestroyObjectImmediate(timerArea.gameObject);
 
         Undo.DestroyObjectImmediate(placeable);
-    }
-
-    /// <summary>
-    /// Adds the <see cref="PrePlacedAsset"/> marker that lets the interaction system recognize this
-    /// instance as example dressing — see <see cref="TagExistingGeneratedAsPrePlaced"/> for backfilling
-    /// dressing generated before this marker existed.
-    /// </summary>
-    private static void AddPrePlacedMarker(GameObject instance)
-    {
-        if (instance.GetComponent<PrePlacedAsset>() != null) return;
-        Undo.AddComponent<PrePlacedAsset>(instance);
-    }
-
-    /// <summary>
-    /// Walks whatever is already sitting under <see cref="GeneratedRootName"/> and adds the
-    /// PrePlacedAsset marker to any item instance that doesn't have one yet — for dressing generated
-    /// before the marker existed, without re-rolling the layout by regenerating from scratch.
-    /// </summary>
-    private static void TagExistingGeneratedAsPrePlaced()
-    {
-        GameObject root = GameObject.Find(GeneratedRootName);
-        if (root == null)
-        {
-            EditorUtility.DisplayDialog("Environment Generator", "Nothing generated yet — click Generate first.", "OK");
-            return;
-        }
-
-        int tagged = 0;
-        foreach (Transform chunk in root.transform)
-        {
-            foreach (Transform item in chunk)
-            {
-                if (item.GetComponent<PrePlacedAsset>() != null) continue;
-
-                Undo.AddComponent<PrePlacedAsset>(item.gameObject);
-                tagged++;
-            }
-        }
-
-        EditorUtility.DisplayDialog("Environment Generator", $"Tagged {tagged} generated item(s) as pre-placed.", "OK");
     }
 
     private static void ClearGenerated()

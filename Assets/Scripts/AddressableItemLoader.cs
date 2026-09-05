@@ -9,15 +9,24 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 /// loaded <see cref="GameObject"/> template that <see cref="Objectpool"/> can spawn from.
 ///
 /// Item prefabs live in a Remote Addressables group so they aren't baked into the shipped app —
-/// this is the layer that downloads (and caches, for the process lifetime) the one a player actually
-/// unlocks/places, instead of every item shipping up front. Keyed by <see cref="AssetReferenceGameObject.AssetGUID"/>
-/// rather than the reference instance itself, because separate <see cref="ShopItemData"/>/
-/// <see cref="TreasureBoxRewardItemData"/> assets can point at the same underlying prefab and must
-/// dedupe to one download/cache entry, not one per referencing field.
+/// this is the layer that downloads the one a player actually unlocks/places, instead of every item
+/// shipping up front. Keyed by <see cref="AssetReferenceGameObject.AssetGUID"/> rather than the
+/// reference instance itself, because separate <see cref="ShopItemData"/>/<see cref="TreasureBoxRewardItemData"/>
+/// assets can point at the same underlying prefab and must dedupe to one download/cache entry, not
+/// one per referencing field.
+///
+/// A load is cached indefinitely once made — but is evictable via <see cref="TrimCache"/>. Source
+/// meshes here run tens of MB each (Meshy AI output), and this process also carries the Flutter
+/// engine embedding it, so letting every item a player ever previews stay resident for the session
+/// is what was driving the OOM kills on-device (see the "export size & shop bundle audit" note):
+/// <see cref="ItemPlacementManager"/> calls <see cref="TrimCache"/> after every placement/return/cancel
+/// to release whatever the garden no longer needs.
 /// </summary>
 public static class AddressableItemLoader
 {
     private static readonly Dictionary<string, GameObject> _cache = new Dictionary<string, GameObject>();
+    private static readonly Dictionary<string, AsyncOperationHandle<GameObject>> _handles = new Dictionary<string, AsyncOperationHandle<GameObject>>();
+    private static readonly Dictionary<string, float> _lastUsed = new Dictionary<string, float>();
     private static readonly Dictionary<string, List<Action<GameObject>>> _waiters = new Dictionary<string, List<Action<GameObject>>>();
     private static readonly Dictionary<string, AsyncOperationHandle<GameObject>> _inFlight = new Dictionary<string, AsyncOperationHandle<GameObject>>();
 
@@ -26,7 +35,9 @@ public static class AddressableItemLoader
     {
         prefab = null;
         if (reference == null || !reference.RuntimeKeyIsValid()) return false;
-        return _cache.TryGetValue(reference.AssetGUID, out prefab);
+        if (!_cache.TryGetValue(reference.AssetGUID, out prefab)) return false;
+        _lastUsed[reference.AssetGUID] = Time.unscaledTime;
+        return true;
     }
 
     /// <summary>
@@ -65,6 +76,7 @@ public static class AddressableItemLoader
 
         if (_cache.TryGetValue(key, out GameObject cached))
         {
+            _lastUsed[key] = Time.unscaledTime;
             onLoaded?.Invoke(cached);
             return;
         }
@@ -91,6 +103,8 @@ public static class AddressableItemLoader
         if (result != null)
         {
             _cache[key] = result;
+            _handles[key] = handle;
+            _lastUsed[key] = Time.unscaledTime;
         }
         else
         {
@@ -105,6 +119,48 @@ public static class AddressableItemLoader
             {
                 callback?.Invoke(result);
             }
+        }
+    }
+
+    /// <summary>
+    /// Releases cached prefabs down to <paramref name="maxEntries"/>, oldest-by-last-use first, never
+    /// touching anything in <paramref name="keepKeys"/> (the AssetGUIDs the garden/current placement
+    /// still needs — see <see cref="ItemPlacementManager"/>). Safe to call freely: instances already
+    /// instantiated from an evicted prefab (placed items, pooled inactive clones) are untouched —
+    /// Addressables releases the loaded template, not objects already spawned from it — the only cost
+    /// is that spawning that item again later re-downloads/reloads it instead of hitting the cache.
+    /// </summary>
+    public static void TrimCache(int maxEntries, ISet<string> keepKeys)
+    {
+        int evictableCount = 0;
+        foreach (string key in _cache.Keys)
+        {
+            if (keepKeys == null || !keepKeys.Contains(key)) evictableCount++;
+        }
+
+        int overBudget = (_cache.Count - maxEntries);
+        int toEvict = Mathf.Min(overBudget, evictableCount);
+        if (toEvict <= 0) return;
+
+        List<string> candidates = new List<string>(evictableCount);
+        foreach (string key in _cache.Keys)
+        {
+            if (keepKeys == null || !keepKeys.Contains(key)) candidates.Add(key);
+        }
+        candidates.Sort((a, b) => _lastUsed.GetValueOrDefault(a, 0f).CompareTo(_lastUsed.GetValueOrDefault(b, 0f)));
+
+        for (int i = 0; i < toEvict; i++)
+        {
+            string key = candidates[i];
+
+            if (_handles.TryGetValue(key, out AsyncOperationHandle<GameObject> handle))
+            {
+                Addressables.Release(handle);
+                _handles.Remove(key);
+            }
+
+            _cache.Remove(key);
+            _lastUsed.Remove(key);
         }
     }
 }
