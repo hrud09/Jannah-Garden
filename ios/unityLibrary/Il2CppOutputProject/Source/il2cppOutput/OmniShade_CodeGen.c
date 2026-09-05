@@ -26,13 +26,13 @@ static Il2CppMethodPointer s_methodPointers[7] =
 };
 static const int32_t s_InvokerIndices[7] = 
 {
-	18597,
-	18597,
-	12232,
-	18597,
-	18597,
-	32295,
-	18597,
+	18583,
+	18583,
+	12221,
+	18583,
+	18583,
+	32278,
+	18583,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_OmniShade_CodeGenModule;
 const Il2CppCodeGenModule g_OmniShade_CodeGenModule = 

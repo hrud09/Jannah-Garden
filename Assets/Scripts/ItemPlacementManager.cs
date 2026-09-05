@@ -73,6 +73,15 @@ public class ItemPlacementManager : MonoBehaviour
     [Header("Shop/Prefab References")]
     public InGameShopManager shopManager;
 
+    [Header("Memory")]
+    [Tooltip("How many distinct downloaded item prefabs AddressableItemLoader keeps cached beyond " +
+             "what the garden/current placement actually needs. Item meshes run tens of MB each, and " +
+             "this process also carries the Flutter engine embedding it — a low cap trades a brief " +
+             "reload toast for a bounded memory footprint instead of an OS-level OOM kill after a few " +
+             "minutes of browsing the shop. Items already placed in the garden are never evicted.")]
+    [Range(0, 20)]
+    public int maxCachedUnusedItemPrefabs = 6;
+
     [Header("Return To Asset Store")]
     [Tooltip("Share of the Noor Coin price refunded when a shop item is returned to the store. " +
              "1 = the full price back, 0.5 = half. Treasure box rewards always come back as one whole item.")]
@@ -191,16 +200,35 @@ public class ItemPlacementManager : MonoBehaviour
         LoadPlacedItems();
 
         BeginCloudSync();
+
+        Application.lowMemory += HandleLowMemory;
     }
 
     private void OnDestroy()
     {
         FlutterBridge.OnGardenStateReceived -= HandleCloudGardenState;
+        Application.lowMemory -= HandleLowMemory;
 
         if (placeButton != null) placeButton.onClick.RemoveListener(HandlePlaceButtonClick);
         if (cancelPlacementButton != null) cancelPlacementButton.onClick.RemoveListener(CancelPlacement);
 
         if (Instance == this) Instance = null;
+    }
+
+    /// <summary>
+    /// The OS is warning this process is close to being killed for memory — iOS's
+    /// <c>didReceiveMemoryWarning</c> and Android's <c>onTrimMemory</c> both surface here as the same
+    /// event. Neither platform gives a size budget with the warning, so there's nothing to tune: drop
+    /// every downloaded item prefab this process isn't actively using, right now, rather than waiting for
+    /// the next placement/return to trigger the normal bounded trim (see <see cref="TrimAddressableCache"/>).
+    /// iOS in particular has no "ask for more headroom" escape hatch the way Android's largeHeap manifest
+    /// flag does, so this is the only lever available there once the OS is already unhappy.
+    /// </summary>
+    private void HandleLowMemory()
+    {
+        Debug.LogWarning("[ItemPlacementManager] OS low-memory warning — releasing every unused item prefab.");
+        AddressableItemLoader.TrimCache(0, ComputeInUseAddressableKeys());
+        Resources.UnloadUnusedAssets();
     }
 
     private void Update()
@@ -659,6 +687,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         ClearPendingPlacement();
         ApplyDeferredCloudState();
+        TrimAddressableCache();
     }
 
     /// <summary>
@@ -684,6 +713,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         ClearPendingPlacement();
         ApplyDeferredCloudState();
+        TrimAddressableCache();
     }
 
     /// <summary>Puts a relocated item back at the position it was picked up from.</summary>
@@ -851,6 +881,7 @@ public class ItemPlacementManager : MonoBehaviour
         RemoveFromGarden(item);
         Objectpool.Instance.Despawn(item.gameObject);
         SavePlacedItems();
+        TrimAddressableCache();
 
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
 
@@ -958,6 +989,42 @@ public class ItemPlacementManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Releases whatever <see cref="AddressableItemLoader"/> is holding for items the garden no longer
+    /// needs, down to <see cref="maxCachedUnusedItemPrefabs"/> beyond what is actually in use. Call this
+    /// after any change that could leave a previously-downloaded prefab unused: a placement finalized,
+    /// cancelled or returned, or the garden freshly rebuilt.
+    /// </summary>
+    private void TrimAddressableCache()
+    {
+        AddressableItemLoader.TrimCache(maxCachedUnusedItemPrefabs, ComputeInUseAddressableKeys());
+    }
+
+    /// <summary>The AssetGUIDs <see cref="AddressableItemLoader"/> must not evict right now: every item
+    /// standing in the garden (real + preview model), plus whatever the current placement is mid-load
+    /// or mid-carry with.</summary>
+    private HashSet<string> ComputeInUseAddressableKeys()
+    {
+        var keys = new HashSet<string>();
+
+        void AddKey(AssetReferenceGameObject reference)
+        {
+            if (reference != null && reference.RuntimeKeyIsValid()) keys.Add(reference.AssetGUID);
+        }
+
+        foreach (PlaceableItem item in activePlacedItems)
+        {
+            if (item == null) continue;
+            AddKey(ResolveItemPrefabRef(item.sourceKind, item.sourceItemId));
+            AddKey(ResolvePreviewPrefabRef(item.sourceKind, item.sourceItemId));
+        }
+
+        AddKey(_pendingProgressPrefabRef);
+        AddKey(_pendingProgressPreviewRef);
+
+        return keys;
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -1110,6 +1177,7 @@ public class ItemPlacementManager : MonoBehaviour
         }
 
         _isRebuildingGarden = false;
+        TrimAddressableCache();
     }
 
     /// <summary>Finds the shop entry an item came from by its stable id.</summary>
