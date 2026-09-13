@@ -15,6 +15,14 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     [SerializeField] private Button recenterButton;
     [Tooltip("Only visible while expanded. Points the direction arrow toward the next available treasure box.")]
     [SerializeField] private Button showTreasureBoxButton;
+    [Tooltip("Only visible while expanded. Points the direction arrow toward the Silver tier treasure box.")]
+    [SerializeField] private Button showSilverTreasureBoxButton;
+    [Tooltip("Only visible while expanded. Points the direction arrow toward the Gold tier treasure box.")]
+    [SerializeField] private Button showGoldTreasureBoxButton;
+    [Tooltip("Only visible while expanded. Points the direction arrow toward the Platinum tier treasure box.")]
+    [SerializeField] private Button showPlatinumTreasureBoxButton;
+    [Tooltip("Only visible while expanded. Points the direction arrow toward the Diamond tier treasure box.")]
+    [SerializeField] private Button showDiamondTreasureBoxButton;
 
     [Header("Camera References & Settings")]
     [SerializeField] private Camera minimapCamera;
@@ -87,6 +95,26 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         if (showTreasureBoxButton != null)
         {
             showTreasureBoxButton.onClick.AddListener(ShowTreasureBox);
+        }
+
+        if (showSilverTreasureBoxButton != null)
+        {
+            showSilverTreasureBoxButton.onClick.AddListener(ShowSilverTreasureBox);
+        }
+
+        if (showGoldTreasureBoxButton != null)
+        {
+            showGoldTreasureBoxButton.onClick.AddListener(ShowGoldTreasureBox);
+        }
+
+        if (showPlatinumTreasureBoxButton != null)
+        {
+            showPlatinumTreasureBoxButton.onClick.AddListener(ShowPlatinumTreasureBox);
+        }
+
+        if (showDiamondTreasureBoxButton != null)
+        {
+            showDiamondTreasureBoxButton.onClick.AddListener(ShowDiamondTreasureBox);
         }
 
         // Cache the canvas so outside-tap hit tests use the correct event camera
@@ -209,6 +237,26 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             showTreasureBoxButton.onClick.RemoveListener(ShowTreasureBox);
         }
+
+        if (showSilverTreasureBoxButton != null)
+        {
+            showSilverTreasureBoxButton.onClick.RemoveListener(ShowSilverTreasureBox);
+        }
+
+        if (showGoldTreasureBoxButton != null)
+        {
+            showGoldTreasureBoxButton.onClick.RemoveListener(ShowGoldTreasureBox);
+        }
+
+        if (showPlatinumTreasureBoxButton != null)
+        {
+            showPlatinumTreasureBoxButton.onClick.RemoveListener(ShowPlatinumTreasureBox);
+        }
+
+        if (showDiamondTreasureBoxButton != null)
+        {
+            showDiamondTreasureBoxButton.onClick.RemoveListener(ShowDiamondTreasureBox);
+        }
     }
 
     /// <summary>
@@ -247,15 +295,50 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     }
 
     /// <summary>
-    /// Points the direction arrow toward the next available treasure box for the current tier.
+    /// Points the direction arrow toward the next available treasure box for the current upcoming tier.
     /// </summary>
     public void ShowTreasureBox()
+    {
+        if (TreasureBoxManager.Instance != null)
+        {
+            ShowTreasureBoxForTier(TreasureBoxManager.Instance.GetUpcomingTier());
+        }
+        else
+        {
+            ShowTreasureBoxForTier(TreasureBoxTier.Silver);
+        }
+    }
+
+    /// <summary>
+    /// Points the direction arrow toward the Silver tier treasure box.
+    /// </summary>
+    public void ShowSilverTreasureBox() => ShowTreasureBoxForTier(TreasureBoxTier.Silver);
+
+    /// <summary>
+    /// Points the direction arrow toward the Gold tier treasure box.
+    /// </summary>
+    public void ShowGoldTreasureBox() => ShowTreasureBoxForTier(TreasureBoxTier.Gold);
+
+    /// <summary>
+    /// Points the direction arrow toward the Platinum tier treasure box.
+    /// </summary>
+    public void ShowPlatinumTreasureBox() => ShowTreasureBoxForTier(TreasureBoxTier.Platinum);
+
+    /// <summary>
+    /// Points the direction arrow toward the Diamond tier treasure box.
+    /// </summary>
+    public void ShowDiamondTreasureBox() => ShowTreasureBoxForTier(TreasureBoxTier.Diamond);
+
+    /// <summary>
+    /// Points the direction arrow toward the next available treasure box for the specified tier.
+    /// </summary>
+    public void ShowTreasureBoxForTier(TreasureBoxTier tier)
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TreasureBoxShow);
 
         if (TreasureBoxManager.Instance != null)
         {
-            TreasureBoxManager.Instance.PlayShowAnimationForTier(TreasureBoxManager.Instance.GetUpcomingTier());
+            TreasureBoxManager.Instance.PlayShowAnimationForTier(tier);
         }
     }
 
@@ -313,6 +396,18 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         if (showTreasureBoxButton != null &&
             ContainsScreenPoint(showTreasureBoxButton.transform as RectTransform, screenPosition, eventCamera)) return true;
+
+        if (showSilverTreasureBoxButton != null &&
+            ContainsScreenPoint(showSilverTreasureBoxButton.transform as RectTransform, screenPosition, eventCamera)) return true;
+
+        if (showGoldTreasureBoxButton != null &&
+            ContainsScreenPoint(showGoldTreasureBoxButton.transform as RectTransform, screenPosition, eventCamera)) return true;
+
+        if (showPlatinumTreasureBoxButton != null &&
+            ContainsScreenPoint(showPlatinumTreasureBoxButton.transform as RectTransform, screenPosition, eventCamera)) return true;
+
+        if (showDiamondTreasureBoxButton != null &&
+            ContainsScreenPoint(showDiamondTreasureBoxButton.transform as RectTransform, screenPosition, eventCamera)) return true;
 
         if (additionalInsideRects != null)
         {
@@ -380,6 +475,26 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         if (showTreasureBoxButton != null)
         {
             showTreasureBoxButton.gameObject.SetActive(isExpanded);
+        }
+
+        if (showSilverTreasureBoxButton != null)
+        {
+            showSilverTreasureBoxButton.gameObject.SetActive(isExpanded);
+        }
+
+        if (showGoldTreasureBoxButton != null)
+        {
+            showGoldTreasureBoxButton.gameObject.SetActive(isExpanded);
+        }
+
+        if (showPlatinumTreasureBoxButton != null)
+        {
+            showPlatinumTreasureBoxButton.gameObject.SetActive(isExpanded);
+        }
+
+        if (showDiamondTreasureBoxButton != null)
+        {
+            showDiamondTreasureBoxButton.gameObject.SetActive(isExpanded);
         }
     }
 
