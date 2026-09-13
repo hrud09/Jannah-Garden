@@ -19,6 +19,10 @@ public class NoorCoinDisplay : MonoBehaviour
     [Tooltip("The TMP label that shows the current Noor Coin balance.")]
     public TMP_Text balanceLabel;
 
+    [Tooltip("Text shown in place of the balance while the initial Flutter/Firebase sync is still in " +
+             "progress, so the player never sees an unsynced 0 and mistakes it for their real balance.")]
+    [SerializeField] private string loadingText = "...";
+
     /// <summary>The live balance, or 0 when no manager exists yet — never the label's authored text.</summary>
     private static int CurrentBalance =>
         NoorCoinManager.Instance != null ? NoorCoinManager.Instance.Balance : 0;
@@ -34,16 +38,18 @@ public class NoorCoinDisplay : MonoBehaviour
 
         NoorCoinManager.OnBalanceChanged += Refresh;
 
-        // Paint a real number straight away. Without this the label keeps whatever placeholder the
-        // designer typed (the HUD one says "200"), so a player with no coins appears to have 200.
-        Refresh(CurrentBalance);
+        // Paint a real number straight away once synced. Without this the label keeps whatever
+        // placeholder the designer typed (the HUD one says "200"), so a player with no coins appears to
+        // have 200. Before the sync completes, show the loading text instead of the unsynced 0 — the
+        // first OnBalanceChanged fired once Flutter answers will replace it with the real balance.
+        ShowCurrentState();
     }
 
     private void OnEnable()
     {
         // Re-show the current balance whenever this object comes back on; the subscription itself is
         // already alive, so nothing is re-registered here.
-        Refresh(CurrentBalance);
+        ShowCurrentState();
     }
 
     private void OnDestroy()
@@ -52,6 +58,19 @@ public class NoorCoinDisplay : MonoBehaviour
     }
 
     // ─── Internal ─────────────────────────────────────────────────────────────
+
+    /// <summary>Shows the loading text while the initial sync is pending, otherwise the real balance.</summary>
+    private void ShowCurrentState()
+    {
+        if (NoorCoinManager.IsBalanceSynced)
+        {
+            Refresh(CurrentBalance);
+        }
+        else if (balanceLabel != null)
+        {
+            balanceLabel.text = loadingText;
+        }
+    }
 
     private void Refresh(int newBalance)
     {

@@ -38,6 +38,13 @@ public class NoorCoinManager : MonoBehaviour
     /// <summary>The player's current Noor Coin balance (read-only externally).</summary>
     public int Balance => _balance;
 
+    /// <summary>
+    /// True once <see cref="_balance"/> holds an authoritative value — either pushed by Flutter/Firebase
+    /// or, in the editor, from debug settings. False means the balance is just its uninitialized 0, so UI
+    /// should show a loading state rather than that number. See <see cref="NoorCoinDisplay"/>.
+    /// </summary>
+    public static bool IsBalanceSynced { get; private set; }
+
     // ─── Unity Lifecycle ──────────────────────────────────────────────────────
 
     private void Awake()
@@ -51,6 +58,7 @@ public class NoorCoinManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        IsBalanceSynced = false;
 
         // We no longer load balance here because Jannah Garden is embedded in Flutter,
         // and Noor coins are assigned directly from the Flutter app or via debug settings in NoorCoinManager.
@@ -177,9 +185,10 @@ public class NoorCoinManager : MonoBehaviour
         {
             // Set balance directly without triggering Earn/Spend notifications
             _balance = Mathf.Max(0, coinCount);
+            IsBalanceSynced = true;
             OnBalanceChanged?.Invoke(_balance);
             SaveBalance(); // Optionally keep saving locally as a fallback
-            
+
             Debug.Log($"[NoorCoinManager] Initial balance set from Flutter/Firebase: {_balance}");
         }
         else
