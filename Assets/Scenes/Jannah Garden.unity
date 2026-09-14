@@ -18207,6 +18207,10 @@ MonoBehaviour:
   panelSlideOffscreenOffset: 400
   panelSlideInDuration: 0.4
   panelSlideOutDuration: 0.3
+  handUi: {fileID: 150527949}
+  handOffset: {x: 0, y: 60}
+  bounceSpeed: 6
+  bounceAmplitude: 15
 --- !u!1 &1858998909
 GameObject:
   m_ObjectHideFlags: 0
@@ -19666,7 +19670,6 @@ Transform:
   - {fileID: 508528228}
   - {fileID: 718521862}
   - {fileID: 291004743}
-  - {fileID: 2020914349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1972430740
@@ -20105,61 +20108,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 817526055909912024, guid: 44616610751b01b47bc32e329c7f6c2a, type: 3}
   m_PrefabInstance: {fileID: 2018232603}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2020914348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2020914349}
-  - component: {fileID: 2020914350}
-  m_Layer: 0
-  m_Name: TutorialManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2020914349
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020914348}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1969168288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2020914350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020914348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16cbd3f095d1014fa8f1843fdf8af73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialManager
-  forceStartTutorial: 0
-  handUi: {fileID: 150527949}
-  dimOverlay: {fileID: 1186234442}
-  instructionPanel: {fileID: 1769460345}
-  instructionText: {fileID: 185137334}
-  nextStepButton: {fileID: 225312269}
-  skipButton: {fileID: 1870231290}
-  tutorialSortingOrder: 999
-  handOffset: {x: 0, y: 60}
-  bounceSpeed: 6
-  bounceAmplitude: 15
 --- !u!1 &2046277793
 GameObject:
   m_ObjectHideFlags: 0

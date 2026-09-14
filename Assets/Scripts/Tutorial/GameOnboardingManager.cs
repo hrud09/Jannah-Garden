@@ -70,6 +70,13 @@ public class GameOnboardingManager : MonoBehaviour
     public float panelSlideInDuration = 0.4f;
     public float panelSlideOutDuration = 0.3f;
 
+    [Header("Hand Pointer Animation")]
+    [Tooltip("Points at whichever UI element the current step is highlighting. Hidden whenever nothing is targeted.")]
+    public RectTransform handUi;
+    public Vector2 handOffset = new Vector2(0f, 60f);
+    public float bounceSpeed = 6f;
+    public float bounceAmplitude = 15f;
+
     private OnboardingStage stage;
     private Flow1SubStep flow1Sub = Flow1SubStep.None;
     private Flow2SubStep flow2Sub = Flow2SubStep.None;
@@ -85,6 +92,8 @@ public class GameOnboardingManager : MonoBehaviour
 
     private Tween pulseTween;
     private RectTransform pulseTarget;
+
+    private Coroutine handPointerCoroutine;
 
     private Tween panelSlideTween;
     private Vector2 instructionPanelShownPos;
@@ -115,6 +124,8 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (dimOverlay != null) dimOverlay.gameObject.SetActive(false);
         SetInstructionPanelVisible(false);
+        EnsureHandUiSetup();
+        StopHandPointerAnimation();
 
         if (skipButton != null)
         {
@@ -137,6 +148,7 @@ public class GameOnboardingManager : MonoBehaviour
         UnsubscribeEvents();
         RestoreHighlightSorting();
         StopPulse();
+        StopHandPointerAnimation();
         panelSlideTween?.Kill();
     }
 
@@ -314,6 +326,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = shopButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
         }
     }
 
@@ -323,6 +336,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         HideDimOverlayOnly();
         SetInstructionText("Select your first item below!");
         StartCoroutine(SelectFirstShopItemRoutine());
@@ -334,6 +348,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         UnblockAllShopCards();
         BeginShopOpenStep();
     }
@@ -374,6 +389,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = chosen.purchaseButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
         }
     }
 
@@ -383,6 +399,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         UnblockAllShopCards();
 
         flow1Sub = Flow1SubStep.AwaitingDownload;
@@ -426,6 +443,7 @@ public class GameOnboardingManager : MonoBehaviour
         RectTransform rect = place.GetComponent<RectTransform>();
         HighlightUIElement(rect);
         PulseButton(rect);
+        StartHandPointerAnimation(rect);
     }
 
     private void HandleItemPlaced(PlaceableItem placedItem)
@@ -436,6 +454,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow1Sub = Flow1SubStep.AwaitingXPTap;
 
         Button xpButton = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpGainChartToggleButton : null;
@@ -446,6 +465,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = xpButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!xpTapListenerAdded)
             {
                 xpButton.onClick.AddListener(HandleXPButtonTapped);
@@ -460,6 +480,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
 
         // The chart opens right where this dim overlay sits (sortingOrder 999) and takes a moment to
         // slide in - drop just the overlay so it never covers the chart the player just asked to see.
@@ -500,6 +521,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = photoButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!photoTapListenerAdded)
             {
                 photoButton.onClick.AddListener(HandlePhotoButtonTapped);
@@ -514,6 +536,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow2Sub = Flow2SubStep.AwaitingPreviewClose;
         SetInstructionText("Share or save it, then close the preview!");
         HideDimOverlayOnly();
@@ -533,6 +556,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = inspectorModeButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!inspectorTapListenerAdded)
             {
                 inspectorModeButton.onClick.AddListener(HandleInspectorButtonTapped);
@@ -547,6 +571,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow2Sub = Flow2SubStep.AwaitingInspectorExit;
 
         // Inspector mode's fly controls and camera drag both need raycasts to reach the world/joystick,
@@ -603,6 +628,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = box.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!treasureBoxTapListenerAdded)
             {
                 box.onClick.AddListener(HandleTreasureBoxButtonTapped);
@@ -622,6 +648,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow2Sub = Flow2SubStep.MinimapCallout;
 
         HideDimOverlayOnly();
@@ -661,6 +688,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = outerGardenButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!outerGardenTapListenerAdded)
             {
                 outerGardenButton.onClick.AddListener(HandleOuterGardenButtonTapped);
@@ -675,6 +703,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         ShowDimAndPanel(false);
 
         if (JannahGardenManager.Instance != null) JannahGardenManager.Instance.LoadOuterGarden();
@@ -825,6 +854,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
 
         switch (stage)
         {
@@ -937,5 +967,68 @@ public class GameOnboardingManager : MonoBehaviour
             pulseTarget.localScale = Vector3.one;
             pulseTarget = null;
         }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  Hand pointer (ported from TutorialManager, reuses the scene's TutorialHand)
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// <summary>One-time setup so the hand renders above whatever HighlightUIElement raises (overlaySortingOrder + 1)
+    /// and never eats the tap meant for the button underneath it.</summary>
+    private void EnsureHandUiSetup()
+    {
+        if (handUi == null) return;
+
+        Canvas handCanvas = handUi.GetComponent<Canvas>();
+        if (handCanvas == null) handCanvas = handUi.gameObject.AddComponent<Canvas>();
+        handCanvas.overrideSorting = true;
+        handCanvas.sortingOrder = overlaySortingOrder + 2;
+
+        foreach (var img in handUi.GetComponentsInChildren<Image>(true))
+        {
+            img.raycastTarget = false;
+        }
+    }
+
+    private void StartHandPointerAnimation(RectTransform target)
+    {
+        StopHandPointerAnimation();
+        if (handUi == null || target == null) return;
+
+        handUi.gameObject.SetActive(true);
+        handPointerCoroutine = StartCoroutine(AnimateHandRoutine(target));
+    }
+
+    private void StopHandPointerAnimation()
+    {
+        if (handPointerCoroutine != null)
+        {
+            StopCoroutine(handPointerCoroutine);
+            handPointerCoroutine = null;
+        }
+        if (handUi != null)
+        {
+            handUi.gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator AnimateHandRoutine(RectTransform target)
+    {
+        while (target != null && handUi != null)
+        {
+            Vector3 targetWorldPos = target.position;
+            Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, targetWorldPos);
+
+            RectTransform parentRect = handUi.parent as RectTransform;
+            if (parentRect != null && RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, screenPoint, null, out Vector2 localPoint))
+            {
+                float bounce = Mathf.Sin(Time.time * bounceSpeed) * bounceAmplitude;
+                handUi.anchoredPosition = localPoint + handOffset + new Vector2(0f, bounce);
+            }
+
+            yield return null;
+        }
+
+        if (handUi != null) handUi.gameObject.SetActive(false);
     }
 }
