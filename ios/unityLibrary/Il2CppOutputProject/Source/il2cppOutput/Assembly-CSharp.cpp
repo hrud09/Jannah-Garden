@@ -851,6 +851,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralFD6A6E26244AD2B96E3FDF91E273AA56B2741557
 IL2CPP_EXTERN_C String_t* _stringLiteralFDA32DC2E96C00474CE484C62A98501A5FB8786E;
 IL2CPP_EXTERN_C String_t* _stringLiteralFF319AAEF673A2110A479FC0547F7A4DB3F6F261;
 IL2CPP_EXTERN_C String_t* _stringLiteralFF5C6695C1932F271878171F2EA1E1485DDC0485;
+IL2CPP_EXTERN_C String_t* _stringLiteralFFEF3DBE279EE1F92E1E2E46F45BC18EBBF55A1A;
 IL2CPP_EXTERN_C const RuntimeMethod* Addressables_LoadAssetAsync_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m71A58B6B9B07D94C0C46D17A4D60EA716C624CB6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Addressables_Release_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m50F71DF61FA17948640834394F0E55E9007573B2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AdsManager_HandleRewardedAdResult_m43A7471C4E9AA572231B896D784473DE4813110C_RuntimeMethod_var;
@@ -4606,6 +4607,7 @@ struct Keyboard_t015BD1A6508137D20B4395295F6E002773FAAF43  : public InputDevice_
 struct NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___balanceLabel;
+	String_t* ___loadingText;
 };
 struct NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -5408,6 +5410,7 @@ struct NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields
 {
 	NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* ___U3CInstanceU3Ek__BackingField;
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___OnBalanceChanged;
+	bool ___U3CIsBalanceSyncedU3Ek__BackingField;
 };
 struct Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F_StaticFields
 {
@@ -6914,9 +6917,11 @@ inline void Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87 (Action_1_t
 	((  void (*) (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87_gshared)(__this, ___0_object, ___1_method, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_add_OnBalanceChanged_mD7733157024D277EFD097FBB0DD87BF883B1E97F (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_ShowCurrentState_m47E039109FAA9C9E0F00059DE716FE0477ADE0FC (NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_remove_OnBalanceChanged_m5EEAF859FD4A6CB80661EBCDC343F241DC2A41A0 (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool NoorCoinManager_get_IsBalanceSynced_mCB5C4E5067F682295338520223F73D9225352EB9_inline (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NoorCoinDisplay_get_CurrentBalance_m376B308F9621B011EA30E87BC389CE1CB3FD5028 (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A (NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500* __this, int32_t ___0_newBalance, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_remove_OnBalanceChanged_m5EEAF859FD4A6CB80661EBCDC343F241DC2A41A0 (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_FormatCoins_m90A973D34659925E2611173585EBC1145F124D83 (int32_t ___0_amount, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_StripTrailingZero_m235E5F272D7D71FD29195750F37CF9A86D9999AB (float ___0_value, int32_t ___1_decimals, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m3F2C4433B6ADFA5ED8E3F14ED19CD23014E5179D (float* __this, String_t* ___0_format, const RuntimeMethod* method) ;
@@ -6924,6 +6929,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_EndsWith_mCD3754F5401E19CE7821CD3
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE (String_t* __this, int32_t ___0_startIndex, int32_t ___1_length, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance_mE3962983FBF8CAE729334C580365E4ACF225EA20_inline (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_IsBalanceSynced_m30BA012F24AB0BC301D130F425073937D0DBB23C_inline (bool ___0_value, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline (const RuntimeMethod* method) ;
 inline bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method)
 {
@@ -21334,7 +21340,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NoorCoinDisplay_get_CurrentBalance_m3
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:24>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:28>
 		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_0;
 		L_0 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -21374,7 +21380,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Awake_m464C47261F516B32F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:30>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:34>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___balanceLabel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -21385,7 +21391,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Awake_m464C47261F516B32F
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:32>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:36>
 		String_t* L_2;
 		L_2 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(__this, NULL);
 		String_t* L_3;
@@ -21396,15 +21402,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Awake_m464C47261F516B32F
 
 IL_0028:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:35>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:39>
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_4 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_4, __this, (intptr_t)((void*)NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A_RuntimeMethod_var), NULL);
 		NoorCoinManager_add_OnBalanceChanged_mD7733157024D277EFD097FBB0DD87BF883B1E97F(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:39>
-		int32_t L_5;
-		L_5 = NoorCoinDisplay_get_CurrentBalance_m376B308F9621B011EA30E87BC389CE1CB3FD5028(NULL);
-		NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A(__this, L_5, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:40>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:45>
+		NoorCoinDisplay_ShowCurrentState_m47E039109FAA9C9E0F00059DE716FE0477ADE0FC(__this, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:46>
 		return;
 	}
 }
@@ -21412,11 +21416,9 @@ IL_0028:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_OnEnable_m57DB0D035919BFEF36A9C211ACB86598FACD49DA (NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:46>
-		int32_t L_0;
-		L_0 = NoorCoinDisplay_get_CurrentBalance_m376B308F9621B011EA30E87BC389CE1CB3FD5028(NULL);
-		NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A(__this, L_0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:47>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:52>
+		NoorCoinDisplay_ShowCurrentState_m47E039109FAA9C9E0F00059DE716FE0477ADE0FC(__this, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:53>
 		return;
 	}
 }
@@ -21431,15 +21433,67 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_OnDestroy_m7C59A617E8180
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:51>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:57>
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_0 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_0, __this, (intptr_t)((void*)NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A_RuntimeMethod_var), NULL);
 		NoorCoinManager_remove_OnBalanceChanged_m5EEAF859FD4A6CB80661EBCDC343F241DC2A41A0(L_0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:58>
 		return;
 	}
 }
 // Method Definition Index: 89152
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_ShowCurrentState_m47E039109FAA9C9E0F00059DE716FE0477ADE0FC (NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:65>
+		bool L_0;
+		L_0 = NoorCoinManager_get_IsBalanceSynced_mCB5C4E5067F682295338520223F73D9225352EB9_inline(NULL);
+		if (!L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:67>
+		int32_t L_1;
+		L_1 = NoorCoinDisplay_get_CurrentBalance_m376B308F9621B011EA30E87BC389CE1CB3FD5028(NULL);
+		NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A(__this, L_1, NULL);
+		return;
+	}
+
+IL_0013:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:69>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2 = __this->___balanceLabel;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_0032;
+		}
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:71>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_4 = __this->___balanceLabel;
+		String_t* L_5 = __this->___loadingText;
+		NullCheck(L_4);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_4, L_5);
+	}
+
+IL_0032:
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:73>
+		return;
+	}
+}
+// Method Definition Index: 89153
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Refresh_m4036FFF3F31A9976EB208A1F904939C6FBA0095A (NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500* __this, int32_t ___0_newBalance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21449,7 +21503,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Refresh_m4036FFF3F31A997
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:77>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___balanceLabel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -21460,24 +21514,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay_Refresh_m4036FFF3F31A997
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:58>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:77>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:60>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:79>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2 = __this->___balanceLabel;
 		int32_t L_3 = ___0_newBalance;
 		String_t* L_4;
 		L_4 = NoorCoinDisplay_FormatCoins_m90A973D34659925E2611173585EBC1145F124D83(L_3, NULL);
 		NullCheck(L_2);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_2, L_4);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:61>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:80>
 		return;
 	}
 }
-// Method Definition Index: 89153
+// Method Definition Index: 89154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_FormatCoins_m90A973D34659925E2611173585EBC1145F124D83 (int32_t ___0_amount, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21489,7 +21543,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_FormatCoins_m90A973
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:75>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:94>
 		int32_t L_0 = ___0_amount;
 		if ((((int32_t)L_0) < ((int32_t)((int32_t)1000000000))))
 		{
@@ -21497,7 +21551,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_FormatCoins_m90A973
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:77>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:96>
 		int32_t L_1 = ___0_amount;
 		String_t* L_2;
 		L_2 = NoorCoinDisplay_StripTrailingZero_m235E5F272D7D71FD29195750F37CF9A86D9999AB(((float)(((float)L_1)/(1.0E+09f))), 1, NULL);
@@ -21508,7 +21562,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_FormatCoins_m90A973
 
 IL_0021:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:99>
 		int32_t L_4 = ___0_amount;
 		if ((((int32_t)L_4) < ((int32_t)((int32_t)1000000))))
 		{
@@ -21516,7 +21570,7 @@ IL_0021:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:101>
 		int32_t L_5 = ___0_amount;
 		String_t* L_6;
 		L_6 = NoorCoinDisplay_StripTrailingZero_m235E5F272D7D71FD29195750F37CF9A86D9999AB(((float)(((float)L_5)/(1000000.0f))), 1, NULL);
@@ -21527,7 +21581,7 @@ IL_0021:
 
 IL_0042:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:104>
 		int32_t L_8 = ___0_amount;
 		if ((((int32_t)L_8) < ((int32_t)((int32_t)1000))))
 		{
@@ -21535,7 +21589,7 @@ IL_0042:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:106>
 		int32_t L_9 = ___0_amount;
 		String_t* L_10;
 		L_10 = NoorCoinDisplay_StripTrailingZero_m235E5F272D7D71FD29195750F37CF9A86D9999AB(((float)(((float)L_9)/(1000.0f))), 1, NULL);
@@ -21546,13 +21600,13 @@ IL_0042:
 
 IL_0063:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:90>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:109>
 		String_t* L_12;
 		L_12 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&___0_amount), NULL);
 		return L_12;
 	}
 }
-// Method Definition Index: 89154
+// Method Definition Index: 89155
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_StripTrailingZero_m235E5F272D7D71FD29195750F37CF9A86D9999AB (float ___0_value, int32_t ___1_decimals, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21564,7 +21618,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_StripTrailingZero_m
 	}
 	String_t* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:99>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:118>
 		String_t* L_0;
 		L_0 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&___1_decimals), NULL);
 		String_t* L_1;
@@ -21572,7 +21626,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_StripTrailingZero_m
 		String_t* L_2;
 		L_2 = Single_ToString_m3F2C4433B6ADFA5ED8E3F14ED19CD23014E5179D((&___0_value), L_1, NULL);
 		V_0 = L_2;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:100>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:119>
 		String_t* L_3 = V_0;
 		NullCheck(L_3);
 		bool L_4;
@@ -21583,7 +21637,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_StripTrailingZero_m
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:102>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:121>
 		String_t* L_5 = V_0;
 		String_t* L_6 = V_0;
 		NullCheck(L_6);
@@ -21597,15 +21651,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NoorCoinDisplay_StripTrailingZero_m
 
 IL_0036:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:104>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:123>
 		String_t* L_9 = V_0;
 		return L_9;
 	}
 }
-// Method Definition Index: 89155
+// Method Definition Index: 89156
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay__ctor_m752092077B71FE9A30C9409B91A85BBF0B89EEC3 (NoorCoinDisplay_t5277D0776E501751224ACF218AD0D1149ACA6500* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralFFEF3DBE279EE1F92E1E2E46F45BC18EBBF55A1A);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinDisplay.cs:24>
+		__this->___loadingText = _stringLiteralFFEF3DBE279EE1F92E1E2E46F45BC18EBBF55A1A;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___loadingText), (void*)_stringLiteralFFEF3DBE279EE1F92E1E2E46F45BC18EBBF55A1A);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}
@@ -21618,7 +21681,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinDisplay__ctor_m752092077B71FE9A3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89156
+// Method Definition Index: 89157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21633,7 +21696,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02
 		return L_0;
 	}
 }
-// Method Definition Index: 89157
+// Method Definition Index: 89158
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance_mE3962983FBF8CAE729334C580365E4ACF225EA20 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21650,7 +21713,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance_mE3962983FB
 		return;
 	}
 }
-// Method Definition Index: 89158
+// Method Definition Index: 89159
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_add_OnBalanceChanged_mD7733157024D277EFD097FBB0DD87BF883B1E97F (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21693,7 +21756,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89159
+// Method Definition Index: 89160
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_remove_OnBalanceChanged_m5EEAF859FD4A6CB80661EBCDC343F241DC2A41A0 (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21736,7 +21799,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89160
+// Method Definition Index: 89161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NoorCoinManager_get_Balance_m10C32AC8622DC29F2B8C490D25C6408B45D2D363 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21745,7 +21808,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NoorCoinManager_get_Balance_m10C32AC8
 		return L_0;
 	}
 }
-// Method Definition Index: 89161
+// Method Definition Index: 89162
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NoorCoinManager_get_IsBalanceSynced_mCB5C4E5067F682295338520223F73D9225352EB9 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:46>
+		bool L_0 = ((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___U3CIsBalanceSyncedU3Ek__BackingField;
+		return L_0;
+	}
+}
+// Method Definition Index: 89163
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_set_IsBalanceSynced_m30BA012F24AB0BC301D130F425073937D0DBB23C (bool ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:46>
+		bool L_0 = ___0_value;
+		((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___U3CIsBalanceSyncedU3Ek__BackingField = L_0;
+		return;
+	}
+}
+// Method Definition Index: 89164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Awake_mD7C9CE7507A3C54AABB34867987BC515B77D7C70 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21760,7 +21854,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Awake_mD7C9CE7507A3C54AA
 	memset((&V_0), 0, sizeof(V_0));
 	int32_t V_1 = 0;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:46>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:53>
 		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_0;
 		L_0 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -21783,25 +21877,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Awake_mD7C9CE7507A3C54AA
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:48>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:55>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
 		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:49>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:56>
 		return;
 	}
 
 IL_0026:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:52>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:59>
 		NoorCoinManager_set_Instance_mE3962983FBF8CAE729334C580365E4ACF225EA20_inline(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:53>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:60>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5;
 		L_5 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7(L_5, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:63>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:61>
+		NoorCoinManager_set_IsBalanceSynced_m30BA012F24AB0BC301D130F425073937D0DBB23C_inline((bool)0, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:71>
 		Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_6;
 		L_6 = FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline(NULL);
 		V_0 = L_6;
@@ -21809,11 +21905,11 @@ IL_0026:
 		L_7 = Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline((&V_0), Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var);
 		if (!L_7)
 		{
-			goto IL_0061;
+			goto IL_0067;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:65>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:73>
 		Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_8;
 		L_8 = FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline(NULL);
 		V_0 = L_8;
@@ -21825,13 +21921,13 @@ IL_0026:
 		NoorCoinManager_SetInitialCoinsFromFlutter_mCB76DAB1BE429F897893DEF59B003167391199E1(__this, L_10, NULL);
 	}
 
-IL_0061:
+IL_0067:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:67>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:75>
 		return;
 	}
 }
-// Method Definition Index: 89162
+// Method Definition Index: 89165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Start_mCA57C98B7A2482F0E76B480FC3262D6DB69B4639 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21846,7 +21942,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Start_mCA57C98B7A2482F0E
 	Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:71>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:79>
 		bool L_0 = __this->___isDebug;
 		if (!L_0)
 		{
@@ -21854,18 +21950,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Start_mCA57C98B7A2482F0E
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:73>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:81>
 		int32_t* L_1 = (int32_t*)(&__this->___debugNoorCoinsAmount);
 		String_t* L_2;
 		L_2 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5(L_1, NULL);
 		NoorCoinManager_SetInitialCoinsFromFlutter_mCB76DAB1BE429F897893DEF59B003167391199E1(__this, L_2, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:74>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:82>
 		return;
 	}
 
 IL_001a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:80>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:88>
 		Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_3;
 		L_3 = FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline(NULL);
 		V_0 = L_3;
@@ -21888,10 +21984,10 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:82>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:90>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralF5F4C3A0CA8AB44DC3FA2645E2838AC7DA29F35B, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:83>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:91>
 		FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* L_7;
 		L_7 = FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline(NULL);
 		NullCheck(L_7);
@@ -21900,24 +21996,24 @@ IL_001a:
 
 IL_004a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:85>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:93>
 		return;
 	}
 }
-// Method Definition Index: 89163
+// Method Definition Index: 89166
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_OnApplicationQuit_m3BF83820632B6A0B866AA07E56DAABCE36E22781 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:87>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:95>
 		NoorCoinManager_SaveBalance_m9D1CFD6A762CD77096DCFFA102D5E2342100AB4F(__this, NULL);
 		return;
 	}
 }
-// Method Definition Index: 89164
+// Method Definition Index: 89167
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_OnApplicationPause_m8DB4F0CD59ADA620AD2B669DD149A1D11EB87664 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, bool ___0_paused, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:96>
 		bool L_0 = ___0_paused;
 		if (!L_0)
 		{
@@ -21925,17 +22021,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_OnApplicationPause_m8DB4
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:96>
 		NoorCoinManager_SaveBalance_m9D1CFD6A762CD77096DCFFA102D5E2342100AB4F(__this, NULL);
 	}
 
 IL_0009:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:88>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:96>
 		return;
 	}
 }
-// Method Definition Index: 89165
+// Method Definition Index: 89168
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_OnDestroy_mA58E59E719EA010648217AAD5925F1BFD94AD57C (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21945,7 +22041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_OnDestroy_mA58E59E719EA0
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:93>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:101>
 		NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* L_0;
 		L_0 = NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -21957,17 +22053,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_OnDestroy_mA58E59E719EA0
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:93>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:101>
 		NoorCoinManager_set_Instance_mE3962983FBF8CAE729334C580365E4ACF225EA20_inline((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4*)NULL, NULL);
 	}
 
 IL_0013:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:94>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:102>
 		return;
 	}
 }
-// Method Definition Index: 89166
+// Method Definition Index: 89169
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NoorCoinManager_TrySpend_mFF029959D4172F4B9C4FD5F60542B2CE633BA67D (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, int32_t ___0_amount, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21982,7 +22078,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NoorCoinManager_TrySpend_mFF029959D4172F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:105>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:113>
 		int32_t L_0 = ___0_amount;
 		if ((((int32_t)L_0) >= ((int32_t)0)))
 		{
@@ -21990,7 +22086,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NoorCoinManager_TrySpend_mFF029959D4172F
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:107>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:115>
 		int32_t L_1 = ___0_amount;
 		int32_t L_2 = L_1;
 		RuntimeObject* L_3 = Box(il2cpp_defaults.int32_class, &L_2);
@@ -21998,13 +22094,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NoorCoinManager_TrySpend_mFF029959D4172F
 		L_4 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral139F1E91D77F3A0110B3CF08A74584C255A575D1, L_3, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:108>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:116>
 		return (bool)0;
 	}
 
 IL_001b:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:111>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:119>
 		int32_t L_5 = __this->____balance;
 		int32_t L_6 = ___0_amount;
 		if ((((int32_t)L_5) >= ((int32_t)L_6)))
@@ -22013,7 +22109,7 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:113>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:121>
 		int32_t L_7 = ___0_amount;
 		int32_t L_8 = L_7;
 		RuntimeObject* L_9 = Box(il2cpp_defaults.int32_class, &L_8);
@@ -22024,17 +22120,17 @@ IL_001b:
 		L_13 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteral5177F63DFC147EA5C1230A8153B6079F4F78329B, L_9, L_12, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_13, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:114>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:122>
 		return (bool)0;
 	}
 
 IL_0046:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:117>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:125>
 		int32_t L_14 = __this->____balance;
 		int32_t L_15 = ___0_amount;
 		NoorCoinManager_SetBalance_m3E2E662A1A474031F152FFF9706C31261D196909(__this, ((int32_t)il2cpp_codegen_subtract(L_14, L_15)), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:118>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:126>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_16;
 		L_16 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -22046,7 +22142,7 @@ IL_0046:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:120>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:128>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_18;
 		L_18 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		int32_t L_19 = ___0_amount;
@@ -22062,7 +22158,7 @@ IL_0046:
 
 IL_0080:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:122>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:130>
 		int32_t L_24 = ___0_amount;
 		int32_t L_25 = L_24;
 		RuntimeObject* L_26 = Box(il2cpp_defaults.int32_class, &L_25);
@@ -22073,14 +22169,14 @@ IL_0080:
 		L_30 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteralC22EA68CF3F317F53A132BD4C125D2292C7276A6, L_26, L_29, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_30, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:126>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:134>
 		int32_t L_31 = ___0_amount;
 		NoorCoinManager_SendCoinUpdateToFlutter_mC62479ECC54433EA07AB098AA78F53082A1C89B0(__this, ((-L_31)), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:128>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:136>
 		return (bool)1;
 	}
 }
-// Method Definition Index: 89167
+// Method Definition Index: 89170
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Earn_m2E8D27BDCE73C48150F14D45F62147E023F7A8D6 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, int32_t ___0_amount, bool ___1_showToast, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22094,7 +22190,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Earn_m2E8D27BDCE73C48150
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:134>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:142>
 		int32_t L_0 = ___0_amount;
 		if ((((int32_t)L_0) >= ((int32_t)0)))
 		{
@@ -22102,7 +22198,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Earn_m2E8D27BDCE73C48150
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:136>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:144>
 		int32_t L_1 = ___0_amount;
 		int32_t L_2 = L_1;
 		RuntimeObject* L_3 = Box(il2cpp_defaults.int32_class, &L_2);
@@ -22110,17 +22206,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_Earn_m2E8D27BDCE73C48150
 		L_4 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralE465FED53EB3A72FCDA9B5E97DAAF59D8502B9BD, L_3, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:137>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:145>
 		return;
 	}
 
 IL_001a:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:140>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:148>
 		int32_t L_5 = __this->____balance;
 		int32_t L_6 = ___0_amount;
 		NoorCoinManager_SetBalance_m3E2E662A1A474031F152FFF9706C31261D196909(__this, ((int32_t)il2cpp_codegen_add(L_5, L_6)), NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:141>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:149>
 		bool L_7 = ___1_showToast;
 		if (!L_7)
 		{
@@ -22139,7 +22235,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:143>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:151>
 		ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* L_10;
 		L_10 = ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline(NULL);
 		int32_t L_11 = ___0_amount;
@@ -22155,7 +22251,7 @@ IL_001a:
 
 IL_0057:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:145>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:153>
 		int32_t L_16 = ___0_amount;
 		int32_t L_17 = L_16;
 		RuntimeObject* L_18 = Box(il2cpp_defaults.int32_class, &L_17);
@@ -22166,24 +22262,24 @@ IL_0057:
 		L_22 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteral88219381D20CD539060715E5C22B6E77FDCBBBEC, L_18, L_21, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_22, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:149>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:157>
 		int32_t L_23 = ___0_amount;
 		NoorCoinManager_SendCoinUpdateToFlutter_mC62479ECC54433EA07AB098AA78F53082A1C89B0(__this, L_23, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:150>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:158>
 		return;
 	}
 }
-// Method Definition Index: 89168
+// Method Definition Index: 89171
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NoorCoinManager_CanAfford_mEFE205C4DD73F71B0F1A151D82679A34D5B8814B (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, int32_t ___0_cost, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:155>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:163>
 		int32_t L_0 = __this->____balance;
 		int32_t L_1 = ___0_cost;
 		return (bool)((((int32_t)((((int32_t)L_0) < ((int32_t)L_1))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 89169
+// Method Definition Index: 89172
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_ResetToStartingBalance_m8E251DF117292095D7030751F38B3A171DB23FD5 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22194,12 +22290,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_ResetToStartingBalance_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:163>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:171>
 		int32_t L_0 = __this->___startingBalance;
 		NoorCoinManager_SetBalance_m3E2E662A1A474031F152FFF9706C31261D196909(__this, L_0, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:164>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:172>
 		NoorCoinManager_SaveBalance_m9D1CFD6A762CD77096DCFFA102D5E2342100AB4F(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:165>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:173>
 		int32_t L_1 = __this->___startingBalance;
 		int32_t L_2 = L_1;
 		RuntimeObject* L_3 = Box(il2cpp_defaults.int32_class, &L_2);
@@ -22207,11 +22303,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_ResetToStartingBalance_m
 		L_4 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralAF0114333B5D5BF3156D5E44E0E6A18C713BD740, L_3, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:166>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:174>
 		return;
 	}
 }
-// Method Definition Index: 89170
+// Method Definition Index: 89173
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SetInitialCoinsFromFlutter_mCB76DAB1BE429F897893DEF59B003167391199E1 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, String_t* ___0_coinCountString, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22227,47 +22323,49 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SetInitialCoinsFromFlutt
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B3_0 = NULL;
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B2_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:176>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:184>
 		String_t* L_0 = ___0_coinCountString;
 		bool L_1;
 		L_1 = Int32_TryParse_mC928DE2FEC1C35ED5298BDDCA9868076E94B8A21(L_0, (&V_0), NULL);
 		if (!L_1)
 		{
-			goto IL_004e;
+			goto IL_0054;
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:179>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:187>
 		int32_t L_2 = V_0;
 		int32_t L_3;
 		L_3 = Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline(0, L_2, NULL);
 		__this->____balance = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:180>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:188>
+		NoorCoinManager_set_IsBalanceSynced_m30BA012F24AB0BC301D130F425073937D0DBB23C_inline((bool)1, NULL);
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:189>
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_4 = ((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___OnBalanceChanged;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_5 = L_4;
 		if (L_5)
 		{
 			G_B3_0 = L_5;
-			goto IL_0022;
+			goto IL_0028;
 		}
 		G_B2_0 = L_5;
 	}
 	{
-		goto IL_002d;
+		goto IL_0033;
 	}
 
-IL_0022:
+IL_0028:
 	{
 		int32_t L_6 = __this->____balance;
 		NullCheck(G_B3_0);
 		Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline(G_B3_0, L_6, NULL);
 	}
 
-IL_002d:
+IL_0033:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:181>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:190>
 		NoorCoinManager_SaveBalance_m9D1CFD6A762CD77096DCFFA102D5E2342100AB4F(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:183>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:192>
 		int32_t L_7 = __this->____balance;
 		int32_t L_8 = L_7;
 		RuntimeObject* L_9 = Box(il2cpp_defaults.int32_class, &L_8);
@@ -22278,19 +22376,19 @@ IL_002d:
 		return;
 	}
 
-IL_004e:
+IL_0054:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:187>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:196>
 		String_t* L_11 = ___0_coinCountString;
 		String_t* L_12;
 		L_12 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralAA6B1236BDF5950851ECEB5563AD976A38F0D442, L_11, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_12, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:189>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:198>
 		return;
 	}
 }
-// Method Definition Index: 89171
+// Method Definition Index: 89174
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SendCoinUpdateToFlutter_mC62479ECC54433EA07AB098AA78F53082A1C89B0 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, int32_t ___0_amountChange, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22303,27 +22401,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SendCoinUpdateToFlutter_
 	}
 	String_t* V_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:197>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:206>
 		int32_t L_0 = ___0_amountChange;
 		int32_t L_1 = L_0;
 		RuntimeObject* L_2 = Box(il2cpp_defaults.int32_class, &L_1);
 		String_t* L_3;
 		L_3 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralB1F89170A7EF120F33AA2A6166C8AD6F406B9686, L_2, NULL);
 		V_0 = L_3;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:200>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:209>
 		String_t* L_4 = V_0;
 		SendToFlutter_Send_mC3EEBDA79530F83C75829EFC506B20AF3C9B16AE(L_4, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:202>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:211>
 		String_t* L_5 = V_0;
 		String_t* L_6;
 		L_6 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralC9D71253B1279C961BBFA86FBE49F483B362C9A2, L_5, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_6, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:203>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:212>
 		return;
 	}
 }
-// Method Definition Index: 89172
+// Method Definition Index: 89175
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SetBalance_m3E2E662A1A474031F152FFF9706C31261D196909 (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, int32_t ___0_newBalance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22335,12 +22433,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SetBalance_m3E2E662A1A47
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B2_0 = NULL;
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B1_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:209>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:218>
 		int32_t L_0 = ___0_newBalance;
 		int32_t L_1;
 		L_1 = Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline(0, L_0, NULL);
 		__this->____balance = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:210>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:219>
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_2 = ((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___OnBalanceChanged;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_3 = L_2;
 		if (L_3)
@@ -22363,13 +22461,13 @@ IL_0018:
 
 IL_0023:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:211>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:220>
 		NoorCoinManager_SaveBalance_m9D1CFD6A762CD77096DCFFA102D5E2342100AB4F(__this, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:212>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:221>
 		return;
 	}
 }
-// Method Definition Index: 89173
+// Method Definition Index: 89176
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SaveBalance_m9D1CFD6A762CD77096DCFFA102D5E2342100AB4F (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22380,14 +22478,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_SaveBalance_m9D1CFD6A762
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:216>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:225>
 		int32_t L_0 = __this->____balance;
 		SaveSystem_Save_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m4F166F93692AED1413B82940FB1C9E17AB0C4522(_stringLiteral049CDFD648D80C9A0A907EDB1B0413B8689CF210, L_0, SaveSystem_Save_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m4F166F93692AED1413B82940FB1C9E17AB0C4522_RuntimeMethod_var);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:217>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:226>
 		return;
 	}
 }
-// Method Definition Index: 89174
+// Method Definition Index: 89177
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_LoadBalance_m52B64CB81FA267146E36E8129ABFF5010F18F00F (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22404,7 +22502,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_LoadBalance_m52B64CB81FA
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B5_0 = NULL;
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B4_0 = NULL;
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:221>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:230>
 		bool L_0;
 		L_0 = SaveSystem_Exists_m1886FB2E731CD63EEE045C293946BE8E229EE7EF(_stringLiteral049CDFD648D80C9A0A907EDB1B0413B8689CF210, NULL);
 		if (!L_0)
@@ -22413,11 +22511,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_LoadBalance_m52B64CB81FA
 		}
 	}
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:223>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:232>
 		int32_t L_1;
 		L_1 = SaveSystem_Load_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m102CD0EDA928D80AB1660B062FC4A07A74422398(_stringLiteral049CDFD648D80C9A0A907EDB1B0413B8689CF210, SaveSystem_Load_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m102CD0EDA928D80AB1660B062FC4A07A74422398_RuntimeMethod_var);
 		__this->____balance = L_1;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:224>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:233>
 		int32_t L_2 = __this->____balance;
 		int32_t L_3 = L_2;
 		RuntimeObject* L_4 = Box(il2cpp_defaults.int32_class, &L_3);
@@ -22430,10 +22528,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager_LoadBalance_m52B64CB81FA
 
 IL_0038:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:228>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:237>
 		int32_t L_6 = __this->___startingBalance;
 		__this->____balance = L_6;
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:229>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:238>
 		int32_t L_7 = __this->___startingBalance;
 		int32_t L_8 = L_7;
 		RuntimeObject* L_9 = Box(il2cpp_defaults.int32_class, &L_8);
@@ -22445,7 +22543,7 @@ IL_0038:
 
 IL_005e:
 	{
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:233>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:242>
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_11 = ((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___OnBalanceChanged;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_12 = L_11;
 		if (L_12)
@@ -22464,11 +22562,11 @@ IL_0068:
 		int32_t L_13 = __this->____balance;
 		NullCheck(G_B5_0);
 		Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline(G_B5_0, L_13, NULL);
-		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:234>
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:243>
 		return;
 	}
 }
-// Method Definition Index: 89175
+// Method Definition Index: 89178
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager__ctor_mE6B56276688B0E256FE3FF843EB988291674B2FA (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22488,7 +22586,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoorCoinManager__ctor_mE6B56276688B0E256
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89176
+// Method Definition Index: 89179
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FellowProfileData_TryGetMemberSince_m11107C99583308212B0DA57B4079B34BC47A661D (FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* __this, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D* ___0_date, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22515,7 +22613,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FellowProfileData_TryGetMemberSince_m111
 		return L_3;
 	}
 }
-// Method Definition Index: 89177
+// Method Definition Index: 89180
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileData__ctor_mA5DEDE29D25A34AAB5FF76C683AD8D8482DA8523 (FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22531,7 +22629,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileData__ctor_mA5DEDE29D25A34A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89178
+// Method Definition Index: 89181
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileList__ctor_m1BD18EA719F3E0CB90B9825BA40086D988D86903 (FellowProfileList_t53592A605F68F0B1EFB501B4C4B32F7500D3C8CD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22547,7 +22645,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileList__ctor_m1BD18EA719F3E0C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89179
+// Method Definition Index: 89182
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* FellowProfileObject_get_Data_m3369552B9FFE8F364C93E24F0C63095E976F5255 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22556,7 +22654,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FellowProfileData_tE64FB39268902B83CB55DC18FE
 		return L_0;
 	}
 }
-// Method Definition Index: 89180
+// Method Definition Index: 89183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject_set_Data_mAB39B3C2362D61D1F551FAD4CA69B440904AE827 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22567,7 +22665,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject_set_Data_mAB39B3C236
 		return;
 	}
 }
-// Method Definition Index: 89181
+// Method Definition Index: 89184
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject_Awake_mAC5F59A177CAA3CB186ECFFDDBD78C959C214BAD (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22601,7 +22699,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 89182
+// Method Definition Index: 89185
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject_Bind_mD9AB352C96CA108658D64D8A1589B20C59398D40 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22720,7 +22818,7 @@ IL_0093:
 		return;
 	}
 }
-// Method Definition Index: 89183
+// Method Definition Index: 89186
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject_ApplyProfilePicture_m7841A9017FF944AE859520B756AFABFE68C85A0F (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, String_t* ___0_path, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22868,7 +22966,7 @@ IL_009a:
 		return;
 	}
 }
-// Method Definition Index: 89184
+// Method Definition Index: 89187
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FellowProfileObject_IsRemote_mFD0A60485C2F235A383862A32705A03A24849B9D (String_t* ___0_path, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22903,7 +23001,7 @@ IL_001b:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 89185
+// Method Definition Index: 89188
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FellowProfileObject_DownloadAvatar_m6189F9B1681FA45D02D6C948E9E9FC51836DC743 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, String_t* ___0_url, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22927,7 +23025,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FellowProfileObject_DownloadAv
 		return L_2;
 	}
 }
-// Method Definition Index: 89186
+// Method Definition Index: 89189
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* FellowProfileObject_FormatMemberSince_m8AE3264CDEDD2B3BB630F4B8BE62D4D8005744F5 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22972,7 +23070,7 @@ IL_0011:
 		return L_5;
 	}
 }
-// Method Definition Index: 89187
+// Method Definition Index: 89190
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* FellowProfileObject_ResolveProfileSprite_m03CE57A1EC9C58713918A8891A56A0F91854AA62 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, String_t* ___0_path, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23106,7 +23204,7 @@ IL_0068:
 		return L_19;
 	}
 }
-// Method Definition Index: 89188
+// Method Definition Index: 89191
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject_LateUpdate_m95825244A4EBBB371B4FB8BDA897F97E15045E57 (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23190,7 +23288,7 @@ IL_003f:
 		return;
 	}
 }
-// Method Definition Index: 89189
+// Method Definition Index: 89192
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject__ctor_m799BFD95CD8DBD12FD27B3D40C65A0A5E35F7DAE (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23209,7 +23307,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject__ctor_m799BFD95CD8DB
 		return;
 	}
 }
-// Method Definition Index: 89190
+// Method Definition Index: 89193
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject__cctor_m569D740D6C08C985FFE08576A8A01E5998EB3364 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23237,7 +23335,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowProfileObject__cctor_m569D740D6C08
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89191
+// Method Definition Index: 89194
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDownloadAvatarU3Ed__21__ctor_mDC90B21ABD63AED03AF31E4FD94A0F65E3637F6D (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -23247,7 +23345,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDownloadAvatarU3Ed__21__ctor_mDC90B21
 		return;
 	}
 }
-// Method Definition Index: 89192
+// Method Definition Index: 89195
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDownloadAvatarU3Ed__21_System_IDisposable_Dispose_m8A89D329D463BBBD91F58F25033180C1C8044F99 (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -23296,7 +23394,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 89193
+// Method Definition Index: 89196
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CDownloadAvatarU3Ed__21_MoveNext_m7B3065CA5DED5851DC38ADB72D9623659E2A910C (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23529,7 +23627,7 @@ IL_0156:
 		return L_47;
 	}
 }
-// Method Definition Index: 89194
+// Method Definition Index: 89197
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDownloadAvatarU3Ed__21_U3CU3Em__Finally1_m299356C9DBC3F04535008791AF4C62ADC0A77F09 (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23557,7 +23655,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 89195
+// Method Definition Index: 89198
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDownloadAvatarU3Ed__21_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF39AEBB2B457877024A525751B0CD9A3410CDD87 (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23565,7 +23663,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDownloadAvatarU3Ed__21_Syst
 		return L_0;
 	}
 }
-// Method Definition Index: 89196
+// Method Definition Index: 89199
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDownloadAvatarU3Ed__21_System_Collections_IEnumerator_Reset_mBF617A49B4E9EF7B00F955DEB3D8452A5B2AA9B5 (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23574,7 +23672,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDownloadAvatarU3Ed__21_System_Collect
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CDownloadAvatarU3Ed__21_System_Collections_IEnumerator_Reset_mBF617A49B4E9EF7B00F955DEB3D8452A5B2AA9B5_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 89197
+// Method Definition Index: 89200
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDownloadAvatarU3Ed__21_System_Collections_IEnumerator_get_Current_m2114FC5604884A704D3338F60D818086F7EC6646 (U3CDownloadAvatarU3Ed__21_tC38118A75C18CABB8F45D750496BCC0D0BCD7E66* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23590,7 +23688,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDownloadAvatarU3Ed__21_Syst
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89198
+// Method Definition Index: 89201
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_Awake_m12DE03ABDB158092E24C600CD2310ECCA4ECF2C8 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23629,7 +23727,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 89199
+// Method Definition Index: 89202
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_OnEnable_mFA3D1ADE5DE722268E6AC21F96D6D3EC58E25AD1 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23648,7 +23746,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_OnEnable_
 		return;
 	}
 }
-// Method Definition Index: 89200
+// Method Definition Index: 89203
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_OnDisable_m5E0854F7FB79091A233EF6A1ADFF1229BDC52070 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23667,7 +23765,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_OnDisable
 		return;
 	}
 }
-// Method Definition Index: 89201
+// Method Definition Index: 89204
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_Start_mC93C24D8A3FC3793BD111A8649678D29A9222827 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23769,7 +23867,7 @@ IL_0061:
 		return;
 	}
 }
-// Method Definition Index: 89202
+// Method Definition Index: 89205
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_HandleFlutterRoster_mEDD05633EA3E40AF21B263F7C5B366C1B5647C38 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, FellowshipProfilesPayload_t009784E75B70678D078072CA951B8D961E880C12* ___0_roster, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23852,7 +23950,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 89203
+// Method Definition Index: 89206
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_FallBackToDummyData_m50CF1DB1A8973FCF3FF7EB1E633F315EE00D96C0 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23893,7 +23991,7 @@ IL_0009:
 		return;
 	}
 }
-// Method Definition Index: 89204
+// Method Definition Index: 89207
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_ShowDummyFellows_m10F7CB867977F52623352DA73425E5AEFB7768E3 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	List_1_t11FE8D5C11B84F6A5CB2FD7EACAB1C7B82ED82C9* V_0 = NULL;
@@ -23921,7 +24019,7 @@ IL_0011:
 		return;
 	}
 }
-// Method Definition Index: 89205
+// Method Definition Index: 89208
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_RegisterSpawnPoints_m1FAA708B3D6F9C61AEFC3A791E2FACA4D2E06C42 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24048,7 +24146,7 @@ IL_0066:
 		return;
 	}
 }
-// Method Definition Index: 89206
+// Method Definition Index: 89209
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t11FE8D5C11B84F6A5CB2FD7EACAB1C7B82ED82C9* FellowshipVisualizationManager_LoadDummyFellows_mA7CD6C32A962FB48A31AD2B6D40D1572159891DA (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24174,7 +24272,7 @@ IL_006e:
 		return L_15;
 	}
 }
-// Method Definition Index: 89207
+// Method Definition Index: 89210
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_ShowFellows_m853D7C98B966D28B98AB542752F29CF398509E73 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, RuntimeObject* ___0_fellows, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24370,7 +24468,7 @@ IL_00d6:
 		return;
 	}
 }
-// Method Definition Index: 89208
+// Method Definition Index: 89211
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_SpawnFellow_mB3E8297865D4B0FE062B634CDC58998085842213 (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24553,7 +24651,7 @@ IL_00b7:
 		return;
 	}
 }
-// Method Definition Index: 89209
+// Method Definition Index: 89212
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager_ClearFellows_m887F6F440D679707661A2810726BCF7B1E2DFCFD (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24715,7 +24813,7 @@ IL_0094:
 		return;
 	}
 }
-// Method Definition Index: 89211
+// Method Definition Index: 89214
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager__ctor_m4B325CC75180E0C8208BD22D6F770C9544BEDA1A (FellowshipVisualizationManager_tEF0651CE3CBEF0293A91BFD18997C701F7D92541* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24762,7 +24860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FellowshipVisualizationManager__ctor_m4B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89212
+// Method Definition Index: 89215
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* GameAnalyticsManager_get_Instance_m65BDFAA20D52E03709468C16BB9302D1314476C3 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24777,7 +24875,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6
 		return L_0;
 	}
 }
-// Method Definition Index: 89213
+// Method Definition Index: 89216
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_set_Instance_m12550AEA26B4C8F0CC9C026D37A8882DC6706FDE (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24794,7 +24892,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_set_Instance_m12550
 		return;
 	}
 }
-// Method Definition Index: 89214
+// Method Definition Index: 89217
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_Awake_m17BF1CEE58E05D9E92D9408B83F276F0F5121051 (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24853,7 +24951,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 89215
+// Method Definition Index: 89218
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_Start_m3D8EACF21013B93CD4568DD30F14A241797DD62C (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24942,7 +25040,7 @@ IL_0073:
 		return;
 	}
 }
-// Method Definition Index: 89216
+// Method Definition Index: 89219
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnDestroy_mB178D9293ABFE21B700F4ABCEEFAF6692E3B452F (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24987,7 +25085,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 89217
+// Method Definition Index: 89220
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnApplicationQuit_m05329EDB769AAFFD7D05D47CB0E560FE444ABE80 (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25015,7 +25113,7 @@ IL_0012:
 		return;
 	}
 }
-// Method Definition Index: 89218
+// Method Definition Index: 89221
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnApplicationPause_mD63ED8E93F48FFA1CC8DF533C57D8B21E40202E1 (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, bool ___0_pause, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25061,7 +25159,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 89219
+// Method Definition Index: 89222
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnXPChanged_mAEE8B78A26EED0306C4ED537714E51B30D657C53 (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, int32_t ___0_newLevel, float ___1_currentXP, float ___2_xpToNextLevel, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25120,7 +25218,7 @@ IL_0036:
 		return;
 	}
 }
-// Method Definition Index: 89220
+// Method Definition Index: 89223
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager_OnCoinBalanceChanged_mAA08F806B9CACC7CFE5880C60C206AFF0583B409 (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, int32_t ___0_newBalance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25209,7 +25307,7 @@ IL_0060:
 		return;
 	}
 }
-// Method Definition Index: 89221
+// Method Definition Index: 89224
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager__ctor_m827BA2984208523EDAE73B0C5C48FE36BD736188 (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25229,7 +25327,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameAnalyticsManager__ctor_m827BA2984208
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89222
+// Method Definition Index: 89225
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_Awake_m29E13A0891D3643AB78AB31B1A3CEC499DE62891 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25268,7 +25366,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 89223
+// Method Definition Index: 89226
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_Start_m1F596AB9EF62B59A5D6D7E58A3CB419D157D76C0 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25278,7 +25376,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_Start_m1F596AB9EF62B
 		return;
 	}
 }
-// Method Definition Index: 89224
+// Method Definition Index: 89227
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_OnEnable_mEC5767E6BF7FF5471A6D86DA0A165F1E90F8791F (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25288,7 +25386,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_OnEnable_mEC5767E6BF
 		return;
 	}
 }
-// Method Definition Index: 89225
+// Method Definition Index: 89228
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_InitializeSettings_m949AC9FA2FEF8BDF647BE6C193E9204F9FC79C7C (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25860,7 +25958,7 @@ IL_03b8:
 		return;
 	}
 }
-// Method Definition Index: 89226
+// Method Definition Index: 89229
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_AnimateOpen_m396B409CFFC5F99EC2375E48D2613700F38C3607 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26018,7 +26116,7 @@ IL_00c5:
 		return;
 	}
 }
-// Method Definition Index: 89227
+// Method Definition Index: 89230
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_AnimateOptions_m25AF5253FB0C10F527CE368F477F5BCCA0215BBC (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26123,7 +26221,7 @@ IL_006b:
 		return;
 	}
 }
-// Method Definition Index: 89228
+// Method Definition Index: 89231
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_SetSFX_m6FAD8E09B1E3F7C3BBC488B3DC23F6792E00BCE8 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, bool ___0_enabled, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26193,7 +26291,7 @@ IL_0031:
 		return;
 	}
 }
-// Method Definition Index: 89229
+// Method Definition Index: 89232
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_SetMusic_m7F96FBC38030004A428BA571E6D195B1C3FE6BC7 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, bool ___0_enabled, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26263,7 +26361,7 @@ IL_0031:
 		return;
 	}
 }
-// Method Definition Index: 89230
+// Method Definition Index: 89233
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_SetVibration_m57C8667BE41FBE7AC8775A37053AB6BDA5A8C4FF (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, bool ___0_enabled, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26313,7 +26411,7 @@ IL_000c:
 		return;
 	}
 }
-// Method Definition Index: 89231
+// Method Definition Index: 89234
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_SetNormalMovementSpeed_m2170F4C287C5287A7B2DE339586867CB9D8DE605 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26356,7 +26454,7 @@ IL_0031:
 		return;
 	}
 }
-// Method Definition Index: 89232
+// Method Definition Index: 89235
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_SetInspectorMovementSpeed_mB100DF8686D2D1198AE3C40AB6FAFC60D319CF29 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26399,7 +26497,7 @@ IL_0031:
 		return;
 	}
 }
-// Method Definition Index: 89233
+// Method Definition Index: 89236
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_SetLookAroundSpeed_m2706206BB7F24386D19177FF283D326FC0DD0025 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26470,7 +26568,7 @@ IL_005b:
 		return;
 	}
 }
-// Method Definition Index: 89234
+// Method Definition Index: 89237
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_UpdateNormalSpeedText_m252EAD40DA383D63C43D6FC3E7E16EAA61A38EDE (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26506,7 +26604,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 89235
+// Method Definition Index: 89238
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_UpdateInspectorSpeedText_m982AAEDB8F0AC098343C03F382D33D21B9907406 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26542,7 +26640,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 89236
+// Method Definition Index: 89239
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_UpdateLookAroundSpeedText_mBBA794EB727B289018B02D1E297500D51337CD2D (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26578,7 +26676,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 89237
+// Method Definition Index: 89240
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_UpdateVisuals_mF3CA7298398BB58FD02ECE8B8AAEA8AE1F16334F (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26759,7 +26857,7 @@ IL_0107:
 		return;
 	}
 }
-// Method Definition Index: 89238
+// Method Definition Index: 89241
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_TriggerVibrationFeedback_m7C4F915231F93249172B94AF1174BAF37A46DFC4 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26789,7 +26887,7 @@ IL_0015:
 		return;
 	}
 }
-// Method Definition Index: 89239
+// Method Definition Index: 89242
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_PlayClickSound_m65718D4B8DAC49F2A8D1196978B37497E18A933D (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26823,7 +26921,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 89240
+// Method Definition Index: 89243
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_OpenSettings_m225A37BA8D9C3EAB0ED8D5C4F1DAB60FACD9BD67 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26885,7 +26983,7 @@ IL_0046:
 		return;
 	}
 }
-// Method Definition Index: 89241
+// Method Definition Index: 89244
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_CloseSettings_m7AB94DED962EE8E505032E91C212BB0DAAB8D1C5 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27041,7 +27139,7 @@ IL_00bd:
 		return;
 	}
 }
-// Method Definition Index: 89242
+// Method Definition Index: 89245
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_FinishClose_mA910E23CAC4F5EBEE2DAFAEAF82A759F48412859 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27082,7 +27180,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 89243
+// Method Definition Index: 89246
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager__ctor_m5FFE9F34BCF8C9B9BD3B8989A4A83BA886EC4CCA (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27098,7 +27196,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager__ctor_m5FFE9F34BCF8C
 		return;
 	}
 }
-// Method Definition Index: 89244
+// Method Definition Index: 89247
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_U3CAnimateOpenU3Eb__26_0_mBF0EF45779EA038895FE31D8DA12FB8608B1D6F2 (GameSettingsManager_t8DFF17CF43D31093EDEA4FCCB6567BB3E8EE8572* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27118,7 +27216,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSettingsManager_U3CAnimateOpenU3Eb__
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89245
+// Method Definition Index: 89248
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CategoryTab__ctor_m53ECE05A5569BF41D617407D433A952310D042FB (CategoryTab_tDBDC2D6007875CFE747666C79590EDA954EF613F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27134,7 +27232,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CategoryTab__ctor_m53ECE05A5569BF41D6174
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89246
+// Method Definition Index: 89249
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShopTierVisuals__ctor_m03A26E26D993610EC35CCCDD1DAFBC71DA4CE5CD (ShopTierVisuals_t2E28087D9A4D8CB83E44E99A1E114B9FE379D173* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27152,7 +27250,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShopTierVisuals__ctor_m03A26E26D993610EC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89247
+// Method Definition Index: 89250
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* InGameShopManager_get_Instance_m9911B560EB56B67C8A4BBB044F35134382611054 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27167,7 +27265,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR InGameShopManager_t937491EF69986C1A76CA6B1FD7
 		return L_0;
 	}
 }
-// Method Definition Index: 89248
+// Method Definition Index: 89251
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_set_Instance_mBFDA92F5C9EB8FF153158812775F7FD30C05E385 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27184,7 +27282,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_set_Instance_mBFDA92F5
 		return;
 	}
 }
-// Method Definition Index: 89249
+// Method Definition Index: 89252
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_add_OnShopOpened_m3E2F25FD3E950A08CF4D4F6A97F867BE0E050EC1 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27227,7 +27325,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89250
+// Method Definition Index: 89253
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_remove_OnShopOpened_m719AC9EF19DC1EBD0878EFFA62F0831BA3289F70 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27270,7 +27368,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89251
+// Method Definition Index: 89254
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_add_OnShopClosed_mEB5764C430F6D197A6148B82100287A76C0BBD05 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27313,7 +27411,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89252
+// Method Definition Index: 89255
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_remove_OnShopClosed_m939C4ABB1BEB8A3DD2B7B2E910077307AA597F81 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27356,7 +27454,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89253
+// Method Definition Index: 89256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_add_OnShopItemUsed_m0A04A1BD0B14BCB28F35D6B7E6DC3A597EF38306 (Action_1_tA53EE3935C293DB57B66A828B2ADD2B3A851BB8D* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27399,7 +27497,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89254
+// Method Definition Index: 89257
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_remove_OnShopItemUsed_mA0A54A10D695C8C14CE440DC3C7CD1F56A6808D1 (Action_1_tA53EE3935C293DB57B66A828B2ADD2B3A851BB8D* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27442,7 +27540,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 89255
+// Method Definition Index: 89258
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF509C222A7727EFE9513631469203B131210958C* InGameShopManager_GetSpawnedShopItemUIs_m54F5B78B2B6B4CAD917BF68925C3A7DA8A72EF64 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27451,7 +27549,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF509C222A7727EFE9513631469203B1312109
 		return L_0;
 	}
 }
-// Method Definition Index: 89256
+// Method Definition Index: 89259
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_Awake_mDE03749231EF89D603A068121F9EB9C8CF7B6003 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27461,7 +27559,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_Awake_mDE03749231EF89D
 		return;
 	}
 }
-// Method Definition Index: 89257
+// Method Definition Index: 89260
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_Start_m8A7077835EC23BA743C34F30ED7A0600DA36D624 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27816,7 +27914,7 @@ IL_01e7:
 		return;
 	}
 }
-// Method Definition Index: 89258
+// Method Definition Index: 89261
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_EnsureItemsSpawned_mD82370396A4F4ED9BD59A2CA639A6CECE9A35C3E (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28397,7 +28495,7 @@ IL_025f:
 		return;
 	}
 }
-// Method Definition Index: 89259
+// Method Definition Index: 89262
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_OnDisable_mB50497D5ACB53859DD9C6F1481518C9F5779F87F (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28423,7 +28521,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 89260
+// Method Definition Index: 89263
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_OnDestroy_mF649480C93100AF0A6766D5857E8968FD8FF21F3 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28583,7 +28681,7 @@ IL_00a7:
 		return;
 	}
 }
-// Method Definition Index: 89261
+// Method Definition Index: 89264
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_ToggleShop_m8BCAFE4FB1FAC363F0589102A2F4DC052F6BEF26 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28647,7 +28745,7 @@ IL_0034:
 		return;
 	}
 }
-// Method Definition Index: 89262
+// Method Definition Index: 89265
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_OnInspectorModeChanged_m8FB3914C8AD743777A2980B792AA6133DFC43162 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, bool ___0_isInspectorMode, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28681,7 +28779,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 89263
+// Method Definition Index: 89266
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_SetShopOpen_mC06AFDB17BBCC9FF114BF9FB4B05B5E5CABFCEBF (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, bool ___0_open, bool ___1_smooth, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29138,7 +29236,7 @@ IL_022a:
 		return;
 	}
 }
-// Method Definition Index: 89264
+// Method Definition Index: 89267
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InGameShopManager_TransitionPanelJuicy_m19020BD79F5B880B2A06A5364331BAD3A2C83E30 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, bool ___0_open, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29161,7 +29259,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InGameShopManager_TransitionPa
 		return L_2;
 	}
 }
-// Method Definition Index: 89265
+// Method Definition Index: 89268
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_SelectAndUseItem_m8BE667115A01C432AA9B69E2DB5656E366C4A134 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29411,7 +29509,7 @@ IL_00f9:
 		return;
 	}
 }
-// Method Definition Index: 89266
+// Method Definition Index: 89269
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_AcquireWithNoorCoins_m6957D7AB431AFB4BB2F261A94AB6CE5F9F87A93A (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* ___0_item, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___1_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29576,7 +29674,7 @@ IL_00df:
 		return;
 	}
 }
-// Method Definition Index: 89267
+// Method Definition Index: 89270
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_AcquireByWatchingAd_m750EC5258631ACF51324F42E0B956E6DB22B7F1E (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* ___0_item, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___1_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29813,7 +29911,7 @@ IL_00f7:
 		return;
 	}
 }
-// Method Definition Index: 89268
+// Method Definition Index: 89271
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_AcquireByRealMoney_m12DC4D8394B5362EE991C89C8C94B2C2258D6017 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* ___0_item, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___1_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29967,7 +30065,7 @@ IL_0078:
 		return;
 	}
 }
-// Method Definition Index: 89269
+// Method Definition Index: 89272
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_CompleteAcquisition_mD908A2658F146F0D8CB24FC5ED0D7834704EDB8D (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* ___0_item, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___1_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30300,7 +30398,7 @@ IL_0191:
 		return;
 	}
 }
-// Method Definition Index: 89270
+// Method Definition Index: 89273
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_RefreshShopItemVisuals_mAC6CE7E13E2738C0E9F78EE5FC9427CA8B03D24B (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30389,7 +30487,7 @@ IL_003e:
 		return;
 	}
 }
-// Method Definition Index: 89271
+// Method Definition Index: 89274
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_SelectAndUseInventoryItem_m89214890F7C76F980CC065B7B585D05C9EC951B5 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* ___0_item, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30746,7 +30844,7 @@ IL_0164:
 		return;
 	}
 }
-// Method Definition Index: 89272
+// Method Definition Index: 89275
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_UpdateHeaderTextColors_m83D448362E4324716A1556D10758FA714D6C5ABC (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_category, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30874,7 +30972,7 @@ IL_0068:
 		return;
 	}
 }
-// Method Definition Index: 89273
+// Method Definition Index: 89276
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_FilterByCategory_m1F112857183CCCF90B15073AD760805A7C479313 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_category, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31023,7 +31121,7 @@ IL_009d:
 		return;
 	}
 }
-// Method Definition Index: 89274
+// Method Definition Index: 89277
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_ApplyImmediateState_mA1FEA69F68DB53EED067F7DD3CA6E70F285FB33C (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_selectedCategory, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31374,7 +31472,7 @@ IL_016b:
 		return;
 	}
 }
-// Method Definition Index: 89275
+// Method Definition Index: 89278
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InGameShopManager_CategoryTransitionRoutine_m05874EFDCD2593ADB5CB410BA51E251AC66B601D (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_oldCategory, int32_t ___1_newCategory, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31401,7 +31499,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InGameShopManager_CategoryTran
 		return L_4;
 	}
 }
-// Method Definition Index: 89276
+// Method Definition Index: 89279
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_FilterByCategoryInt_mDA4D5159A93CEE73CBEEE84756B9EEC9449A5C90 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_categoryIndex, const RuntimeMethod* method) 
 {
 	{
@@ -31412,7 +31510,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_FilterByCategoryInt_mD
 		return;
 	}
 }
-// Method Definition Index: 89277
+// Method Definition Index: 89280
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_FilterByCategoryString_m1824D38194E350726526CDDD6ED96387278E6DC3 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, String_t* ___0_categoryName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31454,7 +31552,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 89278
+// Method Definition Index: 89281
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F InGameShopManager_GetTabColor_m43D7EB48681C0ED76AF5BA845528BBA067B05241 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_category, bool ___1_isActive, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31511,7 +31609,7 @@ IL_0019:
 		return L_8;
 	}
 }
-// Method Definition Index: 89279
+// Method Definition Index: 89282
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CategoryTab_tDBDC2D6007875CFE747666C79590EDA954EF613F* InGameShopManager_FindTabForCategory_m75FD7A8529A89587A57B85A36A3EF476BB206B26 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_category, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31622,7 +31720,7 @@ IL_0049:
 		return L_10;
 	}
 }
-// Method Definition Index: 89280
+// Method Definition Index: 89283
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ShopTierVisuals_t2E28087D9A4D8CB83E44E99A1E114B9FE379D173* InGameShopManager_GetVisualsForTier_m211C84219104FECF8C39F81113EB290A36FA434D (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, int32_t ___0_tier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31733,7 +31831,7 @@ IL_0049:
 		return L_10;
 	}
 }
-// Method Definition Index: 89281
+// Method Definition Index: 89284
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_SpawnShopItemUI_m58BF4AFCFA4D94FBD8EA8EB2D4773191667477B1 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ___0_data, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31866,7 +31964,7 @@ IL_0092:
 		return;
 	}
 }
-// Method Definition Index: 89282
+// Method Definition Index: 89285
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_SpawnInventoryItemUI_m6B11219F6BE79B15BA876D13364265179E120993 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ___0_data, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31986,7 +32084,7 @@ IL_006f:
 		return;
 	}
 }
-// Method Definition Index: 89283
+// Method Definition Index: 89286
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager_UpdateInventoryUI_m4D737852B749FA3DD942155F26F525AEE6ACCCFB (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32145,7 +32243,7 @@ IL_0080:
 		return;
 	}
 }
-// Method Definition Index: 89284
+// Method Definition Index: 89287
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* InGameShopManager_GetOrAddCanvasGroup_m6B1DE2DD6914F3AEEBFBA2E5794A37785D27F74E (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32207,7 +32305,7 @@ IL_0022:
 		return L_8;
 	}
 }
-// Method Definition Index: 89285
+// Method Definition Index: 89288
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InGameShopManager__ctor_m840D0AAAE7C39B836D885F89268FE6CD64841842 (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32522,7 +32620,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_6;
 	}
 }
-// Method Definition Index: 100354
+// Method Definition Index: 100375
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PointerEventData_get_position_m5BE71C28EB72EFB8435749E4E6E839213AEF458C_inline (PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32984,7 +33082,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 90370
+// Method Definition Index: 90391
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FlutterBridge_get_RewardedAdReady_m5DD03387CBFB88F137A674E1B90B4E6B8CE5774A_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32999,7 +33097,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FlutterBridge_get_RewardedAd
 		return L_0;
 	}
 }
-// Method Definition Index: 90346
+// Method Definition Index: 90367
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlutterBridge_tB17C9248F3934261660998A7399DD2107E73A525* FlutterBridge_get_Instance_mE590E5C00E8EE38B3817451F608A30B14516CBB9_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33189,7 +33287,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InventoryManager_set_Instanc
 		return;
 	}
 }
-// Method Definition Index: 89156
+// Method Definition Index: 89157
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* NoorCoinManager_get_Instance_mF6748DA5C7CB816FF5EB0EF92563AE7A1E4CF991_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33204,12 +33302,27 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR NoorCoinManager_t7B66D6A63398B43D
 		return L_0;
 	}
 }
-// Method Definition Index: 89160
+// Method Definition Index: 89161
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t NoorCoinManager_get_Balance_m10C32AC8622DC29F2B8C490D25C6408B45D2D363_inline (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* __this, const RuntimeMethod* method) 
 {
 	{
 		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:39>
 		int32_t L_0 = __this->____balance;
+		return L_0;
+	}
+}
+// Method Definition Index: 89162
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool NoorCoinManager_get_IsBalanceSynced_mCB5C4E5067F682295338520223F73D9225352EB9_inline (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:46>
+		bool L_0 = ((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___U3CIsBalanceSyncedU3Ek__BackingField;
 		return L_0;
 	}
 }
@@ -33221,7 +33334,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D
 		return L_0;
 	}
 }
-// Method Definition Index: 89157
+// Method Definition Index: 89158
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance_mE3962983FBF8CAE729334C580365E4ACF225EA20_inline (NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33238,7 +33351,23 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_Instance
 		return;
 	}
 }
-// Method Definition Index: 90368
+// Method Definition Index: 89163
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NoorCoinManager_set_IsBalanceSynced_m30BA012F24AB0BC301D130F425073937D0DBB23C_inline (bool ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:E:/New Unity Projects/Jannah-Garden/Assets/Scripts/Economy/NoorCoinManager.cs:46>
+		bool L_0 = ___0_value;
+		((NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_StaticFields*)il2cpp_codegen_static_fields_for(NoorCoinManager_t7B66D6A63398B43DC8F7FBC52F02E478CBBCBCD4_il2cpp_TypeInfo_var))->___U3CIsBalanceSyncedU3Ek__BackingField = L_0;
+		return;
+	}
+}
+// Method Definition Index: 90389
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 FlutterBridge_get_LatestCoinBalance_mCBFC666083A244BA36EFAF2F25F25FFF469E9293_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33253,7 +33382,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C8
 		return L_0;
 	}
 }
-// Method Definition Index: 89977
+// Method Definition Index: 89985
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ToastMessageManager_tD30B3FE66E300E4EFB2165D7116456C32409EA95* ToastMessageManager_get_Instance_mC38024BD675058FD23C68A787E60D558275A81E2_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33325,7 +33454,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 89180
+// Method Definition Index: 89183
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FellowProfileObject_set_Data_mAB39B3C2362D61D1F551FAD4CA69B440904AE827_inline (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33336,7 +33465,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FellowProfileObject_set_Data
 		return;
 	}
 }
-// Method Definition Index: 89179
+// Method Definition Index: 89182
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowProfileData_tE64FB39268902B83CB55DC18FE3F27948B07089A* FellowProfileObject_get_Data_m3369552B9FFE8F364C93E24F0C63095E976F5255_inline (FellowProfileObject_t50F7083441F2736A09125820F82F775E22215FC2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33345,7 +33474,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowProfileData_tE64FB39268902B
 		return L_0;
 	}
 }
-// Method Definition Index: 90364
+// Method Definition Index: 90385
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FellowshipProfilesPayload_t009784E75B70678D078072CA951B8D961E880C12* FlutterBridge_get_LatestFellowshipProfiles_mC31A6DE61C0F223355E6F4681366C415717089F5_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33451,7 +33580,7 @@ IL_0043:
 		return L_21;
 	}
 }
-// Method Definition Index: 89644
+// Method Definition Index: 89652
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740A12F7D34BB2D2131B5F* Objectpool_get_Instance_m7DEF6269050C73BA5EDFCCAA0F72D0C0276E145F_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33466,7 +33595,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Objectpool_tBFCB42780CCF16DCBC740
 		return L_0;
 	}
 }
-// Method Definition Index: 89212
+// Method Definition Index: 89215
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* GameAnalyticsManager_get_Instance_m65BDFAA20D52E03709468C16BB9302D1314476C3_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33481,7 +33610,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GameAnalyticsManager_tFA3CCE4EB8C
 		return L_0;
 	}
 }
-// Method Definition Index: 89213
+// Method Definition Index: 89216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GameAnalyticsManager_set_Instance_m12550AEA26B4C8F0CC9C026D37A8882DC6706FDE_inline (GameAnalyticsManager_tFA3CCE4EB8CC064939A18E6890FE8F2FAC84276D* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33498,7 +33627,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GameAnalyticsManager_set_Ins
 		return;
 	}
 }
-// Method Definition Index: 90266
+// Method Definition Index: 90287
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayerXPManager_tE40F6ECEBB054840FFDF3E9048F19356A3AE807B* PlayerXPManager_get_Instance_m861F082390298AE1F0AD57F60D91991213BF1ABA_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33538,7 +33667,7 @@ IL_000a:
 		return L_2;
 	}
 }
-// Method Definition Index: 90882
+// Method Definition Index: 90903
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float CameraMovement_get_SensitivityMultiplier_m1D06B05285918B00A0C8BE58C3C99DA2C9783549_inline (CameraMovement_t3CAC27BC0DF91F0A5E76193B3B929928FE39ACB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33598,7 +33727,7 @@ IL_001d:
 		return L_9;
 	}
 }
-// Method Definition Index: 99889
+// Method Definition Index: 99910
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SliderEvent_t92A82EF6C62E15AF92B640FE2D960E877E8C6555* Slider_get_onValueChanged_m4DA3FD0F8D7BB838F442C07F7796EEE584D0D4F6_inline (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33607,7 +33736,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SliderEvent_t92A82EF6C62E15AF92B6
 		return L_0;
 	}
 }
-// Method Definition Index: 98756
+// Method Definition Index: 98777
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33630,7 +33759,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 89248
+// Method Definition Index: 89251
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InGameShopManager_set_Instance_mBFDA92F5C9EB8FF153158812775F7FD30C05E385_inline (InGameShopManager_t937491EF69986C1A76CA6B1FD768C482B54DDF40* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33647,7 +33776,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InGameShopManager_set_Instan
 		return;
 	}
 }
-// Method Definition Index: 90889
+// Method Definition Index: 90910
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PlayerMovement_get_IsInspectorMode_m3A0CA375881D5AB7F86DE35838C08DBAA15CAB3A_inline (PlayerMovement_t8F653E023645298A880E06CD8292A31DB520649D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33656,7 +33785,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PlayerMovement_get_IsInspect
 		return L_0;
 	}
 }
-// Method Definition Index: 89941
+// Method Definition Index: 89949
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665CFE4C4E1A4F2F96527F89* ShopItemUI_get_ItemData_m2608FAD02DBE15440B44D660F555E1F765A3B0C8_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33665,7 +33794,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ShopItemData_tF34947CA22216F09665
 		return L_0;
 	}
 }
-// Method Definition Index: 89341
+// Method Definition Index: 89344
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ItemPlacementManager_tF321BDE7C13DC633142B3B47F22C3FE9E872846A* ItemPlacementManager_get_Instance_m8B5892189758CD9CA80CDB96D8A91F552DE5F177_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33680,7 +33809,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ItemPlacementManager_tF321BDE7C13
 		return L_0;
 	}
 }
-// Method Definition Index: 89943
+// Method Definition Index: 89951
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* ShopItemUI_get_RewardItemData_mFC1196138E54B22CF152C0F8C0A000D520F0275A_inline (ShopItemUI_tA605A03A42C9B5E0FD24AA8D8EB539AFB4753A25* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33704,7 +33833,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9C
 		return;
 	}
 }
-// Method Definition Index: 89331
+// Method Definition Index: 89334
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TreasureBoxRewardItemData_t90A7A28CAC4E37577E9031467DF69D2857BC5E40* InventoryItemUI_get_RewardItemData_m200BC053ACE1B0C15691652554965BBA0138AEAA_inline (InventoryItemUI_t61D059E2D84738CDD4119D3EB193CBB4DD5EDF8C* __this, const RuntimeMethod* method) 
 {
 	{

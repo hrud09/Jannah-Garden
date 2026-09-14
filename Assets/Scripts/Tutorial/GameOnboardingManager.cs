@@ -117,7 +117,15 @@ public class GameOnboardingManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(transform.root.gameObject);
+
+        // Only TutorialCanvas (this object's direct parent) should survive the scene swap.
+        // transform.root would resolve to "All Canvas", the shared organizational parent of every
+        // HUD canvas in the scene - DontDestroyOnLoad-ing that dragged the whole Jannah Garden HUD
+        // (currency, timer, action buttons, etc.) into Outer Garden along with the tutorial overlay.
+        // DontDestroyOnLoad also requires a root object, so detach TutorialCanvas first.
+        Transform tutorialCanvas = transform.parent != null ? transform.parent : transform;
+        tutorialCanvas.SetParent(null, true);
+        DontDestroyOnLoad(tutorialCanvas.gameObject);
     }
 
     private void Start()
