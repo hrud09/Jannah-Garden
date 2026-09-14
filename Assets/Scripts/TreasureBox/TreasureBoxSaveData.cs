@@ -93,6 +93,7 @@ public class TreasureBoxTierState
 public class TreasureBoxSaveData
 {
     public long globalCycleStartedAtTicks = 0L;
+    public bool hasShownChestOnce = false;
 
     public TreasureBoxTierState silver   = new TreasureBoxTierState();
     public TreasureBoxTierState gold     = new TreasureBoxTierState();

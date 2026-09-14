@@ -19,6 +19,14 @@ public class TreasureBoxStatusUI : MonoBehaviour
     public TMP_Text openedBoxCountText;
     public TMP_Text timerText;
 
+    [Header("4 Slot Stage Boxes UI")]
+    [Tooltip("Root container holding the 4 boxes display.")]
+    public GameObject boxesContainer;
+    [Tooltip("Array of 4 box display items representing slots or stages.")]
+    public GameObject[] slotBoxItems = new GameObject[4];
+    [Tooltip("Overlay blur/lock GameObjects corresponding to each of the 4 boxes.")]
+    public GameObject[] slotBoxLockOverlays = new GameObject[4];
+
     private void OnValidate()
     {
         UpdateVisuals();
@@ -61,6 +69,51 @@ public class TreasureBoxStatusUI : MonoBehaviour
     {
         UpdateColor();
         UpdateIcon();
+        UpdateSlotBoxes();
+    }
+
+    public void UpdateSlotBoxes()
+    {
+        TreasureBoxManager manager = GetManager();
+        bool showBoxes = manager != null && manager.HasShownChestOnce;
+
+        if (boxesContainer != null)
+        {
+            boxesContainer.SetActive(showBoxes);
+        }
+
+        if (slotBoxItems != null)
+        {
+            for (int i = 0; i < slotBoxItems.Length; i++)
+            {
+                if (slotBoxItems[i] != null)
+                {
+                    slotBoxItems[i].SetActive(showBoxes);
+                }
+
+                if (showBoxes && slotBoxLockOverlays != null && i < slotBoxLockOverlays.Length && slotBoxLockOverlays[i] != null)
+                {
+                    bool isUnlocked = false;
+                    if (manager != null)
+                    {
+                        // Check if slot or tier is unlocked & ready
+                        if (i < TreasureBoxManager.SLOTS_PER_TIER)
+                        {
+                            isUnlocked = manager.IsTierUnlocked(tier) && manager.IsSlotAvailable(tier, i);
+                        }
+                        else
+                        {
+                            // 4th box / stage box unlocked if entire tier set is complete
+                            TreasureBoxTierState state = manager.GetTierState(tier);
+                            isUnlocked = state != null && state.IsSetComplete;
+                        }
+                    }
+
+                    // Lock/blur overlay active if NOT unlocked
+                    slotBoxLockOverlays[i].SetActive(!isUnlocked);
+                }
+            }
+        }
     }
 
     public void UpdateColor()

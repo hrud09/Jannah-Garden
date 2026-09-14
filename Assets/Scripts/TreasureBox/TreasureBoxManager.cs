@@ -303,6 +303,18 @@ public class TreasureBoxManager : MonoBehaviour
 
     // ─── Public Query API ─────────────────────────────────────────────────────
 
+    public bool HasShownChestOnce => _saveData != null && _saveData.hasShownChestOnce;
+
+    public void MarkChestShown()
+    {
+        if (_saveData != null && !_saveData.hasShownChestOnce)
+        {
+            _saveData.hasShownChestOnce = true;
+            SaveState();
+            OnStateChanged?.Invoke();
+        }
+    }
+
     /// <summary>
     /// Returns the <see cref="TreasureBoxData"/> associated with a tier.
     /// </summary>
@@ -768,6 +780,8 @@ public class TreasureBoxManager : MonoBehaviour
 
     public void PlayShowAnimationForTier(TreasureBoxTier tier)
     {
+        MarkChestShown();
+
         TreasureBoxTierState state = _saveData.GetTierState(tier);
         if (state != null && state.IsSetComplete)
         {
