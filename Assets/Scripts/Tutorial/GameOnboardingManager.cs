@@ -11,8 +11,9 @@ using DG.Tweening;
 /// Drives the full first-time onboarding experience: five HUD buttons (Shop, Inspector Mode,
 /// Photo Mode, Show Treasure Box, Outer Garden) start hidden and are revealed one at a time as the
 /// player earns them, across three sequential flows (core shop/placement/XP loop -> photo mode /
-/// inspector mode / treasure box / minimap -> outer garden). Replaces <see cref="TutorialManager"/>,
-/// which highlights always-visible buttons instead of gating them.
+/// inspector mode -> outer garden). The Show Treasure Box button is revealed once Flow 3 begins
+/// but, unlike the other buttons, has no dedicated explanation step of its own. Replaces
+/// <see cref="TutorialManager"/>, which highlights always-visible buttons instead of gating them.
 ///
 /// Persists as a DontDestroyOnLoad singleton (via its TutorialCanvas root) so it survives the
 /// Jannah Garden -> Outer Garden scene swap, which is a full LoadSceneMode.Single reload.
@@ -36,7 +37,7 @@ public class GameOnboardingManager : MonoBehaviour
     }
 
     private enum Flow1SubStep { None, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingPlace, AwaitingXPTap, AwaitingXPChartClose }
-    private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit, AwaitingTreasureBoxTap, MinimapCallout }
+    private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit }
 
     private const string StageKey = "GameOnboarding_Stage";
     private const string LegacyTutorialKey = "TutorialCompleted_ShopPlacement";
@@ -106,7 +107,6 @@ public class GameOnboardingManager : MonoBehaviour
     private bool xpTapListenerAdded;
     private bool photoTapListenerAdded;
     private bool inspectorTapListenerAdded;
-    private bool treasureBoxTapListenerAdded;
     private bool outerGardenTapListenerAdded;
 
     private void Awake()
@@ -284,11 +284,6 @@ public class GameOnboardingManager : MonoBehaviour
         if (inspectorTapListenerAdded && inspectorModeButton != null)
         {
             inspectorModeButton.onClick.RemoveListener(HandleInspectorButtonTapped);
-        }
-        if (treasureBoxTapListenerAdded)
-        {
-            Button box = GetTreasureBoxShowButton();
-            if (box != null) box.onClick.RemoveListener(HandleTreasureBoxButtonTapped);
         }
         if (outerGardenTapListenerAdded && outerGardenButton != null)
         {
@@ -512,7 +507,7 @@ public class GameOnboardingManager : MonoBehaviour
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    //  Flow 2 - Photo Mode -> Inspector Mode -> Treasure Box -> Minimap callout
+    //  Flow 2 - Photo Mode -> Inspector Mode
     // ═══════════════════════════════════════════════════════════════════════
 
     private void BeginPhotoModeStep()
@@ -595,7 +590,7 @@ public class GameOnboardingManager : MonoBehaviour
         if (playerMovementRef == null)
         {
             Debug.LogWarning("[GameOnboardingManager] PlayerMovement not found; skipping inspector-exit wait.");
-            BeginTreasureBoxStep();
+            CompleteFlow2();
             return;
         }
 
@@ -609,7 +604,7 @@ public class GameOnboardingManager : MonoBehaviour
         // guard the (unlikely) case where it's already back off by the time we check.
         if (!playerMovementRef.IsInspectorMode)
         {
-            BeginTreasureBoxStep();
+            CompleteFlow2();
         }
     }
 
@@ -618,60 +613,12 @@ public class GameOnboardingManager : MonoBehaviour
         if (isInspectorMode) return; // only care about coming back down
         if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorExit) return;
 
-        BeginTreasureBoxStep();
+        CompleteFlow2();
     }
 
-    private void BeginTreasureBoxStep()
+    private void CompleteFlow2()
     {
-        flow2Sub = Flow2SubStep.AwaitingTreasureBoxTap;
-        ShowDimAndPanel(true);
-
-        Button box = GetTreasureBoxShowButton();
-        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_treasurebox"));
-        ConfigurePrimaryButton(LocalizationManager.Instance.Get("tutorial.button_next"), HandleTreasureBoxStepAdvance);
-
-        SetActive(box, true);
-        if (box != null)
-        {
-            RectTransform rect = box.GetComponent<RectTransform>();
-            HighlightUIElement(rect);
-            PulseButton(rect);
-            StartHandPointerAnimation(rect);
-            if (!treasureBoxTapListenerAdded)
-            {
-                box.onClick.AddListener(HandleTreasureBoxButtonTapped);
-                treasureBoxTapListenerAdded = true;
-            }
-        }
-    }
-
-    private void HandleTreasureBoxButtonTapped()
-    {
-        HandleTreasureBoxStepAdvance();
-    }
-
-    private void HandleTreasureBoxStepAdvance()
-    {
-        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingTreasureBoxTap) return;
-
-        StopPulse();
-        RestoreHighlightSorting();
-        StopHandPointerAnimation();
-        flow2Sub = Flow2SubStep.MinimapCallout;
-
-        HideDimOverlayOnly();
-        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_minimap"));
-        ConfigurePrimaryButton(LocalizationManager.Instance.Get("onboarding.button_got_it"), HandleFlow2Complete);
-
-        if (TreasureBoxManager.Instance != null)
-        {
-            TreasureBoxManager.Instance.PlayShowAnimationForTier(TreasureBoxManager.Instance.GetUpcomingTier());
-        }
-    }
-
-    private void HandleFlow2Complete()
-    {
-        if (flow2Sub != Flow2SubStep.MinimapCallout) return;
+        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorExit) return;
 
         flow2Sub = Flow2SubStep.None;
         SetInstructionPanelVisible(false);
@@ -853,7 +800,7 @@ public class GameOnboardingManager : MonoBehaviour
     /// <summary>Jumps straight to the next flow (or finishes onboarding if already in the last one),
     /// bypassing whatever gameplay action the current section was waiting on. Mirrors the same
     /// stage transitions used when a section completes normally (see <see cref="HandleXPChartToggled"/>
-    /// and <see cref="HandleFlow2Complete"/>) so skipped players end up in an identical state to
+    /// and <see cref="CompleteFlow2"/>) so skipped players end up in an identical state to
     /// players who finished the section the intended way.</summary>
     private void SkipCurrentSection()
     {
