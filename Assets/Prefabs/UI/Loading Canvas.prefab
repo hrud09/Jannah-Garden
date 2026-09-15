@@ -535,8 +535,7 @@ MonoBehaviour:
   outerGardenLogoSprite: {fileID: 21300000, guid: fb7b9aa5d052cf84bb7a09a59cb50326, type: 3}
   outerGardenSceneName: Outer Garden
   jannahGardenSceneName: Jannah Garden
-  addressableSceneNames:
-  - Outer Garden
+  addressableSceneNames: []
   logoSize: {x: 180, y: 180}
   minDisplayTime: 1.5
   fadeDuration: 0.4

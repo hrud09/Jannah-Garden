@@ -1285,7 +1285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.0002593994}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
   m_SizeDelta: {x: 0.000061035, y: -0.0006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &145112202
@@ -2146,8 +2146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
-  m_SizeDelta: {x: -53.2558, y: 196.1338}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -53.2558, y: 182.7598}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &185137334
 MonoBehaviour:
@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 22
   m_fontSizeMax: 30
   m_fontStyle: 0
@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 4.51
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &225312271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4035,7 +4035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoorCoinManager
   startingBalance: 5000
-  isDebug: 1
+  isDebug: 0
   debugNoorCoinsAmount: 500
 --- !u!4 &350008107
 Transform:
@@ -13919,8 +13919,6 @@ MonoBehaviour:
   toggleButton: {fileID: 1375193772}
   toggleButtonText: {fileID: 0}
   activeModeLabel: {fileID: 0}
-  normalModeText: 'Inspector Mode: OFF'
-  inspectorModeText: 'Inspector Mode: ON'
   flyUpButton: {fileID: 0}
   flyDownButton: {fileID: 0}
   playerMovement: {fileID: 0}
@@ -17741,7 +17739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1769460345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17759,10 +17757,10 @@ RectTransform:
   - {fileID: 1870231289}
   m_Father: {fileID: 1650389201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 10.3007, y: 678.0267}
-  m_SizeDelta: {x: 752.4897, y: 272.2123}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 10.30072, y: -325.97333}
+  m_SizeDelta: {x: -1311.5103, y: 272.21228}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1769460346
 MonoBehaviour:
@@ -18656,7 +18654,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 5
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &1870231292
 CanvasRenderer:
   m_ObjectHideFlags: 0

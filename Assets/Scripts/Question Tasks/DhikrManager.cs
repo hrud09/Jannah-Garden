@@ -264,6 +264,14 @@ public class DhikrManager : MonoBehaviour
             if (plusButton != null) plusButton.interactable = false;
             if (minusButton != null) minusButton.interactable = false;
 
+            if (dhikrTextUI != null && LocalizationManager.Instance != null)
+            {
+                SetText(dhikrTextUI, LocalizationManager.Instance.Get("dhikr.completed"));
+                dhikrTextUI.transform.DOKill();
+                dhikrTextUI.transform.localScale = Vector3.one;
+                dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+            }
+
             CloseDhikrDramaticallyInternal();
         }
     }
