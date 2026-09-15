@@ -440,7 +440,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (requestVersion == _placementRequestVersion && _isPreparingPlacement && ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Downloading item…");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.downloading_item"));
         }
     }
 
@@ -477,7 +477,7 @@ public class ItemPlacementManager : MonoBehaviour
         {
             placeButton.gameObject.SetActive(true);
             var btnText = placeButton.GetComponentInChildren<TMPro.TMP_Text>();
-            if (btnText != null) btnText.text = _isRelocating ? "Move Here" : "Place";
+            if (btnText != null) btnText.text = LocalizationManager.Instance.Get(_isRelocating ? "placement.button_move_here" : "placement.button_place");
         }
 
         if (cancelPlacementButton != null)
@@ -503,7 +503,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Couldn't download this item — check your connection");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.download_failed"));
         }
 
         if (_isRelocating)
@@ -655,7 +655,7 @@ public class ItemPlacementManager : MonoBehaviour
             // The player already paid for this item the first time round: no XP, no stock consumed.
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Moved");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.moved"));
             }
         }
         else
@@ -738,7 +738,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Move cancelled");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.move_cancelled"));
         }
     }
 
@@ -750,7 +750,7 @@ public class ItemPlacementManager : MonoBehaviour
             // Stock was not consumed yet — PlaceItem does that — so there is nothing to give back.
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Placement cancelled");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.placement_cancelled"));
             }
             return;
         }
@@ -764,7 +764,7 @@ public class ItemPlacementManager : MonoBehaviour
         }
         else if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Placement cancelled");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.placement_cancelled"));
         }
     }
 
@@ -803,7 +803,7 @@ public class ItemPlacementManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
             }
             return false;
         }
@@ -819,7 +819,7 @@ public class ItemPlacementManager : MonoBehaviour
             Debug.LogWarning($"[ItemPlacementManager] Cannot relocate item (sourceItemId='{item.sourceItemId}') — its prefab is not reachable.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("This item cannot be moved");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.cannot_move"));
             }
             return false;
         }
@@ -850,7 +850,7 @@ public class ItemPlacementManager : MonoBehaviour
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Aim where you want it, then tap Move Here");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.aim_move_here"));
         }
 
         return true;
@@ -870,7 +870,7 @@ public class ItemPlacementManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
             }
             return false;
         }
@@ -906,7 +906,7 @@ public class ItemPlacementManager : MonoBehaviour
 
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast($"{rewardData.itemName} returned to your inventory");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.returned_to_inventory", rewardData.LocalizedName));
             }
 
             return true;
@@ -926,7 +926,7 @@ public class ItemPlacementManager : MonoBehaviour
         // the garden — the player asked for that — but say so rather than pretending they were paid.
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Returned to the store");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.returned_to_store"));
         }
 
         return true;

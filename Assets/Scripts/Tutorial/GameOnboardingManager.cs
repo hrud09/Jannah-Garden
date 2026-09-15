@@ -310,10 +310,10 @@ public class GameOnboardingManager : MonoBehaviour
     private void ShowIntroPanel()
     {
         ShowDimAndPanel(true);
-        SetInstructionText("<color=#FFD35C><size=120%>Welcome to Jannah Garden!</size></color>\n\n"
-            + "Grow your own piece of paradise: place trees, fountains and sacred decor, earn XP, "
-            + "open treasure boxes and explore the Outer Garden. Let's get started!");
-        ConfigurePrimaryButton("Start Tutorial", () =>
+        LocalizationManager loc = LocalizationManager.Instance;
+        SetInstructionText($"<color=#FFD35C><size=120%>{loc.Get("onboarding.welcome_title")}</size></color>\n\n"
+            + loc.Get("onboarding.welcome_body"));
+        ConfigurePrimaryButton(loc.Get("onboarding.start_button"), () =>
         {
             SetStage(OnboardingStage.Flow1InProgress);
             BeginShopOpenStep();
@@ -325,7 +325,7 @@ public class GameOnboardingManager : MonoBehaviour
         flow1Sub = Flow1SubStep.AwaitingShopOpen;
         HidePrimaryButton();
         ShowDimAndPanel(true);
-        SetInstructionText("Tap the Shop button to open the Garden Shop!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_open_shop"));
 
         Button shopButton = InGameShopManager.Instance != null ? InGameShopManager.Instance.openCloseButton : null;
         SetActive(shopButton, true);
@@ -346,7 +346,7 @@ public class GameOnboardingManager : MonoBehaviour
         RestoreHighlightSorting();
         StopHandPointerAnimation();
         HideDimOverlayOnly();
-        SetInstructionText("Select your first item below!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_select_item"));
         StartCoroutine(SelectFirstShopItemRoutine());
     }
 
@@ -411,7 +411,7 @@ public class GameOnboardingManager : MonoBehaviour
         UnblockAllShopCards();
 
         flow1Sub = Flow1SubStep.AwaitingDownload;
-        SetInstructionText("Downloading your item — hang tight!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_downloading"));
         StartCoroutine(WaitForPlaceButtonReady());
     }
 
@@ -446,7 +446,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         flow1Sub = Flow1SubStep.AwaitingPlace;
         ShowDimAndPanel(true, blockRaycasts: false);
-        SetInstructionText("Move around and tap Place to plant it!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_place_item"));
 
         RectTransform rect = place.GetComponent<RectTransform>();
         HighlightUIElement(rect);
@@ -467,7 +467,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         Button xpButton = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpGainChartToggleButton : null;
         ShowDimAndPanel(true);
-        SetInstructionText("Nice! Tap the XP button to see your progress!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_button"));
         if (xpButton != null)
         {
             RectTransform rect = xpButton.GetComponent<RectTransform>();
@@ -494,7 +494,7 @@ public class GameOnboardingManager : MonoBehaviour
         // slide in - drop just the overlay so it never covers the chart the player just asked to see.
         // Flow 2 doesn't start until PlayerXPManager reports the chart closed again (HandleXPChartToggled).
         HideDimOverlayOnly();
-        SetInstructionText("Check out your XP chart, then close it to continue!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_chart"));
 
         flow1Sub = Flow1SubStep.AwaitingXPChartClose;
     }
@@ -520,7 +520,7 @@ public class GameOnboardingManager : MonoBehaviour
         flow2Sub = Flow2SubStep.AwaitingPhoto;
         HidePrimaryButton();
         ShowDimAndPanel(true);
-        SetInstructionText("Snap a photo of your garden!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_take_photo"));
 
         Button photoButton = PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null;
         SetActive(photoButton, true);
@@ -546,7 +546,7 @@ public class GameOnboardingManager : MonoBehaviour
         RestoreHighlightSorting();
         StopHandPointerAnimation();
         flow2Sub = Flow2SubStep.AwaitingPreviewClose;
-        SetInstructionText("Share or save it, then close the preview!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_share_photo"));
         HideDimOverlayOnly();
     }
 
@@ -556,7 +556,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         flow2Sub = Flow2SubStep.AwaitingInspectorTap;
         ShowDimAndPanel(true);
-        SetInstructionText("Try Inspector Mode to fly around and admire your garden!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_inspector_mode"));
 
         SetActive(inspectorModeButton, true);
         if (inspectorModeButton != null)
@@ -585,7 +585,7 @@ public class GameOnboardingManager : MonoBehaviour
         // Inspector mode's fly controls and camera drag both need raycasts to reach the world/joystick,
         // so don't leave a blocking dim overlay up while the player finds their way back to the ground.
         HideDimOverlayOnly();
-        SetInstructionText("Come back down to the ground to continue!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_return_ground"));
 
         if (playerMovementRef == null)
         {
@@ -627,8 +627,8 @@ public class GameOnboardingManager : MonoBehaviour
         ShowDimAndPanel(true);
 
         Button box = GetTreasureBoxShowButton();
-        SetInstructionText("Open a Treasure Box for bonus rewards!");
-        ConfigurePrimaryButton("Next", HandleTreasureBoxStepAdvance);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_treasurebox"));
+        ConfigurePrimaryButton(LocalizationManager.Instance.Get("tutorial.button_next"), HandleTreasureBoxStepAdvance);
 
         SetActive(box, true);
         if (box != null)
@@ -660,8 +660,8 @@ public class GameOnboardingManager : MonoBehaviour
         flow2Sub = Flow2SubStep.MinimapCallout;
 
         HideDimOverlayOnly();
-        SetInstructionText("Check your minimap to find the way to the Treasure Box!");
-        ConfigurePrimaryButton("Got it", HandleFlow2Complete);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_minimap"));
+        ConfigurePrimaryButton(LocalizationManager.Instance.Get("onboarding.button_got_it"), HandleFlow2Complete);
 
         if (TreasureBoxManager.Instance != null)
         {
@@ -688,7 +688,7 @@ public class GameOnboardingManager : MonoBehaviour
     {
         HidePrimaryButton();
         ShowDimAndPanel(true);
-        SetInstructionText("Explore the Outer Garden!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_outer_garden"));
 
         SetActive(outerGardenButton, true);
         if (outerGardenButton != null)
@@ -728,11 +728,10 @@ public class GameOnboardingManager : MonoBehaviour
     private void ShowOuterGardenIntro()
     {
         ShowDimAndPanel(true);
-        SetInstructionText("<color=#FFD35C><size=120%>Welcome to the Outer Garden!</size></color>\n\n"
-            + "This is your wider world beyond the main garden — explore further, discover hidden "
-            + "sights, and find more inspiration for what to bring home and plant. Wander freely and "
-            + "enjoy the view!");
-        ConfigurePrimaryButton("Finish", HandleOuterGardenIntroFinished);
+        LocalizationManager loc = LocalizationManager.Instance;
+        SetInstructionText($"<color=#FFD35C><size=120%>{loc.Get("onboarding.outer_garden_title")}</size></color>\n\n"
+            + loc.Get("onboarding.outer_garden_body"));
+        ConfigurePrimaryButton(loc.Get("tutorial.button_finish"), HandleOuterGardenIntroFinished);
     }
 
     private void HandleOuterGardenIntroFinished()
@@ -827,7 +826,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void SetInstructionText(string text)
     {
-        if (instructionText != null) instructionText.text = text;
+        if (instructionText != null) LocalizedRendering.SetText(instructionText, text);
     }
 
     private void ConfigurePrimaryButton(string label, System.Action onClick)
@@ -836,7 +835,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         primaryActionButton.gameObject.SetActive(true);
         TMP_Text label_ = primaryActionButton.GetComponentInChildren<TMP_Text>();
-        if (label_ != null) label_.text = label;
+        if (label_ != null) LocalizedRendering.SetText(label_, label);
 
         primaryActionButton.onClick.RemoveAllListeners();
         primaryActionButton.onClick.AddListener(() =>

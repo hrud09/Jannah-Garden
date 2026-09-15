@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 1960433852754520511}
   - component: {fileID: 5960773852124146409}
   - component: {fileID: 1667298158819386653}
+  - component: {fileID: 556976504180776868}
   m_Layer: 5
   m_Name: Inventory Text (TMP)
   m_TagString: Untagged
@@ -214,6 +215,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &556976504180776868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401389110187736853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: shop.tab_inventory_label
+  leftToRightAlignment: 257
 --- !u!1 &408876420730932533
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +240,7 @@ GameObject:
   - component: {fileID: 8975886185690829258}
   - component: {fileID: 1966467106865965011}
   - component: {fileID: 5607366851405670464}
+  - component: {fileID: 3097298907235318188}
   m_Layer: 5
   m_Name: Tresure Text (TMP)
   m_TagString: Untagged
@@ -351,6 +367,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3097298907235318188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408876420730932533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: shop.tab_treasure_label
+  leftToRightAlignment: 257
 --- !u!1 &427484985333857727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,6 +4088,7 @@ GameObject:
   - component: {fileID: 8454709614975066628}
   - component: {fileID: 8611687845092167279}
   - component: {fileID: 3963567341902283929}
+  - component: {fileID: 4164845265454086819}
   m_Layer: 5
   m_Name: Shop Text (TMP)
   m_TagString: Untagged
@@ -4184,6 +4215,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4164845265454086819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908258843397023358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: shop.tab_shop_label
+  leftToRightAlignment: 257
 --- !u!1 &8969244912254354685
 GameObject:
   m_ObjectHideFlags: 0

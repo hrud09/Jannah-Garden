@@ -25,6 +25,31 @@ public struct XPTaskReward
     public float rewardAmount;
 }
 
+/// <summary>Player-facing labels for the XP Gain Chart's task rows.</summary>
+public static class XPTaskTaxonomy
+{
+    public static string GetName(XPTaskType taskType)
+    {
+        switch (taskType)
+        {
+            case XPTaskType.PlaceShopItem: return Localized("xp.task.place_shop_item", "Place a Garden Item");
+            case XPTaskType.AnswerQuestion1stTry: return Localized("xp.task.answer_question_1st_try", "Correct on First Try");
+            case XPTaskType.AnswerQuestionRetry: return Localized("xp.task.answer_question_retry", "Correct on Retry");
+            case XPTaskType.CompleteDhikr: return Localized("xp.task.complete_dhikr", "Complete Dhikr");
+            case XPTaskType.OpenSilverBox: return Localized("xp.task.open_silver_box", "Open Silver Box");
+            case XPTaskType.OpenGoldBox: return Localized("xp.task.open_gold_box", "Open Gold Box");
+            case XPTaskType.OpenPlatinumBox: return Localized("xp.task.open_platinum_box", "Open Platinum Box");
+            case XPTaskType.OpenDiamondBox: return Localized("xp.task.open_diamond_box", "Open Diamond Box");
+            default: return taskType.ToString();
+        }
+    }
+
+    private static string Localized(string key, string englishFallback)
+    {
+        return LocalizationManager.Instance != null ? LocalizationManager.Instance.GetOrDefault(key, englishFallback) : englishFallback;
+    }
+}
+
 /// <summary>
 /// Player XP manager with a nonlinear progression similar to Clash of Clans.
 /// - Use AddXP(amount) to add XP; excess carries over to the next level(s).
@@ -216,7 +241,8 @@ public class PlayerXPManager : MonoBehaviour
             if (txt != null)
             {
                 // Format the text as "TaskName - Amount"
-                txt.text = $"{reward.taskType} - {reward.rewardAmount}";
+                LocalizedRendering.SetText(txt, LocalizationManager.Instance.Get(
+                    "xp.chart_row_format", XPTaskTaxonomy.GetName(reward.taskType), reward.rewardAmount));
             }
         }
     }
@@ -263,7 +289,7 @@ public class PlayerXPManager : MonoBehaviour
                     Debug.Log($"[PlayerXPManager] Granted {reward.rewardAmount} XP for {taskType}.");
                     if (showToast && ToastMessageManager.Instance != null)
                     {
-                        ToastMessageManager.Instance.ShowToast($"+{reward.rewardAmount} XP");
+                        ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("reward.xp", reward.rewardAmount));
                     }
                     return reward.rewardAmount;
                 }
@@ -305,7 +331,7 @@ public class PlayerXPManager : MonoBehaviour
             Debug.Log($"[PlayerXPManager] Granted {amount} XP for placing a shop item (Level {requiredXPLevel}).");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast($"+{amount} XP");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("reward.xp", amount));
             }
         }
     }

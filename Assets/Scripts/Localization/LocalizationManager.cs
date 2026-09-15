@@ -193,6 +193,22 @@ public class LocalizationManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Same lookup as <see cref="Get(string)"/>, but returns <paramref name="defaultValue"/> instead of the
+    /// raw key (and logs nothing) when the key isn't in either table. Used by content that has its own
+    /// authored English text to fall back to — e.g. <c>ShopItemData.LocalizedName</c> — so an item whose
+    /// translation hasn't been added yet still shows real English instead of a key like "item.xyz.name".
+    /// </summary>
+    public string GetOrDefault(string key, string defaultValue)
+    {
+        if (string.IsNullOrEmpty(key)) return defaultValue;
+
+        if (_activeTable.TryGetValue(key, out string value) && !string.IsNullOrEmpty(value)) return value;
+        if (_fallbackTable.TryGetValue(key, out string fallback) && !string.IsNullOrEmpty(fallback)) return fallback;
+
+        return defaultValue;
+    }
+
+    /// <summary>
     /// Resolves "{resourceBaseName}_{locale}" in Resources for the active locale, falling back to the
     /// English variant if the active locale has no file yet. Used by content that ships as a whole
     /// locale-suffixed file rather than as UI string keys — see MCQManager.LoadQuestions and

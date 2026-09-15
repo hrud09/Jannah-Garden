@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3257766305516548320}
   - component: {fileID: 1711931204817698209}
   - component: {fileID: 5579582891249851310}
+  - component: {fileID: 6306205867555100600}
   m_Layer: 0
   m_Name: Settings Type Name Text (TMP)
   m_TagString: Untagged
@@ -137,6 +138,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6306205867555100600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349971754647004576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: settings.normal_speed_label
+  leftToRightAlignment: 257
 --- !u!1 &551539211936782152
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +163,7 @@ GameObject:
   - component: {fileID: 3299237477141824572}
   - component: {fileID: 7099179937768033029}
   - component: {fileID: 3993363924575319457}
+  - component: {fileID: 1459655351089394723}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -274,6 +290,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1459655351089394723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551539211936782152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: settings.panel_title
+  leftToRightAlignment: 257
 --- !u!1 &814552419509498643
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +434,9 @@ MonoBehaviour:
   normalSpeedSlider: {fileID: 2934803240025944405}
   inspectorSpeedSlider: {fileID: 2107207315711942234}
   lookAroundSpeedSlider: {fileID: 0}
+  normalSpeedValueText: {fileID: 0}
+  inspectorSpeedValueText: {fileID: 0}
+  lookAroundSpeedValueText: {fileID: 0}
   closeButton: {fileID: 6003480008502770646}
   settingsPanel: {fileID: 8950650481514539343}
   settingsButton: {fileID: 0}
@@ -1234,6 +1267,7 @@ GameObject:
   - component: {fileID: 1315438439135431318}
   - component: {fileID: 7298848380575643135}
   - component: {fileID: 8682670366191170642}
+  - component: {fileID: 3577399317355404482}
   m_Layer: 0
   m_Name: Settings Type Name Text (TMP)
   m_TagString: Untagged
@@ -1360,6 +1394,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3577399317355404482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533290358114606349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: settings.inspector_speed_label
+  leftToRightAlignment: 257
 --- !u!1 &5685682031554926337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2090,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3579372668264193497, guid: f9ad39866f46eee41b635c13dc5b33e7, type: 3}
+      propertyPath: key
+      value: settings.music_label
+      objectReference: {fileID: 0}
     - target: {fileID: 7653234087531610802, guid: f9ad39866f46eee41b635c13dc5b33e7, type: 3}
       propertyPath: m_text
       value: Music
@@ -2158,6 +2210,10 @@ PrefabInstance:
     - target: {fileID: 2993428477537493232, guid: f9ad39866f46eee41b635c13dc5b33e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579372668264193497, guid: f9ad39866f46eee41b635c13dc5b33e7, type: 3}
+      propertyPath: key
+      value: settings.vibration_label
       objectReference: {fileID: 0}
     - target: {fileID: 7653234087531610802, guid: f9ad39866f46eee41b635c13dc5b33e7, type: 3}
       propertyPath: m_text

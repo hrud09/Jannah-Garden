@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 5224223488662440300}
   - component: {fileID: 7562997300268131830}
   - component: {fileID: 1597987420630477783}
+  - component: {fileID: 298721899934378034}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1006,6 +1007,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &298721899934378034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835706687559793594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: quiz.submit_button
+  leftToRightAlignment: 257
 --- !u!1 &8144615942366616672
 GameObject:
   m_ObjectHideFlags: 0

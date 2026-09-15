@@ -79,6 +79,16 @@ public class TreasureBoxData : ScriptableObject
     [Min(0)]
     public int noorCoinEquivalent = 250;
 
+    /// <summary>
+    /// Localized <see cref="tierDisplayName"/> — there are only four tiers, so the key is derived from
+    /// <see cref="tier"/> itself ("treasurebox.tier_name.silver" etc.) rather than a per-asset id.
+    /// Falls back to the authored <see cref="tierDisplayName"/> when untranslated or outside Play Mode.
+    /// </summary>
+    public string LocalizedTierDisplayName =>
+        LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"treasurebox.tier_name.{tier.ToString().ToLowerInvariant()}", tierDisplayName)
+            : tierDisplayName;
+
     // ── Individual Box Reward (single open) ───────────────────────────────────
 
     [Header("Per-Box Reward (optional)")]
@@ -86,4 +96,27 @@ public class TreasureBoxData : ScriptableObject
              "in addition to the set-completion reward. Leave at 0 for no per-box coins.")]
     [Min(0)]
     public int noorCoinPerBox = 0;
+
+    /// <summary>
+    /// Localized short tier name (e.g. "Silver", not "Silver Box") for callers that only have the enum
+    /// value and don't need the full "{0} Box" display name — see
+    /// TreasureBoxManager.GetPreviousTierName and TreasureBoxConfirmationPanel's no-reward fallback.
+    /// </summary>
+    public static string GetLocalizedShortTierName(TreasureBoxTier tier)
+    {
+        string fallback = tier.ToString();
+        return LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"treasurebox.tier_short.{tier.ToString().ToLowerInvariant()}", fallback)
+            : fallback;
+    }
+
+    /// <summary>Localized "{0} Box" fallback for callers with only the enum value, no TreasureBoxData
+    /// asset — see TreasureBoxConfirmationPanel.Show's no-reward-configured branch.</summary>
+    public static string GetLocalizedTierBoxFallback(TreasureBoxTier tier)
+    {
+        string fallback = $"{tier} Box";
+        return LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"treasurebox.tier_name.{tier.ToString().ToLowerInvariant()}", fallback)
+            : fallback;
+    }
 }

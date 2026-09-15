@@ -111,6 +111,22 @@ public class ShopItemData : ScriptableObject
     /// Coin packs and coin-paying ad offers have no prefab, so they skip placement entirely.
     /// </summary>
     public bool IsPlaceable => itemPrefabRef != null && itemPrefabRef.RuntimeKeyIsValid();
+
+    /// <summary>
+    /// Player-facing name for the active locale, looked up as "item.{itemID}.name" (see
+    /// Editor/ShopItemLocalizationKeyGenerator.cs), falling back to the authored <see cref="itemName"/>
+    /// when no translation exists yet or outside Play Mode.
+    /// </summary>
+    public string LocalizedName =>
+        LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"item.{itemID}.name", itemName)
+            : itemName;
+
+    /// <summary>Player-facing description for the active locale — see <see cref="LocalizedName"/>.</summary>
+    public string LocalizedDescription =>
+        LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"item.{itemID}.desc", itemDescription)
+            : itemDescription;
 }
 
 /// <summary>

@@ -1,87 +1,700 @@
 {
     "entries": [
-        { "key": "shop.finish_placing_first", "value": "Finish placing the current item first" },
-        { "key": "shop.requires_level", "value": "Requires Level {0}" },
-        { "key": "shop.not_enough_coins", "value": "Not enough Noor Coins" },
-        { "key": "shop.come_back_in", "value": "Come back in {0}" },
-        { "key": "shop.ads_unavailable", "value": "Ads are unavailable right now" },
-        { "key": "shop.store_unavailable", "value": "The store is unavailable right now" },
-        { "key": "shop.purchase_in_progress", "value": "A purchase is already in progress" },
-        { "key": "shop.purchase_not_completed", "value": "Purchase not completed" },
-        { "key": "shop.offer_ready", "value": "Ready" },
-
-        { "key": "placement.downloading_item", "value": "Downloading item…" },
-        { "key": "placement.download_failed", "value": "Couldn't download this item — check your connection" },
-        { "key": "placement.moved", "value": "Moved" },
-        { "key": "placement.move_cancelled", "value": "Move cancelled" },
-        { "key": "placement.placement_cancelled", "value": "Placement cancelled" },
-        { "key": "placement.cannot_move", "value": "This item cannot be moved" },
-        { "key": "placement.aim_move_here", "value": "Aim where you want it, then tap Move Here" },
-        { "key": "placement.returned_to_inventory", "value": "{0} returned to your inventory" },
-        { "key": "placement.returned_to_store", "value": "Returned to the store" },
-
-        { "key": "economy.coins_spent", "value": "-{0} Noor Coins" },
-        { "key": "economy.coins_earned", "value": "+{0} Noor Coins" },
-
-        { "key": "reward.coins", "value": "+{0} Noor Coins" },
-        { "key": "reward.xp", "value": "+{0} XP" },
-        { "key": "reward.coins_colored", "value": "<color=#FFD700>+{0} Noor Coins</color>" },
-        { "key": "reward.xp_colored", "value": "<color=#00FFFF>+{0} XP</color>" },
-        { "key": "reward.and", "value": "&" },
-
-        { "key": "garden.use_back_button", "value": "Use the back button to leave the garden." },
-
-        { "key": "photo.share_phone_only", "value": "Sharing only works on a phone" },
-        { "key": "photo.capture_failed", "value": "Could not take the photo" },
-        { "key": "photo.share_failed", "value": "Could not share the photo" },
-        { "key": "photo.saved_to_gallery", "value": "Saved to your gallery" },
-        { "key": "photo.save_failed", "value": "Could not save the photo" },
-        { "key": "photo.cannot_save_to_device", "value": "This photo could not be saved to the device" },
-        { "key": "photo.generic_failed", "value": "That didn't work" },
-        { "key": "photo.shared", "value": "Shared" },
-
-        { "key": "dhikr.instruction", "value": "Dhikr \"{0}\" for {1} times" },
-        { "key": "dhikr.completed", "value": "<color=#FFD700>Masha'Allah!</color>\nDhikr Completed!" },
-
-        { "key": "quiz.correct", "value": "<color=#00FF88>Congratulations!</color>\nCorrect Answer!" },
-        { "key": "quiz.wrong", "value": "Opps! Review the correct answer and try again to earn your Noor Coins." },
-
-        { "key": "treasurebox.need_subscribe", "value": "You need to subscribe from the Amal Apps." },
-        { "key": "treasurebox.all_opened", "value": "All boxes for this tier are already opened!" },
-        { "key": "treasurebox.not_appeared_yet", "value": "Boxes for this tier haven't appeared yet!" },
-        { "key": "treasurebox.complete_previous_tier", "value": "Complete all {0} boxes first." },
-
-        { "key": "tutorial.welcome_title", "value": "Welcome to Jannah Garden!" },
-        { "key": "tutorial.welcome_body", "value": "Grow your own piece of paradise: place trees, fountains and sacred decor, earn XP, open treasure boxes and explore the Outer Garden. Let's get started!" },
-        { "key": "tutorial.start_button", "value": "Start Tutorial" },
-        { "key": "tutorial.step_open_shop", "value": "Tap the Shop button to open the Garden Shop!" },
-        { "key": "tutorial.step_select_item", "value": "Select your first item below!" },
-        { "key": "tutorial.step_downloading", "value": "Downloading your item — hang tight!" },
-        { "key": "tutorial.step_place_item", "value": "Move around and tap Place to plant it!" },
-        { "key": "tutorial.step_open_xp", "value": "Nice! Tap the XP button to see your progress!" },
-        { "key": "tutorial.step_xp_chart", "value": "Check out your XP chart, then close it to continue!" },
-        { "key": "tutorial.step_take_photo", "value": "Snap a photo of your garden!" },
-        { "key": "tutorial.step_share_photo", "value": "Share or save it, then close the preview!" },
-        { "key": "tutorial.step_inspector_mode", "value": "Try Inspector Mode to fly around and admire your garden!" },
-        { "key": "tutorial.step_return_ground", "value": "Come back down to the ground to continue!" },
-        { "key": "tutorial.step_open_treasurebox", "value": "Open a Treasure Box for bonus rewards!" },
-        { "key": "tutorial.step_minimap", "value": "Check your minimap to find the way to the Treasure Box!" },
-        { "key": "tutorial.step_outer_garden", "value": "Explore the Outer Garden!" },
-        { "key": "tutorial.outer_garden_title", "value": "Welcome to the Outer Garden!" },
-        { "key": "tutorial.outer_garden_body", "value": "This is your wider world beyond the main garden — explore further, discover hidden sights, and find more inspiration for what to bring home and plant. Wander freely and enjoy the view!" },
-        { "key": "tutorial.finish_button", "value": "Finish" },
-
-        { "key": "shop.category.plants_gardens", "value": "Plants & Gardens" },
-        { "key": "shop.category.water_of_garden", "value": "Water of Garden" },
-        { "key": "shop.category.architecture", "value": "Architecture" },
-        { "key": "shop.category.decor_sacred", "value": "Decor & Sacred" },
-        { "key": "shop.category.decor_sacred_long", "value": "Decor & Sacred Objects" },
-        { "key": "shop.category.celestial_light", "value": "Celestial & Light" },
-        { "key": "shop.category.celestial_light_long", "value": "Celestial & Light / Landscape" },
-        { "key": "shop.category.noor_coins", "value": "Noor Coins" },
-        { "key": "shop.tier.common", "value": "Common" },
-        { "key": "shop.tier.standard", "value": "Standard" },
-        { "key": "shop.tier.premium", "value": "Premium" },
-        { "key": "shop.tier.premium_plus", "value": "Premium Plus" }
+        {
+            "key": "shop.finish_placing_first",
+            "value": "Finish placing the current item first"
+        },
+        {
+            "key": "shop.requires_level",
+            "value": "Requires Level {0}"
+        },
+        {
+            "key": "shop.not_enough_coins",
+            "value": "Not enough Noor Coins"
+        },
+        {
+            "key": "shop.come_back_in",
+            "value": "Come back in {0}"
+        },
+        {
+            "key": "shop.ads_unavailable",
+            "value": "Ads are unavailable right now"
+        },
+        {
+            "key": "shop.store_unavailable",
+            "value": "The store is unavailable right now"
+        },
+        {
+            "key": "shop.purchase_in_progress",
+            "value": "A purchase is already in progress"
+        },
+        {
+            "key": "shop.purchase_not_completed",
+            "value": "Purchase not completed"
+        },
+        {
+            "key": "shop.offer_ready",
+            "value": "Ready"
+        },
+        {
+            "key": "shop.level_badge",
+            "value": "Lvl {0} Req"
+        },
+        {
+            "key": "shop.owned_label",
+            "value": "Owned"
+        },
+        {
+            "key": "shop.label_watch_ad",
+            "value": "Watch Ad"
+        },
+        {
+            "key": "shop.label_select",
+            "value": "Select"
+        },
+        {
+            "key": "shop.label_purchasing",
+            "value": "Purchasing..."
+        },
+        {
+            "key": "shop.label_downloading_percent",
+            "value": "Downloading... {0}%"
+        },
+        {
+            "key": "shop.label_buy",
+            "value": "Buy"
+        },
+        {
+            "key": "shop.label_free",
+            "value": "Free"
+        },
+        {
+            "key": "placement.downloading_item",
+            "value": "Downloading item…"
+        },
+        {
+            "key": "placement.download_failed",
+            "value": "Couldn't download this item — check your connection"
+        },
+        {
+            "key": "placement.moved",
+            "value": "Moved"
+        },
+        {
+            "key": "placement.move_cancelled",
+            "value": "Move cancelled"
+        },
+        {
+            "key": "placement.placement_cancelled",
+            "value": "Placement cancelled"
+        },
+        {
+            "key": "placement.cannot_move",
+            "value": "This item cannot be moved"
+        },
+        {
+            "key": "placement.aim_move_here",
+            "value": "Aim where you want it, then tap Move Here"
+        },
+        {
+            "key": "placement.returned_to_inventory",
+            "value": "{0} returned to your inventory"
+        },
+        {
+            "key": "placement.returned_to_store",
+            "value": "Returned to the store"
+        },
+        {
+            "key": "placement.button_move_here",
+            "value": "Move Here"
+        },
+        {
+            "key": "placement.button_place",
+            "value": "Place"
+        },
+        {
+            "key": "placement.completed_exclaim",
+            "value": "Completed!"
+        },
+        {
+            "key": "economy.coins_spent",
+            "value": "-{0} Noor Coins"
+        },
+        {
+            "key": "economy.coins_earned",
+            "value": "+{0} Noor Coins"
+        },
+        {
+            "key": "reward.coins",
+            "value": "+{0} Noor Coins"
+        },
+        {
+            "key": "reward.xp",
+            "value": "+{0} XP"
+        },
+        {
+            "key": "reward.coins_colored",
+            "value": "<color=#FFD700>+{0} Noor Coins</color>"
+        },
+        {
+            "key": "reward.xp_colored",
+            "value": "<color=#00FFFF>+{0} XP</color>"
+        },
+        {
+            "key": "reward.and",
+            "value": "&"
+        },
+        {
+            "key": "garden.use_back_button",
+            "value": "Use the back button to leave the garden."
+        },
+        {
+            "key": "photo.share_phone_only",
+            "value": "Sharing only works on a phone"
+        },
+        {
+            "key": "photo.capture_failed",
+            "value": "Could not take the photo"
+        },
+        {
+            "key": "photo.share_failed",
+            "value": "Could not share the photo"
+        },
+        {
+            "key": "photo.saved_to_gallery",
+            "value": "Saved to your gallery"
+        },
+        {
+            "key": "photo.save_failed",
+            "value": "Could not save the photo"
+        },
+        {
+            "key": "photo.cannot_save_to_device",
+            "value": "This photo could not be saved to the device"
+        },
+        {
+            "key": "photo.generic_failed",
+            "value": "That didn't work"
+        },
+        {
+            "key": "photo.shared",
+            "value": "Shared"
+        },
+        {
+            "key": "dhikr.instruction",
+            "value": "Dhikr \"{0}\" for {1} times"
+        },
+        {
+            "key": "dhikr.completed",
+            "value": "<color=#FFD700>Masha'Allah!</color>\nDhikr Completed!"
+        },
+        {
+            "key": "quiz.correct",
+            "value": "<color=#00FF88>Congratulations!</color>\nCorrect Answer!"
+        },
+        {
+            "key": "quiz.wrong",
+            "value": "Opps! Review the correct answer and try again to earn your Noor Coins."
+        },
+        {
+            "key": "treasurebox.need_subscribe",
+            "value": "You need to subscribe from the Amal Apps."
+        },
+        {
+            "key": "treasurebox.all_opened",
+            "value": "All boxes for this tier are already opened!"
+        },
+        {
+            "key": "treasurebox.not_appeared_yet",
+            "value": "Boxes for this tier haven't appeared yet!"
+        },
+        {
+            "key": "treasurebox.complete_previous_tier",
+            "value": "Complete all {0} boxes first."
+        },
+        {
+            "key": "treasurebox.open_prompt",
+            "value": "Open this box to get rewards!"
+        },
+        {
+            "key": "treasurebox.reward_noor_coins_fallback",
+            "value": "Noor Coins!"
+        },
+        {
+            "key": "treasurebox.tier_complete_format",
+            "value": "{0} Complete!"
+        },
+        {
+            "key": "treasurebox.set_complete",
+            "value": "Set Complete!"
+        },
+        {
+            "key": "treasurebox.status.resetting",
+            "value": "Resetting..."
+        },
+        {
+            "key": "treasurebox.status.completed",
+            "value": "Completed"
+        },
+        {
+            "key": "treasurebox.status.finish_previous_tier",
+            "value": "Finish previous tier"
+        },
+        {
+            "key": "treasurebox.status.locked",
+            "value": "Locked"
+        },
+        {
+            "key": "treasurebox.status.available",
+            "value": "Available"
+        },
+        {
+            "key": "treasurebox.status.waiting",
+            "value": "Waiting..."
+        },
+        {
+            "key": "treasurebox.tier_name.silver",
+            "value": "Silver Box"
+        },
+        {
+            "key": "treasurebox.tier_name.gold",
+            "value": "Gold Box"
+        },
+        {
+            "key": "treasurebox.tier_name.platinum",
+            "value": "Platinum Box"
+        },
+        {
+            "key": "treasurebox.tier_name.diamond",
+            "value": "Diamond Box"
+        },
+        {
+            "key": "treasurebox.tier_short.silver",
+            "value": "Silver"
+        },
+        {
+            "key": "treasurebox.tier_short.gold",
+            "value": "Gold"
+        },
+        {
+            "key": "treasurebox.tier_short.platinum",
+            "value": "Platinum"
+        },
+        {
+            "key": "treasurebox.tier_short.diamond",
+            "value": "Diamond"
+        },
+        {
+            "key": "rarity.common",
+            "value": "Common"
+        },
+        {
+            "key": "rarity.uncommon",
+            "value": "Uncommon"
+        },
+        {
+            "key": "rarity.rare",
+            "value": "Rare"
+        },
+        {
+            "key": "rarity.epic",
+            "value": "Epic"
+        },
+        {
+            "key": "rarity.legendary",
+            "value": "Legendary"
+        },
+        {
+            "key": "xp.task.place_shop_item",
+            "value": "Place a Garden Item"
+        },
+        {
+            "key": "xp.task.answer_question_1st_try",
+            "value": "Correct on First Try"
+        },
+        {
+            "key": "xp.task.answer_question_retry",
+            "value": "Correct on Retry"
+        },
+        {
+            "key": "xp.task.complete_dhikr",
+            "value": "Complete Dhikr"
+        },
+        {
+            "key": "xp.task.open_silver_box",
+            "value": "Open Silver Box"
+        },
+        {
+            "key": "xp.task.open_gold_box",
+            "value": "Open Gold Box"
+        },
+        {
+            "key": "xp.task.open_platinum_box",
+            "value": "Open Platinum Box"
+        },
+        {
+            "key": "xp.task.open_diamond_box",
+            "value": "Open Diamond Box"
+        },
+        {
+            "key": "xp.chart_row_format",
+            "value": "{0} — +{1} XP"
+        },
+        {
+            "key": "loading.loading_text",
+            "value": "Loading..."
+        },
+        {
+            "key": "loading.base_scene",
+            "value": "Loading base scene..."
+        },
+        {
+            "key": "loading.environments",
+            "value": "Loading environments..."
+        },
+        {
+            "key": "loading.preparing_scene",
+            "value": "Preparing scene..."
+        },
+        {
+            "key": "common.quantity_format",
+            "value": "x{0}"
+        },
+        {
+            "key": "common.now",
+            "value": "now"
+        },
+        {
+            "key": "tutorial.step_welcome",
+            "value": "<color=#FFB300><size=120%>Welcome to Jannah Garden!</color></size>\n\nLet's learn how to grow your garden. Tap <b>Start</b> to begin the tutorial!"
+        },
+        {
+            "key": "tutorial.button_start",
+            "value": "Start"
+        },
+        {
+            "key": "tutorial.step_basic_movement",
+            "value": "Use the <b>Virtual Joystick</b> on the left side of the screen to move your character around."
+        },
+        {
+            "key": "tutorial.button_next",
+            "value": "Next"
+        },
+        {
+            "key": "tutorial.step_basic_looking",
+            "value": "Swipe/drag anywhere on the screen to look around and control the camera view."
+        },
+        {
+            "key": "tutorial.step_open_shop",
+            "value": "First, tap the <b>Shop Button</b> in the corner to open the Garden Shop."
+        },
+        {
+            "key": "tutorial.step_select_item",
+            "value": "Great! Now select the first item in the shop and click <b>Purchase</b> using Noor Coins."
+        },
+        {
+            "key": "tutorial.step_place_item",
+            "value": "The placement preview is visible at the center of the screen.\n\nLook around using camera controls and tap <b>Place</b> when ready!"
+        },
+        {
+            "key": "tutorial.step_completed",
+            "value": "<color=#4CAF50><size=120%>Perfect Sequence!</color></size>\n\nYou have successfully placed your first plant! Grow your garden by completing quizzes and purchasing items. Click <b>Finish</b> to play!"
+        },
+        {
+            "key": "tutorial.button_finish",
+            "value": "Finish"
+        },
+        {
+            "key": "tutorial.button_skip",
+            "value": "Skip"
+        },
+        {
+            "key": "shop.category.plants_gardens",
+            "value": "Plants & Gardens"
+        },
+        {
+            "key": "shop.category.water_of_garden",
+            "value": "Water of Garden"
+        },
+        {
+            "key": "shop.category.architecture",
+            "value": "Architecture"
+        },
+        {
+            "key": "shop.category.decor_sacred",
+            "value": "Decor & Sacred"
+        },
+        {
+            "key": "shop.category.decor_sacred_long",
+            "value": "Decor & Sacred Objects"
+        },
+        {
+            "key": "shop.category.celestial_light",
+            "value": "Celestial & Light"
+        },
+        {
+            "key": "shop.category.celestial_light_long",
+            "value": "Celestial & Light / Landscape"
+        },
+        {
+            "key": "shop.category.noor_coins",
+            "value": "Noor Coins"
+        },
+        {
+            "key": "shop.tier.common",
+            "value": "Common"
+        },
+        {
+            "key": "shop.tier.standard",
+            "value": "Standard"
+        },
+        {
+            "key": "shop.tier.premium",
+            "value": "Premium"
+        },
+        {
+            "key": "shop.tier.premium_plus",
+            "value": "Premium Plus"
+        },
+        {
+            "key": "settings.sfx_label",
+            "value": "SFX"
+        },
+        {
+            "key": "settings.panel_title",
+            "value": "Settings"
+        },
+        {
+            "key": "settings.music_label",
+            "value": "Music"
+        },
+        {
+            "key": "settings.vibration_label",
+            "value": "Vibration"
+        },
+        {
+            "key": "settings.normal_speed_label",
+            "value": "NORMAL SPEED"
+        },
+        {
+            "key": "settings.inspector_speed_label",
+            "value": "INSPECTOR SPEED"
+        },
+        {
+            "key": "settings.look_around_speed_label",
+            "value": "LOOK AROUND SPEED"
+        },
+        {
+            "key": "treasurebox.confirm.watch_ad_button",
+            "value": "Watch Ad"
+        },
+        {
+            "key": "treasurebox.confirm.subscribe_button",
+            "value": "Subscribe"
+        },
+        {
+            "key": "treasurebox.confirm.ad_or_subscribe_prompt",
+            "value": "Watch an ad or subscribe to open the Treasure Box"
+        },
+        {
+            "key": "economy.xp_level_unit_label",
+            "value": "lvl\n"
+        },
+        {
+            "key": "economy.noor_coin_label",
+            "value": "Noor Coins"
+        },
+        {
+            "key": "economy.close_stats_button",
+            "value": "Close Stats"
+        },
+        {
+            "key": "economy.open_stats_button",
+            "value": "Open Stats"
+        },
+        {
+            "key": "shop.tab_shop_label",
+            "value": "SHOP"
+        },
+        {
+            "key": "shop.tab_inventory_label",
+            "value": "Inventory"
+        },
+        {
+            "key": "shop.tab_treasure_label",
+            "value": "Treasure"
+        },
+        {
+            "key": "economy.xp_unit_label",
+            "value": "XP"
+        },
+        {
+            "key": "economy.level_label",
+            "value": "Level"
+        },
+        {
+            "key": "quiz.submit_button",
+            "value": "submit"
+        },
+        {
+            "key": "dhikr.submit_button",
+            "value": "submit"
+        },
+        {
+            "key": "interaction.place_here_button",
+            "value": "Place Here"
+        },
+        {
+            "key": "interaction.open_button",
+            "value": "open"
+        },
+        {
+            "key": "interaction.answer_button",
+            "value": "answer"
+        },
+        {
+            "key": "interaction.manage_button",
+            "value": "manage"
+        },
+        {
+            "key": "placed_item.relocate_button",
+            "value": "Move to a new spot"
+        },
+        {
+            "key": "placed_item.return_button",
+            "value": "Return to the Asset Store"
+        },
+        {
+            "key": "placed_item.keep_here_button",
+            "value": "Keep it here"
+        },
+        {
+            "key": "photo_mode.share_button",
+            "value": "Share"
+        },
+        {
+            "key": "photo_mode.save_button",
+            "value": "Save"
+        },
+        {
+            "key": "photo_mode.cancel_button",
+            "value": "Cancel"
+        },
+        {
+            "key": "leave_garden.confirm_prompt",
+            "value": "Do you want to visit Outer Garden before leaving?"
+        },
+        {
+            "key": "leave_garden.quit_button",
+            "value": "Quit"
+        },
+        {
+            "key": "leave_garden.outer_garden_button",
+            "value": "outer garden"
+        },
+        {
+            "key": "tutorial.skip_button",
+            "value": "Skip"
+        },
+        {
+            "key": "onboarding.welcome_title",
+            "value": "Welcome to Jannah Garden!"
+        },
+        {
+            "key": "onboarding.welcome_body",
+            "value": "Grow your own piece of paradise: place trees, fountains and sacred decor, earn XP, open treasure boxes and explore the Outer Garden. Let's get started!"
+        },
+        {
+            "key": "onboarding.start_button",
+            "value": "Start Tutorial"
+        },
+        {
+            "key": "onboarding.step_open_shop",
+            "value": "Tap the Shop button to open the Garden Shop!"
+        },
+        {
+            "key": "onboarding.step_select_item",
+            "value": "Select your first item below!"
+        },
+        {
+            "key": "onboarding.step_downloading",
+            "value": "Downloading your item — hang tight!"
+        },
+        {
+            "key": "onboarding.step_place_item",
+            "value": "Move around and tap Place to plant it!"
+        },
+        {
+            "key": "onboarding.step_xp_button",
+            "value": "Nice! Tap the XP button to see your progress!"
+        },
+        {
+            "key": "onboarding.step_xp_chart",
+            "value": "Check out your XP chart, then close it to continue!"
+        },
+        {
+            "key": "onboarding.step_take_photo",
+            "value": "Snap a photo of your garden!"
+        },
+        {
+            "key": "onboarding.step_share_photo",
+            "value": "Share or save it, then close the preview!"
+        },
+        {
+            "key": "onboarding.step_inspector_mode",
+            "value": "Try Inspector Mode to fly around and admire your garden!"
+        },
+        {
+            "key": "onboarding.step_return_ground",
+            "value": "Come back down to the ground to continue!"
+        },
+        {
+            "key": "onboarding.step_treasurebox",
+            "value": "Open a Treasure Box for bonus rewards!"
+        },
+        {
+            "key": "onboarding.step_minimap",
+            "value": "Check your minimap to find the way to the Treasure Box!"
+        },
+        {
+            "key": "onboarding.button_got_it",
+            "value": "Got it"
+        },
+        {
+            "key": "onboarding.step_outer_garden",
+            "value": "Explore the Outer Garden!"
+        },
+        {
+            "key": "onboarding.outer_garden_title",
+            "value": "Welcome to the Outer Garden!"
+        },
+        {
+            "key": "onboarding.outer_garden_body",
+            "value": "This is your wider world beyond the main garden — explore further, discover hidden sights, and find more inspiration for what to bring home and plant. Wander freely and enjoy the view!"
+        },
+        {
+            "key": "interaction.inspector_mode_on",
+            "value": "Inspector Mode: ON"
+        },
+        {
+            "key": "interaction.inspector_mode_off",
+            "value": "Inspector Mode: OFF"
+        },
+        {
+            "key": "photo_mode.preview_heading",
+            "value": "Your Jannah Garden"
+        },
+        {
+            "key": "photo_mode.share_caption",
+            "value": "My Jannah Garden 🌿"
+        },
+        {
+            "key": "fellowship.member_since_format",
+            "value": "Member since {0}"
+        },
+        {
+            "key": "fellowship.member_since_unknown",
+            "value": "Member since —"
+        }
     ]
 }

@@ -3492,20 +3492,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7508004933227241077, guid: b58e673bb8fe1a34ca92d7a89efc1470, type: 3}
   m_PrefabInstance: {fileID: 307381228}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &316193810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300000000000000023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: placed_item.return_button
-  leftToRightAlignment: 257
 --- !u!1 &320240519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,20 +4601,6 @@ MonoBehaviour:
   fakeRewardedAdPanel: {fileID: 340693043}
   fakeAdDuration: 3
   fakeTimerCountDownText: {fileID: 1439742882}
---- !u!114 &408723310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400000000000000049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: photo_mode.cancel_button
-  leftToRightAlignment: 257
 --- !u!1001 &411495266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6205,7 +6177,6 @@ GameObject:
   - component: {fileID: 556915630}
   - component: {fileID: 556915632}
   - component: {fileID: 556915631}
-  - component: {fileID: 556915633}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -6332,20 +6303,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556915629}
   m_CullTransparentMesh: 1
---- !u!114 &556915633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556915629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: tutorial.skip_button
-  leftToRightAlignment: 257
 --- !u!1 &564845109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,7 +6426,6 @@ GameObject:
   - component: {fileID: 579394832}
   - component: {fileID: 579394834}
   - component: {fileID: 579394833}
-  - component: {fileID: 579394835}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6596,20 +6552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579394831}
   m_CullTransparentMesh: 1
---- !u!114 &579394835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579394831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: interaction.open_button
-  leftToRightAlignment: 257
 --- !u!1001 &581835329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7431,7 +7373,6 @@ GameObject:
   - component: {fileID: 667601817}
   - component: {fileID: 667601820}
   - component: {fileID: 667601819}
-  - component: {fileID: 667601821}
   m_Layer: 0
   m_Name: InstructionText
   m_TagString: Untagged
@@ -7558,20 +7499,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667601816}
   m_CullTransparentMesh: 1
---- !u!114 &667601821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667601816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: leave_garden.confirm_prompt
-  leftToRightAlignment: 257
 --- !u!1001 &672315288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9652,7 +9579,6 @@ GameObject:
   - component: {fileID: 896861466}
   - component: {fileID: 896861469}
   - component: {fileID: 896861468}
-  - component: {fileID: 896861470}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -9779,20 +9705,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896861465}
   m_CullTransparentMesh: 1
---- !u!114 &896861470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896861465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: leave_garden.outer_garden_button
-  leftToRightAlignment: 257
 --- !u!1 &903452733
 GameObject:
   m_ObjectHideFlags: 0
@@ -13935,7 +13847,6 @@ GameObject:
   - component: {fileID: 1376202604}
   - component: {fileID: 1376202606}
   - component: {fileID: 1376202605}
-  - component: {fileID: 1376202607}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -14062,20 +13973,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376202603}
   m_CullTransparentMesh: 1
---- !u!114 &1376202607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376202603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: interaction.answer_button
-  leftToRightAlignment: 257
 --- !u!1001 &1388295951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14317,20 +14214,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1758729016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1417757522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400000000000000031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: photo_mode.share_button
-  leftToRightAlignment: 257
 --- !u!1 &1428646428
 GameObject:
   m_ObjectHideFlags: 0
@@ -15015,7 +14898,6 @@ GameObject:
   - component: {fileID: 1496956253}
   - component: {fileID: 1496956255}
   - component: {fileID: 1496956254}
-  - component: {fileID: 1496956256}
   m_Layer: 0
   m_Name: Settings Type Name Text (TMP)
   m_TagString: Untagged
@@ -15142,20 +15024,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496956252}
   m_CullTransparentMesh: 1
---- !u!114 &1496956256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496956252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: settings.look_around_speed_label
-  leftToRightAlignment: 257
 --- !u!1 &1507598160
 GameObject:
   m_ObjectHideFlags: 0
@@ -15493,7 +15361,6 @@ GameObject:
   - component: {fileID: 1536573560}
   - component: {fileID: 1536573562}
   - component: {fileID: 1536573561}
-  - component: {fileID: 1536573563}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -15620,20 +15487,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536573559}
   m_CullTransparentMesh: 1
---- !u!114 &1536573563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536573559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: interaction.place_here_button
-  leftToRightAlignment: 257
 --- !u!1 &1547411443
 GameObject:
   m_ObjectHideFlags: 0
@@ -15679,7 +15532,6 @@ GameObject:
   - component: {fileID: 1556121428}
   - component: {fileID: 1556121430}
   - component: {fileID: 1556121429}
-  - component: {fileID: 1556121431}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -15806,20 +15658,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556121427}
   m_CullTransparentMesh: 1
---- !u!114 &1556121431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556121427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: interaction.manage_button
-  leftToRightAlignment: 257
 --- !u!1001 &1576242432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18311,20 +18149,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1854138056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300000000000000014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: placed_item.relocate_button
-  leftToRightAlignment: 257
 --- !u!1 &1857311406
 GameObject:
   m_ObjectHideFlags: 0
@@ -18665,20 +18489,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870231288}
   m_CullTransparentMesh: 1
---- !u!114 &1873482889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400000000000000040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: photo_mode.save_button
-  leftToRightAlignment: 257
 --- !u!1001 &1876838786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19415,7 +19225,6 @@ GameObject:
   - component: {fileID: 1930333385}
   - component: {fileID: 1930333388}
   - component: {fileID: 1930333387}
-  - component: {fileID: 1930333389}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -19542,20 +19351,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930333384}
   m_CullTransparentMesh: 1
---- !u!114 &1930333389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930333384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: leave_garden.quit_button
-  leftToRightAlignment: 257
 --- !u!1 &1940706184
 GameObject:
   m_ObjectHideFlags: 0
@@ -24496,7 +24291,6 @@ GameObject:
   - component: {fileID: 7300000000000000015}
   - component: {fileID: 7300000000000000017}
   - component: {fileID: 7300000000000000016}
-  - component: {fileID: 1854138056}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -24755,7 +24549,6 @@ GameObject:
   - component: {fileID: 7300000000000000024}
   - component: {fileID: 7300000000000000026}
   - component: {fileID: 7300000000000000025}
-  - component: {fileID: 316193810}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -25014,7 +24807,6 @@ GameObject:
   - component: {fileID: 7300000000000000033}
   - component: {fileID: 7300000000000000035}
   - component: {fileID: 7300000000000000034}
-  - component: {fileID: 7300000000000000039}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -25223,20 +25015,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7300000000000000030}
   m_CullTransparentMesh: 1
---- !u!114 &7300000000000000039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300000000000000032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  key: placed_item.keep_here_button
-  leftToRightAlignment: 257
 --- !u!224 &7382768229859183610 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7851810002433707972, guid: 263e44c4bc1669c4fa287101c20b111c, type: 3}
@@ -25785,7 +25563,6 @@ GameObject:
   - component: {fileID: 7400000000000000032}
   - component: {fileID: 7400000000000000034}
   - component: {fileID: 7400000000000000033}
-  - component: {fileID: 1417757522}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -26044,7 +25821,6 @@ GameObject:
   - component: {fileID: 7400000000000000041}
   - component: {fileID: 7400000000000000043}
   - component: {fileID: 7400000000000000042}
-  - component: {fileID: 1873482889}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -26303,7 +26079,6 @@ GameObject:
   - component: {fileID: 7400000000000000050}
   - component: {fileID: 7400000000000000052}
   - component: {fileID: 7400000000000000051}
-  - component: {fileID: 408723310}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged

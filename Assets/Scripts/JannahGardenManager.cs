@@ -156,7 +156,7 @@ public class JannahGardenManager : MonoBehaviour
         Debug.LogWarning("[JannahGardenManager] No FlutterBridge — cannot return to the app.");
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Use the back button to leave the garden.");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("garden.use_back_button"));
         }
     }
 

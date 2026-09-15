@@ -188,7 +188,9 @@ public class PhotoModeManager : MonoBehaviour
         if (NativePhotoService.IsSupported)
         {
             _actionInFlight = true;
-            NativePhotoService.Share(_photoPath, shareCaption, HandleNativeShareResult);
+            NativePhotoService.Share(_photoPath,
+                LocalizationManager.Instance.GetOrDefault("photo_mode.share_caption", shareCaption),
+                HandleNativeShareResult);
             ClosePreview();
             return;
         }
@@ -201,7 +203,7 @@ public class PhotoModeManager : MonoBehaviour
             return;
         }
 
-        ShowToast("Sharing only works on a phone");
+        ShowToast(LocalizationManager.Instance.Get("photo.share_phone_only"));
     }
 
     /// <summary>Writes the current photo into the device gallery.</summary>
@@ -276,7 +278,7 @@ public class PhotoModeManager : MonoBehaviour
 
         if (shot == null)
         {
-            ShowToast("Could not take the photo");
+            ShowToast(LocalizationManager.Instance.Get("photo.capture_failed"));
             yield break;
         }
 
@@ -356,7 +358,11 @@ public class PhotoModeManager : MonoBehaviour
             previewImage.color = Color.white;
         }
 
-        if (previewTitle != null) previewTitle.text = previewHeading;
+        if (previewTitle != null)
+        {
+            LocalizedRendering.SetText(previewTitle,
+                LocalizationManager.Instance.GetOrDefault("photo_mode.preview_heading", previewHeading));
+        }
 
         if (previewPanel == null) return;
 
@@ -457,7 +463,7 @@ public class PhotoModeManager : MonoBehaviour
         // Backing out of the share sheet is a choice, not a failure.
         if (message == NativePhotoService.CancelledMessage) return;
 
-        ShowToast(string.IsNullOrEmpty(message) ? "Could not share the photo" : message);
+        ShowToast(string.IsNullOrEmpty(message) ? LocalizationManager.Instance.Get("photo.share_failed") : message);
     }
 
     private void HandleNativeSaveResult(bool success, string message)
@@ -466,11 +472,11 @@ public class PhotoModeManager : MonoBehaviour
 
         if (success)
         {
-            ShowToast("Saved to your gallery");
+            ShowToast(LocalizationManager.Instance.Get("photo.saved_to_gallery"));
             return;
         }
 
-        ShowToast(string.IsNullOrEmpty(message) ? "Could not save the photo" : message);
+        ShowToast(string.IsNullOrEmpty(message) ? LocalizationManager.Instance.Get("photo.save_failed") : message);
     }
 
     private static void PlayButtonClick()
@@ -485,7 +491,7 @@ public class PhotoModeManager : MonoBehaviour
         return new PhotoSharePayload
         {
             filePath = _photoPath,
-            caption = shareCaption,
+            caption = LocalizationManager.Instance.GetOrDefault("photo_mode.share_caption", shareCaption),
             source = "photo_mode",
             width = _photoWidth,
             height = _photoHeight
@@ -498,7 +504,7 @@ public class PhotoModeManager : MonoBehaviour
         if (string.IsNullOrEmpty(_photoPath) || !File.Exists(_photoPath))
         {
             Debug.LogWarning($"[PhotoModeManager] Cannot {action} — the photo was not written to disk.");
-            ShowToast("This photo could not be saved to the device");
+            ShowToast(LocalizationManager.Instance.Get("photo.cannot_save_to_device"));
             return false;
         }
 
@@ -511,11 +517,11 @@ public class PhotoModeManager : MonoBehaviour
 
         if (!result.success)
         {
-            ShowToast(string.IsNullOrEmpty(result.message) ? "That didn't work" : result.message);
+            ShowToast(string.IsNullOrEmpty(result.message) ? LocalizationManager.Instance.Get("photo.generic_failed") : result.message);
             return;
         }
 
-        ShowToast(result.action == PhotoAction.Save ? "Saved to your gallery" : "Shared");
+        ShowToast(LocalizationManager.Instance.Get(result.action == PhotoAction.Save ? "photo.saved_to_gallery" : "photo.shared"));
     }
 
     private static void ShowToast(string message)

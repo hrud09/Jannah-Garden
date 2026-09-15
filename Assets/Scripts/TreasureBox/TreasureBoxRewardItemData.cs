@@ -56,6 +56,22 @@ public class TreasureBoxRewardItemData : ScriptableObject
     /// <summary>True if claiming this reward hands the player something to place in the garden.</summary>
     public bool IsPlaceable => itemPrefabRef != null && itemPrefabRef.RuntimeKeyIsValid();
 
+    /// <summary>
+    /// Player-facing name for the active locale, looked up as "item.{itemID}.name" (see
+    /// Editor/ShopItemLocalizationKeyGenerator.cs), falling back to the authored <see cref="itemName"/>
+    /// when no translation exists yet or outside Play Mode.
+    /// </summary>
+    public string LocalizedName =>
+        LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"item.{itemID}.name", itemName)
+            : itemName;
+
+    /// <summary>Player-facing description for the active locale — see <see cref="LocalizedName"/>.</summary>
+    public string LocalizedDescription =>
+        LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetOrDefault($"item.{itemID}.desc", itemDescription)
+            : itemDescription;
+
     public ItemRarity GetRarity()
     {
         if (unlockXPLevel <= 5) return ItemRarity.Common;
@@ -86,4 +102,26 @@ public enum ItemRarity
     Rare,
     Epic,
     Legendary
+}
+
+/// <summary>Player-facing rarity labels, e.g. shown on TreasureBoxConfirmationPanel's badge.</summary>
+public static class ItemRarityTaxonomy
+{
+    public static string GetName(ItemRarity rarity)
+    {
+        switch (rarity)
+        {
+            case ItemRarity.Common: return Localized("rarity.common", "Common");
+            case ItemRarity.Uncommon: return Localized("rarity.uncommon", "Uncommon");
+            case ItemRarity.Rare: return Localized("rarity.rare", "Rare");
+            case ItemRarity.Epic: return Localized("rarity.epic", "Epic");
+            case ItemRarity.Legendary: return Localized("rarity.legendary", "Legendary");
+            default: return rarity.ToString();
+        }
+    }
+
+    private static string Localized(string key, string englishFallback)
+    {
+        return LocalizationManager.Instance != null ? LocalizationManager.Instance.GetOrDefault(key, englishFallback) : englishFallback;
+    }
 }

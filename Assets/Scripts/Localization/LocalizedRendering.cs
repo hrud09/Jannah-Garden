@@ -36,7 +36,20 @@ public static class LocalizedRendering
             ShapedTextGraphic shaped = EnsureShapedChild(tmpText.transform);
             shaped.gameObject.SetActive(true);
             shaped.FontAsset = HarfBuzzFontRegistry.GetFontAsset(locale);
-            shaped.FontSize = tmpText.fontSize;
+
+            // ShapedTextGraphic has no auto-size pass of its own (see its class doc) — it always renders
+            // at a fixed size and wraps instead of shrinking, so a Bengali translation longer than its
+            // English source (common) can wrap into a single-line banner and spill outside it.
+            //
+            // tmpText's own fontSizeMin is NOT a safe substitute for auto-sizing here: on fields like a
+            // price label it's an extreme emergency floor (e.g. 5, against a normal ~21) that TMP's real
+            // auto-size algorithm would only ever reach for pathologically long strings — using it
+            // unconditionally renders normal-length Bengali text at a near-invisible size. Instead, shrink
+            // tmpText's own current size by a modest, bounded fraction: enough headroom for a longer
+            // translation to fit on one line without wrapping, clamped so it never drops below the min.
+            shaped.FontSize = tmpText.enableAutoSizing
+                ? Mathf.Max(tmpText.fontSizeMin, tmpText.fontSize * 0.85f)
+                : tmpText.fontSize;
             shaped.Alignment = tmpText.alignment;
             shaped.color = tmpText.color;
             shaped.PaddingTop = shapedTopPadding;
@@ -66,6 +79,29 @@ public static class LocalizedRendering
         tmpText.enableKerning = !rtlRender;
 
         tmpText.text = rtl ? ArabicTextShaper.Shape(text) : text;
+    }
+
+    /// <summary>
+    /// Forces plain, unshaped TMP rendering regardless of the active locale — for content that's
+    /// inherently script-neutral (pure digits, a currency symbol, an icon glyph like the coin symbol) and
+    /// would only risk a missing-glyph tofu box if routed through Bengali's shaped renderer, which draws
+    /// from a Bengali-only font atlas.
+    ///
+    /// Still deactivates any shaped child left over from a previous <see cref="SetText(TMP_Text,string)"/>
+    /// call on this same label — needed because <see cref="ShopItemUI"/>/<see cref="InventoryItemUI"/>
+    /// reuse (pool) their card labels across items, so a label previously showing shaped Bengali text
+    /// (e.g. "Free") must not stay stuck in shaped mode when a later item's price is plain digits.
+    /// </summary>
+    public static void SetPlainText(TMP_Text tmpText, string text)
+    {
+        Transform existingShaped = tmpText.transform.Find(ShapedChildName);
+        if (existingShaped != null) existingShaped.gameObject.SetActive(false);
+
+        LayoutElement sizeOverride = tmpText.GetComponent<LayoutElement>();
+        if (sizeOverride != null) sizeOverride.enabled = false;
+
+        tmpText.enabled = true;
+        tmpText.text = text;
     }
 
     /// <summary>Swaps the Left/Right half of a TMP alignment (encoded in the low byte) while leaving the

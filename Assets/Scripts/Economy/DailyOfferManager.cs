@@ -245,7 +245,7 @@ public class DailyOfferManager : MonoBehaviour
     /// <summary>Formats a cooldown for display on an item card: "23h 59m", "05m 12s", "12s".</summary>
     public static string FormatCooldown(TimeSpan span)
     {
-        if (span <= TimeSpan.Zero) return "Ready";
+        if (span <= TimeSpan.Zero) return LocalizationManager.Instance.Get("shop.offer_ready");
 
         if (span.TotalHours >= 1)
         {

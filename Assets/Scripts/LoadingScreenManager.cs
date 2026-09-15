@@ -383,7 +383,7 @@ public class LoadingScreenManager : MonoBehaviour
         }
 
         // Update status text
-        SetStatusText("Loading base scene...");
+        SetStatusText(LocalizationManager.Instance.Get("loading.base_scene"));
 
         // Pick a random tip
         if (loadingTips != null && loadingTips.Length > 0 && tipsText != null)
@@ -477,7 +477,7 @@ public class LoadingScreenManager : MonoBehaviour
         // 2. Load sub-scenes additively if defined
         if (hasSubScenes)
         {
-            SetStatusText("Loading environments...");
+            SetStatusText(LocalizationManager.Instance.Get("loading.environments"));
             List<AsyncOperation> subSceneOps = new List<AsyncOperation>();
 
             // Start all additive loads
@@ -534,7 +534,7 @@ public class LoadingScreenManager : MonoBehaviour
         if (progressBar != null) progressBar.value = 1f;
         SafeSetText(percentText, "100%");
 
-        SetStatusText("Preparing scene...");
+        SetStatusText(LocalizationManager.Instance.Get("loading.preparing_scene"));
 
         // Wait for any external systems still holding the screen open — e.g. the
         // OcclusionCullingManager activating scene meshes behind the panel. The
@@ -904,7 +904,7 @@ public class LoadingScreenManager : MonoBehaviour
         statusRT.anchoredPosition = new Vector2(0f, 0f);
 
         statusText = statusGO.AddComponent<TextMeshProUGUI>();
-        statusText.text = "Loading...";
+        statusText.text = LocalizationManager.Instance != null ? LocalizationManager.Instance.Get("loading.loading_text") : "Loading...";
         statusText.fontSize = 22f;
         statusText.color = secondaryTextColor;
         statusText.alignment = TextAlignmentOptions.Left;
