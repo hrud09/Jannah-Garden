@@ -103,6 +103,13 @@ public class DhikrManager : MonoBehaviour
         currentOrb = orb;
         if (blurredBG != null) blurredBG.SetActive(true);
 
+        // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh dhikr
+        // session starts with every panel element back in view.
+        if (countTextUI != null) countTextUI.gameObject.SetActive(true);
+        if (plusButton != null) plusButton.gameObject.SetActive(true);
+        if (minusButton != null) minusButton.gameObject.SetActive(true);
+        if (submitButton != null) submitButton.gameObject.SetActive(true);
+
         if (plusButton != null) plusButton.interactable = true;
         if (minusButton != null) minusButton.interactable = true;
 
@@ -264,16 +271,36 @@ public class DhikrManager : MonoBehaviour
             if (plusButton != null) plusButton.interactable = false;
             if (minusButton != null) minusButton.interactable = false;
 
-            if (dhikrTextUI != null && LocalizationManager.Instance != null)
-            {
-                SetText(dhikrTextUI, LocalizationManager.Instance.Get("dhikr.completed"));
-                dhikrTextUI.transform.DOKill();
-                dhikrTextUI.transform.localScale = Vector3.one;
-                dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
-            }
-
-            CloseDhikrDramaticallyInternal();
+            ShowMashallahAndAutoClose();
         }
+    }
+
+    // Replaces the panel's content with a plain "Mash'Allah" finale and closes it automatically
+    // a few seconds later, instead of the manual close flow used elsewhere.
+    private void ShowMashallahAndAutoClose()
+    {
+        if (countTextUI != null) countTextUI.gameObject.SetActive(false);
+        if (plusButton != null) plusButton.gameObject.SetActive(false);
+        if (minusButton != null) minusButton.gameObject.SetActive(false);
+        if (submitButton != null) submitButton.gameObject.SetActive(false);
+
+        if (dhikrTextUI != null)
+        {
+            // Plain (unlocalized, unshaped) text: "Mash'Allah" is Latin script and would render as
+            // tofu boxes if routed through the Bengali shaped-font path like SetText does.
+            LocalizedRendering.SetPlainText(dhikrTextUI, "Mash'Allah");
+            dhikrTextUI.transform.DOKill();
+            dhikrTextUI.transform.localScale = Vector3.one;
+            dhikrTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+        }
+
+        StartCoroutine(AutoCloseAfterDelay(5f));
+    }
+
+    private IEnumerator AutoCloseAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        CloseDhikrDramaticallyInternal();
     }
 
     public void CloseDhikrDramatically()

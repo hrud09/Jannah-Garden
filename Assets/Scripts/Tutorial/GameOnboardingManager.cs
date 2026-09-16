@@ -514,7 +514,7 @@ public class GameOnboardingManager : MonoBehaviour
     {
         flow2Sub = Flow2SubStep.AwaitingPhoto;
         HidePrimaryButton();
-        ShowDimAndPanel(true);
+        ShowDimAndPanel(true, blockRaycasts: false);
         SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_take_photo"));
 
         Button photoButton = PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null;

@@ -21496,96 +21496,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_text
-      value: New Text
-      objectReference: {fileID: 0}
-    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
-    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_fontMaterial
       value: 
       objectReference: {fileID: 170096667}
-    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2517202264660172603, guid: 5c5ee151f9307453bad78be36b51a077, type: 2}
-    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_fontMaterials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: 'm_fontMaterials.Array.data[0]'
       value: 
       objectReference: {fileID: 170096667}
     - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_fontSharedMaterials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3210797222117742113, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: 'm_fontSharedMaterials.Array.data[0]'
       value: 
       objectReference: {fileID: 170096667}
-    - target: {fileID: 3412380362851296346, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3412380362851296346, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_FlexibleWidth
-      value: 1600
-      objectReference: {fileID: 0}
-    - target: {fileID: 3412380362851296346, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_PreferredWidth
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006820594677301412, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5767951910289720032, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_Name
       value: Toaster Message Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5767951910289720032, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_SizeDelta.x
       value: 176.26
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 51.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -36.69995
       objectReference: {fileID: 0}
     - target: {fileID: 6698173638702989947, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976538080016615528, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
