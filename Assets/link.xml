@@ -1,0 +1,16 @@
+<linker>
+  <!--
+    ShapedTextGraphic (Assets/Scripts/Localization/ShapedTextGraphic.cs) rasterizes HarfBuzz's
+    ligature/conjunct glyphs into a TMP_FontAsset's dynamic atlas by glyph INDEX, via a
+    BindingFlags.NonPublic reflection lookup of TMP_FontAsset.TryAddGlyphInternal — that method has
+    no public entry point. IL2CPP's UnityLinker only reliably keeps a private/internal member reachable
+    solely through a string-literal reflection call when a link.xml says so explicitly; without this,
+    Managed Stripping Level "Medium" (this project's setting) can strip it from an Android build even
+    though the Editor (no stripping) never shows the gap. The call site already null-guards
+    (`s_tryAddGlyphByIndex?.Invoke(...)`), so stripping this doesn't crash — it just silently drops
+    Bengali conjunct/ligature rendering on device.
+  -->
+  <assembly fullname="Unity.TextMeshPro">
+    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+  </assembly>
+</linker>

@@ -119,7 +119,36 @@ public class LocalizationManager : MonoBehaviour
 
         Debug.Log($"[LocalizationManager] Locale set to '{locale}' (requested '{localeCode}').");
 
-        if (notify) OnLocaleChanged?.Invoke();
+        if (notify) RaiseLocaleChanged();
+    }
+
+    /// <summary>
+    /// Invokes every <see cref="OnLocaleChanged"/> subscriber individually instead of a single
+    /// <c>OnLocaleChanged?.Invoke()</c>. That single call is a footgun on a multicast delegate with this
+    /// many subscribers (every on-screen <see cref="LocalizedText"/>, shop/inventory card, MCQ/Dhikr
+    /// label, …): if any ONE of them throws — a native HarfBuzz hiccup, an edge-case translated string, a
+    /// stale reference on a pooled card — every subscriber still queued AFTER it in the invocation list
+    /// silently never runs. On an English-only codepath that's rare (no shaping, no native calls), but on
+    /// Bengali/Arabic/Urdu, which route through <see cref="BengaliTextShaper"/>/<see cref="ArabicTextShaper"/>/
+    /// the HarfBuzz native plugin, one bad translation or a device-specific native glitch is enough to
+    /// take down every OTHER label/button state refresh for that whole locale switch — exactly the
+    /// "everything breaks after switching to Bengali/Arabic/Urdu" failure mode this guards against.
+    /// </summary>
+    private void RaiseLocaleChanged()
+    {
+        if (OnLocaleChanged == null) return;
+
+        foreach (Delegate d in OnLocaleChanged.GetInvocationList())
+        {
+            try
+            {
+                ((Action)d)();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[LocalizationManager] A locale-change listener threw and was skipped: {e}");
+            }
+        }
     }
 
     /// <summary>Languages the game actually ships content for. Any other locale falls back to English.</summary>
