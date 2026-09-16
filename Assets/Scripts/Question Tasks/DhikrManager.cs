@@ -37,6 +37,7 @@ public class DhikrManager : MonoBehaviour
     public GameObject blurredBG;
     public TextMeshProUGUI dhikrTextUI;
     public TextMeshProUGUI countTextUI;
+    public GameObject countTextBackground;
     public Button plusButton;
     public Button minusButton;
     public Button submitButton;
@@ -106,6 +107,7 @@ public class DhikrManager : MonoBehaviour
         // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh dhikr
         // session starts with every panel element back in view.
         if (countTextUI != null) countTextUI.gameObject.SetActive(true);
+        if (countTextBackground != null) countTextBackground.SetActive(true);
         if (plusButton != null) plusButton.gameObject.SetActive(true);
         if (minusButton != null) minusButton.gameObject.SetActive(true);
         if (submitButton != null) submitButton.gameObject.SetActive(true);
@@ -280,6 +282,7 @@ public class DhikrManager : MonoBehaviour
     private void ShowMashallahAndAutoClose()
     {
         if (countTextUI != null) countTextUI.gameObject.SetActive(false);
+        if (countTextBackground != null) countTextBackground.SetActive(false);
         if (plusButton != null) plusButton.gameObject.SetActive(false);
         if (minusButton != null) minusButton.gameObject.SetActive(false);
         if (submitButton != null) submitButton.gameObject.SetActive(false);
