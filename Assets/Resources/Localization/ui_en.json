@@ -666,11 +666,11 @@
         },
         {
             "key": "onboarding.outer_garden_title",
-            "value": "Welcome to the Outer Garden!"
+            "value": "Welcome to the Outer Garden"
         },
         {
             "key": "onboarding.outer_garden_body",
-            "value": "This is your wider world beyond the main garden — explore further, discover hidden sights, and find more inspiration for what to bring home and plant. Wander freely and enjoy the view!"
+            "value": "This is a symbolic space — walk around and see everyone you've invited to Amal, and everyone they've invited too.\n\nThis is your Sadaqah Jariyah: a good deed that keeps giving, growing quietly even when you're not looking. The Prophet ﷺ taught us that when a person dies, their deeds end — except three, and among them is knowledge that benefits others, and a legacy that keeps producing good.\n\nEvery new face here is a small reminder of the good you've helped set in motion."
         },
         {
             "key": "interaction.inspector_mode_on",
