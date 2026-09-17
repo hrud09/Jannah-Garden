@@ -59,6 +59,25 @@ namespace IdyllicFantasyNature
             new Keyframe(1f, 1f, 1.2f, 0f)
         );
 
+        // ─── Stuck Detection / Auto-Unstick ─────────────────────────
+        [Header("Stuck / Auto-Unstick")]
+        [Tooltip("Minimum joystick/input magnitude before the player counts as 'trying to move'.")]
+        [Range(0f, 1f)]
+        public float stuckInputThreshold = 0.5f;
+
+        [Tooltip("If the player moves less than this many meters (horizontally) while trying to move, they're considered stuck.")]
+        public float stuckDisplacementThreshold = 1f;
+
+        [Tooltip("How long the player must be stuck before an auto-jump frees them.")]
+        public float stuckDuration = 3f;
+
+        [Tooltip("Upward velocity applied to free a stuck player.")]
+        public float unstickJumpForce = 6f;
+
+        private float _stuckTimer;
+        private Vector3 _stuckOriginPosition;
+        private bool _isTrackingStuck;
+
         [Header("Audio Settings")]
         [SerializeField] private float _walkStepInterval = 0.5f;
         [Range(0f, 1f)]
@@ -249,10 +268,65 @@ namespace IdyllicFantasyNature
             // Single move call per frame for optimal physics collision and terrain sliding
             characterController.Move(totalVelocity * Time.deltaTime);
 
+            // If the player is pushing the joystick but the terrain/geometry won't let them through,
+            // give them a small hop to break free instead of leaving them stuck in place.
+            float inputMagnitude = new Vector2(moveX, moveZ).magnitude;
+            HandleStuckDetection(inputMagnitude);
+
             // Handle player audio state
             bool isMoving = (moveX != 0f || moveZ != 0f);
             bool isRunning = runPressed && isMoving;
             HandleMovementAudio(isMoving, isRunning);
+        }
+
+        /// <summary>
+        /// Tracks whether the player is actively trying to move (joystick/input above
+        /// <see cref="stuckInputThreshold"/>) but has covered less than <see cref="stuckDisplacementThreshold"/>
+        /// for <see cref="stuckDuration"/> seconds. When that happens, they're freed with a small upward hop
+        /// so gravity and the next frame's input can carry them clear of whatever is blocking them.
+        /// </summary>
+        private void HandleStuckDetection(float inputMagnitude)
+        {
+            if (!characterController.isGrounded || inputMagnitude < stuckInputThreshold)
+            {
+                _isTrackingStuck = false;
+                _stuckTimer = 0f;
+                return;
+            }
+
+            if (!_isTrackingStuck)
+            {
+                _isTrackingStuck = true;
+                _stuckTimer = 0f;
+                _stuckOriginPosition = transform.position;
+                return;
+            }
+
+            _stuckTimer += Time.deltaTime;
+
+            Vector3 delta = transform.position - _stuckOriginPosition;
+            delta.y = 0f;
+
+            if (delta.magnitude >= stuckDisplacementThreshold)
+            {
+                // Making real progress — restart the window from here.
+                _stuckTimer = 0f;
+                _stuckOriginPosition = transform.position;
+                return;
+            }
+
+            if (_stuckTimer >= stuckDuration)
+            {
+                FreeFromStuck();
+            }
+        }
+
+        /// <summary>Gives the player an upward hop to break free of whatever is blocking their movement.</summary>
+        private void FreeFromStuck()
+        {
+            _controllerVelocity.y = unstickJumpForce;
+            _isTrackingStuck = false;
+            _stuckTimer = 0f;
         }
 
         // ═════════════════════════════════════════════════════════════
