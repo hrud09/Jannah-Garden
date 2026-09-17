@@ -75,7 +75,7 @@ MonoBehaviour:
       m_ProfileName: Default
       m_Values:
       - m_Id: 0389db2b9650d7542ae176a680e85af7
-        m_Value: 'https://jannah-garden-asset-data-1927f.web.app/[BuildTarget]'
+        m_Value: 'https://pub-75d7b134df7e4a8b9c0d8b53a01dd824.r2.dev/[BuildTarget]'
       - m_Id: 53e62b5792432ca44921649f83b175cf
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: 81594aad5a436f840bbc3225b8483bcf

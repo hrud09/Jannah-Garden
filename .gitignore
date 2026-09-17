@@ -110,3 +110,4 @@ InitTestScene*.unity*
 
 # Unity iOS/Android export projects (Xcode/Gradle build output)
 /ios
+/Assets/_Recovery

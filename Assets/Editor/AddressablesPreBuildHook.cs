@@ -9,9 +9,10 @@ using UnityEngine;
 /// build, so the manual "Build And Deploy For Active Platform" menu step is no longer needed — an
 /// APK/IPA can no longer ship a catalog pointing at remote bundles that were never uploaded.
 ///
-/// Skips the rebuild (and the deploy) when Addressables reports no content changes since the last build.
-/// Aborts the whole player build if the Addressables build or the Firebase deploy fails, since shipping
-/// anyway would mean a build referencing bundles that don't exist, or are stale, on the server.
+/// Skips the rebuild (and the upload) when Addressables reports no content changes since the last build
+/// and the last upload completed. Aborts the whole player build if the Addressables build or the R2
+/// upload fails, since shipping anyway would mean a build referencing bundles that don't exist, or
+/// are stale, on the server.
 /// </summary>
 public class AddressablesPreBuildHook : IPreprocessBuildWithReport
 {
