@@ -1,87 +1,1388 @@
 {
     "entries": [
-        { "key": "shop.finish_placing_first", "value": "প্রথমে বর্তমান আইটেমটি বসানো শেষ করুন" },
-        { "key": "shop.requires_level", "value": "লেভেল {0} প্রয়োজন" },
-        { "key": "shop.not_enough_coins", "value": "পর্যাপ্ত নূর কয়েন নেই" },
-        { "key": "shop.come_back_in", "value": "{0} পরে আবার আসুন" },
-        { "key": "shop.ads_unavailable", "value": "বর্তমানে বিজ্ঞাপন পাওয়া যাচ্ছে না" },
-        { "key": "shop.store_unavailable", "value": "দোকানটি বর্তমানে উপলব্ধ নেই" },
-        { "key": "shop.purchase_in_progress", "value": "একটি ক্রয় ইতিমধ্যে চলছে" },
-        { "key": "shop.purchase_not_completed", "value": "ক্রয় সম্পন্ন হয়নি" },
-        { "key": "shop.offer_ready", "value": "প্রস্তুত" },
-
-        { "key": "placement.downloading_item", "value": "আইটেম ডাউনলোড হচ্ছে…" },
-        { "key": "placement.download_failed", "value": "এই আইটেমটি ডাউনলোড করা যায়নি — আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন" },
-        { "key": "placement.moved", "value": "সরানো হয়েছে" },
-        { "key": "placement.move_cancelled", "value": "স্থানান্তর বাতিল করা হয়েছে" },
-        { "key": "placement.placement_cancelled", "value": "স্থাপন বাতিল করা হয়েছে" },
-        { "key": "placement.cannot_move", "value": "এই আইটেমটি সরানো যাবে না" },
-        { "key": "placement.aim_move_here", "value": "আপনি যেখানে চান সেদিকে লক্ষ্য করুন, তারপর \"এখানে সরান\"-এ চাপুন" },
-        { "key": "placement.returned_to_inventory", "value": "{0} আপনার ইনভেন্টরিতে ফিরিয়ে দেওয়া হয়েছে" },
-        { "key": "placement.returned_to_store", "value": "দোকানে ফিরিয়ে দেওয়া হয়েছে" },
-
-        { "key": "economy.coins_spent", "value": "-{0} নূর কয়েন" },
-        { "key": "economy.coins_earned", "value": "+{0} নূর কয়েন" },
-
-        { "key": "reward.coins", "value": "+{0} নূর কয়েন" },
-        { "key": "reward.xp", "value": "+{0} এক্সপি" },
-        { "key": "reward.coins_colored", "value": "<color=#FFD700>+{0} নূর কয়েন</color>" },
-        { "key": "reward.xp_colored", "value": "<color=#00FFFF>+{0} এক্সপি</color>" },
-        { "key": "reward.and", "value": "ও" },
-
-        { "key": "garden.use_back_button", "value": "বাগান থেকে বের হতে ব্যাক বাটন ব্যবহার করুন।" },
-
-        { "key": "photo.share_phone_only", "value": "শেয়ার করা শুধুমাত্র ফোনে কাজ করে" },
-        { "key": "photo.capture_failed", "value": "ছবি তোলা যায়নি" },
-        { "key": "photo.share_failed", "value": "ছবি শেয়ার করা যায়নি" },
-        { "key": "photo.saved_to_gallery", "value": "আপনার গ্যালারিতে সংরক্ষিত হয়েছে" },
-        { "key": "photo.save_failed", "value": "ছবি সংরক্ষণ করা যায়নি" },
-        { "key": "photo.cannot_save_to_device", "value": "এই ছবিটি ডিভাইসে সংরক্ষণ করা যায়নি" },
-        { "key": "photo.generic_failed", "value": "এটি কাজ করেনি" },
-        { "key": "photo.shared", "value": "শেয়ার করা হয়েছে" },
-
-        { "key": "dhikr.instruction", "value": "যিকর \"{0}\" {1} বার" },
-        { "key": "dhikr.completed", "value": "<color=#FFD700>মাশাআল্লাহ!</color>\nযিকর সম্পন্ন হয়েছে!" },
-
-        { "key": "quiz.correct", "value": "<color=#00FF88>অভিনন্দন!</color>\nসঠিক উত্তর!" },
-        { "key": "quiz.wrong", "value": "দুঃখিত! সঠিক উত্তরটি দেখুন এবং নূর কয়েন অর্জন করতে আবার চেষ্টা করুন।" },
-
-        { "key": "treasurebox.need_subscribe", "value": "আপনাকে আমল অ্যাপ থেকে সাবস্ক্রাইব করতে হবে।" },
-        { "key": "treasurebox.all_opened", "value": "এই স্তরের সব বাক্স ইতিমধ্যে খোলা হয়েছে!" },
-        { "key": "treasurebox.not_appeared_yet", "value": "এই স্তরের বাক্সগুলো এখনো দেখা যায়নি!" },
-        { "key": "treasurebox.complete_previous_tier", "value": "প্রথমে সব {0} বাক্স সম্পন্ন করুন।" },
-
-        { "key": "tutorial.welcome_title", "value": "জান্নাহ গার্ডেনে স্বাগতম!" },
-        { "key": "tutorial.welcome_body", "value": "আপনার নিজের জান্নাতের একটি টুকরো গড়ে তুলুন: গাছ, ফোয়ারা ও পবিত্র সাজসজ্জা বসান, এক্সপি অর্জন করুন, ট্রেজার বক্স খুলুন এবং আউটার গার্ডেন অন্বেষণ করুন। চলুন শুরু করি!" },
-        { "key": "tutorial.start_button", "value": "টিউটোরিয়াল শুরু করুন" },
-        { "key": "tutorial.step_open_shop", "value": "গার্ডেন শপ খুলতে শপ বাটনে চাপুন!" },
-        { "key": "tutorial.step_select_item", "value": "নিচে থেকে আপনার প্রথম আইটেমটি নির্বাচন করুন!" },
-        { "key": "tutorial.step_downloading", "value": "আপনার আইটেম ডাউনলোড হচ্ছে — একটু অপেক্ষা করুন!" },
-        { "key": "tutorial.step_place_item", "value": "চারদিকে ঘুরুন এবং এটি বসাতে \"স্থাপন করুন\"-এ চাপুন!" },
-        { "key": "tutorial.step_open_xp", "value": "চমৎকার! আপনার অগ্রগতি দেখতে এক্সপি বাটনে চাপুন!" },
-        { "key": "tutorial.step_xp_chart", "value": "আপনার এক্সপি চার্ট দেখুন, তারপর চালিয়ে যেতে এটি বন্ধ করুন!" },
-        { "key": "tutorial.step_take_photo", "value": "আপনার বাগানের একটি ছবি তুলুন!" },
-        { "key": "tutorial.step_share_photo", "value": "এটি শেয়ার বা সংরক্ষণ করুন, তারপর প্রিভিউ বন্ধ করুন!" },
-        { "key": "tutorial.step_inspector_mode", "value": "উড়ে বেড়িয়ে আপনার বাগান উপভোগ করতে ইন্সপেক্টর মোড চেষ্টা করুন!" },
-        { "key": "tutorial.step_return_ground", "value": "চালিয়ে যেতে মাটিতে ফিরে আসুন!" },
-        { "key": "tutorial.step_open_treasurebox", "value": "বোনাস পুরস্কারের জন্য একটি ট্রেজার বক্স খুলুন!" },
-        { "key": "tutorial.step_minimap", "value": "ট্রেজার বক্সের পথ খুঁজে পেতে আপনার মিনিম্যাপ দেখুন!" },
-        { "key": "tutorial.step_outer_garden", "value": "আউটার গার্ডেন অন্বেষণ করুন!" },
-        { "key": "tutorial.outer_garden_title", "value": "আউটার গার্ডেনে স্বাগতম!" },
-        { "key": "tutorial.outer_garden_body", "value": "এটি আপনার মূল বাগানের বাইরের বিস্তৃত জগৎ — আরও অন্বেষণ করুন, লুকানো দৃশ্য আবিষ্কার করুন এবং বাড়িতে এনে লাগানোর জন্য আরও অনুপ্রেরণা খুঁজুন। মুক্তভাবে ঘুরে বেড়ান এবং দৃশ্য উপভোগ করুন!" },
-        { "key": "tutorial.finish_button", "value": "শেষ" },
-
-        { "key": "shop.category.plants_gardens", "value": "গাছপালা ও বাগান" },
-        { "key": "shop.category.water_of_garden", "value": "বাগানের জলাশয়" },
-        { "key": "shop.category.architecture", "value": "স্থাপত্য" },
-        { "key": "shop.category.decor_sacred", "value": "সাজসজ্জা ও পবিত্র বস্তু" },
-        { "key": "shop.category.decor_sacred_long", "value": "সাজসজ্জা ও পবিত্র উপকরণ" },
-        { "key": "shop.category.celestial_light", "value": "মহাজাগতিক ও আলো" },
-        { "key": "shop.category.celestial_light_long", "value": "মহাজাগতিক ও আলো / ল্যান্ডস্কেপ" },
-        { "key": "shop.category.noor_coins", "value": "নূর কয়েন" },
-        { "key": "shop.tier.common", "value": "সাধারণ" },
-        { "key": "shop.tier.standard", "value": "স্ট্যান্ডার্ড" },
-        { "key": "shop.tier.premium", "value": "প্রিমিয়াম" },
-        { "key": "shop.tier.premium_plus", "value": "প্রিমিয়াম প্লাস" }
+        {
+            "key": "shop.finish_placing_first",
+            "value": "প্রথমে বর্তমান আইটেমটি বসানো শেষ করুন"
+        },
+        {
+            "key": "shop.requires_level",
+            "value": "লেভেল {0} প্রয়োজন"
+        },
+        {
+            "key": "shop.not_enough_coins",
+            "value": "পর্যাপ্ত নূর কয়েন নেই"
+        },
+        {
+            "key": "shop.come_back_in",
+            "value": "{0} পরে আবার আসুন"
+        },
+        {
+            "key": "shop.ads_unavailable",
+            "value": "বর্তমানে বিজ্ঞাপন পাওয়া যাচ্ছে না"
+        },
+        {
+            "key": "shop.store_unavailable",
+            "value": "দোকানটি বর্তমানে উপলব্ধ নেই"
+        },
+        {
+            "key": "shop.purchase_in_progress",
+            "value": "একটি ক্রয় ইতিমধ্যে চলছে"
+        },
+        {
+            "key": "shop.purchase_not_completed",
+            "value": "ক্রয় সম্পন্ন হয়নি"
+        },
+        {
+            "key": "shop.offer_ready",
+            "value": "প্রস্তুত"
+        },
+        {
+            "key": "shop.level_badge",
+            "value": "লেভেল {0} প্রয়োজন"
+        },
+        {
+            "key": "shop.owned_label",
+            "value": "মালিকানাধীন"
+        },
+        {
+            "key": "shop.label_watch_ad",
+            "value": "অ্যাড দেখুন"
+        },
+        {
+            "key": "shop.label_select",
+            "value": "নির্বাচন"
+        },
+        {
+            "key": "shop.label_purchasing",
+            "value": "ক্রয় করা হচ্ছে..."
+        },
+        {
+            "key": "shop.label_downloading_percent",
+            "value": "ডাউনলোড হচ্ছে... {0}%"
+        },
+        {
+            "key": "shop.label_buy",
+            "value": "কিনুন"
+        },
+        {
+            "key": "shop.label_free",
+            "value": "ফ্রি"
+        },
+        {
+            "key": "placement.downloading_item",
+            "value": "আইটেম ডাউনলোড হচ্ছে…"
+        },
+        {
+            "key": "placement.download_failed",
+            "value": "এই আইটেমটি ডাউনলোড করা যায়নি — আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন"
+        },
+        {
+            "key": "placement.moved",
+            "value": "সরানো হয়েছে"
+        },
+        {
+            "key": "placement.move_cancelled",
+            "value": "স্থানান্তর বাতিল করা হয়েছে"
+        },
+        {
+            "key": "placement.placement_cancelled",
+            "value": "স্থাপন বাতিল করা হয়েছে"
+        },
+        {
+            "key": "placement.cannot_move",
+            "value": "এই আইটেমটি সরানো যাবে না"
+        },
+        {
+            "key": "placement.aim_move_here",
+            "value": "আপনি যেখানে চান সেদিকে লক্ষ্য করুন, তারপর \"এখানে সরান\"-এ চাপুন"
+        },
+        {
+            "key": "placement.returned_to_inventory",
+            "value": "{0} আপনার ইনভেন্টরিতে ফিরিয়ে দেওয়া হয়েছে"
+        },
+        {
+            "key": "placement.returned_to_store",
+            "value": "দোকানে ফিরিয়ে দেওয়া হয়েছে"
+        },
+        {
+            "key": "placement.button_move_here",
+            "value": "এখানে সরান"
+        },
+        {
+            "key": "placement.button_place",
+            "value": "স্থাপন করুন"
+        },
+        {
+            "key": "placement.completed_exclaim",
+            "value": "সম্পন্ন হয়েছে!"
+        },
+        {
+            "key": "economy.coins_spent",
+            "value": "-{0} নূর কয়েন"
+        },
+        {
+            "key": "economy.coins_earned",
+            "value": "+{0} নূর কয়েন"
+        },
+        {
+            "key": "reward.coins",
+            "value": "+{0} নূর কয়েন"
+        },
+        {
+            "key": "reward.xp",
+            "value": "+{0} এক্সপি"
+        },
+        {
+            "key": "reward.coins_colored",
+            "value": "<color=#FFD700>+{0} নূর কয়েন</color>"
+        },
+        {
+            "key": "reward.xp_colored",
+            "value": "<color=#00FFFF>+{0} এক্সপি</color>"
+        },
+        {
+            "key": "reward.and",
+            "value": "ও"
+        },
+        {
+            "key": "garden.use_back_button",
+            "value": "বাগান থেকে বের হতে ব্যাক বাটন ব্যবহার করুন।"
+        },
+        {
+            "key": "photo.share_phone_only",
+            "value": "শেয়ার করা শুধুমাত্র ফোনে কাজ করে"
+        },
+        {
+            "key": "photo.capture_failed",
+            "value": "ছবি তোলা যায়নি"
+        },
+        {
+            "key": "photo.share_failed",
+            "value": "ছবি শেয়ার করা যায়নি"
+        },
+        {
+            "key": "photo.saved_to_gallery",
+            "value": "আপনার গ্যালারিতে সংরক্ষিত হয়েছে"
+        },
+        {
+            "key": "photo.save_failed",
+            "value": "ছবি সংরক্ষণ করা যায়নি"
+        },
+        {
+            "key": "photo.cannot_save_to_device",
+            "value": "এই ছবিটি ডিভাইসে সংরক্ষণ করা যায়নি"
+        },
+        {
+            "key": "photo.generic_failed",
+            "value": "এটি কাজ করেনি"
+        },
+        {
+            "key": "photo.shared",
+            "value": "শেয়ার করা হয়েছে"
+        },
+        {
+            "key": "dhikr.instruction",
+            "value": "যিকর \"{0}\" {1} বার"
+        },
+        {
+            "key": "dhikr.completed",
+            "value": "<color=#FFD700>মাশাআল্লাহ!</color>\nযিকর সম্পন্ন হয়েছে!"
+        },
+        {
+            "key": "quiz.correct",
+            "value": "<color=#00FF88>অভিনন্দন!</color>\nসঠিক উত্তর!"
+        },
+        {
+            "key": "quiz.wrong",
+            "value": "দুঃখিত! সঠিক উত্তরটি দেখুন এবং নূর কয়েন অর্জন করতে আবার চেষ্টা করুন।"
+        },
+        {
+            "key": "treasurebox.need_subscribe",
+            "value": "আপনাকে আমল অ্যাপ থেকে সাবস্ক্রাইব করতে হবে।"
+        },
+        {
+            "key": "treasurebox.all_opened",
+            "value": "এই স্তরের সব বাক্স ইতিমধ্যে খোলা হয়েছে!"
+        },
+        {
+            "key": "treasurebox.not_appeared_yet",
+            "value": "এই স্তরের বাক্সগুলো এখনো দেখা যায়নি!"
+        },
+        {
+            "key": "treasurebox.complete_previous_tier",
+            "value": "প্রথমে সব {0} বাক্স সম্পন্ন করুন।"
+        },
+        {
+            "key": "treasurebox.open_prompt",
+            "value": "পুরস্কার পেতে এই বাক্সটি খুলুন!"
+        },
+        {
+            "key": "treasurebox.reward_noor_coins_fallback",
+            "value": "নূর কয়েন!"
+        },
+        {
+            "key": "treasurebox.tier_complete_format",
+            "value": "{0} সম্পন্ন!"
+        },
+        {
+            "key": "treasurebox.set_complete",
+            "value": "সেট সম্পন্ন!"
+        },
+        {
+            "key": "treasurebox.status.resetting",
+            "value": "রিসেট হচ্ছে..."
+        },
+        {
+            "key": "treasurebox.status.completed",
+            "value": "সম্পন্ন"
+        },
+        {
+            "key": "treasurebox.status.finish_previous_tier",
+            "value": "আগের স্তর শেষ করুন"
+        },
+        {
+            "key": "treasurebox.status.locked",
+            "value": "লক করা"
+        },
+        {
+            "key": "treasurebox.status.available",
+            "value": "উপলব্ধ"
+        },
+        {
+            "key": "treasurebox.status.waiting",
+            "value": "অপেক্ষা করছে..."
+        },
+        {
+            "key": "treasurebox.tier_name.silver",
+            "value": "সিলভার বক্স"
+        },
+        {
+            "key": "treasurebox.tier_name.gold",
+            "value": "গোল্ড বক্স"
+        },
+        {
+            "key": "treasurebox.tier_name.platinum",
+            "value": "প্ল্যাটিনাম বক্স"
+        },
+        {
+            "key": "treasurebox.tier_name.diamond",
+            "value": "ডায়মন্ড বক্স"
+        },
+        {
+            "key": "treasurebox.tier_short.silver",
+            "value": "সিলভার"
+        },
+        {
+            "key": "treasurebox.tier_short.gold",
+            "value": "গোল্ড"
+        },
+        {
+            "key": "treasurebox.tier_short.platinum",
+            "value": "প্ল্যাটিনাম"
+        },
+        {
+            "key": "treasurebox.tier_short.diamond",
+            "value": "ডায়মন্ড"
+        },
+        {
+            "key": "rarity.common",
+            "value": "সাধারণ"
+        },
+        {
+            "key": "rarity.uncommon",
+            "value": "আনকমন"
+        },
+        {
+            "key": "rarity.rare",
+            "value": "বিরল"
+        },
+        {
+            "key": "rarity.epic",
+            "value": "এপিক"
+        },
+        {
+            "key": "rarity.legendary",
+            "value": "কিংবদন্তি"
+        },
+        {
+            "key": "xp.task.place_shop_item",
+            "value": "বাগানে একটি আইটেম বসান"
+        },
+        {
+            "key": "xp.task.answer_question_1st_try",
+            "value": "প্রথম চেষ্টায় সঠিক"
+        },
+        {
+            "key": "xp.task.answer_question_retry",
+            "value": "পুনরায় চেষ্টায় সঠিক"
+        },
+        {
+            "key": "xp.task.complete_dhikr",
+            "value": "যিকর সম্পন্ন করুন"
+        },
+        {
+            "key": "xp.task.open_silver_box",
+            "value": "সিলভার বক্স খুলুন"
+        },
+        {
+            "key": "xp.task.open_gold_box",
+            "value": "গোল্ড বক্স খুলুন"
+        },
+        {
+            "key": "xp.task.open_platinum_box",
+            "value": "প্ল্যাটিনাম বক্স খুলুন"
+        },
+        {
+            "key": "xp.task.open_diamond_box",
+            "value": "ডায়মন্ড বক্স খুলুন"
+        },
+        {
+            "key": "xp.chart_row_format",
+            "value": "{0} — +{1} এক্সপি"
+        },
+        {
+            "key": "loading.loading_text",
+            "value": "লোড হচ্ছে..."
+        },
+        {
+            "key": "loading.base_scene",
+            "value": "মূল দৃশ্য লোড হচ্ছে..."
+        },
+        {
+            "key": "loading.environments",
+            "value": "পরিবেশ লোড হচ্ছে..."
+        },
+        {
+            "key": "loading.preparing_scene",
+            "value": "দৃশ্য প্রস্তুত করা হচ্ছে..."
+        },
+        {
+            "key": "common.quantity_format",
+            "value": "x{0}"
+        },
+        {
+            "key": "common.now",
+            "value": "এখন"
+        },
+        {
+            "key": "tutorial.step_welcome",
+            "value": "<color=#FFB300><size=120%>জান্নাহ গার্ডেনে স্বাগতম!</color></size>\n\nচলুন শিখি কীভাবে আপনার বাগান বড় করবেন। টিউটোরিয়াল শুরু করতে \"শুরু করুন\"-এ চাপুন!"
+        },
+        {
+            "key": "tutorial.button_start",
+            "value": "শুরু করুন"
+        },
+        {
+            "key": "tutorial.step_basic_movement",
+            "value": "আপনার চরিত্রকে ঘোরাতে স্ক্রিনের বাম পাশে থাকা \"ভার্চুয়াল জয়স্টিক\" ব্যবহার করুন।"
+        },
+        {
+            "key": "tutorial.button_next",
+            "value": "পরবর্তী"
+        },
+        {
+            "key": "tutorial.step_basic_looking",
+            "value": "চারপাশ দেখতে এবং ক্যামেরার ভিউ নিয়ন্ত্রণ করতে স্ক্রিনের যেকোনো জায়গায় সোয়াইপ/ড্র্যাগ করুন।"
+        },
+        {
+            "key": "tutorial.step_open_shop",
+            "value": "প্রথমে, গার্ডেন শপ খুলতে কোণায় থাকা \"শপ বাটন\"-এ চাপুন।"
+        },
+        {
+            "key": "tutorial.step_select_item",
+            "value": "চমৎকার! এখন দোকানে প্রথম আইটেমটি নির্বাচন করুন এবং নূর কয়েন দিয়ে \"ক্রয় করুন\"-এ চাপুন।"
+        },
+        {
+            "key": "tutorial.step_place_item",
+            "value": "স্থাপনের পূর্বরূপ স্ক্রিনের কেন্দ্রে দেখা যাচ্ছে।\n\nক্যামেরা নিয়ন্ত্রণ ব্যবহার করে চারপাশ দেখুন এবং প্রস্তুত হলে \"স্থাপন করুন\"-এ চাপুন!"
+        },
+        {
+            "key": "tutorial.step_completed",
+            "value": "<color=#4CAF50><size=120%>নিখুঁত ধারাবাহিকতা!</color></size>\n\nআপনি সফলভাবে আপনার প্রথম গাছ লাগিয়েছেন! কুইজ সম্পন্ন করে এবং আইটেম কিনে আপনার বাগান বড় করুন। খেলা চালিয়ে যেতে \"শেষ করুন\"-এ চাপুন!"
+        },
+        {
+            "key": "tutorial.button_finish",
+            "value": "শেষ করুন"
+        },
+        {
+            "key": "tutorial.button_skip",
+            "value": "এড়িয়ে যান"
+        },
+        {
+            "key": "shop.category.plants_gardens",
+            "value": "গাছপালা ও বাগান"
+        },
+        {
+            "key": "shop.category.water_of_garden",
+            "value": "বাগানের জলাশয়"
+        },
+        {
+            "key": "shop.category.architecture",
+            "value": "স্থাপত্য"
+        },
+        {
+            "key": "shop.category.decor_sacred",
+            "value": "সাজসজ্জা ও পবিত্র বস্তু"
+        },
+        {
+            "key": "shop.category.decor_sacred_long",
+            "value": "সাজসজ্জা ও পবিত্র উপকরণ"
+        },
+        {
+            "key": "shop.category.celestial_light",
+            "value": "মহাজাগতিক ও আলো"
+        },
+        {
+            "key": "shop.category.celestial_light_long",
+            "value": "মহাজাগতিক ও আলো / ল্যান্ডস্কেপ"
+        },
+        {
+            "key": "shop.category.noor_coins",
+            "value": "নূর কয়েন"
+        },
+        {
+            "key": "shop.tier.common",
+            "value": "সাধারণ"
+        },
+        {
+            "key": "shop.tier.standard",
+            "value": "স্ট্যান্ডার্ড"
+        },
+        {
+            "key": "shop.tier.premium",
+            "value": "প্রিমিয়াম"
+        },
+        {
+            "key": "shop.tier.premium_plus",
+            "value": "প্রিমিয়াম প্লাস"
+        },
+        {
+            "key": "item.4fa471036bdf280fb7d2f5e418336013.name",
+            "value": "আরবি লিপির খিলান"
+        },
+        {
+            "key": "item.4fa471036bdf280fb7d2f5e418336013.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত আরবি লিপির খিলান স্থাপনা।"
+        },
+        {
+            "key": "item.27a3cc859ff23cfbbbd93937413078f9.name",
+            "value": "বাঁকানো কাঠের সেতু"
+        },
+        {
+            "key": "item.27a3cc859ff23cfbbbd93937413078f9.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত বাঁকানো কাঠের সেতু স্থাপনা।"
+        },
+        {
+            "key": "item.46c542252394d75fb3a05c7d75252d6c.name",
+            "value": "বিসমিল্লাহ প্রবেশদ্বার বলয়"
+        },
+        {
+            "key": "item.46c542252394d75fb3a05c7d75252d6c.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত বিসমিল্লাহ প্রবেশদ্বার বলয় স্থাপনা।"
+        },
+        {
+            "key": "item.6e91398dc9edb3eb6c10c93213d66dde.name",
+            "value": "করিন্থীয় স্তম্ভ"
+        },
+        {
+            "key": "item.6e91398dc9edb3eb6c10c93213d66dde.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত করিন্থীয় স্তম্ভ স্থাপনা।"
+        },
+        {
+            "key": "item.5dd3addc6287976d041121cdd90f9b14.name",
+            "value": "স্ফটিক দুর্গ"
+        },
+        {
+            "key": "item.5dd3addc6287976d041121cdd90f9b14.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত স্ফটিক দুর্গ স্থাপনা।"
+        },
+        {
+            "key": "item.f1dfa038f5ca3656be50d729b3e6968b.name",
+            "value": "ভাসমান পাথরের পথ"
+        },
+        {
+            "key": "item.f1dfa038f5ca3656be50d729b3e6968b.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত ভাসমান পাথরের পথ স্থাপনা।"
+        },
+        {
+            "key": "item.81f2458477e5f382cc0540a534bea12c.name",
+            "value": "সোনালী আলোর খিলান"
+        },
+        {
+            "key": "item.81f2458477e5f382cc0540a534bea12c.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত সোনালী আলোর খিলান স্থাপনা।"
+        },
+        {
+            "key": "item.55dfbc0dc433384cf3159fb448d92443.name",
+            "value": "স্বর্গের সোনালী প্রবেশদ্বার"
+        },
+        {
+            "key": "item.55dfbc0dc433384cf3159fb448d92443.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত স্বর্গের সোনালী প্রবেশদ্বার স্থাপনা।"
+        },
+        {
+            "key": "item.bc56b164b6e5e7427b9b30a5ffbc8b93.name",
+            "value": "আইভি লতায় ঢাকা কুটির"
+        },
+        {
+            "key": "item.bc56b164b6e5e7427b9b30a5ffbc8b93.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত আইভি লতায় ঢাকা কুটির স্থাপনা।"
+        },
+        {
+            "key": "item.f51486b7130cb7c6af4172aef5de8f9f.name",
+            "value": "মুকারনাস ক্যালিগ্রাফি খিলান"
+        },
+        {
+            "key": "item.f51486b7130cb7c6af4172aef5de8f9f.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত মুকারনাস ক্যালিগ্রাফি খিলান স্থাপনা।"
+        },
+        {
+            "key": "item.2908420f6f6079ec1b7aecaf48477769.name",
+            "value": "দড়ি বাঁধা বাঁশের খিলান"
+        },
+        {
+            "key": "item.2908420f6f6079ec1b7aecaf48477769.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত দড়ি বাঁধা বাঁশের খিলান স্থাপনা।"
+        },
+        {
+            "key": "item.5bf52f6d763f61184423a34f6a597406.name",
+            "value": "রুবি-সোনার খিলানযুক্ত ফটক"
+        },
+        {
+            "key": "item.5bf52f6d763f61184423a34f6a597406.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত রুবি-সোনার খিলানযুক্ত ফটক স্থাপনা।"
+        },
+        {
+            "key": "item.352939995768cbb96524450a28f4fa6b.name",
+            "value": "ফিরোজা মোজাইক খিলান"
+        },
+        {
+            "key": "item.352939995768cbb96524450a28f4fa6b.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত ফিরোজা মোজাইক খিলান স্থাপনা।"
+        },
+        {
+            "key": "item.b5e883e11f087790553ab4c1f5d999a6.name",
+            "value": "লতায় জড়ানো বাঁশের খিলান"
+        },
+        {
+            "key": "item.b5e883e11f087790553ab4c1f5d999a6.desc",
+            "value": "আপনার এস্টেটে প্রশান্তি ও স্থাপত্য সৌন্দর্য যোগ করতে একটি মার্জিত লতায় জড়ানো বাঁশের খিলান স্থাপনা।"
+        },
+        {
+            "key": "item.d285f07515626c88fcc65f444bfaae62.name",
+            "value": "আট কোণা তারা লণ্ঠন"
+        },
+        {
+            "key": "item.d285f07515626c88fcc65f444bfaae62.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল আট কোণা তারা লণ্ঠন।"
+        },
+        {
+            "key": "item.156c89d0965de4298757d8b7aea231be.name",
+            "value": "ভাসমান তৃণভূমি"
+        },
+        {
+            "key": "item.156c89d0965de4298757d8b7aea231be.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল ভাসমান তৃণভূমি।"
+        },
+        {
+            "key": "item.3413652ef4d867f4a650580f33e0c489.name",
+            "value": "সোনালী অর্ধচন্দ্র তারা"
+        },
+        {
+            "key": "item.3413652ef4d867f4a650580f33e0c489.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল সোনালী অর্ধচন্দ্র তারা।"
+        },
+        {
+            "key": "item.c9d0d33026286402518f11f390b029f8.name",
+            "value": "রংধনু আভার পথ"
+        },
+        {
+            "key": "item.c9d0d33026286402518f11f390b029f8.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল রংধনু আভার পথ।"
+        },
+        {
+            "key": "item.f8d1febf41c69a2267520b6b75dcd103.name",
+            "value": "বসন্তের দ্বীপ"
+        },
+        {
+            "key": "item.f8d1febf41c69a2267520b6b75dcd103.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল বসন্তের দ্বীপ।"
+        },
+        {
+            "key": "item.7f0395e6f9d44388ff0fef763dcaabf9.name",
+            "value": "ফানুসের ঊর্ধ্বগমন"
+        },
+        {
+            "key": "item.7f0395e6f9d44388ff0fef763dcaabf9.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল ফানুসের ঊর্ধ্বগমন।"
+        },
+        {
+            "key": "item.c3c9f802da5c8352bbb3209f78e1e4c5.name",
+            "value": "আলোকিত ফাটল"
+        },
+        {
+            "key": "item.c3c9f802da5c8352bbb3209f78e1e4c5.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল আলোকিত ফাটল।"
+        },
+        {
+            "key": "item.58f65719d43fd04db087cd3437366aa2.name",
+            "value": "জ্যোৎস্নালোকিত পাথরের বলয়"
+        },
+        {
+            "key": "item.58f65719d43fd04db087cd3437366aa2.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল জ্যোৎস্নালোকিত পাথরের বলয়।"
+        },
+        {
+            "key": "item.891a12a264f9fcf4bf80d414afbbe031.name",
+            "value": "অলংকৃত ফানুস গ্যালারি"
+        },
+        {
+            "key": "item.891a12a264f9fcf4bf80d414afbbe031.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল অলংকৃত ফানুস গ্যালারি।"
+        },
+        {
+            "key": "item.0f0bf24939c7b7a0d9218d2a6e8c05b5.name",
+            "value": "রুনিক আগুনের বলয়"
+        },
+        {
+            "key": "item.0f0bf24939c7b7a0d9218d2a6e8c05b5.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল রুনিক আগুনের বলয়।"
+        },
+        {
+            "key": "item.40de1a41c6124205bed217d1d80e5488.name",
+            "value": "তারা লণ্ঠন"
+        },
+        {
+            "key": "item.40de1a41c6124205bed217d1d80e5488.desc",
+            "value": "আপনার বাগানে আলো ও বিস্ময় ছড়িয়ে দিতে একটি উজ্জ্বল তারা লণ্ঠন।"
+        },
+        {
+            "key": "item.d527779b36edc1763cdd48957669057d.name",
+            "value": "আরবি ক্যালিগ্রাফি স্ট্যান্ড"
+        },
+        {
+            "key": "item.d527779b36edc1763cdd48957669057d.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত আরবি ক্যালিগ্রাফি স্ট্যান্ড।"
+        },
+        {
+            "key": "item.9141d4caa1471fc40c615d60e625f070.name",
+            "value": "আকাশী মোজাইক বেঞ্চ"
+        },
+        {
+            "key": "item.9141d4caa1471fc40c615d60e625f070.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত আকাশী মোজাইক বেঞ্চ।"
+        },
+        {
+            "key": "item.76c84ec4a5a57f58c77faf260352cdf3.name",
+            "value": "নীল মোজাইক অষ্টভুজ"
+        },
+        {
+            "key": "item.76c84ec4a5a57f58c77faf260352cdf3.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত নীল মোজাইক অষ্টভুজ।"
+        },
+        {
+            "key": "item.fba0c0f0897e7f5b0d786380240c1e14.name",
+            "value": "নীল তারা মোজাইক ফলক"
+        },
+        {
+            "key": "item.fba0c0f0897e7f5b0d786380240c1e14.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত নীল তারা মোজাইক ফলক।"
+        },
+        {
+            "key": "item.bc682c70ac133526e4004b4f54d17917.name",
+            "value": "গাঢ় লাল হীরার বেদি"
+        },
+        {
+            "key": "item.bc682c70ac133526e4004b4f54d17917.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত গাঢ় লাল হীরার বেদি।"
+        },
+        {
+            "key": "item.7f2d99266f113411b3d64a0819c27456.name",
+            "value": "আট কোণা তারার মোজাইক"
+        },
+        {
+            "key": "item.7f2d99266f113411b3d64a0819c27456.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত আট কোণা তারার মোজাইক।"
+        },
+        {
+            "key": "item.960fc290d2e52fc1696d4349c0ecd285.name",
+            "value": "পান্না রঙের মখমল কুশন"
+        },
+        {
+            "key": "item.960fc290d2e52fc1696d4349c0ecd285.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত পান্না রঙের মখমল কুশন।"
+        },
+        {
+            "key": "item.e92347bd50aa6b1769312e8b21c8b174.name",
+            "value": "ভাসমান পদ্ম মঞ্চ"
+        },
+        {
+            "key": "item.e92347bd50aa6b1769312e8b21c8b174.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত ভাসমান পদ্ম মঞ্চ।"
+        },
+        {
+            "key": "item.cca8b065a9b8c4f501b9572d5810e9df.name",
+            "value": "সোনালী কুরআনি ফলক"
+        },
+        {
+            "key": "item.cca8b065a9b8c4f501b9572d5810e9df.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত সোনালী কুরআনি ফলক।"
+        },
+        {
+            "key": "item.ed7f9ff2e032babc5045bdf50b962d90.name",
+            "value": "অলংকৃত সোনালী ধুনুচি"
+        },
+        {
+            "key": "item.ed7f9ff2e032babc5045bdf50b962d90.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত অলংকৃত সোনালী ধুনুচি।"
+        },
+        {
+            "key": "item.a934e834392b9fa7d6fe1650d5515c52.name",
+            "value": "অলংকৃত সোনালী পানপাত্র"
+        },
+        {
+            "key": "item.a934e834392b9fa7d6fe1650d5515c52.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত অলংকৃত সোনালী পানপাত্র।"
+        },
+        {
+            "key": "item.c09503ffcd716c4165b197f8eb6dd253.name",
+            "value": "অলংকৃত মেডেলিয়ন গালিচা"
+        },
+        {
+            "key": "item.c09503ffcd716c4165b197f8eb6dd253.desc",
+            "value": "কারুকার্য ও শান্ত ভক্তিভাব দিয়ে আপনার বাগান সাজাতে একটি অলংকৃত অলংকৃত মেডেলিয়ন গালিচা।"
+        },
+        {
+            "key": "item.f55504b4707c4627a17a74f95fef56df.name",
+            "value": "চওড়া পাতার গাছ ০১ সবুজ"
+        },
+        {
+            "key": "item.f55504b4707c4627a17a74f95fef56df.desc",
+            "value": "আপনার বাগান সাজাতে একটি সুন্দর চওড়া পাতার গাছ ০১ সবুজ।"
+        },
+        {
+            "key": "item.fedc872d00eabad8237824d12acdc5f5.name",
+            "value": "স্বর্গীয় মুকুল গাছ"
+        },
+        {
+            "key": "item.fedc872d00eabad8237824d12acdc5f5.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর স্বর্গীয় মুকুল গাছ।"
+        },
+        {
+            "key": "item.73ba04d2af0ea26d6836fcae79829af7.name",
+            "value": "নারকেল গাছ"
+        },
+        {
+            "key": "item.73ba04d2af0ea26d6836fcae79829af7.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর নারকেল গাছ।"
+        },
+        {
+            "key": "item.c26bcf28a847b7016978f39641762689.name",
+            "value": "উজ্জ্বল রোদনবিলাস গাছ"
+        },
+        {
+            "key": "item.c26bcf28a847b7016978f39641762689.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর উজ্জ্বল রোদনবিলাস গাছ।"
+        },
+        {
+            "key": "item.f55096a3cc5e7810573a1fb4fb88e4f8.name",
+            "value": "জ্যোৎস্নালোকিত ক্যাকটাস ফুল"
+        },
+        {
+            "key": "item.f55096a3cc5e7810573a1fb4fb88e4f8.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর জ্যোৎস্নালোকিত ক্যাকটাস ফুল।"
+        },
+        {
+            "key": "item.169a10ff3aa8cf031779c8faf374b2d4.name",
+            "value": "অলংকৃত বনসাই টব"
+        },
+        {
+            "key": "item.169a10ff3aa8cf031779c8faf374b2d4.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর অলংকৃত বনসাই টব।"
+        },
+        {
+            "key": "item.b7936867c0bd82fdda3732000b979f7c.name",
+            "value": "পাপড়ির ঝর্ণা"
+        },
+        {
+            "key": "item.b7936867c0bd82fdda3732000b979f7c.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর পাপড়ির ঝর্ণা।"
+        },
+        {
+            "key": "item.5616706774371c3dc837e0195607a223.name",
+            "value": "গোলাপি গোলাপ বাগান"
+        },
+        {
+            "key": "item.5616706774371c3dc837e0195607a223.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর গোলাপি গোলাপ বাগান।"
+        },
+        {
+            "key": "item.ea6d937405d11ba59c059717e075844d.name",
+            "value": "ডালিম গাছ"
+        },
+        {
+            "key": "item.ea6d937405d11ba59c059717e075844d.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর ডালিম গাছ।"
+        },
+        {
+            "key": "item.2b3c4f9aaeb366d9aaddf8195f748493.name",
+            "value": "ডালিম গাছ II"
+        },
+        {
+            "key": "item.2b3c4f9aaeb366d9aaddf8195f748493.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর ডালিম গাছ II।"
+        },
+        {
+            "key": "item.19c3a47238ea2f8c9378b737a39ac6ca.name",
+            "value": "রংধনু আভার ফুল"
+        },
+        {
+            "key": "item.19c3a47238ea2f8c9378b737a39ac6ca.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর রংধনু আভার ফুল।"
+        },
+        {
+            "key": "item.9f06434ff4d6531b523dddc01a010c18.name",
+            "value": "তারাফুলের জাফরি"
+        },
+        {
+            "key": "item.9f06434ff4d6531b523dddc01a010c18.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর তারাফুলের জাফরি।"
+        },
+        {
+            "key": "item.b51046a063298f6142a990fcf1dbc0eb.name",
+            "value": "আলোর গাছ"
+        },
+        {
+            "key": "item.b51046a063298f6142a990fcf1dbc0eb.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর আলোর গাছ।"
+        },
+        {
+            "key": "item.519d126fecd336a0f5446380e7b3240f.name",
+            "value": "টিউলিপ থোকা"
+        },
+        {
+            "key": "item.519d126fecd336a0f5446380e7b3240f.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর টিউলিপ থোকা।"
+        },
+        {
+            "key": "item.931f5863f12f47cf1bddbd134557d5d1.name",
+            "value": "খেয়ালি আপেল গাছ"
+        },
+        {
+            "key": "item.931f5863f12f47cf1bddbd134557d5d1.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর খেয়ালি আপেল গাছ।"
+        },
+        {
+            "key": "item.eda847d69c98754e590474c1ffa0f52b.name",
+            "value": "খেয়ালি ফুলের ঝর্ণা"
+        },
+        {
+            "key": "item.eda847d69c98754e590474c1ffa0f52b.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর খেয়ালি ফুলের ঝর্ণা।"
+        },
+        {
+            "key": "item.b73a6ca69670b98c90f841146b7af39f.name",
+            "value": "মর্মরিত মুকুল গাছ"
+        },
+        {
+            "key": "item.b73a6ca69670b98c90f841146b7af39f.desc",
+            "value": "আপনার বাগানে প্রাণবন্ত জীবন ও প্রাকৃতিক সৌন্দর্য যোগ করতে একটি সুন্দর মর্মরিত মুকুল গাছ।"
+        },
+        {
+            "key": "item.f5e63129ff2c6afd4e8d2490f396b3e8.name",
+            "value": "প্রাচীন পাথরের ফোয়ারা"
+        },
+        {
+            "key": "item.f5e63129ff2c6afd4e8d2490f396b3e8.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত প্রাচীন পাথরের ফোয়ারা।"
+        },
+        {
+            "key": "item.9266c6d5e48fb366088f7d703fc354fd.name",
+            "value": "প্রাচীন পাথরের পুকুর"
+        },
+        {
+            "key": "item.9266c6d5e48fb366088f7d703fc354fd.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত প্রাচীন পাথরের পুকুর।"
+        },
+        {
+            "key": "item.8e31ff6a4fca8350ba2df5bc8460f619.name",
+            "value": "সোনালী আলোর ফোয়ারা"
+        },
+        {
+            "key": "item.8e31ff6a4fca8350ba2df5bc8460f619.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত সোনালী আলোর ফোয়ারা।"
+        },
+        {
+            "key": "item.ef8c06c78525f39d0d0ecc196433e619.name",
+            "value": "পদ্ম পুকুর"
+        },
+        {
+            "key": "item.ef8c06c78525f39d0d0ecc196433e619.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত পদ্ম পুকুর।"
+        },
+        {
+            "key": "item.45236065029f7a84478813750eb24738.name",
+            "value": "মার্বেল পানির খাল"
+        },
+        {
+            "key": "item.45236065029f7a84478813750eb24738.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত মার্বেল পানির খাল।"
+        },
+        {
+            "key": "item.3b090e69ca199b7d217531032712b920.name",
+            "value": "আঁকাবাঁকা নদীর দ্বীপ"
+        },
+        {
+            "key": "item.3b090e69ca199b7d217531032712b920.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত আঁকাবাঁকা নদীর দ্বীপ।"
+        },
+        {
+            "key": "item.d06798148d103014f4d2729b928ccf7e.name",
+            "value": "আনারস মুকুট ফোয়ারা"
+        },
+        {
+            "key": "item.d06798148d103014f4d2729b928ccf7e.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত আনারস মুকুট ফোয়ারা।"
+        },
+        {
+            "key": "item.a152201b366fe40e6e0ca4252c211393.name",
+            "value": "রংধনু আভার ঝর্ণা"
+        },
+        {
+            "key": "item.a152201b366fe40e6e0ca4252c211393.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত রংধনু আভার ঝর্ণা।"
+        },
+        {
+            "key": "item.d7b302f68a54d9867db32bd32c7a8d88.name",
+            "value": "সোনার নদী"
+        },
+        {
+            "key": "item.d7b302f68a54d9867db32bd32c7a8d88.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত সোনার নদী।"
+        },
+        {
+            "key": "item.94bbf77133dc37b74dbf95eaef232b40.name",
+            "value": "স্তরে স্তরে ঝর্ণা"
+        },
+        {
+            "key": "item.94bbf77133dc37b74dbf95eaef232b40.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত স্তরে স্তরে ঝর্ণা।"
+        },
+        {
+            "key": "item.30cbad77453f47a180fc6fb277e5eb2d.name",
+            "value": "ফিসফিসে কুয়া"
+        },
+        {
+            "key": "item.30cbad77453f47a180fc6fb277e5eb2d.desc",
+            "value": "আপনার বাগানে প্রবহমান জল ও প্রশান্তি বয়ে আনতে একটি শান্ত ফিসফিসে কুয়া।"
+        },
+        {
+            "key": "item.4f1100893646431bb027e2360f6b337c.name",
+            "value": "মুকুল গাছ ০১"
+        },
+        {
+            "key": "item.4f1100893646431bb027e2360f6b337c.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: মুকুল গাছ ০১। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.23c7880ff58e456caa1cb2dbd0621789.name",
+            "value": "মুকুল গাছ ০১"
+        },
+        {
+            "key": "item.23c7880ff58e456caa1cb2dbd0621789.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: মুকুল গাছ ০১। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.844bf0963b99496dbd783486e3bf9095.name",
+            "value": "মুকুল গাছ ০২"
+        },
+        {
+            "key": "item.844bf0963b99496dbd783486e3bf9095.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: মুকুল গাছ ০২। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.4a10342786c44c41bfd5fb5ad6c5d90d.name",
+            "value": "চওড়া পাতার গাছ ০১ নীল"
+        },
+        {
+            "key": "item.4a10342786c44c41bfd5fb5ad6c5d90d.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: চওড়া পাতার গাছ ০১ নীল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.7781562f021e40cb85a27610a2b29d02.name",
+            "value": "চওড়া পাতার গাছ ০২ লাল"
+        },
+        {
+            "key": "item.7781562f021e40cb85a27610a2b29d02.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: চওড়া পাতার গাছ ০২ লাল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.23343abacc4044c1af515482f8ec5a55.name",
+            "value": "চওড়া পাতার গাছ ০৩ নীল"
+        },
+        {
+            "key": "item.23343abacc4044c1af515482f8ec5a55.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: চওড়া পাতার গাছ ০৩ নীল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.b611853df847406899f5462310dd72ba.name",
+            "value": "চওড়া পাতার গাছ ০৩ বেগুনি"
+        },
+        {
+            "key": "item.b611853df847406899f5462310dd72ba.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: চওড়া পাতার গাছ ০৩ বেগুনি। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.10de1f039f3e42ba960564c1284a2084.name",
+            "value": "চওড়া পাতার গাছ ০৪ নীল"
+        },
+        {
+            "key": "item.10de1f039f3e42ba960564c1284a2084.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: চওড়া পাতার গাছ ০৪ নীল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.2470d121b6384893b8424c42bd6838c0.name",
+            "value": "বড় পাথর ০২"
+        },
+        {
+            "key": "item.2470d121b6384893b8424c42bd6838c0.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: বড় পাথর ০২। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.2866167319434a63bb4bfe6b1e3bef8c.name",
+            "value": "বড় শিলা ০১"
+        },
+        {
+            "key": "item.2866167319434a63bb4bfe6b1e3bef8c.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: বড় শিলা ০১। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.c321751bab0d43218c0338bea8893a44.name",
+            "value": "উইলো গাছ ০১ নীল"
+        },
+        {
+            "key": "item.c321751bab0d43218c0338bea8893a44.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০১ নীল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.95cc5cdea5c34ef9b1f591f631367878.name",
+            "value": "উইলো গাছ ০১ লাল"
+        },
+        {
+            "key": "item.95cc5cdea5c34ef9b1f591f631367878.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০১ লাল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.2ca87ec4976b4e72b9dd795153c3ffc0.name",
+            "value": "উইলো গাছ ০২ গোলাপি"
+        },
+        {
+            "key": "item.2ca87ec4976b4e72b9dd795153c3ffc0.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০২ গোলাপি। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.bca8eed45554450b97e5d1d0e1d47f1c.name",
+            "value": "উইলো গাছ ০৩ নীল"
+        },
+        {
+            "key": "item.bca8eed45554450b97e5d1d0e1d47f1c.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০৩ নীল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.fb2d54e04cfe45c9b6ca91412979707f.name",
+            "value": "উইলো গাছ ০৩ লাল"
+        },
+        {
+            "key": "item.fb2d54e04cfe45c9b6ca91412979707f.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০৩ লাল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.af088967cf3f48caa29fceb1c8ba9e33.name",
+            "value": "উইলো গাছ ০৪ সবুজ"
+        },
+        {
+            "key": "item.af088967cf3f48caa29fceb1c8ba9e33.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০৪ সবুজ। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "item.4415baff0c1c4d62b8ee938d7ae556d7.name",
+            "value": "উইলো গাছ ০৫ লাল"
+        },
+        {
+            "key": "item.4415baff0c1c4d62b8ee938d7ae556d7.desc",
+            "value": "একটি বিশেষ পুরস্কার সামগ্রী: উইলো গাছ ০৫ লাল। আপনার বাগান সাজাতে এটি খুঁজে নিন!"
+        },
+        {
+            "key": "settings.sfx_label",
+            "value": "সাউন্ড এফেক্ট"
+        },
+        {
+            "key": "settings.panel_title",
+            "value": "সেটিংস"
+        },
+        {
+            "key": "settings.music_label",
+            "value": "সঙ্গীত"
+        },
+        {
+            "key": "settings.vibration_label",
+            "value": "কম্পন"
+        },
+        {
+            "key": "settings.normal_speed_label",
+            "value": "স্বাভাবিক গতি"
+        },
+        {
+            "key": "settings.inspector_speed_label",
+            "value": "পরিদর্শন গতি"
+        },
+        {
+            "key": "settings.look_around_speed_label",
+            "value": "চারপাশ দেখার গতি"
+        },
+        {
+            "key": "treasurebox.confirm.watch_ad_button",
+            "value": "বিজ্ঞাপন দেখুন"
+        },
+        {
+            "key": "treasurebox.confirm.subscribe_button",
+            "value": "সাবস্ক্রাইব করুন"
+        },
+        {
+            "key": "treasurebox.confirm.ad_or_subscribe_prompt",
+            "value": "ট্রেজার বক্স খুলতে একটি বিজ্ঞাপন দেখুন অথবা সাবস্ক্রাইব করুন"
+        },
+        {
+            "key": "economy.xp_level_unit_label",
+            "value": "লেভেল\n"
+        },
+        {
+            "key": "economy.noor_coin_label",
+            "value": "নূর কয়েন"
+        },
+        {
+            "key": "economy.close_stats_button",
+            "value": "পরিসংখ্যান বন্ধ করুন"
+        },
+        {
+            "key": "economy.open_stats_button",
+            "value": "পরিসংখ্যান খুলুন"
+        },
+        {
+            "key": "shop.tab_shop_label",
+            "value": "দোকান"
+        },
+        {
+            "key": "shop.tab_inventory_label",
+            "value": "ইনভেন্টরি"
+        },
+        {
+            "key": "shop.tab_treasure_label",
+            "value": "ট্রেজার"
+        },
+        {
+            "key": "economy.xp_unit_label",
+            "value": "এক্সপি"
+        },
+        {
+            "key": "economy.level_label",
+            "value": "লেভেল"
+        },
+        {
+            "key": "quiz.submit_button",
+            "value": "জমা দিন"
+        },
+        {
+            "key": "dhikr.submit_button",
+            "value": "জমা দিন"
+        },
+        {
+            "key": "interaction.place_here_button",
+            "value": "এখানে রাখুন"
+        },
+        {
+            "key": "interaction.open_button",
+            "value": "খুলুন"
+        },
+        {
+            "key": "interaction.answer_button",
+            "value": "উত্তর"
+        },
+        {
+            "key": "interaction.manage_button",
+            "value": "পরিচালনা"
+        },
+        {
+            "key": "placed_item.relocate_button",
+            "value": "নতুন জায়গায় সরান"
+        },
+        {
+            "key": "placed_item.return_button",
+            "value": "দোকানে ফেরত দিন"
+        },
+        {
+            "key": "placed_item.keep_here_button",
+            "value": "এখানেই রাখুন"
+        },
+        {
+            "key": "photo_mode.share_button",
+            "value": "শেয়ার করুন"
+        },
+        {
+            "key": "photo_mode.save_button",
+            "value": "সংরক্ষণ করুন"
+        },
+        {
+            "key": "photo_mode.cancel_button",
+            "value": "বাতিল করুন"
+        },
+        {
+            "key": "leave_garden.confirm_prompt",
+            "value": "চলে যাওয়ার আগে আপনি কি আউটার গার্ডেন দেখতে চান?"
+        },
+        {
+            "key": "leave_garden.quit_button",
+            "value": "প্রস্থান করুন"
+        },
+        {
+            "key": "leave_garden.outer_garden_button",
+            "value": "আউটার গার্ডেন"
+        },
+        {
+            "key": "tutorial.skip_button",
+            "value": "এড়িয়ে যান"
+        },
+        {
+            "key": "item.9999.name",
+            "value": "নূর কয়েন"
+        },
+        {
+            "key": "item.9999.desc",
+            "value": "নূর কয়েন"
+        },
+        {
+            "key": "item.99999.name",
+            "value": "নূর কয়েন প্যাক"
+        },
+        {
+            "key": "item.99999.desc",
+            "value": "নূর কয়েন প্যাক"
+        },
+        {
+            "key": "item.99998.name",
+            "value": "নূর কয়েন ব্যাগ"
+        },
+        {
+            "key": "item.99998.desc",
+            "value": "নূর কয়েন ব্যাগ"
+        },
+        {
+            "key": "item.3f5b95f180e946cabc8a9b458335e87e.name",
+            "value": "দৈনিক চমক"
+        },
+        {
+            "key": "item.3f5b95f180e946cabc8a9b458335e87e.desc",
+            "value": "একটি ছোট ভিডিও দেখুন এবং ৫০০ নূর কয়েন পান। এটি প্রতিদিন একবার ফিরে আসে।"
+        },
+        {
+            "key": "onboarding.welcome_title",
+            "value": "জান্নাহ গার্ডেনে স্বাগতম!"
+        },
+        {
+            "key": "onboarding.welcome_body",
+            "value": "আপনার নিজের জান্নাতের একটি টুকরো গড়ে তুলুন: গাছ, ফোয়ারা ও পবিত্র সাজসজ্জা বসান, এক্সপি অর্জন করুন, ট্রেজার বক্স খুলুন এবং আউটার গার্ডেন অন্বেষণ করুন। চলুন শুরু করি!"
+        },
+        {
+            "key": "onboarding.start_button",
+            "value": "টিউটোরিয়াল শুরু করুন"
+        },
+        {
+            "key": "onboarding.step_open_shop",
+            "value": "গার্ডেন শপ খুলতে শপ বাটনে চাপুন!"
+        },
+        {
+            "key": "onboarding.step_select_item",
+            "value": "নিচে থেকে আপনার প্রথম আইটেমটি নির্বাচন করুন!"
+        },
+        {
+            "key": "onboarding.step_downloading",
+            "value": "আপনার আইটেম ডাউনলোড হচ্ছে — একটু অপেক্ষা করুন!"
+        },
+        {
+            "key": "onboarding.step_place_item",
+            "value": "চারদিকে ঘুরুন এবং এটি বসাতে \"স্থাপন করুন\"-এ চাপুন!"
+        },
+        {
+            "key": "onboarding.step_xp_button",
+            "value": "চমৎকার! আপনার অগ্রগতি দেখতে এক্সপি বাটনে চাপুন!"
+        },
+        {
+            "key": "onboarding.step_xp_chart",
+            "value": "আপনার এক্সপি চার্ট দেখুন, তারপর চালিয়ে যেতে এটি বন্ধ করুন!"
+        },
+        {
+            "key": "onboarding.step_take_photo",
+            "value": "আপনার বাগানের একটি ছবি তুলুন!"
+        },
+        {
+            "key": "onboarding.step_share_photo",
+            "value": "এটি শেয়ার বা সংরক্ষণ করুন, তারপর প্রিভিউ বন্ধ করুন!"
+        },
+        {
+            "key": "onboarding.step_inspector_mode",
+            "value": "উড়ে বেড়িয়ে আপনার বাগান উপভোগ করতে ইন্সপেক্টর মোড চেষ্টা করুন!"
+        },
+        {
+            "key": "onboarding.step_return_ground",
+            "value": "চালিয়ে যেতে মাটিতে ফিরে আসুন!"
+        },
+        {
+            "key": "onboarding.step_treasurebox",
+            "value": "বোনাস পুরস্কারের জন্য একটি ট্রেজার বক্স খুলুন!"
+        },
+        {
+            "key": "onboarding.step_minimap",
+            "value": "ট্রেজার বক্সের পথ খুঁজে পেতে আপনার মিনিম্যাপ দেখুন!"
+        },
+        {
+            "key": "onboarding.button_got_it",
+            "value": "বুঝেছি"
+        },
+        {
+            "key": "onboarding.step_outer_garden",
+            "value": "আউটার গার্ডেন অন্বেষণ করুন!"
+        },
+        {
+            "key": "onboarding.outer_garden_title",
+            "value": "আউটার গার্ডেনে স্বাগতম"
+        },
+        {
+            "key": "onboarding.outer_garden_body",
+            "value": "এটি একটি প্রতীকী জায়গা — চারপাশে ঘুরে দেখুন, আপনি Amal-এ যাদের আমন্ত্রণ জানিয়েছেন এবং তারা যাদের আমন্ত্রণ জানিয়েছে, তাদের সবাইকে।\n\nএটি আপনার সদকায়ে জারিয়া: এমন একটি নেক আমল যা দিতেই থাকে, আপনি না তাকালেও নীরবে বেড়ে চলে। নবী ﷺ আমাদের শিখিয়েছেন, একজন মানুষ মারা গেলে তার আমল বন্ধ হয়ে যায় — তিনটি ছাড়া, আর তার মধ্যে একটি হলো এমন জ্ঞান যা অন্যদের উপকারে আসে, এবং এমন একটি উত্তরাধিকার যা কল্যাণ তৈরি করতেই থাকে।\n\nএখানে প্রতিটি নতুন মুখ আপনার হাত ধরে শুরু হওয়া কল্যাণের একটি ছোট্ট স্মারক।"
+        },
+        {
+            "key": "interaction.inspector_mode_on",
+            "value": "ইন্সপেক্টর মোড: চালু"
+        },
+        {
+            "key": "interaction.inspector_mode_off",
+            "value": "ইন্সপেক্টর মোড: বন্ধ"
+        },
+        {
+            "key": "photo_mode.preview_heading",
+            "value": "আপনার জান্নাহ গার্ডেন"
+        },
+        {
+            "key": "photo_mode.share_caption",
+            "value": "আমার জান্নাহ গার্ডেন 🌿"
+        },
+        {
+            "key": "fellowship.member_since_format",
+            "value": "সদস্য {0} থেকে"
+        },
+        {
+            "key": "fellowship.member_since_unknown",
+            "value": "সদস্য —"
+        }
     ]
 }

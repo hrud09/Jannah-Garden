@@ -852,6 +852,7 @@ GameObject:
   - component: {fileID: 1753051137892331053}
   - component: {fileID: 72387917780624714}
   - component: {fileID: 5008316764308932820}
+  - component: {fileID: 3348846649651014991}
   m_Layer: 5
   m_Name: XP Text (TMP)
   m_TagString: Untagged
@@ -978,6 +979,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3348846649651014991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265494852738511915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: economy.xp_unit_label
+  leftToRightAlignment: 257
 --- !u!1 &7909638796135795204
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1004,7 @@ GameObject:
   - component: {fileID: 3564396587254563195}
   - component: {fileID: 7860139673979151983}
   - component: {fileID: 808678227841740565}
+  - component: {fileID: 5689819761329256232}
   m_Layer: 5
   m_Name: Level Text (TMP) (1)
   m_TagString: Untagged
@@ -1115,6 +1131,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5689819761329256232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7909638796135795204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: economy.level_label
+  leftToRightAlignment: 257
 --- !u!1 &7958418312647883697
 GameObject:
   m_ObjectHideFlags: 0

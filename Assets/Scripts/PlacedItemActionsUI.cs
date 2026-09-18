@@ -237,9 +237,10 @@ public class PlacedItemActionsUI : MonoBehaviour
         titleText = CreateLabel(panelRect, "Title", new Vector2(0f, -26f), new Vector2(540f, 54f),
             _style.fontSize + 4f);
 
-        relocateButton = CreateButton(panelRect, "Relocate Button", "Move to a new spot", -104f);
-        returnButton = CreateButton(panelRect, "Return Button", "Return to the Asset Store", -188f);
-        closeButton = CreateButton(panelRect, "Close Button", "Keep it here", -272f);
+        LocalizationManager loc = LocalizationManager.Instance;
+        relocateButton = CreateButton(panelRect, "Relocate Button", loc.Get("placed_item.relocate_button"), -104f);
+        returnButton = CreateButton(panelRect, "Return Button", loc.Get("placed_item.return_button"), -188f);
+        closeButton = CreateButton(panelRect, "Close Button", loc.Get("placed_item.keep_here_button"), -272f);
     }
 
     /// <summary>
@@ -431,7 +432,7 @@ public class PlacedItemActionsUI : MonoBehaviour
         textRect.anchoredPosition = Vector2.zero;
         textRect.sizeDelta = Vector2.zero;
 
-        StyleLabel(textGo, _style.fontSize).text = label;
+        LocalizedRendering.SetText(StyleLabel(textGo, _style.fontSize), label);
 
         Button button = go.GetComponent<Button>();
         button.targetGraphic = image;

@@ -367,15 +367,6 @@ public class MCQManager : MonoBehaviour
             optionButtons[selectedOptionIndex].transform.DOKill();
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
             optionButtons[selectedOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
-            
-            // Show congratulations message
-            if (questionTextUI != null)
-            {
-                SetText(questionTextUI, LocalizationManager.Instance.Get("quiz.correct"), QuestionShapedTextTopPadding);
-                questionTextUI.transform.DOKill();
-                questionTextUI.transform.localScale = Vector3.one;
-                questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
-            }
 
             // Award Noor Coins and XP together
             int coinsEarned = 0;
@@ -418,7 +409,7 @@ public class MCQManager : MonoBehaviour
                 currentOrb = null;
             }
 
-            HideQuizImmediately();
+            ShowMashallahAndAutoClose();
         }
         else
         {
@@ -483,6 +474,32 @@ public class MCQManager : MonoBehaviour
 
         if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
         ShowQuestion(currentQuestionIndex);
+    }
+
+    // Replaces the panel's content with a plain "Mash'Allah" finale and closes it automatically
+    // a few seconds later, instead of the immediate hide used elsewhere.
+    private void ShowMashallahAndAutoClose()
+    {
+        foreach (var btn in optionButtons) btn.gameObject.SetActive(false);
+        if (submitButton != null) submitButton.gameObject.SetActive(false);
+
+        if (questionTextUI != null)
+        {
+            // Plain (unlocalized, unshaped) text: "Mash'Allah" is Latin script and would render as
+            // tofu boxes if routed through the Bengali shaped-font path like SetText does.
+            LocalizedRendering.SetPlainText(questionTextUI, "Mash'Allah");
+            questionTextUI.transform.DOKill();
+            questionTextUI.transform.localScale = Vector3.one;
+            questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+        }
+
+        StartCoroutine(AutoCloseQuizAfterDelay(5f));
+    }
+
+    private IEnumerator AutoCloseQuizAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        HideQuizImmediately();
     }
 
     private void HideQuizImmediately()

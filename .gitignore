@@ -108,13 +108,6 @@ InitTestScene*.unity*
 /Assets/ToonScapes/Spring Isles/Skybox
 /Assets/Audio/Suras Tilwat
 
-# Unity iOS export - oversized artifacts (exceed GitHub's 100MB file limit)
-/ios/unityLibrary.zip
-/ios/unityLibrary/Data/level2.resS
-/ios/unityLibrary/Data/resources.assets.resS
-/ios/unityLibrary/Libraries/libiPhone-lib.a
+# Unity iOS/Android export projects (Xcode/Gradle build output)
 /ios
-/ios
-/ios
-/ios
-/ios
+/Assets/_Recovery

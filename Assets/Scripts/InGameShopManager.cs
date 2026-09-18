@@ -506,7 +506,7 @@ public class InGameShopManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
             }
             return;
         }
@@ -519,7 +519,7 @@ public class InGameShopManager : MonoBehaviour
             Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': requires level {data.requiredXPLevel}.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast($"Requires Level {data.requiredXPLevel}");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.requires_level", data.requiredXPLevel));
             }
             return; // Abort — player doesn't have the required level
         }
@@ -564,7 +564,7 @@ public class InGameShopManager : MonoBehaviour
                 // Show toast message to the player indicating insufficient funds
                 if (ToastMessageManager.Instance != null)
                 {
-                    ToastMessageManager.Instance.ShowToast("Not enough Noor Coins");
+                    ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.not_enough_coins"));
                 }
 
                 return; // Abort — player can't afford it
@@ -597,7 +597,7 @@ public class InGameShopManager : MonoBehaviour
 
                 if (ToastMessageManager.Instance != null)
                 {
-                    ToastMessageManager.Instance.ShowToast($"Come back in {DailyOfferManager.FormatCooldown(remaining)}");
+                    ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.come_back_in", DailyOfferManager.FormatCooldown(remaining)));
                 }
 
                 return; // Abort — already claimed this cycle
@@ -610,7 +610,7 @@ public class InGameShopManager : MonoBehaviour
                 + "Add an AdsManager GameObject.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Ads are unavailable right now");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.ads_unavailable"));
             }
             return;
         }
@@ -646,7 +646,7 @@ public class InGameShopManager : MonoBehaviour
                 + "Add an IAPManager GameObject.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("The store is unavailable right now");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.store_unavailable"));
             }
             return;
         }
@@ -655,7 +655,7 @@ public class InGameShopManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("A purchase is already in progress");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.purchase_in_progress"));
             }
             return;
         }
@@ -672,7 +672,7 @@ public class InGameShopManager : MonoBehaviour
             {
                 if (ToastMessageManager.Instance != null)
                 {
-                    ToastMessageManager.Instance.ShowToast("Purchase not completed");
+                    ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.purchase_not_completed"));
                 }
                 return;
             }
@@ -777,7 +777,7 @@ public class InGameShopManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
             }
             return;
         }

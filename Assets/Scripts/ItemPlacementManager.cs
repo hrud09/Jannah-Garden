@@ -119,6 +119,13 @@ public class ItemPlacementManager : MonoBehaviour
     // adopt) — guards SaveEverything from persisting a partially-populated garden mid-rebuild.
     private bool _isRebuildingGarden;
 
+    // Saved items whose Addressable bundle failed to download during the last RebuildGardenAsync (no
+    // network / not cached yet on a new device). Kept here and re-merged into every snapshot by
+    // BuildCurrentState/ToPayload so they aren't dropped from the save for good — the next successful
+    // load gets another chance to resolve them. Items whose reference is genuinely invalid (the source
+    // ShopItemData/TreasureBoxRewardItemData asset no longer exists) are not kept here and stay dropped.
+    private readonly List<PlacedItemSaveData> _unresolvedItems = new List<PlacedItemSaveData>();
+
     // Caller-supplied hooks for the placement request currently in flight (typically the shop), so it
     // can find out when to stop waiting: onReady once the ghost is actually up, onFailed if the download
     // failed or this request got superseded by a newer one before it could finish. See InternalPreparePlacement.
@@ -440,7 +447,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (requestVersion == _placementRequestVersion && _isPreparingPlacement && ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Downloading item…");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.downloading_item"));
         }
     }
 
@@ -477,7 +484,7 @@ public class ItemPlacementManager : MonoBehaviour
         {
             placeButton.gameObject.SetActive(true);
             var btnText = placeButton.GetComponentInChildren<TMPro.TMP_Text>();
-            if (btnText != null) btnText.text = _isRelocating ? "Move Here" : "Place";
+            if (btnText != null) btnText.text = LocalizationManager.Instance.Get(_isRelocating ? "placement.button_move_here" : "placement.button_place");
         }
 
         if (cancelPlacementButton != null)
@@ -503,7 +510,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Couldn't download this item — check your connection");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.download_failed"));
         }
 
         if (_isRelocating)
@@ -655,7 +662,7 @@ public class ItemPlacementManager : MonoBehaviour
             // The player already paid for this item the first time round: no XP, no stock consumed.
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Moved");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.moved"));
             }
         }
         else
@@ -738,7 +745,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Move cancelled");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.move_cancelled"));
         }
     }
 
@@ -750,7 +757,7 @@ public class ItemPlacementManager : MonoBehaviour
             // Stock was not consumed yet — PlaceItem does that — so there is nothing to give back.
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Placement cancelled");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.placement_cancelled"));
             }
             return;
         }
@@ -764,7 +771,7 @@ public class ItemPlacementManager : MonoBehaviour
         }
         else if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Placement cancelled");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.placement_cancelled"));
         }
     }
 
@@ -803,7 +810,7 @@ public class ItemPlacementManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
             }
             return false;
         }
@@ -819,7 +826,7 @@ public class ItemPlacementManager : MonoBehaviour
             Debug.LogWarning($"[ItemPlacementManager] Cannot relocate item (sourceItemId='{item.sourceItemId}') — its prefab is not reachable.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("This item cannot be moved");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.cannot_move"));
             }
             return false;
         }
@@ -850,7 +857,7 @@ public class ItemPlacementManager : MonoBehaviour
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Aim where you want it, then tap Move Here");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.aim_move_here"));
         }
 
         return true;
@@ -870,7 +877,7 @@ public class ItemPlacementManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Finish placing the current item first");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
             }
             return false;
         }
@@ -906,7 +913,7 @@ public class ItemPlacementManager : MonoBehaviour
 
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast($"{rewardData.itemName} returned to your inventory");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.returned_to_inventory", rewardData.LocalizedName));
             }
 
             return true;
@@ -926,7 +933,7 @@ public class ItemPlacementManager : MonoBehaviour
         // the garden — the player asked for that — but say so rather than pretending they were paid.
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Returned to the store");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.returned_to_store"));
         }
 
         return true;
@@ -1075,6 +1082,11 @@ public class ItemPlacementManager : MonoBehaviour
             });
         }
 
+        // Items whose bundle failed to download during the last rebuild — preserve them in the save too,
+        // instead of letting this snapshot (built only from activePlacedItems) quietly erase them for
+        // good; see RebuildGardenAsync.
+        state.items.AddRange(_unresolvedItems);
+
         return state;
     }
 
@@ -1105,6 +1117,7 @@ public class ItemPlacementManager : MonoBehaviour
     private IEnumerator RebuildGardenAsync(SaveStateCollection state)
     {
         _isRebuildingGarden = true;
+        _unresolvedItems.Clear();
 
         double currentUnix = System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         double elapsedOffline = state.gameClosedTimeUnix > 0
@@ -1123,6 +1136,7 @@ public class ItemPlacementManager : MonoBehaviour
         int count = state.items.Count;
         GameObject[] resolvedPrefabs = new GameObject[count];
         bool[] done = new bool[count];
+        bool[] hadValidRef = new bool[count];
 
         for (int i = 0; i < count; i++)
         {
@@ -1137,6 +1151,7 @@ public class ItemPlacementManager : MonoBehaviour
                 continue;
             }
 
+            hadValidRef[i] = true;
             int index = i; // capture by value for the closure — `i` itself keeps incrementing
             AddressableItemLoader.LoadAsync(prefabRef, loaded =>
             {
@@ -1153,7 +1168,13 @@ public class ItemPlacementManager : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject prefab = resolvedPrefabs[i];
-            if (prefab == null) continue; // unresolved or failed to download — skip, same as today's "not found"
+            if (prefab == null)
+            {
+                // A validly-referenced item whose bundle failed to download (offline, first sync on a
+                // new device, not cached yet) — keep it pending instead of dropping it for good.
+                if (hadValidRef[i]) _unresolvedItems.Add(state.items[i]);
+                continue;
+            }
 
             PlacedItemSaveData itemData = state.items[i];
             GameObject spawned = Objectpool.Instance.Spawn(prefab, itemData.position, itemData.rotation);
@@ -1373,14 +1394,13 @@ public class ItemPlacementManager : MonoBehaviour
     {
         activePlacedItems.RemoveAll(item => item == null);
 
-        var items = new GardenItemPayload[activePlacedItems.Count];
-        for (int i = 0; i < activePlacedItems.Count; i++)
+        var items = new List<GardenItemPayload>(activePlacedItems.Count + _unresolvedItems.Count);
+        foreach (var item in activePlacedItems)
         {
-            PlaceableItem item = activePlacedItems[i];
             Vector3 position = item.transform.position;
             Quaternion rotation = item.transform.rotation;
 
-            items[i] = new GardenItemPayload
+            items.Add(new GardenItemPayload
             {
                 uniqueId = item.uniqueId,
                 prefabName = item.prefabName,
@@ -1395,7 +1415,29 @@ public class ItemPlacementManager : MonoBehaviour
                 totalDuration = item.placementDuration,
                 sourceItemId = item.sourceItemId,
                 sourceKind = (int)item.sourceKind
-            };
+            });
+        }
+
+        // Items whose bundle failed to download during the last rebuild — keep them in the payload too
+        // (as they last stood) so a cloud sync doesn't erase them for good; see RebuildGardenAsync.
+        foreach (var pending in _unresolvedItems)
+        {
+            items.Add(new GardenItemPayload
+            {
+                uniqueId = pending.uniqueId,
+                prefabName = pending.prefabName,
+                posX = pending.position.x,
+                posY = pending.position.y,
+                posZ = pending.position.z,
+                rotX = pending.rotation.x,
+                rotY = pending.rotation.y,
+                rotZ = pending.rotation.z,
+                rotW = pending.rotation.w,
+                remainingDuration = pending.remainingDuration,
+                totalDuration = pending.totalDuration,
+                sourceItemId = pending.sourceItemId,
+                sourceKind = (int)pending.sourceKind
+            });
         }
 
         return new GardenStatePayload
@@ -1403,7 +1445,7 @@ public class ItemPlacementManager : MonoBehaviour
             hasData = true,
             savedAtUnix = (long)_lastSavedAtUnix,
             revision = _revision,
-            items = items
+            items = items.ToArray()
         };
     }
 

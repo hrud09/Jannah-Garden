@@ -1,87 +1,1388 @@
 {
     "entries": [
-        { "key": "shop.finish_placing_first", "value": "أكمل وضع العنصر الحالي أولاً" },
-        { "key": "shop.requires_level", "value": "يتطلب المستوى {0}" },
-        { "key": "shop.not_enough_coins", "value": "لا توجد عملات نور كافية" },
-        { "key": "shop.come_back_in", "value": "عد بعد {0}" },
-        { "key": "shop.ads_unavailable", "value": "الإعلانات غير متوفرة حالياً" },
-        { "key": "shop.store_unavailable", "value": "المتجر غير متوفر حالياً" },
-        { "key": "shop.purchase_in_progress", "value": "عملية شراء قيد التنفيذ بالفعل" },
-        { "key": "shop.purchase_not_completed", "value": "لم تكتمل عملية الشراء" },
-        { "key": "shop.offer_ready", "value": "جاهز" },
-
-        { "key": "placement.downloading_item", "value": "جارٍ تنزيل العنصر…" },
-        { "key": "placement.download_failed", "value": "تعذّر تنزيل هذا العنصر — تحقق من اتصالك" },
-        { "key": "placement.moved", "value": "تم النقل" },
-        { "key": "placement.move_cancelled", "value": "تم إلغاء النقل" },
-        { "key": "placement.placement_cancelled", "value": "تم إلغاء التنصيب" },
-        { "key": "placement.cannot_move", "value": "لا يمكن نقل هذا العنصر" },
-        { "key": "placement.aim_move_here", "value": "وجّهه إلى المكان الذي تريده، ثم اضغط على \"انقل هنا\"" },
-        { "key": "placement.returned_to_inventory", "value": "تمت إعادة {0} إلى مخزونك" },
-        { "key": "placement.returned_to_store", "value": "تمت الإعادة إلى المتجر" },
-
-        { "key": "economy.coins_spent", "value": "-{0} عملة نور" },
-        { "key": "economy.coins_earned", "value": "+{0} عملة نور" },
-
-        { "key": "reward.coins", "value": "+{0} عملة نور" },
-        { "key": "reward.xp", "value": "+{0} نقطة خبرة" },
-        { "key": "reward.coins_colored", "value": "<color=#FFD700>+{0} عملة نور</color>" },
-        { "key": "reward.xp_colored", "value": "<color=#00FFFF>+{0} نقطة خبرة</color>" },
-        { "key": "reward.and", "value": "و" },
-
-        { "key": "garden.use_back_button", "value": "استخدم زر الرجوع لمغادرة الحديقة." },
-
-        { "key": "photo.share_phone_only", "value": "المشاركة تعمل فقط على الهاتف" },
-        { "key": "photo.capture_failed", "value": "تعذّر التقاط الصورة" },
-        { "key": "photo.share_failed", "value": "تعذّرت مشاركة الصورة" },
-        { "key": "photo.saved_to_gallery", "value": "تم الحفظ في معرض الصور" },
-        { "key": "photo.save_failed", "value": "تعذّر حفظ الصورة" },
-        { "key": "photo.cannot_save_to_device", "value": "تعذّر حفظ هذه الصورة على الجهاز" },
-        { "key": "photo.generic_failed", "value": "لم تنجح العملية" },
-        { "key": "photo.shared", "value": "تمت المشاركة" },
-
-        { "key": "dhikr.instruction", "value": "الذكر: \"{0}\" لعدد {1} مرة" },
-        { "key": "dhikr.completed", "value": "<color=#FFD700>ما شاء الله!</color>\nتم إكمال الذكر!" },
-
-        { "key": "quiz.correct", "value": "<color=#00FF88>تهانينا!</color>\nإجابة صحيحة!" },
-        { "key": "quiz.wrong", "value": "عذراً! راجع الإجابة الصحيحة وحاول مرة أخرى لكسب عملات نور." },
-
-        { "key": "treasurebox.need_subscribe", "value": "يجب عليك الاشتراك من تطبيق أمل." },
-        { "key": "treasurebox.all_opened", "value": "تم فتح جميع الصناديق في هذه الفئة بالفعل!" },
-        { "key": "treasurebox.not_appeared_yet", "value": "لم تظهر الصناديق الخاصة بهذه الفئة بعد!" },
-        { "key": "treasurebox.complete_previous_tier", "value": "أكمل جميع صناديق {0} أولاً." },
-
-        { "key": "tutorial.welcome_title", "value": "مرحباً بك في جنة الحديقة!" },
-        { "key": "tutorial.welcome_body", "value": "ازرع قطعتك الخاصة من الجنة: ضع الأشجار والنافورات والزخارف المقدسة، واكسب نقاط الخبرة، وافتح صناديق الكنوز، واستكشف الحديقة الخارجية. لنبدأ!" },
-        { "key": "tutorial.start_button", "value": "ابدأ الجولة التعريفية" },
-        { "key": "tutorial.step_open_shop", "value": "اضغط على زر المتجر لفتح متجر الحديقة!" },
-        { "key": "tutorial.step_select_item", "value": "اختر عنصرك الأول أدناه!" },
-        { "key": "tutorial.step_downloading", "value": "جارٍ تنزيل عنصرك — يرجى الانتظار!" },
-        { "key": "tutorial.step_place_item", "value": "تحرّك واضغط على \"وضع\" لزراعته!" },
-        { "key": "tutorial.step_open_xp", "value": "رائع! اضغط على زر نقاط الخبرة لرؤية تقدمك!" },
-        { "key": "tutorial.step_xp_chart", "value": "اطّلع على مخطط نقاط خبرتك، ثم أغلقه للمتابعة!" },
-        { "key": "tutorial.step_take_photo", "value": "التقط صورة لحديقتك!" },
-        { "key": "tutorial.step_share_photo", "value": "شارك الصورة أو احفظها، ثم أغلق المعاينة!" },
-        { "key": "tutorial.step_inspector_mode", "value": "جرّب وضع المراقبة للتحليق والاستمتاع بمشاهدة حديقتك!" },
-        { "key": "tutorial.step_return_ground", "value": "عد إلى الأرض للمتابعة!" },
-        { "key": "tutorial.step_open_treasurebox", "value": "افتح صندوق الكنز للحصول على مكافآت إضافية!" },
-        { "key": "tutorial.step_minimap", "value": "تحقق من الخريطة المصغّرة لإيجاد الطريق إلى صندوق الكنز!" },
-        { "key": "tutorial.step_outer_garden", "value": "استكشف الحديقة الخارجية!" },
-        { "key": "tutorial.outer_garden_title", "value": "مرحباً بك في الحديقة الخارجية!" },
-        { "key": "tutorial.outer_garden_body", "value": "هذا هو عالمك الأوسع خارج الحديقة الرئيسية — استكشف أبعد، واكتشف مناظر خفية، واحصل على المزيد من الإلهام لما يمكنك إحضاره وزراعته. تجوّل بحرية واستمتع بالمنظر!" },
-        { "key": "tutorial.finish_button", "value": "إنهاء" },
-
-        { "key": "shop.category.plants_gardens", "value": "النباتات والحدائق" },
-        { "key": "shop.category.water_of_garden", "value": "مياه الحديقة" },
-        { "key": "shop.category.architecture", "value": "العمارة" },
-        { "key": "shop.category.decor_sacred", "value": "الزخارف والمقدسات" },
-        { "key": "shop.category.decor_sacred_long", "value": "الزخارف والأشياء المقدسة" },
-        { "key": "shop.category.celestial_light", "value": "السماوي والإضاءة" },
-        { "key": "shop.category.celestial_light_long", "value": "السماوي والإضاءة / المناظر الطبيعية" },
-        { "key": "shop.category.noor_coins", "value": "عملات نور" },
-        { "key": "shop.tier.common", "value": "عادي" },
-        { "key": "shop.tier.standard", "value": "قياسي" },
-        { "key": "shop.tier.premium", "value": "مميز" },
-        { "key": "shop.tier.premium_plus", "value": "مميز بلس" }
+        {
+            "key": "shop.finish_placing_first",
+            "value": "أكمل وضع العنصر الحالي أولاً"
+        },
+        {
+            "key": "shop.requires_level",
+            "value": "يتطلب المستوى {0}"
+        },
+        {
+            "key": "shop.not_enough_coins",
+            "value": "لا توجد عملات نور كافية"
+        },
+        {
+            "key": "shop.come_back_in",
+            "value": "عد بعد {0}"
+        },
+        {
+            "key": "shop.ads_unavailable",
+            "value": "الإعلانات غير متوفرة حالياً"
+        },
+        {
+            "key": "shop.store_unavailable",
+            "value": "المتجر غير متوفر حالياً"
+        },
+        {
+            "key": "shop.purchase_in_progress",
+            "value": "عملية شراء قيد التنفيذ بالفعل"
+        },
+        {
+            "key": "shop.purchase_not_completed",
+            "value": "لم تكتمل عملية الشراء"
+        },
+        {
+            "key": "shop.offer_ready",
+            "value": "جاهز"
+        },
+        {
+            "key": "shop.level_badge",
+            "value": "مستوى {0} مطلوب"
+        },
+        {
+            "key": "shop.owned_label",
+            "value": "مملوك"
+        },
+        {
+            "key": "shop.label_watch_ad",
+            "value": "مشاهدة إعلان"
+        },
+        {
+            "key": "shop.label_select",
+            "value": "اختر"
+        },
+        {
+            "key": "shop.label_purchasing",
+            "value": "جارٍ الشراء..."
+        },
+        {
+            "key": "shop.label_downloading_percent",
+            "value": "جارٍ التنزيل... {0}%"
+        },
+        {
+            "key": "shop.label_buy",
+            "value": "شراء"
+        },
+        {
+            "key": "shop.label_free",
+            "value": "مجاني"
+        },
+        {
+            "key": "placement.downloading_item",
+            "value": "جارٍ تنزيل العنصر…"
+        },
+        {
+            "key": "placement.download_failed",
+            "value": "تعذّر تنزيل هذا العنصر — تحقق من اتصالك"
+        },
+        {
+            "key": "placement.moved",
+            "value": "تم النقل"
+        },
+        {
+            "key": "placement.move_cancelled",
+            "value": "تم إلغاء النقل"
+        },
+        {
+            "key": "placement.placement_cancelled",
+            "value": "تم إلغاء التنصيب"
+        },
+        {
+            "key": "placement.cannot_move",
+            "value": "لا يمكن نقل هذا العنصر"
+        },
+        {
+            "key": "placement.aim_move_here",
+            "value": "وجّهه إلى المكان الذي تريده، ثم اضغط على \"انقل هنا\""
+        },
+        {
+            "key": "placement.returned_to_inventory",
+            "value": "تمت إعادة {0} إلى مخزونك"
+        },
+        {
+            "key": "placement.returned_to_store",
+            "value": "تمت الإعادة إلى المتجر"
+        },
+        {
+            "key": "placement.button_move_here",
+            "value": "انقل هنا"
+        },
+        {
+            "key": "placement.button_place",
+            "value": "ضع"
+        },
+        {
+            "key": "placement.completed_exclaim",
+            "value": "اكتمل!"
+        },
+        {
+            "key": "economy.coins_spent",
+            "value": "-{0} عملة نور"
+        },
+        {
+            "key": "economy.coins_earned",
+            "value": "+{0} عملة نور"
+        },
+        {
+            "key": "reward.coins",
+            "value": "+{0} عملة نور"
+        },
+        {
+            "key": "reward.xp",
+            "value": "+{0} نقطة خبرة"
+        },
+        {
+            "key": "reward.coins_colored",
+            "value": "<color=#FFD700>+{0} عملة نور</color>"
+        },
+        {
+            "key": "reward.xp_colored",
+            "value": "<color=#00FFFF>+{0} نقطة خبرة</color>"
+        },
+        {
+            "key": "reward.and",
+            "value": "و"
+        },
+        {
+            "key": "garden.use_back_button",
+            "value": "استخدم زر الرجوع لمغادرة الحديقة."
+        },
+        {
+            "key": "photo.share_phone_only",
+            "value": "المشاركة تعمل فقط على الهاتف"
+        },
+        {
+            "key": "photo.capture_failed",
+            "value": "تعذّر التقاط الصورة"
+        },
+        {
+            "key": "photo.share_failed",
+            "value": "تعذّرت مشاركة الصورة"
+        },
+        {
+            "key": "photo.saved_to_gallery",
+            "value": "تم الحفظ في معرض الصور"
+        },
+        {
+            "key": "photo.save_failed",
+            "value": "تعذّر حفظ الصورة"
+        },
+        {
+            "key": "photo.cannot_save_to_device",
+            "value": "تعذّر حفظ هذه الصورة على الجهاز"
+        },
+        {
+            "key": "photo.generic_failed",
+            "value": "لم تنجح العملية"
+        },
+        {
+            "key": "photo.shared",
+            "value": "تمت المشاركة"
+        },
+        {
+            "key": "dhikr.instruction",
+            "value": "الذكر: \"{0}\" لعدد {1} مرة"
+        },
+        {
+            "key": "dhikr.completed",
+            "value": "<color=#FFD700>ما شاء الله!</color>\nتم إكمال الذكر!"
+        },
+        {
+            "key": "quiz.correct",
+            "value": "<color=#00FF88>تهانينا!</color>\nإجابة صحيحة!"
+        },
+        {
+            "key": "quiz.wrong",
+            "value": "عذراً! راجع الإجابة الصحيحة وحاول مرة أخرى لكسب عملات نور."
+        },
+        {
+            "key": "treasurebox.need_subscribe",
+            "value": "يجب عليك الاشتراك من تطبيق أمل."
+        },
+        {
+            "key": "treasurebox.all_opened",
+            "value": "تم فتح جميع الصناديق في هذه الفئة بالفعل!"
+        },
+        {
+            "key": "treasurebox.not_appeared_yet",
+            "value": "لم تظهر الصناديق الخاصة بهذه الفئة بعد!"
+        },
+        {
+            "key": "treasurebox.complete_previous_tier",
+            "value": "أكمل جميع صناديق {0} أولاً."
+        },
+        {
+            "key": "treasurebox.open_prompt",
+            "value": "افتح هذا الصندوق للحصول على المكافآت!"
+        },
+        {
+            "key": "treasurebox.reward_noor_coins_fallback",
+            "value": "عملات نور!"
+        },
+        {
+            "key": "treasurebox.tier_complete_format",
+            "value": "اكتمل {0}!"
+        },
+        {
+            "key": "treasurebox.set_complete",
+            "value": "اكتملت المجموعة!"
+        },
+        {
+            "key": "treasurebox.status.resetting",
+            "value": "جارٍ إعادة التعيين..."
+        },
+        {
+            "key": "treasurebox.status.completed",
+            "value": "مكتمل"
+        },
+        {
+            "key": "treasurebox.status.finish_previous_tier",
+            "value": "أكمل الفئة السابقة"
+        },
+        {
+            "key": "treasurebox.status.locked",
+            "value": "مغلق"
+        },
+        {
+            "key": "treasurebox.status.available",
+            "value": "متاح"
+        },
+        {
+            "key": "treasurebox.status.waiting",
+            "value": "في الانتظار..."
+        },
+        {
+            "key": "treasurebox.tier_name.silver",
+            "value": "الصندوق الفضي"
+        },
+        {
+            "key": "treasurebox.tier_name.gold",
+            "value": "الصندوق الذهبي"
+        },
+        {
+            "key": "treasurebox.tier_name.platinum",
+            "value": "صندوق البلاتين"
+        },
+        {
+            "key": "treasurebox.tier_name.diamond",
+            "value": "الصندوق الماسي"
+        },
+        {
+            "key": "treasurebox.tier_short.silver",
+            "value": "الفضة"
+        },
+        {
+            "key": "treasurebox.tier_short.gold",
+            "value": "الذهب"
+        },
+        {
+            "key": "treasurebox.tier_short.platinum",
+            "value": "البلاتين"
+        },
+        {
+            "key": "treasurebox.tier_short.diamond",
+            "value": "الماس"
+        },
+        {
+            "key": "rarity.common",
+            "value": "عادي"
+        },
+        {
+            "key": "rarity.uncommon",
+            "value": "غير شائع"
+        },
+        {
+            "key": "rarity.rare",
+            "value": "نادر"
+        },
+        {
+            "key": "rarity.epic",
+            "value": "ملحمي"
+        },
+        {
+            "key": "rarity.legendary",
+            "value": "أسطوري"
+        },
+        {
+            "key": "xp.task.place_shop_item",
+            "value": "وضع عنصر في الحديقة"
+        },
+        {
+            "key": "xp.task.answer_question_1st_try",
+            "value": "إجابة صحيحة من أول محاولة"
+        },
+        {
+            "key": "xp.task.answer_question_retry",
+            "value": "إجابة صحيحة بعد إعادة المحاولة"
+        },
+        {
+            "key": "xp.task.complete_dhikr",
+            "value": "إكمال الذكر"
+        },
+        {
+            "key": "xp.task.open_silver_box",
+            "value": "فتح الصندوق الفضي"
+        },
+        {
+            "key": "xp.task.open_gold_box",
+            "value": "فتح الصندوق الذهبي"
+        },
+        {
+            "key": "xp.task.open_platinum_box",
+            "value": "فتح صندوق البلاتين"
+        },
+        {
+            "key": "xp.task.open_diamond_box",
+            "value": "فتح الصندوق الماسي"
+        },
+        {
+            "key": "xp.chart_row_format",
+            "value": "{0} — +{1} نقطة خبرة"
+        },
+        {
+            "key": "loading.loading_text",
+            "value": "جارٍ التحميل..."
+        },
+        {
+            "key": "loading.base_scene",
+            "value": "جارٍ تحميل المشهد الأساسي..."
+        },
+        {
+            "key": "loading.environments",
+            "value": "جارٍ تحميل البيئات..."
+        },
+        {
+            "key": "loading.preparing_scene",
+            "value": "جارٍ تجهيز المشهد..."
+        },
+        {
+            "key": "common.quantity_format",
+            "value": "x{0}"
+        },
+        {
+            "key": "common.now",
+            "value": "الآن"
+        },
+        {
+            "key": "tutorial.step_welcome",
+            "value": "<color=#FFB300><size=120%>مرحباً بك في جنة الحديقة!</color></size>\n\nلنتعلم كيف تنمّي حديقتك. اضغط \"ابدأ\" لبدء الجولة التعريفية!"
+        },
+        {
+            "key": "tutorial.button_start",
+            "value": "ابدأ"
+        },
+        {
+            "key": "tutorial.step_basic_movement",
+            "value": "استخدم \"عصا التحكم الافتراضية\" على الجانب الأيسر من الشاشة لتحريك شخصيتك."
+        },
+        {
+            "key": "tutorial.button_next",
+            "value": "التالي"
+        },
+        {
+            "key": "tutorial.step_basic_looking",
+            "value": "اسحب في أي مكان على الشاشة للنظر حولك والتحكم في زاوية الكاميرا."
+        },
+        {
+            "key": "tutorial.step_open_shop",
+            "value": "أولاً، اضغط على \"زر المتجر\" في الزاوية لفتح متجر الحديقة."
+        },
+        {
+            "key": "tutorial.step_select_item",
+            "value": "رائع! الآن اختر العنصر الأول في المتجر واضغط \"شراء\" باستخدام عملات نور."
+        },
+        {
+            "key": "tutorial.step_place_item",
+            "value": "معاينة التنصيب ظاهرة في منتصف الشاشة.\n\nانظر حولك باستخدام أدوات التحكم بالكاميرا واضغط \"ضع\" عندما تكون جاهزاً!"
+        },
+        {
+            "key": "tutorial.step_completed",
+            "value": "<color=#4CAF50><size=120%>تسلسل مثالي!</color></size>\n\nلقد نجحت في زراعة نبتتك الأولى! نمِّ حديقتك عبر إكمال الاختبارات وشراء العناصر. اضغط \"إنهاء\" للعب!"
+        },
+        {
+            "key": "tutorial.button_finish",
+            "value": "إنهاء"
+        },
+        {
+            "key": "tutorial.button_skip",
+            "value": "تخطي"
+        },
+        {
+            "key": "shop.category.plants_gardens",
+            "value": "النباتات والحدائق"
+        },
+        {
+            "key": "shop.category.water_of_garden",
+            "value": "مياه الحديقة"
+        },
+        {
+            "key": "shop.category.architecture",
+            "value": "العمارة"
+        },
+        {
+            "key": "shop.category.decor_sacred",
+            "value": "الزخارف والمقدسات"
+        },
+        {
+            "key": "shop.category.decor_sacred_long",
+            "value": "الزخارف والأشياء المقدسة"
+        },
+        {
+            "key": "shop.category.celestial_light",
+            "value": "السماوي والإضاءة"
+        },
+        {
+            "key": "shop.category.celestial_light_long",
+            "value": "السماوي والإضاءة / المناظر الطبيعية"
+        },
+        {
+            "key": "shop.category.noor_coins",
+            "value": "عملات نور"
+        },
+        {
+            "key": "shop.tier.common",
+            "value": "عادي"
+        },
+        {
+            "key": "shop.tier.standard",
+            "value": "قياسي"
+        },
+        {
+            "key": "shop.tier.premium",
+            "value": "مميز"
+        },
+        {
+            "key": "shop.tier.premium_plus",
+            "value": "مميز بلس"
+        },
+        {
+            "key": "item.4fa471036bdf280fb7d2f5e418336013.name",
+            "value": "قوس الخط العربي"
+        },
+        {
+            "key": "item.4fa471036bdf280fb7d2f5e418336013.desc",
+            "value": "قوس الخط العربي، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.27a3cc859ff23cfbbbd93937413078f9.name",
+            "value": "جسر خشبي مقوس"
+        },
+        {
+            "key": "item.27a3cc859ff23cfbbbd93937413078f9.desc",
+            "value": "جسر خشبي مقوس، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.46c542252394d75fb3a05c7d75252d6c.name",
+            "value": "حلقة بوابة البسملة"
+        },
+        {
+            "key": "item.46c542252394d75fb3a05c7d75252d6c.desc",
+            "value": "حلقة بوابة البسملة، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.6e91398dc9edb3eb6c10c93213d66dde.name",
+            "value": "عمود كورنثي"
+        },
+        {
+            "key": "item.6e91398dc9edb3eb6c10c93213d66dde.desc",
+            "value": "عمود كورنثي، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.5dd3addc6287976d041121cdd90f9b14.name",
+            "value": "القلعة البلورية"
+        },
+        {
+            "key": "item.5dd3addc6287976d041121cdd90f9b14.desc",
+            "value": "القلعة البلورية، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.f1dfa038f5ca3656be50d729b3e6968b.name",
+            "value": "ممر حجري عائم"
+        },
+        {
+            "key": "item.f1dfa038f5ca3656be50d729b3e6968b.desc",
+            "value": "ممر حجري عائم، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.81f2458477e5f382cc0540a534bea12c.name",
+            "value": "قوس النور الذهبي"
+        },
+        {
+            "key": "item.81f2458477e5f382cc0540a534bea12c.desc",
+            "value": "قوس النور الذهبي، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.55dfbc0dc433384cf3159fb448d92443.name",
+            "value": "بوابة الجنة الذهبية"
+        },
+        {
+            "key": "item.55dfbc0dc433384cf3159fb448d92443.desc",
+            "value": "بوابة الجنة الذهبية، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.bc56b164b6e5e7427b9b30a5ffbc8b93.name",
+            "value": "كوخ مكسو باللبلاب"
+        },
+        {
+            "key": "item.bc56b164b6e5e7427b9b30a5ffbc8b93.desc",
+            "value": "كوخ مكسو باللبلاب، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.f51486b7130cb7c6af4172aef5de8f9f.name",
+            "value": "قوس المقرنصات بالخط العربي"
+        },
+        {
+            "key": "item.f51486b7130cb7c6af4172aef5de8f9f.desc",
+            "value": "قوس المقرنصات بالخط العربي، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.2908420f6f6079ec1b7aecaf48477769.name",
+            "value": "قوس الخيزران المربوط بالحبال"
+        },
+        {
+            "key": "item.2908420f6f6079ec1b7aecaf48477769.desc",
+            "value": "قوس الخيزران المربوط بالحبال، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.5bf52f6d763f61184423a34f6a597406.name",
+            "value": "بوابة مقوسة من الياقوت والذهب"
+        },
+        {
+            "key": "item.5bf52f6d763f61184423a34f6a597406.desc",
+            "value": "بوابة مقوسة من الياقوت والذهب، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.352939995768cbb96524450a28f4fa6b.name",
+            "value": "قوس الفسيفساء الفيروزي"
+        },
+        {
+            "key": "item.352939995768cbb96524450a28f4fa6b.desc",
+            "value": "قوس الفسيفساء الفيروزي، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.b5e883e11f087790553ab4c1f5d999a6.name",
+            "value": "قوس الخيزران الملفوف بالكرمة"
+        },
+        {
+            "key": "item.b5e883e11f087790553ab4c1f5d999a6.desc",
+            "value": "قوس الخيزران الملفوف بالكرمة، تحفة معمارية أنيقة تمنح ملكيتك راحة وجمالاً معمارياً."
+        },
+        {
+            "key": "item.d285f07515626c88fcc65f444bfaae62.name",
+            "value": "فانوس النجمة الثمانية"
+        },
+        {
+            "key": "item.d285f07515626c88fcc65f444bfaae62.desc",
+            "value": "فانوس النجمة الثمانية، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.156c89d0965de4298757d8b7aea231be.name",
+            "value": "المرج العائم"
+        },
+        {
+            "key": "item.156c89d0965de4298757d8b7aea231be.desc",
+            "value": "المرج العائم، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.3413652ef4d867f4a650580f33e0c489.name",
+            "value": "الهلال والنجمة الذهبية"
+        },
+        {
+            "key": "item.3413652ef4d867f4a650580f33e0c489.desc",
+            "value": "الهلال والنجمة الذهبية، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.c9d0d33026286402518f11f390b029f8.name",
+            "value": "الدرب المتلألئ"
+        },
+        {
+            "key": "item.c9d0d33026286402518f11f390b029f8.desc",
+            "value": "الدرب المتلألئ، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.f8d1febf41c69a2267520b6b75dcd103.name",
+            "value": "جزيرة الربيع"
+        },
+        {
+            "key": "item.f8d1febf41c69a2267520b6b75dcd103.desc",
+            "value": "جزيرة الربيع، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.7f0395e6f9d44388ff0fef763dcaabf9.name",
+            "value": "صعود الفوانيس"
+        },
+        {
+            "key": "item.7f0395e6f9d44388ff0fef763dcaabf9.desc",
+            "value": "صعود الفوانيس، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.c3c9f802da5c8352bbb3209f78e1e4c5.name",
+            "value": "الشق النوراني"
+        },
+        {
+            "key": "item.c3c9f802da5c8352bbb3209f78e1e4c5.desc",
+            "value": "الشق النوراني، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.58f65719d43fd04db087cd3437366aa2.name",
+            "value": "حلقة حجرية مقمرة"
+        },
+        {
+            "key": "item.58f65719d43fd04db087cd3437366aa2.desc",
+            "value": "حلقة حجرية مقمرة، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.891a12a264f9fcf4bf80d414afbbe031.name",
+            "value": "رواق الفوانيس المزخرف"
+        },
+        {
+            "key": "item.891a12a264f9fcf4bf80d414afbbe031.desc",
+            "value": "رواق الفوانيس المزخرف، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.0f0bf24939c7b7a0d9218d2a6e8c05b5.name",
+            "value": "حلقة النار الرونية"
+        },
+        {
+            "key": "item.0f0bf24939c7b7a0d9218d2a6e8c05b5.desc",
+            "value": "حلقة النار الرونية، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.40de1a41c6124205bed217d1d80e5488.name",
+            "value": "فانوس النجمة"
+        },
+        {
+            "key": "item.40de1a41c6124205bed217d1d80e5488.desc",
+            "value": "فانوس النجمة، لمسة مشعة تضفي على حديقتك النور والسحر."
+        },
+        {
+            "key": "item.d527779b36edc1763cdd48957669057d.name",
+            "value": "حامل الخط العربي"
+        },
+        {
+            "key": "item.d527779b36edc1763cdd48957669057d.desc",
+            "value": "حامل الخط العربي، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.9141d4caa1471fc40c615d60e625f070.name",
+            "value": "مقعد الفسيفساء اللازوردي"
+        },
+        {
+            "key": "item.9141d4caa1471fc40c615d60e625f070.desc",
+            "value": "مقعد الفسيفساء اللازوردي، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.76c84ec4a5a57f58c77faf260352cdf3.name",
+            "value": "المثمن الفسيفسائي الأزرق"
+        },
+        {
+            "key": "item.76c84ec4a5a57f58c77faf260352cdf3.desc",
+            "value": "المثمن الفسيفسائي الأزرق، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.fba0c0f0897e7f5b0d786380240c1e14.name",
+            "value": "بلاطة الفسيفساء النجمية الزرقاء"
+        },
+        {
+            "key": "item.fba0c0f0897e7f5b0d786380240c1e14.desc",
+            "value": "بلاطة الفسيفساء النجمية الزرقاء، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.bc682c70ac133526e4004b4f54d17917.name",
+            "value": "قاعدة الماس القرمزي"
+        },
+        {
+            "key": "item.bc682c70ac133526e4004b4f54d17917.desc",
+            "value": "قاعدة الماس القرمزي، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.7f2d99266f113411b3d64a0819c27456.name",
+            "value": "فسيفساء النجمة الثمانية"
+        },
+        {
+            "key": "item.7f2d99266f113411b3d64a0819c27456.desc",
+            "value": "فسيفساء النجمة الثمانية، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.960fc290d2e52fc1696d4349c0ecd285.name",
+            "value": "وسادة مخملية زمردية"
+        },
+        {
+            "key": "item.960fc290d2e52fc1696d4349c0ecd285.desc",
+            "value": "وسادة مخملية زمردية، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.e92347bd50aa6b1769312e8b21c8b174.name",
+            "value": "منصة اللوتس العائمة"
+        },
+        {
+            "key": "item.e92347bd50aa6b1769312e8b21c8b174.desc",
+            "value": "منصة اللوتس العائمة، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.cca8b065a9b8c4f501b9572d5810e9df.name",
+            "value": "لوحة قرآنية ذهبية"
+        },
+        {
+            "key": "item.cca8b065a9b8c4f501b9572d5810e9df.desc",
+            "value": "لوحة قرآنية ذهبية، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.ed7f9ff2e032babc5045bdf50b962d90.name",
+            "value": "مبخرة ذهبية مزخرفة"
+        },
+        {
+            "key": "item.ed7f9ff2e032babc5045bdf50b962d90.desc",
+            "value": "مبخرة ذهبية مزخرفة، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.a934e834392b9fa7d6fe1650d5515c52.name",
+            "value": "كأس ذهبي مزخرف"
+        },
+        {
+            "key": "item.a934e834392b9fa7d6fe1650d5515c52.desc",
+            "value": "كأس ذهبي مزخرف، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.c09503ffcd716c4165b197f8eb6dd253.name",
+            "value": "سجادة بميدالية مزخرفة"
+        },
+        {
+            "key": "item.c09503ffcd716c4165b197f8eb6dd253.desc",
+            "value": "سجادة بميدالية مزخرفة، قطعة مزخرفة تزين حديقتك بالحرفية والخشوع الهادئ."
+        },
+        {
+            "key": "item.f55504b4707c4627a17a74f95fef56df.name",
+            "value": "شجرة عريضة الأوراق 01 خضراء"
+        },
+        {
+            "key": "item.f55504b4707c4627a17a74f95fef56df.desc",
+            "value": "شجرة عريضة الأوراق 01 خضراء، إضافة جميلة لتزيين حديقتك."
+        },
+        {
+            "key": "item.fedc872d00eabad8237824d12acdc5f5.name",
+            "value": "شجرة الأزهار السماوية"
+        },
+        {
+            "key": "item.fedc872d00eabad8237824d12acdc5f5.desc",
+            "value": "شجرة الأزهار السماوية، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.73ba04d2af0ea26d6836fcae79829af7.name",
+            "value": "نخلة جوز الهند"
+        },
+        {
+            "key": "item.73ba04d2af0ea26d6836fcae79829af7.desc",
+            "value": "نخلة جوز الهند، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.c26bcf28a847b7016978f39641762689.name",
+            "value": "الصفصاف الباكي المضيء"
+        },
+        {
+            "key": "item.c26bcf28a847b7016978f39641762689.desc",
+            "value": "الصفصاف الباكي المضيء، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.f55096a3cc5e7810573a1fb4fb88e4f8.name",
+            "value": "زهرة الصبار المقمرة"
+        },
+        {
+            "key": "item.f55096a3cc5e7810573a1fb4fb88e4f8.desc",
+            "value": "زهرة الصبار المقمرة، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.169a10ff3aa8cf031779c8faf374b2d4.name",
+            "value": "وعاء بونساي مزخرف"
+        },
+        {
+            "key": "item.169a10ff3aa8cf031779c8faf374b2d4.desc",
+            "value": "وعاء بونساي مزخرف، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.b7936867c0bd82fdda3732000b979f7c.name",
+            "value": "شلال البتلات"
+        },
+        {
+            "key": "item.b7936867c0bd82fdda3732000b979f7c.desc",
+            "value": "شلال البتلات، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.5616706774371c3dc837e0195607a223.name",
+            "value": "حديقة الورد الوردي"
+        },
+        {
+            "key": "item.5616706774371c3dc837e0195607a223.desc",
+            "value": "حديقة الورد الوردي، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.ea6d937405d11ba59c059717e075844d.name",
+            "value": "شجرة الرمان"
+        },
+        {
+            "key": "item.ea6d937405d11ba59c059717e075844d.desc",
+            "value": "شجرة الرمان، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.2b3c4f9aaeb366d9aaddf8195f748493.name",
+            "value": "شجرة الرمان الثانية"
+        },
+        {
+            "key": "item.2b3c4f9aaeb366d9aaddf8195f748493.desc",
+            "value": "شجرة الرمان الثانية، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.19c3a47238ea2f8c9378b737a39ac6ca.name",
+            "value": "زهرة منشورية الألوان"
+        },
+        {
+            "key": "item.19c3a47238ea2f8c9378b737a39ac6ca.desc",
+            "value": "زهرة منشورية الألوان، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.9f06434ff4d6531b523dddc01a010c18.name",
+            "value": "شبكة زهرة النجمة"
+        },
+        {
+            "key": "item.9f06434ff4d6531b523dddc01a010c18.desc",
+            "value": "شبكة زهرة النجمة، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.b51046a063298f6142a990fcf1dbc0eb.name",
+            "value": "شجرة النور"
+        },
+        {
+            "key": "item.b51046a063298f6142a990fcf1dbc0eb.desc",
+            "value": "شجرة النور، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.519d126fecd336a0f5446380e7b3240f.name",
+            "value": "عنقود الزنبق"
+        },
+        {
+            "key": "item.519d126fecd336a0f5446380e7b3240f.desc",
+            "value": "عنقود الزنبق، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.931f5863f12f47cf1bddbd134557d5d1.name",
+            "value": "شجرة التفاح الخيالية"
+        },
+        {
+            "key": "item.931f5863f12f47cf1bddbd134557d5d1.desc",
+            "value": "شجرة التفاح الخيالية، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.eda847d69c98754e590474c1ffa0f52b.name",
+            "value": "شلال الزهور الخيالي"
+        },
+        {
+            "key": "item.eda847d69c98754e590474c1ffa0f52b.desc",
+            "value": "شلال الزهور الخيالي، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.b73a6ca69670b98c90f841146b7af39f.name",
+            "value": "شجرة الأزهار الهامسة"
+        },
+        {
+            "key": "item.b73a6ca69670b98c90f841146b7af39f.desc",
+            "value": "شجرة الأزهار الهامسة، إضافة جميلة تمنح حديقتك حياة نابضة وجمالاً طبيعياً."
+        },
+        {
+            "key": "item.f5e63129ff2c6afd4e8d2490f396b3e8.name",
+            "value": "نافورة حجرية قديمة"
+        },
+        {
+            "key": "item.f5e63129ff2c6afd4e8d2490f396b3e8.desc",
+            "value": "نافورة حجرية قديمة، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.9266c6d5e48fb366088f7d703fc354fd.name",
+            "value": "بركة حجرية قديمة"
+        },
+        {
+            "key": "item.9266c6d5e48fb366088f7d703fc354fd.desc",
+            "value": "بركة حجرية قديمة، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.8e31ff6a4fca8350ba2df5bc8460f619.name",
+            "value": "نافورة النور الذهبية"
+        },
+        {
+            "key": "item.8e31ff6a4fca8350ba2df5bc8460f619.desc",
+            "value": "نافورة النور الذهبية، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.ef8c06c78525f39d0d0ecc196433e619.name",
+            "value": "بركة اللوتس"
+        },
+        {
+            "key": "item.ef8c06c78525f39d0d0ecc196433e619.desc",
+            "value": "بركة اللوتس، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.45236065029f7a84478813750eb24738.name",
+            "value": "قناة مائية رخامية"
+        },
+        {
+            "key": "item.45236065029f7a84478813750eb24738.desc",
+            "value": "قناة مائية رخامية، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.3b090e69ca199b7d217531032712b920.name",
+            "value": "جزيرة النهر المتعرج"
+        },
+        {
+            "key": "item.3b090e69ca199b7d217531032712b920.desc",
+            "value": "جزيرة النهر المتعرج، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.d06798148d103014f4d2729b928ccf7e.name",
+            "value": "نافورة تاج الأناناس"
+        },
+        {
+            "key": "item.d06798148d103014f4d2729b928ccf7e.desc",
+            "value": "نافورة تاج الأناناس، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.a152201b366fe40e6e0ca4252c211393.name",
+            "value": "شلال منشوري الألوان"
+        },
+        {
+            "key": "item.a152201b366fe40e6e0ca4252c211393.desc",
+            "value": "شلال منشوري الألوان، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.d7b302f68a54d9867db32bd32c7a8d88.name",
+            "value": "نهر الذهب"
+        },
+        {
+            "key": "item.d7b302f68a54d9867db32bd32c7a8d88.desc",
+            "value": "نهر الذهب، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.94bbf77133dc37b74dbf95eaef232b40.name",
+            "value": "شلال متدرج"
+        },
+        {
+            "key": "item.94bbf77133dc37b74dbf95eaef232b40.desc",
+            "value": "شلال متدرج، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.30cbad77453f47a180fc6fb277e5eb2d.name",
+            "value": "البئر الهامس"
+        },
+        {
+            "key": "item.30cbad77453f47a180fc6fb277e5eb2d.desc",
+            "value": "البئر الهامس، لمسة هادئة تجلب مياهاً متدفقة وسكينة إلى حديقتك."
+        },
+        {
+            "key": "item.4f1100893646431bb027e2360f6b337c.name",
+            "value": "شجرة الأزهار 01"
+        },
+        {
+            "key": "item.4f1100893646431bb027e2360f6b337c.desc",
+            "value": "عنصر مكافأة خاص: شجرة الأزهار 01. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.23c7880ff58e456caa1cb2dbd0621789.name",
+            "value": "شجرة الأزهار 01"
+        },
+        {
+            "key": "item.23c7880ff58e456caa1cb2dbd0621789.desc",
+            "value": "عنصر مكافأة خاص: شجرة الأزهار 01. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.844bf0963b99496dbd783486e3bf9095.name",
+            "value": "شجرة الأزهار 02"
+        },
+        {
+            "key": "item.844bf0963b99496dbd783486e3bf9095.desc",
+            "value": "عنصر مكافأة خاص: شجرة الأزهار 02. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.4a10342786c44c41bfd5fb5ad6c5d90d.name",
+            "value": "شجرة عريضة الأوراق 01 زرقاء"
+        },
+        {
+            "key": "item.4a10342786c44c41bfd5fb5ad6c5d90d.desc",
+            "value": "عنصر مكافأة خاص: شجرة عريضة الأوراق 01 زرقاء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.7781562f021e40cb85a27610a2b29d02.name",
+            "value": "شجرة عريضة الأوراق 02 حمراء"
+        },
+        {
+            "key": "item.7781562f021e40cb85a27610a2b29d02.desc",
+            "value": "عنصر مكافأة خاص: شجرة عريضة الأوراق 02 حمراء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.23343abacc4044c1af515482f8ec5a55.name",
+            "value": "شجرة عريضة الأوراق 03 زرقاء"
+        },
+        {
+            "key": "item.23343abacc4044c1af515482f8ec5a55.desc",
+            "value": "عنصر مكافأة خاص: شجرة عريضة الأوراق 03 زرقاء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.b611853df847406899f5462310dd72ba.name",
+            "value": "شجرة عريضة الأوراق 03 بنفسجية"
+        },
+        {
+            "key": "item.b611853df847406899f5462310dd72ba.desc",
+            "value": "عنصر مكافأة خاص: شجرة عريضة الأوراق 03 بنفسجية. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.10de1f039f3e42ba960564c1284a2084.name",
+            "value": "شجرة عريضة الأوراق 04 زرقاء"
+        },
+        {
+            "key": "item.10de1f039f3e42ba960564c1284a2084.desc",
+            "value": "عنصر مكافأة خاص: شجرة عريضة الأوراق 04 زرقاء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.2470d121b6384893b8424c42bd6838c0.name",
+            "value": "صخرة كبيرة 02"
+        },
+        {
+            "key": "item.2470d121b6384893b8424c42bd6838c0.desc",
+            "value": "عنصر مكافأة خاص: صخرة كبيرة 02. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.2866167319434a63bb4bfe6b1e3bef8c.name",
+            "value": "حجر كبير 01"
+        },
+        {
+            "key": "item.2866167319434a63bb4bfe6b1e3bef8c.desc",
+            "value": "عنصر مكافأة خاص: حجر كبير 01. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.c321751bab0d43218c0338bea8893a44.name",
+            "value": "شجرة الصفصاف 01 زرقاء"
+        },
+        {
+            "key": "item.c321751bab0d43218c0338bea8893a44.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 01 زرقاء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.95cc5cdea5c34ef9b1f591f631367878.name",
+            "value": "شجرة الصفصاف 01 حمراء"
+        },
+        {
+            "key": "item.95cc5cdea5c34ef9b1f591f631367878.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 01 حمراء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.2ca87ec4976b4e72b9dd795153c3ffc0.name",
+            "value": "شجرة الصفصاف 02 وردية"
+        },
+        {
+            "key": "item.2ca87ec4976b4e72b9dd795153c3ffc0.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 02 وردية. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.bca8eed45554450b97e5d1d0e1d47f1c.name",
+            "value": "شجرة الصفصاف 03 زرقاء"
+        },
+        {
+            "key": "item.bca8eed45554450b97e5d1d0e1d47f1c.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 03 زرقاء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.fb2d54e04cfe45c9b6ca91412979707f.name",
+            "value": "شجرة الصفصاف 03 حمراء"
+        },
+        {
+            "key": "item.fb2d54e04cfe45c9b6ca91412979707f.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 03 حمراء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.af088967cf3f48caa29fceb1c8ba9e33.name",
+            "value": "شجرة الصفصاف 04 خضراء"
+        },
+        {
+            "key": "item.af088967cf3f48caa29fceb1c8ba9e33.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 04 خضراء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "item.4415baff0c1c4d62b8ee938d7ae556d7.name",
+            "value": "شجرة الصفصاف 05 حمراء"
+        },
+        {
+            "key": "item.4415baff0c1c4d62b8ee938d7ae556d7.desc",
+            "value": "عنصر مكافأة خاص: شجرة الصفصاف 05 حمراء. اعثر عليه لتخصيص حديقتك!"
+        },
+        {
+            "key": "settings.sfx_label",
+            "value": "المؤثرات الصوتية"
+        },
+        {
+            "key": "settings.panel_title",
+            "value": "الإعدادات"
+        },
+        {
+            "key": "settings.music_label",
+            "value": "الموسيقى"
+        },
+        {
+            "key": "settings.vibration_label",
+            "value": "الاهتزاز"
+        },
+        {
+            "key": "settings.normal_speed_label",
+            "value": "السرعة العادية"
+        },
+        {
+            "key": "settings.inspector_speed_label",
+            "value": "سرعة وضع المراقبة"
+        },
+        {
+            "key": "settings.look_around_speed_label",
+            "value": "سرعة النظر حولك"
+        },
+        {
+            "key": "treasurebox.confirm.watch_ad_button",
+            "value": "مشاهدة إعلان"
+        },
+        {
+            "key": "treasurebox.confirm.subscribe_button",
+            "value": "اشترك"
+        },
+        {
+            "key": "treasurebox.confirm.ad_or_subscribe_prompt",
+            "value": "شاهد إعلاناً أو اشترك لفتح صندوق الكنز"
+        },
+        {
+            "key": "economy.xp_level_unit_label",
+            "value": "مستوى\n"
+        },
+        {
+            "key": "economy.noor_coin_label",
+            "value": "عملات نور"
+        },
+        {
+            "key": "economy.close_stats_button",
+            "value": "إغلاق الإحصائيات"
+        },
+        {
+            "key": "economy.open_stats_button",
+            "value": "فتح الإحصائيات"
+        },
+        {
+            "key": "shop.tab_shop_label",
+            "value": "المتجر"
+        },
+        {
+            "key": "shop.tab_inventory_label",
+            "value": "المخزون"
+        },
+        {
+            "key": "shop.tab_treasure_label",
+            "value": "الكنز"
+        },
+        {
+            "key": "economy.xp_unit_label",
+            "value": "نقاط الخبرة"
+        },
+        {
+            "key": "economy.level_label",
+            "value": "المستوى"
+        },
+        {
+            "key": "quiz.submit_button",
+            "value": "إرسال"
+        },
+        {
+            "key": "dhikr.submit_button",
+            "value": "إرسال"
+        },
+        {
+            "key": "interaction.place_here_button",
+            "value": "ضع هنا"
+        },
+        {
+            "key": "interaction.open_button",
+            "value": "فتح"
+        },
+        {
+            "key": "interaction.answer_button",
+            "value": "إجابة"
+        },
+        {
+            "key": "interaction.manage_button",
+            "value": "إدارة"
+        },
+        {
+            "key": "placed_item.relocate_button",
+            "value": "انقل إلى مكان جديد"
+        },
+        {
+            "key": "placed_item.return_button",
+            "value": "أعده إلى المتجر"
+        },
+        {
+            "key": "placed_item.keep_here_button",
+            "value": "أبقه هنا"
+        },
+        {
+            "key": "photo_mode.share_button",
+            "value": "مشاركة"
+        },
+        {
+            "key": "photo_mode.save_button",
+            "value": "حفظ"
+        },
+        {
+            "key": "photo_mode.cancel_button",
+            "value": "إلغاء"
+        },
+        {
+            "key": "leave_garden.confirm_prompt",
+            "value": "هل تريد زيارة الحديقة الخارجية قبل المغادرة؟"
+        },
+        {
+            "key": "leave_garden.quit_button",
+            "value": "خروج"
+        },
+        {
+            "key": "leave_garden.outer_garden_button",
+            "value": "الحديقة الخارجية"
+        },
+        {
+            "key": "tutorial.skip_button",
+            "value": "تخطي"
+        },
+        {
+            "key": "item.9999.name",
+            "value": "عملة نور"
+        },
+        {
+            "key": "item.9999.desc",
+            "value": "عملة نور"
+        },
+        {
+            "key": "item.99999.name",
+            "value": "حزمة عملات نور"
+        },
+        {
+            "key": "item.99999.desc",
+            "value": "حزمة عملات نور"
+        },
+        {
+            "key": "item.99998.name",
+            "value": "كيس عملات نور"
+        },
+        {
+            "key": "item.99998.desc",
+            "value": "كيس عملات نور"
+        },
+        {
+            "key": "item.3f5b95f180e946cabc8a9b458335e87e.name",
+            "value": "المفاجأة اليومية"
+        },
+        {
+            "key": "item.3f5b95f180e946cabc8a9b458335e87e.desc",
+            "value": "شاهد مقطع فيديو قصيراً واحصل على 500 عملة نور. تتجدد مرة كل يوم."
+        },
+        {
+            "key": "onboarding.welcome_title",
+            "value": "مرحباً بك في جنة الحديقة!"
+        },
+        {
+            "key": "onboarding.welcome_body",
+            "value": "ازرع قطعتك الخاصة من الجنة: ضع الأشجار والنافورات والزخارف المقدسة، واكسب نقاط الخبرة، وافتح صناديق الكنوز، واستكشف الحديقة الخارجية. لنبدأ!"
+        },
+        {
+            "key": "onboarding.start_button",
+            "value": "ابدأ الجولة التعريفية"
+        },
+        {
+            "key": "onboarding.step_open_shop",
+            "value": "اضغط على زر المتجر لفتح متجر الحديقة!"
+        },
+        {
+            "key": "onboarding.step_select_item",
+            "value": "اختر عنصرك الأول أدناه!"
+        },
+        {
+            "key": "onboarding.step_downloading",
+            "value": "جارٍ تنزيل عنصرك — يرجى الانتظار!"
+        },
+        {
+            "key": "onboarding.step_place_item",
+            "value": "تحرّك واضغط على \"وضع\" لزراعته!"
+        },
+        {
+            "key": "onboarding.step_xp_button",
+            "value": "رائع! اضغط على زر نقاط الخبرة لرؤية تقدمك!"
+        },
+        {
+            "key": "onboarding.step_xp_chart",
+            "value": "اطّلع على مخطط نقاط خبرتك، ثم أغلقه للمتابعة!"
+        },
+        {
+            "key": "onboarding.step_take_photo",
+            "value": "التقط صورة لحديقتك!"
+        },
+        {
+            "key": "onboarding.step_share_photo",
+            "value": "شارك الصورة أو احفظها، ثم أغلق المعاينة!"
+        },
+        {
+            "key": "onboarding.step_inspector_mode",
+            "value": "جرّب وضع المراقبة للتحليق والاستمتاع بمشاهدة حديقتك!"
+        },
+        {
+            "key": "onboarding.step_return_ground",
+            "value": "عد إلى الأرض للمتابعة!"
+        },
+        {
+            "key": "onboarding.step_treasurebox",
+            "value": "افتح صندوق الكنز للحصول على مكافآت إضافية!"
+        },
+        {
+            "key": "onboarding.step_minimap",
+            "value": "تحقق من الخريطة المصغّرة لإيجاد الطريق إلى صندوق الكنز!"
+        },
+        {
+            "key": "onboarding.button_got_it",
+            "value": "فهمت"
+        },
+        {
+            "key": "onboarding.step_outer_garden",
+            "value": "استكشف الحديقة الخارجية!"
+        },
+        {
+            "key": "onboarding.outer_garden_title",
+            "value": "مرحباً بك في الحديقة الخارجية"
+        },
+        {
+            "key": "onboarding.outer_garden_body",
+            "value": "هذه مساحة رمزية — تجوّل وانظر إلى كل من دعوتهم إلى Amal، وكل من دعَوهم بدورهم.\n\nهذه صدقتك الجارية: عمل صالح يستمر في العطاء، ينمو بهدوء حتى عندما لا تنظر. علّمنا النبي ﷺ أنه إذا مات الإنسان انقطع عمله إلا من ثلاث، ومن بينها علمٌ ينتفع به، وأثرٌ صالح يستمر في إنتاج الخير.\n\nكل وجه جديد هنا هو تذكير صغير بالخير الذي ساعدت في تحريكه."
+        },
+        {
+            "key": "interaction.inspector_mode_on",
+            "value": "وضع المراقبة: تشغيل"
+        },
+        {
+            "key": "interaction.inspector_mode_off",
+            "value": "وضع المراقبة: إيقاف"
+        },
+        {
+            "key": "photo_mode.preview_heading",
+            "value": "حديقتك في الجنة"
+        },
+        {
+            "key": "photo_mode.share_caption",
+            "value": "حديقتي في الجنة 🌿"
+        },
+        {
+            "key": "fellowship.member_since_format",
+            "value": "عضو منذ {0}"
+        },
+        {
+            "key": "fellowship.member_since_unknown",
+            "value": "عضو منذ —"
+        }
     ]
 }

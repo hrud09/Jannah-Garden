@@ -273,7 +273,14 @@ public class ShapedTextGraphic : MaskableGraphic
 
         float lineHeight = fontSize * 1.2f; // fixed line height; no auto-size, see class doc.
         float totalHeight = visualLines.Count * lineHeight;
-        float penY = rect.yMax - VerticalOffset(totalHeight, rect.height);
+
+        // DrawGlyphLine positions each glyph as baseline + horizontalBearingY (its height above the
+        // baseline) — so PenY here must be the first line's BASELINE, not its top, or every glyph renders
+        // pushed up by roughly its own ascent (most visible on a short rect, or a tall script like
+        // Bengali's matras/conjuncts): rect.yMax is the top of the block, and the baseline of the first
+        // line sits `ascent` below that.
+        float ascent = fontAsset.faceInfo.ascentLine * (fontSize / fontAsset.faceInfo.pointSize);
+        float penY = rect.yMax - VerticalOffset(totalHeight, rect.height) - ascent;
 
         float maxLineWidth = 0f;
 

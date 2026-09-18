@@ -138,15 +138,7 @@ public class ShopItemUI : MonoBehaviour
             itemIcon.sprite = data.itemIcon;
         }
 
-        if (itemNameText != null && !string.IsNullOrEmpty(data.itemName))
-        {
-            itemNameText.text = data.itemName;
-        }
-
-        if (itemDescriptionText != null && !string.IsNullOrEmpty(data.itemDescription))
-        {
-            itemDescriptionText.text = data.itemDescription;
-        }
+        ApplyNameAndDescription(data.LocalizedName, data.LocalizedDescription);
 
         bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel;
 
@@ -264,6 +256,7 @@ public class ShopItemUI : MonoBehaviour
         NoorCoinManager.OnBalanceChanged += OnBalanceChanged;
         DailyOfferManager.OnOffersChanged += OnOffersChanged;
         ItemPlacementManager.OnDownloadStateChanged += SetInteractionBlocked;
+        LocalizationManager.OnLocaleChanged += RefreshLocalizedLabels;
 
         // Catch up on a download that started before this card existed. Categories build their cards the
         // first time they are opened, so a player who buys an item and then switches tabs mid-download
@@ -271,6 +264,7 @@ public class ShopItemUI : MonoBehaviour
         SetInteractionBlocked(ItemPlacementManager.Instance != null
             && ItemPlacementManager.Instance.IsDownloadingItem);
 
+        RefreshLocalizedLabels();
         RefreshAffordabilityVisual();
     }
 
@@ -279,11 +273,41 @@ public class ShopItemUI : MonoBehaviour
         NoorCoinManager.OnBalanceChanged -= OnBalanceChanged;
         DailyOfferManager.OnOffersChanged -= OnOffersChanged;
         ItemPlacementManager.OnDownloadStateChanged -= SetInteractionBlocked;
+        LocalizationManager.OnLocaleChanged -= RefreshLocalizedLabels;
     }
 
     private void OnBalanceChanged(int _) => RefreshAffordabilityVisual();
 
     private void OnOffersChanged() => RefreshAffordabilityVisual();
+
+    /// <summary>
+    /// Re-applies the bound item's localized name/description — called on enable and whenever the active
+    /// locale changes, so a card already on screen updates immediately instead of only on its next
+    /// Initialize() call.
+    /// </summary>
+    private void RefreshLocalizedLabels()
+    {
+        if (ItemData != null) ApplyNameAndDescription(ItemData.LocalizedName, ItemData.LocalizedDescription);
+        else if (RewardItemData != null) ApplyNameAndDescription(RewardItemData.LocalizedName, RewardItemData.LocalizedDescription);
+
+        // These acquisition-label fields are Inspector-configurable (see their [Tooltip]s above), but every
+        // instance ships with the plain English default — refresh them from the active locale so a card
+        // doesn't get stuck showing English after a locale change.
+        LocalizationManager loc = LocalizationManager.Instance;
+        if (loc == null) return;
+        watchAdLabel = loc.Get("shop.label_watch_ad");
+        selectLabel = loc.Get("shop.label_select");
+        purchasePendingLabel = loc.Get("shop.label_purchasing");
+        downloadPendingLabel = loc.Get("shop.label_downloading_percent");
+    }
+
+    /// <summary>Shapes and assigns the name/description labels for the active locale (RTL mirroring,
+    /// Arabic/Urdu joining, Bengali HarfBuzz rendering) instead of a raw <c>.text =</c> assignment.</summary>
+    private void ApplyNameAndDescription(string name, string description)
+    {
+        if (itemNameText != null && !string.IsNullOrEmpty(name)) LocalizedRendering.SetText(itemNameText, name);
+        if (itemDescriptionText != null && !string.IsNullOrEmpty(description)) LocalizedRendering.SetText(itemDescriptionText, description);
+    }
 
     private void Update()
     {
@@ -383,7 +407,7 @@ public class ShopItemUI : MonoBehaviour
         // A download in flight blocks the card regardless of what kind of item this is.
         if (isDownloadPending)
         {
-            itemPriceText.text = string.Format(downloadPendingLabel, Mathf.RoundToInt(downloadProgress01 * 100f));
+            LocalizedRendering.SetText(itemPriceText, string.Format(downloadPendingLabel, Mathf.RoundToInt(downloadProgress01 * 100f)));
             itemPriceText.color = unaffordableColor;
             SetButtonInteractable(false);
             return;
@@ -405,7 +429,7 @@ public class ShopItemUI : MonoBehaviour
         // A pending purchase blocks the card regardless of anything else.
         if (isPurchasePending)
         {
-            itemPriceText.text = purchasePendingLabel;
+            LocalizedRendering.SetText(itemPriceText, purchasePendingLabel);
             itemPriceText.color = unaffordableColor;
             SetButtonInteractable(false);
             return;
@@ -417,7 +441,7 @@ public class ShopItemUI : MonoBehaviour
         bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < ItemData.requiredXPLevel;
         if (isLevelLocked)
         {
-            itemPriceText.text = $"Lvl {ItemData.requiredXPLevel} Req";
+            LocalizedRendering.SetText(itemPriceText, LocalizationManager.Instance.Get("shop.level_badge", ItemData.requiredXPLevel));
             return;
         }
 
@@ -426,9 +450,9 @@ public class ShopItemUI : MonoBehaviour
             case ShopAcquisitionType.InAppPurchase:
             {
                 // Real money: always "affordable" — the storefront, not the wallet, decides.
-                itemPriceText.text = string.IsNullOrEmpty(ItemData.realMoneyPriceLabel)
-                    ? "Buy"
-                    : ItemData.realMoneyPriceLabel;
+                LocalizedRendering.SetText(itemPriceText, string.IsNullOrEmpty(ItemData.realMoneyPriceLabel)
+                    ? LocalizationManager.Instance.Get("shop.label_buy")
+                    : ItemData.realMoneyPriceLabel);
                 itemPriceText.color = affordableColor;
                 break;
             }
@@ -440,18 +464,24 @@ public class ShopItemUI : MonoBehaviour
                 if (IsDailyOfferOnCooldown())
                 {
                     System.TimeSpan remaining = DailyOfferManager.Instance.GetTimeUntilAvailable(ItemData);
-                    itemPriceText.text = DailyOfferManager.FormatCooldown(remaining);
+                    LocalizedRendering.SetText(itemPriceText, DailyOfferManager.FormatCooldown(remaining));
                     itemPriceText.color = unaffordableColor;
                     SetButtonInteractable(false);
+                }
+                else if (ItemData.noorCoinReward > 0)
+                {
+                    // Pure digits + the coin glyph — no translated words, so this skips shaping rather
+                    // than routing through it: the coin glyph isn't in the Bengali HarfBuzz font, and
+                    // would render as a missing-glyph tofu box there.
+                    LocalizedRendering.SetPlainText(itemPriceText, $"+{ItemData.noorCoinReward} ⧟"); // coin glyph
+                    itemPriceText.color = affordableColor;
                 }
                 else
                 {
                     // The price slot advertises the payout instead of a cost — the button already says
                     // it costs an ad. A prefab-granting offer has no coin payout, so it falls back to
                     // the ad label.
-                    itemPriceText.text = ItemData.noorCoinReward > 0
-                        ? $"+{ItemData.noorCoinReward} ⧟" // coin glyph
-                        : watchAdLabel;
+                    LocalizedRendering.SetText(itemPriceText, watchAdLabel);
                     itemPriceText.color = affordableColor;
                 }
                 break;
@@ -459,9 +489,17 @@ public class ShopItemUI : MonoBehaviour
 
             default:
             {
-                itemPriceText.text = ItemData.noorCoinCost == 0
-                    ? "Free"
-                    : $"{ItemData.noorCoinCost} ⧟"; // coin glyph
+                if (ItemData.noorCoinCost == 0)
+                {
+                    LocalizedRendering.SetText(itemPriceText, LocalizationManager.Instance.Get("shop.label_free"));
+                }
+                else
+                {
+                    // Pure digits + the coin glyph — no translated words, so this skips shaping rather
+                    // than routing through it: the coin glyph isn't in the Bengali HarfBuzz font, and
+                    // would render as a missing-glyph tofu box there.
+                    LocalizedRendering.SetPlainText(itemPriceText, $"{ItemData.noorCoinCost} ⧟"); // coin glyph
+                }
 
                 // Free items are always "affordable"
                 if (ItemData.noorCoinCost <= 0)
@@ -501,7 +539,7 @@ public class ShopItemUI : MonoBehaviour
 
     private void SetButtonLabel(string label)
     {
-        if (purchaseButtonLabel != null) purchaseButtonLabel.text = label;
+        if (purchaseButtonLabel != null) LocalizedRendering.SetText(purchaseButtonLabel, label);
     }
 
     /// <summary>
@@ -519,19 +557,12 @@ public class ShopItemUI : MonoBehaviour
             itemIcon.sprite = data.itemIcon;
         }
 
-        if (itemNameText != null && !string.IsNullOrEmpty(data.itemName))
-        {
-            itemNameText.text = data.itemName;
-        }
-
-        if (itemDescriptionText != null && !string.IsNullOrEmpty(data.itemDescription))
-        {
-            itemDescriptionText.text = data.itemDescription;
-        }
+        ApplyNameAndDescription(data.LocalizedName, data.LocalizedDescription);
 
         if (itemPriceText != null)
         {
-            itemPriceText.text = "Owned"; // Since there is no isUnlocked, assume they own what is shown in inventory
+            // Since there is no isUnlocked, assume they own what is shown in inventory
+            LocalizedRendering.SetText(itemPriceText, LocalizationManager.Instance.Get("shop.owned_label"));
         }
 
         if (itemBackgroundImg != null && customBackground != null)

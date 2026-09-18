@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547ca43515ce1a4db1128b08d7e6494, type: 3}
   m_Name: Coconut_Palm_Data
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemIcon: {fileID: 21300000, guid: 9828983dc24119a468e69c740091f6f1, type: 3}
+  itemIcon: {fileID: 21300000, guid: d802368548d077c4fb5631a1392355c0, type: 3}
   itemName: Coconut Palm
   itemDescription: A beautiful Coconut Palm to add vibrant life and natural beauty
     to your garden.
   itemID: 73ba04d2af0ea26d6836fcae79829af7
   acquisitionType: 0
-  noorCoinCost: 100
+  noorCoinCost: 0
   isDailyOffer: 0
   offerCooldownHours: 24
   iapProductId: 

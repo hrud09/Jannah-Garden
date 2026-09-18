@@ -23,12 +23,6 @@ public class InspectorModeUI : MonoBehaviour
     [Tooltip("Label shown when Inspector Mode is active (e.g. a floating 'INSPECTOR MODE' text). Hidden when inactive.")]
     public GameObject activeModeLabel;
 
-    [Header("Optional — Button Labels")]
-    [Tooltip("Text to display when Inspector Mode is OFF (clicking will turn it ON).")]
-    public string normalModeText = "Inspector Mode: OFF";
-    [Tooltip("Text to display when Inspector Mode is ON (clicking will turn it OFF).")]
-    public string inspectorModeText = "Inspector Mode: ON";
-
     [Header("Optional — Mobile Vertical Controls")]
     [Tooltip("Hold to fly up in Inspector Mode. Hidden when not in Inspector Mode.")]
     public Button flyUpButton;
@@ -118,10 +112,13 @@ public class InspectorModeUI : MonoBehaviour
 
     private void UpdateUI(bool isInspectorMode)
     {
-        // Update button text
+        // Update button text. Note: toggleButtonText is a legacy UI.Text, not TMP_Text, so it can't go
+        // through LocalizedRendering's Arabic/Bengali shaping — this label renders unshaped in those
+        // locales, a pre-existing limitation of using UI.Text here rather than something this fix changes.
         if (toggleButtonText != null)
         {
-            toggleButtonText.text = isInspectorMode ? inspectorModeText : normalModeText;
+            toggleButtonText.text = LocalizationManager.Instance.Get(
+                isInspectorMode ? "interaction.inspector_mode_on" : "interaction.inspector_mode_off");
         }
 
         // Show/hide active mode label

@@ -1,87 +1,1388 @@
 {
     "entries": [
-        { "key": "shop.finish_placing_first", "value": "پہلے موجودہ آئٹم کو رکھنا مکمل کریں" },
-        { "key": "shop.requires_level", "value": "لیول {0} درکار ہے" },
-        { "key": "shop.not_enough_coins", "value": "نور کوائنز کافی نہیں ہیں" },
-        { "key": "shop.come_back_in", "value": "{0} کے بعد واپس آئیں" },
-        { "key": "shop.ads_unavailable", "value": "اشتہارات فی الحال دستیاب نہیں ہیں" },
-        { "key": "shop.store_unavailable", "value": "اسٹور فی الحال دستیاب نہیں ہے" },
-        { "key": "shop.purchase_in_progress", "value": "ایک خریداری پہلے سے جاری ہے" },
-        { "key": "shop.purchase_not_completed", "value": "خریداری مکمل نہیں ہوئی" },
-        { "key": "shop.offer_ready", "value": "تیار" },
-
-        { "key": "placement.downloading_item", "value": "آئٹم ڈاؤن لوڈ ہو رہا ہے…" },
-        { "key": "placement.download_failed", "value": "یہ آئٹم ڈاؤن لوڈ نہیں ہو سکا — اپنا کنکشن چیک کریں" },
-        { "key": "placement.moved", "value": "منتقل کر دیا گیا" },
-        { "key": "placement.move_cancelled", "value": "منتقلی منسوخ کر دی گئی" },
-        { "key": "placement.placement_cancelled", "value": "رکھنے کا عمل منسوخ کر دیا گیا" },
-        { "key": "placement.cannot_move", "value": "یہ آئٹم منتقل نہیں کیا جا سکتا" },
-        { "key": "placement.aim_move_here", "value": "جہاں رکھنا چاہتے ہیں وہاں نشانہ لگائیں، پھر \"یہاں منتقل کریں\" پر ٹیپ کریں" },
-        { "key": "placement.returned_to_inventory", "value": "{0} آپ کی انوینٹری میں واپس کر دیا گیا" },
-        { "key": "placement.returned_to_store", "value": "اسٹور کو واپس کر دیا گیا" },
-
-        { "key": "economy.coins_spent", "value": "-{0} نور کوائنز" },
-        { "key": "economy.coins_earned", "value": "+{0} نور کوائنز" },
-
-        { "key": "reward.coins", "value": "+{0} نور کوائنز" },
-        { "key": "reward.xp", "value": "+{0} ایکس پی" },
-        { "key": "reward.coins_colored", "value": "<color=#FFD700>+{0} نور کوائنز</color>" },
-        { "key": "reward.xp_colored", "value": "<color=#00FFFF>+{0} ایکس پی</color>" },
-        { "key": "reward.and", "value": "اور" },
-
-        { "key": "garden.use_back_button", "value": "باغ سے نکلنے کے لیے واپس (بیک) بٹن استعمال کریں۔" },
-
-        { "key": "photo.share_phone_only", "value": "شیئرنگ صرف فون پر کام کرتی ہے" },
-        { "key": "photo.capture_failed", "value": "تصویر نہیں لی جا سکی" },
-        { "key": "photo.share_failed", "value": "تصویر شیئر نہیں ہو سکی" },
-        { "key": "photo.saved_to_gallery", "value": "آپ کی گیلری میں محفوظ ہو گئی" },
-        { "key": "photo.save_failed", "value": "تصویر محفوظ نہیں ہو سکی" },
-        { "key": "photo.cannot_save_to_device", "value": "یہ تصویر ڈیوائس میں محفوظ نہیں ہو سکی" },
-        { "key": "photo.generic_failed", "value": "کچھ گڑبڑ ہو گئی" },
-        { "key": "photo.shared", "value": "شیئر کر دی گئی" },
-
-        { "key": "dhikr.instruction", "value": "\"{0}\" کا ذکر {1} مرتبہ کریں" },
-        { "key": "dhikr.completed", "value": "<color=#FFD700>ما شاء اللہ!</color>\nذکر مکمل ہوا!" },
-
-        { "key": "quiz.correct", "value": "<color=#00FF88>مبارک ہو!</color>\nدرست جواب!" },
-        { "key": "quiz.wrong", "value": "افسوس! درست جواب دیکھیں اور نور کوائنز حاصل کرنے کے لیے دوبارہ کوشش کریں۔" },
-
-        { "key": "treasurebox.need_subscribe", "value": "آپ کو امل ایپس سے سبسکرائب کرنا ہوگا۔" },
-        { "key": "treasurebox.all_opened", "value": "اس درجے کے تمام صندوق پہلے ہی کھولے جا چکے ہیں!" },
-        { "key": "treasurebox.not_appeared_yet", "value": "اس درجے کے صندوق ابھی ظاہر نہیں ہوئے!" },
-        { "key": "treasurebox.complete_previous_tier", "value": "پہلے تمام {0} صندوق مکمل کریں۔" },
-
-        { "key": "tutorial.welcome_title", "value": "جنت گارڈن میں خوش آمدید!" },
-        { "key": "tutorial.welcome_body", "value": "جنت کا اپنا حصہ سجائیں: درخت، فوارے اور مقدس آرائشی اشیاء رکھیں، ایکس پی حاصل کریں، خزانے کے صندوق کھولیں اور بیرونی باغ کی سیر کریں۔ آئیے شروع کرتے ہیں!" },
-        { "key": "tutorial.start_button", "value": "ٹیوٹوریل شروع کریں" },
-        { "key": "tutorial.step_open_shop", "value": "گارڈن شاپ کھولنے کے لیے شاپ بٹن پر ٹیپ کریں!" },
-        { "key": "tutorial.step_select_item", "value": "نیچے سے اپنا پہلا آئٹم منتخب کریں!" },
-        { "key": "tutorial.step_downloading", "value": "آپ کا آئٹم ڈاؤن لوڈ ہو رہا ہے — ذرا انتظار کریں!" },
-        { "key": "tutorial.step_place_item", "value": "گھومیں اور اسے لگانے کے لیے \"رکھیں\" پر ٹیپ کریں!" },
-        { "key": "tutorial.step_open_xp", "value": "شاباش! اپنی پیش رفت دیکھنے کے لیے ایکس پی بٹن پر ٹیپ کریں!" },
-        { "key": "tutorial.step_xp_chart", "value": "اپنا ایکس پی چارٹ دیکھیں، پھر جاری رکھنے کے لیے اسے بند کریں!" },
-        { "key": "tutorial.step_take_photo", "value": "اپنے باغ کی تصویر لیں!" },
-        { "key": "tutorial.step_share_photo", "value": "اسے شیئر کریں یا محفوظ کریں، پھر پری ویو بند کریں!" },
-        { "key": "tutorial.step_inspector_mode", "value": "انسپکٹر موڈ آزمائیں — اڑ کر اپنے باغ کا نظارہ کریں!" },
-        { "key": "tutorial.step_return_ground", "value": "جاری رکھنے کے لیے واپس زمین پر آئیں!" },
-        { "key": "tutorial.step_open_treasurebox", "value": "اضافی انعامات کے لیے خزانے کا صندوق کھولیں!" },
-        { "key": "tutorial.step_minimap", "value": "خزانے کے صندوق تک راستہ تلاش کرنے کے لیے اپنا منی میپ دیکھیں!" },
-        { "key": "tutorial.step_outer_garden", "value": "بیرونی باغ کی سیر کریں!" },
-        { "key": "tutorial.outer_garden_title", "value": "بیرونی باغ میں خوش آمدید!" },
-        { "key": "tutorial.outer_garden_body", "value": "یہ مرکزی باغ سے آگے آپ کی وسیع دنیا ہے — مزید سیر کریں، چھپے ہوئے مناظر دریافت کریں، اور گھر لا کر لگانے کے لیے نئے خیال پائیں۔ آزادی سے گھومیں اور نظارے کا لطف اٹھائیں!" },
-        { "key": "tutorial.finish_button", "value": "ختم کریں" },
-
-        { "key": "shop.category.plants_gardens", "value": "پودے اور باغات" },
-        { "key": "shop.category.water_of_garden", "value": "باغ کا پانی" },
-        { "key": "shop.category.architecture", "value": "عمارات" },
-        { "key": "shop.category.decor_sacred", "value": "آرائش و مقدسات" },
-        { "key": "shop.category.decor_sacred_long", "value": "آرائشی اور مقدس اشیاء" },
-        { "key": "shop.category.celestial_light", "value": "آسمانی اور روشنی" },
-        { "key": "shop.category.celestial_light_long", "value": "آسمانی اور روشنی / مناظر" },
-        { "key": "shop.category.noor_coins", "value": "نور کوائنز" },
-        { "key": "shop.tier.common", "value": "عام" },
-        { "key": "shop.tier.standard", "value": "معیاری" },
-        { "key": "shop.tier.premium", "value": "پریمیم" },
-        { "key": "shop.tier.premium_plus", "value": "پریمیم پلس" }
+        {
+            "key": "shop.finish_placing_first",
+            "value": "پہلے موجودہ آئٹم کو رکھنا مکمل کریں"
+        },
+        {
+            "key": "shop.requires_level",
+            "value": "لیول {0} درکار ہے"
+        },
+        {
+            "key": "shop.not_enough_coins",
+            "value": "نور کوائنز کافی نہیں ہیں"
+        },
+        {
+            "key": "shop.come_back_in",
+            "value": "{0} کے بعد واپس آئیں"
+        },
+        {
+            "key": "shop.ads_unavailable",
+            "value": "اشتہارات فی الحال دستیاب نہیں ہیں"
+        },
+        {
+            "key": "shop.store_unavailable",
+            "value": "اسٹور فی الحال دستیاب نہیں ہے"
+        },
+        {
+            "key": "shop.purchase_in_progress",
+            "value": "ایک خریداری پہلے سے جاری ہے"
+        },
+        {
+            "key": "shop.purchase_not_completed",
+            "value": "خریداری مکمل نہیں ہوئی"
+        },
+        {
+            "key": "shop.offer_ready",
+            "value": "تیار"
+        },
+        {
+            "key": "shop.level_badge",
+            "value": "لیول {0} درکار"
+        },
+        {
+            "key": "shop.owned_label",
+            "value": "ملکیت میں"
+        },
+        {
+            "key": "shop.label_watch_ad",
+            "value": "اشتہار دیکھیں"
+        },
+        {
+            "key": "shop.label_select",
+            "value": "منتخب کریں"
+        },
+        {
+            "key": "shop.label_purchasing",
+            "value": "خریداری ہو رہی ہے..."
+        },
+        {
+            "key": "shop.label_downloading_percent",
+            "value": "ڈاؤن لوڈ ہو رہا ہے... {0}%"
+        },
+        {
+            "key": "shop.label_buy",
+            "value": "خریدیں"
+        },
+        {
+            "key": "shop.label_free",
+            "value": "مفت"
+        },
+        {
+            "key": "placement.downloading_item",
+            "value": "آئٹم ڈاؤن لوڈ ہو رہا ہے…"
+        },
+        {
+            "key": "placement.download_failed",
+            "value": "یہ آئٹم ڈاؤن لوڈ نہیں ہو سکا — اپنا کنکشن چیک کریں"
+        },
+        {
+            "key": "placement.moved",
+            "value": "منتقل کر دیا گیا"
+        },
+        {
+            "key": "placement.move_cancelled",
+            "value": "منتقلی منسوخ کر دی گئی"
+        },
+        {
+            "key": "placement.placement_cancelled",
+            "value": "رکھنے کا عمل منسوخ کر دیا گیا"
+        },
+        {
+            "key": "placement.cannot_move",
+            "value": "یہ آئٹم منتقل نہیں کیا جا سکتا"
+        },
+        {
+            "key": "placement.aim_move_here",
+            "value": "جہاں رکھنا چاہتے ہیں وہاں نشانہ لگائیں، پھر \"یہاں منتقل کریں\" پر ٹیپ کریں"
+        },
+        {
+            "key": "placement.returned_to_inventory",
+            "value": "{0} آپ کی انوینٹری میں واپس کر دیا گیا"
+        },
+        {
+            "key": "placement.returned_to_store",
+            "value": "اسٹور کو واپس کر دیا گیا"
+        },
+        {
+            "key": "placement.button_move_here",
+            "value": "یہاں منتقل کریں"
+        },
+        {
+            "key": "placement.button_place",
+            "value": "رکھیں"
+        },
+        {
+            "key": "placement.completed_exclaim",
+            "value": "مکمل ہو گیا!"
+        },
+        {
+            "key": "economy.coins_spent",
+            "value": "-{0} نور کوائنز"
+        },
+        {
+            "key": "economy.coins_earned",
+            "value": "+{0} نور کوائنز"
+        },
+        {
+            "key": "reward.coins",
+            "value": "+{0} نور کوائنز"
+        },
+        {
+            "key": "reward.xp",
+            "value": "+{0} ایکس پی"
+        },
+        {
+            "key": "reward.coins_colored",
+            "value": "<color=#FFD700>+{0} نور کوائنز</color>"
+        },
+        {
+            "key": "reward.xp_colored",
+            "value": "<color=#00FFFF>+{0} ایکس پی</color>"
+        },
+        {
+            "key": "reward.and",
+            "value": "اور"
+        },
+        {
+            "key": "garden.use_back_button",
+            "value": "باغ سے نکلنے کے لیے واپس (بیک) بٹن استعمال کریں۔"
+        },
+        {
+            "key": "photo.share_phone_only",
+            "value": "شیئرنگ صرف فون پر کام کرتی ہے"
+        },
+        {
+            "key": "photo.capture_failed",
+            "value": "تصویر نہیں لی جا سکی"
+        },
+        {
+            "key": "photo.share_failed",
+            "value": "تصویر شیئر نہیں ہو سکی"
+        },
+        {
+            "key": "photo.saved_to_gallery",
+            "value": "آپ کی گیلری میں محفوظ ہو گئی"
+        },
+        {
+            "key": "photo.save_failed",
+            "value": "تصویر محفوظ نہیں ہو سکی"
+        },
+        {
+            "key": "photo.cannot_save_to_device",
+            "value": "یہ تصویر ڈیوائس میں محفوظ نہیں ہو سکی"
+        },
+        {
+            "key": "photo.generic_failed",
+            "value": "کچھ گڑبڑ ہو گئی"
+        },
+        {
+            "key": "photo.shared",
+            "value": "شیئر کر دی گئی"
+        },
+        {
+            "key": "dhikr.instruction",
+            "value": "\"{0}\" کا ذکر {1} مرتبہ کریں"
+        },
+        {
+            "key": "dhikr.completed",
+            "value": "<color=#FFD700>ما شاء اللہ!</color>\nذکر مکمل ہوا!"
+        },
+        {
+            "key": "quiz.correct",
+            "value": "<color=#00FF88>مبارک ہو!</color>\nدرست جواب!"
+        },
+        {
+            "key": "quiz.wrong",
+            "value": "افسوس! درست جواب دیکھیں اور نور کوائنز حاصل کرنے کے لیے دوبارہ کوشش کریں۔"
+        },
+        {
+            "key": "treasurebox.need_subscribe",
+            "value": "آپ کو امل ایپس سے سبسکرائب کرنا ہوگا۔"
+        },
+        {
+            "key": "treasurebox.all_opened",
+            "value": "اس درجے کے تمام صندوق پہلے ہی کھولے جا چکے ہیں!"
+        },
+        {
+            "key": "treasurebox.not_appeared_yet",
+            "value": "اس درجے کے صندوق ابھی ظاہر نہیں ہوئے!"
+        },
+        {
+            "key": "treasurebox.complete_previous_tier",
+            "value": "پہلے تمام {0} صندوق مکمل کریں۔"
+        },
+        {
+            "key": "treasurebox.open_prompt",
+            "value": "انعامات حاصل کرنے کے لیے یہ صندوق کھولیں!"
+        },
+        {
+            "key": "treasurebox.reward_noor_coins_fallback",
+            "value": "نور کوائنز!"
+        },
+        {
+            "key": "treasurebox.tier_complete_format",
+            "value": "{0} مکمل!"
+        },
+        {
+            "key": "treasurebox.set_complete",
+            "value": "سیٹ مکمل!"
+        },
+        {
+            "key": "treasurebox.status.resetting",
+            "value": "دوبارہ ترتیب دیا جا رہا ہے..."
+        },
+        {
+            "key": "treasurebox.status.completed",
+            "value": "مکمل"
+        },
+        {
+            "key": "treasurebox.status.finish_previous_tier",
+            "value": "پچھلا درجہ مکمل کریں"
+        },
+        {
+            "key": "treasurebox.status.locked",
+            "value": "مقفل"
+        },
+        {
+            "key": "treasurebox.status.available",
+            "value": "دستیاب"
+        },
+        {
+            "key": "treasurebox.status.waiting",
+            "value": "انتظار ہو رہا ہے..."
+        },
+        {
+            "key": "treasurebox.tier_name.silver",
+            "value": "چاندی کا صندوق"
+        },
+        {
+            "key": "treasurebox.tier_name.gold",
+            "value": "سونے کا صندوق"
+        },
+        {
+            "key": "treasurebox.tier_name.platinum",
+            "value": "پلاٹینم صندوق"
+        },
+        {
+            "key": "treasurebox.tier_name.diamond",
+            "value": "ہیرے کا صندوق"
+        },
+        {
+            "key": "treasurebox.tier_short.silver",
+            "value": "چاندی"
+        },
+        {
+            "key": "treasurebox.tier_short.gold",
+            "value": "سونا"
+        },
+        {
+            "key": "treasurebox.tier_short.platinum",
+            "value": "پلاٹینم"
+        },
+        {
+            "key": "treasurebox.tier_short.diamond",
+            "value": "ہیرا"
+        },
+        {
+            "key": "rarity.common",
+            "value": "عام"
+        },
+        {
+            "key": "rarity.uncommon",
+            "value": "غیر معمولی"
+        },
+        {
+            "key": "rarity.rare",
+            "value": "نایاب"
+        },
+        {
+            "key": "rarity.epic",
+            "value": "ایپک"
+        },
+        {
+            "key": "rarity.legendary",
+            "value": "افسانوی"
+        },
+        {
+            "key": "xp.task.place_shop_item",
+            "value": "باغ میں آئٹم رکھیں"
+        },
+        {
+            "key": "xp.task.answer_question_1st_try",
+            "value": "پہلی کوشش میں درست"
+        },
+        {
+            "key": "xp.task.answer_question_retry",
+            "value": "دوبارہ کوشش میں درست"
+        },
+        {
+            "key": "xp.task.complete_dhikr",
+            "value": "ذکر مکمل کریں"
+        },
+        {
+            "key": "xp.task.open_silver_box",
+            "value": "چاندی کا صندوق کھولیں"
+        },
+        {
+            "key": "xp.task.open_gold_box",
+            "value": "سونے کا صندوق کھولیں"
+        },
+        {
+            "key": "xp.task.open_platinum_box",
+            "value": "پلاٹینم صندوق کھولیں"
+        },
+        {
+            "key": "xp.task.open_diamond_box",
+            "value": "ہیرے کا صندوق کھولیں"
+        },
+        {
+            "key": "xp.chart_row_format",
+            "value": "{0} — +{1} ایکس پی"
+        },
+        {
+            "key": "loading.loading_text",
+            "value": "لوڈ ہو رہا ہے..."
+        },
+        {
+            "key": "loading.base_scene",
+            "value": "بنیادی منظر لوڈ ہو رہا ہے..."
+        },
+        {
+            "key": "loading.environments",
+            "value": "ماحول لوڈ ہو رہے ہیں..."
+        },
+        {
+            "key": "loading.preparing_scene",
+            "value": "منظر تیار کیا جا رہا ہے..."
+        },
+        {
+            "key": "common.quantity_format",
+            "value": "x{0}"
+        },
+        {
+            "key": "common.now",
+            "value": "ابھی"
+        },
+        {
+            "key": "tutorial.step_welcome",
+            "value": "<color=#FFB300><size=120%>جنت گارڈن میں خوش آمدید!</color></size>\n\nآئیے سیکھتے ہیں کہ اپنے باغ کو کیسے بڑھایا جائے۔ ٹیوٹوریل شروع کرنے کے لیے \"شروع کریں\" پر ٹیپ کریں!"
+        },
+        {
+            "key": "tutorial.button_start",
+            "value": "شروع کریں"
+        },
+        {
+            "key": "tutorial.step_basic_movement",
+            "value": "اپنے کردار کو حرکت دینے کے لیے اسکرین کے بائیں جانب موجود \"ورچوئل جوائے اسٹک\" استعمال کریں۔"
+        },
+        {
+            "key": "tutorial.button_next",
+            "value": "اگلا"
+        },
+        {
+            "key": "tutorial.step_basic_looking",
+            "value": "ارد گرد دیکھنے اور کیمرے کے زاویے کو کنٹرول کرنے کے لیے اسکرین پر کہیں بھی سوائپ/ڈریگ کریں۔"
+        },
+        {
+            "key": "tutorial.step_open_shop",
+            "value": "سب سے پہلے، گارڈن شاپ کھولنے کے لیے کونے میں موجود \"شاپ بٹن\" پر ٹیپ کریں۔"
+        },
+        {
+            "key": "tutorial.step_select_item",
+            "value": "شاباش! اب دکان میں پہلا آئٹم منتخب کریں اور نور کوائنز استعمال کرتے ہوئے \"خریدیں\" پر کلک کریں۔"
+        },
+        {
+            "key": "tutorial.step_place_item",
+            "value": "رکھنے کا پیش منظر اسکرین کے وسط میں دکھائی دے رہا ہے۔\n\nکیمرہ کنٹرولز استعمال کرتے ہوئے ارد گرد دیکھیں اور تیار ہونے پر \"رکھیں\" پر ٹیپ کریں!"
+        },
+        {
+            "key": "tutorial.step_completed",
+            "value": "<color=#4CAF50><size=120%>بہترین ترتیب!</color></size>\n\nآپ نے کامیابی سے اپنا پہلا پودا لگا لیا ہے! کوئز مکمل کر کے اور آئٹمز خرید کر اپنا باغ بڑھائیں۔ کھیلنے کے لیے \"ختم کریں\" پر کلک کریں!"
+        },
+        {
+            "key": "tutorial.button_finish",
+            "value": "ختم کریں"
+        },
+        {
+            "key": "tutorial.button_skip",
+            "value": "چھوڑ دیں"
+        },
+        {
+            "key": "shop.category.plants_gardens",
+            "value": "پودے اور باغات"
+        },
+        {
+            "key": "shop.category.water_of_garden",
+            "value": "باغ کا پانی"
+        },
+        {
+            "key": "shop.category.architecture",
+            "value": "عمارات"
+        },
+        {
+            "key": "shop.category.decor_sacred",
+            "value": "آرائش و مقدسات"
+        },
+        {
+            "key": "shop.category.decor_sacred_long",
+            "value": "آرائشی اور مقدس اشیاء"
+        },
+        {
+            "key": "shop.category.celestial_light",
+            "value": "آسمانی اور روشنی"
+        },
+        {
+            "key": "shop.category.celestial_light_long",
+            "value": "آسمانی اور روشنی / مناظر"
+        },
+        {
+            "key": "shop.category.noor_coins",
+            "value": "نور کوائنز"
+        },
+        {
+            "key": "shop.tier.common",
+            "value": "عام"
+        },
+        {
+            "key": "shop.tier.standard",
+            "value": "معیاری"
+        },
+        {
+            "key": "shop.tier.premium",
+            "value": "پریمیم"
+        },
+        {
+            "key": "shop.tier.premium_plus",
+            "value": "پریمیم پلس"
+        },
+        {
+            "key": "item.4fa471036bdf280fb7d2f5e418336013.name",
+            "value": "عربی رسم الخط کا محراب"
+        },
+        {
+            "key": "item.4fa471036bdf280fb7d2f5e418336013.desc",
+            "value": "عربی رسم الخط کا محراب ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.27a3cc859ff23cfbbbd93937413078f9.name",
+            "value": "محرابی لکڑی کا پل"
+        },
+        {
+            "key": "item.27a3cc859ff23cfbbbd93937413078f9.desc",
+            "value": "محرابی لکڑی کا پل ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.46c542252394d75fb3a05c7d75252d6c.name",
+            "value": "بسم اللہ دروازے کا حلقہ"
+        },
+        {
+            "key": "item.46c542252394d75fb3a05c7d75252d6c.desc",
+            "value": "بسم اللہ دروازے کا حلقہ ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.6e91398dc9edb3eb6c10c93213d66dde.name",
+            "value": "کورنتھی ستون"
+        },
+        {
+            "key": "item.6e91398dc9edb3eb6c10c93213d66dde.desc",
+            "value": "کورنتھی ستون ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.5dd3addc6287976d041121cdd90f9b14.name",
+            "value": "کرسٹل قلعہ"
+        },
+        {
+            "key": "item.5dd3addc6287976d041121cdd90f9b14.desc",
+            "value": "کرسٹل قلعہ ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.f1dfa038f5ca3656be50d729b3e6968b.name",
+            "value": "تیرتا ہوا پتھروں کا راستہ"
+        },
+        {
+            "key": "item.f1dfa038f5ca3656be50d729b3e6968b.desc",
+            "value": "تیرتا ہوا پتھروں کا راستہ ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.81f2458477e5f382cc0540a534bea12c.name",
+            "value": "سنہری روشنی کا محراب"
+        },
+        {
+            "key": "item.81f2458477e5f382cc0540a534bea12c.desc",
+            "value": "سنہری روشنی کا محراب ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.55dfbc0dc433384cf3159fb448d92443.name",
+            "value": "جنت کا سنہری دروازہ"
+        },
+        {
+            "key": "item.55dfbc0dc433384cf3159fb448d92443.desc",
+            "value": "جنت کا سنہری دروازہ ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.bc56b164b6e5e7427b9b30a5ffbc8b93.name",
+            "value": "لبلاب بیل میں لپٹی جھونپڑی"
+        },
+        {
+            "key": "item.bc56b164b6e5e7427b9b30a5ffbc8b93.desc",
+            "value": "لبلاب بیل میں لپٹی جھونپڑی ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.f51486b7130cb7c6af4172aef5de8f9f.name",
+            "value": "مقرنص خطاطی محراب"
+        },
+        {
+            "key": "item.f51486b7130cb7c6af4172aef5de8f9f.desc",
+            "value": "مقرنص خطاطی محراب ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.2908420f6f6079ec1b7aecaf48477769.name",
+            "value": "رسی سے بندھا بانس کا محراب"
+        },
+        {
+            "key": "item.2908420f6f6079ec1b7aecaf48477769.desc",
+            "value": "رسی سے بندھا بانس کا محراب ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.5bf52f6d763f61184423a34f6a597406.name",
+            "value": "یاقوتی سونے کا محرابی دروازہ"
+        },
+        {
+            "key": "item.5bf52f6d763f61184423a34f6a597406.desc",
+            "value": "یاقوتی سونے کا محرابی دروازہ ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.352939995768cbb96524450a28f4fa6b.name",
+            "value": "فیروزی موزائیک محراب"
+        },
+        {
+            "key": "item.352939995768cbb96524450a28f4fa6b.desc",
+            "value": "فیروزی موزائیک محراب ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.b5e883e11f087790553ab4c1f5d999a6.name",
+            "value": "بیل میں لپٹا بانس کا محراب"
+        },
+        {
+            "key": "item.b5e883e11f087790553ab4c1f5d999a6.desc",
+            "value": "بیل میں لپٹا بانس کا محراب ایک خوبصورت تعمیراتی شاہکار ہے جو آپ کی جائیداد کو راحت اور تعمیراتی حسن سے نوازتا ہے۔"
+        },
+        {
+            "key": "item.d285f07515626c88fcc65f444bfaae62.name",
+            "value": "آٹھ نکاتی ستارہ فانوس"
+        },
+        {
+            "key": "item.d285f07515626c88fcc65f444bfaae62.desc",
+            "value": "آٹھ نکاتی ستارہ فانوس ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.156c89d0965de4298757d8b7aea231be.name",
+            "value": "تیرتا ہوا سبزہ زار"
+        },
+        {
+            "key": "item.156c89d0965de4298757d8b7aea231be.desc",
+            "value": "تیرتا ہوا سبزہ زار ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.3413652ef4d867f4a650580f33e0c489.name",
+            "value": "سنہری ہلالی ستارہ"
+        },
+        {
+            "key": "item.3413652ef4d867f4a650580f33e0c489.desc",
+            "value": "سنہری ہلالی ستارہ ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.c9d0d33026286402518f11f390b029f8.name",
+            "value": "رنگارنگ چمکتا راستہ"
+        },
+        {
+            "key": "item.c9d0d33026286402518f11f390b029f8.desc",
+            "value": "رنگارنگ چمکتا راستہ ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.f8d1febf41c69a2267520b6b75dcd103.name",
+            "value": "بہار کا جزیرہ"
+        },
+        {
+            "key": "item.f8d1febf41c69a2267520b6b75dcd103.desc",
+            "value": "بہار کا جزیرہ ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.7f0395e6f9d44388ff0fef763dcaabf9.name",
+            "value": "فانوسوں کا عروج"
+        },
+        {
+            "key": "item.7f0395e6f9d44388ff0fef763dcaabf9.desc",
+            "value": "فانوسوں کا عروج ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.c3c9f802da5c8352bbb3209f78e1e4c5.name",
+            "value": "نورانی شگاف"
+        },
+        {
+            "key": "item.c3c9f802da5c8352bbb3209f78e1e4c5.desc",
+            "value": "نورانی شگاف ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.58f65719d43fd04db087cd3437366aa2.name",
+            "value": "چاندنی میں چمکتا پتھروں کا حلقہ"
+        },
+        {
+            "key": "item.58f65719d43fd04db087cd3437366aa2.desc",
+            "value": "چاندنی میں چمکتا پتھروں کا حلقہ ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.891a12a264f9fcf4bf80d414afbbe031.name",
+            "value": "آراستہ فانوس گیلری"
+        },
+        {
+            "key": "item.891a12a264f9fcf4bf80d414afbbe031.desc",
+            "value": "آراستہ فانوس گیلری ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.0f0bf24939c7b7a0d9218d2a6e8c05b5.name",
+            "value": "رونیک آگ کا حلقہ"
+        },
+        {
+            "key": "item.0f0bf24939c7b7a0d9218d2a6e8c05b5.desc",
+            "value": "رونیک آگ کا حلقہ ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.40de1a41c6124205bed217d1d80e5488.name",
+            "value": "ستارہ فانوس"
+        },
+        {
+            "key": "item.40de1a41c6124205bed217d1d80e5488.desc",
+            "value": "ستارہ فانوس ایک روشن تحفہ ہے جو آپ کے باغ کو نور اور سحر سے بھر دیتا ہے۔"
+        },
+        {
+            "key": "item.d527779b36edc1763cdd48957669057d.name",
+            "value": "عربی خطاطی اسٹینڈ"
+        },
+        {
+            "key": "item.d527779b36edc1763cdd48957669057d.desc",
+            "value": "عربی خطاطی اسٹینڈ ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.9141d4caa1471fc40c615d60e625f070.name",
+            "value": "آسمانی موزائیک بینچ"
+        },
+        {
+            "key": "item.9141d4caa1471fc40c615d60e625f070.desc",
+            "value": "آسمانی موزائیک بینچ ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.76c84ec4a5a57f58c77faf260352cdf3.name",
+            "value": "نیلا موزائیک مثمن"
+        },
+        {
+            "key": "item.76c84ec4a5a57f58c77faf260352cdf3.desc",
+            "value": "نیلا موزائیک مثمن ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.fba0c0f0897e7f5b0d786380240c1e14.name",
+            "value": "نیلی ستارہ موزائیک تختی"
+        },
+        {
+            "key": "item.fba0c0f0897e7f5b0d786380240c1e14.desc",
+            "value": "نیلی ستارہ موزائیک تختی ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.bc682c70ac133526e4004b4f54d17917.name",
+            "value": "گہرے سرخ ہیرے کی مسند"
+        },
+        {
+            "key": "item.bc682c70ac133526e4004b4f54d17917.desc",
+            "value": "گہرے سرخ ہیرے کی مسند ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.7f2d99266f113411b3d64a0819c27456.name",
+            "value": "آٹھ نکاتی ستارہ موزائیک"
+        },
+        {
+            "key": "item.7f2d99266f113411b3d64a0819c27456.desc",
+            "value": "آٹھ نکاتی ستارہ موزائیک ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.960fc290d2e52fc1696d4349c0ecd285.name",
+            "value": "زمردی مخملی گدی"
+        },
+        {
+            "key": "item.960fc290d2e52fc1696d4349c0ecd285.desc",
+            "value": "زمردی مخملی گدی ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.e92347bd50aa6b1769312e8b21c8b174.name",
+            "value": "تیرتا ہوا کنول چبوترہ"
+        },
+        {
+            "key": "item.e92347bd50aa6b1769312e8b21c8b174.desc",
+            "value": "تیرتا ہوا کنول چبوترہ ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.cca8b065a9b8c4f501b9572d5810e9df.name",
+            "value": "سنہری قرآنی تختی"
+        },
+        {
+            "key": "item.cca8b065a9b8c4f501b9572d5810e9df.desc",
+            "value": "سنہری قرآنی تختی ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.ed7f9ff2e032babc5045bdf50b962d90.name",
+            "value": "آراستہ سنہری عود دان"
+        },
+        {
+            "key": "item.ed7f9ff2e032babc5045bdf50b962d90.desc",
+            "value": "آراستہ سنہری عود دان ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.a934e834392b9fa7d6fe1650d5515c52.name",
+            "value": "آراستہ سنہری جام"
+        },
+        {
+            "key": "item.a934e834392b9fa7d6fe1650d5515c52.desc",
+            "value": "آراستہ سنہری جام ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.c09503ffcd716c4165b197f8eb6dd253.name",
+            "value": "آراستہ تمغہ نما قالین"
+        },
+        {
+            "key": "item.c09503ffcd716c4165b197f8eb6dd253.desc",
+            "value": "آراستہ تمغہ نما قالین ایک نفیس تحفہ ہے جو آپ کے باغ کو کاریگری اور پرسکون تقدس سے آراستہ کرتا ہے۔"
+        },
+        {
+            "key": "item.f55504b4707c4627a17a74f95fef56df.name",
+            "value": "چوڑے پتوں والا درخت 01 سبز"
+        },
+        {
+            "key": "item.f55504b4707c4627a17a74f95fef56df.desc",
+            "value": "چوڑے پتوں والا درخت 01 سبز ایک خوبصورت اضافہ ہے جو آپ کے باغ کو سجاتا ہے۔"
+        },
+        {
+            "key": "item.fedc872d00eabad8237824d12acdc5f5.name",
+            "value": "آسمانی شگوفوں کا درخت"
+        },
+        {
+            "key": "item.fedc872d00eabad8237824d12acdc5f5.desc",
+            "value": "آسمانی شگوفوں کا درخت ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.73ba04d2af0ea26d6836fcae79829af7.name",
+            "value": "ناریل کا درخت"
+        },
+        {
+            "key": "item.73ba04d2af0ea26d6836fcae79829af7.desc",
+            "value": "ناریل کا درخت ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.c26bcf28a847b7016978f39641762689.name",
+            "value": "چمکتا بید مجنوں"
+        },
+        {
+            "key": "item.c26bcf28a847b7016978f39641762689.desc",
+            "value": "چمکتا بید مجنوں ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.f55096a3cc5e7810573a1fb4fb88e4f8.name",
+            "value": "چاندنی میں کھلتا کیکٹس کا پھول"
+        },
+        {
+            "key": "item.f55096a3cc5e7810573a1fb4fb88e4f8.desc",
+            "value": "چاندنی میں کھلتا کیکٹس کا پھول ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.169a10ff3aa8cf031779c8faf374b2d4.name",
+            "value": "آراستہ بونسائی گملا"
+        },
+        {
+            "key": "item.169a10ff3aa8cf031779c8faf374b2d4.desc",
+            "value": "آراستہ بونسائی گملا ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.b7936867c0bd82fdda3732000b979f7c.name",
+            "value": "پنکھڑیوں کا آبشار"
+        },
+        {
+            "key": "item.b7936867c0bd82fdda3732000b979f7c.desc",
+            "value": "پنکھڑیوں کا آبشار ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.5616706774371c3dc837e0195607a223.name",
+            "value": "گلابی گلاب کا باغ"
+        },
+        {
+            "key": "item.5616706774371c3dc837e0195607a223.desc",
+            "value": "گلابی گلاب کا باغ ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.ea6d937405d11ba59c059717e075844d.name",
+            "value": "انار کا درخت"
+        },
+        {
+            "key": "item.ea6d937405d11ba59c059717e075844d.desc",
+            "value": "انار کا درخت ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.2b3c4f9aaeb366d9aaddf8195f748493.name",
+            "value": "انار کا درخت II"
+        },
+        {
+            "key": "item.2b3c4f9aaeb366d9aaddf8195f748493.desc",
+            "value": "انار کا درخت II ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.19c3a47238ea2f8c9378b737a39ac6ca.name",
+            "value": "رنگ برنگا پرزم پھول"
+        },
+        {
+            "key": "item.19c3a47238ea2f8c9378b737a39ac6ca.desc",
+            "value": "رنگ برنگا پرزم پھول ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.9f06434ff4d6531b523dddc01a010c18.name",
+            "value": "ستارہ پھول کی جالی"
+        },
+        {
+            "key": "item.9f06434ff4d6531b523dddc01a010c18.desc",
+            "value": "ستارہ پھول کی جالی ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.b51046a063298f6142a990fcf1dbc0eb.name",
+            "value": "نور کا درخت"
+        },
+        {
+            "key": "item.b51046a063298f6142a990fcf1dbc0eb.desc",
+            "value": "نور کا درخت ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.519d126fecd336a0f5446380e7b3240f.name",
+            "value": "ٹیولپ کا گچھا"
+        },
+        {
+            "key": "item.519d126fecd336a0f5446380e7b3240f.desc",
+            "value": "ٹیولپ کا گچھا ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.931f5863f12f47cf1bddbd134557d5d1.name",
+            "value": "نرالا سیب کا درخت"
+        },
+        {
+            "key": "item.931f5863f12f47cf1bddbd134557d5d1.desc",
+            "value": "نرالا سیب کا درخت ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.eda847d69c98754e590474c1ffa0f52b.name",
+            "value": "نرالا پھولوں کا آبشار"
+        },
+        {
+            "key": "item.eda847d69c98754e590474c1ffa0f52b.desc",
+            "value": "نرالا پھولوں کا آبشار ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.b73a6ca69670b98c90f841146b7af39f.name",
+            "value": "سرگوشی کرتے شگوفوں کا درخت"
+        },
+        {
+            "key": "item.b73a6ca69670b98c90f841146b7af39f.desc",
+            "value": "سرگوشی کرتے شگوفوں کا درخت ایک خوبصورت اضافہ ہے جو آپ کے باغ میں متحرک زندگی اور قدرتی حسن گھول دیتا ہے۔"
+        },
+        {
+            "key": "item.f5e63129ff2c6afd4e8d2490f396b3e8.name",
+            "value": "قدیم پتھر کا فوارہ"
+        },
+        {
+            "key": "item.f5e63129ff2c6afd4e8d2490f396b3e8.desc",
+            "value": "قدیم پتھر کا فوارہ ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.9266c6d5e48fb366088f7d703fc354fd.name",
+            "value": "قدیم پتھر کا حوض"
+        },
+        {
+            "key": "item.9266c6d5e48fb366088f7d703fc354fd.desc",
+            "value": "قدیم پتھر کا حوض ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.8e31ff6a4fca8350ba2df5bc8460f619.name",
+            "value": "سنہری نور کا فوارہ"
+        },
+        {
+            "key": "item.8e31ff6a4fca8350ba2df5bc8460f619.desc",
+            "value": "سنہری نور کا فوارہ ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.ef8c06c78525f39d0d0ecc196433e619.name",
+            "value": "کنول کا تالاب"
+        },
+        {
+            "key": "item.ef8c06c78525f39d0d0ecc196433e619.desc",
+            "value": "کنول کا تالاب ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.45236065029f7a84478813750eb24738.name",
+            "value": "سنگ مرمر کی آبی نالی"
+        },
+        {
+            "key": "item.45236065029f7a84478813750eb24738.desc",
+            "value": "سنگ مرمر کی آبی نالی ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.3b090e69ca199b7d217531032712b920.name",
+            "value": "بل کھاتے دریا کا جزیرہ"
+        },
+        {
+            "key": "item.3b090e69ca199b7d217531032712b920.desc",
+            "value": "بل کھاتے دریا کا جزیرہ ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.d06798148d103014f4d2729b928ccf7e.name",
+            "value": "انناس کے تاج کا فوارہ"
+        },
+        {
+            "key": "item.d06798148d103014f4d2729b928ccf7e.desc",
+            "value": "انناس کے تاج کا فوارہ ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.a152201b366fe40e6e0ca4252c211393.name",
+            "value": "رنگ برنگا آبشار"
+        },
+        {
+            "key": "item.a152201b366fe40e6e0ca4252c211393.desc",
+            "value": "رنگ برنگا آبشار ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.d7b302f68a54d9867db32bd32c7a8d88.name",
+            "value": "سونے کا دریا"
+        },
+        {
+            "key": "item.d7b302f68a54d9867db32bd32c7a8d88.desc",
+            "value": "سونے کا دریا ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.94bbf77133dc37b74dbf95eaef232b40.name",
+            "value": "درجہ دار آبشار"
+        },
+        {
+            "key": "item.94bbf77133dc37b74dbf95eaef232b40.desc",
+            "value": "درجہ دار آبشار ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.30cbad77453f47a180fc6fb277e5eb2d.name",
+            "value": "سرگوشی کرتا کنواں"
+        },
+        {
+            "key": "item.30cbad77453f47a180fc6fb277e5eb2d.desc",
+            "value": "سرگوشی کرتا کنواں ایک پرسکون تحفہ ہے جو آپ کے باغ میں بہتا پانی اور سکون لے آتا ہے۔"
+        },
+        {
+            "key": "item.4f1100893646431bb027e2360f6b337c.name",
+            "value": "شگوفوں کا درخت 01"
+        },
+        {
+            "key": "item.4f1100893646431bb027e2360f6b337c.desc",
+            "value": "ایک خاص انعامی چیز: شگوفوں کا درخت 01۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.23c7880ff58e456caa1cb2dbd0621789.name",
+            "value": "شگوفوں کا درخت 01"
+        },
+        {
+            "key": "item.23c7880ff58e456caa1cb2dbd0621789.desc",
+            "value": "ایک خاص انعامی چیز: شگوفوں کا درخت 01۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.844bf0963b99496dbd783486e3bf9095.name",
+            "value": "شگوفوں کا درخت 02"
+        },
+        {
+            "key": "item.844bf0963b99496dbd783486e3bf9095.desc",
+            "value": "ایک خاص انعامی چیز: شگوفوں کا درخت 02۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.4a10342786c44c41bfd5fb5ad6c5d90d.name",
+            "value": "چوڑے پتوں والا درخت 01 نیلا"
+        },
+        {
+            "key": "item.4a10342786c44c41bfd5fb5ad6c5d90d.desc",
+            "value": "ایک خاص انعامی چیز: چوڑے پتوں والا درخت 01 نیلا۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.7781562f021e40cb85a27610a2b29d02.name",
+            "value": "چوڑے پتوں والا درخت 02 سرخ"
+        },
+        {
+            "key": "item.7781562f021e40cb85a27610a2b29d02.desc",
+            "value": "ایک خاص انعامی چیز: چوڑے پتوں والا درخت 02 سرخ۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.23343abacc4044c1af515482f8ec5a55.name",
+            "value": "چوڑے پتوں والا درخت 03 نیلا"
+        },
+        {
+            "key": "item.23343abacc4044c1af515482f8ec5a55.desc",
+            "value": "ایک خاص انعامی چیز: چوڑے پتوں والا درخت 03 نیلا۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.b611853df847406899f5462310dd72ba.name",
+            "value": "چوڑے پتوں والا درخت 03 جامنی"
+        },
+        {
+            "key": "item.b611853df847406899f5462310dd72ba.desc",
+            "value": "ایک خاص انعامی چیز: چوڑے پتوں والا درخت 03 جامنی۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.10de1f039f3e42ba960564c1284a2084.name",
+            "value": "چوڑے پتوں والا درخت 04 نیلا"
+        },
+        {
+            "key": "item.10de1f039f3e42ba960564c1284a2084.desc",
+            "value": "ایک خاص انعامی چیز: چوڑے پتوں والا درخت 04 نیلا۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.2470d121b6384893b8424c42bd6838c0.name",
+            "value": "بڑی چٹان 02"
+        },
+        {
+            "key": "item.2470d121b6384893b8424c42bd6838c0.desc",
+            "value": "ایک خاص انعامی چیز: بڑی چٹان 02۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.2866167319434a63bb4bfe6b1e3bef8c.name",
+            "value": "بڑا پتھر 01"
+        },
+        {
+            "key": "item.2866167319434a63bb4bfe6b1e3bef8c.desc",
+            "value": "ایک خاص انعامی چیز: بڑا پتھر 01۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.c321751bab0d43218c0338bea8893a44.name",
+            "value": "بید کا درخت 01 نیلا"
+        },
+        {
+            "key": "item.c321751bab0d43218c0338bea8893a44.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 01 نیلا۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.95cc5cdea5c34ef9b1f591f631367878.name",
+            "value": "بید کا درخت 01 سرخ"
+        },
+        {
+            "key": "item.95cc5cdea5c34ef9b1f591f631367878.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 01 سرخ۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.2ca87ec4976b4e72b9dd795153c3ffc0.name",
+            "value": "بید کا درخت 02 گلابی"
+        },
+        {
+            "key": "item.2ca87ec4976b4e72b9dd795153c3ffc0.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 02 گلابی۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.bca8eed45554450b97e5d1d0e1d47f1c.name",
+            "value": "بید کا درخت 03 نیلا"
+        },
+        {
+            "key": "item.bca8eed45554450b97e5d1d0e1d47f1c.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 03 نیلا۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.fb2d54e04cfe45c9b6ca91412979707f.name",
+            "value": "بید کا درخت 03 سرخ"
+        },
+        {
+            "key": "item.fb2d54e04cfe45c9b6ca91412979707f.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 03 سرخ۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.af088967cf3f48caa29fceb1c8ba9e33.name",
+            "value": "بید کا درخت 04 سبز"
+        },
+        {
+            "key": "item.af088967cf3f48caa29fceb1c8ba9e33.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 04 سبز۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "item.4415baff0c1c4d62b8ee938d7ae556d7.name",
+            "value": "بید کا درخت 05 سرخ"
+        },
+        {
+            "key": "item.4415baff0c1c4d62b8ee938d7ae556d7.desc",
+            "value": "ایک خاص انعامی چیز: بید کا درخت 05 سرخ۔ اپنے باغ کو سجانے کے لیے اسے تلاش کریں!"
+        },
+        {
+            "key": "settings.sfx_label",
+            "value": "ساؤنڈ ایفیکٹس"
+        },
+        {
+            "key": "settings.panel_title",
+            "value": "ترتیبات"
+        },
+        {
+            "key": "settings.music_label",
+            "value": "موسیقی"
+        },
+        {
+            "key": "settings.vibration_label",
+            "value": "وائبریشن"
+        },
+        {
+            "key": "settings.normal_speed_label",
+            "value": "عام رفتار"
+        },
+        {
+            "key": "settings.inspector_speed_label",
+            "value": "انسپکٹر رفتار"
+        },
+        {
+            "key": "settings.look_around_speed_label",
+            "value": "ارد گرد دیکھنے کی رفتار"
+        },
+        {
+            "key": "treasurebox.confirm.watch_ad_button",
+            "value": "اشتہار دیکھیں"
+        },
+        {
+            "key": "treasurebox.confirm.subscribe_button",
+            "value": "سبسکرائب کریں"
+        },
+        {
+            "key": "treasurebox.confirm.ad_or_subscribe_prompt",
+            "value": "خزانے کا صندوق کھولنے کے لیے اشتہار دیکھیں یا سبسکرائب کریں"
+        },
+        {
+            "key": "economy.xp_level_unit_label",
+            "value": "لیول\n"
+        },
+        {
+            "key": "economy.noor_coin_label",
+            "value": "نور کوائنز"
+        },
+        {
+            "key": "economy.close_stats_button",
+            "value": "اعداد و شمار بند کریں"
+        },
+        {
+            "key": "economy.open_stats_button",
+            "value": "اعداد و شمار کھولیں"
+        },
+        {
+            "key": "shop.tab_shop_label",
+            "value": "دکان"
+        },
+        {
+            "key": "shop.tab_inventory_label",
+            "value": "انوینٹری"
+        },
+        {
+            "key": "shop.tab_treasure_label",
+            "value": "خزانہ"
+        },
+        {
+            "key": "economy.xp_unit_label",
+            "value": "ایکس پی"
+        },
+        {
+            "key": "economy.level_label",
+            "value": "لیول"
+        },
+        {
+            "key": "quiz.submit_button",
+            "value": "جمع کروائیں"
+        },
+        {
+            "key": "dhikr.submit_button",
+            "value": "جمع کروائیں"
+        },
+        {
+            "key": "interaction.place_here_button",
+            "value": "یہاں رکھیں"
+        },
+        {
+            "key": "interaction.open_button",
+            "value": "کھولیں"
+        },
+        {
+            "key": "interaction.answer_button",
+            "value": "جواب"
+        },
+        {
+            "key": "interaction.manage_button",
+            "value": "منظم کریں"
+        },
+        {
+            "key": "placed_item.relocate_button",
+            "value": "نئی جگہ منتقل کریں"
+        },
+        {
+            "key": "placed_item.return_button",
+            "value": "اسٹور کو واپس کریں"
+        },
+        {
+            "key": "placed_item.keep_here_button",
+            "value": "یہیں رہنے دیں"
+        },
+        {
+            "key": "photo_mode.share_button",
+            "value": "شیئر کریں"
+        },
+        {
+            "key": "photo_mode.save_button",
+            "value": "محفوظ کریں"
+        },
+        {
+            "key": "photo_mode.cancel_button",
+            "value": "منسوخ کریں"
+        },
+        {
+            "key": "leave_garden.confirm_prompt",
+            "value": "کیا آپ جانے سے پہلے بیرونی باغ دیکھنا چاہتے ہیں؟"
+        },
+        {
+            "key": "leave_garden.quit_button",
+            "value": "خارج ہوں"
+        },
+        {
+            "key": "leave_garden.outer_garden_button",
+            "value": "بیرونی باغ"
+        },
+        {
+            "key": "tutorial.skip_button",
+            "value": "چھوڑ دیں"
+        },
+        {
+            "key": "item.9999.name",
+            "value": "نور کوائن"
+        },
+        {
+            "key": "item.9999.desc",
+            "value": "نور کوائن"
+        },
+        {
+            "key": "item.99999.name",
+            "value": "نور کوائن پیک"
+        },
+        {
+            "key": "item.99999.desc",
+            "value": "نور کوائن پیک"
+        },
+        {
+            "key": "item.99998.name",
+            "value": "نور کوائن بیگ"
+        },
+        {
+            "key": "item.99998.desc",
+            "value": "نور کوائن بیگ"
+        },
+        {
+            "key": "item.3f5b95f180e946cabc8a9b458335e87e.name",
+            "value": "روزانہ سرپرائز"
+        },
+        {
+            "key": "item.3f5b95f180e946cabc8a9b458335e87e.desc",
+            "value": "ایک مختصر ویڈیو دیکھیں اور 500 نور کوائنز حاصل کریں۔ یہ روزانہ ایک بار دوبارہ دستیاب ہوتا ہے۔"
+        },
+        {
+            "key": "onboarding.welcome_title",
+            "value": "جنت گارڈن میں خوش آمدید!"
+        },
+        {
+            "key": "onboarding.welcome_body",
+            "value": "جنت کا اپنا حصہ سجائیں: درخت، فوارے اور مقدس آرائشی اشیاء رکھیں، ایکس پی حاصل کریں، خزانے کے صندوق کھولیں اور بیرونی باغ کی سیر کریں۔ آئیے شروع کرتے ہیں!"
+        },
+        {
+            "key": "onboarding.start_button",
+            "value": "ٹیوٹوریل شروع کریں"
+        },
+        {
+            "key": "onboarding.step_open_shop",
+            "value": "گارڈن شاپ کھولنے کے لیے شاپ بٹن پر ٹیپ کریں!"
+        },
+        {
+            "key": "onboarding.step_select_item",
+            "value": "نیچے سے اپنا پہلا آئٹم منتخب کریں!"
+        },
+        {
+            "key": "onboarding.step_downloading",
+            "value": "آپ کا آئٹم ڈاؤن لوڈ ہو رہا ہے — ذرا انتظار کریں!"
+        },
+        {
+            "key": "onboarding.step_place_item",
+            "value": "گھومیں اور اسے لگانے کے لیے \"رکھیں\" پر ٹیپ کریں!"
+        },
+        {
+            "key": "onboarding.step_xp_button",
+            "value": "شاباش! اپنی پیش رفت دیکھنے کے لیے ایکس پی بٹن پر ٹیپ کریں!"
+        },
+        {
+            "key": "onboarding.step_xp_chart",
+            "value": "اپنا ایکس پی چارٹ دیکھیں، پھر جاری رکھنے کے لیے اسے بند کریں!"
+        },
+        {
+            "key": "onboarding.step_take_photo",
+            "value": "اپنے باغ کی تصویر لیں!"
+        },
+        {
+            "key": "onboarding.step_share_photo",
+            "value": "اسے شیئر کریں یا محفوظ کریں، پھر پری ویو بند کریں!"
+        },
+        {
+            "key": "onboarding.step_inspector_mode",
+            "value": "انسپکٹر موڈ آزمائیں — اڑ کر اپنے باغ کا نظارہ کریں!"
+        },
+        {
+            "key": "onboarding.step_return_ground",
+            "value": "جاری رکھنے کے لیے واپس زمین پر آئیں!"
+        },
+        {
+            "key": "onboarding.step_treasurebox",
+            "value": "اضافی انعامات کے لیے خزانے کا صندوق کھولیں!"
+        },
+        {
+            "key": "onboarding.step_minimap",
+            "value": "خزانے کے صندوق تک راستہ تلاش کرنے کے لیے اپنا منی میپ دیکھیں!"
+        },
+        {
+            "key": "onboarding.button_got_it",
+            "value": "سمجھ گیا"
+        },
+        {
+            "key": "onboarding.step_outer_garden",
+            "value": "بیرونی باغ کی سیر کریں!"
+        },
+        {
+            "key": "onboarding.outer_garden_title",
+            "value": "بیرونی باغ میں خوش آمدید"
+        },
+        {
+            "key": "onboarding.outer_garden_body",
+            "value": "یہ ایک علامتی جگہ ہے — گھوم پھر کر دیکھیں ان سب کو جنہیں آپ نے Amal پر دعوت دی، اور جنہیں انہوں نے دعوت دی۔\n\nیہ آپ کا صدقہ جاریہ ہے: ایک ایسی نیکی جو دیتی رہتی ہے، خاموشی سے بڑھتی رہتی ہے چاہے آپ دیکھ نہ رہے ہوں۔ نبی ﷺ نے ہمیں سکھایا کہ جب انسان فوت ہو جاتا ہے تو اس کے اعمال ختم ہو جاتے ہیں — سوائے تین کے، اور ان میں سے ایک وہ علم ہے جو دوسروں کو فائدہ پہنچائے، اور ایک ایسی میراث جو نیکی پیدا کرتی رہے۔\n\nیہاں ہر نیا چہرہ اس بھلائی کی ایک چھوٹی سی یاد دہانی ہے جو آپ نے شروع کرنے میں مدد کی۔"
+        },
+        {
+            "key": "interaction.inspector_mode_on",
+            "value": "انسپکٹر موڈ: آن"
+        },
+        {
+            "key": "interaction.inspector_mode_off",
+            "value": "انسپکٹر موڈ: آف"
+        },
+        {
+            "key": "photo_mode.preview_heading",
+            "value": "آپ کا جنت گارڈن"
+        },
+        {
+            "key": "photo_mode.share_caption",
+            "value": "میرا جنت گارڈن 🌿"
+        },
+        {
+            "key": "fellowship.member_since_format",
+            "value": "رکن بتاریخ {0}"
+        },
+        {
+            "key": "fellowship.member_since_unknown",
+            "value": "رکن بتاریخ —"
+        }
     ]
 }

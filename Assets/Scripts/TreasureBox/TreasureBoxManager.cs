@@ -203,7 +203,7 @@ public class TreasureBoxManager : MonoBehaviour
         
         if (treasureBoxStatusUi.nameText != null && data != null)
         {
-            treasureBoxStatusUi.nameText.text = data.tierDisplayName;
+            LocalizedRendering.SetText(treasureBoxStatusUi.nameText, data.LocalizedTierDisplayName);
         }
             
         if (treasureBoxStatusUi.openedBoxCountText != null)
@@ -222,12 +222,12 @@ public class TreasureBoxManager : MonoBehaviour
                 }
                 else
                 {
-                    treasureBoxStatusUi.timerText.text = "Resetting...";
+                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.resetting"));
                 }
             }
             else if (state.IsSetComplete)
             {
-                treasureBoxStatusUi.timerText.text = "Completed";
+                LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.completed"));
             }
             else if (!IsTierUnlocked(upcomingTier))
             {
@@ -241,12 +241,12 @@ public class TreasureBoxManager : MonoBehaviour
                     }
                     else
                     {
-                        treasureBoxStatusUi.timerText.text = "Finish previous tier";
+                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.finish_previous_tier"));
                     }
                 }
                 else
                 {
-                    treasureBoxStatusUi.timerText.text = "Locked";
+                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.locked"));
                 }
             }
             else
@@ -264,7 +264,7 @@ public class TreasureBoxManager : MonoBehaviour
 
                 if (IsSlotAvailable(upcomingTier, nextSlot))
                 {
-                    treasureBoxStatusUi.timerText.text = "Available";
+                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.available"));
                 }
                 else
                 {
@@ -276,7 +276,7 @@ public class TreasureBoxManager : MonoBehaviour
                     }
                     else
                     {
-                        treasureBoxStatusUi.timerText.text = "Waiting...";
+                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.waiting"));
                     }
                 }
             }
@@ -465,7 +465,7 @@ public class TreasureBoxManager : MonoBehaviour
         // ── Progression gate ──────────────────────────────────────────────────
         if (!IsTierUnlocked(tier))
         {
-            string msg = $"Complete all {GetPreviousTierName(tier)} boxes first.";
+            string msg = LocalizationManager.Instance.Get("treasurebox.complete_previous_tier", GetPreviousTierName(tier));
             Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
             
             if (ToastMessageManager.Instance != null)
@@ -787,7 +787,7 @@ public class TreasureBoxManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("All boxes for this tier are already opened!");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("treasurebox.all_opened"));
             }
             return;
         }
@@ -817,7 +817,7 @@ public class TreasureBoxManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("Boxes for this tier haven't appeared yet!");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("treasurebox.not_appeared_yet"));
             }
         }
     }
@@ -917,7 +917,7 @@ public class TreasureBoxManager : MonoBehaviour
                 if (boxData != null)
                 {
                     boxScript.boxData = boxData;
-                    boxScript.nameText.text = boxData.tierDisplayName;
+                    LocalizedRendering.SetText(boxScript.nameText, boxData.LocalizedTierDisplayName);
                 }
             }
             _spawnedBoxes.Add(new SpawnedBoxInfo { boxScript = boxScript, tier = tier, slotIndex = slotIndex, gameObject = go });
@@ -963,12 +963,12 @@ public class TreasureBoxManager : MonoBehaviour
     private static string GetPreviousTierName(TreasureBoxTier tier)
     {
         int prev = (int)tier - 1;
-        return prev >= 0 ? ((TreasureBoxTier)prev).ToString() : "N/A";
+        return prev >= 0 ? TreasureBoxData.GetLocalizedShortTierName((TreasureBoxTier)prev) : "N/A";
     }
 
     private static string FormatTimeSpan(TimeSpan span)
     {
-        if (span <= TimeSpan.Zero) return "now";
+        if (span <= TimeSpan.Zero) return LocalizationManager.Instance.Get("common.now");
         return span.Hours > 0
             ? $"{span.Hours:D2}h {span.Minutes:D2}m {span.Seconds:D2}s"
             : $"{span.Minutes:D2}m {span.Seconds:D2}s";

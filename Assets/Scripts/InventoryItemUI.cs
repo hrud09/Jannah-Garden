@@ -32,19 +32,11 @@ public class InventoryItemUI : MonoBehaviour
             itemIcon.sprite = data.itemIcon;
         }
 
-        if (itemNameText != null && !string.IsNullOrEmpty(data.itemName))
-        {
-            itemNameText.text = data.itemName;
-        }
-
-        if (itemDescriptionText != null && !string.IsNullOrEmpty(data.itemDescription))
-        {
-            itemDescriptionText.text = data.itemDescription;
-        }
+        ApplyNameAndDescription(data.LocalizedName, data.LocalizedDescription);
 
         if (itemQuantityText != null)
         {
-            itemQuantityText.text = $"x{quantityOwned}";
+            itemQuantityText.text = LocalizationManager.Instance.Get("common.quantity_format", quantityOwned);
         }
 
         if (itemBackgroundImg != null && customBackground != null)
@@ -66,6 +58,8 @@ public class InventoryItemUI : MonoBehaviour
         {
             PlayerXPManager.Instance.OnXPChanged += HandleXPChanged;
         }
+        LocalizationManager.OnLocaleChanged += RefreshLocalizedLabels;
+        RefreshLocalizedLabels();
     }
 
     private void OnDisable()
@@ -74,11 +68,27 @@ public class InventoryItemUI : MonoBehaviour
         {
             PlayerXPManager.Instance.OnXPChanged -= HandleXPChanged;
         }
+        LocalizationManager.OnLocaleChanged -= RefreshLocalizedLabels;
     }
 
     private void HandleXPChanged(int newLevel, float currentXP, float xpToNextLevel)
     {
         RefreshVisualState();
+    }
+
+    /// <summary>Re-applies the bound reward's localized name/description — see ShopItemUI's identical
+    /// pattern for why this needs to run on enable and on every locale change, not just Initialize().</summary>
+    private void RefreshLocalizedLabels()
+    {
+        if (RewardItemData != null) ApplyNameAndDescription(RewardItemData.LocalizedName, RewardItemData.LocalizedDescription);
+    }
+
+    /// <summary>Shapes and assigns the name/description labels for the active locale (RTL mirroring,
+    /// Arabic/Urdu joining, Bengali HarfBuzz rendering) instead of a raw <c>.text =</c> assignment.</summary>
+    private void ApplyNameAndDescription(string name, string description)
+    {
+        if (itemNameText != null && !string.IsNullOrEmpty(name)) LocalizedRendering.SetText(itemNameText, name);
+        if (itemDescriptionText != null && !string.IsNullOrEmpty(description)) LocalizedRendering.SetText(itemDescriptionText, description);
     }
 
     public void RefreshVisualState()

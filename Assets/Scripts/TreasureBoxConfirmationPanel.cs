@@ -108,8 +108,8 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
             TreasureBoxRewardItemData reward = TreasureBoxManager.Instance.GetCurrentCycleReward(tier);
             if (reward != null)
             {
-                if (nameText != null) nameText.text = reward.itemName;
-                if (descriptionText != null) descriptionText.text = reward.itemDescription;
+                if (nameText != null) LocalizedRendering.SetText(nameText, reward.LocalizedName);
+                if (descriptionText != null) LocalizedRendering.SetText(descriptionText, reward.LocalizedDescription);
                 if (rewardIcon != null)
                 {
                     rewardIcon.sprite = reward.itemIcon;
@@ -122,14 +122,14 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
                 }
                 if (rarityText != null)
                 {
-                    rarityText.text = reward.GetRarity().ToString();
+                    LocalizedRendering.SetText(rarityText, ItemRarityTaxonomy.GetName(reward.GetRarity()));
                     rarityText.gameObject.SetActive(true);
                 }
             }
             else
             {
-                if (nameText != null) nameText.text = tier.ToString() + " Box";
-                if (descriptionText != null) descriptionText.text = "Open this box to get rewards!";
+                if (nameText != null) LocalizedRendering.SetText(nameText, TreasureBoxData.GetLocalizedTierBoxFallback(tier));
+                if (descriptionText != null) LocalizedRendering.SetText(descriptionText, LocalizationManager.Instance.Get("treasurebox.open_prompt"));
                 if (rewardIcon != null) rewardIcon.gameObject.SetActive(false);
                 if (rarityBgImage != null) rarityBgImage.gameObject.SetActive(false);
                 if (rarityText != null) rarityText.gameObject.SetActive(false);
@@ -179,7 +179,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
             Debug.LogWarning("[TreasureBoxConfirmationPanel] No FlutterBridge — cannot open subscribe page.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast("You need to subscribe from the Amal Apps.");
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("treasurebox.need_subscribe"));
             }
         }
     }

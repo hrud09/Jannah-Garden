@@ -7,10 +7,10 @@ using UnityEngine;
 
 /// <summary>
 /// Moves the "Outer Garden" scene entry out of Default Local Group — where its ~150MB bundle ships
-/// embedded in StreamingAssets with every install — into a remote group served from Firebase
-/// Hosting like the Shop Item prefabs. The entry's address doesn't change, so
-/// LoadingScreenManager/JannahGardenManager keep loading it the same way; it just downloads on
-/// first visit (behind the existing loading screen) instead of padding the app download.
+/// embedded in StreamingAssets with every install — into a remote group served from Cloudflare R2 like
+/// the Shop Item prefabs. The entry's address doesn't change, so LoadingScreenManager and
+/// JannahGardenManager keep loading it the same way; it just downloads on first visit (behind the
+/// existing loading screen) instead of padding the app download.
 ///
 /// The new group copies its schemas from "Remote Item Prefabs" so build/load paths and compression
 /// stay consistent with the remote content that is already known to work.

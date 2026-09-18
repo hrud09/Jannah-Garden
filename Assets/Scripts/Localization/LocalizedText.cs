@@ -7,7 +7,10 @@ using UnityEngine;
 /// Resources/Localization/ui_en.json (and its ui_ar.json/ui_bn.json counterparts).
 ///
 /// For Arabic, this also right-aligns the label and runs its text through <see cref="ArabicTextShaper"/>
-/// so it renders as joined, right-to-left script rather than isolated LTR letterforms.
+/// so it renders as joined, right-to-left script rather than isolated LTR letterforms. The LTR baseline
+/// alignment it mirrors from is whatever is already set on the TMP_Text in the editor (captured once in
+/// <see cref="Awake"/>) — not a separate field to keep in sync, so every label keeps its designed
+/// alignment (e.g. a centered button label) for English/Bengali and only flips L/R for Arabic/Urdu.
 ///
 /// Bengali is handled differently: instead of the hand-rolled <see cref="BengaliTextShaper"/> (which only
 /// reorders pre-base vowel signs and can't form conjuncts), this swaps in a lazily-created
@@ -21,14 +24,13 @@ public class LocalizedText : MonoBehaviour
     [Tooltip("Key looked up in Resources/Localization/ui_{locale}.json.")]
     public string key;
 
-    [Tooltip("Alignment to use for left-to-right locales (English, Bengali). Arabic uses the mirrored alignment automatically.")]
-    public TextAlignmentOptions leftToRightAlignment = TextAlignmentOptions.TopLeft;
-
     private TMP_Text _label;
+    private TextAlignmentOptions _editorAlignment;
 
     private void Awake()
     {
         _label = GetComponent<TMP_Text>();
+        _editorAlignment = _label.alignment;
     }
 
     private void OnEnable()
@@ -51,7 +53,7 @@ public class LocalizedText : MonoBehaviour
         AppLocale locale = LocalizationManager.Instance.CurrentLocale;
         bool rtl = LocalizationManager.Instance.IsRightToLeft;
 
-        _label.alignment = rtl ? LocalizedRendering.MirrorAlignment(leftToRightAlignment) : leftToRightAlignment;
+        _label.alignment = rtl ? LocalizedRendering.MirrorAlignment(_editorAlignment) : _editorAlignment;
         LocalizedRendering.SetText(_label, value, locale);
     }
 

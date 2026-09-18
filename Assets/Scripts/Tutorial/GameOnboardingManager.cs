@@ -11,8 +11,9 @@ using DG.Tweening;
 /// Drives the full first-time onboarding experience: five HUD buttons (Shop, Inspector Mode,
 /// Photo Mode, Show Treasure Box, Outer Garden) start hidden and are revealed one at a time as the
 /// player earns them, across three sequential flows (core shop/placement/XP loop -> photo mode /
-/// inspector mode / treasure box / minimap -> outer garden). Replaces <see cref="TutorialManager"/>,
-/// which highlights always-visible buttons instead of gating them.
+/// inspector mode -> outer garden). The Show Treasure Box button is revealed once Flow 3 begins
+/// but, unlike the other buttons, has no dedicated explanation step of its own. Replaces
+/// <see cref="TutorialManager"/>, which highlights always-visible buttons instead of gating them.
 ///
 /// Persists as a DontDestroyOnLoad singleton (via its TutorialCanvas root) so it survives the
 /// Jannah Garden -> Outer Garden scene swap, which is a full LoadSceneMode.Single reload.
@@ -36,7 +37,7 @@ public class GameOnboardingManager : MonoBehaviour
     }
 
     private enum Flow1SubStep { None, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingPlace, AwaitingXPTap, AwaitingXPChartClose }
-    private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit, AwaitingTreasureBoxTap, MinimapCallout }
+    private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit }
 
     private const string StageKey = "GameOnboarding_Stage";
     private const string LegacyTutorialKey = "TutorialCompleted_ShopPlacement";
@@ -70,6 +71,13 @@ public class GameOnboardingManager : MonoBehaviour
     public float panelSlideInDuration = 0.4f;
     public float panelSlideOutDuration = 0.3f;
 
+    [Header("Hand Pointer Animation")]
+    [Tooltip("Points at whichever UI element the current step is highlighting. Hidden whenever nothing is targeted.")]
+    public RectTransform handUi;
+    public Vector2 handOffset = new Vector2(0f, 60f);
+    public float bounceSpeed = 6f;
+    public float bounceAmplitude = 15f;
+
     private OnboardingStage stage;
     private Flow1SubStep flow1Sub = Flow1SubStep.None;
     private Flow2SubStep flow2Sub = Flow2SubStep.None;
@@ -86,6 +94,8 @@ public class GameOnboardingManager : MonoBehaviour
     private Tween pulseTween;
     private RectTransform pulseTarget;
 
+    private Coroutine handPointerCoroutine;
+
     private Tween panelSlideTween;
     private Vector2 instructionPanelShownPos;
     private bool instructionPanelShownPosCaptured;
@@ -97,7 +107,6 @@ public class GameOnboardingManager : MonoBehaviour
     private bool xpTapListenerAdded;
     private bool photoTapListenerAdded;
     private bool inspectorTapListenerAdded;
-    private bool treasureBoxTapListenerAdded;
     private bool outerGardenTapListenerAdded;
 
     private void Awake()
@@ -108,13 +117,23 @@ public class GameOnboardingManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(transform.root.gameObject);
+
+        // Only TutorialCanvas (this object's direct parent) should survive the scene swap.
+        // transform.root would resolve to "All Canvas", the shared organizational parent of every
+        // HUD canvas in the scene - DontDestroyOnLoad-ing that dragged the whole Jannah Garden HUD
+        // (currency, timer, action buttons, etc.) into Outer Garden along with the tutorial overlay.
+        // DontDestroyOnLoad also requires a root object, so detach TutorialCanvas first.
+        Transform tutorialCanvas = transform.parent != null ? transform.parent : transform;
+        tutorialCanvas.SetParent(null, true);
+        DontDestroyOnLoad(tutorialCanvas.gameObject);
     }
 
     private void Start()
     {
         if (dimOverlay != null) dimOverlay.gameObject.SetActive(false);
         SetInstructionPanelVisible(false);
+        EnsureHandUiSetup();
+        StopHandPointerAnimation();
 
         if (skipButton != null)
         {
@@ -137,6 +156,7 @@ public class GameOnboardingManager : MonoBehaviour
         UnsubscribeEvents();
         RestoreHighlightSorting();
         StopPulse();
+        StopHandPointerAnimation();
         panelSlideTween?.Kill();
     }
 
@@ -265,11 +285,6 @@ public class GameOnboardingManager : MonoBehaviour
         {
             inspectorModeButton.onClick.RemoveListener(HandleInspectorButtonTapped);
         }
-        if (treasureBoxTapListenerAdded)
-        {
-            Button box = GetTreasureBoxShowButton();
-            if (box != null) box.onClick.RemoveListener(HandleTreasureBoxButtonTapped);
-        }
         if (outerGardenTapListenerAdded && outerGardenButton != null)
         {
             outerGardenButton.onClick.RemoveListener(HandleOuterGardenButtonTapped);
@@ -290,10 +305,10 @@ public class GameOnboardingManager : MonoBehaviour
     private void ShowIntroPanel()
     {
         ShowDimAndPanel(true);
-        SetInstructionText("<color=#FFD35C><size=120%>Welcome to Jannah Garden!</size></color>\n\n"
-            + "Grow your own piece of paradise: place trees, fountains and sacred decor, earn XP, "
-            + "open treasure boxes and explore the Outer Garden. Let's get started!");
-        ConfigurePrimaryButton("Start Tutorial", () =>
+        LocalizationManager loc = LocalizationManager.Instance;
+        SetInstructionText($"<color=#FFD35C><size=120%>{loc.Get("onboarding.welcome_title")}</size></color>\n\n"
+            + loc.Get("onboarding.welcome_body"));
+        ConfigurePrimaryButton(loc.Get("onboarding.start_button"), () =>
         {
             SetStage(OnboardingStage.Flow1InProgress);
             BeginShopOpenStep();
@@ -305,7 +320,7 @@ public class GameOnboardingManager : MonoBehaviour
         flow1Sub = Flow1SubStep.AwaitingShopOpen;
         HidePrimaryButton();
         ShowDimAndPanel(true);
-        SetInstructionText("Tap the Shop button to open the Garden Shop!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_open_shop"));
 
         Button shopButton = InGameShopManager.Instance != null ? InGameShopManager.Instance.openCloseButton : null;
         SetActive(shopButton, true);
@@ -314,6 +329,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = shopButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
         }
     }
 
@@ -323,8 +339,9 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         HideDimOverlayOnly();
-        SetInstructionText("Select your first item below!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_select_item"));
         StartCoroutine(SelectFirstShopItemRoutine());
     }
 
@@ -334,6 +351,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         UnblockAllShopCards();
         BeginShopOpenStep();
     }
@@ -374,6 +392,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = chosen.purchaseButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
         }
     }
 
@@ -383,10 +402,11 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         UnblockAllShopCards();
 
         flow1Sub = Flow1SubStep.AwaitingDownload;
-        SetInstructionText("Downloading your item — hang tight!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_downloading"));
         StartCoroutine(WaitForPlaceButtonReady());
     }
 
@@ -421,11 +441,12 @@ public class GameOnboardingManager : MonoBehaviour
 
         flow1Sub = Flow1SubStep.AwaitingPlace;
         ShowDimAndPanel(true, blockRaycasts: false);
-        SetInstructionText("Move around and tap Place to plant it!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_place_item"));
 
         RectTransform rect = place.GetComponent<RectTransform>();
         HighlightUIElement(rect);
         PulseButton(rect);
+        StartHandPointerAnimation(rect);
     }
 
     private void HandleItemPlaced(PlaceableItem placedItem)
@@ -436,16 +457,18 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow1Sub = Flow1SubStep.AwaitingXPTap;
 
         Button xpButton = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpGainChartToggleButton : null;
         ShowDimAndPanel(true);
-        SetInstructionText("Nice! Tap the XP button to see your progress!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_button"));
         if (xpButton != null)
         {
             RectTransform rect = xpButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!xpTapListenerAdded)
             {
                 xpButton.onClick.AddListener(HandleXPButtonTapped);
@@ -460,12 +483,13 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
 
         // The chart opens right where this dim overlay sits (sortingOrder 999) and takes a moment to
         // slide in - drop just the overlay so it never covers the chart the player just asked to see.
         // Flow 2 doesn't start until PlayerXPManager reports the chart closed again (HandleXPChartToggled).
         HideDimOverlayOnly();
-        SetInstructionText("Check out your XP chart, then close it to continue!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_chart"));
 
         flow1Sub = Flow1SubStep.AwaitingXPChartClose;
     }
@@ -483,15 +507,15 @@ public class GameOnboardingManager : MonoBehaviour
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    //  Flow 2 - Photo Mode -> Inspector Mode -> Treasure Box -> Minimap callout
+    //  Flow 2 - Photo Mode -> Inspector Mode
     // ═══════════════════════════════════════════════════════════════════════
 
     private void BeginPhotoModeStep()
     {
         flow2Sub = Flow2SubStep.AwaitingPhoto;
         HidePrimaryButton();
-        ShowDimAndPanel(true);
-        SetInstructionText("Snap a photo of your garden!");
+        ShowDimAndPanel(true, blockRaycasts: false);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_take_photo"));
 
         Button photoButton = PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null;
         SetActive(photoButton, true);
@@ -500,6 +524,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = photoButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!photoTapListenerAdded)
             {
                 photoButton.onClick.AddListener(HandlePhotoButtonTapped);
@@ -514,8 +539,9 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow2Sub = Flow2SubStep.AwaitingPreviewClose;
-        SetInstructionText("Share or save it, then close the preview!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_share_photo"));
         HideDimOverlayOnly();
     }
 
@@ -525,7 +551,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         flow2Sub = Flow2SubStep.AwaitingInspectorTap;
         ShowDimAndPanel(true);
-        SetInstructionText("Try Inspector Mode to fly around and admire your garden!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_inspector_mode"));
 
         SetActive(inspectorModeButton, true);
         if (inspectorModeButton != null)
@@ -533,6 +559,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = inspectorModeButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!inspectorTapListenerAdded)
             {
                 inspectorModeButton.onClick.AddListener(HandleInspectorButtonTapped);
@@ -547,12 +574,13 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         flow2Sub = Flow2SubStep.AwaitingInspectorExit;
 
         // Inspector mode's fly controls and camera drag both need raycasts to reach the world/joystick,
         // so don't leave a blocking dim overlay up while the player finds their way back to the ground.
         HideDimOverlayOnly();
-        SetInstructionText("Come back down to the ground to continue!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_return_ground"));
 
         if (playerMovementRef == null)
         {
@@ -562,7 +590,7 @@ public class GameOnboardingManager : MonoBehaviour
         if (playerMovementRef == null)
         {
             Debug.LogWarning("[GameOnboardingManager] PlayerMovement not found; skipping inspector-exit wait.");
-            BeginTreasureBoxStep();
+            CompleteFlow2();
             return;
         }
 
@@ -576,7 +604,7 @@ public class GameOnboardingManager : MonoBehaviour
         // guard the (unlikely) case where it's already back off by the time we check.
         if (!playerMovementRef.IsInspectorMode)
         {
-            BeginTreasureBoxStep();
+            CompleteFlow2();
         }
     }
 
@@ -585,58 +613,12 @@ public class GameOnboardingManager : MonoBehaviour
         if (isInspectorMode) return; // only care about coming back down
         if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorExit) return;
 
-        BeginTreasureBoxStep();
+        CompleteFlow2();
     }
 
-    private void BeginTreasureBoxStep()
+    private void CompleteFlow2()
     {
-        flow2Sub = Flow2SubStep.AwaitingTreasureBoxTap;
-        ShowDimAndPanel(true);
-
-        Button box = GetTreasureBoxShowButton();
-        SetInstructionText("Open a Treasure Box for bonus rewards!");
-        ConfigurePrimaryButton("Next", HandleTreasureBoxStepAdvance);
-
-        SetActive(box, true);
-        if (box != null)
-        {
-            RectTransform rect = box.GetComponent<RectTransform>();
-            HighlightUIElement(rect);
-            PulseButton(rect);
-            if (!treasureBoxTapListenerAdded)
-            {
-                box.onClick.AddListener(HandleTreasureBoxButtonTapped);
-                treasureBoxTapListenerAdded = true;
-            }
-        }
-    }
-
-    private void HandleTreasureBoxButtonTapped()
-    {
-        HandleTreasureBoxStepAdvance();
-    }
-
-    private void HandleTreasureBoxStepAdvance()
-    {
-        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingTreasureBoxTap) return;
-
-        StopPulse();
-        RestoreHighlightSorting();
-        flow2Sub = Flow2SubStep.MinimapCallout;
-
-        HideDimOverlayOnly();
-        SetInstructionText("Check your minimap to find the way to the Treasure Box!");
-        ConfigurePrimaryButton("Got it", HandleFlow2Complete);
-
-        if (TreasureBoxManager.Instance != null)
-        {
-            TreasureBoxManager.Instance.PlayShowAnimationForTier(TreasureBoxManager.Instance.GetUpcomingTier());
-        }
-    }
-
-    private void HandleFlow2Complete()
-    {
-        if (flow2Sub != Flow2SubStep.MinimapCallout) return;
+        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorExit) return;
 
         flow2Sub = Flow2SubStep.None;
         SetInstructionPanelVisible(false);
@@ -653,7 +635,7 @@ public class GameOnboardingManager : MonoBehaviour
     {
         HidePrimaryButton();
         ShowDimAndPanel(true);
-        SetInstructionText("Explore the Outer Garden!");
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_outer_garden"));
 
         SetActive(outerGardenButton, true);
         if (outerGardenButton != null)
@@ -661,6 +643,7 @@ public class GameOnboardingManager : MonoBehaviour
             RectTransform rect = outerGardenButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
+            StartHandPointerAnimation(rect);
             if (!outerGardenTapListenerAdded)
             {
                 outerGardenButton.onClick.AddListener(HandleOuterGardenButtonTapped);
@@ -675,6 +658,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
         ShowDimAndPanel(false);
 
         if (JannahGardenManager.Instance != null) JannahGardenManager.Instance.LoadOuterGarden();
@@ -691,11 +675,10 @@ public class GameOnboardingManager : MonoBehaviour
     private void ShowOuterGardenIntro()
     {
         ShowDimAndPanel(true);
-        SetInstructionText("<color=#FFD35C><size=120%>Welcome to the Outer Garden!</size></color>\n\n"
-            + "This is your wider world beyond the main garden — explore further, discover hidden "
-            + "sights, and find more inspiration for what to bring home and plant. Wander freely and "
-            + "enjoy the view!");
-        ConfigurePrimaryButton("Finish", HandleOuterGardenIntroFinished);
+        LocalizationManager loc = LocalizationManager.Instance;
+        SetInstructionText($"<color=#FFD35C><size=120%>{loc.Get("onboarding.outer_garden_title")}</size></color>\n\n"
+            + loc.Get("onboarding.outer_garden_body"));
+        ConfigurePrimaryButton(loc.Get("tutorial.button_finish"), HandleOuterGardenIntroFinished);
     }
 
     private void HandleOuterGardenIntroFinished()
@@ -790,7 +773,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void SetInstructionText(string text)
     {
-        if (instructionText != null) instructionText.text = text;
+        if (instructionText != null) LocalizedRendering.SetText(instructionText, text);
     }
 
     private void ConfigurePrimaryButton(string label, System.Action onClick)
@@ -799,7 +782,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         primaryActionButton.gameObject.SetActive(true);
         TMP_Text label_ = primaryActionButton.GetComponentInChildren<TMP_Text>();
-        if (label_ != null) label_.text = label;
+        if (label_ != null) LocalizedRendering.SetText(label_, label);
 
         primaryActionButton.onClick.RemoveAllListeners();
         primaryActionButton.onClick.AddListener(() =>
@@ -817,7 +800,7 @@ public class GameOnboardingManager : MonoBehaviour
     /// <summary>Jumps straight to the next flow (or finishes onboarding if already in the last one),
     /// bypassing whatever gameplay action the current section was waiting on. Mirrors the same
     /// stage transitions used when a section completes normally (see <see cref="HandleXPChartToggled"/>
-    /// and <see cref="HandleFlow2Complete"/>) so skipped players end up in an identical state to
+    /// and <see cref="CompleteFlow2"/>) so skipped players end up in an identical state to
     /// players who finished the section the intended way.</summary>
     private void SkipCurrentSection()
     {
@@ -825,6 +808,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        StopHandPointerAnimation();
 
         switch (stage)
         {
@@ -937,5 +921,68 @@ public class GameOnboardingManager : MonoBehaviour
             pulseTarget.localScale = Vector3.one;
             pulseTarget = null;
         }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  Hand pointer (ported from TutorialManager, reuses the scene's TutorialHand)
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// <summary>One-time setup so the hand renders above whatever HighlightUIElement raises (overlaySortingOrder + 1)
+    /// and never eats the tap meant for the button underneath it.</summary>
+    private void EnsureHandUiSetup()
+    {
+        if (handUi == null) return;
+
+        Canvas handCanvas = handUi.GetComponent<Canvas>();
+        if (handCanvas == null) handCanvas = handUi.gameObject.AddComponent<Canvas>();
+        handCanvas.overrideSorting = true;
+        handCanvas.sortingOrder = overlaySortingOrder + 2;
+
+        foreach (var img in handUi.GetComponentsInChildren<Image>(true))
+        {
+            img.raycastTarget = false;
+        }
+    }
+
+    private void StartHandPointerAnimation(RectTransform target)
+    {
+        StopHandPointerAnimation();
+        if (handUi == null || target == null) return;
+
+        handUi.gameObject.SetActive(true);
+        handPointerCoroutine = StartCoroutine(AnimateHandRoutine(target));
+    }
+
+    private void StopHandPointerAnimation()
+    {
+        if (handPointerCoroutine != null)
+        {
+            StopCoroutine(handPointerCoroutine);
+            handPointerCoroutine = null;
+        }
+        if (handUi != null)
+        {
+            handUi.gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator AnimateHandRoutine(RectTransform target)
+    {
+        while (target != null && handUi != null)
+        {
+            Vector3 targetWorldPos = target.position;
+            Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, targetWorldPos);
+
+            RectTransform parentRect = handUi.parent as RectTransform;
+            if (parentRect != null && RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, screenPoint, null, out Vector2 localPoint))
+            {
+                float bounce = Mathf.Sin(Time.time * bounceSpeed) * bounceAmplitude;
+                handUi.anchoredPosition = localPoint + handOffset + new Vector2(0f, bounce);
+            }
+
+            yield return null;
+        }
+
+        if (handUi != null) handUi.gameObject.SetActive(false);
     }
 }

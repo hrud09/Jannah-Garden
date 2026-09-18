@@ -84,7 +84,7 @@ public class FellowProfileObject : MonoBehaviour
             nameText.text = data.userName;
 
         if (memberSinceText != null)
-            memberSinceText.text = FormatMemberSince(data);
+            LocalizedRendering.SetText(memberSinceText, FormatMemberSince(data));
 
         if (noorCoinCountText != null)
             noorCoinCountText.text = data.noorCoins.ToString("N0", CultureInfo.InvariantCulture);
@@ -164,9 +164,10 @@ public class FellowProfileObject : MonoBehaviour
     private string FormatMemberSince(FellowProfileData data)
     {
         if (!data.TryGetMemberSince(out DateTime joined))
-            return unknownMemberSinceText;
+            return LocalizationManager.Instance.GetOrDefault("fellowship.member_since_unknown", unknownMemberSinceText);
 
-        return $"Member since {joined.ToString("MMM yyyy", CultureInfo.InvariantCulture)}";
+        return LocalizationManager.Instance.Get("fellowship.member_since_format",
+            joined.ToString("MMM yyyy", CultureInfo.InvariantCulture));
     }
 
     /// <summary>

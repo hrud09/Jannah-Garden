@@ -453,7 +453,7 @@ public class PlaceableItem : MonoBehaviour
 
             if (timerText != null)
             {
-                timerText.text = "Completed!";
+                timerText.text = LocalizationManager.Instance.Get("placement.completed_exclaim");
             }
 
             // Start coroutine to hide the timer holder after 5 seconds

@@ -250,14 +250,14 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "<color=#FFB300><size=120%>Welcome to Jannah Garden!</color></size>\n\nLet's learn how to grow your garden. Tap <b>Start</b> to begin the tutorial!";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_welcome"));
         }
 
         if (nextStepButton != null)
         {
             nextStepButton.gameObject.SetActive(true);
             var txt = nextStepButton.GetComponentInChildren<TMP_Text>();
-            if (txt != null) txt.text = "Start";
+            if (txt != null) txt.text = LocalizationManager.Instance.Get("tutorial.button_start");
 
             nextStepButton.onClick.RemoveAllListeners();
             nextStepButton.onClick.AddListener(() => {
@@ -276,14 +276,14 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "Use the <b>Virtual Joystick</b> on the left side of the screen to move your character around.";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_basic_movement"));
         }
 
         if (nextStepButton != null)
         {
             nextStepButton.gameObject.SetActive(true);
             var txt = nextStepButton.GetComponentInChildren<TMP_Text>();
-            if (txt != null) txt.text = "Next";
+            if (txt != null) txt.text = LocalizationManager.Instance.Get("tutorial.button_next");
 
             nextStepButton.onClick.RemoveAllListeners();
             nextStepButton.onClick.AddListener(() => {
@@ -316,14 +316,14 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "Swipe/drag anywhere on the screen to look around and control the camera view.";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_basic_looking"));
         }
 
         if (nextStepButton != null)
         {
             nextStepButton.gameObject.SetActive(true);
             var txt = nextStepButton.GetComponentInChildren<TMP_Text>();
-            if (txt != null) txt.text = "Next";
+            if (txt != null) txt.text = LocalizationManager.Instance.Get("tutorial.button_next");
 
             nextStepButton.onClick.RemoveAllListeners();
             nextStepButton.onClick.AddListener(() => {
@@ -343,7 +343,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "First, tap the <b>Shop Button</b> in the corner to open the Garden Shop.";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_open_shop"));
         }
 
         if (nextStepButton != null) nextStepButton.gameObject.SetActive(false); // Player must click shop button instead
@@ -367,7 +367,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "Great! Now select the first item in the shop and click <b>Purchase</b> using Noor Coins.";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_select_item"));
         }
 
         if (nextStepButton != null) nextStepButton.gameObject.SetActive(false);
@@ -414,7 +414,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "The placement preview is visible at the center of the screen.\n\nLook around using camera controls and tap <b>Place</b> when ready!";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_place_item"));
         }
 
         if (nextStepButton != null) nextStepButton.gameObject.SetActive(false);
@@ -438,14 +438,14 @@ public class TutorialManager : MonoBehaviour
     {
         if (instructionText != null)
         {
-            instructionText.text = "<color=#4CAF50><size=120%>Perfect Sequence!</color></size>\n\nYou have successfully placed your first plant! Grow your garden by completing quizzes and purchasing items. Click <b>Finish</b> to play!";
+            LocalizedRendering.SetText(instructionText, LocalizationManager.Instance.Get("tutorial.step_completed"));
         }
 
         if (nextStepButton != null)
         {
             nextStepButton.gameObject.SetActive(true);
             var txt = nextStepButton.GetComponentInChildren<TMP_Text>();
-            if (txt != null) txt.text = "Finish";
+            if (txt != null) txt.text = LocalizationManager.Instance.Get("tutorial.button_finish");
 
             nextStepButton.onClick.RemoveAllListeners();
             nextStepButton.onClick.AddListener(() => {
@@ -740,7 +740,7 @@ public class TutorialManager : MonoBehaviour
                 btnText.fontSize = 14;
                 btnText.color = Color.white;
                 btnText.alignment = TextAlignmentOptions.Center;
-                btnText.text = "Next";
+                btnText.text = LocalizationManager.Instance.Get("tutorial.button_next");
 
                 // Action Skip Button
                 GameObject skipObj = new GameObject("SkipButton", typeof(RectTransform));
@@ -770,7 +770,7 @@ public class TutorialManager : MonoBehaviour
                 skipText.fontSize = 14;
                 skipText.color = Color.white;
                 skipText.alignment = TextAlignmentOptions.Center;
-                skipText.text = "Skip";
+                skipText.text = LocalizationManager.Instance.Get("tutorial.button_skip");
             }
 
             // C. Create Animated Hand Pointer UI

@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using FlutterIntegration;
@@ -156,7 +154,7 @@ public class JannahGardenManager : MonoBehaviour
         Debug.LogWarning("[JannahGardenManager] No FlutterBridge — cannot return to the app.");
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast("Use the back button to leave the garden.");
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("garden.use_back_button"));
         }
     }
 
@@ -172,10 +170,10 @@ public class JannahGardenManager : MonoBehaviour
         }
         else
         {
-            // Outer Garden is loaded via Addressables, not Build Settings — this fallback
-            // path is hit when LoadingScreenManager hasn't bootstrapped (e.g. Play Mode
-            // started directly from this scene, skipping Init Scene).
-            Addressables.LoadSceneAsync(outerGardenSceneName, LoadSceneMode.Single);
+            // Fallback path hit when LoadingScreenManager hasn't bootstrapped (e.g. Play Mode
+            // started directly from this scene, skipping Init Scene). Outer Garden is a
+            // regular Build Settings scene, so a plain scene load works here too.
+            SceneManager.LoadScene(outerGardenSceneName, LoadSceneMode.Single);
         }
     }
 

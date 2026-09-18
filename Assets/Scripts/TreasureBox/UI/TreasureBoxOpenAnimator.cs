@@ -151,13 +151,21 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
             rewardIcon.sprite = reward.itemIcon;
 
         if (rewardNameText != null)
-            rewardNameText.text = reward != null ? reward.itemName : "Noor Coins!";
+        {
+            string rewardName = reward != null
+                ? reward.LocalizedName
+                : LocalizationManager.Instance.Get("treasurebox.reward_noor_coins_fallback");
+            LocalizedRendering.SetText(rewardNameText, rewardName);
+        }
 
         if (rewardSubtitleText != null)
         {
-            rewardSubtitleText.text = isSetComplete
-                ? (rewardData != null ? $"{rewardData.tierDisplayName} Complete!" : "Set Complete!")
+            string subtitle = isSetComplete
+                ? (rewardData != null
+                    ? LocalizationManager.Instance.Get("treasurebox.tier_complete_format", rewardData.LocalizedTierDisplayName)
+                    : LocalizationManager.Instance.Get("treasurebox.set_complete"))
                 : string.Empty;
+            LocalizedRendering.SetText(rewardSubtitleText, subtitle);
         }
 
         float fadeDur = 0.4f;

@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 8103505355900302587}
   - component: {fileID: 5443310844028410491}
   - component: {fileID: 4003503016292481198}
+  - component: {fileID: 4837613332742759958}
   m_Layer: 5
   m_Name: Ads Descriptiopn Text (TMP) (1)
   m_TagString: Untagged
@@ -212,6 +213,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4837613332742759958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672149898832283765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: treasurebox.confirm.ad_or_subscribe_prompt
+  leftToRightAlignment: 257
 --- !u!1 &1473958576440510820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1770,7 @@ GameObject:
   - component: {fileID: 7324775848788236136}
   - component: {fileID: 4645502481563047924}
   - component: {fileID: 3679871300100558638}
+  - component: {fileID: 4785143820368851385}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1881,6 +1897,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4785143820368851385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897739105791458921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: treasurebox.confirm.watch_ad_button
+  leftToRightAlignment: 257
 --- !u!1 &8611595448859002928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1922,7 @@ GameObject:
   - component: {fileID: 1300120795159176784}
   - component: {fileID: 8335465676708404883}
   - component: {fileID: 7801037623313718429}
+  - component: {fileID: 3829307133971564256}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2018,6 +2049,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3829307133971564256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611595448859002928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0560a15603cdd94a92218fac228ea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: treasurebox.confirm.subscribe_button
+  leftToRightAlignment: 257
 --- !u!1 &8836634453563617615
 GameObject:
   m_ObjectHideFlags: 0
