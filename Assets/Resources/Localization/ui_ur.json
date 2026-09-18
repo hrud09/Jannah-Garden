@@ -113,6 +113,26 @@
             "value": "رکھیں"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "گھمائیں"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "یہاں پہلے سے کچھ موجود ہے"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "یہاں زمین بہت ڈھلوان ہے"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "یہ جگہ بہت دور ہے"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "آپ یہاں کچھ نہیں رکھ سکتے"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "مکمل ہو گیا!"
         },

@@ -113,6 +113,26 @@
             "value": "স্থাপন করুন"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "ঘোরান"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "এখানে আগে থেকেই কিছু আছে"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "এখানকার জমি খুব ঢালু"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "জায়গাটি অনেক দূরে"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "এখানে কিছু রাখা যাবে না"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "সম্পন্ন হয়েছে!"
         },

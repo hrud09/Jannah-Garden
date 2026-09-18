@@ -113,6 +113,26 @@
             "value": "Place"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "Rotate"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "Something's already standing there"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "The ground here is too steep"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "That spot is too far away"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "You can't place anything there"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "Completed!"
         },
