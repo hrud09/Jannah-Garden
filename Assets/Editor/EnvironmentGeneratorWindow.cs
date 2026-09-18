@@ -51,6 +51,8 @@ public class EnvironmentGeneratorWindow : EditorWindow
     private int randomSeed = 12345;
     private Vector2 uniformScaleJitter = new Vector2(0.9f, 1.1f);
 
+    private bool showGrid = true;
+
     private List<CategoryEntry> categories;
     private readonly HashSet<Vector2Int> selectedChunks = new HashSet<Vector2Int>();
     private Vector2 scroll;
@@ -202,6 +204,14 @@ public class EnvironmentGeneratorWindow : EditorWindow
             if (GUILayout.Button("Select None")) selectedChunks.Clear();
             if (GUILayout.Button("Invert")) InvertSelection();
         }
+
+        bool newShowGrid = EditorGUILayout.ToggleLeft("Show Grid In Scene View", showGrid);
+        if (newShowGrid != showGrid)
+        {
+            showGrid = newShowGrid;
+            SceneView.RepaintAll();
+        }
+
         DrawChunkSelectionGrid();
 
         EditorGUILayout.Space();
@@ -272,7 +282,7 @@ public class EnvironmentGeneratorWindow : EditorWindow
     /// </summary>
     private void OnSceneGUI(SceneView sceneView)
     {
-        if (terrain == null || terrain.terrainData == null) return;
+        if (!showGrid || terrain == null || terrain.terrainData == null) return;
 
         TerrainData data = terrain.terrainData;
         Vector3 origin = terrain.transform.position;

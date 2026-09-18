@@ -431,8 +431,9 @@ public class PlayersInteractionManager : MonoBehaviour
             hitPlaceable = hit.collider.GetComponentInParent<PlaceableItem>();
         }
 
-        // A ghost being positioned has its PlaceableItem disabled — it is not a target.
-        return (hitPlaceable != null && hitPlaceable.enabled) ? hitPlaceable : null;
+        // A ghost being positioned has its PlaceableItem disabled, and an item whose placement timer is
+        // still counting down isn't manageable yet — neither is a valid target.
+        return (hitPlaceable != null && hitPlaceable.enabled && hitPlaceable.IsFullyPlaced) ? hitPlaceable : null;
     }
 
     private void DetectOrbClick()

@@ -66,6 +66,28 @@ public class ItemPlacementManager : MonoBehaviour
              "the radius has no effect - the ghost tracks the crosshair/terrain intersection directly.")]
     public float placementRadius = 15f;
 
+    [Header("Grid Placement")]
+    [Tooltip("The lattice items snap to. Left empty, one is created on this object at startup and " +
+             "anchored to the placement terrain.")]
+    public GardenGrid grid;
+
+    [Tooltip("Draws the lattice and the footprint highlight on the ground. Left empty, one is created " +
+             "as a child at startup.")]
+    public PlacementGridView gridView;
+
+    [Tooltip("Optional. Freely rotates the item being placed - the slider's 0-1 range maps to a full " +
+             "0-360 degree turn. Hidden and inert while nothing is being placed.")]
+    public Slider rotationSlider;
+
+    [Tooltip("Snap placements to the grid and show the overlay. Turning this off restores the old " +
+             "free-form behaviour wholesale — an escape hatch, not a gameplay option.")]
+    public bool useGrid = true;
+
+    [Tooltip("Refuse to confirm a placement that overlaps another item, runs off the terrain or sits " +
+             "on ground too steep for it. Turned off, the highlight still turns red but the player " +
+             "can place anyway.")]
+    public bool blockInvalidPlacements = true;
+
     [Tooltip("Optional. Abandons the placement in progress. For a relocation the item goes back where " +
              "it was; for a fresh purchase the item is handed back the same way a return would.")]
     public Button cancelPlacementButton;
@@ -141,6 +163,29 @@ public class ItemPlacementManager : MonoBehaviour
     private AssetReferenceGameObject _pendingProgressPreviewRef;
     private float _lastReportedPlacementProgress = -1f;
 
+    // ── Grid placement state ──────────────────────────────────────────────────
+    // The footprint is measured from the *real* prefab, never the ghost: the ghost is spawned at 0.2x
+    // and items keep growing for as long as their timer runs, so a footprint taken from what is on
+    // screen would have a sapling claim a fifth of the ground the grown tree needs.
+    private Vector2Int _pendingFootprint = Vector2Int.one;
+    private Vector2Int _pendingFootprintOverride;
+
+    // Continuous yaw offset applied on top of _ghostBaseRotation, in degrees. The slider's centre (0.5)
+    // is 0 degrees - the model's authored facing - so dragging left/right turns it either way from
+    // there; see OnRotationSliderChanged for the (sliderValue - 0.5) * 360 mapping. Grid occupancy still
+    // needs an axis-aligned rectangle, so footprint claims are derived by rounding this to the nearest
+    // quarter-turn - see RefreshPendingFootprint.
+    private float _pendingRotationDegrees;
+
+    // The preview prefab's authored rotation. Placement yaw is applied on top of it rather than
+    // replacing it, because several models are authored pre-rotated.
+    private Quaternion _ghostBaseRotation = Quaternion.identity;
+
+    private Vector2Int _snapAnchor;
+    private bool _hasSnapAnchor;
+    private RectInt _pendingArea;
+    private PlacementValidity _pendingValidity = PlacementValidity.Valid;
+
     // ── Relocation state ──────────────────────────────────────────────────────
     // A relocation is a placement that reuses an existing item's identity and growth progress instead
     // of minting a new one, and that must not charge the player or award XP a second time.
@@ -149,6 +194,8 @@ public class ItemPlacementManager : MonoBehaviour
     private float _relocateRemainingDuration;
     private Vector3 _relocateOriginalPosition;
     private Quaternion _relocateOriginalRotation;
+    private RectInt _relocateOriginalArea;
+    private bool _relocateHadArea;
 
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
@@ -175,6 +222,19 @@ public class ItemPlacementManager : MonoBehaviour
 
     /// <summary>True when the placement in progress is moving an item that is already in the garden.</summary>
     public bool IsRelocating => _isRelocating;
+
+    /// <summary>True once the grid is anchored and snapping is switched on.</summary>
+    private bool UseGrid => useGrid && grid != null && grid.IsReady;
+
+    /// <summary>Everything currently wrong with where the ghost is standing.</summary>
+    public PlacementValidity CurrentValidity => _pendingValidity;
+
+    /// <summary>
+    /// Whether the Place button should do anything. Distinct from <see cref="CurrentValidity"/>: the
+    /// highlight always shows the truth, but only <see cref="blockInvalidPlacements"/> makes it binding.
+    /// </summary>
+    public bool CanConfirmPlacement =>
+        !UseGrid || !blockInvalidPlacements || _pendingValidity == PlacementValidity.Valid;
 
     /// <summary>Every item currently standing in the garden.</summary>
     public IReadOnlyList<PlaceableItem> ActivePlacedItems => activePlacedItems;
@@ -203,6 +263,9 @@ public class ItemPlacementManager : MonoBehaviour
             cancelPlacementButton.gameObject.SetActive(false);
         }
 
+        // Before LoadPlacedItems: the rebuild claims cells as it goes, so the lattice has to exist first.
+        SetupGrid();
+
         // Load previously placed items on startup
         LoadPlacedItems();
 
@@ -218,6 +281,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (placeButton != null) placeButton.onClick.RemoveListener(HandlePlaceButtonClick);
         if (cancelPlacementButton != null) cancelPlacementButton.onClick.RemoveListener(CancelPlacement);
+        if (rotationSlider != null) rotationSlider.onValueChanged.RemoveListener(OnRotationSliderChanged);
 
         if (Instance == this) Instance = null;
     }
@@ -235,6 +299,7 @@ public class ItemPlacementManager : MonoBehaviour
     {
         Debug.LogWarning("[ItemPlacementManager] OS low-memory warning — releasing every unused item prefab.");
         AddressableItemLoader.TrimCache(0, ComputeInUseAddressableKeys());
+        ItemFootprint.ClearCache();
         Resources.UnloadUnusedAssets();
     }
 
@@ -243,6 +308,10 @@ public class ItemPlacementManager : MonoBehaviour
         if (currentPlacedObject != null)
         {
             UpdatePlacementPosition();
+
+            // Keeps the overlay centred as the player walks. Cheap: it only re-samples terrain heights
+            // once the player has actually moved a metre.
+            if (gridView != null && UseGrid) gridView.SetCenter(transform.position, placementRadius);
         }
 
         if (_isPreparingPlacement && _pendingPlacementProgressCallback != null)
@@ -461,6 +530,18 @@ public class ItemPlacementManager : MonoBehaviour
 
         currentPlacedObject = Objectpool.Instance.Spawn(previewPrefab);
 
+        // Placement yaw sits on top of whatever rotation the model was authored with, so the authored
+        // one has to be captured before any yaw is applied.
+        _ghostBaseRotation = currentPlacedObject.transform.rotation;
+        _pendingFootprintOverride = ResolveFootprintOverride(_pendingSourceKind, _pendingSourceItemId);
+
+        // A relocated item keeps the facing it already had; a fresh one starts unrotated.
+        _pendingRotationDegrees = _isRelocating
+            ? ItemFootprint.YawDegreesFromRotation(_relocateOriginalRotation, _ghostBaseRotation)
+            : 0f;
+
+        RefreshPendingFootprint();
+
         // Disable PlaceableItem on the ghost so the countdown doesn't start yet
         PlaceableItem placeable = currentPlacedObject.GetComponent<PlaceableItem>();
         if (placeable != null)
@@ -475,6 +556,14 @@ public class ItemPlacementManager : MonoBehaviour
             // Show the timer label immediately so the player can see the
             // duration before confirming placement.
             placeable.PreviewTimer(_isRelocating ? _relocateRemainingDuration : duration);
+        }
+
+        if (UseGrid && gridView != null) gridView.Show(transform.position, placementRadius);
+
+        if (rotationSlider != null)
+        {
+            rotationSlider.gameObject.SetActive(true);
+            rotationSlider.SetValueWithoutNotify(0.5f + _pendingRotationDegrees / 360f);
         }
 
         UpdatePlacementPosition();
@@ -538,17 +627,24 @@ public class ItemPlacementManager : MonoBehaviour
     /// </summary>
     public void HandlePlaceButtonClick()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPlace);
-        if (currentPlacedObject != null)
+        if (currentPlacedObject == null) return;
+
+        if (!CanConfirmPlacement)
         {
-            // Finalize placement immediately
-            PlaceItem();
+            ShowBlockedToast();
+            return;
         }
+
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPlace);
+
+        // Finalize placement immediately
+        PlaceItem();
     }
 
     /// <summary>
-    /// Projects a ray from the camera through the crosshair onto the terrain collider,
-    /// updating the position of the preview object.
+    /// Projects a ray from the camera through the crosshair onto the terrain collider, snaps the
+    /// result to the grid and updates the preview object, the footprint highlight and the Place
+    /// button's enabled state.
     /// </summary>
     private void UpdatePlacementPosition()
     {
@@ -562,33 +658,176 @@ public class ItemPlacementManager : MonoBehaviour
         RaycastHit hit;
 
         // Raycast specifically against the TerrainCollider
-        if (terrainCollider.Raycast(ray, out hit, 1000f))
+        if (!terrainCollider.Raycast(ray, out hit, 1000f)) return;
+
+        currentPlacedObject.transform.rotation = YawFor(_pendingRotationDegrees) * _ghostBaseRotation;
+
+        if (!UseGrid)
         {
-            currentPlacedObject.transform.position = ClampToPlacementRadius(hit.point);
+            currentPlacedObject.transform.position = ClampToPlacementRadius(hit.point, placementRadius);
+            return;
         }
+
+        // An item has to fit inside the reachable bubble whole, not just have its pivot inside it, so
+        // the clamp works against a radius shrunk by the block's half-diagonal. Doing it here rather
+        // than only in the validity check means looking into the distance slides the ghost to the
+        // furthest spot it can legally stand, instead of stranding it somewhere permanently red.
+        float halfDiagonal = new Vector2(_pendingFootprint.x, _pendingFootprint.y).magnitude * grid.CellSize * 0.5f;
+        Vector3 target = ClampToPlacementRadius(hit.point, Mathf.Max(0f, placementRadius - halfDiagonal));
+
+        Vector3 snapped = grid.Snap(target, _pendingFootprint, ref _snapAnchor, ref _hasSnapAnchor);
+
+        // Ground height has to come from the snapped spot, not the raw hit: snapping moves the point
+        // by up to a cell diagonally, and on any slope that is the difference between an item standing
+        // on the ground and one hovering above or buried in it.
+        snapped.y = grid.SampleHeight(snapped);
+
+        _pendingArea = new RectInt(_snapAnchor, _pendingFootprint);
+
+        // Occupancy is always evaluated, even when blockInvalidPlacements is off, so the highlight
+        // tells the truth about the spot regardless of whether the rule is being enforced.
+        _pendingValidity = grid.Evaluate(_pendingArea, transform.position, placementRadius, checkOccupancy: true);
+
+        currentPlacedObject.transform.position = snapped;
+
+        if (gridView != null) gridView.SetFootprint(_pendingArea, _pendingValidity == PlacementValidity.Valid);
+        if (placeButton != null) placeButton.interactable = CanConfirmPlacement;
+    }
+
+    /// <summary>The yaw applied on top of the model's authored rotation, in degrees.</summary>
+    private static Quaternion YawFor(float degrees) => Quaternion.Euler(0f, degrees, 0f);
+
+    /// <summary>
+    /// Live callback for rotationSlider - centred at 0.5 (the authored facing), dragging out to either
+    /// end turns the item a full 180 degrees that way. Rectangular footprints only swap axes at
+    /// quarter-turns, so the snap anchor is dropped and re-derived on the next frame whenever that
+    /// snapped footprint changes - keeping the old anchor would swing the block away from the crosshair
+    /// instead of turning it in place.
+    /// </summary>
+    public void OnRotationSliderChanged(float sliderValue)
+    {
+        if (currentPlacedObject == null) return;
+
+        _pendingRotationDegrees = (sliderValue - 0.5f) * 360f;
+        RefreshPendingFootprint();
+        UpdatePlacementPosition();
+    }
+
+    /// <summary>Re-measures the cells the pending item claims at its current rotation. Grid occupancy
+    /// is axis-aligned, so the free rotation is rounded to the nearest quarter-turn for this purpose.</summary>
+    private void RefreshPendingFootprint()
+    {
+        if (grid == null || _pendingItemPrefab == null) return;
+
+        int footprintSteps = (((Mathf.RoundToInt(_pendingRotationDegrees / 90f)) % 4) + 4) % 4;
+        _pendingFootprint = ItemFootprint.Compute(
+            _pendingItemPrefab, footprintSteps, grid.CellSize, _pendingFootprintOverride);
+
+        _hasSnapAnchor = false;
+    }
+
+    /// <summary>The designer-authored footprint override for an item, if its source asset carries one.</summary>
+    private Vector2Int ResolveFootprintOverride(PlacedItemSource kind, string itemId)
+    {
+        if (kind == PlacedItemSource.InventoryItem)
+        {
+            TreasureBoxRewardItemData reward = FindInventoryItemData(itemId);
+            return reward != null ? reward.gridFootprintOverride : Vector2Int.zero;
+        }
+
+        ShopItemData shopData = FindShopItemData(itemId);
+        return shopData != null ? shopData.gridFootprintOverride : Vector2Int.zero;
+    }
+
+    /// <summary>Explains the first real reason the current spot was refused.</summary>
+    private void ShowBlockedToast()
+    {
+        if (ToastMessageManager.Instance == null || LocalizationManager.Instance == null) return;
+
+        string key =
+            (_pendingValidity & PlacementValidity.Occupied) != 0 ? "placement.blocked_occupied" :
+            (_pendingValidity & PlacementValidity.TooSteep) != 0 ? "placement.blocked_steep" :
+            (_pendingValidity & PlacementValidity.OutOfRadius) != 0 ? "placement.blocked_too_far" :
+            "placement.blocked_off_terrain";
+
+        ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get(key));
     }
 
     /// <summary>
-    /// Keeps the ghost within <see cref="placementRadius"/> of the player. A hit point inside the radius
+    /// Creates the lattice and its overlay if the scene does not already provide them, and anchors the
+    /// lattice to the placement terrain.
+    ///
+    /// The anchor is deliberately the Terrain's own transform rather than anything computed at runtime:
+    /// placements travel to the player's other devices through Firebase as raw world positions, and a
+    /// lattice that could land differently per device would let a garden that was flush on a phone come
+    /// back a cell out on a tablet.
+    /// </summary>
+    private void SetupGrid()
+    {
+        Terrain resolved = terrainCollider != null ? terrainCollider.GetComponent<Terrain>() : null;
+        if (resolved == null) resolved = Terrain.activeTerrain;
+
+        if (grid == null)
+        {
+            grid = GardenGrid.Instance != null ? GardenGrid.Instance : gameObject.AddComponent<GardenGrid>();
+        }
+
+        grid.Bind(resolved);
+
+        if (!grid.IsReady)
+        {
+            Debug.LogWarning("[ItemPlacementManager] No terrain to anchor the placement grid to - "
+                + "falling back to free-form placement.");
+        }
+
+        if (gridView == null)
+        {
+            var viewObject = new GameObject("PlacementGridView");
+            viewObject.transform.SetParent(transform, false);
+            gridView = viewObject.AddComponent<PlacementGridView>();
+        }
+
+        gridView.Bind(grid);
+        gridView.Hide();
+
+        if (rotationSlider != null)
+        {
+            rotationSlider.onValueChanged.AddListener(OnRotationSliderChanged);
+            rotationSlider.gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>Claims the cells a newly confirmed item stands on.</summary>
+    private void RegisterGridArea(PlaceableItem placeable, Vector3 worldPosition)
+    {
+        if (grid == null || !grid.IsReady || placeable == null) return;
+
+        RectInt area = UseGrid ? _pendingArea : grid.AreaCovering(worldPosition, _pendingFootprint);
+        placeable.SetGridArea(area);
+        grid.Occupy(area, placeable.uniqueId);
+    }
+
+    /// <summary>
+    /// Keeps the ghost within <paramref name="radius"/> of the player. A hit point inside the radius
     /// is used as-is (the ghost tracks the crosshair/terrain intersection directly); a hit point beyond
     /// it is pulled back along the same look direction to the radius edge, then re-sampled against the
     /// terrain so it still sits on the ground at that clamped spot rather than at the original (likely
     /// very different) hit height.
     /// </summary>
-    private Vector3 ClampToPlacementRadius(Vector3 hitPoint)
+    private Vector3 ClampToPlacementRadius(Vector3 hitPoint, float radius)
     {
         Vector3 playerPos = transform.position;
         Vector3 flatOffset = hitPoint - playerPos;
         flatOffset.y = 0f;
 
         float flatDistance = flatOffset.magnitude;
-        if (flatDistance <= placementRadius || flatDistance < 0.0001f)
+        if (flatDistance <= radius || flatDistance < 0.0001f)
         {
             return hitPoint;
         }
 
         Vector3 direction = flatOffset / flatDistance;
-        Vector3 clampedXZ = playerPos + direction * placementRadius;
+        Vector3 clampedXZ = playerPos + direction * radius;
 
         Terrain terrain = terrainCollider != null ? terrainCollider.GetComponent<Terrain>() : null;
         if (terrain != null)
@@ -608,6 +847,14 @@ public class ItemPlacementManager : MonoBehaviour
     public void PlaceItem()
     {
         if (currentPlacedObject == null) return;
+
+        // Guarded here as well as on the button: relocation and tutorial flows can drive placement
+        // without going through the HUD.
+        if (!CanConfirmPlacement)
+        {
+            ShowBlockedToast();
+            return;
+        }
 
         // ── Swap ghost → real prefab ──────────────────────────────────────────
         // Record where the ghost ended up, then destroy it.
@@ -653,6 +900,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         // Add to tracking list and save state
         activePlacedItems.Add(placeable);
+        RegisterGridArea(placeable, confirmedPosition);
         SavePlacedItems();
 
         OnItemPlaced?.Invoke(placeable);
@@ -741,12 +989,29 @@ public class ItemPlacementManager : MonoBehaviour
         placeable.SetSource(_pendingSourceKind, _pendingSourceItemId);
 
         activePlacedItems.Add(placeable);
+        RestoreRelocatedGridArea(placeable);
         SavePlacedItems();
 
         if (ToastMessageManager.Instance != null)
         {
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.move_cancelled"));
         }
+    }
+
+    /// <summary>
+    /// Re-claims the cells a relocated item held before it was picked up. Items placed before the grid
+    /// existed have no recorded area, so theirs is derived from where they stood.
+    /// </summary>
+    private void RestoreRelocatedGridArea(PlaceableItem placeable)
+    {
+        if (grid == null || !grid.IsReady || placeable == null) return;
+
+        RectInt area = _relocateHadArea
+            ? _relocateOriginalArea
+            : grid.AreaCovering(_relocateOriginalPosition, _pendingFootprint);
+
+        placeable.SetGridArea(area);
+        grid.Occupy(area, placeable.uniqueId);
     }
 
     /// <summary>Gives back whatever a cancelled first-time placement was bought with.</summary>
@@ -786,11 +1051,31 @@ public class ItemPlacementManager : MonoBehaviour
         _isRelocating = false;
         _relocateUniqueId = null;
         _relocateRemainingDuration = 0f;
+        _relocateHadArea = false;
+
+        _pendingRotationDegrees = 0f;
+        _pendingFootprint = Vector2Int.one;
+        _pendingFootprintOverride = Vector2Int.zero;
+        _pendingValidity = PlacementValidity.Valid;
+        _hasSnapAnchor = false;
+        _ghostBaseRotation = Quaternion.identity;
+
         SetPreparingPlacement(false);
         _placementRequestVersion++; // invalidate any in-flight load callbacks tied to the placement just cleared
 
-        if (placeButton != null) placeButton.gameObject.SetActive(false);
+        if (placeButton != null)
+        {
+            placeButton.gameObject.SetActive(false);
+            placeButton.interactable = true;
+        }
+
         if (cancelPlacementButton != null) cancelPlacementButton.gameObject.SetActive(false);
+        if (rotationSlider != null)
+        {
+            rotationSlider.gameObject.SetActive(false);
+            rotationSlider.SetValueWithoutNotify(0.5f);
+        }
+        if (gridView != null) gridView.Hide();
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -837,6 +1122,8 @@ public class ItemPlacementManager : MonoBehaviour
         _relocateRemainingDuration = item.remainingDuration;
         _relocateOriginalPosition = item.transform.position;
         _relocateOriginalRotation = item.transform.rotation;
+        _relocateHadArea = item.hasGridArea;
+        _relocateOriginalArea = item.gridArea;
 
         _pendingRequiredXPLevel = 0;
         _pendingRewardItemData = null;
@@ -950,6 +1237,7 @@ public class ItemPlacementManager : MonoBehaviour
     private void RemoveFromGarden(PlaceableItem item)
     {
         activePlacedItems.Remove(item);
+        if (grid != null) grid.Release(item.uniqueId);
         item.SetHighlight(false);
         OnItemRemoved?.Invoke(item);
     }
@@ -1132,6 +1420,7 @@ public class ItemPlacementManager : MonoBehaviour
             Objectpool.Instance.Despawn(existing.gameObject);
         }
         activePlacedItems.Clear();
+        if (grid != null) grid.ClearAll();
 
         int count = state.items.Count;
         GameObject[] resolvedPrefabs = new GameObject[count];
@@ -1195,10 +1484,33 @@ public class ItemPlacementManager : MonoBehaviour
             placeable.Initialize(itemData.uniqueId, itemData.totalDuration, newRemaining);
             placeable.SetSource(itemData.sourceKind, itemData.sourceItemId);
             activePlacedItems.Add(placeable);
+            RegisterLoadedGridArea(placeable, prefab, itemData);
         }
 
         _isRebuildingGarden = false;
         TrimAddressableCache();
+    }
+
+    /// <summary>
+    /// Claims the cells an item restored from a save is standing on.
+    ///
+    /// Saved positions are used exactly as they are, never re-snapped. Gardens built before the grid
+    /// existed sit at arbitrary offsets, and silently nudging every decoration on the next launch -
+    /// then pushing that rewritten layout to Firebase for every player at once - is neither something
+    /// anyone asked for nor something that could be undone afterwards. The lattice governs what
+    /// happens next instead: as players rearrange, their gardens come into alignment on their own.
+    /// </summary>
+    private void RegisterLoadedGridArea(PlaceableItem placeable, GameObject prefab, PlacedItemSaveData itemData)
+    {
+        if (grid == null || !grid.IsReady || placeable == null || prefab == null) return;
+
+        int steps = ItemFootprint.StepsFromRotation(itemData.rotation, prefab.transform.rotation);
+        Vector2Int footprint = ItemFootprint.Compute(
+            prefab, steps, grid.CellSize, ResolveFootprintOverride(itemData.sourceKind, itemData.sourceItemId));
+
+        RectInt area = grid.AreaCovering(itemData.position, footprint);
+        placeable.SetGridArea(area);
+        grid.Occupy(area, placeable.uniqueId);
     }
 
     /// <summary>Finds the shop entry an item came from by its stable id.</summary>

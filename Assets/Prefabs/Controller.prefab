@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1501129940733030358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8091756486679338850}
+  - component: {fileID: 2970300643397475484}
+  m_Layer: 0
+  m_Name: Grid View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8091756486679338850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501129940733030358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2531667859275332621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2970300643397475484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501129940733030358}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14116ea7cac2844992f8aba6acb19f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlacementGridView
+  gridSubdivisions: 48
+  gridMargin: 3
+  rebuildMoveThreshold: 1
+  groundOffset: 0.02
+  footprintSubdivisions: 6
+  validFill: {r: 0.35, g: 1, b: 0.45, a: 0.90588236}
+  validBorder: {r: 0.5, g: 1, b: 0.6, a: 0.85}
+  invalidFill: {r: 1, g: 0.32, b: 0.3, a: 0.26}
+  invalidBorder: {r: 1, g: 0.45, b: 0.42, a: 0.9}
+  fadeDuration: 0.18
 --- !u!1 &1922786256643900074
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +157,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 101431
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 4aa1b2601fbf3424d9f113ab98f9097b, type: 2}
   m_TargetDisplay: 0
@@ -112,7 +166,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &7278762767850294025
@@ -234,7 +288,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3127
+    m_Bits: 265271
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -243,7 +297,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!81 &2531667858752797857
@@ -277,7 +331,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -311,8 +365,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mouseSensity: 1
-  _touchDragSensitivity: 0.1
+  _touchDragSensitivity: 0.2
+  _sensitivityMultiplier: 1
   _controller: {fileID: 2531667859275332621}
+  unlockFullPitch: 0
 --- !u!82 &4747229110717720193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -452,6 +508,7 @@ Transform:
   - {fileID: 2002206195655614619}
   - {fileID: 1026175747702961962}
   - {fileID: 7381393660850475471}
+  - {fileID: 8091756486679338850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2531667859275332616
@@ -492,12 +549,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 0}
-  _movementSpeed: 10
-  _runMultiplier: 5
+  _movementSpeed: 8
+  _runMultiplier: 2
   _gravity: -9.81
+  autoClimbEnabled: 1
+  minClimbHeight: 0.5
+  maxClimbHeight: 1.5
+  climbCheckDistance: 0.35
+  climbDuration: 0.4
+  climbLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  climbRiseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 2.4
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.55
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  climbForwardCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.4
+      value: 0.15
+      inSlope: 0.7
+      outSlope: 0.7
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.2
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stuckInputThreshold: 0.5
+  stuckDisplacementThreshold: 1
+  stuckDuration: 2
+  unstickJumpForce: 6
   _walkStepInterval: 0.6
   _footstepVolume: 0.495
   _breathingVolume: 0.4
+  inspectorModeHeight: 25
+  inspectorModeSpeed: 25
+  inspectorModeVerticalSpeed: 10
+  inspectorModeSmoothTime: 0.15
+  inspectorModeTransitionSpeed: 3
+  inspectorModeBoostMultiplier: 2.5
 --- !u!114 &1895128501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,8 +666,18 @@ MonoBehaviour:
   crosshairRect: {fileID: 0}
   terrainCollider: {fileID: 0}
   placeButton: {fileID: 0}
+  placementRadius: 15
+  grid: {fileID: 0}
+  gridView: {fileID: 0}
+  rotationSlider: {fileID: 0}
+  useGrid: 1
+  blockInvalidPlacements: 1
+  cancelPlacementButton: {fileID: 0}
   shopManager: {fileID: 0}
-  placeablePrefabs: []
+  maxCachedUnusedItemPrefabs: 6
+  storeRefundRate: 1
+  syncToCloud: 1
+  cloudPushDelay: 3
 --- !u!114 &5509489776399048857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,9 +695,17 @@ MonoBehaviour:
   interactionLayerMask:
     serializedVersion: 2
     m_Bits: 3072
+  allowPlacedItemManagement: 1
+  placedItemLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  treasureBoxInteractButton: {fileID: 0}
+  orbInteractButton: {fileID: 0}
+  placedItemInteractButton: {fileID: 0}
+  itemInteractButton: {fileID: 0}
   currentTargetBox: {fileID: 0}
   currentTargetOrb: {fileID: 0}
-  itemInteractButton: {fileID: 0}
+  currentTargetPlaceable: {fileID: 0}
 --- !u!114 &7050522446715206237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +985,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 380ea302699fa4fadbd0b57f1e26b4ef, type: 3}
+    - target: {fileID: 432731661757540524, guid: 233accb2d1a745a4f99ec39c92edd77b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2214001552163986596, guid: 233accb2d1a745a4f99ec39c92edd77b, type: 3}
       propertyPath: m_Name
       value: Minimap Sprite

@@ -99,6 +99,12 @@ public class ShopItemData : ScriptableObject
     [Header("Placement Settings")]
     public float placementTimerDuration = 360f; // Required time to fully place the item in the game world in seconds
 
+    [Tooltip("Optional. Overrides the grid footprint, in cells, that this item claims when placed. " +
+             "Leave at 0,0 to derive it from the model's own collision bounds. Set it when the " +
+             "measured body is misleading — a tree whose canopy collider is far wider than anything " +
+             "you would actually plant around, or a path tile that wants deliberate padding.")]
+    public Vector2Int gridFootprintOverride = Vector2Int.zero;
+
     // ---------------------------------------------------------------------
     // Deprecated
     // ---------------------------------------------------------------------

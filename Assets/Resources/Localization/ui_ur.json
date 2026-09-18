@@ -113,6 +113,26 @@
             "value": "رکھیں"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "گھمائیں"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "یہاں پہلے سے کچھ موجود ہے"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "یہاں زمین بہت ڈھلوان ہے"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "یہ جگہ بہت دور ہے"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "آپ یہاں کچھ نہیں رکھ سکتے"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "مکمل ہو گیا!"
         },
@@ -1309,16 +1329,20 @@
             "value": "آپ کا آئٹم ڈاؤن لوڈ ہو رہا ہے — ذرا انتظار کریں!"
         },
         {
+            "key": "onboarding.step_rotate_item",
+            "value": "رکھنے سے پہلے آئٹم کو گھمانے کے لیے ہینڈل کو دائیں بائیں سلائیڈ کریں!"
+        },
+        {
             "key": "onboarding.step_place_item",
             "value": "گھومیں اور اسے لگانے کے لیے \"رکھیں\" پر ٹیپ کریں!"
         },
         {
-            "key": "onboarding.step_xp_button",
-            "value": "شاباش! اپنی پیش رفت دیکھنے کے لیے ایکس پی بٹن پر ٹیپ کریں!"
+            "key": "onboarding.step_xp_info",
+            "value": "شاباش! جنت گارڈن میں آپ جو کچھ بھی کرتے ہیں — پودے لگانا، سیکھنا اور مزید — آپ کی ایکسپیرینس لیول بڑھاتا ہے۔ اسے یہاں بڑھتے دیکھیں!"
         },
         {
-            "key": "onboarding.step_xp_chart",
-            "value": "اپنا ایکس پی چارٹ دیکھیں، پھر جاری رکھنے کے لیے اسے بند کریں!"
+            "key": "onboarding.got_it_button",
+            "value": "سمجھ گیا!"
         },
         {
             "key": "onboarding.step_take_photo",

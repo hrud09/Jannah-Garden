@@ -113,6 +113,26 @@
             "value": "Place"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "Rotate"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "Something's already standing there"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "The ground here is too steep"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "That spot is too far away"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "You can't place anything there"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "Completed!"
         },
@@ -621,16 +641,20 @@
             "value": "Downloading your item — hang tight!"
         },
         {
+            "key": "onboarding.step_rotate_item",
+            "value": "Slide the handle left and right to rotate your item before placing it!"
+        },
+        {
             "key": "onboarding.step_place_item",
             "value": "Move around and tap Place to plant it!"
         },
         {
-            "key": "onboarding.step_xp_button",
-            "value": "Nice! Tap the XP button to see your progress!"
+            "key": "onboarding.step_xp_info",
+            "value": "Nice! Everything you do in Jannah Garden — planting, learning, and more — grows your Experience Level. Watch it climb here!"
         },
         {
-            "key": "onboarding.step_xp_chart",
-            "value": "Check out your XP chart, then close it to continue!"
+            "key": "onboarding.got_it_button",
+            "value": "Got it!"
         },
         {
             "key": "onboarding.step_take_photo",

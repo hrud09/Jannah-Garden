@@ -12,8 +12,8 @@ using DG.Tweening;
 /// Photo Mode, Show Treasure Box, Outer Garden) start hidden and are revealed one at a time as the
 /// player earns them, across three sequential flows (core shop/placement/XP loop -> photo mode /
 /// inspector mode -> outer garden). The Show Treasure Box button is revealed once Flow 3 begins
-/// but, unlike the other buttons, has no dedicated explanation step of its own. Replaces
-/// <see cref="TutorialManager"/>, which highlights always-visible buttons instead of gating them.
+/// but, unlike the other buttons, has no dedicated explanation step of its own. Flow 1 opens with
+/// a movement step that highlights the joystick until the player actually moves.
 ///
 /// Persists as a DontDestroyOnLoad singleton (via its TutorialCanvas root) so it survives the
 /// Jannah Garden -> Outer Garden scene swap, which is a full LoadSceneMode.Single reload.
@@ -36,7 +36,7 @@ public class GameOnboardingManager : MonoBehaviour
         Completed = 6
     }
 
-    private enum Flow1SubStep { None, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingPlace, AwaitingXPTap, AwaitingXPChartClose }
+    private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingRotationDemo, AwaitingPlace, ShowingXPInfo }
     private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit }
 
     private const string StageKey = "GameOnboarding_Stage";
@@ -78,6 +78,16 @@ public class GameOnboardingManager : MonoBehaviour
     public float bounceSpeed = 6f;
     public float bounceAmplitude = 15f;
 
+    [Header("Movement Step")]
+    [Tooltip("World-space distance the player must cover with the joystick before the movement step is considered done.")]
+    public float movementCompletionDistance = 1.5f;
+    [Tooltip("Safety cap so a player who never touches the joystick isn't stuck - advances anyway once reached.")]
+    public float movementStepTimeout = 30f;
+
+    [Header("Rotation Demo Step")]
+    [Tooltip("Safety cap so a player who never touches the rotation slider isn't stuck - advances anyway once reached.")]
+    public float rotationDemoTimeout = 8f;
+
     private OnboardingStage stage;
     private Flow1SubStep flow1Sub = Flow1SubStep.None;
     private Flow2SubStep flow2Sub = Flow2SubStep.None;
@@ -90,6 +100,13 @@ public class GameOnboardingManager : MonoBehaviour
     private GraphicRaycaster highlightRaycaster;
     private bool addedHighlightCanvas;
     private bool addedHighlightRaycaster;
+
+    // Joystick gets its own permanent highlight (rather than HighlightUIElement's single slot) since
+    // its background is normally invisible until touched - ported from TutorialManager.
+    private Canvas joystickHighlightCanvas;
+    private GraphicRaycaster joystickHighlightRaycaster;
+    private bool joystickAddedCanvas;
+    private bool joystickAddedRaycaster;
 
     private Tween pulseTween;
     private RectTransform pulseTarget;
@@ -104,7 +121,6 @@ public class GameOnboardingManager : MonoBehaviour
     /// completion) - see <see cref="SetInstructionPanelVisible"/>.</summary>
     private bool panelTargetShown;
 
-    private bool xpTapListenerAdded;
     private bool photoTapListenerAdded;
     private bool inspectorTapListenerAdded;
     private bool outerGardenTapListenerAdded;
@@ -113,6 +129,7 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            DeactivateStaleTutorialUiIfCompleted();
             Destroy(gameObject);
             return;
         }
@@ -155,9 +172,26 @@ public class GameOnboardingManager : MonoBehaviour
         if (Instance == this) Instance = null;
         UnsubscribeEvents();
         RestoreHighlightSorting();
+        RestoreJoystickHighlight();
         StopPulse();
         StopHandPointerAnimation();
         panelSlideTween?.Kill();
+    }
+
+    /// <summary>Every scene ships its own authored-active copy of the TutorialCanvas hierarchy, since the
+    /// singleton only survives scene loads by detaching and DontDestroyOnLoad-ing the *first* one. Each
+    /// later scene's own GameOnboardingManager reaches here, sees the surviving Instance, and destroys only
+    /// its own GameObject (not the whole hierarchy) - leaving that scene's own dimOverlay/instructionPanel
+    /// sitting active with nothing left to ever hide them. Once onboarding is already complete there's no
+    /// step left that will show them on purpose, so hide this duplicate's own copies (still valid references
+    /// at this point, since Destroy hasn't run yet) before it self-destructs - this runs in Awake, ahead of
+    /// any Start/Update/render for the newly loaded scene.</summary>
+    private void DeactivateStaleTutorialUiIfCompleted()
+    {
+        if (PlayerPrefs.GetInt(StageKey, (int)OnboardingStage.NotStarted) < (int)OnboardingStage.Completed) return;
+
+        if (dimOverlay != null) dimOverlay.gameObject.SetActive(false);
+        if (instructionPanel != null) instructionPanel.gameObject.SetActive(false);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -252,7 +286,6 @@ public class GameOnboardingManager : MonoBehaviour
         InGameShopManager.OnShopItemUsed += HandleShopItemUsed;
         ItemPlacementManager.OnItemPlaced += HandleItemPlaced;
         PhotoModeManager.OnPreviewClosed += HandlePhotoPreviewClosed;
-        PlayerXPManager.OnChartToggled += HandleXPChartToggled;
         SceneManager.sceneLoaded += HandleSceneLoaded;
     }
 
@@ -263,7 +296,6 @@ public class GameOnboardingManager : MonoBehaviour
         InGameShopManager.OnShopItemUsed -= HandleShopItemUsed;
         ItemPlacementManager.OnItemPlaced -= HandleItemPlaced;
         PhotoModeManager.OnPreviewClosed -= HandlePhotoPreviewClosed;
-        PlayerXPManager.OnChartToggled -= HandleXPChartToggled;
         SceneManager.sceneLoaded -= HandleSceneLoaded;
 
         if (inspectorExitListenerAdded && playerMovementRef != null)
@@ -271,11 +303,6 @@ public class GameOnboardingManager : MonoBehaviour
             playerMovementRef.OnInspectorModeChanged -= HandleInspectorModeChanged;
         }
 
-        if (xpTapListenerAdded)
-        {
-            Button xp = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpGainChartToggleButton : null;
-            if (xp != null) xp.onClick.RemoveListener(HandleXPButtonTapped);
-        }
         if (photoTapListenerAdded)
         {
             Button photo = PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null;
@@ -311,8 +338,70 @@ public class GameOnboardingManager : MonoBehaviour
         ConfigurePrimaryButton(loc.Get("onboarding.start_button"), () =>
         {
             SetStage(OnboardingStage.Flow1InProgress);
-            BeginShopOpenStep();
+            BeginMovementStep();
         });
+    }
+
+    private void BeginMovementStep()
+    {
+        flow1Sub = Flow1SubStep.AwaitingMovement;
+        HidePrimaryButton();
+        // Non-blocking: the player needs the joystick underneath to actually be usable.
+        ShowDimAndPanel(true, blockRaycasts: false);
+        SetInstructionText(LocalizationManager.Instance.Get("tutorial.step_basic_movement"));
+
+        Joystick joystick = FindFirstObjectByType<Joystick>();
+        if (joystick == null)
+        {
+            Debug.LogWarning("[GameOnboardingManager] Joystick not found; skipping movement step.");
+            CompleteMovementStep();
+            return;
+        }
+
+        RectTransform joystickRect = joystick.GetComponent<RectTransform>();
+        HighlightJoystickPermanently(joystickRect);
+
+        RectTransform pointerTarget = joystick.Handle != null ? joystick.Handle : joystickRect;
+        StartHandPointerAnimation(pointerTarget);
+
+        if (playerMovementRef == null)
+        {
+            playerMovementRef = FindFirstObjectByType<IdyllicFantasyNature.PlayerMovement>();
+        }
+
+        StartCoroutine(WaitForMovementRoutine(playerMovementRef != null ? playerMovementRef.transform : null));
+    }
+
+    private IEnumerator WaitForMovementRoutine(Transform playerTransform)
+    {
+        Vector3 startPos = playerTransform != null ? playerTransform.position : Vector3.zero;
+        float elapsed = 0f;
+
+        while (flow1Sub == Flow1SubStep.AwaitingMovement && elapsed < movementStepTimeout)
+        {
+            if (playerTransform != null
+                && Vector3.Distance(playerTransform.position, startPos) >= movementCompletionDistance)
+            {
+                break;
+            }
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (flow1Sub != Flow1SubStep.AwaitingMovement) yield break; // superseded (e.g. skipped)
+
+        CompleteMovementStep();
+    }
+
+    private void CompleteMovementStep()
+    {
+        if (stage != OnboardingStage.Flow1InProgress) return;
+
+        RestoreJoystickHighlight();
+        StopHandPointerAnimation();
+        flow1Sub = Flow1SubStep.None;
+
+        BeginShopOpenStep();
     }
 
     private void BeginShopOpenStep()
@@ -439,6 +528,61 @@ public class GameOnboardingManager : MonoBehaviour
             yield break;
         }
 
+        BeginRotationDemoStep(place);
+    }
+
+    /// <summary>Shown once between the item finishing download and the placement-highlight step, while the
+    /// rotation slider (activated alongside the Place button by <see cref="ItemPlacementManager.FinishPreparingPlacement"/>)
+    /// is already on screen. Pulses the slider's handle and explains it rotates the item, then falls through
+    /// to <see cref="BeginPlaceHighlightStep"/> once the player actually drags it (or after a timeout).</summary>
+    private void BeginRotationDemoStep(Button place)
+    {
+        Slider slider = ItemPlacementManager.Instance != null ? ItemPlacementManager.Instance.rotationSlider : null;
+        if (slider == null)
+        {
+            BeginPlaceHighlightStep(place);
+            return;
+        }
+
+        flow1Sub = Flow1SubStep.AwaitingRotationDemo;
+        ShowDimAndPanel(true, blockRaycasts: false);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_rotate_item"));
+
+        RectTransform handleRect = slider.handleRect;
+        if (handleRect != null)
+        {
+            HighlightUIElement(handleRect);
+            PulseButton(handleRect);
+        }
+
+        StartCoroutine(WaitForRotationDemoRoutine(place, slider, slider.value));
+    }
+
+    private IEnumerator WaitForRotationDemoRoutine(Button place, Slider slider, float startValue)
+    {
+        float elapsed = 0f;
+        while (flow1Sub == Flow1SubStep.AwaitingRotationDemo && elapsed < rotationDemoTimeout)
+        {
+            if (slider == null || Mathf.Abs(slider.value - startValue) > 0.01f) break;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (flow1Sub != Flow1SubStep.AwaitingRotationDemo) yield break; // superseded (e.g. skipped)
+
+        StopPulse();
+        RestoreHighlightSorting();
+        BeginPlaceHighlightStep(place);
+    }
+
+    private void BeginPlaceHighlightStep(Button place)
+    {
+        if (place == null || !place.gameObject.activeInHierarchy)
+        {
+            Debug.LogWarning("[GameOnboardingManager] Place button no longer ready; skipping placement highlight.");
+            return;
+        }
+
         flow1Sub = Flow1SubStep.AwaitingPlace;
         ShowDimAndPanel(true, blockRaycasts: false);
         SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_place_item"));
@@ -458,47 +602,27 @@ public class GameOnboardingManager : MonoBehaviour
         StopPulse();
         RestoreHighlightSorting();
         StopHandPointerAnimation();
-        flow1Sub = Flow1SubStep.AwaitingXPTap;
+        flow1Sub = Flow1SubStep.ShowingXPInfo;
 
         Button xpButton = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpGainChartToggleButton : null;
         ShowDimAndPanel(true);
-        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_button"));
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_info"));
         if (xpButton != null)
         {
             RectTransform rect = xpButton.GetComponent<RectTransform>();
             HighlightUIElement(rect);
             PulseButton(rect);
-            StartHandPointerAnimation(rect);
-            if (!xpTapListenerAdded)
-            {
-                xpButton.onClick.AddListener(HandleXPButtonTapped);
-                xpTapListenerAdded = true;
-            }
         }
+
+        ConfigurePrimaryButton(LocalizationManager.Instance.Get("onboarding.got_it_button"), HandleXPInfoContinue);
     }
 
-    private void HandleXPButtonTapped()
+    private void HandleXPInfoContinue()
     {
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.AwaitingXPTap) return;
+        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.ShowingXPInfo) return;
 
         StopPulse();
         RestoreHighlightSorting();
-        StopHandPointerAnimation();
-
-        // The chart opens right where this dim overlay sits (sortingOrder 999) and takes a moment to
-        // slide in - drop just the overlay so it never covers the chart the player just asked to see.
-        // Flow 2 doesn't start until PlayerXPManager reports the chart closed again (HandleXPChartToggled).
-        HideDimOverlayOnly();
-        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_xp_chart"));
-
-        flow1Sub = Flow1SubStep.AwaitingXPChartClose;
-    }
-
-    private void HandleXPChartToggled(bool isOpen)
-    {
-        if (isOpen) return;
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.AwaitingXPChartClose) return;
-
         flow1Sub = Flow1SubStep.None;
         SetInstructionPanelVisible(false);
 
@@ -760,13 +884,13 @@ public class GameOnboardingManager : MonoBehaviour
         instructionPanelShownPosCaptured = true;
     }
 
-    /// <summary>Turns off just the dim overlay, leaving the instruction panel (if any) up. Used where a
-    /// full-screen game element (the XP chart) needs to be visible without the tutorial's own dimming.</summary>
+    /// <summary>Stops the dim overlay from blocking touches/clicks, leaving the instruction panel (if any)
+    /// up. The overlay itself is authored small enough that it no longer needs to be deactivated to make
+    /// the rest of the screen interactable, so it stays visible and active while the tutorial panel is.</summary>
     private void HideDimOverlayOnly()
     {
         if (dimOverlay != null)
         {
-            dimOverlay.gameObject.SetActive(false);
             dimOverlay.blocksRaycasts = false;
         }
     }
@@ -799,7 +923,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     /// <summary>Jumps straight to the next flow (or finishes onboarding if already in the last one),
     /// bypassing whatever gameplay action the current section was waiting on. Mirrors the same
-    /// stage transitions used when a section completes normally (see <see cref="HandleXPChartToggled"/>
+    /// stage transitions used when a section completes normally (see <see cref="HandleXPInfoContinue"/>
     /// and <see cref="CompleteFlow2"/>) so skipped players end up in an identical state to
     /// players who finished the section the intended way.</summary>
     private void SkipCurrentSection()
@@ -808,6 +932,7 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
+        RestoreJoystickHighlight();
         StopHandPointerAnimation();
 
         switch (stage)
@@ -892,6 +1017,76 @@ public class GameOnboardingManager : MonoBehaviour
         addedHighlightRaycaster = false;
     }
 
+    private void HighlightJoystickPermanently(RectTransform target)
+    {
+        if (target == null || joystickHighlightCanvas != null) return;
+
+        Joystick joystick = target.GetComponentInParent<Joystick>();
+        if (joystick != null)
+        {
+            joystick.KeepBackgroundVisible = true;
+            if (joystick.Background != null)
+            {
+                joystick.Background.gameObject.SetActive(true);
+            }
+        }
+
+        joystickHighlightCanvas = target.GetComponent<Canvas>();
+        if (joystickHighlightCanvas == null)
+        {
+            joystickHighlightCanvas = target.gameObject.AddComponent<Canvas>();
+            joystickAddedCanvas = true;
+        }
+        else
+        {
+            joystickAddedCanvas = false;
+        }
+        joystickHighlightCanvas.overrideSorting = true;
+        joystickHighlightCanvas.sortingOrder = overlaySortingOrder + 1;
+
+        joystickHighlightRaycaster = target.GetComponent<GraphicRaycaster>();
+        if (joystickHighlightRaycaster == null)
+        {
+            joystickHighlightRaycaster = target.gameObject.AddComponent<GraphicRaycaster>();
+            joystickAddedRaycaster = true;
+        }
+        else
+        {
+            joystickAddedRaycaster = false;
+        }
+    }
+
+    private void RestoreJoystickHighlight()
+    {
+        if (joystickHighlightCanvas == null) return;
+
+        Joystick joystick = joystickHighlightCanvas.GetComponentInParent<Joystick>();
+        if (joystick != null)
+        {
+            joystick.KeepBackgroundVisible = false;
+            if (joystick is FloatingJoystick || joystick is DynamicJoystick)
+            {
+                if (joystick.Background != null)
+                {
+                    joystick.Background.gameObject.SetActive(false);
+                }
+            }
+            else if (joystick is VariableJoystick variableJoystick)
+            {
+                variableJoystick.SetMode(variableJoystick.Mode);
+            }
+        }
+
+        if (joystickAddedRaycaster && joystickHighlightRaycaster != null) Destroy(joystickHighlightRaycaster);
+        if (joystickAddedCanvas) Destroy(joystickHighlightCanvas);
+        else joystickHighlightCanvas.overrideSorting = false;
+
+        joystickHighlightCanvas = null;
+        joystickHighlightRaycaster = null;
+        joystickAddedCanvas = false;
+        joystickAddedRaycaster = false;
+    }
+
     // ═══════════════════════════════════════════════════════════════════════
     //  Pulse animation
     // ═══════════════════════════════════════════════════════════════════════
@@ -933,6 +1128,13 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (handUi == null) return;
 
+        // Canvas.overrideSorting silently fails to take effect (and sortingOrder reads back as the
+        // inherited/default value) while the GameObject is inactive - handUi starts disabled in the
+        // scene, so the override has to be applied with it briefly active or it never actually applies,
+        // leaving the hand stuck at TutorialCanvas's own sortingOrder (i.e. behind whatever's highlighted).
+        bool wasActive = handUi.gameObject.activeSelf;
+        if (!wasActive) handUi.gameObject.SetActive(true);
+
         Canvas handCanvas = handUi.GetComponent<Canvas>();
         if (handCanvas == null) handCanvas = handUi.gameObject.AddComponent<Canvas>();
         handCanvas.overrideSorting = true;
@@ -942,6 +1144,8 @@ public class GameOnboardingManager : MonoBehaviour
         {
             img.raycastTarget = false;
         }
+
+        if (!wasActive) handUi.gameObject.SetActive(false);
     }
 
     private void StartHandPointerAnimation(RectTransform target)

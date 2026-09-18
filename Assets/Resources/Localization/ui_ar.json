@@ -113,6 +113,26 @@
             "value": "ضع"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "تدوير"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "يوجد شيء هنا بالفعل"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "الأرض هنا شديدة الانحدار"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "هذا المكان بعيد جدًا"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "لا يمكنك وضع شيء هنا"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "اكتمل!"
         },
@@ -1309,16 +1329,20 @@
             "value": "جارٍ تنزيل عنصرك — يرجى الانتظار!"
         },
         {
+            "key": "onboarding.step_rotate_item",
+            "value": "حرّك المقبض يمينًا ويسارًا لتدوير عنصرك قبل وضعه!"
+        },
+        {
             "key": "onboarding.step_place_item",
             "value": "تحرّك واضغط على \"وضع\" لزراعته!"
         },
         {
-            "key": "onboarding.step_xp_button",
-            "value": "رائع! اضغط على زر نقاط الخبرة لرؤية تقدمك!"
+            "key": "onboarding.step_xp_info",
+            "value": "رائع! كل ما تفعله في جنة الحديقة — الزراعة والتعلم والمزيد — يرفع مستوى خبرتك. راقبه وهو يرتفع هنا!"
         },
         {
-            "key": "onboarding.step_xp_chart",
-            "value": "اطّلع على مخطط نقاط خبرتك، ثم أغلقه للمتابعة!"
+            "key": "onboarding.got_it_button",
+            "value": "فهمت!"
         },
         {
             "key": "onboarding.step_take_photo",

@@ -113,6 +113,26 @@
             "value": "স্থাপন করুন"
         },
         {
+            "key": "placement.button_rotate",
+            "value": "ঘোরান"
+        },
+        {
+            "key": "placement.blocked_occupied",
+            "value": "এখানে আগে থেকেই কিছু আছে"
+        },
+        {
+            "key": "placement.blocked_steep",
+            "value": "এখানকার জমি খুব ঢালু"
+        },
+        {
+            "key": "placement.blocked_too_far",
+            "value": "জায়গাটি অনেক দূরে"
+        },
+        {
+            "key": "placement.blocked_off_terrain",
+            "value": "এখানে কিছু রাখা যাবে না"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "সম্পন্ন হয়েছে!"
         },
@@ -1309,16 +1329,20 @@
             "value": "আপনার আইটেম ডাউনলোড হচ্ছে — একটু অপেক্ষা করুন!"
         },
         {
+            "key": "onboarding.step_rotate_item",
+            "value": "বসানোর আগে আইটেমটি ঘোরাতে হ্যান্ডেলটি ডানে-বামে স্লাইড করুন!"
+        },
+        {
             "key": "onboarding.step_place_item",
             "value": "চারদিকে ঘুরুন এবং এটি বসাতে \"স্থাপন করুন\"-এ চাপুন!"
         },
         {
-            "key": "onboarding.step_xp_button",
-            "value": "চমৎকার! আপনার অগ্রগতি দেখতে এক্সপি বাটনে চাপুন!"
+            "key": "onboarding.step_xp_info",
+            "value": "চমৎকার! জান্নাহ গার্ডেনে আপনি যা কিছু করেন — রোপণ, শেখা এবং আরও অনেক কিছু — তা আপনার এক্সপেরিয়েন্স লেভেল বাড়ায়। এখানে এটি বাড়তে দেখুন!"
         },
         {
-            "key": "onboarding.step_xp_chart",
-            "value": "আপনার এক্সপি চার্ট দেখুন, তারপর চালিয়ে যেতে এটি বন্ধ করুন!"
+            "key": "onboarding.got_it_button",
+            "value": "বুঝেছি!"
         },
         {
             "key": "onboarding.step_take_photo",
