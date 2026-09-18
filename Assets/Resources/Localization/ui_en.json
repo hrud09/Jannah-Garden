@@ -645,12 +645,12 @@
             "value": "Move around and tap Place to plant it!"
         },
         {
-            "key": "onboarding.step_xp_button",
-            "value": "Nice! Tap the XP button to see your progress!"
+            "key": "onboarding.step_xp_info",
+            "value": "Nice! Everything you do in Jannah Garden — planting, learning, and more — grows your Experience Level. Watch it climb here!"
         },
         {
-            "key": "onboarding.step_xp_chart",
-            "value": "Check out your XP chart, then close it to continue!"
+            "key": "onboarding.got_it_button",
+            "value": "Got it!"
         },
         {
             "key": "onboarding.step_take_photo",

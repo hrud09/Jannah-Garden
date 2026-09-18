@@ -1333,12 +1333,12 @@
             "value": "تحرّك واضغط على \"وضع\" لزراعته!"
         },
         {
-            "key": "onboarding.step_xp_button",
-            "value": "رائع! اضغط على زر نقاط الخبرة لرؤية تقدمك!"
+            "key": "onboarding.step_xp_info",
+            "value": "رائع! كل ما تفعله في جنة الحديقة — الزراعة والتعلم والمزيد — يرفع مستوى خبرتك. راقبه وهو يرتفع هنا!"
         },
         {
-            "key": "onboarding.step_xp_chart",
-            "value": "اطّلع على مخطط نقاط خبرتك، ثم أغلقه للمتابعة!"
+            "key": "onboarding.got_it_button",
+            "value": "فهمت!"
         },
         {
             "key": "onboarding.step_take_photo",
