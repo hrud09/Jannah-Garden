@@ -11,15 +11,11 @@ public class DayNightCycle : MonoBehaviour
     [Header("Skyboxes")]
     public Material daySkybox;
 
-    [Header("Time Simulation")]
-    [Tooltip("How much faster time passes compared to real life. (e.g. 2 means 2x faster, 60 means 1 real minute = 1 in-game hour)")]
-    public float timeMultiplier = 1f;
-
-    [Tooltip("The current simulated time in hours (0 to 24). You can scrub this to change time manually!")]
+    [Tooltip("The current real-world time in hours (0 to 24), read from the device clock.")]
     [Range(0f, 24f)]
     public float currentTimeInHours;
 
-    [Tooltip("The current simulated time in HH:MM format, visible here in the inspector.")]
+    [Tooltip("The current real-world time in HH:MM:SS format, visible here in the inspector.")]
     public string currentTimeString;
 
     [Header("UI")]
@@ -27,10 +23,6 @@ public class DayNightCycle : MonoBehaviour
 
     void Start()
     {
-        // Initial setup based on current real-world time
-        DateTime now = DateTime.Now;
-        currentTimeInHours = now.Hour + (now.Minute / 60f) + (now.Second / 3600f);
-
         // Always render as full daytime - no time-based lighting/skybox changes.
         if (directionalLight != null)
         {
@@ -49,24 +41,18 @@ public class DayNightCycle : MonoBehaviour
 
     void Update()
     {
-        // Advance time based on Time.deltaTime and the multiplier
-        // Time.deltaTime is in seconds. We convert to hours by dividing by 3600
-        currentTimeInHours += (Time.deltaTime * timeMultiplier) / 3600f;
-
-        // Loop time back around if it exceeds 24 hours
-        if (currentTimeInHours >= 24f)
-        {
-            currentTimeInHours %= 24f;
-        }
-
         UpdateTimeText();
     }
 
     void UpdateTimeText()
     {
-        int hours = Mathf.FloorToInt(currentTimeInHours);
-        int minutes = Mathf.FloorToInt((currentTimeInHours - hours) * 60f);
-        currentTimeString = string.Format("{0:00}:{1:00}", hours, minutes);
+        DateTime now = DateTime.Now;
+        int hours = now.Hour;
+        int minutes = now.Minute;
+        int seconds = now.Second;
+
+        currentTimeInHours = hours + (minutes / 60f) + (seconds / 3600f);
+        currentTimeString = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
 
         if (timeText != null)
         {
