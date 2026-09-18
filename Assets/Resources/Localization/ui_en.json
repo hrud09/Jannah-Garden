@@ -641,6 +641,10 @@
             "value": "Downloading your item — hang tight!"
         },
         {
+            "key": "onboarding.step_rotate_item",
+            "value": "Slide the handle left and right to rotate your item before placing it!"
+        },
+        {
             "key": "onboarding.step_place_item",
             "value": "Move around and tap Place to plant it!"
         },

@@ -36,7 +36,7 @@ public class GameOnboardingManager : MonoBehaviour
         Completed = 6
     }
 
-    private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingPlace, ShowingXPInfo }
+    private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingRotationDemo, AwaitingPlace, ShowingXPInfo }
     private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit }
 
     private const string StageKey = "GameOnboarding_Stage";
@@ -84,6 +84,10 @@ public class GameOnboardingManager : MonoBehaviour
     [Tooltip("Safety cap so a player who never touches the joystick isn't stuck - advances anyway once reached.")]
     public float movementStepTimeout = 30f;
 
+    [Header("Rotation Demo Step")]
+    [Tooltip("Safety cap so a player who never touches the rotation slider isn't stuck - advances anyway once reached.")]
+    public float rotationDemoTimeout = 8f;
+
     private OnboardingStage stage;
     private Flow1SubStep flow1Sub = Flow1SubStep.None;
     private Flow2SubStep flow2Sub = Flow2SubStep.None;
@@ -125,6 +129,7 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            DeactivateStaleTutorialUiIfCompleted();
             Destroy(gameObject);
             return;
         }
@@ -171,6 +176,22 @@ public class GameOnboardingManager : MonoBehaviour
         StopPulse();
         StopHandPointerAnimation();
         panelSlideTween?.Kill();
+    }
+
+    /// <summary>Every scene ships its own authored-active copy of the TutorialCanvas hierarchy, since the
+    /// singleton only survives scene loads by detaching and DontDestroyOnLoad-ing the *first* one. Each
+    /// later scene's own GameOnboardingManager reaches here, sees the surviving Instance, and destroys only
+    /// its own GameObject (not the whole hierarchy) - leaving that scene's own dimOverlay/instructionPanel
+    /// sitting active with nothing left to ever hide them. Once onboarding is already complete there's no
+    /// step left that will show them on purpose, so hide this duplicate's own copies (still valid references
+    /// at this point, since Destroy hasn't run yet) before it self-destructs - this runs in Awake, ahead of
+    /// any Start/Update/render for the newly loaded scene.</summary>
+    private void DeactivateStaleTutorialUiIfCompleted()
+    {
+        if (PlayerPrefs.GetInt(StageKey, (int)OnboardingStage.NotStarted) < (int)OnboardingStage.Completed) return;
+
+        if (dimOverlay != null) dimOverlay.gameObject.SetActive(false);
+        if (instructionPanel != null) instructionPanel.gameObject.SetActive(false);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -505,6 +526,61 @@ public class GameOnboardingManager : MonoBehaviour
         {
             Debug.LogWarning("[GameOnboardingManager] Place button never became ready; skipping placement highlight.");
             yield break;
+        }
+
+        BeginRotationDemoStep(place);
+    }
+
+    /// <summary>Shown once between the item finishing download and the placement-highlight step, while the
+    /// rotation slider (activated alongside the Place button by <see cref="ItemPlacementManager.FinishPreparingPlacement"/>)
+    /// is already on screen. Pulses the slider's handle and explains it rotates the item, then falls through
+    /// to <see cref="BeginPlaceHighlightStep"/> once the player actually drags it (or after a timeout).</summary>
+    private void BeginRotationDemoStep(Button place)
+    {
+        Slider slider = ItemPlacementManager.Instance != null ? ItemPlacementManager.Instance.rotationSlider : null;
+        if (slider == null)
+        {
+            BeginPlaceHighlightStep(place);
+            return;
+        }
+
+        flow1Sub = Flow1SubStep.AwaitingRotationDemo;
+        ShowDimAndPanel(true, blockRaycasts: false);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_rotate_item"));
+
+        RectTransform handleRect = slider.handleRect;
+        if (handleRect != null)
+        {
+            HighlightUIElement(handleRect);
+            PulseButton(handleRect);
+        }
+
+        StartCoroutine(WaitForRotationDemoRoutine(place, slider, slider.value));
+    }
+
+    private IEnumerator WaitForRotationDemoRoutine(Button place, Slider slider, float startValue)
+    {
+        float elapsed = 0f;
+        while (flow1Sub == Flow1SubStep.AwaitingRotationDemo && elapsed < rotationDemoTimeout)
+        {
+            if (slider == null || Mathf.Abs(slider.value - startValue) > 0.01f) break;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (flow1Sub != Flow1SubStep.AwaitingRotationDemo) yield break; // superseded (e.g. skipped)
+
+        StopPulse();
+        RestoreHighlightSorting();
+        BeginPlaceHighlightStep(place);
+    }
+
+    private void BeginPlaceHighlightStep(Button place)
+    {
+        if (place == null || !place.gameObject.activeInHierarchy)
+        {
+            Debug.LogWarning("[GameOnboardingManager] Place button no longer ready; skipping placement highlight.");
+            return;
         }
 
         flow1Sub = Flow1SubStep.AwaitingPlace;
