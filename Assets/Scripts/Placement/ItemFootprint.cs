@@ -92,6 +92,16 @@ public static class ItemFootprint
         return ((Mathf.RoundToInt(delta / 90f) % 4) + 4) % 4;
     }
 
+    /// <summary>
+    /// The continuous yaw offset of <paramref name="placed"/> relative to <paramref name="authored"/>,
+    /// in degrees, signed and in the range (-180, 180]. Used to restore the rotation slider to the
+    /// exact facing a relocated item already had, rather than snapping it to the nearest quarter-turn.
+    /// </summary>
+    public static float YawDegreesFromRotation(Quaternion placed, Quaternion authored)
+    {
+        return Mathf.DeltaAngle(authored.eulerAngles.y, placed.eulerAngles.y);
+    }
+
     /// <summary>Drops every cached measurement. Called when prefabs are evicted from the addressable cache.</summary>
     public static void ClearCache() => _sizeCache.Clear();
 }

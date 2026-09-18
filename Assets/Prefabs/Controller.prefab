@@ -669,7 +669,7 @@ MonoBehaviour:
   placementRadius: 15
   grid: {fileID: 0}
   gridView: {fileID: 0}
-  rotateButton: {fileID: 0}
+  rotationSlider: {fileID: 0}
   useGrid: 1
   blockInvalidPlacements: 1
   cancelPlacementButton: {fileID: 0}

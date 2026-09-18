@@ -75,9 +75,9 @@ public class ItemPlacementManager : MonoBehaviour
              "as a child at startup.")]
     public PlacementGridView gridView;
 
-    [Tooltip("Optional. Turns the item being placed a quarter-turn per tap. Hidden while nothing is " +
-             "being placed.")]
-    public Button rotateButton;
+    [Tooltip("Optional. Freely rotates the item being placed - the slider's 0-1 range maps to a full " +
+             "0-360 degree turn. Hidden and inert while nothing is being placed.")]
+    public Slider rotationSlider;
 
     [Tooltip("Snap placements to the grid and show the overlay. Turning this off restores the old " +
              "free-form behaviour wholesale — an escape hatch, not a gameplay option.")]
@@ -169,7 +169,13 @@ public class ItemPlacementManager : MonoBehaviour
     // screen would have a sapling claim a fifth of the ground the grown tree needs.
     private Vector2Int _pendingFootprint = Vector2Int.one;
     private Vector2Int _pendingFootprintOverride;
-    private int _pendingRotationSteps;
+
+    // Continuous yaw offset applied on top of _ghostBaseRotation, in degrees. The slider's centre (0.5)
+    // is 0 degrees - the model's authored facing - so dragging left/right turns it either way from
+    // there; see OnRotationSliderChanged for the (sliderValue - 0.5) * 360 mapping. Grid occupancy still
+    // needs an axis-aligned rectangle, so footprint claims are derived by rounding this to the nearest
+    // quarter-turn - see RefreshPendingFootprint.
+    private float _pendingRotationDegrees;
 
     // The preview prefab's authored rotation. Placement yaw is applied on top of it rather than
     // replacing it, because several models are authored pre-rotated.
@@ -275,7 +281,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (placeButton != null) placeButton.onClick.RemoveListener(HandlePlaceButtonClick);
         if (cancelPlacementButton != null) cancelPlacementButton.onClick.RemoveListener(CancelPlacement);
-        if (rotateButton != null) rotateButton.onClick.RemoveListener(RotatePlacement);
+        if (rotationSlider != null) rotationSlider.onValueChanged.RemoveListener(OnRotationSliderChanged);
 
         if (Instance == this) Instance = null;
     }
@@ -530,9 +536,9 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingFootprintOverride = ResolveFootprintOverride(_pendingSourceKind, _pendingSourceItemId);
 
         // A relocated item keeps the facing it already had; a fresh one starts unrotated.
-        _pendingRotationSteps = _isRelocating
-            ? ItemFootprint.StepsFromRotation(_relocateOriginalRotation, _ghostBaseRotation)
-            : 0;
+        _pendingRotationDegrees = _isRelocating
+            ? ItemFootprint.YawDegreesFromRotation(_relocateOriginalRotation, _ghostBaseRotation)
+            : 0f;
 
         RefreshPendingFootprint();
 
@@ -554,11 +560,10 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (UseGrid && gridView != null) gridView.Show(transform.position, placementRadius);
 
-        if (rotateButton != null)
+        if (rotationSlider != null)
         {
-            rotateButton.gameObject.SetActive(true);
-            var rotateText = rotateButton.GetComponentInChildren<TMPro.TMP_Text>();
-            if (rotateText != null) rotateText.text = LocalizationManager.Instance.Get("placement.button_rotate");
+            rotationSlider.gameObject.SetActive(true);
+            rotationSlider.SetValueWithoutNotify(0.5f + _pendingRotationDegrees / 360f);
         }
 
         UpdatePlacementPosition();
@@ -655,7 +660,7 @@ public class ItemPlacementManager : MonoBehaviour
         // Raycast specifically against the TerrainCollider
         if (!terrainCollider.Raycast(ray, out hit, 1000f)) return;
 
-        currentPlacedObject.transform.rotation = YawFor(_pendingRotationSteps) * _ghostBaseRotation;
+        currentPlacedObject.transform.rotation = YawFor(_pendingRotationDegrees) * _ghostBaseRotation;
 
         if (!UseGrid)
         {
@@ -689,33 +694,34 @@ public class ItemPlacementManager : MonoBehaviour
         if (placeButton != null) placeButton.interactable = CanConfirmPlacement;
     }
 
-    /// <summary>The yaw applied on top of the model's authored rotation, in quarter-turns.</summary>
-    private static Quaternion YawFor(int steps) => Quaternion.Euler(0f, 90f * steps, 0f);
+    /// <summary>The yaw applied on top of the model's authored rotation, in degrees.</summary>
+    private static Quaternion YawFor(float degrees) => Quaternion.Euler(0f, degrees, 0f);
 
     /// <summary>
-    /// Turns the item being placed a quarter-turn. Rectangular footprints swap their axes, so the
-    /// snap anchor is dropped and re-derived on the next frame - keeping the old anchor would swing
-    /// the block away from the crosshair instead of turning it in place.
+    /// Live callback for rotationSlider - centred at 0.5 (the authored facing), dragging out to either
+    /// end turns the item a full 180 degrees that way. Rectangular footprints only swap axes at
+    /// quarter-turns, so the snap anchor is dropped and re-derived on the next frame whenever that
+    /// snapped footprint changes - keeping the old anchor would swing the block away from the crosshair
+    /// instead of turning it in place.
     /// </summary>
-    public void RotatePlacement()
+    public void OnRotationSliderChanged(float sliderValue)
     {
         if (currentPlacedObject == null) return;
 
-        _pendingRotationSteps = (_pendingRotationSteps + 1) & 3;
+        _pendingRotationDegrees = (sliderValue - 0.5f) * 360f;
         RefreshPendingFootprint();
-
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
-
         UpdatePlacementPosition();
     }
 
-    /// <summary>Re-measures the cells the pending item claims at its current rotation.</summary>
+    /// <summary>Re-measures the cells the pending item claims at its current rotation. Grid occupancy
+    /// is axis-aligned, so the free rotation is rounded to the nearest quarter-turn for this purpose.</summary>
     private void RefreshPendingFootprint()
     {
         if (grid == null || _pendingItemPrefab == null) return;
 
+        int footprintSteps = (((Mathf.RoundToInt(_pendingRotationDegrees / 90f)) % 4) + 4) % 4;
         _pendingFootprint = ItemFootprint.Compute(
-            _pendingItemPrefab, _pendingRotationSteps, grid.CellSize, _pendingFootprintOverride);
+            _pendingItemPrefab, footprintSteps, grid.CellSize, _pendingFootprintOverride);
 
         _hasSnapAnchor = false;
     }
@@ -784,10 +790,10 @@ public class ItemPlacementManager : MonoBehaviour
         gridView.Bind(grid);
         gridView.Hide();
 
-        if (rotateButton != null)
+        if (rotationSlider != null)
         {
-            rotateButton.onClick.AddListener(RotatePlacement);
-            rotateButton.gameObject.SetActive(false);
+            rotationSlider.onValueChanged.AddListener(OnRotationSliderChanged);
+            rotationSlider.gameObject.SetActive(false);
         }
     }
 
@@ -1047,7 +1053,7 @@ public class ItemPlacementManager : MonoBehaviour
         _relocateRemainingDuration = 0f;
         _relocateHadArea = false;
 
-        _pendingRotationSteps = 0;
+        _pendingRotationDegrees = 0f;
         _pendingFootprint = Vector2Int.one;
         _pendingFootprintOverride = Vector2Int.zero;
         _pendingValidity = PlacementValidity.Valid;
@@ -1064,7 +1070,11 @@ public class ItemPlacementManager : MonoBehaviour
         }
 
         if (cancelPlacementButton != null) cancelPlacementButton.gameObject.SetActive(false);
-        if (rotateButton != null) rotateButton.gameObject.SetActive(false);
+        if (rotationSlider != null)
+        {
+            rotationSlider.gameObject.SetActive(false);
+            rotationSlider.SetValueWithoutNotify(0.5f);
+        }
         if (gridView != null) gridView.Hide();
     }
 
