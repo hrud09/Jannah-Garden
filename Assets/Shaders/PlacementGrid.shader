@@ -40,7 +40,7 @@ Shader "JannahGarden/PlacementGrid"
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             ZTest LEqual
-            Cull Back
+            Cull Off
             Offset -1, -1
 
             HLSLPROGRAM

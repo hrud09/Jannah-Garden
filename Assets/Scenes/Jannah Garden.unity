@@ -5394,6 +5394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1431690957}
     - target: {fileID: 269081357664727164, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: gridView
+      value: 
+      objectReference: {fileID: 1726353796}
+    - target: {fileID: 269081357664727164, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: placeButton
       value: 
       objectReference: {fileID: 328864480}
@@ -5409,6 +5413,10 @@ PrefabInstance:
       propertyPath: terrainCollider
       value: 
       objectReference: {fileID: 320240520}
+    - target: {fileID: 1501129940733030358, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2531667859275332615, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: m_Name
       value: Controller
@@ -5461,6 +5469,10 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 411495268}
+    - target: {fileID: 2970300643397475484, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5509489776399048857, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: crosshairRect
       value: 
@@ -16861,6 +16873,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7508004933227241077, guid: b58e673bb8fe1a34ca92d7a89efc1470, type: 3}
   m_PrefabInstance: {fileID: 1722466570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1726353795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726353797}
+  - component: {fileID: 1726353796}
+  m_Layer: 0
+  m_Name: Item Placement Grid View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1726353796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726353795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14116ea7cac2844992f8aba6acb19f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlacementGridView
+  gridSubdivisions: 48
+  gridMargin: 1
+  rebuildMoveThreshold: 1
+  groundOffset: 0.02
+  footprintSubdivisions: 6
+  validFill: {r: 0.35, g: 1, b: 0.45, a: 0.2}
+  validBorder: {r: 0, g: 1, b: 0.1968503, a: 0.85}
+  invalidFill: {r: 1, g: 0.32, b: 0.3, a: 0.3529412}
+  invalidBorder: {r: 1, g: 0.067440055, b: 0.0141509175, a: 0.9}
+  fadeDuration: 0.18
+--- !u!4 &1726353797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726353795}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.3387287, z: -0, w: -0.9408841}
+  m_LocalPosition: {x: 105.87, y: 12.4, z: 88.382}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1758729015
 GameObject:
   m_ObjectHideFlags: 0
@@ -25833,6 +25899,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1367825611}
   - {fileID: 816459544}
+  - {fileID: 1726353797}
   - {fileID: 755716460}
   - {fileID: 2111190028}
   - {fileID: 1969168288}

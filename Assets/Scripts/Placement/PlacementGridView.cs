@@ -38,9 +38,12 @@ public class PlacementGridView : MonoBehaviour
     [Range(1, 32)]
     public int footprintSubdivisions = 6;
 
-    public Color validFill = new Color(0.35f, 1f, 0.45f, 0.22f);
+    // Fill left fully transparent on purpose: a solid tint over textured ground blends unevenly with
+    // whatever is underneath (sand, grass, dirt) and reads as blotchy patches rather than a placement
+    // outline. The border and interior cell lines alone are enough to show the footprint and its validity.
+    public Color validFill = new Color(0.35f, 1f, 0.45f, 0f);
     public Color validBorder = new Color(0.5f, 1f, 0.6f, 0.85f);
-    public Color invalidFill = new Color(1f, 0.32f, 0.3f, 0.26f);
+    public Color invalidFill = new Color(1f, 0.32f, 0.3f, 0f);
     public Color invalidBorder = new Color(1f, 0.45f, 0.42f, 0.9f);
 
     [Header("Fade")]

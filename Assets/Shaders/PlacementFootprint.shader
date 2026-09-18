@@ -38,7 +38,7 @@ Shader "JannahGarden/PlacementFootprint"
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             ZTest LEqual
-            Cull Back
+            Cull Off
             Offset -2, -2
 
             HLSLPROGRAM
