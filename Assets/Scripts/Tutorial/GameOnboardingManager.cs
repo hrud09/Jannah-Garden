@@ -808,13 +808,13 @@ public class GameOnboardingManager : MonoBehaviour
         instructionPanelShownPosCaptured = true;
     }
 
-    /// <summary>Turns off just the dim overlay, leaving the instruction panel (if any) up. Used where a
-    /// full-screen game element (the XP chart) needs to be visible without the tutorial's own dimming.</summary>
+    /// <summary>Stops the dim overlay from blocking touches/clicks, leaving the instruction panel (if any)
+    /// up. The overlay itself is authored small enough that it no longer needs to be deactivated to make
+    /// the rest of the screen interactable, so it stays visible and active while the tutorial panel is.</summary>
     private void HideDimOverlayOnly()
     {
         if (dimOverlay != null)
         {
-            dimOverlay.gameObject.SetActive(false);
             dimOverlay.blocksRaycasts = false;
         }
     }

@@ -324,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -95.74806, y: -179}
+  m_AnchoredPosition: {x: -95.74806, y: -227}
   m_SizeDelta: {x: 295.0267, y: 311.77972}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &6751425123208476636
@@ -992,7 +992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   key: economy.xp_unit_label
-  leftToRightAlignment: 257
 --- !u!1 &7909638796135795204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   key: economy.level_label
-  leftToRightAlignment: 257
 --- !u!1 &7958418312647883697
 GameObject:
   m_ObjectHideFlags: 0
