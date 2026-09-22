@@ -524,6 +524,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: isInitScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: additiveSceneGroups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: additiveSceneGroups.Array.data[0].baseSceneName
+      value: Jannah Garden
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
+      propertyPath: additiveSceneGroups.Array.data[1].baseSceneName
+      value: Outer Garden
+      objectReference: {fileID: 0}
     - target: {fileID: 7559076174171591430, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -46,6 +47,11 @@ public class PlacementGridView : MonoBehaviour
     public Color invalidFill = new Color(1f, 0.32f, 0.3f, 0f);
     public Color invalidBorder = new Color(1f, 0.45f, 0.42f, 0.9f);
 
+    [Header("Occupied Areas")]
+    [Tooltip("Extra metres beyond the placement radius within which already-placed items' footprints " +
+             "are outlined, so the player can see taken ground before aiming into it.")]
+    public float occupiedAreaMargin = 1.5f;
+
     [Header("Fade")]
     [Tooltip("Seconds for the overlay to fade in when a placement starts and out when it ends.")]
     [Range(0.01f, 1f)]
@@ -60,6 +66,11 @@ public class PlacementGridView : MonoBehaviour
     private MeshRenderer _footprintRenderer;
     private Mesh _footprintMesh;
     private Material _footprintMaterial;
+
+    private MeshRenderer _occupiedRenderer;
+    private Mesh _occupiedMesh;
+    private Material _occupiedMaterial;
+    private readonly List<RectInt> _occupiedAreaBuffer = new List<RectInt>();
 
     private Vector3[] _gridVertices;
     private Vector3 _lastGridCenter = new Vector3(float.MaxValue, 0f, float.MaxValue);
@@ -111,6 +122,14 @@ public class PlacementGridView : MonoBehaviour
             _footprintMesh.MarkDynamic();
             _footprintRenderer = CreateChild("FootprintHighlight", _footprintMesh, _footprintMaterial);
         }
+
+        if (_occupiedRenderer == null)
+        {
+            _occupiedMaterial = LoadMaterial("Placement/PlacementOccupiedArea");
+            _occupiedMesh = new Mesh { name = "PlacementOccupiedAreas" };
+            _occupiedMesh.MarkDynamic();
+            _occupiedRenderer = CreateChild("OccupiedAreasHighlight", _occupiedMesh, _occupiedMaterial);
+        }
     }
 
     /// <summary>
@@ -157,8 +176,10 @@ public class PlacementGridView : MonoBehaviour
     {
         if (_gridMesh != null) Destroy(_gridMesh);
         if (_footprintMesh != null) Destroy(_footprintMesh);
+        if (_occupiedMesh != null) Destroy(_occupiedMesh);
         if (_gridMaterial != null) Destroy(_gridMaterial);
         if (_footprintMaterial != null) Destroy(_footprintMaterial);
+        if (_occupiedMaterial != null) Destroy(_occupiedMaterial);
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -173,6 +194,11 @@ public class PlacementGridView : MonoBehaviour
         EnsureRenderers();
         _targetAlpha = 1f;
         RefreshGridSheet(center, radius);
+
+        // Occupancy can have changed since the last time this view was hidden (an item was just placed
+        // while standing still, so the move-threshold in RefreshGridSheet would otherwise skip the
+        // rebuild) — always resync the outlines when a placement starts.
+        BuildOccupiedAreasMesh(center, radius);
     }
 
     /// <summary>Fades everything out. The meshes stay built, ready for the next placement.</summary>
@@ -181,6 +207,7 @@ public class PlacementGridView : MonoBehaviour
         _targetAlpha = 0f;
         _hasFootprint = false;
         if (_footprintRenderer != null) _footprintRenderer.enabled = false;
+        if (_occupiedRenderer != null) _occupiedRenderer.enabled = false;
     }
 
     /// <summary>Keeps the sheet centred on the player, rebuilding its heights only when worth it.</summary>
@@ -241,9 +268,11 @@ public class PlacementGridView : MonoBehaviour
 
         if (_gridMaterial != null) _gridMaterial.SetFloat(GlobalAlphaId, _alpha);
         if (_footprintMaterial != null) _footprintMaterial.SetFloat(GlobalAlphaId, _alpha);
+        if (_occupiedMaterial != null) _occupiedMaterial.SetFloat(GlobalAlphaId, _alpha);
 
         if (_gridRenderer != null) _gridRenderer.enabled = visible;
         if (_footprintRenderer != null) _footprintRenderer.enabled = visible && _hasFootprint;
+        if (_occupiedRenderer != null) _occupiedRenderer.enabled = visible && _occupiedAreaBuffer.Count > 0;
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -271,9 +300,13 @@ public class PlacementGridView : MonoBehaviour
         bool moved = (new Vector2(center.x - _lastGridCenter.x, center.z - _lastGridCenter.z)).sqrMagnitude
                      > rebuildMoveThreshold * rebuildMoveThreshold;
 
-        if (!moved && Mathf.Approximately(radius, _lastGridRadius) && _gridVertices != null) return;
+        if (!moved && Mathf.Approximately(radius, _lastGridRadius) && _gridVertices != null)
+        {
+            return;
+        }
 
         BuildGridMesh(center, radius);
+        BuildOccupiedAreasMesh(center, radius);
         _lastGridCenter = center;
         _lastGridRadius = radius;
     }
@@ -350,6 +383,92 @@ public class PlacementGridView : MonoBehaviour
         _footprintMesh.uv = uvs;
         _footprintMesh.triangles = BuildQuadIndices(n);
         _footprintMesh.RecalculateBounds();
+    }
+
+    /// <summary>
+    /// Builds one combined mesh outlining every already-claimed footprint within
+    /// <paramref name="radius"/> + <see cref="occupiedAreaMargin"/> of <paramref name="center"/>, so the
+    /// player can see taken ground before aiming a new item into it. A single quad per area, each
+    /// carrying its own size in metres on uv1 (see <c>PlacementOccupiedArea.shader</c>), so differently
+    /// sized footprints can share one draw call instead of one material each.
+    /// </summary>
+    private void BuildOccupiedAreasMesh(Vector3 center, float radius)
+    {
+        if (_grid == null || !_grid.IsReady || _occupiedMesh == null) return;
+
+        _occupiedAreaBuffer.Clear();
+
+        float reach = Mathf.Max(0f, radius) + occupiedAreaMargin;
+        float reachSqr = reach * reach;
+
+        foreach (var kvp in _grid.AllAreas)
+        {
+            RectInt area = kvp.Value;
+            Vector3 areaCenter = _grid.CellAreaCenter(area.min, area.size);
+            float dx = areaCenter.x - center.x;
+            float dz = areaCenter.z - center.z;
+            if (dx * dx + dz * dz <= reachSqr) _occupiedAreaBuffer.Add(area);
+        }
+
+        int quadCount = _occupiedAreaBuffer.Count;
+        var vertices = new Vector3[quadCount * 4];
+        var uvs = new Vector2[quadCount * 4];
+        var sizes = new Vector2[quadCount * 4];
+        var triangles = new int[quadCount * 6];
+
+        for (int i = 0; i < quadCount; i++)
+        {
+            RectInt area = _occupiedAreaBuffer[i];
+            Vector3 min = _grid.CellAreaCenter(area.min, Vector2Int.zero);
+            float width = area.width * _grid.CellSize;
+            float depth = area.height * _grid.CellSize;
+            var size = new Vector2(width, depth);
+
+            int v = i * 4;
+
+            vertices[v + 0] = LiftedCorner(min.x, min.z);
+            vertices[v + 1] = LiftedCorner(min.x + width, min.z);
+            vertices[v + 2] = LiftedCorner(min.x, min.z + depth);
+            vertices[v + 3] = LiftedCorner(min.x + width, min.z + depth);
+
+            uvs[v + 0] = new Vector2(0f, 0f);
+            uvs[v + 1] = new Vector2(1f, 0f);
+            uvs[v + 2] = new Vector2(0f, 1f);
+            uvs[v + 3] = new Vector2(1f, 1f);
+
+            sizes[v + 0] = size;
+            sizes[v + 1] = size;
+            sizes[v + 2] = size;
+            sizes[v + 3] = size;
+
+            int t = i * 6;
+            // Same winding as BuildQuadIndices(1): (0,2,1),(1,2,3).
+            triangles[t + 0] = v + 0;
+            triangles[t + 1] = v + 2;
+            triangles[t + 2] = v + 1;
+            triangles[t + 3] = v + 1;
+            triangles[t + 4] = v + 2;
+            triangles[t + 5] = v + 3;
+        }
+
+        _occupiedMesh.Clear();
+        _occupiedMesh.indexFormat = vertices.Length > 65000
+            ? UnityEngine.Rendering.IndexFormat.UInt32
+            : UnityEngine.Rendering.IndexFormat.UInt16;
+        _occupiedMesh.vertices = vertices;
+        _occupiedMesh.uv = uvs;
+        _occupiedMesh.uv2 = sizes;
+        _occupiedMesh.triangles = triangles;
+        _occupiedMesh.RecalculateBounds();
+
+        if (_occupiedRenderer != null) _occupiedRenderer.enabled = quadCount > 0 && _alpha > 0.001f;
+    }
+
+    /// <summary>A footprint-outline corner, sampled onto the ground a touch above the lattice sheet so
+    /// it never z-fights with it but still sits below the current ghost's own footprint highlight.</summary>
+    private Vector3 LiftedCorner(float x, float z)
+    {
+        return new Vector3(x, _grid.SampleHeight(new Vector3(x, 0f, z)) + groundOffset * 1.2f, z);
     }
 
     /// <summary>Two triangles per cell of an <c>n</c>x<c>n</c> grid, wound to face up.</summary>

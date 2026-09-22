@@ -383,7 +383,7 @@ public class LoadingScreenManager : MonoBehaviour
         }
 
         // Update status text
-        SetStatusText(LocalizationManager.Instance.Get("loading.base_scene"));
+        SetStatusText(LocalizationManager.Instance.Get("loading.base_scene_named", GetDisplaySceneName(sceneName)));
 
         // Pick a random tip
         if (loadingTips != null && loadingTips.Length > 0 && tipsText != null)
@@ -431,6 +431,8 @@ public class LoadingScreenManager : MonoBehaviour
             }
             else
             {
+                SetStatusText(LocalizationManager.Instance.Get("loading.activating_scene", GetDisplaySceneName(sceneName)));
+
                 AsyncOperation activateOp = newAddressableHandle.Result.ActivateAsync();
                 while (!activateOp.isDone)
                 {
@@ -477,7 +479,6 @@ public class LoadingScreenManager : MonoBehaviour
         // 2. Load sub-scenes additively if defined
         if (hasSubScenes)
         {
-            SetStatusText(LocalizationManager.Instance.Get("loading.environments"));
             List<AsyncOperation> subSceneOps = new List<AsyncOperation>();
 
             // Start all additive loads
@@ -490,21 +491,32 @@ public class LoadingScreenManager : MonoBehaviour
                 }
             }
 
-            // Monitor progress of all additive sub-scenes
+            // Monitor progress of all additive sub-scenes, updating the status text with
+            // whichever one is still loading so the player sees what's actually happening
+            // instead of a single static "Loading environments..." message the whole time.
             bool allDone = false;
             while (!allDone)
             {
                 allDone = true;
                 float totalSubProgress = 0f;
+                string currentSubScene = null;
 
-                foreach (var subOp in subSceneOps)
+                for (int i = 0; i < subSceneOps.Count; i++)
                 {
+                    AsyncOperation subOp = subSceneOps[i];
                     totalSubProgress += subOp.progress; // ranges from 0 to 1
                     if (!subOp.isDone)
                     {
                         allDone = false;
+                        if (currentSubScene == null)
+                        {
+                            currentSubScene = activeGroup.subScenes[i];
+                        }
                     }
                 }
+
+                SetStatusText(LocalizationManager.Instance.Get("loading.environment_named",
+                    GetDisplaySceneName(currentSubScene ?? activeGroup.baseSceneName)));
 
                 float avgSubProgress = subSceneOps.Count > 0 ? (totalSubProgress / subSceneOps.Count) : 1f;
                 _targetProgress = 0.5f + (avgSubProgress * 0.5f);
@@ -667,6 +679,26 @@ public class LoadingScreenManager : MonoBehaviour
         {
             Debug.LogWarning($"[LoadingScreenManager] Failed to set text on '{field.name}': {e.Message}");
         }
+    }
+
+    /// <summary>Turns a raw scene name (e.g. "OuterGarden_Art") into a friendlier display name ("Outer Garden Art")
+    /// for the status text, since scene names are internal identifiers rather than authored copy.</summary>
+    private static string GetDisplaySceneName(string sceneName)
+    {
+        if (string.IsNullOrEmpty(sceneName)) return sceneName;
+
+        string spaced = sceneName.Replace('_', ' ');
+        System.Text.StringBuilder sb = new System.Text.StringBuilder(spaced.Length + 8);
+        for (int i = 0; i < spaced.Length; i++)
+        {
+            char c = spaced[i];
+            if (i > 0 && char.IsUpper(c) && char.IsLower(spaced[i - 1]))
+            {
+                sb.Append(' ');
+            }
+            sb.Append(c);
+        }
+        return sb.ToString();
     }
 
     /// <summary>Whether the given scene name should be loaded via Addressables instead of SceneManager.</summary>
