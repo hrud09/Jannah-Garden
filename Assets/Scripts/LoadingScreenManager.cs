@@ -94,6 +94,23 @@ public class LoadingScreenManager : MonoBehaviour
     public Vector2 logoSize = new Vector2(180f, 180f);
 
     // ─────────────────────────────────────────────
+    //  Inspector — Company / Publisher Logo (splash)
+    // ─────────────────────────────────────────────
+    [Header("Company Logo (Splash)")]
+    [Tooltip("RectTransform of the company/publisher logo shown before the loading screen appears. " +
+             "If assigned, it is enabled and faded in, held, then faded out before the loading " +
+             "screen shows and the scene starts loading. Leave null to skip this step.")]
+    public RectTransform companyLogoRect;
+
+    [Tooltip("Duration of the company logo's fade in / fade out animation.")]
+    public float companyLogoFadeDuration = 0.6f;
+
+    [Tooltip("Seconds the company logo stays fully visible before fading out.")]
+    public float companyLogoHoldTime = 1.2f;
+
+    private CanvasGroup _companyLogoCanvasGroup;
+
+    // ─────────────────────────────────────────────
     //  Inspector — Timing
     // ─────────────────────────────────────────────
     [Header("Timing")]
@@ -221,6 +238,14 @@ public class LoadingScreenManager : MonoBehaviour
 
         // Start hidden (alpha 0, panel inactive)
         HideImmediate();
+
+        // Company logo starts hidden too — it is only shown by PlayCompanyLogoThenLoad().
+        if (companyLogoRect != null)
+        {
+            _companyLogoCanvasGroup = GetOrAddCanvasGroup(companyLogoRect);
+            _companyLogoCanvasGroup.alpha = 0f;
+            companyLogoRect.gameObject.SetActive(false);
+        }
     }
 
     private void FindUIReferences()
@@ -297,10 +322,61 @@ public class LoadingScreenManager : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         if (isInitScene || currentSceneName == "Init Scene" || SceneManager.GetActiveScene().buildIndex == 0)
         {
-            // Show loading screen immediately and begin loading
-            ShowImmediate();
-            LoadScene(sceneToLoadOnInit);
+            StartCoroutine(PlayCompanyLogoThenLoad(sceneToLoadOnInit));
         }
+    }
+
+    /// <summary>
+    /// Plays the company logo splash (fade in, hold, fade out) if one is assigned,
+    /// then shows the loading screen and begins loading the target scene.
+    /// </summary>
+    private IEnumerator PlayCompanyLogoThenLoad(string sceneName)
+    {
+        if (companyLogoRect != null)
+        {
+            yield return StartCoroutine(PlayCompanyLogo());
+        }
+
+        // Show loading screen immediately and begin loading
+        ShowImmediate();
+        LoadScene(sceneName);
+    }
+
+    /// <summary>Enables the company logo and animates it: fade in, hold, fade out.</summary>
+    private IEnumerator PlayCompanyLogo()
+    {
+        companyLogoRect.gameObject.SetActive(true);
+        _companyLogoCanvasGroup.alpha = 0f;
+
+        float t = 0f;
+        while (t < companyLogoFadeDuration)
+        {
+            t += Time.unscaledDeltaTime;
+            _companyLogoCanvasGroup.alpha = Mathf.SmoothStep(0f, 1f, t / companyLogoFadeDuration);
+            yield return null;
+        }
+        _companyLogoCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSecondsRealtime(companyLogoHoldTime);
+
+        t = 0f;
+        while (t < companyLogoFadeDuration)
+        {
+            t += Time.unscaledDeltaTime;
+            _companyLogoCanvasGroup.alpha = Mathf.SmoothStep(1f, 0f, t / companyLogoFadeDuration);
+            yield return null;
+        }
+        _companyLogoCanvasGroup.alpha = 0f;
+
+        companyLogoRect.gameObject.SetActive(false);
+    }
+
+    /// <summary>Returns the RectTransform's CanvasGroup, adding one if it doesn't already have it.</summary>
+    private static CanvasGroup GetOrAddCanvasGroup(RectTransform rect)
+    {
+        CanvasGroup group = rect.GetComponent<CanvasGroup>();
+        if (group == null) group = rect.gameObject.AddComponent<CanvasGroup>();
+        return group;
     }
 
     private void Update()

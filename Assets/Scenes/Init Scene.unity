@@ -156,7 +156,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19607845, g: 0.19607845, b: 0.20000002, a: 0}
+  m_BackGroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -523,22 +523,6 @@ PrefabInstance:
     - target: {fileID: 4246105545637473545, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
       propertyPath: m_Name
       value: Loading Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
-      propertyPath: isInitScene
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
-      propertyPath: additiveSceneGroups.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
-      propertyPath: additiveSceneGroups.Array.data[0].baseSceneName
-      value: Jannah Garden
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183950909705311162, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
-      propertyPath: additiveSceneGroups.Array.data[1].baseSceneName
-      value: Outer Garden
       objectReference: {fileID: 0}
     - target: {fileID: 7559076174171591430, guid: 5745c5cdbcc1f4747b01eede075b1e0a, type: 3}
       propertyPath: m_Pivot.x

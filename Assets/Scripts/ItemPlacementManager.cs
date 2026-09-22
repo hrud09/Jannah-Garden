@@ -59,6 +59,9 @@ public class ItemPlacementManager : MonoBehaviour
     public TerrainCollider terrainCollider;
     public Button placeButton;
 
+    /// <summary>Cached in <see cref="UpdatePlacementPosition"/> instead of resolving Camera.main every call.</summary>
+    private Camera _cachedMainCamera;
+
     [Header("Placement Radius")]
     [Tooltip("Max horizontal distance from the player the ghost can be positioned. Looking further than " +
              "this clamps the ghost to the radius edge along the same look direction, so an item can't " +
@@ -652,11 +655,11 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (currentPlacedObject == null || terrainCollider == null || crosshairRect == null) return;
 
-        Camera mainCam = Camera.main;
-        if (mainCam == null) return;
+        if (_cachedMainCamera == null) _cachedMainCamera = Camera.main;
+        if (_cachedMainCamera == null) return;
 
         // Cast a ray from camera through crosshair screen space position
-        Ray ray = mainCam.ScreenPointToRay(crosshairRect.position);
+        Ray ray = _cachedMainCamera.ScreenPointToRay(crosshairRect.position);
         RaycastHit hit;
 
         // Raycast specifically against the TerrainCollider

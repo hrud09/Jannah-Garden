@@ -111,6 +111,7 @@ public class PlaceableItem : MonoBehaviour
         {
             itemRenderers = GetComponentsInChildren<Renderer>(true);
         }
+        CacheInstancedMaterials();
         // Auto-detect tree or building based on name if not set
         if (!isTree && !isBuilding)
         {
@@ -445,17 +446,39 @@ public class PlaceableItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Per-renderer instanced material arrays, indexed the same as <see cref="itemRenderers"/>.
+    /// Populated once in <see cref="Awake"/>: <c>Renderer.materials</c> allocates a new array
+    /// (and instantiates materials) on every call, and this is read every frame while a placed
+    /// item's saturation/scale animation is ticking, so the cached copy avoids re-allocating.
+    /// </summary>
+    private Material[][] _cachedMaterials;
+
+    private void CacheInstancedMaterials()
+    {
+        if (itemRenderers == null)
+        {
+            _cachedMaterials = null;
+            return;
+        }
+
+        _cachedMaterials = new Material[itemRenderers.Length][];
+        for (int i = 0; i < itemRenderers.Length; i++)
+        {
+            _cachedMaterials[i] = itemRenderers[i] != null ? itemRenderers[i].materials : null;
+        }
+    }
+
     public void UpdateSaturation(float saturationValue, int materialIndex = -1)
     {
         if (itemRenderers == null || itemRenderers.Length == 0) return;
+        if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
 
-        foreach (var renderer in itemRenderers)
+        for (int r = 0; r < itemRenderers.Length; r++)
         {
-            if (renderer == null) continue;
-            
-            // Using .materials creates instances of the materials if not already created,
-            // which is safe here so we don't modify shared materials for other objects.
-            Material[] mats = renderer.materials;
+            Material[] mats = _cachedMaterials[r];
+            if (mats == null) continue;
+
             for (int i = 0; i < mats.Length; i++)
             {
                 if (materialIndex != -1 && i != materialIndex) continue;
@@ -517,12 +540,13 @@ public class PlaceableItem : MonoBehaviour
     public void UpdateSaturationForIndices(float saturationValue, int startIndex)
     {
         if (itemRenderers == null || itemRenderers.Length == 0) return;
+        if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
 
-        foreach (var renderer in itemRenderers)
+        for (int r = 0; r < itemRenderers.Length; r++)
         {
-            if (renderer == null) continue;
-            
-            Material[] mats = renderer.materials;
+            Material[] mats = _cachedMaterials[r];
+            if (mats == null) continue;
+
             for (int i = startIndex; i < mats.Length; i++)
             {
                 Material mat = mats[i];
@@ -541,13 +565,17 @@ public class PlaceableItem : MonoBehaviour
 /// </summary>
 public class Billboard : MonoBehaviour
 {
+    private Camera _cachedCamera;
+
     private void LateUpdate()
     {
-        Camera mainCam = Camera.main;
-        if (mainCam != null)
+        if (_cachedCamera == null)
         {
-            transform.LookAt(transform.position + mainCam.transform.rotation * Vector3.forward,
-                             mainCam.transform.rotation * Vector3.up);
+            _cachedCamera = Camera.main;
+            if (_cachedCamera == null) return;
         }
+
+        transform.LookAt(transform.position + _cachedCamera.transform.rotation * Vector3.forward,
+                         _cachedCamera.transform.rotation * Vector3.up);
     }
 }
