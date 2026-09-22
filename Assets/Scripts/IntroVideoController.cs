@@ -95,6 +95,13 @@ public class IntroVideoController : MonoBehaviour
             return;
         }
 
+        // Keep the loading screen up (still fully opaque, covering this panel) until the video
+        // has actually finished preparing — otherwise the loading screen fades out while the
+        // video is still buffering and the player sees the door image or a stalled first frame
+        // instead of the intro. LoadingScreenManager releases this automatically after
+        // maxHoldTime if OnPrepared never fires (e.g. the video fails to load).
+        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.AddLoadHold(this);
+
         if (videoPlayer.renderMode == VideoRenderMode.RenderTexture && videoPlayer.targetTexture == null)
         {
             _runtimeTexture = new RenderTexture(renderTextureSize.x, renderTextureSize.y, 0);
@@ -154,6 +161,10 @@ public class IntroVideoController : MonoBehaviour
 
         vp.playbackSpeed = playbackSpeed;
         vp.Play();
+
+        // The video is fully loaded and playing now, so the loading screen can fade out
+        // and reveal it.
+        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
     }
 
     private void OnVideoFinished(VideoPlayer vp)
@@ -172,6 +183,8 @@ public class IntroVideoController : MonoBehaviour
         if (_ending) return;
         _ending = true;
         s_hasPlayedThisSession = true;
+
+        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
 
         if (videoPlayer != null)
         {
@@ -239,6 +252,8 @@ public class IntroVideoController : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
+
         if (videoPlayer != null)
         {
             videoPlayer.prepareCompleted -= OnPrepared;

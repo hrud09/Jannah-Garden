@@ -40,4 +40,5 @@ MonoBehaviour:
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
   placementTimerDuration: 60
+  gridFootprintOverride: {x: 0, y: 0}
   itemPrice: 
