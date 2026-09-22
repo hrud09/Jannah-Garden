@@ -30,8 +30,7 @@ public static class ShopItemLocalizationKeyGenerator
         int rowCount = 0;
         var skipped = new List<string>();
 
-        rowCount += AppendRows<ShopItemData>(sb, skipped,
-            asset => asset.itemID, asset => asset.itemName, asset => asset.itemDescription);
+        rowCount += AppendShopItemRows(sb, skipped);
 
         rowCount += AppendRows<TreasureBoxRewardItemData>(sb, skipped,
             asset => asset.itemID, asset => asset.itemName, asset => asset.itemDescription);
@@ -42,6 +41,31 @@ public static class ShopItemLocalizationKeyGenerator
                   (skipped.Count > 0 ? $" Skipped {skipped.Count} asset(s) with no itemID: {string.Join(", ", skipped)}" : string.Empty));
 
         EditorUtility.RevealInFinder(path);
+    }
+
+    // ShopItemData entries live inside the single ShopItemsData aggregator asset instead of as their own
+    // .asset files, so they need their own loop rather than the generic AssetDatabase.FindAssets<T> path.
+    private static int AppendShopItemRows(StringBuilder sb, List<string> skipped)
+    {
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
+        int count = 0;
+
+        foreach (var asset in ShopItemsDataUtility.AllItems(database))
+        {
+            if (asset == null) continue;
+
+            if (string.IsNullOrEmpty(asset.itemID))
+            {
+                skipped.Add($"{ShopItemsDataUtility.DatabaseAssetPath} :: {asset.itemName}");
+                continue;
+            }
+
+            AppendRow(sb, $"item.{asset.itemID}.name", asset.itemName);
+            AppendRow(sb, $"item.{asset.itemID}.desc", asset.itemDescription);
+            count += 2;
+        }
+
+        return count;
     }
 
     private static int AppendRows<T>(

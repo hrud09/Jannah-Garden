@@ -1,8 +1,13 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-[CreateAssetMenu(fileName = "NewShopItemData", menuName = "Shop/Item Data", order = 1)]
-public class ShopItemData : ScriptableObject
+/// <summary>
+/// One shop item's data. A plain serializable class rather than a ScriptableObject — every item lives
+/// as an entry inside one of <see cref="ShopItemsData.categories"/>'s groups, in one shared asset,
+/// instead of as its own .asset file.
+/// </summary>
+[System.Serializable]
+public class ShopItemData
 {
     // ---------------------------------------------------------------------
     // Identity — shown for every acquisition type.

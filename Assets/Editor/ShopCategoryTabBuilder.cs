@@ -94,10 +94,10 @@ public static class ShopCategoryTabBuilder
     }
 
     /// <summary>
-    /// Repoints the manager's <c>shopItemDatas</c> at every ShopItemData under Resources, in shop
-    /// order. Regenerating the item assets gives them fresh GUIDs, which leaves the hand-authored
-    /// list in the prefab pointing at deleted assets and the shop spawning nothing — run this after
-    /// any bulk regeneration.
+    /// Sorts the manager's <see cref="ShopItemsData"/> database: the category groups themselves into shop
+    /// tab order, and each group's items by tier, then authored sort order, then name. Every item lives
+    /// in its category's group rather than a flat list, so there is nothing left to re-point — this only
+    /// reorders the groups and their contents.
     /// </summary>
     [MenuItem("Tools/Shop/Refresh Shop Item List")]
     public static void RefreshShopItemList()
@@ -118,29 +118,36 @@ public static class ShopCategoryTabBuilder
                 return;
             }
 
-            // Resources holds both the placeable catalogue and the coin/ad offers.
-            ShopItemData[] all = AssetDatabase.FindAssets("t:ShopItemData")
-                .Select(AssetDatabase.GUIDToAssetPath)
-                .Where(p => p.StartsWith("Assets/Resources/"))
-                .Select(AssetDatabase.LoadAssetAtPath<ShopItemData>)
-                .Where(d => d != null)
-                .OrderBy(d => CategoryOrder(d.itemCategory))
-                .ThenBy(d => (int)d.itemTier)
-                .ThenBy(d => d.sortOrder)
-                .ThenBy(d => d.itemName)
-                .ToArray();
+            if (manager.shopItemsDatabase == null)
+            {
+                Debug.LogError("[ShopTabs] manager.shopItemsDatabase is not assigned — nothing to sort.");
+                return;
+            }
 
-            int before = manager.shopItemDatas != null ? manager.shopItemDatas.Length : 0;
-            int missing = manager.shopItemDatas != null ? manager.shopItemDatas.Count(d => d == null) : 0;
+            List<ShopItemCategoryGroup> categories = manager.shopItemsDatabase.categories;
+            int before = categories?.Sum(g => g.items.Count) ?? 0;
 
-            manager.shopItemDatas = all;
+            categories = (categories ?? new List<ShopItemCategoryGroup>())
+                .OrderBy(g => CategoryOrder(g.category))
+                .ToList();
 
-            PrefabUtility.SaveAsPrefabAsset(root, ShopPrefabPath);
+            foreach (var group in categories)
+            {
+                group.items = group.items
+                    .OrderBy(d => (int)d.itemTier)
+                    .ThenBy(d => d.sortOrder)
+                    .ThenBy(d => d.itemName)
+                    .ToList();
+            }
+
+            manager.shopItemsDatabase.categories = categories;
+            EditorUtility.SetDirty(manager.shopItemsDatabase);
             AssetDatabase.SaveAssets();
 
-            Debug.Log($"[ShopTabs] Shop item list: {before} entries ({missing} broken) → {all.Length}.\n  "
-                + string.Join("\n  ", all.GroupBy(d => d.itemCategory)
-                    .Select(g => $"{ShopTaxonomy.GetCategoryLongName(g.Key)}: {g.Count()}")));
+            Debug.Log($"[ShopTabs] Shop item list sorted: {before} entries.\n  "
+                + string.Join("\n  ", categories
+                    .Where(g => g.items.Count > 0)
+                    .Select(g => $"{ShopTaxonomy.GetCategoryLongName(g.category)}: {g.items.Count}")));
         }
         finally
         {

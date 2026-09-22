@@ -94,20 +94,30 @@ public static class LocalizationKeyValidator
         // ShopItemData.LocalizedName / TreasureBoxTier's Localized* helpers) — a literal-string regex over
         // the .cs files can't see those, so generate the concrete keys straight from the data assets.
         int generatedItemKeys = 0;
-        foreach (string typeName in new[] { "ShopItemData", "TreasureBoxRewardItemData" })
-        {
-            foreach (string guid in AssetDatabase.FindAssets($"t:{typeName}"))
-            {
-                string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-                var so = AssetDatabase.LoadAssetAtPath<ScriptableObject>(assetPath);
-                var itemIdField = so?.GetType().GetField("itemID");
-                string itemId = itemIdField?.GetValue(so) as string;
-                if (string.IsNullOrEmpty(itemId)) continue;
 
-                usedKeys.Add($"item.{itemId}.name");
-                usedKeys.Add($"item.{itemId}.desc");
-                generatedItemKeys += 2;
-            }
+        // ShopItemData entries live inside the single ShopItemsData aggregator asset instead of as their
+        // own .asset files, so they are walked directly rather than via AssetDatabase.FindAssets.
+        ShopItemsData shopDatabase = ShopItemsDataUtility.GetOrCreateDatabase();
+        foreach (var item in ShopItemsDataUtility.AllItems(shopDatabase))
+        {
+            if (item == null || string.IsNullOrEmpty(item.itemID)) continue;
+
+            usedKeys.Add($"item.{item.itemID}.name");
+            usedKeys.Add($"item.{item.itemID}.desc");
+            generatedItemKeys += 2;
+        }
+
+        foreach (string guid in AssetDatabase.FindAssets("t:TreasureBoxRewardItemData"))
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            var so = AssetDatabase.LoadAssetAtPath<ScriptableObject>(assetPath);
+            var itemIdField = so?.GetType().GetField("itemID");
+            string itemId = itemIdField?.GetValue(so) as string;
+            if (string.IsNullOrEmpty(itemId)) continue;
+
+            usedKeys.Add($"item.{itemId}.name");
+            usedKeys.Add($"item.{itemId}.desc");
+            generatedItemKeys += 2;
         }
 
         foreach (string tier in new[] { "silver", "gold", "platinum", "diamond" })

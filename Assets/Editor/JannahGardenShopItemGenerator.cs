@@ -49,7 +49,6 @@ public static class JannahGardenShopItemGenerator
             RequiredXPLevel = requiredXPLevel;
         }
 
-        public string AssetPath => $"{OutputFolder}/{Name.Replace(" ", "_")}_Data.asset";
     }
 
     static readonly Item[] Items =
@@ -132,17 +131,12 @@ public static class JannahGardenShopItemGenerator
     [MenuItem("Tools/Shop/Generate Jannah Garden Shop Items")]
     public static void Generate()
     {
-        if (!AssetDatabase.IsValidFolder(OutputFolder))
-        {
-            Debug.LogError($"[JannahGarden] Missing output folder \"{OutputFolder}\".");
-            return;
-        }
-
         int created = 0, bound = 0, alreadyBound = 0;
         var problems = new List<string>();
 
         AddressableAssetSettings settings = AddressableAssetSettingsDefaultObject.Settings;
         var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(settings);
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
 
         try
         {
@@ -159,9 +153,9 @@ public static class JannahGardenShopItemGenerator
                     var model = AssetDatabase.LoadAssetAtPath<GameObject>(fbxPath);
                     if (model == null) problems.Add($"missing model: {fbxPath}");
 
-                    var data = AssetDatabase.LoadAssetAtPath<ShopItemData>(item.AssetPath);
+                    var data = ShopItemsDataUtility.FindByName(database, item.Name);
                     bool isNew = data == null;
-                    if (isNew) data = ScriptableObject.CreateInstance<ShopItemData>();
+                    if (isNew) data = new ShopItemData();
 
                     // Authoritative for every run — these come from the table.
                     data.itemName = item.Name;
@@ -201,12 +195,8 @@ public static class JannahGardenShopItemGenerator
 
                     if (isNew)
                     {
-                        AssetDatabase.CreateAsset(data, item.AssetPath);
+                        ShopItemsDataUtility.AddItem(database, data);
                         created++;
-                    }
-                    else
-                    {
-                        EditorUtility.SetDirty(data);
                     }
                 }
             }
@@ -215,7 +205,7 @@ public static class JannahGardenShopItemGenerator
                 AssetDatabase.StopAssetEditing();
             }
 
-            AssetDatabase.SaveAssets();
+            ShopItemsDataUtility.Save(database);
             AssetDatabase.Refresh();
         }
         finally

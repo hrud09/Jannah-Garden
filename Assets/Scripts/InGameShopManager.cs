@@ -131,7 +131,15 @@ public class InGameShopManager : MonoBehaviour
     private Coroutine panelTransitionCoroutine;
 
     [Header("Shop Item Data Source")]
-    public ShopItemData[] shopItemDatas; // Data assets for each shop item
+    [Tooltip("The single database asset holding every shop item. Replaces the old one-asset-per-item setup.")]
+    public ShopItemsData shopItemsDatabase;
+
+    /// <summary>Every shop item, flattened from <see cref="shopItemsDatabase"/>'s per-category groups.
+    /// Kept as a property so existing call sites reading <c>shopItemDatas</c> did not need to change.</summary>
+    public List<ShopItemData> shopItemDatas =>
+        shopItemsDatabase != null && shopItemsDatabase.categories != null
+            ? shopItemsDatabase.categories.SelectMany(g => g.items).ToList()
+            : null;
 
     [Header("Inventory Item Data Source")]
     public TreasureBoxRewardItemData[] inventoryItemDatas;

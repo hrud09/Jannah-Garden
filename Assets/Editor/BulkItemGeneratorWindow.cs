@@ -129,10 +129,9 @@ public class BulkItemGeneratorWindow : EditorWindow
             string cleanName = CleanName(prefab.name);
             ShopItemCategory category = DetermineCategory(prefab.name);
 
-            // Attempt to check if an asset already exists to populate current values
-            string assetName = prefab.name.Replace(" ", "_") + "_Data";
-            string assetPath = $"{shopOutputFolder}/{assetName}.asset";
-            ShopItemData existingData = AssetDatabase.LoadAssetAtPath<ShopItemData>(assetPath);
+            // Attempt to check if a database entry already exists for this prefab to populate current values
+            ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
+            ShopItemData existingData = ShopItemsDataUtility.FindByPrefab(database, prefab);
 
             int price = existingData != null ? existingData.noorCoinCost : shopDefaultPrice;
             int xpLevel = existingData != null ? existingData.requiredXPLevel : shopDefaultXPLevel;
@@ -257,7 +256,7 @@ public class BulkItemGeneratorWindow : EditorWindow
 
     private void GenerateSelectedShopItems()
     {
-        EnsureFolderExists(shopOutputFolder);
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
 
         AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
         var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
@@ -267,15 +266,12 @@ public class BulkItemGeneratorWindow : EditorWindow
         {
             if (!item.selected) continue;
 
-            string assetName = item.prefab.name.Replace(" ", "_") + "_Data";
-            string assetPath = $"{shopOutputFolder}/{assetName}.asset";
-
-            ShopItemData itemData = AssetDatabase.LoadAssetAtPath<ShopItemData>(assetPath);
+            ShopItemData itemData = ShopItemsDataUtility.FindByPrefab(database, item.prefab);
             bool isNew = false;
 
             if (itemData == null)
             {
-                itemData = CreateInstance<ShopItemData>();
+                itemData = new ShopItemData();
                 isNew = true;
             }
 
@@ -299,19 +295,15 @@ public class BulkItemGeneratorWindow : EditorWindow
 
             if (isNew)
             {
-                AssetDatabase.CreateAsset(itemData, assetPath);
-            }
-            else
-            {
-                EditorUtility.SetDirty(itemData);
+                ShopItemsDataUtility.AddItem(database, itemData);
             }
             count++;
         }
 
-        AssetDatabase.SaveAssets();
+        ShopItemsDataUtility.Save(database);
         AssetDatabase.Refresh();
 
-        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} ShopItemData assets.", "OK");
+        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} ShopItemData entries in {ShopItemsDataUtility.DatabaseAssetPath}.", "OK");
         LoadShopPrefabs();
     }
 
