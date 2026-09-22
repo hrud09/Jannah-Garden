@@ -27,16 +27,25 @@ public static class ItemFootprint
     private const float DefaultSizeMetres = 0.5f;
 
     /// <summary>
+    /// Geometry-derived footprints are shrunk to this fraction of the model's measured body before
+    /// rounding to cells — the raw collision/render bounds claim far more ground than an item actually
+    /// needs breathing room for. An item's own <c>footprintScale</c> multiplies on top of this.
+    /// </summary>
+    private const float DefaultFootprintScale = 1f / 3f;
+
+    /// <summary>
     /// Cells claimed by <paramref name="prefab"/> when yawed by <paramref name="rotationSteps"/>
     /// quarter-turns. A non-zero <paramref name="authoredOverride"/> wins outright — designers need
     /// that for a tree whose canopy collider is three times the width of the trunk anyone would
-    /// actually expect to plant around, and for path tiles that want deliberate padding.
+    /// actually expect to plant around, and for path tiles that want deliberate padding. Otherwise the
+    /// footprint is derived from measured geometry, shrunk by <paramref name="footprintScale"/> on top
+    /// of the built-in <see cref="DefaultFootprintScale"/>.
     /// </summary>
-    public static Vector2Int Compute(GameObject prefab, int rotationSteps, float cellSize, Vector2Int authoredOverride)
+    public static Vector2Int Compute(GameObject prefab, int rotationSteps, float cellSize, Vector2Int authoredOverride, float footprintScale = 1f)
     {
         Vector2Int footprint = authoredOverride.x > 0 && authoredOverride.y > 0
             ? authoredOverride
-            : FromGeometry(prefab, cellSize);
+            : FromGeometry(prefab, cellSize, footprintScale);
 
         // Odd quarter-turns swap the axes; even ones leave the block as it was.
         if ((rotationSteps & 1) != 0) footprint = new Vector2Int(footprint.y, footprint.x);
@@ -44,10 +53,10 @@ public static class ItemFootprint
         return footprint;
     }
 
-    /// <summary>Cells derived purely from the model's measured body.</summary>
-    private static Vector2Int FromGeometry(GameObject prefab, float cellSize)
+    /// <summary>Cells derived from the model's measured body, shrunk by <paramref name="footprintScale"/>.</summary>
+    private static Vector2Int FromGeometry(GameObject prefab, float cellSize, float footprintScale)
     {
-        Vector2 size = MeasureSize(prefab);
+        Vector2 size = MeasureSize(prefab) * DefaultFootprintScale * footprintScale;
 
         return new Vector2Int(
             Mathf.Max(1, Mathf.CeilToInt(size.x / cellSize - 0.001f)),

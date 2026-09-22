@@ -41,6 +41,7 @@ public class ShopItemDataEditor : PropertyDrawer
         SerializedProperty itemPlacementModelPrefabRef = property.FindPropertyRelative(nameof(ShopItemData.itemPlacementModelPrefabRef));
         SerializedProperty placementTimerDuration = property.FindPropertyRelative(nameof(ShopItemData.placementTimerDuration));
         SerializedProperty gridFootprintOverride = property.FindPropertyRelative(nameof(ShopItemData.gridFootprintOverride));
+        SerializedProperty footprintScale = property.FindPropertyRelative(nameof(ShopItemData.footprintScale));
 
         property.isExpanded = EditorGUI.Foldout(
             new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight),
@@ -133,6 +134,7 @@ public class ShopItemDataEditor : PropertyDrawer
         {
             Field(placementTimerDuration);
             Field(gridFootprintOverride);
+            Field(footprintScale);
         }
         else
         {
@@ -178,7 +180,7 @@ public class ShopItemDataEditor : PropertyDrawer
 
         SerializedProperty itemPrefabGuid = itemPrefabRef.FindPropertyRelative("m_AssetGUID");
         bool placeable = !string.IsNullOrEmpty(itemPrefabGuid.stringValue);
-        lines += placeable ? 2 : 2; // placementTimerDuration + gridFootprintOverride, or a 2-line help box
+        lines += placeable ? 3 : 2; // placementTimerDuration + gridFootprintOverride + footprintScale, or a 2-line help box
 
         return lines * (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) + 8f;
     }

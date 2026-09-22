@@ -1,0 +1,482 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d5f99f660ca1242876731c1e5cd45b, type: 3}
+  m_Name: TreasureBoxRewardItemsData
+  m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxRewardItemsData
+  categories:
+  - category: 4
+    items:
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Blossom Tree 01
+      itemDescription: 'A special reward item: Blossom Tree 01. Find it to customize
+        your garden!'
+      itemID: 4f1100893646431bb027e2360f6b337c
+      itemPrefabRef:
+        m_AssetGUID: 7a183a7d1673e62489ed277a92cfbd6d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 4
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+      - {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+      - {fileID: 3435643351429671060, guid: 7a183a7d1673e62489ed277a92cfbd6d, type: 3}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Broadleaf Tree 01 Blue
+      itemDescription: 'A special reward item: Broadleaf Tree 01 Blue. Find it to
+        customize your garden!'
+      itemID: 4a10342786c44c41bfd5fb5ad6c5d90d
+      itemPrefabRef:
+        m_AssetGUID: d0a1dd6fb7ae56447972d0371c8b4c65
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 4
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Stone Big 01
+      itemDescription: 'A special reward item: Stone Big 01. Find it to customize
+        your garden!'
+      itemID: 2866167319434a63bb4bfe6b1e3bef8c
+      itemPrefabRef:
+        m_AssetGUID: 78f4fda6b7fccb646bf8ac8de2537205
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 4
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 01 Red
+      itemDescription: 'A special reward item: Willow Tree 01 Red. Find it to customize
+        your garden!'
+      itemID: 95cc5cdea5c34ef9b1f591f631367878
+      itemPrefabRef:
+        m_AssetGUID: f5a27b2261923ad458aeaede85c57938
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 4
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 03 Blue
+      itemDescription: 'A special reward item: Willow Tree 03 Blue. Find it to customize
+        your garden!'
+      itemID: bca8eed45554450b97e5d1d0e1d47f1c
+      itemPrefabRef:
+        m_AssetGUID: a48c0d1d9c522c642b477916fa0dfbec
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 4
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 04 Green
+      itemDescription: 'A special reward item: Willow Tree 04 Green. Find it to customize
+        your garden!'
+      itemID: af088967cf3f48caa29fceb1c8ba9e33
+      itemPrefabRef:
+        m_AssetGUID: 6ec2816b271f90945b1ac48dcb242f7d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 4
+      quantity: 0
+      unlockXPLevel: 2
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - category: 5
+    items:
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Blossom Tree 01
+      itemDescription: 'A special reward item: Blossom Tree 01. Find it to customize
+        your garden!'
+      itemID: 23c7880ff58e456caa1cb2dbd0621789
+      itemPrefabRef:
+        m_AssetGUID: fd5ab67aa510888499f842d51f660a4a
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 5
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 3435643351429671060, guid: fd5ab67aa510888499f842d51f660a4a, type: 3}
+      - {fileID: 3435643351429671060, guid: fd5ab67aa510888499f842d51f660a4a, type: 3}
+      - {fileID: 3435643351429671060, guid: fd5ab67aa510888499f842d51f660a4a, type: 3}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 03 Red
+      itemDescription: 'A special reward item: Willow Tree 03 Red. Find it to customize
+        your garden!'
+      itemID: fb2d54e04cfe45c9b6ca91412979707f
+      itemPrefabRef:
+        m_AssetGUID: a3f0c91d12f1fd643adf945e86c9f01d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 5
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Blossom Tree 02
+      itemDescription: 'A special reward item: Blossom Tree 02. Find it to customize
+        your garden!'
+      itemID: 844bf0963b99496dbd783486e3bf9095
+      itemPrefabRef:
+        m_AssetGUID: 28cb30b20402c9148881d51f5c3ceb5f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 5
+      quantity: 0
+      unlockXPLevel: 2
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Broadleaf Tree 03 Blue
+      itemDescription: 'A special reward item: Broadleaf Tree 03 Blue. Find it to
+        customize your garden!'
+      itemID: 23343abacc4044c1af515482f8ec5a55
+      itemPrefabRef:
+        m_AssetGUID: f5675ed7b23079045bce7dae043e5342
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 5
+      quantity: 0
+      unlockXPLevel: 2
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Rock Big 02
+      itemDescription: 'A special reward item: Rock Big 02. Find it to customize
+        your garden!'
+      itemID: 2470d121b6384893b8424c42bd6838c0
+      itemPrefabRef:
+        m_AssetGUID: 1d985827dc2f0a94fbb84d96fdf353fa
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 5
+      quantity: 0
+      unlockXPLevel: 2
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - category: 6
+    items:
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Broadleaf Tree 02 Red
+      itemDescription: 'A special reward item: Broadleaf Tree 02 Red. Find it to
+        customize your garden!'
+      itemID: 7781562f021e40cb85a27610a2b29d02
+      itemPrefabRef:
+        m_AssetGUID: aec7bcbf20e5d5f4fa566cabacc811c9
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 6
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+      - {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+      - {fileID: 863322927964328203, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Broadleaf Tree 03 Purple
+      itemDescription: 'A special reward item: Broadleaf Tree 03 Purple. Find it
+        to customize your garden!'
+      itemID: b611853df847406899f5462310dd72ba
+      itemPrefabRef:
+        m_AssetGUID: 7cc39a5e6a1890441974ee9e456fa8ef
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 6
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 05 Red
+      itemDescription: 'A special reward item: Willow Tree 05 Red. Find it to customize
+        your garden!'
+      itemID: 4415baff0c1c4d62b8ee938d7ae556d7
+      itemPrefabRef:
+        m_AssetGUID: eed9e9df9f832574585ca051fbbbf943
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 6
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 01 Blue
+      itemDescription: 'A special reward item: Willow Tree 01 Blue. Find it to customize
+        your garden!'
+      itemID: c321751bab0d43218c0338bea8893a44
+      itemPrefabRef:
+        m_AssetGUID: 107cac4590a2a764daf1cbcf0a7e7daf
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 6
+      quantity: 0
+      unlockXPLevel: 2
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - category: 7
+    items:
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Broadleaf Tree 04 Blue
+      itemDescription: 'A special reward item: Broadleaf Tree 04 Blue. Find it to
+        customize your garden!'
+      itemID: 10de1f039f3e42ba960564c1284a2084
+      itemPrefabRef:
+        m_AssetGUID: 5ad052af4362cc249be7df140568cb99
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 7
+      quantity: 0
+      unlockXPLevel: 1
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - itemIcon: {fileID: 265663245, guid: d840f61ce8751d64fa4e9fc707014161, type: 3}
+      itemName: Willow Tree 02 Pink
+      itemDescription: 'A special reward item: Willow Tree 02 Pink. Find it to customize
+        your garden!'
+      itemID: 2ca87ec4976b4e72b9dd795153c3ffc0
+      itemPrefabRef:
+        m_AssetGUID: b0695c356c279e845abdba6c9f5676b9
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      itemCategory: 7
+      quantity: 0
+      unlockXPLevel: 2
+      noorCoinAmount: 250
+      placementTimerDuration: 30
+      gridFootprintOverride: {x: 0, y: 0}
+      puzzlePieces:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}

@@ -110,6 +110,10 @@ public class ShopItemData
              "you would actually plant around, or a path tile that wants deliberate padding.")]
     public Vector2Int gridFootprintOverride = Vector2Int.zero;
 
+    [Tooltip("Multiplier applied to the geometry-derived grid footprint (ignored when Grid Footprint " +
+             "Override is set). 1 = the default footprint; lower shrinks it, higher grows it.")]
+    public float footprintScale = 1f;
+
     // ---------------------------------------------------------------------
     // Deprecated
     // ---------------------------------------------------------------------

@@ -142,7 +142,16 @@ public class InGameShopManager : MonoBehaviour
             : null;
 
     [Header("Inventory Item Data Source")]
-    public TreasureBoxRewardItemData[] inventoryItemDatas;
+    [Tooltip("The single database asset holding every treasure box reward item. Replaces the old one-asset-per-item setup.")]
+    public TreasureBoxRewardItemsData inventoryItemsDatabase;
+
+    /// <summary>Every reward item, flattened from <see cref="inventoryItemsDatabase"/>'s per-category
+    /// groups. Kept as a property so existing call sites reading <c>inventoryItemDatas</c> did not need
+    /// to change.</summary>
+    public List<TreasureBoxRewardItemData> inventoryItemDatas =>
+        inventoryItemsDatabase != null && inventoryItemsDatabase.categories != null
+            ? inventoryItemsDatabase.categories.SelectMany(g => g.items).ToList()
+            : null;
 
     [Header("Placement Reference")]
     public ItemPlacementManager placementManager;

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -70,9 +71,12 @@ public class TreasureBoxData : ScriptableObject
     // ── Set-Completion Reward ─────────────────────────────────────────────────
 
     [Header("Set-Completion Reward")]
-    [Tooltip("The exclusive garden items awarded when the player opens all 3 boxes " +
-             "of this tier. One item is chosen randomly per cycle.")]
-    public TreasureBoxRewardItemData[] exclusiveRewardItems;
+    [Tooltip("itemIDs of the exclusive garden items awarded when the player opens all 3 boxes of this " +
+             "tier, resolved at runtime against TreasureBoxManager.rewardsDatabase. One item is chosen " +
+             "randomly per cycle. TreasureBoxRewardItemData is a plain serializable class rather than a " +
+             "ScriptableObject, so it has no asset identity of its own to reference directly here — see " +
+             "ShopItemData/ShopItemsData for the equivalent shop-side design.")]
+    public List<string> exclusiveRewardItemIDs = new List<string>();
 
     [Tooltip("Noor Coins awarded instead if the player already owns the exclusive " +
              "reward item. Set this to the item's perceived NC value.")]

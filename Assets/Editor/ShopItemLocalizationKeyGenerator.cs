@@ -32,8 +32,7 @@ public static class ShopItemLocalizationKeyGenerator
 
         rowCount += AppendShopItemRows(sb, skipped);
 
-        rowCount += AppendRows<TreasureBoxRewardItemData>(sb, skipped,
-            asset => asset.itemID, asset => asset.itemName, asset => asset.itemDescription);
+        rowCount += AppendTreasureBoxRewardRows(sb, skipped);
 
         File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
 
@@ -68,32 +67,26 @@ public static class ShopItemLocalizationKeyGenerator
         return count;
     }
 
-    private static int AppendRows<T>(
-        StringBuilder sb,
-        List<string> skipped,
-        System.Func<T, string> getId,
-        System.Func<T, string> getName,
-        System.Func<T, string> getDescription) where T : Object
+    // TreasureBoxRewardItemData entries live inside the single TreasureBoxRewardItemsData aggregator asset
+    // instead of as their own .asset files, so they need their own loop rather than the generic
+    // AssetDatabase.FindAssets<T> path — mirrors AppendShopItemRows above.
+    private static int AppendTreasureBoxRewardRows(StringBuilder sb, List<string> skipped)
     {
+        TreasureBoxRewardItemsData database = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
         int count = 0;
-        string typeName = typeof(T).Name;
-        string[] guids = AssetDatabase.FindAssets($"t:{typeName}");
 
-        foreach (string guid in guids)
+        foreach (var asset in TreasureBoxRewardItemsDataUtility.AllItems(database))
         {
-            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-            T asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
             if (asset == null) continue;
 
-            string id = getId(asset);
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(asset.itemID))
             {
-                skipped.Add(assetPath);
+                skipped.Add($"{TreasureBoxRewardItemsDataUtility.DatabaseAssetPath} :: {asset.itemName}");
                 continue;
             }
 
-            AppendRow(sb, $"item.{id}.name", getName(asset));
-            AppendRow(sb, $"item.{id}.desc", getDescription(asset));
+            AppendRow(sb, $"item.{asset.itemID}.name", asset.itemName);
+            AppendRow(sb, $"item.{asset.itemID}.desc", asset.itemDescription);
             count += 2;
         }
 

@@ -107,16 +107,16 @@ public static class LocalizationKeyValidator
             generatedItemKeys += 2;
         }
 
-        foreach (string guid in AssetDatabase.FindAssets("t:TreasureBoxRewardItemData"))
+        // TreasureBoxRewardItemData entries live inside the single TreasureBoxRewardItemsData aggregator
+        // asset instead of as their own .asset files, so they are walked directly rather than via
+        // AssetDatabase.FindAssets — mirrors the ShopItemData block above.
+        TreasureBoxRewardItemsData rewardDatabase = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
+        foreach (var item in TreasureBoxRewardItemsDataUtility.AllItems(rewardDatabase))
         {
-            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-            var so = AssetDatabase.LoadAssetAtPath<ScriptableObject>(assetPath);
-            var itemIdField = so?.GetType().GetField("itemID");
-            string itemId = itemIdField?.GetValue(so) as string;
-            if (string.IsNullOrEmpty(itemId)) continue;
+            if (item == null || string.IsNullOrEmpty(item.itemID)) continue;
 
-            usedKeys.Add($"item.{itemId}.name");
-            usedKeys.Add($"item.{itemId}.desc");
+            usedKeys.Add($"item.{item.itemID}.name");
+            usedKeys.Add($"item.{item.itemID}.desc");
             generatedItemKeys += 2;
         }
 

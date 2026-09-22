@@ -169,6 +169,7 @@ public class ItemPlacementManager : MonoBehaviour
     // screen would have a sapling claim a fifth of the ground the grown tree needs.
     private Vector2Int _pendingFootprint = Vector2Int.one;
     private Vector2Int _pendingFootprintOverride;
+    private float _pendingFootprintScale = 1f;
 
     // Continuous yaw offset applied on top of _ghostBaseRotation, in degrees. The slider's centre (0.5)
     // is 0 degrees - the model's authored facing - so dragging left/right turns it either way from
@@ -534,6 +535,7 @@ public class ItemPlacementManager : MonoBehaviour
         // one has to be captured before any yaw is applied.
         _ghostBaseRotation = currentPlacedObject.transform.rotation;
         _pendingFootprintOverride = ResolveFootprintOverride(_pendingSourceKind, _pendingSourceItemId);
+        _pendingFootprintScale = ResolveFootprintScale(_pendingSourceKind, _pendingSourceItemId);
 
         // A relocated item keeps the facing it already had; a fresh one starts unrotated.
         _pendingRotationDegrees = _isRelocating
@@ -721,7 +723,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         int footprintSteps = (((Mathf.RoundToInt(_pendingRotationDegrees / 90f)) % 4) + 4) % 4;
         _pendingFootprint = ItemFootprint.Compute(
-            _pendingItemPrefab, footprintSteps, grid.CellSize, _pendingFootprintOverride);
+            _pendingItemPrefab, footprintSteps, grid.CellSize, _pendingFootprintOverride, _pendingFootprintScale);
 
         _hasSnapAnchor = false;
     }
@@ -737,6 +739,16 @@ public class ItemPlacementManager : MonoBehaviour
 
         ShopItemData shopData = FindShopItemData(itemId);
         return shopData != null ? shopData.gridFootprintOverride : Vector2Int.zero;
+    }
+
+    /// <summary>The designer-authored footprint scale for an item. Treasure-box rewards have no such
+    /// field, so they always use the default (1).</summary>
+    private float ResolveFootprintScale(PlacedItemSource kind, string itemId)
+    {
+        if (kind == PlacedItemSource.InventoryItem) return 1f;
+
+        ShopItemData shopData = FindShopItemData(itemId);
+        return shopData != null ? shopData.footprintScale : 1f;
     }
 
     /// <summary>Explains the first real reason the current spot was refused.</summary>
@@ -1056,6 +1068,7 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingRotationDegrees = 0f;
         _pendingFootprint = Vector2Int.one;
         _pendingFootprintOverride = Vector2Int.zero;
+        _pendingFootprintScale = 1f;
         _pendingValidity = PlacementValidity.Valid;
         _hasSnapAnchor = false;
         _ghostBaseRotation = Quaternion.identity;
@@ -1506,7 +1519,9 @@ public class ItemPlacementManager : MonoBehaviour
 
         int steps = ItemFootprint.StepsFromRotation(itemData.rotation, prefab.transform.rotation);
         Vector2Int footprint = ItemFootprint.Compute(
-            prefab, steps, grid.CellSize, ResolveFootprintOverride(itemData.sourceKind, itemData.sourceItemId));
+            prefab, steps, grid.CellSize,
+            ResolveFootprintOverride(itemData.sourceKind, itemData.sourceItemId),
+            ResolveFootprintScale(itemData.sourceKind, itemData.sourceItemId));
 
         RectInt area = grid.AreaCovering(itemData.position, footprint);
         placeable.SetGridArea(area);

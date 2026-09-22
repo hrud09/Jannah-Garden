@@ -44,6 +44,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: e36850a1fd94a0a46900cc8b3f8859a4, type: 3}
       itemName: Celestial Blossom Tree
@@ -75,6 +76,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: d802368548d077c4fb5631a1392355c0, type: 3}
       itemName: Coconut Palm
@@ -106,6 +108,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 5e0167fcc75de8d4d98a133bf649a4dc, type: 3}
       itemName: Luminous Weeping Willow
@@ -137,6 +140,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: ed96c07ac15d603468685f5279c3d0c3, type: 3}
       itemName: Moonlit Cactus Bloom
@@ -168,6 +172,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 1ab8710d15acd7d4cbb4a6bae6a501d1, type: 3}
       itemName: Ornate Bonsai Planter
@@ -199,6 +204,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 0}
       itemName: Petal Cascade
@@ -230,6 +236,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 03270feabea9ca14b90a6c36d79f19d0, type: 3}
       itemName: Pink Rose Garden
@@ -261,6 +268,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: a56693de05d5ea446851a9edee245e19, type: 3}
       itemName: Pomegranate Tree
@@ -292,6 +300,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 27fd0bb2337f28645a800b3313bd33e2, type: 3}
       itemName: Pomegranate Tree II
@@ -323,6 +332,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 51fb5346d5154b2488c24f307a7d5caa, type: 3}
       itemName: Prismatic Bloom
@@ -354,6 +364,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: f6b0d16273ace514ba9e8ad9663506d0, type: 3}
       itemName: Starflower Trellis
@@ -385,6 +396,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 61b211041ef49e34399f5c4e3ae30a35, type: 3}
       itemName: Tree of Light
@@ -416,6 +428,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 44f25736e12a1d74b9cbe9062da1b6bc, type: 3}
       itemName: Tulip Cluster
@@ -447,6 +460,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 9604a424c8e8eed4aa1579cfe164012c, type: 3}
       itemName: Whimsical Apple Tree
@@ -478,6 +492,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 969d558ce2606164a8a3d8e668a21ab3, type: 3}
       itemName: Whimsical Floral Cascade
@@ -509,6 +524,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: d30319e8ff0921f42b27b1b0874b328f, type: 3}
       itemName: Whispering Blossom Tree
@@ -540,6 +556,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
   - category: 1
     items:
@@ -573,6 +590,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: a0a087ddd1e6fec45af5170311450b73, type: 3}
       itemName: Ancient Stone Fountain
@@ -604,6 +622,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: f761778ffdcb036438b6b3a9f3834972, type: 3}
       itemName: Ancient Stone Pool
@@ -635,6 +654,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: ca6e2c323d7987e49ac63de67d191d4d, type: 3}
       itemName: Meandering River Island
@@ -666,6 +686,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 2a02c3555855b4e44849429f774683b8, type: 3}
       itemName: Golden Fountain of Light
@@ -697,6 +718,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 297a34b52e6accd4a873378da94b4dee, type: 3}
       itemName: Marble Water Channel
@@ -728,6 +750,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 67875258df7d8b545b97d233415da2e6, type: 3}
       itemName: Prismatic Cascade
@@ -759,6 +782,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 70378dfadcb06bd419b461b97e7b41e2, type: 3}
       itemName: River of Gold
@@ -790,6 +814,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 5db8a432478b026498fa3e9d76994bfc, type: 3}
       itemName: Pineapple Crown Fountain
@@ -821,6 +846,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 0156519ee134a414fa88e7510366708a, type: 3}
       itemName: Tiered Cascade
@@ -852,6 +878,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 99cd919cfc379af4f8623a72616f3b05, type: 3}
       itemName: Whispering Well
@@ -883,6 +910,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
   - category: 2
     items:
@@ -916,6 +944,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: ed8e449fda2b94a47bb33e392d72e895, type: 3}
       itemName: Arched Timber Bridge
@@ -947,6 +976,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: ed2094b9ff720d84f8c38dc900c12afb, type: 3}
       itemName: Floating Stone Path
@@ -978,6 +1008,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 3a0c4ca4684a91f459fec0f3c1f364fe, type: 3}
       itemName: Bismillah Portal Ring
@@ -1009,6 +1040,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 03aded7a306610742bac1be155c18925, type: 3}
       itemName: Corinthian Column
@@ -1040,6 +1072,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 3dec1d13b898f624d92cdee0ab186ce3, type: 3}
       itemName: Crystal Citadel
@@ -1071,6 +1104,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: e2a4a8311acf4e14595c19ce6e8dd1ca, type: 3}
       itemName: Golden Archway of Light
@@ -1102,6 +1136,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 6b2970aefcfdbdf46ba874ed0c6939d6, type: 3}
       itemName: Golden Gateway to Paradise
@@ -1133,6 +1168,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 67addd3be56580941a34861f7c1ec923, type: 3}
       itemName: Ivy Clad Cottage
@@ -1164,6 +1200,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 3eae70e39ce8b6a41ae084d9a9513598, type: 3}
       itemName: Muqarnas Calligraphy Arch
@@ -1195,6 +1232,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: a4bf327ee6012bc49896be3f8b9b4239, type: 3}
       itemName: Ropebound Bamboo Arch
@@ -1226,6 +1264,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: cbf5c007d9264f147827a8bebf18d052, type: 3}
       itemName: Ruby Gold Arched Gate
@@ -1257,6 +1296,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: be4e5e4162cbb3c47a07384d534864ee, type: 3}
       itemName: Turquoise Mosaic Arch
@@ -1288,6 +1328,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 87e813001cbdee9489c84a1f4c228e24, type: 3}
       itemName: Vine Wrapped Bamboo Arch
@@ -1319,6 +1360,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
   - category: 3
     items:
@@ -1352,6 +1394,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 0c52e453c45e4d94d9865e5700aa5790, type: 3}
       itemName: Azure Mosaic Bench
@@ -1383,6 +1426,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: b293cfaee612645409bb3ff19d0f2ce5, type: 3}
       itemName: Blue Mosaic Octagon
@@ -1414,6 +1458,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 689b716932d3f5d4d9b1dc5aae6778b2, type: 3}
       itemName: Blue Star Mosaic Slab
@@ -1445,6 +1490,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: c17393a3ec28b8d4d990676e842267ea, type: 3}
       itemName: Crimson Diamond Pedestal
@@ -1476,6 +1522,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: c2a434fde6bdc5948b246b53ec686c42, type: 3}
       itemName: Eight Point Star Mosaic
@@ -1507,6 +1554,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: af9a13cca5ddbaf4491e97620255d6e2, type: 3}
       itemName: Emerald Velvet Cushion
@@ -1538,6 +1586,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 62f68dbe86a0a0b4382c66bb17bd48ff, type: 3}
       itemName: Floating Lotus Altar
@@ -1569,6 +1618,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: e4758a390bd7f6641ac7f8742fe5a8a8, type: 3}
       itemName: Golden Quranic Panel
@@ -1600,6 +1650,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 6e341771bd87ab44b8e807011e69ab8e, type: 3}
       itemName: Ornate Golden Censer
@@ -1631,6 +1682,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 352a4408ed94d1c4cb10c986b9f6b150, type: 3}
       itemName: Ornate Golden Goblet
@@ -1662,6 +1714,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 2894a1c806e094f47a1b8c37a03750de, type: 3}
       itemName: Ornate Medallion Rug
@@ -1693,6 +1746,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
   - category: 9
     items:
@@ -1726,6 +1780,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: b633c773e60e2654eb9c94d7bb2ac4f7, type: 3}
       itemName: Isle of Spring
@@ -1757,6 +1812,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: cf31d2adfee3ea542af7a269037f1fc7, type: 3}
       itemName: Eight Pointed Star Lantern
@@ -1788,6 +1844,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 3970ad88efce719419a2366467e93f84, type: 3}
       itemName: Golden Crescent Star
@@ -1819,6 +1876,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 8eff2632afa334348a534a85d228c126, type: 3}
       itemName: Iridescent Trail
@@ -1850,6 +1908,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: c83e9d413057fd546b5f554071ba5d7a, type: 3}
       itemName: Lantern Ascension
@@ -1881,6 +1940,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: c28dea198ea6dd54eacc42da5742493a, type: 3}
       itemName: Luminal Rift
@@ -1912,6 +1972,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: f3dcc098242ea6d4194b9b54c5963294, type: 3}
       itemName: Moonlit Stone Ring
@@ -1943,6 +2004,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 3552d189d526b2040bca636f0674b5b4, type: 3}
       itemName: Ornate Lantern Gallery
@@ -1974,6 +2036,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: bb0a7b9914d7e904991adb05f08c9e4a, type: 3}
       itemName: Runic Fire Ring
@@ -2005,6 +2068,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: a75c3268a7973064cb563cd159a926dc, type: 3}
       itemName: Star Lantern
@@ -2036,15 +2100,8 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 60
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
-  - category: 4
-    items: []
-  - category: 5
-    items: []
-  - category: 6
-    items: []
-  - category: 7
-    items: []
   - category: 8
     items:
     - itemIcon: {fileID: 0}
@@ -2077,6 +2134,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 360
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 52066fc285ffc4bb0b9fc98f1d840149, type: 3}
       itemName: Noor Coin
@@ -2107,6 +2165,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 360
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 928516686caa643f5b6615dc945cff34, type: 3}
       itemName: Noor Coin Bag
@@ -2137,6 +2196,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 360
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
     - itemIcon: {fileID: 21300000, guid: abb96bbc164304c69af8d0a9cf8cf261, type: 3}
       itemName: Noor Coin Pack
@@ -2167,5 +2227,5 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       placementTimerDuration: 360
       gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
       itemPrice: 
-  items: []
