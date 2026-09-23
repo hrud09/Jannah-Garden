@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,6 +11,10 @@ public class FenceBarrier : MonoBehaviour
 {
     public Transform fenceHolderParent;
     public GameObject[] surroundingFences;
+
+    [Tooltip("Rigidbody on each entry of surroundingFences, same order/length - kept kinematic while the " +
+        "fence is standing and released (isKinematic = false) so physics throws it down for the despawn animation.")]
+    public Rigidbody[] surroundingFenceRigidbodies;
 
     [Header("Drop-In Animation")]
     [Tooltip("How high above its resting spot each fence starts its fall from.")]
@@ -25,8 +30,37 @@ public class FenceBarrier : MonoBehaviour
 
     private Coroutine _dropRoutine;
 
+    [Header("Despawn (Dramatic Fall) Animation")]
+    [Tooltip("Seconds between one fence's rigidbody being released and the next one's - staggers the " +
+        "collapse instead of the whole ring dropping in unison.")]
+    public float despawnStagger = 0.08f;
+    [Tooltip("Outward+upward impulse given to each fence the instant it's released, so the ring bursts apart " +
+        "instead of just crumbling straight down.")]
+    public float despawnImpulseStrength = 2f;
+    [Tooltip("Random torque applied alongside the impulse so fences tumble end-over-end rather than falling flat.")]
+    public float despawnTorqueStrength = 4f;
+    [Tooltip("How long physics gets to play out, after the last fence is released, before the whole barrier is despawned back to the pool.")]
+    public float despawnSettleDuration = 1.2f;
+
+    private Coroutine _despawnRoutine;
+    private Vector3[] _restLocalPositions;
+    private Quaternion[] _restLocalRotations;
 
     public Transform[] timerSignBoardReferenceTransforms;
+
+    private void Awake()
+    {
+        if (surroundingFences == null) return;
+
+        _restLocalPositions = new Vector3[surroundingFences.Length];
+        _restLocalRotations = new Quaternion[surroundingFences.Length];
+        for (int i = 0; i < surroundingFences.Length; i++)
+        {
+            if (surroundingFences[i] == null) continue;
+            _restLocalPositions[i] = surroundingFences[i].transform.localPosition;
+            _restLocalRotations[i] = surroundingFences[i].transform.localRotation;
+        }
+    }
 
     /// <summary>
     /// The entry in <see cref="timerSignBoardReferenceTransforms"/> closest to the player, so the timer
@@ -74,13 +108,37 @@ public class FenceBarrier : MonoBehaviour
             StopCoroutine(_dropRoutine);
             _dropRoutine = null;
         }
-
-        // Reset for the next time this pooled instance is spawned - otherwise a fence left active by an
-        // interrupted animation would skip its "activate one by one" reveal on reuse.
-        if (surroundingFences == null) return;
-        foreach (GameObject fence in surroundingFences)
+        if (_despawnRoutine != null)
         {
-            if (fence != null) fence.SetActive(false);
+            StopCoroutine(_despawnRoutine);
+            _despawnRoutine = null;
+        }
+
+        // Reset for the next time this pooled instance is spawned - otherwise a fence left active (or
+        // mid-tumble from the despawn animation) would skip its "activate one by one" reveal on reuse.
+        if (surroundingFences == null) return;
+        for (int i = 0; i < surroundingFences.Length; i++)
+        {
+            GameObject fence = surroundingFences[i];
+            if (fence != null)
+            {
+                fence.SetActive(false);
+                if (_restLocalPositions != null && i < _restLocalPositions.Length)
+                {
+                    fence.transform.localPosition = _restLocalPositions[i];
+                    fence.transform.localRotation = _restLocalRotations[i];
+                }
+            }
+
+            if (surroundingFenceRigidbodies != null && i < surroundingFenceRigidbodies.Length)
+            {
+                Rigidbody rb = surroundingFenceRigidbodies[i];
+                if (rb == null) continue;
+
+                rb.isKinematic = true;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
         }
     }
 
@@ -113,6 +171,49 @@ public class FenceBarrier : MonoBehaviour
         }
 
         _dropRoutine = null;
+    }
+
+    /// <summary>
+    /// Releases every fence's rigidbody (one after another, per <see cref="despawnStagger"/>) with an
+    /// outward/upward impulse and some tumble, letting physics throw the ring apart instead of it just
+    /// vanishing. Calls <paramref name="onComplete"/> once physics has had <see cref="despawnSettleDuration"/>
+    /// to play out - the caller is expected to return this instance to the pool from that callback.
+    /// </summary>
+    public void PlayDespawnAnimation(Action onComplete)
+    {
+        if (_dropRoutine != null)
+        {
+            StopCoroutine(_dropRoutine);
+            _dropRoutine = null;
+        }
+        if (_despawnRoutine != null) StopCoroutine(_despawnRoutine);
+        _despawnRoutine = StartCoroutine(AnimateFencesFallingAway(onComplete));
+    }
+
+    private IEnumerator AnimateFencesFallingAway(Action onComplete)
+    {
+        if (surroundingFenceRigidbodies != null)
+        {
+            foreach (Rigidbody rb in surroundingFenceRigidbodies)
+            {
+                if (rb == null) continue;
+
+                Vector3 outward = rb.transform.position - transform.position;
+                outward.y = 0f;
+                outward = outward.sqrMagnitude > 0.0001f ? outward.normalized : UnityEngine.Random.insideUnitSphere;
+
+                rb.isKinematic = false;
+                rb.AddForce(outward * despawnImpulseStrength + Vector3.up * (despawnImpulseStrength * 0.5f), ForceMode.VelocityChange);
+                rb.AddTorque(UnityEngine.Random.insideUnitSphere * despawnTorqueStrength, ForceMode.VelocityChange);
+
+                yield return new WaitForSeconds(despawnStagger);
+            }
+        }
+
+        yield return new WaitForSeconds(despawnSettleDuration);
+
+        _despawnRoutine = null;
+        onComplete?.Invoke();
     }
 
     /// <summary>

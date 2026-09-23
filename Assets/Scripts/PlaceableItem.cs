@@ -73,16 +73,19 @@ public class PlaceableItem : MonoBehaviour
         _timerAreaOverrideZ = referenceTransform.position.z;
     }
 
-    /// <summary>How far along the root-to-signboard line <see cref="TimerHolderGroundPosition"/> settles,
-    /// where 1 is the raw FenceBarrier/offset spot and 0 is right on top of the root. Halving it pulls the
-    /// plank in to sit 50% closer to the placed item than that raw spot.</summary>
-    private const float TimerHolderDistanceFraction = 0.5f;
+    /// <summary>How far along the root-to-signboard line <see cref="TimerHolderGroundPosition"/> settles
+    /// once the placement timer has finished (<see cref="IsFullyPlaced"/>), where 1 is the raw
+    /// FenceBarrier/offset spot and 0 is right on top of the root. Halving it pulls the plank in to sit
+    /// 50% closer to the placed item than that raw spot. Before the timer is up the plank stays at the
+    /// raw spot (fraction 1) — see <see cref="TimerHolderGroundPosition"/>.</summary>
+    private const float TimerHolderDistanceFractionWhenComplete = 0.5f;
 
     /// <summary>Where <see cref="timerHolder"/> should rest: the FenceBarrier-supplied X/Z when available,
-    /// otherwise the legacy offset-based spot — pulled in to <see cref="TimerHolderDistanceFraction"/> of
-    /// the way from the root, then Y re-sampled from the actual terrain/grid height at that X/Z (not just
-    /// copied from the root) so the signboard stays grounded even when its X/Z sits off to the side of the
-    /// root on sloped ground.</summary>
+    /// otherwise the legacy offset-based spot. While the placement timer is still running this is the raw
+    /// spot; once <see cref="IsFullyPlaced"/> it is pulled in to <see cref="TimerHolderDistanceFractionWhenComplete"/>
+    /// of the way from the root. Y is always re-sampled from the actual terrain/grid height at that X/Z
+    /// (not just copied from the root) so the signboard stays grounded even when its X/Z sits off to the
+    /// side of the root on sloped ground.</summary>
     private Vector3 TimerHolderGroundPosition
     {
         get
@@ -100,8 +103,9 @@ public class PlaceableItem : MonoBehaviour
                 p = root + transform.rotation * TimerHolderGroundOffset;
             }
 
-            p.x = Mathf.Lerp(root.x, p.x, TimerHolderDistanceFraction);
-            p.z = Mathf.Lerp(root.z, p.z, TimerHolderDistanceFraction);
+            float fraction = IsFullyPlaced ? TimerHolderDistanceFractionWhenComplete : 1f;
+            p.x = Mathf.Lerp(root.x, p.x, fraction);
+            p.z = Mathf.Lerp(root.z, p.z, fraction);
 
             p.y = SampleGroundHeight(p);
             return p;

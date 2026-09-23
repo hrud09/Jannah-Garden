@@ -761,7 +761,11 @@ public class ItemPlacementManager : MonoBehaviour
         barrier.PlayDropInAnimation();
     }
 
-    /// <summary>Removes the barrier standing around <paramref name="uniqueId"/>'s item, if any.</summary>
+    /// <summary>
+    /// Removes the barrier standing around <paramref name="uniqueId"/>'s item, if any - lets its fences
+    /// tumble away under physics (see <see cref="FenceBarrier.PlayDespawnAnimation"/>) before the barrier
+    /// is returned to the pool.
+    /// </summary>
     private void DespawnFenceBarrierFor(string uniqueId)
     {
         if (uniqueId == null) return;
@@ -769,7 +773,11 @@ public class ItemPlacementManager : MonoBehaviour
 
         _activeFenceBarriers.Remove(uniqueId);
         entry.unsubscribe?.Invoke();
-        if (entry.barrier != null) Objectpool.Instance.Despawn(entry.barrier.gameObject);
+
+        FenceBarrier barrier = entry.barrier;
+        if (barrier == null) return;
+
+        barrier.PlayDespawnAnimation(() => Objectpool.Instance.Despawn(barrier.gameObject));
     }
 
     /// <summary>The yaw applied on top of the model's authored rotation, in degrees.</summary>
