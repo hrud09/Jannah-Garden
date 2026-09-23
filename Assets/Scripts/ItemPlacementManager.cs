@@ -59,6 +59,12 @@ public class ItemPlacementManager : MonoBehaviour
     public TerrainCollider terrainCollider;
     public Button placeButton;
 
+    [Header("Timer Area Placement")]
+    [Tooltip("Local offset from an item's ground position (rotated by its facing) applied when pinning " +
+             "its PlaceableItem.timerHolder signboard to the ground - lets it sit forward/aside/embedded " +
+             "rather than exactly at the root.")]
+    public Vector3 timerHolderGroundOffset;
+
     /// <summary>Cached in <see cref="UpdatePlacementPosition"/> instead of resolving Camera.main every call.</summary>
     private Camera _cachedMainCamera;
 

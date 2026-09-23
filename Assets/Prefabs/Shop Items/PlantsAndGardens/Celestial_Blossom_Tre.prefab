@@ -58,6 +58,8 @@ MonoBehaviour:
   isTree: 0
   isBuilding: 0
   itemGFX: {fileID: 7197009910954610903}
+  alignGfxToGround: 1
+  alignUsingRenderersIfNoCollider: 1
 --- !u!1 &8157263180965237155
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,11 +195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.911
+      value: -3.16
       objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.425
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 4507196509073728307, guid: d5cf5f9c053a68948805aa7d267a148f, type: 3}
       propertyPath: m_LocalRotation.w

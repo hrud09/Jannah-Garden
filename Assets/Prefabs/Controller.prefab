@@ -53,6 +53,7 @@ MonoBehaviour:
   validBorder: {r: 0.5, g: 1, b: 0.6, a: 0.85}
   invalidFill: {r: 1, g: 0.32, b: 0.3, a: 0.26}
   invalidBorder: {r: 1, g: 0.45, b: 0.42, a: 0.9}
+  occupiedAreaMargin: 1.5
   fadeDuration: 0.18
 --- !u!1 &1922786256643900074
 GameObject:
@@ -666,6 +667,7 @@ MonoBehaviour:
   crosshairRect: {fileID: 0}
   terrainCollider: {fileID: 0}
   placeButton: {fileID: 0}
+  timerHolderGroundOffset: {x: 0, y: -0.3, z: 0}
   placementRadius: 15
   grid: {fileID: 0}
   gridView: {fileID: 0}

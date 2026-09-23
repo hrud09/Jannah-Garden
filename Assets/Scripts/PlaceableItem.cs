@@ -37,6 +37,29 @@ public class PlaceableItem : MonoBehaviour
     private TMP_Text timerText;
     public GameObject timerHolder;
 
+    /// <summary>Local offset from the root's ground position applied when pinning <see cref="timerHolder"/>
+    /// to the ground — lets the signboard sit forward/aside/embedded rather than exactly at the root.
+    /// Configured centrally on <see cref="ItemPlacementManager.timerHolderGroundOffset"/> rather than
+    /// per-prefab, so every placed item's signboard uses the same offset.</summary>
+    private Vector3 TimerHolderGroundOffset =>
+        ItemPlacementManager.Instance != null ? ItemPlacementManager.Instance.timerHolderGroundOffset : Vector3.zero;
+
+    [Header("Timer Area Planting Animation")]
+    /// <summary>How high above the ground the signboard starts its drop.</summary>
+    public float timerPlantDropHeight = 4f;
+    /// <summary>Local-space horizontal offset it swings in from, on top of the drop height, so the
+    /// descent reads as a diagonal swoop rather than a straight vertical fall.</summary>
+    public float timerPlantSwingDistance = 0.6f;
+    /// <summary>How long the fall itself takes, before the impact squash.</summary>
+    public float timerPlantFallDuration = 0.35f;
+    /// <summary>How long the ground-impact squash/rebound takes once it lands.</summary>
+    public float timerPlantImpactDuration = 0.18f;
+    /// <summary>How hard it squashes on impact, as a fraction of its scale.</summary>
+    public float timerPlantImpactStrength = 0.35f;
+
+    private Coroutine _timerPlantRoutine;
+    private bool _isPlantingTimerHolder;
+
     [Header("Renderers")]
     public Renderer[] itemRenderers;
 
@@ -133,7 +156,15 @@ public class PlaceableItem : MonoBehaviour
         MeasureGfxGroundOffset();
         SetScaleMultiplier(1f);
 
-        if(timerHolder) timerText = timerHolder.GetComponentInChildren<TMP_Text>();
+        if (timerHolder)
+        {
+            timerText = timerHolder.GetComponentInChildren<TMP_Text>(true);
+
+            // The signboard/timer must not be visible on the ghost preview - it only appears once
+            // the item is actually placed (Start/Initialize turn it back on via ApplyStateVisuals).
+            StopPlantingRoutine();
+            timerHolder.SetActive(false);
+        }
     }
 
     private void OnEnable()
@@ -262,7 +293,7 @@ public class PlaceableItem : MonoBehaviour
         // bootstrap the text reference ourselves if it's missing.
         if (timerText == null)
         {
-            timerText = GetComponentInChildren<TMPro.TMP_Text>();
+            timerText = GetComponentInChildren<TMPro.TMP_Text>(true);
         }
 
         if (timerText == null)
@@ -289,7 +320,7 @@ public class PlaceableItem : MonoBehaviour
         // Auto-detect a Text Mesh Pro text field in children if not assigned
         if (timerText == null)
         {
-            timerText = GetComponentInChildren<TMP_Text>();
+            timerText = GetComponentInChildren<TMP_Text>(true);
         }
 
         // Dynamically create a floating world-space billboard timer if missing
@@ -316,6 +347,7 @@ public class PlaceableItem : MonoBehaviour
             remainingDuration = 0f;
             if (timerHolder != null)
             {
+                StopPlantingRoutine();
                 timerHolder.SetActive(false);
             }
 
@@ -327,7 +359,7 @@ public class PlaceableItem : MonoBehaviour
         {
             if (timerHolder != null)
             {
-                timerHolder.SetActive(true);
+                PlantTimerHolder();
             }
 
             float timeRatio = placementDuration > 0f
@@ -436,12 +468,118 @@ public class PlaceableItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The timer holder carries a physical signboard/plank, so unlike the growing model it must never
+    /// lift off the ground — pin its world Y to the root's (which sits at ground level, see
+    /// <see cref="alignGfxToGround"/>) every frame regardless of what parent or growth animation it
+    /// inherits from.
+    /// </summary>
+    private void LateUpdate()
+    {
+        // While the plant-in animation owns the position, let it drive; otherwise keep the
+        // signboard pinned to ground level every frame regardless of what parent or growth
+        // animation it inherits from.
+        if (timerHolder == null || _isPlantingTimerHolder) return;
+
+        // Rotated by the root so the offset stays meaningful (forward/aside) regardless of the
+        // item's placement facing, then anchored to ground level (the root's own Y).
+        timerHolder.transform.position = transform.position + transform.rotation * TimerHolderGroundOffset;
+    }
+
+    /// <summary>(Re)starts the drop-and-plant animation for <see cref="timerHolder"/>, activating it first
+    /// if needed. Called every time tracking begins — a fresh placement or a relocate drop — so the
+    /// signboard always slams into the ground rather than just popping into view.</summary>
+    private void PlantTimerHolder()
+    {
+        if (timerHolder == null) return;
+
+        StopPlantingRoutine();
+        timerHolder.SetActive(true);
+        _timerPlantRoutine = StartCoroutine(AnimateTimerHolderPlanting());
+    }
+
+    private void StopPlantingRoutine()
+    {
+        if (_timerPlantRoutine != null)
+        {
+            StopCoroutine(_timerPlantRoutine);
+            _timerPlantRoutine = null;
+        }
+        _isPlantingTimerHolder = false;
+    }
+
+    /// <summary>
+    /// Drops the signboard in from above along a diagonal, accelerating path — like it's been thrown
+    /// down and driven into the ground — then squashes and rebounds on impact for the "planted" feel.
+    /// </summary>
+    private System.Collections.IEnumerator AnimateTimerHolderPlanting()
+    {
+        _isPlantingTimerHolder = true;
+
+        Transform t = timerHolder.transform;
+        Vector3 baseLocalScale = t.localScale;
+
+        // The swing direction comes from the item's own facing so the swoop always reads as
+        // "in front of / to the side of" the item rather than a fixed world axis.
+        Vector3 swingDir = transform.rotation * Vector3.back;
+
+        float elapsed = 0f;
+        while (elapsed < timerPlantFallDuration)
+        {
+            elapsed += Time.deltaTime;
+            float u = Mathf.Clamp01(elapsed / timerPlantFallDuration);
+
+            Vector3 groundPos = transform.position + transform.rotation * TimerHolderGroundOffset;
+
+            // Vertical: eases in hard (u^3) so it lingers up high then slams down at the end.
+            float fallT = u * u * u;
+            float height = Mathf.Lerp(timerPlantDropHeight, 0f, fallT);
+
+            // Horizontal: settles out smoothly, fading to zero before the fall finishes so the
+            // final motion is a straight downward slam rather than a lateral drift.
+            float swingT = 1f - Mathf.Pow(1f - u, 2f);
+            float swingAmount = Mathf.Lerp(timerPlantSwingDistance, 0f, swingT);
+
+            t.position = groundPos + Vector3.up * height + swingDir * swingAmount;
+
+            yield return null;
+        }
+
+        Vector3 finalGroundPos = transform.position + transform.rotation * TimerHolderGroundOffset;
+        t.position = finalGroundPos;
+
+        // Impact squash: flatten on the way down, rebound past neutral, then settle - the stake
+        // being forcefully driven into the ground.
+        elapsed = 0f;
+        while (elapsed < timerPlantImpactDuration)
+        {
+            elapsed += Time.deltaTime;
+            float u = Mathf.Clamp01(elapsed / timerPlantImpactDuration);
+            float squash = Mathf.Sin(u * Mathf.PI) * timerPlantImpactStrength * (1f - u);
+
+            t.localScale = new Vector3(
+                baseLocalScale.x * (1f + squash),
+                baseLocalScale.y * (1f - squash * 1.5f),
+                baseLocalScale.z * (1f + squash));
+            t.position = finalGroundPos;
+
+            yield return null;
+        }
+
+        t.localScale = baseLocalScale;
+        t.position = finalGroundPos;
+
+        _isPlantingTimerHolder = false;
+        _timerPlantRoutine = null;
+    }
+
     private System.Collections.IEnumerator DisableTimerHolderAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
         if (timerHolder != null)
         {
+            StopPlantingRoutine();
             timerHolder.SetActive(false);
         }
     }
