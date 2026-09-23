@@ -143,6 +143,18 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     private void OnWatchAdClicked()
     {
         SetVisualsActive(false);
+
+        // Android (and Editor, where the plugin simulates ads): a real AdMob rewarded test ad.
+        // iOS keeps going through Flutter — see the crash notes on AdsManager/AdMobAdService.
+#if UNITY_ANDROID || UNITY_EDITOR
+        AdMobAdService.Instance.ShowRewardedAd(earned =>
+        {
+            if (earned && TreasureBoxManager.Instance != null)
+            {
+                TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
+            }
+        });
+#else
         if (AdsManager.Instance != null)
         {
             AdsManager.Instance.ShowRewardedAd(() =>
@@ -160,6 +172,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
                 TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
             }
         }
+#endif
     }
 
     private void OnSubscribeClicked()
