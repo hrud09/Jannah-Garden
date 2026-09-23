@@ -1,8 +1,14 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-[CreateAssetMenu(fileName = "NewTreasureBoxRewardItem", menuName = "Jannah Garden/Treasure Box Reward Item", order = 20)]
-public class TreasureBoxRewardItemData : ScriptableObject
+/// <summary>
+/// One treasure box reward item's data. A plain serializable class rather than a ScriptableObject —
+/// every item lives as an entry inside one of <see cref="TreasureBoxRewardItemsData.categories"/>'s
+/// groups, in one shared asset, instead of as its own .asset file. See <see cref="ShopItemData"/> for
+/// the equivalent shop-side migration this mirrors.
+/// </summary>
+[System.Serializable]
+public class TreasureBoxRewardItemData
 {
     [Header("Item Metadata")]
     public Sprite itemIcon;
@@ -51,14 +57,6 @@ public class TreasureBoxRewardItemData : ScriptableObject
 
     [Header("Puzzle Data")]
     public GameObject[] puzzlePieces;
-
-    [Header("Calculated Rarity")]
-    public ItemRarity calculatedRarity;
-
-    private void OnValidate()
-    {
-        calculatedRarity = GetRarity();
-    }
 
     /// <summary>True if claiming this reward hands the player something to place in the garden.</summary>
     public bool IsPlaceable => itemPrefabRef != null && itemPrefabRef.RuntimeKeyIsValid();

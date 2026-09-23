@@ -327,6 +327,13 @@ public class GardenGrid : MonoBehaviour
     /// <summary>The cells <paramref name="ownerId"/> holds, if it holds any.</summary>
     public bool TryGetArea(string ownerId, out RectInt area) => _areas.TryGetValue(ownerId, out area);
 
+    /// <summary>
+    /// Every cell block currently claimed, keyed by owner id. Read-only presentation data for
+    /// <see cref="PlacementGridView"/> — callers must not mutate the returned areas' bookkeeping
+    /// through anything but <see cref="Occupy"/>/<see cref="Release"/>.
+    /// </summary>
+    public IReadOnlyDictionary<string, RectInt> AllAreas => _areas;
+
     // ═══════════════════════════════════════════════════════════════════════════
     //  VALIDITY
     // ═══════════════════════════════════════════════════════════════════════════

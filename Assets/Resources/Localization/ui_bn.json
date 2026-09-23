@@ -377,6 +377,18 @@
             "value": "দৃশ্য প্রস্তুত করা হচ্ছে..."
         },
         {
+            "key": "loading.base_scene_named",
+            "value": "{0} লোড হচ্ছে..."
+        },
+        {
+            "key": "loading.environment_named",
+            "value": "{0} লোড হচ্ছে..."
+        },
+        {
+            "key": "loading.activating_scene",
+            "value": "{0} সক্রিয় করা হচ্ছে..."
+        },
+        {
             "key": "common.quantity_format",
             "value": "x{0}"
         },

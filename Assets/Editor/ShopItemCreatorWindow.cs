@@ -895,11 +895,7 @@ public class ShopItemCreatorWindow : EditorWindow
 
     private void GenerateShopItemDataAssets()
     {
-        if (!AssetDatabase.IsValidFolder(scriptableObjectOutputFolder))
-        {
-            Directory.CreateDirectory(scriptableObjectOutputFolder);
-            AssetDatabase.Refresh();
-        }
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
 
         AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
         var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
@@ -909,11 +905,8 @@ public class ShopItemCreatorWindow : EditorWindow
         {
             if (!cfg.selected || cfg.prefab == null) continue;
 
-            string cleanAssetName = string.IsNullOrEmpty(cfg.itemName) ? cfg.prefab.name : cfg.itemName.Replace(" ", "_");
-            string assetPath = $"{scriptableObjectOutputFolder}/{cleanAssetName}_Data.asset";
-
             // Create Instance
-            ShopItemData itemData = CreateInstance<ShopItemData>();
+            ShopItemData itemData = new ShopItemData();
 
             itemData.itemName = cfg.itemName;
             itemData.itemDescription = cfg.itemDescription;
@@ -932,14 +925,14 @@ public class ShopItemCreatorWindow : EditorWindow
             AddressableItemAuthoring.AssignPrefab(itemData.itemPlacementModelPrefabRef, cfg.placementGhostPrefab, addressableSettings, remoteGroup);
             itemData.placementTimerDuration = cfg.placementTimerDuration;
 
-            AssetDatabase.CreateAsset(itemData, assetPath);
+            ShopItemsDataUtility.AddItem(database, itemData);
             createdCount++;
         }
 
-        AssetDatabase.SaveAssets();
+        ShopItemsDataUtility.Save(database);
         AssetDatabase.Refresh();
 
-        EditorUtility.DisplayDialog("Success", $"Successfully created {createdCount} ShopItemData asset(s) under '{scriptableObjectOutputFolder}'!", "OK");
+        EditorUtility.DisplayDialog("Success", $"Successfully created {createdCount} ShopItemData entries in '{ShopItemsDataUtility.DatabaseAssetPath}'!", "OK");
     }
 
     private void ExtractMeshesFromFolder(string folderPath)

@@ -66,6 +66,10 @@ public class TreasureBoxManager : MonoBehaviour
     public TreasureBoxData platinumBoxData;
     public TreasureBoxData diamondBoxData;
 
+    [Tooltip("The single database asset holding every treasure box reward item, used to resolve each " +
+             "tier's TreasureBoxData.exclusiveRewardItemIDs back into TreasureBoxRewardItemData.")]
+    public TreasureBoxRewardItemsData rewardsDatabase;
+
     [Header("Subscriber Setting")]
     [Tooltip("Subscribers bypass rewarded ads and open all available boxes instantly.")]
     public bool isSubscriber = false;
@@ -339,16 +343,18 @@ public class TreasureBoxManager : MonoBehaviour
     public TreasureBoxRewardItemData GetCurrentCycleReward(TreasureBoxTier tier)
     {
         TreasureBoxData data = GetBoxData(tier);
-        if (data == null || data.exclusiveRewardItems == null || data.exclusiveRewardItems.Length == 0) return null;
+        if (data == null || data.exclusiveRewardItemIDs == null || data.exclusiveRewardItemIDs.Count == 0) return null;
 
         TreasureBoxTierState state = _saveData.GetTierState(tier);
-        if (state.selectedRewardIndex < 0 || state.selectedRewardIndex >= data.exclusiveRewardItems.Length)
+        if (state.selectedRewardIndex < 0 || state.selectedRewardIndex >= data.exclusiveRewardItemIDs.Count)
         {
-            state.selectedRewardIndex = UnityEngine.Random.Range(0, data.exclusiveRewardItems.Length);
+            state.selectedRewardIndex = UnityEngine.Random.Range(0, data.exclusiveRewardItemIDs.Count);
             SaveState();
         }
 
-        return data.exclusiveRewardItems[state.selectedRewardIndex];
+        return rewardsDatabase != null
+            ? rewardsDatabase.FindByID(data.exclusiveRewardItemIDs[state.selectedRewardIndex])
+            : null;
     }
 
     /// <summary>

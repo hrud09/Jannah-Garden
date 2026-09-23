@@ -377,6 +377,18 @@
             "value": "منظر تیار کیا جا رہا ہے..."
         },
         {
+            "key": "loading.base_scene_named",
+            "value": "{0} لوڈ ہو رہا ہے..."
+        },
+        {
+            "key": "loading.environment_named",
+            "value": "{0} لوڈ ہو رہا ہے..."
+        },
+        {
+            "key": "loading.activating_scene",
+            "value": "{0} فعال کیا جا رہا ہے..."
+        },
+        {
             "key": "common.quantity_format",
             "value": "x{0}"
         },

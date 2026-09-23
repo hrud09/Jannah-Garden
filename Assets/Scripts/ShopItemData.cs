@@ -1,8 +1,13 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-[CreateAssetMenu(fileName = "NewShopItemData", menuName = "Shop/Item Data", order = 1)]
-public class ShopItemData : ScriptableObject
+/// <summary>
+/// One shop item's data. A plain serializable class rather than a ScriptableObject — every item lives
+/// as an entry inside one of <see cref="ShopItemsData.categories"/>'s groups, in one shared asset,
+/// instead of as its own .asset file.
+/// </summary>
+[System.Serializable]
+public class ShopItemData
 {
     // ---------------------------------------------------------------------
     // Identity — shown for every acquisition type.
@@ -104,6 +109,10 @@ public class ShopItemData : ScriptableObject
              "measured body is misleading — a tree whose canopy collider is far wider than anything " +
              "you would actually plant around, or a path tile that wants deliberate padding.")]
     public Vector2Int gridFootprintOverride = Vector2Int.zero;
+
+    [Tooltip("Multiplier applied to the geometry-derived grid footprint (ignored when Grid Footprint " +
+             "Override is set). 1 = the default footprint; lower shrinks it, higher grows it.")]
+    public float footprintScale = 1f;
 
     // ---------------------------------------------------------------------
     // Deprecated

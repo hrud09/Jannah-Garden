@@ -1,76 +1,44 @@
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
-using System.Collections.Generic;
 
 public static class TreasureBoxRewardItemIdAssigner
 {
     [MenuItem("Tools/Treasure Box/Assign Reward Item IDs")]
     public static void AssignIdsToAllRewardItems()
     {
-        string[] guids = AssetDatabase.FindAssets("t:TreasureBoxRewardItemData");
+        TreasureBoxRewardItemsData database = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
+
         int assigned = 0;
         int updated = 0;
 
-        HashSet<string> usedIds = new HashSet<string>();
+        System.Collections.Generic.HashSet<string> usedIds = new System.Collections.Generic.HashSet<string>();
 
         // First collect existing IDs to avoid duplicates
-        foreach (string g in guids)
+        foreach (var item in TreasureBoxRewardItemsDataUtility.AllItems(database))
         {
-            string path = AssetDatabase.GUIDToAssetPath(g);
-            var obj = AssetDatabase.LoadMainAssetAtPath(path);
-            if (obj == null) continue;
-            SerializedObject so = new SerializedObject(obj);
-            SerializedProperty prop = so.FindProperty("itemID");
-            if (prop != null && !string.IsNullOrEmpty(prop.stringValue))
+            if (!string.IsNullOrEmpty(item.itemID))
             {
-                usedIds.Add(prop.stringValue);
+                usedIds.Add(item.itemID);
             }
         }
 
-        // Assign/Update IDs
-        foreach (string g in guids)
+        foreach (var item in TreasureBoxRewardItemsDataUtility.AllItems(database))
         {
-            string path = AssetDatabase.GUIDToAssetPath(g);
-            var obj = AssetDatabase.LoadMainAssetAtPath(path);
-            if (obj == null) continue;
-
-            SerializedObject so = new SerializedObject(obj);
-            SerializedProperty prop = so.FindProperty("itemID");
-            if (prop == null)
-            {
-                assigned++;
-                continue;
-            }
-
             bool needSave = false;
-            string current = prop.stringValue;
+            string current = item.itemID;
 
-            // If empty or duplicate, generate a new random ID
             if (string.IsNullOrEmpty(current) || usedIds.Contains(current))
             {
-                // Remove the current one if it was added to usedIds as a duplicate check
-                if (!string.IsNullOrEmpty(current))
-                {
-                    usedIds.Remove(current);
-                }
-
                 string newId;
                 do
                 {
                     newId = System.Guid.NewGuid().ToString("N");
                 } while (usedIds.Contains(newId));
 
-                prop.stringValue = newId;
+                item.itemID = newId;
                 usedIds.Add(newId);
-                so.ApplyModifiedProperties();
-                EditorUtility.SetDirty(obj);
                 needSave = true;
-            }
-            else
-            {
-                // Ensure current ID is registered as used
-                usedIds.Add(current);
             }
 
             if (needSave)
@@ -83,13 +51,13 @@ public static class TreasureBoxRewardItemIdAssigner
 
         if (updated > 0)
         {
-            AssetDatabase.SaveAssets();
+            TreasureBoxRewardItemsDataUtility.Save(database);
         }
 
-        Debug.Log($"[TreasureBoxRewardItemIdAssigner] Processed {assigned} TreasureBoxRewardItemData assets. Assigned/Updated IDs on {updated} assets.");
+        Debug.Log($"[TreasureBoxRewardItemIdAssigner] Processed {assigned} TreasureBoxRewardItemData entries. Assigned/Updated IDs on {updated} entries.");
         EditorUtility.DisplayDialog(
             "Assign IDs",
-            $"Processed {assigned} TreasureBoxRewardItemData assets. Assigned/Updated IDs on {updated} assets.",
+            $"Processed {assigned} TreasureBoxRewardItemData entries. Assigned/Updated IDs on {updated} entries.",
             "OK"
         );
     }

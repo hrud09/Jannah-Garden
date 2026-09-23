@@ -7851,7 +7851,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -0.100097656, y: -2.1000977}
-  m_SizeDelta: {x: 165.5923, y: 23.5779}
+  m_SizeDelta: {x: 181.4501, y: 29.2415}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &724547790
 MonoBehaviour:
@@ -8855,7 +8855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &804719152
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8960,6 +8960,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 804719157}
   playOncePerSession: 1
   playbackSpeed: 1.5
+  mute: 1
   renderTextureSize: {x: 1920, y: 1080}
   fadeOutDuration: 0.7
 --- !u!225 &804719157
@@ -17431,6 +17432,7 @@ MonoBehaviour:
   validBorder: {r: 0, g: 1, b: 0.1968503, a: 0.85}
   invalidFill: {r: 1, g: 0.32, b: 0.3, a: 0.3529412}
   invalidBorder: {r: 1, g: 0.067440055, b: 0.0141509175, a: 0.9}
+  occupiedAreaMargin: 1.5
   fadeDuration: 0.18
 --- !u!4 &1726353797
 Transform:
@@ -21708,6 +21710,7 @@ MonoBehaviour:
   goldBoxData: {fileID: 11400000, guid: 7dd2867608290934ba8eaf3ab74d10aa, type: 2}
   platinumBoxData: {fileID: 11400000, guid: 0ae62cbe89d8b0f438b4ecbc2d7b3888, type: 2}
   diamondBoxData: {fileID: 11400000, guid: 6aa46fa171c4c3a45acf0dd61b07bac0, type: 2}
+  rewardsDatabase: {fileID: 11400000, guid: 291e9c1c7f1529745ae487ce5ddfca95, type: 2}
   isSubscriber: 0
   dailyResetTime: {x: 0, y: 0}
   treasureBoxStatusUi: {fileID: 302626757594565094}

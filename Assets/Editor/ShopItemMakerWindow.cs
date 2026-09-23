@@ -182,17 +182,10 @@ public class ShopItemMakerWindow : EditorWindow
             return;
         }
 
-        if (!AssetDatabase.IsValidFolder(outputFolder))
-        {
-            EditorUtility.DisplayDialog("Error", $"Invalid output folder: {outputFolder}", "OK");
-            return;
-        }
-
-        string cleanName = itemName.Replace(" ", "_");
-        string assetPath = $"{outputFolder}/{cleanName}_Data.asset";
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
 
         // Create new instance
-        ShopItemData itemData = CreateInstance<ShopItemData>();
+        ShopItemData itemData = new ShopItemData();
 
         // Set Metadata
         itemData.itemName = itemName;
@@ -223,15 +216,15 @@ public class ShopItemMakerWindow : EditorWindow
         itemData.placementTimerDuration = placementTimerDuration;
 
         // Save
-        AssetDatabase.CreateAsset(itemData, assetPath);
-        AssetDatabase.SaveAssets();
+        ShopItemsDataUtility.AddItem(database, itemData);
+        ShopItemsDataUtility.Save(database);
         AssetDatabase.Refresh();
 
-        // Highlight the newly created asset
+        // Highlight the aggregator asset holding the new entry
         EditorUtility.FocusProjectWindow();
-        Selection.activeObject = itemData;
+        Selection.activeObject = database;
 
-        Debug.Log($"[ShopItemMaker] Created new shop item '{itemName}' at {assetPath}");
+        Debug.Log($"[ShopItemMaker] Created new shop item '{itemName}' in {ShopItemsDataUtility.DatabaseAssetPath}");
     }
 }
 #endif

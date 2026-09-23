@@ -12,26 +12,11 @@ public class GenerateShopItemDatas
     public static void GenerateShopItems()
     {
         string prefabFolder = "Assets/Prefabs/Shop Items";
-        string outputFolder = "Assets/Resources/Natural Placeable Shop Items";
 
         AddressableAssetSettings settings = AddressableAssetSettingsDefaultObject.Settings;
         var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(settings);
 
-        // Ensure the output folder exists
-        if (!AssetDatabase.IsValidFolder(outputFolder))
-        {
-            string[] folders = outputFolder.Split('/');
-            string currentPath = folders[0];
-            for (int i = 1; i < folders.Length; i++)
-            {
-                string nextPath = currentPath + "/" + folders[i];
-                if (!AssetDatabase.IsValidFolder(nextPath))
-                {
-                    AssetDatabase.CreateFolder(currentPath, folders[i]);
-                }
-                currentPath = nextPath;
-            }
-        }
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
 
         // Find all prefabs in the prefab folder
         string[] prefabGuids = AssetDatabase.FindAssets("t:Prefab", new[] { prefabFolder });
@@ -50,16 +35,12 @@ public class GenerateShopItemDatas
             ShopItemCategory category = DetermineCategory(rawName);
             string description = GenerateDescription(cleanedName, category);
 
-            // Asset name matching the clean/raw name style
-            string assetName = rawName.Replace(" ", "_") + "_Data";
-            string assetPath = $"{outputFolder}/{assetName}.asset";
-
-            ShopItemData itemData = AssetDatabase.LoadAssetAtPath<ShopItemData>(assetPath);
+            ShopItemData itemData = ShopItemsDataUtility.FindByPrefab(database, prefab);
             bool isNew = false;
 
             if (itemData == null)
             {
-                itemData = ScriptableObject.CreateInstance<ShopItemData>();
+                itemData = new ShopItemData();
                 isNew = true;
             }
 
@@ -105,20 +86,19 @@ public class GenerateShopItemDatas
 
             if (isNew)
             {
-                AssetDatabase.CreateAsset(itemData, assetPath);
+                ShopItemsDataUtility.AddItem(database, itemData);
                 createdCount++;
             }
             else
             {
-                EditorUtility.SetDirty(itemData);
                 updatedCount++;
             }
         }
 
-        AssetDatabase.SaveAssets();
+        ShopItemsDataUtility.Save(database);
         AssetDatabase.Refresh();
 
-        Debug.Log($"[GenerateShopItemDatas] Successfully processed prefabs. Created: {createdCount}, Updated: {updatedCount} assets in {outputFolder}.");
+        Debug.Log($"[GenerateShopItemDatas] Successfully processed prefabs. Created: {createdCount}, Updated: {updatedCount} entries in {ShopItemsDataUtility.DatabaseAssetPath}.");
     }
 
     private static string CleanName(string rawName)

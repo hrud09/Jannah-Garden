@@ -34,6 +34,9 @@ public class IntroVideoController : MonoBehaviour
     [Tooltip("Video playback speed. 1 = normal, 1.5 = 50% faster.")]
     public float playbackSpeed = 1.5f;
 
+    [Tooltip("If true, the intro video plays without audio.")]
+    public bool mute = false;
+
     [Tooltip("Fallback render texture size used when the VideoPlayer targets a RenderTexture at runtime.")]
     public Vector2Int renderTextureSize = new Vector2Int(1920, 1080);
 
@@ -113,10 +116,12 @@ public class IntroVideoController : MonoBehaviour
         if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource && audioSource != null)
         {
             videoPlayer.SetTargetAudioSource(0, audioSource);
+            audioSource.mute = mute;
         }
 
         videoPlayer.playOnAwake = false;
         videoPlayer.playbackSpeed = playbackSpeed;
+        videoPlayer.SetDirectAudioMute(0, mute);
         videoPlayer.prepareCompleted += OnPrepared;
         videoPlayer.loopPointReached += OnVideoFinished;
         videoPlayer.Prepare();
@@ -156,14 +161,30 @@ public class IntroVideoController : MonoBehaviour
             aspectRatioFitter.aspectRatio = (float)vp.width / vp.height;
         }
 
+        vp.playbackSpeed = playbackSpeed;
+
+        // Start playback while still hidden behind the door image, and only reveal the
+        // video once it has an actual decoded frame ready. This avoids swapping to the
+        // RawImage a frame (or more) before the video texture has anything in it, which
+        // would otherwise show a black/stale flash between the door image and the video.
+        vp.Play();
+        StartCoroutine(RevealVideoOnceFrameReady(vp));
+    }
+
+    private IEnumerator RevealVideoOnceFrameReady(VideoPlayer vp)
+    {
+        while (vp != null && vp.isPlaying && vp.frame <= 0)
+        {
+            yield return null;
+        }
+
+        if (_ending) yield break;
+
         if (doorImage != null) doorImage.SetActive(false);
         if (videoImage != null) videoImage.enabled = true;
 
-        vp.playbackSpeed = playbackSpeed;
-        vp.Play();
-
-        // The video is fully loaded and playing now, so the loading screen can fade out
-        // and reveal it.
+        // The video is fully loaded and actually rendering now, so the loading screen can
+        // fade out and reveal it.
         if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
     }
 

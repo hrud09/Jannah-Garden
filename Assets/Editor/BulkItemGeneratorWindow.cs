@@ -129,10 +129,9 @@ public class BulkItemGeneratorWindow : EditorWindow
             string cleanName = CleanName(prefab.name);
             ShopItemCategory category = DetermineCategory(prefab.name);
 
-            // Attempt to check if an asset already exists to populate current values
-            string assetName = prefab.name.Replace(" ", "_") + "_Data";
-            string assetPath = $"{shopOutputFolder}/{assetName}.asset";
-            ShopItemData existingData = AssetDatabase.LoadAssetAtPath<ShopItemData>(assetPath);
+            // Attempt to check if a database entry already exists for this prefab to populate current values
+            ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
+            ShopItemData existingData = ShopItemsDataUtility.FindByPrefab(database, prefab);
 
             int price = existingData != null ? existingData.noorCoinCost : shopDefaultPrice;
             int xpLevel = existingData != null ? existingData.requiredXPLevel : shopDefaultXPLevel;
@@ -257,7 +256,7 @@ public class BulkItemGeneratorWindow : EditorWindow
 
     private void GenerateSelectedShopItems()
     {
-        EnsureFolderExists(shopOutputFolder);
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
 
         AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
         var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
@@ -267,15 +266,12 @@ public class BulkItemGeneratorWindow : EditorWindow
         {
             if (!item.selected) continue;
 
-            string assetName = item.prefab.name.Replace(" ", "_") + "_Data";
-            string assetPath = $"{shopOutputFolder}/{assetName}.asset";
-
-            ShopItemData itemData = AssetDatabase.LoadAssetAtPath<ShopItemData>(assetPath);
+            ShopItemData itemData = ShopItemsDataUtility.FindByPrefab(database, item.prefab);
             bool isNew = false;
 
             if (itemData == null)
             {
-                itemData = CreateInstance<ShopItemData>();
+                itemData = new ShopItemData();
                 isNew = true;
             }
 
@@ -299,19 +295,15 @@ public class BulkItemGeneratorWindow : EditorWindow
 
             if (isNew)
             {
-                AssetDatabase.CreateAsset(itemData, assetPath);
-            }
-            else
-            {
-                EditorUtility.SetDirty(itemData);
+                ShopItemsDataUtility.AddItem(database, itemData);
             }
             count++;
         }
 
-        AssetDatabase.SaveAssets();
+        ShopItemsDataUtility.Save(database);
         AssetDatabase.Refresh();
 
-        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} ShopItemData assets.", "OK");
+        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} ShopItemData entries in {ShopItemsDataUtility.DatabaseAssetPath}.", "OK");
         LoadShopPrefabs();
     }
 
@@ -341,10 +333,9 @@ public class BulkItemGeneratorWindow : EditorWindow
             string cleanName = CleanName(prefab.name);
             ShopItemCategory tier = DetermineRewardTier(prefab.name);
 
-            // Attempt to check if an asset already exists
-            string assetName = prefab.name.Replace(" ", "_") + "_Data";
-            string assetPath = $"{rewardOutputFolder}/{assetName}.asset";
-            TreasureBoxRewardItemData existingData = AssetDatabase.LoadAssetAtPath<TreasureBoxRewardItemData>(assetPath);
+            // Attempt to check if a database entry already exists for this prefab to populate current values
+            TreasureBoxRewardItemsData rewardDatabase = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
+            TreasureBoxRewardItemData existingData = TreasureBoxRewardItemsDataUtility.FindByPrefab(rewardDatabase, prefab);
 
             int xpLevel = existingData != null ? existingData.unlockXPLevel : rewardDefaultXPLevel;
             int noorCoins = existingData != null ? existingData.noorCoinAmount : rewardDefaultNoorCoinAmount;
@@ -469,7 +460,7 @@ public class BulkItemGeneratorWindow : EditorWindow
 
     private void GenerateSelectedRewardItems()
     {
-        EnsureFolderExists(rewardOutputFolder);
+        TreasureBoxRewardItemsData rewardDatabase = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
 
         AddressableAssetSettings addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
         var remoteGroup = AddressableItemAuthoring.GetOrCreateRemoteGroup(addressableSettings);
@@ -479,15 +470,12 @@ public class BulkItemGeneratorWindow : EditorWindow
         {
             if (!item.selected) continue;
 
-            string assetName = item.prefab.name.Replace(" ", "_") + "_Data";
-            string assetPath = $"{rewardOutputFolder}/{assetName}.asset";
-
-            TreasureBoxRewardItemData itemData = AssetDatabase.LoadAssetAtPath<TreasureBoxRewardItemData>(assetPath);
+            TreasureBoxRewardItemData itemData = TreasureBoxRewardItemsDataUtility.FindByPrefab(rewardDatabase, item.prefab);
             bool isNew = false;
 
             if (itemData == null)
             {
-                itemData = CreateInstance<TreasureBoxRewardItemData>();
+                itemData = new TreasureBoxRewardItemData();
                 isNew = true;
             }
 
@@ -511,21 +499,17 @@ public class BulkItemGeneratorWindow : EditorWindow
 
             if (isNew)
             {
-                AssetDatabase.CreateAsset(itemData, assetPath);
-            }
-            else
-            {
-                EditorUtility.SetDirty(itemData);
+                TreasureBoxRewardItemsDataUtility.AddItem(rewardDatabase, itemData);
             }
             count++;
         }
 
-        AssetDatabase.SaveAssets();
+        TreasureBoxRewardItemsDataUtility.Save(rewardDatabase);
         AssetDatabase.Refresh();
 
         AssignRewardsToTreasureBoxData();
 
-        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} TreasureBoxRewardItemData assets and assigned them to TreasureBoxData.", "OK");
+        EditorUtility.DisplayDialog("Success", $"Successfully generated/updated {count} TreasureBoxRewardItemData entries in {TreasureBoxRewardItemsDataUtility.DatabaseAssetPath} and assigned them to TreasureBoxData.", "OK");
         LoadRewardPrefabs();
     }
 
@@ -538,18 +522,17 @@ public class BulkItemGeneratorWindow : EditorWindow
             return;
         }
 
-        // Find all TreasureBoxRewardItemData assets in the rewardOutputFolder
-        string[] rewardItemGuids = AssetDatabase.FindAssets("t:TreasureBoxRewardItemData", new[] { rewardOutputFolder });
-        
+        // Every item now lives in the single shared aggregator asset rather than a folder, so there's no
+        // folder-scoped filter any more — just use every item in the aggregator.
+        TreasureBoxRewardItemsData rewardDatabase = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
+
         List<TreasureBoxRewardItemData> silverRewards = new List<TreasureBoxRewardItemData>();
         List<TreasureBoxRewardItemData> goldRewards = new List<TreasureBoxRewardItemData>();
         List<TreasureBoxRewardItemData> platinumRewards = new List<TreasureBoxRewardItemData>();
         List<TreasureBoxRewardItemData> diamondRewards = new List<TreasureBoxRewardItemData>();
 
-        foreach (string guid in rewardItemGuids)
+        foreach (TreasureBoxRewardItemData rewardItem in TreasureBoxRewardItemsDataUtility.AllItems(rewardDatabase))
         {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            TreasureBoxRewardItemData rewardItem = AssetDatabase.LoadAssetAtPath<TreasureBoxRewardItemData>(path);
             if (rewardItem == null) continue;
 
             switch (rewardItem.itemCategory)
@@ -583,9 +566,22 @@ public class BulkItemGeneratorWindow : EditorWindow
         TreasureBoxData tbData = AssetDatabase.LoadAssetAtPath<TreasureBoxData>(assetPath);
         if (tbData != null)
         {
-            tbData.exclusiveRewardItems = rewards.ToArray();
+            List<string> ids = new List<string>();
+            List<string> skippedNoId = new List<string>();
+            foreach (var reward in rewards)
+            {
+                if (string.IsNullOrEmpty(reward.itemID))
+                {
+                    skippedNoId.Add(reward.itemName);
+                    continue;
+                }
+                ids.Add(reward.itemID);
+            }
+
+            tbData.exclusiveRewardItemIDs = ids;
             EditorUtility.SetDirty(tbData);
-            Debug.Log($"[BulkItemGeneratorWindow] Assigned {rewards.Count} items to {tier} TreasureBoxData.");
+            Debug.Log($"[BulkItemGeneratorWindow] Assigned {ids.Count} items to {tier} TreasureBoxData." +
+                      (skippedNoId.Count > 0 ? $" Skipped {skippedNoId.Count} item(s) with no itemID: {string.Join(", ", skippedNoId)}" : string.Empty));
         }
         else
         {
@@ -724,18 +720,24 @@ public class BulkItemGeneratorWindow : EditorWindow
         // Display Assigned exclusive rewards list
         EditorGUILayout.Space();
         GUILayout.Label("Assigned Exclusive Rewards", EditorStyles.miniBoldLabel);
-        if (data.exclusiveRewardItems == null || data.exclusiveRewardItems.Length == 0)
+        if (data.exclusiveRewardItemIDs == null || data.exclusiveRewardItemIDs.Count == 0)
         {
             GUILayout.Label("No rewards assigned yet.", EditorStyles.miniLabel);
         }
         else
         {
-            for (int i = 0; i < data.exclusiveRewardItems.Length; i++)
+            TreasureBoxRewardItemsData rewardDatabase = TreasureBoxRewardItemsDataUtility.GetOrCreateDatabase();
+            for (int i = 0; i < data.exclusiveRewardItemIDs.Count; i++)
             {
-                var item = data.exclusiveRewardItems[i];
+                string id = data.exclusiveRewardItemIDs[i];
+                TreasureBoxRewardItemData item = TreasureBoxRewardItemsDataUtility.FindByID(rewardDatabase, id);
                 if (item != null)
                 {
                     EditorGUILayout.LabelField($"- {item.itemName} (ID: {item.itemID})");
+                }
+                else
+                {
+                    EditorGUILayout.LabelField($"- <unresolved> (ID: {id})");
                 }
             }
         }

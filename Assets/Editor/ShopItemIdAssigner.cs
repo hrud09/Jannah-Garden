@@ -7,43 +7,27 @@ public static class ShopItemIdAssigner
     [MenuItem("Tools/Shop/Assign Shop Item IDs")]
     public static void AssignIdsToAllShopItems()
     {
-        string[] guids = AssetDatabase.FindAssets("t:ShopItemData");
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
+
         int assigned = 0;
         int updated = 0;
 
         System.Collections.Generic.HashSet<string> usedIds = new System.Collections.Generic.HashSet<string>();
 
         // First collect existing IDs to avoid duplicates
-        foreach (string g in guids)
+        foreach (var item in ShopItemsDataUtility.AllItems(database))
         {
-            string path = AssetDatabase.GUIDToAssetPath(g);
-            var obj = AssetDatabase.LoadMainAssetAtPath(path);
-            if (obj == null) continue;
-            SerializedObject so = new SerializedObject(obj);
-            SerializedProperty prop = so.FindProperty("itemID");
-            if (prop != null && !string.IsNullOrEmpty(prop.stringValue))
+            if (!string.IsNullOrEmpty(item.itemID))
             {
-                usedIds.Add(prop.stringValue);
+                usedIds.Add(item.itemID);
             }
         }
 
-        foreach (string g in guids)
+        foreach (var item in ShopItemsDataUtility.AllItems(database))
         {
-            string path = AssetDatabase.GUIDToAssetPath(g);
-            var obj = AssetDatabase.LoadMainAssetAtPath(path);
-            if (obj == null) continue;
-
-            SerializedObject so = new SerializedObject(obj);
-            SerializedProperty prop = so.FindProperty("itemID");
-            if (prop == null)
-            {
-                // No itemID property found on this asset
-                assigned++;
-                continue;
-            }
 
             bool needSave = false;
-            string current = prop.stringValue;
+            string current = item.itemID;
 
             if (string.IsNullOrEmpty(current) || usedIds.Contains(current))
             {
@@ -53,10 +37,8 @@ public static class ShopItemIdAssigner
                     newId = System.Guid.NewGuid().ToString("N");
                 } while (usedIds.Contains(newId));
 
-                prop.stringValue = newId;
+                item.itemID = newId;
                 usedIds.Add(newId);
-                so.ApplyModifiedProperties();
-                EditorUtility.SetDirty(obj);
                 needSave = true;
             }
 
@@ -70,47 +52,31 @@ public static class ShopItemIdAssigner
 
         if (updated > 0)
         {
-            AssetDatabase.SaveAssets();
+            ShopItemsDataUtility.Save(database);
         }
 
-        Debug.Log($"[ShopItemIdAssigner] Processed {assigned} ShopItemData assets. Assigned/Updated IDs on {updated} assets.");
+        Debug.Log($"[ShopItemIdAssigner] Processed {assigned} ShopItemData entries. Assigned/Updated IDs on {updated} entries.");
     }
 
     [MenuItem("Tools/Shop/Assign Random Shop Item Unlock Levels")]
     public static void AssignRandomUnlockLevelsToAllShopItems()
     {
-        string[] guids = AssetDatabase.FindAssets("t:ShopItemData");
+        ShopItemsData database = ShopItemsDataUtility.GetOrCreateDatabase();
         int processed = 0;
 
-        foreach (string g in guids)
+        foreach (var item in ShopItemsDataUtility.AllItems(database))
         {
-            string path = AssetDatabase.GUIDToAssetPath(g);
-            var obj = AssetDatabase.LoadMainAssetAtPath(path);
-            if (obj == null) continue;
-
-            SerializedObject so = new SerializedObject(obj);
-            SerializedProperty prop = so.FindProperty("requiredXPLevel");
-            if (prop != null)
-            {
-                // Generate a random required XP level between 1 and 15 (inclusive)
-                int randomLevel = UnityEngine.Random.Range(1, 16);
-                prop.intValue = randomLevel;
-                so.ApplyModifiedProperties();
-                EditorUtility.SetDirty(obj);
-                processed++;
-            }
-            else
-            {
-                Debug.LogWarning($"[ShopItemIdAssigner] requiredXPLevel property not found on asset: {path}");
-            }
+            // Generate a random required XP level between 1 and 15 (inclusive)
+            item.requiredXPLevel = UnityEngine.Random.Range(1, 16);
+            processed++;
         }
 
         if (processed > 0)
         {
-            AssetDatabase.SaveAssets();
+            ShopItemsDataUtility.Save(database);
         }
 
-        Debug.Log($"[ShopItemIdAssigner] Assigned random requiredXPLevel values (1-15) to {processed} ShopItemData assets.");
+        Debug.Log($"[ShopItemIdAssigner] Assigned random requiredXPLevel values (1-15) to {processed} ShopItemData entries.");
     }
 }
 #endif

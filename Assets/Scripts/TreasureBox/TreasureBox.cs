@@ -28,6 +28,7 @@ public class TreasureBox : MonoBehaviour
 
     private Quaternion _initialLidRot;
     private Vector3 _initialScale;
+    private Camera _cachedCamera;
 
     private void Awake()
     {
@@ -61,10 +62,10 @@ public class TreasureBox : MonoBehaviour
         // Make the canvas face the camera
         if (treasureBoxCanvas != null)
         {
-            Camera mainCamera = Camera.main;
-            if (mainCamera != null)
+            if (_cachedCamera == null) _cachedCamera = Camera.main;
+            if (_cachedCamera != null)
             {
-                treasureBoxCanvas.LookAt(mainCamera.transform);
+                treasureBoxCanvas.LookAt(_cachedCamera.transform);
             }
         }
     }

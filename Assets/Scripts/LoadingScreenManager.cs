@@ -94,6 +94,23 @@ public class LoadingScreenManager : MonoBehaviour
     public Vector2 logoSize = new Vector2(180f, 180f);
 
     // ─────────────────────────────────────────────
+    //  Inspector — Company / Publisher Logo (splash)
+    // ─────────────────────────────────────────────
+    [Header("Company Logo (Splash)")]
+    [Tooltip("RectTransform of the company/publisher logo shown before the loading screen appears. " +
+             "If assigned, it is enabled and faded in, held, then faded out before the loading " +
+             "screen shows and the scene starts loading. Leave null to skip this step.")]
+    public RectTransform companyLogoRect;
+
+    [Tooltip("Duration of the company logo's fade in / fade out animation.")]
+    public float companyLogoFadeDuration = 0.6f;
+
+    [Tooltip("Seconds the company logo stays fully visible before fading out.")]
+    public float companyLogoHoldTime = 1.2f;
+
+    private CanvasGroup _companyLogoCanvasGroup;
+
+    // ─────────────────────────────────────────────
     //  Inspector — Timing
     // ─────────────────────────────────────────────
     [Header("Timing")]
@@ -221,6 +238,14 @@ public class LoadingScreenManager : MonoBehaviour
 
         // Start hidden (alpha 0, panel inactive)
         HideImmediate();
+
+        // Company logo starts hidden too — it is only shown by PlayCompanyLogoThenLoad().
+        if (companyLogoRect != null)
+        {
+            _companyLogoCanvasGroup = GetOrAddCanvasGroup(companyLogoRect);
+            _companyLogoCanvasGroup.alpha = 0f;
+            companyLogoRect.gameObject.SetActive(false);
+        }
     }
 
     private void FindUIReferences()
@@ -297,10 +322,61 @@ public class LoadingScreenManager : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         if (isInitScene || currentSceneName == "Init Scene" || SceneManager.GetActiveScene().buildIndex == 0)
         {
-            // Show loading screen immediately and begin loading
-            ShowImmediate();
-            LoadScene(sceneToLoadOnInit);
+            StartCoroutine(PlayCompanyLogoThenLoad(sceneToLoadOnInit));
         }
+    }
+
+    /// <summary>
+    /// Plays the company logo splash (fade in, hold, fade out) if one is assigned,
+    /// then shows the loading screen and begins loading the target scene.
+    /// </summary>
+    private IEnumerator PlayCompanyLogoThenLoad(string sceneName)
+    {
+        if (companyLogoRect != null)
+        {
+            yield return StartCoroutine(PlayCompanyLogo());
+        }
+
+        // Show loading screen immediately and begin loading
+        ShowImmediate();
+        LoadScene(sceneName);
+    }
+
+    /// <summary>Enables the company logo and animates it: fade in, hold, fade out.</summary>
+    private IEnumerator PlayCompanyLogo()
+    {
+        companyLogoRect.gameObject.SetActive(true);
+        _companyLogoCanvasGroup.alpha = 0f;
+
+        float t = 0f;
+        while (t < companyLogoFadeDuration)
+        {
+            t += Time.unscaledDeltaTime;
+            _companyLogoCanvasGroup.alpha = Mathf.SmoothStep(0f, 1f, t / companyLogoFadeDuration);
+            yield return null;
+        }
+        _companyLogoCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSecondsRealtime(companyLogoHoldTime);
+
+        t = 0f;
+        while (t < companyLogoFadeDuration)
+        {
+            t += Time.unscaledDeltaTime;
+            _companyLogoCanvasGroup.alpha = Mathf.SmoothStep(1f, 0f, t / companyLogoFadeDuration);
+            yield return null;
+        }
+        _companyLogoCanvasGroup.alpha = 0f;
+
+        companyLogoRect.gameObject.SetActive(false);
+    }
+
+    /// <summary>Returns the RectTransform's CanvasGroup, adding one if it doesn't already have it.</summary>
+    private static CanvasGroup GetOrAddCanvasGroup(RectTransform rect)
+    {
+        CanvasGroup group = rect.GetComponent<CanvasGroup>();
+        if (group == null) group = rect.gameObject.AddComponent<CanvasGroup>();
+        return group;
     }
 
     private void Update()
@@ -383,7 +459,7 @@ public class LoadingScreenManager : MonoBehaviour
         }
 
         // Update status text
-        SetStatusText(LocalizationManager.Instance.Get("loading.base_scene"));
+        SetStatusText(LocalizationManager.Instance.Get("loading.base_scene_named", GetDisplaySceneName(sceneName)));
 
         // Pick a random tip
         if (loadingTips != null && loadingTips.Length > 0 && tipsText != null)
@@ -431,6 +507,8 @@ public class LoadingScreenManager : MonoBehaviour
             }
             else
             {
+                SetStatusText(LocalizationManager.Instance.Get("loading.activating_scene", GetDisplaySceneName(sceneName)));
+
                 AsyncOperation activateOp = newAddressableHandle.Result.ActivateAsync();
                 while (!activateOp.isDone)
                 {
@@ -477,7 +555,6 @@ public class LoadingScreenManager : MonoBehaviour
         // 2. Load sub-scenes additively if defined
         if (hasSubScenes)
         {
-            SetStatusText(LocalizationManager.Instance.Get("loading.environments"));
             List<AsyncOperation> subSceneOps = new List<AsyncOperation>();
 
             // Start all additive loads
@@ -490,21 +567,32 @@ public class LoadingScreenManager : MonoBehaviour
                 }
             }
 
-            // Monitor progress of all additive sub-scenes
+            // Monitor progress of all additive sub-scenes, updating the status text with
+            // whichever one is still loading so the player sees what's actually happening
+            // instead of a single static "Loading environments..." message the whole time.
             bool allDone = false;
             while (!allDone)
             {
                 allDone = true;
                 float totalSubProgress = 0f;
+                string currentSubScene = null;
 
-                foreach (var subOp in subSceneOps)
+                for (int i = 0; i < subSceneOps.Count; i++)
                 {
+                    AsyncOperation subOp = subSceneOps[i];
                     totalSubProgress += subOp.progress; // ranges from 0 to 1
                     if (!subOp.isDone)
                     {
                         allDone = false;
+                        if (currentSubScene == null)
+                        {
+                            currentSubScene = activeGroup.subScenes[i];
+                        }
                     }
                 }
+
+                SetStatusText(LocalizationManager.Instance.Get("loading.environment_named",
+                    GetDisplaySceneName(currentSubScene ?? activeGroup.baseSceneName)));
 
                 float avgSubProgress = subSceneOps.Count > 0 ? (totalSubProgress / subSceneOps.Count) : 1f;
                 _targetProgress = 0.5f + (avgSubProgress * 0.5f);
@@ -667,6 +755,26 @@ public class LoadingScreenManager : MonoBehaviour
         {
             Debug.LogWarning($"[LoadingScreenManager] Failed to set text on '{field.name}': {e.Message}");
         }
+    }
+
+    /// <summary>Turns a raw scene name (e.g. "OuterGarden_Art") into a friendlier display name ("Outer Garden Art")
+    /// for the status text, since scene names are internal identifiers rather than authored copy.</summary>
+    private static string GetDisplaySceneName(string sceneName)
+    {
+        if (string.IsNullOrEmpty(sceneName)) return sceneName;
+
+        string spaced = sceneName.Replace('_', ' ');
+        System.Text.StringBuilder sb = new System.Text.StringBuilder(spaced.Length + 8);
+        for (int i = 0; i < spaced.Length; i++)
+        {
+            char c = spaced[i];
+            if (i > 0 && char.IsUpper(c) && char.IsLower(spaced[i - 1]))
+            {
+                sb.Append(' ');
+            }
+            sb.Append(c);
+        }
+        return sb.ToString();
     }
 
     /// <summary>Whether the given scene name should be loaded via Addressables instead of SceneManager.</summary>

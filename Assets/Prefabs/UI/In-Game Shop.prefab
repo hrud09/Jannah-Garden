@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   key: shop.tab_inventory_label
-  leftToRightAlignment: 257
 --- !u!1 &408876420730932533
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   key: shop.tab_treasure_label
-  leftToRightAlignment: 257
 --- !u!1 &427484985333857727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,92 +2337,8 @@ MonoBehaviour:
   unselectedTabColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.8}
   useCategoryAccentColors: 1
   tierVisuals: []
-  shopItemDatas:
-  - {fileID: 11400000, guid: ed8cc40a38d52b47e1b2b87759274a4c, type: 2}
-  - {fileID: 11400000, guid: 52eb14c48690c78601b49032aabe3cc8, type: 2}
-  - {fileID: 11400000, guid: 76c42f66f3c44f836821865763d8de9a, type: 2}
-  - {fileID: 11400000, guid: 602092c4b6600513cde05810d013f152, type: 2}
-  - {fileID: 11400000, guid: 6d527d576b912cb51e466d4cac6c0a68, type: 2}
-  - {fileID: 11400000, guid: e4c21aa1ca035681a41f2a59de02bf2a, type: 2}
-  - {fileID: 11400000, guid: 61fc911e5cb7f48bc85f02b9a314164b, type: 2}
-  - {fileID: 11400000, guid: dc124560be94ce2babc4c82de3f58e43, type: 2}
-  - {fileID: 11400000, guid: 6c6200f3ed16ca1cd6e5fc4156716f7f, type: 2}
-  - {fileID: 11400000, guid: e88a3a5998832f3eb7cf91625c2280d2, type: 2}
-  - {fileID: 11400000, guid: e13bd0e5aebbc8b723825f7334e8f7a2, type: 2}
-  - {fileID: 11400000, guid: 5ad6d135109b0feea4579809af979d00, type: 2}
-  - {fileID: 11400000, guid: bc9bd5348ff40074c14bee82d8eaafe4, type: 2}
-  - {fileID: 11400000, guid: 1b75b315cbc3c38dbbfb0fedd7176fcc, type: 2}
-  - {fileID: 11400000, guid: db8c9e0cd97f50f7114fc77f77df32b7, type: 2}
-  - {fileID: 11400000, guid: 530979361a1d391c2d1924619700f100, type: 2}
-  - {fileID: 11400000, guid: 6edc2e2c08f8481561118d930991af32, type: 2}
-  - {fileID: 11400000, guid: 1d4e5a28f97120a3f902c4686dc4afa8, type: 2}
-  - {fileID: 11400000, guid: fbebca35af4b8ecab0ef22b0bd9830d4, type: 2}
-  - {fileID: 11400000, guid: 60fdf1f5c683f6401ff6b1c8194f04c3, type: 2}
-  - {fileID: 11400000, guid: 4dc2cfdd856b4b9c6a23e350929ed3a0, type: 2}
-  - {fileID: 11400000, guid: daeff6d9d27c8cbee7c54c0abc18f3c5, type: 2}
-  - {fileID: 11400000, guid: 9fe89d9e82301d82ba2c2c24443e9693, type: 2}
-  - {fileID: 11400000, guid: b8f9c90421ae2755d81b41a45cffb0cb, type: 2}
-  - {fileID: 11400000, guid: 961a71527efa8399d260a9686e853c55, type: 2}
-  - {fileID: 11400000, guid: 904dafb375e4d68f57263e44765f556f, type: 2}
-  - {fileID: 11400000, guid: b479cfc9492cc00431c0ff93d338cfe7, type: 2}
-  - {fileID: 11400000, guid: 8a4d9597ba2c7427f964469b89f49f04, type: 2}
-  - {fileID: 11400000, guid: e08856092151b8fcb61ec76aee9f4caa, type: 2}
-  - {fileID: 11400000, guid: 8092fcfd35dbbf7a3755750af9b3f041, type: 2}
-  - {fileID: 11400000, guid: a91e186a8c533a718fbac7189eb49bdf, type: 2}
-  - {fileID: 11400000, guid: 6eec5ba2636dfdb5bf53099a6ab1fc1d, type: 2}
-  - {fileID: 11400000, guid: bd745eca97acbd7d027043dfd36587ec, type: 2}
-  - {fileID: 11400000, guid: c613d18bbfb653bea2bfd3adb1e68011, type: 2}
-  - {fileID: 11400000, guid: 8d5cb670a685c1f19005703f17e94d98, type: 2}
-  - {fileID: 11400000, guid: 1467678a781a3bfd5aa1915cb0a246ce, type: 2}
-  - {fileID: 11400000, guid: 4ba9e0aa485388b0adeb95a19839d272, type: 2}
-  - {fileID: 11400000, guid: 03285187b781a6012c56ddc4e092ed73, type: 2}
-  - {fileID: 11400000, guid: da47ebe89d3ef4d3ef6a0b7eb5b2e60f, type: 2}
-  - {fileID: 11400000, guid: ebe7068ccc4f3970219fb30d92e0b503, type: 2}
-  - {fileID: 11400000, guid: d0a48049e5ebcd6daefb6fdfab2f4029, type: 2}
-  - {fileID: 11400000, guid: 2732b0a478732c732b7e909c1af907f8, type: 2}
-  - {fileID: 11400000, guid: 9dfd855d1fef0a743cafc29b21c64e48, type: 2}
-  - {fileID: 11400000, guid: f90e6bacd1b7e49cd1184e7dac88bccd, type: 2}
-  - {fileID: 11400000, guid: 4ba843b87fe98c0b8d3203d7124c373c, type: 2}
-  - {fileID: 11400000, guid: 139cfae15a637b1e688ca84ca90bd5f1, type: 2}
-  - {fileID: 11400000, guid: 31e0849719ca702bbfb6fddb87211311, type: 2}
-  - {fileID: 11400000, guid: a7cae5c428626a742d6032130e732a7f, type: 2}
-  - {fileID: 11400000, guid: fd4055f360429f0b8b641f0fc4bb7dda, type: 2}
-  - {fileID: 11400000, guid: 9c351cbebbd5d8bde9fa6720de069eac, type: 2}
-  - {fileID: 11400000, guid: 89654dcbd0544dc5560f506e1776b204, type: 2}
-  - {fileID: 11400000, guid: 161b5ffd642fbfd3f668dad9d18e4271, type: 2}
-  - {fileID: 11400000, guid: 6dfdc94e91694916206f8b20d6fc79b9, type: 2}
-  - {fileID: 11400000, guid: b0fb8f8cb440ea847be23ed6c46f2542, type: 2}
-  - {fileID: 11400000, guid: 75eed12ce24698d53abf660f99c8d615, type: 2}
-  - {fileID: 11400000, guid: ab0ea06db7b908a2dbfa9b86ebc7cc98, type: 2}
-  - {fileID: 11400000, guid: 7bf2640eec64dad2b94a45e29344674f, type: 2}
-  - {fileID: 11400000, guid: cdf218833ce05b6b27ed1b00e5f282c4, type: 2}
-  - {fileID: 11400000, guid: 66c88245c16254cb8cf3dc4c94fa7e7c, type: 2}
-  - {fileID: 11400000, guid: 2c891c718b81be4e82fb78b4e6ce55d3, type: 2}
-  - {fileID: 11400000, guid: c6d6fc35831d591baeba7bfe424b08a0, type: 2}
-  - {fileID: 11400000, guid: 0f19645d925717d0a3fff2a511c88e2e, type: 2}
-  - {fileID: 11400000, guid: 60e781c52ad887967d994179e56df800, type: 2}
-  - {fileID: 11400000, guid: 6b6e5b178bfddf7a7b251eac73f4f867, type: 2}
-  - {fileID: 11400000, guid: c1c0e2fb260dfd042bc2cb9eaf4cbb2e, type: 2}
-  - {fileID: 11400000, guid: 61541e0546bc5a34d88e68f726508e50, type: 2}
-  - {fileID: 11400000, guid: e8acf11e868cf2347bb6e547da4fd00f, type: 2}
-  inventoryItemDatas:
-  - {fileID: 11400000, guid: be957367a8c8c0e478615ee354e66b9d, type: 2}
-  - {fileID: 11400000, guid: 52fe6ef850a228c4fac1995a2074b285, type: 2}
-  - {fileID: 11400000, guid: ef3158b3dfa0f414e978b38edf926c03, type: 2}
-  - {fileID: 11400000, guid: a857127fc947a5640a896a91fd6cda19, type: 2}
-  - {fileID: 11400000, guid: badac7081050cb04fa93c4a917ecd27a, type: 2}
-  - {fileID: 11400000, guid: 88b550604c1df264fbbfe09d784a3b5b, type: 2}
-  - {fileID: 11400000, guid: ac06539aeec6369429ff3f80a8051ff1, type: 2}
-  - {fileID: 11400000, guid: e5f93f3267a39d740b07f0048e1d6bc6, type: 2}
-  - {fileID: 11400000, guid: d432a7a4161988646b6dfd704fe58654, type: 2}
-  - {fileID: 11400000, guid: f989471d2469f834e875616c9ba43f2f, type: 2}
-  - {fileID: 11400000, guid: 6c21185091ac3694286f6af60c135a29, type: 2}
-  - {fileID: 11400000, guid: b4f68fea4dbd4594fac305c56d297141, type: 2}
-  - {fileID: 11400000, guid: 9a3a11cbdcf52c94a8191bbf6760a4c5, type: 2}
-  - {fileID: 11400000, guid: af705d83f4add934795a87e1af851186, type: 2}
-  - {fileID: 11400000, guid: 363dd96e46f36994088024871144fdb2, type: 2}
-  - {fileID: 11400000, guid: 2a84836058e7e2845961e1d77873d790, type: 2}
-  - {fileID: 11400000, guid: f0dddf5b2a64b0542b88936fb0489f3a, type: 2}
+  shopItemsDatabase: {fileID: 11400000, guid: e5b7bb12ea581344d8e0541e41b62933, type: 2}
+  inventoryItemsDatabase: {fileID: 11400000, guid: 291e9c1c7f1529745ae487ce5ddfca95, type: 2}
   placementManager: {fileID: 0}
 --- !u!1 &4705011922667004107
 GameObject:
@@ -4228,7 +4142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   key: shop.tab_shop_label
-  leftToRightAlignment: 257
 --- !u!1 &8969244912254354685
 GameObject:
   m_ObjectHideFlags: 0
