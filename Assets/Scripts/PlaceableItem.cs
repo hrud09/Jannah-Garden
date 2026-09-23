@@ -34,15 +34,105 @@ public class PlaceableItem : MonoBehaviour
     public string sourceItemId;
 
     [Header("UI References (Optional)")]
-    private TMP_Text timerText;
     public GameObject timerHolder;
+
+    /// <summary>The <see cref="TimerHoldingPlank"/> on <see cref="timerHolder"/>, if any — supplies the
+    /// signboard text and the timer icon directly rather than searching the hierarchy for them.</summary>
+    private TimerHoldingPlank timerHoldingPlank;
 
     /// <summary>Local offset from the root's ground position applied when pinning <see cref="timerHolder"/>
     /// to the ground — lets the signboard sit forward/aside/embedded rather than exactly at the root.
     /// Configured centrally on <see cref="ItemPlacementManager.timerHolderGroundOffset"/> rather than
-    /// per-prefab, so every placed item's signboard uses the same offset.</summary>
+    /// per-prefab, so every placed item's signboard uses the same offset. Only used as a fallback until
+    /// <see cref="SetTimerAreaXZFromFenceBarrier"/> supplies a real X/Z to pin to.</summary>
     private Vector3 TimerHolderGroundOffset =>
         ItemPlacementManager.Instance != null ? ItemPlacementManager.Instance.timerHolderGroundOffset : Vector3.zero;
+
+    // World X/Z to pin timerHolder to, taken from the FenceBarrier's timerSignBoardReferenceTransform
+    // (see SetTimerAreaXZFromFenceBarrier) — set once, right before the barrier spawns, so both the
+    // drop-in animation and the steady-state pin use it from the very first frame. Y always comes from
+    // the root's own ground level, never from this.
+    private bool _hasTimerAreaXZOverride;
+    private float _timerAreaOverrideX;
+    private float _timerAreaOverrideZ;
+
+    /// <summary>
+    /// Pins where <see cref="timerHolder"/>'s X/Z will settle to <paramref name="referenceTransform"/>'s
+    /// current X/Z (its own Y is ignored — the signboard always sits at ground level). Called once by
+    /// <see cref="ItemPlacementManager"/> right after it spawns this item's FenceBarrier, before
+    /// <see cref="Initialize"/>, so the plant-in animation targets the right spot from its first frame.
+    /// Captured as plain floats rather than keeping the Transform live, since the FenceBarrier is pooled
+    /// and despawns (and can be reused elsewhere) well before this item finishes growing.
+    /// </summary>
+    public void SetTimerAreaXZFromFenceBarrier(Transform referenceTransform)
+    {
+        if (referenceTransform == null) return;
+
+        _hasTimerAreaXZOverride = true;
+        _timerAreaOverrideX = referenceTransform.position.x;
+        _timerAreaOverrideZ = referenceTransform.position.z;
+    }
+
+    /// <summary>How far along the root-to-signboard line <see cref="TimerHolderGroundPosition"/> settles,
+    /// where 1 is the raw FenceBarrier/offset spot and 0 is right on top of the root. Halving it pulls the
+    /// plank in to sit 50% closer to the placed item than that raw spot.</summary>
+    private const float TimerHolderDistanceFraction = 0.5f;
+
+    /// <summary>Where <see cref="timerHolder"/> should rest: the FenceBarrier-supplied X/Z when available,
+    /// otherwise the legacy offset-based spot — pulled in to <see cref="TimerHolderDistanceFraction"/> of
+    /// the way from the root, then Y re-sampled from the actual terrain/grid height at that X/Z (not just
+    /// copied from the root) so the signboard stays grounded even when its X/Z sits off to the side of the
+    /// root on sloped ground.</summary>
+    private Vector3 TimerHolderGroundPosition
+    {
+        get
+        {
+            Vector3 root = transform.position;
+            Vector3 p;
+            if (_hasTimerAreaXZOverride)
+            {
+                p = root;
+                p.x = _timerAreaOverrideX;
+                p.z = _timerAreaOverrideZ;
+            }
+            else
+            {
+                p = root + transform.rotation * TimerHolderGroundOffset;
+            }
+
+            p.x = Mathf.Lerp(root.x, p.x, TimerHolderDistanceFraction);
+            p.z = Mathf.Lerp(root.z, p.z, TimerHolderDistanceFraction);
+
+            p.y = SampleGroundHeight(p);
+            return p;
+        }
+    }
+
+    /// <summary>Horizontal direction the signboard should face: straight out from the root/item position
+    /// towards wherever <see cref="TimerHolderGroundPosition"/> sits, so it always reads as planted facing
+    /// away from the item rather than towards it. Falls back to the item's own forward when the signboard
+    /// sits right on top of the root (no meaningful direction to derive).</summary>
+    private Vector3 TimerHolderOutwardDirection
+    {
+        get
+        {
+            Vector3 groundPos = TimerHolderGroundPosition;
+            Vector3 dir = new Vector3(groundPos.x - transform.position.x, 0f, groundPos.z - transform.position.z);
+
+            return dir.sqrMagnitude > 0.0001f ? -dir.normalized : -transform.forward;
+        }
+    }
+
+    private static float SampleGroundHeight(Vector3 world)
+    {
+        if (GardenGrid.Instance != null && GardenGrid.Instance.IsReady)
+        {
+            return GardenGrid.Instance.SampleHeight(world);
+        }
+
+        Terrain terrain = Terrain.activeTerrain;
+        return terrain != null ? terrain.SampleHeight(world) + terrain.transform.position.y : world.y;
+    }
 
     [Header("Timer Area Planting Animation")]
     /// <summary>How high above the ground the signboard starts its drop.</summary>
@@ -98,6 +188,11 @@ public class PlaceableItem : MonoBehaviour
 
     /// <summary>True once the placement timer has run out and the item is fully grown.</summary>
     public bool IsFullyPlaced => remainingDuration <= 0f;
+
+    /// <summary>Fired exactly once, the moment <see cref="remainingDuration"/> reaches zero while tracking
+    /// (never for an item that was already fully grown when placed - see <see cref="alreadyCompletedOnStart"/>).
+    /// Used by <see cref="ItemPlacementManager"/> to take down the fence barrier around a freshly-placed item.</summary>
+    public event System.Action OnFullyPlaced;
 
     private Vector3 initialScale;
     public Vector3 InitialScale => initialScale;
@@ -158,7 +253,7 @@ public class PlaceableItem : MonoBehaviour
 
         if (timerHolder)
         {
-            timerText = timerHolder.GetComponentInChildren<TMP_Text>(true);
+            timerHoldingPlank = timerHolder.GetComponent<TimerHoldingPlank>();
 
             // The signboard/timer must not be visible on the ghost preview - it only appears once
             // the item is actually placed (Start/Initialize turn it back on via ApplyStateVisuals).
@@ -288,47 +383,24 @@ public class PlaceableItem : MonoBehaviour
     /// </summary>
     public void PreviewTimer(float duration)
     {
-        // The floating timer UI is created in Start(), which hasn't run yet
-        // when this is called on a freshly instantiated object, so we need to
-        // bootstrap the text reference ourselves if it's missing.
-        if (timerText == null)
+        // Awake (which resolves timerHoldingPlank) has already run by the time this is called on a
+        // freshly instantiated object, but fall back to a lookup just in case timerHolder was assigned
+        // after Awake.
+        if (timerHoldingPlank == null && timerHolder != null)
         {
-            timerText = GetComponentInChildren<TMPro.TMP_Text>(true);
+            timerHoldingPlank = timerHolder.GetComponent<TimerHoldingPlank>();
         }
 
-        if (timerText == null)
-        {
-            CreateFloatingTimerUI();
-        }
-
-        if (timerText != null)
+        if (timerHoldingPlank != null && timerHoldingPlank.signBoardText != null)
         {
             int minutes = Mathf.FloorToInt(duration / 60f);
             int seconds = Mathf.FloorToInt(duration % 60f);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerHoldingPlank.signBoardText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
 
     private void Start()
     {
-        // Make the timerHolder face the camera
-        if (timerHolder != null && timerHolder.GetComponent<Billboard>() == null)
-        {
-            timerHolder.AddComponent<Billboard>();
-        }
-
-        // Auto-detect a Text Mesh Pro text field in children if not assigned
-        if (timerText == null)
-        {
-            timerText = GetComponentInChildren<TMP_Text>(true);
-        }
-
-        // Dynamically create a floating world-space billboard timer if missing
-        if (timerText == null)
-        {
-            CreateFloatingTimerUI();
-        }
-
         hasStarted = true;
         ApplyStateVisuals();
     }
@@ -359,6 +431,13 @@ public class PlaceableItem : MonoBehaviour
         {
             if (timerHolder != null)
             {
+                // A pooled instance may still have its icon switched off from a previous item that
+                // finished growing - a fresh countdown always starts with it back on.
+                if (timerHoldingPlank != null && timerHoldingPlank.timerIcon != null)
+                {
+                    timerHoldingPlank.timerIcon.SetActive(true);
+                }
+
                 PlantTimerHolder();
             }
 
@@ -369,41 +448,6 @@ public class PlaceableItem : MonoBehaviour
             UpdateSaturation(0f, -1);
             SetScaleMultiplier(Mathf.Lerp(0.2f, 1f, timeRatio));
         }
-    }
-
-    private void CreateFloatingTimerUI()
-    {
-        // Create Canvas container
-        GameObject canvasGo = new GameObject("FloatingTimerCanvas");
-        canvasGo.transform.SetParent(this.transform);
-        canvasGo.transform.localPosition = new Vector3(0, 3.5f, 0); // Positioned above the model
-        canvasGo.transform.localRotation = Quaternion.identity;
-
-        Canvas canvas = canvasGo.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.WorldSpace;
-
-        CanvasScaler scaler = canvasGo.AddComponent<CanvasScaler>();
-        scaler.dynamicPixelsPerUnit = 10;
-
-        RectTransform canvasRect = canvasGo.GetComponent<RectTransform>();
-        canvasRect.sizeDelta = new Vector2(3, 1);
-
-        // Create TMP Text container
-        GameObject textGo = new GameObject("TimerText");
-        textGo.transform.SetParent(canvasGo.transform);
-        textGo.transform.localPosition = Vector3.zero;
-        textGo.transform.localRotation = Quaternion.identity;
-
-        timerText = textGo.AddComponent<TextMeshPro>();
-        timerText.fontSize = 4;
-        timerText.alignment = TextAlignmentOptions.Center;
-        timerText.color = Color.yellow;
-
-        // Apply a Billboard effect to rotate towards the camera
-        textGo.AddComponent<Billboard>();
-
-        // Store the canvas in timerHolder so it can be disabled later
-        timerHolder = canvasGo;
     }
 
     private void Update()
@@ -420,21 +464,30 @@ public class PlaceableItem : MonoBehaviour
             UpdateSaturation(1f, -1);
             SetScaleMultiplier(1f);
 
-            if (timerText != null)
+            // Once fully grown, the signboard stays up but switches from a countdown to naming the
+            // item, and the clock icon goes away since there's nothing left to count down.
+            if (timerHoldingPlank != null)
             {
-                timerText.text = LocalizationManager.Instance.Get("placement.completed_exclaim");
+                if (timerHoldingPlank.signBoardText != null)
+                {
+                    timerHoldingPlank.signBoardText.text = prefabName;
+                }
+
+                if (timerHoldingPlank.timerIcon != null)
+                {
+                    timerHoldingPlank.timerIcon.SetActive(false);
+                }
             }
 
-            // Start coroutine to hide the timer holder after 5 seconds
-            StartCoroutine(DisableTimerHolderAfterDelay(5f));
+            OnFullyPlaced?.Invoke();
         }
         else
         {
-            if (timerText != null)
+            if (timerHoldingPlank != null && timerHoldingPlank.signBoardText != null)
             {
                 int minutes = Mathf.FloorToInt(remainingDuration / 60f);
                 int seconds = Mathf.FloorToInt(remainingDuration % 60f);
-                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+                timerHoldingPlank.signBoardText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
 
             // Update stepped saturation
@@ -481,9 +534,8 @@ public class PlaceableItem : MonoBehaviour
         // animation it inherits from.
         if (timerHolder == null || _isPlantingTimerHolder) return;
 
-        // Rotated by the root so the offset stays meaningful (forward/aside) regardless of the
-        // item's placement facing, then anchored to ground level (the root's own Y).
-        timerHolder.transform.position = transform.position + transform.rotation * TimerHolderGroundOffset;
+        timerHolder.transform.position = TimerHolderGroundPosition;
+        timerHolder.transform.rotation = Quaternion.LookRotation(TimerHolderOutwardDirection, Vector3.up);
     }
 
     /// <summary>(Re)starts the drop-and-plant animation for <see cref="timerHolder"/>, activating it first
@@ -519,6 +571,9 @@ public class PlaceableItem : MonoBehaviour
         Transform t = timerHolder.transform;
         Vector3 baseLocalScale = t.localScale;
 
+        // Face outward from the item for the whole drop, not just once it settles.
+        t.rotation = Quaternion.LookRotation(TimerHolderOutwardDirection, Vector3.up);
+
         // The swing direction comes from the item's own facing so the swoop always reads as
         // "in front of / to the side of" the item rather than a fixed world axis.
         Vector3 swingDir = transform.rotation * Vector3.back;
@@ -529,7 +584,7 @@ public class PlaceableItem : MonoBehaviour
             elapsed += Time.deltaTime;
             float u = Mathf.Clamp01(elapsed / timerPlantFallDuration);
 
-            Vector3 groundPos = transform.position + transform.rotation * TimerHolderGroundOffset;
+            Vector3 groundPos = TimerHolderGroundPosition;
 
             // Vertical: eases in hard (u^3) so it lingers up high then slams down at the end.
             float fallT = u * u * u;
@@ -545,7 +600,7 @@ public class PlaceableItem : MonoBehaviour
             yield return null;
         }
 
-        Vector3 finalGroundPos = transform.position + transform.rotation * TimerHolderGroundOffset;
+        Vector3 finalGroundPos = TimerHolderGroundPosition;
         t.position = finalGroundPos;
 
         // Impact squash: flatten on the way down, rebound past neutral, then settle - the stake
@@ -571,17 +626,6 @@ public class PlaceableItem : MonoBehaviour
 
         _isPlantingTimerHolder = false;
         _timerPlantRoutine = null;
-    }
-
-    private System.Collections.IEnumerator DisableTimerHolderAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        if (timerHolder != null)
-        {
-            StopPlantingRoutine();
-            timerHolder.SetActive(false);
-        }
     }
 
     /// <summary>
@@ -695,25 +739,5 @@ public class PlaceableItem : MonoBehaviour
                 }
             }
         }
-    }
-}
-
-/// <summary>
-/// Simple helper behavior to rotate text towards the camera.
-/// </summary>
-public class Billboard : MonoBehaviour
-{
-    private Camera _cachedCamera;
-
-    private void LateUpdate()
-    {
-        if (_cachedCamera == null)
-        {
-            _cachedCamera = Camera.main;
-            if (_cachedCamera == null) return;
-        }
-
-        transform.LookAt(transform.position + _cachedCamera.transform.rotation * Vector3.forward,
-                         _cachedCamera.transform.rotation * Vector3.up);
     }
 }

@@ -217,6 +217,20 @@ public class ItemPlacementManager : MonoBehaviour
     private bool _cloudPushPending;
     private GardenStatePayload _deferredCloudState;
 
+    //Fencing Management
+    public FenceBarrier fenceBarrierPrefab;
+
+    // One barrier per item still growing, keyed by its uniqueId - spawned when the item is placed,
+    // despawned the moment its placement timer finishes (or the item leaves the garden early via
+    // relocate/return). See SpawnFenceBarrierFor/DespawnFenceBarrierFor.
+    private readonly Dictionary<string, FenceBarrierEntry> _activeFenceBarriers = new Dictionary<string, FenceBarrierEntry>();
+
+    private struct FenceBarrierEntry
+    {
+        public FenceBarrier barrier;
+        public System.Action unsubscribe;
+    }
+
     /// <summary>
     /// True while an item is following the crosshair and waiting to be confirmed, or while its prefab is
     /// still downloading (before the ghost even exists).
@@ -705,6 +719,59 @@ public class ItemPlacementManager : MonoBehaviour
         if (placeButton != null) placeButton.interactable = CanConfirmPlacement;
     }
 
+    /// <summary>
+    /// Spawns the barrier that surrounds a newly-placed item while it grows - a no-op if no
+    /// <see cref="fenceBarrierPrefab"/> is assigned or the item is already fully grown (e.g. relocating
+    /// an item whose timer already finished). Removes itself the moment <paramref name="uniqueId"/>'s
+    /// item finishes growing, or earlier if the item leaves the garden first (see <see cref="RemoveFromGarden"/>).
+    ///
+    /// Must run before <see cref="PlaceableItem.Initialize"/> on <paramref name="placeable"/>: it hands the
+    /// barrier's <see cref="FenceBarrier.ClosestTimerSignBoardReferenceTransform"/> X/Z over to the item so its
+    /// plant-in animation targets the right spot from its very first frame instead of the old offset-based
+    /// one and then snapping. <paramref name="uniqueId"/> and <paramref name="alreadyFullyGrown"/> are
+    /// therefore taken as parameters rather than read off <paramref name="placeable"/>, which hasn't been
+    /// (re)initialized yet at call time.
+    /// </summary>
+    private void SpawnFenceBarrierFor(PlaceableItem placeable, string uniqueId, bool alreadyFullyGrown)
+    {
+        if (fenceBarrierPrefab == null || placeable == null || alreadyFullyGrown) return;
+
+        DespawnFenceBarrierFor(uniqueId); // safety net against a stale leftover entry
+
+        GameObject barrierObject = Objectpool.Instance.Spawn(
+            fenceBarrierPrefab.gameObject, placeable.transform.position, placeable.transform.rotation);
+        FenceBarrier barrier = barrierObject.GetComponent<FenceBarrier>();
+        if (barrier == null)
+        {
+            Objectpool.Instance.Despawn(barrierObject);
+            return;
+        }
+
+        placeable.SetTimerAreaXZFromFenceBarrier(barrier.ClosestTimerSignBoardReferenceTransform);
+
+        void HandleFullyPlaced() => DespawnFenceBarrierFor(uniqueId);
+        placeable.OnFullyPlaced += HandleFullyPlaced;
+
+        _activeFenceBarriers[uniqueId] = new FenceBarrierEntry
+        {
+            barrier = barrier,
+            unsubscribe = () => placeable.OnFullyPlaced -= HandleFullyPlaced,
+        };
+
+        barrier.PlayDropInAnimation();
+    }
+
+    /// <summary>Removes the barrier standing around <paramref name="uniqueId"/>'s item, if any.</summary>
+    private void DespawnFenceBarrierFor(string uniqueId)
+    {
+        if (uniqueId == null) return;
+        if (!_activeFenceBarriers.TryGetValue(uniqueId, out FenceBarrierEntry entry)) return;
+
+        _activeFenceBarriers.Remove(uniqueId);
+        entry.unsubscribe?.Invoke();
+        if (entry.barrier != null) Objectpool.Instance.Despawn(entry.barrier.gameObject);
+    }
+
     /// <summary>The yaw applied on top of the model's authored rotation, in degrees.</summary>
     private static Quaternion YawFor(float degrees) => Quaternion.Euler(0f, degrees, 0f);
 
@@ -912,6 +979,11 @@ public class ItemPlacementManager : MonoBehaviour
         string uniqueId = _isRelocating ? _relocateUniqueId : System.Guid.NewGuid().ToString();
         float remainingDuration = _isRelocating ? _relocateRemainingDuration : totalDuration;
 
+        // Must happen before Initialize: it feeds the fence barrier's signboard reference X/Z into the
+        // item so its plant-in animation (which Initialize can trigger immediately on a pooled instance)
+        // targets the right spot from the start. See SpawnFenceBarrierFor.
+        SpawnFenceBarrierFor(placeable, uniqueId, remainingDuration <= 0f);
+
         placeable.Initialize(uniqueId, totalDuration, remainingDuration);
         placeable.SetSource(_pendingSourceKind, _pendingSourceItemId);
 
@@ -1006,6 +1078,11 @@ public class ItemPlacementManager : MonoBehaviour
 
         placeable.enabled = true;
         placeable.prefabName = restored.name.Replace("(Clone)", "").Trim();
+
+        // See PlaceItem: must happen before Initialize so the item's plant-in animation already knows
+        // the fence barrier's signboard reference X/Z.
+        SpawnFenceBarrierFor(placeable, _relocateUniqueId, _relocateRemainingDuration <= 0f);
+
         placeable.Initialize(_relocateUniqueId, _pendingDuration, _relocateRemainingDuration);
         placeable.SetSource(_pendingSourceKind, _pendingSourceItemId);
 
@@ -1261,6 +1338,7 @@ public class ItemPlacementManager : MonoBehaviour
         activePlacedItems.Remove(item);
         if (grid != null) grid.Release(item.uniqueId);
         item.SetHighlight(false);
+        DespawnFenceBarrierFor(item.uniqueId);
         OnItemRemoved?.Invoke(item);
     }
 
