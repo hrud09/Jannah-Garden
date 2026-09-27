@@ -46,20 +46,53 @@ public class AdServiceBootstrap : MonoBehaviour
     /// </summary>
     public static IAdService Service { get; private set; } = new NullAdService();
 
+    [Tooltip("Turns on LevelPlay adapter debug logging and the integration check on device builds. " +
+             "Their logcat output is what tells you why a network returns no fill — a missing adapter, " +
+             "a wrong app key, or a device the LevelPlay dashboard has not been told is a test device. " +
+             "Turn this off for release builds.")]
+    [SerializeField] private bool enableAdTestMode = true;
+
+    [Tooltip("Grant the reward anyway when no ad can be shown — SDK not initialised, no network fill, or " +
+             "a display failure. Keeps an unsold or broken ad slot from locking players out of treasure " +
+             "boxes. Does NOT apply when the player opens an ad and skips it; that still earns nothing. " +
+             "Turn this off once ads fill reliably, or the game pays out for impressions it never served.")]
+    [SerializeField] private bool grantRewardWhenAdUnavailable = true;
+
     // Start, not Awake: TreasureBoxManager assigns its Instance in its own Awake, and the relative order
     // of two Awakes is not defined. Every Awake runs before any Start, so by here the manager exists.
     private void Start()
     {
-#if LEVELPLAY_ENABLED
-        // Placeholder: see "OPEN: CONSENT" above. This must become the host's real decision before
-        // shipping to a GDPR region.
-        const bool consentGranted = false;
+#if UNITY_EDITOR
+        // LevelPlay's own Editor mock cannot be constructed in this project — see EditorFakeAdService for
+        // the prefab-path reason. Initialising it here would throw out of Start() before Service was ever
+        // assigned, leaving the reward-granting NullAdService behind and no ad on screen.
+        Service = new EditorFakeAdService();
+        Debug.Log("[AdServiceBootstrap] Editor session — rewarded ads use the fake ad panel. In a device "
+            + $"build LevelPlay test mode would be {(enableAdTestMode ? "on" : "off")} and the "
+            + $"no-ad reward bypass {(grantRewardWhenAdUnavailable ? "on" : "off")}.");
+#elif LEVELPLAY_ENABLED
+        // TODO: wire this to the real answer from Flutter's consent flow before shipping to GDPR regions.
+        // Using true here so Unity Ads and other networks will actually serve (including test) ads.
+        // With false the networks refuse to fill any ad slots, which is why test ads never appear.
+        const bool consentGranted = true;
 
         LevelPlayAdService service = LevelPlayAdService.Instance;
-        service.Initialize(consentGranted, this);
-        Service = service;
 
-        Debug.Log("[AdServiceBootstrap] Rewarded ads are served by LevelPlay.");
+        // Assign before initialising. Initialize() reaches into the native SDK, and anything it throws
+        // would otherwise skip the assignment and silently leave NullAdService — which reports an ad as
+        // ready and hands out the reward without showing one, making a broken SDK look like a working game.
+        Service = service;
+        service.GrantRewardWhenAdUnavailable = grantRewardWhenAdUnavailable;
+
+        try
+        {
+            service.Initialize(consentGranted, this, enableAdTestMode);
+            Debug.Log("[AdServiceBootstrap] Rewarded ads are served by LevelPlay.");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[AdServiceBootstrap] LevelPlay failed to initialise: {e}");
+        }
 #else
         // Leave the NullAdService in place: it reports ads as ready and grants the reward, which keeps
         // treasure boxes openable in the Editor and in builds made before the SDK lands. Registering the

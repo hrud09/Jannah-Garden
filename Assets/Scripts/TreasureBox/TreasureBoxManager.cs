@@ -504,26 +504,25 @@ public class TreasureBoxManager : MonoBehaviour
         }
 
         // ── Free user: show rewarded ad ───────────────────────────────────────
-        if (!AdService.IsAdReady)
-        {
-            string msg = "Ad not ready. Please try again shortly.";
-            Debug.Log($"[TreasureBoxManager] {msg}");
-            onResult?.Invoke(false, msg);
-            return;
-        }
+        // Deliberately no IsAdReady gate before the call. Returning early here made the "request another
+        // ad" path inside ShowRewardedAd unreachable, so a single failed load at startup left every later
+        // box permanently unopenable. ShowRewardedAd reports false when it has nothing to show and asks
+        // for a fresh ad on the way out, which lets the next attempt succeed.
+        bool adWasReady = AdService.IsAdReady;
 
         AdService.ShowRewardedAd(earned =>
         {
             if (earned)
             {
                 CompleteBoxOpen(tier, slotIndex, onResult);
+                return;
             }
-            else
-            {
-                string msg = "Ad skipped — box not opened.";
-                Debug.Log($"[TreasureBoxManager] {msg}");
-                onResult?.Invoke(false, msg);
-            }
+
+            string msg = adWasReady
+                ? "Ad skipped — box not opened."
+                : "Ad not ready. Please try again shortly.";
+            Debug.Log($"[TreasureBoxManager] {msg}");
+            onResult?.Invoke(false, msg);
         });
     }
 

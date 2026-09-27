@@ -151,7 +151,17 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
         // one box.
         if (TreasureBoxManager.Instance != null)
         {
-            TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
+            // Report failures. Without a callback the panel just closed and nothing happened, which made
+            // an ad that never loaded indistinguishable from an ad the player skipped.
+            TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex, (success, reason) =>
+            {
+                if (success || string.IsNullOrEmpty(reason)) return;
+
+                if (ToastMessageManager.Instance != null)
+                {
+                    ToastMessageManager.Instance.ShowToast(reason);
+                }
+            });
         }
     }
 

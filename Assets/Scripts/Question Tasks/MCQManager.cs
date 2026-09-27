@@ -51,6 +51,9 @@ public class MCQManager : MonoBehaviour
     public TextMeshProUGUI[] optionTextsUI;
     public Button submitButton; // Optional: A button to submit the selected answer
     public TMP_Text countDownToHidePanel;
+    [Tooltip("Dedicated label that shows the \"Mash'Allah\" finale after a correct answer. Kept as its own "
+             + "GameObject so the question label's layout/localization state is never repurposed for it.")]
+    public TextMeshProUGUI mashallahTextUI;
 
     [Header("Button Sprites")]
     public Sprite defaultSprite;
@@ -84,6 +87,7 @@ public class MCQManager : MonoBehaviour
         // frame. Only these children are toggled — this GameObject stays active.
         if (quizPanel != null) quizPanel.SetActive(false);
         if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+        if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
         if (blurredBG != null) blurredBG.SetActive(false);
     }
 
@@ -124,6 +128,11 @@ public class MCQManager : MonoBehaviour
     {
         currentOrb = orb;
         if (blurredBG != null) blurredBG.SetActive(true);
+
+        // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh quiz
+        // starts with the question content back in view and the finale label hidden again.
+        if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
+        if (questionTextUI != null) questionTextUI.gameObject.SetActive(true);
 
         if (quizPanel != null) 
         {
@@ -383,6 +392,11 @@ public class MCQManager : MonoBehaviour
                 xpEarned = PlayerXPManager.Instance.AddXPForTask(xpTask, false);
             }
 
+            // Show Mash'Allah before granting rewards — reward side-effects (level-up panels,
+            // coin animations) can trigger StopAllCoroutines or CloseQuiz, which would cancel
+            // the Mash'Allah display before it ever renders.
+            ShowMashallahAndAutoClose();
+
             if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
             {
                 LocalizationManager loc = LocalizationManager.Instance;
@@ -408,8 +422,6 @@ public class MCQManager : MonoBehaviour
                 QuestionMarkOrbManager.Instance.OnOrbOpened(currentOrb);
                 currentOrb = null;
             }
-
-            ShowMashallahAndAutoClose();
         }
         else
         {
@@ -448,6 +460,7 @@ public class MCQManager : MonoBehaviour
                 quizPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
                     quizPanel.SetActive(false);
                     if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+                    if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
                     if (blurredBG != null) blurredBG.SetActive(false);
                     currentOrb = null;
                 });
@@ -480,17 +493,29 @@ public class MCQManager : MonoBehaviour
     // a few seconds later, instead of the immediate hide used elsewhere.
     private void ShowMashallahAndAutoClose()
     {
+        // Stop any in-flight panel open/close animation so the panel is fully visible
+        // and at the correct scale before we update the content.
+        if (quizPanel != null)
+        {
+            quizPanel.transform.DOKill();
+            quizPanel.transform.localScale = Vector3.one;
+        }
+
         foreach (var btn in optionButtons) btn.gameObject.SetActive(false);
         if (submitButton != null) submitButton.gameObject.SetActive(false);
+        if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+        if (questionTextUI != null) questionTextUI.gameObject.SetActive(false);
 
-        if (questionTextUI != null)
+        if (mashallahTextUI != null)
         {
+            mashallahTextUI.gameObject.SetActive(true);
+
             // Plain (unlocalized, unshaped) text: "Mash'Allah" is Latin script and would render as
             // tofu boxes if routed through the Bengali shaped-font path like SetText does.
-            LocalizedRendering.SetPlainText(questionTextUI, "Mash'Allah");
-            questionTextUI.transform.DOKill();
-            questionTextUI.transform.localScale = Vector3.one;
-            questionTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+            LocalizedRendering.SetPlainText(mashallahTextUI, "Mash'Allah");
+            mashallahTextUI.transform.DOKill();
+            mashallahTextUI.transform.localScale = Vector3.one;
+            mashallahTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
         }
 
         StartCoroutine(AutoCloseQuizAfterDelay(5f));
@@ -512,6 +537,10 @@ public class MCQManager : MonoBehaviour
                 if (countDownToHidePanel != null)
                 {
                     countDownToHidePanel.gameObject.SetActive(false);
+                }
+                if (mashallahTextUI != null)
+                {
+                    mashallahTextUI.gameObject.SetActive(false);
                 }
                 if (blurredBG != null)
                 {

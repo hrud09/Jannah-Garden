@@ -45,3 +45,39 @@ public class NullAdService : IAdService
         onComplete?.Invoke(true);
     }
 }
+
+#if UNITY_EDITOR
+
+/// <summary>
+/// Editor stand-in that plays the visible countdown panel owned by <see cref="AdsManager"/>.
+///
+/// LevelPlay cannot show its own mock ad in this project. <c>EditorRewardedAd</c> picks its prefab path
+/// with <c>Directory.Exists("Packages/com.unity.services.levelplay")</c>, which is false for a registry
+/// install (the package sits in <c>Library/PackageCache</c>), so it falls back to
+/// <c>Assets/LevelPlay/Runtime/.../MockRewardedEditorAd.prefab</c> — a path that does not exist here,
+/// because <c>Assets/LevelPlay</c> holds only the adapter dependency XMLs. Loading returns null and
+/// constructing the ad throws.
+///
+/// Playing the game's own fake ad instead means the Editor shows something for the tester to watch,
+/// rather than <see cref="NullAdService"/> silently handing out the reward with no ad at all.
+/// </summary>
+public class EditorFakeAdService : IAdService
+{
+    public bool IsAdReady => true;
+
+    public void ShowRewardedAd(Action<bool> onComplete)
+    {
+        if (AdsManager.Instance == null)
+        {
+            UnityEngine.Debug.LogWarning("[EditorFakeAdService] No AdsManager in the scene — granting the "
+                + "reward without showing a panel.");
+            onComplete?.Invoke(true);
+            return;
+        }
+
+        UnityEngine.Debug.Log("[EditorFakeAdService] Playing the fake rewarded ad panel.");
+        AdsManager.Instance.ShowFakeRewardedAd(() => onComplete?.Invoke(true));
+    }
+}
+
+#endif

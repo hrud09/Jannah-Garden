@@ -53,10 +53,33 @@ public class LevelPlayAdService : IAdService
 
     private LevelPlayAdService() { }
 
+    /// <summary>
+    /// Grant the reward anyway when no ad can be shown at all — the SDK never initialised, no network
+    /// filled the request, or the ad failed to display. Keeps a broken or unsold ad slot from locking the
+    /// player out of treasure boxes.
+    ///
+    /// This covers "we could not show you an ad", NOT "you skipped the ad". A player who opens an ad and
+    /// closes it early still earns nothing, because granting there would make every ad skippable for a
+    /// free reward and the ad unit would never earn anything.
+    ///
+    /// Set from <see cref="AdServiceBootstrap"/>. Turn it off once ads reliably fill, or the game keeps
+    /// paying out for impressions it never served.
+    /// </summary>
+    public bool GrantRewardWhenAdUnavailable { get; set; }
+
 #if LEVELPLAY_ENABLED
 
     private LevelPlayRewardedAd _rewardedAd;
     private bool _initStarted;
+
+    /// <summary>Backoff between load retries, multiplied by the consecutive-failure count.</summary>
+    private const float LoadRetryDelaySeconds = 10f;
+
+    /// <summary>Stop retrying after this many failures in a row so a dead ad unit doesn't retry forever.</summary>
+    private const int MaxConsecutiveLoadFailures = 5;
+
+    private int _consecutiveLoadFailures;
+    private bool _retryScheduled;
 
     /// <summary>
     /// Something alive in the scene to run a one-frame wait on — this class is not a MonoBehaviour.
@@ -86,7 +109,13 @@ public class LevelPlayAdService : IAdService
     /// The player's GDPR consent decision. Must be the answer from the host's consent flow, not a
     /// default — see <see cref="AdServiceBootstrap"/> for why this is still an open wire.
     /// </param>
-    public void Initialize(bool consentGranted, MonoBehaviour coroutineRunner = null)
+    /// <param name="enableTestMode">
+    /// Turns on adapter debug logging and runs LevelPlay's integration check. Both write their findings
+    /// to logcat, which is the only way to see *why* a network returns no fill — a missing adapter, a
+    /// bad app key, or a device the dashboard has not been told to treat as a test device. Leave off for
+    /// release builds; the logging is noisy and reveals the mediation setup.
+    /// </param>
+    public void Initialize(bool consentGranted, MonoBehaviour coroutineRunner = null, bool enableTestMode = false)
     {
         _coroutineRunner = coroutineRunner;
 
@@ -96,19 +125,49 @@ public class LevelPlayAdService : IAdService
         // Set before Init so the first ad request already carries the right consent state.
         LevelPlay.SetConsent(consentGranted);
 
+        if (enableTestMode) LevelPlay.SetAdaptersDebug(true);
+
         LevelPlay.OnInitSuccess += OnInitSuccess;
         LevelPlay.OnInitFailed += error =>
             Debug.LogError($"[LevelPlayAdService] LevelPlay failed to initialise: {error}");
+
+        if (enableTestMode)
+        {
+            // Only meaningful once the SDK is up, so hang it off the success event rather than calling
+            // it straight after Init.
+            LevelPlay.OnInitSuccess += _ => LevelPlay.ValidateIntegration();
+        }
 
         LevelPlay.Init(AppKey);
     }
 
     private void OnInitSuccess(LevelPlayConfiguration configuration)
     {
-        _rewardedAd = new LevelPlayRewardedAd(RewardedAdUnitId);
+        try
+        {
+            _rewardedAd = new LevelPlayRewardedAd(RewardedAdUnitId);
+        }
+        catch (Exception e)
+        {
+            // In the Editor, LevelPlay's mock ad resolves its prefab from Assets/LevelPlay/... whenever the
+            // package is not embedded under Packages/. A registry (PackageCache) install leaves that folder
+            // holding only the dependency XMLs, so the prefab is missing and constructing the ad throws.
+            // Swallowing it here keeps the exception from unwinding into AdServiceBootstrap.Start().
+            Debug.LogError($"[LevelPlayAdService] Could not create the rewarded ad: {e.Message}");
+            return;
+        }
+
+        _rewardedAd.OnAdLoaded += adInfo =>
+        {
+            _consecutiveLoadFailures = 0;
+            Debug.Log("[LevelPlayAdService] Rewarded ad loaded and ready to show.");
+        };
 
         _rewardedAd.OnAdLoadFailed += error =>
+        {
             Debug.LogWarning($"[LevelPlayAdService] Rewarded ad failed to load: {error}");
+            ScheduleLoadRetry();
+        };
 
         // The reward event is authoritative: seeing it at all means the player earned the reward, so
         // settle immediately rather than waiting for the close event.
@@ -120,8 +179,10 @@ public class LevelPlayAdService : IAdService
 
         _rewardedAd.OnAdDisplayFailed += (adInfo, error) =>
         {
+            // The player asked for an ad and the SDK could not put one on screen — that is our failure,
+            // not a skip, so it follows the same bypass as an unfilled slot.
             Debug.LogWarning($"[LevelPlayAdService] Rewarded ad failed to display: {error}");
-            Settle(false);
+            Settle(GrantRewardWhenAdUnavailable);
         };
 
         // Closing settles as "not earned" only if the reward event never arrived — and only after a frame.
@@ -132,6 +193,41 @@ public class LevelPlayAdService : IAdService
         _rewardedAd.OnAdClosed += adInfo => DeferredSettleIfUnrewarded();
 
         _rewardedAd.LoadAd();
+    }
+
+    /// <summary>
+    /// Re-requests an ad after a failed load.
+    ///
+    /// A load failure used to be terminal. The only <c>LoadAd</c> retry lived in
+    /// <see cref="ShowRewardedAd"/>, but <see cref="TreasureBoxManager.TryOpenBox"/> tested
+    /// <see cref="IsAdReady"/> first and returned early, so that retry was unreachable. A single failed
+    /// load at startup therefore left <see cref="IsAdReady"/> false for the whole session and no treasure
+    /// box could ever play an ad.
+    /// </summary>
+    private void ScheduleLoadRetry()
+    {
+        if (_rewardedAd == null || _coroutineRunner == null || _retryScheduled) return;
+
+        if (_consecutiveLoadFailures >= MaxConsecutiveLoadFailures)
+        {
+            Debug.LogError($"[LevelPlayAdService] Rewarded ad failed to load {_consecutiveLoadFailures} "
+                + "times in a row — giving up for this session. Check the ad unit ID and that the "
+                + "LevelPlay dashboard has this device registered for test ads.");
+            return;
+        }
+
+        _consecutiveLoadFailures++;
+        _retryScheduled = true;
+        _coroutineRunner.StartCoroutine(RetryLoadAfterDelay(LoadRetryDelaySeconds * _consecutiveLoadFailures));
+    }
+
+    private IEnumerator RetryLoadAfterDelay(float delay)
+    {
+        // Realtime: an ad that paused the game leaves Time.timeScale at 0, which would stall a scaled wait.
+        yield return new WaitForSecondsRealtime(delay);
+
+        _retryScheduled = false;
+        if (_rewardedAd != null && !_rewardedAd.IsAdReady()) _rewardedAd.LoadAd();
     }
 
     /// <summary>
@@ -172,8 +268,18 @@ public class LevelPlayAdService : IAdService
 
         if (!IsAdReady)
         {
+            // Request one for the next attempt, so a slot that is merely cold recovers by itself.
+            if (_rewardedAd != null) _rewardedAd.LoadAd();
+            else Debug.LogError("[LevelPlayAdService] No rewarded ad object — LevelPlay never initialised.");
+
+            if (GrantRewardWhenAdUnavailable)
+            {
+                Debug.LogWarning("[LevelPlayAdService] No ad available to show — granting the reward anyway.");
+                onComplete?.Invoke(true);
+                return;
+            }
+
             Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called with no ad loaded — no reward.");
-            _rewardedAd?.LoadAd(); // Try to have one ready for the next attempt.
             onComplete?.Invoke(false);
             return;
         }
@@ -213,7 +319,7 @@ public class LevelPlayAdService : IAdService
 
     public bool IsAdReady => false;
 
-    public void Initialize(bool consentGranted, MonoBehaviour coroutineRunner = null)
+    public void Initialize(bool consentGranted, MonoBehaviour coroutineRunner = null, bool enableTestMode = false)
     {
         Debug.LogWarning("[LevelPlayAdService] LEVELPLAY_ENABLED is not set — the LevelPlay SDK is not in "
             + "the project. No real ads will be shown.");
@@ -221,8 +327,9 @@ public class LevelPlayAdService : IAdService
 
     public void ShowRewardedAd(Action<bool> onComplete)
     {
-        Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called without the LevelPlay SDK — no reward.");
-        onComplete?.Invoke(false);
+        Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called without the LevelPlay SDK — "
+            + (GrantRewardWhenAdUnavailable ? "granting the reward anyway." : "no reward."));
+        onComplete?.Invoke(GrantRewardWhenAdUnavailable);
     }
 
 #endif
