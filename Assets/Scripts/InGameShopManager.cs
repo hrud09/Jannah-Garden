@@ -621,10 +621,11 @@ public class InGameShopManager : MonoBehaviour
             }
         }
 
-        if (AdsManager.Instance == null)
+        // Mediation has nothing loaded. Unlike the old path there is no fake-ad fallback to wait out, so
+        // the honest answer is to tell the player to try again rather than hand over the item for free.
+        if (!AdServiceBootstrap.Service.IsAdReady)
         {
-            Debug.LogError("[InGameShopManager] AdsManager not found in scene — cannot show a rewarded ad. "
-                + "Add an AdsManager GameObject.");
+            Debug.Log($"[InGameShopManager] No rewarded ad ready for '{data.itemName}'.");
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.ads_unavailable"));
@@ -634,10 +635,16 @@ public class InGameShopManager : MonoBehaviour
 
         Debug.Log($"[InGameShopManager] Showing rewarded ad for '{data.itemName}'.");
 
-        // ShowRewardedAd only calls back once the reward is earned (it falls back to the fake ad panel
-        // when no real ad is loaded), so reaching this callback means the player has paid with their time.
-        AdsManager.Instance.ShowRewardedAd(() =>
+        // This callback runs however the ad ends, so the reward is granted only when earned is true — a
+        // player who closes the ad early gets nothing, and the daily offer stays unclaimed for them.
+        AdServiceBootstrap.Service.ShowRewardedAd(earned =>
         {
+            if (!earned)
+            {
+                Debug.Log($"[InGameShopManager] Rewarded ad not completed — '{data.itemName}' not granted.");
+                return;
+            }
+
             if (item == null || item.ItemData != data) return; // Shop was torn down mid-ad
 
             Debug.Log($"[InGameShopManager] Rewarded ad watched — granting '{data.itemName}'.");
@@ -648,7 +655,7 @@ public class InGameShopManager : MonoBehaviour
             }
 
             CompleteAcquisition(item, data);
-        }, "shop_item");
+        });
     }
 
     /// <summary>

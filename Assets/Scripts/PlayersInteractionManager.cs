@@ -203,21 +203,13 @@ public class PlayersInteractionManager : MonoBehaviour
         if (TreasureBoxConfirmationPanel.Instance != null)
         {
             TreasureBoxConfirmationPanel.Instance.Show(tier, slot);
+            return;
         }
-        else if (AdsManager.Instance != null)
-        {
-            AdsManager.Instance.ShowRewardedAd(() =>
-            {
-                if (TreasureBoxManager.Instance != null)
-                {
-                    TreasureBoxManager.Instance.TryOpenBox(tier, slot);
-                }
-            }, "treasure_box");
-        }
-        else
-        {
-            TreasureBoxManager.Instance.TryOpenBox(tier, slot);
-        }
+
+        // No confirmation panel in the scene: open directly. TryOpenBox runs the rewarded-ad gate itself
+        // through TreasureBoxManager.AdService, so this must not show an ad of its own — doing that was
+        // the same double-ad mistake the confirmation panel used to make.
+        TreasureBoxManager.Instance.TryOpenBox(tier, slot);
     }
 
     private void Update()

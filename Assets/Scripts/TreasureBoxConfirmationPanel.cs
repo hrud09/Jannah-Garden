@@ -144,35 +144,15 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     {
         SetVisualsActive(false);
 
-        // Android (and Editor, where the plugin simulates ads): a real AdMob rewarded test ad.
-        // iOS keeps going through Flutter — see the crash notes on AdsManager/AdMobAdService.
-#if UNITY_ANDROID || UNITY_EDITOR
-        AdMobAdService.Instance.ShowRewardedAd(earned =>
+        // Do not show an ad here. TryOpenBox runs the rewarded-ad gate itself, through whichever
+        // IAdService AdServiceBootstrap registered, and only opens the box if the player earns the
+        // reward. This used to play its own ad first and then call TryOpenBox, which worked only because
+        // the registered service was the no-op one — with a real network behind it that is two ads for
+        // one box.
+        if (TreasureBoxManager.Instance != null)
         {
-            if (earned && TreasureBoxManager.Instance != null)
-            {
-                TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
-            }
-        });
-#else
-        if (AdsManager.Instance != null)
-        {
-            AdsManager.Instance.ShowRewardedAd(() =>
-            {
-                if (TreasureBoxManager.Instance != null)
-                {
-                    TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
-                }
-            }, "treasure_box");
+            TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
         }
-        else
-        {
-            if (TreasureBoxManager.Instance != null)
-            {
-                TreasureBoxManager.Instance.TryOpenBox(_tier, _slotIndex);
-            }
-        }
-#endif
     }
 
     private void OnSubscribeClicked()

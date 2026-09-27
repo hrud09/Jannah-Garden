@@ -16760,6 +16760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407033777}
   - component: {fileID: 407033778}
+  - component: {fileID: 407033779}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
@@ -16797,6 +16798,18 @@ MonoBehaviour:
   fakeRewardedAdPanel: {fileID: 340693043}
   fakeAdDuration: 3
   fakeTimerCountDownText: {fileID: 1439742882}
+--- !u!114 &407033779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407033776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393709094295da94ca693b3a3b889a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdServiceBootstrap
 --- !u!114 &408723310
 MonoBehaviour:
   m_ObjectHideFlags: 0
