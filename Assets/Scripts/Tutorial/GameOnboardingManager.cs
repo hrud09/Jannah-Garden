@@ -27,6 +27,19 @@ public class GameOnboardingManager : MonoBehaviour
     /// the screen.</summary>
     public static bool IsInstructionPanelVisible { get; private set; }
 
+    /// <summary>True while onboarding is actively guiding the player - either the one-time first-run
+    /// flows or an on-demand replay. <see cref="TutorialReplayButton"/> hides itself while this is set
+    /// so its own icon can't be tapped (or highlighted) mid-tutorial.</summary>
+    public static bool IsTutorialActive { get; private set; }
+
+    /// <summary>Raised whenever <see cref="IsTutorialActive"/> changes.</summary>
+    public static event System.Action OnTutorialActiveChanged;
+
+    /// <summary>Readable without a live instance (straight off PlayerPrefs) so buttons that gate on it can
+    /// decide their visibility in Awake, before the singleton's Start has necessarily run.</summary>
+    public static bool IsOnboardingCompleted =>
+        PlayerPrefs.GetInt(StageKey, (int)OnboardingStage.NotStarted) >= (int)OnboardingStage.Completed;
+
     private enum OnboardingStage
     {
         NotStarted = 0,
@@ -91,6 +104,15 @@ public class GameOnboardingManager : MonoBehaviour
     private OnboardingStage stage;
     private Flow1SubStep flow1Sub = Flow1SubStep.None;
     private Flow2SubStep flow2Sub = Flow2SubStep.None;
+
+    /// <summary>Set while an on-demand replay of the shop -> buy -> place walkthrough is running (see
+    /// <see cref="ReplayShopTutorial"/>). The replay reuses every Flow 1 step verbatim but never touches
+    /// <see cref="stage"/>, so a player who has already finished onboarding stays finished.</summary>
+    private bool replayMode;
+
+    /// <summary>Flow 1's steps run both during first-run onboarding and during a replay, so every step
+    /// guard asks this rather than comparing <see cref="stage"/> directly.</summary>
+    private bool Flow1Active => replayMode || stage == OnboardingStage.Flow1InProgress;
 
     private IdyllicFantasyNature.PlayerMovement playerMovementRef;
     private bool inspectorExitListenerAdded;
@@ -165,11 +187,20 @@ public class GameOnboardingManager : MonoBehaviour
         SubscribeEvents();
         ApplyButtonVisibilityForStage();
         ResumeFromStage();
+        // Notify even when the flag itself didn't move: RunMigrationCheckIfNeeded may have just
+        // grandfathered an existing player to Completed, and buttons that gate on that (whose own
+        // Awake ran before it) have no other cue to re-check.
+        RefreshTutorialActive(forceNotify: true);
     }
 
     private void OnDestroy()
     {
-        if (Instance == this) Instance = null;
+        if (Instance == this)
+        {
+            Instance = null;
+            replayMode = false;
+            SetTutorialActive(false);
+        }
         UnsubscribeEvents();
         RestoreHighlightSorting();
         RestoreJoystickHighlight();
@@ -233,6 +264,19 @@ public class GameOnboardingManager : MonoBehaviour
         PlayerPrefs.SetInt(StageKey, (int)stage);
         PlayerPrefs.Save();
         ApplyButtonVisibilityForStage();
+        RefreshTutorialActive();
+    }
+
+    private void RefreshTutorialActive(bool forceNotify = false)
+    {
+        SetTutorialActive(replayMode || stage < OnboardingStage.Completed, forceNotify);
+    }
+
+    private static void SetTutorialActive(bool active, bool forceNotify = false)
+    {
+        bool changed = IsTutorialActive != active;
+        IsTutorialActive = active;
+        if (changed || forceNotify) OnTutorialActiveChanged?.Invoke();
     }
 
     /// <summary>A button becomes permanently visible once its own step has begun - derived purely from
@@ -424,7 +468,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleShopOpened()
     {
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.AwaitingShopOpen) return;
+        if (!Flow1Active || flow1Sub != Flow1SubStep.AwaitingShopOpen) return;
 
         StopPulse();
         RestoreHighlightSorting();
@@ -436,7 +480,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleShopClosed()
     {
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.AwaitingItemSelect) return;
+        if (!Flow1Active || flow1Sub != Flow1SubStep.AwaitingItemSelect) return;
 
         StopPulse();
         RestoreHighlightSorting();
@@ -471,9 +515,14 @@ public class GameOnboardingManager : MonoBehaviour
         if (chosen == null) chosen = spawned.FirstOrDefault(u => u != null);
         if (chosen == null) yield break;
 
-        foreach (var ui in spawned)
+        // First-time players are funnelled onto one card so the walkthrough can't go off-script. A replay
+        // is for players who already own the loop, so it only points at a card and lets them buy any item.
+        if (!replayMode)
         {
-            if (ui != null) ui.SetInteractionBlocked(ui != chosen);
+            foreach (var ui in spawned)
+            {
+                if (ui != null) ui.SetInteractionBlocked(ui != chosen);
+            }
         }
 
         if (chosen.purchaseButton != null)
@@ -487,7 +536,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleShopItemUsed(ShopItemData data)
     {
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.AwaitingItemSelect) return;
+        if (!Flow1Active || flow1Sub != Flow1SubStep.AwaitingItemSelect) return;
 
         StopPulse();
         RestoreHighlightSorting();
@@ -525,6 +574,9 @@ public class GameOnboardingManager : MonoBehaviour
         if (place == null || !place.gameObject.activeInHierarchy)
         {
             Debug.LogWarning("[GameOnboardingManager] Place button never became ready; skipping placement highlight.");
+            // Nothing left to guide towards (e.g. the player bought a coin pack, which has nothing to
+            // place) - a replay would otherwise sit on the "downloading" panel forever.
+            if (replayMode) EndReplay();
             yield break;
         }
 
@@ -597,7 +649,7 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (placedItem == null || placedItem.sourceKind != PlacedItemSource.ShopItem) return;
         if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsRelocating) return;
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.AwaitingPlace) return;
+        if (!Flow1Active || flow1Sub != Flow1SubStep.AwaitingPlace) return;
 
         StopPulse();
         RestoreHighlightSorting();
@@ -619,15 +671,66 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleXPInfoContinue()
     {
-        if (stage != OnboardingStage.Flow1InProgress || flow1Sub != Flow1SubStep.ShowingXPInfo) return;
+        if (!Flow1Active || flow1Sub != Flow1SubStep.ShowingXPInfo) return;
 
         StopPulse();
         RestoreHighlightSorting();
         flow1Sub = Flow1SubStep.None;
         SetInstructionPanelVisible(false);
 
+        if (replayMode)
+        {
+            EndReplay();
+            return;
+        }
+
         SetStage(OnboardingStage.Flow2InProgress);
         BeginPhotoModeStep();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  On-demand replay of Flow 1 (shop -> buy -> rotate -> place)
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// <summary>
+    /// Replays the shop / buying / placing walkthrough on demand - the info button in the Jannah Garden
+    /// HUD (<see cref="TutorialReplayButton"/>) calls this. It re-runs Flow 1's steps from the "open the
+    /// shop" prompt through to the XP explainer, but leaves the persisted stage untouched, so a player who
+    /// has already finished onboarding is still finished afterwards and keeps every HUD button.
+    ///
+    /// Ignored while onboarding itself is still running - the first-run flow is already doing this, and
+    /// restarting mid-flow would strand it in the wrong sub-step.
+    /// </summary>
+    public void ReplayShopTutorial()
+    {
+        if (replayMode || stage < OnboardingStage.Completed) return;
+
+        replayMode = true;
+        flow1Sub = Flow1SubStep.None;
+        flow2Sub = Flow2SubStep.None;
+        RefreshTutorialActive();
+
+        BeginShopOpenStep();
+    }
+
+    /// <summary>Tears the replay down and hands the HUD back to the player, whether it ran to completion
+    /// (the XP explainer's "Got it") or was cut short by the skip button.</summary>
+    private void EndReplay()
+    {
+        if (!replayMode) return;
+
+        replayMode = false;
+        flow1Sub = Flow1SubStep.None;
+
+        StopPulse();
+        RestoreHighlightSorting();
+        RestoreJoystickHighlight();
+        StopHandPointerAnimation();
+        UnblockAllShopCards();
+        HidePrimaryButton();
+        ShowDimAndPanel(false);
+
+        RefreshTutorialActive();
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -929,6 +1032,13 @@ public class GameOnboardingManager : MonoBehaviour
     private void SkipCurrentSection()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+
+        // A replay has no "next section" to jump to - skipping it just ends the walkthrough.
+        if (replayMode)
+        {
+            EndReplay();
+            return;
+        }
 
         StopPulse();
         RestoreHighlightSorting();
