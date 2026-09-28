@@ -1423,6 +1423,66 @@
         {
             "key": "fellowship.member_since_unknown",
             "value": "সদস্য —"
+        },
+        {
+            "key": "area.gateway_lawn",
+            "value": "প্রবেশদ্বারের সবুজ"
+        },
+        {
+            "key": "area.corner_grove",
+            "value": "কোণের উপবন"
+        },
+        {
+            "key": "area.eastern_orchard",
+            "value": "প্রাচ্যের ফলবাগান"
+        },
+        {
+            "key": "area.northern_meadow",
+            "value": "উত্তরের প্রান্তর"
+        },
+        {
+            "key": "area.heart_garden",
+            "value": "হৃদয় উদ্যান"
+        },
+        {
+            "key": "area.quiet_hollow",
+            "value": "নিরিবিলি খাড়ি"
+        },
+        {
+            "key": "area.rose_terrace",
+            "value": "গোলাপ ছত"
+        },
+        {
+            "key": "area.western_glade",
+            "value": "পশ্চিমের ফাঁকা"
+        },
+        {
+            "key": "area.edge_thicket",
+            "value": "কিনারের ঝাড়"
+        },
+        {
+            "key": "area.blossom_rise",
+            "value": "পুষ্পিত টিলা"
+        },
+        {
+            "key": "area.sunset_field",
+            "value": "গধূলি প্রান্তর"
+        },
+        {
+            "key": "area.great_expanse",
+            "value": "বিশাল প্রসার"
+        },
+        {
+            "key": "area.southern_shore",
+            "value": "দক্ষিণের তীর"
+        },
+        {
+            "key": "area.willow_bank",
+            "value": "বেতস তীর"
+        },
+        {
+            "key": "area.lakeside_walk",
+            "value": "হ্রদের পাড়"
         }
     ]
 }

@@ -1423,6 +1423,66 @@
         {
             "key": "fellowship.member_since_unknown",
             "value": "عضو منذ —"
+        },
+        {
+            "key": "area.gateway_lawn",
+            "value": "مرج المدخل"
+        },
+        {
+            "key": "area.corner_grove",
+            "value": "بستان الزاوية"
+        },
+        {
+            "key": "area.eastern_orchard",
+            "value": "بستان الشرق"
+        },
+        {
+            "key": "area.northern_meadow",
+            "value": "مرج الشمال"
+        },
+        {
+            "key": "area.heart_garden",
+            "value": "حديقة القلب"
+        },
+        {
+            "key": "area.quiet_hollow",
+            "value": "الوهدة الهادئة"
+        },
+        {
+            "key": "area.rose_terrace",
+            "value": "شرفة الورد"
+        },
+        {
+            "key": "area.western_glade",
+            "value": "فسحة الغرب"
+        },
+        {
+            "key": "area.edge_thicket",
+            "value": "دغل الحافة"
+        },
+        {
+            "key": "area.blossom_rise",
+            "value": "ربوة الزهر"
+        },
+        {
+            "key": "area.sunset_field",
+            "value": "حقل الغروب"
+        },
+        {
+            "key": "area.great_expanse",
+            "value": "المدى الواسع"
+        },
+        {
+            "key": "area.southern_shore",
+            "value": "الشاطئ الجنوبي"
+        },
+        {
+            "key": "area.willow_bank",
+            "value": "ضفة الصفصاف"
+        },
+        {
+            "key": "area.lakeside_walk",
+            "value": "ممشى البحيرة"
         }
     ]
 }

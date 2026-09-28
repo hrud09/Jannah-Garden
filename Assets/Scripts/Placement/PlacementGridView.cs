@@ -75,6 +75,18 @@ public class PlacementGridView : MonoBehaviour
     [Range(1, 32)]
     public int lockedGroundMaxRun = 16;
 
+    [Tooltip("Extra metres of locked ground built beyond what is actually shown, so walking does not " +
+             "rebuild the patch. The player has to leave this margin before anything is rebuilt, which " +
+             "turns a rebuild every stride into one every several seconds. Costs a little more work " +
+             "per rebuild and far less of it overall; the extra geometry is never seen, because the " +
+             "overlay still fades out at the radius it displays.")]
+    [Range(0f, 40f)]
+    public float lockedGroundRebuildSlack = 6f;
+
+    [Tooltip("How the grey looks: wash colour, stripe colour, stripe size. Leave empty to use the " +
+             "material's own values. Edits to the asset show up straight away, including in play mode.")]
+    public GardenLockedGroundStyle lockedGroundStyle;
+
     [Header("Fade")]
     [Tooltip("Seconds for the overlay to fade in when a placement starts and out when it ends.")]
     [Range(0.01f, 1f)]
@@ -108,7 +120,11 @@ public class PlacementGridView : MonoBehaviour
     private float _lockedTargetAlpha;
 
     private Vector3 _lastLockedCenter = new Vector3(float.MaxValue, 0f, float.MaxValue);
+    private float _lastLockedBuildRadius = -1f;
     private bool _lockedDirty = true;
+
+    /// <summary>Which slots the patch covers, rebuilt per patch rather than asked per cell.</summary>
+    private bool[] _lockedSlots;
 
     /// <summary>The manager whose unlock event is currently hooked, so it can be unhooked again.</summary>
     private GardenAreaManager _subscribedAreas;
@@ -198,6 +214,7 @@ public class PlacementGridView : MonoBehaviour
             _lockedMesh = new Mesh { name = "PlacementLockedGround" };
             _lockedMesh.MarkDynamic();
             _lockedRenderer = CreateChild("LockedGround", _lockedMesh, _lockedMaterial);
+            ApplyLockedGroundStyle();
         }
     }
 
@@ -384,14 +401,28 @@ public class PlacementGridView : MonoBehaviour
 
         Vector3 center = player.transform.position;
 
-        bool moved = new Vector2(center.x - _lastLockedCenter.x, center.z - _lastLockedCenter.z).sqrMagnitude
-                     > rebuildMoveThreshold * rebuildMoveThreshold;
+        // The fade follows the player every frame; only the geometry waits for them to leave the slack.
+        // Without this the grey would visibly trail behind them between rebuilds.
+        AimLockedFade(center, idleLockedRadius);
 
-        if (!moved && !_lockedDirty) return;
+        float slack = Mathf.Max(0f, lockedGroundRebuildSlack);
+        float left = new Vector2(center.x - _lastLockedCenter.x, center.z - _lastLockedCenter.z).magnitude;
 
-        _lastLockedCenter = center;
-        _lockedDirty = false;
+        if (!_lockedDirty && left <= slack && _lastLockedBuildRadius >= idleLockedRadius) return;
+
         BuildLockedGroundMesh(center, idleLockedRadius);
+    }
+
+    /// <summary>
+    /// Points the overlay's radial fade at <paramref name="center"/>. Cheap enough to do every frame,
+    /// which is what lets the geometry be rebuilt rarely without the grey lagging behind the player.
+    /// </summary>
+    private void AimLockedFade(Vector3 center, float radius)
+    {
+        if (_lockedMaterial == null) return;
+
+        _lockedMaterial.SetVector(CenterId, new Vector4(center.x, 0f, center.z, 0f));
+        _lockedMaterial.SetFloat(RadiusId, radius + lockedGroundMargin);
     }
 
     /// <summary>
@@ -675,18 +706,22 @@ public class PlacementGridView : MonoBehaviour
 
         float reach = Mathf.Max(0f, radius) + lockedGroundMargin;
 
-        if (_lockedMaterial != null)
-        {
-            _lockedMaterial.SetVector(CenterId, new Vector4(center.x, 0f, center.z, 0f));
-            _lockedMaterial.SetFloat(RadiusId, reach);
-        }
+        AimLockedFade(center, radius);
+
+        _lastLockedCenter = center;
+        _lastLockedBuildRadius = radius;
+        _lockedDirty = false;
+
+        _lockedSlots = GardenAreaMesh.LockedSlots(map, areas, ref _lockedSlots);
 
         _lockedQuadCount = GardenAreaMesh.BuildGroundPatch(
             map,
-            GardenAreaMesh.LockedSlots(map, areas),
+            _lockedSlots,
             SampleGroundHeight,
             center,
-            reach,
+            // Built wider than it is shown so walking does not rebuild it; the shader fades the
+            // overlay out at the displayed radius, so the surplus is never visible.
+            reach + Mathf.Max(0f, lockedGroundRebuildSlack),
             lockedGroundMaxRun,
             // The bottom layer of the overlay: the context the lattice and the footprint draw on top of.
             // Floated a touch higher than the lattice sheet regardless, because the terrain's own mesh
@@ -697,11 +732,32 @@ public class PlacementGridView : MonoBehaviour
         if (_lockedRenderer != null) _lockedRenderer.enabled = _lockedQuadCount > 0 && _lockedAlpha > 0.001f;
     }
 
+    /// <summary>
+    /// Pushes <see cref="lockedGroundStyle"/> onto the overlay's material. Safe to call at any time;
+    /// a missing style simply leaves the material as the asset authored it.
+    /// </summary>
+    public void ApplyLockedGroundStyle()
+    {
+        if (lockedGroundStyle != null) lockedGroundStyle.ApplyTo(_lockedMaterial);
+    }
+
+#if UNITY_EDITOR
+    /// <summary>
+    /// Re-applies the style when a field is changed in the Inspector, so a colour can be judged
+    /// against the running game rather than against the next entry into play mode.
+    /// </summary>
+    private void OnValidate()
+    {
+        if (_lockedMaterial != null) ApplyLockedGroundStyle();
+    }
+#endif
+
     private float SampleGroundHeight(float x, float z) => _grid.SampleHeight(new Vector3(x, 0f, z));
 
     private void ClearLockedGround()
     {
         _lockedQuadCount = 0;
+        _lastLockedBuildRadius = -1f;
         _lockedMesh.Clear();
         if (_lockedRenderer != null) _lockedRenderer.enabled = false;
     }

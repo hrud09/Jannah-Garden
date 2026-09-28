@@ -62,6 +62,9 @@ public class GardenAreaMapEditor : Editor
     /// </summary>
     private Material _playerMaterial;
 
+    /// <summary>Which slots the preview covers. See <see cref="GardenAreaMesh.FillLockedSlots"/>.</summary>
+    private bool[] _lockedSlots;
+
     private bool _greyOutLocked = true;
 
     /// <summary>
@@ -364,7 +367,7 @@ public class GardenAreaMapEditor : Editor
 
         GardenAreaMesh.BuildGroundPatch(
             map,
-            LockedSlot(map),
+            GardenAreaMesh.FillLockedSlots(map, IsLocked, ref _lockedSlots),
             (x, z) => terrain.SampleHeight(new Vector3(x, 0f, z)) + terrainY,
             Vector3.zero,
             -1f,
@@ -387,6 +390,10 @@ public class GardenAreaMapEditor : Editor
             _playerMaterial.SetVector(CenterId, Vector4.zero);
         }
 
+        // The scene's own style, so the preview shows the look being shipped rather than the
+        // material's defaults. Re-read every repaint: the style is an asset someone may be editing.
+        PlacementGridView view = FindFirstObjectByType<PlacementGridView>();
+        if (view != null && view.lockedGroundStyle != null) view.lockedGroundStyle.ApplyTo(_playerMaterial);
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -407,21 +414,6 @@ public class GardenAreaMapEditor : Editor
         if (live != null && live.IsReady) return !live.IsUnlocked(area);
 
         return !area.unlockedFromStart;
-    }
-
-    /// <summary>
-    /// The same test over map slots the game uses — locked areas only, never the roads between them.
-    /// See <see cref="GardenAreaMesh.LockedSlots"/> for why the paths are left bare.
-    /// </summary>
-    private static Func<byte, bool> LockedSlot(GardenAreaMap map)
-    {
-        return slot =>
-        {
-            if (slot == GardenAreaMap.NoArea) return false;
-
-            GardenAreaDefinition area = map.BySlot(slot);
-            return area != null && IsLocked(area);
-        };
     }
 
     /// <summary>Changes to the bake or to any lock, as one number, so the mesh rebuilds when it must.</summary>

@@ -1423,6 +1423,66 @@
         {
             "key": "fellowship.member_since_unknown",
             "value": "رکن بتاریخ —"
+        },
+        {
+            "key": "area.gateway_lawn",
+            "value": "دروازے کا سبزہ"
+        },
+        {
+            "key": "area.corner_grove",
+            "value": "کونے کا باغ"
+        },
+        {
+            "key": "area.eastern_orchard",
+            "value": "مشرقی باغ"
+        },
+        {
+            "key": "area.northern_meadow",
+            "value": "شمالی چراگاہ"
+        },
+        {
+            "key": "area.heart_garden",
+            "value": "قلبی باغ"
+        },
+        {
+            "key": "area.quiet_hollow",
+            "value": "پرسکون درے"
+        },
+        {
+            "key": "area.rose_terrace",
+            "value": "گلاب کا صحن"
+        },
+        {
+            "key": "area.western_glade",
+            "value": "مغربی کشادہ"
+        },
+        {
+            "key": "area.edge_thicket",
+            "value": "کنارے کا جھاڑ"
+        },
+        {
+            "key": "area.blossom_rise",
+            "value": "شگوفہ کی ٹیکری"
+        },
+        {
+            "key": "area.sunset_field",
+            "value": "غروب کا میدان"
+        },
+        {
+            "key": "area.great_expanse",
+            "value": "وسیع میدان"
+        },
+        {
+            "key": "area.southern_shore",
+            "value": "جنوبی کنارہ"
+        },
+        {
+            "key": "area.willow_bank",
+            "value": "بید کا کنارہ"
+        },
+        {
+            "key": "area.lakeside_walk",
+            "value": "جھیل کنارے کی راہ"
         }
     ]
 }

@@ -160,6 +160,32 @@ public class GardenAreaMap : ScriptableObject
         return ordered;
     }
 
+    /// <summary>
+    /// The player-facing name of an area, in the current language.
+    ///
+    /// <para>Falls back to "Area N" when the area has no name key or the key is missing from the
+    /// language file, so a half-authored map shows something usable rather than a raw key or a blank.
+    /// Callers should use this rather than reading <see cref="GardenAreaDefinition.displayNameKey"/>,
+    /// which is an authoring detail.</para>
+    /// </summary>
+    public string DisplayName(GardenAreaDefinition area)
+    {
+        if (area == null) return string.Empty;
+
+        if (!string.IsNullOrEmpty(area.displayNameKey) && LocalizationManager.Instance != null)
+        {
+            string name = LocalizationManager.Instance.Get(area.displayNameKey);
+
+            // The manager hands back the key itself when it has no entry for it; that is not a name.
+            if (!string.IsNullOrEmpty(name) && name != area.displayNameKey) return name;
+        }
+
+        return "Area " + area.number;
+    }
+
+    /// <summary>The name of whichever area covers <paramref name="world"/>, or empty for none.</summary>
+    public string DisplayNameAt(Vector3 world) => DisplayName(AreaAt(world));
+
     /// <summary>World XZ of the centre of cell (<paramref name="x"/>, <paramref name="y"/>).</summary>
     public Vector3 CellCentre(int x, int y)
     {

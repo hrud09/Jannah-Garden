@@ -735,6 +735,66 @@
         {
             "key": "fellowship.member_since_unknown",
             "value": "Member since —"
+        },
+        {
+            "key": "area.gateway_lawn",
+            "value": "Gateway Lawn"
+        },
+        {
+            "key": "area.corner_grove",
+            "value": "Corner Grove"
+        },
+        {
+            "key": "area.eastern_orchard",
+            "value": "Eastern Orchard"
+        },
+        {
+            "key": "area.northern_meadow",
+            "value": "Northern Meadow"
+        },
+        {
+            "key": "area.heart_garden",
+            "value": "Heart Garden"
+        },
+        {
+            "key": "area.quiet_hollow",
+            "value": "Quiet Hollow"
+        },
+        {
+            "key": "area.rose_terrace",
+            "value": "Rose Terrace"
+        },
+        {
+            "key": "area.western_glade",
+            "value": "Western Glade"
+        },
+        {
+            "key": "area.edge_thicket",
+            "value": "Edge Thicket"
+        },
+        {
+            "key": "area.blossom_rise",
+            "value": "Blossom Rise"
+        },
+        {
+            "key": "area.sunset_field",
+            "value": "Sunset Field"
+        },
+        {
+            "key": "area.great_expanse",
+            "value": "Great Expanse"
+        },
+        {
+            "key": "area.southern_shore",
+            "value": "Southern Shore"
+        },
+        {
+            "key": "area.willow_bank",
+            "value": "Willow Bank"
+        },
+        {
+            "key": "area.lakeside_walk",
+            "value": "Lakeside Walk"
         }
     ]
 }

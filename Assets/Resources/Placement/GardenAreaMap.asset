@@ -19,7 +19,7 @@ MonoBehaviour:
   areas:
   - id: 2b0c1cc2e0b04626be7f3b29508e69dd
     number: 4
-    displayNameKey: 
+    displayNameKey: area.northern_meadow
     unlockedFromStart: 0
     centroid: {x: 96.60136, y: 172.94066}
     labelAnchor: {x: 103.71094, y: 174.02344}
@@ -27,7 +27,7 @@ MonoBehaviour:
     editorColor: {r: 0.18, g: 0.55, b: 0.42, a: 1}
   - id: de2a37103f8246e299eff7ada7c23e2b
     number: 10
-    displayNameKey: 
+    displayNameKey: area.blossom_rise
     unlockedFromStart: 0
     centroid: {x: 52.205826, y: 168.958}
     labelAnchor: {x: 50.585938, y: 168.94531}
@@ -35,7 +35,7 @@ MonoBehaviour:
     editorColor: {r: 0.29, g: 0.47, b: 0.86, a: 1}
   - id: 13e32350128d4e7986ba687c62e68fec
     number: 2
-    displayNameKey: 
+    displayNameKey: area.corner_grove
     unlockedFromStart: 0
     centroid: {x: 141.34282, y: 168.61403}
     labelAnchor: {x: 143.16406, y: 168.55469}
@@ -43,7 +43,7 @@ MonoBehaviour:
     editorColor: {r: 0.95, g: 0.64, b: 0.76, a: 1}
   - id: 6519f9dc7edd4b3b8255c2cadc410dfa
     number: 1
-    displayNameKey: 
+    displayNameKey: area.gateway_lawn
     unlockedFromStart: 1
     centroid: {x: 128.63979, y: 153.83492}
     labelAnchor: {x: 127.53906, y: 158.78906}
@@ -51,7 +51,7 @@ MonoBehaviour:
     editorColor: {r: 0.42, g: 0.72, b: 0.4, a: 1}
   - id: 2ea890c56cec46cdb393e50f7ff8d987
     number: 5
-    displayNameKey: 
+    displayNameKey: area.heart_garden
     unlockedFromStart: 0
     centroid: {x: 95.5798, y: 147.9363}
     labelAnchor: {x: 105.66406, y: 148.63281}
@@ -59,7 +59,7 @@ MonoBehaviour:
     editorColor: {r: 0.37, g: 0.69, b: 0.84, a: 1}
   - id: 775900d999c5435e978adbb08d98aedd
     number: 3
-    displayNameKey: 
+    displayNameKey: area.eastern_orchard
     unlockedFromStart: 0
     centroid: {x: 155.74318, y: 145.9725}
     labelAnchor: {x: 158.39844, y: 138.86719}
@@ -67,7 +67,7 @@ MonoBehaviour:
     editorColor: {r: 0.97, g: 0.87, b: 0.47, a: 1}
   - id: 536ba53a4a3048e7822493a370ff8612
     number: 8
-    displayNameKey: 
+    displayNameKey: area.western_glade
     unlockedFromStart: 0
     centroid: {x: 41.28898, y: 145.11472}
     labelAnchor: {x: 41.601562, y: 145.50781}
@@ -75,7 +75,7 @@ MonoBehaviour:
     editorColor: {r: 0.88, g: 0.46, b: 0.24, a: 1}
   - id: a5deb4a8e9e44a0cabc11d0c40e714bb
     number: 7
-    displayNameKey: 
+    displayNameKey: area.rose_terrace
     unlockedFromStart: 0
     centroid: {x: 59.733162, y: 134.24358}
     labelAnchor: {x: 60.351562, y: 133.00781}
@@ -83,7 +83,7 @@ MonoBehaviour:
     editorColor: {r: 0.63, g: 0.43, b: 0.82, a: 1}
   - id: d0a191a978b14d45b10eff6a5f2cc598
     number: 6
-    displayNameKey: 
+    displayNameKey: area.quiet_hollow
     unlockedFromStart: 0
     centroid: {x: 132.26587, y: 129.42442}
     labelAnchor: {x: 134.17969, y: 131.44531}
@@ -91,7 +91,7 @@ MonoBehaviour:
     editorColor: {r: 0.66, g: 0.63, b: 0.59, a: 1}
   - id: 8f67e90305de4b989beda77783127b7d
     number: 9
-    displayNameKey: 
+    displayNameKey: area.edge_thicket
     unlockedFromStart: 0
     centroid: {x: 35.45928, y: 123.27896}
     labelAnchor: {x: 34.960938, y: 123.24219}
@@ -99,7 +99,7 @@ MonoBehaviour:
     editorColor: {r: 0.94, g: 0.59, b: 0.67, a: 1}
   - id: ee17bfdf96d4441f814ec5df2b670d2b
     number: 14
-    displayNameKey: 
+    displayNameKey: area.willow_bank
     unlockedFromStart: 0
     centroid: {x: 76.48294, y: 121.21449}
     labelAnchor: {x: 65.42969, y: 115.42969}
@@ -107,7 +107,7 @@ MonoBehaviour:
     editorColor: {r: 0.42, g: 0.72, b: 0.4, a: 1}
   - id: 09bce0264732443fad382b9812f3f22a
     number: 11
-    displayNameKey: 
+    displayNameKey: area.sunset_field
     unlockedFromStart: 0
     centroid: {x: 153.83644, y: 95.31247}
     labelAnchor: {x: 155.27344, y: 95.89844}
@@ -115,7 +115,7 @@ MonoBehaviour:
     editorColor: {r: 0.55, g: 0.66, b: 0.47, a: 1}
   - id: fa3117b21263400da355f4e142c934ce
     number: 15
-    displayNameKey: 
+    displayNameKey: area.lakeside_walk
     unlockedFromStart: 0
     centroid: {x: 57.759514, y: 87.31092}
     labelAnchor: {x: 57.226562, y: 90.42969}
@@ -123,7 +123,7 @@ MonoBehaviour:
     editorColor: {r: 0.95, g: 0.64, b: 0.76, a: 1}
   - id: ca22710b039441a78f3ee3476ef752e1
     number: 13
-    displayNameKey: 
+    displayNameKey: area.southern_shore
     unlockedFromStart: 0
     centroid: {x: 108.1917, y: 85.041695}
     labelAnchor: {x: 108.39844, y: 81.05469}
@@ -131,7 +131,7 @@ MonoBehaviour:
     editorColor: {r: 0.4, g: 0.8, b: 0.72, a: 1}
   - id: 714148d9ad554170bf491856d4b5e7e8
     number: 12
-    displayNameKey: 
+    displayNameKey: area.great_expanse
     unlockedFromStart: 0
     centroid: {x: 37.482037, y: 81.09114}
     labelAnchor: {x: 30.664062, y: 86.13281}

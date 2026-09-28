@@ -56586,6 +56586,8 @@ MonoBehaviour:
   lockedGroundMargin: 2
   idleLockedAlpha: 0.85
   lockedGroundMaxRun: 16
+  lockedGroundRebuildSlack: 6
+  lockedGroundStyle: {fileID: 11400000, guid: 438e832c0636149438fe39f98977d86f, type: 2}
   fadeDuration: 0.18
 --- !u!4 &1726353797
 Transform:
@@ -63486,7 +63488,7 @@ MonoBehaviour:
   unlockLowestNumberedIfNoneFlagged: 1
   enforceLocks: 1
   allowPlacementOutsideAreas: 0
-  showLockedAreaVisualsAlways: 0
+  showLockedAreaVisualsAlways: 1
   ignoreSavedLockedAreaVisuals: 0
 --- !u!1001 &1926518195
 PrefabInstance:
