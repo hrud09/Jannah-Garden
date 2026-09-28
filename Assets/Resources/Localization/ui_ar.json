@@ -133,6 +133,10 @@
             "value": "لا يمكنك وضع شيء هنا"
         },
         {
+            "key": "placement.blocked_area_locked",
+            "value": "لم تفتح هذا الجزء من الحديقة بعد"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "اكتمل!"
         },

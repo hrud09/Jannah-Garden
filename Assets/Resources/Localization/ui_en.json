@@ -133,6 +133,10 @@
             "value": "You can't place anything there"
         },
         {
+            "key": "placement.blocked_area_locked",
+            "value": "You haven't unlocked this part of the garden yet"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "Completed!"
         },

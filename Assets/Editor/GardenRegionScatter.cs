@@ -481,105 +481,37 @@ public static class GardenRegionScatter
     /// </summary>
     private class RegionMap
     {
-        public readonly int Res;
-        public readonly float CellSize;
-        public readonly Vector3 Origin;
-        public readonly Vector3 Size;
+        /// <summary>
+        /// The painted-road fill itself. Shared with the placement area bake so both run off one
+        /// definition of where an area ends (see <see cref="GardenTerrainRegions"/>).
+        /// </summary>
+        private readonly GardenTerrainRegions _regions;
+
+        public int Res => _regions.Res;
+        public float CellSize => _regions.CellSize;
+        public Vector3 Origin => _regions.Origin;
+        public Vector3 Size => _regions.Size;
 
         /// <summary>-1 for road/sand, otherwise a 1-based pocket label.</summary>
-        public readonly int[] Label;
+        public int[] Label => _regions.Label;
         /// <summary>Metres from each cell to the nearest road or sand cell.</summary>
-        public readonly float[] RoadDistance;
+        public float[] RoadDistance => _regions.RoadDistance;
         /// <summary>Metres from each cell to the terrain edge.</summary>
-        public readonly float[] EdgeDistance;
+        public float[] EdgeDistance => _regions.EdgeDistance;
 
-        public readonly Dictionary<int, float> AreaByLabel = new Dictionary<int, float>();
-        public readonly Dictionary<int, Vector2> CentroidByLabel = new Dictionary<int, Vector2>();
+        public Dictionary<int, float> AreaByLabel => _regions.AreaByLabel;
+        public Dictionary<int, Vector2> CentroidByLabel => _regions.CentroidByLabel;
+
         /// <summary>Pocket label for each theme index, or -1 when no pocket matched.</summary>
         public int[] LabelForTheme;
         private Theme[] _themes;
 
+        // No lake exclusion here on purpose: the scatter's themes are matched to pockets by centroid,
+        // and carving the lake out would renumber and reshape those pockets. The water rules in
+        // PassesWaterRule already keep props off the lake.
         public RegionMap(Terrain terrain)
         {
-            var td = terrain.terrainData;
-            Res = td.alphamapResolution;
-            Size = td.size;
-            Origin = terrain.transform.position;
-            CellSize = Size.x / Res;
-
-            float[,,] alpha = td.GetAlphamaps(0, 0, Res, Res);
-            int n = Res * Res;
-            Label = new int[n];
-            var barrier = new bool[n];
-            for (int y = 0; y < Res; y++)
-                for (int x = 0; x < Res; x++)
-                {
-                    bool b = alpha[y, x, LayerDirt] > RoadThreshold || alpha[y, x, LayerSand] > SandThreshold;
-                    barrier[y * Res + x] = b;
-                    Label[y * Res + x] = b ? -1 : 0;
-                }
-
-            // Multi-source BFS out from every barrier cell. An 8-connected walk is close enough to
-            // euclidean at the few-metre scale the clearance rules actually test against.
-            RoadDistance = new float[n];
-            var q = new Queue<int>();
-            for (int i = 0; i < n; i++)
-            {
-                RoadDistance[i] = barrier[i] ? 0f : float.MaxValue;
-                if (barrier[i]) q.Enqueue(i);
-            }
-            while (q.Count > 0)
-            {
-                int c = q.Dequeue();
-                int cy = c / Res, cx = c % Res;
-                for (int dy = -1; dy <= 1; dy++)
-                    for (int dx = -1; dx <= 1; dx++)
-                    {
-                        if (dx == 0 && dy == 0) continue;
-                        int nx = cx + dx, ny = cy + dy;
-                        if (nx < 0 || ny < 0 || nx >= Res || ny >= Res) continue;
-                        int ni = ny * Res + nx;
-                        float step = (dx == 0 || dy == 0) ? CellSize : CellSize * 1.41421f;
-                        if (RoadDistance[c] + step < RoadDistance[ni])
-                        {
-                            RoadDistance[ni] = RoadDistance[c] + step;
-                            q.Enqueue(ni);
-                        }
-                    }
-            }
-
-            EdgeDistance = new float[n];
-            for (int y = 0; y < Res; y++)
-                for (int x = 0; x < Res; x++)
-                    EdgeDistance[y * Res + x] =
-                        Mathf.Min(Mathf.Min(x, Res - 1 - x), Mathf.Min(y, Res - 1 - y)) * CellSize;
-
-            // Label the pockets.
-            int next = 0;
-            var fill = new Queue<int>();
-            float cellArea = CellSize * CellSize;
-            for (int s = 0; s < n; s++)
-            {
-                if (Label[s] != 0) continue;
-                next++;
-                Label[s] = next;
-                fill.Enqueue(s);
-                long count = 0, sx = 0, sy = 0;
-                while (fill.Count > 0)
-                {
-                    int c = fill.Dequeue();
-                    int cy = c / Res, cx = c % Res;
-                    count++; sx += cx; sy += cy;
-                    if (cx > 0 && Label[c - 1] == 0) { Label[c - 1] = next; fill.Enqueue(c - 1); }
-                    if (cx < Res - 1 && Label[c + 1] == 0) { Label[c + 1] = next; fill.Enqueue(c + 1); }
-                    if (cy > 0 && Label[c - Res] == 0) { Label[c - Res] = next; fill.Enqueue(c - Res); }
-                    if (cy < Res - 1 && Label[c + Res] == 0) { Label[c + Res] = next; fill.Enqueue(c + Res); }
-                }
-                AreaByLabel[next] = count * cellArea;
-                CentroidByLabel[next] = new Vector2(
-                    Origin.x + (float)sx / count / Res * Size.x,
-                    Origin.z + (float)sy / count / Res * Size.z);
-            }
+            _regions = new GardenTerrainRegions(terrain);
         }
 
         /// <summary>

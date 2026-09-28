@@ -133,6 +133,10 @@
             "value": "এখানে কিছু রাখা যাবে না"
         },
         {
+            "key": "placement.blocked_area_locked",
+            "value": "আপনি এখনো বাগানের এই অংশটি উন্মুক্ত করেননি"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "সম্পন্ন হয়েছে!"
         },

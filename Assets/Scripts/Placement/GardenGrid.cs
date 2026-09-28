@@ -13,7 +13,8 @@ public enum PlacementValidity
     OutOfRadius = 1 << 0,
     OffTerrain = 1 << 1,
     Occupied = 1 << 2,
-    TooSteep = 1 << 3
+    TooSteep = 1 << 3,
+    AreaLocked = 1 << 4
 }
 
 /// <summary>
@@ -143,6 +144,15 @@ public class GardenGrid : MonoBehaviour
             _origin.x + (minCell.x + footprint.x * 0.5f) * cellSize,
             0f,
             _origin.z + (minCell.y + footprint.y * 0.5f) * cellSize);
+    }
+
+    /// <summary>World XZ of the centre of a single cell, at ground level zero.</summary>
+    public Vector3 CellCenter(Vector2Int cell)
+    {
+        return new Vector3(
+            _origin.x + (cell.x + 0.5f) * cellSize,
+            0f,
+            _origin.z + (cell.y + 0.5f) * cellSize);
     }
 
     /// <summary>The anchor cell that centres <paramref name="footprint"/> as close as possible to <paramref name="world"/>.</summary>
@@ -350,6 +360,7 @@ public class GardenGrid : MonoBehaviour
         if (checkOccupancy && !IsAreaFree(area)) result |= PlacementValidity.Occupied;
         if (!IsInsideTerrain(area)) result |= PlacementValidity.OffTerrain;
         if (MaxSlopeOver(area) > maxSlopeDegrees) result |= PlacementValidity.TooSteep;
+        if (!IsAreaUnlocked(area)) result |= PlacementValidity.AreaLocked;
 
         if (radius >= 0f)
         {
@@ -372,5 +383,48 @@ public class GardenGrid : MonoBehaviour
         }
 
         return result;
+    }
+
+    /// <summary>
+    /// True when every part of <paramref name="area"/> stands on ground the player may build on —
+    /// an unlocked garden area, and not the roads, sand or water between them.
+    ///
+    /// <para>No <see cref="GardenAreaManager"/> in the scene means no area rules at all, so the grid
+    /// keeps working unchanged in test scenes and in any garden built before areas existed.</para>
+    ///
+    /// <para><b>Why cell centres and not the four corners:</b> a road can cut diagonally across a
+    /// footprint without touching a single corner of it, and roads are exactly what separates one
+    /// area from the next. Striding keeps the cost flat — at most nine samples a side however large
+    /// the item — and the last row and column are always sampled, because overhanging into the
+    /// neighbouring area is what a stride would otherwise step straight over.</para>
+    /// </summary>
+    private bool IsAreaUnlocked(RectInt area)
+    {
+        GardenAreaManager areas = GardenAreaManager.Instance;
+        if (areas == null || !areas.IsReady) return true;
+
+        int stepX = Mathf.Max(1, Mathf.CeilToInt(area.width / 8f));
+        int stepY = Mathf.Max(1, Mathf.CeilToInt(area.height / 8f));
+
+        for (int x = area.xMin; x < area.xMax; x += stepX)
+        {
+            int sx = Mathf.Min(x, area.xMax - 1);
+
+            for (int y = area.yMin; y < area.yMax; y += stepY)
+            {
+                int sy = Mathf.Min(y, area.yMax - 1);
+                if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(sx, sy)))) return false;
+            }
+
+            if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(sx, area.yMax - 1)))) return false;
+        }
+
+        for (int y = area.yMin; y < area.yMax; y += stepY)
+        {
+            int sy = Mathf.Min(y, area.yMax - 1);
+            if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(area.xMax - 1, sy)))) return false;
+        }
+
+        return areas.IsPlaceableAt(CellCenter(new Vector2Int(area.xMax - 1, area.yMax - 1)));
     }
 }

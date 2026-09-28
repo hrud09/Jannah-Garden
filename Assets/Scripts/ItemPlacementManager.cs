@@ -840,7 +840,11 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (ToastMessageManager.Instance == null || LocalizationManager.Instance == null) return;
 
+        // Area lock is checked first because it is the only reason that is about the player's
+        // progression rather than the spot: "you haven't unlocked this part of the garden yet" is
+        // what they need to hear, even if the ground also happens to be steep or taken.
         string key =
+            (_pendingValidity & PlacementValidity.AreaLocked) != 0 ? "placement.blocked_area_locked" :
             (_pendingValidity & PlacementValidity.Occupied) != 0 ? "placement.blocked_occupied" :
             (_pendingValidity & PlacementValidity.TooSteep) != 0 ? "placement.blocked_steep" :
             (_pendingValidity & PlacementValidity.OutOfRadius) != 0 ? "placement.blocked_too_far" :

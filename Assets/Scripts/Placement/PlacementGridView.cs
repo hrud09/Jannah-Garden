@@ -52,6 +52,29 @@ public class PlacementGridView : MonoBehaviour
              "are outlined, so the player can see taken ground before aiming into it.")]
     public float occupiedAreaMargin = 1.5f;
 
+    [Header("Locked Areas")]
+    [Tooltip("Metres of locked ground drawn around the player while they are not placing anything. " +
+             "Independent of the placement radius, which only exists while a placement is open.")]
+    public float idleLockedRadius = 22f;
+
+    [Tooltip("Extra metres beyond the placement radius over which locked ground is drawn, so the " +
+             "hatching is already there at the edge of what the player can reach.")]
+    public float lockedGroundMargin = 2f;
+
+    [Tooltip("How strongly the grey reads while the player is just walking around, as a fraction of " +
+             "its strength during a placement. Held back so the garden still looks like a garden when " +
+             "nobody is building: at rest the grey is a standing answer to 'is this mine', and it " +
+             "comes up to full only when the player is actually deciding where to put something.")]
+    [Range(0f, 1f)]
+    public float idleLockedAlpha = 0.85f;
+
+    [Tooltip("Longest run of cells merged into one ground-following strip. Runs are what keep the " +
+             "locked overlay to a few hundred quads instead of thousands. A strip samples ground " +
+             "height at every cell along it, so longer runs cost accuracy nothing — the cap only " +
+             "bounds how much work a single rebuild does at once.")]
+    [Range(1, 32)]
+    public int lockedGroundMaxRun = 16;
+
     [Header("Fade")]
     [Tooltip("Seconds for the overlay to fade in when a placement starts and out when it ends.")]
     [Range(0.01f, 1f)]
@@ -71,6 +94,24 @@ public class PlacementGridView : MonoBehaviour
     private Mesh _occupiedMesh;
     private Material _occupiedMaterial;
     private readonly List<RectInt> _occupiedAreaBuffer = new List<RectInt>();
+
+    private MeshRenderer _lockedRenderer;
+    private Mesh _lockedMesh;
+    private Material _lockedMaterial;
+    private int _lockedQuadCount;
+
+    /// <summary>
+    /// The locked overlay fades on its own clock. It outlives a placement — it is visible while the
+    /// player walks around — so it cannot ride the alpha that exists to show and hide the lattice.
+    /// </summary>
+    private float _lockedAlpha;
+    private float _lockedTargetAlpha;
+
+    private Vector3 _lastLockedCenter = new Vector3(float.MaxValue, 0f, float.MaxValue);
+    private bool _lockedDirty = true;
+
+    /// <summary>The manager whose unlock event is currently hooked, so it can be unhooked again.</summary>
+    private GardenAreaManager _subscribedAreas;
 
     private Vector3[] _gridVertices;
     private Vector3 _lastGridCenter = new Vector3(float.MaxValue, 0f, float.MaxValue);
@@ -103,7 +144,27 @@ public class PlacementGridView : MonoBehaviour
     {
         EnsureRenderers();
         SetAlphaImmediate(0f);
+        SetLockedAlphaImmediate(0f);
+        _lockedTargetAlpha = IdleLockedTarget;
     }
+
+    /// <summary>
+    /// How locked ground should currently be shown. Owned by <see cref="GardenAreaManager"/> — with no
+    /// manager there is no map either, so there is nothing to draw.
+    /// </summary>
+    private LockedGroundVisibility Mode =>
+        _subscribedAreas != null ? _subscribedAreas.LockedGroundMode : LockedGroundVisibility.Never;
+
+    /// <summary>
+    /// What the locked overlay fades to when no placement is open.
+    ///
+    /// <para>Deliberately not full strength. While walking, the grey is background information and the
+    /// garden should still look like a garden; the moment a placement opens it goes to full, because
+    /// then it is the thing being read rather than the thing being lived in. The step between the two
+    /// is itself a cue that the question has changed.</para>
+    /// </summary>
+    private float IdleLockedTarget =>
+        Mode == LockedGroundVisibility.Always ? Mathf.Clamp01(idleLockedAlpha) : 0f;
 
     private void EnsureRenderers()
     {
@@ -129,6 +190,14 @@ public class PlacementGridView : MonoBehaviour
             _occupiedMesh = new Mesh { name = "PlacementOccupiedAreas" };
             _occupiedMesh.MarkDynamic();
             _occupiedRenderer = CreateChild("OccupiedAreasHighlight", _occupiedMesh, _occupiedMaterial);
+        }
+
+        if (_lockedRenderer == null)
+        {
+            _lockedMaterial = LoadMaterial("Placement/PlacementLockedGround");
+            _lockedMesh = new Mesh { name = "PlacementLockedGround" };
+            _lockedMesh.MarkDynamic();
+            _lockedRenderer = CreateChild("LockedGround", _lockedMesh, _lockedMaterial);
         }
     }
 
@@ -174,12 +243,20 @@ public class PlacementGridView : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (_subscribedAreas != null)
+        {
+            _subscribedAreas.UnlocksChanged -= MarkLockedGroundDirty;
+            _subscribedAreas.LockedGroundModeChanged -= OnLockedGroundModeChanged;
+        }
+
         if (_gridMesh != null) Destroy(_gridMesh);
         if (_footprintMesh != null) Destroy(_footprintMesh);
         if (_occupiedMesh != null) Destroy(_occupiedMesh);
+        if (_lockedMesh != null) Destroy(_lockedMesh);
         if (_gridMaterial != null) Destroy(_gridMaterial);
         if (_footprintMaterial != null) Destroy(_footprintMaterial);
         if (_occupiedMaterial != null) Destroy(_occupiedMaterial);
+        if (_lockedMaterial != null) Destroy(_lockedMaterial);
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -199,6 +276,9 @@ public class PlacementGridView : MonoBehaviour
         // while standing still, so the move-threshold in RefreshGridSheet would otherwise skip the
         // rebuild) — always resync the outlines when a placement starts.
         BuildOccupiedAreasMesh(center, radius);
+
+        _lockedTargetAlpha = Mode == LockedGroundVisibility.Never ? 0f : 1f;
+        BuildLockedGroundMesh(center, radius);
     }
 
     /// <summary>Fades everything out. The meshes stay built, ready for the next placement.</summary>
@@ -208,6 +288,12 @@ public class PlacementGridView : MonoBehaviour
         _hasFootprint = false;
         if (_footprintRenderer != null) _footprintRenderer.enabled = false;
         if (_occupiedRenderer != null) _occupiedRenderer.enabled = false;
+
+        // The locked overlay is not hidden with the rest: it falls back to its idle strength and
+        // keeps standing, because "which of this garden is mine" is a question the player has while
+        // walking around, not only while they happen to be holding something.
+        _lockedTargetAlpha = IdleLockedTarget;
+        _lockedDirty = true;
     }
 
     /// <summary>Keeps the sheet centred on the player, rebuilding its heights only when worth it.</summary>
@@ -255,10 +341,109 @@ public class PlacementGridView : MonoBehaviour
 
     private void Update()
     {
-        if (Mathf.Approximately(_alpha, _targetAlpha)) return;
+        SyncAreaSubscription();
+        FollowPlayerWhileIdle();
 
         float step = Time.unscaledDeltaTime / Mathf.Max(fadeDuration, 0.01f);
-        SetAlphaImmediate(Mathf.MoveTowards(_alpha, _targetAlpha, step));
+
+        if (!Mathf.Approximately(_alpha, _targetAlpha))
+        {
+            SetAlphaImmediate(Mathf.MoveTowards(_alpha, _targetAlpha, step));
+        }
+
+        if (!Mathf.Approximately(_lockedAlpha, _lockedTargetAlpha))
+        {
+            SetLockedAlphaImmediate(Mathf.MoveTowards(_lockedAlpha, _lockedTargetAlpha, step));
+        }
+    }
+
+    /// <summary>
+    /// Keeps the grey patch under the player while no placement is open.
+    ///
+    /// <para>During a placement <see cref="ItemPlacementManager"/> drives the centre through
+    /// <see cref="SetCenter"/>. Outside one nothing does, so the view follows the player itself —
+    /// otherwise an always-visible overlay would sit wherever the last placement ended.</para>
+    ///
+    /// <para>Rebuilt on the same move threshold the lattice uses, because building it samples terrain
+    /// height a few thousand times and the player crossing half a metre changes nothing they can see.</para>
+    /// </summary>
+    private void FollowPlayerWhileIdle()
+    {
+        if (_targetAlpha > 0f) return;
+
+        // Re-read the idle target every frame rather than only when a placement ends, so dragging the
+        // strength slider or switching the visibility mode takes effect while the game is running —
+        // which is the only way to judge either of them.
+        _lockedTargetAlpha = IdleLockedTarget;
+
+        if (Mode != LockedGroundVisibility.Always) return;
+        if (_grid == null || !_grid.IsReady) return;
+
+        TargetDirectionController player = TargetDirectionController.Instance;
+        if (player == null) return;
+
+        Vector3 center = player.transform.position;
+
+        bool moved = new Vector2(center.x - _lastLockedCenter.x, center.z - _lastLockedCenter.z).sqrMagnitude
+                     > rebuildMoveThreshold * rebuildMoveThreshold;
+
+        if (!moved && !_lockedDirty) return;
+
+        _lastLockedCenter = center;
+        _lockedDirty = false;
+        BuildLockedGroundMesh(center, idleLockedRadius);
+    }
+
+    /// <summary>
+    /// Hooks the area manager's unlock event, re-hooking if the manager is replaced.
+    ///
+    /// <para>Done here rather than in <c>OnEnable</c> because the view is created by
+    /// <see cref="ItemPlacementManager"/> during its own setup, and the manager it needs may not have
+    /// woken yet at that point.</para>
+    /// </summary>
+    private void SyncAreaSubscription()
+    {
+        GardenAreaManager areas = GardenAreaManager.Instance;
+        if (_subscribedAreas == areas) return;
+
+        if (_subscribedAreas != null)
+        {
+            _subscribedAreas.UnlocksChanged -= MarkLockedGroundDirty;
+            _subscribedAreas.LockedGroundModeChanged -= OnLockedGroundModeChanged;
+        }
+
+        _subscribedAreas = areas;
+
+        if (_subscribedAreas != null)
+        {
+            _subscribedAreas.UnlocksChanged += MarkLockedGroundDirty;
+            _subscribedAreas.LockedGroundModeChanged += OnLockedGroundModeChanged;
+        }
+
+        _lockedDirty = true;
+    }
+
+    /// <summary>An area opened or closed: the grey has to be rebuilt even if the player has not moved.</summary>
+    private void MarkLockedGroundDirty() => _lockedDirty = true;
+
+    /// <summary>
+    /// The display mode changed. Switching to 'always' mid-walk has to rebuild immediately, because
+    /// the idle follow only rebuilds on movement and the player may be standing still.
+    /// </summary>
+    private void OnLockedGroundModeChanged(LockedGroundVisibility mode)
+    {
+        _lockedDirty = true;
+
+        if (_targetAlpha <= 0f) _lockedTargetAlpha = IdleLockedTarget;
+        else if (mode == LockedGroundVisibility.Never) _lockedTargetAlpha = 0f;
+    }
+
+    private void SetLockedAlphaImmediate(float alpha)
+    {
+        _lockedAlpha = alpha;
+
+        if (_lockedMaterial != null) _lockedMaterial.SetFloat(GlobalAlphaId, _lockedAlpha);
+        if (_lockedRenderer != null) _lockedRenderer.enabled = _lockedAlpha > 0.001f && _lockedQuadCount > 0;
     }
 
     private void SetAlphaImmediate(float alpha)
@@ -307,6 +492,7 @@ public class PlacementGridView : MonoBehaviour
 
         BuildGridMesh(center, radius);
         BuildOccupiedAreasMesh(center, radius);
+        BuildLockedGroundMesh(center, radius);
         _lastGridCenter = center;
         _lastGridRadius = radius;
     }
@@ -462,6 +648,62 @@ public class PlacementGridView : MonoBehaviour
         _occupiedMesh.RecalculateBounds();
 
         if (_occupiedRenderer != null) _occupiedRenderer.enabled = quadCount > 0 && _alpha > 0.001f;
+    }
+
+    /// <summary>
+    /// Hatches the ground the player may not build on: garden areas they have not unlocked, and —
+    /// when the placement rule says so — the roads, sand and water that belong to no area at all.
+    ///
+    /// <para>Nothing here decides anything: <see cref="GardenGrid.Evaluate"/> owns the rule, and this
+    /// only draws it. The cells to cover come from <see cref="GardenAreaMesh.LockedSlots"/>, the same
+    /// predicate the rule is written against, so the hatching cannot mark different ground than the
+    /// ghost turns red over. With no area map in the scene there is simply nothing to draw.</para>
+    /// </summary>
+    private void BuildLockedGroundMesh(Vector3 center, float radius)
+    {
+        if (_lockedMesh == null) return;
+
+        GardenAreaManager areas = GardenAreaManager.Instance;
+        GardenAreaMap map = areas != null ? areas.map : null;
+
+        if (Mode == LockedGroundVisibility.Never || _grid == null || !_grid.IsReady
+            || areas == null || !areas.IsReady || !areas.enforceLocks || map == null)
+        {
+            ClearLockedGround();
+            return;
+        }
+
+        float reach = Mathf.Max(0f, radius) + lockedGroundMargin;
+
+        if (_lockedMaterial != null)
+        {
+            _lockedMaterial.SetVector(CenterId, new Vector4(center.x, 0f, center.z, 0f));
+            _lockedMaterial.SetFloat(RadiusId, reach);
+        }
+
+        _lockedQuadCount = GardenAreaMesh.BuildGroundPatch(
+            map,
+            GardenAreaMesh.LockedSlots(map, areas),
+            SampleGroundHeight,
+            center,
+            reach,
+            lockedGroundMaxRun,
+            // The bottom layer of the overlay: the context the lattice and the footprint draw on top of.
+            // Floated a touch higher than the lattice sheet regardless, because the terrain's own mesh
+            // is coarser than this grid and interpolates between its vertices differently.
+            groundOffset * 2f,
+            _lockedMesh);
+
+        if (_lockedRenderer != null) _lockedRenderer.enabled = _lockedQuadCount > 0 && _lockedAlpha > 0.001f;
+    }
+
+    private float SampleGroundHeight(float x, float z) => _grid.SampleHeight(new Vector3(x, 0f, z));
+
+    private void ClearLockedGround()
+    {
+        _lockedQuadCount = 0;
+        _lockedMesh.Clear();
+        if (_lockedRenderer != null) _lockedRenderer.enabled = false;
     }
 
     /// <summary>A footprint-outline corner, sampled onto the ground a touch above the lattice sheet so

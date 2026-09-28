@@ -133,6 +133,10 @@
             "value": "آپ یہاں کچھ نہیں رکھ سکتے"
         },
         {
+            "key": "placement.blocked_area_locked",
+            "value": "آپ نے ابھی تک باغ کا یہ حصہ نہیں کھولا"
+        },
+        {
             "key": "placement.completed_exclaim",
             "value": "مکمل ہو گیا!"
         },
