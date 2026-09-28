@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527097370b4abb642a86f6525c02bf91, type: 3}
   m_Name: LockedGroundStyle
   m_EditorClassIdentifier: Assembly-CSharp::GardenLockedGroundStyle
-  fill: {r: 0.6367924, g: 0.6367924, b: 1, a: 1}
-  hatch: {r: 0.2688679, g: 0.2688679, b: 1, a: 0.78}
-  spacing: 0.47
-  width: 0.15
+  fill: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.29803923}
+  gridLine: {r: 0.2688679, g: 0.2688679, b: 1, a: 0.5529412}
+  gridMajorLine: {r: 0, g: 0, b: 0, a: 0.85}
+  majorEvery: 4
+  lineWidth: 1.1
+  majorLineWidth: 1.8

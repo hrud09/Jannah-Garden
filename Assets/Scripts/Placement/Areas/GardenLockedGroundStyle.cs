@@ -22,30 +22,46 @@ public class GardenLockedGroundStyle : ScriptableObject
              "hole in the world rather than as ground somebody else's.")]
     public Color fill = new Color(0.32f, 0.32f, 0.35f, 0.72f);
 
-    [Header("Hatching")]
-    [Tooltip("The diagonal stripes drawn over the wash. Darker than the wash reads as cordoned-off; " +
-             "lighter than it disappears against lit grass at any distance.")]
-    public Color hatch = new Color(0.10f, 0.10f, 0.12f, 0.78f);
+    [Header("Grid")]
+    [Tooltip("The lattice drawn over the wash, on the same cells the placement grid uses so the lines " +
+             "carry straight across the boundary between unlocked and locked ground. Darker than the " +
+             "wash reads as surveyed ground; lighter than it disappears against lit grass at any " +
+             "distance. Its alpha is how strongly a line sits over the wash.")]
+    public Color gridLine = new Color(0.10f, 0.10f, 0.12f, 0.78f);
 
-    [Tooltip("Metres from one stripe to the next. Wider stripes survive being seen from across the " +
-             "garden; narrower ones read as texture rather than as a barrier.")]
-    [Range(0.2f, 6f)]
-    public float spacing = 1.3f;
+    [Tooltip("Every Nth line, drawn heavier so the lattice has a readable rhythm instead of dissolving " +
+             "into an even mesh when seen from across the garden.")]
+    public Color gridMajorLine = new Color(0.06f, 0.06f, 0.08f, 0.92f);
 
-    [Tooltip("Metres of stripe within each repeat. Half the spacing gives even bands; less leaves the " +
-             "wash dominant with the stripes as an accent.")]
-    [Range(0.05f, 3f)]
-    public float width = 0.5f;
+    [Tooltip("How many cells apart the heavier lines fall. Matches the placement grid's own major " +
+             "spacing so the two lattices stay in step.")]
+    [Range(1f, 16f)]
+    public float majorEvery = 4f;
+
+    [Tooltip("Line thickness in pixels, not metres: a line that holds its screen width stays legible " +
+             "underfoot and fades to an even tone in the distance rather than aliasing.")]
+    [Range(0.25f, 6f)]
+    public float lineWidth = 1.1f;
+
+    [Tooltip("Thickness of the heavier lines, in pixels.")]
+    [Range(0.25f, 8f)]
+    public float majorLineWidth = 1.8f;
 
     private static readonly int FillId = Shader.PropertyToID("_Color");
-    private static readonly int HatchId = Shader.PropertyToID("_HatchColor");
-    private static readonly int SpacingId = Shader.PropertyToID("_HatchSpacing");
-    private static readonly int WidthId = Shader.PropertyToID("_HatchWidth");
+    private static readonly int LineId = Shader.PropertyToID("_LineColor");
+    private static readonly int MajorLineId = Shader.PropertyToID("_MajorLineColor");
+    private static readonly int MajorEveryId = Shader.PropertyToID("_MajorEvery");
+    private static readonly int LineWidthId = Shader.PropertyToID("_LineWidth");
+    private static readonly int MajorLineWidthId = Shader.PropertyToID("_MajorLineWidth");
 
     /// <summary>
     /// Writes this style onto <paramref name="material"/>.
     ///
-    /// <para>Fade and strength are deliberately not touched: those belong to the overlay's own state —
+    /// <para>Cell size and grid origin are deliberately not touched: they come from the real
+    /// <see cref="GardenGrid"/> through <c>PlacementGridView</c>, because the lattice is only worth
+    /// drawing if it sits on the cells the game actually snaps to.</para>
+    ///
+    /// <para>Fade and strength are deliberately not touched either: those belong to the overlay's own state —
     /// which radius it is covering, whether a placement is open — and a style that quietly overwrote
     /// them would make the grey pop to full brightness the moment someone edited a colour.</para>
     /// </summary>
@@ -54,8 +70,10 @@ public class GardenLockedGroundStyle : ScriptableObject
         if (material == null) return;
 
         material.SetColor(FillId, fill);
-        material.SetColor(HatchId, hatch);
-        material.SetFloat(SpacingId, Mathf.Max(0.01f, spacing));
-        material.SetFloat(WidthId, Mathf.Max(0f, width));
+        material.SetColor(LineId, gridLine);
+        material.SetColor(MajorLineId, gridMajorLine);
+        material.SetFloat(MajorEveryId, Mathf.Max(1f, majorEvery));
+        material.SetFloat(LineWidthId, Mathf.Max(0.01f, lineWidth));
+        material.SetFloat(MajorLineWidthId, Mathf.Max(0.01f, majorLineWidth));
     }
 }

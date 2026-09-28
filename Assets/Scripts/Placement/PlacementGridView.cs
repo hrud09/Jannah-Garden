@@ -423,6 +423,15 @@ public class PlacementGridView : MonoBehaviour
 
         _lockedMaterial.SetVector(CenterId, new Vector4(center.x, 0f, center.z, 0f));
         _lockedMaterial.SetFloat(RadiusId, radius + lockedGroundMargin);
+
+        // The locked overlay draws the same lattice the placement sheet does, so it needs the same
+        // anchor and cell size. Pushed from here rather than once at bind time because the overlay is
+        // visible before any placement opens, which is the one path that never touches the grid sheet.
+        if (_grid != null && _grid.IsReady)
+        {
+            _lockedMaterial.SetFloat(CellSizeId, _grid.CellSize);
+            _lockedMaterial.SetVector(GridOriginId, GridOriginVector());
+        }
     }
 
     /// <summary>
