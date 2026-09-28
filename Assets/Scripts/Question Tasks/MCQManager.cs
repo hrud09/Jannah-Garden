@@ -74,6 +74,12 @@ public class MCQManager : MonoBehaviour
     private int currentCorrectOptionIndex;
     private int currentQuestionAttempts = 0;
 
+    // How long the correct-answer feedback (green sprite + punch scale) stays on screen before the
+    // panel swaps to the "Mash'Allah" finale. The punch itself runs 0.4s; the remainder is so the
+    // player actually registers which option was right before the options disappear.
+    private const float CorrectAnswerFeedbackDuration = 1.5f;
+    private Tween mashallahDelay;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -122,6 +128,8 @@ public class MCQManager : MonoBehaviour
     void OnDestroy()
     {
         LocalizationManager.OnLocaleChanged -= LoadQuestions;
+        mashallahDelay?.Kill();
+        mashallahDelay = null;
     }
 
     public void StartQuiz(QuestionMarkOrb orb = null)
@@ -131,6 +139,8 @@ public class MCQManager : MonoBehaviour
 
         // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh quiz
         // starts with the question content back in view and the finale label hidden again.
+        mashallahDelay?.Kill();
+        mashallahDelay = null;
         if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
         if (questionTextUI != null) questionTextUI.gameObject.SetActive(true);
 
@@ -392,10 +402,13 @@ public class MCQManager : MonoBehaviour
                 xpEarned = PlayerXPManager.Instance.AddXPForTask(xpTask, false);
             }
 
-            // Show Mash'Allah before granting rewards — reward side-effects (level-up panels,
-            // coin animations) can trigger StopAllCoroutines or CloseQuiz, which would cancel
-            // the Mash'Allah display before it ever renders.
-            ShowMashallahAndAutoClose();
+            // Let the correct-answer feedback above play out in full before the panel swaps to the
+            // "Mash'Allah" finale — hiding the options immediately would throw away the green
+            // highlight the player just earned. Scheduled here, before rewards are granted, and as a
+            // DOTween call rather than a coroutine, because reward side-effects (level-up panels,
+            // coin animations) can StopAllCoroutines and would cancel it before it ever renders.
+            mashallahDelay?.Kill();
+            mashallahDelay = DOVirtual.DelayedCall(CorrectAnswerFeedbackDuration, ShowMashallahAndAutoClose, false);
 
             if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
             {
@@ -452,6 +465,8 @@ public class MCQManager : MonoBehaviour
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.QuizClose);
         StopAllCoroutines();
+        mashallahDelay?.Kill();
+        mashallahDelay = null;
 
         if (quizPanel != null) 
         {
@@ -493,6 +508,8 @@ public class MCQManager : MonoBehaviour
     // a few seconds later, instead of the immediate hide used elsewhere.
     private void ShowMashallahAndAutoClose()
     {
+        mashallahDelay = null;
+
         // Stop any in-flight panel open/close animation so the panel is fully visible
         // and at the correct scale before we update the content.
         if (quizPanel != null)
