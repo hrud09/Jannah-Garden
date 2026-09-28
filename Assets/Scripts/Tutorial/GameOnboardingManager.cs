@@ -49,7 +49,7 @@ public class GameOnboardingManager : MonoBehaviour
         Completed = 6
     }
 
-    private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingRotationDemo, AwaitingPlace, ShowingXPInfo }
+    private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingRotationDemo, ShowingZoneIntro, AwaitingPlace, ShowingZoneAesthetics, ShowingXPInfo }
     private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit }
 
     private const string StageKey = "GameOnboarding_Stage";
@@ -624,7 +624,63 @@ public class GameOnboardingManager : MonoBehaviour
 
         StopPulse();
         RestoreHighlightSorting();
-        BeginPlaceHighlightStep(place);
+        BeginZoneIntroStep(place);
+    }
+
+    /// <summary>
+    /// Explains the garden's division, at the one moment the picture of it is already on screen.
+    ///
+    /// <para>Placed here on purpose: the placement is open, so the green over the player's own ground
+    /// and the grey over everything they have not earned are both drawn and both fading at full
+    /// strength. Explaining the rule while the player can see it costs one panel; explaining it in the
+    /// welcome screen, before any of it is visible, costs a paragraph and teaches nothing.</para>
+    ///
+    /// <para>Non-blocking, so the player can swing the camera around and look at the two colours while
+    /// they read — which is most of the point.</para>
+    /// </summary>
+    private void BeginZoneIntroStep(Button place)
+    {
+        flow1Sub = Flow1SubStep.ShowingZoneIntro;
+        StopHandPointerAnimation();
+        ShowDimAndPanel(true, blockRaycasts: false);
+
+        // The one step whose subject is the ground itself, so the dim comes straight back off: a grey
+        // sheet over the garden is the last thing to put between the player and two colours they are
+        // being asked to tell apart. The panel stays; only the veil goes.
+        HideDimOverlayOnly();
+
+        LocalizationManager loc = LocalizationManager.Instance;
+        SetInstructionText(loc.Get("onboarding.step_zone_intro", CurrentAreaName()));
+        ConfigurePrimaryButton(loc.Get("onboarding.got_it_button"), () =>
+        {
+            if (flow1Sub != Flow1SubStep.ShowingZoneIntro) return;
+
+            HidePrimaryButton();
+            BeginPlaceHighlightStep(place);
+        });
+    }
+
+    /// <summary>
+    /// The name of the area the player is standing in, for the zone steps' copy.
+    ///
+    /// <para>Falls back to the generic phrase rather than to a blank or a raw key: a first-run garden
+    /// with no baked area map must still produce a sentence, and "this part of your garden" is true in
+    /// every garden whether or not it has been divided.</para>
+    /// </summary>
+    private string CurrentAreaName()
+    {
+        GardenAreaManager areas = GardenAreaManager.Instance;
+        IdyllicFantasyNature.PlayerMovement player = playerMovementRef != null
+            ? playerMovementRef
+            : FindFirstObjectByType<IdyllicFantasyNature.PlayerMovement>();
+
+        if (areas != null && areas.IsReady && areas.map != null && player != null)
+        {
+            GardenAreaDefinition area = areas.AreaAt(player.transform.position);
+            if (area != null) return areas.map.DisplayName(area);
+        }
+
+        return LocalizationManager.Instance.Get("zone.this_area_fallback");
     }
 
     private void BeginPlaceHighlightStep(Button place)
@@ -643,6 +699,51 @@ public class GameOnboardingManager : MonoBehaviour
         HighlightUIElement(rect);
         PulseButton(rect);
         StartHandPointerAnimation(rect);
+
+        StartCoroutine(WatchForLockedGroundRoutine());
+    }
+
+    /// <summary>
+    /// Swaps the placement prompt for a correction while the player is aiming at ground that is not
+    /// theirs, and swaps it back when they aim away again.
+    ///
+    /// <para>A player who has just been told about the two colours will test them — that is what being
+    /// told a rule does. Meeting that test with the reason, rather than with a red outline and silence,
+    /// is what turns the rule into something understood rather than something bumped into. Nothing is
+    /// blocked and nothing fails: the step still ends when they place the item, wherever they place
+    /// it.</para>
+    ///
+    /// <para>Held for a moment before speaking, because the ghost crosses a road on the way to almost
+    /// anywhere and a prompt that flickered on every pass would read as a fault.</para>
+    /// </summary>
+    private IEnumerator WatchForLockedGroundRoutine()
+    {
+        const float SpeakAfterSeconds = 0.4f;
+
+        bool warning = false;
+        float lockedFor = 0f;
+
+        while (flow1Sub == Flow1SubStep.AwaitingPlace)
+        {
+            ItemPlacementManager placement = ItemPlacementManager.Instance;
+            bool onLocked = placement != null
+                            && (placement.CurrentValidity & PlacementValidity.AreaLocked) != 0;
+
+            lockedFor = onLocked ? lockedFor + Time.deltaTime : 0f;
+
+            if (onLocked && !warning && lockedFor >= SpeakAfterSeconds)
+            {
+                warning = true;
+                SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_zone_locked_hint"));
+            }
+            else if (!onLocked && warning)
+            {
+                warning = false;
+                SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_place_item"));
+            }
+
+            yield return null;
+        }
     }
 
     private void HandleItemPlaced(PlaceableItem placedItem)
@@ -654,6 +755,56 @@ public class GameOnboardingManager : MonoBehaviour
         StopPulse();
         RestoreHighlightSorting();
         StopHandPointerAnimation();
+
+        BeginZoneAestheticsStep();
+    }
+
+    /// <summary>
+    /// The lesson the whole division of the garden exists for: a zone is a composition, not a shelf.
+    ///
+    /// <para>Said after the first item is down rather than before, because it is only once there is
+    /// something standing in the garden that "where does the next one go" is a question the player is
+    /// actually holding. Before the first placement it would be advice about nothing.</para>
+    ///
+    /// <para>Points at the zone banner while it talks, so the meter the advice refers to is the thing
+    /// on screen — and asks the banner to name the area first, since the player has just been looking
+    /// at the ground rather than at the top of the screen.</para>
+    /// </summary>
+    private void BeginZoneAestheticsStep()
+    {
+        flow1Sub = Flow1SubStep.ShowingZoneAesthetics;
+
+        GardenAreaBanner banner = FindFirstObjectByType<GardenAreaBanner>();
+
+        if (banner != null)
+        {
+            GardenAreaManager areas = GardenAreaManager.Instance;
+            IdyllicFantasyNature.PlayerMovement player = playerMovementRef;
+
+            if (areas != null && areas.IsReady && player != null)
+            {
+                banner.Announce(areas.AreaAt(player.transform.position));
+            }
+        }
+
+        ShowDimAndPanel(true, blockRaycasts: false);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_zone_aesthetics", CurrentAreaName()));
+
+        if (banner != null && banner.group != null)
+        {
+            RectTransform rect = banner.group.GetComponent<RectTransform>();
+            if (rect != null) HighlightUIElement(rect);
+        }
+
+        ConfigurePrimaryButton(LocalizationManager.Instance.Get("onboarding.got_it_button"),
+            HandleZoneAestheticsContinue);
+    }
+
+    private void HandleZoneAestheticsContinue()
+    {
+        if (!Flow1Active || flow1Sub != Flow1SubStep.ShowingZoneAesthetics) return;
+
+        RestoreHighlightSorting();
         flow1Sub = Flow1SubStep.ShowingXPInfo;
 
         Button xpButton = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpGainChartToggleButton : null;

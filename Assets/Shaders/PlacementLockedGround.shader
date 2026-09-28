@@ -17,6 +17,12 @@
 //
 // The whole overlay fades out toward the placement radius so the mesh's own edge is never the thing
 // the player sees.
+//
+// It draws both halves of the answer: the grey over ground the player has not unlocked, and — through
+// a second material carrying green colours, a rim and a pulse — the ground they have. One shader for
+// both because they are the same picture asked in opposite directions, and because two shaders would
+// be two places to fix the day the lattice or the falloff changes. The rim and pulse default to zero,
+// so the grey material behaves exactly as it always has.
 Shader "JannahGarden/PlacementLockedGround"
 {
     Properties
@@ -32,6 +38,14 @@ Shader "JannahGarden/PlacementLockedGround"
         _Center ("Fade Center (world)", Vector) = (0, 0, 0, 0)
         _Radius ("Fade Radius (metres)", Float) = 12
         _GlobalAlpha ("Global Alpha", Range(0, 1)) = 1
+
+        // Zero by default, which is exactly the overlay as it shipped: the grey wants to sit still and
+        // be read, so the glow below belongs to the green "this ground is yours" material alone.
+        _RimColor ("Rim Color", Color) = (1, 1, 1, 1)
+        _RimStrength ("Rim Strength", Range(0, 3)) = 0
+        _RimWidth ("Rim Width (fraction of a cell)", Range(0.05, 1)) = 0.55
+        _Pulse ("Pulse Amount", Range(0, 1)) = 0
+        _PulseSpeed ("Pulse Speed (cycles/sec)", Float) = 0.6
     }
 
     SubShader
@@ -67,12 +81,16 @@ Shader "JannahGarden/PlacementLockedGround"
             struct Attributes
             {
                 float4 positionOS : POSITION;
+                // uv.x carries the rim weight the mesh builder wrote per lattice corner — see
+                // GardenAreaMesh.RimWeight. Nothing samples a texture here.
+                float2 uv : TEXCOORD0;
             };
 
             struct Varyings
             {
                 float4 positionCS : SV_POSITION;
                 float3 positionWS : TEXCOORD0;
+                float rim : TEXCOORD1;
             };
 
             CBUFFER_START(UnityPerMaterial)
@@ -87,6 +105,11 @@ Shader "JannahGarden/PlacementLockedGround"
                 float _MajorLineWidth;
                 float _Radius;
                 float _GlobalAlpha;
+                float4 _RimColor;
+                float _RimStrength;
+                float _RimWidth;
+                float _Pulse;
+                float _PulseSpeed;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -95,6 +118,7 @@ Shader "JannahGarden/PlacementLockedGround"
                 VertexPositionInputs positions = GetVertexPositionInputs(IN.positionOS.xyz);
                 OUT.positionCS = positions.positionCS;
                 OUT.positionWS = positions.positionWS;
+                OUT.rim = IN.uv.x;
                 return OUT;
             }
 
@@ -131,9 +155,23 @@ Shader "JannahGarden/PlacementLockedGround"
                 rgb = lerp(rgb, _MajorLineColor.rgb, majorA);
                 alpha = lerp(alpha, 1.0, majorA);
 
+                // The edge of the shape, brightened. The rim weight interpolates from 1 at a boundary
+                // corner to 0 at the corner behind it, so the band is one cell wide however large the
+                // area is — a border drawn on the zone's own outline rather than a line the player has
+                // to infer from where the wash stops.
+                float rim = saturate((IN.rim - (1.0 - _RimWidth)) / max(_RimWidth, 1e-4)) * _RimStrength;
+                rgb = lerp(rgb, _RimColor.rgb, saturate(rim * _RimColor.a));
+                alpha = lerp(alpha, 1.0, saturate(rim * _RimColor.a));
+
                 // Same radial falloff the grid sheet uses, so the two overlays end together.
                 float2 toCenter = world - _Center.xz;
                 alpha *= 1.0 - smoothstep(_Radius * 0.72, _Radius, length(toCenter));
+
+                // Breathing, so ground that has just been offered to the player reads as live rather
+                // than as another painted texture. Amplitude is a fraction of the alpha the overlay
+                // already has, so the pulse never brightens past what the style asked for.
+                alpha *= 1.0 - _Pulse * 0.5 * (1.0 - cos(_Time.y * _PulseSpeed * 6.2831853));
+
                 alpha *= _GlobalAlpha;
 
                 clip(alpha - 0.002);

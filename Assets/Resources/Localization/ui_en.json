@@ -666,7 +666,7 @@
         },
         {
             "key": "onboarding.step_xp_info",
-            "value": "Nice! Everything you do in Jannah Garden — planting, learning, and more — grows your Experience Level. Watch it climb here!"
+            "value": "Nice! Everything you do in Jannah Garden — planting, learning, and more — grows your Experience Level. Every level you reach opens another zone of the garden. Watch it climb here!"
         },
         {
             "key": "onboarding.got_it_button",
@@ -795,6 +795,70 @@
         {
             "key": "area.lakeside_walk",
             "value": "Lakeside Walk"
+        },
+        {
+            "key": "zone.this_area_fallback",
+            "value": "this part of your garden"
+        },
+        {
+            "key": "zone.path_title",
+            "value": "Garden Path"
+        },
+        {
+            "key": "zone.path_status",
+            "value": "no building here"
+        },
+        {
+            "key": "zone.status_yours",
+            "value": "Yours to plant"
+        },
+        {
+            "key": "zone.status_locked",
+            "value": "Unlocks at Level {0}"
+        },
+        {
+            "key": "zone.progress_format",
+            "value": "{0} of {1} planted"
+        },
+        {
+            "key": "zone.unlocked_title",
+            "value": "A new zone is open!"
+        },
+        {
+            "key": "zone.unlocked_body",
+            "value": "<b>{0}</b> is yours now. Walk over and make it beautiful."
+        },
+        {
+            "key": "zone.unlocked_toast",
+            "value": "New zone unlocked: {0}"
+        },
+        {
+            "key": "onboarding.step_zone_intro",
+            "value": "Your garden is divided into zones, and you're standing in <b>{0}</b>.\n\nThe ground glowing <color=#7CD97C>green</color> is yours to plant. The grey ground belongs to zones you haven't unlocked yet — level up and they open one by one."
+        },
+        {
+            "key": "onboarding.step_zone_locked_hint",
+            "value": "That ground isn't yours yet — aim back at the <color=#7CD97C>green</color> to plant here."
+        },
+        {
+            "key": "onboarding.step_zone_aesthetics",
+            "value": "Beautifully done!\n\nThink of <b>{0}</b> as a little garden of its own: mix different plants, spread them out, and leave the paths clear. The zone's meter fills as it grows lovelier — not just fuller."
+        },
+        {
+            "key": "zone.banner_line",
+            "value": "{0}  ·  {1}"
+        },
+        {
+            "key": "zone.minimap_locked_format",
+            "value": "{0}  <size=85%>Lv {1}</size>"
+        },
+        {
+            "key": "placement.blocked_zone_full",
+            "value": "{0} is full ({1} items) — try another zone"
+        },
+        {
+            "key": "zone.status_full",
+            "value": "full · {0} items"
         }
     ]
 }

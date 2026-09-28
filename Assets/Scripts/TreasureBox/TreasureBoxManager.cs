@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -146,6 +146,11 @@ public class TreasureBoxManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            // The survivor's own spawn points, terrain and HUD were destroyed with the scene it was
+            // created in; this copy carries the live ones. Hand them over before going away, or the
+            // treasure box system stays dead for the rest of the session once the player has been
+            // to the Outer Garden and back.
+            Instance.AdoptSceneReferences(this);
             Destroy(gameObject);
             return;
         }
@@ -153,17 +158,99 @@ public class TreasureBoxManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        if (spawnPointsParent != null)
-        {
-            foreach (Transform child in spawnPointsParent)
-            {
-                spawnPoints.Add(child);
-            }
-        }
+        CollectSpawnPoints();
 
         LoadState();
         TickCycleResets();
         OnStateChanged += CheckAndSpawnNewBoxes;
+    }
+
+    /// <summary>
+    /// Takes over the scene-bound references of a newly loaded copy of this manager.
+    ///
+    /// <para>The manager itself is <c>DontDestroyOnLoad</c> because the box timers are global and must
+    /// keep running across a scene change. Most of what it <em>points at</em> is not: the status HUD and
+    /// the terrain belong to roots the load throws away. Without this the survivor spends the rest of
+    /// the session holding destroyed references, which is what produced a null reference every frame
+    /// from <see cref="UpdateTierUiData"/> and on every spawn check.</para>
+    /// </summary>
+    private void AdoptSceneReferences(TreasureBoxManager replacement)
+    {
+        if (replacement == null) return;
+
+        // Only what has actually died is replaced. Some of this manager's references outlive a scene
+        // load and some do not, depending on which root object they hang from: the spawn points are
+        // its own children and travel with it, while the status panel (a HUD canvas) and the terrain
+        // belong to roots that are not preserved. Taking the replacement's copy of something still
+        // alive would be worse than useless — the replacement is about to be destroyed, so it would
+        // trade a live reference for one that dies a frame later.
+        if (spawnPointsParent == null && replacement.spawnPointsParent != null)
+        {
+            // Re-parented rather than merely referenced, for that same reason: left where it is, it
+            // goes away with the copy that carried it.
+            replacement.spawnPointsParent.SetParent(transform, worldPositionStays: true);
+            spawnPointsParent = replacement.spawnPointsParent;
+            CollectSpawnPoints();
+        }
+
+        if (terrainReference == null) terrainReference = replacement.terrainReference;
+        if (treasureBoxStatusUi == null) treasureBoxStatusUi = replacement.treasureBoxStatusUi;
+
+        // Every box that was standing is gone with the old scene. Forgetting them is what lets the
+        // next spawn check put them back rather than believing they are still out there.
+        _spawnedBoxes.Clear();
+
+        // Left to the one-second tick rather than respawned here: this runs from the new copy's Awake,
+        // where the object pool the boxes come from may not have woken yet.
+    }
+
+    private void CollectSpawnPoints()
+    {
+        spawnPoints.Clear();
+
+        if (spawnPointsParent == null) return;
+
+        foreach (Transform child in spawnPointsParent)
+        {
+            spawnPoints.Add(child);
+        }
+    }
+
+    /// <summary>
+    /// True while the garden this manager spawns into is actually loaded around it.
+    ///
+    /// <para>It outlives its scene by design, and in the Outer Garden there is no ground to put a box
+    /// on and no HUD to write a timer into. Rather than letting every call guard itself, the whole
+    /// per-frame job stops until the garden comes back.</para>
+    /// </summary>
+    private bool IsBoundToScene
+    {
+        get
+        {
+            for (int i = 0; i < spawnPoints.Count; i++)
+            {
+                if (spawnPoints[i] != null) return true;
+            }
+
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// A localized string, or an empty one when the localization manager is not up.
+    ///
+    /// <para>Every lookup here goes through this rather than <c>LocalizationManager.Instance.Get</c>
+    /// directly: this manager keeps running through scene loads, and a status line is not worth a
+    /// null reference exception per frame.</para>
+    /// </summary>
+    private static string Loc(string key)
+    {
+        return LocalizationManager.Instance != null ? LocalizationManager.Instance.Get(key) : string.Empty;
+    }
+
+    private static string Loc(string key, params object[] args)
+    {
+        return LocalizationManager.Instance != null ? LocalizationManager.Instance.Get(key, args) : string.Empty;
     }
 
     private void Start()
@@ -188,8 +275,13 @@ public class TreasureBoxManager : MonoBehaviour
         if (_spawnCheckTimer >= 1f)
         {
             _spawnCheckTimer = 0f;
+
+            // Timers keep running wherever the player is - they are real time, and a box that became
+            // available while they were in the Outer Garden should be waiting when they come back.
             TickCycleResets();
-            CheckAndSpawnNewBoxes();
+
+            // Spawning and the HUD are not: both need the garden scene around them.
+            if (IsBoundToScene) CheckAndSpawnNewBoxes();
         }
 
         UpdateTierUiData();
@@ -226,12 +318,12 @@ public class TreasureBoxManager : MonoBehaviour
                 }
                 else
                 {
-                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.resetting"));
+                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.resetting"));
                 }
             }
             else if (state.IsSetComplete)
             {
-                LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.completed"));
+                LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.completed"));
             }
             else if (!IsTierUnlocked(upcomingTier))
             {
@@ -245,12 +337,12 @@ public class TreasureBoxManager : MonoBehaviour
                     }
                     else
                     {
-                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.finish_previous_tier"));
+                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.finish_previous_tier"));
                     }
                 }
                 else
                 {
-                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.locked"));
+                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.locked"));
                 }
             }
             else
@@ -268,7 +360,7 @@ public class TreasureBoxManager : MonoBehaviour
 
                 if (IsSlotAvailable(upcomingTier, nextSlot))
                 {
-                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.available"));
+                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.available"));
                 }
                 else
                 {
@@ -280,7 +372,7 @@ public class TreasureBoxManager : MonoBehaviour
                     }
                     else
                     {
-                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, LocalizationManager.Instance.Get("treasurebox.status.waiting"));
+                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.waiting"));
                     }
                 }
             }
@@ -471,7 +563,7 @@ public class TreasureBoxManager : MonoBehaviour
         // ── Progression gate ──────────────────────────────────────────────────
         if (!IsTierUnlocked(tier))
         {
-            string msg = LocalizationManager.Instance.Get("treasurebox.complete_previous_tier", GetPreviousTierName(tier));
+            string msg = Loc("treasurebox.complete_previous_tier", GetPreviousTierName(tier));
             Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
             
             if (ToastMessageManager.Instance != null)
@@ -792,7 +884,7 @@ public class TreasureBoxManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("treasurebox.all_opened"));
+                ToastMessageManager.Instance.ShowToast(Loc("treasurebox.all_opened"));
             }
             return;
         }
@@ -822,14 +914,16 @@ public class TreasureBoxManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("treasurebox.not_appeared_yet"));
+                ToastMessageManager.Instance.ShowToast(Loc("treasurebox.not_appeared_yet"));
             }
         }
     }
     
     private void CheckAndSpawnNewBoxes()
     {
-        if (spawnPoints == null || spawnPoints.Count == 0) return;
+        // _saveData is null until LoadState has run, and this is also reached from the OnStateChanged
+        // event, which anything may raise at any point in a load.
+        if (_saveData == null || spawnPoints == null || spawnPoints.Count == 0) return;
         
         foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
         {
@@ -907,7 +1001,24 @@ public class TreasureBoxManager : MonoBehaviour
             spawnPos = new Vector3(spawnPos.x, terrainY + 2f, spawnPos.z);
         }
         
+        // The pool lives in the garden scene, so it is absent for as long as the player is elsewhere -
+        // and for the first frames of a load, before its own Awake has run. Neither is worth an
+        // exception: the spawn check runs again a second later, by which time it is there.
+        if (Objectpool.Instance == null)
+        {
+            Debug.LogWarning("[TreasureBoxManager] No Objectpool yet - deferring the " + tier
+                             + " slot " + slotIndex + " spawn to the next check.");
+            return;
+        }
+
         GameObject go = Objectpool.Instance.Spawn(prefab, spawnPos, spawnPoint.rotation);
+
+        if (go == null)
+        {
+            Debug.LogWarning("[TreasureBoxManager] Pool returned nothing for " + tier + " slot " + slotIndex + ".");
+            return;
+        }
+
         go.name = $"TreasureBox_{tier}_Slot{slotIndex}";
         
         TreasureBox boxScript = go.GetComponent<TreasureBox>();
@@ -973,7 +1084,7 @@ public class TreasureBoxManager : MonoBehaviour
 
     private static string FormatTimeSpan(TimeSpan span)
     {
-        if (span <= TimeSpan.Zero) return LocalizationManager.Instance.Get("common.now");
+        if (span <= TimeSpan.Zero) return Loc("common.now");
         return span.Hours > 0
             ? $"{span.Hours:D2}h {span.Minutes:D2}m {span.Seconds:D2}s"
             : $"{span.Minutes:D2}m {span.Seconds:D2}s";

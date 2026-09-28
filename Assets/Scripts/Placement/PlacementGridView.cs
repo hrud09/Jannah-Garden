@@ -87,6 +87,16 @@ public class PlacementGridView : MonoBehaviour
              "material's own values. Edits to the asset show up straight away, including in play mode.")]
     public GardenLockedGroundStyle lockedGroundStyle;
 
+    [Header("Unlocked Areas")]
+    [Tooltip("How the green over the player's own ground looks — the same style asset the grey uses, " +
+             "authored the other way round: a green wash, a bright rim around the area's edge and a " +
+             "slow pulse. This is the knob for the whole 'build here' cue; edits show up live.")]
+    public GardenLockedGroundStyle unlockedGroundStyle;
+
+    [Tooltip("Off, the player's own ground is never tinted and only the grey over locked ground " +
+             "remains. For judging the garden's own colours, or shooting a trailer.")]
+    public bool showUnlockedGround = true;
+
     [Header("Fade")]
     [Tooltip("Seconds for the overlay to fade in when a placement starts and out when it ends.")]
     [Range(0.01f, 1f)]
@@ -111,6 +121,15 @@ public class PlacementGridView : MonoBehaviour
     private Mesh _lockedMesh;
     private Material _lockedMaterial;
     private int _lockedQuadCount;
+
+    private MeshRenderer _unlockedRenderer;
+    private Mesh _unlockedMesh;
+    private Material _unlockedMaterial;
+    private int _unlockedQuadCount;
+
+    /// <summary>Which slots the green patch covers. Kept apart from <see cref="_lockedSlots"/> rather
+    /// than inverted on the fly, because both patches are built in the same pass.</summary>
+    private bool[] _unlockedSlots;
 
     /// <summary>
     /// The locked overlay fades on its own clock. It outlives a placement — it is visible while the
@@ -216,6 +235,15 @@ public class PlacementGridView : MonoBehaviour
             _lockedRenderer = CreateChild("LockedGround", _lockedMesh, _lockedMaterial);
             ApplyLockedGroundStyle();
         }
+
+        if (_unlockedRenderer == null)
+        {
+            _unlockedMaterial = LoadMaterial("Placement/PlacementUnlockedGround");
+            _unlockedMesh = new Mesh { name = "PlacementUnlockedGround" };
+            _unlockedMesh.MarkDynamic();
+            _unlockedRenderer = CreateChild("UnlockedGround", _unlockedMesh, _unlockedMaterial);
+            ApplyUnlockedGroundStyle();
+        }
     }
 
     /// <summary>
@@ -270,6 +298,8 @@ public class PlacementGridView : MonoBehaviour
         if (_footprintMesh != null) Destroy(_footprintMesh);
         if (_occupiedMesh != null) Destroy(_occupiedMesh);
         if (_lockedMesh != null) Destroy(_lockedMesh);
+        if (_unlockedMesh != null) Destroy(_unlockedMesh);
+        if (_unlockedMaterial != null) Destroy(_unlockedMaterial);
         if (_gridMaterial != null) Destroy(_gridMaterial);
         if (_footprintMaterial != null) Destroy(_footprintMaterial);
         if (_occupiedMaterial != null) Destroy(_occupiedMaterial);
@@ -295,7 +325,7 @@ public class PlacementGridView : MonoBehaviour
         BuildOccupiedAreasMesh(center, radius);
 
         _lockedTargetAlpha = Mode == LockedGroundVisibility.Never ? 0f : 1f;
-        BuildLockedGroundMesh(center, radius);
+        BuildAreaOverlays(center, radius);
     }
 
     /// <summary>Fades everything out. The meshes stay built, ready for the next placement.</summary>
@@ -410,7 +440,7 @@ public class PlacementGridView : MonoBehaviour
 
         if (!_lockedDirty && left <= slack && _lastLockedBuildRadius >= idleLockedRadius) return;
 
-        BuildLockedGroundMesh(center, idleLockedRadius);
+        BuildAreaOverlays(center, idleLockedRadius);
     }
 
     /// <summary>
@@ -495,9 +525,16 @@ public class PlacementGridView : MonoBehaviour
         if (_footprintMaterial != null) _footprintMaterial.SetFloat(GlobalAlphaId, _alpha);
         if (_occupiedMaterial != null) _occupiedMaterial.SetFloat(GlobalAlphaId, _alpha);
 
+        // The green rides the placement's own fade rather than keeping its own clock the way the grey
+        // does. "Which ground is mine" is a standing question and gets the standing grey answer; "put
+        // it here" is a question only asked while something is in hand, and a garden that glowed green
+        // all the time would stop looking like a garden.
+        if (_unlockedMaterial != null) _unlockedMaterial.SetFloat(GlobalAlphaId, _alpha);
+
         if (_gridRenderer != null) _gridRenderer.enabled = visible;
         if (_footprintRenderer != null) _footprintRenderer.enabled = visible && _hasFootprint;
         if (_occupiedRenderer != null) _occupiedRenderer.enabled = visible && _occupiedAreaBuffer.Count > 0;
+        if (_unlockedRenderer != null) _unlockedRenderer.enabled = visible && _unlockedQuadCount > 0;
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -522,6 +559,10 @@ public class PlacementGridView : MonoBehaviour
             _gridMaterial.SetVector(GridOriginId, GridOriginVector());
         }
 
+        // Aimed every call, not only on a rebuild: the green is built wide and rarely, so without this
+        // its radial fade would stay where the last rebuild put it and visibly trail the player.
+        AimUnlockedFade(center, radius);
+
         bool moved = (new Vector2(center.x - _lastGridCenter.x, center.z - _lastGridCenter.z)).sqrMagnitude
                      > rebuildMoveThreshold * rebuildMoveThreshold;
 
@@ -532,7 +573,7 @@ public class PlacementGridView : MonoBehaviour
 
         BuildGridMesh(center, radius);
         BuildOccupiedAreasMesh(center, radius);
-        BuildLockedGroundMesh(center, radius);
+        BuildAreaOverlays(center, radius);
         _lastGridCenter = center;
         _lastGridRadius = radius;
     }
@@ -691,27 +732,39 @@ public class PlacementGridView : MonoBehaviour
     }
 
     /// <summary>
-    /// Hatches the ground the player may not build on: garden areas they have not unlocked, and —
-    /// when the placement rule says so — the roads, sand and water that belong to no area at all.
+    /// Draws both halves of where the player stands: the grey over garden areas they have not
+    /// unlocked, and the green over the ones they have.
     ///
     /// <para>Nothing here decides anything: <see cref="GardenGrid.Evaluate"/> owns the rule, and this
-    /// only draws it. The cells to cover come from <see cref="GardenAreaMesh.LockedSlots"/>, the same
-    /// predicate the rule is written against, so the hatching cannot mark different ground than the
-    /// ghost turns red over. With no area map in the scene there is simply nothing to draw.</para>
+    /// only draws it. The cells come from <see cref="GardenAreaMesh.LockedSlots"/> and
+    /// <see cref="GardenAreaMesh.UnlockedSlots"/>, written against the same predicate the rule is, so
+    /// neither picture can mark different ground than the ghost turns red over. With no area map in
+    /// the scene there is simply nothing to draw.</para>
+    ///
+    /// <para>The two patches are built in one call rather than by two independent passes so they share
+    /// <see cref="GardenAreaMesh"/>'s terrain-height corner cache — which is the expensive part of a
+    /// rebuild, and is warm for the second patch precisely because the first just walked the same
+    /// window of cells.</para>
     /// </summary>
-    private void BuildLockedGroundMesh(Vector3 center, float radius)
+    private void BuildAreaOverlays(Vector3 center, float radius)
     {
         if (_lockedMesh == null) return;
 
         GardenAreaManager areas = GardenAreaManager.Instance;
         GardenAreaMap map = areas != null ? areas.map : null;
 
-        if (Mode == LockedGroundVisibility.Never || _grid == null || !_grid.IsReady
-            || areas == null || !areas.IsReady || !areas.enforceLocks || map == null)
+        bool noAreas = _grid == null || !_grid.IsReady
+                       || areas == null || !areas.IsReady || !areas.enforceLocks || map == null;
+
+        if (noAreas || Mode == LockedGroundVisibility.Never)
         {
             ClearLockedGround();
-            return;
+            if (noAreas) ClearUnlockedGround();
         }
+
+        if (!noAreas) BuildUnlockedGroundMesh(map, areas, center, radius);
+
+        if (noAreas || Mode == LockedGroundVisibility.Never) return;
 
         float reach = Mathf.Max(0f, radius) + lockedGroundMargin;
 
@@ -742,6 +795,67 @@ public class PlacementGridView : MonoBehaviour
     }
 
     /// <summary>
+    /// Greens the ground the player <em>may</em> build on, while they are actually holding something.
+    ///
+    /// <para>The point of the pair is that the two questions are answered at once and in the same
+    /// language: the lattice carries straight across the boundary, the rim traces where one area ends,
+    /// and the player learns the garden's shape from the one glance rather than by aiming at ground
+    /// until something turns red.</para>
+    ///
+    /// <para>Built only while a placement is open, because that is the only time it is being asked —
+    /// and because the geometry is the expensive part, so not building it is most of not paying for
+    /// it. It follows the placement's own centre and radius, never the idle one.</para>
+    /// </summary>
+    private void BuildUnlockedGroundMesh(
+        GardenAreaMap map, GardenAreaManager areas, Vector3 center, float radius)
+    {
+        if (_unlockedMesh == null) return;
+
+        if (!showUnlockedGround || _targetAlpha <= 0f)
+        {
+            ClearUnlockedGround();
+            return;
+        }
+
+        AimUnlockedFade(center, radius);
+
+        _unlockedSlots = GardenAreaMesh.UnlockedSlots(map, areas, ref _unlockedSlots);
+
+        _unlockedQuadCount = GardenAreaMesh.BuildGroundPatch(
+            map,
+            _unlockedSlots,
+            SampleGroundHeight,
+            center,
+            Mathf.Max(0f, radius) + lockedGroundMargin + Mathf.Max(0f, lockedGroundRebuildSlack),
+            lockedGroundMaxRun,
+            // The same height as the grey, since the two never overlap — one covers the areas the
+            // other does not — so there is nothing between them to z-fight with.
+            groundOffset * 2f,
+            _unlockedMesh);
+
+        if (_unlockedRenderer != null)
+        {
+            _unlockedRenderer.enabled = _unlockedQuadCount > 0 && _alpha > 0.001f;
+        }
+    }
+
+    /// <summary>Points the green overlay's radial fade, the same way <see cref="AimLockedFade"/> does
+    /// for the grey, so the two end at the same distance and read as one picture.</summary>
+    private void AimUnlockedFade(Vector3 center, float radius)
+    {
+        if (_unlockedMaterial == null) return;
+
+        _unlockedMaterial.SetVector(CenterId, new Vector4(center.x, 0f, center.z, 0f));
+        _unlockedMaterial.SetFloat(RadiusId, radius + lockedGroundMargin);
+
+        if (_grid != null && _grid.IsReady)
+        {
+            _unlockedMaterial.SetFloat(CellSizeId, _grid.CellSize);
+            _unlockedMaterial.SetVector(GridOriginId, GridOriginVector());
+        }
+    }
+
+    /// <summary>
     /// Pushes <see cref="lockedGroundStyle"/> onto the overlay's material. Safe to call at any time;
     /// a missing style simply leaves the material as the asset authored it.
     /// </summary>
@@ -750,14 +864,21 @@ public class PlacementGridView : MonoBehaviour
         if (lockedGroundStyle != null) lockedGroundStyle.ApplyTo(_lockedMaterial);
     }
 
+    /// <summary>The same, for the green over the player's own ground.</summary>
+    public void ApplyUnlockedGroundStyle()
+    {
+        if (unlockedGroundStyle != null) unlockedGroundStyle.ApplyTo(_unlockedMaterial);
+    }
+
 #if UNITY_EDITOR
     /// <summary>
-    /// Re-applies the style when a field is changed in the Inspector, so a colour can be judged
+    /// Re-applies the styles when a field is changed in the Inspector, so a colour can be judged
     /// against the running game rather than against the next entry into play mode.
     /// </summary>
     private void OnValidate()
     {
         if (_lockedMaterial != null) ApplyLockedGroundStyle();
+        if (_unlockedMaterial != null) ApplyUnlockedGroundStyle();
     }
 #endif
 
@@ -769,6 +890,15 @@ public class PlacementGridView : MonoBehaviour
         _lastLockedBuildRadius = -1f;
         _lockedMesh.Clear();
         if (_lockedRenderer != null) _lockedRenderer.enabled = false;
+    }
+
+    private void ClearUnlockedGround()
+    {
+        if (_unlockedMesh == null) return;
+
+        _unlockedQuadCount = 0;
+        _unlockedMesh.Clear();
+        if (_unlockedRenderer != null) _unlockedRenderer.enabled = false;
     }
 
     /// <summary>A footprint-outline corner, sampled onto the ground a touch above the lattice sheet so

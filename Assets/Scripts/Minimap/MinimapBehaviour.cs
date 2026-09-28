@@ -68,6 +68,13 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public bool IsExpanded => isExpanded;
 
+    /// <summary>The camera that draws the map, for anything that needs to place an overlay on top of
+    /// it — see <see cref="GardenAreaMinimapLabels"/>, which projects world positions through it.</summary>
+    public Camera MinimapCamera => minimapCamera;
+
+    /// <summary>The rect the map is drawn into. Its size changes when the map is expanded.</summary>
+    public RectTransform MinimapPanel => minimapPanel;
+
     private void Start()
     {
         // Fallback to local RectTransform if not set

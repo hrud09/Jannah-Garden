@@ -31,6 +31,22 @@ public static class GardenAreaMesh
     private static readonly List<int> Triangles = new List<int>();
 
     /// <summary>
+    /// Per-vertex rim weight on uv.x: 1 where the lattice corner touches ground outside the patch,
+    /// 0 deep inside it. The shader reads it to draw a bright edge around the whole shape.
+    ///
+    /// <para>A vertex attribute rather than a second mesh, because the strip already puts a vertex on
+    /// every cell boundary — so the boundary is <em>already</em> described by the geometry, and the
+    /// interpolation between a rim corner and the one behind it hands the shader a free one-cell
+    /// gradient to fade the glow across.</para>
+    /// </summary>
+    private static readonly List<Vector2> Uvs = new List<Vector2>();
+
+    // The patch currently being built, so the rim test can ask "is that cell in this shape too?"
+    // without threading four more arguments through AddRun on every run of every row.
+    private static GardenAreaMap _patchMap;
+    private static bool[] _patchSelected;
+
+    /// <summary>
     /// Ground height at each corner of the patch's cell lattice, and the rebuild it was sampled on.
     ///
     /// <para>Every run shares its end corners with the run beside it, and every row shares its whole
@@ -132,6 +148,10 @@ public static class GardenAreaMesh
 
         Vertices.Clear();
         Triangles.Clear();
+        Uvs.Clear();
+
+        _patchMap = map;
+        _patchSelected = selectedBySlot;
 
         for (int y = minY; y <= maxY; y++)
         {
@@ -193,8 +213,12 @@ public static class GardenAreaMesh
             ? UnityEngine.Rendering.IndexFormat.UInt32
             : UnityEngine.Rendering.IndexFormat.UInt16;
         mesh.SetVertices(Vertices);
+        mesh.SetUVs(0, Uvs);
         mesh.SetTriangles(Triangles, 0);
         mesh.RecalculateBounds();
+
+        _patchMap = null;
+        _patchSelected = null;
 
         return Triangles.Count / 6;
     }
@@ -217,8 +241,13 @@ public static class GardenAreaMesh
         for (int i = 0; i <= cells; i++)
         {
             float x = worldX + i * cell;
-            Vertices.Add(new Vector3(x, CornerHeight(height, x0 + i, y, x, z0) + offset, z0));
-            Vertices.Add(new Vector3(x, CornerHeight(height, x0 + i, y + 1, x, z1) + offset, z1));
+            int cx = x0 + i;
+
+            Vertices.Add(new Vector3(x, CornerHeight(height, cx, y, x, z0) + offset, z0));
+            Uvs.Add(new Vector2(RimWeight(cx, y), 0f));
+
+            Vertices.Add(new Vector3(x, CornerHeight(height, cx, y + 1, x, z1) + offset, z1));
+            Uvs.Add(new Vector2(RimWeight(cx, y + 1), 0f));
         }
 
         // Wound to face up, matching the rest of the placement overlay.
@@ -234,6 +263,35 @@ public static class GardenAreaMesh
             Triangles.Add(v + 1);
             Triangles.Add(v + 3);
         }
+    }
+
+    /// <summary>
+    /// 1 when the lattice corner (<paramref name="cx"/>, <paramref name="cy"/>) touches ground the
+    /// patch does not cover, 0 when all four cells around it are inside the shape.
+    ///
+    /// <para>Tested against the slot table alone and never against the build radius, so the rim traces
+    /// the real boundary between one area and the next rather than lighting up a circle around the
+    /// player wherever the patch happens to have been cut off.</para>
+    /// </summary>
+    private static float RimWeight(int cx, int cy)
+    {
+        if (_patchMap == null || _patchSelected == null) return 0f;
+
+        bool all = IsPatchCell(cx - 1, cy - 1) && IsPatchCell(cx, cy - 1)
+                   && IsPatchCell(cx - 1, cy) && IsPatchCell(cx, cy);
+
+        return all ? 0f : 1f;
+    }
+
+    /// <summary>Whether cell (<paramref name="x"/>, <paramref name="y"/>) belongs to the shape being
+    /// built. Off-map counts as outside, which is what puts a rim along the terrain's own edge.</summary>
+    private static bool IsPatchCell(int x, int y)
+    {
+        int res = _patchMap.resolution;
+        if (x < 0 || y < 0 || x >= res || y >= res) return false;
+
+        byte slot = _patchMap.cells[y * res + x];
+        return slot < _patchSelected.Length && _patchSelected[slot];
     }
 
     /// <summary>Readies the corner cache for a patch spanning the given cell window.</summary>
@@ -292,5 +350,17 @@ public static class GardenAreaMesh
     public static bool[] LockedSlots(GardenAreaMap map, GardenAreaManager areas, ref bool[] buffer)
     {
         return FillLockedSlots(map, area => !areas.IsUnlocked(area), ref buffer);
+    }
+
+    /// <summary>
+    /// Which slots the green "this is yours" overlay covers: the areas the player <em>has</em> unlocked.
+    ///
+    /// <para>The exact complement of <see cref="LockedSlots"/> within the areas, and — for the same
+    /// reason — not over the roads either. The path between two of the player's own areas is not
+    /// theirs to build on, and painting it green would say it was.</para>
+    /// </summary>
+    public static bool[] UnlockedSlots(GardenAreaMap map, GardenAreaManager areas, ref bool[] buffer)
+    {
+        return FillLockedSlots(map, areas.IsUnlocked, ref buffer);
     }
 }

@@ -14,7 +14,10 @@ public enum PlacementValidity
     OffTerrain = 1 << 1,
     Occupied = 1 << 2,
     TooSteep = 1 << 3,
-    AreaLocked = 1 << 4
+    AreaLocked = 1 << 4,
+
+    /// <summary>The area is the player's, but already holds as many items as it may.</summary>
+    ZoneFull = 1 << 5
 }
 
 /// <summary>
@@ -361,6 +364,7 @@ public class GardenGrid : MonoBehaviour
         if (!IsInsideTerrain(area)) result |= PlacementValidity.OffTerrain;
         if (MaxSlopeOver(area) > maxSlopeDegrees) result |= PlacementValidity.TooSteep;
         if (!IsAreaUnlocked(area)) result |= PlacementValidity.AreaLocked;
+        if (IsZoneFull(area)) result |= PlacementValidity.ZoneFull;
 
         if (radius >= 0f)
         {
@@ -398,6 +402,22 @@ public class GardenGrid : MonoBehaviour
     /// the item — and the last row and column are always sampled, because overhanging into the
     /// neighbouring area is what a stride would otherwise step straight over.</para>
     /// </summary>
+    /// <summary>
+    /// True when the area this block would stand in is already at its item limit.
+    ///
+    /// <para>The limit exists to teach composition: a zone that is finished should send the player to
+    /// the next one rather than absorbing everything they ever buy. Measured at the block's centre, so
+    /// an item belongs to exactly one zone however far it overhangs — see
+    /// <see cref="GardenAreaManager.IsFullAt"/>.</para>
+    /// </summary>
+    private bool IsZoneFull(RectInt area)
+    {
+        GardenAreaManager areas = GardenAreaManager.Instance;
+        if (areas == null || !areas.IsReady) return false;
+
+        return areas.IsFullAt(CellAreaCenter(area.min, area.size));
+    }
+
     private bool IsAreaUnlocked(RectInt area)
     {
         GardenAreaManager areas = GardenAreaManager.Instance;

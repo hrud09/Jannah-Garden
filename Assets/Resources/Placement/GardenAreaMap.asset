@@ -21,6 +21,8 @@ MonoBehaviour:
     number: 4
     displayNameKey: area.northern_meadow
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 96.60136, y: 172.94066}
     labelAnchor: {x: 103.71094, y: 174.02344}
     squareMetres: 940.55176
@@ -29,6 +31,8 @@ MonoBehaviour:
     number: 10
     displayNameKey: area.blossom_rise
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 52.205826, y: 168.958}
     labelAnchor: {x: 50.585938, y: 168.94531}
     squareMetres: 942.5354
@@ -37,6 +41,8 @@ MonoBehaviour:
     number: 2
     displayNameKey: area.corner_grove
     unlockedFromStart: 0
+    requiredLevel: 2
+    placementLimit: 3
     centroid: {x: 141.34282, y: 168.61403}
     labelAnchor: {x: 143.16406, y: 168.55469}
     squareMetres: 189.81934
@@ -45,6 +51,8 @@ MonoBehaviour:
     number: 1
     displayNameKey: area.gateway_lawn
     unlockedFromStart: 1
+    requiredLevel: 1
+    placementLimit: 5
     centroid: {x: 128.63979, y: 153.83492}
     labelAnchor: {x: 127.53906, y: 158.78906}
     squareMetres: 309.14307
@@ -53,6 +61,8 @@ MonoBehaviour:
     number: 5
     displayNameKey: area.heart_garden
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 95.5798, y: 147.9363}
     labelAnchor: {x: 105.66406, y: 148.63281}
     squareMetres: 977.7832
@@ -61,6 +71,8 @@ MonoBehaviour:
     number: 3
     displayNameKey: area.eastern_orchard
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 155.74318, y: 145.9725}
     labelAnchor: {x: 158.39844, y: 138.86719}
     squareMetres: 897.67456
@@ -69,6 +81,8 @@ MonoBehaviour:
     number: 8
     displayNameKey: area.western_glade
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 41.28898, y: 145.11472}
     labelAnchor: {x: 41.601562, y: 145.50781}
     squareMetres: 493.01147
@@ -77,6 +91,8 @@ MonoBehaviour:
     number: 7
     displayNameKey: area.rose_terrace
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 59.733162, y: 134.24358}
     labelAnchor: {x: 60.351562, y: 133.00781}
     squareMetres: 455.32227
@@ -85,6 +101,8 @@ MonoBehaviour:
     number: 6
     displayNameKey: area.quiet_hollow
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 132.26587, y: 129.42442}
     labelAnchor: {x: 134.17969, y: 131.44531}
     squareMetres: 649.1089
@@ -93,6 +111,8 @@ MonoBehaviour:
     number: 9
     displayNameKey: area.edge_thicket
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 35.45928, y: 123.27896}
     labelAnchor: {x: 34.960938, y: 123.24219}
     squareMetres: 343.62793
@@ -101,6 +121,8 @@ MonoBehaviour:
     number: 14
     displayNameKey: area.willow_bank
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 76.48294, y: 121.21449}
     labelAnchor: {x: 65.42969, y: 115.42969}
     squareMetres: 466.00342
@@ -109,6 +131,8 @@ MonoBehaviour:
     number: 11
     displayNameKey: area.sunset_field
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 153.83644, y: 95.31247}
     labelAnchor: {x: 155.27344, y: 95.89844}
     squareMetres: 1750.4883
@@ -117,6 +141,8 @@ MonoBehaviour:
     number: 15
     displayNameKey: area.lakeside_walk
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 57.759514, y: 87.31092}
     labelAnchor: {x: 57.226562, y: 90.42969}
     squareMetres: 435.33325
@@ -125,6 +151,8 @@ MonoBehaviour:
     number: 13
     displayNameKey: area.southern_shore
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 108.1917, y: 85.041695}
     labelAnchor: {x: 108.39844, y: 81.05469}
     squareMetres: 1314.8499
@@ -133,7 +161,12 @@ MonoBehaviour:
     number: 12
     displayNameKey: area.great_expanse
     unlockedFromStart: 0
+    requiredLevel: 0
+    placementLimit: 0
     centroid: {x: 37.482037, y: 81.09114}
     labelAnchor: {x: 30.664062, y: 86.13281}
     squareMetres: 1801.7578
     editorColor: {r: 0.85, g: 0.78, b: 0.6, a: 1}
+  metresPerItem: 28
+  minDerivedLimit: 3
+  maxDerivedLimit: 30

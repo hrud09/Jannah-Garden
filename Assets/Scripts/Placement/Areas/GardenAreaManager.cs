@@ -43,6 +43,11 @@ public class GardenAreaManager : MonoBehaviour
              "built on. Off keeps the paths walkable and the garden's shape readable.")]
     public bool allowPlacementOutsideAreas;
 
+    [Tooltip("Whether an area refuses further items once it is at its limit. Off, the limits still " +
+             "drive the zone meters but nothing is ever blocked - for testing a full garden, or for " +
+             "a build where the limit is guidance rather than a rule.")]
+    public bool enforcePlacementLimits = true;
+
     [Header("Locked Area Visuals")]
     [Tooltip("ON: the grey over locked ground is visible whenever the player is near it, so they can " +
              "always see which of the garden is theirs. OFF: it only appears while they are actually " +
@@ -75,6 +80,9 @@ public class GardenAreaManager : MonoBehaviour
     private bool _showAlways;
     private bool _showAlwaysLoaded;
 
+    /// <summary>The XP manager whose level event is currently hooked, so it can be unhooked again.</summary>
+    private PlayerXPManager _subscribedXp;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -88,8 +96,25 @@ public class GardenAreaManager : MonoBehaviour
         EnsureVisualsFlagLoaded();
     }
 
+    private void Start()
+    {
+        SyncXpSubscription();
+    }
+
+    /// <summary>
+    /// Keeps the level subscription pointed at whichever XP manager currently exists.
+    ///
+    /// <para>Polled rather than hooked once, for the same reason <c>PlacementGridView</c> polls for
+    /// this manager: the two are independent scene objects and neither controls the order the other
+    /// wakes in, so a subscription taken in <c>Awake</c> would be a coin flip.</para>
+    /// </summary>
+    private void Update() => SyncXpSubscription();
+
     private void OnDestroy()
     {
+        if (_subscribedXp != null) _subscribedXp.OnXPChanged -= HandleXpChanged;
+        _subscribedXp = null;
+
         if (Instance == this) Instance = null;
     }
 
@@ -167,6 +192,98 @@ public class GardenAreaManager : MonoBehaviour
         GardenAreaDefinition next = NextLockedArea();
         return next != null && Unlock(next) ? next : null;
     }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  PLACEMENT LIMITS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    /// <summary>How many items <paramref name="area"/> may hold. 0 when there is no map.</summary>
+    public int LimitFor(GardenAreaDefinition area) => IsReady ? map.PlacementLimitFor(area) : 0;
+
+    /// <summary>How many items stand in <paramref name="area"/> right now.</summary>
+    public int CountIn(GardenAreaDefinition area)
+    {
+        GardenZoneProgress progress = GardenZoneProgress.Instance;
+        return progress != null ? progress.ItemsIn(area) : 0;
+    }
+
+    /// <summary>
+    /// True when <paramref name="area"/> is already holding everything it may.
+    ///
+    /// <para>Counted from the placements that exist rather than from a running total, so it cannot
+    /// drift out of step with the garden — see <see cref="GardenZoneProgress"/>.</para>
+    /// </summary>
+    public bool IsFull(GardenAreaDefinition area)
+    {
+        if (!enforcePlacementLimits || area == null || !IsUnlocked(area)) return false;
+
+        int limit = LimitFor(area);
+        return limit > 0 && CountIn(area) >= limit;
+    }
+
+    /// <summary>
+    /// True when the area covering <paramref name="world"/> is full.
+    ///
+    /// <para>Asked of the aim point alone and not of every cell an item covers, unlike the unlock
+    /// rule: an item that straddles a boundary belongs to the area its centre is in, and counting it
+    /// against both would let a full zone be topped up from the edge of the one beside it.</para>
+    /// </summary>
+    public bool IsFullAt(Vector3 world) => IsFull(AreaAt(world));
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  LEVEL-DRIVEN UNLOCKS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    /// <summary>The XP level <paramref name="area"/> opens at. 0 for an area that is already open.</summary>
+    public int LevelFor(GardenAreaDefinition area)
+    {
+        if (area == null) return 0;
+        return IsUnlocked(area) ? 0 : area.RequiredLevel;
+    }
+
+    /// <summary>
+    /// Opens every area the player's level has earned, and returns the ones that were still shut.
+    ///
+    /// <para>Written as "bring the world up to this level" rather than "the player just levelled up",
+    /// so the same call serves both the level-up moment and load — a player who gained levels while
+    /// the areas were unwired, or whose save predates them, is caught up on their next launch instead
+    /// of having to level again to collect ground they already earned.</para>
+    /// </summary>
+    public List<GardenAreaDefinition> SyncUnlocksToLevel(int level)
+    {
+        List<GardenAreaDefinition> opened = null;
+        if (!IsReady) return opened;
+
+        // In number order so a jump of several levels announces the areas in the order the player
+        // was meant to meet them, rather than in whatever order the bake happened to list them.
+        foreach (GardenAreaDefinition area in map.InNumberOrder())
+        {
+            if (area == null || IsUnlocked(area) || area.RequiredLevel > level) continue;
+
+            if (Unlock(area)) (opened ??= new List<GardenAreaDefinition>()).Add(area);
+        }
+
+        return opened;
+    }
+
+    private void SyncXpSubscription()
+    {
+        PlayerXPManager xp = PlayerXPManager.Instance;
+        if (_subscribedXp == xp) return;
+
+        if (_subscribedXp != null) _subscribedXp.OnXPChanged -= HandleXpChanged;
+
+        _subscribedXp = xp;
+
+        if (_subscribedXp == null) return;
+
+        _subscribedXp.OnXPChanged += HandleXpChanged;
+
+        // The level the player already holds, applied the moment the two objects find each other.
+        SyncUnlocksToLevel(_subscribedXp.xpLevel);
+    }
+
+    private void HandleXpChanged(int level, float currentXp, float xpToNext) => SyncUnlocksToLevel(level);
 
     // ═══════════════════════════════════════════════════════════════════════════
     //  LOCKED AREA VISUALS

@@ -137,6 +137,9 @@ public class GardenAreaMapEditor : Editor
             EditorStyles.miniLabel);
 
         EditorGUILayout.Space();
+        DrawCapacityHeader(map);
+
+        EditorGUILayout.Space();
         DrawAreaList(map);
 
         EditorGUILayout.Space();
@@ -148,6 +151,81 @@ public class GardenAreaMapEditor : Editor
         EditorGUILayout.HelpBox(
             "Numbers are the player-facing order and can be changed at any time. Unlock save data is " +
             "keyed to each area's hidden id instead, so renumbering never moves a player's unlocked ground.",
+            MessageType.None);
+    }
+
+    /// <summary>
+    /// The dials that decide how many items every area holds, and the two bulk actions worth having.
+    ///
+    /// <para>Sits above the list because it is what most tuning passes touch: raising the density of
+    /// the whole garden is one number here, where doing it per area is fifteen. The per-area field
+    /// below is the exception, for the pocket that wants a different answer from its size.</para>
+    /// </summary>
+    private void DrawCapacityHeader(GardenAreaMap map)
+    {
+        EditorGUILayout.LabelField("Placement Capacity", EditorStyles.boldLabel);
+
+        EditorGUI.BeginChangeCheck();
+
+        float metres = EditorGUILayout.Slider(
+            new GUIContent("Metres per item",
+                "Ground each item is given when an area's own limit is left at 0."),
+            map.metresPerItem, 2f, 200f);
+
+        int min = EditorGUILayout.IntSlider("Smallest area holds", map.minDerivedLimit, 1, 50);
+        int max = EditorGUILayout.IntSlider("Largest area holds", map.maxDerivedLimit, 1, 400);
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(map, "Tune Garden Capacity");
+            map.metresPerItem = metres;
+            map.minDerivedLimit = min;
+            map.maxDerivedLimit = Mathf.Max(min, max);
+            EditorUtility.SetDirty(map);
+        }
+
+        int total = 0;
+        int overridden = 0;
+
+        foreach (GardenAreaDefinition area in map.areas)
+        {
+            if (area == null) continue;
+            total += map.PlacementLimitFor(area);
+            if (area.placementLimit > 0) overridden++;
+        }
+
+        EditorGUILayout.LabelField(
+            "Whole garden holds " + total + " items   •   " + overridden + " of " + map.areas.Count
+            + " areas overridden",
+            EditorStyles.miniLabel);
+
+        EditorGUILayout.BeginHorizontal();
+
+        if (GUILayout.Button("Freeze All To Current"))
+        {
+            Undo.RecordObject(map, "Freeze Garden Capacity");
+            foreach (GardenAreaDefinition area in map.areas)
+            {
+                if (area != null) area.placementLimit = map.PlacementLimitFor(area);
+            }
+            EditorUtility.SetDirty(map);
+        }
+
+        if (GUILayout.Button("Clear All Overrides"))
+        {
+            Undo.RecordObject(map, "Clear Garden Capacity Overrides");
+            foreach (GardenAreaDefinition area in map.areas)
+            {
+                if (area != null) area.placementLimit = 0;
+            }
+            EditorUtility.SetDirty(map);
+        }
+
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.HelpBox(
+            "A limit of 0 is derived from the area's size, so re-baking after moving a road keeps every " +
+            "unfrozen area proportionate on its own. Freeze when you want the numbers to stop moving.",
             MessageType.None);
     }
 
@@ -220,7 +298,38 @@ public class GardenAreaMapEditor : Editor
                 SceneView.RepaintAll();
             }
 
-            GUILayout.Label(area.squareMetres.ToString("F0") + " m²", EditorStyles.miniLabel, GUILayout.Width(56f));
+            GUILayout.Label(area.squareMetres.ToString("F0") + " m²", EditorStyles.miniLabel, GUILayout.Width(52f));
+
+            // Level and capacity are editable on every row rather than only the selected one: both are
+            // numbers you tune by reading down the column and comparing, which a click-to-select list
+            // makes into fifteen separate errands.
+            GUILayout.Label("Lv", EditorStyles.miniLabel, GUILayout.Width(16f));
+
+            EditorGUI.BeginChangeCheck();
+            int level = EditorGUILayout.IntField(area.requiredLevel, GUILayout.Width(30f));
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(map, "Set Garden Area Level");
+                area.requiredLevel = Mathf.Max(0, level);
+                EditorUtility.SetDirty(map);
+            }
+
+            GUILayout.Label("Max", EditorStyles.miniLabel, GUILayout.Width(26f));
+
+            EditorGUI.BeginChangeCheck();
+            int limit = EditorGUILayout.IntField(area.placementLimit, GUILayout.Width(34f));
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(map, "Set Garden Area Capacity");
+                area.placementLimit = Mathf.Max(0, limit);
+                EditorUtility.SetDirty(map);
+            }
+
+            // What the two zeros actually resolve to, so "derived" is never a number you have to work
+            // out yourself to know what the player will meet.
+            GUILayout.Label(
+                "→ " + area.RequiredLevel + " / " + map.PlacementLimitFor(area),
+                EditorStyles.miniLabel, GUILayout.Width(56f));
 
             if (GUILayout.Button("Look", EditorStyles.miniButton, GUILayout.Width(44f)))
             {

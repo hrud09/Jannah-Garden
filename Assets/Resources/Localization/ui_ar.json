@@ -1354,7 +1354,7 @@
         },
         {
             "key": "onboarding.step_xp_info",
-            "value": "رائع! كل ما تفعله في جنة الحديقة — الزراعة والتعلم والمزيد — يرفع مستوى خبرتك. راقبه وهو يرتفع هنا!"
+            "value": "رائع! كل ما تفعله في جنة الحديقة — الزراعة والتعلم والمزيد — يرفع مستوى خبرتك. وكل مستوى تبلغه يفتح منطقة جديدة من الحديقة. راقبه وهو يرتفع هنا!"
         },
         {
             "key": "onboarding.got_it_button",
@@ -1483,6 +1483,70 @@
         {
             "key": "area.lakeside_walk",
             "value": "ممشى البحيرة"
+        },
+        {
+            "key": "zone.this_area_fallback",
+            "value": "هذا الجزء من حديقتك"
+        },
+        {
+            "key": "zone.path_title",
+            "value": "ممر الحديقة"
+        },
+        {
+            "key": "zone.path_status",
+            "value": "لا بناء هنا"
+        },
+        {
+            "key": "zone.status_yours",
+            "value": "لك أن تزرع فيها"
+        },
+        {
+            "key": "zone.status_locked",
+            "value": "تُفتح عند المستوى {0}"
+        },
+        {
+            "key": "zone.progress_format",
+            "value": "{0} من {1} مزروعة"
+        },
+        {
+            "key": "zone.unlocked_title",
+            "value": "منطقة جديدة مفتوحة!"
+        },
+        {
+            "key": "zone.unlocked_body",
+            "value": "<b>{0}</b> أصبحت لك الآن. اذهب إليها واجعلها جميلة."
+        },
+        {
+            "key": "zone.unlocked_toast",
+            "value": "فُتحت منطقة جديدة: {0}"
+        },
+        {
+            "key": "onboarding.step_zone_intro",
+            "value": "حديقتك مقسّمة إلى مناطق، وأنت الآن في <b>{0}</b>.\n\nالأرض المتوهّجة <color=#7CD97C>بالأخضر</color> لك لتزرع فيها. أما الأرض الرمادية فتعود لمناطق لم تفتحها بعد — ارتقِ بالمستوى وستُفتح واحدة تلو الأخرى."
+        },
+        {
+            "key": "onboarding.step_zone_locked_hint",
+            "value": "هذه الأرض ليست لك بعد — وجّه نظرك إلى <color=#7CD97C>الأخضر</color> لتزرع هنا."
+        },
+        {
+            "key": "onboarding.step_zone_aesthetics",
+            "value": "أحسنت صنعًا!\n\nاعتبر <b>{0}</b> حديقة صغيرة قائمة بذاتها: نوّع النباتات، وباعد بينها، واترك الممرات خالية. يمتلئ مؤشر المنطقة كلما ازدادت جمالًا — لا امتلاءً فحسب."
+        },
+        {
+            "key": "zone.banner_line",
+            "value": "{0}  ·  {1}"
+        },
+        {
+            "key": "zone.minimap_locked_format",
+            "value": "{0}  <size=85%>مستوى {1}</size>"
+        },
+        {
+            "key": "placement.blocked_zone_full",
+            "value": "{0} ممتلئة ({1} عنصرًا) — جرّب منطقة أخرى"
+        },
+        {
+            "key": "zone.status_full",
+            "value": "ممتلئة · {0} عنصرًا"
         }
     ]
 }

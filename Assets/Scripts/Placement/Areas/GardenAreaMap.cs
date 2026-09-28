@@ -33,6 +33,24 @@ public class GardenAreaDefinition
     [Tooltip("True for the single area the player starts with. The bake preserves whatever you set.")]
     public bool unlockedFromStart;
 
+    [Tooltip("XP level at which this area opens. 0 falls back to 'number', so a pocket that was just " +
+             "baked is gated at its own place in the sequence rather than being free from the start.")]
+    public int requiredLevel;
+
+    /// <summary>
+    /// The level this area actually opens at.
+    ///
+    /// <para>Falls back to <see cref="number"/> rather than to zero, because zero would mean "already
+    /// open" — the one wrong answer for a field nobody has filled in yet. A freshly baked pocket is
+    /// therefore gated behind its own place in the sequence until someone tunes it.</para>
+    /// </summary>
+    public int RequiredLevel => requiredLevel > 0 ? requiredLevel : Mathf.Max(1, number);
+
+    [Tooltip("How many items may stand in this area at once. 0 derives one from its size — see " +
+             "GardenAreaMap.PlacementLimitFor — so an unfilled field still gives a sane answer and " +
+             "only the areas you actually want to tune need a number.")]
+    public int placementLimit;
+
     [Tooltip("World XZ centre of the pocket. Written by the bake; used to re-match this area to its " +
              "pocket after the roads are repainted, and to aim the camera at it.")]
     public Vector2 centroid;
@@ -87,6 +105,40 @@ public class GardenAreaMap : ScriptableObject
 
     [Header("Areas")]
     public List<GardenAreaDefinition> areas = new List<GardenAreaDefinition>();
+
+    [Header("Placement Limits")]
+    [Tooltip("Square metres of ground per item, used to derive a limit for any area whose own " +
+             "'placement limit' is left at 0. Lower means a denser garden everywhere at once - the " +
+             "one dial that retunes the whole map without touching fifteen fields.")]
+    [Range(2f, 200f)]
+    public float metresPerItem = 28f;
+
+    [Tooltip("Floor for a derived limit, so the smallest pocket still holds something worth arranging.")]
+    [Range(1, 50)]
+    public int minDerivedLimit = 3;
+
+    [Tooltip("Ceiling for a derived limit, so the largest area does not become somewhere to dump " +
+             "two hundred items.")]
+    [Range(1, 400)]
+    public int maxDerivedLimit = 30;
+
+    /// <summary>
+    /// How many items <paramref name="area"/> may hold.
+    ///
+    /// <para>An explicit <see cref="GardenAreaDefinition.placementLimit"/> wins; 0 means "work it out
+    /// from how big this pocket is". Derived rather than required, because fifteen numbers nobody has
+    /// filled in is a worse starting point than fifteen proportionate ones — and because re-baking the
+    /// map after repainting a road changes the areas' sizes, and a derived limit follows that on its
+    /// own where a typed-in one quietly stops matching the ground.</para>
+    /// </summary>
+    public int PlacementLimitFor(GardenAreaDefinition area)
+    {
+        if (area == null) return 0;
+        if (area.placementLimit > 0) return area.placementLimit;
+
+        int derived = Mathf.RoundToInt(area.squareMetres / Mathf.Max(1f, metresPerItem));
+        return Mathf.Clamp(derived, Mathf.Max(1, minDerivedLimit), Mathf.Max(1, maxDerivedLimit));
+    }
 
     /// <summary>True once a bake has produced a grid that matches the area list.</summary>
     public bool IsBaked =>

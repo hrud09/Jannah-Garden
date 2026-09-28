@@ -843,6 +843,29 @@ public class ItemPlacementManager : MonoBehaviour
         // Area lock is checked first because it is the only reason that is about the player's
         // progression rather than the spot: "you haven't unlocked this part of the garden yet" is
         // what they need to hear, even if the ground also happens to be steep or taken.
+        // "This zone is full" comes next for the same reason: it is a fact about the zone the player
+        // chose, not about the patch of grass under the ghost, and moving a step sideways will not
+        // fix it the way it would for a taken or steep spot.
+        if ((_pendingValidity & PlacementValidity.AreaLocked) == 0
+            && (_pendingValidity & PlacementValidity.ZoneFull) != 0)
+        {
+            GardenAreaManager areas = GardenAreaManager.Instance;
+
+            // The zone the block is actually standing in, which is the one the rule measured - not
+            // the one the player happens to be standing in, which can be the other side of a road.
+            Vector3 blockCentre = grid != null && grid.IsReady
+                ? grid.CellAreaCenter(_pendingArea.min, _pendingArea.size)
+                : transform.position;
+
+            GardenAreaDefinition here = areas != null ? areas.AreaAt(blockCentre) : null;
+
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get(
+                "placement.blocked_zone_full",
+                areas != null && areas.map != null ? areas.map.DisplayName(here) : string.Empty,
+                areas != null ? areas.LimitFor(here) : 0));
+            return;
+        }
+
         string key =
             (_pendingValidity & PlacementValidity.AreaLocked) != 0 ? "placement.blocked_area_locked" :
             (_pendingValidity & PlacementValidity.Occupied) != 0 ? "placement.blocked_occupied" :
