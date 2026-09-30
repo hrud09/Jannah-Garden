@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4134736214749425570}
   - component: {fileID: 3613503192435589083}
   m_Layer: 0
-  m_Name: Celestial_Blossom_Tre
+  m_Name: Celestial_Blossom_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,11 @@ MonoBehaviour:
   sourceKind: 0
   sourceItemId: 
   timerHolder: {fileID: 5330464879515036433}
+  timerPlantDropHeight: 4
+  timerPlantSwingDistance: 0.6
+  timerPlantFallDuration: 0.35
+  timerPlantImpactDuration: 0.18
+  timerPlantImpactStrength: 0.35
   itemRenderers:
   - {fileID: 6293540128419359667}
   isTree: 0
