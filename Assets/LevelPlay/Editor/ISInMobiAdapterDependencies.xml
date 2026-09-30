@@ -1,5 +1,5 @@
 <dependencies>
-  <unityversion>5.14.0.0</unityversion>
+  <unityversion>5.15.0.0</unityversion>
   <androidPackages>
     <androidPackage spec="com.unity3d.ads-mediation:inmobi-adapter:5.9.0">
     </androidPackage>
@@ -16,7 +16,7 @@
     </androidPackage>
   </androidPackages>
   <iosPods>
-    <iosPod name="IronSourceInMobiAdapter" version="5.9.0.0">
+    <iosPod name="IronSourceInMobiAdapter" version="5.10.0.0">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GardenMist
+  m_Shader: {fileID: 4800000, guid: 9ac58f1bd7eb02c4195caae3be2234d7, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _CloudNoise:
+        m_Texture: {fileID: 2800000, guid: 71086dfc70b1e434ea6609843bf5e3ac, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Absorption: 2
+    - _BottomFade: 0
+    - _Coverage: 0.15
+    - _DensityScale: 3
+    - _DetailStrength: 0.538
+    - _DetailTiling: 1.3
+    - _FogInfluence: 0.45
+    - _NoiseTiling: 0.45
+    - _Opacity: 1.8
+    - _PowderStrength: 1
+    - _SelfShadowStep: 0.5
+    - _SilverLining: 1.34
+    - _SilverPower: 4.6
+    - _SoftEdge: 1.1
+    - _Turbulence: 0.14
+    - _TurbulenceOn: 0
+    - _TurbulenceSpeed: 0.35
+    - _VerticalBillboard: 0.25
+    m_Colors:
+    - _LightTint: {r: 0, g: 0.05740881, b: 1, a: 1}
+    - _NearFade: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowTint: {r: 0.7688679, g: 0.8481131, b: 1, a: 1}
+    - _Spin: {r: 0, g: 0, b: 0, a: 0}
+    - _Sway: {r: 0.6, g: 0.25, b: 0, a: 0}
+    - _WindScroll: {r: 0.004, g: 0.0015, b: -0.006, a: 0.002}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
