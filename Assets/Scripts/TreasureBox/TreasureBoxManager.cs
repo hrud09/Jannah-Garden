@@ -194,7 +194,12 @@ public class TreasureBoxManager : MonoBehaviour
         }
 
         if (terrainReference == null) terrainReference = replacement.terrainReference;
-        if (treasureBoxStatusUi == null) treasureBoxStatusUi = replacement.treasureBoxStatusUi;
+        if (treasureBoxStatusUi == null)
+        {
+            // Adopting another instance's HUD: nothing this object cached describes those labels.
+            treasureBoxStatusUi = replacement.treasureBoxStatusUi;
+            InvalidateHudCache();
+        }
 
         // Every box that was standing is gone with the old scene. Forgetting them is what lets the
         // next spawn check put them back rather than believing they are still out there.
@@ -287,9 +292,71 @@ public class TreasureBoxManager : MonoBehaviour
         UpdateTierUiData();
     }
 
+    /// <summary>
+    /// Every tier in progression order — the same order and contents
+    /// <c>Enum.GetValues(typeof(TreasureBoxTier))</c> returns, held once instead of rebuilt per call.
+    /// That call allocates a fresh array every time and, iterated with <c>foreach</c>, boxes each
+    /// value; the sweeps below run often enough (one of them on every frame, behind the status HUD)
+    /// for that to be steady garbage for no gain.
+    /// </summary>
+    private static readonly TreasureBoxTier[] AllTiers =
+    {
+        TreasureBoxTier.Silver,
+        TreasureBoxTier.Gold,
+        TreasureBoxTier.Platinum,
+        TreasureBoxTier.Diamond
+    };
+
+    // ─── Status HUD write cache ───────────────────────────────────────────────
+    //
+    // UpdateTierUiData runs every frame, but everything it shows changes at most once a second.
+    // Re-writing a label is not free: LocalizedRendering.SetText searches the transform for a shaped
+    // child, re-reads layout components, re-runs the Arabic shaper and rebuilds the text mesh, and
+    // even a plain TMP_Text.text assignment forces a mesh regeneration. These hold what was last
+    // pushed to each label, so an unchanged value costs a string comparison instead.
+    //
+    // The locale is part of the key: a language switch changes every rendered string without changing
+    // any of the values they were derived from.
+
+    private AppLocale _hudLocale = (AppLocale)(-1);
+    private string _hudName;
+    private int _hudOpenedCount = int.MinValue;
+    private string _hudTimer;
+    private bool _hudTimerLocalized;
+
+    /// <summary>Drops the cache so the next tick rewrites every label from scratch.</summary>
+    private void InvalidateHudCache()
+    {
+        _hudName = null;
+        _hudOpenedCount = int.MinValue;
+        _hudTimer = null;
+    }
+
+    /// <summary>Writes the countdown label, skipping the rebuild when it already reads that way.</summary>
+    private void SetHudTimer(TMP_Text label, string value, bool localized)
+    {
+        if (_hudTimerLocalized == localized && string.Equals(_hudTimer, value)) return;
+
+        _hudTimer = value;
+        _hudTimerLocalized = localized;
+
+        if (localized) LocalizedRendering.SetText(label, value);
+        else label.text = value;
+    }
+
     private void UpdateTierUiData()
     {
         if (treasureBoxStatusUi == null || _saveData == null) return;
+
+        AppLocale locale = LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.CurrentLocale
+            : AppLocale.en;
+
+        if (locale != _hudLocale)
+        {
+            _hudLocale = locale;
+            InvalidateHudCache();
+        }
         
         TreasureBoxTier upcomingTier = GetUpcomingTier();
         treasureBoxStatusUi.SetTier(upcomingTier);
@@ -299,11 +366,17 @@ public class TreasureBoxManager : MonoBehaviour
         
         if (treasureBoxStatusUi.nameText != null && data != null)
         {
-            LocalizedRendering.SetText(treasureBoxStatusUi.nameText, data.LocalizedTierDisplayName);
+            string tierName = data.LocalizedTierDisplayName;
+            if (!string.Equals(tierName, _hudName))
+            {
+                _hudName = tierName;
+                LocalizedRendering.SetText(treasureBoxStatusUi.nameText, tierName);
+            }
         }
             
-        if (treasureBoxStatusUi.openedBoxCountText != null)
+        if (treasureBoxStatusUi.openedBoxCountText != null && state.openedCount != _hudOpenedCount)
         {
+            _hudOpenedCount = state.openedCount;
             treasureBoxStatusUi.openedBoxCountText.text = $"{state.openedCount}/{SLOTS_PER_TIER}";
         }
             
@@ -314,16 +387,16 @@ public class TreasureBoxManager : MonoBehaviour
                 TimeSpan span = new DateTime(state.pendingResetAvailableAtTicks) - DateTime.Now;
                 if (span.TotalSeconds > 0)
                 {
-                    treasureBoxStatusUi.timerText.text = FormatTimeSpan(span);
+                    SetHudTimer(treasureBoxStatusUi.timerText, FormatTimeSpan(span), false);
                 }
                 else
                 {
-                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.resetting"));
+                    SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.resetting"), true);
                 }
             }
             else if (state.IsSetComplete)
             {
-                LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.completed"));
+                SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.completed"), true);
             }
             else if (!IsTierUnlocked(upcomingTier))
             {
@@ -333,16 +406,16 @@ public class TreasureBoxManager : MonoBehaviour
                     TimeSpan span = readyAt - DateTime.Now;
                     if (span.TotalSeconds > 0)
                     {
-                        treasureBoxStatusUi.timerText.text = FormatTimeSpan(span);
+                        SetHudTimer(treasureBoxStatusUi.timerText, FormatTimeSpan(span), false);
                     }
                     else
                     {
-                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.finish_previous_tier"));
+                        SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.finish_previous_tier"), true);
                     }
                 }
                 else
                 {
-                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.locked"));
+                    SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.locked"), true);
                 }
             }
             else
@@ -360,7 +433,7 @@ public class TreasureBoxManager : MonoBehaviour
 
                 if (IsSlotAvailable(upcomingTier, nextSlot))
                 {
-                    LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.available"));
+                    SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.available"), true);
                 }
                 else
                 {
@@ -368,11 +441,11 @@ public class TreasureBoxManager : MonoBehaviour
                     if (readyAt != DateTime.MinValue)
                     {
                         TimeSpan span = readyAt - DateTime.Now;
-                        treasureBoxStatusUi.timerText.text = FormatTimeSpan(span);
+                        SetHudTimer(treasureBoxStatusUi.timerText, FormatTimeSpan(span), false);
                     }
                     else
                     {
-                        LocalizedRendering.SetText(treasureBoxStatusUi.timerText, Loc("treasurebox.status.waiting"));
+                        SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.waiting"), true);
                     }
                 }
             }
@@ -383,7 +456,7 @@ public class TreasureBoxManager : MonoBehaviour
     {
         if (_saveData == null) return TreasureBoxTier.Silver;
 
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             TreasureBoxTierState state = _saveData.GetTierState(tier);
             if (!state.IsSetComplete)
@@ -534,7 +607,7 @@ public class TreasureBoxManager : MonoBehaviour
     public int GetTotalAvailableBoxCount()
     {
         int count = 0;
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             if (!IsTierUnlocked(tier)) continue;
             for (int i = 0; i < SLOTS_PER_TIER; i++)
@@ -818,7 +891,7 @@ public class TreasureBoxManager : MonoBehaviour
         bool changed = false;
         DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
 
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             TreasureBoxTierState state = _saveData.GetTierState(tier);
             if (state.lastTierResetTicks == 0)
@@ -925,7 +998,7 @@ public class TreasureBoxManager : MonoBehaviour
         // event, which anything may raise at any point in a load.
         if (_saveData == null || spawnPoints == null || spawnPoints.Count == 0) return;
         
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             TreasureBoxData rd = GetBoxData(tier);
             if (rd == null || rd.boxPrefab == null) continue;
@@ -951,7 +1024,7 @@ public class TreasureBoxManager : MonoBehaviour
             if (spawnPoints[i] != null) availableIndices.Add(i);
         }
 
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             TreasureBoxTierState state = _saveData.GetTierState(tier);
             if (state.assignedSpawnPoints == null) continue;
@@ -1064,7 +1137,7 @@ public class TreasureBoxManager : MonoBehaviour
         }
 
         // Guard: ensure per-slot arrays are initialized (handles saves from older versions)
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             TreasureBoxTierState s = _saveData.GetTierState(tier);
             if (s.slotOpened == null || s.slotOpened.Length != SLOTS_PER_TIER)
@@ -1147,7 +1220,7 @@ public class TreasureBoxManager : MonoBehaviour
     [ContextMenu("DEBUG — Expire All Cooldowns (Make All Available)")]
     private void Debug_ExpireAllCooldowns()
     {
-        foreach (TreasureBoxTier tier in Enum.GetValues(typeof(TreasureBoxTier)))
+        foreach (TreasureBoxTier tier in AllTiers)
         {
             TreasureBoxTierState state = _saveData.GetTierState(tier);
             for (int i = 0; i < SLOTS_PER_TIER; i++)

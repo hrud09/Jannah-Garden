@@ -400,6 +400,7 @@ public class PlaceableItem : MonoBehaviour
             int minutes = Mathf.FloorToInt(duration / 60f);
             int seconds = Mathf.FloorToInt(duration % 60f);
             timerHoldingPlank.signBoardText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            _lastTimerTextSeconds = int.MinValue;
         }
     }
 
@@ -416,6 +417,10 @@ public class PlaceableItem : MonoBehaviour
     /// </summary>
     private void ApplyStateVisuals()
     {
+        // A pooled instance may be re-used for an item with a different remaining time, so nothing the
+        // previous one wrote to the label can be trusted.
+        _lastTimerTextSeconds = int.MinValue;
+
         // If it was already completed on start/load, disable the timer holder immediately
         if (alreadyCompletedOnStart)
         {
@@ -475,6 +480,7 @@ public class PlaceableItem : MonoBehaviour
                 if (timerHoldingPlank.signBoardText != null)
                 {
                     timerHoldingPlank.signBoardText.text = prefabName;
+                    _lastTimerTextSeconds = int.MinValue;
                 }
 
                 if (timerHoldingPlank.timerIcon != null)
@@ -489,9 +495,13 @@ public class PlaceableItem : MonoBehaviour
         {
             if (timerHoldingPlank != null && timerHoldingPlank.signBoardText != null)
             {
-                int minutes = Mathf.FloorToInt(remainingDuration / 60f);
-                int seconds = Mathf.FloorToInt(remainingDuration % 60f);
-                timerHoldingPlank.signBoardText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+                int totalSeconds = Mathf.FloorToInt(remainingDuration);
+                if (totalSeconds != _lastTimerTextSeconds)
+                {
+                    _lastTimerTextSeconds = totalSeconds;
+                    timerHoldingPlank.signBoardText.text =
+                        string.Format("{0:00}:{1:00}", totalSeconds / 60, totalSeconds % 60);
+                }
             }
 
             // Update stepped saturation
@@ -640,8 +650,48 @@ public class PlaceableItem : MonoBehaviour
     /// </summary>
     private Material[][] _cachedMaterials;
 
+    /// <summary>
+    /// Shader property ids resolved once. The string overloads of <c>HasProperty</c>/<c>SetFloat</c>
+    /// hash the name on every call, and the saturation ones are hit for every material of every
+    /// growing item, every frame.
+    /// </summary>
+    private static readonly int SaturationPropertyId = Shader.PropertyToID("_Saturation");
+    private static readonly int OutlinePropertyId = Shader.PropertyToID("_Outline");
+
+    /// <summary>
+    /// The last values actually pushed to the materials. The growth tick recomputes saturation every
+    /// frame but it only moves in four steps, so without this the same value is re-written (along with
+    /// a keyword enable, which costs a shader variant lookup) across every material 60 times a second.
+    /// Cleared whenever the material cache is rebuilt, or when an overlapping write makes the other
+    /// entry stale.
+    /// </summary>
+    private float _lastSaturation = float.NaN;
+    private int _lastSaturationIndex = int.MinValue;
+    private float _lastSaturationFromValue = float.NaN;
+    private int _lastSaturationFromStart = int.MinValue;
+
+    /// <summary>
+    /// Whole seconds last written to the signboard, or <see cref="int.MinValue"/> when the label holds
+    /// something else (a name, a preview) and must be rewritten. The countdown ticks every frame but
+    /// the label only ever shows mm:ss, so assigning it 60 times a second rebuilds the text mesh for
+    /// 59 frames of identical output.
+    /// </summary>
+    private int _lastTimerTextSeconds = int.MinValue;
+
+    private void ClearSaturationWriteCache()
+    {
+        _lastSaturation = float.NaN;
+        _lastSaturationIndex = int.MinValue;
+        _lastSaturationFromValue = float.NaN;
+        _lastSaturationFromStart = int.MinValue;
+    }
+
     private void CacheInstancedMaterials()
     {
+        // The materials this was tracking are gone, so what was written to them says nothing about
+        // what the new ones hold.
+        ClearSaturationWriteCache();
+
         if (itemRenderers == null)
         {
             _cachedMaterials = null;
@@ -660,6 +710,19 @@ public class PlaceableItem : MonoBehaviour
         if (itemRenderers == null || itemRenderers.Length == 0) return;
         if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
 
+        // Already written, and nothing has touched these materials since.
+        if (_lastSaturationIndex == materialIndex && _lastSaturation == saturationValue) return;
+
+        _lastSaturationIndex = materialIndex;
+        _lastSaturation = saturationValue;
+
+        // A write to every index overwrites whatever UpdateSaturationForIndices last left behind.
+        if (materialIndex == -1)
+        {
+            _lastSaturationFromValue = float.NaN;
+            _lastSaturationFromStart = int.MinValue;
+        }
+
         for (int r = 0; r < itemRenderers.Length; r++)
         {
             Material[] mats = _cachedMaterials[r];
@@ -670,10 +733,10 @@ public class PlaceableItem : MonoBehaviour
                 if (materialIndex != -1 && i != materialIndex) continue;
 
                 Material mat = mats[i];
-                if (mat != null && mat.HasProperty("_Saturation"))
+                if (mat != null && mat.HasProperty(SaturationPropertyId))
                 {
                     mat.EnableKeyword("BASE_SATURATION");
-                    mat.SetFloat("_Saturation", saturationValue);
+                    mat.SetFloat(SaturationPropertyId, saturationValue);
                 }
             }
         }
@@ -689,17 +752,21 @@ public class PlaceableItem : MonoBehaviour
         if (isHighlighted == enable) return;
         isHighlighted = enable;
 
-        if (itemRenderers == null) return;
+        if (itemRenderers == null || itemRenderers.Length == 0) return;
+        if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
 
-        foreach (var renderer in itemRenderers)
+        // Reads the cached arrays rather than Renderer.materials, which allocates a fresh array on
+        // every access - and this runs for every material on every selection and deselection.
+        for (int r = 0; r < itemRenderers.Length; r++)
         {
-            if (renderer == null) continue;
+            Material[] mats = _cachedMaterials[r];
+            if (mats == null) continue;
 
-            foreach (Material mat in renderer.materials)
+            foreach (Material mat in mats)
             {
-                if (mat == null || !mat.HasProperty("_Outline")) continue;
+                if (mat == null || !mat.HasProperty(OutlinePropertyId)) continue;
 
-                mat.SetFloat("_Outline", enable ? 1f : 0f);
+                mat.SetFloat(OutlinePropertyId, enable ? 1f : 0f);
 
                 // "SRPDefaultUnlit" is the outline pass under URP; "Always" under Built-in.
                 string outlinePassName = mat.shader.name.Contains("URP") ? "SRPDefaultUnlit" : "Always";
@@ -728,6 +795,18 @@ public class PlaceableItem : MonoBehaviour
         if (itemRenderers == null || itemRenderers.Length == 0) return;
         if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
 
+        if (_lastSaturationFromStart == startIndex && _lastSaturationFromValue == saturationValue) return;
+
+        _lastSaturationFromStart = startIndex;
+        _lastSaturationFromValue = saturationValue;
+
+        // This just overwrote part of what a write-everything call left behind.
+        if (_lastSaturationIndex == -1)
+        {
+            _lastSaturation = float.NaN;
+            _lastSaturationIndex = int.MinValue;
+        }
+
         for (int r = 0; r < itemRenderers.Length; r++)
         {
             Material[] mats = _cachedMaterials[r];
@@ -736,10 +815,10 @@ public class PlaceableItem : MonoBehaviour
             for (int i = startIndex; i < mats.Length; i++)
             {
                 Material mat = mats[i];
-                if (mat != null && mat.HasProperty("_Saturation"))
+                if (mat != null && mat.HasProperty(SaturationPropertyId))
                 {
                     mat.EnableKeyword("BASE_SATURATION");
-                    mat.SetFloat("_Saturation", saturationValue);
+                    mat.SetFloat(SaturationPropertyId, saturationValue);
                 }
             }
         }

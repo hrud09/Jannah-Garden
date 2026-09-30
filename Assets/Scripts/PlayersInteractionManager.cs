@@ -257,20 +257,12 @@ public class PlayersInteractionManager : MonoBehaviour
         {
             hitObject = hit.collider.gameObject;
 
-            // Attempt to find the TreasureBox component on the hit object or its parent hierarchies
-            detectedBox = hit.collider.GetComponent<TreasureBox>();
-            if (detectedBox == null)
-            {
-                detectedBox = hit.collider.GetComponentInParent<TreasureBox>();
-            }
-
+            // Attempt to find the TreasureBox component on the hit object or its parent hierarchies.
+            // GetComponentInParent already checks the object itself, so it covers both cases.
+            detectedBox = hit.collider.GetComponentInParent<TreasureBox>();
 
             // Also check for QuestionMarkOrb
-            detectedOrb = hit.collider.GetComponent<QuestionMarkOrb>();
-            if (detectedOrb == null)
-            {
-                detectedOrb = hit.collider.GetComponentInParent<QuestionMarkOrb>();
-            }
+            detectedOrb = hit.collider.GetComponentInParent<QuestionMarkOrb>();
         }
 
         // Handle highlighting transitions for TreasureBox
@@ -417,11 +409,8 @@ public class PlayersInteractionManager : MonoBehaviour
             return null;
         }
 
-        PlaceableItem hitPlaceable = hit.collider.GetComponent<PlaceableItem>();
-        if (hitPlaceable == null)
-        {
-            hitPlaceable = hit.collider.GetComponentInParent<PlaceableItem>();
-        }
+        // Searches the hit object itself before walking up, so this covers both.
+        PlaceableItem hitPlaceable = hit.collider.GetComponentInParent<PlaceableItem>();
 
         // A ghost being positioned has its PlaceableItem disabled, and an item whose placement timer is
         // still counting down isn't manageable yet — neither is a valid target.

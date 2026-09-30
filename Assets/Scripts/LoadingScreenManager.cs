@@ -180,6 +180,9 @@ public class LoadingScreenManager : MonoBehaviour
     private float _displayedProgress;
     private float _targetProgress;
 
+    /// <summary>Whole percent last written to <see cref="percentText"/>; -1 when it holds anything else.</summary>
+    private int _displayedPercent = -1;
+
     // Coroutine handle so we can stop it if LoadScene is called mid-load
     private Coroutine _loadRoutine;
 
@@ -391,7 +394,14 @@ public class LoadingScreenManager : MonoBehaviour
         if (progressBar != null)
             progressBar.value = _displayedProgress;
 
-        SafeSetText(percentText, Mathf.RoundToInt(_displayedProgress * 100f) + "%");
+        // The bar lerps every frame but the label only ever shows whole percent, so without this it
+        // builds a string and rebuilds the text mesh for a value that reads the same.
+        int percent = Mathf.RoundToInt(_displayedProgress * 100f);
+        if (percent != _displayedPercent)
+        {
+            _displayedPercent = percent;
+            SafeSetText(percentText, percent + "%");
+        }
 
         // Animate spinner dots
         AnimateSpinner();
@@ -439,6 +449,7 @@ public class LoadingScreenManager : MonoBehaviour
     {
         IsLoading = true;
         _displayedProgress = 0f;
+        _displayedPercent = -1;
         _targetProgress = 0f;
         _loadHolds.Clear();
 
@@ -619,6 +630,7 @@ public class LoadingScreenManager : MonoBehaviour
 
         // Snap to 100%
         _displayedProgress = 1f;
+        _displayedPercent = 100;
         if (progressBar != null) progressBar.value = 1f;
         SafeSetText(percentText, "100%");
 
