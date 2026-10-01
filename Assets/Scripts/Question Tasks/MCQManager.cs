@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -54,6 +54,8 @@ public class MCQManager : MonoBehaviour
     [Tooltip("Dedicated label that shows the \"Mash'Allah\" finale after a correct answer. Kept as its own "
              + "GameObject so the question label's layout/localization state is never repurposed for it.")]
     public TextMeshProUGUI mashallahTextUI;
+    [Tooltip("Row under the Mash'Allah label that shows the coins/XP the correct answer earned. Lives in the scene so its styling is editable; leave unassigned to show the praise on its own.")]
+    public RewardFinaleDisplay rewardFinale;
 
     [Header("Button Sprites")]
     public Sprite defaultSprite;
@@ -141,7 +143,11 @@ public class MCQManager : MonoBehaviour
         // starts with the question content back in view and the finale label hidden again.
         mashallahDelay?.Kill();
         mashallahDelay = null;
-        if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
+        if (mashallahTextUI != null)
+        {
+            if (rewardFinale != null) rewardFinale.Hide();
+            mashallahTextUI.gameObject.SetActive(false);
+        }
         if (questionTextUI != null) questionTextUI.gameObject.SetActive(true);
 
         if (quizPanel != null) 
@@ -387,14 +393,16 @@ public class MCQManager : MonoBehaviour
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
             optionButtons[selectedOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
 
-            // Award Noor Coins and XP together
+            // Award Noor Coins and XP together. Both grants suppress their own toast: the amounts are
+            // presented instead by the Mash'Allah finale's reward row (see RewardFinaleDisplay), so a
+            // toast here would just repeat them a second and a half before the panel shows them.
             int coinsEarned = 0;
             float xpEarned = 0f;
 
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
                 coinsEarned = QuestionMarkOrbManager.Instance.rewardCoins;
-                NoorCoinManager.Instance.Earn(coinsEarned, false);
+                NoorCoinManager.Instance.Earn(coinsEarned, false); // Suppress default toast
             }
             if (PlayerXPManager.Instance != null)
             {
@@ -408,27 +416,10 @@ public class MCQManager : MonoBehaviour
             // DOTween call rather than a coroutine, because reward side-effects (level-up panels,
             // coin animations) can StopAllCoroutines and would cancel it before it ever renders.
             mashallahDelay?.Kill();
-            mashallahDelay = DOVirtual.DelayedCall(CorrectAnswerFeedbackDuration, ShowMashallahAndAutoClose, false);
-
-            if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
-            {
-                LocalizationManager loc = LocalizationManager.Instance;
-                string toastMsg = "";
-                if (coinsEarned > 0)
-                {
-                    toastMsg += loc.Get("reward.coins", coinsEarned) + " ";
-                }
-                if (coinsEarned > 0 && xpEarned > 0)
-                {
-                    toastMsg += loc.Get("reward.and") + " ";
-                }
-                if (xpEarned > 0)
-                {
-                    toastMsg += loc.Get("reward.xp", xpEarned);
-                }
-
-                ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
-            }
+            int finaleCoins = coinsEarned;
+            float finaleXP = xpEarned;
+            mashallahDelay = DOVirtual.DelayedCall(
+                CorrectAnswerFeedbackDuration, () => ShowMashallahAndAutoClose(finaleCoins, finaleXP), false);
 
             if (currentOrb != null && QuestionMarkOrbManager.Instance != null)
             {
@@ -504,9 +495,10 @@ public class MCQManager : MonoBehaviour
         ShowQuestion(currentQuestionIndex);
     }
 
-    // Replaces the panel's content with a plain "Mash'Allah" finale and closes it automatically
-    // a few seconds later, instead of the immediate hide used elsewhere.
-    private void ShowMashallahAndAutoClose()
+    // Replaces the panel's content with the "Mash'Allah" finale — praise plus the coins/XP the answer
+    // just earned — and closes it automatically a few seconds later, instead of the immediate hide
+    // used elsewhere.
+    private void ShowMashallahAndAutoClose(int coinsEarned, float xpEarned)
     {
         mashallahDelay = null;
 
@@ -533,6 +525,8 @@ public class MCQManager : MonoBehaviour
             mashallahTextUI.transform.DOKill();
             mashallahTextUI.transform.localScale = Vector3.one;
             mashallahTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+
+            if (rewardFinale != null) rewardFinale.Show(coinsEarned, xpEarned);
         }
 
         StartCoroutine(AutoCloseQuizAfterDelay(5f));

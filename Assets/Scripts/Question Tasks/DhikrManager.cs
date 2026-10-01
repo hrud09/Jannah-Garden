@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -44,6 +44,8 @@ public class DhikrManager : MonoBehaviour
     [Tooltip("Dedicated label that shows the \"Mash'Allah\" finale once the dhikr count is complete. "
              + "Kept as its own GameObject so the dhikr label's layout/localization state is never repurposed for it.")]
     public TextMeshProUGUI mashallahTextUI;
+    [Tooltip("Row under the Mash'Allah label that shows the coins/XP the completed dhikr earned. Lives in the scene so its styling is editable; leave unassigned to show the praise on its own.")]
+    public RewardFinaleDisplay rewardFinale;
 
     [Header("Data")]
     [Tooltip("Optional explicit override. Leave empty to auto-load Resources/dhikrs_{locale}.txt for the " +
@@ -110,7 +112,11 @@ public class DhikrManager : MonoBehaviour
 
         // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh dhikr
         // session starts with every panel element back in view.
-        if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
+        if (mashallahTextUI != null)
+        {
+            if (rewardFinale != null) rewardFinale.Hide();
+            mashallahTextUI.gameObject.SetActive(false);
+        }
         if (dhikrTextUI != null) dhikrTextUI.gameObject.SetActive(true);
         if (countTextUI != null) countTextUI.gameObject.SetActive(true);
         if (countTextBackground != null) countTextBackground.SetActive(true);
@@ -246,6 +252,8 @@ public class DhikrManager : MonoBehaviour
         {
             if (submitButton != null) submitButton.interactable = false;
 
+            // Both grants suppress their own toast: the amounts are presented instead by the
+            // Mash'Allah finale's reward row (see RewardFinaleDisplay).
             int coinsEarned = 0;
             float xpEarned = 0f;
 
@@ -259,17 +267,6 @@ public class DhikrManager : MonoBehaviour
                 xpEarned = PlayerXPManager.Instance.AddXPForTask(XPTaskType.CompleteDhikr, false); // Suppress default toast
             }
 
-            if (ToastMessageManager.Instance != null && (coinsEarned > 0 || xpEarned > 0))
-            {
-                LocalizationManager loc = LocalizationManager.Instance;
-                string toastMsg = "";
-                if (coinsEarned > 0) toastMsg += loc.Get("reward.coins_colored", coinsEarned) + " ";
-                if (coinsEarned > 0 && xpEarned > 0) toastMsg += loc.Get("reward.and") + " ";
-                if (xpEarned > 0) toastMsg += loc.Get("reward.xp_colored", xpEarned);
-
-                ToastMessageManager.Instance.ShowToast(toastMsg.Trim(), Color.white);
-            }
-
             if (currentOrb != null && QuestionMarkOrbManager.Instance != null)
             {
                 QuestionMarkOrbManager.Instance.OnOrbOpened(currentOrb);
@@ -279,13 +276,14 @@ public class DhikrManager : MonoBehaviour
             if (plusButton != null) plusButton.interactable = false;
             if (minusButton != null) minusButton.interactable = false;
 
-            ShowMashallahAndAutoClose();
+            ShowMashallahAndAutoClose(coinsEarned, xpEarned);
         }
     }
 
-    // Replaces the panel's content with a plain "Mash'Allah" finale and closes it automatically
-    // a few seconds later, instead of the manual close flow used elsewhere.
-    private void ShowMashallahAndAutoClose()
+    // Replaces the panel's content with the "Mash'Allah" finale — praise plus the coins/XP the dhikr
+    // just earned — and closes it automatically a few seconds later, instead of the manual close flow
+    // used elsewhere.
+    private void ShowMashallahAndAutoClose(int coinsEarned, float xpEarned)
     {
         if (countTextUI != null) countTextUI.gameObject.SetActive(false);
         if (countTextBackground != null) countTextBackground.SetActive(false);
@@ -304,6 +302,8 @@ public class DhikrManager : MonoBehaviour
             mashallahTextUI.transform.DOKill();
             mashallahTextUI.transform.localScale = Vector3.one;
             mashallahTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+
+            if (rewardFinale != null) rewardFinale.Show(coinsEarned, xpEarned);
         }
 
         StartCoroutine(AutoCloseAfterDelay(5f));
