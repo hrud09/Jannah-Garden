@@ -165,6 +165,10 @@
             "value": "<color=#00FFFF>+{0} এক্সপি</color>"
         },
         {
+            "key": "reward.find_more_orbs",
+            "value": "জান্নাহ গার্ডেনে ছড়িয়ে থাকা আরও অর্ব খুঁজে নিন"
+        },
+        {
             "key": "reward.and",
             "value": "ও"
         },

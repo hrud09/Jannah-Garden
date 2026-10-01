@@ -165,6 +165,10 @@
             "value": "<color=#00FFFF>+{0} ایکس پی</color>"
         },
         {
+            "key": "reward.find_more_orbs",
+            "value": "جنّہ گارڈن میں بکھرے ہوئے مزید اورب تلاش کریں"
+        },
+        {
             "key": "reward.and",
             "value": "اور"
         },

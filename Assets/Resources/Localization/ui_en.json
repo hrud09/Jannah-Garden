@@ -165,6 +165,10 @@
             "value": "<color=#00FFFF>+{0} XP</color>"
         },
         {
+            "key": "reward.find_more_orbs",
+            "value": "Find more orbs scattered around Jannah Garden"
+        },
+        {
             "key": "reward.and",
             "value": "&"
         },

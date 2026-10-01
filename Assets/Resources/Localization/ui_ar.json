@@ -165,6 +165,10 @@
             "value": "<color=#00FFFF>+{0} نقطة خبرة</color>"
         },
         {
+            "key": "reward.find_more_orbs",
+            "value": "ابحث عن المزيد من الكرات المنتشرة في جنة الحديقة"
+        },
+        {
             "key": "reward.and",
             "value": "و"
         },

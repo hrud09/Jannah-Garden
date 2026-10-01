@@ -24,12 +24,17 @@ public class RewardFinaleDisplay : MonoBehaviour
     public TextMeshProUGUI xpText;
     [Tooltip("Optional divider between the two chips. Only shown when both rewards are present.")]
     public GameObject separator;
+    [Tooltip("Optional nudge under the chips telling the player there are more orbs to find out in the " +
+             "garden. Leave empty on panels that shouldn't show it.")]
+    public TextMeshProUGUI hintText;
 
     [Header("Localization Keys")]
     [Tooltip("Format key for the coin chip, e.g. \"reward.coins\" -> \"+{0} Noor Coins\".")]
     public string coinLocalizationKey = "reward.coins";
     [Tooltip("Format key for the XP chip, e.g. \"reward.xp\" -> \"+{0} XP\".")]
     public string xpLocalizationKey = "reward.xp";
+    [Tooltip("Key for the \"find more orbs\" nudge under the chips.")]
+    public string hintLocalizationKey = "reward.find_more_orbs";
 
     [Header("Animation")]
     [Tooltip("Wait before the row appears, so the praise's own punch-scale lands first.")]
@@ -37,6 +42,8 @@ public class RewardFinaleDisplay : MonoBehaviour
     public float entryDuration = 0.45f;
     [Tooltip("Extra delay applied to the second chip, so the two don't pop in together.")]
     public float chipStagger = 0.12f;
+    [Tooltip("Extra delay before the \"find more orbs\" nudge fades in, so it lands after the chips.")]
+    public float hintDelay = 0.35f;
     [Tooltip("How long the numbers take to roll up from zero. Set to 0 to show the final value instantly.")]
     public float countUpDuration = 0.7f;
     [Tooltip("Scale the chips start at before springing to full size.")]
@@ -44,6 +51,7 @@ public class RewardFinaleDisplay : MonoBehaviour
     public float rowPunchStrength = 0.08f;
 
     private CanvasGroup cachedGroup;
+    private CanvasGroup cachedHintGroup;
 
     // Resolved lazily rather than in Awake: the row starts inactive in the scene, so Awake hasn't run
     // by the time the first Show call arrives.
@@ -92,6 +100,8 @@ public class RewardFinaleDisplay : MonoBehaviour
         int chipIndex = 0;
         if (showCoins) AnimateChip(coinText, coinLocalizationKey, coins, chipIndex++);
         if (showXP) AnimateChip(xpText, xpLocalizationKey, xp, chipIndex);
+
+        ShowHint(chipIndex);
     }
 
     /// <summary>Takes the row back down, so a panel reopened for a fresh question/dhikr starts clean.</summary>
@@ -102,8 +112,50 @@ public class RewardFinaleDisplay : MonoBehaviour
 
         if (coinText != null) coinText.transform.DOKill();
         if (xpText != null) xpText.transform.DOKill();
+        if (hintText != null)
+        {
+            CanvasGroup hintGroup = HintGroup;
+            if (hintGroup != null) hintGroup.DOKill();
+            hintText.transform.DOKill();
+            hintText.gameObject.SetActive(false);
+        }
 
         gameObject.SetActive(false);
+    }
+
+    // Same lazy resolve as Group above: the hint starts inactive, so its Awake hasn't run on first Show.
+    private CanvasGroup HintGroup
+    {
+        get
+        {
+            if (cachedHintGroup == null && hintText != null) cachedHintGroup = hintText.GetComponent<CanvasGroup>();
+            return cachedHintGroup;
+        }
+    }
+
+    /// <summary>Fades in the "there are more orbs out in the garden" nudge once the chips have landed.
+    /// Its own alpha is tweened (rather than the row's) so it trails the numbers instead of arriving
+    /// with them.</summary>
+    private void ShowHint(int lastChipIndex)
+    {
+        if (hintText == null) return;
+
+        hintText.gameObject.SetActive(true);
+
+        LocalizationManager loc = LocalizationManager.Instance;
+        string text = loc != null ? loc.Get(hintLocalizationKey) : "Find more orbs scattered around Jannah Garden";
+        LocalizedRendering.SetText(hintText, text);
+
+        float delay = entryDelay + lastChipIndex * chipStagger + hintDelay;
+
+        // Faded through a CanvasGroup rather than TMP's own alpha: under Bengali the label is rendered by
+        // a ShapedTextGraphic child (see LocalizedRendering), which TMP's alpha doesn't reach.
+        CanvasGroup hintGroup = HintGroup;
+        if (hintGroup == null) return;
+
+        hintGroup.DOKill();
+        hintGroup.alpha = 0f;
+        hintGroup.DOFade(1f, entryDuration).SetDelay(delay);
     }
 
     private void AnimateChip(TextMeshProUGUI chip, string localizationKey, float amount, int index)
