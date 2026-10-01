@@ -58,6 +58,13 @@ public class AdServiceBootstrap : MonoBehaviour
              "Turn this off once ads fill reliably, or the game pays out for impressions it never served.")]
     [SerializeField] private bool grantRewardWhenAdUnavailable = true;
 
+    [Tooltip("How many times a day the setting above may actually fire. Without a cap, a region or an " +
+             "account that never gets fill opens every treasure box for free forever. With one, a player " +
+             "is still never hard-blocked by a broken ad slot, but a permanent no-fill costs a bounded " +
+             "amount. Set to 0 to refuse every no-ad reward without turning the bypass off outright.")]
+    [Min(0)]
+    [SerializeField] private int maxBypassGrantsPerDay = 3;
+
     // Start, not Awake: TreasureBoxManager assigns its Instance in its own Awake, and the relative order
     // of two Awakes is not defined. Every Awake runs before any Start, so by here the manager exists.
     private void Start()
@@ -69,7 +76,8 @@ public class AdServiceBootstrap : MonoBehaviour
         Service = new EditorFakeAdService();
         Debug.Log("[AdServiceBootstrap] Editor session — rewarded ads use the fake ad panel. In a device "
             + $"build LevelPlay test mode would be {(enableAdTestMode ? "on" : "off")} and the "
-            + $"no-ad reward bypass {(grantRewardWhenAdUnavailable ? "on" : "off")}.");
+            + $"no-ad reward bypass {(grantRewardWhenAdUnavailable ? "on" : "off")}, capped at "
+            + $"{maxBypassGrantsPerDay} a day.");
 #elif LEVELPLAY_ENABLED
         // TODO: wire this to the real answer from Flutter's consent flow before shipping to GDPR regions.
         // Using true here so Unity Ads and other networks will actually serve (including test) ads.
@@ -83,6 +91,7 @@ public class AdServiceBootstrap : MonoBehaviour
         // ready and hands out the reward without showing one, making a broken SDK look like a working game.
         Service = service;
         service.GrantRewardWhenAdUnavailable = grantRewardWhenAdUnavailable;
+        service.MaxBypassGrantsPerDay = maxBypassGrantsPerDay;
 
         try
         {

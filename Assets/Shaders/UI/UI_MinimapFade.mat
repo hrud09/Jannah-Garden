@@ -45,7 +45,7 @@ Material:
     - _MapOrigin: {r: 152.92552, g: 147.74025, b: 0, a: 0}
     - _MapRight: {r: 108.75598, g: 50.716248, b: 0, a: 0}
     - _MapUp: {r: -50.716248, g: 108.756004, b: 0, a: 0}
-    - _OutsideColor: {r: 0.18396229, g: 0.5919812, b: 1, a: 1}
+    - _OutsideColor: {r: 1, g: 0.79356855, b: 0.5235849, a: 1}
     - _VignetteColor: {r: 1, g: 1, b: 1, a: 1}
     - _WorldBounds: {r: 0, g: 0, b: 200, a: 200}
   m_BuildTextureStacks: []

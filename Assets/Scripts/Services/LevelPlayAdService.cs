@@ -67,6 +67,60 @@ public class LevelPlayAdService : IAdService
     /// </summary>
     public bool GrantRewardWhenAdUnavailable { get; set; }
 
+    /// <summary>
+    /// How many times a day the bypass above may actually fire. Set from <see cref="AdServiceBootstrap"/>.
+    ///
+    /// The bypass without a cap is an unbounded hole: a region or an account that never gets fill opens
+    /// every treasure box for free, forever, and the game pays out for impressions it never served. The
+    /// cap keeps the thing it was for — a player is never hard-blocked by a broken ad slot — while
+    /// bounding what a permanent no-fill can cost.
+    /// </summary>
+    public int MaxBypassGrantsPerDay { get; set; } = 3;
+
+    // Per-day bypass budget. PlayerPrefs rather than the treasure box save file because this is not
+    // player progress — it is a throttle on our own failure path, and it is read from the shop as well.
+    private const string BypassDateKey = "ads.bypass.date";
+    private const string BypassCountKey = "ads.bypass.count";
+
+    /// <summary>
+    /// True if a "we could not show you an ad" reward may be granted right now, spending one of today's
+    /// grants if so. Call this only on the failure paths — never where the player skipped an ad they
+    /// were actually shown.
+    /// </summary>
+    private bool TryConsumeUnavailableBypass()
+    {
+        if (!GrantRewardWhenAdUnavailable) return false;
+
+        if (MaxBypassGrantsPerDay <= 0)
+        {
+            Debug.LogWarning("[LevelPlayAdService] No ad to show and the daily bypass budget is zero — no reward.");
+            return false;
+        }
+
+        // UTC, to match the treasure box save data. A player who moves the device clock can still earn
+        // extra grants; that is worth far less than a treasure box and not worth a server round-trip.
+        string today = DateTime.UtcNow.ToString("yyyy-MM-dd");
+        int used = PlayerPrefs.GetString(BypassDateKey, string.Empty) == today
+            ? PlayerPrefs.GetInt(BypassCountKey, 0)
+            : 0;
+
+        if (used >= MaxBypassGrantsPerDay)
+        {
+            Debug.LogWarning($"[LevelPlayAdService] No ad to show, and today's {MaxBypassGrantsPerDay} "
+                + "no-ad rewards are already spent — no reward. If this keeps happening, the ad unit is "
+                + "not filling; check the LevelPlay dashboard rather than raising the cap.");
+            return false;
+        }
+
+        PlayerPrefs.SetString(BypassDateKey, today);
+        PlayerPrefs.SetInt(BypassCountKey, used + 1);
+        PlayerPrefs.Save();
+
+        Debug.LogWarning($"[LevelPlayAdService] No ad available — granting the reward anyway "
+            + $"({used + 1}/{MaxBypassGrantsPerDay} today).");
+        return true;
+    }
+
 #if LEVELPLAY_ENABLED
 
     private LevelPlayRewardedAd _rewardedAd;
@@ -80,6 +134,24 @@ public class LevelPlayAdService : IAdService
 
     private int _consecutiveLoadFailures;
     private bool _retryScheduled;
+
+    /// <summary>
+    /// How long to wait for the SDK to report how a shown ad ended before settling it ourselves.
+    ///
+    /// Generous, because the wait covers the whole ad — playback plus however long the player leaves the
+    /// close button alone. It only has to be shorter than "forever": every result path runs through a
+    /// LevelPlay event, and if none of them arrives the pending callback is never cleared, so the caller
+    /// that asked for the ad never hears back AND every later request is refused as already-in-flight.
+    /// One lost callback would otherwise take out treasure boxes and the shop for the rest of the session.
+    ///
+    /// Realtime seconds, but Unity stops stepping coroutines while a full-screen native ad has the app
+    /// backgrounded on Android — so the clock effectively only runs while the game is on screen, which is
+    /// where a lost callback actually strands us.
+    /// </summary>
+    private const float ShowTimeoutSeconds = 180f;
+
+    /// <summary>The in-flight watchdog from <see cref="ShowRewardedAd"/>, stopped by <see cref="Settle"/>.</summary>
+    private Coroutine _showWatchdog;
 
     /// <summary>
     /// Something alive in the scene to run a one-frame wait on — this class is not a MonoBehaviour.
@@ -123,7 +195,10 @@ public class LevelPlayAdService : IAdService
         _initStarted = true;
 
         // Set before Init so the first ad request already carries the right consent state.
-        LevelPlay.SetConsent(consentGranted);
+        // LevelPlayPrivacySettings, not LevelPlay.SetConsent — the latter is [Obsolete] in 9.5.1 and
+        // forwards to exactly this call. The privacy class is also where CCPA and COPPA live, if the
+        // host's consent flow ever answers those too.
+        LevelPlayPrivacySettings.SetGDPRConsent(consentGranted);
 
         if (enableTestMode) LevelPlay.SetAdaptersDebug(true);
 
@@ -182,7 +257,7 @@ public class LevelPlayAdService : IAdService
             // The player asked for an ad and the SDK could not put one on screen — that is our failure,
             // not a skip, so it follows the same bypass as an unfilled slot.
             Debug.LogWarning($"[LevelPlayAdService] Rewarded ad failed to display: {error}");
-            Settle(GrantRewardWhenAdUnavailable);
+            Settle(TryConsumeUnavailableBypass());
         };
 
         // Closing settles as "not earned" only if the reward event never arrived — and only after a frame.
@@ -192,7 +267,7 @@ public class LevelPlayAdService : IAdService
         // is exactly why watching an ad in the Editor left the treasure box shut.
         _rewardedAd.OnAdClosed += adInfo => DeferredSettleIfUnrewarded();
 
-        _rewardedAd.LoadAd();
+        SafeLoadAd();
     }
 
     /// <summary>
@@ -227,7 +302,7 @@ public class LevelPlayAdService : IAdService
         yield return new WaitForSecondsRealtime(delay);
 
         _retryScheduled = false;
-        if (_rewardedAd != null && !_rewardedAd.IsAdReady()) _rewardedAd.LoadAd();
+        if (!IsAdReady) SafeLoadAd();
     }
 
     /// <summary>
@@ -269,24 +344,86 @@ public class LevelPlayAdService : IAdService
         if (!IsAdReady)
         {
             // Request one for the next attempt, so a slot that is merely cold recovers by itself.
-            if (_rewardedAd != null) _rewardedAd.LoadAd();
+            if (_rewardedAd != null) SafeLoadAd();
             else Debug.LogError("[LevelPlayAdService] No rewarded ad object — LevelPlay never initialised.");
 
-            if (GrantRewardWhenAdUnavailable)
-            {
-                Debug.LogWarning("[LevelPlayAdService] No ad available to show — granting the reward anyway.");
-                onComplete?.Invoke(true);
-                return;
-            }
-
-            Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called with no ad loaded — no reward.");
-            onComplete?.Invoke(false);
+            onComplete?.Invoke(TryConsumeUnavailableBypass());
             return;
         }
 
         _rewardEarned = false;
         _pendingCallback = onComplete;
-        _rewardedAd.ShowAd();
+
+        try
+        {
+            _rewardedAd.ShowAd();
+        }
+        catch (Exception e)
+        {
+            // ShowAd goes straight through to the native adapter, which can throw — and the exception
+            // would otherwise unwind into the caller with _pendingCallback already assigned, stranding it
+            // exactly the way a lost SDK event does. Settle it here instead: the player asked for an ad
+            // and did not get one, which is the same "we could not show you an ad" case as a display
+            // failure, so it takes the same bypass rather than counting as a skip.
+            Debug.LogError($"[LevelPlayAdService] ShowAd threw — treating it as a display failure: {e}");
+            Settle(TryConsumeUnavailableBypass());
+            return;
+        }
+
+        StartShowWatchdog();
+    }
+
+    /// <summary>
+    /// Arms the fallback that settles an ad the SDK never reports on. Cancelled by <see cref="Settle"/>,
+    /// so it only ever fires when every real result path has gone silent.
+    /// </summary>
+    private void StartShowWatchdog()
+    {
+        if (_coroutineRunner == null)
+        {
+            Debug.LogWarning("[LevelPlayAdService] No coroutine runner — a rewarded ad the SDK never "
+                + "reports on cannot be timed out, and would block every later ad this session.");
+            return;
+        }
+
+        _showWatchdog = _coroutineRunner.StartCoroutine(SettleIfSdkNeverAnswers());
+    }
+
+    private IEnumerator SettleIfSdkNeverAnswers()
+    {
+        // Realtime: a caller may have paused the game for the duration of the ad.
+        yield return new WaitForSecondsRealtime(ShowTimeoutSeconds);
+
+        _showWatchdog = null;
+
+        if (_pendingCallback == null) yield break;
+
+        Debug.LogError($"[LevelPlayAdService] No reward, close, or display-failure event within "
+            + $"{ShowTimeoutSeconds}s of showing the ad — settling it so later ads still work.");
+
+        // The ad may well have played fine and only the event was lost, so this is "we could not tell you
+        // watched it", not a skip — same bypass as an ad we could never show.
+        Settle(TryConsumeUnavailableBypass());
+    }
+
+    /// <summary>
+    /// Requests an ad, absorbing anything the native adapter throws.
+    ///
+    /// Every <c>LoadAd</c> here is speculative — a pre-load, a retry, or a warm-up on the way out of an
+    /// ad. None of them is worth propagating an exception for, and the one inside <see cref="Settle"/>
+    /// runs a line before the caller's callback, so a throw there would swallow the reward the player
+    /// just earned.
+    /// </summary>
+    private void SafeLoadAd()
+    {
+        try
+        {
+            _rewardedAd?.LoadAd();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[LevelPlayAdService] LoadAd threw: {e}");
+        }
     }
 
     /// <summary>
@@ -305,7 +442,16 @@ public class LevelPlayAdService : IAdService
         _pendingCallback = null;
         _rewardEarned = false;
 
-        _rewardedAd?.LoadAd();
+        // A settled ad no longer needs its timeout. Leaving it running would be harmless today — it
+        // re-checks _pendingCallback before doing anything — but it would fire mid-way through the *next*
+        // ad, whose callback is pending, and settle that one instead.
+        if (_showWatchdog != null)
+        {
+            if (_coroutineRunner != null) _coroutineRunner.StopCoroutine(_showWatchdog);
+            _showWatchdog = null;
+        }
+
+        SafeLoadAd();
 
         callback?.Invoke(earned);
     }
@@ -328,8 +474,8 @@ public class LevelPlayAdService : IAdService
     public void ShowRewardedAd(Action<bool> onComplete)
     {
         Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called without the LevelPlay SDK — "
-            + (GrantRewardWhenAdUnavailable ? "granting the reward anyway." : "no reward."));
-        onComplete?.Invoke(GrantRewardWhenAdUnavailable);
+            + "checking the daily no-ad reward budget.");
+        onComplete?.Invoke(TryConsumeUnavailableBypass());
     }
 
 #endif

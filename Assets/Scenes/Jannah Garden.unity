@@ -700,172 +700,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 817526055909912024, guid: 44616610751b01b47bc32e329c7f6c2a, type: 3}
   m_PrefabInstance: {fileID: 12729577}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &13337652
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 13337653}
-  - component: {fileID: 13337654}
-  m_Layer: 0
-  m_Name: Cloud Bank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &13337653
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13337652}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100, y: 0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1367825611}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &13337654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13337652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6e59c3c74a1f040b3670d01648f92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CloudBank
-  cloudMaterial: {fileID: 2100000, guid: bd53deb0a5bf5b449af6b6347a6b5b20, type: 2}
-  renderLayer: Culling Layer
-  sectors: 12
-  terrain: {fileID: 320240521}
-  seed: 7317
-  qualityScale: 1
-  layers:
-  - name: Inner Wisps
-    enabled: 1
-    placement: 0
-    material: {fileID: 0}
-    radius: 150
-    radiusJitter: 14
-    baseHeight: -24
-    topHeight: 14
-    rows: 3
-    innerRadius: 0
-    discCount: 140
-    followTerrain: 1
-    groundClearance: 5
-    heightJitter: 6
-    minWidth: 24
-    maxWidth: 40
-    heightRatio: 0.5
-    angularSpacing: 0.5
-    opacity: 0.5
-    innerDensity: 0.15
-    tint: {r: 0.97, g: 0.98, b: 1, a: 1}
-    tintVariation: 0.06
-    opacityVariation: 0.35
-  - name: Horizon Wall
-    enabled: 1
-    placement: 0
-    material: {fileID: 0}
-    radius: 175
-    radiusJitter: 16
-    baseHeight: -45
-    topHeight: 40
-    rows: 5
-    innerRadius: 0
-    discCount: 140
-    followTerrain: 1
-    groundClearance: 5
-    heightJitter: 6
-    minWidth: 34
-    maxWidth: 54
-    heightRatio: 0.62
-    angularSpacing: 0.22
-    opacity: 1
-    innerDensity: 0.8
-    tint: {r: 1, g: 1, b: 1, a: 1}
-    tintVariation: 0.07
-    opacityVariation: 0.15
-  - name: Far Towers
-    enabled: 1
-    placement: 0
-    material: {fileID: 0}
-    radius: 220
-    radiusJitter: 24
-    baseHeight: 0
-    topHeight: 62
-    rows: 3
-    innerRadius: 0
-    discCount: 140
-    followTerrain: 1
-    groundClearance: 5
-    heightJitter: 6
-    minWidth: 44
-    maxWidth: 76
-    heightRatio: 0.85
-    angularSpacing: 0.45
-    opacity: 0.9
-    innerDensity: 1
-    tint: {r: 1, g: 0.99, b: 0.97, a: 1}
-    tintVariation: 0.1
-    opacityVariation: 0.2
-  - name: Skirt
-    enabled: 1
-    placement: 0
-    material: {fileID: 0}
-    radius: 160
-    radiusJitter: 20
-    baseHeight: -130
-    topHeight: -55
-    rows: 2
-    innerRadius: 0
-    discCount: 140
-    followTerrain: 1
-    groundClearance: 5
-    heightJitter: 6
-    minWidth: 100
-    maxWidth: 140
-    heightRatio: 1
-    angularSpacing: 0.4
-    opacity: 1
-    innerDensity: 1
-    tint: {r: 0.98, g: 0.98, b: 1, a: 1}
-    tintVariation: 0.08
-    opacityVariation: 0.1
-  - name: Garden Mist
-    enabled: 1
-    placement: 1
-    material: {fileID: 2100000, guid: e38518bbdd7d3184fb21db1baa7e2052, type: 2}
-    radius: 140
-    radiusJitter: 18
-    baseHeight: -8
-    topHeight: 46
-    rows: 3
-    innerRadius: 0
-    discCount: 160
-    followTerrain: 1
-    groundClearance: 0
-    heightJitter: 3
-    minWidth: 14
-    maxWidth: 26
-    heightRatio: 0.5
-    angularSpacing: 0.35
-    opacity: 0.55
-    innerDensity: 0.5
-    tint: {r: 0.98, g: 0.99, b: 1, a: 1}
-    tintVariation: 0.05
-    opacityVariation: 0.4
 --- !u!4 &13996023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6983262550692983886, guid: 04edc0bffc5bee54eb107fcc8ce4385a, type: 3}
@@ -13970,6 +13804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdServiceBootstrap
   enableAdTestMode: 1
   grantRewardWhenAdUnavailable: 1
+  maxBypassGrantsPerDay: 3
 --- !u!114 &408723310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44488,7 +44323,6 @@ Transform:
   - {fileID: 1963852959}
   - {fileID: 2046277794}
   - {fileID: 978483484}
-  - {fileID: 13337653}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1369582859 stripped
@@ -54314,7 +54148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678177954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

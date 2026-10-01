@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Absorption: 2
+    - _Absorption: 4.4
     - _BottomFade: 0
     - _Coverage: 0.15
     - _DensityScale: 3
@@ -43,12 +43,12 @@ Material:
     - _SilverLining: 1.34
     - _SilverPower: 4.6
     - _SoftEdge: 1.1
-    - _Turbulence: 0.14
+    - _Turbulence: 0.272
     - _TurbulenceOn: 0
-    - _TurbulenceSpeed: 0.35
+    - _TurbulenceSpeed: 1.38
     - _VerticalBillboard: 0.25
     m_Colors:
-    - _LightTint: {r: 0, g: 0.05740881, b: 1, a: 1}
+    - _LightTint: {r: 0.7216981, g: 0.7380688, b: 1, a: 1}
     - _NearFade: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowTint: {r: 0.7688679, g: 0.8481131, b: 1, a: 1}
     - _Spin: {r: 0, g: 0, b: 0, a: 0}
