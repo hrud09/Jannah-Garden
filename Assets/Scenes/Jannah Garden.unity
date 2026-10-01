@@ -42566,6 +42566,15 @@ MonoBehaviour:
   lineText: {fileID: 697428313}
   anchorUnder: {fileID: 1492407108}
   gapUnderAnchor: 10
+  buildCard: 1
+  cardSprite: {fileID: 21300000, guid: 7cb4dc1d2d451b04e9226a1cf257ee73, type: 3}
+  cardColor: {r: 1, g: 1, b: 1, a: 1}
+  cardHeight: 72
+  cardPadding: 12
+  accentWidth: 6
+  nameColor: {r: 0.98, g: 0.96, b: 0.93, a: 1}
+  nameFontSize: 23
+  statusFontSize: 15
   yoursColor: {r: 0.72, g: 1, b: 0.76, a: 1}
   lockedColor: {r: 1, g: 0.85, b: 0.55, a: 1}
   pathColor: {r: 0.86, g: 0.86, b: 0.86, a: 1}
@@ -69436,7 +69445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 216.87
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchoredPosition.x

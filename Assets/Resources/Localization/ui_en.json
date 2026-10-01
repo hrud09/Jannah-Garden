@@ -849,6 +849,10 @@
             "value": "{0}  ·  {1}"
         },
         {
+            "key": "zone.minimap_level",
+            "value": "Lv {0}"
+        },
+        {
             "key": "zone.minimap_locked_format",
             "value": "{0}  <size=85%>Lv {1}</size>"
         },

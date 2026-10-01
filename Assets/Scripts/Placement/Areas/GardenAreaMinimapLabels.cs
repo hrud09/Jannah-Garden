@@ -16,6 +16,14 @@ using UnityEngine;
 /// is a wall of letters on the expanded one. Projecting the anchor point and placing a UI label there
 /// keeps every name the same size on screen, whatever the map is doing — and lets the labels be
 /// clipped, tinted and ordered like the rest of the HUD.</para>
+///
+/// <para><b>Why the unlock level is its own object on its own line,</b> rather than a
+/// <c>&lt;size=85%&gt;</c> run appended to the name: the two are different kinds of fact. The name is
+/// the place; the level is a price. Printed on one line they read as one long name — "Rose Court Lv 12"
+/// — and the eye has to parse the whole string to find the number it came for. Stacked, the names form
+/// one scannable column and the prices another underneath them, each in its own colour, and the number
+/// can be tinted gold without dragging the name's tint with it. It also means a locked area's price can
+/// be hidden without rewriting the name, which is what happens the moment it unlocks.</para>
 /// </summary>
 public class GardenAreaMinimapLabels : MonoBehaviour
 {
@@ -34,6 +42,15 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     [Range(6f, 48f)]
     public float fontSize = 14f;
 
+    [Tooltip("The unlock line's size as a fraction of the name's. Small enough to read as a caption " +
+             "under the name rather than as a second name.")]
+    [Range(0.4f, 1f)]
+    public float levelFontScale = 0.68f;
+
+    [Tooltip("Gap between the name and the unlock line beneath it, in canvas units.")]
+    [Range(-6f, 16f)]
+    public float lineGap = 1f;
+
     [Tooltip("Padding added around each name when deciding whether two of them collide, in canvas " +
              "units. Larger keeps the map airier by dropping more names.")]
     [Range(0f, 30f)]
@@ -46,9 +63,23 @@ public class GardenAreaMinimapLabels : MonoBehaviour
              "rather than as fifteen equally loud names.")]
     public Color lockedColor = new Color(1f, 0.92f, 0.72f, 0.75f);
 
-    [Tooltip("Show the level a locked area opens at, after its name. The map is the natural place to " +
+    [Tooltip("The unlock line under a locked name. Gold, because it is the one number on the map the " +
+             "player is being invited to chase.")]
+    public Color levelColor = new Color(0.98f, 0.76f, 0.35f, 0.95f);
+
+    [Tooltip("Show the level a locked area opens at, under its name. The map is the natural place to " +
              "ask 'what do I get next', and the answer is a number.")]
     public bool showLockLevel = true;
+
+    [Header("Legibility")]
+    [Tooltip("Dark outline around the glyphs, so a pale name stays readable over a pale patch of map. " +
+             "One material is shared by every label, so this costs no extra draw calls.")]
+    public bool outlineLabels = true;
+
+    [Range(0f, 0.4f)]
+    public float outlineWidth = 0.18f;
+
+    public Color outlineColor = new Color(0.06f, 0.11f, 0.08f, 0.9f);
 
     [Tooltip("Hide a name once the map is zoomed far enough out that the names would overlap. " +
              "Measured in metres of map height per label; 0 never hides anything.")]
@@ -61,8 +92,14 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     [Range(0f, 0.5f)]
     public float refreshInterval;
 
-    /// <summary>One label per area, built once and then only moved, tinted and hidden.</summary>
-    private readonly List<TMP_Text> _labels = new List<TMP_Text>();
+    /// <summary>
+    /// One label per area, built once and then only moved, tinted and hidden. Parallel lists rather
+    /// than a struct per label: every pass walks them by index, and the hot loop only ever touches
+    /// <see cref="_roots"/>.
+    /// </summary>
+    private readonly List<RectTransform> _roots = new List<RectTransform>();
+    private readonly List<TMP_Text> _names = new List<TMP_Text>();
+    private readonly List<TMP_Text> _levels = new List<TMP_Text>();
     private readonly List<GardenAreaDefinition> _areas = new List<GardenAreaDefinition>();
 
     /// <summary>
@@ -74,6 +111,19 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     /// </summary>
     private readonly List<int> _candidates = new List<int>();
     private readonly List<Rect> _claimed = new List<Rect>();
+
+    /// <summary>
+    /// The outlined copy of the font's material, created once and shared by every label.
+    ///
+    /// <para>Setting <c>TMP_Text.outlineWidth</c> per label would instance the material per label, which
+    /// is fifteen extra draw calls on a HUD that is otherwise one — the kind of cost that only shows up
+    /// on the phones least able to pay it.</para>
+    /// </summary>
+    private Material _outlined;
+
+    private const string OutlineWidthProperty = "_OutlineWidth";
+    private const string OutlineColorProperty = "_OutlineColor";
+    private const string OutlineKeyword = "OUTLINE_ON";
 
     private GardenAreaManager _subscribed;
     private float _timer;
@@ -93,6 +143,9 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     {
         if (_subscribed != null) _subscribed.UnlocksChanged -= MarkTextDirty;
         _subscribed = null;
+
+        if (_outlined != null) Destroy(_outlined);
+        _outlined = null;
     }
 
     /// <summary>Guarded: every locale subscriber shares one dispatch, and a throw here would cost the
@@ -177,12 +230,12 @@ public class GardenAreaMinimapLabels : MonoBehaviour
         // we go so the collision test below measures where they would actually sit.
         _candidates.Clear();
 
-        for (int i = 0; i < _labels.Count; i++)
+        for (int i = 0; i < _roots.Count; i++)
         {
-            TMP_Text label = _labels[i];
+            RectTransform root = _roots[i];
             GardenAreaDefinition def = _areas[i];
 
-            if (label == null || def == null) continue;
+            if (root == null || def == null) continue;
 
             Vector3 world = new Vector3(def.labelAnchor.x, 0f, def.labelAnchor.y);
             Vector3 viewport = cam.WorldToViewportPoint(world);
@@ -195,11 +248,11 @@ public class GardenAreaMinimapLabels : MonoBehaviour
 
             if (!onMap)
             {
-                if (label.gameObject.activeSelf) label.gameObject.SetActive(false);
+                if (root.gameObject.activeSelf) root.gameObject.SetActive(false);
                 continue;
             }
 
-            label.rectTransform.anchoredPosition = new Vector2(
+            root.anchoredPosition = new Vector2(
                 (viewport.x - 0.5f) * size.x,
                 (viewport.y - 0.5f) * size.y);
 
@@ -219,8 +272,9 @@ public class GardenAreaMinimapLabels : MonoBehaviour
 
         for (int c = 0; c < _candidates.Count; c++)
         {
-            TMP_Text label = _labels[_candidates[c]];
-            Rect rect = ClaimRect(label);
+            int index = _candidates[c];
+            RectTransform root = _roots[index];
+            Rect rect = ClaimRect(index);
 
             // A name that only half fits is worse than no name: the mask cuts it mid-word and leaves
             // a fragment like "Lv 10" floating at the edge with nothing to attach it to.
@@ -232,12 +286,12 @@ public class GardenAreaMinimapLabels : MonoBehaviour
 
             if (blocked)
             {
-                if (label.gameObject.activeSelf) label.gameObject.SetActive(false);
+                if (root.gameObject.activeSelf) root.gameObject.SetActive(false);
                 continue;
             }
 
             _claimed.Add(rect);
-            if (!label.gameObject.activeSelf) label.gameObject.SetActive(true);
+            if (!root.gameObject.activeSelf) root.gameObject.SetActive(true);
         }
     }
 
@@ -288,41 +342,63 @@ public class GardenAreaMinimapLabels : MonoBehaviour
                && inner.yMin >= outer.yMin && inner.yMax <= outer.yMax;
     }
 
-    /// <summary>The space a name would take on the map, padded, in the label area's own coordinates.</summary>
-    private Rect ClaimRect(TMP_Text label)
+    /// <summary>
+    /// The space a label would take on the map, padded, in the label area's own coordinates — the name
+    /// and, when it is showing, the unlock line stacked under it.
+    /// </summary>
+    private Rect ClaimRect(int index)
     {
-        Vector2 centre = label.rectTransform.anchoredPosition;
+        Vector2 centre = _roots[index].anchoredPosition;
+
+        TMP_Text name = _names[index];
+        TMP_Text level = _levels[index];
 
         // GetPreferredValues rather than the preferredWidth/Height properties: those are only refreshed
         // when the text is laid out, and a name that was hidden last frame has not been.
-        Vector2 preferred = label.GetPreferredValues();
+        Vector2 preferred = name.GetPreferredValues();
 
-        float width = preferred.x + declutterPadding * 2f;
-        float height = preferred.y + declutterPadding * 2f;
+        float width = preferred.x;
+        float height = preferred.y;
+
+        if (level != null && level.gameObject.activeSelf)
+        {
+            Vector2 levelPreferred = level.GetPreferredValues();
+            width = Mathf.Max(width, levelPreferred.x);
+            height += lineGap + levelPreferred.y;
+        }
+
+        width += declutterPadding * 2f;
+        height += declutterPadding * 2f;
 
         return new Rect(centre.x - width * 0.5f, centre.y - height * 0.5f, width, height);
     }
 
     private void HideAll()
     {
-        for (int i = 0; i < _labels.Count; i++)
+        for (int i = 0; i < _roots.Count; i++)
         {
-            if (_labels[i] != null && _labels[i].gameObject.activeSelf) _labels[i].gameObject.SetActive(false);
+            if (_roots[i] != null && _roots[i].gameObject.activeSelf) _roots[i].gameObject.SetActive(false);
         }
     }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  BUILDING
+    // ═══════════════════════════════════════════════════════════════════════════
 
     /// <summary>Builds one label per area the first time, and again if the map is ever re-baked into
     /// a different number of areas.</summary>
     private void EnsureLabels(GardenAreaManager areas)
     {
-        if (_labels.Count == areas.map.areas.Count) return;
+        if (_roots.Count == areas.map.areas.Count) return;
 
-        for (int i = 0; i < _labels.Count; i++)
+        for (int i = 0; i < _roots.Count; i++)
         {
-            if (_labels[i] != null) Destroy(_labels[i].gameObject);
+            if (_roots[i] != null) Destroy(_roots[i].gameObject);
         }
 
-        _labels.Clear();
+        _roots.Clear();
+        _names.Clear();
+        _levels.Clear();
         _areas.Clear();
 
         RectTransform parent = labelArea != null ? labelArea : transform as RectTransform;
@@ -332,25 +408,87 @@ public class GardenAreaMinimapLabels : MonoBehaviour
             var go = new GameObject("Zone Label", typeof(RectTransform));
             go.transform.SetParent(parent, false);
 
-            var rt = go.GetComponent<RectTransform>();
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
-            rt.sizeDelta = new Vector2(150f, 26f);
+            var root = go.GetComponent<RectTransform>();
+            root.anchorMin = new Vector2(0.5f, 0.5f);
+            root.anchorMax = new Vector2(0.5f, 0.5f);
+            root.pivot = new Vector2(0.5f, 0.5f);
+            root.sizeDelta = new Vector2(150f, 26f);
 
-            var text = go.AddComponent<TextMeshProUGUI>();
-            if (font != null) text.font = font;
-            text.fontSize = fontSize;
-            text.alignment = TextAlignmentOptions.Center;
-            text.textWrappingMode = TextWrappingModes.NoWrap;
-            text.overflowMode = TextOverflowModes.Overflow;
-            text.raycastTarget = false;
+            TMP_Text name = BuildLine(root, "Name", fontSize, TMPro.FontWeight.Bold);
+            TMP_Text level = BuildLine(root, "Unlock Level", fontSize * levelFontScale, TMPro.FontWeight.Medium);
 
-            _labels.Add(text);
+            // Off until a locked area asks for it, so an unlocked map is exactly as quiet as it was.
+            level.gameObject.SetActive(false);
+
+            _roots.Add(root);
+            _names.Add(name);
+            _levels.Add(level);
             _areas.Add(def);
         }
 
         _textDirty = true;
+    }
+
+    /// <summary>One line of a label: its own object, so the two lines can be sized, tinted and shown
+    /// independently of each other.</summary>
+    private TMP_Text BuildLine(RectTransform parent, string objectName, float size, TMPro.FontWeight weight)
+    {
+        var go = new GameObject(objectName, typeof(RectTransform));
+        go.transform.SetParent(parent, false);
+
+        var rt = go.GetComponent<RectTransform>();
+        rt.anchorMin = new Vector2(0.5f, 0.5f);
+        rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.pivot = new Vector2(0.5f, 0.5f);
+        rt.sizeDelta = new Vector2(150f, Mathf.Max(8f, size * 1.25f));
+
+        var text = go.AddComponent<TextMeshProUGUI>();
+        if (font != null) text.font = font;
+
+        Material outlined = EnsureOutlineMaterial(text);
+        if (outlined != null) text.fontSharedMaterial = outlined;
+
+        text.fontSize = size;
+        text.fontWeight = weight;
+        text.alignment = TextAlignmentOptions.Center;
+        text.textWrappingMode = TextWrappingModes.NoWrap;
+        text.overflowMode = TextOverflowModes.Overflow;
+        text.raycastTarget = false;
+
+        return text;
+    }
+
+    /// <summary>
+    /// The shared outlined material, made from the first label's font the first time one is built.
+    ///
+    /// <para>Guarded on the property rather than assumed: the project ships several TMP shader variants,
+    /// and a font whose material has no <c>_OutlineWidth</c> should fall back to a plain face rather
+    /// than log a warning per label per scene load.</para>
+    /// </summary>
+    private Material EnsureOutlineMaterial(TMP_Text source)
+    {
+        if (!outlineLabels || outlineWidth <= 0f) return null;
+        if (_outlined != null) return _outlined;
+
+        Material shared = source.fontSharedMaterial;
+        if (shared == null) return null;
+
+        var copy = new Material(shared) { name = shared.name + " (Minimap Labels)" };
+
+        // Looked up by name rather than through ShaderUtilities' cached ids: those ids are only
+        // populated for the shader family TMP shipped with, and the project's fonts do not all use it.
+        if (!copy.HasProperty(OutlineWidthProperty))
+        {
+            Destroy(copy);
+            return null;
+        }
+
+        copy.SetFloat(OutlineWidthProperty, outlineWidth);
+        if (copy.HasProperty(OutlineColorProperty)) copy.SetColor(OutlineColorProperty, outlineColor);
+        copy.EnableKeyword(OutlineKeyword);
+
+        _outlined = copy;
+        return _outlined;
     }
 
     private void WriteText(GardenAreaManager areas)
@@ -360,23 +498,56 @@ public class GardenAreaMinimapLabels : MonoBehaviour
         LocalizationManager loc = LocalizationManager.Instance;
         if (loc == null) return;
 
-        for (int i = 0; i < _labels.Count; i++)
+        for (int i = 0; i < _roots.Count; i++)
         {
-            TMP_Text label = _labels[i];
+            TMP_Text name = _names[i];
+            TMP_Text level = _levels[i];
             GardenAreaDefinition def = _areas[i];
-            if (label == null || def == null) continue;
+            if (name == null || level == null || def == null) continue;
 
-            string name = areas.map.DisplayName(def);
             bool unlocked = areas.IsUnlocked(def);
+            bool showLevel = !unlocked && showLockLevel;
 
-            label.color = unlocked ? yoursColor : lockedColor;
-            label.fontSize = fontSize;
+            name.color = unlocked ? yoursColor : lockedColor;
+            name.fontSize = fontSize;
 
-            string value = !unlocked && showLockLevel
-                ? loc.Get("zone.minimap_locked_format", name, def.RequiredLevel)
-                : name;
+            LocalizedRendering.SetText(name, areas.map.DisplayName(def));
 
-            LocalizedRendering.SetText(label, value);
+            if (level.gameObject.activeSelf != showLevel) level.gameObject.SetActive(showLevel);
+
+            if (showLevel)
+            {
+                level.color = levelColor;
+                level.fontSize = fontSize * levelFontScale;
+                LocalizedRendering.SetText(level, loc.Get("zone.minimap_level", def.RequiredLevel));
+            }
+
+            Stack(i, showLevel);
         }
+    }
+
+    /// <summary>
+    /// Centres the name over the unlock line, or centres the name alone when there is no second line.
+    ///
+    /// <para>Done here rather than with a vertical layout group: a layout group on fifteen labels that
+    /// move every frame rebuilds fifteen layouts every frame, and the arithmetic it would do is the two
+    /// assignments below.</para>
+    /// </summary>
+    private void Stack(int index, bool showLevel)
+    {
+        RectTransform nameRect = _names[index].rectTransform;
+        RectTransform levelRect = _levels[index].rectTransform;
+
+        if (!showLevel)
+        {
+            nameRect.anchoredPosition = Vector2.zero;
+            return;
+        }
+
+        float nameHeight = nameRect.sizeDelta.y;
+        float levelHeight = levelRect.sizeDelta.y;
+
+        nameRect.anchoredPosition = new Vector2(0f, (levelHeight + lineGap) * 0.5f);
+        levelRect.anchoredPosition = new Vector2(0f, -(nameHeight + lineGap) * 0.5f);
     }
 }

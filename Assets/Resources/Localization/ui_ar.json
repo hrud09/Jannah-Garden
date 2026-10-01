@@ -1537,6 +1537,10 @@
             "value": "{0}  ·  {1}"
         },
         {
+            "key": "zone.minimap_level",
+            "value": "مستوى {0}"
+        },
+        {
             "key": "zone.minimap_locked_format",
             "value": "{0}  <size=85%>مستوى {1}</size>"
         },
