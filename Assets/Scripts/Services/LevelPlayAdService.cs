@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using FlutterIntegration;
 #if LEVELPLAY_ENABLED
 // Written against Ads Mediation 9.5.1, verified against the package source rather than the docs — the
 // online 8.x reference is wrong for this version in two places: the namespace moved out of
@@ -9,7 +10,7 @@ using Unity.Services.LevelPlay;
 #endif
 
 /// <summary>
-/// Rewarded ads through Unity LevelPlay mediation (Unity Ads, Meta Audience Network, InMobi, and later
+/// Rewarded ads through Unity LevelPlay mediation (Unity Ads, InMobi, and later
 /// Mintegral). This is the game's only ad SDK.
 ///
 /// WHY THIS REPLACED THE UNITY-SIDE ADMOB PLUGIN
@@ -21,7 +22,13 @@ using Unity.Services.LevelPlay;
 ///
 /// LevelPlay's mediation list here contains no AdMob, so no adapter pulls in google_mobile_ads and the
 /// duplicate-symbol condition does not arise. That is what makes owning the SDK on the Unity side safe
-/// again. It stays safe only while the AdMob adapter is left out — adding it would recreate the crash.
+/// again. It stays safe only while the AdMob adapter is left out.
+///
+/// This is not hypothetical: on 2026-10-01 the AdMob adapter was found installed, and it broke the
+/// Flutter host's Android Release build at :app:checkReleaseDuplicateClasses — its ads-mobile-sdk:1.5.0
+/// and the host's play-services-ads-lite:23.6.0 declare the same com.google.android.gms.ads.* classes.
+/// It was removed, along with the AppLovin and Meta adapters. Do not try to exclude it in Gradle: the adapter
+/// calls the excluded classes, so the build passes and the app crashes at runtime instead.
 ///
 /// COMPILING WITHOUT THE SDK
 /// -------------------------
@@ -35,7 +42,7 @@ public class LevelPlayAdService : IAdService
 {
     // ─── Network IDs ──────────────────────────────────────────────────────────
     // LevelPlay app keys and rewarded ad unit IDs, per store. These identify the *mediation* account;
-    // the individual networks (Unity Ads, Meta, InMobi) are configured in the LevelPlay dashboard and
+    // the individual networks (Unity Ads, InMobi) are configured in the LevelPlay dashboard and
     // reach the app through adapters, not through IDs compiled in here.
 
 #if UNITY_IOS
@@ -126,6 +133,28 @@ public class LevelPlayAdService : IAdService
     private LevelPlayRewardedAd _rewardedAd;
     private bool _initStarted;
 
+    /// <summary>True once the rewarded ad has been built on the host's SDK — see <see cref="AttachToHostSdk"/>.</summary>
+    private bool _attached;
+
+    /// <summary>Remembered from Initialize, because the integration check can only run once the host is up.</summary>
+    private bool _enableTestMode;
+
+    /// <summary>
+    /// How long to wait for the host's <c>UPDATE_AD_SDK_STATE</c> before building the rewarded ad anyway.
+    ///
+    /// The handshake is the correct mechanism, but it is not the only way the SDK can be up: the host
+    /// initialises LevelPlay whether or not it has been taught to announce it. Waiting forever for an
+    /// announcement that may never come means no ads at all, which is strictly worse than trying and
+    /// failing — a failed attach logs and costs nothing, since the SDK is a process singleton and we
+    /// never call Init ourselves either way.
+    ///
+    /// Realtime, because this runs while the loading screen may have the game at timeScale 0.
+    /// </summary>
+    private const float HostSdkAnnouncementTimeoutSeconds = 10f;
+
+    /// <summary>How often to re-ask the host during that wait.</summary>
+    private const float HostSdkAskIntervalSeconds = 2f;
+
     /// <summary>Backoff between load retries, multiplied by the consecutive-failure count.</summary>
     private const float LoadRetryDelaySeconds = 10f;
 
@@ -174,50 +203,135 @@ public class LevelPlayAdService : IAdService
     public bool IsAdReady => _rewardedAd != null && _rewardedAd.IsAdReady();
 
     /// <summary>
-    /// Starts the SDK and pre-loads the first rewarded ad. Safe to call more than once; only the first
-    /// call does anything.
+    /// Waits for the Flutter host to finish initialising LevelPlay, then builds the game's rewarded ad
+    /// and pre-loads it. Safe to call more than once; only the first call does anything.
+    ///
+    /// This does <b>not</b> initialise the SDK, and must not. The game ships inside the Amal Flutter app
+    /// as one APK in one process, sharing one LevelPlay app key (<c>285c611cd</c> on Android). LevelPlay
+    /// is a per-process singleton that may only be initialised once, and the host owns that call for two
+    /// reasons: it runs first, and it owns the GDPR/UMP consent flow whose answer has to reach the SDK
+    /// before init. Consent is therefore not a parameter here either — the host sets it, and the game
+    /// setting it again could overwrite a "no" the player gave in Flutter's dialog.
+    ///
+    /// The game still gets its own revenue reporting: it shows ads on its own ad unit
+    /// (<see cref="RewardedAdUnitId"/>) under the host's shared app key.
     /// </summary>
-    /// <param name="consentGranted">
-    /// The player's GDPR consent decision. Must be the answer from the host's consent flow, not a
-    /// default — see <see cref="AdServiceBootstrap"/> for why this is still an open wire.
-    /// </param>
     /// <param name="enableTestMode">
     /// Turns on adapter debug logging and runs LevelPlay's integration check. Both write their findings
     /// to logcat, which is the only way to see *why* a network returns no fill — a missing adapter, a
     /// bad app key, or a device the dashboard has not been told to treat as a test device. Leave off for
     /// release builds; the logging is noisy and reveals the mediation setup.
     /// </param>
-    public void Initialize(bool consentGranted, MonoBehaviour coroutineRunner = null, bool enableTestMode = false)
+    public void Initialize(MonoBehaviour coroutineRunner = null, bool enableTestMode = false)
     {
         _coroutineRunner = coroutineRunner;
 
         if (_initStarted) return;
         _initStarted = true;
-
-        // Set before Init so the first ad request already carries the right consent state.
-        // LevelPlayPrivacySettings, not LevelPlay.SetConsent — the latter is [Obsolete] in 9.5.1 and
-        // forwards to exactly this call. The privacy class is also where CCPA and COPPA live, if the
-        // host's consent flow ever answers those too.
-        LevelPlayPrivacySettings.SetGDPRConsent(consentGranted);
+        _enableTestMode = enableTestMode;
 
         if (enableTestMode) LevelPlay.SetAdaptersDebug(true);
 
-        LevelPlay.OnInitSuccess += OnInitSuccess;
-        LevelPlay.OnInitFailed += error =>
-            Debug.LogError($"[LevelPlayAdService] LevelPlay failed to initialise: {error}");
-
-        if (enableTestMode)
+        // The host may well have finished init before this scene existed, in which case its unprompted
+        // broadcast already came and went. Check the cached state first, then subscribe, then ask — in
+        // that order, so neither an early nor a late host init is missed.
+        if (FlutterBridge.AdSdkInitialized)
         {
-            // Only meaningful once the SDK is up, so hang it off the success event rather than calling
-            // it straight after Init.
-            LevelPlay.OnInitSuccess += _ => LevelPlay.ValidateIntegration();
+            AttachToHostSdk();
+            return;
         }
 
-        LevelPlay.Init(AppKey);
+        FlutterBridge.OnAdSdkStateChanged += HandleHostSdkStateChanged;
+
+        if (coroutineRunner != null)
+        {
+            coroutineRunner.StartCoroutine(AskHostUntilItAnswers());
+        }
+        else if (FlutterBridge.Instance != null)
+        {
+            // No runner to retry or time out with — one ask is all we get.
+            FlutterBridge.Instance.RequestAdSdkState();
+        }
+
+        if (FlutterBridge.Instance == null)
+        {
+            // The bridge GameObject comes up with the scene and asks on our behalf during its handshake,
+            // so this is recoverable — but it is worth saying out loud, because the symptom otherwise is
+            // simply that ads never appear.
+            Debug.LogWarning("[LevelPlayAdService] No FlutterBridge in the scene yet — waiting for the "
+                + "host to announce LevelPlay. If no ad ever shows, check that the bridge object exists "
+                + $"and that Flutter answers {FlutterCommands.RequestAdSdkState}.");
+        }
     }
 
-    private void OnInitSuccess(LevelPlayConfiguration configuration)
+    /// <summary>
+    /// Asks the host whether LevelPlay is up, repeatedly, and gives up waiting after
+    /// <see cref="HostSdkAnnouncementTimeoutSeconds"/> — at which point it builds the ad anyway.
+    ///
+    /// The giving-up branch exists because the host answering this at all is newer than the host
+    /// initialising LevelPlay. A build whose Flutter side predates the handshake would otherwise show no
+    /// ads whatsoever, which is how the first merged QA build behaved: the game sat waiting for an
+    /// announcement nothing was sending, and every treasure box fell through to the no-ad bypass.
+    /// </summary>
+    private IEnumerator AskHostUntilItAnswers()
     {
+        float waited = 0f;
+
+        while (waited < HostSdkAnnouncementTimeoutSeconds)
+        {
+            if (_attached) yield break;
+
+            if (FlutterBridge.Instance != null) FlutterBridge.Instance.RequestAdSdkState();
+
+            yield return new WaitForSecondsRealtime(HostSdkAskIntervalSeconds);
+            waited += HostSdkAskIntervalSeconds;
+        }
+
+        if (_attached) yield break;
+
+        Debug.LogWarning(
+            $"[LevelPlayAdService] The host did not answer {FlutterCommands.RequestAdSdkState} within "
+            + $"{HostSdkAnnouncementTimeoutSeconds:0}s. Building the rewarded ad anyway, on the assumption "
+            + "that Flutter has LevelPlay up but has not been taught to announce it. If ads still do not "
+            + $"show, the Flutter side needs to answer with {FlutterCommands.UpdateAdSdkState} — see "
+            + "MONETIZATION.md.");
+
+        AttachToHostSdk();
+    }
+
+    /// <summary>
+    /// Flutter's answer to "is LevelPlay up?". Only the success edge matters: a false means the host's own
+    /// init failed, and the game has no way to retry it — the host must.
+    /// </summary>
+    private void HandleHostSdkStateChanged(bool initialized)
+    {
+        if (!initialized) return;
+
+        AttachToHostSdk();
+
+        // Unsubscribe only once the ad actually exists. If the attach failed, stay subscribed so a later
+        // announcement gets another go — the host may re-init after its own failure.
+        if (_attached) FlutterBridge.OnAdSdkStateChanged -= HandleHostSdkStateChanged;
+    }
+
+    /// <summary>
+    /// Builds the game's rewarded ad on top of the SDK instance the host already initialised.
+    ///
+    /// This is everything the old <c>OnInitSuccess</c> handler did, minus the init itself. The native
+    /// LevelPlay SDK is a per-process singleton, so once the host has it up, creating an ad object here
+    /// against the game's own ad unit is all that is left to do.
+    /// </summary>
+    private void AttachToHostSdk()
+    {
+        if (_attached) return;
+        _attached = true;
+
+        if (_enableTestMode)
+        {
+            // Only meaningful once the SDK is up, which — by the time we get here — it should be.
+            LevelPlay.ValidateIntegration();
+        }
+
         try
         {
             _rewardedAd = new LevelPlayRewardedAd(RewardedAdUnitId);
@@ -228,6 +342,11 @@ public class LevelPlayAdService : IAdService
             // package is not embedded under Packages/. A registry (PackageCache) install leaves that folder
             // holding only the dependency XMLs, so the prefab is missing and constructing the ad throws.
             // Swallowing it here keeps the exception from unwinding into AdServiceBootstrap.Start().
+            // Release the latch. This can be reached from the timeout path, where the guess that the host
+            // had LevelPlay up was simply wrong; if the host announces itself later, that attempt must not
+            // be swallowed as "already attached".
+            _attached = false;
+
             Debug.LogError($"[LevelPlayAdService] Could not create the rewarded ad: {e.Message}");
             return;
         }
@@ -465,7 +584,7 @@ public class LevelPlayAdService : IAdService
 
     public bool IsAdReady => false;
 
-    public void Initialize(bool consentGranted, MonoBehaviour coroutineRunner = null, bool enableTestMode = false)
+    public void Initialize(MonoBehaviour coroutineRunner = null, bool enableTestMode = false)
     {
         Debug.LogWarning("[LevelPlayAdService] LEVELPLAY_ENABLED is not set — the LevelPlay SDK is not in "
             + "the project. No real ads will be shown.");

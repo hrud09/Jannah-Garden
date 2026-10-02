@@ -41,6 +41,13 @@ namespace FlutterIntegration
         public static event Action<bool> OnRewardedAdAvailabilityChanged;
 
         /// <summary>
+        /// Fires when Flutter reports that it has finished initialising LevelPlay in this process.
+        /// <see cref="LevelPlayAdService"/> listens for this: the host owns <c>LevelPlay.Init</c>, and the
+        /// game may not create its rewarded ad object until that init has succeeded.
+        /// </summary>
+        public static event Action<bool> OnAdSdkStateChanged;
+
+        /// <summary>
         /// Fires when Flutter hands over the garden stored in Firebase. <see cref="ItemPlacementManager"/>
         /// listens for this and rebuilds the garden when the stored copy is newer than the device's.
         /// </summary>
@@ -77,6 +84,16 @@ namespace FlutterIntegration
         /// ad it has not been told about.
         /// </summary>
         public static bool RewardedAdReady { get; private set; }
+
+        /// <summary>
+        /// Whether the Flutter host has initialised LevelPlay in this process.
+        ///
+        /// Static and cached because the host normally finishes init long before the Unity scene loads,
+        /// so a subscriber that only listens for <see cref="OnAdSdkStateChanged"/> would miss the event
+        /// entirely. Read this first, then subscribe. Defaults to false — the game must never assume the
+        /// SDK is up, or it will build a rewarded ad against an uninitialised native SDK.
+        /// </summary>
+        public static bool AdSdkInitialized { get; private set; }
 
         /// <summary>True once Flutter has sent at least one non-empty fellowship roster.</summary>
         public static bool HasFellowshipProfiles =>
@@ -173,6 +190,10 @@ namespace FlutterIntegration
 
                 SendMessageToFlutterApp(FlutterCommands.UnityReady, new EmptyPayload());
                 SendMessageToFlutterApp(FlutterCommands.RequestCoinBalance, new EmptyPayload());
+
+                // Asked here as well as from LevelPlayAdService: whichever of the two comes up first gets
+                // the answer, and re-asking is free. Without an answer the game shows no rewarded ads.
+                SendMessageToFlutterApp(FlutterCommands.RequestAdSdkState, new EmptyPayload());
 
                 // Realtime: a paused/slowed game (timeScale 0 behind a panel) must still retry.
                 yield return new WaitForSecondsRealtime(HandshakeRetrySeconds);
@@ -312,6 +333,28 @@ namespace FlutterIntegration
                     break;
                 }
 
+                case FlutterCommands.UpdateAdSdkState:
+                {
+                    AdSdkStatePayload state = JsonUtility.FromJson<AdSdkStatePayload>(dataJson);
+                    if (state == null) break;
+
+                    if (state.initialized)
+                    {
+                        Debug.Log("[FlutterBridge] Flutter reports LevelPlay is initialised — the game may "
+                            + "now create its rewarded ad.");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[FlutterBridge] Flutter reports LevelPlay is NOT initialised"
+                            + (string.IsNullOrEmpty(state.message) ? "." : $": {state.message}")
+                            + " The game will serve no rewarded ads until this clears.");
+                    }
+
+                    AdSdkInitialized = state.initialized;
+                    OnAdSdkStateChanged?.Invoke(state.initialized);
+                    break;
+                }
+
                 case FlutterCommands.UpdateGardenState:
                 {
                     GardenStatePayload garden = JsonUtility.FromJson<GardenStatePayload>(dataJson);
@@ -427,6 +470,18 @@ namespace FlutterIntegration
             SendMessageToFlutterApp(
                 FlutterCommands.RequestRewardedAd,
                 new RewardedAdRequestPayload { source = source });
+        }
+
+        /// <summary>
+        /// Asks Flutter whether LevelPlay is initialised yet, answered with
+        /// <see cref="FlutterCommands.UpdateAdSdkState"/>.
+        ///
+        /// The host's unprompted broadcast almost always fires before this scene exists, so asking is the
+        /// only way a late-loading game learns the SDK is already up.
+        /// </summary>
+        public void RequestAdSdkState()
+        {
+            SendMessageToFlutterApp(FlutterCommands.RequestAdSdkState, new EmptyPayload());
         }
 
         /// <summary>

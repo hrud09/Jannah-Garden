@@ -18,7 +18,7 @@ dependencyResolutionManagement {
         mavenCentral()
 // Android Resolver Repos Start
         maven {
-            url "https://maven.google.com/" // Assets/LevelPlay/Editor/IronSourceSDKDependencies.xml:12, Assets/LevelPlay/Editor/ISAdMobAdapterDependencies.xml:8, Assets/LevelPlay/Editor/ISInMobiAdapterDependencies.xml:16
+            url "https://maven.google.com/" // Assets/LevelPlay/Editor/IronSourceSDKDependencies.xml:12, Assets/LevelPlay/Editor/ISInMobiAdapterDependencies.xml:16
         }
         mavenLocal()
 // Android Resolver Repos End

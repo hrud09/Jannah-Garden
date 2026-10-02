@@ -47,6 +47,20 @@ namespace FlutterIntegration
         public const string UpdateAdAvailability = "UPDATE_AD_AVAILABILITY";
 
         /// <summary>
+        /// Flutter reports whether the LevelPlay SDK is initialised in this process.
+        ///
+        /// The game and the Flutter host share one APK, one process, and one LevelPlay app key
+        /// (<c>285c611cd</c> on Android). LevelPlay may only be initialised <b>once</b> per process, and
+        /// the host owns that call — it runs first and it owns the GDPR/UMP consent flow whose answer has
+        /// to be set before init. The game therefore never calls <c>LevelPlay.Init</c>; it waits for this
+        /// message and only then creates its own rewarded ad object, on its own ad unit.
+        ///
+        /// Push this unprompted as soon as init succeeds or fails, and answer
+        /// <see cref="RequestAdSdkState"/> with it. Payload: <see cref="AdSdkStatePayload"/>.
+        /// </summary>
+        public const string UpdateAdSdkState = "UPDATE_AD_SDK_STATE";
+
+        /// <summary>
         /// Flutter hands over the garden it has stored in Firebase — every asset the player has placed,
         /// where it stands and how far along its growth timer is. Sent in answer to
         /// <see cref="RequestGardenState"/>, and again whenever the stored garden changes.
@@ -108,6 +122,16 @@ namespace FlutterIntegration
         /// Payload: <see cref="RewardedAdRequestPayload"/>. Answered with <see cref="RewardedAdResult"/>.
         /// </summary>
         public const string RequestRewardedAd = "REQUEST_REWARDED_AD";
+
+        /// <summary>
+        /// Asks Flutter whether LevelPlay is initialised yet. Sent once when the game's ad service starts.
+        ///
+        /// Needed because the host almost always finishes initialising before the Unity scene loads, so
+        /// the unprompted <see cref="UpdateAdSdkState"/> would have been broadcast while nothing was
+        /// listening. Without this the game would wait forever for an event that already happened.
+        /// Payload: <see cref="EmptyPayload"/>. Answered with <see cref="UpdateAdSdkState"/>.
+        /// </summary>
+        public const string RequestAdSdkState = "REQUEST_AD_SDK_STATE";
 
         /// <summary>
         /// Asks Flutter for the garden stored in Firebase. Sent once when the placement manager comes up
@@ -267,6 +291,18 @@ namespace FlutterIntegration
     public class AdAvailabilityPayload
     {
         public bool rewardedReady;
+    }
+
+    /// <summary>
+    /// Flutter → Unity: whether the host has finished initialising LevelPlay in this process.
+    /// <see cref="message"/> is optional and only used for logging when <see cref="initialized"/> is
+    /// false, so a failed host init shows up in the game's logs instead of looking like a silent hang.
+    /// </summary>
+    [Serializable]
+    public class AdSdkStatePayload
+    {
+        public bool initialized;
+        public string message;
     }
 
     /// <summary>

@@ -15,21 +15,27 @@ using UnityEngine;
 /// To go live:
 ///   1. Package Manager → Unity Registry → "Ads Mediation" (`com.unity.services.levelplay`), install the
 ///      latest verified version. Accept the dependency-resolver prompt.
-///   2. In its Integration Manager, install the Unity Ads, Meta Audience Network, and InMobi adapters.
-///      Do NOT install the AdMob adapter — see the crash notes on <see cref="LevelPlayAdService"/>.
+///   2. In its Integration Manager, install the Unity Ads and InMobi adapters, and nothing else.
+///      Do NOT install the AdMob, AppLovin, or Meta adapters — AdMob breaks the Flutter host's build
+///      outright, and all three are undeclared in the host app's privacy policy and Play Data safety
+///      declaration. See the crash notes on <see cref="LevelPlayAdService"/> and MONETIZATION.md.
 ///   3. Add LEVELPLAY_ENABLED to the scripting define symbols for Android and iOS.
-///   4. Replace the consent value below with the host's real answer.
+///   4. Make sure the Flutter host initialises LevelPlay and sends UPDATE_AD_SDK_STATE — the game
+///      shows no ads until it does. See "CONSENT AND INITIALISATION" below.
 ///
 /// The API used in <see cref="LevelPlayAdService"/> is checked against Ads Mediation 8.9. If you install
 /// an older 8.x, note that 8.7 renamed the namespace — the using at the top of that file says which.
 ///
-/// OPEN: CONSENT
-/// -------------
-/// The Flutter host owns the GDPR/UMP consent flow today, and <c>FlutterCommands</c> has no command to
-/// pass the outcome across. Until that wire exists this bootstrap has no real consent value to give the
-/// SDK, so it assumes none was granted — the conservative reading, and worth lower revenue rather than
-/// serving non-consented ads in the EU. Either add an UPDATE_CONSENT bridge command or move the consent
-/// flow into Unity along with the SDK, then feed the answer in here.
+/// CONSENT AND INITIALISATION — OWNED BY THE HOST
+/// ----------------------------------------------
+/// The game ships inside the Amal Flutter app: one APK, one process, one LevelPlay app key. The host
+/// initialises LevelPlay and answers the GDPR/UMP consent question; the game does neither. It waits for
+/// <c>UPDATE_AD_SDK_STATE</c> over <see cref="FlutterIntegration.FlutterBridge"/> and then builds its own
+/// rewarded ad on the SDK the host already has running, using the game's own ad unit so its revenue still
+/// reports separately.
+///
+/// This replaced a hardcoded <c>consentGranted = true</c> that could overwrite a player's "no" from
+/// Flutter's consent dialog, since both sides write to the same SDK singleton and the last writer wins.
 /// </summary>
 public class AdServiceBootstrap : MonoBehaviour
 {
@@ -79,11 +85,10 @@ public class AdServiceBootstrap : MonoBehaviour
             + $"no-ad reward bypass {(grantRewardWhenAdUnavailable ? "on" : "off")}, capped at "
             + $"{maxBypassGrantsPerDay} a day.");
 #elif LEVELPLAY_ENABLED
-        // TODO: wire this to the real answer from Flutter's consent flow before shipping to GDPR regions.
-        // Using true here so Unity Ads and other networks will actually serve (including test) ads.
-        // With false the networks refuse to fill any ad slots, which is why test ads never appear.
-        const bool consentGranted = true;
-
+        // Consent is deliberately not passed in any more. The Flutter host owns the GDPR/UMP flow and
+        // sets the answer on the SDK before it initialises it. Setting it again from here would race the
+        // host in the same process, and the game — which never asked the player anything — could
+        // overwrite a "no" with a hardcoded "yes". Whoever asks the question owns the answer.
         LevelPlayAdService service = LevelPlayAdService.Instance;
 
         // Assign before initialising. Initialize() reaches into the native SDK, and anything it throws
@@ -95,8 +100,9 @@ public class AdServiceBootstrap : MonoBehaviour
 
         try
         {
-            service.Initialize(consentGranted, this, enableAdTestMode);
-            Debug.Log("[AdServiceBootstrap] Rewarded ads are served by LevelPlay.");
+            service.Initialize(this, enableAdTestMode);
+            Debug.Log("[AdServiceBootstrap] Rewarded ads are served by LevelPlay, on the SDK instance the "
+                + "Flutter host initialises. Ads stay unavailable until the host announces it is up.");
         }
         catch (System.Exception e)
         {
