@@ -125,7 +125,7 @@ public class NoorCoinManager : MonoBehaviour
         SetBalance(_balance - amount);
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("economy.coins_spent", amount), Color.red);
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("economy.coins_spent", amount), SpendColor);
         }
         Debug.Log($"[NoorCoinManager] Spent {amount} Noor Coins. New balance: {_balance}");
         
@@ -135,6 +135,12 @@ public class NoorCoinManager : MonoBehaviour
 
         return true;
     }
+
+    /// <summary>Soft coral used wherever coins leave the wallet — matches the shop's unaffordable price tint.</summary>
+    public static readonly Color SpendColor = new Color(0.96f, 0.62f, 0.60f, 1f);
+
+    /// <summary>Soft mint used wherever coins arrive — matches the shop's affordable price tint.</summary>
+    public static readonly Color EarnColor = new Color(0.62f, 0.91f, 0.60f, 1f);
 
     /// <summary>Adds <paramref name="amount"/> Noor Coins to the player's balance.</summary>
     public void Earn(int amount, bool showToast = true)
@@ -148,7 +154,7 @@ public class NoorCoinManager : MonoBehaviour
         SetBalance(_balance + amount);
         if (showToast && ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("economy.coins_earned", amount), Color.green);
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("economy.coins_earned", amount), EarnColor);
         }
         Debug.Log($"[NoorCoinManager] Earned {amount} Noor Coins. New balance: {_balance}");
         

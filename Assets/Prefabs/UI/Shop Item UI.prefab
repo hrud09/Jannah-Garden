@@ -649,8 +649,8 @@ MonoBehaviour:
   itemTierFrameImg: {fileID: 0}
   tierRoots: []
   tintTierVisuals: 1
-  affordableColor: {r: 0.38978246, g: 1, b: 0.10196078, a: 1}
-  unaffordableColor: {r: 0.9, g: 0.2, b: 0.2, a: 1}
+  affordableColor: {r: 0.62, g: 0.91, b: 0.6, a: 1}
+  unaffordableColor: {r: 0.96, g: 0.62, b: 0.6, a: 1}
   watchAdLabel: Watch Ad
   selectLabel: Select
   purchasePendingLabel: Purchasing...
