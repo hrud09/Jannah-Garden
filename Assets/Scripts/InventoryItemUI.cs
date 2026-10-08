@@ -36,7 +36,12 @@ public class InventoryItemUI : MonoBehaviour
 
         if (itemQuantityText != null)
         {
-            itemQuantityText.text = LocalizationManager.Instance.Get("common.quantity_format", quantityOwned);
+            // Null-guarded like every other LocalizationManager read on this path: cards can be built
+            // before the manager's BeforeSceneLoad bootstrap has run, and an NRE here would abort
+            // InGameShopManager's whole inventory-spawn loop (see EnsureItemsSpawned) rather than just
+            // this one label.
+            LocalizationManager loc = LocalizationManager.Instance;
+            itemQuantityText.text = loc != null ? loc.Get("common.quantity_format", quantityOwned) : $"x{quantityOwned}";
         }
 
         if (itemBackgroundImg != null && customBackground != null)

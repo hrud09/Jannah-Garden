@@ -525,6 +525,10 @@
             "value": "LOOK AROUND SPEED"
         },
         {
+            "key": "settings.language_label",
+            "value": "Language"
+        },
+        {
             "key": "treasurebox.confirm.watch_ad_button",
             "value": "Watch Ad"
         },

@@ -1181,6 +1181,10 @@
             "value": "سرعة النظر حولك"
         },
         {
+            "key": "settings.language_label",
+            "value": "اللغة"
+        },
+        {
             "key": "treasurebox.confirm.watch_ad_button",
             "value": "مشاهدة إعلان"
         },

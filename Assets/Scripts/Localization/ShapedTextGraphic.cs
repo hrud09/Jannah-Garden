@@ -49,7 +49,22 @@ using UnityEngine.UI;
 public class ShapedTextGraphic : MaskableGraphic
 {
     private static readonly int MainTexId = Shader.PropertyToID("_MainTex");
-    private static Shader s_shader;
+
+    /// <summary>
+    /// Resources path of the material whose shader this component renders with. It is loaded from
+    /// Resources rather than resolved with <c>Shader.Find("UI/ShapedTextSDF")</c> for the same reason
+    /// <see cref="PlacementGridView"/> does it this way: a shader that nothing in a built scene
+    /// references is stripped from the player build, so Shader.Find returns null on device while
+    /// working perfectly in the editor (no stripping there). Assets/Shaders/ShapedTextSDF.shader was
+    /// referenced by no material and is not in Graphics Settings' Always Included Shaders, so every
+    /// Bengali label on an Android build was constructing <c>new Material(null)</c> — an
+    /// ArgumentNullException that propagated out of InGameShopManager's card-spawn loop and left the
+    /// whole shop empty.
+    /// </summary>
+    private const string MaterialResourcePath = "Localization/ShapedTextSDF";
+
+    private static Material s_sharedMaterial;
+    private static bool s_sharedMaterialMissingLogged;
 
     [SerializeField] private TMP_FontAsset fontAsset;
     [SerializeField] private float fontSize = 36f;
@@ -192,8 +207,29 @@ public class ShapedTextGraphic : MaskableGraphic
     {
         if (fontAsset == null) return;
 
-        if (s_shader == null) s_shader = Shader.Find("UI/ShapedTextSDF");
-        if (_instanceMaterial == null) _instanceMaterial = new Material(s_shader) { hideFlags = HideFlags.HideAndDontSave };
+        if (s_sharedMaterial == null) s_sharedMaterial = Resources.Load<Material>(MaterialResourcePath);
+
+        // Never throw out of here. This runs inside LocalizedRendering.SetText, which sits on the
+        // straight-line path of InGameShopManager.EnsureItemsSpawned and ShopItemUI.Initialize — an
+        // exception here aborts the whole card-spawn loop and empties the shop for the rest of the
+        // session. A missing material is a build-configuration problem worth shouting about once, but
+        // it must degrade to "this label draws nothing" rather than taking the UI down with it.
+        if (s_sharedMaterial == null)
+        {
+            if (!s_sharedMaterialMissingLogged)
+            {
+                s_sharedMaterialMissingLogged = true;
+                Debug.LogError($"[ShapedTextGraphic] Missing Resources/{MaterialResourcePath}.mat — shaped "
+                    + "(Bengali/Arabic) text cannot render. Restore the material so its shader ships in the build.");
+            }
+            return;
+        }
+
+        if (_instanceMaterial == null)
+        {
+            _instanceMaterial = new Material(s_sharedMaterial) { hideFlags = HideFlags.HideAndDontSave };
+        }
+
         _instanceMaterial.SetTexture(MainTexId, fontAsset.atlasTexture);
         material = _instanceMaterial;
     }

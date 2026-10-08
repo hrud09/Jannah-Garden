@@ -1181,6 +1181,10 @@
             "value": "চারপাশ দেখার গতি"
         },
         {
+            "key": "settings.language_label",
+            "value": "ভাষা"
+        },
+        {
             "key": "treasurebox.confirm.watch_ad_button",
             "value": "বিজ্ঞাপন দেখুন"
         },

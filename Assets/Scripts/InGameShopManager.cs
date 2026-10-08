@@ -198,11 +198,22 @@ public class InGameShopManager : MonoBehaviour
                     ShopItemCategory cat = tab.category;
                     tab.tabButton.onClick.AddListener(() => FilterByCategory(cat));
 
-                    // Dynamically set button text label from category name
+                    // Dynamically set button text label from category name. Guarded because the
+                    // non-English path runs script shaping (HarfBuzz / ShapedTextGraphic) — a throw
+                    // here would abandon the rest of this loop, leaving every LATER tab without its
+                    // onClick listener and without a measured default width, i.e. a shop whose tabs
+                    // silently do nothing. A tab stuck showing its English label is far cheaper.
                     TMP_Text txt = tab.tabButton.GetComponentInChildren<TMP_Text>();
                     if (txt != null)
                     {
-                        LocalizedRendering.SetText(txt, ShopTaxonomy.GetCategoryName(cat));
+                        try
+                        {
+                            LocalizedRendering.SetText(txt, ShopTaxonomy.GetCategoryName(cat));
+                        }
+                        catch (System.Exception e)
+                        {
+                            Debug.LogError($"[InGameShopManager] Failed to localize the '{cat}' tab label: {e}");
+                        }
                     }
 
                     RectTransform rect = tab.tabButton.GetComponent<RectTransform>();
@@ -254,7 +265,20 @@ public class InGameShopManager : MonoBehaviour
                 CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
                 if (matchingTab != null)
                 {
-                    SpawnShopItemUI(data, matchingTab.contentParent);
+                    // Per-item guard: this method runs exactly once per session (hasSpawnedItems is
+                    // latched above), so an exception escaping a single card would abandon every
+                    // remaining item and leave the shop permanently empty — with no way to retry,
+                    // because reopening the panel returns early. Losing one card is recoverable;
+                    // losing the catalogue is not.
+                    try
+                    {
+                        SpawnShopItemUI(data, matchingTab.contentParent);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.LogError($"[InGameShopManager] Failed to spawn shop card for '{data.itemName}' "
+                            + $"({data.itemID}); skipping it and continuing: {e}");
+                    }
                 }
                 else
                 {
@@ -278,7 +302,16 @@ public class InGameShopManager : MonoBehaviour
                 CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
                 if (matchingTab != null)
                 {
-                    SpawnInventoryItemUI(data, matchingTab.contentParent);
+                    // Same one-shot latch as the shop loop above — see the comment there.
+                    try
+                    {
+                        SpawnInventoryItemUI(data, matchingTab.contentParent);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.LogError($"[InGameShopManager] Failed to spawn inventory card for "
+                            + $"'{data.itemName}' ({data.itemID}); skipping it and continuing: {e}");
+                    }
                 }
                 else
                 {
