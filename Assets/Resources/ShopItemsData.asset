@@ -15,13 +15,13 @@ MonoBehaviour:
   categories:
   - category: 0
     items:
-    - itemIcon: {fileID: 21300000, guid: e36850a1fd94a0a46900cc8b3f8859a4, type: 3}
-      itemName: Celestial Blossom Tree
-      itemDescription: A beautiful Celestial Blossom Tree to add vibrant life and
-        natural beauty to your garden.
-      itemID: fedc872d00eabad8237824d12acdc5f5
+    - itemIcon: {fileID: 21300000, guid: d802368548d077c4fb5631a1392355c0, type: 3}
+      itemName: Coconut Palm
+      itemDescription: A beautiful Coconut Palm to add vibrant life and natural beauty
+        to your garden.
+      itemID: 73ba04d2af0ea26d6836fcae79829af7
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 100
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -32,71 +32,7 @@ MonoBehaviour:
       sortOrder: 10
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 6bfbbc973eeef5c4d9e7e0d43e8a261b
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: d802368548d077c4fb5631a1392355c0, type: 3}
-      itemName: Coconut Palm
-      itemDescription: A beautiful Coconut Palm to add vibrant life and natural beauty
-        to your garden.
-      itemID: 73ba04d2af0ea26d6836fcae79829af7
-      acquisitionType: 0
-      noorCoinCost: 0
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 0
-      itemTier: 1
-      sortOrder: 20
-      requiredXPLevel: 1
-      itemPrefabRef:
         m_AssetGUID: 5d83463fbec7b214bb8fc7bc2e061a4a
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 5e0167fcc75de8d4d98a133bf649a4dc, type: 3}
-      itemName: Luminous Weeping Willow
-      itemDescription: A beautiful Luminous Weeping Willow to add vibrant life and
-        natural beauty to your garden.
-      itemID: c26bcf28a847b7016978f39641762689
-      acquisitionType: 0
-      noorCoinCost: 0
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 0
-      itemTier: 1
-      sortOrder: 30
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 4614feb4ead6185408f0c2c4b74e2ec7
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -117,7 +53,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: f55096a3cc5e7810573a1fb4fb88e4f8
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 350
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -125,7 +61,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 1
-      sortOrder: 40
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 2774f58dc19e2a74f97f3d8beaff4d74
@@ -149,7 +85,71 @@ MonoBehaviour:
         natural beauty to your garden.
       itemID: 169a10ff3aa8cf031779c8faf374b2d4
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 450
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 0
+      itemTier: 1
+      sortOrder: 30
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: e08f7c1e9f027c84eba29e231ae15b99
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 5e0167fcc75de8d4d98a133bf649a4dc, type: 3}
+      itemName: Luminous Weeping Willow
+      itemDescription: A beautiful Luminous Weeping Willow to add vibrant life and
+        natural beauty to your garden.
+      itemID: c26bcf28a847b7016978f39641762689
+      acquisitionType: 0
+      noorCoinCost: 600
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 0
+      itemTier: 1
+      sortOrder: 40
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 4614feb4ead6185408f0c2c4b74e2ec7
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: e36850a1fd94a0a46900cc8b3f8859a4, type: 3}
+      itemName: Celestial Blossom Tree
+      itemDescription: A beautiful Celestial Blossom Tree to add vibrant life and
+        natural beauty to your garden.
+      itemID: fedc872d00eabad8237824d12acdc5f5
+      acquisitionType: 0
+      noorCoinCost: 750
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -160,7 +160,7 @@ MonoBehaviour:
       sortOrder: 50
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: e08f7c1e9f027c84eba29e231ae15b99
+        m_AssetGUID: 6bfbbc973eeef5c4d9e7e0d43e8a261b
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -181,7 +181,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: b7936867c0bd82fdda3732000b979f7c
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 1100
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -213,7 +213,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: 5616706774371c3dc837e0195607a223
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 1300
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -245,7 +245,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: ea6d937405d11ba59c059717e075844d
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 1500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -277,7 +277,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: 2b3c4f9aaeb366d9aaddf8195f748493
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 1700
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -303,13 +303,13 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 51fb5346d5154b2488c24f307a7d5caa, type: 3}
-      itemName: Prismatic Bloom
-      itemDescription: A beautiful Prismatic Bloom to add vibrant life and natural
+    - itemIcon: {fileID: 21300000, guid: 44f25736e12a1d74b9cbe9062da1b6bc, type: 3}
+      itemName: Tulip Cluster
+      itemDescription: A beautiful Tulip Cluster to add vibrant life and natural
         beauty to your garden.
-      itemID: 19c3a47238ea2f8c9378b737a39ac6ca
+      itemID: 519d126fecd336a0f5446380e7b3240f
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 2800
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -320,7 +320,7 @@ MonoBehaviour:
       sortOrder: 100
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: af105a08f3ae1f54eae4c132312cab5b
+        m_AssetGUID: 128e63914f0cfe9488502242ee445fc5
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -341,7 +341,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: 9f06434ff4d6531b523dddc01a010c18
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 3200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -367,13 +367,13 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 61b211041ef49e34399f5c4e3ae30a35, type: 3}
-      itemName: Tree of Light
-      itemDescription: A beautiful Tree of Light to add vibrant life and natural
+    - itemIcon: {fileID: 21300000, guid: 51fb5346d5154b2488c24f307a7d5caa, type: 3}
+      itemName: Prismatic Bloom
+      itemDescription: A beautiful Prismatic Bloom to add vibrant life and natural
         beauty to your garden.
-      itemID: b51046a063298f6142a990fcf1dbc0eb
+      itemID: 19c3a47238ea2f8c9378b737a39ac6ca
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 3800
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -384,7 +384,7 @@ MonoBehaviour:
       sortOrder: 120
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 7708db588ca39844ebd86a6a78795c4f
+        m_AssetGUID: af105a08f3ae1f54eae4c132312cab5b
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -399,13 +399,13 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 44f25736e12a1d74b9cbe9062da1b6bc, type: 3}
-      itemName: Tulip Cluster
-      itemDescription: A beautiful Tulip Cluster to add vibrant life and natural
+    - itemIcon: {fileID: 21300000, guid: 61b211041ef49e34399f5c4e3ae30a35, type: 3}
+      itemName: Tree of Light
+      itemDescription: A beautiful Tree of Light to add vibrant life and natural
         beauty to your garden.
-      itemID: 519d126fecd336a0f5446380e7b3240f
+      itemID: b51046a063298f6142a990fcf1dbc0eb
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 4800
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -416,7 +416,7 @@ MonoBehaviour:
       sortOrder: 130
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 128e63914f0cfe9488502242ee445fc5
+        m_AssetGUID: 7708db588ca39844ebd86a6a78795c4f
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -437,7 +437,7 @@ MonoBehaviour:
         beauty to your garden.
       itemID: 931f5863f12f47cf1bddbd134557d5d1
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 6000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -469,7 +469,7 @@ MonoBehaviour:
         natural beauty to your garden.
       itemID: eda847d69c98754e590474c1ffa0f52b
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 6500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -501,7 +501,7 @@ MonoBehaviour:
         natural beauty to your garden.
       itemID: b73a6ca69670b98c90f841146b7af39f
       acquisitionType: 0
-      noorCoinCost: 0
+      noorCoinCost: 7000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -535,7 +535,7 @@ MonoBehaviour:
         garden.
       itemID: ef8c06c78525f39d0d0ecc196433e619
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 300
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -543,42 +543,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 1
-      sortOrder: 170
+      sortOrder: 10
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d7c1b40f5df30ac49a73480dbad1a483
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: a0a087ddd1e6fec45af5170311450b73, type: 3}
-      itemName: Ancient Stone Fountain
-      itemDescription: A tranquil Ancient Stone Fountain to bring flowing water and
-        calm to your garden.
-      itemID: f5e63129ff2c6afd4e8d2490f396b3e8
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 1
-      itemTier: 1
-      sortOrder: 180
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 98bc97596cb06ec48905cd8da9f202da
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -599,7 +567,7 @@ MonoBehaviour:
         to your garden.
       itemID: 9266c6d5e48fb366088f7d703fc354fd
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -607,10 +575,74 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 1
-      sortOrder: 190
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: a14d0f3c8b250644384d52f9cbdc41fa
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: a0a087ddd1e6fec45af5170311450b73, type: 3}
+      itemName: Ancient Stone Fountain
+      itemDescription: A tranquil Ancient Stone Fountain to bring flowing water and
+        calm to your garden.
+      itemID: f5e63129ff2c6afd4e8d2490f396b3e8
+      acquisitionType: 0
+      noorCoinCost: 650
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 1
+      itemTier: 1
+      sortOrder: 30
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 98bc97596cb06ec48905cd8da9f202da
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 297a34b52e6accd4a873378da94b4dee, type: 3}
+      itemName: Marble Water Channel
+      itemDescription: A tranquil Marble Water Channel to bring flowing water and
+        calm to your garden.
+      itemID: 45236065029f7a84478813750eb24738
+      acquisitionType: 0
+      noorCoinCost: 1400
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 1
+      itemTier: 2
+      sortOrder: 40
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: d09d29aacf13ce14eafdeb61458c0bbc
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -631,7 +663,7 @@ MonoBehaviour:
         and calm to your garden.
       itemID: 3b090e69ca199b7d217531032712b920
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 1800
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -639,7 +671,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 2
-      sortOrder: 200
+      sortOrder: 50
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 7340b1e9f39ffd449a54bdf72d0b2308
@@ -663,7 +695,7 @@ MonoBehaviour:
         and calm to your garden.
       itemID: 8e31ff6a4fca8350ba2df5bc8460f619
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 2200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -671,7 +703,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 2
-      sortOrder: 210
+      sortOrder: 60
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 1055c55776b64c446bcb6cba984d7468
@@ -689,24 +721,24 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 297a34b52e6accd4a873378da94b4dee, type: 3}
-      itemName: Marble Water Channel
-      itemDescription: A tranquil Marble Water Channel to bring flowing water and
-        calm to your garden.
-      itemID: 45236065029f7a84478813750eb24738
+    - itemIcon: {fileID: 21300000, guid: 5db8a432478b026498fa3e9d76994bfc, type: 3}
+      itemName: Pineapple Crown Fountain
+      itemDescription: A tranquil Pineapple Crown Fountain to bring flowing water
+        and calm to your garden.
+      itemID: d06798148d103014f4d2729b928ccf7e
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 3000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
       realMoneyPriceLabel: $0.99
       noorCoinReward: 0
       itemCategory: 1
-      itemTier: 2
-      sortOrder: 220
+      itemTier: 3
+      sortOrder: 70
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: d09d29aacf13ce14eafdeb61458c0bbc
+        m_AssetGUID: 24e24ea9d3622c24bb8d4f7e6b1f6ec6
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -727,7 +759,7 @@ MonoBehaviour:
         to your garden.
       itemID: a152201b366fe40e6e0ca4252c211393
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 4200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -735,7 +767,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 3
-      sortOrder: 230
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 39f999052b7ec9945909d39e655a69c5
@@ -759,7 +791,7 @@ MonoBehaviour:
         your garden.
       itemID: d7b302f68a54d9867db32bd32c7a8d88
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 5200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -767,74 +799,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 3
-      sortOrder: 240
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 91af25deb6bfb2b48be4351a3077c547
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 5db8a432478b026498fa3e9d76994bfc, type: 3}
-      itemName: Pineapple Crown Fountain
-      itemDescription: A tranquil Pineapple Crown Fountain to bring flowing water
-        and calm to your garden.
-      itemID: d06798148d103014f4d2729b928ccf7e
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 1
-      itemTier: 3
-      sortOrder: 250
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 24e24ea9d3622c24bb8d4f7e6b1f6ec6
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 0156519ee134a414fa88e7510366708a, type: 3}
-      itemName: Tiered Cascade
-      itemDescription: A tranquil Tiered Cascade to bring flowing water and calm
-        to your garden.
-      itemID: 94bbf77133dc37b74dbf95eaef232b40
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 1
-      itemTier: 4
-      sortOrder: 260
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 061b2bdb0b505404ab381eed6f75c1ba
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -855,7 +823,7 @@ MonoBehaviour:
         to your garden.
       itemID: 30cbad77453f47a180fc6fb277e5eb2d
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 6800
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -863,7 +831,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 4
-      sortOrder: 270
+      sortOrder: 100
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 12a56b1201287e8448c1e656cd917a40
@@ -881,15 +849,47 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 0156519ee134a414fa88e7510366708a, type: 3}
+      itemName: Tiered Cascade
+      itemDescription: A tranquil Tiered Cascade to bring flowing water and calm
+        to your garden.
+      itemID: 94bbf77133dc37b74dbf95eaef232b40
+      acquisitionType: 0
+      noorCoinCost: 7500
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 1
+      itemTier: 4
+      sortOrder: 110
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 061b2bdb0b505404ab381eed6f75c1ba
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
   - category: 2
     items:
-    - itemIcon: {fileID: 21300000, guid: 4346b82ffe50c944b933308d429cf5fd, type: 3}
-      itemName: Arabic Script Archway
-      itemDescription: An elegant Arabic Script Archway structure to provide comfort
+    - itemIcon: {fileID: 21300000, guid: ed2094b9ff720d84f8c38dc900c12afb, type: 3}
+      itemName: Floating Stone Path
+      itemDescription: An elegant Floating Stone Path structure to provide comfort
         and architectural beauty to your estate.
-      itemID: 4fa471036bdf280fb7d2f5e418336013
+      itemID: f1dfa038f5ca3656be50d729b3e6968b
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -897,10 +897,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 1
-      sortOrder: 280
+      sortOrder: 10
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 1e3e3497af7128842941de6845aa4b42
+        m_AssetGUID: b44fd53de93ed7f4aa1753a571ac6cb9
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -921,7 +921,7 @@ MonoBehaviour:
         and architectural beauty to your estate.
       itemID: 27a3cc859ff23cfbbbd93937413078f9
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 550
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -929,7 +929,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 1
-      sortOrder: 290
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d0f4264227b01f14ab52a2416357719c
@@ -947,13 +947,13 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: ed2094b9ff720d84f8c38dc900c12afb, type: 3}
-      itemName: Floating Stone Path
-      itemDescription: An elegant Floating Stone Path structure to provide comfort
+    - itemIcon: {fileID: 21300000, guid: 4346b82ffe50c944b933308d429cf5fd, type: 3}
+      itemName: Arabic Script Archway
+      itemDescription: An elegant Arabic Script Archway structure to provide comfort
         and architectural beauty to your estate.
-      itemID: f1dfa038f5ca3656be50d729b3e6968b
+      itemID: 4fa471036bdf280fb7d2f5e418336013
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 800
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -961,42 +961,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 1
-      sortOrder: 300
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: b44fd53de93ed7f4aa1753a571ac6cb9
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 3a0c4ca4684a91f459fec0f3c1f364fe, type: 3}
-      itemName: Bismillah Portal Ring
-      itemDescription: An elegant Bismillah Portal Ring structure to provide comfort
-        and architectural beauty to your estate.
-      itemID: 46c542252394d75fb3a05c7d75252d6c
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 2
-      itemTier: 2
-      sortOrder: 310
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 97421e8848172ea4abe1f2938e5435c8
+        m_AssetGUID: 1e3e3497af7128842941de6845aa4b42
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1017,7 +985,7 @@ MonoBehaviour:
         and architectural beauty to your estate.
       itemID: 6e91398dc9edb3eb6c10c93213d66dde
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 1200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1025,10 +993,42 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 2
-      sortOrder: 320
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 737ec70c423792140b4abf3a01613c0d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 3a0c4ca4684a91f459fec0f3c1f364fe, type: 3}
+      itemName: Bismillah Portal Ring
+      itemDescription: An elegant Bismillah Portal Ring structure to provide comfort
+        and architectural beauty to your estate.
+      itemID: 46c542252394d75fb3a05c7d75252d6c
+      acquisitionType: 0
+      noorCoinCost: 1900
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 2
+      itemTier: 2
+      sortOrder: 50
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 97421e8848172ea4abe1f2938e5435c8
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1049,7 +1049,7 @@ MonoBehaviour:
         architectural beauty to your estate.
       itemID: 5dd3addc6287976d041121cdd90f9b14
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 2400
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1057,7 +1057,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 2
-      sortOrder: 330
+      sortOrder: 60
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 49ca857ca25523342a72a35489b7d5d6
@@ -1081,7 +1081,7 @@ MonoBehaviour:
         and architectural beauty to your estate.
       itemID: 81f2458477e5f382cc0540a534bea12c
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 2600
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1089,7 +1089,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 2
-      sortOrder: 340
+      sortOrder: 70
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 3b519444c76ccf54e9bae6ad084438fc
@@ -1107,13 +1107,13 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 6b2970aefcfdbdf46ba874ed0c6939d6, type: 3}
-      itemName: Golden Gateway to Paradise
-      itemDescription: An elegant Golden Gateway to Paradise structure to provide
-        comfort and architectural beauty to your estate.
-      itemID: 55dfbc0dc433384cf3159fb448d92443
+    - itemIcon: {fileID: 21300000, guid: a4bf327ee6012bc49896be3f8b9b4239, type: 3}
+      itemName: Ropebound Bamboo Arch
+      itemDescription: An elegant Ropebound Bamboo Arch structure to provide comfort
+        and architectural beauty to your estate.
+      itemID: 2908420f6f6079ec1b7aecaf48477769
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 2900
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1121,10 +1121,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 3
-      sortOrder: 350
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: c753baa09f997714090603ef3492727e
+        m_AssetGUID: bd3229993494e09469defbbb8598c237
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1145,7 +1145,7 @@ MonoBehaviour:
         architectural beauty to your estate.
       itemID: bc56b164b6e5e7427b9b30a5ffbc8b93
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 3600
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1153,7 +1153,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 3
-      sortOrder: 360
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 889b3b9e57f5cac44b212e745f9e420d
@@ -1177,7 +1177,7 @@ MonoBehaviour:
         comfort and architectural beauty to your estate.
       itemID: f51486b7130cb7c6af4172aef5de8f9f
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 4400
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1185,42 +1185,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 3
-      sortOrder: 370
+      sortOrder: 100
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 54a01b56e5e334440b80736d2f32abdb
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: a4bf327ee6012bc49896be3f8b9b4239, type: 3}
-      itemName: Ropebound Bamboo Arch
-      itemDescription: An elegant Ropebound Bamboo Arch structure to provide comfort
-        and architectural beauty to your estate.
-      itemID: 2908420f6f6079ec1b7aecaf48477769
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 2
-      itemTier: 3
-      sortOrder: 380
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: bd3229993494e09469defbbb8598c237
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1241,7 +1209,7 @@ MonoBehaviour:
         and architectural beauty to your estate.
       itemID: 5bf52f6d763f61184423a34f6a597406
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 5000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1249,7 +1217,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 3
-      sortOrder: 390
+      sortOrder: 110
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 2e17bc07ec3e307478a04990c128a5cd
@@ -1267,24 +1235,24 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: be4e5e4162cbb3c47a07384d534864ee, type: 3}
-      itemName: Turquoise Mosaic Arch
-      itemDescription: An elegant Turquoise Mosaic Arch structure to provide comfort
-        and architectural beauty to your estate.
-      itemID: 352939995768cbb96524450a28f4fa6b
+    - itemIcon: {fileID: 21300000, guid: 6b2970aefcfdbdf46ba874ed0c6939d6, type: 3}
+      itemName: Golden Gateway to Paradise
+      itemDescription: An elegant Golden Gateway to Paradise structure to provide
+        comfort and architectural beauty to your estate.
+      itemID: 55dfbc0dc433384cf3159fb448d92443
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 5500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
       realMoneyPriceLabel: $0.99
       noorCoinReward: 0
       itemCategory: 2
-      itemTier: 4
-      sortOrder: 400
+      itemTier: 3
+      sortOrder: 120
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 17c44dede46c3ab42b9505170fab4fb8
+        m_AssetGUID: c753baa09f997714090603ef3492727e
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1305,7 +1273,7 @@ MonoBehaviour:
         and architectural beauty to your estate.
       itemID: b5e883e11f087790553ab4c1f5d999a6
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 7200
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1313,7 +1281,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 2
       itemTier: 4
-      sortOrder: 410
+      sortOrder: 130
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: a155f81050a27e1488412d393aa5909d
@@ -1331,26 +1299,24 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-  - category: 3
-    items:
-    - itemIcon: {fileID: 21300000, guid: dd35193b77ac69e4e8f6728ee5f4c143, type: 3}
-      itemName: Arabic Calligraphy Stand
-      itemDescription: An ornate Arabic Calligraphy Stand to adorn your garden with
-        craftsmanship and quiet reverence.
-      itemID: d527779b36edc1763cdd48957669057d
+    - itemIcon: {fileID: 21300000, guid: be4e5e4162cbb3c47a07384d534864ee, type: 3}
+      itemName: Turquoise Mosaic Arch
+      itemDescription: An elegant Turquoise Mosaic Arch structure to provide comfort
+        and architectural beauty to your estate.
+      itemID: 352939995768cbb96524450a28f4fa6b
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 8000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
       realMoneyPriceLabel: $0.99
       noorCoinReward: 0
-      itemCategory: 3
-      itemTier: 1
-      sortOrder: 420
+      itemCategory: 2
+      itemTier: 4
+      sortOrder: 140
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: ca24b26b267452e40a0c819587e92f71
+        m_AssetGUID: 17c44dede46c3ab42b9505170fab4fb8
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1365,13 +1331,15 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 0c52e453c45e4d94d9865e5700aa5790, type: 3}
-      itemName: Azure Mosaic Bench
-      itemDescription: An ornate Azure Mosaic Bench to adorn your garden with craftsmanship
-        and quiet reverence.
-      itemID: 9141d4caa1471fc40c615d60e625f070
+  - category: 3
+    items:
+    - itemIcon: {fileID: 21300000, guid: 689b716932d3f5d4d9b1dc5aae6778b2, type: 3}
+      itemName: Blue Star Mosaic Slab
+      itemDescription: An ornate Blue Star Mosaic Slab to adorn your garden with
+        craftsmanship and quiet reverence.
+      itemID: fba0c0f0897e7f5b0d786380240c1e14
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 150
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1379,10 +1347,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 1
-      sortOrder: 430
+      sortOrder: 10
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 67531d4d7e7cf74449dab395613b2c2e
+        m_AssetGUID: bca1bf10e82e1a14c98a1327a8361431
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1403,7 +1371,7 @@ MonoBehaviour:
         and quiet reverence.
       itemID: 76c84ec4a5a57f58c77faf260352cdf3
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 250
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1411,7 +1379,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 1
-      sortOrder: 440
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 291a8f6a09c01cc4f97fbf536f65461e
@@ -1429,13 +1397,13 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 689b716932d3f5d4d9b1dc5aae6778b2, type: 3}
-      itemName: Blue Star Mosaic Slab
-      itemDescription: An ornate Blue Star Mosaic Slab to adorn your garden with
-        craftsmanship and quiet reverence.
-      itemID: fba0c0f0897e7f5b0d786380240c1e14
+    - itemIcon: {fileID: 21300000, guid: 0c52e453c45e4d94d9865e5700aa5790, type: 3}
+      itemName: Azure Mosaic Bench
+      itemDescription: An ornate Azure Mosaic Bench to adorn your garden with craftsmanship
+        and quiet reverence.
+      itemID: 9141d4caa1471fc40c615d60e625f070
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1443,10 +1411,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 1
-      sortOrder: 450
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: bca1bf10e82e1a14c98a1327a8361431
+        m_AssetGUID: 67531d4d7e7cf74449dab395613b2c2e
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1461,24 +1429,24 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: c17393a3ec28b8d4d990676e842267ea, type: 3}
-      itemName: Crimson Diamond Pedestal
-      itemDescription: An ornate Crimson Diamond Pedestal to adorn your garden with
+    - itemIcon: {fileID: 21300000, guid: dd35193b77ac69e4e8f6728ee5f4c143, type: 3}
+      itemName: Arabic Calligraphy Stand
+      itemDescription: An ornate Arabic Calligraphy Stand to adorn your garden with
         craftsmanship and quiet reverence.
-      itemID: bc682c70ac133526e4004b4f54d17917
+      itemID: d527779b36edc1763cdd48957669057d
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 700
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
       realMoneyPriceLabel: $0.99
       noorCoinReward: 0
       itemCategory: 3
-      itemTier: 2
-      sortOrder: 460
+      itemTier: 1
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
-        m_AssetGUID: 96d1d000e3ca54d4083344b7ef44db0d
+        m_AssetGUID: ca24b26b267452e40a0c819587e92f71
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1499,7 +1467,7 @@ MonoBehaviour:
         craftsmanship and quiet reverence.
       itemID: 7f2d99266f113411b3d64a0819c27456
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 1150
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1507,7 +1475,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 2
-      sortOrder: 470
+      sortOrder: 50
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 91af87783fb429f4c9229bf647f530cc
@@ -1531,7 +1499,7 @@ MonoBehaviour:
         craftsmanship and quiet reverence.
       itemID: 960fc290d2e52fc1696d4349c0ecd285
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 1450
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1539,10 +1507,42 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 2
-      sortOrder: 480
+      sortOrder: 60
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 3d62e899955bf044cb8e2c1fcd17d80d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: c17393a3ec28b8d4d990676e842267ea, type: 3}
+      itemName: Crimson Diamond Pedestal
+      itemDescription: An ornate Crimson Diamond Pedestal to adorn your garden with
+        craftsmanship and quiet reverence.
+      itemID: bc682c70ac133526e4004b4f54d17917
+      acquisitionType: 0
+      noorCoinCost: 2000
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 3
+      itemTier: 2
+      sortOrder: 70
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 96d1d000e3ca54d4083344b7ef44db0d
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1563,7 +1563,7 @@ MonoBehaviour:
         and quiet reverence.
       itemID: e92347bd50aa6b1769312e8b21c8b174
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 3400
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1571,7 +1571,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 3
-      sortOrder: 490
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: f5076a95134897041a6cca523d747ba4
@@ -1595,7 +1595,7 @@ MonoBehaviour:
         and quiet reverence.
       itemID: cca8b065a9b8c4f501b9572d5810e9df
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 4600
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1603,10 +1603,42 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 3
-      sortOrder: 500
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 1995e8687630d444281001f26d1fa51a
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 2894a1c806e094f47a1b8c37a03750de, type: 3}
+      itemName: Ornate Medallion Rug
+      itemDescription: An ornate Ornate Medallion Rug to adorn your garden with craftsmanship
+        and quiet reverence.
+      itemID: c09503ffcd716c4165b197f8eb6dd253
+      acquisitionType: 0
+      noorCoinCost: 8200
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 3
+      itemTier: 4
+      sortOrder: 100
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 84b30b493a74673479eb2330d2ffe38b
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1627,7 +1659,7 @@ MonoBehaviour:
         and quiet reverence.
       itemID: ed7f9ff2e032babc5045bdf50b962d90
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 8500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1635,7 +1667,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 4
-      sortOrder: 510
+      sortOrder: 110
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 9d292e1c1d549dc4a9689c29c9720997
@@ -1659,7 +1691,7 @@ MonoBehaviour:
         and quiet reverence.
       itemID: a934e834392b9fa7d6fe1650d5515c52
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 9000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1667,42 +1699,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 4
-      sortOrder: 520
+      sortOrder: 120
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: fc5a457aeb235d54592484a954b5ef83
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 2894a1c806e094f47a1b8c37a03750de, type: 3}
-      itemName: Ornate Medallion Rug
-      itemDescription: An ornate Ornate Medallion Rug to adorn your garden with craftsmanship
-        and quiet reverence.
-      itemID: c09503ffcd716c4165b197f8eb6dd253
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 3
-      itemTier: 4
-      sortOrder: 530
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 84b30b493a74673479eb2330d2ffe38b
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1725,7 +1725,7 @@ MonoBehaviour:
         wonder.
       itemID: 156c89d0965de4298757d8b7aea231be
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 600
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1733,7 +1733,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 1
-      sortOrder: 540
+      sortOrder: 10
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d9929b5ec2be05d40a5f436970470e36
@@ -1757,7 +1757,7 @@ MonoBehaviour:
         wonder.
       itemID: f8d1febf41c69a2267520b6b75dcd103
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 750
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1765,7 +1765,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 1
-      sortOrder: 550
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: b2cc2d46f1635ce4a8845d519500ba3f
@@ -1789,7 +1789,7 @@ MonoBehaviour:
         light and wonder.
       itemID: d285f07515626c88fcc65f444bfaae62
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 900
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1797,42 +1797,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 1
-      sortOrder: 560
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 68b1b2801573edd498e45b6e074c07e3
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 3970ad88efce719419a2366467e93f84, type: 3}
-      itemName: Golden Crescent Star
-      itemDescription: A radiant Golden Crescent Star to lift your garden with light
-        and wonder.
-      itemID: 3413652ef4d867f4a650580f33e0c489
-      acquisitionType: 0
-      noorCoinCost: 100
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 9
-      itemTier: 2
-      sortOrder: 570
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: a7f8d41c960a4c947901f794bfdf5808
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1853,7 +1821,7 @@ MonoBehaviour:
         and wonder.
       itemID: c9d0d33026286402518f11f390b029f8
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 1600
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1861,7 +1829,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 580
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 26be55c193df5f841893c0f6c8eb0863
@@ -1885,7 +1853,7 @@ MonoBehaviour:
         and wonder.
       itemID: 7f0395e6f9d44388ff0fef763dcaabf9
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 2100
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1893,10 +1861,42 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 590
+      sortOrder: 50
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 89a1ebf2734f6da45848797f48cc45c7
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 3970ad88efce719419a2366467e93f84, type: 3}
+      itemName: Golden Crescent Star
+      itemDescription: A radiant Golden Crescent Star to lift your garden with light
+        and wonder.
+      itemID: 3413652ef4d867f4a650580f33e0c489
+      acquisitionType: 0
+      noorCoinCost: 2300
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 9
+      itemTier: 2
+      sortOrder: 60
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: a7f8d41c960a4c947901f794bfdf5808
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1917,7 +1917,7 @@ MonoBehaviour:
         wonder.
       itemID: c3c9f802da5c8352bbb3209f78e1e4c5
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 2500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1925,7 +1925,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 600
+      sortOrder: 70
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d1fc34eaffb466f4682095bce350c15b
@@ -1949,7 +1949,7 @@ MonoBehaviour:
         and wonder.
       itemID: 58f65719d43fd04db087cd3437366aa2
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 4000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1957,7 +1957,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 3
-      sortOrder: 610
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: c6fbc84cdb741194fab33d0e30a2fc74
@@ -1981,7 +1981,7 @@ MonoBehaviour:
         light and wonder.
       itemID: 891a12a264f9fcf4bf80d414afbbe031
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 5000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -1989,7 +1989,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 3
-      sortOrder: 620
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 00569db4ce011734db9f21c149690a4b
@@ -2013,7 +2013,7 @@ MonoBehaviour:
         wonder.
       itemID: 0f0bf24939c7b7a0d9218d2a6e8c05b5
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 9500
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -2021,7 +2021,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 4
-      sortOrder: 630
+      sortOrder: 100
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 6963c4194b8666a41b21bd17bbb406ce
@@ -2045,7 +2045,7 @@ MonoBehaviour:
         wonder.
       itemID: 40de1a41c6124205bed217d1d80e5488
       acquisitionType: 0
-      noorCoinCost: 100
+      noorCoinCost: 10000
       isDailyOffer: 0
       offerCooldownHours: 24
       iapProductId: 
@@ -2053,7 +2053,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 4
-      sortOrder: 640
+      sortOrder: 110
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: db28bbaf5d417d940a3b01ed401d9005
@@ -2087,7 +2087,7 @@ MonoBehaviour:
       noorCoinReward: 500
       itemCategory: 8
       itemTier: 0
-      sortOrder: 0
+      sortOrder: 10
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 
@@ -2118,7 +2118,7 @@ MonoBehaviour:
       noorCoinReward: 100
       itemCategory: 8
       itemTier: 0
-      sortOrder: 0
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 
@@ -2149,7 +2149,7 @@ MonoBehaviour:
       noorCoinReward: 500
       itemCategory: 8
       itemTier: 0
-      sortOrder: 0
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 
@@ -2180,7 +2180,7 @@ MonoBehaviour:
       noorCoinReward: 250
       itemCategory: 8
       itemTier: 0
-      sortOrder: 0
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 

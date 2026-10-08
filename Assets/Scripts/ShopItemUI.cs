@@ -40,9 +40,9 @@ public class ShopItemUI : MonoBehaviour
 
     [Header("Economy Visuals")]
     [Tooltip("Colour of the price label when the player CAN afford the item.")]
-    public Color affordableColor = Color.green; // green
+    public Color affordableColor = new Color(0.62f, 0.91f, 0.60f, 1f); // soft mint green #9EE899
     [Tooltip("Colour of the price label when the player CANNOT afford the item.")]
-    public Color unaffordableColor = Color.red; // red
+    public Color unaffordableColor = new Color(0.96f, 0.62f, 0.60f, 1f); // soft coral red #F59E99
 
     [Header("Acquisition Labels")]
     [Tooltip("Button label shown on a rewarded-ad item that is ready to claim.")]

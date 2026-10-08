@@ -238,10 +238,12 @@ public class InGameShopManager : MonoBehaviour
         {
             int currentXPLevel = PlayerXPManager.Instance != null ? PlayerXPManager.Instance.xpLevel : 1;
 
-            // Unlocked first, then by tier so each collection reads Common → Premium Plus, then by
-            // the authored sort order inside a tier.
+            // Unlocked first, then cheapest to most expensive so every collection climbs in price,
+            // then by tier and the authored sort order for items that cost the same (coin packs and
+            // ad offers all cost nothing, so they fall through to their authored order).
             var sortedShopItems = shopItemDatas
                 .OrderBy(d => d != null && currentXPLevel >= d.requiredXPLevel ? 0 : 1)
+                .ThenBy(d => d != null ? d.noorCoinCost : 0)
                 .ThenBy(d => d != null ? (int)d.itemTier : 0)
                 .ThenBy(d => d != null ? d.sortOrder : 0);
 
