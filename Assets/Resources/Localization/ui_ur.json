@@ -1181,6 +1181,10 @@
             "value": "ارد گرد دیکھنے کی رفتار"
         },
         {
+            "key": "settings.language_label",
+            "value": "زبان"
+        },
+        {
             "key": "treasurebox.confirm.watch_ad_button",
             "value": "اشتہار دیکھیں"
         },

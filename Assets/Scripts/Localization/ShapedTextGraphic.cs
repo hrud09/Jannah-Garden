@@ -25,10 +25,15 @@ using UnityEngine.UI;
 /// Mixed-script lines (e.g. a Bengali sentence with an embedded Arabic honorific like "নবী ﷺ প্রথম") are
 /// split into same-script runs by <see cref="ScriptRunSplitter"/>, each shaped against its own font via
 /// <see cref="HarfBuzzFontRegistry"/>. A single Graphic/CanvasRenderer can only bind one texture per
-/// draw call, so a run in a script other than this component's own <see cref="locale"/> is delegated to
-/// a pooled child ShapedTextGraphic (its own CanvasRenderer/material/atlas), positioned to sit exactly
-/// where that run falls in the line. Word-wrap operates on the whole multi-run glyph stream before any
-/// of this happens, so wrapping decisions are correct regardless of how many scripts a line mixes.
+/// draw call, so a run this component cannot draw with the texture it binds is delegated to a pooled
+/// child ShapedTextGraphic (its own CanvasRenderer/material/atlas), positioned to sit exactly where that
+/// run falls in the line. Two things force that delegation, and both are part of the batch key: a run in
+/// a script other than this component's own <see cref="locale"/>, and a run whose glyphs were rasterized
+/// into an atlas page other than the one this component binds (see <see cref="ResolveAtlasTexture"/> —
+/// these font assets have Multi Atlas Textures enabled and populate entirely at runtime, so a long
+/// Bengali session really does spill onto page 1). Word-wrap operates on the whole multi-run glyph
+/// stream before any of this happens, so wrapping decisions are correct regardless of how many scripts
+/// a line mixes.
 ///
 /// Scope (deliberately limited — see the implementation plan for what's deferred):
 ///  - Word-wrap breaks only at plain ASCII spaces (U+0020) — the actual word boundary in Bengali/Arabic
@@ -49,13 +54,33 @@ using UnityEngine.UI;
 public class ShapedTextGraphic : MaskableGraphic
 {
     private static readonly int MainTexId = Shader.PropertyToID("_MainTex");
-    private static Shader s_shader;
+
+    /// <summary>
+    /// Resources path of the material whose shader this component renders with. It is loaded from
+    /// Resources rather than resolved with <c>Shader.Find("UI/ShapedTextSDF")</c> for the same reason
+    /// <see cref="PlacementGridView"/> does it this way: a shader that nothing in a built scene
+    /// references is stripped from the player build, so Shader.Find returns null on device while
+    /// working perfectly in the editor (no stripping there). Assets/Shaders/ShapedTextSDF.shader was
+    /// referenced by no material and is not in Graphics Settings' Always Included Shaders, so every
+    /// Bengali label on an Android build was constructing <c>new Material(null)</c> — an
+    /// ArgumentNullException that propagated out of InGameShopManager's card-spawn loop and left the
+    /// whole shop empty.
+    /// </summary>
+    private const string MaterialResourcePath = "Localization/ShapedTextSDF";
+
+    private static Material s_sharedMaterial;
+    private static bool s_sharedMaterialMissingLogged;
 
     [SerializeField] private TMP_FontAsset fontAsset;
     [SerializeField] private float fontSize = 36f;
     [SerializeField] private AppLocale locale = AppLocale.bn;
     [SerializeField] [TextArea] private string rawText;
     [SerializeField] private TextAlignmentOptions alignment = TextAlignmentOptions.Center;
+
+    /// <summary>Index into <see cref="TMP_FontAsset.atlasTextures"/> that this graphic draws from.
+    /// Always 0 for a label the game creates directly; a pooled run-child is assigned the page its
+    /// delegated batch lives on (see <see cref="AtlasPage"/>).</summary>
+    [SerializeField] private int atlasPage;
 
     [SerializeField] private float paddingLeft;
     [SerializeField] private float paddingRight;
@@ -81,6 +106,10 @@ public class ShapedTextGraphic : MaskableGraphic
     {
         public ShapedGlyph Glyph;
         public AppLocale Locale;
+        /// <summary>Which of the font asset's atlas textures this glyph was rasterized into. A
+        /// CanvasRenderer binds one texture per draw call, so this is part of the batch key exactly
+        /// like <see cref="Locale"/> is — see RebuildLayout's batching loop.</summary>
+        public int AtlasPage;
     }
 
     /// <summary>A run of glyphs in this component's own base <see cref="locale"/>/<see cref="fontAsset"/>,
@@ -94,7 +123,42 @@ public class ShapedTextGraphic : MaskableGraphic
         public float PenY;
     }
 
-    public override Texture mainTexture => fontAsset != null ? fontAsset.atlasTexture : s_WhiteTexture;
+    public override Texture mainTexture => ResolveAtlasTexture() ?? s_WhiteTexture;
+
+    /// <summary>
+    /// The atlas texture for <see cref="atlasPage"/>, or null if there is no font asset.
+    ///
+    /// Must never be <c>fontAsset.atlasTexture</c> unconditionally: that property is hardcoded to
+    /// <c>atlasTextures[0]</c>, and these font assets ship with Multi Atlas Textures enabled, an empty
+    /// glyph table, and a 1024x1024 page — so every glyph is rasterized at runtime and TMP allocates a
+    /// second page once the first fills. Glyphs on page 1+ carry page-1 rects; sampling those rects out
+    /// of page 0 draws unrelated glyphs. Which glyphs overflow depends on the order text happened to be
+    /// rendered in that session, so this reproduces inconsistently and can differ between platforms.
+    /// </summary>
+    private Texture ResolveAtlasTexture()
+    {
+        if (fontAsset == null) return null;
+
+        Texture2D[] pages = fontAsset.atlasTextures;
+        if (pages != null && atlasPage >= 0 && atlasPage < pages.Length && pages[atlasPage] != null)
+            return pages[atlasPage];
+
+        return fontAsset.atlasTexture;
+    }
+
+    /// <summary>Which atlas page this graphic draws from. Only the parent sets this, when handing a
+    /// pooled run-child a batch that lives on a page other than the one the parent itself binds.</summary>
+    public int AtlasPage
+    {
+        get => atlasPage;
+        set
+        {
+            if (atlasPage == value) return;
+            atlasPage = value;
+            RefreshMaterial();
+            SetVerticesDirty();
+        }
+    }
 
     public TMP_FontAsset FontAsset
     {
@@ -192,9 +256,30 @@ public class ShapedTextGraphic : MaskableGraphic
     {
         if (fontAsset == null) return;
 
-        if (s_shader == null) s_shader = Shader.Find("UI/ShapedTextSDF");
-        if (_instanceMaterial == null) _instanceMaterial = new Material(s_shader) { hideFlags = HideFlags.HideAndDontSave };
-        _instanceMaterial.SetTexture(MainTexId, fontAsset.atlasTexture);
+        if (s_sharedMaterial == null) s_sharedMaterial = Resources.Load<Material>(MaterialResourcePath);
+
+        // Never throw out of here. This runs inside LocalizedRendering.SetText, which sits on the
+        // straight-line path of InGameShopManager.EnsureItemsSpawned and ShopItemUI.Initialize — an
+        // exception here aborts the whole card-spawn loop and empties the shop for the rest of the
+        // session. A missing material is a build-configuration problem worth shouting about once, but
+        // it must degrade to "this label draws nothing" rather than taking the UI down with it.
+        if (s_sharedMaterial == null)
+        {
+            if (!s_sharedMaterialMissingLogged)
+            {
+                s_sharedMaterialMissingLogged = true;
+                Debug.LogError($"[ShapedTextGraphic] Missing Resources/{MaterialResourcePath}.mat — shaped "
+                    + "(Bengali/Arabic) text cannot render. Restore the material so its shader ships in the build.");
+            }
+            return;
+        }
+
+        if (_instanceMaterial == null)
+        {
+            _instanceMaterial = new Material(s_sharedMaterial) { hideFlags = HideFlags.HideAndDontSave };
+        }
+
+        _instanceMaterial.SetTexture(MainTexId, ResolveAtlasTexture());
         material = _instanceMaterial;
     }
 
@@ -294,9 +379,13 @@ public class ShapedTextGraphic : MaskableGraphic
             int i = 0;
             while (i < visualLine.Count)
             {
+                // A CanvasRenderer binds exactly one texture per draw call, so a batch has to be
+                // uniform in BOTH the font it shapes against and the atlas page it samples from.
+                // Splitting on locale alone was enough only while every glyph fit on page 0.
                 AppLocale batchLocale = visualLine[i].Locale;
+                int batchPage = visualLine[i].AtlasPage;
                 int start = i;
-                while (i < visualLine.Count && visualLine[i].Locale == batchLocale) i++;
+                while (i < visualLine.Count && visualLine[i].Locale == batchLocale && visualLine[i].AtlasPage == batchPage) i++;
 
                 float batchHbScale = fontSize / HarfBuzzShaper.UnitsPerEm(batchLocale);
                 var batchGlyphs = new List<ShapedGlyph>(i - start);
@@ -307,13 +396,15 @@ public class ShapedTextGraphic : MaskableGraphic
                     batchWidth += visualLine[k].Glyph.XAdvance * batchHbScale;
                 }
 
-                if (batchLocale == locale)
+                if (batchLocale == locale && batchPage == atlasPage)
                 {
                     _baseBatches.Add(new DrawBatch { Glyphs = batchGlyphs, PenX = penX, PenY = penY });
                 }
                 else
                 {
-                    TMP_FontAsset otherFont = HarfBuzzFontRegistry.GetFontAsset(batchLocale);
+                    // Same font, different page is just as undrawable by this renderer as a different
+                    // font is, and goes down the same delegation path — the child binds that page.
+                    TMP_FontAsset otherFont = batchLocale == locale ? fontAsset : HarfBuzzFontRegistry.GetFontAsset(batchLocale);
                     if (otherFont != null)
                     {
                         ShapedTextGraphic child = GetOrCreateRunChild(childCount++);
@@ -329,6 +420,7 @@ public class ShapedTextGraphic : MaskableGraphic
                         child.FontAsset = otherFont;
                         child.FontSize = fontSize;
                         child.Locale = batchLocale;
+                        child.AtlasPage = batchPage;
                         child.SetPrecomputedGlyphs(batchGlyphs);
                     }
                     else
@@ -468,7 +560,17 @@ public class ShapedTextGraphic : MaskableGraphic
 
                 ShapedGlyph offsetGlyph = g;
                 offsetGlyph.Cluster = (uint)(run.StartIndex + (int)g.Cluster);
-                result.Add(new PositionedGlyph { Glyph = offsetGlyph, Locale = run.Locale });
+
+                // Read the page AFTER the two Ensure/TryAdd calls above, so a glyph rasterized just now
+                // reports the page it actually landed on. A glyph's atlasIndex never changes once TMP has
+                // assigned it, so this stays valid for the lifetime of the layout. A glyph that still
+                // isn't in the table (rasterization genuinely failed) falls through as page 0, where
+                // DrawGlyphLine's existing warning reports it.
+                int page = 0;
+                if (runFont != null && runFont.glyphLookupTable.TryGetValue(offsetGlyph.GlyphId, out var atlasGlyph))
+                    page = atlasGlyph.atlasIndex;
+
+                result.Add(new PositionedGlyph { Glyph = offsetGlyph, Locale = run.Locale, AtlasPage = page });
             }
         }
         return result;
