@@ -142,29 +142,19 @@ public class MobileNotificationManager : MonoBehaviour
     /// </summary>
     private void ScheduleTreasureBoxNotifications()
     {
-        if (TreasureBoxManager.Instance == null) return;
+        TreasureBoxManager manager = TreasureBoxManager.Instance;
+        if (manager == null) return;
 
-        TreasureBoxTier upcomingTier = TreasureBoxManager.Instance.GetUpcomingTier();
+        // While a tier is active its boxes are already out in the garden. The only future event is the
+        // next day's sequence, once today's has been opened in full.
+        if (manager.TryGetActiveTier(out _)) return;
 
-        // Only schedule if the tier is unlocked and accessible
-        if (!TreasureBoxManager.Instance.IsTierUnlocked(upcomingTier)) return;
+        DateTime availableAt = manager.GetNextSequenceStartTime();
+        if (availableAt <= DateTime.Now) return;
 
-        for (int i = 0; i < TreasureBoxManager.SLOTS_PER_TIER; i++)
-        {
-            // If the slot is not yet available, it means it will be available in the future
-            if (!TreasureBoxManager.Instance.IsSlotAvailable(upcomingTier, i))
-            {
-                DateTime availableAt = TreasureBoxManager.Instance.GetSlotAvailableAt(upcomingTier, i);
-
-                // If we got a valid future time, schedule the notification
-                if (availableAt != DateTime.MinValue && availableAt > DateTime.Now)
-                {
-                    string title = "Treasure Box Ready!";
-                    string text = $"A new {upcomingTier} Treasure Box is ready to be opened in Jannah Garden!";
-                    ScheduleNotification(title, text, availableAt, CHANNEL_ID);
-                }
-            }
-        }
+        string title = "Treasure Box Ready!";
+        string text = $"New {TreasureBoxTier.Silver} Treasure Boxes are ready to be opened in Jannah Garden!";
+        ScheduleNotification(title, text, availableAt, CHANNEL_ID);
     }
 
     /// <summary>

@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 
 /// <summary>
 /// Persistent state for a single tier's three treasure box slots.
@@ -15,10 +16,8 @@ public class TreasureBoxTierState
     public bool[] slotOpened = new bool[TreasureBoxManager.SLOTS_PER_TIER];
 
     /// <summary>
-    /// UTC ticks (DateTime.Ticks) at which each slot becomes available to open.
-    /// Slot 0 is available immediately when the cycle starts.
-    /// Slot 1 becomes available 2 hours after slot 0 is opened.
-    /// Slot 2 becomes available 2 hours after slot 1 is opened.
+    /// Legacy: per-slot spawn times from before all 3 boxes of a tier appeared together.
+    /// No longer read; kept so older binary saves still deserialize.
     /// </summary>
     public long[] slotAvailableAtTicks = new long[TreasureBoxManager.SLOTS_PER_TIER];
 
@@ -42,12 +41,14 @@ public class TreasureBoxTierState
     public int openedCount = 0;
 
     /// <summary>
-    /// Ticks of the cycle start time this tier belongs to.
+    /// Legacy: per-tier cycle stamp from before the single daily sequence. Only read once, to
+    /// migrate an older save (see <see cref="TreasureBoxSaveData.sequenceCycleStartTicks"/>).
     /// </summary>
     public long lastTierResetTicks = 0L;
 
     /// <summary>
-    /// Ticks when a carried-forward tier has finished its 10-minute cooldown and can reset.
+    /// Legacy: the old 10-minute cooldown after a carried-over tier. No longer read; kept so older
+    /// binary saves still deserialize.
     /// </summary>
     public long pendingResetAvailableAtTicks = 0L;
 
@@ -94,6 +95,14 @@ public class TreasureBoxSaveData
 {
     public long globalCycleStartedAtTicks = 0L;
     public bool hasShownChestOnce = false;
+
+    /// <summary>
+    /// Ticks of the daily cycle start the current Silver → Diamond sequence belongs to. A sequence
+    /// older than today's cycle is replaced at the next tick, unless its active tier is partially
+    /// opened — that tier is carried over until it is finished. 0 means not yet set (fresh install or
+    /// a save from before this field existed).
+    /// </summary>
+    [OptionalField] public long sequenceCycleStartTicks = 0L;
 
     public TreasureBoxTierState silver   = new TreasureBoxTierState();
     public TreasureBoxTierState gold     = new TreasureBoxTierState();

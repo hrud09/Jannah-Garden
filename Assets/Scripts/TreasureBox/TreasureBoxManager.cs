@@ -7,9 +7,11 @@ using TMPro;
 /// Singleton manager for the Jannah Garden Treasure Box daily-reward system.
 ///
 /// Responsibilities:
-///   • Tracks 4 tiers × 3 slots = 12 boxes per 24-hour cycle.
-///   • Enforces strict tier progression (Silver → Gold → Platinum → Diamond).
-///   • Manages 2-hour per-slot respawn cooldowns.
+///   • Runs one sequence of 4 tiers × 3 slots = 12 boxes per daily cycle.
+///   • Enforces strict tier progression (Silver → Gold → Platinum → Diamond): all
+///     3 boxes of a tier appear together the moment the previous tier is finished.
+///   • Carries a partially opened tier over the daily reset; the new day's
+///     sequence starts from Silver as soon as that tier is finished.
 ///   • Gates free-user opens behind a rewarded ad.
 ///   • Fires events for the UI layer to react to.
 ///   • Persists all state via <see cref="SaveSystem"/>.
@@ -382,9 +384,10 @@ public class TreasureBoxManager : MonoBehaviour
             
         if (treasureBoxStatusUi.timerText != null)
         {
-            if (state.pendingResetAvailableAtTicks > 0)
+            if (!TryGetActiveTier(out _))
             {
-                TimeSpan span = new DateTime(state.pendingResetAvailableAtTicks) - DateTime.Now;
+                // Today's twelve are all opened; the next sequence starts at the daily reset.
+                TimeSpan span = GetNextSequenceStartTime() - DateTime.Now;
                 if (span.TotalSeconds > 0)
                 {
                     SetHudTimer(treasureBoxStatusUi.timerText, FormatTimeSpan(span), false);
@@ -394,77 +397,48 @@ public class TreasureBoxManager : MonoBehaviour
                     SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.resetting"), true);
                 }
             }
-            else if (state.IsSetComplete)
-            {
-                SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.completed"), true);
-            }
             else if (!IsTierUnlocked(upcomingTier))
             {
-                DateTime readyAt = GetSlotAvailableAt(upcomingTier, 0);
-                if (readyAt != DateTime.MinValue)
-                {
-                    TimeSpan span = readyAt - DateTime.Now;
-                    if (span.TotalSeconds > 0)
-                    {
-                        SetHudTimer(treasureBoxStatusUi.timerText, FormatTimeSpan(span), false);
-                    }
-                    else
-                    {
-                        SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.finish_previous_tier"), true);
-                    }
-                }
-                else
-                {
-                    SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.locked"), true);
-                }
+                SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.locked"), true);
             }
             else
             {
-                // Tier is unlocked but not complete. Find the NEXT slot to open.
-                int nextSlot = 0;
-                for (int i = 0; i < SLOTS_PER_TIER; i++)
-                {
-                    if (!state.slotOpened[i])
-                    {
-                        nextSlot = i;
-                        break;
-                    }
-                }
-
-                if (IsSlotAvailable(upcomingTier, nextSlot))
-                {
-                    SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.available"), true);
-                }
-                else
-                {
-                    DateTime readyAt = GetSlotAvailableAt(upcomingTier, nextSlot);
-                    if (readyAt != DateTime.MinValue)
-                    {
-                        TimeSpan span = readyAt - DateTime.Now;
-                        SetHudTimer(treasureBoxStatusUi.timerText, FormatTimeSpan(span), false);
-                    }
-                    else
-                    {
-                        SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.waiting"), true);
-                    }
-                }
+                SetHudTimer(treasureBoxStatusUi.timerText, Loc("treasurebox.status.available"), true);
             }
         }
     }
 
+    /// <summary>
+    /// The tier the HUD and minimap should point at: the active tier, or Diamond once the whole
+    /// sequence has been opened and the player is waiting on the next daily reset.
+    /// </summary>
     public TreasureBoxTier GetUpcomingTier()
     {
         if (_saveData == null) return TreasureBoxTier.Silver;
 
+        return TryGetActiveTier(out TreasureBoxTier active) ? active : TreasureBoxTier.Diamond;
+    }
+
+    /// <summary>
+    /// The tier whose boxes are out in the garden right now — the lowest tier of the current sequence
+    /// that is not finished. False once all four are finished, until the next daily reset.
+    /// </summary>
+    public bool TryGetActiveTier(out TreasureBoxTier activeTier)
+    {
+        activeTier = TreasureBoxTier.Silver;
+        if (_saveData == null) return false;
+
         foreach (TreasureBoxTier tier in AllTiers)
         {
-            TreasureBoxTierState state = _saveData.GetTierState(tier);
-            if (!state.IsSetComplete)
+            if (!_saveData.GetTierState(tier).IsSetComplete)
             {
-                return tier;
+                activeTier = tier;
+                return true;
             }
         }
-        return TreasureBoxTier.Silver;
+
+        activeTier = TreasureBoxTier.Diamond;
+        return false;
     }
 
     private void OnApplicationQuit()  => SaveState();
@@ -525,9 +499,9 @@ public class TreasureBoxManager : MonoBehaviour
     /// <summary>
     /// Returns true if the given tier is unlocked for opening.
     ///
-    /// Progression rule: a tier is unlocked only when all lower tiers have
-    /// completed their set of 3 in the current cycle — OR when it is Silver
-    /// (always accessible).
+    /// Progression rule: only the active tier (see <see cref="TryGetActiveTier"/>)
+    /// is open; tiers already finished in this sequence also count as unlocked.
+    /// Higher tiers wait until every tier below them is finished.
     ///
     /// IAP note: PurchaseTierUnlock calls bypass this check internally; do not
     /// call this before calling that flow.
@@ -543,51 +517,32 @@ public class TreasureBoxManager : MonoBehaviour
             }
         }
 
-        if (tier == TreasureBoxTier.Silver) return true;
-        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        if (_saveData == null) return false;
+        if (_saveData.GetTierState(tier).IsSetComplete) return true;
 
-        if (state.openedCount > 0 && state.openedCount < SLOTS_PER_TIER) return true;
-
-        TreasureBoxTier prevTier = (TreasureBoxTier)((int)tier - 1);
-        TreasureBoxTierState prevState = _saveData.GetTierState(prevTier);
-
-        DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
-        bool isPrevTierCurrentCycle = new DateTime(prevState.lastTierResetTicks) >= currentCycleStart;
-
-        return prevState.IsSetComplete && isPrevTierCurrentCycle;
+        return TryGetActiveTier(out TreasureBoxTier active) && active == tier;
     }
 
     /// <summary>
-    /// Returns true if a specific slot is ready to be opened right now:
-    ///   • The slot has not already been opened this cycle.
-    ///   • The current UTC time is at or past the slot's spawn timestamp
-    ///     (or the slot has never been used, meaning it is immediately available).
+    /// Returns true if a specific slot is ready to be opened right now: it belongs to the active
+    /// tier and has not been opened yet. There are no per-slot timers — all three boxes of a tier
+    /// appear together.
     /// </summary>
     public bool IsSlotAvailable(TreasureBoxTier tier, int slotIndex)
     {
-        TreasureBoxTierState state = _saveData.GetTierState(tier);
-
+        if (_saveData == null) return false;
         if (slotIndex < 0 || slotIndex >= SLOTS_PER_TIER) return false;
-        if (state.slotOpened[slotIndex]) return false;
+        if (!TryGetActiveTier(out TreasureBoxTier active) || active != tier) return false;
 
-        return DateTime.Now >= GetSlotAvailableAt(tier, slotIndex);
+        return !_saveData.GetTierState(tier).slotOpened[slotIndex];
     }
 
     /// <summary>
-    /// Returns the UTC DateTime at which the given slot will become available.
-    /// Returns <c>DateTime.MinValue</c> if the slot is already available or opened.
+    /// When the next daily sequence (3 Silver boxes) becomes due: the next daily reset.
     /// </summary>
-    public DateTime GetSlotAvailableAt(TreasureBoxTier tier, int slotIndex)
+    public DateTime GetNextSequenceStartTime()
     {
-        TreasureBoxTierState state = _saveData.GetTierState(tier);
-        if (slotIndex < 0 || slotIndex >= SLOTS_PER_TIER) return DateTime.MinValue;
-        if (state.slotOpened[slotIndex]) return DateTime.MinValue;
-
-        int overallIndex = (int)tier * SLOTS_PER_TIER + slotIndex;
-        int hoursOffset = overallIndex * 2;
-        
-        long baseTicks = state.lastTierResetTicks > 0 ? state.lastTierResetTicks : GetCurrentCycleStart(DateTime.Now).Ticks;
-        return new DateTime(baseTicks).AddHours(hoursOffset);
+        return GetCurrentCycleStart(DateTime.Now).AddDays(1);
     }
 
     public DateTime GetCurrentCycleStart(DateTime now)
@@ -651,10 +606,8 @@ public class TreasureBoxManager : MonoBehaviour
         // ── Slot availability gate ────────────────────────────────────────────
         if (!IsSlotAvailable(tier, slotIndex))
         {
-            DateTime readyAt = GetSlotAvailableAt(tier, slotIndex);
-            string msg = readyAt == DateTime.MinValue
-                ? $"{tier} slot {slotIndex} is already opened."
-                : $"Ready in {FormatTimeSpan(readyAt - DateTime.Now)}.";
+            // Past the progression gate, the only way a slot is unavailable is that it is already opened.
+            string msg = $"{tier} slot {slotIndex} is already opened.";
 
             Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
             onResult?.Invoke(false, msg);
@@ -754,6 +707,9 @@ public class TreasureBoxManager : MonoBehaviour
             SaveState();
             OnSetCompleted?.Invoke(tier, GetBoxData(tier));
             GrantSetCompletionReward(tier);
+
+            // Finishing a carried-over tier is what lets the new day's sequence start.
+            TickCycleResets();
             OnStateChanged?.Invoke();
 
             onResult?.Invoke(true, null);
@@ -784,8 +740,6 @@ public class TreasureBoxManager : MonoBehaviour
         // Mark this slot opened
         state.slotOpened[slotIndex] = true;
         state.openedCount++;
-
-        // No need to schedule next slot here since it's strictly chronological from midnight
 
         // Grant per-box NC reward
         if (rewardData != null && rewardData.noorCoinPerBox > 0 && NoorCoinManager.Instance != null)
@@ -831,12 +785,9 @@ public class TreasureBoxManager : MonoBehaviour
             GrantSetCompletionReward(tier);
             OnSetCompleted?.Invoke(tier, rewardData);
 
-            DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
-            if (new DateTime(state.lastTierResetTicks) < currentCycleStart)
-            {
-                state.pendingResetAvailableAtTicks = DateTime.Now.AddMinutes(10).Ticks;
-                Debug.Log($"[TreasureBoxManager] {tier} finished carried-forward boxes. Starting 10-minute cooldown.");
-            }
+            // If this was a tier carried over from an earlier day, the current day's sequence starts
+            // right away, from Silver.
+            TickCycleResets();
         }
 
         OnStateChanged?.Invoke();
@@ -886,50 +837,84 @@ public class TreasureBoxManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts a new daily sequence once the daily reset has passed — unless the active tier has been
+    /// partially opened. That tier is carried over, however many resets go by, and the sequence
+    /// restarts from Silver the moment it is finished. Any untouched tiers left over from the old
+    /// sequence are dropped.
+    /// </summary>
     private void TickCycleResets()
     {
+        if (_saveData == null) return;
+
         bool changed = false;
         DateTime currentCycleStart = GetCurrentCycleStart(DateTime.Now);
 
-        foreach (TreasureBoxTier tier in AllTiers)
+        if (_saveData.sequenceCycleStartTicks == 0L)
         {
-            TreasureBoxTierState state = _saveData.GetTierState(tier);
-            if (state.lastTierResetTicks == 0)
-            {
-                state.ResetCycle();
-                state.lastTierResetTicks = currentCycleStart.Ticks;
-                changed = true;
-                continue;
-            }
+            MigrateLegacySave(currentCycleStart);
+            changed = true;
+        }
 
-            DateTime tierLastReset = new DateTime(state.lastTierResetTicks);
-
-            if (tierLastReset < currentCycleStart)
-            {
-                if (state.openedCount == 0 || state.openedCount >= SLOTS_PER_TIER)
-                {
-                    state.ResetCycle();
-                    state.lastTierResetTicks = currentCycleStart.Ticks;
-                    state.pendingResetAvailableAtTicks = 0;
-                    RemoveSpawnedBoxesForTier(tier);
-                    changed = true;
-                }
-            }
-
-            if (state.pendingResetAvailableAtTicks > 0 && DateTime.Now.Ticks >= state.pendingResetAvailableAtTicks)
-            {
-                state.ResetCycle();
-                state.lastTierResetTicks = currentCycleStart.Ticks;
-                state.pendingResetAvailableAtTicks = 0;
-                RemoveSpawnedBoxesForTier(tier);
-                changed = true;
-            }
+        if (new DateTime(_saveData.sequenceCycleStartTicks) < currentCycleStart && !HasCarriedOverTier())
+        {
+            StartNewSequence(currentCycleStart);
+            changed = true;
         }
 
         if (changed)
         {
             SaveState();
             OnStateChanged?.Invoke();
+        }
+    }
+
+    /// <summary>True while the active tier has some, but not all, of its boxes opened.</summary>
+    private bool HasCarriedOverTier()
+    {
+        return TryGetActiveTier(out TreasureBoxTier active) && _saveData.GetTierState(active).openedCount > 0;
+    }
+
+    private void StartNewSequence(DateTime cycleStart)
+    {
+        foreach (TreasureBoxTier tier in AllTiers)
+        {
+            _saveData.GetTierState(tier).ResetCycle();
+            RemoveSpawnedBoxesForTier(tier);
+        }
+
+        _saveData.sequenceCycleStartTicks = cycleStart.Ticks;
+        Debug.Log($"[TreasureBoxManager] New daily sequence started for {cycleStart}.");
+    }
+
+    /// <summary>
+    /// Brings a save from before the single-sequence model up to date. Those saves stamped and carried
+    /// each tier on its own, so a higher tier could hold progress while a lower one had been reset.
+    /// </summary>
+    private void MigrateLegacySave(DateTime currentCycleStart)
+    {
+        long oldestReset = 0L;
+        foreach (TreasureBoxTier tier in AllTiers)
+        {
+            long ticks = _saveData.GetTierState(tier).lastTierResetTicks;
+            if (ticks > 0 && (oldestReset == 0L || ticks < oldestReset)) oldestReset = ticks;
+        }
+        _saveData.sequenceCycleStartTicks = oldestReset > 0 ? oldestReset : currentCycleStart.Ticks;
+
+        // Progress on a tier means every tier below it was finished in that sequence. Marking them so
+        // keeps the partially opened tier the active one, which is what carries it over.
+        for (int t = AllTiers.Length - 1; t > 0; t--)
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(AllTiers[t]);
+            if (state.openedCount == 0 || state.IsSetComplete) continue;
+
+            for (int lower = 0; lower < t; lower++)
+            {
+                TreasureBoxTierState lowerState = _saveData.GetTierState(AllTiers[lower]);
+                for (int i = 0; i < SLOTS_PER_TIER; i++) lowerState.slotOpened[i] = true;
+                lowerState.openedCount = SLOTS_PER_TIER;
+            }
+            break;
         }
     }
 
@@ -1006,7 +991,7 @@ public class TreasureBoxManager : MonoBehaviour
             TreasureBoxTierState state = _saveData.GetTierState(tier);
             for (int i = 0; i < SLOTS_PER_TIER; i++)
             {
-                if (!state.slotOpened[i] && IsTierUnlocked(tier) && IsSlotAvailable(tier, i) && !_spawnedBoxes.Exists(b => b.tier == tier && b.slotIndex == i))
+                if (IsTierUnlocked(tier) && IsSlotAvailable(tier, i) && !_spawnedBoxes.Exists(b => b.tier == tier && b.slotIndex == i))
                 {
                     SpawnBox(rd.boxPrefab, tier, i);
                 }
@@ -1178,13 +1163,13 @@ public class TreasureBoxManager : MonoBehaviour
             {
                 timerArray[i] = "Available";
             }
+            else if (!TryGetActiveTier(out _))
+            {
+                timerArray[i] = FormatTimeSpan(GetNextSequenceStartTime() - DateTime.Now);
+            }
             else
             {
-                DateTime availableAt = GetSlotAvailableAt(tier, i);
-                if (availableAt != DateTime.MinValue)
-                    timerArray[i] = FormatTimeSpan(availableAt - DateTime.Now);
-                else
-                    timerArray[i] = "Waiting on previous...";
+                timerArray[i] = "Waiting on previous tier...";
             }
         }
     }
@@ -1217,21 +1202,15 @@ public class TreasureBoxManager : MonoBehaviour
         Debug_CompleteTier(TreasureBoxTier.Platinum);
     }
 
-    [ContextMenu("DEBUG — Expire All Cooldowns (Make All Available)")]
-    private void Debug_ExpireAllCooldowns()
+    [ContextMenu("DEBUG — Simulate Daily Reset")]
+    private void Debug_SimulateDailyReset()
     {
-        foreach (TreasureBoxTier tier in AllTiers)
-        {
-            TreasureBoxTierState state = _saveData.GetTierState(tier);
-            for (int i = 0; i < SLOTS_PER_TIER; i++)
-            {
-                if (!state.slotOpened[i])
-                    state.slotAvailableAtTicks[i] = 0L; // 0 = immediately available
-            }
-        }
+        // Backdates the current sequence by a day, so the next tick treats the reset as having passed.
+        _saveData.sequenceCycleStartTicks = new DateTime(_saveData.sequenceCycleStartTicks).AddDays(-1).Ticks;
+        TickCycleResets();
         SaveState();
         OnStateChanged?.Invoke();
-        Debug.Log("[TreasureBoxManager] DEBUG: All cooldowns expired.");
+        Debug.Log("[TreasureBoxManager] DEBUG: Daily reset simulated.");
     }
 
     private void Debug_CompleteTier(TreasureBoxTier tier)
@@ -1245,6 +1224,8 @@ public class TreasureBoxManager : MonoBehaviour
             state.slotOpened[i] = true;
         }
         state.openedCount = SLOTS_PER_TIER;
+        RemoveSpawnedBoxesForTier(tier);
+        TickCycleResets();
         SaveState();
         OnStateChanged?.Invoke();
         Debug.Log($"[TreasureBoxManager] DEBUG: {tier} tier force-completed.");
