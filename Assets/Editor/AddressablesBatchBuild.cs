@@ -148,7 +148,7 @@ public static class AddressablesBatchBuild
 
         var psi = new ProcessStartInfo
         {
-            FileName = "powershell.exe",
+            FileName = ResolvePowerShell(),
             // Bypass because the script is local and unsigned; NoProfile so a user profile can't write
             // anything into the stream being read back as deploy output.
             Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\" -BuildTarget {target}",
@@ -175,6 +175,22 @@ public static class AddressablesBatchBuild
 
             Debug.Log("[AddressablesBatchBuild] DEPLOY_OK");
         }
+    }
+
+    /// <summary>
+    /// Windows ships powershell.exe; macOS needs PowerShell 7 (pwsh). An editor launched from the Hub or
+    /// Dock doesn't inherit the shell's PATH, so Homebrew's bin directories are checked explicitly.
+    /// </summary>
+    private static string ResolvePowerShell()
+    {
+        if (Application.platform == RuntimePlatform.WindowsEditor)
+            return "powershell.exe";
+
+        foreach (string candidate in new[] { "/opt/homebrew/bin/pwsh", "/usr/local/bin/pwsh", "/usr/local/microsoft/powershell/7/pwsh" })
+            if (File.Exists(candidate))
+                return candidate;
+
+        throw new Exception("PowerShell 7 (pwsh) not found — install it with: brew install powershell");
     }
 
     /// <summary>

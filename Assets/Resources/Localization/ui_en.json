@@ -729,6 +729,34 @@
             "value": "Inspector Mode: OFF"
         },
         {
+            "key": "interaction.return_to_base",
+            "value": "Return to Base"
+        },
+        {
+            "key": "interaction.move_to_unlocked_area",
+            "value": "Go to Unlocked Area"
+        },
+        {
+            "key": "interaction.auto_walk_stop",
+            "value": "Stop"
+        },
+        {
+            "key": "interaction.auto_walk_arrived_area",
+            "value": "You've arrived at {0}"
+        },
+        {
+            "key": "interaction.auto_walk_already_in_area",
+            "value": "You're already in your unlocked area"
+        },
+        {
+            "key": "interaction.auto_walk_no_path",
+            "value": "Couldn't find a path there"
+        },
+        {
+            "key": "interaction.auto_walk_blocked",
+            "value": "The path is blocked — try walking a little and press again"
+        },
+        {
             "key": "photo_mode.preview_heading",
             "value": "Your Jannah Garden"
         },

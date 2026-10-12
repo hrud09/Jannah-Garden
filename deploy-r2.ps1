@@ -65,7 +65,7 @@ if ($Bucket -like '*REPLACE_WITH*' -or $PublicUrlBase -like '*REPLACE_WITH*') {
 }
 
 # --- Source ----------------------------------------------------------------------------------------
-$sourceDir = Join-Path $PSScriptRoot "ServerData\$BuildTarget"
+$sourceDir = Join-Path (Join-Path $PSScriptRoot "ServerData") $BuildTarget
 if (-not (Test-Path -LiteralPath $sourceDir)) {
     Fail "No built content at $sourceDir. Build Addressables for $BuildTarget first."
 }
@@ -90,6 +90,8 @@ if ($found) {
         'C:\Tools\rclone\rclone.exe'
         "$env:LOCALAPPDATA\Microsoft\WinGet\Links\rclone.exe"
         "$env:ProgramFiles\rclone\rclone.exe"
+        '/opt/homebrew/bin/rclone'
+        '/usr/local/bin/rclone'
     ) | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 }
 if (-not $rclone) {
@@ -137,7 +139,7 @@ if ($LASTEXITCODE -ne 0) {
 # rclone succeeding only proves the write path works. Public access on r2.dev is a separate toggle, and
 # without it every bundle 404s on device while the deploy still looks green.
 $probe = $files | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
-$relative = $probe.FullName.Substring($sourceDir.Length + 1).Replace('\', '/')
+$relative = $probe.FullName.Substring($sourceDir.Length + 1).Replace([IO.Path]::DirectorySeparatorChar, '/')
 $probeUrl = "$($PublicUrlBase.TrimEnd('/'))/$BuildTarget/$relative"
 
 Write-Output "[deploy-r2] Verifying public read: $probeUrl"

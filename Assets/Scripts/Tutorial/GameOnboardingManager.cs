@@ -10,9 +10,9 @@ using DG.Tweening;
 /// <summary>
 /// Drives the full first-time onboarding experience: five HUD buttons (Shop, Inspector Mode,
 /// Photo Mode, Show Treasure Box, Outer Garden) start hidden and are revealed one at a time as the
-/// player earns them, across three sequential flows (core shop/placement/XP loop -> photo mode /
-/// inspector mode -> outer garden). The Show Treasure Box button is revealed once Flow 3 begins
-/// but, unlike the other buttons, has no dedicated explanation step of its own. Flow 1 opens with
+/// player earns them, across three sequential flows (core shop/placement/XP loop -> photo mode ->
+/// outer garden). The Inspector Mode and Show Treasure Box buttons are revealed once Flow 3 begins
+/// but, unlike the other buttons, have no dedicated explanation step of their own. Flow 1 opens with
 /// a movement step that highlights the joystick until the player actually moves.
 ///
 /// Persists as a DontDestroyOnLoad singleton (via its TutorialCanvas root) so it survives the
@@ -50,7 +50,7 @@ public class GameOnboardingManager : MonoBehaviour
     }
 
     private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingRotationDemo, ShowingZoneIntro, AwaitingPlace, ShowingZoneAesthetics, ShowingXPInfo }
-    private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose, AwaitingInspectorTap, AwaitingInspectorExit }
+    private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose }
 
     private const string StageKey = "GameOnboarding_Stage";
     private const string LegacyTutorialKey = "TutorialCompleted_ShopPlacement";
@@ -115,7 +115,6 @@ public class GameOnboardingManager : MonoBehaviour
     private bool Flow1Active => replayMode || stage == OnboardingStage.Flow1InProgress;
 
     private IdyllicFantasyNature.PlayerMovement playerMovementRef;
-    private bool inspectorExitListenerAdded;
 
     private RectTransform highlightTarget;
     private Canvas highlightCanvas;
@@ -144,7 +143,6 @@ public class GameOnboardingManager : MonoBehaviour
     private bool panelTargetShown;
 
     private bool photoTapListenerAdded;
-    private bool inspectorTapListenerAdded;
     private bool outerGardenTapListenerAdded;
 
     private void Awake()
@@ -342,19 +340,10 @@ public class GameOnboardingManager : MonoBehaviour
         PhotoModeManager.OnPreviewClosed -= HandlePhotoPreviewClosed;
         SceneManager.sceneLoaded -= HandleSceneLoaded;
 
-        if (inspectorExitListenerAdded && playerMovementRef != null)
-        {
-            playerMovementRef.OnInspectorModeChanged -= HandleInspectorModeChanged;
-        }
-
         if (photoTapListenerAdded)
         {
             Button photo = PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null;
             if (photo != null) photo.onClick.RemoveListener(HandlePhotoButtonTapped);
-        }
-        if (inspectorTapListenerAdded && inspectorModeButton != null)
-        {
-            inspectorModeButton.onClick.RemoveListener(HandleInspectorButtonTapped);
         }
         if (outerGardenTapListenerAdded && outerGardenButton != null)
         {
@@ -885,7 +874,7 @@ public class GameOnboardingManager : MonoBehaviour
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    //  Flow 2 - Photo Mode -> Inspector Mode
+    //  Flow 2 - Photo Mode
     // ═══════════════════════════════════════════════════════════════════════
 
     private void BeginPhotoModeStep()
@@ -927,77 +916,11 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingPreviewClose) return;
 
-        flow2Sub = Flow2SubStep.AwaitingInspectorTap;
-        ShowDimAndPanel(true);
-        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_inspector_mode"));
-
-        SetActive(inspectorModeButton, true);
-        if (inspectorModeButton != null)
-        {
-            RectTransform rect = inspectorModeButton.GetComponent<RectTransform>();
-            HighlightUIElement(rect);
-            PulseButton(rect);
-            StartHandPointerAnimation(rect);
-            if (!inspectorTapListenerAdded)
-            {
-                inspectorModeButton.onClick.AddListener(HandleInspectorButtonTapped);
-                inspectorTapListenerAdded = true;
-            }
-        }
-    }
-
-    private void HandleInspectorButtonTapped()
-    {
-        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorTap) return;
-
-        StopPulse();
-        RestoreHighlightSorting();
-        StopHandPointerAnimation();
-        flow2Sub = Flow2SubStep.AwaitingInspectorExit;
-
-        // Inspector mode's fly controls and camera drag both need raycasts to reach the world/joystick,
-        // so don't leave a blocking dim overlay up while the player finds their way back to the ground.
-        HideDimOverlayOnly();
-        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_return_ground"));
-
-        if (playerMovementRef == null)
-        {
-            playerMovementRef = FindFirstObjectByType<IdyllicFantasyNature.PlayerMovement>();
-        }
-
-        if (playerMovementRef == null)
-        {
-            Debug.LogWarning("[GameOnboardingManager] PlayerMovement not found; skipping inspector-exit wait.");
-            CompleteFlow2();
-            return;
-        }
-
-        if (!inspectorExitListenerAdded)
-        {
-            playerMovementRef.OnInspectorModeChanged += HandleInspectorModeChanged;
-            inspectorExitListenerAdded = true;
-        }
-
-        // Toggling the button just fired ToggleInspectorMode(), so this is normally still true - but
-        // guard the (unlikely) case where it's already back off by the time we check.
-        if (!playerMovementRef.IsInspectorMode)
-        {
-            CompleteFlow2();
-        }
-    }
-
-    private void HandleInspectorModeChanged(bool isInspectorMode)
-    {
-        if (isInspectorMode) return; // only care about coming back down
-        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorExit) return;
-
         CompleteFlow2();
     }
 
     private void CompleteFlow2()
     {
-        if (stage != OnboardingStage.Flow2InProgress || flow2Sub != Flow2SubStep.AwaitingInspectorExit) return;
-
         flow2Sub = Flow2SubStep.None;
         SetInstructionPanelVisible(false);
 

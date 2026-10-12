@@ -1417,6 +1417,34 @@
             "value": "وضع المراقبة: إيقاف"
         },
         {
+            "key": "interaction.return_to_base",
+            "value": "العودة إلى البداية"
+        },
+        {
+            "key": "interaction.move_to_unlocked_area",
+            "value": "اذهب إلى منطقة مفتوحة"
+        },
+        {
+            "key": "interaction.auto_walk_stop",
+            "value": "توقف"
+        },
+        {
+            "key": "interaction.auto_walk_arrived_area",
+            "value": "لقد وصلت إلى {0}"
+        },
+        {
+            "key": "interaction.auto_walk_already_in_area",
+            "value": "أنت بالفعل في منطقتك المفتوحة"
+        },
+        {
+            "key": "interaction.auto_walk_no_path",
+            "value": "تعذّر إيجاد طريق إلى هناك"
+        },
+        {
+            "key": "interaction.auto_walk_blocked",
+            "value": "الطريق مسدود — امشِ قليلاً ثم اضغط مرة أخرى"
+        },
+        {
             "key": "photo_mode.preview_heading",
             "value": "حديقتك في الجنة"
         },

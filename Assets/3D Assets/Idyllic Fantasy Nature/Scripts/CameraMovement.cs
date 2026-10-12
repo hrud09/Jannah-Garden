@@ -41,6 +41,28 @@ namespace IdyllicFantasyNature
         [HideInInspector]
         public bool unlockFullPitch = false;
 
+        /// <summary>
+        /// True on any frame the player actually turned the view (drag delta, not just a tap). The
+        /// autopilot watches this to hand control back when the player starts looking around.
+        /// </summary>
+        public bool HasLookInput { get; private set; }
+
+        /// <summary>Current yaw of the controller, in degrees.</summary>
+        public float Yaw => _yRotation;
+
+        /// <summary>Current camera pitch, in degrees (-90..90, negative looks up).</summary>
+        public float Pitch => _xRotation;
+
+        /// <summary>
+        /// Sets the view angles directly. Used by the autopilot to steer, since this component writes
+        /// the controller's rotation every frame and would otherwise undo any rotation set elsewhere.
+        /// </summary>
+        public void SetLookAngles(float yaw, float pitch)
+        {
+            _yRotation = yaw;
+            _xRotation = Mathf.Clamp(pitch > 180f ? pitch - 360f : pitch, -90f, 90f);
+        }
+
         private bool _isDraggingRotation = false;
         private int _activeTouchId = -1;
         private Vector2 _lastTouchPosition;
@@ -267,6 +289,8 @@ namespace IdyllicFantasyNature
                 }
             }
 #endif
+
+            HasLookInput = rotateX != 0f || rotateY != 0f;
 
             // Apply sensitivity multiplier
             rotateX *= _sensitivityMultiplier;

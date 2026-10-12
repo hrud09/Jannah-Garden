@@ -1417,6 +1417,34 @@
             "value": "ইন্সপেক্টর মোড: বন্ধ"
         },
         {
+            "key": "interaction.return_to_base",
+            "value": "শুরুর জায়গায় ফিরুন"
+        },
+        {
+            "key": "interaction.move_to_unlocked_area",
+            "value": "আনলক করা এলাকায় যান"
+        },
+        {
+            "key": "interaction.auto_walk_stop",
+            "value": "থামুন"
+        },
+        {
+            "key": "interaction.auto_walk_arrived_area",
+            "value": "আপনি {0}-এ পৌঁছেছেন"
+        },
+        {
+            "key": "interaction.auto_walk_already_in_area",
+            "value": "আপনি ইতিমধ্যেই আপনার আনলক করা এলাকায় আছেন"
+        },
+        {
+            "key": "interaction.auto_walk_no_path",
+            "value": "সেখানে যাওয়ার পথ পাওয়া যায়নি"
+        },
+        {
+            "key": "interaction.auto_walk_blocked",
+            "value": "পথ বন্ধ — একটু হেঁটে আবার চাপুন"
+        },
+        {
             "key": "photo_mode.preview_heading",
             "value": "আপনার জান্নাহ গার্ডেন"
         },

@@ -136,6 +136,19 @@ namespace IdyllicFantasyNature
         /// <summary>Fired when a climb starts (true) and when it finishes (false).</summary>
         public event Action<bool> OnClimbStateChanged;
 
+        // ─── Autopilot (driven by PlayerAutoWalker) ──────────────────
+        private Vector3 _autoMoveDirection;
+        private bool _autoMoveRun;
+
+        /// <summary>
+        /// True on any frame the player is pushing the joystick, keyboard or gamepad. The autopilot
+        /// watches this to hand control straight back the moment the player asks for it.
+        /// </summary>
+        public bool HasManualMoveInput { get; private set; }
+
+        /// <summary>True while an autopilot direction is being fed in.</summary>
+        public bool IsAutoMoving => _autoMoveDirection != Vector3.zero;
+
         // ─── Camera Reference (for Inspector Mode flight direction) ──
         private Camera _mainCamera;
 
@@ -238,8 +251,18 @@ namespace IdyllicFantasyNature
 #endif
             }
 
+            HasManualMoveInput = moveX != 0f || moveZ != 0f;
+
             // moves the controller in the desired direction on the x- and z-axis
             Vector3 movement = transform.right * moveX + transform.forward * moveZ;
+
+            // Autopilot only steers while the player's hands are off the controls. The walker cancels
+            // itself off HasManualMoveInput, but this keeps the frame the player grabs the stick theirs.
+            bool autoMoving = !HasManualMoveInput && _autoMoveDirection != Vector3.zero;
+            if (autoMoving)
+            {
+                movement = _autoMoveDirection;
+            }
 
             // Walking into a low ledge lifts the player over it instead of stopping them dead.
             if (TryStartClimb(movement))
@@ -258,6 +281,8 @@ namespace IdyllicFantasyNature
             runPressed = Input.GetKey(KeyCode.LeftShift);
 #endif
 
+            if (autoMoving) runPressed = _autoMoveRun;
+
             float currentSpeed = runPressed ? (_movementSpeed + _runMultiplier) : _movementSpeed;
             Vector3 totalVelocity = movement * currentSpeed;
 
@@ -270,11 +295,11 @@ namespace IdyllicFantasyNature
 
             // If the player is pushing the joystick but the terrain/geometry won't let them through,
             // give them a small hop to break free instead of leaving them stuck in place.
-            float inputMagnitude = new Vector2(moveX, moveZ).magnitude;
+            float inputMagnitude = autoMoving ? movement.magnitude : new Vector2(moveX, moveZ).magnitude;
             HandleStuckDetection(inputMagnitude);
 
             // Handle player audio state
-            bool isMoving = (moveX != 0f || moveZ != 0f);
+            bool isMoving = HasManualMoveInput || autoMoving;
             bool isRunning = runPressed && isMoving;
             HandleMovementAudio(isMoving, isRunning);
         }
@@ -398,6 +423,8 @@ namespace IdyllicFantasyNature
                 moveZ = Input.GetAxis("Vertical");
 #endif
             }
+
+            HasManualMoveInput = moveX != 0f || moveZ != 0f;
 
             // ── Read vertical input (keyboard: Space=up, Ctrl=down) ──
             float verticalInput = _inspectorVerticalInput; // From UI buttons (mobile)
@@ -695,6 +722,29 @@ namespace IdyllicFantasyNature
         public void SetInspectorVerticalInput(float value)
         {
             _inspectorVerticalInput = Mathf.Clamp(value, -1f, 1f);
+        }
+
+        // ═════════════════════════════════════════════════════════════
+        //  AUTOPILOT API (used by PlayerAutoWalker)
+        // ═════════════════════════════════════════════════════════════
+
+        /// <summary>
+        /// Walks the player in world-space <paramref name="worldDirection"/> (XZ, magnitude 0..1) until
+        /// changed or cleared. Normal Mode only — gravity, auto-climb, unstick and footsteps all apply
+        /// exactly as they do for the joystick. Manual input always overrides it for that frame.
+        /// </summary>
+        public void SetAutoMove(Vector3 worldDirection, bool run)
+        {
+            worldDirection.y = 0f;
+            _autoMoveDirection = Vector3.ClampMagnitude(worldDirection, 1f);
+            _autoMoveRun = run;
+        }
+
+        /// <summary>Stops any autopilot movement.</summary>
+        public void ClearAutoMove()
+        {
+            _autoMoveDirection = Vector3.zero;
+            _autoMoveRun = false;
         }
 
         // ═════════════════════════════════════════════════════════════

@@ -1417,6 +1417,34 @@
             "value": "انسپکٹر موڈ: آف"
         },
         {
+            "key": "interaction.return_to_base",
+            "value": "واپس شروع کی جگہ"
+        },
+        {
+            "key": "interaction.move_to_unlocked_area",
+            "value": "کھلے علاقے میں جائیں"
+        },
+        {
+            "key": "interaction.auto_walk_stop",
+            "value": "رکیں"
+        },
+        {
+            "key": "interaction.auto_walk_arrived_area",
+            "value": "آپ {0} پہنچ گئے"
+        },
+        {
+            "key": "interaction.auto_walk_already_in_area",
+            "value": "آپ پہلے ہی اپنے کھلے علاقے میں ہیں"
+        },
+        {
+            "key": "interaction.auto_walk_no_path",
+            "value": "وہاں کا راستہ نہیں ملا"
+        },
+        {
+            "key": "interaction.auto_walk_blocked",
+            "value": "راستہ بند ہے — تھوڑا چل کر دوبارہ دبائیں"
+        },
+        {
             "key": "photo_mode.preview_heading",
             "value": "آپ کا جنت گارڈن"
         },
