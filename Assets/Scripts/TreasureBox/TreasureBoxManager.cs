@@ -485,9 +485,16 @@ public class TreasureBoxManager : MonoBehaviour
         if (data == null || data.exclusiveRewardItemIDs == null || data.exclusiveRewardItemIDs.Count == 0) return null;
 
         TreasureBoxTierState state = _saveData.GetTierState(tier);
-        if (state.selectedRewardIndex < 0 || state.selectedRewardIndex >= data.exclusiveRewardItemIDs.Count)
+        bool hasValidPick = state.selectedRewardIndex >= 0 && state.selectedRewardIndex < data.exclusiveRewardItemIDs.Count;
+
+        // A pick above the player's level is re-rolled, but only while none of the tier's boxes have
+        // been opened — after that the pieces already handed out belong to it.
+        bool rerollOverLevel = hasValidPick && state.openedCount == 0
+                               && !IsRewardWithinPlayerLevel(data.exclusiveRewardItemIDs[state.selectedRewardIndex]);
+
+        if (!hasValidPick || rerollOverLevel)
         {
-            state.selectedRewardIndex = UnityEngine.Random.Range(0, data.exclusiveRewardItemIDs.Count);
+            state.selectedRewardIndex = PickRewardIndexForPlayerLevel(data);
             SaveState();
         }
 
@@ -497,26 +504,45 @@ public class TreasureBoxManager : MonoBehaviour
     }
 
     /// <summary>
+    /// A random reward the player's level already allows, or any reward when none of them is.
+    /// </summary>
+    private int PickRewardIndexForPlayerLevel(TreasureBoxData data)
+    {
+        List<int> eligible = new List<int>();
+        for (int i = 0; i < data.exclusiveRewardItemIDs.Count; i++)
+        {
+            if (IsRewardWithinPlayerLevel(data.exclusiveRewardItemIDs[i])) eligible.Add(i);
+        }
+
+        return eligible.Count > 0
+            ? eligible[UnityEngine.Random.Range(0, eligible.Count)]
+            : UnityEngine.Random.Range(0, data.exclusiveRewardItemIDs.Count);
+    }
+
+    private bool IsRewardWithinPlayerLevel(string itemID)
+    {
+        if (rewardsDatabase == null || PlayerXPManager.Instance == null) return true;
+
+        TreasureBoxRewardItemData item = rewardsDatabase.FindByID(itemID);
+        return item == null || PlayerXPManager.Instance.xpLevel >= item.unlockXPLevel;
+    }
+
+    /// <summary>
     /// Returns true if the given tier is unlocked for opening.
     ///
     /// Progression rule: only the active tier (see <see cref="TryGetActiveTier"/>)
     /// is open; tiers already finished in this sequence also count as unlocked.
     /// Higher tiers wait until every tier below them is finished.
     ///
+    /// The player's XP level never blocks a tier: it is applied when the tier's reward is picked
+    /// (see <see cref="GetCurrentCycleReward"/>). Gating here left the whole sequence stuck — boxes
+    /// never spawned — whenever the random pick was above the player's level.
+    ///
     /// IAP note: PurchaseTierUnlock calls bypass this check internally; do not
     /// call this before calling that flow.
     /// </summary>
     public bool IsTierUnlocked(TreasureBoxTier tier)
     {
-        TreasureBoxRewardItemData currentReward = GetCurrentCycleReward(tier);
-        if (currentReward != null)
-        {
-            if (PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < currentReward.unlockXPLevel)
-            {
-                return false;
-            }
-        }
-
         if (_saveData == null) return false;
         if (_saveData.GetTierState(tier).IsSetComplete) return true;
 

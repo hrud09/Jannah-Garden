@@ -17793,6 +17793,14 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 1379383
       objectReference: {fileID: 0}
+    - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: _mouseSensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: _touchDragSensitivity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2531667859275332615, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: m_Name
       value: Controller
@@ -17849,6 +17857,10 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 411495268}
+    - target: {fileID: 2531667859275332622, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: _movementSpeed
+      value: 11.33
+      objectReference: {fileID: 0}
     - target: {fileID: 4990371204157392209, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
