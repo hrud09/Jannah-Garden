@@ -173,6 +173,10 @@
             "value": "&"
         },
         {
+            "key": "reward.mashallah",
+            "value": "Mash'Allah"
+        },
+        {
             "key": "garden.use_back_button",
             "value": "Use the back button to leave the garden."
         },

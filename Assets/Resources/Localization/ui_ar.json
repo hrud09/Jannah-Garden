@@ -173,6 +173,10 @@
             "value": "و"
         },
         {
+            "key": "reward.mashallah",
+            "value": "ما شاء الله"
+        },
+        {
             "key": "garden.use_back_button",
             "value": "استخدم زر الرجوع لمغادرة الحديقة."
         },

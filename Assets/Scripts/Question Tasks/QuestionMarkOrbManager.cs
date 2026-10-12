@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class QuestionMarkOrbManager : MonoBehaviour
@@ -12,7 +13,8 @@ public class QuestionMarkOrbManager : MonoBehaviour
     
     [Header("Settings")]
     public int maxOrbs = 5;
-    public float respawnDelay = 20f;
+    [Tooltip("How long a finished orb takes to shrink away before it returns to the pool.")]
+    public float vanishDuration = 0.4f;
     public int rewardCoins = 10;
 
     private List<GameObject> activeOrbs = new List<GameObject>();
@@ -46,7 +48,8 @@ public class QuestionMarkOrbManager : MonoBehaviour
     {
         if (availableSpawnPoints.Count == 0 || orbPrefab == null) return;
 
-        // Pick a random available spawn point
+        // Pick a random available spawn point. Occupied points are never in this list, so the new
+        // orb always lands somewhere no other orb is standing.
         int randIndex = Random.Range(0, availableSpawnPoints.Count);
         Transform spawnPoint = availableSpawnPoints[randIndex];
         
@@ -61,6 +64,13 @@ public class QuestionMarkOrbManager : MonoBehaviour
         }
 
         GameObject newOrb = Objectpool.Instance.Spawn(orbPrefab, spawnPos, spawnPoint.rotation);
+
+        // A pooled orb comes back exactly as VanishOrb left it — shrunk to zero with its colliders
+        // off — so restore both, then pop it in.
+        newOrb.transform.DOKill();
+        SetCollidersEnabled(newOrb, true);
+        newOrb.transform.localScale = Vector3.zero;
+        newOrb.transform.DOScale(orbPrefab.transform.localScale, vanishDuration).SetEase(Ease.OutBack);
         
         // Attach a reference to the spawn point so we can free it later
         QuestionMarkOrb orbScript = newOrb.GetComponent<QuestionMarkOrb>();
@@ -72,32 +82,47 @@ public class QuestionMarkOrbManager : MonoBehaviour
         activeOrbs.Add(newOrb);
     }
 
+    // Called once the task inside an orb (question or dhikr) is finished: the orb vanishes and a
+    // replacement appears straight away at a different, unoccupied spawn point.
     public void OnOrbOpened(QuestionMarkOrb orb)
     {
-        // Free the spawn point
+        if (orb == null || !activeOrbs.Contains(orb.gameObject)) return;
+
+        activeOrbs.Remove(orb.gameObject);
+
+        // Spawn the replacement before freeing the finished orb's point, so the replacement can't
+        // pick the very spot the player just cleared.
+        bool hadFreePoint = availableSpawnPoints.Count > 0;
+        SpawnOrb();
+
         if (orb.spawnPoint != null && !availableSpawnPoints.Contains(orb.spawnPoint))
         {
             availableSpawnPoints.Add(orb.spawnPoint);
         }
+        orb.spawnPoint = null;
 
-        if (activeOrbs.Contains(orb.gameObject))
-        {
-            activeOrbs.Remove(orb.gameObject);
-        }
+        // Every other point was taken (as many spawn points as orbs), so the only free spot is the
+        // one just cleared — reuse it rather than letting the garden lose an orb.
+        if (!hadFreePoint) SpawnOrb();
 
-        Objectpool.Instance.Despawn(orb.gameObject);
-
-        // Schedule respawn
-        StartCoroutine(RespawnRoutine());
+        VanishOrb(orb.gameObject);
     }
 
-    IEnumerator RespawnRoutine()
+    void VanishOrb(GameObject orb)
     {
-        yield return new WaitForSeconds(respawnDelay);
+        // Colliders go off first so the player can't target the orb again while it shrinks.
+        SetCollidersEnabled(orb, false);
 
-        if (activeOrbs.Count < maxOrbs && availableSpawnPoints.Count > 0)
+        orb.transform.DOKill();
+        orb.transform.DOScale(0f, vanishDuration).SetEase(Ease.InBack)
+            .OnComplete(() => Objectpool.Instance.Despawn(orb));
+    }
+
+    static void SetCollidersEnabled(GameObject orb, bool enabled)
+    {
+        foreach (Collider col in orb.GetComponentsInChildren<Collider>(true))
         {
-            SpawnOrb();
+            col.enabled = enabled;
         }
     }
 }

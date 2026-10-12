@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -46,6 +46,8 @@ public class DhikrManager : MonoBehaviour
     public TextMeshProUGUI mashallahTextUI;
     [Tooltip("Row under the Mash'Allah label that shows the coins/XP the completed dhikr earned. Lives in the scene so its styling is editable; leave unassigned to show the praise on its own.")]
     public RewardFinaleDisplay rewardFinale;
+    [Tooltip("Seconds the \"Mash'Allah\" finale stays on screen before the panel closes itself.")]
+    public float mashallahAutoCloseDelay = 3f;
 
     [Header("Data")]
     [Tooltip("Optional explicit override. Leave empty to auto-load Resources/dhikrs_{locale}.txt for the " +
@@ -281,7 +283,7 @@ public class DhikrManager : MonoBehaviour
     }
 
     // Replaces the panel's content with the "Mash'Allah" finale — praise plus the coins/XP the dhikr
-    // just earned — and closes it automatically a few seconds later, instead of the manual close flow
+    // just earned — and closes it automatically mashallahAutoCloseDelay seconds later, instead of the manual close flow
     // used elsewhere.
     private void ShowMashallahAndAutoClose(int coinsEarned, float xpEarned)
     {
@@ -296,9 +298,10 @@ public class DhikrManager : MonoBehaviour
         {
             mashallahTextUI.gameObject.SetActive(true);
 
-            // Plain (unlocalized, unshaped) text: "Mash'Allah" is Latin script and would render as
-            // tofu boxes if routed through the Bengali shaped-font path like SetText does.
-            LocalizedRendering.SetPlainText(mashallahTextUI, "Mash'Allah");
+            // Localized like the reward chips under it, and routed through the shared path so Arabic/Urdu
+            // shaping and the Bengali shaped renderer both apply.
+            LocalizationManager loc = LocalizationManager.Instance;
+            LocalizedRendering.SetText(mashallahTextUI, loc != null ? loc.Get("reward.mashallah") : "Mash'Allah");
             mashallahTextUI.transform.DOKill();
             mashallahTextUI.transform.localScale = Vector3.one;
             mashallahTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
@@ -306,7 +309,7 @@ public class DhikrManager : MonoBehaviour
             if (rewardFinale != null) rewardFinale.Show(coinsEarned, xpEarned);
         }
 
-        StartCoroutine(AutoCloseAfterDelay(5f));
+        StartCoroutine(AutoCloseAfterDelay(mashallahAutoCloseDelay));
     }
 
     private IEnumerator AutoCloseAfterDelay(float delay)

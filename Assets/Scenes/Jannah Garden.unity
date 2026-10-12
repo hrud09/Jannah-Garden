@@ -53392,7 +53392,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.9
 --- !u!222 &1678177957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55060,7 +55060,7 @@ MonoBehaviour:
   spawnPointsParent: {fileID: 1758729016}
   terrainReference: {fileID: 320240521}
   maxOrbs: 5
-  respawnDelay: 20
+  vanishDuration: 0.4
   rewardCoins: 100
 --- !u!1 &1708988261
 GameObject:
