@@ -39,8 +39,9 @@ using UnityEngine.UI;
 ///  - Word-wrap breaks only at plain ASCII spaces (U+0020) — the actual word boundary in Bengali/Arabic
 ///    same as in Latin script — using the already-shaped glyph run's cluster indices to find break
 ///    points, so wrapping never re-shapes a word differently than it would on an unbroken line. A
-///    single word wider than the rect hard-breaks mid-word rather than overflowing forever. No
-///    auto-size: overflow when even the smallest piece can't fit is accepted, not shrunk to fit.
+///    single word wider than the rect hard-breaks mid-word rather than overflowing forever. Optional
+///    shrink-to-fit (see <see cref="SetAutoSize"/>) avoids both where the source TMP_Text auto-sizes;
+///    overflow at the minimum size is accepted, same as TMP.
 ///  - Script-run splitting recognizes Bengali, Arabic, and Latin (see <see cref="ScriptRunSplitter"/> —
 ///    the last is for untranslated fallback text and plain-ASCII numeral strings, not a real "en UI
 ///    locale" input; see LocalizedRendering) and only reorders which FONT a run uses, not which VISUAL
@@ -77,6 +78,14 @@ public class ShapedTextGraphic : MaskableGraphic
     [SerializeField] [TextArea] private string rawText;
     [SerializeField] private TextAlignmentOptions alignment = TextAlignmentOptions.Center;
 
+    /// <summary>When on, <see cref="fontSize"/> is treated as the MAXIMUM size and the label shrinks
+    /// (down to <see cref="autoSizeMin"/>) until every line fits the rect without a mid-word hard
+    /// break — the shaped-text counterpart of TMP_Text's Auto Size, mirrored from the source TMP_Text
+    /// by <see cref="LocalizedRendering"/>. Without it, a Bengali translation longer than its English
+    /// source wraps at full size and spills out of fixed-size buttons, ribbons and badges.</summary>
+    [SerializeField] private bool autoSize;
+    [SerializeField] private float autoSizeMin = 10f;
+
     /// <summary>Index into <see cref="TMP_FontAsset.atlasTextures"/> that this graphic draws from.
     /// Always 0 for a label the game creates directly; a pooled run-child is assigned the page its
     /// delegated batch lives on (see <see cref="AtlasPage"/>).</summary>
@@ -97,8 +106,24 @@ public class ShapedTextGraphic : MaskableGraphic
     /// would report, for callers (see <see cref="LocalizedRendering"/>) that need to drive a
     /// ContentSizeFitter sitting on a sibling/parent object this component can't reach through Unity's
     /// own layout system (a ContentSizeFitter only ever looks at ILayoutElements on its own GameObject).</summary>
+    /// <remarks>Like TMP_Text's own preferredWidth, the width is the UNWRAPPED natural width (longest
+    /// source line on one line), while the height is measured wrapped at the current rect width.
+    /// Reporting the wrapped width instead would make a ContentSizeFitter/LayoutGroup driving this
+    /// rect ratchet narrower on every pass and never grow back for a longer string.</remarks>
     public float PreferredWidth { get; private set; }
     public float PreferredHeight { get; private set; }
+
+    /// <summary>The size actually rendered at after the last layout — equal to <see cref="FontSize"/>
+    /// unless <see cref="autoSize"/> shrank it to fit.</summary>
+    public float RenderedFontSize => _renderSize > 0f ? _renderSize : fontSize;
+
+    /// <summary>Raised after every relayout (including one triggered by the rect being resized), so a
+    /// caller mirroring <see cref="PreferredWidth"/>/<see cref="PreferredHeight"/> into a
+    /// LayoutElement can keep it in sync. See <see cref="LocalizedRendering"/>.</summary>
+    public event System.Action LayoutRebuilt;
+
+    private float _renderSize;
+    private Vector2 _laidOutSize = new Vector2(-1f, -1f);
 
     /// <summary>One shaped glyph plus which script/locale (and therefore which font) it came from —
     /// only meaningful while laying out a mixed-script line; not used once split into per-run batches.</summary>
@@ -227,6 +252,30 @@ public class ShapedTextGraphic : MaskableGraphic
         RebuildLayout();
     }
 
+    /// <summary>Configures shrink-to-fit (see <see cref="autoSize"/>). Deliberately does not relayout on
+    /// its own — callers always follow it with <see cref="FontSize"/>/<see cref="SetText"/>, which do.</summary>
+    public void SetAutoSize(bool enabled, float minSize)
+    {
+        autoSize = enabled;
+        autoSizeMin = Mathf.Max(1f, minSize);
+    }
+
+    /// <summary>
+    /// Word-wrap and auto-size both depend on the rect, so a label shaped before its layout settled —
+    /// e.g. an MCQ answer inside a button a LayoutGroup sizes a frame later — would otherwise keep the
+    /// layout it computed against a near-zero-width rect: one glyph per line, stacked down the screen.
+    /// Skipped during a graphic rebuild pass, where creating run-children is not allowed (see
+    /// <see cref="RebuildLayout"/>); the layout pass, where resizes normally happen, is fine.
+    /// </summary>
+    protected override void OnRectTransformDimensionsChange()
+    {
+        base.OnRectTransformDimensionsChange();
+        if (!isActiveAndEnabled || _precomputedGlyphs != null || string.IsNullOrEmpty(rawText)) return;
+        if ((rectTransform.rect.size - _laidOutSize).sqrMagnitude < 0.01f) return;
+        if (CanvasUpdateRegistry.IsRebuildingGraphics()) return;
+        RebuildLayout();
+    }
+
     /// <summary>Reshapes and re-renders with a new string for the given locale.</summary>
     public void SetText(string text, AppLocale forLocale)
     {
@@ -328,6 +377,8 @@ public class ShapedTextGraphic : MaskableGraphic
     {
         _baseBatches.Clear();
         int childCount = 0;
+        _renderSize = fontSize;
+        _laidOutSize = rectTransform.rect.size;
 
         if (fontAsset == null || string.IsNullOrEmpty(rawText))
         {
@@ -335,6 +386,7 @@ public class ShapedTextGraphic : MaskableGraphic
             PreferredHeight = 0f;
             DeactivateRunChildren(0);
             SetVerticesDirty();
+            LayoutRebuilt?.Invoke();
             return;
         }
 
@@ -347,16 +399,25 @@ public class ShapedTextGraphic : MaskableGraphic
         Rect rect = PaddedRect(fullRect);
         string[] sourceLines = rawText.Split('\n');
 
+        // Shaping is size-independent (design units), so every source line is shaped exactly once and
+        // the auto-size search below only re-runs the cheap wrap step at each candidate size.
+        var shapedLines = new List<List<PositionedGlyph>>(sourceLines.Length);
+        foreach (string sourceLine in sourceLines) shapedLines.Add(ShapeLineWithRuns(sourceLine));
+
+        if (autoSize) _renderSize = FitFontSize(shapedLines, sourceLines, rect);
+        float size = _renderSize;
+
         // Word-wrap every source line up front so the vertical alignment below knows the true total
         // line count before placing a single glyph — otherwise Middle/Bottom would need a second pass.
         var visualLines = new List<List<PositionedGlyph>>();
-        foreach (string sourceLine in sourceLines)
+        float naturalWidth = 0f;
+        for (int l = 0; l < sourceLines.Length; l++)
         {
-            List<PositionedGlyph> glyphs = ShapeLineWithRuns(sourceLine);
-            visualLines.AddRange(WrapIntoLines(glyphs, sourceLine, fontSize, rect.width));
+            visualLines.AddRange(WrapIntoLines(shapedLines[l], sourceLines[l], size, rect.width, out _));
+            naturalWidth = Mathf.Max(naturalWidth, MeasureWidth(shapedLines[l], size));
         }
 
-        float lineHeight = fontSize * 1.2f; // fixed line height; no auto-size, see class doc.
+        float lineHeight = size * 1.2f; // fixed line height
         float totalHeight = visualLines.Count * lineHeight;
 
         // DrawGlyphLine positions each glyph as baseline + horizontalBearingY (its height above the
@@ -364,16 +425,12 @@ public class ShapedTextGraphic : MaskableGraphic
         // pushed up by roughly its own ascent (most visible on a short rect, or a tall script like
         // Bengali's matras/conjuncts): rect.yMax is the top of the block, and the baseline of the first
         // line sits `ascent` below that.
-        float ascent = fontAsset.faceInfo.ascentLine * (fontSize / fontAsset.faceInfo.pointSize);
+        float ascent = fontAsset.faceInfo.ascentLine * (size / fontAsset.faceInfo.pointSize);
         float penY = rect.yMax - VerticalOffset(totalHeight, rect.height) - ascent;
-
-        float maxLineWidth = 0f;
 
         foreach (List<PositionedGlyph> visualLine in visualLines)
         {
-            float lineWidth = 0f;
-            foreach (PositionedGlyph pg in visualLine) lineWidth += pg.Glyph.XAdvance * (fontSize / HarfBuzzShaper.UnitsPerEm(pg.Locale));
-            if (lineWidth > maxLineWidth) maxLineWidth = lineWidth;
+            float lineWidth = MeasureWidth(visualLine, size);
             float penX = rect.xMin + HorizontalOffset(lineWidth, rect.width);
 
             int i = 0;
@@ -387,7 +444,7 @@ public class ShapedTextGraphic : MaskableGraphic
                 int start = i;
                 while (i < visualLine.Count && visualLine[i].Locale == batchLocale && visualLine[i].AtlasPage == batchPage) i++;
 
-                float batchHbScale = fontSize / HarfBuzzShaper.UnitsPerEm(batchLocale);
+                float batchHbScale = size / HarfBuzzShaper.UnitsPerEm(batchLocale);
                 var batchGlyphs = new List<ShapedGlyph>(i - start);
                 float batchWidth = 0f;
                 for (int k = start; k < i; k++)
@@ -413,12 +470,12 @@ public class ShapedTextGraphic : MaskableGraphic
                         childRt.anchorMin = new Vector2(0f, 1f);
                         childRt.anchorMax = new Vector2(0f, 1f);
                         childRt.pivot = new Vector2(0f, 1f);
-                        childRt.sizeDelta = new Vector2(Mathf.Max(batchWidth, 1f), fontSize * 1.4f);
+                        childRt.sizeDelta = new Vector2(Mathf.Max(batchWidth, 1f), size * 1.4f);
                         childRt.anchoredPosition = new Vector2(penX - fullRect.xMin, penY - fullRect.yMax);
 
                         child.color = color;
                         child.FontAsset = otherFont;
-                        child.FontSize = fontSize;
+                        child.FontSize = size;
                         child.Locale = batchLocale;
                         child.AtlasPage = batchPage;
                         child.SetPrecomputedGlyphs(batchGlyphs);
@@ -436,11 +493,54 @@ public class ShapedTextGraphic : MaskableGraphic
             penY -= lineHeight;
         }
 
-        PreferredWidth = maxLineWidth + paddingLeft + paddingRight;
+        PreferredWidth = naturalWidth + paddingLeft + paddingRight;
         PreferredHeight = totalHeight + paddingTop + paddingBottom;
 
         DeactivateRunChildren(childCount);
         SetVerticesDirty();
+        LayoutRebuilt?.Invoke();
+    }
+
+    /// <summary>
+    /// The largest size in [<see cref="autoSizeMin"/>, <see cref="fontSize"/>] at which every source line
+    /// wraps inside <paramref name="rect"/> with no mid-word hard break and the block's height fits.
+    /// Falls back to the minimum when even that overflows (same as TMP's Auto Size), and to the maximum
+    /// while the rect has no real size yet — <see cref="OnRectTransformDimensionsChange"/> refits once
+    /// layout gives it one.
+    /// </summary>
+    private float FitFontSize(List<List<PositionedGlyph>> shapedLines, string[] sourceLines, Rect rect)
+    {
+        float max = fontSize;
+        float min = Mathf.Min(autoSizeMin, max);
+        if (rect.width <= 1f || rect.height <= 1f || Fits(max)) return max;
+        if (!Fits(min)) return min;
+
+        float lo = min, hi = max;
+        for (int step = 0; step < 8; step++)
+        {
+            float mid = (lo + hi) * 0.5f;
+            if (Fits(mid)) lo = mid;
+            else hi = mid;
+        }
+        return lo;
+
+        bool Fits(float candidate)
+        {
+            int lines = 0;
+            for (int l = 0; l < sourceLines.Length; l++)
+            {
+                lines += WrapIntoLines(shapedLines[l], sourceLines[l], candidate, rect.width, out bool hardBroke).Count;
+                if (hardBroke) return false;
+            }
+            return lines * candidate * 1.2f <= rect.height + 0.5f;
+        }
+    }
+
+    private static float MeasureWidth(List<PositionedGlyph> glyphs, float size)
+    {
+        float width = 0f;
+        foreach (PositionedGlyph pg in glyphs) width += pg.Glyph.XAdvance * (size / HarfBuzzShaper.UnitsPerEm(pg.Locale));
+        return width;
     }
 
     protected override void OnPopulateMesh(VertexHelper vh)
@@ -448,7 +548,7 @@ public class ShapedTextGraphic : MaskableGraphic
         vh.Clear();
         if (fontAsset == null) return;
 
-        float metricsScale = fontSize / fontAsset.faceInfo.pointSize;
+        float metricsScale = RenderedFontSize / fontAsset.faceInfo.pointSize;
         float atlasWidth = fontAsset.atlasWidth;
         float atlasHeight = fontAsset.atlasHeight;
         // TMP always samples slightly outside each glyph's tight metrics box, by this many atlas
@@ -464,14 +564,14 @@ public class ShapedTextGraphic : MaskableGraphic
             // padding set behaves consistently — its own rect is what this draws relative to, same as
             // any other ShapedTextGraphic.
             Rect rect = PaddedRect(rectTransform.rect);
-            float hbScale = fontSize / HarfBuzzShaper.UnitsPerEm(locale);
+            float hbScale = RenderedFontSize / HarfBuzzShaper.UnitsPerEm(locale);
             DrawGlyphLine(vh, _precomputedGlyphs, rect.xMin, rect.yMax, metricsScale, hbScale, padding, atlasWidth, atlasHeight);
             return;
         }
 
         foreach (DrawBatch batch in _baseBatches)
         {
-            float hbScale = fontSize / HarfBuzzShaper.UnitsPerEm(locale);
+            float hbScale = RenderedFontSize / HarfBuzzShaper.UnitsPerEm(locale);
             DrawGlyphLine(vh, batch.Glyphs, batch.PenX, batch.PenY, metricsScale, hbScale, padding, atlasWidth, atlasHeight);
         }
     }
@@ -603,8 +703,9 @@ public class ShapedTextGraphic : MaskableGraphic
     /// space character in <paramref name="sourceLine"/> — shaping happens exactly once, up front, so
     /// wrapping can never change how a word is shaped relative to it appearing on an unbroken line.
     /// </summary>
-    private static List<List<PositionedGlyph>> WrapIntoLines(List<PositionedGlyph> glyphs, string sourceLine, float fontSize, float maxWidth)
+    private static List<List<PositionedGlyph>> WrapIntoLines(List<PositionedGlyph> glyphs, string sourceLine, float fontSize, float maxWidth, out bool hardBroke)
     {
+        hardBroke = false;
         var result = new List<List<PositionedGlyph>>();
         var current = new List<PositionedGlyph>();
         float currentWidth = 0f;
@@ -631,6 +732,7 @@ public class ShapedTextGraphic : MaskableGraphic
                 {
                     // No space seen yet in this segment (one word wider than the rect) — hard-break
                     // here rather than overflowing indefinitely.
+                    hardBroke = true;
                     result.Add(current);
                     current = new List<PositionedGlyph>();
                     currentWidth = 0f;

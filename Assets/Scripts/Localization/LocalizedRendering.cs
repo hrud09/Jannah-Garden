@@ -37,22 +37,21 @@ public static class LocalizedRendering
             shaped.gameObject.SetActive(true);
             shaped.FontAsset = HarfBuzzFontRegistry.GetFontAsset(locale);
 
-            // ShapedTextGraphic has no auto-size pass of its own (see its class doc) — it always renders
-            // at a fixed size and wraps instead of shrinking, so a Bengali translation longer than its
-            // English source (common) can wrap into a single-line banner and spill outside it.
-            //
-            // tmpText's own fontSizeMin is NOT a safe substitute for auto-sizing here: on fields like a
-            // price label it's an extreme emergency floor (e.g. 5, against a normal ~21) that TMP's real
-            // auto-size algorithm would only ever reach for pathologically long strings — using it
-            // unconditionally renders normal-length Bengali text at a near-invisible size. Instead, shrink
-            // tmpText's own current size by a modest, bounded fraction: enough headroom for a longer
-            // translation to fit on one line without wrapping, clamped so it never drops below the min.
-            shaped.FontSize = tmpText.enableAutoSizing
-                ? Mathf.Max(tmpText.fontSizeMin, tmpText.fontSize * 0.85f)
-                : tmpText.fontSize;
+            // Mirror TMP's Auto Size onto the shaped label: fontSizeMax becomes the ceiling and the shaped
+            // label shrinks only as far as this string actually needs to fit its rect (one line where it
+            // can, never a mid-word break), refitting whenever the rect resizes. That is the same search
+            // TMP runs, so an emergency-floor fontSizeMin (e.g. 5 on a price label) is only ever reached
+            // by a string that genuinely needs it. tmpText.fontSize can't be the size here: with Auto Size
+            // on it's whatever TMP last computed for the previous (usually English) string, and once
+            // tmpText is disabled it never updates again. A label that doesn't auto-size keeps its size.
+            shaped.SetAutoSize(tmpText.enableAutoSizing, tmpText.fontSizeMin);
+            shaped.FontSize = tmpText.enableAutoSizing ? tmpText.fontSizeMax : tmpText.fontSize;
             shaped.Alignment = tmpText.alignment;
             shaped.color = tmpText.color;
-            shaped.PaddingTop = shapedTopPadding;
+            // TMP's own Margins (left, top, right, bottom) inset its text the same way this padding does — without
+            // mirroring them, a button label designed with breathing room renders edge-to-edge in Bengali.
+            Vector4 margin = tmpText.margin;
+            shaped.SetPadding(margin.x, margin.z, margin.y + shapedTopPadding, margin.w);
             shaped.SetText(text, locale);
             SyncContentSizeFitter(tmpText, shaped);
             return;
@@ -126,13 +125,17 @@ public static class LocalizedRendering
     /// toast's "Message Text (TMP)" has, to grow its background bubble around the message) only ever
     /// looks at ILayoutElements on that same GameObject — and once <paramref name="tmpText"/> is disabled
     /// for shaped-text locales, its own contribution is skipped entirely (Unity's layout system ignores
-    /// disabled Behaviours), which would otherwise collapse the fitter to zero size. A LayoutElement
-    /// mirroring <paramref name="shaped"/>'s measured size stands in for it while shaped text is showing.
-    /// No-op for callers whose text object isn't fitted (e.g. MCQ/Dhikr/shop labels, which wrap within a
-    /// fixed box instead), so this only ever changes behavior for text that already opted into fitting.</summary>
+    /// disabled Behaviours), which would otherwise collapse the fitter to zero size. A parent
+    /// Horizontal/VerticalLayoutGroup that controls its children's size reads the same ILayoutElements and
+    /// collapses the label the same way. A LayoutElement mirroring <paramref name="shaped"/>'s measured
+    /// size stands in for it while shaped text is showing — kept current from
+    /// <see cref="ShapedTextGraphic.LayoutRebuilt"/>, since the shaped label re-measures on every resize.
+    /// No-op for text that is neither fitted nor layout-driven (e.g. labels inside fixed-size buttons),
+    /// so this only ever changes behavior for text that already opted into automatic sizing.</summary>
     private static void SyncContentSizeFitter(TMP_Text tmpText, ShapedTextGraphic shaped)
     {
-        if (tmpText.GetComponent<ContentSizeFitter>() == null) return;
+        if (tmpText == null || shaped == null || tmpText.enabled || !shaped.gameObject.activeSelf) return;
+        if (tmpText.GetComponent<ContentSizeFitter>() == null && !IsSizedByParentLayout(tmpText.transform)) return;
 
         LayoutElement sizeOverride = tmpText.GetComponent<LayoutElement>();
         if (sizeOverride == null) sizeOverride = tmpText.gameObject.AddComponent<LayoutElement>();
@@ -140,6 +143,29 @@ public static class LocalizedRendering
         sizeOverride.enabled = true;
         sizeOverride.preferredWidth = shaped.PreferredWidth;
         sizeOverride.preferredHeight = shaped.PreferredHeight;
+    }
+
+    private static bool IsSizedByParentLayout(Transform t)
+    {
+        var group = t.parent != null ? t.parent.GetComponent<HorizontalOrVerticalLayoutGroup>() : null;
+        return group != null && group.enabled && (group.childControlWidth || group.childControlHeight);
+    }
+
+    /// <summary>What <paramref name="tmpText"/> currently measures on screen — the shaped child's
+    /// natural size while Bengali is showing (TMP's own GetPreferredValues would measure the hidden,
+    /// unrendered string against a font that has no Bengali glyphs), TMP's otherwise.</summary>
+    public static Vector2 GetPreferredValues(TMP_Text tmpText)
+    {
+        if (!tmpText.enabled)
+        {
+            Transform shapedTransform = tmpText.transform.Find(ShapedChildName);
+            if (shapedTransform != null && shapedTransform.gameObject.activeSelf)
+            {
+                ShapedTextGraphic shaped = shapedTransform.GetComponent<ShapedTextGraphic>();
+                if (shaped != null) return new Vector2(shaped.PreferredWidth, shaped.PreferredHeight);
+            }
+        }
+        return tmpText.GetPreferredValues();
     }
 
     private static ShapedTextGraphic EnsureShapedChild(Transform parent)
@@ -154,6 +180,10 @@ public static class LocalizedRendering
         rt.anchorMax = Vector2.one;
         rt.offsetMin = Vector2.zero;
         rt.offsetMax = Vector2.zero;
-        return go.AddComponent<ShapedTextGraphic>();
+        ShapedTextGraphic shaped = go.AddComponent<ShapedTextGraphic>();
+
+        TMP_Text owner = parent.GetComponent<TMP_Text>();
+        shaped.LayoutRebuilt += () => SyncContentSizeFitter(owner, shaped);
+        return shaped;
     }
 }

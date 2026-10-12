@@ -311,7 +311,7 @@ public class MCQManager : MonoBehaviour
             if (i < qData.options.Length)
             {
                 optionButtons[i].gameObject.SetActive(true);
-                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]], QuestionShapedTextTopPadding);
+                SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]]);
                 
                 if (reshuffle)
                 {
@@ -579,10 +579,11 @@ public class MCQManager : MonoBehaviour
         }
     }
 
-    // The question label and each MCQ option label get 50 units of top padding on their shaped
-    // (Bengali) child by default, so the shaped glyphs don't render flush against the panel's top
-    // edge the way plain TMP's own vertical centering would allow. Opt-in per call rather than baked
-    // into the shared wrapper, since not every SetText caller (e.g. countdown text) wants it.
+    // The question label gets 50 units of top padding on its shaped (Bengali) child, so the shaped
+    // glyphs don't render flush against the panel's top edge the way plain TMP's own vertical centering
+    // would allow. Opt-in per call rather than baked into the shared wrapper, since not every SetText
+    // caller wants it — the option labels are vertically centred in their buttons, where 50 units would
+    // push the answer into the bottom half and leave the shrink-to-fit half the button's height.
     private const float QuestionShapedTextTopPadding = 50f;
 
     // The prefab authors every label's alignment for left-to-right locales; RTL locales mirror the

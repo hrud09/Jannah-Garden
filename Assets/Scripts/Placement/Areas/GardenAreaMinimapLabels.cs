@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Draws each garden area's name onto the minimap, at the point deepest inside it.
@@ -354,15 +355,18 @@ public class GardenAreaMinimapLabels : MonoBehaviour
         TMP_Text level = _levels[index];
 
         // GetPreferredValues rather than the preferredWidth/Height properties: those are only refreshed
-        // when the text is laid out, and a name that was hidden last frame has not been.
-        Vector2 preferred = name.GetPreferredValues();
+        // when the text is laid out, and a name that was hidden last frame has not been. Routed through
+        // LocalizedRendering so a Bengali name is measured by its shaped renderer — TMP would measure the
+        // hidden string against a font with no Bengali glyphs, and the declutter pass would let names
+        // that visibly overlap both through.
+        Vector2 preferred = LocalizedRendering.GetPreferredValues(name);
 
         float width = preferred.x;
         float height = preferred.y;
 
         if (level != null && level.gameObject.activeSelf)
         {
-            Vector2 levelPreferred = level.GetPreferredValues();
+            Vector2 levelPreferred = LocalizedRendering.GetPreferredValues(level);
             width = Mathf.Max(width, levelPreferred.x);
             height += lineGap + levelPreferred.y;
         }
@@ -512,6 +516,7 @@ public class GardenAreaMinimapLabels : MonoBehaviour
             name.fontSize = fontSize;
 
             LocalizedRendering.SetText(name, areas.map.DisplayName(def));
+            OutlineShapedText(name);
 
             if (level.gameObject.activeSelf != showLevel) level.gameObject.SetActive(showLevel);
 
@@ -520,9 +525,33 @@ public class GardenAreaMinimapLabels : MonoBehaviour
                 level.color = levelColor;
                 level.fontSize = fontSize * levelFontScale;
                 LocalizedRendering.SetText(level, loc.Get("zone.minimap_level", def.RequiredLevel));
+                OutlineShapedText(level);
             }
 
             Stack(i, showLevel);
+        }
+    }
+
+    /// <summary>
+    /// Gives a label's shaped (Bengali) renderer the same dark rim <see cref="EnsureOutlineMaterial"/> gives
+    /// TMP labels. The shaped renderer draws with its own SDF shader, not the outlined TMP material, so
+    /// without this a Bengali name is a pale, rimless glyph run that disappears into the pale map. A
+    /// UI mesh effect is used because it works on any Graphic, including the run-children a mixed-script
+    /// line (e.g. "লেভেল 5") creates for its digits — a one-sided Shadow rather than a four-sided
+    /// Outline, since at minimap sizes a full outline fills in the counters of Bengali glyphs.
+    /// </summary>
+    private void OutlineShapedText(TMP_Text label)
+    {
+        if (!outlineLabels || outlineWidth <= 0f) return;
+
+        foreach (ShapedTextGraphic shaped in label.GetComponentsInChildren<ShapedTextGraphic>(true))
+        {
+            Shadow rim = shaped.GetComponent<Shadow>();
+            if (rim == null) rim = shaped.gameObject.AddComponent<Shadow>();
+
+            rim.effectColor = outlineColor;
+            rim.effectDistance = new Vector2(1f, -1f);
+            rim.useGraphicAlpha = true;
         }
     }
 

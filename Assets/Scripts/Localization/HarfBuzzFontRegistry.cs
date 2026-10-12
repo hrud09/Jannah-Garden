@@ -15,6 +15,10 @@ public class HarfBuzzFontRegistry : ScriptableObject
 
     [SerializeField] private TMP_FontAsset bengaliFontAsset;
     [SerializeField] private TMP_FontAsset arabicFontAsset;
+    // Each asset MUST be generated from the same font file HarfBuzzShaper shapes that locale with
+    // (Resources/Fonts/*.bytes): HarfBuzz returns glyph INDICES, and ShapedTextGraphic looks those indices
+    // up in this asset's atlas. Pointing English at the UI font (LINESeedSans) instead of LiberationSans
+    // made every Latin run inside Bengali text — the digits in "লেভেল 5", "+20 এক্সপি" — draw nothing.
     [SerializeField] private TMP_FontAsset englishFontAsset;
 
     private static HarfBuzzFontRegistry _instance;

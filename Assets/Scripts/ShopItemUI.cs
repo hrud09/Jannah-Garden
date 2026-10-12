@@ -470,10 +470,10 @@ public class ShopItemUI : MonoBehaviour
                 }
                 else if (ItemData.noorCoinReward > 0)
                 {
-                    // Pure digits + the coin glyph — no translated words, so this skips shaping rather
-                    // than routing through it: the coin glyph isn't in the Bengali HarfBuzz font, and
-                    // would render as a missing-glyph tofu box there.
-                    LocalizedRendering.SetPlainText(itemPriceText, $"+{ItemData.noorCoinReward} ⧟"); // coin glyph
+                    // Pure digits — no translated words, so this skips shaping. No inline coin glyph: the
+                    // card's Item Cost UI already draws the coin icon beside this label, and "⧟" is in
+                    // neither the UI font nor the Bengali one, so it rendered as a tofu box everywhere.
+                    LocalizedRendering.SetPlainText(itemPriceText, $"+{ItemData.noorCoinReward}");
                     itemPriceText.color = affordableColor;
                 }
                 else
@@ -495,10 +495,8 @@ public class ShopItemUI : MonoBehaviour
                 }
                 else
                 {
-                    // Pure digits + the coin glyph — no translated words, so this skips shaping rather
-                    // than routing through it: the coin glyph isn't in the Bengali HarfBuzz font, and
-                    // would render as a missing-glyph tofu box there.
-                    LocalizedRendering.SetPlainText(itemPriceText, $"{ItemData.noorCoinCost} ⧟"); // coin glyph
+                    // Pure digits — see the reward branch above for why there is no inline coin glyph.
+                    LocalizedRendering.SetPlainText(itemPriceText, $"{ItemData.noorCoinCost}");
                 }
 
                 // Free items are always "affordable"
