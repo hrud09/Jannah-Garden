@@ -17795,11 +17795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _mouseSensity
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _touchDragSensitivity
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2531667859275332615, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: m_Name
@@ -17859,7 +17859,7 @@ PrefabInstance:
       objectReference: {fileID: 411495268}
     - target: {fileID: 2531667859275332622, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _movementSpeed
-      value: 11.33
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4990371204157392209, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -53382,7 +53382,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678177954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
