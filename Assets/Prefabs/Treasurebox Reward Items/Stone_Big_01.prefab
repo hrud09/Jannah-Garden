@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 8317289700727006681}
   - component: {fileID: 330408103618397861}
   - component: {fileID: -6393211188909411708}
-  - component: {fileID: 5528461168758381668}
   m_Layer: 0
   m_Name: Stone_Big_01
   m_TagString: Untagged
@@ -188,32 +187,20 @@ MonoBehaviour:
   remainingDuration: 60
   uniqueId: 
   prefabName: 
+  sourceKind: 0
+  sourceItemId: 
   timerHolder: {fileID: 0}
+  timerPlantDropHeight: 4
+  timerPlantSwingDistance: 0.6
+  timerPlantFallDuration: 0.35
+  timerPlantImpactDuration: 0.18
+  timerPlantImpactStrength: 0.35
   itemRenderers: []
   isTree: 0
   isBuilding: 0
   itemGFX: {fileID: 0}
---- !u!135 &5528461168758381668
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4502823302244845586}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2.81
-  m_Center: {x: 0, y: 0, z: 0}
+  alignGfxToGround: 1
+  alignUsingRenderersIfNoCollider: 1
 --- !u!1 &6585077253434300560
 GameObject:
   m_ObjectHideFlags: 0
