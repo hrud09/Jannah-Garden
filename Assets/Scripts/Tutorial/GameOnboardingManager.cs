@@ -8,12 +8,13 @@ using TMPro;
 using DG.Tweening;
 
 /// <summary>
-/// Drives the full first-time onboarding experience: five HUD buttons (Shop, Inspector Mode,
-/// Photo Mode, Show Treasure Box, Outer Garden) start hidden and are revealed one at a time as the
-/// player earns them, across three sequential flows (core shop/placement/XP loop -> photo mode ->
-/// outer garden). The Inspector Mode and Show Treasure Box buttons are revealed once Flow 3 begins
-/// but, unlike the other buttons, have no dedicated explanation step of their own. Flow 1 opens with
-/// a movement step that highlights the joystick until the player actually moves.
+/// Drives the full first-time onboarding experience: every HUD button (Shop, Photo Mode, the
+/// quick-action drawer and the three tools inside it, Show Treasure Box, Outer Garden) starts hidden
+/// and is revealed one at a time as the player earns it, across four sequential flows (core
+/// shop/placement/XP loop -> photo mode -> quick-action garden tools -> outer garden). Flow 1 opens
+/// with a movement step that highlights the joystick until the player actually moves. Flow 3 first
+/// makes the player pull the quick-action drawer open - every tool it then explains lives inside it,
+/// and the drawer is invisible (CanvasGroup alpha 0) while closed.
 ///
 /// Persists as a DontDestroyOnLoad singleton (via its TutorialCanvas root) so it survives the
 /// Jannah Garden -> Outer Garden scene swap, which is a full LoadSceneMode.Single reload.
@@ -45,12 +46,16 @@ public class GameOnboardingManager : MonoBehaviour
         NotStarted = 0,
         Flow1InProgress = 1,
         Flow2InProgress = 3,
-        Flow3InProgress = 5,
+        /// <summary>The quick-action drawer tour. Numbered below <see cref="Flow4InProgress"/> so that
+        /// players already saved at 5 keep resuming straight at the Outer Garden step they were on.</summary>
+        Flow3InProgress = 4,
+        Flow4InProgress = 5,
         Completed = 6
     }
 
     private enum Flow1SubStep { None, AwaitingMovement, AwaitingShopOpen, AwaitingItemSelect, AwaitingDownload, AwaitingRotationDemo, ShowingZoneIntro, AwaitingPlace, ShowingZoneAesthetics, ShowingXPInfo }
     private enum Flow2SubStep { None, AwaitingPhoto, AwaitingPreviewClose }
+    private enum Flow3SubStep { None, AwaitingDrawerOpen, ShowingInspectorMode, ShowingReturnToBase, ShowingMoveToArea, ShowingTreasureBox }
 
     private const string StageKey = "GameOnboarding_Stage";
     private const string LegacyTutorialKey = "TutorialCompleted_ShopPlacement";
@@ -66,7 +71,16 @@ public class GameOnboardingManager : MonoBehaviour
     public Button skipButton;
 
     [Header("Gated Buttons (no public accessor elsewhere - wired directly)")]
+    [Tooltip("The handle that expands/collapses the quick-action row. Revealed when Flow 3 begins; the " +
+             "tour waits for the player to pull it open before pointing at anything inside.")]
+    public Button drawerToggleButton;
+    [Tooltip("The drawer itself, so the tour can skip the 'open it' step when it's already expanded.")]
+    public QuickActionDrawerController quickActionDrawer;
     public Button inspectorModeButton;
+    [Tooltip("Quick-action tool: walks the player back to where they started, along the garden paths.")]
+    public Button returnToBaseButton;
+    [Tooltip("Quick-action tool: walks the player to the nearest unlocked area, along the garden paths.")]
+    public Button moveToUnlockedAreaButton;
     public Button outerGardenButton;
     [Tooltip("Hidden until the whole onboarding flow is done, so first-time players can't back out into settings mid-tutorial.")]
     public Button settingsButton;
@@ -104,6 +118,7 @@ public class GameOnboardingManager : MonoBehaviour
     private OnboardingStage stage;
     private Flow1SubStep flow1Sub = Flow1SubStep.None;
     private Flow2SubStep flow2Sub = Flow2SubStep.None;
+    private Flow3SubStep flow3Sub = Flow3SubStep.None;
 
     /// <summary>Set while an on-demand replay of the shop -> buy -> place walkthrough is running (see
     /// <see cref="ReplayShopTutorial"/>). The replay reuses every Flow 1 step verbatim but never touches
@@ -287,11 +302,17 @@ public class GameOnboardingManager : MonoBehaviour
         SetActive(PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null,
             stage >= OnboardingStage.Flow2InProgress);
 
+        // The whole quick-action drawer - its handle and the three tools behind it - arrives together
+        // with the Treasure Box button when Flow 3's tour starts, so the drawer is never opened onto an
+        // empty row.
         bool flow2Done = stage >= OnboardingStage.Flow3InProgress;
+        SetActive(drawerToggleButton, flow2Done);
         SetActive(inspectorModeButton, flow2Done);
+        SetActive(returnToBaseButton, flow2Done);
+        SetActive(moveToUnlockedAreaButton, flow2Done);
         SetActive(GetTreasureBoxShowButton(), flow2Done);
 
-        SetActive(outerGardenButton, stage >= OnboardingStage.Flow3InProgress);
+        SetActive(outerGardenButton, stage >= OnboardingStage.Flow4InProgress);
 
         SetActive(settingsButton, stage >= OnboardingStage.Completed);
     }
@@ -310,6 +331,9 @@ public class GameOnboardingManager : MonoBehaviour
                 BeginPhotoModeStep();
                 break;
             case OnboardingStage.Flow3InProgress:
+                BeginQuickActionsStep();
+                break;
+            case OnboardingStage.Flow4InProgress:
                 BeginOuterGardenStep();
                 break;
             default:
@@ -328,6 +352,7 @@ public class GameOnboardingManager : MonoBehaviour
         InGameShopManager.OnShopItemUsed += HandleShopItemUsed;
         ItemPlacementManager.OnItemPlaced += HandleItemPlaced;
         PhotoModeManager.OnPreviewClosed += HandlePhotoPreviewClosed;
+        QuickActionDrawerController.OnDrawerToggled += HandleDrawerToggled;
         SceneManager.sceneLoaded += HandleSceneLoaded;
     }
 
@@ -338,6 +363,7 @@ public class GameOnboardingManager : MonoBehaviour
         InGameShopManager.OnShopItemUsed -= HandleShopItemUsed;
         ItemPlacementManager.OnItemPlaced -= HandleItemPlaced;
         PhotoModeManager.OnPreviewClosed -= HandlePhotoPreviewClosed;
+        QuickActionDrawerController.OnDrawerToggled -= HandleDrawerToggled;
         SceneManager.sceneLoaded -= HandleSceneLoaded;
 
         if (photoTapListenerAdded)
@@ -925,11 +951,134 @@ public class GameOnboardingManager : MonoBehaviour
         SetInstructionPanelVisible(false);
 
         SetStage(OnboardingStage.Flow3InProgress);
+        BeginQuickActionsStep();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  Flow 3 - Quick-action garden tools
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// <summary>Opens the tool tour. Reveals the drawer handle (and, behind it, the three quick-action
+    /// buttons plus the Treasure Box button) and waits for the player to actually pull the drawer open -
+    /// every step that follows points at a button living inside it, and the drawer's CanvasGroup is at
+    /// alpha 0 while closed, so highlighting one before then would point at nothing.</summary>
+    private void BeginQuickActionsStep()
+    {
+        StopPulse();
+        RestoreHighlightSorting();
+        StopHandPointerAnimation();
+
+        flow3Sub = Flow3SubStep.AwaitingDrawerOpen;
+        HidePrimaryButton();
+        // Non-blocking: the drawer handle underneath has to stay tappable.
+        ShowDimAndPanel(true, blockRaycasts: false);
+        SetInstructionText(LocalizationManager.Instance.Get("onboarding.step_quick_actions"));
+
+        SetActive(drawerToggleButton, true);
+
+        // The drawer can be authored to start open - nothing left to wait for.
+        if (quickActionDrawer != null && quickActionDrawer.IsOpen)
+        {
+            BeginInspectorModeStep();
+            return;
+        }
+
+        if (drawerToggleButton != null)
+        {
+            RectTransform rect = drawerToggleButton.GetComponent<RectTransform>();
+            HighlightUIElement(rect);
+            PulseButton(rect);
+            StartHandPointerAnimation(rect);
+        }
+    }
+
+    private void HandleDrawerToggled(bool open)
+    {
+        if (stage != OnboardingStage.Flow3InProgress || flow3Sub == Flow3SubStep.None) return;
+
+        if (open)
+        {
+            if (flow3Sub == Flow3SubStep.AwaitingDrawerOpen) BeginInspectorModeStep();
+            return;
+        }
+
+        // Collapsed again part-way through the tour: whatever the current step was pointing at just
+        // faded out with the drawer (the row's CanvasGroup drops to alpha 0), so back up to the "pull
+        // it open" prompt rather than leave the player reading about a button they can't see. The
+        // Treasure Box step is exempt - its button sits outside the drawer and is still on screen.
+        if (flow3Sub == Flow3SubStep.ShowingInspectorMode
+            || flow3Sub == Flow3SubStep.ShowingReturnToBase
+            || flow3Sub == Flow3SubStep.ShowingMoveToArea)
+        {
+            BeginQuickActionsStep();
+        }
+    }
+
+    /// <summary>Every tool explainer is the same shape - dim the garden, raise one quick-action button out
+    /// of the dim, and wait for "Got it" - so they all route through here and differ only in which button
+    /// they point at and which line of copy they show.</summary>
+    private void ShowToolExplainer(Flow3SubStep step, Button target, string textKey, System.Action onContinue)
+    {
+        StopPulse();
+        RestoreHighlightSorting();
+        StopHandPointerAnimation();
+
+        flow3Sub = step;
+        ShowDimAndPanel(true);
+        SetInstructionText(LocalizationManager.Instance.Get(textKey));
+
+        SetActive(target, true);
+        if (target != null)
+        {
+            RectTransform rect = target.GetComponent<RectTransform>();
+            HighlightUIElement(rect);
+            PulseButton(rect);
+        }
+
+        ConfigurePrimaryButton(LocalizationManager.Instance.Get("onboarding.got_it_button"), () =>
+        {
+            if (stage != OnboardingStage.Flow3InProgress || flow3Sub != step) return;
+            onContinue?.Invoke();
+        });
+    }
+
+    private void BeginInspectorModeStep()
+    {
+        ShowToolExplainer(Flow3SubStep.ShowingInspectorMode, inspectorModeButton,
+            "onboarding.step_tool_inspector", BeginReturnToBaseStep);
+    }
+
+    private void BeginReturnToBaseStep()
+    {
+        ShowToolExplainer(Flow3SubStep.ShowingReturnToBase, returnToBaseButton,
+            "onboarding.step_tool_return_base", BeginMoveToAreaStep);
+    }
+
+    private void BeginMoveToAreaStep()
+    {
+        ShowToolExplainer(Flow3SubStep.ShowingMoveToArea, moveToUnlockedAreaButton,
+            "onboarding.step_tool_move_area", BeginTreasureBoxStep);
+    }
+
+    private void BeginTreasureBoxStep()
+    {
+        ShowToolExplainer(Flow3SubStep.ShowingTreasureBox, GetTreasureBoxShowButton(),
+            "onboarding.step_tool_treasure_box", CompleteFlow3);
+    }
+
+    private void CompleteFlow3()
+    {
+        StopPulse();
+        RestoreHighlightSorting();
+        flow3Sub = Flow3SubStep.None;
+        SetInstructionPanelVisible(false);
+
+        SetStage(OnboardingStage.Flow4InProgress);
         BeginOuterGardenStep();
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    //  Flow 3 - Outer Garden
+    //  Flow 4 - Outer Garden
     // ═══════════════════════════════════════════════════════════════════════
 
     private void BeginOuterGardenStep()
@@ -955,7 +1104,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleOuterGardenButtonTapped()
     {
-        if (stage != OnboardingStage.Flow3InProgress) return;
+        if (stage != OnboardingStage.Flow4InProgress) return;
 
         StopPulse();
         RestoreHighlightSorting();
@@ -967,7 +1116,7 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (stage == OnboardingStage.Flow3InProgress && scene.name == OuterGardenSceneName)
+        if (stage == OnboardingStage.Flow4InProgress && scene.name == OuterGardenSceneName)
         {
             ShowOuterGardenIntro();
         }
@@ -1134,6 +1283,13 @@ public class GameOnboardingManager : MonoBehaviour
                 flow2Sub = Flow2SubStep.None;
                 SetInstructionPanelVisible(false);
                 SetStage(OnboardingStage.Flow3InProgress);
+                BeginQuickActionsStep();
+                break;
+
+            case OnboardingStage.Flow3InProgress:
+                flow3Sub = Flow3SubStep.None;
+                SetInstructionPanelVisible(false);
+                SetStage(OnboardingStage.Flow4InProgress);
                 BeginOuterGardenStep();
                 break;
 

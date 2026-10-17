@@ -60862,7 +60862,11 @@ MonoBehaviour:
   instructionText: {fileID: 185137334}
   primaryActionButton: {fileID: 225312269}
   skipButton: {fileID: 1870231290}
+  drawerToggleButton: {fileID: 350198467}
+  quickActionDrawer: {fileID: 350198466}
   inspectorModeButton: {fileID: 1375193772}
+  returnToBaseButton: {fileID: 1754890207}
+  moveToUnlockedAreaButton: {fileID: 1601212128}
   outerGardenButton: {fileID: 5683040533047501450}
   settingsButton: {fileID: 3000932241959212105}
   overlaySortingOrder: 999

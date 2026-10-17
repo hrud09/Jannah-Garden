@@ -693,6 +693,26 @@
             "value": "Share or save it, then close the preview!"
         },
         {
+            "key": "onboarding.step_quick_actions",
+            "value": "Your garden tools live in here. Tap the arrow to slide the Quick Actions tray open — tap it again any time to tuck it away."
+        },
+        {
+            "key": "onboarding.step_tool_inspector",
+            "value": "<b>Inspector Mode</b> lifts you high above your garden so you can admire the whole thing from the air. Fly with the joystick, drag to look around, and aim up or down as you fly to gain or lose height. Tap the button again to come back down."
+        },
+        {
+            "key": "onboarding.step_tool_return_base",
+            "value": "<b>Return to Base</b> walks you back along the garden paths to where you started, and turns you to face the way you began. Tap it again — or just move yourself — to stop the walk."
+        },
+        {
+            "key": "onboarding.step_tool_move_area",
+            "value": "<b>Go to Unlocked Area</b> walks you along the paths to the nearest zone you've unlocked. Perfect when a new zone opens and you don't know the way yet."
+        },
+        {
+            "key": "onboarding.step_tool_treasure_box",
+            "value": "<b>Treasure Boxes</b> fill up while you play. Tap here to bring your box out into the garden, then open it for rewards — and come back whenever the timer runs out."
+        },
+        {
             "key": "onboarding.step_inspector_mode",
             "value": "Try Inspector Mode to fly around and admire your garden!"
         },

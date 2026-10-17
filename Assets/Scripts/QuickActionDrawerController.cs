@@ -9,6 +9,15 @@ using UnityEngine.UI;
 /// </summary>
 public class QuickActionDrawerController : MonoBehaviour
 {
+    /// <summary>True while the quick-action row is expanded. <see cref="GameOnboardingManager"/>
+    /// reads this to know whether the buttons it wants to point at are actually on screen.</summary>
+    public bool IsOpen => isOpen;
+
+    /// <summary>Raised (with the new open state) every time the handle toggles the drawer. Lets the
+    /// onboarding "tap the arrow to open your tools" step advance the moment the player actually
+    /// opens it, rather than polling.</summary>
+    public static event System.Action<bool> OnDrawerToggled;
+
     public GameObject drawerContentObject;
     public GameObject toggleArrowObject;
     public float animationDuration = 0.25f;
@@ -49,6 +58,8 @@ public class QuickActionDrawerController : MonoBehaviour
             StopCoroutine(animationCoroutine);
         }
         animationCoroutine = StartCoroutine(AnimateTo(isOpen));
+
+        OnDrawerToggled?.Invoke(isOpen);
     }
 
     private void ApplyStateImmediate(bool open)
