@@ -1489,6 +1489,18 @@
             "value": "عضو منذ {0}"
         },
         {
+            "key": "fellowship.relation_inviter",
+            "value": "دعاك"
+        },
+        {
+            "key": "fellowship.relation_invited",
+            "value": "دعوته"
+        },
+        {
+            "key": "fellowship.unnamed_fellow",
+            "value": "رفيق"
+        },
+        {
             "key": "fellowship.member_since_unknown",
             "value": "عضو منذ —"
         },

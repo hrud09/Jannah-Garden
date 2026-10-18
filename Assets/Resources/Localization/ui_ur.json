@@ -1489,6 +1489,18 @@
             "value": "رکن بتاریخ {0}"
         },
         {
+            "key": "fellowship.relation_inviter",
+            "value": "آپ کو لائے"
+        },
+        {
+            "key": "fellowship.relation_invited",
+            "value": "آپ لائے"
+        },
+        {
+            "key": "fellowship.unnamed_fellow",
+            "value": "ایک ساتھی"
+        },
+        {
             "key": "fellowship.member_since_unknown",
             "value": "رکن بتاریخ —"
         },

@@ -34,6 +34,9 @@ public class FellowProfileObject : MonoBehaviour
     [Tooltip("The 'Circle' child under Profile Picture BG that displays the avatar.")]
     public SpriteRenderer profilePicture;
 
+    [Tooltip("Optional. A small label saying how this fellow is connected to the player - \"Invited you\" for the person who brought them into the app, \"You invited\" for their own direct referrals. Leave unassigned to show no relation at all; the card then looks exactly as it did before.")]
+    public TMP_Text relationText;
+
     [Header("Fallbacks")]
     [Tooltip("Shown when a fellow has no avatar, or the sprite path fails to resolve.")]
     public Sprite defaultProfilePicture;
@@ -62,6 +65,20 @@ public class FellowProfileObject : MonoBehaviour
     /// </summary>
     private static readonly Dictionary<string, Sprite> remoteAvatarCache = new Dictionary<string, Sprite>();
 
+    /// <summary>
+    /// URLs currently downloading. Several cards can bind the same avatar in the same frame (the roster
+    /// is spawned in one loop), and without this each would start its own request for the same bytes.
+    /// </summary>
+    private static readonly HashSet<string> avatarDownloadsInFlight = new HashSet<string>();
+
+    /// <summary>
+    /// Ceiling on cached avatar textures. Each is an uncompressed RGBA32 texture the game never releases
+    /// on its own, and the roster can be hundreds of fellows deep across repeated visits — on a 2 GB
+    /// device that is a slow walk into the OOM killer. Well above <c>maxProfiles</c>, so a single garden
+    /// visit never evicts an avatar it is still showing.
+    /// </summary>
+    private const int MaxCachedAvatars = 32;
+
     private void Awake()
     {
         if (billboardRoot == null) billboardRoot = transform;
@@ -80,16 +97,44 @@ public class FellowProfileObject : MonoBehaviour
             return;
         }
 
-        if (nameText != null)
-            nameText.text = data.userName;
-
-        if (memberSinceText != null)
-            LocalizedRendering.SetText(memberSinceText, FormatMemberSince(data));
+        // Both labels go through WorldTextLocalizer rather than LocalizedRendering: this card is a
+        // canvas-less world-space object, and LocalizedRendering's Bengali path swaps in a Graphic that
+        // only draws under a Canvas — the label would disappear instead of shaping. A fellow's name is
+        // also user data, so its font follows the name's own script, not the UI language.
+        WorldTextLocalizer.SetText(nameText, data.DisplayName);
+        WorldTextLocalizer.SetText(memberSinceText, FormatMemberSince(data));
 
         if (noorCoinCountText != null)
             noorCoinCountText.text = data.noorCoins.ToString("N0", CultureInfo.InvariantCulture);
 
+        ApplyRelationLabel(data);
+
         ApplyProfilePicture(data.profileImagePath);
+    }
+
+    /// <summary>
+    /// Writes the "how do I know this person" line, if the prefab has a label for it.
+    ///
+    /// Only the two adjacent links get a label. Further up or down the chain the honest answer is
+    /// "a friend of a friend of a friend", which is noise on a card this small, so those stay blank and
+    /// the label is hidden entirely rather than left as an empty gap.
+    /// </summary>
+    private void ApplyRelationLabel(FellowProfileData data)
+    {
+        if (relationText == null) return;
+
+        LocalizationManager loc = LocalizationManager.Instance;
+        string label = string.Empty;
+
+        if (data.IsDirectInviter)
+            label = loc != null ? loc.GetOrDefault("fellowship.relation_inviter", "Invited you") : "Invited you";
+        else if (!data.IsUpline && (data.isDirect || data.level == 1))
+            label = loc != null ? loc.GetOrDefault("fellowship.relation_invited", "You invited") : "You invited";
+
+        bool show = !string.IsNullOrEmpty(label);
+        relationText.gameObject.SetActive(show);
+
+        if (show) WorldTextLocalizer.SetText(relationText, label);
     }
 
     /// <summary>
@@ -116,6 +161,10 @@ public class FellowProfileObject : MonoBehaviour
 
             profilePicture.sprite = defaultProfilePicture;
 
+            // Someone else is already fetching these bytes; their completion fills the cache and this
+            // card picks the sprite up on its next bind. Not worth a second request for one frame.
+            if (avatarDownloadsInFlight.Contains(path)) return;
+
             // StartCoroutine throws on an inactive object — a pooled card bound before it is re-enabled.
             if (isActiveAndEnabled) StartCoroutine(DownloadAvatar(path));
             else Debug.LogWarning($"[FellowProfileObject] '{name}' is inactive; skipping avatar download.", this);
@@ -132,18 +181,33 @@ public class FellowProfileObject : MonoBehaviour
 
     private IEnumerator DownloadAvatar(string url)
     {
-        using UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
-        yield return request.SendWebRequest();
+        avatarDownloadsInFlight.Add(url);
 
-        if (request.result != UnityWebRequest.Result.Success)
+        Texture2D texture;
+
+        // Scoped so the request (and its download buffer) is disposed before the sprite is published —
+        // the texture itself outlives it.
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
         {
-            Debug.LogWarning(
-                $"[FellowProfileObject] Failed to download avatar '{url}': {request.error}. Keeping the default avatar.",
-                this);
-            yield break;
+            yield return request.SendWebRequest();
+
+            avatarDownloadsInFlight.Remove(url);
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogWarning(
+                    $"[FellowProfileObject] Failed to download avatar '{url}': {request.error}. Keeping the default avatar.",
+                    this);
+                yield break;
+            }
+
+            texture = DownloadHandlerTexture.GetContent(request);
         }
 
-        Texture2D texture = DownloadHandlerTexture.GetContent(request);
+        if (texture == null) yield break;
+
+        TrimAvatarCache();
+
         Sprite sprite = Sprite.Create(
             texture,
             new Rect(0, 0, texture.width, texture.height),
@@ -159,15 +223,62 @@ public class FellowProfileObject : MonoBehaviour
     }
 
     /// <summary>
+    /// Drops cached avatars (and their textures) until the cache is back under
+    /// <see cref="MaxCachedAvatars"/>. Anything a live card is still displaying is kept: destroying its
+    /// texture would blank the card it is on.
+    /// </summary>
+    private static void TrimAvatarCache()
+    {
+        if (remoteAvatarCache.Count < MaxCachedAvatars) return;
+
+        HashSet<string> inUse = new HashSet<string>();
+        // Inactive cards are included: a pooled-away card still holds its Data, and it will show that
+        // avatar again the moment it is respawned.
+        FellowProfileObject[] cards =
+            FindObjectsByType<FellowProfileObject>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        foreach (FellowProfileObject card in cards)
+        {
+            if (card.Data != null && !string.IsNullOrEmpty(card.Data.profileImagePath))
+                inUse.Add(card.Data.profileImagePath);
+        }
+
+        List<string> evictable = new List<string>();
+        foreach (KeyValuePair<string, Sprite> entry in remoteAvatarCache)
+        {
+            if (!inUse.Contains(entry.Key)) evictable.Add(entry.Key);
+        }
+
+        foreach (string url in evictable)
+        {
+            if (remoteAvatarCache.Count < MaxCachedAvatars) break;
+
+            if (remoteAvatarCache.TryGetValue(url, out Sprite sprite) && sprite != null)
+            {
+                // The texture is ours (created by the download handler) and nothing else references it.
+                if (sprite.texture != null) Destroy(sprite.texture);
+                Destroy(sprite);
+            }
+
+            remoteAvatarCache.Remove(url);
+        }
+    }
+
+    /// <summary>
     /// Renders the join date as e.g. "Member since Mar 2024".
     /// </summary>
     private string FormatMemberSince(FellowProfileData data)
     {
-        if (!data.TryGetMemberSince(out DateTime joined))
-            return LocalizationManager.Instance.GetOrDefault("fellowship.member_since_unknown", unknownMemberSinceText);
+        LocalizationManager loc = LocalizationManager.Instance;
 
-        return LocalizationManager.Instance.Get("fellowship.member_since_format",
-            joined.ToString("MMM yyyy", CultureInfo.InvariantCulture));
+        if (!data.TryGetMemberSince(out DateTime joined))
+            return loc != null
+                ? loc.GetOrDefault("fellowship.member_since_unknown", unknownMemberSinceText)
+                : unknownMemberSinceText;
+
+        string month = joined.ToString("MMM yyyy", CultureInfo.InvariantCulture);
+
+        return loc != null ? loc.Get("fellowship.member_since_format", month) : $"Member since {month}";
     }
 
     /// <summary>

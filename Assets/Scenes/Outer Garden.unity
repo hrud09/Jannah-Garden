@@ -27498,10 +27498,14 @@ MonoBehaviour:
   spawnPointsParent: {fileID: 961607822}
   maxProfiles: 8
   randomize: 1
+  rankByCloseness: 1
+  alwaysShowInviter: 1
   spawnOnStart: 1
   useFlutterData: 1
   fallbackToDummyData: 1
-  flutterResponseTimeout: 3
+  allowDummyDataInBuilds: 0
+  flutterResponseTimeout: 12
+  flutterRetryAfter: 4
   fellowProfileFile: {fileID: 4900000, guid: 674ee25fa238c9f4a9ea13b9776c3da7, type: 3}
 --- !u!1001 &106739527
 PrefabInstance:

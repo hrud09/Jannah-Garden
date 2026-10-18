@@ -222,6 +222,19 @@ namespace FlutterIntegration
     public class FellowshipProfilesPayload
     {
         public FellowProfileData[] fellows;
+
+        /// <summary>
+        /// How many fellows the player really has. Flutter caps the roster it sends (the server returns
+        /// at most 500 members per call), so <c>fellows.Length</c> is a page, not a total. 0 means
+        /// "not sent" — the game then treats the array length as the total.
+        /// </summary>
+        public int totalCount;
+
+        /// <summary>How many of them the player invited personally (level 1). 0 when not sent.</summary>
+        public int directCount;
+
+        /// <summary>True when <see cref="fellows"/> was cut short by the server's cap.</summary>
+        public bool truncated;
     }
 
     /// <summary>Unity → Flutter: please charge the player for this product.</summary>

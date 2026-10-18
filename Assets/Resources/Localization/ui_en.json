@@ -801,6 +801,18 @@
             "value": "Member since {0}"
         },
         {
+            "key": "fellowship.relation_inviter",
+            "value": "Invited you"
+        },
+        {
+            "key": "fellowship.relation_invited",
+            "value": "You invited"
+        },
+        {
+            "key": "fellowship.unnamed_fellow",
+            "value": "A fellow"
+        },
+        {
             "key": "fellowship.member_since_unknown",
             "value": "Member since —"
         },
