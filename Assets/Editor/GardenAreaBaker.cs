@@ -489,7 +489,7 @@ public static class GardenAreaBaker
     //  SCENE
     // ═══════════════════════════════════════════════════════════════════════════
 
-    private static Terrain ResolveTerrain()
+    internal static Terrain ResolveTerrain()
     {
         var go = GameObject.Find(TerrainName);
         Terrain terrain = go != null ? go.GetComponent<Terrain>() : null;
@@ -509,7 +509,7 @@ public static class GardenAreaBaker
     /// Footprint of the Lake plane in XZ. Height alone cannot decide what is underwater — plenty of
     /// dry ground elsewhere in the garden sits below the lake's surface height.
     /// </summary>
-    private static Rect ResolveLakeFootprint()
+    internal static Rect ResolveLakeFootprint()
     {
         var env = GameObject.Find("Environment");
         Transform water = env != null ? env.transform.Find("Water") : null;
@@ -525,7 +525,7 @@ public static class GardenAreaBaker
         return Rect.zero;
     }
 
-    private static bool IsWater(Terrain terrain, Rect lake, float x, float z)
+    internal static bool IsWater(Terrain terrain, Rect lake, float x, float z)
     {
         if (lake.width <= 0f || !lake.Contains(new Vector2(x, z))) return false;
 
@@ -533,7 +533,7 @@ public static class GardenAreaBaker
         return height <= WaterLevel + ShoreMargin;
     }
 
-    private static GardenAreaMap LoadOrCreateMap()
+    internal static GardenAreaMap LoadOrCreateMap()
     {
         var existing = AssetDatabase.FindAssets("t:GardenAreaMap");
 
