@@ -257,6 +257,14 @@
             "value": "{0} সম্পন্ন!"
         },
         {
+            "key": "treasurebox.progress",
+            "value": "{1}টির মধ্যে {0}টি সম্পন্ন! পূর্ণ পুরস্কার পেতে {1}টি ট্রেজার বক্সই সম্পন্ন করুন!"
+        },
+        {
+            "key": "treasurebox.progress_all_complete",
+            "value": "{1}টির মধ্যে {0}টি সম্পন্ন! আপনার পূর্ণ পুরস্কার আনলক হয়েছে!"
+        },
+        {
             "key": "treasurebox.set_complete",
             "value": "সেট সম্পন্ন!"
         },

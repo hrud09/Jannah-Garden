@@ -734,6 +734,10 @@ public class TreasureBoxManager : MonoBehaviour
             OnSetCompleted?.Invoke(tier, GetBoxData(tier));
             GrantSetCompletionReward(tier);
 
+            // The purchase opens all 3 at once, so the per-box progress toasts would be three messages
+            // fighting over one slot; report the finished set instead.
+            ShowSetProgressToast(SLOTS_PER_TIER);
+
             // Finishing a carried-over tier is what lets the new day's sequence start.
             TickCycleResets();
             OnStateChanged?.Invoke();
@@ -766,6 +770,10 @@ public class TreasureBoxManager : MonoBehaviour
         // Mark this slot opened
         state.slotOpened[slotIndex] = true;
         state.openedCount++;
+
+        // Read before TickCycleResets below can clear the tier: the toast reports the progress this
+        // open just made, not whatever the state has rolled over to by the end of the method.
+        int openedCountForToast = state.openedCount;
 
         // Grant per-box NC reward
         if (rewardData != null && rewardData.noorCoinPerBox > 0 && NoorCoinManager.Instance != null)
@@ -816,8 +824,28 @@ public class TreasureBoxManager : MonoBehaviour
             TickCycleResets();
         }
 
+        ShowSetProgressToast(openedCountForToast);
+
         OnStateChanged?.Invoke();
         onResult?.Invoke(true, null);
+    }
+
+    /// <summary>
+    /// Toasts how far the player is through the current tier's 3-box set, so the reason to come back
+    /// for the remaining boxes is stated at the moment a box is opened rather than only implied by the
+    /// status HUD.
+    /// </summary>
+    private void ShowSetProgressToast(int openedCount)
+    {
+        if (ToastMessageManager.Instance == null) return;
+
+        openedCount = Mathf.Clamp(openedCount, 1, SLOTS_PER_TIER);
+
+        string key = openedCount >= SLOTS_PER_TIER
+            ? "treasurebox.progress_all_complete"
+            : "treasurebox.progress";
+
+        ToastMessageManager.Instance.ShowToast(Loc(key, openedCount, SLOTS_PER_TIER));
     }
 
     /// <summary>

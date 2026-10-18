@@ -260,6 +260,15 @@ public class ItemPlacementManager : MonoBehaviour
     public bool CanConfirmPlacement =>
         !UseGrid || !blockInvalidPlacements || _pendingValidity == PlacementValidity.Valid;
 
+    /// <summary>
+    /// Whether the item currently being placed may stand in a garden area the player has not unlocked
+    /// yet. True for treasure-box rewards: the player never chose which item a box would hand them, so
+    /// a reward that can only go in the one zone they happen to have open would sit in the inventory
+    /// until the garden caught up. The ground between areas (road, sand, water) still refuses them -
+    /// see <see cref="GardenAreaManager.IsPlaceableAt"/>.
+    /// </summary>
+    private bool PendingIgnoresAreaLocks => _pendingSourceKind == PlacedItemSource.InventoryItem;
+
     /// <summary>Every item currently standing in the garden.</summary>
     public IReadOnlyList<PlaceableItem> ActivePlacedItems => activePlacedItems;
 
@@ -711,7 +720,8 @@ public class ItemPlacementManager : MonoBehaviour
 
         // Occupancy is always evaluated, even when blockInvalidPlacements is off, so the highlight
         // tells the truth about the spot regardless of whether the rule is being enforced.
-        _pendingValidity = grid.Evaluate(_pendingArea, transform.position, placementRadius, checkOccupancy: true);
+        _pendingValidity = grid.Evaluate(_pendingArea, transform.position, placementRadius, checkOccupancy: true,
+            ignoreAreaLocks: PendingIgnoresAreaLocks);
 
         currentPlacedObject.transform.position = snapped;
 

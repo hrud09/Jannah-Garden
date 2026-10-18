@@ -257,6 +257,14 @@
             "value": "اكتمل {0}!"
         },
         {
+            "key": "treasurebox.progress",
+            "value": "اكتمل {0} من {1}! أكمل صناديق الكنز الـ{1} كلها لفتح مكافأتك الكاملة!"
+        },
+        {
+            "key": "treasurebox.progress_all_complete",
+            "value": "اكتمل {0} من {1}! تم فتح مكافأتك الكاملة!"
+        },
+        {
             "key": "treasurebox.set_complete",
             "value": "اكتملت المجموعة!"
         },

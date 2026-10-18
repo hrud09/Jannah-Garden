@@ -257,6 +257,14 @@
             "value": "{0} Complete!"
         },
         {
+            "key": "treasurebox.progress",
+            "value": "{0} of {1} completed! Complete all {1} Treasure Boxes to unlock your full reward!"
+        },
+        {
+            "key": "treasurebox.progress_all_complete",
+            "value": "{0} of {1} completed! Your full reward is unlocked!"
+        },
+        {
             "key": "treasurebox.set_complete",
             "value": "Set Complete!"
         },

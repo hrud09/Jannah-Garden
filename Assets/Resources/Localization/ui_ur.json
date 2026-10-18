@@ -257,6 +257,14 @@
             "value": "{0} مکمل!"
         },
         {
+            "key": "treasurebox.progress",
+            "value": "{1} میں سے {0} مکمل! اپنا مکمل انعام کھولنے کے لیے تینوں ٹریژر باکس مکمل کریں!"
+        },
+        {
+            "key": "treasurebox.progress_all_complete",
+            "value": "{1} میں سے {0} مکمل! آپ کا مکمل انعام کھل گیا ہے!"
+        },
+        {
             "key": "treasurebox.set_complete",
             "value": "سیٹ مکمل!"
         },

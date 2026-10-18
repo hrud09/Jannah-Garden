@@ -355,15 +355,18 @@ public class GardenGrid : MonoBehaviour
     /// Everything wrong with standing an item on <paramref name="area"/>, as one flag set.
     /// <paramref name="radiusCenter"/>/<paramref name="radius"/> describe the reachable bubble around
     /// the player; pass a negative radius to skip that test.
+    /// <paramref name="ignoreAreaLocks"/> waives the garden's unlock rules for this item only - see
+    /// <see cref="GardenAreaManager.IsPlaceableAt"/>.
     /// </summary>
-    public PlacementValidity Evaluate(RectInt area, Vector3 radiusCenter, float radius, bool checkOccupancy)
+    public PlacementValidity Evaluate(RectInt area, Vector3 radiusCenter, float radius, bool checkOccupancy,
+        bool ignoreAreaLocks = false)
     {
         var result = PlacementValidity.Valid;
 
         if (checkOccupancy && !IsAreaFree(area)) result |= PlacementValidity.Occupied;
         if (!IsInsideTerrain(area)) result |= PlacementValidity.OffTerrain;
         if (MaxSlopeOver(area) > maxSlopeDegrees) result |= PlacementValidity.TooSteep;
-        if (!IsAreaUnlocked(area)) result |= PlacementValidity.AreaLocked;
+        if (!IsAreaUnlocked(area, ignoreAreaLocks)) result |= PlacementValidity.AreaLocked;
         if (IsZoneFull(area)) result |= PlacementValidity.ZoneFull;
 
         if (radius >= 0f)
@@ -418,7 +421,7 @@ public class GardenGrid : MonoBehaviour
         return areas.IsFullAt(CellAreaCenter(area.min, area.size));
     }
 
-    private bool IsAreaUnlocked(RectInt area)
+    private bool IsAreaUnlocked(RectInt area, bool ignoreLocks)
     {
         GardenAreaManager areas = GardenAreaManager.Instance;
         if (areas == null || !areas.IsReady) return true;
@@ -433,18 +436,18 @@ public class GardenGrid : MonoBehaviour
             for (int y = area.yMin; y < area.yMax; y += stepY)
             {
                 int sy = Mathf.Min(y, area.yMax - 1);
-                if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(sx, sy)))) return false;
+                if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(sx, sy)), ignoreLocks)) return false;
             }
 
-            if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(sx, area.yMax - 1)))) return false;
+            if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(sx, area.yMax - 1)), ignoreLocks)) return false;
         }
 
         for (int y = area.yMin; y < area.yMax; y += stepY)
         {
             int sy = Mathf.Min(y, area.yMax - 1);
-            if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(area.xMax - 1, sy)))) return false;
+            if (!areas.IsPlaceableAt(CellCenter(new Vector2Int(area.xMax - 1, sy)), ignoreLocks)) return false;
         }
 
-        return areas.IsPlaceableAt(CellCenter(new Vector2Int(area.xMax - 1, area.yMax - 1)));
+        return areas.IsPlaceableAt(CellCenter(new Vector2Int(area.xMax - 1, area.yMax - 1)), ignoreLocks);
     }
 }

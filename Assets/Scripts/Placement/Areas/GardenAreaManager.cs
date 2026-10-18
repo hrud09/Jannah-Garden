@@ -138,13 +138,21 @@ public class GardenAreaManager : MonoBehaviour
     ///
     /// Ground belonging to no area (road, sand, water, off-map) follows
     /// <see cref="allowPlacementOutsideAreas"/>; everything else follows its area's unlock state.
+    ///
+    /// <para><paramref name="ignoreLocks"/> treats every area as unlocked while still refusing the
+    /// ground between them. Treasure-box rewards are placed that way: the player did not choose where
+    /// the box came from, so holding one hostage behind garden progression would strand it in the
+    /// inventory - see <c>ItemPlacementManager</c>. It never loosens the road/sand/water rule, because
+    /// that is about the ground itself rather than about progression.</para>
     /// </summary>
-    public bool IsPlaceableAt(Vector3 world)
+    public bool IsPlaceableAt(Vector3 world, bool ignoreLocks = false)
     {
         if (!enforceLocks || !IsReady) return true;
 
         GardenAreaDefinition area = map.AreaAt(world);
-        return area == null ? allowPlacementOutsideAreas : IsUnlocked(area);
+        if (area == null) return allowPlacementOutsideAreas;
+
+        return ignoreLocks || IsUnlocked(area);
     }
 
     /// <summary>The area covering <paramref name="world"/>, or null.</summary>
