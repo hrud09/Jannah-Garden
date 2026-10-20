@@ -2,6 +2,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// What a shop card's background colour is derived from. Category gives every collection its own
+/// hue so the five tabs read apart; Tier varies the cards inside one tab as the quality band climbs.
+/// </summary>
+public enum ShopCardTintSource
+{
+    /// <summary>Leave the background on the sprite's authored colour.</summary>
+    None,
+    /// <summary>Colour of the collection the item belongs to (ShopTaxonomy.GetCategoryColor).</summary>
+    Category,
+    /// <summary>Colour of the item's quality band (ShopTaxonomy.GetTierColor), falling back to the
+    /// category colour for items with no tier — coin packs, ad offers and treasure-box rewards.</summary>
+    Tier
+}
+
 public class ShopItemUI : MonoBehaviour
 {
     [Header("UI Component References")]
@@ -38,11 +53,29 @@ public class ShopItemUI : MonoBehaviour
            + "Turn off when the sprites already carry their own colour.")]
     public bool tintTierVisuals = true;
 
+    [Header("Card Background Colour")]
+    [Tooltip("Where the card background's colour comes from. Tier gives each quality band inside a tab "
+           + "its own hue; Category gives every collection one hue; None leaves the sprite untinted.")]
+    public ShopCardTintSource backgroundTintSource = ShopCardTintSource.Tier;
+    [Tooltip("How far the background is pushed from white toward the source colour. Low values keep the "
+           + "card light so the icon and labels stay legible; 0 leaves it white.")]
+    [Range(0f, 1f)]
+    public float backgroundTintStrength = 0.3f;
+    [Tooltip("Tint strength for the icon backing plate. Usually a little stronger than the card itself so "
+           + "the icon sits in a visible well. Ignored when Icon Background Img is the same Image as the "
+           + "card background.")]
+    [Range(0f, 1f)]
+    public float iconBackgroundTintStrength = 0.45f;
+    [Tooltip("Colour the background is blended away from. White keeps the card art's own shading; a warm "
+           + "off-white or a dark value suits a darker UI kit.")]
+    public Color backgroundBaseColor = Color.white;
+
     [Header("Economy Visuals")]
-    [Tooltip("Colour of the price label when the player CAN afford the item.")]
-    public Color affordableColor = new Color(0.62f, 0.91f, 0.60f, 1f); // soft mint green #9EE899
+    [Tooltip("Colour of the price label when the player CAN afford the item. Dark enough to read on "
+           + "the cream price plate; the card art behind it is light, not the old green.")]
+    public Color affordableColor = new Color(0.20f, 0.38f, 0.24f, 1f); // deep leaf green #33613D
     [Tooltip("Colour of the price label when the player CANNOT afford the item.")]
-    public Color unaffordableColor = new Color(0.96f, 0.62f, 0.60f, 1f); // soft coral red #F59E99
+    public Color unaffordableColor = new Color(0.70f, 0.24f, 0.20f, 1f); // deep clay red #B33D33
 
     [Header("Acquisition Labels")]
     [Tooltip("Button label shown on a rewarded-ad item that is ready to claim.")]
@@ -172,6 +205,7 @@ public class ShopItemUI : MonoBehaviour
         }
 
         ApplyTaxonomyVisuals(data.itemCategory, data.itemTier, tierVisuals);
+        ApplyBackgroundTint(data.itemCategory, data.itemTier);
 
         // Price label + affordability tint (both derived from the acquisition type)
         RefreshAffordabilityVisual();
@@ -247,6 +281,44 @@ public class ShopItemUI : MonoBehaviour
                 if (tierRoots[i] != null) tierRoots[i].SetActive(i == activeIndex);
             }
         }
+    }
+
+    /// <summary>
+    /// Colours the card background (and the icon backing plate, when it is a separate Image) from the
+    /// item's tier or category, so a panel of cards no longer reads as one flat block. The source colour
+    /// is blended away from <see cref="backgroundBaseColor"/> rather than applied raw: a shop card is
+    /// mostly a backdrop for an icon and three labels, and a full-strength accent swallows them. The
+    /// authored alpha is preserved so a translucent card stays translucent.
+    /// </summary>
+    private void ApplyBackgroundTint(ShopItemCategory category, ShopItemTier tier)
+    {
+        if (backgroundTintSource == ShopCardTintSource.None) return;
+
+        // Tier mode falls back to the category colour for anything unranked — coin packs, ad offers and
+        // treasure-box rewards all arrive here as Tier.None and would otherwise come out plain white.
+        Color source = backgroundTintSource == ShopCardTintSource.Category || tier == ShopItemTier.None
+            ? ShopTaxonomy.GetCategoryColor(category)
+            : ShopTaxonomy.GetTierColor(tier);
+
+        ApplyTintTo(itemBackgroundImg, source, backgroundTintStrength);
+
+        // Both references point at the same Image on the stock card prefab; tinting it twice would
+        // apply the icon strength over the card strength and lose the card's own setting.
+        if (itemIconBackgroundImg != itemBackgroundImg)
+        {
+            ApplyTintTo(itemIconBackgroundImg, source, iconBackgroundTintStrength);
+        }
+    }
+
+    /// <summary>Blends one Image from <see cref="backgroundBaseColor"/> toward <paramref name="source"/>,
+    /// keeping whatever alpha the prefab authored.</summary>
+    private void ApplyTintTo(Image img, Color source, float strength)
+    {
+        if (img == null) return;
+
+        Color tint = Color.Lerp(backgroundBaseColor, source, Mathf.Clamp01(strength));
+        tint.a = img.color.a;
+        img.color = tint;
     }
 
     // Affordability Visuals
@@ -576,6 +648,7 @@ public class ShopItemUI : MonoBehaviour
         // Treasure box rewards are ranked by their own ItemRarity, not by a shop tier, so the tier
         // widgets stay hidden here.
         ApplyTaxonomyVisuals(data.itemCategory, ShopItemTier.None, null);
+        ApplyBackgroundTint(data.itemCategory, ShopItemTier.None);
 
         bool isLocked = false;
         if (lockedVisuals != null)

@@ -26,18 +26,24 @@ SS = 4  # supersample factor for anti-aliasing
 # ---------------------------------------------------------------- palette ---
 CREAM = (250, 246, 238)
 CREAM_DIM = (232, 226, 213)
+# Warm sand, the kit's one darker cream. Used as a border where a cream body
+# needs an edge but cannot take a contrasting hue (see jg_card_cream).
+CREAM_EDGE = (221, 208, 184)
 
 SAGE_HI = (170, 192, 172)
 SAGE_LO = (136, 163, 141)
-
-DEEP_HI = (92, 120, 98)
-DEEP_LO = (62, 90, 70)
 
 GOLD_HI = (212, 165, 80)
 GOLD_LO = (192, 138, 46)
 
 GREEN_HI = (127, 160, 127)
 GREEN_LO = (95, 132, 99)
+
+# "deep" used to be a second, darker green carried by panels, cards, tabs and
+# the slider/scroll tracks. The UI now runs on a single green, so it is an
+# alias of the button ramp; the name is kept because sprites are named after it.
+DEEP_HI = GREEN_HI
+DEEP_LO = GREEN_LO
 
 CLAY_HI = (194, 132, 112)
 CLAY_LO = (166, 106, 87)
@@ -101,15 +107,20 @@ def gloss(size, radius, border, limit=None, strength=0.30):
 
 
 # ------------------------------------------------------------------ parts ---
-def framed(size, radius, border, ramp, glossy=True, slice_border=None):
-    """Cream-bordered squircle with a gradient body, the core badge look."""
+def framed(size, radius, border, ramp, glossy=True, slice_border=None,
+           border_color=CREAM):
+    """Cream-bordered squircle with a gradient body, the core badge look.
+
+    `border_color` only moves off cream for sprites whose body is itself cream
+    and would otherwise have no visible edge.
+    """
     w, h = size
     hi, lo = RAMPS[ramp]
 
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
 
     outer = rounded_mask((w, h), radius)
-    img.paste(Image.new("RGBA", (w, h), CREAM + (255,)), (0, 0), outer)
+    img.paste(Image.new("RGBA", (w, h), border_color + (255,)), (0, 0), outer)
 
     inner = rounded_mask((w, h), radius, inset=border)
     body = vgradient((w, h), hi, lo).convert("RGBA")
@@ -179,7 +190,10 @@ def main():
         save(framed((128, 128), 64, 5, ramp), f"jg_btn_circle_{ramp}")
 
     # --- frames / panels: 192px, radius 44, cream border 7 -----------------
-    for ramp, name in (("deep", "jg_panel"), ("sage", "jg_panel_sage"), ("cream", "jg_panel_cream")):
+    # jg_panel_green shares the button ramp so a panel carrying green buttons
+    # reads as one piece of art instead of two greens that nearly match.
+    for ramp, name in (("deep", "jg_panel"), ("sage", "jg_panel_sage"),
+                       ("cream", "jg_panel_cream"), ("green", "jg_panel_green")):
         save(framed((192, 192), 44, 7, ramp, slice_border=46), name)
         BORDERS[name] = 46
 
@@ -187,6 +201,15 @@ def main():
     for ramp, name in (("deep", "jg_card"), ("sage", "jg_card_sage")):
         save(framed((160, 160), 32, 5, ramp, slice_border=34), name)
         BORDERS[name] = 34
+
+    # Cream card body, for the shop item card. A green card carrying green
+    # buttons on a green list plate collapsed into one block, so the card is the
+    # light surface the green widgets sit on instead. The border is a deeper
+    # cream rather than green: ShopItemUI tints this Image per item, and a tint
+    # drags a coloured border off-hue while two creams shift together.
+    save(framed((160, 160), 32, 6, "cream", slice_border=34,
+                border_color=CREAM_EDGE), "jg_card_cream")
+    BORDERS["jg_card_cream"] = 34
 
     # recessed plate for list backgrounds and read-only fields
     save(plain((160, 160), 28, "deep"), "jg_inset")
