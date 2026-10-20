@@ -58,7 +58,7 @@
         },
         {
             "key": "shop.label_downloading_percent",
-            "value": "جارٍ التنزيل... {0}%"
+            "value": "{0}%"
         },
         {
             "key": "shop.label_buy",
@@ -1631,6 +1631,30 @@
         {
             "key": "zone.status_full",
             "value": "ممتلئة · {0} عنصرًا"
+        },
+        {
+            "key": "placement.download_complete",
+            "value": "اكتمل التنزيل · ١٠٠٪"
+        },
+        {
+            "key": "shop.coin_popup_title",
+            "value": "احصل على عملات نور"
+        },
+        {
+            "key": "shop.coin_popup_shortfall",
+            "value": "تحتاج إلى {0} عملة نور إضافية"
+        },
+        {
+            "key": "shop.coin_popup_generic",
+            "value": "اكسب عملات نور بمشاهدة إعلان قصير"
+        },
+        {
+            "key": "shop.coin_popup_now_affordable",
+            "value": "أصبح لديك ما يكفي الآن!"
+        },
+        {
+            "key": "shop.coin_popup_close",
+            "value": "إغلاق"
         }
     ]
 }

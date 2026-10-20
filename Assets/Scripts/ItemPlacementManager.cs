@@ -457,6 +457,10 @@ public class ItemPlacementManager : MonoBehaviour
     /// through here. Idempotent, so the paths that unwind through more than one of those (a failure that
     /// then clears the pending placement) still announce the state change exactly once.
     /// </summary>
+    // True once this request has told the player a download is running, so the matching "100%" toast is
+    // only shown to a player who actually saw the "Downloading..." one — a cache hit stays silent.
+    private bool _downloadToastShown;
+
     private void SetPreparingPlacement(bool preparing)
     {
         if (_isPreparingPlacement == preparing) return;
@@ -492,6 +496,7 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingPlacementProgressCallback = onProgress;
         _pendingProgressPrefabRef = prefabRef;
         _lastReportedPlacementProgress = -1f;
+        _downloadToastShown = false;
         supersededFailed?.Invoke();
 
         _pendingItemPrefab = null;
@@ -549,6 +554,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (requestVersion == _placementRequestVersion && _isPreparingPlacement && ToastMessageManager.Instance != null)
         {
+            _downloadToastShown = true;
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.downloading_item"));
         }
     }
@@ -558,6 +564,18 @@ public class ItemPlacementManager : MonoBehaviour
     private void FinishPreparingPlacement(GameObject prefab, GameObject previewPrefab, float duration)
     {
         SetPreparingPlacement(false);
+
+        // Close the loop on the "Downloading..." toast: the player was told to wait, so tell them the
+        // wait is over. Skipped when no download toast was shown (a cache hit resolves instantly and a
+        // "100%" toast out of nowhere would just be noise).
+        if (_downloadToastShown)
+        {
+            _downloadToastShown = false;
+            if (ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.download_complete"));
+            }
+        }
         _pendingItemPrefab = prefab;
         _pendingDuration = duration;
 

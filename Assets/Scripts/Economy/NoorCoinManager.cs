@@ -74,6 +74,15 @@ public class NoorCoinManager : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
+    /// <summary>
+    /// Balance handed to the player when running inside the Unity Editor. Play mode has no Flutter host
+    /// to push a real balance, so without this every editor session starts broke and nothing in the shop
+    /// can be exercised. Compiled out of Android/iOS players — those always take their balance from Flutter.
+    /// </summary>
+    private const int EDITOR_DEFAULT_BALANCE = 1_000_000;
+#endif
+
     private void Start()
     {
         if (isDebug)
@@ -82,6 +91,11 @@ public class NoorCoinManager : MonoBehaviour
             return;
         }
 
+#if UNITY_EDITOR
+        // Editor-only: start rich so the shop and placement flows are testable without the Flutter host.
+        SetInitialCoinsFromFlutter(EDITOR_DEFAULT_BALANCE.ToString());
+        return;
+#else
         // Nothing cached means Flutter has not answered the bridge's handshake yet, or this manager came
         // up in a scene loaded long after the handshake gave up. Either way, ask again rather than run the
         // whole session on a 0 balance. Same pattern as FellowshipVisualizationManager.
@@ -90,6 +104,7 @@ public class NoorCoinManager : MonoBehaviour
             Debug.Log("[NoorCoinManager] No balance from Flutter yet — requesting it.");
             FlutterBridge.Instance.RequestCoinBalance();
         }
+#endif
     }
 
     private void OnApplicationQuit() => SaveBalance();

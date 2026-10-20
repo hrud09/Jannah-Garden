@@ -49,6 +49,11 @@ public class InGameShopManager : MonoBehaviour
     }
     [Header("Dynamic Spawning References")]
     [SerializeField] private GameObject shopItemUIPrefab; // The ShopItemUI prefab to instantiate
+
+    /// <summary>The card prefab the shop spawns, so a second storefront (the Noor Coin popup) can use
+    /// the same card art without being handed its own copy of the reference.</summary>
+    public GameObject ShopItemUIPrefab => shopItemUIPrefab;
+
     [SerializeField] private GameObject inventoryItemUIPrefab; // The InventoryItemUI prefab to instantiate
     private List<ShopItemUI> spawnedShopItemUIs = new List<ShopItemUI>();
     private List<InventoryItemUI> spawnedInventoryItemUIs = new List<InventoryItemUI>();
@@ -155,6 +160,13 @@ public class InGameShopManager : MonoBehaviour
 
     [Header("Placement Reference")]
     public ItemPlacementManager placementManager;
+
+    [Header("Noor Coin Store Popup")]
+    [Tooltip("Opened when the player taps an item they cannot afford, so the answer to \"not enough "
+           + "coins\" is the screen that sells coins rather than a toast. Leave empty to fall back to "
+           + "whichever NoorCoinStorePopup is in the scene, and to a plain toast if there is none. "
+           + "Run Tools/Shop/Build Noor Coin Popup to author one.")]
+    public NoorCoinStorePopup noorCoinStorePopup;
 
     private IdyllicFantasyNature.PlayerMovement playerMovement;
 
@@ -613,8 +625,10 @@ public class InGameShopManager : MonoBehaviour
                     + $"insufficient Noor Coins (need {data.noorCoinCost}, "
                     + $"have {NoorCoinManager.Instance.Balance}).");
 
-                // Show toast message to the player indicating insufficient funds
-                if (ToastMessageManager.Instance != null)
+                // Being short of coins is a thing the player can fix in two taps, so offer the fix:
+                // the Noor Coin storefront, where an ad pays out. The toast is the fallback for a
+                // scene with no popup authored yet.
+                if (!TryOpenNoorCoinStore(data) && ToastMessageManager.Instance != null)
                 {
                     ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.not_enough_coins"));
                 }
@@ -738,6 +752,26 @@ public class InGameShopManager : MonoBehaviour
 
             CompleteAcquisition(item, data);
         });
+    }
+
+    /// <summary>
+    /// Opens the Noor Coin storefront for an item the player cannot afford. Returns false when there
+    /// is no popup to open — a scene that predates it, or one where the panel was removed — so the
+    /// caller can fall back to the old toast instead of silently doing nothing.
+    /// </summary>
+    private bool TryOpenNoorCoinStore(ShopItemData unaffordable)
+    {
+        if (noorCoinStorePopup == null)
+        {
+            noorCoinStorePopup = NoorCoinStorePopup.Instance != null
+                ? NoorCoinStorePopup.Instance
+                : FindObjectOfType<NoorCoinStorePopup>(true);
+        }
+
+        if (noorCoinStorePopup == null) return false;
+
+        noorCoinStorePopup.Open(unaffordable);
+        return true;
     }
 
     /// <summary>

@@ -58,7 +58,7 @@
         },
         {
             "key": "shop.label_downloading_percent",
-            "value": "Downloading... {0}%"
+            "value": "{0}%"
         },
         {
             "key": "shop.label_buy",
@@ -943,6 +943,30 @@
         {
             "key": "zone.status_full",
             "value": "full · {0} items"
+        },
+        {
+            "key": "placement.download_complete",
+            "value": "Download complete · 100%"
+        },
+        {
+            "key": "shop.coin_popup_title",
+            "value": "Get Noor Coins"
+        },
+        {
+            "key": "shop.coin_popup_shortfall",
+            "value": "You need {0} more Noor Coins"
+        },
+        {
+            "key": "shop.coin_popup_generic",
+            "value": "Earn Noor Coins by watching a short ad"
+        },
+        {
+            "key": "shop.coin_popup_now_affordable",
+            "value": "You have enough now!"
+        },
+        {
+            "key": "shop.coin_popup_close",
+            "value": "Close"
         }
     ]
 }

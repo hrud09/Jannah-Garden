@@ -58,7 +58,7 @@
         },
         {
             "key": "shop.label_downloading_percent",
-            "value": "ڈاؤن لوڈ ہو رہا ہے... {0}%"
+            "value": "{0}%"
         },
         {
             "key": "shop.label_buy",
@@ -1631,6 +1631,30 @@
         {
             "key": "zone.status_full",
             "value": "بھرا ہوا · {0} چیزیں"
+        },
+        {
+            "key": "placement.download_complete",
+            "value": "ڈاؤن لوڈ مکمل · ۱۰۰٪"
+        },
+        {
+            "key": "shop.coin_popup_title",
+            "value": "نور کوائنز حاصل کریں"
+        },
+        {
+            "key": "shop.coin_popup_shortfall",
+            "value": "آپ کو {0} مزید نور کوائنز درکار ہیں"
+        },
+        {
+            "key": "shop.coin_popup_generic",
+            "value": "مختصر اشتہار دیکھ کر نور کوائنز کمائیں"
+        },
+        {
+            "key": "shop.coin_popup_now_affordable",
+            "value": "اب آپ کے پاس کافی ہیں!"
+        },
+        {
+            "key": "shop.coin_popup_close",
+            "value": "بند کریں"
         }
     ]
 }

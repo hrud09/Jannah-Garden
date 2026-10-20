@@ -58,7 +58,7 @@
         },
         {
             "key": "shop.label_downloading_percent",
-            "value": "ডাউনলোড হচ্ছে... {0}%"
+            "value": "{0}%"
         },
         {
             "key": "shop.label_buy",
@@ -1631,6 +1631,30 @@
         {
             "key": "zone.status_full",
             "value": "ভরে গেছে · {0}টি জিনিস"
+        },
+        {
+            "key": "placement.download_complete",
+            "value": "ডাউনলোড সম্পন্ন · ১০০%"
+        },
+        {
+            "key": "shop.coin_popup_title",
+            "value": "নূর কয়েন নিন"
+        },
+        {
+            "key": "shop.coin_popup_shortfall",
+            "value": "আপনার আরও {0} নূর কয়েন দরকার"
+        },
+        {
+            "key": "shop.coin_popup_generic",
+            "value": "ছোট একটি বিজ্ঞাপন দেখে নূর কয়েন অর্জন করুন"
+        },
+        {
+            "key": "shop.coin_popup_now_affordable",
+            "value": "এখন আপনার যথেষ্ট আছে!"
+        },
+        {
+            "key": "shop.coin_popup_close",
+            "value": "বন্ধ করুন"
         }
     ]
 }

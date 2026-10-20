@@ -82,15 +82,18 @@ public class ShopItemUI : MonoBehaviour
     public string watchAdLabel = "Watch Ad";
     [Tooltip("Button label shown on every non-ad item.")]
     public string selectLabel = "Select";
-    [Tooltip("Price label shown while a real-money purchase is in flight.")]
+    [Tooltip("Button label shown while a real-money purchase is in flight.")]
     public string purchasePendingLabel = "Purchasing...";
-    [Tooltip("Price label shown while the item's prefab is downloading after purchase, before placement mode "
-           + "starts. {0} is replaced with the live progress percentage, e.g. \"Downloading... 42%\".")]
-    public string downloadPendingLabel = "Downloading... {0}%";
+    [Tooltip("Button label shown while the item's prefab is downloading after purchase, before placement mode "
+           + "starts. {0} is replaced with the live progress percentage. It replaces the Select/Watch Ad "
+           + "label, never the price — the cost stays on the card throughout. Kept to the number alone "
+           + "because the button is a narrow pill and a translated \"Downloading...\" wraps out of it; the "
+           + "word itself is said once, in the toast that goes up when the download starts.")]
+    public string downloadPendingLabel = "{0}%";
 
     [Header("Download Progress (optional)")]
     [Tooltip("Optional fill image (Image Type = Filled) driven 0→1 with live download progress. Safe to "
-           + "leave unassigned — the price label always shows the percentage as text too.")]
+           + "leave unassigned — the purchase button always shows the percentage as text too.")]
     public Image downloadProgressFillImg;
     [Tooltip("Optional root (e.g. a progress bar container) shown only while a download is in progress.")]
     public GameObject downloadProgressRoot;
@@ -126,6 +129,13 @@ public class ShopItemUI : MonoBehaviour
 
     // Throttles the daily-offer countdown to one refresh per second.
     private float countdownTimer;
+
+    // The purchase button label's authored sizing, captured the first time a download shrinks it.
+    private bool hasCachedLabelSizing;
+    private bool cachedAutoSizing;
+    private float cachedFontSize;
+    private float cachedFontSizeMin;
+    private float cachedFontSizeMax;
 
     /// <summary>
     /// Gets the CanvasGroup on this GameObject, adding one dynamically if missing.
@@ -417,6 +427,10 @@ public class ShopItemUI : MonoBehaviour
         if (downloadProgressFillImg != null) downloadProgressFillImg.fillAmount = 0f;
         if (downloadProgressRoot != null) downloadProgressRoot.SetActive(pending);
 
+        // Even a bare "42%" can be wider than the shortest Select label at some font sizes, so let the
+        // label shrink for the duration rather than wrapping inside the button pill.
+        SetButtonLabelAutoSizing(pending);
+
         // This card just became (or stopped being) the one downloading, which flips whether the shop-wide
         // lock should be dimming it.
         ApplyBlockedAlpha();
@@ -459,55 +473,78 @@ public class ShopItemUI : MonoBehaviour
 
         downloadProgress01 = Mathf.Clamp01(progress01);
         if (downloadProgressFillImg != null) downloadProgressFillImg.fillAmount = downloadProgress01;
-        RefreshAffordabilityVisual();
+
+        // Only the button label changes as the bytes land — the price label is unaffected by progress,
+        // and re-shaping it every frame would run HarfBuzz on the Bengali/Arabic path for nothing.
+        SetProgressButtonLabel();
     }
 
     /// <summary>
-    /// Rebuilds the price label and its tint from the item's acquisition type, and enables or disables
-    /// the purchase button. Gold/green when the item can be acquired, red when it cannot.
+    /// Rebuilds the card's button label and its price label, and enables or disables the purchase
+    /// button. The two are deliberately independent: the button says what tapping the card does —
+    /// "Select", "Watch Ad", "Purchasing...", "Downloading... 42%" — while the price label only ever
+    /// says what the item costs or pays out, so the cost never disappears from under the player mid
+    /// download.
     /// </summary>
     public void RefreshAffordabilityVisual()
     {
-        // A card prefab with no price label still has to obey the shop-wide download lock, so settle the
-        // button before bailing out of the label work.
-        if (itemPriceText == null)
+        // ── Pending states: they take over the BUTTON, not the price ──────────
+        if (isDownloadPending)
+        {
+            SetProgressButtonLabel();
+            SetButtonInteractable(false);
+            RefreshPriceLabel();
+            return;
+        }
+
+        if (isPurchasePending)
+        {
+            SetButtonLabel(purchasePendingLabel);
+            SetButtonInteractable(false);
+            RefreshPriceLabel();
+            return;
+        }
+
+        // ── Idle: the button says how the item is acquired ────────────────────
+        if (RewardItemData != null)
+        {
+            SetButtonLabel(selectLabel);
+            SetButtonInteractable(true);
+            RefreshPriceLabel();
+            return;
+        }
+
+        if (ItemData == null)
         {
             SetButtonInteractable(true);
             return;
         }
 
-        // A download in flight blocks the card regardless of what kind of item this is.
-        if (isDownloadPending)
-        {
-            LocalizedRendering.SetText(itemPriceText, string.Format(downloadPendingLabel, Mathf.RoundToInt(downloadProgress01 * 100f)));
-            itemPriceText.color = unaffordableColor;
-            SetButtonInteractable(false);
-            return;
-        }
+        SetButtonLabel(ItemData.acquisitionType == ShopAcquisitionType.RewardedAd ? watchAdLabel : selectLabel);
+
+        // A claimed daily offer is the only idle state that locks the card — an item the player cannot
+        // currently afford stays tappable, because tapping it is now what opens the Noor Coin store.
+        SetButtonInteractable(!IsDailyOfferOnCooldown());
+
+        RefreshPriceLabel();
+    }
+
+    /// <summary>
+    /// Writes the price/payout label and its affordability tint. Never touches the button — see
+    /// <see cref="RefreshAffordabilityVisual"/> for why the two are kept apart.
+    /// </summary>
+    private void RefreshPriceLabel()
+    {
+        if (itemPriceText == null) return;
 
         if (RewardItemData != null)
         {
+            // The text itself ("Owned") is written once in Initialize.
             itemPriceText.color = affordableColor;
-            SetButtonLabel(selectLabel);
-            SetButtonInteractable(true);
             return;
         }
 
         if (ItemData == null) return;
-
-        // The button says how the item is acquired; the price label says what it costs or pays out.
-        SetButtonLabel(ItemData.acquisitionType == ShopAcquisitionType.RewardedAd ? watchAdLabel : selectLabel);
-
-        // A pending purchase blocks the card regardless of anything else.
-        if (isPurchasePending)
-        {
-            LocalizedRendering.SetText(itemPriceText, purchasePendingLabel);
-            itemPriceText.color = unaffordableColor;
-            SetButtonInteractable(false);
-            return;
-        }
-
-        SetButtonInteractable(true);
 
         // Locked items advertise the level they need, and don't need affordability tinting.
         bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < ItemData.requiredXPLevel;
@@ -538,7 +575,6 @@ public class ShopItemUI : MonoBehaviour
                     System.TimeSpan remaining = DailyOfferManager.Instance.GetTimeUntilAvailable(ItemData);
                     LocalizedRendering.SetText(itemPriceText, DailyOfferManager.FormatCooldown(remaining));
                     itemPriceText.color = unaffordableColor;
-                    SetButtonInteractable(false);
                 }
                 else if (ItemData.noorCoinReward > 0)
                 {
@@ -607,9 +643,55 @@ public class ShopItemUI : MonoBehaviour
         if (purchaseButton != null) purchaseButton.interactable = interactable && !isInteractionBlocked;
     }
 
+    /// <summary>
+    /// Writes the live percentage into the purchase button. Digits and a percent sign only, so this
+    /// takes the plain path rather than the shaping one — there is no script to join or mirror, and
+    /// this runs roughly once a frame for as long as the download lasts.
+    /// </summary>
+    private void SetProgressButtonLabel()
+    {
+        if (purchaseButtonLabel == null) return;
+
+        LocalizedRendering.SetPlainText(purchaseButtonLabel,
+            string.Format(downloadPendingLabel, Mathf.RoundToInt(downloadProgress01 * 100f)));
+    }
+
     private void SetButtonLabel(string label)
     {
         if (purchaseButtonLabel != null) LocalizedRendering.SetText(purchaseButtonLabel, label);
+    }
+
+    /// <summary>
+    /// Turns TMP auto-sizing on for the button label while a long status string is in it, and puts the
+    /// prefab's authored sizing back afterwards. The authored values are captured the first time this
+    /// runs, so a card that is never used for a download keeps its label untouched.
+    /// </summary>
+    private void SetButtonLabelAutoSizing(bool enable)
+    {
+        if (purchaseButtonLabel == null) return;
+
+        if (!hasCachedLabelSizing)
+        {
+            cachedAutoSizing = purchaseButtonLabel.enableAutoSizing;
+            cachedFontSize = purchaseButtonLabel.fontSize;
+            cachedFontSizeMin = purchaseButtonLabel.fontSizeMin;
+            cachedFontSizeMax = purchaseButtonLabel.fontSizeMax;
+            hasCachedLabelSizing = true;
+        }
+
+        if (enable)
+        {
+            purchaseButtonLabel.enableAutoSizing = true;
+            purchaseButtonLabel.fontSizeMin = Mathf.Max(8f, cachedFontSize * 0.55f);
+            purchaseButtonLabel.fontSizeMax = cachedFontSize;
+        }
+        else
+        {
+            purchaseButtonLabel.enableAutoSizing = cachedAutoSizing;
+            purchaseButtonLabel.fontSizeMin = cachedFontSizeMin;
+            purchaseButtonLabel.fontSizeMax = cachedFontSizeMax;
+            purchaseButtonLabel.fontSize = cachedFontSize;
+        }
     }
 
     /// <summary>
