@@ -164,6 +164,16 @@ public class JannahGardenManager : MonoBehaviour
     public void LoadOuterGarden()
     {
         Debug.Log($"[JannahGardenManager] Loading Outer Garden scene '{outerGardenSceneName}'...");
+
+        // Nothing in Outer Garden uses a shop prefab, and that scene is a ~150 MB remote bundle on its
+        // own — carrying the garden's cached item prefabs across is pure overhead at the exact moment
+        // the process is at its peak. Everything here is about to be destroyed by the Single-mode
+        // load, so release the lot rather than sparing what is currently placed.
+        if (MemoryPressureResponder.Instance != null)
+        {
+            MemoryPressureResponder.Instance.ReleaseAllItemPrefabsForSceneExit();
+        }
+
         if (LoadingScreenManager.Instance != null)
         {
             LoadingScreenManager.Instance.LoadScene(outerGardenSceneName);

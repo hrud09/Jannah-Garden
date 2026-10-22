@@ -303,14 +303,11 @@ public class ItemPlacementManager : MonoBehaviour
         LoadPlacedItems();
 
         BeginCloudSync();
-
-        Application.lowMemory += HandleLowMemory;
     }
 
     private void OnDestroy()
     {
         FlutterBridge.OnGardenStateReceived -= HandleCloudGardenState;
-        Application.lowMemory -= HandleLowMemory;
 
         if (placeButton != null) placeButton.onClick.RemoveListener(HandlePlaceButtonClick);
         if (cancelPlacementButton != null) cancelPlacementButton.onClick.RemoveListener(CancelPlacement);
@@ -319,22 +316,10 @@ public class ItemPlacementManager : MonoBehaviour
         if (Instance == this) Instance = null;
     }
 
-    /// <summary>
-    /// The OS is warning this process is close to being killed for memory — iOS's
-    /// <c>didReceiveMemoryWarning</c> and Android's <c>onTrimMemory</c> both surface here as the same
-    /// event. Neither platform gives a size budget with the warning, so there's nothing to tune: drop
-    /// every downloaded item prefab this process isn't actively using, right now, rather than waiting for
-    /// the next placement/return to trigger the normal bounded trim (see <see cref="TrimAddressableCache"/>).
-    /// iOS in particular has no "ask for more headroom" escape hatch the way Android's largeHeap manifest
-    /// flag does, so this is the only lever available there once the OS is already unhappy.
-    /// </summary>
-    private void HandleLowMemory()
-    {
-        Debug.LogWarning("[ItemPlacementManager] OS low-memory warning — releasing every unused item prefab.");
-        AddressableItemLoader.TrimCache(0, ComputeInUseAddressableKeys());
-        ItemFootprint.ClearCache();
-        Resources.UnloadUnusedAssets();
-    }
+    // The OS low-memory response used to live here. It now sits on MemoryPressureResponder, a
+    // DontDestroyOnLoad singleton, because this manager only exists in the Jannah Garden scene: once
+    // the player walked into Outer Garden — the heaviest scene in the game — the handler went with it
+    // and nothing answered the OS at all. See MemoryPressureResponder and oom_crash_fix_guide.md.
 
     private void Update()
     {
@@ -1463,7 +1448,7 @@ public class ItemPlacementManager : MonoBehaviour
     /// <summary>The AssetGUIDs <see cref="AddressableItemLoader"/> must not evict right now: every item
     /// standing in the garden (real + preview model), plus whatever the current placement is mid-load
     /// or mid-carry with.</summary>
-    private HashSet<string> ComputeInUseAddressableKeys()
+    public HashSet<string> ComputeInUseAddressableKeys()
     {
         var keys = new HashSet<string>();
 

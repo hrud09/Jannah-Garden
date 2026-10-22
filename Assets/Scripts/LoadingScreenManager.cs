@@ -515,6 +515,13 @@ public class LoadingScreenManager : MonoBehaviour
             {
                 Debug.LogError($"[LoadingScreenManager] Addressables failed to load scene '{sceneName}': " +
                                 $"{newAddressableHandle.OperationException}");
+
+                // A failed load still holds whatever bundle data it managed to pull down. Release it
+                // and stop tracking it: storing a failed handle as the active scene would also make the
+                // next transition call UnloadSceneAsync on an operation that never produced a scene.
+                if (newAddressableHandle.IsValid()) Addressables.Release(newAddressableHandle);
+                newAddressableHandle = default;
+                loadAsAddressable = false;
             }
             else
             {
@@ -648,6 +655,15 @@ public class LoadingScreenManager : MonoBehaviour
             }
             _loadHolds.Clear();
         }
+
+        // Drop assets the outgoing scene was the last referent of. Unity's own unload pass runs when
+        // the Single-mode load swaps scenes — before the old Addressable bundle above was released and
+        // before the incoming scene finished populating — so without this pass a transition's worth of
+        // textures and meshes stays resident until something else happens to trigger one. On the Outer
+        // Garden route that is a ~150 MB bundle's worth. Yielded on rather than called bare: the
+        // synchronous form stalls for hundreds of ms on a mid-range phone, and here it is free because
+        // the panel is still fully opaque.
+        yield return Resources.UnloadUnusedAssets();
 
         // Give the new scenes a moment to render their first frames
         yield return new WaitForSecondsRealtime(hideDelay);
