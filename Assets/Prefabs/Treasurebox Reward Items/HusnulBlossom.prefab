@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5906658779687831799}
   - component: {fileID: 5047994870052733648}
   m_Layer: 0
-  m_Name: BlossomTree_02
+  m_Name: HusnulBlossom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

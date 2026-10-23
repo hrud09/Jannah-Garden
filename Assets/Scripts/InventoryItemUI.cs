@@ -13,6 +13,11 @@ public class InventoryItemUI : MonoBehaviour
     public Image itemIconBackgroundImg;
 
     [Header("State Visual References")]
+    [Tooltip("Icon drawn inside the locked overlay, so a locked card still shows what it is. " +
+             "Sits above the opaque locked background, which would otherwise hide itemIcon.")]
+    public Image lockedIcon;
+    [Tooltip("Tint applied to lockedIcon - dimmed and semi-transparent so it reads as unavailable.")]
+    public Color lockedIconTint = new Color(0.5f, 0.5f, 0.5f, 0.55f);
     public GameObject[] lockedVisuals;
     public GameObject[] unlockedVisuals;
 
@@ -30,6 +35,12 @@ public class InventoryItemUI : MonoBehaviour
         if (itemIcon != null && data.itemIcon != null)
         {
             itemIcon.sprite = data.itemIcon;
+        }
+
+        if (lockedIcon != null && data.itemIcon != null)
+        {
+            lockedIcon.sprite = data.itemIcon;
+            lockedIcon.color = lockedIconTint;
         }
 
         ApplyNameAndDescription(data.LocalizedName, data.LocalizedDescription);
@@ -101,6 +112,13 @@ public class InventoryItemUI : MonoBehaviour
         if (RewardItemData == null) return;
 
         bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < RewardItemData.unlockXPLevel;
+
+        if (lockedIcon != null)
+        {
+            // The locked overlay hides itemIcon entirely, so mirror the sprite here and only show it
+            // while locked - otherwise the faded copy would double up on the unlocked icon.
+            lockedIcon.enabled = isLevelLocked && lockedIcon.sprite != null;
+        }
 
         if (lockedVisuals != null)
         {

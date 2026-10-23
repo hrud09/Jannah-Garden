@@ -170,11 +170,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6ec2816b271f90945b1ac48dcb242f7d
-    m_Address: Assets/Prefabs/Treasurebox Reward Items/WillowTree_04_Green.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7340b1e9f39ffd449a54bdf72d0b2308
     m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Meandering_River_Isla.prefab
     m_ReadOnly: 0
