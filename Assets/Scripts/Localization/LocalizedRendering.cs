@@ -37,15 +37,17 @@ public static class LocalizedRendering
             shaped.gameObject.SetActive(true);
             shaped.FontAsset = HarfBuzzFontRegistry.GetFontAsset(locale);
 
-            // Mirror TMP's Auto Size onto the shaped label: fontSizeMax becomes the ceiling and the shaped
-            // label shrinks only as far as this string actually needs to fit its rect (one line where it
-            // can, never a mid-word break), refitting whenever the rect resizes. That is the same search
-            // TMP runs, so an emergency-floor fontSizeMin (e.g. 5 on a price label) is only ever reached
-            // by a string that genuinely needs it. tmpText.fontSize can't be the size here: with Auto Size
-            // on it's whatever TMP last computed for the previous (usually English) string, and once
-            // tmpText is disabled it never updates again. A label that doesn't auto-size keeps its size.
+            // Match the size the label renders at in English rather than running an independent search
+            // up to TMP's ceiling. tmpText.fontSize is exactly that size: with Auto Size on it holds what
+            // TMP resolved for the string it last laid out (the English one, since the shaped path only
+            // takes over afterwards), and before TMP has ever laid out — Bengali active from the first
+            // frame — it is still the size authored in the prefab, which is the English design size too.
+            // Using fontSizeMax instead let Bengali render far larger than English wherever a label
+            // authored a generous ceiling (the world-space treasure-box name label tops out at 1.0 but
+            // renders English around 0.3). Auto Size stays on as a shrink-only safety net, so a Bengali
+            // string that is genuinely longer than its rect still fits — it just never grows past English.
             shaped.SetAutoSize(tmpText.enableAutoSizing, tmpText.fontSizeMin);
-            shaped.FontSize = tmpText.enableAutoSizing ? tmpText.fontSizeMax : tmpText.fontSize;
+            shaped.FontSize = tmpText.fontSize;
             shaped.Alignment = tmpText.alignment;
             shaped.color = tmpText.color;
             // TMP's own Margins (left, top, right, bottom) inset its text the same way this padding does — without

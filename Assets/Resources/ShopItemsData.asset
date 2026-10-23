@@ -143,7 +143,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: e36850a1fd94a0a46900cc8b3f8859a4, type: 3}
+    - itemIcon: {fileID: 21300000, guid: b633c773e60e2654eb9c94d7bb2ac4f7, type: 3}
       itemName: Celestial Blossom Tree
       itemDescription: A beautiful Celestial Blossom Tree to add vibrant life and
         natural beauty to your garden.
@@ -175,7 +175,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 0}
+    - itemIcon: {fileID: 21300000, guid: e36850a1fd94a0a46900cc8b3f8859a4, type: 3}
       itemName: Petal Cascade
       itemDescription: A beautiful Petal Cascade to add vibrant life and natural
         beauty to your garden.
@@ -947,7 +947,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 4346b82ffe50c944b933308d429cf5fd, type: 3}
+    - itemIcon: {fileID: 21300000, guid: 3eae70e39ce8b6a41ae084d9a9513598, type: 3}
       itemName: Arabic Script Archway
       itemDescription: An elegant Arabic Script Archway structure to provide comfort
         and architectural beauty to your estate.
@@ -1171,7 +1171,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 3eae70e39ce8b6a41ae084d9a9513598, type: 3}
+    - itemIcon: {fileID: 21300000, guid: c7103cd11a67fd4449c4db8e367619a4, type: 3}
       itemName: Muqarnas Calligraphy Arch
       itemDescription: An elegant Muqarnas Calligraphy Arch structure to provide
         comfort and architectural beauty to your estate.
@@ -1235,7 +1235,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 6b2970aefcfdbdf46ba874ed0c6939d6, type: 3}
+    - itemIcon: {fileID: 21300000, guid: 4346b82ffe50c944b933308d429cf5fd, type: 3}
       itemName: Golden Gateway to Paradise
       itemDescription: An elegant Golden Gateway to Paradise structure to provide
         comfort and architectural beauty to your estate.
@@ -1299,7 +1299,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: be4e5e4162cbb3c47a07384d534864ee, type: 3}
+    - itemIcon: {fileID: 21300000, guid: 6b2970aefcfdbdf46ba874ed0c6939d6, type: 3}
       itemName: Turquoise Mosaic Arch
       itemDescription: An elegant Turquoise Mosaic Arch structure to provide comfort
         and architectural beauty to your estate.
@@ -1751,7 +1751,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: b633c773e60e2654eb9c94d7bb2ac4f7, type: 3}
+    - itemIcon: {fileID: 21300000, guid: 0141b39c9d236154ca22cd5488015546, type: 3}
       itemName: Isle of Spring
       itemDescription: A radiant Isle of Spring to lift your garden with light and
         wonder.
@@ -1783,7 +1783,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: cf31d2adfee3ea542af7a269037f1fc7, type: 3}
+    - itemIcon: {fileID: 21300000, guid: a75c3268a7973064cb563cd159a926dc, type: 3}
       itemName: Eight Pointed Star Lantern
       itemDescription: A radiant Eight Pointed Star Lantern to lift your garden with
         light and wonder.
@@ -2039,7 +2039,7 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: a75c3268a7973064cb563cd159a926dc, type: 3}
+    - itemIcon: {fileID: 21300000, guid: cf31d2adfee3ea542af7a269037f1fc7, type: 3}
       itemName: Star Lantern
       itemDescription: A radiant Star Lantern to lift your garden with light and
         wonder.

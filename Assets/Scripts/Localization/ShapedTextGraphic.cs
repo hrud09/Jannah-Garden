@@ -257,7 +257,11 @@ public class ShapedTextGraphic : MaskableGraphic
     public void SetAutoSize(bool enabled, float minSize)
     {
         autoSize = enabled;
-        autoSizeMin = Mathf.Max(1f, minSize);
+        // No hard 1.0 floor: on a world-space canvas a whole label is often well under one unit tall
+        // (the treasure-box name label authors its range as 0.2-1.0), and clamping the minimum up to 1
+        // there collapsed the search range onto the maximum, so the shaped text rendered at its ceiling
+        // instead of shrinking to fit. The floor only has to stay positive.
+        autoSizeMin = Mathf.Max(0.0001f, minSize);
     }
 
     /// <summary>
@@ -512,7 +516,11 @@ public class ShapedTextGraphic : MaskableGraphic
     {
         float max = fontSize;
         float min = Mathf.Min(autoSizeMin, max);
-        if (rect.width <= 1f || rect.height <= 1f || Fits(max)) return max;
+        // "No real size yet" has to be measured against the font size, not in pixels: a 1-unit threshold
+        // treats every world-space rect (where the whole label may be a third of a unit tall) as unlaid-out
+        // and skips the fit entirely.
+        float degenerate = max * 0.01f;
+        if (rect.width <= degenerate || rect.height <= degenerate || Fits(max)) return max;
         if (!Fits(min)) return min;
 
         float lo = min, hi = max;
@@ -532,7 +540,9 @@ public class ShapedTextGraphic : MaskableGraphic
                 lines += WrapIntoLines(shapedLines[l], sourceLines[l], candidate, rect.width, out bool hardBroke).Count;
                 if (hardBroke) return false;
             }
-            return lines * candidate * 1.2f <= rect.height + 0.5f;
+            // Slack for float noise only, expressed relative to the candidate size — a flat 0.5 is
+            // sub-pixel in a UI rect but larger than a whole world-space line box.
+            return lines * candidate * 1.2f <= rect.height + candidate * 0.02f;
         }
     }
 
