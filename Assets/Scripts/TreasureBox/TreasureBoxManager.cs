@@ -131,6 +131,50 @@ public class TreasureBoxManager : MonoBehaviour
     public Transform spawnPointsParent;
     public Terrain terrainReference;
 
+    /// <summary>
+    /// Marks a slot whose box stands on a spot picked inside an unlocked garden area rather than on one
+    /// of the hand-placed spawn points. The position itself is in
+    /// <see cref="TreasureBoxTierState.assignedSpawnPositions"/>.
+    /// </summary>
+    public const int GENERATED_SPAWN_POINT = -2;
+
+    [Header("Spawn Placement (Unlocked Areas)")]
+    [Tooltip("ON: boxes only ever appear inside garden areas the player has unlocked, spread across " +
+             "them. OFF: the old behaviour - any hand-placed spawn point, anywhere in the garden. " +
+             "Also falls back to the old behaviour in a scene with no GardenAreaManager.")]
+    public bool restrictToUnlockedAreas = true;
+
+    [Tooltip("Use the hand-placed spawn points (children of 'Spawn Points Parent') when one stands " +
+             "inside the chosen unlocked area. Areas with no hand-placed point get a spot picked " +
+             "automatically. OFF: every spot is picked automatically.")]
+    public bool useHandPlacedPoints = true;
+
+    [Tooltip("How far, in metres, an automatically picked spot must stay inside its area's edge - " +
+             "keeps boxes off the roads and paths that separate the areas.")]
+    [Range(0f, 10f)]
+    public float areaEdgeMargin = 2f;
+
+    [Tooltip("Steepest ground, in degrees, an automatically picked spot may be on.")]
+    [Range(0f, 45f)]
+    public float maxSpawnSlope = 20f;
+
+    [Tooltip("Boxes waiting to be opened are kept at least this many metres apart. Relaxed " +
+             "automatically when an area is too small to honour it.")]
+    [Range(0f, 30f)]
+    public float minDistanceBetweenBoxes = 6f;
+
+    [Tooltip("Radius, in metres, around an automatically picked spot that must be free of placed " +
+             "garden items and of colliders on the layers below.")]
+    [Range(0.25f, 4f)]
+    public float spawnClearRadius = 1f;
+
+    [Tooltip("Colliders on these layers block an automatically picked spot (scenery, buildings, " +
+             "placed items). Trigger colliders are always ignored.")]
+    public LayerMask spawnBlockingLayers = ~0;
+
+    /// <summary>Random samples tried per area, per relaxation pass, before giving up on that area.</summary>
+    private const int GeneratedSpawnAttempts = 60;
+
     private List<Transform> spawnPoints = new List<Transform>();
 
     private class SpawnedBoxInfo
@@ -239,7 +283,9 @@ public class TreasureBoxManager : MonoBehaviour
                 if (spawnPoints[i] != null) return true;
             }
 
-            return false;
+            // Spots inside unlocked areas need no hand-placed points at all; the area manager only
+            // exists while the garden scene is loaded, so it is just as good a sign of being in it.
+            return PlacementAreas != null;
         }
     }
 
@@ -1035,7 +1081,8 @@ public class TreasureBoxManager : MonoBehaviour
     {
         // _saveData is null until LoadState has run, and this is also reached from the OnStateChanged
         // event, which anything may raise at any point in a load.
-        if (_saveData == null || spawnPoints == null || spawnPoints.Count == 0) return;
+        if (_saveData == null || spawnPoints == null) return;
+        if (spawnPoints.Count == 0 && PlacementAreas == null) return;
         
         foreach (TreasureBoxTier tier in AllTiers)
         {
@@ -1051,6 +1098,408 @@ public class TreasureBoxManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    // ─── Spawn Placement ──────────────────────────────────────────────────────
+    //
+    // Where each box goes is decided once, when its slot is first spawned, and saved with the slot so
+    // the box is standing in the same place every time the garden loads until it is opened.
+    //
+    // With a GardenAreaManager in the scene, a slot is only ever given ground the player has unlocked:
+    // an unlocked area is picked first (weighted by size, and away from areas already holding a waiting
+    // box so the boxes spread out), then a spot inside it - one of the hand-placed spawn points when one
+    // stands there, otherwise a spot picked from the baked area map. As more areas unlock, later boxes
+    // start appearing in them on their own.
+    //
+    // Without one (a test scene, or the feature switched off) it is the original behaviour: any free
+    // hand-placed spawn point.
+
+    /// <summary>The area manager to place by, or null when boxes are not restricted to unlocked areas.</summary>
+    private GardenAreaManager PlacementAreas
+    {
+        get
+        {
+            if (!restrictToUnlockedAreas) return null;
+            GardenAreaManager areas = GardenAreaManager.Instance;
+            return areas != null && areas.IsReady ? areas : null;
+        }
+    }
+
+    /// <summary>The terrain heights and slopes are read from.</summary>
+    private Terrain SpawnTerrain
+    {
+        get
+        {
+            if (terrainReference != null) return terrainReference;
+            if (GardenGrid.Instance != null && GardenGrid.Instance.terrain != null) return GardenGrid.Instance.terrain;
+            return Terrain.activeTerrain;
+        }
+    }
+
+    /// <summary>True when <paramref name="world"/> lies in an area the player has unlocked (always, without area rules).</summary>
+    private bool IsInUnlockedArea(Vector3 world)
+    {
+        GardenAreaManager areas = PlacementAreas;
+        if (areas == null) return true;
+
+        GardenAreaDefinition area = areas.AreaAt(world);
+        return area != null && areas.IsUnlocked(area);
+    }
+
+    /// <summary>
+    /// True when the slot already has a spot that may still be used. A spot stops being usable when its
+    /// hand-placed point has gone, or when it is not on unlocked ground - which is how a save made
+    /// before this rule existed (boxes sitting in locked areas) gets moved onto the player's own ground.
+    /// </summary>
+    private bool IsAssignedSpawnUsable(TreasureBoxTierState state, int slotIndex)
+    {
+        int assigned = state.assignedSpawnPoints[slotIndex];
+
+        if (assigned == GENERATED_SPAWN_POINT)
+        {
+            return PlacementAreas != null && IsInUnlockedArea(state.assignedSpawnPositions[slotIndex]);
+        }
+
+        if (assigned < 0 || assigned >= spawnPoints.Count || spawnPoints[assigned] == null) return false;
+
+        // With area rules active, a hand-placed point is only kept while hand-placed points are in use
+        // and it stands on unlocked ground.
+        if (PlacementAreas != null && (!useHandPlacedPoints || !IsInUnlockedArea(spawnPoints[assigned].position)))
+            return false;
+
+        return true;
+    }
+
+    /// <summary>World position and rotation of the slot's assigned spot, before it is dropped onto the ground.</summary>
+    private bool TryResolveAssignedSpawn(TreasureBoxTierState state, int slotIndex, out Vector3 position, out Quaternion rotation)
+    {
+        position = Vector3.zero;
+        rotation = Quaternion.identity;
+
+        int assigned = state.assignedSpawnPoints[slotIndex];
+
+        if (assigned == GENERATED_SPAWN_POINT)
+        {
+            position = state.assignedSpawnPositions[slotIndex];
+            rotation = GeneratedSpawnRotation(position);
+            return true;
+        }
+
+        if (assigned < 0 || assigned >= spawnPoints.Count || spawnPoints[assigned] == null) return false;
+
+        position = spawnPoints[assigned].position;
+        rotation = spawnPoints[assigned].rotation;
+        return true;
+    }
+
+    /// <summary>
+    /// A facing for a generated spot. Derived from the position rather than random so the box faces the
+    /// same way on every load without the rotation needing a save field of its own.
+    /// </summary>
+    private static Quaternion GeneratedSpawnRotation(Vector3 position)
+    {
+        float yaw = Mathf.Repeat(position.x * 37.13f + position.z * 91.71f, 360f);
+        return Quaternion.Euler(0f, yaw, 0f);
+    }
+
+    /// <summary>
+    /// Where every other box still waiting to be opened stands, and which hand-placed points they hold,
+    /// so a new spot keeps its distance and never doubles up on a point.
+    /// </summary>
+    private void CollectReservedSpawns(TreasureBoxTier exceptTier, int exceptSlot,
+        List<Vector3> reservedPositions, HashSet<int> reservedPoints)
+    {
+        foreach (TreasureBoxTier tier in AllTiers)
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            if (state.assignedSpawnPoints == null) continue;
+
+            for (int slot = 0; slot < SLOTS_PER_TIER; slot++)
+            {
+                if (tier == exceptTier && slot == exceptSlot) continue;
+                if (state.slotOpened[slot]) continue;
+
+                // A stale spot (say, a box from an old save sitting in a locked area) is about to be
+                // replaced, so it must not push the new spots away from where it stood.
+                if (!IsAssignedSpawnUsable(state, slot)) continue;
+
+                int assigned = state.assignedSpawnPoints[slot];
+                if (assigned >= 0) reservedPoints.Add(assigned);
+
+                if (TryResolveAssignedSpawn(state, slot, out Vector3 pos, out _)) reservedPositions.Add(pos);
+            }
+        }
+    }
+
+    private static bool IsFarFromAll(Vector3 candidate, List<Vector3> others, float minDistance)
+    {
+        if (minDistance <= 0f) return true;
+
+        float minSqr = minDistance * minDistance;
+        for (int i = 0; i < others.Count; i++)
+        {
+            float dx = candidate.x - others[i].x;
+            float dz = candidate.z - others[i].z;
+            if (dx * dx + dz * dz < minSqr) return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Gives the slot a new spot and records it in the save. False when there is nowhere to put it.
+    /// The caller saves.
+    /// </summary>
+    private bool TryAssignSpawn(TreasureBoxTier tier, int slotIndex)
+    {
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        state.assignedSpawnPoints[slotIndex] = -1;
+
+        GardenAreaManager areas = PlacementAreas;
+
+        if (areas == null)
+        {
+            // No area rules: the original behaviour, any free hand-placed point.
+            int legacyIndex = GetAvailableSpawnPointIndex();
+            if (legacyIndex == -1) return false;
+
+            state.assignedSpawnPoints[slotIndex] = legacyIndex;
+            return true;
+        }
+
+        var reservedPositions = new List<Vector3>();
+        var reservedPoints = new HashSet<int>();
+        CollectReservedSpawns(tier, slotIndex, reservedPositions, reservedPoints);
+
+        List<GardenAreaDefinition> ordered = OrderUnlockedAreasForSpawn(areas, reservedPositions);
+        if (ordered.Count == 0)
+        {
+            Debug.LogWarning("[TreasureBoxManager] No unlocked garden area to put a treasure box in.");
+            return false;
+        }
+
+        // Each pass is a little less fussy than the last, so a cramped garden still gets its box rather
+        // than none: first the full spacing, then half of it, then none at all.
+        float[] spacingPasses = { minDistanceBetweenBoxes, minDistanceBetweenBoxes * 0.5f, 0f };
+
+        foreach (float spacing in spacingPasses)
+        {
+            foreach (GardenAreaDefinition area in ordered)
+            {
+                if (useHandPlacedPoints &&
+                    TryPickHandPlacedPointIn(areas, area, reservedPoints, reservedPositions, spacing, out int pointIndex))
+                {
+                    state.assignedSpawnPoints[slotIndex] = pointIndex;
+                    return true;
+                }
+
+                if (TryGenerateSpotIn(areas, area, reservedPositions, spacing, out Vector3 spot))
+                {
+                    state.assignedSpawnPoints[slotIndex] = GENERATED_SPAWN_POINT;
+                    state.assignedSpawnPositions[slotIndex] = spot;
+                    return true;
+                }
+            }
+        }
+
+        // Everything was refused (every spot blocked by scenery, say). The deepest point of the first
+        // choice of area is still on unlocked ground and well clear of its roads.
+        GardenAreaDefinition fallbackArea = ordered[0];
+        Vector3 anchor = new Vector3(fallbackArea.labelAnchor.x, 0f, fallbackArea.labelAnchor.y);
+        anchor.y = SampleGroundHeight(anchor);
+
+        Debug.LogWarning($"[TreasureBoxManager] Found no clear spot for {tier} slot {slotIndex} - using the " +
+                         $"centre of area {fallbackArea.number}. Check 'Spawn Blocking Layers' if this keeps happening.");
+
+        state.assignedSpawnPoints[slotIndex] = GENERATED_SPAWN_POINT;
+        state.assignedSpawnPositions[slotIndex] = anchor;
+        return true;
+    }
+
+    /// <summary>
+    /// The unlocked areas in the order to try them: a random draw weighted by ground area, with areas
+    /// already holding a waiting box pushed down so the three boxes of a tier spread across the garden.
+    /// </summary>
+    private List<GardenAreaDefinition> OrderUnlockedAreasForSpawn(GardenAreaManager areas, List<Vector3> reservedPositions)
+    {
+        var pool = new List<GardenAreaDefinition>();
+        var weights = new List<float>();
+
+        foreach (GardenAreaDefinition area in areas.map.areas)
+        {
+            if (area == null || !areas.IsUnlocked(area)) continue;
+
+            int boxesAlreadyThere = 0;
+            for (int i = 0; i < reservedPositions.Count; i++)
+            {
+                if (areas.AreaAt(reservedPositions[i]) == area) boxesAlreadyThere++;
+            }
+
+            float weight = Mathf.Max(1f, area.squareMetres) * Mathf.Pow(0.2f, boxesAlreadyThere);
+            pool.Add(area);
+            weights.Add(weight);
+        }
+
+        var ordered = new List<GardenAreaDefinition>(pool.Count);
+        while (pool.Count > 0)
+        {
+            float total = 0f;
+            for (int i = 0; i < weights.Count; i++) total += weights[i];
+
+            float roll = UnityEngine.Random.value * total;
+            int pick = pool.Count - 1;
+            for (int i = 0; i < weights.Count; i++)
+            {
+                roll -= weights[i];
+                if (roll <= 0f) { pick = i; break; }
+            }
+
+            ordered.Add(pool[pick]);
+            pool.RemoveAt(pick);
+            weights.RemoveAt(pick);
+        }
+
+        return ordered;
+    }
+
+    /// <summary>A free hand-placed spawn point standing inside <paramref name="area"/>, if there is one.</summary>
+    private bool TryPickHandPlacedPointIn(GardenAreaManager areas, GardenAreaDefinition area,
+        HashSet<int> reservedPoints, List<Vector3> reservedPositions, float spacing, out int pointIndex)
+    {
+        pointIndex = -1;
+        var candidates = new List<int>();
+
+        for (int i = 0; i < spawnPoints.Count; i++)
+        {
+            if (spawnPoints[i] == null || reservedPoints.Contains(i)) continue;
+
+            Vector3 pos = spawnPoints[i].position;
+            if (areas.AreaAt(pos) != area) continue;
+            if (!IsFarFromAll(pos, reservedPositions, spacing)) continue;
+
+            candidates.Add(i);
+        }
+
+        if (candidates.Count == 0) return false;
+
+        pointIndex = candidates[UnityEngine.Random.Range(0, candidates.Count)];
+        return true;
+    }
+
+    /// <summary>
+    /// A random spot inside <paramref name="area"/>, read off the baked area map: clear of the area's
+    /// edges (so off the roads), on gentle ground, free of placed items and scenery, and at least
+    /// <paramref name="spacing"/> from every other waiting box.
+    /// </summary>
+    private bool TryGenerateSpotIn(GardenAreaManager areas, GardenAreaDefinition area,
+        List<Vector3> reservedPositions, float spacing, out Vector3 spot)
+    {
+        spot = Vector3.zero;
+
+        GardenAreaMap map = areas.map;
+        int slot = map.areas.IndexOf(area) + 1;
+        if (slot <= 0 || slot > byte.MaxValue) return false;
+
+        // Every cell of this area. One pass over the grid; this only runs when a box is first given its
+        // spot, a handful of times a day.
+        var cells = new List<int>();
+        byte slotByte = (byte)slot;
+        for (int i = 0; i < map.cells.Length; i++)
+        {
+            if (map.cells[i] == slotByte) cells.Add(i);
+        }
+
+        if (cells.Count == 0) return false;
+
+        float cellSize = map.CellSize;
+        int attempts = Mathf.Min(GeneratedSpawnAttempts, cells.Count);
+
+        for (int attempt = 0; attempt < attempts; attempt++)
+        {
+            int cellIndex = cells[UnityEngine.Random.Range(0, cells.Count)];
+            int cx = cellIndex % map.resolution;
+            int cy = cellIndex / map.resolution;
+
+            Vector3 candidate = map.CellCentre(cx, cy);
+            candidate.x += UnityEngine.Random.Range(-0.5f, 0.5f) * cellSize;
+            candidate.z += UnityEngine.Random.Range(-0.5f, 0.5f) * cellSize;
+
+            if (!IsFarFromAll(candidate, reservedPositions, spacing)) continue;
+            if (!IsWellInsideArea(map, area, candidate)) continue;
+
+            candidate.y = SampleGroundHeight(candidate);
+
+            if (!IsGentleGround(candidate)) continue;
+            if (!IsClearOfPlacedItems(candidate)) continue;
+            if (!IsClearOfScenery(candidate)) continue;
+
+            spot = candidate;
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>True when the ground within <see cref="areaEdgeMargin"/> all round still belongs to <paramref name="area"/>.</summary>
+    private bool IsWellInsideArea(GardenAreaMap map, GardenAreaDefinition area, Vector3 point)
+    {
+        if (map.AreaAt(point) != area) return false;
+        if (areaEdgeMargin <= 0f) return true;
+
+        const int Samples = 8;
+        for (int i = 0; i < Samples; i++)
+        {
+            float angle = i * Mathf.PI * 2f / Samples;
+            Vector3 probe = new Vector3(
+                point.x + Mathf.Cos(angle) * areaEdgeMargin,
+                point.y,
+                point.z + Mathf.Sin(angle) * areaEdgeMargin);
+
+            if (map.AreaAt(probe) != area) return false;
+        }
+
+        return true;
+    }
+
+    private float SampleGroundHeight(Vector3 world)
+    {
+        Terrain terrain = SpawnTerrain;
+        return terrain != null ? terrain.SampleHeight(world) + terrain.transform.position.y : world.y;
+    }
+
+    private bool IsGentleGround(Vector3 world)
+    {
+        Terrain terrain = SpawnTerrain;
+        TerrainData data = terrain != null ? terrain.terrainData : null;
+        if (data == null) return true;
+
+        Vector3 local = world - terrain.transform.position;
+        float u = Mathf.Clamp01(local.x / data.size.x);
+        float v = Mathf.Clamp01(local.z / data.size.z);
+
+        return Vector3.Angle(data.GetInterpolatedNormal(u, v), Vector3.up) <= maxSpawnSlope;
+    }
+
+    /// <summary>True when no item the player has placed covers the ground around <paramref name="world"/>.</summary>
+    private bool IsClearOfPlacedItems(Vector3 world)
+    {
+        GardenGrid grid = GardenGrid.Instance;
+        if (grid == null || !grid.IsReady) return true;
+
+        int span = Mathf.Max(1, Mathf.CeilToInt(spawnClearRadius * 2f / grid.CellSize));
+        return grid.IsAreaFree(grid.AreaCovering(world, new Vector2Int(span, span)));
+    }
+
+    /// <summary>
+    /// True when nothing solid stands where the box would. The test sphere sits just above the ground so
+    /// the terrain under it is never what blocks it.
+    /// </summary>
+    private bool IsClearOfScenery(Vector3 groundPoint)
+    {
+        if (spawnBlockingLayers.value == 0) return true;
+
+        Vector3 centre = groundPoint + Vector3.up * (spawnClearRadius + 0.5f);
+        return !Physics.CheckSphere(centre, spawnClearRadius, spawnBlockingLayers, QueryTriggerInteraction.Ignore);
     }
 
     private int GetAvailableSpawnPointIndex()
@@ -1069,7 +1518,7 @@ public class TreasureBoxManager : MonoBehaviour
             if (state.assignedSpawnPoints == null) continue;
             for (int slot = 0; slot < SLOTS_PER_TIER; slot++)
             {
-                if (!state.slotOpened[slot] && state.assignedSpawnPoints[slot] != -1)
+                if (!state.slotOpened[slot] && state.assignedSpawnPoints[slot] >= 0)
                 {
                     availableIndices.Remove(state.assignedSpawnPoints[slot]);
                 }
@@ -1082,40 +1531,11 @@ public class TreasureBoxManager : MonoBehaviour
 
     private void SpawnBox(GameObject prefab, TreasureBoxTier tier, int slotIndex)
     {
-        TreasureBoxTierState state = _saveData.GetTierState(tier);
-        
-        // If not already assigned, get a new point
-        if (state.assignedSpawnPoints[slotIndex] == -1)
-        {
-            int spIndex = GetAvailableSpawnPointIndex();
-            if (spIndex == -1)
-            {
-                Debug.LogWarning($"[TreasureBoxManager] No available spawn points for {tier} slot {slotIndex}");
-                return;
-            }
-            state.assignedSpawnPoints[slotIndex] = spIndex;
-            SaveState();
-        }
-
-        int assignedIndex = state.assignedSpawnPoints[slotIndex];
-        if (spawnPoints == null || assignedIndex < 0 || assignedIndex >= spawnPoints.Count || spawnPoints[assignedIndex] == null)
-        {
-            Debug.LogWarning("[TreasureBoxManager] Assigned spawn point is missing or invalid.");
-            return;
-        }
-
-        Transform spawnPoint = spawnPoints[assignedIndex];
-        
-        Vector3 spawnPos = spawnPoint.position;
-        if (terrainReference != null)
-        {
-            float terrainY = terrainReference.SampleHeight(spawnPos) + terrainReference.transform.position.y;
-            spawnPos = new Vector3(spawnPos.x, terrainY + 2f, spawnPos.z);
-        }
-        
         // The pool lives in the garden scene, so it is absent for as long as the player is elsewhere -
         // and for the first frames of a load, before its own Awake has run. Neither is worth an
-        // exception: the spawn check runs again a second later, by which time it is there.
+        // exception: the spawn check runs again a second later, by which time it is there. Checked
+        // before a spot is picked, so nothing is decided (and saved) while the garden and its area map
+        // are not actually loaded.
         if (Objectpool.Instance == null)
         {
             Debug.LogWarning("[TreasureBoxManager] No Objectpool yet - deferring the " + tier
@@ -1123,7 +1543,32 @@ public class TreasureBoxManager : MonoBehaviour
             return;
         }
 
-        GameObject go = Objectpool.Instance.Spawn(prefab, spawnPos, spawnPoint.rotation);
+        TreasureBoxTierState state = _saveData.GetTierState(tier);
+        
+        // Pick a spot when the slot has none yet, or when the one it has is no longer on unlocked ground.
+        if (!IsAssignedSpawnUsable(state, slotIndex))
+        {
+            if (!TryAssignSpawn(tier, slotIndex))
+            {
+                Debug.LogWarning($"[TreasureBoxManager] No available spawn spot for {tier} slot {slotIndex}");
+                SaveState();
+                return;
+            }
+            SaveState();
+        }
+
+        if (!TryResolveAssignedSpawn(state, slotIndex, out Vector3 spawnPos, out Quaternion spawnRot))
+        {
+            Debug.LogWarning("[TreasureBoxManager] Assigned spawn point is missing or invalid.");
+            return;
+        }
+        
+        if (SpawnTerrain != null)
+        {
+            spawnPos = new Vector3(spawnPos.x, SampleGroundHeight(spawnPos) + 2f, spawnPos.z);
+        }
+
+        GameObject go = Objectpool.Instance.Spawn(prefab, spawnPos, spawnRot);
 
         if (go == null)
         {
@@ -1185,6 +1630,15 @@ public class TreasureBoxManager : MonoBehaviour
                 s.slotAvailableAtTicks = new long[SLOTS_PER_TIER];
             if (s.assignedSpawnPoints == null || s.assignedSpawnPoints.Length != SLOTS_PER_TIER)
                 s.assignedSpawnPoints = new int[] { -1, -1, -1 };
+            if (s.assignedSpawnPositions == null || s.assignedSpawnPositions.Length != SLOTS_PER_TIER)
+            {
+                // Saves from before generated spots existed: none of their slots can be pointing at one.
+                s.assignedSpawnPositions = new SerializableVector3[SLOTS_PER_TIER];
+                for (int i = 0; i < SLOTS_PER_TIER; i++)
+                {
+                    if (s.assignedSpawnPoints[i] == GENERATED_SPAWN_POINT) s.assignedSpawnPoints[i] = -1;
+                }
+            }
         }
     }
 
@@ -1266,6 +1720,51 @@ public class TreasureBoxManager : MonoBehaviour
         OnStateChanged?.Invoke();
         Debug.Log("[TreasureBoxManager] DEBUG: Daily reset simulated.");
     }
+
+    [ContextMenu("DEBUG — Re-pick Box Spawn Spots")]
+    private void Debug_RepickSpawnSpots()
+    {
+        if (_saveData == null) return;
+
+        foreach (TreasureBoxTier tier in AllTiers)
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            for (int i = 0; i < SLOTS_PER_TIER; i++)
+            {
+                if (!state.slotOpened[i]) state.assignedSpawnPoints[i] = -1;
+            }
+            RemoveSpawnedBoxesForTier(tier);
+        }
+
+        SaveState();
+        CheckAndSpawnNewBoxes();
+        Debug.Log("[TreasureBoxManager] DEBUG: Unopened boxes given new spawn spots.");
+    }
+
+#if UNITY_EDITOR
+    /// <summary>Shows where every waiting box has been placed, with the clear radius it was checked against.</summary>
+    private void OnDrawGizmosSelected()
+    {
+        if (_saveData == null) return;
+
+        foreach (TreasureBoxTier tier in AllTiers)
+        {
+            TreasureBoxTierState state = _saveData.GetTierState(tier);
+            if (state.assignedSpawnPoints == null || state.assignedSpawnPositions == null) continue;
+
+            Gizmos.color = GetTierColor(tier);
+            for (int i = 0; i < SLOTS_PER_TIER; i++)
+            {
+                if (state.slotOpened[i]) continue;
+                if (!TryResolveAssignedSpawn(state, i, out Vector3 pos, out _)) continue;
+
+                pos.y = SampleGroundHeight(pos);
+                Gizmos.DrawWireSphere(pos + Vector3.up * (spawnClearRadius + 0.5f), spawnClearRadius);
+                Gizmos.DrawLine(pos, pos + Vector3.up * 6f);
+            }
+        }
+    }
+#endif
 
     private void Debug_CompleteTier(TreasureBoxTier tier)
     {

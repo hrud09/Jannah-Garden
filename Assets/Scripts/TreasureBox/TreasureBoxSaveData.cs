@@ -22,9 +22,21 @@ public class TreasureBoxTierState
     public long[] slotAvailableAtTicks = new long[TreasureBoxManager.SLOTS_PER_TIER];
 
     /// <summary>
-    /// Index of the spawn point assigned to this slot from the manager's array. -1 means unassigned.
+    /// Index of the spawn point assigned to this slot from the manager's array. -1 means unassigned;
+    /// <see cref="TreasureBoxManager.GENERATED_SPAWN_POINT"/> means the slot uses the position picked
+    /// inside an unlocked garden area, stored in <see cref="assignedSpawnPositions"/>.
     /// </summary>
     public int[] assignedSpawnPoints = new int[] { -1, -1, -1 };
+
+    /// <summary>
+    /// World position picked for each slot when it was given a generated spot inside an unlocked area
+    /// rather than a hand-placed spawn point. Only meaningful while the matching
+    /// <see cref="assignedSpawnPoints"/> entry is <see cref="TreasureBoxManager.GENERATED_SPAWN_POINT"/>.
+    /// Optional so saves written before it existed still deserialize (it comes back null and the
+    /// manager re-creates it on load).
+    /// </summary>
+    [OptionalField] public SerializableVector3[] assignedSpawnPositions =
+        new SerializableVector3[TreasureBoxManager.SLOTS_PER_TIER];
 
     // ── Cycle Tracking ────────────────────────────────────────────────────────
 

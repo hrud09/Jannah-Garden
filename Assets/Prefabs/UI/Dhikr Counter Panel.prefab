@@ -75,15 +75,15 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278236159
-  m_fontColor: {r: 1, g: 0.7019608, b: 0, a: 1}
+    rgba: 4278542750
+  m_fontColor: {r: 0.62, g: 0.38, b: 0.02, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 0.94509804, b: 0.6509804, a: 1}
-    topRight: {r: 1, g: 0.94509804, b: 0.6509804, a: 1}
-    bottomLeft: {r: 1, g: 0.7019608, b: 0, a: 1}
-    bottomRight: {r: 1, g: 0.7019608, b: 0, a: 1}
+    topLeft: {r: 0.85, g: 0.6, b: 0.12, a: 1}
+    topRight: {r: 0.85, g: 0.6, b: 0.12, a: 1}
+    bottomLeft: {r: 0.62, g: 0.38, b: 0.02, a: 1}
+    bottomRight: {r: 0.62, g: 0.38, b: 0.02, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.25}
+  m_Color: {r: 0.2, g: 0.38, b: 0.24, a: 0.25}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -819,8 +819,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293850874
-  m_fontColor: {r: 0.98039216, g: 0.9647059, b: 0.93333334, a: 1}
+    rgba: 4282212659
+  m_fontColor: {r: 0.2, g: 0.38, b: 0.24, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -957,15 +957,15 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293312551
-  m_fontColor: {r: 0.15294118, g: 0.7529412, b: 0.9019608, a: 1}
+    rgba: 4286929935
+  m_fontColor: {r: 0.06, g: 0.36, b: 0.52, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.7764706, g: 0.9764706, b: 1, a: 1}
-    topRight: {r: 0.7764706, g: 0.9764706, b: 1, a: 1}
-    bottomLeft: {r: 0.15294118, g: 0.7529412, b: 0.9019608, a: 1}
-    bottomRight: {r: 0.15294118, g: 0.7529412, b: 0.9019608, a: 1}
+    topLeft: {r: 0.16, g: 0.56, b: 0.72, a: 1}
+    topRight: {r: 0.16, g: 0.56, b: 0.72, a: 1}
+    bottomLeft: {r: 0.06, g: 0.36, b: 0.52, a: 1}
+    bottomRight: {r: 0.06, g: 0.36, b: 0.52, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1304,8 +1304,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293850874
-  m_fontColor: {r: 0.98039216, g: 0.9647059, b: 0.93333334, a: 1}
+    rgba: 4282212659
+  m_fontColor: {r: 0.2, g: 0.38, b: 0.24, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2078,8 +2078,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 0.9098039, g: 0.95686275, b: 0.8627451, a: 0.8509804}
+    rgba: 3644678451
+  m_fontColor: {r: 0.2, g: 0.38, b: 0.24, a: 0.85}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2553,14 +2553,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.82, g: 0.928, b: 0.814, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d5b7a0d4803e57f49bd7e180c5a3cd61, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c57c0f94f1de1b244a482a666148fbfd, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

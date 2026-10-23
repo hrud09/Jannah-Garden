@@ -78,6 +78,13 @@ public class MCQManager : MonoBehaviour
     private int currentCorrectOptionIndex;
     private int currentQuestionAttempts = 0;
 
+    // Set once an answer has been submitted, and cleared when the next question is dealt. It is what
+    // turns away further clicks, in place of the Selectable.interactable = false this used to use: the
+    // option buttons run a ColorTint transition, so clearing interactable tints the target Image to the
+    // disabled colour (grey at half alpha) and washed the green correct-answer sprite out to the point
+    // that players never saw which option was right.
+    private bool answerLocked;
+
     // How long the correct-answer feedback (green sprite + punch scale) stays on screen before the
     // panel swaps to the "Mash'Allah" finale. The punch itself runs 0.4s; the remainder is so the
     // player actually registers which option was right before the options disappear.
@@ -277,6 +284,7 @@ public class MCQManager : MonoBehaviour
         {
             selectedOptionIndex = -1;
             currentQuestionAttempts = 0;
+            answerLocked = false;
 
             currentShuffledIndices = new int[qData.options.Length];
             for (int i = 0; i < qData.options.Length; i++) currentShuffledIndices[i] = i;
@@ -319,6 +327,7 @@ public class MCQManager : MonoBehaviour
                 {
                     // Reset appearance and interaction
                     optionButtons[i].image.sprite = defaultSprite;
+                    optionButtons[i].enabled = true;
                     optionButtons[i].interactable = true;
 
                     // Juicy animation for option buttons
@@ -345,6 +354,8 @@ public class MCQManager : MonoBehaviour
 
     public void SelectOption(int optionIndex)
     {
+        if (answerLocked) return; // answer already submitted; the result feedback is on screen
+
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
         selectedOptionIndex = optionIndex;
         
@@ -373,14 +384,18 @@ public class MCQManager : MonoBehaviour
 
     public void CheckAnswer()
     {
+        if (answerLocked) return;
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.QuizSubmit);
         if (selectedOptionIndex == -1) return; // No option selected
 
         QuestionData qData = allQuestions.questions[currentQuestionIndex];
-        
-        // Disable all buttons to prevent changing answer
-        foreach(var btn in optionButtons)
-            btn.interactable = false;
+
+        // Lock the answer in. Deliberately a flag rather than Button.interactable: see answerLocked.
+        // The Button components themselves are switched off so a post-submit tap can't flash the
+        // pressed/highlighted tint over the result sprites — disabling a Selectable clears its tint
+        // back to normal rather than applying the disabled one.
+        answerLocked = true;
+        foreach (var btn in optionButtons) btn.enabled = false;
 
         if (submitButton != null)
             submitButton.interactable = false;
