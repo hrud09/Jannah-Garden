@@ -19741,7 +19741,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 42.7
-  m_fontSizeBase: 50
+  m_fontSizeBase: 42.7
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 25
@@ -21394,7 +21394,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 26.95
-  m_fontSizeBase: 45
+  m_fontSizeBase: 26.95
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 22.5
@@ -28888,7 +28888,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 24.7
-  m_fontSizeBase: 25
+  m_fontSizeBase: 24.7
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 21
@@ -35245,7 +35245,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 20.6
-  m_fontSizeBase: 30
+  m_fontSizeBase: 20.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
@@ -44203,7 +44203,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 45
-  m_fontSizeBase: 50
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 25
@@ -48811,7 +48811,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 40.95
-  m_fontSizeBase: 36
+  m_fontSizeBase: 40.95
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 35
@@ -49444,7 +49444,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 45
-  m_fontSizeBase: 50
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 25
@@ -70142,6 +70142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XP Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4614038290063786711, guid: e9ac15fbf6dbcb344801cb3dcb19b4a3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5008316764308932820, guid: e9ac15fbf6dbcb344801cb3dcb19b4a3, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
@@ -70659,6 +70663,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8913000703373795441, guid: 263e44c4bc1669c4fa287101c20b111c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973849181963867759, guid: 263e44c4bc1669c4fa287101c20b111c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -71534,6 +71542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1849649446}
     m_Modifications:
+    - target: {fileID: 1553650293527289199, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2651932324609336659, guid: a7ae150807b53f1459e3a4b33c39e92f, type: 3}
       propertyPath: m_Name
       value: Noor Coin Holder
@@ -73781,7 +73793,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 29.25
-  m_fontSizeBase: 30
+  m_fontSizeBase: 29.25
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 21
