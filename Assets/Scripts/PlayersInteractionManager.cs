@@ -171,17 +171,22 @@ public class PlayersInteractionManager : MonoBehaviour
         if (type == InteractionTargetType.None) return;
 
         isInteracting = true;
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
         HideAllButtons();
 
         switch (type)
         {
             case InteractionTargetType.TreasureBox:
+                // The box plays its own cue once the manager knows whether it is openable or still
+                // on its timer, so nothing is sounded here.
                 OpenTargetedTreasureBox();
                 break;
 
             case InteractionTargetType.QuestionOrb:
-                if (currentTargetOrb != null) currentTargetOrb.OpenQuiz();
+                if (currentTargetOrb != null)
+                {
+                    GameSfx.PlayAt(SoundEffect.OrbCollect, currentTargetOrb.transform);
+                    currentTargetOrb.OpenQuiz();
+                }
                 break;
 
             case InteractionTargetType.PlacedItem:
@@ -296,6 +301,7 @@ public class PlayersInteractionManager : MonoBehaviour
             if (currentTargetOrb != null)
             {
                 currentTargetOrb.SetFocus(true);
+                GameSfx.PlayAt(SoundEffect.OrbFocus, currentTargetOrb.transform);
             }
         }
 

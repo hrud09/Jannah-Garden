@@ -1,34 +1,43 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 /// <summary>
-/// Plays the Jannah Garden opening cinematic over the door artwork the first time the
-/// scene is entered in a given app session, then fades the panel out to reveal gameplay.
-/// Attach to the "Opening Canvas" root; SkipIntro() can be wired to a UI button.
+/// Drives the Jannah Garden opening the first time the scene is entered in a given app session:
+/// the closed door artwork is shown with an "Open" button in the middle of the screen, and only
+/// when the player presses it does the door-opening cinematic play. When the video ends the panel
+/// fades out on its own and the player is in the garden — there is no skip step any more.
 ///
-/// "openingSceneContents" (the parent of Door Image / Intro Video / Skip Button) is kept
+/// Attach to the "Opening Canvas" root; <see cref="OpenDoor"/> can also be wired to a UI button
+/// directly from the inspector (the button referenced by <see cref="openButton"/> is wired in code).
+///
+/// "openingSceneContents" (the parent of Door Image / Intro Video / Open Button) is kept
 /// inactive by default in the editor so those full-screen UI elements don't sit on top of
 /// the scene while working in it — this script is what turns it on, only when the intro is
-/// actually about to play.
+/// actually about to run.
 /// </summary>
 public class IntroVideoController : MonoBehaviour
 {
     [Header("References")]
-    [Tooltip("Parent of Door Image / Intro Video / Skip Button. Kept inactive by default " +
+    [Tooltip("Parent of Door Image / Intro Video / Open Button. Kept inactive by default " +
              "(in the editor) so the intro UI doesn't block working in the scene; this script " +
-             "activates it only when the intro is about to play.")]
+             "activates it only when the intro is about to run.")]
     public GameObject openingSceneContents;
     public VideoPlayer videoPlayer;
     public RawImage videoImage;
     public AspectRatioFitter aspectRatioFitter;
     public GameObject doorImage;
-    public Button skipButton;
+
+    [Tooltip("Centre-screen button the player presses to open the door and start the cinematic.")]
+    [FormerlySerializedAs("skipButton")]
+    public Button openButton;
+
     public CanvasGroup canvasGroup;
 
     [Header("Behaviour")]
-    [Tooltip("If true, the intro only plays once per app session; later (re)loads of this scene skip straight past it.")]
+    [Tooltip("If true, the intro only runs once per app session; later (re)loads of this scene skip straight past it.")]
     public bool playOncePerSession = true;
 
     [Tooltip("Video playback speed. 1 = normal, 1.5 = 50% faster.")]
@@ -41,6 +50,11 @@ public class IntroVideoController : MonoBehaviour
     public Vector2Int renderTextureSize = new Vector2Int(1920, 1080);
 
     public float fadeOutDuration = 0.6f;
+
+    [Tooltip("Safety net: if the video hasn't started playing this many seconds after Open is " +
+             "pressed, go straight into the garden. Without a skip button this is the only way " +
+             "out of a video that fails to prepare on a given device.")]
+    public float playbackStartTimeout = 8f;
 
     private static bool s_hasPlayedThisSession;
 
@@ -56,6 +70,8 @@ public class IntroVideoController : MonoBehaviour
 
     private RenderTexture _runtimeTexture;
     private bool _ending;
+    private bool _prepared;
+    private bool _openRequested;
 
     private void Awake()
     {
@@ -78,6 +94,10 @@ public class IntroVideoController : MonoBehaviour
         BeginIntro();
     }
 
+    /// <summary>
+    /// Shows the closed door with the Open button and starts preparing the video in the
+    /// background, so that pressing Open can start playback immediately.
+    /// </summary>
     private void BeginIntro()
     {
         if (openingSceneContents != null) openingSceneContents.SetActive(true);
@@ -90,20 +110,14 @@ public class IntroVideoController : MonoBehaviour
         if (videoImage != null) videoImage.enabled = false;
         if (doorImage != null) doorImage.SetActive(true);
 
-        if (skipButton != null) skipButton.onClick.AddListener(SkipIntro);
-
-        if (videoPlayer == null)
+        if (openButton != null)
         {
-            EndIntro();
-            return;
+            openButton.gameObject.SetActive(true);
+            openButton.interactable = true;
+            openButton.onClick.AddListener(OpenDoor);
         }
 
-        // Keep the loading screen up (still fully opaque, covering this panel) until the video
-        // has actually finished preparing — otherwise the loading screen fades out while the
-        // video is still buffering and the player sees the door image or a stalled first frame
-        // instead of the intro. LoadingScreenManager releases this automatically after
-        // maxHoldTime if OnPrepared never fires (e.g. the video fails to load).
-        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.AddLoadHold(this);
+        if (videoPlayer == null) return;
 
         if (videoPlayer.renderMode == VideoRenderMode.RenderTexture && videoPlayer.targetTexture == null)
         {
@@ -124,13 +138,14 @@ public class IntroVideoController : MonoBehaviour
         videoPlayer.SetDirectAudioMute(0, mute);
         videoPlayer.prepareCompleted += OnPrepared;
         videoPlayer.loopPointReached += OnVideoFinished;
+        videoPlayer.errorReceived += OnVideoError;
         videoPlayer.Prepare();
     }
 
     /// <summary>
     /// Fills in any inspector references left unassigned by locating the standard child
     /// hierarchy this panel is built with: openingSceneContents, and under it,
-    /// Door Image / Intro Video / Skip Button.
+    /// Door Image / Intro Video / Open Button.
     /// </summary>
     private void AutoResolveReferences()
     {
@@ -145,7 +160,7 @@ public class IntroVideoController : MonoBehaviour
         if (videoPlayer == null) videoPlayer = searchRoot.GetComponentInChildren<VideoPlayer>(true);
         if (videoImage == null) videoImage = searchRoot.GetComponentInChildren<RawImage>(true);
         if (aspectRatioFitter == null) aspectRatioFitter = searchRoot.GetComponentInChildren<AspectRatioFitter>(true);
-        if (skipButton == null) skipButton = searchRoot.GetComponentInChildren<Button>(true);
+        if (openButton == null) openButton = searchRoot.GetComponentInChildren<Button>(true);
 
         if (doorImage == null)
         {
@@ -154,8 +169,64 @@ public class IntroVideoController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Wired to the Open button. Hides the button and plays the door-opening cinematic; if the
+    /// video is still preparing, playback starts as soon as it is ready (the door artwork stays
+    /// up in the meantime, so there is no black flash).
+    /// </summary>
+    public void OpenDoor()
+    {
+        if (_ending || _openRequested) return;
+        _openRequested = true;
+
+        GameSfx.Play(SoundEffect.ButtonClick);
+
+        if (openButton != null)
+        {
+            openButton.interactable = false;
+            openButton.onClick.RemoveListener(OpenDoor);
+            openButton.gameObject.SetActive(false);
+        }
+
+        // No video to play (missing reference or a load failure) — go straight into the garden.
+        if (videoPlayer == null)
+        {
+            EndIntro();
+            return;
+        }
+
+        if (_prepared) StartPlayback();
+        // Otherwise OnPrepared() picks this up via _openRequested.
+
+        StartCoroutine(FailsafeAfterOpen());
+    }
+
+    /// <summary>
+    /// If the cinematic never actually starts (the video failed to prepare on this device, for
+    /// instance), don't leave the player staring at a door they can't get through.
+    /// </summary>
+    private IEnumerator FailsafeAfterOpen()
+    {
+        float t = 0f;
+        while (t < playbackStartTimeout)
+        {
+            if (_ending) yield break;
+            if (videoPlayer != null && videoPlayer.isPlaying && videoPlayer.frame > 0) yield break;
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        if (_ending) yield break;
+
+        Debug.LogWarning("[IntroVideoController] Intro video didn't start within " +
+                         playbackStartTimeout + "s of pressing Open; entering the garden anyway.");
+        EndIntro();
+    }
+
     private void OnPrepared(VideoPlayer vp)
     {
+        _prepared = true;
+
         if (aspectRatioFitter != null && vp.width > 0 && vp.height > 0)
         {
             aspectRatioFitter.aspectRatio = (float)vp.width / vp.height;
@@ -163,12 +234,19 @@ public class IntroVideoController : MonoBehaviour
 
         vp.playbackSpeed = playbackSpeed;
 
+        if (_openRequested) StartPlayback();
+    }
+
+    private void StartPlayback()
+    {
+        if (_ending || videoPlayer == null) return;
+
         // Start playback while still hidden behind the door image, and only reveal the
         // video once it has an actual decoded frame ready. This avoids swapping to the
         // RawImage a frame (or more) before the video texture has anything in it, which
         // would otherwise show a black/stale flash between the door image and the video.
-        vp.Play();
-        StartCoroutine(RevealVideoOnceFrameReady(vp));
+        videoPlayer.Play();
+        StartCoroutine(RevealVideoOnceFrameReady(videoPlayer));
     }
 
     private IEnumerator RevealVideoOnceFrameReady(VideoPlayer vp)
@@ -182,10 +260,6 @@ public class IntroVideoController : MonoBehaviour
 
         if (doorImage != null) doorImage.SetActive(false);
         if (videoImage != null) videoImage.enabled = true;
-
-        // The video is fully loaded and actually rendering now, so the loading screen can
-        // fade out and reveal it.
-        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
     }
 
     private void OnVideoFinished(VideoPlayer vp)
@@ -193,10 +267,14 @@ public class IntroVideoController : MonoBehaviour
         EndIntro();
     }
 
-    /// <summary>Wire this to the Skip button's OnClick.</summary>
-    public void SkipIntro()
+    private void OnVideoError(VideoPlayer vp, string message)
     {
-        EndIntro();
+        Debug.LogWarning("[IntroVideoController] Intro video error: " + message);
+
+        // Before Open is pressed the door just stays up and the button keeps working — the
+        // failsafe in OpenDoor() handles it from there. Once playback was requested there is
+        // nothing left to show, so go into the garden.
+        if (_openRequested) EndIntro();
     }
 
     private void EndIntro()
@@ -205,16 +283,15 @@ public class IntroVideoController : MonoBehaviour
         _ending = true;
         s_hasPlayedThisSession = true;
 
-        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
-
         if (videoPlayer != null)
         {
             videoPlayer.prepareCompleted -= OnPrepared;
             videoPlayer.loopPointReached -= OnVideoFinished;
+            videoPlayer.errorReceived -= OnVideoError;
             if (videoPlayer.isPlaying) videoPlayer.Stop();
         }
 
-        if (skipButton != null) skipButton.onClick.RemoveListener(SkipIntro);
+        if (openButton != null) openButton.onClick.RemoveListener(OpenDoor);
 
         StartCoroutine(FadeOutAndDisable());
     }
@@ -273,16 +350,15 @@ public class IntroVideoController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (LoadingScreenManager.Instance != null) LoadingScreenManager.Instance.RemoveLoadHold(this);
-
         if (videoPlayer != null)
         {
             videoPlayer.prepareCompleted -= OnPrepared;
             videoPlayer.loopPointReached -= OnVideoFinished;
+            videoPlayer.errorReceived -= OnVideoError;
         }
-        if (skipButton != null)
+        if (openButton != null)
         {
-            skipButton.onClick.RemoveListener(SkipIntro);
+            openButton.onClick.RemoveListener(OpenDoor);
         }
 
         ReleaseRuntimeTexture();

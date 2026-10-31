@@ -254,7 +254,7 @@ public class GameSettingsManager : MonoBehaviour
             AudioManager.Instance.IsSfxMuted = !enabled;
         }
 
-        PlayClickSound();
+        PlayToggleSound(enabled);
         UpdateVisuals();
     }
 
@@ -268,7 +268,7 @@ public class GameSettingsManager : MonoBehaviour
             AudioManager.Instance.IsMusicMuted = !enabled;
         }
 
-        PlayClickSound();
+        PlayToggleSound(enabled);
         UpdateVisuals();
     }
 
@@ -277,7 +277,7 @@ public class GameSettingsManager : MonoBehaviour
         PlayerPrefs.SetInt("VibrationEnabled", enabled ? 1 : 0);
         PlayerPrefs.Save();
 
-        PlayClickSound();
+        PlayToggleSound(enabled);
         TriggerVibrationFeedback();
         UpdateVisuals();
     }
@@ -382,18 +382,23 @@ public class GameSettingsManager : MonoBehaviour
         }
     }
 
-    private void PlayClickSound()
-    {
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
-        }
-    }
+    private void PlayClickSound() => GameSfx.Play(SoundEffect.ButtonClick);
+
+    /// <summary>
+    /// Sounds a switch flipping. The two directions are separate clips so the player can hear
+    /// which way a toggle went without looking at it.
+    ///
+    /// The SFX toggle is the exception: turning sound off cannot announce itself (the mute has
+    /// already landed by the time this runs), so only the on-direction is audible there, and it
+    /// doubles as the confirmation that sound is back.
+    /// </summary>
+    private static void PlayToggleSound(bool enabled)
+        => GameSfx.Play(enabled ? SoundEffect.ToggleOn : SoundEffect.ToggleOff);
 
     public void OpenSettings()
     {
         _isAnimating = false; // Reset animation state to ensure the show animation always plays
-        PlayClickSound();
+        GameSfx.Play(SoundEffect.PanelOpen);
         if (darkBg != null)
         {
             darkBg.alpha = 0f; // Set alpha to 0 first to prevent any visual flickering before the fade starts
@@ -413,7 +418,7 @@ public class GameSettingsManager : MonoBehaviour
         if (_isAnimating) return;
         _isAnimating = true;
 
-        PlayClickSound();
+        GameSfx.Play(SoundEffect.PanelClose);
 
         // Stagger hide options
         if (settingsOptions != null && settingsOptions.Length > 0)

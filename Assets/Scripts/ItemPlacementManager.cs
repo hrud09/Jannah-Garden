@@ -191,6 +191,11 @@ public class ItemPlacementManager : MonoBehaviour
     // replacing it, because several models are authored pre-rotated.
     private Quaternion _ghostBaseRotation = Quaternion.identity;
 
+    // Last grid cell the ghost snapped to, so the step tick fires on a crossing rather than every
+    // frame the player holds the camera still.
+    private Vector2Int _lastGhostCell;
+    private bool _hasGhostCell;
+
     private Vector2Int _snapAnchor;
     private bool _hasSnapAnchor;
     private RectInt _pendingArea;
@@ -540,6 +545,7 @@ public class ItemPlacementManager : MonoBehaviour
         if (requestVersion == _placementRequestVersion && _isPreparingPlacement && ToastMessageManager.Instance != null)
         {
             _downloadToastShown = true;
+            GameSfx.Play(SoundEffect.AssetDownloadStart);
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.downloading_item"));
         }
     }
@@ -556,6 +562,7 @@ public class ItemPlacementManager : MonoBehaviour
         if (_downloadToastShown)
         {
             _downloadToastShown = false;
+            GameSfx.Play(SoundEffect.AssetDownloadComplete);
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.download_complete"));
@@ -634,6 +641,8 @@ public class ItemPlacementManager : MonoBehaviour
     {
         SetPreparingPlacement(false);
 
+        GameSfx.Play(SoundEffect.AssetDownloadFailed);
+
         if (ToastMessageManager.Instance != null)
         {
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.download_failed"));
@@ -668,11 +677,12 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (!CanConfirmPlacement)
         {
+            GameSfx.Play(SoundEffect.ItemPlaceBlocked);
             ShowBlockedToast();
             return;
         }
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPlace);
+        GameSfx.PlayAt(SoundEffect.ItemPlace, currentPlacedObject.transform);
 
         // Finalize placement immediately
         PlaceItem();
@@ -718,6 +728,10 @@ public class ItemPlacementManager : MonoBehaviour
         // by up to a cell diagonally, and on any slope that is the difference between an item standing
         // on the ground and one hovering above or buried in it.
         snapped.y = grid.SampleHeight(snapped);
+
+        if (_hasGhostCell && _lastGhostCell != _snapAnchor) GameSfx.Play(SoundEffect.ItemGhostStep);
+        _lastGhostCell = _snapAnchor;
+        _hasGhostCell = true;
 
         _pendingArea = new RectInt(_snapAnchor, _pendingFootprint);
 
@@ -807,7 +821,17 @@ public class ItemPlacementManager : MonoBehaviour
     {
         if (currentPlacedObject == null) return;
 
+        float previous = _pendingRotationDegrees;
         _pendingRotationDegrees = (sliderValue - 0.5f) * 360f;
+
+        // One tick per quarter-turn boundary crossed. A drag sweeps through hundreds of values, so
+        // sounding every change would be a continuous buzz; the quarter-turns are also the only
+        // steps that actually change the footprint the grid measures.
+        if (Mathf.FloorToInt(previous / 90f) != Mathf.FloorToInt(_pendingRotationDegrees / 90f))
+        {
+            GameSfx.Play(SoundEffect.ItemRotate);
+        }
+
         RefreshPendingFootprint();
         UpdatePlacementPosition();
     }
@@ -1200,6 +1224,7 @@ public class ItemPlacementManager : MonoBehaviour
         _relocateHadArea = false;
 
         _pendingRotationDegrees = 0f;
+        _hasGhostCell = false;
         _pendingFootprint = Vector2Int.one;
         _pendingFootprintOverride = Vector2Int.zero;
         _pendingFootprintScale = 1f;
@@ -1288,7 +1313,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         InternalPreparePlacement(prefabRef, previewRef, totalDuration);
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
+        GameSfx.Play(SoundEffect.ItemInteract);
         if (ToastMessageManager.Instance != null)
         {
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.aim_move_here"));
@@ -1324,7 +1349,7 @@ public class ItemPlacementManager : MonoBehaviour
         SavePlacedItems();
         TrimAddressableCache();
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemInteract);
+        GameSfx.Play(SoundEffect.ItemStore);
 
         // ── Treasure box reward → back on the shelf as one item ───────────────
         TreasureBoxRewardItemData rewardData = kind == PlacedItemSource.ShopItem

@@ -39,7 +39,7 @@ public class TreasureBoxStatusUI : MonoBehaviour
         {
             showBoxButton.onClick.AddListener(() =>
             {
-                if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TreasureBoxShow);
+                GameSfx.Play(SoundEffect.TreasureBoxShow);
                 if (TreasureBoxManager.Instance != null)
                 {
                     TreasureBoxManager.Instance.PlayShowAnimationForTier(tier);

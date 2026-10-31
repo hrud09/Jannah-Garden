@@ -114,8 +114,13 @@ public class GardenAreaUnlockAnnouncer : MonoBehaviour
             // the moment entirely.
             if (ToastMessageManager.Instance != null && loc != null && areas != null && areas.map != null)
             {
+                // The toast plays its own success chime, so the fanfare would double up here.
                 ToastMessageManager.Instance.ShowToast(
-                    loc.Get("zone.unlocked_toast", areas.map.DisplayName(area)));
+                    loc.Get("zone.unlocked_toast", areas.map.DisplayName(area)), ToastTone.Success);
+            }
+            else
+            {
+                GameSfx.Play(SoundEffect.AreaUnlockFanfare);
             }
 
             yield break;
@@ -131,6 +136,10 @@ public class GardenAreaUnlockAnnouncer : MonoBehaviour
         panel.blocksRaycasts = false;
         panel.interactable = false;
 
+        // Two layers, matching the two beats of the animation: a rising reveal as the card appears,
+        // then the fanfare landing on the punch.
+        GameSfx.Play(SoundEffect.AreaUnlockReveal);
+
         RectTransform punch = punchTarget != null ? punchTarget : panel.transform as RectTransform;
 
         if (punch != null)
@@ -139,6 +148,8 @@ public class GardenAreaUnlockAnnouncer : MonoBehaviour
             punch.localScale = Vector3.one;
             punch.DOPunchScale(new Vector3(0.25f, 0.25f, 0.25f), 0.5f, 8, 1f).SetUpdate(true);
         }
+
+        GameSfx.Play(SoundEffect.AreaUnlockFanfare);
 
         yield return FadeTo(1f);
         yield return new WaitForSecondsRealtime(Mathf.Max(0f, holdSeconds));

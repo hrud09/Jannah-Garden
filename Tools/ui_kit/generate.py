@@ -257,8 +257,150 @@ def main():
     scrim = Image.new("RGBA", (16, 16), (16, 28, 20, 214))
     save(scrim, "jg_scrim")
 
+    category_icons()
+
     write_border_manifest()
     print(f"Wrote {len(os.listdir(os.path.normpath(OUT)))} files to {os.path.normpath(OUT)}")
+
+
+# -------------------------------------------------------- category icons ---
+# Flat cream/gold glyphs for the shop's collection tabs. They sit on a green
+# jg_panel plate, so they are drawn as silhouettes in the kit's creams rather
+# than as full-colour art - the stock emoji-style icons they replace read as
+# borrowed clip art against the rest of the UI.
+#
+# Each glyph is drawn at SS times its final size and downsampled, the same
+# anti-aliasing trick the rest of the kit uses.
+
+ICON = 128  # final px for every category glyph
+
+
+def _icon_canvas():
+    return Image.new("RGBA", (ICON * SS, ICON * SS), (0, 0, 0, 0))
+
+
+def _finish(img):
+    return img.resize((ICON, ICON), Image.LANCZOS)
+
+
+def _star_points(cx, cy, outer, inner, points=8, phase=0.0):
+    """Alternating outer/inner vertices for an n-pointed star."""
+    import math
+    pts = []
+    for i in range(points * 2):
+        r = outer if i % 2 == 0 else inner
+        a = phase + math.pi * i / points
+        pts.append((cx + r * math.sin(a), cy - r * math.cos(a)))
+    return pts
+
+
+def icon_plants():
+    """Plants & Gardens: a round-canopied tree."""
+    img = _icon_canvas()
+    d = ImageDraw.Draw(img)
+    s = ICON * SS
+    cream = CREAM + (255,)
+    # trunk
+    d.rounded_rectangle([0.455 * s, 0.56 * s, 0.545 * s, 0.86 * s],
+                        radius=0.035 * s, fill=GOLD_LO + (255,))
+    # canopy: three overlapping lobes so the silhouette reads as foliage
+    d.ellipse([0.16 * s, 0.26 * s, 0.56 * s, 0.66 * s], fill=cream)
+    d.ellipse([0.44 * s, 0.26 * s, 0.84 * s, 0.66 * s], fill=cream)
+    d.ellipse([0.28 * s, 0.12 * s, 0.72 * s, 0.56 * s], fill=cream)
+    return _finish(img)
+
+
+def icon_water():
+    """Water of Garden: a tiered fountain with two arcing jets."""
+    img = _icon_canvas()
+    d = ImageDraw.Draw(img)
+    s = ICON * SS
+    cream = CREAM + (255,)
+    gold = GOLD_LO + (255,)
+    # lower basin and upper bowl
+    d.rounded_rectangle([0.14 * s, 0.70 * s, 0.86 * s, 0.82 * s],
+                        radius=0.06 * s, fill=cream)
+    d.rounded_rectangle([0.30 * s, 0.50 * s, 0.70 * s, 0.58 * s],
+                        radius=0.04 * s, fill=cream)
+    # stem
+    d.rounded_rectangle([0.465 * s, 0.30 * s, 0.535 * s, 0.52 * s],
+                        radius=0.03 * s, fill=cream)
+    # jets arcing out of the top, drawn as arcs so they read as moving water
+    w = int(0.045 * s)
+    d.arc([0.18 * s, 0.22 * s, 0.50 * s, 0.62 * s], 250, 360, fill=gold, width=w)
+    d.arc([0.50 * s, 0.22 * s, 0.82 * s, 0.62 * s], 180, 290, fill=gold, width=w)
+    # droplet crowning the stem
+    d.ellipse([0.455 * s, 0.17 * s, 0.545 * s, 0.27 * s], fill=gold)
+    return _finish(img)
+
+
+def icon_architecture():
+    """Architecture: a pointed arch on two piers."""
+    img = _icon_canvas()
+    d = ImageDraw.Draw(img)
+    s = ICON * SS
+    cream = CREAM + (255,)
+    stroke = int(0.085 * s)
+    # the arch head: two arcs meeting in a point at the top
+    d.arc([0.16 * s, 0.14 * s, 0.98 * s, 0.96 * s], 180, 270, fill=cream, width=stroke)
+    d.arc([0.02 * s, 0.14 * s, 0.84 * s, 0.96 * s], 270, 360, fill=cream, width=stroke)
+    # piers down to the floor
+    d.rectangle([0.16 * s - stroke / 2, 0.55 * s, 0.16 * s + stroke / 2, 0.88 * s], fill=cream)
+    d.rectangle([0.84 * s - stroke / 2, 0.55 * s, 0.84 * s + stroke / 2, 0.88 * s], fill=cream)
+    # plinth
+    d.rounded_rectangle([0.08 * s, 0.86 * s, 0.92 * s, 0.94 * s],
+                        radius=0.03 * s, fill=GOLD_LO + (255,))
+    return _finish(img)
+
+
+def icon_decor():
+    """Decor & Sacred Objects: the eight-point khatam star, the motif the
+    collection's own mosaic items are built from."""
+    img = _icon_canvas()
+    d = ImageDraw.Draw(img)
+    s = ICON * SS
+    c = 0.5 * s
+    d.polygon(_star_points(c, c, 0.44 * s, 0.185 * s), fill=CREAM + (255,))
+    d.polygon(_star_points(c, c, 0.20 * s, 0.085 * s), fill=GOLD_LO + (255,))
+    return _finish(img)
+
+
+def icon_celestial():
+    """Celestial & Light: a crescent with a sparkle."""
+    img = _icon_canvas()
+    s = ICON * SS
+    cream = CREAM + (255,)
+
+    # Crescent by subtraction: a full disc minus an offset disc. Done on a
+    # mask so the bite has the same anti-aliased edge as the outer rim.
+    full = Image.new("L", (s, s), 0)
+    ImageDraw.Draw(full).ellipse([0.10 * s, 0.10 * s, 0.78 * s, 0.78 * s], fill=255)
+    bite = Image.new("L", (s, s), 0)
+    ImageDraw.Draw(bite).ellipse([0.28 * s, 0.03 * s, 0.96 * s, 0.71 * s], fill=255)
+    full.paste(0, (0, 0), bite)
+
+    img = Image.new("RGBA", (s, s), (0, 0, 0, 0))
+    img.paste(Image.new("RGBA", (s, s), cream), (0, 0), full)
+
+    # four-point sparkle off the crescent's open side
+    d = ImageDraw.Draw(img)
+    d.polygon(_star_points(0.76 * s, 0.76 * s, 0.20 * s, 0.045 * s, points=4),
+              fill=GOLD_LO + (255,))
+    return _finish(img)
+
+
+CATEGORY_ICONS = {
+    "jg_cat_plants": icon_plants,
+    "jg_cat_water": icon_water,
+    "jg_cat_architecture": icon_architecture,
+    "jg_cat_decor": icon_decor,
+    "jg_cat_celestial": icon_celestial,
+}
+
+
+def category_icons():
+    for name, fn in CATEGORY_ICONS.items():
+        save(fn(), name)
 
 
 def check_mark(size):

@@ -287,7 +287,7 @@ public class PhotoModeManager : MonoBehaviour
         _photoHeight = shot.height;
 
         PlayFlash();
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.CameraShutter);
+        GameSfx.Play(SoundEffect.CameraShutter);
 
         _photoPath = WritePhoto(shot);
 
@@ -481,7 +481,7 @@ public class PhotoModeManager : MonoBehaviour
 
     private static void PlayButtonClick()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        GameSfx.Play(SoundEffect.ButtonClick);
     }
 
     // ─── Flutter ──────────────────────────────────────────────────────────────

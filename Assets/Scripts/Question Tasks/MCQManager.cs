@@ -59,11 +59,27 @@ public class MCQManager : MonoBehaviour
     [Tooltip("Seconds the \"Mash'Allah\" finale stays on screen before the panel closes itself.")]
     public float mashallahAutoCloseDelay = 3f;
 
+    [Tooltip("Scale the panel shrinks to for the \"Mash'Allah\" finale. The finale holds one word and "
+             + "a reward row, so the question-sized box reads as mostly empty at full size. The praise "
+             + "label is authored large enough that it still grows on screen despite this shrink.")]
+    [Range(0.4f, 1f)]
+    public float mashallahPanelScale = 0.78f;
+
     [Header("Button Sprites")]
     public Sprite defaultSprite;
     public Sprite selectedSprite;
     public Sprite correctSprite;
     public Sprite wrongSprite;
+
+    [Tooltip("Tint laid over the correct option's sprite when it is revealed after the player picked "
+             + "a wrong answer, so the right answer reads instantly against the four green buttons. "
+             + "Only used on the reveal — a correct answer the player chose themselves keeps the "
+             + "plain correct sprite.")]
+    public Color correctAnswerRevealTint = new Color(0.22f, 1f, 0.35f, 1f); // neon green
+
+    [Tooltip("Seconds for one pulse of the revealed correct answer's neon tint. The pulse is what "
+             + "separates the reveal from an ordinary green button; set to 0 for a flat tint.")]
+    public float correctAnswerRevealPulse = 0.6f;
 
     [Header("Data")]
     [Tooltip("Optional explicit override. Leave empty to auto-load Resources/questions_{locale}.txt for " +
@@ -90,6 +106,10 @@ public class MCQManager : MonoBehaviour
     // player actually registers which option was right before the options disappear.
     private const float CorrectAnswerFeedbackDuration = 1.5f;
     private Tween mashallahDelay;
+
+    // Endless yoyo on the revealed correct answer's tint; must be killed before the option Images
+    // are reused for the next question or the pulse keeps writing to them.
+    private Tween correctRevealTween;
 
     void Awake()
     {
@@ -141,6 +161,8 @@ public class MCQManager : MonoBehaviour
         LocalizationManager.OnLocaleChanged -= LoadQuestions;
         mashallahDelay?.Kill();
         mashallahDelay = null;
+        correctRevealTween?.Kill();
+        correctRevealTween = null;
     }
 
     public void StartQuiz(QuestionMarkOrb orb = null)
@@ -285,6 +307,7 @@ public class MCQManager : MonoBehaviour
             selectedOptionIndex = -1;
             currentQuestionAttempts = 0;
             answerLocked = false;
+            ClearCorrectAnswerReveal();
 
             currentShuffledIndices = new int[qData.options.Length];
             for (int i = 0; i < qData.options.Length; i++) currentShuffledIndices[i] = i;
@@ -356,7 +379,7 @@ public class MCQManager : MonoBehaviour
     {
         if (answerLocked) return; // answer already submitted; the result feedback is on screen
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        GameSfx.Play(SoundEffect.QuizOptionSelect);
         selectedOptionIndex = optionIndex;
         
         // Update visual to selected
@@ -385,8 +408,8 @@ public class MCQManager : MonoBehaviour
     public void CheckAnswer()
     {
         if (answerLocked) return;
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.QuizSubmit);
         if (selectedOptionIndex == -1) return; // No option selected
+        GameSfx.Play(SoundEffect.QuizSubmit);
 
         QuestionData qData = allQuestions.questions[currentQuestionIndex];
 
@@ -404,6 +427,7 @@ public class MCQManager : MonoBehaviour
         if (selectedOptionIndex == currentCorrectOptionIndex)
         {
             // Selected answer is correct
+            GameSfx.Play(SoundEffect.QuizCorrect);
             currentQuestionAttempts++;
             optionButtons[selectedOptionIndex].image.sprite = correctSprite;
             optionButtons[selectedOptionIndex].transform.DOKill();
@@ -447,34 +471,79 @@ public class MCQManager : MonoBehaviour
         else
         {
             // Selected answer is wrong
+            GameSfx.Play(SoundEffect.QuizWrong);
             currentQuestionAttempts++;
             optionButtons[selectedOptionIndex].image.sprite = wrongSprite;
             optionButtons[selectedOptionIndex].transform.DOKill();
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
             optionButtons[selectedOptionIndex].transform.DOShakePosition(0.4f, 10f, 20, 90f, false, true);
             
-            // Also show the correct answer
-            optionButtons[currentCorrectOptionIndex].image.sprite = correctSprite;
-            optionButtons[currentCorrectOptionIndex].transform.DOKill();
-            optionButtons[currentCorrectOptionIndex].transform.localScale = Vector3.one;
-            optionButtons[currentCorrectOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
+            // Also show the correct answer, tinted neon green and pulsing. The four options are all
+            // the same green, so the correct sprite alone does not stand out enough to teach the
+            // player what they should have picked; the tint is what makes the reveal readable.
+            RevealCorrectAnswer(currentCorrectOptionIndex);
             
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(
-                    LocalizationManager.Instance.Get("quiz.wrong"), Color.red);
+                    LocalizationManager.Instance.Get("quiz.wrong"), Color.red, ToastTone.Silent);
             }
             
             StartCoroutine(ResetQuizAfterDelay(5f));
         }
     }
 
+    /// <summary>
+    /// Shows which option was right after the player got it wrong: the correct sprite, a neon green
+    /// tint and a slow pulse between that tint and white.
+    ///
+    /// The tint goes on <see cref="Graphic.color"/> rather than swapping in another sprite so it
+    /// layers over whatever correct sprite is authored. That only reads correctly because the option
+    /// Buttons are switched off (see <see cref="answerLocked"/>) before this runs — a live Button's
+    /// ColorTint transition drives the same property and would overwrite the pulse on the next
+    /// pointer event.
+    /// </summary>
+    private void RevealCorrectAnswer(int optionIndex)
+    {
+        Button button = optionButtons[optionIndex];
+        button.image.sprite = correctSprite;
+
+        button.transform.DOKill();
+        button.transform.localScale = Vector3.one;
+        button.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
+
+        correctRevealTween?.Kill();
+        button.image.color = correctAnswerRevealTint;
+        if (correctAnswerRevealPulse > 0f)
+        {
+            correctRevealTween = button.image
+                .DOColor(Color.white, correctAnswerRevealPulse)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetEase(Ease.InOutSine);
+        }
+    }
+
+    /// <summary>
+    /// Clears the neon reveal from every option. Needed because the tint lives on the shared button
+    /// Image, so without this the next question would deal a pre-highlighted option.
+    /// </summary>
+    private void ClearCorrectAnswerReveal()
+    {
+        correctRevealTween?.Kill();
+        correctRevealTween = null;
+        foreach (var btn in optionButtons)
+        {
+            if (btn != null && btn.image != null) btn.image.color = Color.white;
+        }
+    }
+
     public void CloseQuizDramatically()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.QuizClose);
+        GameSfx.Play(SoundEffect.QuizClose);
         StopAllCoroutines();
         mashallahDelay?.Kill();
         mashallahDelay = null;
+        ClearCorrectAnswerReveal();
 
         if (quizPanel != null) 
         {
@@ -525,8 +594,10 @@ public class MCQManager : MonoBehaviour
         {
             quizPanel.transform.DOKill();
             quizPanel.transform.localScale = Vector3.one;
+            quizPanel.transform.DOScale(mashallahPanelScale, 0.35f).SetEase(Ease.OutBack);
         }
 
+        ClearCorrectAnswerReveal();
         foreach (var btn in optionButtons) btn.gameObject.SetActive(false);
         if (submitButton != null) submitButton.gameObject.SetActive(false);
         if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);

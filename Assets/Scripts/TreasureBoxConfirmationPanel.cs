@@ -100,6 +100,9 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     public void Show(TreasureBoxTier tier, int slotIndex)
     {
+        // The player has reached a box they can act on: the panel opening is the "ready" moment.
+        GameSfx.Play(SoundEffect.TreasureBoxTap);
+
         _tier = tier;
         _slotIndex = slotIndex;
 
@@ -159,7 +162,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
                 if (ToastMessageManager.Instance != null)
                 {
-                    ToastMessageManager.Instance.ShowToast(reason);
+                    ToastMessageManager.Instance.ShowToast(reason, ToastTone.Error);
                 }
             });
         }
@@ -182,12 +185,19 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
             Debug.LogWarning("[TreasureBoxConfirmationPanel] No FlutterBridge — cannot open subscribe page.");
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("treasurebox.need_subscribe"));
+                ToastMessageManager.Instance.ShowToast(
+                    LocalizationManager.Instance.Get("treasurebox.need_subscribe"), ToastTone.Warning);
             }
         }
     }
 
     private void OnCloseClicked()
+    {
+        GameSfx.Play(SoundEffect.ButtonBack);
+        OnCloseClickedInternal();
+    }
+
+    private void OnCloseClickedInternal()
     {
         SetVisualsActive(false);
     }

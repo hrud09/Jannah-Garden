@@ -192,7 +192,7 @@ public class PlayerXPManager : MonoBehaviour
 
     public void ToggleXPGainChart()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.XPGainChartToggle);
+        GameSfx.Play(SoundEffect.XPGainChartToggle);
         if (xpGainChartPanel == null) return;
 
         _isChartOpen = !_isChartOpen;
@@ -270,7 +270,11 @@ public class PlayerXPManager : MonoBehaviour
 
         if (leveledUp)
         {
-            // optional: fire an event or play effects here
+            GameSfx.Play(SoundEffect.LevelUp);
+        }
+        else
+        {
+            GameSfx.Play(SoundEffect.XPGain);
         }
     }
 
@@ -289,7 +293,9 @@ public class PlayerXPManager : MonoBehaviour
                     Debug.Log($"[PlayerXPManager] Granted {reward.rewardAmount} XP for {taskType}.");
                     if (showToast && ToastMessageManager.Instance != null)
                     {
-                        ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("reward.xp", reward.rewardAmount));
+                        // AddXP above already sounded the gain (or the level-up that swallowed it).
+                        ToastMessageManager.Instance.ShowToast(
+                            LocalizationManager.Instance.Get("reward.xp", reward.rewardAmount), ToastTone.Silent);
                     }
                     return reward.rewardAmount;
                 }

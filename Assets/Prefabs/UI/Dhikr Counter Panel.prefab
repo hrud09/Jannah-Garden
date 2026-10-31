@@ -213,6 +213,8 @@ MonoBehaviour:
   submitButton: {fileID: 4613968800082838540}
   mashallahTextUI: {fileID: 3335485595850636402}
   rewardFinale: {fileID: 6882338360338141372}
+  mashallahAutoCloseDelay: 3
+  mashallahPanelScale: 0.78
   dhikrFile: {fileID: 0}
   minDhikrCount: 33
   maxDhikrCount: 33
@@ -779,8 +781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -80, y: -80}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_SizeDelta: {x: -43.6912, y: -62.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1045937619286975013
 CanvasRenderer:
@@ -837,12 +839,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96
+  m_fontSize: 150
   m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 48
-  m_fontSizeMax: 96
+  m_fontSizeMin: 80
+  m_fontSizeMax: 150
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1070,7 +1072,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -1}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 180, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5527230699827448342
 CanvasRenderer:
@@ -1150,7 +1152,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -39.72}
-  m_SizeDelta: {x: 422.84, y: 34.56}
+  m_SizeDelta: {x: 607.9602, y: 57.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!225 &8821944789471046408
 CanvasGroup:
@@ -1579,12 +1581,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
+  m_fontSize: 120
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 40
-  m_fontSizeMax: 80
+  m_fontSizeMin: 70
+  m_fontSizeMax: 120
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2015,6 +2017,7 @@ GameObject:
   - component: {fileID: 8528259428177171998}
   - component: {fileID: 6449821338548962045}
   - component: {fileID: 8778748979019137060}
+  - component: {fileID: 7240328946414913405}
   m_Layer: 0
   m_Name: Find More Orbs Hint
   m_TagString: Untagged
@@ -2036,10 +2039,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8973849181963867759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -73}
-  m_SizeDelta: {x: 520, y: 34}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 269}
+  m_SizeDelta: {x: -80, y: 97.0041}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8528259428177171998
 CanvasRenderer:
@@ -2096,8 +2099,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.856
-  m_fontSizeBase: 17.856
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2153,6 +2156,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7240328946414913405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719550957804382748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &8179643537339552546
 GameObject:
   m_ObjectHideFlags: 0

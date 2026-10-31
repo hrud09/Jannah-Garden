@@ -666,9 +666,11 @@ public class TreasureBoxManager : MonoBehaviour
             string msg = Loc("treasurebox.complete_previous_tier", GetPreviousTierName(tier));
             Debug.Log($"[TreasureBoxManager] Cannot open {tier} slot {slotIndex}: {msg}");
             
+            GameSfx.Play(SoundEffect.TreasureBoxLocked);
+
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(msg);
+                ToastMessageManager.Instance.ShowToast(msg, ToastTone.Warning);
             }
 
             onResult?.Invoke(false, msg);
@@ -849,6 +851,7 @@ public class TreasureBoxManager : MonoBehaviour
                 {
                     TreasureBox tb = _spawnedBoxes[i].boxScript;
                     if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
+                    GameSfx.PlayAt(SoundEffect.TreasureBoxLidOpen, _spawnedBoxes[i].gameObject.transform.position);
                     Objectpool.Instance.Despawn(_spawnedBoxes[i].gameObject, 2f);
                 }
                 _spawnedBoxes.RemoveAt(i);
@@ -863,6 +866,7 @@ public class TreasureBoxManager : MonoBehaviour
         {
             Debug.Log($"[TreasureBoxManager] {tier} set complete!");
             GrantSetCompletionReward(tier);
+            GameSfx.Play(SoundEffect.TreasureBoxSetComplete);
             OnSetCompleted?.Invoke(tier, rewardData);
 
             // If this was a tier carried over from an earlier day, the current day's sequence starts
@@ -891,7 +895,7 @@ public class TreasureBoxManager : MonoBehaviour
             ? "treasurebox.progress_all_complete"
             : "treasurebox.progress";
 
-        ToastMessageManager.Instance.ShowToast(Loc(key, openedCount, SLOTS_PER_TIER));
+        ToastMessageManager.Instance.ShowToast(Loc(key, openedCount, SLOTS_PER_TIER), ToastTone.Success);
     }
 
     /// <summary>
@@ -1042,7 +1046,7 @@ public class TreasureBoxManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(Loc("treasurebox.all_opened"));
+                ToastMessageManager.Instance.ShowToast(Loc("treasurebox.all_opened"), ToastTone.Warning);
             }
             return;
         }
@@ -1072,7 +1076,7 @@ public class TreasureBoxManager : MonoBehaviour
         {
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(Loc("treasurebox.not_appeared_yet"));
+                ToastMessageManager.Instance.ShowToast(Loc("treasurebox.not_appeared_yet"), ToastTone.Warning);
             }
         }
     }
@@ -1577,6 +1581,8 @@ public class TreasureBoxManager : MonoBehaviour
         }
 
         go.name = $"TreasureBox_{tier}_Slot{slotIndex}";
+
+        GameSfx.PlayAt(SoundEffect.TreasureBoxAppear, spawnPos);
         
         TreasureBox boxScript = go.GetComponent<TreasureBox>();
         if (boxScript != null)

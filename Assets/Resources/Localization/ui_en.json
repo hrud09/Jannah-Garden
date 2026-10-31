@@ -649,6 +649,10 @@
             "value": "outer garden"
         },
         {
+            "key": "intro.open_button",
+            "value": "Open"
+        },
+        {
             "key": "tutorial.skip_button",
             "value": "Skip"
         },

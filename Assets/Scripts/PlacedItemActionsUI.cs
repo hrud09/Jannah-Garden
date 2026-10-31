@@ -141,12 +141,23 @@ public class PlacedItemActionsUI : MonoBehaviour
 
         if (panel != null) panel.SetActive(true);
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        GameSfx.PlayAt(SoundEffect.ItemSelect, item.transform);
     }
 
     /// <summary>Closes the panel and clears the selection outline.</summary>
-    public void Hide()
+    public void Hide() => Hide(silent: false);
+
+    /// <summary>
+    /// Closes the panel. <paramref name="silent"/> suppresses the deselect cue for callers that
+    /// immediately sound the action they are starting instead (relocate, return to store), which
+    /// would otherwise fire two sounds on one tap.
+    /// </summary>
+    public void Hide(bool silent)
     {
+        // Only sound a deselect when something was actually selected: Hide is also the close-button
+        // handler and runs on teardown paths where nothing is highlighted.
+        bool hadSelection = _target != null && !silent;
+
         if (_target != null)
         {
             _target.SetHighlight(false);
@@ -154,6 +165,8 @@ public class PlacedItemActionsUI : MonoBehaviour
         }
 
         if (panel != null) panel.SetActive(false);
+
+        if (hadSelection) GameSfx.Play(SoundEffect.ItemDeselect);
     }
 
     // ─── Button handlers ──────────────────────────────────────────────────────
@@ -161,17 +174,18 @@ public class PlacedItemActionsUI : MonoBehaviour
     private void OnRelocateClicked()
     {
         PlaceableItem item = _target;
-        Hide(); // Clears the outline before the object is pooled away.
+        Hide(silent: true); // Clears the outline before the object is pooled away.
 
         if (item == null || ItemPlacementManager.Instance == null) return;
 
+        GameSfx.PlayAt(SoundEffect.ItemPickUp, item.transform);
         ItemPlacementManager.Instance.BeginRelocate(item);
     }
 
     private void OnReturnClicked()
     {
         PlaceableItem item = _target;
-        Hide();
+        Hide(silent: true);
 
         if (item == null || ItemPlacementManager.Instance == null) return;
 

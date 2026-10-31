@@ -49,6 +49,12 @@ public class DhikrManager : MonoBehaviour
     [Tooltip("Seconds the \"Mash'Allah\" finale stays on screen before the panel closes itself.")]
     public float mashallahAutoCloseDelay = 3f;
 
+    [Tooltip("Scale the panel shrinks to for the \"Mash'Allah\" finale, matching the quiz panel. The "
+             + "finale holds one word and a reward row, so the counter-sized box reads as mostly empty "
+             + "at full size.")]
+    [Range(0.4f, 1f)]
+    public float mashallahPanelScale = 0.78f;
+
     [Header("Data")]
     [Tooltip("Optional explicit override. Leave empty to auto-load Resources/dhikrs_{locale}.txt for the " +
              "active locale (falling back to dhikrs_en if that locale has no file yet).")]
@@ -184,7 +190,7 @@ public class DhikrManager : MonoBehaviour
     {
         if (currentCount >= targetCount) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrIncrement);
+        GameSfx.Play(SoundEffect.DhikrIncrement);
         currentCount++;
         UpdateCountUI();
         CheckSubmitCondition();
@@ -215,7 +221,7 @@ public class DhikrManager : MonoBehaviour
     {
         if (currentCount >= targetCount) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrDecrement);
+        GameSfx.Play(SoundEffect.DhikrDecrement);
         if (currentCount > 0)
         {
             currentCount--;
@@ -249,7 +255,7 @@ public class DhikrManager : MonoBehaviour
 
     public void SubmitDhikr()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrSubmit);
+        GameSfx.Play(SoundEffect.DhikrSubmit);
         if (currentCount >= targetCount)
         {
             if (submitButton != null) submitButton.interactable = false;
@@ -287,6 +293,15 @@ public class DhikrManager : MonoBehaviour
     // used elsewhere.
     private void ShowMashallahAndAutoClose(int coinsEarned, float xpEarned)
     {
+        // Same treatment as the quiz finale: the box shrinks as its content collapses to one word
+        // plus the reward row, while the praise label itself is authored larger.
+        if (dhikrPanel != null)
+        {
+            dhikrPanel.transform.DOKill();
+            dhikrPanel.transform.localScale = Vector3.one;
+            dhikrPanel.transform.DOScale(mashallahPanelScale, 0.35f).SetEase(Ease.OutBack);
+        }
+
         if (countTextUI != null) countTextUI.gameObject.SetActive(false);
         if (countTextBackground != null) countTextBackground.SetActive(false);
         if (plusButton != null) plusButton.gameObject.SetActive(false);
@@ -320,7 +335,7 @@ public class DhikrManager : MonoBehaviour
 
     public void CloseDhikrDramatically()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.DhikrClose);
+        GameSfx.Play(SoundEffect.DhikrClose);
         StopAllCoroutines();
         CloseDhikrDramaticallyInternal();
     }

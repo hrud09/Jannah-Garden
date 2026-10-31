@@ -76,6 +76,8 @@ public class RewardFinaleDisplay : MonoBehaviour
 
         gameObject.SetActive(true);
 
+        GameSfx.Play(SoundEffect.RewardFinale);
+
         bool showCoins = coins > 0;
         bool showXP = xp > 0f;
 

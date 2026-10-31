@@ -273,7 +273,7 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         if (isExpanded) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.MinimapExpand);
+        GameSfx.Play(SoundEffect.MinimapExpand);
         isExpanded = true;
         lastStateChangeFrame = Time.frameCount;
         UpdateMinimapState(true);
@@ -286,7 +286,7 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         if (!isExpanded) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.MinimapCollapse);
+        GameSfx.Play(SoundEffect.MinimapCollapse);
         isExpanded = false;
         lastStateChangeFrame = Time.frameCount;
         panOffset = Vector3.zero;
@@ -341,7 +341,7 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     /// </summary>
     public void ShowTreasureBoxForTier(TreasureBoxTier tier)
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TreasureBoxShow);
+        GameSfx.Play(SoundEffect.TreasureBoxShow);
 
         if (TreasureBoxManager.Instance != null)
         {

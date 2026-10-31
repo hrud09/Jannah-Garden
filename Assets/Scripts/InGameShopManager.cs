@@ -383,7 +383,8 @@ public class InGameShopManager : MonoBehaviour
     {
         if (playerMovement != null && playerMovement.IsInspectorMode) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ShopOpenClose);
+        GameSfx.Play(isOpen ? SoundEffect.PanelClose : SoundEffect.PanelOpen);
+        GameSfx.Play(SoundEffect.ShopOpenClose);
         SetShopOpen(!isOpen, smooth: true);
     }
 
@@ -568,22 +569,26 @@ public class InGameShopManager : MonoBehaviour
         // ── Placement Gate — one download/placement in flight at a time ────────
         if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing)
         {
+            GameSfx.Play(SoundEffect.ButtonDisabled);
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
+                ToastMessageManager.Instance.ShowToast(
+                    LocalizationManager.Instance.Get("shop.finish_placing_first"), ToastTone.Warning);
             }
             return;
         }
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ItemPurchase);
+        GameSfx.Play(SoundEffect.ItemSelect);
 
         // ── Level Gate (applies to every acquisition type) ─────────────────────
         if (PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel)
         {
             Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': requires level {data.requiredXPLevel}.");
+            GameSfx.Play(SoundEffect.ButtonDisabled);
             if (ToastMessageManager.Instance != null)
             {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.requires_level", data.requiredXPLevel));
+                ToastMessageManager.Instance.ShowToast(
+                    LocalizationManager.Instance.Get("shop.requires_level", data.requiredXPLevel), ToastTone.Warning);
             }
             return; // Abort — player doesn't have the required level
         }
@@ -630,7 +635,8 @@ public class InGameShopManager : MonoBehaviour
                 // scene with no popup authored yet.
                 if (!TryOpenNoorCoinStore(data) && ToastMessageManager.Instance != null)
                 {
-                    ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.not_enough_coins"));
+                    ToastMessageManager.Instance.ShowToast(
+                        LocalizationManager.Instance.Get("shop.not_enough_coins"), ToastTone.Silent);
                 }
 
                 return; // Abort — player can't afford it
@@ -743,9 +749,11 @@ public class InGameShopManager : MonoBehaviour
 
             if (!success)
             {
+                GameSfx.Play(SoundEffect.PurchaseFailed);
                 if (ToastMessageManager.Instance != null)
                 {
-                    ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.purchase_not_completed"));
+                    ToastMessageManager.Instance.ShowToast(
+                        LocalizationManager.Instance.Get("shop.purchase_not_completed"), ToastTone.Silent);
                 }
                 return;
             }
@@ -781,6 +789,8 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     private void CompleteAcquisition(ShopItemUI item, ShopItemData data)
     {
+        GameSfx.Play(SoundEffect.ItemPurchase);
+
         selectedShopItem = item;
 
         // ── Grant coins (coin packs, ad offers) ───────────────────────────────
@@ -943,7 +953,7 @@ public class InGameShopManager : MonoBehaviour
     /// </summary>
     public void FilterByCategory(ShopItemCategory category)
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.TabSwitch);
+        GameSfx.Play(SoundEffect.TabSwitch);
         if (hasSelectedCategory && currentCategory == category) return; // Already selected
 
         lastCategory = hasSelectedCategory ? currentCategory : category;

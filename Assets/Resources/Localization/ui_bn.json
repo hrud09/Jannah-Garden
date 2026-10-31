@@ -1305,6 +1305,10 @@
             "value": "আউটার গার্ডেন"
         },
         {
+            "key": "intro.open_button",
+            "value": "খুলুন"
+        },
+        {
             "key": "tutorial.skip_button",
             "value": "এড়িয়ে যান"
         },

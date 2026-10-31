@@ -1305,6 +1305,10 @@
             "value": "الحديقة الخارجية"
         },
         {
+            "key": "intro.open_button",
+            "value": "افتح"
+        },
+        {
             "key": "tutorial.skip_button",
             "value": "تخطي"
         },

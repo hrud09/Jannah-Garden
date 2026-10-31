@@ -1237,7 +1237,9 @@ public class GameOnboardingManager : MonoBehaviour
         primaryActionButton.onClick.RemoveAllListeners();
         primaryActionButton.onClick.AddListener(() =>
         {
-            if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+            // The walkthrough's own forward step, distinct from a plain UI button so the tutorial
+            // reads as a guided sequence rather than a stack of dialogs.
+            GameSfx.Play(SoundEffect.TutorialAdvance);
             onClick?.Invoke();
         });
     }
@@ -1254,7 +1256,7 @@ public class GameOnboardingManager : MonoBehaviour
     /// players who finished the section the intended way.</summary>
     private void SkipCurrentSection()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        GameSfx.Play(SoundEffect.ButtonClick);
 
         // A replay has no "next section" to jump to - skipping it just ends the walkthrough.
         if (replayMode)

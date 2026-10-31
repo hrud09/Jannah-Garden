@@ -40,7 +40,7 @@ public class TutorialReplayButton : MonoBehaviour
 
     private void HandleClick()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        GameSfx.Play(SoundEffect.ButtonClick);
 
         if (GameOnboardingManager.Instance == null)
         {

@@ -124,6 +124,7 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
         // ── Stage 1: Scale punch on box ───────────────────────────────────────
         if (revealBoxImage != null)
         {
+            GameSfx.Play(SoundEffect.TreasureBoxLidOpen);
             yield return StartCoroutine(ScalePunch(revealBoxImage.transform,
                                                    punchDuration, punchPeakScale));
         }
@@ -167,6 +168,10 @@ public class TreasureBoxOpenAnimator : MonoBehaviour
                 : string.Empty;
             LocalizedRendering.SetText(rewardSubtitleText, subtitle);
         }
+
+        // The reward reading out is the payoff beat; a completed set gets the bigger one on top.
+        GameSfx.Play(SoundEffect.TreasureBoxRewardReveal);
+        if (isSetComplete) GameSfx.Play(SoundEffect.TreasureBoxSetComplete);
 
         float fadeDur = 0.4f;
         float elapsed = 0f;

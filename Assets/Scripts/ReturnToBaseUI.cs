@@ -98,10 +98,7 @@ public class ReturnToBaseUI : MonoBehaviour
         if (_walker == null) return;
 
         // Play click sound
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
-        }
+        GameSfx.Play(SoundEffect.ButtonClick);
 
         // Second press while already heading home stops the walk.
         if (_walker.Current == PlayerAutoWalker.Destination.Base)

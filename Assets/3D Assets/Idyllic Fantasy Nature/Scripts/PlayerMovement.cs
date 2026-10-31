@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -623,13 +623,14 @@ namespace IdyllicFantasyNature
         /// </summary>
         private void PlayClimbSound()
         {
-            if (_footstepSource == null || AudioManager.Instance == null || AudioManager.Instance.sounds == null) return;
+            if (_footstepSource == null || AudioManager.Instance == null) return;
 
-            var walkSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Walk);
-            if (walkSound == null || walkSound.clip == null) return;
+            AudioClip clip = AudioManager.Instance.NextClip(SoundEffect.Walk);
+            if (clip == null) return;
 
+            _footstepSource.mute = AudioManager.Instance.IsSfxMuted;
             _footstepSource.pitch = UnityEngine.Random.Range(0.75f, 0.85f); // Lower than a walking step.
-            _footstepSource.PlayOneShot(walkSound.clip, _footstepVolume);
+            _footstepSource.PlayOneShot(clip, _footstepVolume);
             _footstepTimer = 0f;
         }
 
@@ -782,18 +783,11 @@ namespace IdyllicFantasyNature
         {
             if (AudioManager.Instance == null) return;
 
-            AudioClip walkClip = null;
-            AudioClip runClip = null;
             AudioClip breathingClip = null;
 
             if (AudioManager.Instance.sounds != null)
             {
-                var walkSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Walk);
-                var runSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Run);
                 var breathingSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Breathing);
-
-                if (walkSound != null) walkClip = walkSound.clip;
-                if (runSound != null) runClip = runSound.clip;
                 if (breathingSound != null) breathingClip = breathingSound.clip;
             }
 
@@ -811,9 +805,16 @@ namespace IdyllicFantasyNature
                 if (_footstepTimer >= interval)
                 {
                     _footstepTimer = 0f;
-                    AudioClip clipToPlay = walkClip;
+
+                    // Asked for one step at a time rather than read off the Sound directly, so the
+                    // library's alternates actually rotate. Reading `.clip` played the same single
+                    // recording on every step, which is what turned walking into a mechanical tick.
+                    AudioClip clipToPlay = AudioManager.Instance.NextClip(isRunning ? SoundEffect.Run : SoundEffect.Walk);
+                    if (clipToPlay == null) clipToPlay = AudioManager.Instance.NextClip(SoundEffect.Walk);
+
                     if (clipToPlay != null && _footstepSource != null)
                     {
+                        _footstepSource.mute = AudioManager.Instance.IsSfxMuted;
                         _footstepSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f); // slight pitch variation
                         _footstepSource.PlayOneShot(clipToPlay, _footstepVolume);
                     }

@@ -84,7 +84,7 @@ public class LanguageSelector : MonoBehaviour
         if (loc == null) return;
         if (loc.CurrentLocale == locale) return;
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
+        GameSfx.Play(SoundEffect.ButtonClick);
 
         // Raises OnLocaleChanged, which calls Refresh() below and re-renders every other localized
         // label in the game. It also writes the choice to PlayerPrefs, so it survives a restart.

@@ -175,6 +175,38 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 0141b39c9d236154ca22cd5488015546, type: 3}
+      itemName: Isle of Spring
+      itemDescription: A radiant Isle of Spring to lift your garden with light and
+        wonder.
+      itemID: f8d1febf41c69a2267520b6b75dcd103
+      acquisitionType: 0
+      noorCoinCost: 750
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 0
+      itemTier: 1
+      sortOrder: 60
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: b2cc2d46f1635ce4a8845d519500ba3f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
     - itemIcon: {fileID: 21300000, guid: e36850a1fd94a0a46900cc8b3f8859a4, type: 3}
       itemName: Petal Cascade
       itemDescription: A beautiful Petal Cascade to add vibrant life and natural
@@ -189,7 +221,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 2
-      sortOrder: 60
+      sortOrder: 70
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 0fe37267e69811d4c914833e7816996a
@@ -221,7 +253,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 2
-      sortOrder: 70
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: c89e989b101bf074c92afecf2de6a555
@@ -253,7 +285,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 2
-      sortOrder: 80
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 2c5d118f204bb7944838a13e4148c88c
@@ -285,7 +317,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 2
-      sortOrder: 90
+      sortOrder: 100
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 99bd25a06c225f7469d9a5fa3472bdbf
@@ -317,7 +349,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 3
-      sortOrder: 100
+      sortOrder: 110
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 128e63914f0cfe9488502242ee445fc5
@@ -349,7 +381,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 3
-      sortOrder: 110
+      sortOrder: 120
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: ffcc2484aa6751847bf6782966705110
@@ -381,7 +413,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 3
-      sortOrder: 120
+      sortOrder: 130
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: af105a08f3ae1f54eae4c132312cab5b
@@ -413,7 +445,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 3
-      sortOrder: 130
+      sortOrder: 140
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 7708db588ca39844ebd86a6a78795c4f
@@ -445,7 +477,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 4
-      sortOrder: 140
+      sortOrder: 150
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 1ac509d66769a7e4caade9ede70df4a2
@@ -477,7 +509,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 4
-      sortOrder: 150
+      sortOrder: 160
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: e99cd6960af738c429341b405e09e4f9
@@ -509,7 +541,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 0
       itemTier: 4
-      sortOrder: 160
+      sortOrder: 170
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: cd59de99b173f0946bc8aa45ecc3acfa
@@ -529,6 +561,38 @@ MonoBehaviour:
       itemPrice: 
   - category: 1
     items:
+    - itemIcon: {fileID: 21300000, guid: b293cfaee612645409bb3ff19d0f2ce5, type: 3}
+      itemName: Blue Mosaic Octagon
+      itemDescription: An ornate Blue Mosaic Octagon to adorn your garden with craftsmanship
+        and quiet reverence.
+      itemID: 76c84ec4a5a57f58c77faf260352cdf3
+      acquisitionType: 0
+      noorCoinCost: 250
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 1
+      itemTier: 1
+      sortOrder: 10
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 291a8f6a09c01cc4f97fbf536f65461e
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 4483a04bbba37ad4989785d779bfd523, type: 3}
       itemName: Lotus Pond
       itemDescription: A tranquil Lotus Pond to bring flowing water and calm to your
@@ -543,7 +607,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 1
-      sortOrder: 10
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d7c1b40f5df30ac49a73480dbad1a483
@@ -575,7 +639,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 1
-      sortOrder: 20
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: a14d0f3c8b250644384d52f9cbdc41fa
@@ -607,10 +671,42 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 1
-      sortOrder: 30
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 98bc97596cb06ec48905cd8da9f202da
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: c2a434fde6bdc5948b246b53ec686c42, type: 3}
+      itemName: Eight Point Star Mosaic
+      itemDescription: An ornate Eight Point Star Mosaic to adorn your garden with
+        craftsmanship and quiet reverence.
+      itemID: 7f2d99266f113411b3d64a0819c27456
+      acquisitionType: 0
+      noorCoinCost: 1150
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 1
+      itemTier: 2
+      sortOrder: 50
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 91af87783fb429f4c9229bf647f530cc
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -639,7 +735,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 2
-      sortOrder: 40
+      sortOrder: 60
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d09d29aacf13ce14eafdeb61458c0bbc
@@ -671,7 +767,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 2
-      sortOrder: 50
+      sortOrder: 70
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 7340b1e9f39ffd449a54bdf72d0b2308
@@ -703,7 +799,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 2
-      sortOrder: 60
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 1055c55776b64c446bcb6cba984d7468
@@ -735,7 +831,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 3
-      sortOrder: 70
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 24e24ea9d3622c24bb8d4f7e6b1f6ec6
@@ -767,7 +863,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 3
-      sortOrder: 80
+      sortOrder: 100
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 39f999052b7ec9945909d39e655a69c5
@@ -799,7 +895,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 3
-      sortOrder: 90
+      sortOrder: 110
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 91af25deb6bfb2b48be4351a3077c547
@@ -831,7 +927,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 4
-      sortOrder: 100
+      sortOrder: 120
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 12a56b1201287e8448c1e656cd917a40
@@ -863,7 +959,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 1
       itemTier: 4
-      sortOrder: 110
+      sortOrder: 130
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 061b2bdb0b505404ab381eed6f75c1ba
@@ -1365,38 +1461,6 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: b293cfaee612645409bb3ff19d0f2ce5, type: 3}
-      itemName: Blue Mosaic Octagon
-      itemDescription: An ornate Blue Mosaic Octagon to adorn your garden with craftsmanship
-        and quiet reverence.
-      itemID: 76c84ec4a5a57f58c77faf260352cdf3
-      acquisitionType: 0
-      noorCoinCost: 250
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 3
-      itemTier: 1
-      sortOrder: 20
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 291a8f6a09c01cc4f97fbf536f65461e
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
     - itemIcon: {fileID: 21300000, guid: 0c52e453c45e4d94d9865e5700aa5790, type: 3}
       itemName: Azure Mosaic Bench
       itemDescription: An ornate Azure Mosaic Bench to adorn your garden with craftsmanship
@@ -1411,7 +1475,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 1
-      sortOrder: 30
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 67531d4d7e7cf74449dab395613b2c2e
@@ -1443,42 +1507,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 1
-      sortOrder: 40
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: ca24b26b267452e40a0c819587e92f71
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: c2a434fde6bdc5948b246b53ec686c42, type: 3}
-      itemName: Eight Point Star Mosaic
-      itemDescription: An ornate Eight Point Star Mosaic to adorn your garden with
-        craftsmanship and quiet reverence.
-      itemID: 7f2d99266f113411b3d64a0819c27456
-      acquisitionType: 0
-      noorCoinCost: 1150
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 3
-      itemTier: 2
-      sortOrder: 50
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: 91af87783fb429f4c9229bf647f530cc
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1507,7 +1539,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 2
-      sortOrder: 60
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 3d62e899955bf044cb8e2c1fcd17d80d
@@ -1539,42 +1571,10 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 2
-      sortOrder: 70
+      sortOrder: 50
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 96d1d000e3ca54d4083344b7ef44db0d
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 62f68dbe86a0a0b4382c66bb17bd48ff, type: 3}
-      itemName: Floating Lotus Altar
-      itemDescription: An ornate Floating Lotus Altar to adorn your garden with craftsmanship
-        and quiet reverence.
-      itemID: e92347bd50aa6b1769312e8b21c8b174
-      acquisitionType: 0
-      noorCoinCost: 3400
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 3
-      itemTier: 3
-      sortOrder: 80
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: f5076a95134897041a6cca523d747ba4
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 
@@ -1603,7 +1603,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 3
-      sortOrder: 90
+      sortOrder: 60
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 1995e8687630d444281001f26d1fa51a
@@ -1635,7 +1635,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 4
-      sortOrder: 100
+      sortOrder: 70
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 84b30b493a74673479eb2330d2ffe38b
@@ -1667,7 +1667,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 4
-      sortOrder: 110
+      sortOrder: 80
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 9d292e1c1d549dc4a9689c29c9720997
@@ -1699,7 +1699,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 3
       itemTier: 4
-      sortOrder: 120
+      sortOrder: 90
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: fc5a457aeb235d54592484a954b5ef83
@@ -1751,38 +1751,6 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
-    - itemIcon: {fileID: 21300000, guid: 0141b39c9d236154ca22cd5488015546, type: 3}
-      itemName: Isle of Spring
-      itemDescription: A radiant Isle of Spring to lift your garden with light and
-        wonder.
-      itemID: f8d1febf41c69a2267520b6b75dcd103
-      acquisitionType: 0
-      noorCoinCost: 750
-      isDailyOffer: 0
-      offerCooldownHours: 24
-      iapProductId: 
-      realMoneyPriceLabel: $0.99
-      noorCoinReward: 0
-      itemCategory: 9
-      itemTier: 1
-      sortOrder: 20
-      requiredXPLevel: 1
-      itemPrefabRef:
-        m_AssetGUID: b2cc2d46f1635ce4a8845d519500ba3f
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-      itemPlacementModelPrefabRef:
-        m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 0
-      placementTimerDuration: 60
-      gridFootprintOverride: {x: 0, y: 0}
-      footprintScale: 1
-      itemPrice: 
     - itemIcon: {fileID: 21300000, guid: a75c3268a7973064cb563cd159a926dc, type: 3}
       itemName: Eight Pointed Star Lantern
       itemDescription: A radiant Eight Pointed Star Lantern to lift your garden with
@@ -1797,7 +1765,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 1
-      sortOrder: 30
+      sortOrder: 20
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 68b1b2801573edd498e45b6e074c07e3
@@ -1829,7 +1797,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 40
+      sortOrder: 30
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 26be55c193df5f841893c0f6c8eb0863
@@ -1861,7 +1829,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 50
+      sortOrder: 40
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: 89a1ebf2734f6da45848797f48cc45c7
@@ -1893,7 +1861,7 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 60
+      sortOrder: 50
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: a7f8d41c960a4c947901f794bfdf5808
@@ -1925,10 +1893,42 @@ MonoBehaviour:
       noorCoinReward: 0
       itemCategory: 9
       itemTier: 2
-      sortOrder: 70
+      sortOrder: 60
       requiredXPLevel: 1
       itemPrefabRef:
         m_AssetGUID: d1fc34eaffb466f4682095bce350c15b
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 0, y: 0}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: 62f68dbe86a0a0b4382c66bb17bd48ff, type: 3}
+      itemName: Floating Lotus Altar
+      itemDescription: An ornate Floating Lotus Altar to adorn your garden with craftsmanship
+        and quiet reverence.
+      itemID: e92347bd50aa6b1769312e8b21c8b174
+      acquisitionType: 0
+      noorCoinCost: 3400
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 9
+      itemTier: 3
+      sortOrder: 70
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: f5076a95134897041a6cca523d747ba4
         m_SubObjectName: 
         m_SubObjectType: 
         m_SubObjectGUID: 

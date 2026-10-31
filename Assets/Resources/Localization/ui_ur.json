@@ -1305,6 +1305,10 @@
             "value": "بیرونی باغ"
         },
         {
+            "key": "intro.open_button",
+            "value": "کھولیں"
+        },
+        {
             "key": "tutorial.skip_button",
             "value": "چھوڑ دیں"
         },

@@ -87,10 +87,7 @@ public class InspectorModeUI : MonoBehaviour
         if (playerMovement == null) return;
 
         // Play click sound
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlaySound(SoundEffect.ButtonClick);
-        }
+        GameSfx.Play(SoundEffect.ButtonClick);
 
         playerMovement.ToggleInspectorMode();
     }

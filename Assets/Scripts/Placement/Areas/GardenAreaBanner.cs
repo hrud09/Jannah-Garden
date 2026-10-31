@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -185,6 +185,12 @@ public class GardenAreaBanner : MonoBehaviour
         bool sameArea = _hasCurrent && ReferenceEquals(area, _current);
         if (sameArea && ItemsIn(area) == _shownItems) return;
 
+        // The first resolution is the player being placed in the world, not walking anywhere, so it
+        // reports a crossing that never happened. Render the card, stay silent.
+        bool firstResolve = !_hasCurrent;
+
+        GardenAreaDefinition previous = _current;
+
         _current = area;
         _hasCurrent = true;
 
@@ -192,7 +198,37 @@ public class GardenAreaBanner : MonoBehaviour
 
         // Only a genuine crossing restarts the fade; a count ticking over while the player plants in
         // the zone they are already standing in should change the number, not flash the card.
-        if (!sameArea) Show();
+        if (!sameArea)
+        {
+            Show();
+            if (!firstResolve) PlayCrossingSound(previous, area);
+        }
+    }
+
+    /// <summary>
+    /// Sounds the crossing the player just made: stepping into ground you own, or the road between
+    /// zones. A zone that is unlocked but out of room gets the "full" cue instead of the welcome,
+    /// since that is the fact the player needs before they try to plant something.
+    /// Locked ground is deliberately silent in both directions - entering it, walking through it and
+    /// leaving it all play nothing, because the card already says the zone is locked and a cue on
+    /// every boundary of a zone the player cannot use turns into nagging.
+    /// </summary>
+    private static void PlayCrossingSound(GardenAreaDefinition from, GardenAreaDefinition to)
+    {
+        GardenAreaManager areas = GardenAreaManager.Instance;
+
+        if (to == null || areas == null)
+        {
+            if (from != null && areas != null && !areas.IsUnlocked(from)) return;
+            GameSfx.Play(SoundEffect.AreaEnterPath);
+            return;
+        }
+
+        // Either side of the boundary being locked ground keeps the crossing silent.
+        if (!areas.IsUnlocked(to)) return;
+        if (from != null && !areas.IsUnlocked(from)) return;
+
+        GameSfx.Play(areas.IsFull(to) ? SoundEffect.AreaFull : SoundEffect.AreaEnterUnlocked);
     }
 
     private static GardenAreaDefinition AreaUnderPlayer()

@@ -134,13 +134,19 @@ public class NoorCoinManager : MonoBehaviour
         if (_balance < amount)
         {
             Debug.Log($"[NoorCoinManager] Not enough Noor Coins. Need {amount}, have {_balance}.");
+            GameSfx.Play(SoundEffect.CoinInsufficient);
             return false;
         }
 
         SetBalance(_balance - amount);
+
+        // Silent toast: the coin cue below already says what happened, and SpendColor's coral would
+        // otherwise be read as a failure by the colour-to-tone inference.
+        GameSfx.Play(SoundEffect.CoinSpend);
         if (ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("economy.coins_spent", amount), SpendColor);
+            ToastMessageManager.Instance.ShowToast(
+                LocalizationManager.Instance.Get("economy.coins_spent", amount), SpendColor, ToastTone.Silent);
         }
         Debug.Log($"[NoorCoinManager] Spent {amount} Noor Coins. New balance: {_balance}");
         
@@ -167,9 +173,12 @@ public class NoorCoinManager : MonoBehaviour
         }
 
         SetBalance(_balance + amount);
+
+        GameSfx.Play(SoundEffect.CoinGain);
         if (showToast && ToastMessageManager.Instance != null)
         {
-            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("economy.coins_earned", amount), EarnColor);
+            ToastMessageManager.Instance.ShowToast(
+                LocalizationManager.Instance.Get("economy.coins_earned", amount), EarnColor, ToastTone.Silent);
         }
         Debug.Log($"[NoorCoinManager] Earned {amount} Noor Coins. New balance: {_balance}");
         
