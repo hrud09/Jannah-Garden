@@ -382,8 +382,6 @@ public class GameSettingsManager : MonoBehaviour
         }
     }
 
-    private void PlayClickSound() => GameSfx.Play(SoundEffect.ButtonClick);
-
     /// <summary>
     /// Sounds a switch flipping. The two directions are separate clips so the player can hear
     /// which way a toggle went without looking at it.

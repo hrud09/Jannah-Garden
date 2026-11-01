@@ -183,8 +183,6 @@ public class PhotoModeManager : MonoBehaviour
         if (!HasPhotoOnDisk("share")) return;
         if (_actionInFlight) return;
 
-        PlayButtonClick();
-
         if (NativePhotoService.IsSupported)
         {
             _actionInFlight = true;
@@ -211,8 +209,6 @@ public class PhotoModeManager : MonoBehaviour
     {
         if (!HasPhotoOnDisk("save")) return;
         if (_actionInFlight) return;
-
-        PlayButtonClick();
 
         // Off a phone this copies the photo into the user's Pictures folder instead, so the button is
         // still testable from the Editor.
@@ -477,11 +473,6 @@ public class PhotoModeManager : MonoBehaviour
         }
 
         ShowToast(string.IsNullOrEmpty(message) ? LocalizationManager.Instance.Get("photo.save_failed") : message);
-    }
-
-    private static void PlayButtonClick()
-    {
-        GameSfx.Play(SoundEffect.ButtonClick);
     }
 
     // ─── Flutter ──────────────────────────────────────────────────────────────

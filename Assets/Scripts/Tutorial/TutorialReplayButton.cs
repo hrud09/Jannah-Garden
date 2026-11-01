@@ -40,8 +40,6 @@ public class TutorialReplayButton : MonoBehaviour
 
     private void HandleClick()
     {
-        GameSfx.Play(SoundEffect.ButtonClick);
-
         if (GameOnboardingManager.Instance == null)
         {
             Debug.LogWarning("[TutorialReplayButton] No GameOnboardingManager in the scene - nothing to replay.");

@@ -179,8 +179,6 @@ public class IntroVideoController : MonoBehaviour
         if (_ending || _openRequested) return;
         _openRequested = true;
 
-        GameSfx.Play(SoundEffect.ButtonClick);
-
         if (openButton != null)
         {
             openButton.interactable = false;

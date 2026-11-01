@@ -55285,13 +55285,10 @@ MonoBehaviour:
   sounds:
   - effect: 0
     clip: {fileID: 8300000, guid: 99e5f691adb65ae40bb5669ccdf47026, type: 3}
-    variations:
-    - {fileID: 8300000, guid: 8292c0138958d1f47a59226bce15a4f0, type: 3}
-    - {fileID: 8300000, guid: 5063f69215ab8ca47a8e8d4613038495, type: 3}
-    - {fileID: 8300000, guid: 4e3c7205e9519fe4fa2629a2c06b4a9a, type: 3}
+    variations: []
     volume: 0.55
     pitch: 1
-    pitchVariance: 0.04
+    pitchVariance: 0
     cooldown: 0.04
     category: 0
     spatial: 0
@@ -55723,11 +55720,10 @@ MonoBehaviour:
     spatial: 0
   - effect: 43
     clip: {fileID: 8300000, guid: 899037e17ea99b2449f975cfd77b368f, type: 3}
-    variations:
-    - {fileID: 8300000, guid: d1c85a3c8fa2e3043abbf2bd65c45f66, type: 3}
+    variations: []
     volume: 0.35
     pitch: 1
-    pitchVariance: 0.06
+    pitchVariance: 0
     cooldown: 0.05
     category: 1
     spatial: 0

@@ -95,9 +95,6 @@ public class MoveToUnlockedAreaUI : MonoBehaviour
     {
         if (_walker == null) return;
 
-        // Play click sound
-        GameSfx.Play(SoundEffect.ButtonClick);
-
         // Second press while already on the way stops the walk.
         if (_walker.Current == PlayerAutoWalker.Destination.UnlockedArea)
         {

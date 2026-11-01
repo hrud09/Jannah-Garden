@@ -1256,8 +1256,6 @@ public class GameOnboardingManager : MonoBehaviour
     /// players who finished the section the intended way.</summary>
     private void SkipCurrentSection()
     {
-        GameSfx.Play(SoundEffect.ButtonClick);
-
         // A replay has no "next section" to jump to - skipping it just ends the walkthrough.
         if (replayMode)
         {

@@ -193,7 +193,6 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     private void OnCloseClicked()
     {
-        GameSfx.Play(SoundEffect.ButtonBack);
         OnCloseClickedInternal();
     }
 

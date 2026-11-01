@@ -55,9 +55,10 @@ public static class AudioLibraryMap
     public static readonly Dictionary<SoundEffect, Entry> Table = new Dictionary<SoundEffect, Entry>
     {
         // ── Buttons, panels, navigation ──────────────────────────────────────
-        // Light and short. Variations on the click keep a menu from sounding like a metronome.
-        { SoundEffect.ButtonClick,   E(SoundCategory.UI, 0.55f, 0.04f, 0.04f, false,
-            "JDSherbert - Ultimate UI SFX Pack - Select - 1", "JDSherbert - Ultimate UI SFX Pack - Select - 2", "select_1", "select_2") },
+        // Light and short. One clip, unvaried: every button in the garden plays this exact click
+        // (see ButtonClickSfx), so they must all sound identical.
+        { SoundEffect.ButtonClick,   E(SoundCategory.UI, 0.55f, 0f, 0.04f, false,
+            "JDSherbert - Ultimate UI SFX Pack - Select - 1") },
         { SoundEffect.ButtonBack,    E(SoundCategory.UI, 0.5f, 0.03f, 0.04f, false,
             "JDSherbert - Ultimate UI SFX Pack - Cancel - 1", "cancel") },
         { SoundEffect.ButtonDisabled,E(SoundCategory.UI, 0.5f, 0f, 0.25f, false,
@@ -107,7 +108,9 @@ public static class AudioLibraryMap
             "wood_small_drop", "stone_push_short") },
         { SoundEffect.ItemPlaceBlocked, E(SoundCategory.World, 0.55f, 0f, 0.2f, false,
             "cardboard_hit", "sci_fi_disallow") },
-        { SoundEffect.ItemRotate,     E(SoundCategory.World, 0.35f, 0.06f, 0.05f, false, "slide_and_click", "snap") },
+        // A single clip so turning the slider left sounds exactly like turning it right; two
+        // alternating clips made the direction seem to change the sound.
+        { SoundEffect.ItemRotate,     E(SoundCategory.World, 0.35f, 0f, 0.05f, false, "slide_and_click") },
         { SoundEffect.ItemPickUp,     E(SoundCategory.World, 0.6f, 0.05f, 0f, true,
             "wood_small_pickup", "cardboard_pick_up") },
         { SoundEffect.ItemStore,      E(SoundCategory.World, 0.6f, 0.04f, 0f, false,
