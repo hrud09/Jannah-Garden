@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -18,8 +19,9 @@ public class InspectorModeUI : MonoBehaviour
     public Button toggleButton;
 
     [Header("Button Visuals")]
-    [Tooltip("Text component on the toggle button to update its label.")]
-    public Text toggleButtonText;
+    [Tooltip("TMP label on the toggle button. TMP rather than UI.Text so the label goes through " +
+             "LocalizedRendering and shapes correctly in Bengali, Arabic and Urdu.")]
+    public TMP_Text toggleButtonText;
     [Tooltip("Label shown when Inspector Mode is active (e.g. a floating 'INSPECTOR MODE' text). Hidden when inactive.")]
     public GameObject activeModeLabel;
 
@@ -106,13 +108,10 @@ public class InspectorModeUI : MonoBehaviour
 
     private void UpdateUI(bool isInspectorMode)
     {
-        // Update button text. Note: toggleButtonText is a legacy UI.Text, not TMP_Text, so it can't go
-        // through LocalizedRendering's Arabic/Bengali shaping — this label renders unshaped in those
-        // locales, a pre-existing limitation of using UI.Text here rather than something this fix changes.
         if (toggleButtonText != null)
         {
-            toggleButtonText.text = LocalizationManager.Instance.Get(
-                isInspectorMode ? "interaction.inspector_mode_on" : "interaction.inspector_mode_off");
+            LocalizedRendering.SetText(toggleButtonText, LocalizationManager.Instance.Get(
+                isInspectorMode ? "interaction.inspector_mode_on" : "interaction.inspector_mode_off"));
         }
 
         // Show/hide active mode label

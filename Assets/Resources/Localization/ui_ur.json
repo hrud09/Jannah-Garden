@@ -409,6 +409,14 @@
             "value": "{0} فعال کیا جا رہا ہے..."
         },
         {
+            "key": "scene.jannah_garden",
+            "value": "جنت گارڈن"
+        },
+        {
+            "key": "scene.outer_garden",
+            "value": "باہری باغ"
+        },
+        {
             "key": "common.quantity_format",
             "value": "x{0}"
         },

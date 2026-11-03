@@ -160,11 +160,17 @@ public class GameOnboardingManager : MonoBehaviour
     private bool photoTapListenerAdded;
     private bool outerGardenTapListenerAdded;
 
+    /// <summary>True only while the "Welcome to the Outer Garden" panel is actually on screen *in* the
+    /// Outer Garden. The tutorial canvas is DontDestroyOnLoad, so without this the panel rode the scene
+    /// swap back into Jannah Garden and sat there as a stale Outer Garden message - see
+    /// <see cref="HandleSceneLoaded"/>.</summary>
+    private bool showingOuterGardenIntro;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            DeactivateStaleTutorialUiIfCompleted();
+            DeactivateStaleTutorialUi();
             Destroy(gameObject);
             return;
         }
@@ -226,14 +232,12 @@ public class GameOnboardingManager : MonoBehaviour
     /// singleton only survives scene loads by detaching and DontDestroyOnLoad-ing the *first* one. Each
     /// later scene's own GameOnboardingManager reaches here, sees the surviving Instance, and destroys only
     /// its own GameObject (not the whole hierarchy) - leaving that scene's own dimOverlay/instructionPanel
-    /// sitting active with nothing left to ever hide them. Once onboarding is already complete there's no
-    /// step left that will show them on purpose, so hide this duplicate's own copies (still valid references
-    /// at this point, since Destroy hasn't run yet) before it self-destructs - this runs in Awake, ahead of
-    /// any Start/Update/render for the newly loaded scene.</summary>
-    private void DeactivateStaleTutorialUiIfCompleted()
+    /// sitting active with nothing left to ever hide them. Nothing ever drives this duplicate's copies -
+    /// mid-tutorial included, since every step runs against the surviving instance's own panel - so hide
+    /// them unconditionally (the references are still valid here, Destroy hasn't run yet). This runs in
+    /// Awake, ahead of any Start/Update/render for the newly loaded scene.</summary>
+    private void DeactivateStaleTutorialUi()
     {
-        if (PlayerPrefs.GetInt(StageKey, (int)OnboardingStage.NotStarted) < (int)OnboardingStage.Completed) return;
-
         if (dimOverlay != null) dimOverlay.gameObject.SetActive(false);
         if (instructionPanel != null) instructionPanel.gameObject.SetActive(false);
     }
@@ -1116,14 +1120,25 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (stage == OnboardingStage.Flow4InProgress && scene.name == OuterGardenSceneName)
+        if (scene.name == OuterGardenSceneName)
         {
-            ShowOuterGardenIntro();
+            if (stage == OnboardingStage.Flow4InProgress) ShowOuterGardenIntro();
+            return;
+        }
+
+        // Left the Outer Garden (back to Jannah Garden) without tapping Finish. The panel belongs to the
+        // DontDestroyOnLoad tutorial canvas, so it survives the swap - tear it down here instead of
+        // letting an Outer Garden message greet the player in their own garden. They did reach the Outer
+        // Garden, which is all Flow 4 ever asked for, so that counts as finishing onboarding.
+        if (showingOuterGardenIntro)
+        {
+            HandleOuterGardenIntroFinished();
         }
     }
 
     private void ShowOuterGardenIntro()
     {
+        showingOuterGardenIntro = true;
         ShowDimAndPanel(true);
         LocalizationManager loc = LocalizationManager.Instance;
         SetInstructionText($"<color=#FFD35C><size=120%>{loc.Get("onboarding.outer_garden_title")}</size></color>\n\n"
@@ -1133,6 +1148,8 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void HandleOuterGardenIntroFinished()
     {
+        showingOuterGardenIntro = false;
+        HidePrimaryButton();
         ShowDimAndPanel(false);
         SetStage(OnboardingStage.Completed);
     }

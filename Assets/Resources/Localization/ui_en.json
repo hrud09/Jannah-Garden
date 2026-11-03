@@ -409,6 +409,14 @@
             "value": "Activating {0}..."
         },
         {
+            "key": "scene.jannah_garden",
+            "value": "Jannah Garden"
+        },
+        {
+            "key": "scene.outer_garden",
+            "value": "Outer Garden"
+        },
+        {
             "key": "common.quantity_format",
             "value": "x{0}"
         },

@@ -409,6 +409,14 @@
             "value": "{0} সক্রিয় করা হচ্ছে..."
         },
         {
+            "key": "scene.jannah_garden",
+            "value": "জান্নাহ গার্ডেন"
+        },
+        {
+            "key": "scene.outer_garden",
+            "value": "আউটার গার্ডেন"
+        },
+        {
             "key": "common.quantity_format",
             "value": "x{0}"
         },

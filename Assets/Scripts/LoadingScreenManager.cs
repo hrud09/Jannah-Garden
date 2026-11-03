@@ -400,7 +400,7 @@ public class LoadingScreenManager : MonoBehaviour
         if (percent != _displayedPercent)
         {
             _displayedPercent = percent;
-            SafeSetText(percentText, percent + "%");
+            SafePlainText(percentText, percent + "%");
         }
 
         // Animate spinner dots
@@ -639,7 +639,7 @@ public class LoadingScreenManager : MonoBehaviour
         _displayedProgress = 1f;
         _displayedPercent = 100;
         if (progressBar != null) progressBar.value = 1f;
-        SafeSetText(percentText, "100%");
+        SafePlainText(percentText, "100%");
 
         SetStatusText(LocalizationManager.Instance.Get("loading.preparing_scene"));
 
@@ -777,7 +777,12 @@ public class LoadingScreenManager : MonoBehaviour
 
         try
         {
-            field.text = value;
+            // Every other label in the game goes through LocalizedRendering; the loading screen used to
+            // assign TMP_Text.text directly, which left Bengali completely unshaped — conjuncts split
+            // apart and the pre-base vowel signs (ি, ে, ৈ) stranded after their consonant instead of
+            // before it. That is the "weird looking" Bengali on the loading screen.
+            StripLatinOnlyStyling(field);
+            LocalizedRendering.SetText(field, value);
         }
         catch (System.Exception e)
         {
@@ -785,11 +790,44 @@ public class LoadingScreenManager : MonoBehaviour
         }
     }
 
+    /// <summary>Digits-only labels (the percentage) must never take the shaped Bengali path — that
+    /// renderer draws from a Bengali-only atlas and would turn "87%" into tofu.</summary>
+    private static void SafePlainText(TMP_Text field, string value)
+    {
+        if (field == null) return;
+
+        try
+        {
+            LocalizedRendering.SetPlainText(field, value);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"[LoadingScreenManager] Failed to set text on '{field.name}': {e.Message}");
+        }
+    }
+
+    /// <summary>The status label is authored UpperCase and the tips label Italic — both are Latin
+    /// typographic conventions. Bengali, Arabic and Urdu have no case at all, and TMP's faux-italic skew
+    /// shears their connected letterforms into an unreadable slant, so drop both outside English.</summary>
+    private static void StripLatinOnlyStyling(TMP_Text field)
+    {
+        AppLocale locale = LocalizationManager.Instance != null ? LocalizationManager.Instance.CurrentLocale : AppLocale.en;
+        if (locale == AppLocale.en) return;
+
+        field.fontStyle &= ~(FontStyles.UpperCase | FontStyles.LowerCase | FontStyles.SmallCaps | FontStyles.Italic);
+    }
+
     /// <summary>Turns a raw scene name (e.g. "OuterGarden_Art") into a friendlier display name ("Outer Garden Art")
     /// for the status text, since scene names are internal identifiers rather than authored copy.</summary>
-    private static string GetDisplaySceneName(string sceneName)
+    private string GetDisplaySceneName(string sceneName)
     {
         if (string.IsNullOrEmpty(sceneName)) return sceneName;
+
+        // The two player-facing scenes are authored copy, not internal identifiers - under a non-Latin
+        // locale a bare "Jannah Garden" sat as an untranslated Latin island inside the Bengali status
+        // line. Sub-scene names (OuterGarden_Art and friends) stay on the prettify path below.
+        string localized = GetLocalizedSceneName(sceneName);
+        if (localized != null) return localized;
 
         string spaced = sceneName.Replace('_', ' ');
         System.Text.StringBuilder sb = new System.Text.StringBuilder(spaced.Length + 8);
@@ -803,6 +841,24 @@ public class LoadingScreenManager : MonoBehaviour
             sb.Append(c);
         }
         return sb.ToString();
+    }
+
+    /// <summary>Returns the translated name for a scene the player actually knows by name, or null if
+    /// this scene has no authored copy (callers then fall back to prettifying the raw name).</summary>
+    private string GetLocalizedSceneName(string sceneName)
+    {
+        LocalizationManager loc = LocalizationManager.Instance;
+        if (loc == null) return null;
+
+        string key = null;
+        if (sceneName == jannahGardenSceneName) key = "scene.jannah_garden";
+        else if (sceneName == outerGardenSceneName) key = "scene.outer_garden";
+        if (key == null) return null;
+
+        // GetOrDefault rather than Get so a locale file that hasn't picked these keys up yet falls back
+        // to the prettified raw name instead of printing "scene.outer_garden" at the player.
+        string value = loc.GetOrDefault(key, null);
+        return string.IsNullOrEmpty(value) ? null : value;
     }
 
     /// <summary>Whether the given scene name should be loaded via Addressables instead of SceneManager.</summary>
@@ -1040,13 +1096,14 @@ public class LoadingScreenManager : MonoBehaviour
         statusRT.anchoredPosition = new Vector2(0f, 0f);
 
         statusText = statusGO.AddComponent<TextMeshProUGUI>();
-        statusText.text = LocalizationManager.Instance != null ? LocalizationManager.Instance.Get("loading.loading_text") : "Loading...";
         statusText.fontSize = 22f;
         statusText.color = secondaryTextColor;
         statusText.alignment = TextAlignmentOptions.Left;
         statusText.raycastTarget = false;
         statusText.fontStyle = FontStyles.UpperCase;
         if (uiFont != null) statusText.font = uiFont;
+        // After the styling above, so SafeSetText's StripLatinOnlyStyling has something to strip.
+        SafeSetText(statusText, LocalizationManager.Instance != null ? LocalizationManager.Instance.Get("loading.loading_text") : "Loading...");
 
         // ── 9. Progress bar ──
         BuildProgressBar(bottomGO.transform);

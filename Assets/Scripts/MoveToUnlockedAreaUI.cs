@@ -30,10 +30,9 @@ public class MoveToUnlockedAreaUI : MonoBehaviour
     public Button moveButton;
 
     [Header("Button Visuals")]
-    [Tooltip("TMP label on the button. Preferred: shaped correctly for Arabic and Bengali.")]
+    [Tooltip("TMP label on the button. TMP rather than UI.Text so the label goes through " +
+             "LocalizedRendering and shapes correctly in Bengali, Arabic and Urdu.")]
     public TMP_Text buttonLabel;
-    [Tooltip("Legacy Text label on the button, if it uses UI.Text instead of TMP.")]
-    public Text legacyButtonText;
     [Tooltip("Shown while the player is walking to an unlocked area. Hidden otherwise.")]
     public GameObject activeWalkLabel;
 
@@ -153,11 +152,6 @@ public class MoveToUnlockedAreaUI : MonoBehaviour
         if (buttonLabel != null)
         {
             LocalizedRendering.SetText(buttonLabel, text);
-        }
-
-        if (legacyButtonText != null)
-        {
-            legacyButtonText.text = text;
         }
 
         if (activeWalkLabel != null)

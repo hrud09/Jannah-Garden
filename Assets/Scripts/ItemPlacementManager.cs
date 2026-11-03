@@ -617,7 +617,9 @@ public class ItemPlacementManager : MonoBehaviour
         {
             placeButton.gameObject.SetActive(true);
             var btnText = placeButton.GetComponentInChildren<TMPro.TMP_Text>();
-            if (btnText != null) btnText.text = LocalizationManager.Instance.Get(_isRelocating ? "placement.button_move_here" : "placement.button_place");
+            // Via LocalizedRendering, not a raw .text assign: "স্থাপন করুন" needs HarfBuzz shaping for its
+            // স্থ conjunct, and the Arabic/Urdu strings need their joined forms.
+            if (btnText != null) LocalizedRendering.SetText(btnText, LocalizationManager.Instance.Get(_isRelocating ? "placement.button_move_here" : "placement.button_place"));
         }
 
         if (cancelPlacementButton != null)

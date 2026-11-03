@@ -409,6 +409,14 @@
             "value": "جارٍ تفعيل {0}..."
         },
         {
+            "key": "scene.jannah_garden",
+            "value": "حديقة الجنة"
+        },
+        {
+            "key": "scene.outer_garden",
+            "value": "الحديقة الخارجية"
+        },
+        {
             "key": "common.quantity_format",
             "value": "x{0}"
         },
