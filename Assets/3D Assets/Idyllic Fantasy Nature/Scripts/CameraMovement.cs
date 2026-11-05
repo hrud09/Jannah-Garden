@@ -1,3 +1,8 @@
+#if UNITY_IOS && !UNITY_EDITOR && ENABLE_INPUT_SYSTEM
+#define IOS_TOUCH_LOOK
+#endif
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 #if ENABLE_INPUT_SYSTEM
@@ -67,6 +72,12 @@ namespace IdyllicFantasyNature
         private int _activeTouchId = -1;
         private Vector2 _lastTouchPosition;
 
+#if IOS_TOUCH_LOOK
+        private readonly IOSTouchLookTracker _iosLook = new IOSTouchLookTracker();
+        private readonly List<RaycastResult> _iosUiHits = new List<RaycastResult>();
+        private Func<Vector2, bool> _iosIsBlocked;
+#endif
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -112,6 +123,9 @@ namespace IdyllicFantasyNature
             float rotateY = 0f;
 
 #if ENABLE_INPUT_SYSTEM
+#if IOS_TOUCH_LOOK
+            UpdateIOSTouchLook(ref rotateX, ref rotateY);
+#else
             if (Touchscreen.current != null)
             {
                 // Touch Input (Mobile with New Input System)
@@ -180,6 +194,7 @@ namespace IdyllicFantasyNature
                     _isDraggingRotation = false;
                 }
             }
+#endif
             
             // Mouse Input (PC / Editor / WebGL)
             if (Mouse.current != null)
@@ -318,6 +333,66 @@ namespace IdyllicFantasyNature
                 transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0f);
             }
         }
+
+#if IOS_TOUCH_LOOK
+        private void UpdateIOSTouchLook(ref float rotateX, ref float rotateY)
+        {
+            Touchscreen touchscreen = Touchscreen.current;
+            if (touchscreen == null)
+                return;
+
+            if (_iosIsBlocked == null)
+                _iosIsBlocked = IsIOSTouchStartBlocked;
+
+            foreach (var touch in touchscreen.touches)
+            {
+                if (touch.isInProgress)
+                {
+                    _iosLook.Report(touch.touchId.ReadValue(), touch.startPosition.ReadValue(),
+                        touch.position.ReadValue(), _iosIsBlocked);
+                }
+            }
+
+            Vector2 delta = _iosLook.EndFrame();
+            rotateX += delta.x * _touchDragSensitivity;
+            rotateY += delta.y * _touchDragSensitivity;
+        }
+
+        /// <summary>
+        /// Raycasts the UI directly instead of calling EventSystem.IsPointerOverGameObject(touchId). That
+        /// call only knows about touches the UI module has already processed, and its lookup also
+        /// compares the id against device ids, so a new touch can be matched to the finger already
+        /// holding the joystick and be wrongly reported as over UI.
+        /// </summary>
+        private bool IsIOSTouchStartBlocked(Vector2 screenPosition)
+        {
+            // The left side of the screen is dedicated to the movement joystick zone
+            if (screenPosition.x < Screen.width * 0.35f)
+                return true;
+
+            EventSystem eventSystem = EventSystem.current;
+            if (eventSystem == null)
+                return false;
+
+            _iosUiHits.Clear();
+            eventSystem.RaycastAll(new PointerEventData(eventSystem) { position = screenPosition }, _iosUiHits);
+            return _iosUiHits.Count > 0;
+        }
+
+        private void OnDisable() => _iosLook.Reset();
+
+        private void OnApplicationPause(bool paused)
+        {
+            if (paused)
+                _iosLook.Reset();
+        }
+
+        private void OnApplicationFocus(bool focused)
+        {
+            if (!focused)
+                _iosLook.Reset();
+        }
+#endif
 
         /// <summary>
         /// Checks if a touch position/ID is over blocking UI (buttons, panels) or in the movement joystick area.

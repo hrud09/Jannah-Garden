@@ -1,9 +1,15 @@
+#if UNITY_IOS && !UNITY_EDITOR && ENABLE_INPUT_SYSTEM
+#define IOS_JOYSTICK_TOUCH
+#endif
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+#endif
+#if IOS_JOYSTICK_TOUCH
+using UnityEngine.InputSystem.UI;
 #endif
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
@@ -50,6 +56,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private bool isKeyboardActive = false;
     private bool isDragging = false;
 
+#if IOS_JOYSTICK_TOUCH
+    private int iosPointerId;
+    private int iosTouchId;
+#endif
+
     protected virtual void Start()
     {
         HandleRange = handleRange;
@@ -70,12 +81,22 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+#if IOS_JOYSTICK_TOUCH
+        if (IsOtherFingerHolding(eventData))
+            return;
+        iosPointerId = eventData.pointerId;
+        iosTouchId = (eventData as ExtendedPointerEventData)?.touchId ?? 0;
+#endif
         isDragging = true;
         OnDrag(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+#if IOS_JOYSTICK_TOUCH
+        if (!isDragging || IsOtherFingerHolding(eventData))
+            return;
+#endif
         cam = null;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
             cam = canvas.worldCamera;
@@ -143,13 +164,81 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+#if IOS_JOYSTICK_TOUCH
+        if (IsOtherFingerHolding(eventData))
+            return;
+#endif
         isDragging = false;
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
     }
 
+    /// <summary>
+    /// True when this event belongs to a different finger from the one holding the joystick. On iOS
+    /// only the holding finger may move or release the stick; elsewhere this is always false.
+    /// </summary>
+    protected bool IsOtherFingerHolding(PointerEventData eventData)
+    {
+#if IOS_JOYSTICK_TOUCH
+        return isDragging && eventData.pointerId != iosPointerId;
+#else
+        return false;
+#endif
+    }
+
+#if IOS_JOYSTICK_TOUCH
+    // iOS can drop a touch without the UI ever sending OnPointerUp, for example when a system gesture
+    // takes over or the app is interrupted. Without this the player would keep walking on their own.
+    private void ReleaseIfHoldingFingerIsGone()
+    {
+        if (!isDragging || iosTouchId == 0 || Touchscreen.current == null)
+            return;
+
+        foreach (var touch in Touchscreen.current.touches)
+        {
+            if (touch.isInProgress && touch.touchId.ReadValue() == iosTouchId)
+                return;
+        }
+
+        ForceRelease();
+    }
+
+    private void ForceRelease()
+    {
+        if (!isDragging)
+            return;
+
+        isDragging = false;
+        OnPointerUp(null);
+    }
+
+    private void OnApplicationPause(bool paused)
+    {
+        if (paused)
+            ForceRelease();
+    }
+
+    private void OnApplicationFocus(bool focused)
+    {
+        if (!focused)
+            ForceRelease();
+    }
+
+    // Only stops the movement. The release itself waits for Update, since the background can't be
+    // toggled while this hierarchy is being deactivated.
+    private void OnDisable()
+    {
+        input = Vector2.zero;
+        if (handle != null)
+            handle.anchoredPosition = Vector2.zero;
+    }
+#endif
+
     protected virtual void Update()
     {
+#if IOS_JOYSTICK_TOUCH
+        ReleaseIfHoldingFingerIsGone();
+#endif
         if (!isDragging)
         {
 #if ENABLE_INPUT_SYSTEM
