@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using FlutterIntegration;
 #if LEVELPLAY_ENABLED
@@ -59,6 +60,22 @@ public class LevelPlayAdService : IAdService
     public static LevelPlayAdService Instance => _instance ??= new LevelPlayAdService();
 
     private LevelPlayAdService() { }
+
+#if UNITY_IOS && !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern void JannahAds_MakeVisibleWindowKey();
+#endif
+
+    /// <summary>
+    /// The path for "we could not show you a network ad": a house ad if the build has one, otherwise the
+    /// capped no-ad reward. Never call this where the player skipped an ad they were actually shown.
+    /// </summary>
+    private void FinishWithoutNetworkAd(Action<bool> onComplete)
+    {
+        if (HouseAdPresenter.TryShow(() => onComplete?.Invoke(true))) return;
+
+        onComplete?.Invoke(TryConsumeUnavailableBypass());
+    }
 
     /// <summary>
     /// Grant the reward anyway when no ad can be shown at all — the SDK never initialised, no network
@@ -200,7 +217,10 @@ public class LevelPlayAdService : IAdService
     /// </summary>
     private Action<bool> _pendingCallback;
 
-    public bool IsAdReady => _rewardedAd != null && _rewardedAd.IsAdReady();
+    private bool IsNetworkAdReady => _rewardedAd != null && _rewardedAd.IsAdReady();
+
+    /// <summary>True when the player can be shown something: a network ad, or a house ad in its place.</summary>
+    public bool IsAdReady => IsNetworkAdReady || HouseAdPresenter.HasAds;
 
     /// <summary>
     /// Waits for the Flutter host to finish initialising LevelPlay, then builds the game's rewarded ad
@@ -374,9 +394,9 @@ public class LevelPlayAdService : IAdService
         _rewardedAd.OnAdDisplayFailed += (adInfo, error) =>
         {
             // The player asked for an ad and the SDK could not put one on screen — that is our failure,
-            // not a skip, so it follows the same bypass as an unfilled slot.
+            // not a skip, so it follows the same path as an unfilled slot.
             Debug.LogWarning($"[LevelPlayAdService] Rewarded ad failed to display: {error}");
-            Settle(TryConsumeUnavailableBypass());
+            SettleWithoutNetworkAd();
         };
 
         // Closing settles as "not earned" only if the reward event never arrived — and only after a frame.
@@ -421,7 +441,7 @@ public class LevelPlayAdService : IAdService
         yield return new WaitForSecondsRealtime(delay);
 
         _retryScheduled = false;
-        if (!IsAdReady) SafeLoadAd();
+        if (!IsNetworkAdReady) SafeLoadAd();
     }
 
     /// <summary>
@@ -451,7 +471,7 @@ public class LevelPlayAdService : IAdService
 
     public void ShowRewardedAd(Action<bool> onComplete)
     {
-        if (_pendingCallback != null)
+        if (_pendingCallback != null || HouseAdPresenter.IsShowing)
         {
             // A second show while one is on screen would overwrite the first caller's callback and strand
             // it — the treasure box that asked for the ad would never hear back.
@@ -460,13 +480,13 @@ public class LevelPlayAdService : IAdService
             return;
         }
 
-        if (!IsAdReady)
+        if (!IsNetworkAdReady)
         {
             // Request one for the next attempt, so a slot that is merely cold recovers by itself.
             if (_rewardedAd != null) SafeLoadAd();
             else Debug.LogError("[LevelPlayAdService] No rewarded ad object — LevelPlay never initialised.");
 
-            onComplete?.Invoke(TryConsumeUnavailableBypass());
+            FinishWithoutNetworkAd(onComplete);
             return;
         }
 
@@ -475,6 +495,9 @@ public class LevelPlayAdService : IAdService
 
         try
         {
+#if UNITY_IOS && !UNITY_EDITOR
+            JannahAds_MakeVisibleWindowKey();
+#endif
             _rewardedAd.ShowAd();
         }
         catch (Exception e)
@@ -483,9 +506,9 @@ public class LevelPlayAdService : IAdService
             // would otherwise unwind into the caller with _pendingCallback already assigned, stranding it
             // exactly the way a lost SDK event does. Settle it here instead: the player asked for an ad
             // and did not get one, which is the same "we could not show you an ad" case as a display
-            // failure, so it takes the same bypass rather than counting as a skip.
+            // failure, so it takes the same path rather than counting as a skip.
             Debug.LogError($"[LevelPlayAdService] ShowAd threw — treating it as a display failure: {e}");
-            Settle(TryConsumeUnavailableBypass());
+            SettleWithoutNetworkAd();
             return;
         }
 
@@ -557,6 +580,19 @@ public class LevelPlayAdService : IAdService
         // ad load.
         if (_pendingCallback == null) return;
 
+        TakePendingCallback()?.Invoke(earned);
+    }
+
+    /// <summary>Settles an ad the SDK could not put on screen, so the player gets the fallback instead.</summary>
+    private void SettleWithoutNetworkAd()
+    {
+        if (_pendingCallback == null) return;
+
+        FinishWithoutNetworkAd(TakePendingCallback());
+    }
+
+    private Action<bool> TakePendingCallback()
+    {
         Action<bool> callback = _pendingCallback;
         _pendingCallback = null;
         _rewardEarned = false;
@@ -572,7 +608,7 @@ public class LevelPlayAdService : IAdService
 
         SafeLoadAd();
 
-        callback?.Invoke(earned);
+        return callback;
     }
 
 #else
@@ -593,8 +629,8 @@ public class LevelPlayAdService : IAdService
     public void ShowRewardedAd(Action<bool> onComplete)
     {
         Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called without the LevelPlay SDK — "
-            + "checking the daily no-ad reward budget.");
-        onComplete?.Invoke(TryConsumeUnavailableBypass());
+            + "using the no-ad fallback.");
+        FinishWithoutNetworkAd(onComplete);
     }
 
 #endif

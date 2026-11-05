@@ -7,6 +7,8 @@ public class DayNightCycle : MonoBehaviour
     [Header("Lighting")]
     public Light directionalLight;
     public float maxIntensity = 1f;
+    [Tooltip("Sun rotation applied on start. An angled sun gives objects a lit and a shaded side, which adds contrast.")]
+    public Vector3 sunRotation = new Vector3(52f, 15f, 0f);
 
     [Header("Skyboxes")]
     public Material daySkybox;
@@ -27,7 +29,7 @@ public class DayNightCycle : MonoBehaviour
         if (directionalLight != null)
         {
             directionalLight.intensity = maxIntensity;
-            directionalLight.transform.rotation = Quaternion.Euler(90f, 50f, 0f);
+            directionalLight.transform.rotation = Quaternion.Euler(sunRotation);
         }
 
         if (daySkybox != null)

@@ -56,10 +56,33 @@ public class AdAdapterGuard : IPreprocessBuildWithReport
             + "Data safety declaration.",
     };
 
+    private const string ResolverSettingsPath = "ProjectSettings/GvhProjectSettings.xml";
+    private const string SwiftPackagesOff =
+        "name=\"Google.IOSResolver.SwiftPackageManagerEnabled\" value=\"False\"";
+
+    /// <summary>
+    /// With Swift Packages on, the resolver links LevelPlay directly into UnityFramework. The host's Podfile
+    /// also puts it in Runner, so the app ends up with two copies of the SDK: Flutter initialises one, and
+    /// the game's ad object may land on the other, which never loads an ad. Pods only, so Runner's is the
+    /// only copy.
+    /// </summary>
+    private static void RefuseSwiftPackages()
+    {
+        if (File.Exists(ResolverSettingsPath) && File.ReadAllText(ResolverSettingsPath).Contains(SwiftPackagesOff))
+            return;
+
+        throw new BuildFailedException(
+            "[AdAdapterGuard] Swift Packages are enabled in the iOS Resolver, which would link a second copy "
+            + "of LevelPlay into UnityFramework. Turn it off: Assets → External Dependency Manager → iOS "
+            + "Resolver → Settings → Enable Swift Package Manager.");
+    }
+
     public void OnPreprocessBuild(BuildReport report)
     {
         if (report.summary.platform != BuildTarget.Android && report.summary.platform != BuildTarget.iOS)
             return;
+
+        if (report.summary.platform == BuildTarget.iOS) RefuseSwiftPackages();
 
         List<string> offenders = ForbiddenAdapters
             .Where(entry => File.Exists(Path.Combine(LevelPlayEditorDir, entry.Key)))

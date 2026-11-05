@@ -8,6 +8,26 @@ Mediation is **Unity LevelPlay** (`com.unity.services.levelplay`, Ads Mediation 
 only ad SDK in the project. Unity Ads and InMobi reach the game as LevelPlay *adapters* — their
 SDKs are never imported directly, and their IDs are never compiled into the app.
 
+## When mediation has no ad — house ads
+
+`LevelPlayAdService` falls back in this order when it cannot show a network ad (no fill, SDK not up, or a
+display failure):
+
+1. A **house ad** from `Assets/Resources/HouseAds`: a full-screen image with a 5 second countdown, then a
+   close button. Closing it earns the reward. These are not capped.
+2. The capped no-ad reward (`maxBypassGrantsPerDay`), only if the build has no house ad images.
+
+To add a creative, drop an image into that folder. The ads take turns.
+
+A player who skips a real network ad still earns nothing and does not get a house ad.
+
+## iOS: one copy of LevelPlay
+
+The iOS Resolver's Swift Package option must stay **off**. With it on, the export links LevelPlay into
+UnityFramework while the host's Podfile also puts it in Runner, so the app has two copies of the SDK.
+`AdAdapterGuard` fails the build if it is on. The versions in the host's `ios/Podfile`, and its patch of the
+`unity_levelplay_mediation` podspec, must match the export's `ios/unityLibrary/Podfile` after every export.
+
 ## Who initialises LevelPlay — the Flutter host, not the game
 
 The game ships inside the Amal Flutter app (`com.ibadah.amal`): **one APK, one process, one LevelPlay app

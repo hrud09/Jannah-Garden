@@ -15,11 +15,11 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
+  m_FogColor: {r: 0.7, g: 0.86, b: 1, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 220
+  m_LinearFogStart: 45
+  m_LinearFogEnd: 320
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -9582,7 +9582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayNightCycle
   directionalLight: {fileID: 855445491}
-  maxIntensity: 1
+  maxIntensity: 1.2
+  sunRotation: {x: 52, y: 15, z: 0}
   daySkybox: {fileID: 2100000, guid: 5d5eebce588f65f418757d3cfaa9563c, type: 2}
   currentTimeInHours: 12
   currentTimeString: 
@@ -17924,6 +17925,10 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 1379383
       objectReference: {fileID: 0}
+    - target: {fileID: 2531667858752797860, guid: a3af83311772f6f42825f33d87641a66, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _mouseSensity
       value: 1
@@ -24376,6 +24381,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2812591273341151154, guid: ea4b22d3800ce0b46b7304dfd8f7ac78, type: 3}
   m_PrefabInstance: {fileID: 1493669211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &717169913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 717169915}
+  - component: {fileID: 717169914}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &717169914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717169913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 969a233127e584241b2ac1a79b44ecbd, type: 2}
+--- !u!4 &717169915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717169913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &717872482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27814,8 +27868,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.98, b: 0.93, a: 1}
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -27824,7 +27878,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.55
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -27877,7 +27931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855445490}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6408564, y: 0.29883626, z: -0.29883626, w: 0.6408564}
+  m_LocalRotation: {x: 0.43462083, y: 0.11731617, z: -0.05721892, w: 0.89110476}
   m_LocalPosition: {x: -1194.5165, y: -1354.1821, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -51189,7 +51243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoveToUnlockedAreaUI
   moveButton: {fileID: 1601212128}
   buttonLabel: {fileID: 0}
-  legacyButtonText: {fileID: 0}
   activeWalkLabel: {fileID: 0}
   announceArrival: 1
   playerMovement: {fileID: 0}
@@ -57763,7 +57816,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReturnToBaseUI
   returnButton: {fileID: 1754890207}
   buttonLabel: {fileID: 0}
-  legacyButtonText: {fileID: 0}
   activeWalkLabel: {fileID: 0}
   baseMarker: {fileID: 0}
   playerMovement: {fileID: 0}
@@ -75648,3 +75700,4 @@ SceneRoots:
   - {fileID: 2111190028}
   - {fileID: 1969168288}
   - {fileID: 1547411444}
+  - {fileID: 717169915}

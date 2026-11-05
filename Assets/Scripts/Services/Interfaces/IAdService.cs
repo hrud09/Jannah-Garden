@@ -67,6 +67,9 @@ public class EditorFakeAdService : IAdService
 
     public void ShowRewardedAd(Action<bool> onComplete)
     {
+        // Devices fall back to this when mediation has no fill, so it is what is worth testing here.
+        if (HouseAdPresenter.TryShow(() => onComplete?.Invoke(true))) return;
+
         if (AdsManager.Instance == null)
         {
             UnityEngine.Debug.LogWarning("[EditorFakeAdService] No AdsManager in the scene — granting the "
