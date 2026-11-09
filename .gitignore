@@ -112,3 +112,6 @@ InitTestScene*.unity*
 /ios
 /Assets/_Recovery
 /Assets/_Recovery
+
+# Stylized Nature Bundle demo skybox (104 MB, over GitHub's 100 MB limit, only used by its demo scene)
+/Assets/StylizedNatureBundle/Textures/T_SNB_Skybox_02.tga*

@@ -1,0 +1,1432 @@
+{
+ "019fd740-bc3f-7f84-b973-0441da9fb98c": {
+  "name": "Petal_Cascade",
+  "src_tris": 1944698,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 14599,
+  "dims_m": [
+   1.89,
+   1.89,
+   1.82
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 8.01,
+  "sec": 78.9,
+  "source_folder": "019fd740-bc3f-7f84-b973-0441da9fb98c"
+ },
+ "019fd741-4df5-7f58-979d-34c4f23ef887": {
+  "name": "Pomegranate_Tree",
+  "src_tris": 1863101,
+  "lods": [
+   50000,
+   18000,
+   8074
+  ],
+  "foliage": true,
+  "parts": 477,
+  "dims_m": [
+   1.54,
+   1.4,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 7.87,
+  "sec": 81.2,
+  "source_folder": "019fd741-4df5-7f58-979d-34c4f23ef887"
+ },
+ "019fd741-bc42-7f9c-a542-23cd902d6799": {
+  "name": "Tulip_Cluster",
+  "src_tris": 845337,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 226,
+  "dims_m": [
+   1.55,
+   1.54,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.97,
+  "sec": 85.3,
+  "source_folder": "019fd741-bc42-7f9c-a542-23cd902d6799"
+ },
+ "019fd740-fb00-7f45-8883-6277e7b83fe7": {
+  "name": "Isle_of_Spring",
+  "src_tris": 1932703,
+  "lods": [
+   50000,
+   18000,
+   6070
+  ],
+  "foliage": true,
+  "parts": 5814,
+  "dims_m": [
+   1.89,
+   1.89,
+   0.6
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 7.74,
+  "sec": 138.7,
+  "source_folder": "019fd740-fb00-7f45-8883-6277e7b83fe7"
+ },
+ "019fd741-7de3-7f6b-abe9-62c5ddd38ca5": {
+  "name": "Starflower_Trellis",
+  "src_tris": 1855359,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 12841,
+  "dims_m": [
+   1.65,
+   0.6,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.73,
+  "sec": 128.2,
+  "source_folder": "019fd741-7de3-7f6b-abe9-62c5ddd38ca5"
+ },
+ "019fd742-0aae-7046-87c9-1b52e8d937e6": {
+  "name": "Luminal_Rift",
+  "src_tris": 543625,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 102,
+  "dims_m": [
+   1.9,
+   1.89,
+   0.33
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.59,
+  "sec": 61.2,
+  "source_folder": "019fd742-0aae-7046-87c9-1b52e8d937e6"
+ },
+ "019fd742-4b48-7eb0-aea6-9601826b4185": {
+  "name": "Whispering_Well",
+  "src_tris": 414503,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 2,
+  "dims_m": [
+   1.9,
+   1.9,
+   0.31
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.69,
+  "sec": 43.3,
+  "source_folder": "019fd742-4b48-7eb0-aea6-9601826b4185"
+ },
+ "019fd742-7d6c-7fa3-82fd-dddac95b30a1": {
+  "name": "Meandering_River_Isla",
+  "src_tris": 796826,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 625,
+  "dims_m": [
+   1.81,
+   1.9,
+   0.26
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 6.62,
+  "sec": 45.7,
+  "source_folder": "019fd742-7d6c-7fa3-82fd-dddac95b30a1"
+ },
+ "019fd742-a4b7-7fce-81a4-8b5fda8dcd11": {
+  "name": "Moonlit_Cactus_Bloom",
+  "src_tris": 1775576,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 3442,
+  "dims_m": [
+   1.82,
+   1.9,
+   1.21
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.44,
+  "sec": 120.2,
+  "source_folder": "019fd742-a4b7-7fce-81a4-8b5fda8dcd11"
+ },
+ "019fd742-cd08-7ec7-87c0-dc90890109ac": {
+  "name": "Whispering_Blossom_Tr",
+  "src_tris": 1174258,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 2064,
+  "dims_m": [
+   1.85,
+   1.9,
+   1.45
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.42,
+  "sec": 125.3,
+  "source_folder": "019fd742-cd08-7ec7-87c0-dc90890109ac"
+ },
+ "019fd743-0af6-7fb8-8c9a-e132bcf8cef6": {
+  "name": "Tree_of_Light",
+  "src_tris": 275024,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 543,
+  "dims_m": [
+   0.99,
+   1.12,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 6.85,
+  "sec": 31.6,
+  "source_folder": "019fd743-0af6-7fb8-8c9a-e132bcf8cef6"
+ },
+ "019fd743-764e-7ede-b743-9668b0e6c7ab": {
+  "name": "Whimsical_Apple_Tree",
+  "src_tris": 932170,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 21,
+  "dims_m": [
+   1.57,
+   1.62,
+   1.88
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.73,
+  "sec": 70.8,
+  "source_folder": "019fd743-764e-7ede-b743-9668b0e6c7ab"
+ },
+ "019fd743-a857-7fc5-a17e-8cf68524ae1f": {
+  "name": "Low_Poly_Coconut_Palm",
+  "src_tris": 1316508,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 40,
+  "dims_m": [
+   1.51,
+   1.51,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 3.03,
+  "sec": 64.1,
+  "source_folder": "019fd743-a857-7fc5-a17e-8cf68524ae1f"
+ },
+ "019fd743-ef2c-7fd5-a669-b9334202d205": {
+  "name": "Blue_Mosaic_Octagonal",
+  "src_tris": 452060,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.9,
+   1.9,
+   0.82
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.63,
+  "sec": 63.6,
+  "source_folder": "019fd743-ef2c-7fd5-a669-b9334202d205"
+ },
+ "019fd744-4bb4-7ff0-b1b0-7690092c0126": {
+  "name": "Ancient_Stone_Fountai",
+  "src_tris": 497100,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 6,
+  "dims_m": [
+   1.16,
+   1.16,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.47,
+  "sec": 45.3,
+  "source_folder": "019fd744-4bb4-7ff0-b1b0-7690092c0126"
+ },
+ "019fd748-592c-70bc-bbd8-afc1405d16df": {
+  "name": "Pineapple_Crown_Fount",
+  "src_tris": 601097,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 119,
+  "dims_m": [
+   1.9,
+   1.9,
+   1.26
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.79,
+  "sec": 57.0,
+  "source_folder": "019fd748-592c-70bc-bbd8-afc1405d16df"
+ },
+ "019fd749-e140-7155-8e56-fabf63718ee1": {
+  "name": "Ancient_Stone_Pool",
+  "src_tris": 145164,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.9,
+   1.09,
+   0.19
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.46,
+  "sec": 25.4,
+  "source_folder": "019fd749-e140-7155-8e56-fabf63718ee1"
+ },
+ "019fd74a-2cd7-70c7-b6a1-1ae3e4cd06dc": {
+  "name": "Prismatic_Bloom",
+  "src_tris": 305160,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 5,
+  "dims_m": [
+   1.48,
+   1.2,
+   1.9
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.48,
+  "sec": 47.8,
+  "source_folder": "019fd74a-2cd7-70c7-b6a1-1ae3e4cd06dc"
+ },
+ "019fd74a-60cd-7060-8a23-e30b39b79f33": {
+  "name": "Lotus_Pond",
+  "src_tris": 425793,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 6,
+  "dims_m": [
+   1.89,
+   1.9,
+   0.84
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.58,
+  "sec": 51.2,
+  "source_folder": "019fd74a-60cd-7060-8a23-e30b39b79f33"
+ },
+ "019fd74a-864e-713e-a0da-054ccba49f8f": {
+  "name": "Marble_Water_Channel_",
+  "src_tris": 698671,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 7,
+  "dims_m": [
+   1.9,
+   0.82,
+   0.32
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.65,
+  "sec": 44.9,
+  "source_folder": "019fd74a-864e-713e-a0da-054ccba49f8f"
+ },
+ "019fd74a-e240-70df-a77e-f5c12d24f9ef": {
+  "name": "Pomegranate_Tree_2",
+  "src_tris": 1895773,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 600,
+  "dims_m": [
+   1.65,
+   1.48,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 7.54,
+  "sec": 108.9,
+  "source_folder": "019fd74a-e240-70df-a77e-f5c12d24f9ef"
+ },
+ "019fd74b-1aa0-70e2-9086-1618e73d50a0": {
+  "name": "Whimsical_Floral_Casc",
+  "src_tris": 1524534,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 674,
+  "dims_m": [
+   1.89,
+   1.77,
+   1.36
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.89,
+  "sec": 191.6,
+  "source_folder": "019fd74b-1aa0-70e2-9086-1618e73d50a0"
+ },
+ "019fd74b-4b66-7198-87df-f86877fcc113": {
+  "name": "Pink_Rose_Garden_in_a",
+  "src_tris": 1075939,
+  "lods": [
+   50000,
+   17988,
+   5790
+  ],
+  "foliage": true,
+  "parts": 36007,
+  "dims_m": [
+   1.89,
+   1.46,
+   0.47
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 7.88,
+  "sec": 94.6,
+  "source_folder": "019fd74b-4b66-7198-87df-f86877fcc113"
+ },
+ "019fd74b-9334-70ef-aab0-c92929f3bfde": {
+  "name": "Luminous_Weeping_Will",
+  "src_tris": 1897171,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 5945,
+  "dims_m": [
+   1.79,
+   1.89,
+   1.69
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.82,
+  "sec": 263.2,
+  "source_folder": "019fd74b-9334-70ef-aab0-c92929f3bfde"
+ },
+ "019fd74b-cab9-717f-a7b7-809a21aeb81a": {
+  "name": "Celestial_Blossom_Tre",
+  "src_tris": 1037848,
+  "lods": [
+   50000,
+   18000,
+   5984
+  ],
+  "foliage": true,
+  "parts": 525,
+  "dims_m": [
+   1.38,
+   0.88,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.52,
+  "sec": 64.4,
+  "source_folder": "019fd74b-cab9-717f-a7b7-809a21aeb81a"
+ },
+ "019fd74b-fc35-7190-8fa3-3d172ab2bad5": {
+  "name": "Blue_Star_Mosaic_Slab",
+  "src_tris": 466167,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 61,
+  "dims_m": [
+   1.9,
+   1.28,
+   0.16
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.41,
+  "sec": 32.9,
+  "source_folder": "019fd74b-fc35-7190-8fa3-3d172ab2bad5"
+ },
+ "019fd74c-3d9b-71a3-b3f3-2bf34d956ec8": {
+  "name": "Arabic_Script_Archway",
+  "src_tris": 1130498,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.9,
+   1.06,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.73,
+  "sec": 75.5,
+  "source_folder": "019fd74c-3d9b-71a3-b3f3-2bf34d956ec8"
+ },
+ "019fd74f-0822-7127-882f-0a86b12e50db": {
+  "name": "River_of_Gold",
+  "src_tris": 306402,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 11,
+  "dims_m": [
+   1.9,
+   1.0,
+   0.33
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.66,
+  "sec": 37.9,
+  "source_folder": "019fd74f-0822-7127-882f-0a86b12e50db"
+ },
+ "019fd74f-706b-71ae-80a1-0dbf244f2162": {
+  "name": "Turquoise_Mosaic_Arch",
+  "src_tris": 959914,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 7,
+  "dims_m": [
+   1.9,
+   1.63,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.94,
+  "sec": 96.3,
+  "source_folder": "019fd74f-706b-71ae-80a1-0dbf244f2162"
+ },
+ "019fd74f-aa4e-713a-82a8-74c3bc0eec60": {
+  "name": "Arched_Timber_Bridge",
+  "src_tris": 829825,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 60,
+  "dims_m": [
+   1.9,
+   0.92,
+   0.67
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.74,
+  "sec": 52.0,
+  "source_folder": "019fd74f-aa4e-713a-82a8-74c3bc0eec60"
+ },
+ "019fd74f-e0b9-722e-954c-2463277b4b8a": {
+  "name": "Muqarnas_Arch_with_Ca",
+  "src_tris": 1212499,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 3,
+  "dims_m": [
+   1.9,
+   1.01,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.85,
+  "sec": 81.0,
+  "source_folder": "019fd74f-e0b9-722e-954c-2463277b4b8a"
+ },
+ "019fd750-27df-7248-aba6-4d2d897609fe": {
+  "name": "Eight_Point_Star_Mosa",
+  "src_tris": 988716,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 61,
+  "dims_m": [
+   1.87,
+   1.9,
+   0.42
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.27,
+  "sec": 49.6,
+  "source_folder": "019fd750-27df-7248-aba6-4d2d897609fe"
+ },
+ "019fd750-600a-715b-81ec-f8fc40a60e38": {
+  "name": "Moonlit_Ring_in_a_Sto",
+  "src_tris": 478868,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 586,
+  "dims_m": [
+   1.89,
+   1.9,
+   0.41
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 6.6,
+  "sec": 50.9,
+  "source_folder": "019fd750-600a-715b-81ec-f8fc40a60e38"
+ },
+ "019fd750-8a50-71df-9dd6-ef95167026a5": {
+  "name": "Ruby_Gold_Arched_Gate",
+  "src_tris": 1561483,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 117,
+  "dims_m": [
+   1.9,
+   0.64,
+   1.9
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.95,
+  "sec": 90.0,
+  "source_folder": "019fd750-8a50-71df-9dd6-ef95167026a5"
+ },
+ "019fd750-afcf-7285-a4d1-f6c608e037ea": {
+  "name": "Bismillah_Portal_Ring",
+  "src_tris": 1281214,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 455,
+  "dims_m": [
+   1.89,
+   1.25,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 6.69,
+  "sec": 61.0,
+  "source_folder": "019fd750-afcf-7285-a4d1-f6c608e037ea"
+ },
+ "019fd750-e0ff-71e7-9465-52e242f85963": {
+  "name": "Golden_Fountain_of_Li",
+  "src_tris": 1123853,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 1248,
+  "dims_m": [
+   1.9,
+   1.9,
+   1.11
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 7.04,
+  "sec": 61.3,
+  "source_folder": "019fd750-e0ff-71e7-9465-52e242f85963"
+ },
+ "019fd751-1240-716c-b8bc-558ad26335b8": {
+  "name": "Ornate_Medallion_Rug_",
+  "src_tris": 719452,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.89,
+   1.9,
+   0.04
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.62,
+  "sec": 28.6,
+  "source_folder": "019fd751-1240-716c-b8bc-558ad26335b8"
+ },
+ "019fd751-3e70-71fc-9ae6-0115408b6d33": {
+  "name": "Tiered_Cascade",
+  "src_tris": 784146,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 65,
+  "dims_m": [
+   1.64,
+   1.9,
+   1.11
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.68,
+  "sec": 42.6,
+  "source_folder": "019fd751-3e70-71fc-9ae6-0115408b6d33"
+ },
+ "019fd751-7507-720f-85f8-e780338df37b": {
+  "name": "Emerald_Velvet_Cushio",
+  "src_tris": 594764,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 3,
+  "dims_m": [
+   1.9,
+   1.66,
+   0.69
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.61,
+  "sec": 37.3,
+  "source_folder": "019fd751-7507-720f-85f8-e780338df37b"
+ },
+ "019fd751-ab9d-7182-9357-4d53dc2ff68b": {
+  "name": "Ornate_Bonsai_in_a_Ca",
+  "src_tris": 1729756,
+  "lods": [
+   20000,
+   7000,
+   2556
+  ],
+  "foliage": false,
+  "parts": 242,
+  "dims_m": [
+   1.16,
+   1.16,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 3.01,
+  "sec": 59.6,
+  "source_folder": "019fd751-ab9d-7182-9357-4d53dc2ff68b"
+ },
+ "019fd751-df5f-7283-a69d-21ce0b39341f": {
+  "name": "Prismatic_Cascade",
+  "src_tris": 713720,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.54,
+   1.9,
+   1.18
+  ],
+  "metallic": false,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.57,
+  "sec": 42.3,
+  "source_folder": "019fd751-df5f-7283-a69d-21ce0b39341f"
+ },
+ "019fd752-18df-7230-9073-3541023b0cfa": {
+  "name": "Ivy_Clad_Cottage",
+  "src_tris": 1699830,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 11,
+  "dims_m": [
+   1.8,
+   1.9,
+   1.4
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.93,
+  "sec": 58.6,
+  "source_folder": "019fd752-18df-7230-9073-3541023b0cfa"
+ },
+ "019fd752-448c-7299-9aa7-c7d261a155d0": {
+  "name": "Floating_Stone_Path",
+  "src_tris": 876708,
+  "lods": [
+   50000,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 897,
+  "dims_m": [
+   1.89,
+   1.15,
+   0.22
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 7.19,
+  "sec": 27.5,
+  "source_folder": "019fd752-448c-7299-9aa7-c7d261a155d0"
+ },
+ "019fd752-7040-72a1-b415-d57b2058a277": {
+  "name": "Vine_Wrapped_Bamboo_A",
+  "src_tris": 483985,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 145,
+  "dims_m": [
+   1.89,
+   0.4,
+   1.56
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.79,
+  "sec": 22.3,
+  "source_folder": "019fd752-7040-72a1-b415-d57b2058a277"
+ },
+ "019fd752-9dea-71ac-983c-25a48ddc5d03": {
+  "name": "Corinthian_Column",
+  "src_tris": 724621,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 7,
+  "dims_m": [
+   0.74,
+   0.74,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.83,
+  "sec": 28.9,
+  "source_folder": "019fd752-9dea-71ac-983c-25a48ddc5d03"
+ },
+ "019fd752-cb5c-71b2-9d5b-f10b344739ec": {
+  "name": "Ropebound_Bamboo_Arch",
+  "src_tris": 419080,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.9,
+   0.47,
+   1.89
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.53,
+  "sec": 21.7,
+  "source_folder": "019fd752-cb5c-71b2-9d5b-f10b344739ec"
+ },
+ "019fd754-0629-71de-a125-f877e6542a40": {
+  "name": "Azure_Mosaic_Bench",
+  "src_tris": 728554,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 2,
+  "dims_m": [
+   1.89,
+   0.86,
+   1.11
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.56,
+  "sec": 31.3,
+  "source_folder": "019fd754-0629-71de-a125-f877e6542a40"
+ },
+ "019fd754-37bc-71e2-85b4-ce7a16526388": {
+  "name": "Golden_Gateway_to_Par",
+  "src_tris": 1324355,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 338,
+  "dims_m": [
+   1.89,
+   1.7,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.91,
+  "sec": 84.1,
+  "source_folder": "019fd754-37bc-71e2-85b4-ce7a16526388"
+ },
+ "019fd754-8dfa-728f-b272-559d8c3f4a17": {
+  "name": "Iridescent_Trail",
+  "src_tris": 309705,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 143,
+  "dims_m": [
+   1.9,
+   1.26,
+   0.14
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.65,
+  "sec": 25.2,
+  "source_folder": "019fd754-8dfa-728f-b272-559d8c3f4a17"
+ },
+ "019fd754-f7ac-7315-8fa2-521e6487e994": {
+  "name": "Star_Lantern",
+  "src_tris": 286756,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 4,
+  "dims_m": [
+   0.87,
+   0.87,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.59,
+  "sec": 28.1,
+  "source_folder": "019fd754-f7ac-7315-8fa2-521e6487e994"
+ },
+ "019fd755-2101-7327-85f8-093ed25da565": {
+  "name": "Crystal_Citadel",
+  "src_tris": 810132,
+  "lods": [
+   19998,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 92,
+  "dims_m": [
+   1.88,
+   1.8,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.93,
+  "sec": 97.2,
+  "source_folder": "019fd755-2101-7327-85f8-093ed25da565"
+ },
+ "019fd755-497b-7200-b2fb-c1a9f43bc1a7": {
+  "name": "Eight_Pointed_Star_La",
+  "src_tris": 721365,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 6,
+  "dims_m": [
+   1.67,
+   0.53,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.84,
+  "sec": 33.2,
+  "source_folder": "019fd755-497b-7200-b2fb-c1a9f43bc1a7"
+ },
+ "019fd755-7ddd-733b-bae0-c91e472c4657": {
+  "name": "Runic_Fire_Ring",
+  "src_tris": 351856,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 13,
+  "dims_m": [
+   1.9,
+   1.9,
+   0.28
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.55,
+  "sec": 20.6,
+  "source_folder": "019fd755-7ddd-733b-bae0-c91e472c4657"
+ },
+ "019fd755-a65c-721b-8406-8b1a4b5239fe": {
+  "name": "Golden_Crescent_Star_",
+  "src_tris": 1612575,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 7,
+  "dims_m": [
+   1.9,
+   1.18,
+   1.75
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.98,
+  "sec": 66.4,
+  "source_folder": "019fd755-a65c-721b-8406-8b1a4b5239fe"
+ },
+ "019fd755-d532-7223-92e7-dbad92e34f13": {
+  "name": "Ornate_Golden_Censer",
+  "src_tris": 1080022,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 5,
+  "dims_m": [
+   1.02,
+   1.02,
+   1.9
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.98,
+  "sec": 43.6,
+  "source_folder": "019fd755-d532-7223-92e7-dbad92e34f13"
+ },
+ "019fd75a-6e2d-734c-95b1-73c0c5a1e96c": {
+  "name": "Golden_Archway_of_Lig",
+  "src_tris": 1394524,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 2,
+  "dims_m": [
+   1.45,
+   0.57,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.65,
+  "sec": 59.8,
+  "source_folder": "019fd75a-6e2d-734c-95b1-73c0c5a1e96c"
+ },
+ "019fd75a-9879-73a7-bcfc-cf491522314f": {
+  "name": "Golden_Quranic_Panel",
+  "src_tris": 1447339,
+  "lods": [
+   20000,
+   5174,
+   2664
+  ],
+  "foliage": false,
+  "parts": 164,
+  "dims_m": [
+   1.9,
+   0.41,
+   1.57
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.74,
+  "sec": 77.0,
+  "source_folder": "019fd75a-9879-73a7-bcfc-cf491522314f"
+ },
+ "019fd75a-df94-7474-929e-e37928161495": {
+  "name": "Ornate_Lantern_Galler",
+  "src_tris": 1049770,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 5,
+  "dims_m": [
+   1.9,
+   0.28,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 3.0,
+  "sec": 62.2,
+  "source_folder": "019fd75a-df94-7474-929e-e37928161495"
+ },
+ "019fd75b-2808-7467-8085-10b81c90a994": {
+  "name": "Arabic_Calligraphy_St",
+  "src_tris": 599133,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   0.92,
+   0.29,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.76,
+  "sec": 22.9,
+  "source_folder": "019fd75b-2808-7467-8085-10b81c90a994"
+ },
+ "019fd75b-5c4b-73d8-b942-4956b951d703": {
+  "name": "Ornate_Golden_Goblet",
+  "src_tris": 1171438,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 1,
+  "dims_m": [
+   1.58,
+   1.8,
+   1.9
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.7,
+  "sec": 65.0,
+  "source_folder": "019fd75b-5c4b-73d8-b942-4956b951d703"
+ },
+ "019fd75b-9103-73e5-8b56-61c73bdee108": {
+  "name": "Crimson_Diamond_on_a_",
+  "src_tris": 1043440,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 16,
+  "dims_m": [
+   1.61,
+   1.24,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.74,
+  "sec": 69.2,
+  "source_folder": "019fd75b-9103-73e5-8b56-61c73bdee108"
+ },
+ "019fd75b-cbd0-73f1-824c-cdf9640f52dd": {
+  "name": "Floating_Lotus_Altar",
+  "src_tris": 1039237,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 17,
+  "dims_m": [
+   1.55,
+   1.33,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.8,
+  "sec": 54.8,
+  "source_folder": "019fd75b-cbd0-73f1-824c-cdf9640f52dd"
+ },
+ "019fd75b-f6e8-73c0-9fb2-3b835b73a8c3": {
+  "name": "Lantern_Ascension",
+  "src_tris": 585858,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 43,
+  "dims_m": [
+   0.95,
+   0.93,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 2.78,
+  "sec": 30.8,
+  "source_folder": "019fd75b-f6e8-73c0-9fb2-3b835b73a8c3"
+ },
+ "019fd75c-1e1b-74e2-8a88-d59f2daaa530": {
+  "name": "Floating_Meadow",
+  "src_tris": 1430113,
+  "lods": [
+   54408,
+   18000,
+   6000
+  ],
+  "foliage": true,
+  "parts": 18549,
+  "dims_m": [
+   1.85,
+   1.85,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 7.55,
+  "sec": 77.1,
+  "source_folder": "019fd75c-1e1b-74e2-8a88-d59f2daaa530"
+ },
+ "Asset": {
+  "name": "Marble_Water_Channel__2",
+  "src_tris": 698671,
+  "lods": [
+   20000,
+   7000,
+   2500
+  ],
+  "foliage": false,
+  "parts": 7,
+  "dims_m": [
+   1.9,
+   0.82,
+   0.32
+  ],
+  "metallic": true,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 2.65,
+  "sec": 29.2,
+  "source_folder": "Asset"
+ }
+}
