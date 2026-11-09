@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -282,6 +282,32 @@ public class GardenGrid : MonoBehaviour
 
     /// <summary>True when any cell of <paramref name="area"/> is already claimed.</summary>
     public bool IsCellOccupied(Vector2Int cell) => _cellRefs.ContainsKey(cell);
+
+    /// <summary>
+    /// <see cref="IsAreaFree(RectInt)"/> as it would read if <paramref name="ownerId"/> were not
+    /// standing there. Used to ask whether a spot is still clear of *other* things by something that
+    /// already holds it - a treasure box checking its own ground, say.
+    /// </summary>
+    public bool IsAreaFreeIgnoring(RectInt area, string ownerId)
+    {
+        RectInt ownArea = default;
+        bool hasOwn = !string.IsNullOrEmpty(ownerId) && _areas.TryGetValue(ownerId, out ownArea);
+
+        for (int x = area.xMin; x < area.xMax; x++)
+        {
+            for (int y = area.yMin; y < area.yMax; y++)
+            {
+                if (!_cellRefs.TryGetValue(new Vector2Int(x, y), out int refs)) continue;
+
+                // The owner's own claim accounts for exactly one reference on each of its cells.
+                if (hasOwn && ownArea.Contains(new Vector2Int(x, y))) refs--;
+
+                if (refs > 0) return false;
+            }
+        }
+
+        return true;
+    }
 
     /// <summary>
     /// Marks <paramref name="area"/> as taken by <paramref name="ownerId"/>.

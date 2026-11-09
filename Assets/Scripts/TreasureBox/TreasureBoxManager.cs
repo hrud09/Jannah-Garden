@@ -163,14 +163,36 @@ public class TreasureBoxManager : MonoBehaviour
     [Range(0f, 30f)]
     public float minDistanceBetweenBoxes = 6f;
 
-    [Tooltip("Radius, in metres, around an automatically picked spot that must be free of placed " +
-             "garden items and of colliders on the layers below.")]
-    [Range(0.25f, 4f)]
-    public float spawnClearRadius = 1f;
-
-    [Tooltip("Colliders on these layers block an automatically picked spot (scenery, buildings, " +
-             "placed items). Trigger colliders are always ignored.")]
+    [Tooltip("Colliders on these layers block a spot (scenery, buildings, placed items). Trigger " +
+             "colliders, the terrain, and the layers below are always ignored.")]
     public LayerMask spawnBlockingLayers = ~0;
+
+    [Tooltip("Layers that never block a box, whatever 'Spawn Blocking Layers' says: the boxes " +
+             "themselves, question mark orbs, minimap proxies, UI and water. Leaving these in the " +
+             "blocking mask would refuse spots that are perfectly good.")]
+    public string[] neverBlockingLayerNames =
+    {
+        "TreasureBox", "QuestionMark", "Minimap", "UI", "Ignore Raycast", "Water", "Player"
+    };
+
+    [Tooltip("The volume, in metres, that must be free where a box is to stand. A little larger than " +
+             "the box itself so it never ends up clipping into a rock or a placed item.")]
+    public Vector3 boxClearanceSize = new Vector3(2f, 1.6f, 1.6f);
+
+    /// <summary>How far off the ground the clearance test starts, so the terrain itself never blocks a spot.</summary>
+    private const float ClearanceGroundLift = 0.12f;
+
+    /// <summary>Scratch buffer for the clearance overlap test.</summary>
+    private static readonly Collider[] ClearanceHits = new Collider[32];
+
+    /// <summary>Cached <see cref="neverBlockingLayerNames"/> as a mask; -1 until first built.</summary>
+    private int _neverBlockingMask = -1;
+
+    /// <summary>Grid owner ids for the spots currently reserved, so the player cannot build on a waiting box.</summary>
+    private readonly HashSet<string> _reservedGridOwners = new HashSet<string>();
+
+    /// <summary>Slots already reported as having nowhere to stand, so the once-a-second retry stays quiet.</summary>
+    private readonly HashSet<string> _unplacedSlotsReported = new HashSet<string>();
 
     /// <summary>Random samples tried per area, per relaxation pass, before giving up on that area.</summary>
     private const int GeneratedSpawnAttempts = 60;
@@ -334,7 +356,15 @@ public class TreasureBoxManager : MonoBehaviour
             TickCycleResets();
 
             // Spawning and the HUD are not: both need the garden scene around them.
-            if (IsBoundToScene) CheckAndSpawnNewBoxes();
+            if (IsBoundToScene)
+            {
+                // Before spawning, so a box that has lost its ground is re-placed in the same tick.
+                RelocateObstructedBoxes();
+                CheckAndSpawnNewBoxes();
+
+                // After spawning, so a box that has just appeared claims its ground in the same tick.
+                SyncGridReservations();
+            }
         }
 
         UpdateTierUiData();
@@ -1152,16 +1182,26 @@ public class TreasureBoxManager : MonoBehaviour
 
     /// <summary>
     /// True when the slot already has a spot that may still be used. A spot stops being usable when its
-    /// hand-placed point has gone, or when it is not on unlocked ground - which is how a save made
-    /// before this rule existed (boxes sitting in locked areas) gets moved onto the player's own ground.
+    /// hand-placed point has gone, when it is not on unlocked ground - which is how a save made before
+    /// that rule existed (boxes sitting in locked areas) gets moved onto the player's own ground - or
+    /// when something now stands there.
     /// </summary>
-    private bool IsAssignedSpawnUsable(TreasureBoxTierState state, int slotIndex)
+    /// <param name="tier">The tier the slot belongs to, so a box already standing on the spot can
+    /// discount its own reservation. Null skips the "is anything in the way" test, which is what
+    /// <see cref="CollectReservedSpawns"/> wants: it is asking which spots are taken, not which are
+    /// still good.</param>
+    private bool IsAssignedSpawnUsable(TreasureBoxTierState state, int slotIndex, TreasureBoxTier? tier = null)
     {
         int assigned = state.assignedSpawnPoints[slotIndex];
 
         if (assigned == GENERATED_SPAWN_POINT)
         {
-            return PlacementAreas != null && IsInUnlockedArea(state.assignedSpawnPositions[slotIndex]);
+            if (PlacementAreas == null) return false;
+
+            Vector3 spot = state.assignedSpawnPositions[slotIndex];
+            if (!IsInUnlockedArea(spot)) return false;
+
+            return !tier.HasValue || IsSpotClear(spot, tier, slotIndex);
         }
 
         if (assigned < 0 || assigned >= spawnPoints.Count || spawnPoints[assigned] == null) return false;
@@ -1171,7 +1211,7 @@ public class TreasureBoxManager : MonoBehaviour
         if (PlacementAreas != null && (!useHandPlacedPoints || !IsInUnlockedArea(spawnPoints[assigned].position)))
             return false;
 
-        return true;
+        return !tier.HasValue || IsSpotClear(spawnPoints[assigned].position, tier, slotIndex);
     }
 
     /// <summary>World position and rotation of the slot's assigned spot, before it is dropped onto the ground.</summary>
@@ -1259,6 +1299,10 @@ public class TreasureBoxManager : MonoBehaviour
         TreasureBoxTierState state = _saveData.GetTierState(tier);
         state.assignedSpawnPoints[slotIndex] = -1;
 
+        // Whatever ground the slot was holding is no longer its own, and must not stop it picking a
+        // spot overlapping where it used to stand.
+        ReleaseGridReservation(tier, slotIndex);
+
         GardenAreaManager areas = PlacementAreas;
 
         if (areas == null)
@@ -1306,18 +1350,73 @@ public class TreasureBoxManager : MonoBehaviour
             }
         }
 
-        // Everything was refused (every spot blocked by scenery, say). The deepest point of the first
-        // choice of area is still on unlocked ground and well clear of its roads.
+        // Everything was refused: every spot in every unlocked area was blocked, too close to another
+        // box, or on ground too steep. Fall back to the deepest point of the first choice of area -
+        // still on unlocked ground and well clear of the roads - but walk outwards from it until the
+        // ground is actually free, rather than dropping the box into whatever happens to stand there.
         GardenAreaDefinition fallbackArea = ordered[0];
         Vector3 anchor = new Vector3(fallbackArea.labelAnchor.x, 0f, fallbackArea.labelAnchor.y);
         anchor.y = SampleGroundHeight(anchor);
 
-        Debug.LogWarning($"[TreasureBoxManager] Found no clear spot for {tier} slot {slotIndex} - using the " +
-                         $"centre of area {fallbackArea.number}. Check 'Spawn Blocking Layers' if this keeps happening.");
+        if (TryFindClearSpotNear(areas, fallbackArea, anchor, out Vector3 nearby))
+        {
+            Debug.LogWarning($"[TreasureBoxManager] Found no spot for {tier} slot {slotIndex} by the usual " +
+                             $"rules - placing it near the centre of area {fallbackArea.number} instead.");
 
-        state.assignedSpawnPoints[slotIndex] = GENERATED_SPAWN_POINT;
-        state.assignedSpawnPositions[slotIndex] = anchor;
-        return true;
+            state.assignedSpawnPoints[slotIndex] = GENERATED_SPAWN_POINT;
+            state.assignedSpawnPositions[slotIndex] = nearby;
+            return true;
+        }
+
+        // Nowhere in the whole area is clear. Refusing is better than putting a box inside a rock:
+        // the slot keeps no spot, and the next spawn check - after the player moves something, or
+        // unlocks more garden - tries again.
+        Debug.LogWarning($"[TreasureBoxManager] No clear ground anywhere for {tier} slot {slotIndex}; " +
+                         "leaving it unplaced until something frees up. Check 'Spawn Blocking Layers' " +
+                         "and 'Box Clearance Size' if this keeps happening.");
+        return false;
+    }
+
+    /// <summary>
+    /// Ground near <paramref name="anchor"/> that is clear and still inside <paramref name="area"/>,
+    /// found by stepping outwards in widening rings. The last word before a box would have to be
+    /// placed inside something.
+    /// </summary>
+    private bool TryFindClearSpotNear(GardenAreaManager areas, GardenAreaDefinition area, Vector3 anchor, out Vector3 spot)
+    {
+        spot = anchor;
+
+        const int Rings = 12;
+        const int PerRing = 12;
+        float step = Mathf.Max(1f, boxClearanceSize.x);
+
+        for (int ring = 0; ring <= Rings; ring++)
+        {
+            int samples = ring == 0 ? 1 : PerRing;
+            float radius = ring * step;
+            float phase = UnityEngine.Random.value * Mathf.PI * 2f;
+
+            for (int i = 0; i < samples; i++)
+            {
+                float angle = phase + i * Mathf.PI * 2f / samples;
+                Vector3 candidate = new Vector3(
+                    anchor.x + Mathf.Cos(angle) * radius,
+                    0f,
+                    anchor.z + Mathf.Sin(angle) * radius);
+
+                if (areas.AreaAt(candidate) != area) continue;
+
+                candidate.y = SampleGroundHeight(candidate);
+
+                if (!IsGentleGround(candidate)) continue;
+                if (!IsSpotClear(candidate)) continue;
+
+                spot = candidate;
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -1381,6 +1480,10 @@ public class TreasureBoxManager : MonoBehaviour
             if (areas.AreaAt(pos) != area) continue;
             if (!IsFarFromAll(pos, reservedPositions, spacing)) continue;
 
+            // A hand-placed point is a suggestion, not a promise: the player may well have built on
+            // top of it since, and rocks move when the scene is re-dressed.
+            if (!IsSpotClear(pos)) continue;
+
             candidates.Add(i);
         }
 
@@ -1434,8 +1537,7 @@ public class TreasureBoxManager : MonoBehaviour
             candidate.y = SampleGroundHeight(candidate);
 
             if (!IsGentleGround(candidate)) continue;
-            if (!IsClearOfPlacedItems(candidate)) continue;
-            if (!IsClearOfScenery(candidate)) continue;
+            if (!IsSpotClear(candidate)) continue;
 
             spot = candidate;
             return true;
@@ -1484,26 +1586,217 @@ public class TreasureBoxManager : MonoBehaviour
         return Vector3.Angle(data.GetInterpolatedNormal(u, v), Vector3.up) <= maxSpawnSlope;
     }
 
+    // --- Is this spot free? ---------------------------------------------------
+    //
+    // Every spot a box is ever put on goes through IsSpotClear: the hand-placed points, the
+    // automatically picked ones, and the spot a box is already standing on when the garden loads
+    // again. That last one is what keeps a box out of a shop item the player built over it while the
+    // box was waiting - the spot stops being clear, so the box is quietly given a new one.
+    //
+    // Two things can be in the way, and each needs its own test:
+    //   - items the player has placed, which claim cells in the GardenGrid;
+    //   - scenery that was always there (rocks, buildings, trees), which only has colliders.
+
+    /// <summary>The grid owner id a box's reserved cells are held under.</summary>
+    private static string GridOwnerId(TreasureBoxTier tier, int slotIndex) => "treasurebox:" + (int)tier + ":" + slotIndex;
+
+    /// <summary>The footprint, in grid cells, a box claims.</summary>
+    private Vector2Int ClearanceFootprint(GardenGrid grid)
+    {
+        float cell = Mathf.Max(0.01f, grid.CellSize);
+        return new Vector2Int(
+            Mathf.Max(1, Mathf.CeilToInt(boxClearanceSize.x / cell)),
+            Mathf.Max(1, Mathf.CeilToInt(boxClearanceSize.z / cell)));
+    }
+
+    /// <summary>True when nothing stands where a box would at <paramref name="groundPoint"/>.</summary>
+    /// <param name="ignoreTier">The box doing the asking, when it is already standing there: its own
+    /// reserved cells must not count as an obstacle. Null while picking a spot for a box that is not
+    /// out yet.</param>
+    private bool IsSpotClear(Vector3 groundPoint, TreasureBoxTier? ignoreTier = null, int ignoreSlot = -1)
+    {
+        return IsClearOfPlacedItems(groundPoint, ignoreTier, ignoreSlot) && IsClearOfScenery(groundPoint);
+    }
+
     /// <summary>True when no item the player has placed covers the ground around <paramref name="world"/>.</summary>
-    private bool IsClearOfPlacedItems(Vector3 world)
+    private bool IsClearOfPlacedItems(Vector3 world, TreasureBoxTier? ignoreTier = null, int ignoreSlot = -1)
     {
         GardenGrid grid = GardenGrid.Instance;
         if (grid == null || !grid.IsReady) return true;
 
-        int span = Mathf.Max(1, Mathf.CeilToInt(spawnClearRadius * 2f / grid.CellSize));
-        return grid.IsAreaFree(grid.AreaCovering(world, new Vector2Int(span, span)));
+        RectInt area = grid.AreaCovering(world, ClearanceFootprint(grid));
+
+        if (ignoreTier.HasValue && ignoreSlot >= 0)
+            return grid.IsAreaFreeIgnoring(area, GridOwnerId(ignoreTier.Value, ignoreSlot));
+
+        return grid.IsAreaFree(area);
+    }
+
+    /// <summary>The blocking mask with the layers that are never a real obstacle taken back out.</summary>
+    private int BlockingMask
+    {
+        get
+        {
+            if (_neverBlockingMask < 0)
+            {
+                _neverBlockingMask = 0;
+                if (neverBlockingLayerNames != null)
+                {
+                    foreach (string layerName in neverBlockingLayerNames)
+                    {
+                        if (string.IsNullOrEmpty(layerName)) continue;
+                        int layer = LayerMask.NameToLayer(layerName);
+                        if (layer >= 0) _neverBlockingMask |= 1 << layer;
+                    }
+                }
+            }
+
+            return spawnBlockingLayers.value & ~_neverBlockingMask;
+        }
     }
 
     /// <summary>
-    /// True when nothing solid stands where the box would. The test sphere sits just above the ground so
-    /// the terrain under it is never what blocks it.
+    /// True when nothing solid stands in the volume the box would fill. A box is tested rather than a
+    /// sphere, so a low rock the box would end up halfway inside is caught as readily as a wall, and
+    /// the test starts a little above the ground so the terrain under it is never what blocks it.
     /// </summary>
     private bool IsClearOfScenery(Vector3 groundPoint)
     {
-        if (spawnBlockingLayers.value == 0) return true;
+        int mask = BlockingMask;
+        if (mask == 0) return true;
 
-        Vector3 centre = groundPoint + Vector3.up * (spawnClearRadius + 0.5f);
-        return !Physics.CheckSphere(centre, spawnClearRadius, spawnBlockingLayers, QueryTriggerInteraction.Ignore);
+        float height = Mathf.Max(0.1f, boxClearanceSize.y - ClearanceGroundLift);
+        Vector3 halfExtents = new Vector3(
+            Mathf.Max(0.05f, boxClearanceSize.x * 0.5f),
+            height * 0.5f,
+            Mathf.Max(0.05f, boxClearanceSize.z * 0.5f));
+        Vector3 centre = groundPoint + Vector3.up * (ClearanceGroundLift + height * 0.5f);
+
+        int count = Physics.OverlapBoxNonAlloc(centre, halfExtents, ClearanceHits, Quaternion.identity,
+            mask, QueryTriggerInteraction.Ignore);
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider hit = ClearanceHits[i];
+            if (hit == null) continue;
+
+            // The ground itself is not an obstacle, however steeply it rises - the slope test speaks
+            // for that - and neither is another treasure box, which the spacing rule already handles.
+            if (hit is TerrainCollider) continue;
+            if (hit.GetComponentInParent<TreasureBox>() != null) continue;
+
+            return false;
+        }
+
+        return true;
+    }
+
+    // --- Holding the ground a waiting box stands on ---------------------------
+    //
+    // A box claims its cells in the GardenGrid for as long as it is standing there, so the player
+    // cannot put a shop item down on top of it: the placement preview refuses a box just as it
+    // refuses a bench. The claims are rebuilt from the live boxes once a second rather than on every
+    // spawn and despawn, because a garden rebuild clears the whole grid - this way the boxes get
+    // their ground back afterwards without the rebuild having to know they exist.
+
+    private void SyncGridReservations()
+    {
+        GardenGrid grid = GardenGrid.Instance;
+        if (grid == null || !grid.IsReady) return;
+
+        Vector2Int footprint = ClearanceFootprint(grid);
+
+        // Anything reserved for a box that is no longer standing goes back.
+        if (_reservedGridOwners.Count > 0)
+        {
+            List<string> stale = null;
+            foreach (string owner in _reservedGridOwners)
+            {
+                bool stillStanding = false;
+                foreach (SpawnedBoxInfo info in _spawnedBoxes)
+                {
+                    if (info.gameObject != null && GridOwnerId(info.tier, info.slotIndex) == owner)
+                    {
+                        stillStanding = true;
+                        break;
+                    }
+                }
+
+                if (!stillStanding) (stale ??= new List<string>()).Add(owner);
+            }
+
+            if (stale != null)
+            {
+                for (int i = 0; i < stale.Count; i++)
+                {
+                    grid.Release(stale[i]);
+                    _reservedGridOwners.Remove(stale[i]);
+                }
+            }
+        }
+
+        foreach (SpawnedBoxInfo info in _spawnedBoxes)
+        {
+            if (info.gameObject == null) continue;
+
+            string owner = GridOwnerId(info.tier, info.slotIndex);
+
+            // Already held, and the grid still remembers it: nothing to do. A garden rebuild wipes the
+            // grid without telling anyone, which is what the second half of this test catches.
+            if (_reservedGridOwners.Contains(owner) && grid.TryGetArea(owner, out _)) continue;
+
+            grid.Occupy(grid.AreaCovering(info.gameObject.transform.position, footprint), owner);
+            _reservedGridOwners.Add(owner);
+        }
+    }
+
+    /// <summary>
+    /// Takes down any waiting box whose ground is no longer its own and forgets where it stood, so the
+    /// spawn check that follows gives it a fresh spot.
+    ///
+    /// A box reserves its cells the moment it appears, so the player cannot build over one in the
+    /// ordinary way. This is for the ways round that: a garden restored from the cloud puts its items
+    /// back without asking the grid, and a scene re-dressed with new scenery can drop a rock on a spot
+    /// that was clear when it was picked.
+    /// </summary>
+    private void RelocateObstructedBoxes()
+    {
+        if (_saveData == null || Objectpool.Instance == null) return;
+
+        GardenGrid grid = GardenGrid.Instance;
+        if (grid == null || !grid.IsReady) return;
+
+        for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
+        {
+            SpawnedBoxInfo info = _spawnedBoxes[i];
+            if (info.gameObject == null) continue;
+
+            TreasureBoxTierState state = _saveData.GetTierState(info.tier);
+            if (state == null || state.slotOpened[info.slotIndex]) continue;
+
+            // The same question asked when the spot was picked, so a spot that was good then is still
+            // good now unless something has genuinely gone up on it.
+            if (IsAssignedSpawnUsable(state, info.slotIndex, info.tier)) continue;
+
+            Debug.Log($"[TreasureBoxManager] {info.tier} slot {info.slotIndex} is no longer standing on " +
+                      "clear ground - moving it.");
+
+            ReleaseGridReservation(info.tier, info.slotIndex);
+            Objectpool.Instance.Despawn(info.gameObject);
+            _spawnedBoxes.RemoveAt(i);
+
+            state.assignedSpawnPoints[info.slotIndex] = -1;
+        }
+    }
+
+    /// <summary>Hands back the cells a slot held, so the spot is free for whatever goes there next.</summary>
+    private void ReleaseGridReservation(TreasureBoxTier tier, int slotIndex)
+    {
+        string owner = GridOwnerId(tier, slotIndex);
+        if (!_reservedGridOwners.Remove(owner)) return;
+
+        GardenGrid grid = GardenGrid.Instance;
+        if (grid != null) grid.Release(owner);
     }
 
     private int GetAvailableSpawnPointIndex()
@@ -1549,15 +1842,22 @@ public class TreasureBoxManager : MonoBehaviour
 
         TreasureBoxTierState state = _saveData.GetTierState(tier);
         
-        // Pick a spot when the slot has none yet, or when the one it has is no longer on unlocked ground.
-        if (!IsAssignedSpawnUsable(state, slotIndex))
+        // Pick a spot when the slot has none yet, when the one it has is no longer on unlocked ground,
+        // or when something has gone up on it since it was chosen.
+        if (!IsAssignedSpawnUsable(state, slotIndex, tier))
         {
             if (!TryAssignSpawn(tier, slotIndex))
             {
-                Debug.LogWarning($"[TreasureBoxManager] No available spawn spot for {tier} slot {slotIndex}");
+                // The spawn check runs every second, so this would otherwise fill the log.
+                string unplaced = tier + ":" + slotIndex;
+                if (_unplacedSlotsReported.Add(unplaced))
+                    Debug.LogWarning($"[TreasureBoxManager] No available spawn spot for {tier} slot {slotIndex}");
+
                 SaveState();
                 return;
             }
+
+            _unplacedSlotsReported.Remove(tier + ":" + slotIndex);
             SaveState();
         }
 
@@ -1748,7 +2048,7 @@ public class TreasureBoxManager : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    /// <summary>Shows where every waiting box has been placed, with the clear radius it was checked against.</summary>
+    /// <summary>Shows where every waiting box has been placed, with the volume it was checked against.</summary>
     private void OnDrawGizmosSelected()
     {
         if (_saveData == null) return;
@@ -1765,7 +2065,11 @@ public class TreasureBoxManager : MonoBehaviour
                 if (!TryResolveAssignedSpawn(state, i, out Vector3 pos, out _)) continue;
 
                 pos.y = SampleGroundHeight(pos);
-                Gizmos.DrawWireSphere(pos + Vector3.up * (spawnClearRadius + 0.5f), spawnClearRadius);
+
+                float height = Mathf.Max(0.1f, boxClearanceSize.y - ClearanceGroundLift);
+                Gizmos.DrawWireCube(
+                    pos + Vector3.up * (ClearanceGroundLift + height * 0.5f),
+                    new Vector3(boxClearanceSize.x, height, boxClearanceSize.z));
                 Gizmos.DrawLine(pos, pos + Vector3.up * 6f);
             }
         }
