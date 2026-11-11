@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Init Scene.unity
     guid: 6a3aa92af8eaa1e46ada4104cfb9f7b4
   - enabled: 1
+    path: Assets/Scenes/Zaman/Jannah Garden shop asset Zaman.unity
+    guid: 5aff273581cf1e34fa9e8b63e1e69883
+  - enabled: 0
     path: Assets/Scenes/Jannah Garden.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
