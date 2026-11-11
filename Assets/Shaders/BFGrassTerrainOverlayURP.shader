@@ -1474,6 +1474,36 @@ Shader "JannahGarden/BFGrassTerrainOverlayURP"
 				}
 
 
-		}// Fallback "VertexLit"
+		}
+
+		// JannahGarden: fallback for GPUs/APIs without geometry shaders (Metal on macOS/iOS, many Android GLES/Vulkan devices).
+		// The SubShader above needs '#pragma geometry', so Unity skips it there and would otherwise render magenta.
+		// This overlay terrain only adds grass blades on top of 'LandTerrain' (its own ground is cut via _GrassCut = 1),
+		// so the fallback draws nothing and the regular terrain underneath shows through.
+		SubShader
+		{
+			Tags { "RenderPipeline" = "UniversalPipeline" "RenderType" = "Opaque" "Queue" = "Geometry" }
+			Pass
+			{
+				Name "NoGeometryFallback"
+				Tags { "LightMode" = "UniversalForward" }
+				ZWrite Off
+				ColorMask 0
+				HLSLPROGRAM
+				#pragma vertex vert
+				#pragma fragment frag
+				#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+				float4 vert(float4 vertex : POSITION) : SV_POSITION
+				{
+					// Push every vertex outside the clip volume so nothing is rasterized.
+					return float4(2.0, 2.0, 2.0, 1.0);
+				}
+
+				half4 frag() : SV_Target { return 0; }
+				ENDHLSL
+			}
+		}
+		Fallback Off
 }
 
