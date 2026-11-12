@@ -1,0 +1,246 @@
+{
+ "Celestial_Blossom_Tre": {
+  "name": "Celestial_Blossom_Tre",
+  "lods": [
+   {
+    "tris": 1924,
+    "cards": 50
+   },
+   {
+    "tris": 847,
+    "cards": 25
+   },
+   {
+    "tris": 328,
+    "cards": 12
+   }
+  ],
+  "card_size_m": 0.332,
+  "foliage_frac": 0.92,
+  "dims_m": [
+   1.38,
+   0.88,
+   1.9
+  ],
+  "sec": 21.8
+ },
+ "Whispering_Blossom_Tr": {
+  "name": "Whispering_Blossom_Tr",
+  "lods": [
+   {
+    "tris": 2169,
+    "cards": 85
+   },
+   {
+    "tris": 882,
+    "cards": 42
+   },
+   {
+    "tris": 342,
+    "cards": 21
+   }
+  ],
+  "card_size_m": 0.484,
+  "foliage_frac": 1.0,
+  "dims_m": [
+   1.85,
+   1.9,
+   1.45
+  ],
+  "sec": 19.3
+ },
+ "Petal_Cascade": {
+  "name": "Petal_Cascade",
+  "lods": [
+   {
+    "tris": 2230,
+    "cards": 117
+   },
+   {
+    "tris": 915,
+    "cards": 58
+   },
+   {
+    "tris": 386,
+    "cards": 29
+   }
+  ],
+  "card_size_m": 0.291,
+  "foliage_frac": 0.93,
+  "dims_m": [
+   1.89,
+   1.89,
+   1.82
+  ],
+  "sec": 35.0
+ },
+ "Luminous_Weeping_Will": {
+  "name": "Luminous_Weeping_Will",
+  "lods": [
+   {
+    "tris": 1782,
+    "cards": 169
+   },
+   {
+    "tris": 967,
+    "cards": 84
+   },
+   {
+    "tris": 384,
+    "cards": 42
+   }
+  ],
+  "card_size_m": 0.47,
+  "foliage_frac": 1.0,
+  "dims_m": [
+   1.79,
+   1.89,
+   1.69
+  ],
+  "sec": 30.7
+ },
+ "Low_Poly_Coconut_Palm": {
+  "name": "Low_Poly_Coconut_Palm",
+  "src_tris": 1316508,
+  "lods": [
+   3000,
+   1340,
+   450
+  ],
+  "foliage": false,
+  "parts": 40,
+  "dims_m": [
+   1.51,
+   1.51,
+   1.9
+  ],
+  "metallic": false,
+  "emission": false,
+  "tex": 1024,
+  "fbx_mb": 0.54,
+  "sec": 45.5,
+  "mode": "mesh"
+ },
+ "Tree_of_Light": {
+  "name": "Tree_of_Light",
+  "src_tris": 275024,
+  "lods": [
+   3000,
+   1200,
+   450
+  ],
+  "foliage": true,
+  "parts": 543,
+  "dims_m": [
+   0.99,
+   1.12,
+   1.9
+  ],
+  "metallic": true,
+  "emission": true,
+  "tex": 1024,
+  "fbx_mb": 0.53,
+  "sec": 18.3,
+  "mode": "mesh"
+ },
+ "Pomegranate_Tree": {
+  "name": "Pomegranate_Tree",
+  "lods": [
+   {
+    "tris": 2244,
+    "cards": 122
+   },
+   {
+    "tris": 922,
+    "cards": 61
+   },
+   {
+    "tris": 360,
+    "cards": 30
+   }
+  ],
+  "card_size_m": 0.342,
+  "foliage_frac": 0.94,
+  "dims_m": [
+   1.54,
+   1.4,
+   1.9
+  ],
+  "sec": 28.7
+ },
+ "Pomegranate_Tree_2": {
+  "name": "Pomegranate_Tree_2",
+  "lods": [
+   {
+    "tris": 2223,
+    "cards": 112
+   },
+   {
+    "tris": 911,
+    "cards": 56
+   },
+   {
+    "tris": 356,
+    "cards": 28
+   }
+  ],
+  "card_size_m": 0.367,
+  "foliage_frac": 0.93,
+  "dims_m": [
+   1.65,
+   1.48,
+   1.9
+  ],
+  "sec": 27.9
+ },
+ "Whimsical_Apple_Tree": {
+  "name": "Whimsical_Apple_Tree",
+  "lods": [
+   {
+    "tris": 2297,
+    "cards": 102
+   },
+   {
+    "tris": 902,
+    "cards": 51
+   },
+   {
+    "tris": 350,
+    "cards": 25
+   }
+  ],
+  "card_size_m": 0.417,
+  "foliage_frac": 0.73,
+  "dims_m": [
+   1.57,
+   1.62,
+   1.88
+  ],
+  "sec": 21.3
+ },
+ "Ornate_Bonsai_in_a_Ca": {
+  "name": "Ornate_Bonsai_in_a_Ca",
+  "lods": [
+   {
+    "tris": 2219,
+    "cards": 110
+   },
+   {
+    "tris": 908,
+    "cards": 55
+   },
+   {
+    "tris": 354,
+    "cards": 27
+   }
+  ],
+  "card_size_m": 0.189,
+  "foliage_frac": 0.47,
+  "dims_m": [
+   1.16,
+   1.16,
+   1.9
+  ],
+  "sec": 37.7
+ }
+}

@@ -1,17 +1,3 @@
-/*
-http://www.cgsoso.com/forum-211-1.html
-
-CG搜搜 Unity3d 每日Unity3d插件免费更新 更有VIP资源！
-
-CGSOSO 主打游戏开发，影视设计等CG资源素材。
-
-插件如若商用，请务必官网购买！
-
-daily assets update for try.
-
-U should buy the asset from home store if u use it in your project!
-*/
-
 //
 // Kino/Bloom v2 - Bloom filter for Unity
 //
@@ -48,7 +34,11 @@ namespace Kino
         // Update internal state with a given bloom instance.
         public void Prepare(Bloom bloom)
         {
+            #if UNITY_5_6_OR_NEWER
             if (bloom.GetComponent<Camera>().allowHDR)
+            #else
+            if (bloom.GetComponent<Camera>().hdr)
+            #endif
             {
                 _rangeX = 6;
                 _rangeY = 1.5f;

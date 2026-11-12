@@ -1,0 +1,65 @@
+{
+ "Petal_Cascade": {
+  "base_h": 0.04,
+  "z_c": 0.45,
+  "r_t": 0.18,
+  "mode": "cards",
+  "bark_v_max": 0.62,
+  "card_scale": 0.6,
+  "card_density": 0.55
+ },
+ "Pomegranate_Tree": {
+  "base_h": 0.04,
+  "z_c": 0.37,
+  "r_t": 0.15,
+  "mode": "cards"
+ },
+ "Pomegranate_Tree_2": {
+  "base_h": 0.04,
+  "z_c": 0.37,
+  "r_t": 0.15,
+  "mode": "cards"
+ },
+ "Celestial_Blossom_Tre": {
+  "base_h": 0.04,
+  "z_c": 0.58,
+  "r_t": 0.32,
+  "mode": "cards"
+ },
+ "Whispering_Blossom_Tr": {
+  "base_h": 0.04,
+  "z_c": 0.3,
+  "r_t": 0.15,
+  "mode": "cards"
+ },
+ "Luminous_Weeping_Will": {
+  "base_h": 0.0,
+  "z_c": 0.45,
+  "r_t": 0.12,
+  "mode": "hang"
+ },
+ "Tree_of_Light": {
+  "base_h": 0.04,
+  "z_c": 0.45,
+  "r_t": 0.2,
+  "mode": "mesh"
+ },
+ "Whimsical_Apple_Tree": {
+  "base_h": 0.04,
+  "z_c": 0.39,
+  "r_t": 0.22,
+  "mode": "cards"
+ },
+ "Low_Poly_Coconut_Palm": {
+  "base_h": 0.04,
+  "z_c": 0.47,
+  "r_t": 0.12,
+  "mode": "mesh"
+ },
+ "Ornate_Bonsai_in_a_Ca": {
+  "base_h": 0.57,
+  "z_c": 0.66,
+  "r_t": 0.15,
+  "mode": "cards"
+ }
+}
