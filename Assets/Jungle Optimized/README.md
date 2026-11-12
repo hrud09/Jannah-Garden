@@ -26,6 +26,7 @@ disable or delete `Environment/Jungle`. The prefab is laid out in world space on
 | `Shaders/SNB_Nature_URP_Mobile.shader` | Mobile version of `JannahGarden/SNB_Nature_URP`, same look and wind. |
 | `Scripts/MobileEnvironmentOptimizer.cs` | Runtime-only mobile layer (see below). |
 | `Editor/JungleOptimizedBuilder.cs` | The tool that generates all of the above. |
+| `Showcase/` | Before/after demo: split screen, live counters, benchmark and HTML report (see below). |
 
 ## What was optimized
 
@@ -72,6 +73,36 @@ everything if disabled. It:
   frame, and add other decorative roots (e.g. `Environment/Scattered Foliage`) to **Cull Roots**.
 
 Set **Apply Mode = Always** to preview the mobile result in the editor.
+
+## Showing the result: Optimization Showcase (`Showcase/`)
+
+A before/after demo for presenting the work. It needs a scene with **both** the original jungle and the optimized
+one, so use a demo scene (e.g. `Assets/Scenes/Zaman/Jannah Garden shop asset Zaman v_2.unity`), not the shipped game scene.
+
+1. Open the scene and run **Tools > Jungle Optimized > Set Up Showcase In Open Scene**. This:
+   - adds the optimized prefab (disabled) next to the original;
+   - adds an `Optimization Showcase (demo)` object with three camera viewpoints: inside the jungle, the lantern
+     path, and the garden edge;
+   - keeps any scene-level `Mobile Environment Optimizer` switched off, so the original is shown as it really was.
+2. Press **Play** (click through the game's start screen). A panel appears in the Game view:
+   - **Original / Optimized**: switch the whole jungle. The live counters (FPS, draw calls, triangles,
+     shadow casters, objects rendered, lantern lights) update immediately.
+   - **Split**: the original on the left of the line and the optimized jungle on the right, from the same camera
+     in the same frame. Drag the line.
+   - **View**: jump between the saved viewpoints and the free camera.
+   - **Benchmark**: measures both versions at every viewpoint, in the order original, optimized, optimized,
+     original, so changes over time cancel out.
+   - **Full Report**: runs the benchmark, renders same-view screenshots of both versions (3D only, no UI) with a
+     split image and a pixel-difference image, and writes `Report.html`. The report opens in the browser and
+     is saved to `<project>/OptimizationShowcase/<date>/`, which is git-ignored.
+   - Keys: `1` `2` `3` modes, `V` view, `B` benchmark, `R` report, `H` hide the panel.
+3. Add more viewpoints: frame a shot in the Scene view, select the showcase object and click
+   **Add viewpoint from Scene view camera**. With the object selected, the inspector also shows a content
+   comparison without Play: renderers, triangles, shadow casters, particles and mesh memory.
+
+The demo runs with the **Mobile** quality level, so both versions are judged with the phone settings. To show it on
+a phone, add the demo scene to a **Development Build**. Draw-call counters only exist in development builds; FPS
+works in any build. On the phone, reports are saved under `Application.persistentDataPath`.
 
 ## Rebuilding
 
