@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemsData
   categories:
   - category: 0
-    maxVisibleItems: 3
+    maxVisibleItems: 7
     items:
     - itemIcon: {fileID: 21300000, guid: d802368548d077c4fb5631a1392355c0, type: 3}
       itemName: Coconut Palm
@@ -561,7 +561,7 @@ MonoBehaviour:
       footprintScale: 1
       itemPrice: 
   - category: 1
-    maxVisibleItems: 3
+    maxVisibleItems: 6
     items:
     - itemIcon: {fileID: 21300000, guid: b293cfaee612645409bb3ff19d0f2ce5, type: 3}
       itemName: Blue Mosaic Octagon
@@ -980,7 +980,7 @@ MonoBehaviour:
       footprintScale: 1
       itemPrice: 
   - category: 2
-    maxVisibleItems: 3
+    maxVisibleItems: 7
     items:
     - itemIcon: {fileID: 21300000, guid: ed2094b9ff720d84f8c38dc900c12afb, type: 3}
       itemName: Floating Stone Path
@@ -1431,7 +1431,7 @@ MonoBehaviour:
       footprintScale: 1
       itemPrice: 
   - category: 3
-    maxVisibleItems: 3
+    maxVisibleItems: 5
     items:
     - itemIcon: {fileID: 21300000, guid: 689b716932d3f5d4d9b1dc5aae6778b2, type: 3}
       itemName: Blue Star Mosaic Slab
@@ -1722,7 +1722,7 @@ MonoBehaviour:
       footprintScale: 1
       itemPrice: 
   - category: 9
-    maxVisibleItems: 3
+    maxVisibleItems: 5
     items:
     - itemIcon: {fileID: 21300000, guid: 58fedf2cc51016642a4f6dcf0e02aa39, type: 3}
       itemName: Floating Meadow
@@ -2077,7 +2077,7 @@ MonoBehaviour:
       footprintScale: 1
       itemPrice: 
   - category: 8
-    maxVisibleItems: 3
+    maxVisibleItems: 4
     items:
     - itemIcon: {fileID: 21300000, guid: 4f2b7909ea19b43eaa483d82db91305a, type: 3}
       itemName: Daily Surprise
