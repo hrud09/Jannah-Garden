@@ -9,6 +9,13 @@ using UnityEngine;
 public class ShopItemCategoryGroup
 {
     public ShopItemCategory category;
+
+    [Tooltip("How many items of this category are shown under its tab in the shop. "
+           + "0 = show every item in the category. Items are picked after the shop's normal sort "
+           + "(unlocked first, then cheapest), so the cut keeps the most relevant ones.")]
+    [Min(0)]
+    public int maxVisibleItems = 0;
+
     public List<ShopItemData> items = new List<ShopItemData>();
 }
 
@@ -21,4 +28,22 @@ public class ShopItemCategoryGroup
 public class ShopItemsData : ScriptableObject
 {
     public List<ShopItemCategoryGroup> categories = new List<ShopItemCategoryGroup>();
+
+    /// <summary>
+    /// The number of items allowed to be visible under <paramref name="category"/>'s tab, or
+    /// <see cref="int.MaxValue"/> when the category has no limit (no group, or its
+    /// <see cref="ShopItemCategoryGroup.maxVisibleItems"/> is 0).
+    /// </summary>
+    public int GetMaxVisibleItems(ShopItemCategory category)
+    {
+        if (categories != null)
+        {
+            foreach (var group in categories)
+            {
+                if (group != null && group.category == category && group.maxVisibleItems > 0)
+                    return group.maxVisibleItems;
+            }
+        }
+        return int.MaxValue;
+    }
 }

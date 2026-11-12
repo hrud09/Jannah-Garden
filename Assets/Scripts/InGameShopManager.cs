@@ -270,6 +270,10 @@ public class InGameShopManager : MonoBehaviour
                 .ThenBy(d => d != null ? (int)d.itemTier : 0)
                 .ThenBy(d => d != null ? d.sortOrder : 0);
 
+            // Per-category visible cap from ShopItemsData (0 there = unlimited). Counted per tab after
+            // sorting, so each tab shows its first N items in the order above.
+            var spawnedPerCategory = new Dictionary<ShopItemCategory, int>();
+
             foreach (var data in sortedShopItems)
             {
                 if (data == null) continue;
@@ -277,6 +281,10 @@ public class InGameShopManager : MonoBehaviour
                 CategoryTab matchingTab = FindTabForCategory(data.itemCategory);
                 if (matchingTab != null)
                 {
+                    spawnedPerCategory.TryGetValue(data.itemCategory, out int shownSoFar);
+                    if (shownSoFar >= shopItemsDatabase.GetMaxVisibleItems(data.itemCategory)) continue;
+                    spawnedPerCategory[data.itemCategory] = shownSoFar + 1;
+
                     // Per-item guard: this method runs exactly once per session (hasSpawnedItems is
                     // latched above), so an exception escaping a single card would abandon every
                     // remaining item and leave the shop permanently empty — with no way to retry,
