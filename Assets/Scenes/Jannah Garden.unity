@@ -354200,10 +354200,18 @@ MonoBehaviour:
   areaEdgeMargin: 2
   maxSpawnSlope: 20
   minDistanceBetweenBoxes: 6
-  spawnClearRadius: 1
   spawnBlockingLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  neverBlockingLayerNames:
+  - TreasureBox
+  - QuestionMark
+  - Minimap
+  - UI
+  - Ignore Raycast
+  - Water
+  - Player
+  boxClearanceSize: {x: 2, y: 1.6, z: 1.6}
 --- !u!4 &2090118979
 Transform:
   m_ObjectHideFlags: 0
@@ -364692,7 +364700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 216.87
       objectReference: {fileID: 0}
     - target: {fileID: 6107051593006915305, guid: 7914c64c9edcb4a4390d460858e8ddae, type: 3}
       propertyPath: m_AnchoredPosition.x
