@@ -178,6 +178,7 @@ public class IntroVideoController : MonoBehaviour
     {
         if (_ending || _openRequested) return;
         _openRequested = true;
+        GameEvents.IntroVideo("DoorOpened");
 
         if (openButton != null)
         {
@@ -262,6 +263,7 @@ public class IntroVideoController : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer vp)
     {
+        GameEvents.IntroVideo("VideoFinished");
         EndIntro();
     }
 

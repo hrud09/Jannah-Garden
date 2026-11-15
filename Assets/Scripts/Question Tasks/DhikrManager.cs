@@ -67,6 +67,11 @@ public class DhikrManager : MonoBehaviour
     private int currentCount = 0;
     private int targetCount = 33;
     private int currentDhikrIndex = 0;
+
+    // Analytics: whether a dhikr is in progress (started, not yet completed or closed) and when it began.
+    private bool _analyticsActive;
+    private float _analyticsStartTime;
+    private const string LifetimeDhikrKey = "analytics.lifetime_dhikr";
     private string currentDhikrName = "";
 
     void Awake()
@@ -115,6 +120,7 @@ public class DhikrManager : MonoBehaviour
 
     public void StartDhikr(QuestionMarkOrb orb = null)
     {
+        ReportDhikrAbandonedIfActive();
         currentOrb = orb;
         if (blurredBG != null) blurredBG.SetActive(true);
 
@@ -159,6 +165,10 @@ public class DhikrManager : MonoBehaviour
                 }
 
                 UpdateCountUI();
+
+                _analyticsActive = true;
+                _analyticsStartTime = Time.realtimeSinceStartup;
+                GameEvents.DhikrStarted(currentDhikrIndex, targetCount, orb != null);
 
                 if (dhikrTextUI != null)
                 {
@@ -260,6 +270,15 @@ public class DhikrManager : MonoBehaviour
         {
             if (submitButton != null) submitButton.interactable = false;
 
+            if (_analyticsActive)
+            {
+                _analyticsActive = false;
+                int lifetime = PlayerPrefs.GetInt(LifetimeDhikrKey, 0) + 1;
+                PlayerPrefs.SetInt(LifetimeDhikrKey, lifetime);
+                GameEvents.DhikrCompleted(currentDhikrIndex, targetCount,
+                    Time.realtimeSinceStartup - _analyticsStartTime, lifetime);
+            }
+
             // Both grants suppress their own toast: the amounts are presented instead by the
             // Mash'Allah finale's reward row (see RewardFinaleDisplay).
             int coinsEarned = 0;
@@ -268,7 +287,7 @@ public class DhikrManager : MonoBehaviour
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
                 coinsEarned = QuestionMarkOrbManager.Instance.rewardCoins;
-                NoorCoinManager.Instance.Earn(coinsEarned, false); // Suppress default toast
+                NoorCoinManager.Instance.Earn(coinsEarned, false, GameEvents.CoinSource.Dhikr, $"Dhikr_{currentDhikrIndex}"); // Suppress default toast
             }
             if (PlayerXPManager.Instance != null)
             {
@@ -335,9 +354,19 @@ public class DhikrManager : MonoBehaviour
 
     public void CloseDhikrDramatically()
     {
+        ReportDhikrAbandonedIfActive();
         GameSfx.Play(SoundEffect.DhikrClose);
         StopAllCoroutines();
         CloseDhikrDramaticallyInternal();
+    }
+
+    /// <summary>Reports a dhikr the player walked away from before reaching the target count.</summary>
+    private void ReportDhikrAbandonedIfActive()
+    {
+        if (!_analyticsActive) return;
+        _analyticsActive = false;
+        GameEvents.DhikrAbandoned(currentDhikrIndex, currentCount, targetCount,
+            Time.realtimeSinceStartup - _analyticsStartTime);
     }
 
     private void CloseDhikrDramaticallyInternal()

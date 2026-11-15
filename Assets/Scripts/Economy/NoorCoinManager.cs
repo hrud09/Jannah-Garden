@@ -123,7 +123,9 @@ public class NoorCoinManager : MonoBehaviour
     /// Returns <c>true</c> and deducts the cost if the player can afford it;
     /// returns <c>false</c> and leaves the balance unchanged if they cannot.
     /// </summary>
-    public bool TrySpend(int amount)
+    /// <param name="sink">What the coins were spent on, for analytics — see <see cref="GameEvents.CoinSink"/>.</param>
+    /// <param name="itemId">The specific thing bought, for analytics.</param>
+    public bool TrySpend(int amount, string sink = GameEvents.CoinSink.Other, string itemId = null)
     {
         if (amount < 0)
         {
@@ -139,6 +141,7 @@ public class NoorCoinManager : MonoBehaviour
         }
 
         SetBalance(_balance - amount);
+        GameEvents.CoinsSpent(amount, sink, itemId);
 
         // Silent toast: the coin cue below already says what happened, and SpendColor's coral would
         // otherwise be read as a failure by the colour-to-tone inference.
@@ -164,7 +167,9 @@ public class NoorCoinManager : MonoBehaviour
     public static readonly Color EarnColor = new Color(0.62f, 0.91f, 0.60f, 1f);
 
     /// <summary>Adds <paramref name="amount"/> Noor Coins to the player's balance.</summary>
-    public void Earn(int amount, bool showToast = true)
+    /// <param name="source">Where the coins came from, for analytics — see <see cref="GameEvents.CoinSource"/>.</param>
+    /// <param name="itemId">The specific quiz, item or box behind the grant, for analytics.</param>
+    public void Earn(int amount, bool showToast = true, string source = GameEvents.CoinSource.Other, string itemId = null)
     {
         if (amount < 0)
         {
@@ -173,6 +178,7 @@ public class NoorCoinManager : MonoBehaviour
         }
 
         SetBalance(_balance + amount);
+        GameEvents.CoinsEarned(amount, source, itemId);
 
         GameSfx.Play(SoundEffect.CoinGain);
         if (showToast && ToastMessageManager.Instance != null)

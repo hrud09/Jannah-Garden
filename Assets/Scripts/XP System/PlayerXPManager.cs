@@ -290,6 +290,7 @@ public class PlayerXPManager : MonoBehaviour
                 if (reward.rewardAmount > 0f)
                 {
                     AddXP(reward.rewardAmount);
+                    GameEvents.XpGained(taskType.ToString(), reward.rewardAmount);
                     Debug.Log($"[PlayerXPManager] Granted {reward.rewardAmount} XP for {taskType}.");
                     if (showToast && ToastMessageManager.Instance != null)
                     {
@@ -334,6 +335,7 @@ public class PlayerXPManager : MonoBehaviour
         if (amount > 0f)
         {
             AddXP(amount);
+            GameEvents.XpGained(XPTaskType.PlaceShopItem.ToString(), amount);
             Debug.Log($"[PlayerXPManager] Granted {amount} XP for placing a shop item (Level {requiredXPLevel}).");
             if (ToastMessageManager.Instance != null)
             {

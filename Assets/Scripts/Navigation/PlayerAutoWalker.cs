@@ -339,6 +339,7 @@ public class PlayerAutoWalker : MonoBehaviour
 
     private bool Fail(Destination destination, EndReason reason)
     {
+        GameEvents.AutoWalkEnded(destination.ToString(), reason.ToString());
         WalkEnded?.Invoke(destination, reason);
         return false;
     }
@@ -356,6 +357,7 @@ public class PlayerAutoWalker : MonoBehaviour
         _repaths = 0;
         ResetStuck();
 
+        GameEvents.AutoWalkStarted(destination.ToString());
         WalkStarted?.Invoke(destination);
     }
 
@@ -368,6 +370,7 @@ public class PlayerAutoWalker : MonoBehaviour
         _turningInPlace = false;
         if (_movement != null) _movement.ClearAutoMove();
 
+        GameEvents.AutoWalkEnded(ended.ToString(), reason.ToString());
         WalkEnded?.Invoke(ended, reason);
     }
 

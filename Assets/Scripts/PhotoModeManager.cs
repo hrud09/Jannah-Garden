@@ -174,6 +174,7 @@ public class PhotoModeManager : MonoBehaviour
         if (_isCapturing || IsPreviewOpen) return;
         if (!isActiveAndEnabled) return;
 
+        GameEvents.PhotoTaken();
         StartCoroutine(CaptureRoutine());
     }
 
@@ -182,6 +183,8 @@ public class PhotoModeManager : MonoBehaviour
     {
         if (!HasPhotoOnDisk("share")) return;
         if (_actionInFlight) return;
+
+        GameEvents.PhotoAction("Share");
 
         if (NativePhotoService.IsSupported)
         {
@@ -209,6 +212,8 @@ public class PhotoModeManager : MonoBehaviour
     {
         if (!HasPhotoOnDisk("save")) return;
         if (_actionInFlight) return;
+
+        GameEvents.PhotoAction("Save");
 
         // Off a phone this copies the photo into the user's Pictures folder instead, so the button is
         // still testable from the Editor.
@@ -453,6 +458,8 @@ public class PhotoModeManager : MonoBehaviour
     private void HandleNativeShareResult(bool success, string message)
     {
         _actionInFlight = false;
+        if (message != NativePhotoService.CancelledMessage) GameEvents.PhotoAction("Share", success);
+        else GameEvents.Design(new[] { "Photo", "Share", "Cancelled" });
 
         if (success) return;
 
@@ -465,6 +472,7 @@ public class PhotoModeManager : MonoBehaviour
     private void HandleNativeSaveResult(bool success, string message)
     {
         _actionInFlight = false;
+        GameEvents.PhotoAction("Save", success);
 
         if (success)
         {
@@ -505,6 +513,7 @@ public class PhotoModeManager : MonoBehaviour
     private void HandlePhotoActionResult(PhotoActionResultPayload result)
     {
         if (result == null) return;
+        GameEvents.PhotoAction(result.action == PhotoAction.Save ? "Save" : "Share", result.success);
 
         if (!result.success)
         {

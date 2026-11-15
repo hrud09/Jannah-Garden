@@ -95,6 +95,7 @@ public class InspectorModeUI : MonoBehaviour
 
     private void OnModeChanged(bool isInspectorMode)
     {
+        GameEvents.InspectorModeToggled(isInspectorMode);
         UpdateUI(isInspectorMode);
 
         // Unlock/lock camera pitch

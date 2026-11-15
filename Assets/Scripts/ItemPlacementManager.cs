@@ -412,6 +412,9 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingSourceKind = PlacedItemSource.ShopItem;
         _pendingSourceItemId = itemData.itemID;
 
+        GameEvents.PlacementStarted("Shop", itemData.itemID, itemData.itemCategory.ToString());
+        onFailed = ReportDownloadFailure(onFailed, itemData.itemID);
+
         InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration, onReady, onFailed, onProgress);
     }
 
@@ -437,6 +440,9 @@ public class ItemPlacementManager : MonoBehaviour
         _pendingRewardItemData = itemData;
         _pendingSourceKind = PlacedItemSource.InventoryItem;
         _pendingSourceItemId = itemData.itemID;
+
+        GameEvents.PlacementStarted("Inventory", itemData.itemID, itemData.itemCategory.ToString());
+        onFailed = ReportDownloadFailure(onFailed, itemData.itemID);
 
         InternalPreparePlacement(itemData.itemPrefabRef, itemData.itemPlacementModelPrefabRef, itemData.placementTimerDuration, onReady, onFailed, onProgress);
     }
@@ -1071,6 +1077,7 @@ public class ItemPlacementManager : MonoBehaviour
         SavePlacedItems();
 
         OnItemPlaced?.Invoke(placeable);
+        ReportPlacement(placeable);
 
         if (_isRelocating)
         {
@@ -1120,6 +1127,8 @@ public class ItemPlacementManager : MonoBehaviour
     public void CancelPlacement()
     {
         if (currentPlacedObject == null) return;
+
+        GameEvents.PlacementCancelled(_isRelocating, _pendingSourceItemId);
 
         Objectpool.Instance.Despawn(currentPlacedObject);
         currentPlacedObject = null;
@@ -1204,7 +1213,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (refund > 0 && NoorCoinManager.Instance != null)
         {
-            NoorCoinManager.Instance.Earn(refund);
+            NoorCoinManager.Instance.Earn(refund, true, GameEvents.CoinSource.Refund, _pendingSourceItemId);
         }
         else if (ToastMessageManager.Instance != null)
         {
@@ -1351,6 +1360,10 @@ public class ItemPlacementManager : MonoBehaviour
         SavePlacedItems();
         TrimAddressableCache();
 
+        GameEvents.ItemReturnedToStore(kind.ToString(), sourceItemId,
+            kind == PlacedItemSource.InventoryItem ? 0 : CalculateCoinRefund(FindShopItemData(sourceItemId)),
+            activePlacedItems.Count);
+
         GameSfx.Play(SoundEffect.ItemStore);
 
         // ── Treasure box reward → back on the shelf as one item ───────────────
@@ -1386,7 +1399,7 @@ public class ItemPlacementManager : MonoBehaviour
 
         if (refund > 0 && NoorCoinManager.Instance != null)
         {
-            NoorCoinManager.Instance.Earn(refund);
+            NoorCoinManager.Instance.Earn(refund, true, GameEvents.CoinSource.Refund, sourceItemId);
             return true;
         }
 
@@ -1398,6 +1411,39 @@ public class ItemPlacementManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    // ─── Analytics ────────────────────────────────────────────────────────────
+
+    private const string LifetimePlacedKey = "analytics.lifetime_placed";
+
+    /// <summary>Reports a confirmed placement — a move for a relocation, a new garden item otherwise.</summary>
+    private void ReportPlacement(PlaceableItem placeable)
+    {
+        if (_isRelocating)
+        {
+            GameEvents.ItemMoved(_pendingSourceItemId);
+            return;
+        }
+
+        string category = _pendingRewardItemData != null
+            ? _pendingRewardItemData.itemCategory.ToString()
+            : FindShopItemData(_pendingSourceItemId)?.itemCategory.ToString();
+
+        int lifetime = PlayerPrefs.GetInt(LifetimePlacedKey, 0) + 1;
+        PlayerPrefs.SetInt(LifetimePlacedKey, lifetime);
+
+        GameEvents.ItemPlaced(_pendingSourceKind == PlacedItemSource.InventoryItem ? "Inventory" : "Shop",
+            _pendingSourceItemId, category, activePlacedItems.Count, lifetime);
+    }
+
+    private static System.Action ReportDownloadFailure(System.Action onFailed, string itemId)
+    {
+        return () =>
+        {
+            GameEvents.PlacementDownloadFailed(itemId);
+            onFailed?.Invoke();
+        };
     }
 
     /// <summary>What returning <paramref name="shopData"/> pays out, rounded to a whole coin.</summary>

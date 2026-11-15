@@ -74,7 +74,9 @@ public class LevelPlayAdService : IAdService
     {
         if (HouseAdPresenter.TryShow(() => onComplete?.Invoke(true))) return;
 
-        onComplete?.Invoke(TryConsumeUnavailableBypass());
+        bool granted = TryConsumeUnavailableBypass();
+        GameEvents.AdFallback(granted ? "BypassGranted" : "BypassDenied");
+        onComplete?.Invoke(granted);
     }
 
     /// <summary>
@@ -375,18 +377,28 @@ public class LevelPlayAdService : IAdService
         {
             _consecutiveLoadFailures = 0;
             Debug.Log("[LevelPlayAdService] Rewarded ad loaded and ready to show.");
+            GameEvents.AdLoaded(GameEvents.AdSdk.LevelPlay, adInfo?.AdNetwork);
         };
 
         _rewardedAd.OnAdLoadFailed += error =>
         {
             Debug.LogWarning($"[LevelPlayAdService] Rewarded ad failed to load: {error}");
+            GameEvents.AdLoadFailed(GameEvents.AdSdk.LevelPlay, error?.ToString(), _consecutiveLoadFailures + 1);
             ScheduleLoadRetry();
         };
+
+        _rewardedAd.OnAdDisplayed += adInfo =>
+            GameEvents.AdShown(GameEvents.AdSdk.LevelPlay, adInfo?.AdNetwork, adInfo?.Revenue);
+
+        _rewardedAd.OnAdClicked += adInfo =>
+            GameEvents.AdClicked(GameEvents.AdSdk.LevelPlay, adInfo?.AdNetwork);
 
         // The reward event is authoritative: seeing it at all means the player earned the reward, so
         // settle immediately rather than waiting for the close event.
         _rewardedAd.OnAdRewarded += (adInfo, reward) =>
         {
+            // Reported only for the ad actually pending — a duplicate reward event must not count twice.
+            if (_pendingCallback != null) GameEvents.AdRewarded(GameEvents.AdSdk.LevelPlay);
             _rewardEarned = true;
             Settle(true);
         };
@@ -396,6 +408,7 @@ public class LevelPlayAdService : IAdService
             // The player asked for an ad and the SDK could not put one on screen — that is our failure,
             // not a skip, so it follows the same path as an unfilled slot.
             Debug.LogWarning($"[LevelPlayAdService] Rewarded ad failed to display: {error}");
+            GameEvents.AdFailedToShow(GameEvents.AdSdk.LevelPlay, GameAnalyticsSDK.GAAdError.InternalError, error?.ToString());
             SettleWithoutNetworkAd();
         };
 
@@ -456,6 +469,7 @@ public class LevelPlayAdService : IAdService
         {
             // No runner to wait a frame on. Settling on the flag as-is is still correct whenever the SDK
             // sends rewarded before closed, which is what it does on device.
+            if (!_rewardEarned) GameEvents.AdSkipped(GameEvents.AdSdk.LevelPlay);
             Settle(_rewardEarned);
             return;
         }
@@ -466,7 +480,11 @@ public class LevelPlayAdService : IAdService
     private IEnumerator SettleNextFrame()
     {
         yield return null;
-        if (_pendingCallback != null) Settle(_rewardEarned);
+        if (_pendingCallback == null) yield break;
+
+        // Still pending a frame after close means no reward arrived: the player closed the ad early.
+        if (!_rewardEarned) GameEvents.AdSkipped(GameEvents.AdSdk.LevelPlay);
+        Settle(_rewardEarned);
     }
 
     public void ShowRewardedAd(Action<bool> onComplete)
@@ -486,6 +504,9 @@ public class LevelPlayAdService : IAdService
             if (_rewardedAd != null) SafeLoadAd();
             else Debug.LogError("[LevelPlayAdService] No rewarded ad object — LevelPlay never initialised.");
 
+            GameEvents.AdFailedToShow(GameEvents.AdSdk.LevelPlay,
+                _rewardedAd != null ? GameAnalyticsSDK.GAAdError.NoFill : GameAnalyticsSDK.GAAdError.InternalError,
+                _rewardedAd != null ? "not_loaded" : "sdk_not_initialised");
             FinishWithoutNetworkAd(onComplete);
             return;
         }
@@ -508,6 +529,7 @@ public class LevelPlayAdService : IAdService
             // and did not get one, which is the same "we could not show you an ad" case as a display
             // failure, so it takes the same path rather than counting as a skip.
             Debug.LogError($"[LevelPlayAdService] ShowAd threw — treating it as a display failure: {e}");
+            GameEvents.AdFailedToShow(GameEvents.AdSdk.LevelPlay, GameAnalyticsSDK.GAAdError.InternalError, e.Message);
             SettleWithoutNetworkAd();
             return;
         }
@@ -542,6 +564,7 @@ public class LevelPlayAdService : IAdService
 
         Debug.LogError($"[LevelPlayAdService] No reward, close, or display-failure event within "
             + $"{ShowTimeoutSeconds}s of showing the ad — settling it so later ads still work.");
+        GameEvents.AdTimedOut(GameEvents.AdSdk.LevelPlay);
 
         // The ad may well have played fine and only the event was lost, so this is "we could not tell you
         // watched it", not a skip — same bypass as an ad we could never show.
@@ -630,6 +653,7 @@ public class LevelPlayAdService : IAdService
     {
         Debug.LogWarning("[LevelPlayAdService] ShowRewardedAd called without the LevelPlay SDK — "
             + "using the no-ad fallback.");
+        GameEvents.AdFailedToShow(GameEvents.AdSdk.LevelPlay, GameAnalyticsSDK.GAAdError.InternalError, "sdk_not_in_build");
         FinishWithoutNetworkAd(onComplete);
     }
 

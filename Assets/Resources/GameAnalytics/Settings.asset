@@ -59,8 +59,16 @@ MonoBehaviour:
   CustomDimensions01: []
   CustomDimensions02: []
   CustomDimensions03: []
-  ResourceItemTypes: []
-  ResourceCurrencies: []
+  ResourceItemTypes:
+  - Quiz
+  - Dhikr
+  - TreasureBox
+  - ShopReward
+  - Refund
+  - Other
+  - ShopPurchase
+  ResourceCurrencies:
+  - NoorCoin
   LastCreatedGamePlatform: -1
   Platforms: 0b000000
   CurrentInspectorState: 1
@@ -81,7 +89,7 @@ MonoBehaviour:
   iosIcon: {fileID: 0}
   macIcon: {fileID: 0}
   windowsPhoneIcon: {fileID: 0}
-  UsePlayerSettingsBuildNumber: 0
+  UsePlayerSettingsBuildNumber: 1
   SubmitErrors: 1
   NativeErrorReporting: 0
   MaxErrorCount: 10

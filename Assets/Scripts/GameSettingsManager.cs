@@ -248,6 +248,7 @@ public class GameSettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("SFXEnabled", enabled ? 1 : 0);
         PlayerPrefs.Save();
+        GameEvents.SettingChanged("SFX", enabled ? "On" : "Off");
         
         if (AudioManager.Instance != null)
         {
@@ -262,6 +263,7 @@ public class GameSettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("MusicEnabled", enabled ? 1 : 0);
         PlayerPrefs.Save();
+        GameEvents.SettingChanged("Music", enabled ? "On" : "Off");
         
         if (AudioManager.Instance != null)
         {
@@ -276,6 +278,7 @@ public class GameSettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("VibrationEnabled", enabled ? 1 : 0);
         PlayerPrefs.Save();
+        GameEvents.SettingChanged("Vibration", enabled ? "On" : "Off");
 
         PlayToggleSound(enabled);
         TriggerVibrationFeedback();
@@ -393,8 +396,12 @@ public class GameSettingsManager : MonoBehaviour
     private static void PlayToggleSound(bool enabled)
         => GameSfx.Play(enabled ? SoundEffect.ToggleOn : SoundEffect.ToggleOff);
 
+    private float _settingsOpenedAt = -1f;
+
     public void OpenSettings()
     {
+        _settingsOpenedAt = Time.realtimeSinceStartup;
+        GameEvents.Design(new[] { "Settings", "Opened" });
         _isAnimating = false; // Reset animation state to ensure the show animation always plays
         GameSfx.Play(SoundEffect.PanelOpen);
         if (darkBg != null)
@@ -415,6 +422,12 @@ public class GameSettingsManager : MonoBehaviour
     {
         if (_isAnimating) return;
         _isAnimating = true;
+
+        if (_settingsOpenedAt >= 0f)
+        {
+            GameEvents.FeatureTime("Settings", Time.realtimeSinceStartup - _settingsOpenedAt);
+            _settingsOpenedAt = -1f;
+        }
 
         GameSfx.Play(SoundEffect.PanelClose);
 

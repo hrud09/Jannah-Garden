@@ -69,6 +69,9 @@ public class HouseAdPresenter : MonoBehaviour
 
         _active = root.AddComponent<HouseAdPresenter>();
         _active.Begin(ad, onFinished);
+
+        GameEvents.AdFallback("HouseAd");
+        GameEvents.AdShown(GameEvents.AdSdk.HouseAd, ad.name);
         return true;
     }
 
@@ -164,6 +167,7 @@ public class HouseAdPresenter : MonoBehaviour
         Time.timeScale = _timeScaleBeforeAd;
         _active = null;
 
+        GameEvents.AdRewarded(GameEvents.AdSdk.HouseAd);
         finished.Invoke();
     }
 

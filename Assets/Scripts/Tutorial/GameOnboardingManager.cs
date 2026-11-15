@@ -116,9 +116,33 @@ public class GameOnboardingManager : MonoBehaviour
     public float rotationDemoTimeout = 8f;
 
     private OnboardingStage stage;
-    private Flow1SubStep flow1Sub = Flow1SubStep.None;
-    private Flow2SubStep flow2Sub = Flow2SubStep.None;
-    private Flow3SubStep flow3Sub = Flow3SubStep.None;
+
+    // The sub-step fields report each step the player reaches, which gives the tutorial funnel in
+    // analytics: how far players get, and which step they stop at.
+    private Flow1SubStep _flow1Sub = Flow1SubStep.None;
+    private Flow2SubStep _flow2Sub = Flow2SubStep.None;
+    private Flow3SubStep _flow3Sub = Flow3SubStep.None;
+
+    private Flow1SubStep flow1Sub
+    {
+        get => _flow1Sub;
+        set { if (value != _flow1Sub && value != Flow1SubStep.None) GameEvents.TutorialStep("Flow1", value.ToString(), replayMode); _flow1Sub = value; }
+    }
+
+    private Flow2SubStep flow2Sub
+    {
+        get => _flow2Sub;
+        set { if (value != _flow2Sub && value != Flow2SubStep.None) GameEvents.TutorialStep("Flow2", value.ToString(), replayMode); _flow2Sub = value; }
+    }
+
+    private Flow3SubStep flow3Sub
+    {
+        get => _flow3Sub;
+        set { if (value != _flow3Sub && value != Flow3SubStep.None) GameEvents.TutorialStep("Flow3", value.ToString(), replayMode); _flow3Sub = value; }
+    }
+
+    /// <summary>Set by <see cref="SkipCurrentSection"/> so the stage change it causes reports a skip.</summary>
+    private bool _skippingSection;
 
     /// <summary>Set while an on-demand replay of the shop -> buy -> place walkthrough is running (see
     /// <see cref="ReplayShopTutorial"/>). The replay reuses every Flow 1 step verbatim but never touches
@@ -277,11 +301,36 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void SetStage(OnboardingStage newStage)
     {
+        ReportStageChange(stage, newStage);
         stage = newStage;
         PlayerPrefs.SetInt(StageKey, (int)stage);
         PlayerPrefs.Save();
         ApplyButtonVisibilityForStage();
         RefreshTutorialActive();
+    }
+
+    private void ReportStageChange(OnboardingStage from, OnboardingStage to)
+    {
+        if (from == to) return;
+
+        string fromFlow = AnalyticsFlowName(from);
+        string toFlow = AnalyticsFlowName(to);
+
+        if (fromFlow != null) GameEvents.TutorialFlowCompleted(fromFlow, _skippingSection);
+        if (toFlow != null) GameEvents.TutorialFlowStarted(toFlow);
+        if (to == OnboardingStage.Completed) GameEvents.Design(new[] { "Tutorial", "Finished" });
+    }
+
+    private static string AnalyticsFlowName(OnboardingStage s)
+    {
+        switch (s)
+        {
+            case OnboardingStage.Flow1InProgress: return "Flow1_ShopAndPlace";
+            case OnboardingStage.Flow2InProgress: return "Flow2_Photo";
+            case OnboardingStage.Flow3InProgress: return "Flow3_QuickActions";
+            case OnboardingStage.Flow4InProgress: return "Flow4_OuterGarden";
+            default: return null;
+        }
     }
 
     private void RefreshTutorialActive(bool forceNotify = false)
@@ -878,6 +927,7 @@ public class GameOnboardingManager : MonoBehaviour
         replayMode = true;
         flow1Sub = Flow1SubStep.None;
         flow2Sub = Flow2SubStep.None;
+        GameEvents.TutorialReplayStarted();
         RefreshTutorialActive();
 
         BeginShopOpenStep();
@@ -1285,6 +1335,13 @@ public class GameOnboardingManager : MonoBehaviour
         RestoreJoystickHighlight();
         StopHandPointerAnimation();
 
+        _skippingSection = true;
+        try { SkipCurrentSectionInternal(); }
+        finally { _skippingSection = false; }
+    }
+
+    private void SkipCurrentSectionInternal()
+    {
         switch (stage)
         {
             case OnboardingStage.NotStarted:

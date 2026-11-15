@@ -721,6 +721,7 @@ public class TreasureBoxManager : MonoBehaviour
         // ── Subscriber fast-path ──────────────────────────────────────────────
         if (isSubscriber)
         {
+            GameEvents.TreasureBoxOpenRequested(tier.ToString(), slotIndex, true);
             CompleteBoxOpen(tier, slotIndex, onResult);
             return;
         }
@@ -732,6 +733,8 @@ public class TreasureBoxManager : MonoBehaviour
         // for a fresh ad on the way out, which lets the next attempt succeed.
         bool adWasReady = AdService.IsAdReady;
 
+        GameEvents.TreasureBoxOpenRequested(tier.ToString(), slotIndex, false);
+        GameEvents.AdRequested(GameEvents.AdPlacement.TreasureBox);
         AdService.ShowRewardedAd(earned =>
         {
             if (earned)
@@ -743,6 +746,7 @@ public class TreasureBoxManager : MonoBehaviour
             string msg = adWasReady
                 ? "Ad skipped — box not opened."
                 : "Ad not ready. Please try again shortly.";
+            GameEvents.TreasureBoxOpenFailed(tier.ToString(), adWasReady ? "AdSkipped" : "AdNotReady");
             Debug.Log($"[TreasureBoxManager] {msg}");
             onResult?.Invoke(false, msg);
         });
@@ -757,6 +761,7 @@ public class TreasureBoxManager : MonoBehaviour
     {
         IAPService.PurchaseTierUnlock(tier, success =>
         {
+            GameEvents.TreasureBoxTierPurchase(tier.ToString(), success);
             if (!success)
             {
                 onResult?.Invoke(false, "Purchase cancelled or failed.");
@@ -856,7 +861,7 @@ public class TreasureBoxManager : MonoBehaviour
         // Grant per-box NC reward
         if (rewardData != null && rewardData.noorCoinPerBox > 0 && NoorCoinManager.Instance != null)
         {
-            NoorCoinManager.Instance.Earn(rewardData.noorCoinPerBox);
+            NoorCoinManager.Instance.Earn(rewardData.noorCoinPerBox, true, GameEvents.CoinSource.TreasureBox, tier.ToString());
             Debug.Log($"[TreasureBoxManager] Earned {rewardData.noorCoinPerBox} NC from {tier} box {slotIndex}.");
         }
 

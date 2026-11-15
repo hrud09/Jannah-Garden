@@ -577,6 +577,7 @@ public class InGameShopManager : MonoBehaviour
         // ── Placement Gate — one download/placement in flight at a time ────────
         if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing)
         {
+            GameEvents.ShopBlocked("Busy", data.itemID);
             GameSfx.Play(SoundEffect.ButtonDisabled);
             if (ToastMessageManager.Instance != null)
             {
@@ -592,6 +593,7 @@ public class InGameShopManager : MonoBehaviour
         if (PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel)
         {
             Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': requires level {data.requiredXPLevel}.");
+            GameEvents.ShopBlocked("LevelLocked", data.itemID);
             GameSfx.Play(SoundEffect.ButtonDisabled);
             if (ToastMessageManager.Instance != null)
             {
@@ -632,8 +634,9 @@ public class InGameShopManager : MonoBehaviour
                 return;
             }
 
-            if (!NoorCoinManager.Instance.TrySpend(data.noorCoinCost))
+            if (!NoorCoinManager.Instance.TrySpend(data.noorCoinCost, GameEvents.CoinSink.ShopPurchase, data.itemID))
             {
+                GameEvents.ShopBlocked("NotEnoughCoins", data.itemID);
                 Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': "
                     + $"insufficient Noor Coins (need {data.noorCoinCost}, "
                     + $"have {NoorCoinManager.Instance.Balance}).");
@@ -672,6 +675,7 @@ public class InGameShopManager : MonoBehaviour
             if (!DailyOfferManager.Instance.IsOfferAvailable(data))
             {
                 System.TimeSpan remaining = DailyOfferManager.Instance.GetTimeUntilAvailable(data);
+                GameEvents.ShopBlocked("OnCooldown", data.itemID);
                 Debug.Log($"[InGameShopManager] '{data.itemName}' is on cooldown for another "
                     + $"{DailyOfferManager.FormatCooldown(remaining)}.");
 
@@ -689,6 +693,8 @@ public class InGameShopManager : MonoBehaviour
         if (!AdServiceBootstrap.Service.IsAdReady)
         {
             Debug.Log($"[InGameShopManager] No rewarded ad ready for '{data.itemName}'.");
+            GameEvents.ShopBlocked("AdUnavailable", data.itemID);
+            GameEvents.AdFailedToShow(GameEvents.AdSdk.LevelPlay, GameAnalyticsSDK.GAAdError.NoFill, "shop_not_ready");
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.ads_unavailable"));
@@ -697,6 +703,7 @@ public class InGameShopManager : MonoBehaviour
         }
 
         Debug.Log($"[InGameShopManager] Showing rewarded ad for '{data.itemName}'.");
+        GameEvents.AdRequested(GameEvents.AdPlacement.ShopItem);
 
         // This callback runs however the ad ends, so the reward is granted only when earned is true — a
         // player who closes the ad early gets nothing, and the daily offer stays unclaimed for them.
@@ -749,6 +756,7 @@ public class InGameShopManager : MonoBehaviour
 
         item.SetPurchasePending(true);
 
+        GameEvents.IapStarted(data.iapProductId);
         IAPManager.Instance.PurchaseProduct(data, success =>
         {
             if (item == null || item.ItemData != data) return; // Shop was torn down mid-purchase
@@ -799,6 +807,12 @@ public class InGameShopManager : MonoBehaviour
     {
         GameSfx.Play(SoundEffect.ItemPurchase);
 
+        string method = data.acquisitionType == ShopAcquisitionType.RewardedAd ? "Ad"
+            : data.acquisitionType == ShopAcquisitionType.InAppPurchase ? "IAP"
+            : data.noorCoinCost > 0 ? "Coins" : "Free";
+        GameEvents.ShopItemAcquired(method, data.itemID, data.itemCategory.ToString(),
+            method == "Coins" ? data.noorCoinCost : 0);
+
         selectedShopItem = item;
 
         // ── Grant coins (coin packs, ad offers) ───────────────────────────────
@@ -811,7 +825,7 @@ public class InGameShopManager : MonoBehaviour
             }
             else
             {
-                NoorCoinManager.Instance.Earn(data.noorCoinReward);
+                NoorCoinManager.Instance.Earn(data.noorCoinReward, true, GameEvents.CoinSource.ShopReward, data.itemID);
                 Debug.Log($"[InGameShopManager] Granted {data.noorCoinReward} Noor Coins from '{data.itemName}'. "
                     + $"New balance: {NoorCoinManager.Instance.Balance}.");
             }
@@ -963,6 +977,7 @@ public class InGameShopManager : MonoBehaviour
     {
         GameSfx.Play(SoundEffect.TabSwitch);
         if (hasSelectedCategory && currentCategory == category) return; // Already selected
+        if (hasSelectedCategory) GameEvents.ShopCategorySelected(category.ToString());
 
         lastCategory = hasSelectedCategory ? currentCategory : category;
         currentCategory = category;

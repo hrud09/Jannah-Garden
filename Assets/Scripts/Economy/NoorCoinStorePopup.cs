@@ -127,6 +127,7 @@ public class NoorCoinStorePopup : MonoBehaviour
     public void Open(ShopItemData unaffordable)
     {
         blockedItem = unaffordable;
+        GameEvents.CoinStoreOpened(unaffordable != null);
 
         EnsureCardsSpawned();
 

@@ -88,6 +88,14 @@ public class MCQManager : MonoBehaviour
 
     private QuestionList allQuestions;
     private int currentQuestionIndex = 0;
+
+    // Analytics. Attempts are counted here rather than read from currentQuestionAttempts, which the
+    // retry path resets when it re-shows the question.
+    private bool _analyticsActive;
+    private float _analyticsStartTime;
+    private float _answerStartTime;
+    private int _analyticsAttempts;
+    private const string LifetimeCorrectKey = "analytics.lifetime_quiz_correct";
     private int selectedOptionIndex = -1;
     private QuestionMarkOrb currentOrb;
     private int[] currentShuffledIndices;
@@ -167,6 +175,7 @@ public class MCQManager : MonoBehaviour
 
     public void StartQuiz(QuestionMarkOrb orb = null)
     {
+        ReportQuizAbandonedIfActive();
         currentOrb = orb;
         if (blurredBG != null) blurredBG.SetActive(true);
 
@@ -205,7 +214,21 @@ public class MCQManager : MonoBehaviour
             }
 
             ShowQuestion(questionIndex, true);
+
+            QuestionData started = allQuestions.questions[currentQuestionIndex];
+            _analyticsActive = true;
+            _analyticsStartTime = Time.realtimeSinceStartup;
+            _analyticsAttempts = 0;
+            GameEvents.QuizStarted(started.id, started.level, started.category, orb != null);
         }
+    }
+
+    private void ReportQuizAbandonedIfActive()
+    {
+        if (!_analyticsActive || allQuestions?.questions == null) return;
+        _analyticsActive = false;
+        QuestionData q = allQuestions.questions[currentQuestionIndex];
+        GameEvents.QuizAbandoned(_analyticsAttempts, q.id, q.level, Time.realtimeSinceStartup - _analyticsStartTime);
     }
 
     void LoadQuestions()
@@ -294,6 +317,7 @@ public class MCQManager : MonoBehaviour
             return;
 
         currentQuestionIndex = index;
+        _answerStartTime = Time.realtimeSinceStartup;
         
         if (countDownToHidePanel != null) 
             countDownToHidePanel.gameObject.SetActive(false);
@@ -420,6 +444,19 @@ public class MCQManager : MonoBehaviour
         answerLocked = true;
         foreach (var btn in optionButtons) btn.enabled = false;
 
+        bool answeredCorrectly = selectedOptionIndex == currentCorrectOptionIndex;
+        _analyticsAttempts++;
+        GameEvents.QuizAnswered(answeredCorrectly, _analyticsAttempts, qData.id, qData.level, qData.category,
+            Time.realtimeSinceStartup - _answerStartTime);
+        if (answeredCorrectly && _analyticsActive)
+        {
+            _analyticsActive = false;
+            int lifetimeCorrect = PlayerPrefs.GetInt(LifetimeCorrectKey, 0) + 1;
+            PlayerPrefs.SetInt(LifetimeCorrectKey, lifetimeCorrect);
+            GameEvents.QuizCompleted(_analyticsAttempts, qData.id, qData.level,
+                Time.realtimeSinceStartup - _analyticsStartTime, lifetimeCorrect);
+        }
+
         if (submitButton != null)
             submitButton.interactable = false;
 
@@ -443,7 +480,7 @@ public class MCQManager : MonoBehaviour
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
                 coinsEarned = QuestionMarkOrbManager.Instance.rewardCoins;
-                NoorCoinManager.Instance.Earn(coinsEarned, false); // Suppress default toast
+                NoorCoinManager.Instance.Earn(coinsEarned, false, GameEvents.CoinSource.Quiz, qData.id); // Suppress default toast
             }
             if (PlayerXPManager.Instance != null)
             {
@@ -539,6 +576,7 @@ public class MCQManager : MonoBehaviour
 
     public void CloseQuizDramatically()
     {
+        ReportQuizAbandonedIfActive();
         GameSfx.Play(SoundEffect.QuizClose);
         StopAllCoroutines();
         mashallahDelay?.Kill();

@@ -308,6 +308,7 @@ public class FellowshipVisualizationManager : MonoBehaviour
     public void ShowFellows(IList<FellowProfileData> fellows)
     {
         ClearFellows();
+        GameEvents.FellowsShown(fellows != null ? fellows.Count : 0);
 
         if (fellowProfilePrefab == null)
         {
