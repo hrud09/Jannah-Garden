@@ -13,6 +13,10 @@ namespace JannahGarden.EditorTools
     /// The art itself is produced by Tools/ui_kit/generate.py, which also writes
     /// borders.txt next to the PNGs listing the 9-slice border for each sprite.
     /// Re-run this after regenerating so the borders survive the reimport.
+    ///
+    /// The kit is drawn at 2x its layout size for crisp ornament detail. The
+    /// manifest's "#ppu=" header carries the matching pixels-per-unit (200),
+    /// which keeps on-screen sizes and 9-slice border widths unchanged.
     /// </summary>
     public static class JannahUIKitImporter
     {
@@ -22,7 +26,7 @@ namespace JannahGarden.EditorTools
         [MenuItem("Jannah/UI Kit/Reimport Sprites")]
         public static void Reimport()
         {
-            var borders = ReadBorders();
+            var borders = ReadBorders(out float ppu);
             var guids = AssetDatabase.FindAssets("t:Texture2D", new[] { KitFolder });
             int changed = 0;
 
@@ -40,7 +44,7 @@ namespace JannahGarden.EditorTools
 
                     importer.textureType = TextureImporterType.Sprite;
                     importer.spriteImportMode = SpriteImportMode.Single;
-                    importer.spritePixelsPerUnit = 100f;
+                    importer.spritePixelsPerUnit = ppu;
                     importer.spriteBorder = new Vector4(b, b, b, b);
                     importer.alphaIsTransparency = true;
                     importer.mipmapEnabled = false;
@@ -61,11 +65,12 @@ namespace JannahGarden.EditorTools
                 AssetDatabase.Refresh();
             }
 
-            Debug.Log($"[UI Kit] Reimported {changed} sprites ({borders.Count} with 9-slice borders).");
+            Debug.Log($"[UI Kit] Reimported {changed} sprites at {ppu} PPU ({borders.Count} with 9-slice borders).");
         }
 
-        static Dictionary<string, int> ReadBorders()
+        static Dictionary<string, int> ReadBorders(out float ppu)
         {
+            ppu = 100f;
             var map = new Dictionary<string, int>(StringComparer.Ordinal);
             var full = Path.Combine(Directory.GetCurrentDirectory(), BorderManifest);
             if (!File.Exists(full))
@@ -78,6 +83,14 @@ namespace JannahGarden.EditorTools
             {
                 var trimmed = line.Trim();
                 if (trimmed.Length == 0) continue;
+                if (trimmed.StartsWith("#ppu=", StringComparison.Ordinal))
+                {
+                    if (float.TryParse(trimmed.Substring(5), NumberStyles.Float,
+                            CultureInfo.InvariantCulture, out float p) && p > 0f)
+                        ppu = p;
+                    continue;
+                }
+                if (trimmed.StartsWith("#", StringComparison.Ordinal)) continue;
                 var eq = trimmed.IndexOf('=');
                 if (eq <= 0) continue;
                 var key = trimmed.Substring(0, eq);
