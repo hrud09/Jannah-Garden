@@ -174,6 +174,16 @@ public class GameOnboardingManager : MonoBehaviour
     private Coroutine handPointerCoroutine;
 
     private Tween panelSlideTween;
+
+    // Motion state (UI motion plan, Phase 4).
+    private Vector3 pulseRestScale = Vector3.one;
+    private Tween dimTween;
+    private float dimRestAlpha = -1f;
+    private Sequence instructionTextTween;
+    private Vector3 handRestScale = Vector3.zero;
+    private bool buttonsApplied;
+    private int revealIndex;
+    private readonly Dictionary<Transform, (float at, Vector3 rest)> revealed = new Dictionary<Transform, (float at, Vector3 rest)>();
     private Vector2 instructionPanelShownPos;
     private bool instructionPanelShownPosCaptured;
 
@@ -349,25 +359,48 @@ public class GameOnboardingManager : MonoBehaviour
     /// the coarse stage, so this alone reproduces the "hidden until earned" state on every resume.</summary>
     private void ApplyButtonVisibilityForStage()
     {
-        SetActive(InGameShopManager.Instance != null ? InGameShopManager.Instance.openCloseButton : null,
+        revealIndex = 0;
+
+        RevealButton(InGameShopManager.Instance != null ? InGameShopManager.Instance.openCloseButton : null,
             stage >= OnboardingStage.Flow1InProgress);
 
-        SetActive(PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null,
+        RevealButton(PhotoModeManager.Instance != null ? PhotoModeManager.Instance.photoButton : null,
             stage >= OnboardingStage.Flow2InProgress);
 
         // The whole quick-action drawer - its handle and the three tools behind it - arrives together
         // with the Treasure Box button when Flow 3's tour starts, so the drawer is never opened onto an
         // empty row.
         bool flow2Done = stage >= OnboardingStage.Flow3InProgress;
-        SetActive(drawerToggleButton, flow2Done);
-        SetActive(inspectorModeButton, flow2Done);
-        SetActive(returnToBaseButton, flow2Done);
-        SetActive(moveToUnlockedAreaButton, flow2Done);
-        SetActive(GetTreasureBoxShowButton(), flow2Done);
+        RevealButton(drawerToggleButton, flow2Done);
+        RevealButton(inspectorModeButton, flow2Done);
+        RevealButton(returnToBaseButton, flow2Done);
+        RevealButton(moveToUnlockedAreaButton, flow2Done);
+        RevealButton(GetTreasureBoxShowButton(), flow2Done);
 
-        SetActive(outerGardenButton, stage >= OnboardingStage.Flow4InProgress);
+        RevealButton(outerGardenButton, stage >= OnboardingStage.Flow4InProgress);
 
-        SetActive(settingsButton, stage >= OnboardingStage.Completed);
+        RevealButton(settingsButton, stage >= OnboardingStage.Completed);
+
+        // The first pass restores the saved state on load; only buttons earned after that get the reveal.
+        buttonsApplied = true;
+    }
+
+    /// <summary>
+    /// Shows or hides a stage-gated button. A button handed to the player mid-session arrives with the
+    /// shared reveal (grow past full size, settle, ring ripple), staggered when several arrive at once.
+    /// </summary>
+    private void RevealButton(Component button, bool show)
+    {
+        if (button == null) return;
+        GameObject go = button.gameObject;
+        bool reveal = show && !go.activeSelf && buttonsApplied && Application.isPlaying;
+        go.SetActive(show);
+        if (!reveal) return;
+
+        Transform t = go.transform;
+        Vector3 rest = t.localScale == Vector3.zero ? Vector3.one : t.localScale;
+        UIMotion.Reveal(t, revealIndex++ * 0.08f, rest);
+        revealed[t] = (Time.unscaledTime, rest);
     }
 
     private void ResumeFromStage()
@@ -1217,10 +1250,40 @@ public class GameOnboardingManager : MonoBehaviour
     {
         if (dimOverlay != null)
         {
-            dimOverlay.gameObject.SetActive(show);
             dimOverlay.blocksRaycasts = show && blockRaycasts;
+            FadeDim(show);
         }
         SetInstructionPanelVisible(show);
+    }
+
+    /// <summary>Fades the dim overlay in or out (deactivating it only once it is clear) instead of
+    /// blinking it on and off.</summary>
+    private void FadeDim(bool show)
+    {
+        if (dimRestAlpha < 0f) dimRestAlpha = dimOverlay.alpha > 0.01f ? dimOverlay.alpha : 1f;
+        dimTween?.Kill();
+
+        GameObject go = dimOverlay.gameObject;
+        if (show)
+        {
+            if (!go.activeSelf)
+            {
+                go.SetActive(true);
+                dimOverlay.alpha = 0f;
+            }
+            dimTween = dimOverlay.DOFade(dimRestAlpha, 0.28f).SetEase(Ease.OutQuad).SetUpdate(true).SetLink(go);
+            return;
+        }
+
+        if (!go.activeSelf) return;
+        CanvasGroup dim = dimOverlay;
+        dimTween = dim.DOFade(0f, 0.18f).SetEase(Ease.InQuad).SetUpdate(true).SetLink(go)
+            .OnComplete(() =>
+            {
+                if (dim == null) return;
+                dim.gameObject.SetActive(false);
+                dim.alpha = dimRestAlpha;
+            });
     }
 
     /// <summary>The one place instructionPanel's active state is set, so <see cref="IsInstructionPanelVisible"/>
@@ -1290,7 +1353,32 @@ public class GameOnboardingManager : MonoBehaviour
 
     private void SetInstructionText(string text)
     {
-        if (instructionText != null) LocalizedRendering.SetText(instructionText, text);
+        if (instructionText == null) return;
+
+        instructionTextTween?.Kill();
+
+        // Already reading the panel: the old line fades out and the new one fades in, rather than the
+        // words swapping under the player's eyes. A panel that is just sliding in gets the text at once.
+        bool crossFade = IsInstructionPanelVisible && instructionPanel != null
+            && instructionPanel.gameObject.activeInHierarchy
+            && (panelSlideTween == null || !panelSlideTween.IsActive());
+
+        // Faded through a CanvasGroup so the Bengali shaped renderer (a child graphic) fades too.
+        CanvasGroup group = instructionText.GetComponent<CanvasGroup>();
+        if (!crossFade)
+        {
+            if (group != null) group.alpha = 1f;
+            LocalizedRendering.SetText(instructionText, text);
+            return;
+        }
+
+        if (group == null) group = instructionText.gameObject.AddComponent<CanvasGroup>();
+        TMP_Text label = instructionText;
+        instructionTextTween = DOTween.Sequence().SetUpdate(true).SetLink(label.gameObject)
+            .Append(group.DOFade(0f, 0.1f).SetEase(Ease.InQuad))
+            .AppendCallback(() => LocalizedRendering.SetText(label, text))
+            .Append(group.DOFade(1f, 0.18f).SetEase(Ease.OutQuad))
+            .OnKill(() => { if (group != null && group.alpha < 1f) LocalizedRendering.SetText(label, text); });
     }
 
     private void ConfigurePrimaryButton(string label, System.Action onClick)
@@ -1511,11 +1599,19 @@ public class GameOnboardingManager : MonoBehaviour
         if (target == null) return;
 
         pulseTarget = target;
-        pulseTarget.localScale = Vector3.one;
-        pulseTween = target.DOScale(pulseScale, pulseDuration)
+
+        // Pulse around the button's own size (some HUD buttons are authored well above 1). A button
+        // that is mid-reveal reads as zero, so it waits for the reveal and pulses around its rest size.
+        bool known = revealed.TryGetValue(target, out var info);
+        bool revealing = known && Time.unscaledTime - info.at < 0.6f;
+        Vector3 current = target.localScale;
+        pulseRestScale = known ? info.rest : (current == Vector3.zero ? Vector3.one : current);
+        pulseTween = DOTween.To(() => 0f, v => { if (target != null) target.localScale = pulseRestScale * Mathf.Lerp(1f, pulseScale, v); }, 1f, pulseDuration)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine)
-            .SetUpdate(true);
+            .SetDelay(revealing ? 0.6f : 0f)
+            .SetUpdate(true)
+            .SetLink(target.gameObject);
     }
 
     private void StopPulse()
@@ -1527,7 +1623,7 @@ public class GameOnboardingManager : MonoBehaviour
         }
         if (pulseTarget != null)
         {
-            pulseTarget.localScale = Vector3.one;
+            pulseTarget.localScale = pulseRestScale;
             pulseTarget = null;
         }
     }
@@ -1568,6 +1664,10 @@ public class GameOnboardingManager : MonoBehaviour
         if (handUi == null || target == null) return;
 
         handUi.gameObject.SetActive(true);
+        if (handRestScale == Vector3.zero) handRestScale = handUi.localScale == Vector3.zero ? Vector3.one : handUi.localScale;
+        handUi.localScale = handRestScale;
+        // The hand pops in rather than appearing; the routine below takes over its scale for the taps.
+        if (!UIMotion.ReduceMotion) UIMotion.PopIn(handUi, 0f, handRestScale);
         handPointerCoroutine = StartCoroutine(AnimateHandRoutine(target));
     }
 
@@ -1580,22 +1680,38 @@ public class GameOnboardingManager : MonoBehaviour
         }
         if (handUi != null)
         {
+            DOTween.Kill(handUi);
+            if (handRestScale != Vector3.zero) handUi.localScale = handRestScale;
             handUi.gameObject.SetActive(false);
         }
     }
 
     private IEnumerator AnimateHandRoutine(RectTransform target)
     {
+        float startTime = Time.unscaledTime;
+        bool wasDown = false;
         while (target != null && handUi != null)
         {
             Vector3 targetWorldPos = target.position;
             Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, targetWorldPos);
 
+            // Unscaled, so the hand keeps tapping while gameplay is paused under the tutorial.
+            float phase = Mathf.Sin((Time.unscaledTime - startTime) * bounceSpeed);
+
             RectTransform parentRect = handUi.parent as RectTransform;
             if (parentRect != null && RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, screenPoint, null, out Vector2 localPoint))
             {
-                float bounce = Mathf.Sin(Time.time * bounceSpeed) * bounceAmplitude;
-                handUi.anchoredPosition = localPoint + handOffset + new Vector2(0f, bounce);
+                handUi.anchoredPosition = localPoint + handOffset + new Vector2(0f, phase * bounceAmplitude);
+            }
+
+            if (!UIMotion.ReduceMotion && Time.unscaledTime - startTime > 0.3f) // after the pop-in
+            {
+                // At the bottom of each bob the hand "presses": a small squash, and a ring on the target.
+                float press = Mathf.Clamp01((-phase - 0.6f) / 0.4f);
+                handUi.localScale = handRestScale * (1f - 0.12f * press);
+                bool down = phase < -0.92f;
+                if (down && !wasDown) UIMotion.Ripple(target, new Color(1f, 0.95f, 0.75f, 1f));
+                wasDown = down;
             }
 
             yield return null;

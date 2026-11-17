@@ -225,9 +225,51 @@ public class PhotoModeManager : MonoBehaviour
     /// <summary>Closes the preview. The file stays on the device until it ages out of the library.</summary>
     public void ClosePreview()
     {
-        if (previewPanel == null) return;
+        if (previewPanel == null || _closingPreview) return;
 
+        // The window shrinks away and the panel (with its dim) fades at exit speed before switching
+        // off; the cleanup below runs once it is gone.
+        if (previewPanel.activeInHierarchy && !UIMotion.ReduceMotion)
+        {
+            _closingPreview = true;
+            UIMotionTokens tokens = UIMotion.Tokens;
+            Transform window = PreviewWindowTransform;
+            CanvasGroup group = PreviewGroup;
+            window.DOKill();
+            DOTween.Kill(group);
+            group.blocksRaycasts = false;
+            float d = tokens.disappear.duration * 1.3f;
+            DOTween.Sequence().SetUpdate(true).SetLink(previewPanel).SetTarget(previewPanel)
+                .Insert(0f, group.DOFade(0f, d).SetEase(Ease.InQuad))
+                .Insert(0f, window.DOScale(Vector3.one * tokens.popFromScale, d).WithEase(tokens.disappear))
+                .OnComplete(FinishClosePreview);
+            return;
+        }
+
+        FinishClosePreview();
+    }
+
+    private bool _closingPreview;
+
+    private CanvasGroup PreviewGroup
+    {
+        get
+        {
+            CanvasGroup g = previewPanel.GetComponent<CanvasGroup>();
+            if (g == null) g = previewPanel.AddComponent<CanvasGroup>();
+            return g;
+        }
+    }
+
+    private void FinishClosePreview()
+    {
+        _closingPreview = false;
         PreviewWindowTransform.DOKill();
+        PreviewWindowTransform.localScale = Vector3.one;
+        PreviewWindowTransform.localRotation = Quaternion.identity;
+        CanvasGroup group = PreviewGroup;
+        group.alpha = 1f;
+        group.blocksRaycasts = true;
         previewPanel.SetActive(false);
 
         // A share sheet the player dismissed by leaving the app can leave this set; the preview closing
@@ -333,7 +375,7 @@ public class PhotoModeManager : MonoBehaviour
 
         flashImage.DOKill();
         SetFlashAlpha(flashPeakAlpha);
-        flashImage.DOFade(0f, flashFadeDuration).SetEase(Ease.OutQuad).SetUpdate(true);
+        flashImage.DOFade(0f, flashFadeDuration).SetEase(Ease.OutQuad).SetUpdate(true).SetLink(flashImage.gameObject);
     }
 
     private void SetFlashAlpha(float alpha)
@@ -367,13 +409,34 @@ public class PhotoModeManager : MonoBehaviour
 
         if (previewPanel == null) return;
 
+        // A close still running from the previous shot must not switch this one off.
+        DOTween.Kill(previewPanel);
+        _closingPreview = false;
         previewPanel.SetActive(true);
 
-        // Let the window arrive with the flash rather than appearing under it.
+        // The photo "prints": it drops from larger than the window into place with a slight tilt that
+        // straightens as it lands, arriving with the flash rather than appearing under it.
+        UIMotionTokens tokens = UIMotion.Tokens;
         Transform window = PreviewWindowTransform;
+        CanvasGroup group = PreviewGroup;
         window.DOKill();
-        window.localScale = Vector3.one * 0.85f;
-        window.DOScale(Vector3.one, 0.35f).SetEase(Ease.OutBack).SetUpdate(true);
+        DOTween.Kill(group);
+        group.blocksRaycasts = true;
+        if (UIMotion.ReduceMotion)
+        {
+            window.localScale = Vector3.one;
+            window.localRotation = Quaternion.identity;
+            group.alpha = 0f;
+            group.DOFade(1f, tokens.reducedFade.duration).SetUpdate(true).SetLink(previewPanel);
+            return;
+        }
+        group.alpha = 0f;
+        window.localScale = Vector3.one * 1.25f;
+        window.localRotation = Quaternion.Euler(0f, 0f, UIMotion.IsRightToLeft ? 4f : -4f);
+        float d = tokens.appear.duration * 1.5f;
+        group.DOFade(1f, tokens.appearSoft.duration * 0.6f).SetUpdate(true).SetLink(previewPanel);
+        window.DOScale(Vector3.one, d).Apply(tokens.appear, previewPanel);
+        window.DOLocalRotate(Vector3.zero, d * 1.2f).SetEase(Ease.OutBack, 2f).SetUpdate(true).SetLink(previewPanel);
     }
 
     private Transform PreviewWindowTransform =>
@@ -476,6 +539,7 @@ public class PhotoModeManager : MonoBehaviour
 
         if (success)
         {
+            if (saveButton != null) UIMotion.Punch(saveButton.transform, 1.2f);
             ShowToast(LocalizationManager.Instance.Get("photo.saved_to_gallery"));
             return;
         }

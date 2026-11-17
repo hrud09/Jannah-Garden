@@ -35,6 +35,8 @@ public class TreasureBoxStatusUI : MonoBehaviour
     private void Start()
     {
         UpdateVisuals();
+        TreasureBoxManager.OnStateChanged += RefreshIdle;
+        RefreshIdle();
         if (showBoxButton != null)
         {
             showBoxButton.onClick.AddListener(() =>
@@ -48,8 +50,20 @@ public class TreasureBoxStatusUI : MonoBehaviour
         }
     }
 
+    /// <summary>The button breathes and shimmers while today's boxes are out in the garden to find.</summary>
+    private void RefreshIdle()
+    {
+        if (showBoxButton == null) return;
+        if (!showBoxButton.TryGetComponent(out UIIdle idle)) idle = showBoxButton.gameObject.AddComponent<UIIdle>();
+        idle.shimmerGraphic = showBoxButton.image;
+        idle.SetEffects(UIIdle.Effect.Breathe | UIIdle.Effect.Shimmer);
+        TreasureBoxManager m = TreasureBoxManager.Instance;
+        idle.Playing = m != null && m.TryGetActiveTier(out _);
+    }
+
     private void OnDestroy()
     {
+        TreasureBoxManager.OnStateChanged -= RefreshIdle;
         if (showBoxButton != null)
         {
             showBoxButton.onClick.RemoveAllListeners();

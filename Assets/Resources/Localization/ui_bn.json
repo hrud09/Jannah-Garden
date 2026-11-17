@@ -1189,6 +1189,14 @@
             "value": "কম্পন"
         },
         {
+            "key": "hud.level_up",
+            "value": "লেভেল আপ!"
+        },
+        {
+            "key": "settings.reduce_motion_label",
+            "value": "অ্যানিমেশন কমান"
+        },
+        {
             "key": "settings.normal_speed_label",
             "value": "স্বাভাবিক গতি"
         },

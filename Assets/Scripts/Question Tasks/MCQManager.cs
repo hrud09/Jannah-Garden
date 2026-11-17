@@ -177,7 +177,7 @@ public class MCQManager : MonoBehaviour
     {
         ReportQuizAbandonedIfActive();
         currentOrb = orb;
-        if (blurredBG != null) blurredBG.SetActive(true);
+        UIMotion.SetBackdrop(blurredBG, true);
 
         // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh quiz
         // starts with the question content back in view and the finale label hidden again.
@@ -190,13 +190,8 @@ public class MCQManager : MonoBehaviour
         }
         if (questionTextUI != null) questionTextUI.gameObject.SetActive(true);
 
-        if (quizPanel != null) 
-        {
-            quizPanel.SetActive(true);
-            quizPanel.transform.DOKill();
-            quizPanel.transform.localScale = Vector3.zero;
-            quizPanel.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
-        }
+        // Shared dialog entrance (UIMotionTokens): pop from 0.85 with a fade, on unscaled time.
+        if (quizPanel != null) UIMotion.PanelIn(quizPanel);
         if (allQuestions != null && allQuestions.questions != null && allQuestions.questions.Length > 0)
         {
             int targetLevel = 1;
@@ -206,7 +201,7 @@ public class MCQManager : MonoBehaviour
             }
 
             int questionIndex = GetRandomQuestionIndexByLevel(targetLevel);
-            
+
             // Fallback to any random question if no questions exist for the player's exact level
             if (questionIndex == -1)
             {
@@ -318,8 +313,8 @@ public class MCQManager : MonoBehaviour
 
         currentQuestionIndex = index;
         _answerStartTime = Time.realtimeSinceStartup;
-        
-        if (countDownToHidePanel != null) 
+
+        if (countDownToHidePanel != null)
             countDownToHidePanel.gameObject.SetActive(false);
 
         QuestionData qData = allQuestions.questions[index];
@@ -357,8 +352,7 @@ public class MCQManager : MonoBehaviour
 
             // Juicy animation for question text on new question load
             questionTextUI.transform.DOKill();
-            questionTextUI.transform.localScale = Vector3.zero;
-            questionTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
+            UIMotion.PopIn(questionTextUI.transform, 0.15f);
         }
 
         SetText(questionTextUI, qData.questionText, QuestionShapedTextTopPadding);
@@ -369,7 +363,7 @@ public class MCQManager : MonoBehaviour
             {
                 optionButtons[i].gameObject.SetActive(true);
                 SetText(optionTextsUI[i], qData.options[currentShuffledIndices[i]]);
-                
+
                 if (reshuffle)
                 {
                     // Reset appearance and interaction
@@ -378,9 +372,9 @@ public class MCQManager : MonoBehaviour
                     optionButtons[i].interactable = true;
 
                     // Juicy animation for option buttons
+                    // Options cascade in after the question (token stagger, doubled: they're big).
                     optionButtons[i].transform.DOKill();
-                    optionButtons[i].transform.localScale = Vector3.zero;
-                    optionButtons[i].transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (i * 0.1f));
+                    UIMotion.PopIn(optionButtons[i].transform, 0.22f + UIMotion.StaggerDelay(i) * 2f);
                 }
             }
             else
@@ -394,8 +388,7 @@ public class MCQManager : MonoBehaviour
             submitButton.interactable = false;
             submitButton.gameObject.SetActive(true);
             submitButton.transform.DOKill();
-            submitButton.transform.localScale = Vector3.zero;
-            submitButton.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.3f + (qData.options.Length * 0.1f));
+            UIMotion.PopIn(submitButton.transform, 0.27f + UIMotion.StaggerDelay(qData.options.Length) * 2f);
         }
     }
 
@@ -405,7 +398,7 @@ public class MCQManager : MonoBehaviour
 
         GameSfx.Play(SoundEffect.QuizOptionSelect);
         selectedOptionIndex = optionIndex;
-        
+
         // Update visual to selected
         for (int i = 0; i < optionButtons.Length; i++)
         {
@@ -414,7 +407,7 @@ public class MCQManager : MonoBehaviour
             {
                 optionButtons[i].image.sprite = selectedSprite;
                 optionButtons[i].transform.localScale = Vector3.one;
-                optionButtons[i].transform.DOPunchScale(new Vector3(0.05f, 0.05f, 0.05f), 0.2f, 5, 1);
+                UIMotion.Punch(optionButtons[i].transform, 0.45f);
             }
             else
             {
@@ -469,13 +462,16 @@ public class MCQManager : MonoBehaviour
             optionButtons[selectedOptionIndex].image.sprite = correctSprite;
             optionButtons[selectedOptionIndex].transform.DOKill();
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
-            optionButtons[selectedOptionIndex].transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
+            UIMotion.Punch(optionButtons[selectedOptionIndex].transform, 0.85f);
 
             // Award Noor Coins and XP together. Both grants suppress their own toast: the amounts are
             // presented instead by the Mash'Allah finale's reward row (see RewardFinaleDisplay), so a
             // toast here would just repeat them a second and a half before the panel shows them.
             int coinsEarned = 0;
             float xpEarned = 0f;
+
+            // The HUD waits under the panel; the finale flies the reward into it on close.
+            if (rewardFinale != null) rewardFinale.HoldHud();
 
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
@@ -513,19 +509,20 @@ public class MCQManager : MonoBehaviour
             optionButtons[selectedOptionIndex].image.sprite = wrongSprite;
             optionButtons[selectedOptionIndex].transform.DOKill();
             optionButtons[selectedOptionIndex].transform.localScale = Vector3.one;
-            optionButtons[selectedOptionIndex].transform.DOShakePosition(0.4f, 10f, 20, 90f, false, true);
-            
+            optionButtons[selectedOptionIndex].transform.DOShakePosition(0.4f, 10f, 20, 90f, false, true)
+                .SetUpdate(true).SetLink(optionButtons[selectedOptionIndex].gameObject);
+
             // Also show the correct answer, tinted neon green and pulsing. The four options are all
             // the same green, so the correct sprite alone does not stand out enough to teach the
             // player what they should have picked; the tint is what makes the reveal readable.
             RevealCorrectAnswer(currentCorrectOptionIndex);
-            
+
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(
                     LocalizationManager.Instance.Get("quiz.wrong"), Color.red, ToastTone.Silent);
             }
-            
+
             StartCoroutine(ResetQuizAfterDelay(5f));
         }
     }
@@ -547,7 +544,7 @@ public class MCQManager : MonoBehaviour
 
         button.transform.DOKill();
         button.transform.localScale = Vector3.one;
-        button.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.4f, 10, 1);
+        UIMotion.Punch(button.transform, 0.85f);
 
         correctRevealTween?.Kill();
         button.image.color = correctAnswerRevealTint;
@@ -556,7 +553,9 @@ public class MCQManager : MonoBehaviour
             correctRevealTween = button.image
                 .DOColor(Color.white, correctAnswerRevealPulse)
                 .SetLoops(-1, LoopType.Yoyo)
-                .SetEase(Ease.InOutSine);
+                .SetEase(Ease.InOutSine)
+                .SetUpdate(true)
+                .SetLink(button.gameObject);
         }
     }
 
@@ -583,22 +582,19 @@ public class MCQManager : MonoBehaviour
         mashallahDelay = null;
         ClearCorrectAnswerReveal();
 
-        if (quizPanel != null) 
+        // The backdrop fades with the panel rather than vanishing after it.
+        UIMotion.SetBackdrop(blurredBG, false);
+        if (quizPanel != null)
         {
-            quizPanel.transform.DOKill();
-            quizPanel.transform.DOPunchScale(new Vector3(0.05f, 0.05f, 0.05f), 0.2f, 5, 1).OnComplete(() => {
-                quizPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
-                    quizPanel.SetActive(false);
-                    if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
-                    if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
-                    if (blurredBG != null) blurredBG.SetActive(false);
-                    currentOrb = null;
-                });
+            UIMotion.PanelOut(quizPanel, () => {
+                quizPanel.SetActive(false);
+                if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+                if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
+                currentOrb = null;
             });
         }
-        else if (blurredBG != null)
+        else
         {
-            blurredBG.SetActive(false);
             currentOrb = null;
         }
     }
@@ -632,7 +628,8 @@ public class MCQManager : MonoBehaviour
         {
             quizPanel.transform.DOKill();
             quizPanel.transform.localScale = Vector3.one;
-            quizPanel.transform.DOScale(mashallahPanelScale, 0.35f).SetEase(Ease.OutBack);
+            UIMotionTokens tokens = UIMotion.Tokens;
+            quizPanel.transform.DOScale(mashallahPanelScale, tokens.appear.duration * 1.1f).Apply(tokens.appear, quizPanel);
         }
 
         ClearCorrectAnswerReveal();
@@ -651,7 +648,7 @@ public class MCQManager : MonoBehaviour
             LocalizedRendering.SetText(mashallahTextUI, loc != null ? loc.Get("reward.mashallah") : "Mash'Allah");
             mashallahTextUI.transform.DOKill();
             mashallahTextUI.transform.localScale = Vector3.one;
-            mashallahTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+            UIMotion.Punch(mashallahTextUI.transform, 1.25f);
 
             if (rewardFinale != null) rewardFinale.Show(coinsEarned, xpEarned);
         }
@@ -667,28 +664,16 @@ public class MCQManager : MonoBehaviour
 
     private void HideQuizImmediately()
     {
+        if (rewardFinale != null) rewardFinale.LaunchToHud();
+
+        UIMotion.SetBackdrop(blurredBG, false);
         if (quizPanel != null)
         {
-            quizPanel.transform.DOKill();
-            quizPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
+            UIMotion.PanelOut(quizPanel, () => {
                 quizPanel.SetActive(false);
-                if (countDownToHidePanel != null)
-                {
-                    countDownToHidePanel.gameObject.SetActive(false);
-                }
-                if (mashallahTextUI != null)
-                {
-                    mashallahTextUI.gameObject.SetActive(false);
-                }
-                if (blurredBG != null)
-                {
-                    blurredBG.SetActive(false);
-                }
+                if (countDownToHidePanel != null) countDownToHidePanel.gameObject.SetActive(false);
+                if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
             });
-        }
-        else if (blurredBG != null)
-        {
-            blurredBG.SetActive(false);
         }
     }
 

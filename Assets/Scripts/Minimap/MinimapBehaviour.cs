@@ -466,42 +466,20 @@ public class MinimapBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             expandButton.enabled = !isExpanded;
         }
 
-        // Set collapse button active state
-        if (collapseButton != null)
+        // The expanded-only buttons pop in one after another once the panel has mostly grown, and
+        // shrink away immediately on collapse so they're gone before the panel closes over them.
+        bool animateButtons = animate && Application.isPlaying;
+        Button[] expandedOnly =
         {
-            collapseButton.gameObject.SetActive(isExpanded);
-        }
-
-        // The recenter button is only useful (and only visible) while expanded
-        if (recenterButton != null)
+            collapseButton, recenterButton, showTreasureBoxButton, showSilverTreasureBoxButton,
+            showGoldTreasureBoxButton, showPlatinumTreasureBoxButton, showDiamondTreasureBoxButton,
+        };
+        int shown = 0;
+        foreach (Button button in expandedOnly)
         {
-            recenterButton.gameObject.SetActive(isExpanded);
-        }
-
-        // The show-treasure-box button is only useful (and only visible) while expanded
-        if (showTreasureBoxButton != null)
-        {
-            showTreasureBoxButton.gameObject.SetActive(isExpanded);
-        }
-
-        if (showSilverTreasureBoxButton != null)
-        {
-            showSilverTreasureBoxButton.gameObject.SetActive(isExpanded);
-        }
-
-        if (showGoldTreasureBoxButton != null)
-        {
-            showGoldTreasureBoxButton.gameObject.SetActive(isExpanded);
-        }
-
-        if (showPlatinumTreasureBoxButton != null)
-        {
-            showPlatinumTreasureBoxButton.gameObject.SetActive(isExpanded);
-        }
-
-        if (showDiamondTreasureBoxButton != null)
-        {
-            showDiamondTreasureBoxButton.gameObject.SetActive(isExpanded);
+            if (button == null) continue;
+            float delay = isExpanded ? transitionDuration * 0.55f + UIMotion.StaggerDelay(shown++) : 0f;
+            UIToggleMotion.SetActive(button.gameObject, isExpanded, delay, Vector2.zero, animateButtons);
         }
     }
 

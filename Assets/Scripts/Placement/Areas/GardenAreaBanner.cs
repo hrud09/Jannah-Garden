@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -201,7 +202,11 @@ public class GardenAreaBanner : MonoBehaviour
         if (!sameArea)
         {
             Show();
-            if (!firstResolve) PlayCrossingSound(previous, area);
+            if (!firstResolve)
+            {
+                PlayCrossingSound(previous, area);
+                PlayCrossingMotion();
+            }
         }
     }
 
@@ -501,6 +506,43 @@ public class GardenAreaBanner : MonoBehaviour
     private float MinimumCardHeight()
     {
         return nameFontSize * 1.3f + statusFontSize * 1.35f + cardPadding * 2f;
+    }
+
+    private Sequence _crossingMotion;
+
+    /// <summary>
+    /// A crossing re-announces the card: it drops in a few units from above, and the area name settles
+    /// from wide letter spacing to normal, so a new name reads as "arrived" rather than swapped.
+    /// </summary>
+    private void PlayCrossingMotion()
+    {
+        if (UIMotion.ReduceMotion || _card == null || !_card.gameObject.activeInHierarchy) return;
+
+        _crossingMotion?.Kill(true);
+
+        RectTransform card = _card;
+        Vector2 rest = card.anchoredPosition;
+        TMP_Text name = _nameText;
+        float restSpacing = name != null ? name.characterSpacing : 0f;
+
+        card.anchoredPosition = rest + new Vector2(0f, 14f);
+        _crossingMotion = DOTween.Sequence().SetUpdate(true).SetLink(card.gameObject);
+        _crossingMotion.Insert(0f, card.DOAnchorPos(rest, 0.35f).SetEase(Ease.OutCubic));
+        if (name != null)
+        {
+            name.characterSpacing = restSpacing + 14f;
+            _crossingMotion.Insert(0f, DOTween.To(() => name.characterSpacing, v => name.characterSpacing = v, restSpacing, 0.45f)
+                .SetEase(Ease.OutCubic));
+        }
+        if (_accent != null)
+            _crossingMotion.Insert(0.05f, _accent.rectTransform.DOPunchScale(new Vector3(0f, 0.35f, 0f), 0.35f, 6, 0.6f));
+        // Killed early (the next crossing, a teardown): land exactly on the rest layout.
+        _crossingMotion.OnKill(() =>
+        {
+            if (card != null) card.anchoredPosition = rest;
+            if (name != null) name.characterSpacing = restSpacing;
+            if (_accent != null) _accent.rectTransform.localScale = Vector3.one;
+        });
     }
 
     private void Show()

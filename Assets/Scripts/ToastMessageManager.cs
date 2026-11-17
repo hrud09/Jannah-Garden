@@ -66,18 +66,59 @@ public class ToastMessageManager : MonoBehaviour
             LocalizedRendering.SetText(messageText, message);
         }
         
-        if (messageHolder != null) 
+        if (messageHolder != null)
         {
+            UIMotionTokens tokens = UIMotion.Tokens;
+            CanvasGroup group = Group;
+            bool alreadyUp = messageHolder.gameObject.activeSelf && !_hiding;
+            _hiding = false;
             messageHolder.gameObject.SetActive(true);
             messageHolder.DOKill();
-            
-            // Start from bottom off-screen position
-            messageHolder.anchoredPosition = new Vector2(_defaultPos.x, messageHolderOffscreenY);
-            messageHolder.DOAnchorPosY(messageHolderRisingY, 0.6f).SetEase(Ease.OutElastic, 0.5f);
+            DOTween.Kill(group);
+            group.alpha = 1f;
+
+            if (alreadyUp)
+            {
+                // A new message while one is showing: it lands where it is with a nudge instead of
+                // dropping off-screen and rising again, so a burst of toasts doesn't bounce around.
+                messageHolder.anchoredPosition = new Vector2(_defaultPos.x, messageHolderRisingY);
+                messageHolder.localScale = Vector3.one;
+                UIMotion.Punch(messageHolder, 0.6f);
+            }
+            else if (UIMotion.ReduceMotion)
+            {
+                messageHolder.anchoredPosition = new Vector2(_defaultPos.x, messageHolderRisingY);
+                group.alpha = 0f;
+                group.DOFade(1f, tokens.reducedFade.duration).SetUpdate(true).SetLink(messageHolder.gameObject);
+            }
+            else
+            {
+                // Rises from below the screen on the shared entrance token: a calm OutBack settle
+                // (the old elastic bounce was too playful for the garden's mood).
+                messageHolder.anchoredPosition = new Vector2(_defaultPos.x, messageHolderOffscreenY);
+                group.alpha = 0f;
+                messageHolder.DOAnchorPosY(messageHolderRisingY, tokens.appear.duration * 1.4f)
+                    .Apply(tokens.appear, messageHolder.gameObject);
+                group.DOFade(1f, tokens.appearSoft.duration).SetUpdate(true).SetLink(messageHolder.gameObject);
+            }
         }
 
-        CancelInvoke(nameof(HideToast));
-        Invoke(nameof(HideToast), 3f);
+        // Unscaled, so a toast shown while the game is paused still goes away on time.
+        _hideTimer?.Kill();
+        _hideTimer = DOVirtual.DelayedCall(3f, HideToast, true).SetLink(gameObject);
+    }
+
+    private Tween _hideTimer;
+    private bool _hiding;
+
+    private CanvasGroup Group
+    {
+        get
+        {
+            CanvasGroup g = messageHolder.GetComponent<CanvasGroup>();
+            if (g == null) g = messageHolder.gameObject.AddComponent<CanvasGroup>();
+            return g;
+        }
     }
 
     /// <summary>
@@ -115,14 +156,24 @@ public class ToastMessageManager : MonoBehaviour
 
     private void HideToast()
     {
-        if (messageHolder != null) 
+        if (messageHolder != null && messageHolder.gameObject.activeSelf)
         {
+            UIMotionTokens tokens = UIMotion.Tokens;
+            CanvasGroup group = Group;
+            _hiding = true;
             messageHolder.DOKill();
-            // Animate back to bottom off-screen position before deactivating
-            messageHolder.DOAnchorPosY(messageHolderOffscreenY, 0.3f).SetEase(Ease.InBack).OnComplete(() => 
-            {
-                messageHolder.gameObject.SetActive(false);
-            });
+            DOTween.Kill(group);
+            float d = UIMotion.ReduceMotion ? tokens.reducedFade.duration : tokens.disappear.duration * 1.5f;
+            // Sinks back below the screen at exit speed, fading as it goes, then switches off.
+            if (!UIMotion.ReduceMotion)
+                messageHolder.DOAnchorPosY(messageHolderOffscreenY, d).Apply(tokens.disappear, messageHolder.gameObject);
+            group.DOFade(0f, d).SetEase(Ease.InQuad).SetUpdate(true).SetLink(messageHolder.gameObject)
+                .OnComplete(() =>
+                {
+                    _hiding = false;
+                    messageHolder.gameObject.SetActive(false);
+                    group.alpha = 1f;
+                });
         }
     }
 }

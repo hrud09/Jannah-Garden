@@ -91,6 +91,8 @@ public class PlayerXPManager : MonoBehaviour
     [Header("UI Reference")]
     public TMP_Text xpLevelText;
     public Slider xpSlider;
+    [Tooltip("Animates the bar (ghost fill, sparkle, level-up burst). Without it the bar updates plainly.")]
+    public XPBarAnimator barAnimator;
     
     [Header("XP Gain Chart UI")]
     public Button xpGainChartToggleButton;
@@ -379,6 +381,14 @@ public class PlayerXPManager : MonoBehaviour
 
     private void UpdateUI(bool animate = false)
     {
+        if (barAnimator != null && xpSlider != null)
+        {
+            if (animate) barAnimator.AnimateTo(xpLevel, currentXP, xpToNextLevel);
+            else barAnimator.SetImmediate(xpLevel, currentXP, xpToNextLevel);
+            OnXPChanged?.Invoke(xpLevel, currentXP, xpToNextLevel);
+            return;
+        }
+
         if (xpLevelText != null)
         {
             if (xpLevelText.text != $"{xpLevel}")

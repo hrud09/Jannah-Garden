@@ -58,8 +58,29 @@ public class QuickActionDrawerController : MonoBehaviour
             StopCoroutine(animationCoroutine);
         }
         animationCoroutine = StartCoroutine(AnimateTo(isOpen));
+        if (isOpen) FanOutItems();
 
         OnDrawerToggled?.Invoke(isOpen);
+    }
+
+    private readonly System.Collections.Generic.Dictionary<Transform, Vector3> itemRestScales =
+        new System.Collections.Generic.Dictionary<Transform, Vector3>();
+
+    /// <summary>The drawer's tools pop in one after another as it opens, like a fan.</summary>
+    private void FanOutItems()
+    {
+        if (drawerContent == null || UIMotion.ReduceMotion) return;
+        int index = 0;
+        foreach (Transform item in drawerContent)
+        {
+            if (!item.gameObject.activeSelf) continue;
+            if (!itemRestScales.TryGetValue(item, out Vector3 rest))
+            {
+                rest = item.localScale == Vector3.zero ? Vector3.one : item.localScale;
+                itemRestScales[item] = rest;
+            }
+            UIMotion.PopIn(item, 0.03f + UIMotion.StaggerDelay(index++) * 1.5f, rest);
+        }
     }
 
     private void ApplyStateImmediate(bool open)

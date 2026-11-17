@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using DG.Tweening;
 
 
 
@@ -172,6 +173,10 @@ public class InGameShopManager : MonoBehaviour
 
     private void Start()
     {
+        DailyOfferManager.OnOffersChanged += RefreshOpenButtonIdle;
+        // Offers come back on a clock, not only on an event, so look again now and then.
+        InvokeRepeating(nameof(RefreshOpenButtonIdle), 1f, 30f);
+
         // Save initial X position as the closed state position
         if (shopPanel != null)
         {
@@ -360,8 +365,29 @@ public class InGameShopManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The shop button wiggles every few seconds while a daily offer is waiting to be claimed (and the
+    /// shop is closed), so a free reward never sits unnoticed.
+    /// </summary>
+    private void RefreshOpenButtonIdle()
+    {
+        if (openCloseButton == null) return;
+        UIIdle idle = UIIdle.Ensure(openCloseButton.gameObject, UIIdle.Effect.Wiggle);
+        idle.Playing = !isOpen && AnyDailyOfferWaiting();
+    }
+
+    private bool AnyDailyOfferWaiting()
+    {
+        DailyOfferManager offers = DailyOfferManager.Instance;
+        if (offers == null || shopItemDatas == null) return false;
+        foreach (ShopItemData d in shopItemDatas)
+            if (d != null && d.isDailyOffer && offers.IsOfferAvailable(d)) return true;
+        return false;
+    }
+
     private void OnDestroy()
     {
+        DailyOfferManager.OnOffersChanged -= RefreshOpenButtonIdle;
         if (openCloseButton != null)
         {
             openCloseButton.onClick.RemoveListener(ToggleShop);
@@ -418,6 +444,7 @@ public class InGameShopManager : MonoBehaviour
         }
 
         isOpen = open;
+        RefreshOpenButtonIdle();
 
         if (isOpen) OnShopOpened?.Invoke();
         else OnShopClosed?.Invoke();
@@ -497,7 +524,7 @@ public class InGameShopManager : MonoBehaviour
 
         while (elapsed < duration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
             float scaleY = curve.Evaluate(t);
 
@@ -550,6 +577,11 @@ public class InGameShopManager : MonoBehaviour
             if (inventoryItemPanel != null) inventoryItemPanel.gameObject.SetActive(true);
             if (shopCategoryTabsParent != null) shopCategoryTabsParent.gameObject.SetActive(true);
             if (inventoryCategoryTabsParent != null) inventoryCategoryTabsParent.gameObject.SetActive(true);
+
+            // The panel has landed: the tabs drop in one after another, then the visible cards cascade.
+            int tabCount = CascadeTabs();
+            if (hasSelectedCategory)
+                CascadeCards(FindTabForCategory(currentCategory), 0.05f + UIMotion.StaggerDelay(tabCount));
         }
         else
         {
@@ -595,6 +627,7 @@ public class InGameShopManager : MonoBehaviour
             Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': requires level {data.requiredXPLevel}.");
             GameEvents.ShopBlocked("LevelLocked", data.itemID);
             GameSfx.Play(SoundEffect.ButtonDisabled);
+            item.PlayDenied();
             if (ToastMessageManager.Instance != null)
             {
                 ToastMessageManager.Instance.ShowToast(
@@ -637,6 +670,7 @@ public class InGameShopManager : MonoBehaviour
             if (!NoorCoinManager.Instance.TrySpend(data.noorCoinCost, GameEvents.CoinSink.ShopPurchase, data.itemID))
             {
                 GameEvents.ShopBlocked("NotEnoughCoins", data.itemID);
+                item.PlayDenied();
                 Debug.Log($"[InGameShopManager] Cannot purchase '{data.itemName}': "
                     + $"insufficient Noor Coins (need {data.noorCoinCost}, "
                     + $"have {NoorCoinManager.Instance.Balance}).");
@@ -806,6 +840,7 @@ public class InGameShopManager : MonoBehaviour
     private void CompleteAcquisition(ShopItemUI item, ShopItemData data)
     {
         GameSfx.Play(SoundEffect.ItemPurchase);
+        item.PlayPurchased();
 
         string method = data.acquisitionType == ShopAcquisitionType.RewardedAd ? "Ad"
             : data.acquisitionType == ShopAcquisitionType.InAppPurchase ? "IAP"
@@ -825,6 +860,9 @@ public class InGameShopManager : MonoBehaviour
             }
             else
             {
+                // The coins burst out of the card and stream into the HUD counter, which waits for them.
+                RectTransform from = item.itemIcon != null ? item.itemIcon.rectTransform : item.transform as RectTransform;
+                UIFlyToTarget.Coins(data.noorCoinReward, UIFlyToTarget.ScreenPoint(from), 0.05f);
                 NoorCoinManager.Instance.Earn(data.noorCoinReward, true, GameEvents.CoinSource.ShopReward, data.itemID);
                 Debug.Log($"[InGameShopManager] Granted {data.noorCoinReward} Noor Coins from '{data.itemName}'. "
                     + $"New balance: {NoorCoinManager.Instance.Balance}.");
@@ -1021,6 +1059,9 @@ public class InGameShopManager : MonoBehaviour
                         cg.alpha = isActive ? 1f : 0f;
                     }
                     tab.categoryPanel.transform.localScale = Vector3.one;
+                    // An interrupted swipe must never leave a panel parked off its spot.
+                    RectTransform panelRect = CanSlide(tab.categoryPanel);
+                    if (panelRect != null) panelRect.anchoredPosition = PanelRestPosition(panelRect);
                 }
 
                 // Set button size and color
@@ -1080,16 +1121,42 @@ public class InGameShopManager : MonoBehaviour
         CanvasGroup oldPanelCG = oldTab != null ? GetOrAddCanvasGroup(oldTab.categoryPanel) : null;
         CanvasGroup newPanelCG = newTab != null ? GetOrAddCanvasGroup(newTab.categoryPanel) : null;
 
+        // The content swipes in the direction of travel along the tab row: a tab further along slides
+        // its content in from the far side, mirrored for right-to-left languages.
+        int direction = TabIndex(newCategory) >= TabIndex(oldCategory) ? 1 : -1;
+        if (UIMotion.IsRightToLeft) direction = -direction;
+        bool slide = !UIMotion.ReduceMotion && oldTab != newTab;
+        RectTransform oldPanelRect = oldTab != null && oldTab.categoryPanel != null ? CanSlide(oldTab.categoryPanel) : null;
+        RectTransform newPanelRect = newTab != null && newTab.categoryPanel != null ? CanSlide(newTab.categoryPanel) : null;
+        Vector2 oldRest = oldPanelRect != null ? PanelRestPosition(oldPanelRect) : Vector2.zero;
+        Vector2 newRest = newPanelRect != null ? PanelRestPosition(newPanelRect) : Vector2.zero;
+
+        // A switch that interrupts another leaves that one's panels half-faded; only the two panels in
+        // this transition may be on screen, so everything else goes straight back to hidden and at rest.
+        if (categoryTabs != null)
+        {
+            foreach (var tab in categoryTabs)
+            {
+                if (tab == null || tab == oldTab || tab == newTab || tab.categoryPanel == null) continue;
+                if (!tab.categoryPanel.activeSelf) continue;
+                tab.categoryPanel.SetActive(false);
+                RectTransform r = CanSlide(tab.categoryPanel);
+                if (r != null) r.anchoredPosition = PanelRestPosition(r);
+            }
+        }
+
         if (newTab != null && newTab.categoryPanel != null)
         {
             newTab.categoryPanel.SetActive(true);
-            newTab.categoryPanel.transform.localScale = new Vector3(0.9f, 0.9f, 1f); // Start slightly scaled down
+            newTab.categoryPanel.transform.localScale = Vector3.one;
             if (newPanelCG != null) newPanelCG.alpha = 0f;
+            if (slide && newPanelRect != null) newPanelRect.anchoredPosition = newRest + new Vector2(direction * CategorySlideDistance, 0f);
+            if (oldTab != newTab) CascadeCards(newTab, 0.06f);
         }
 
         while (elapsed < duration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
             // 1. Interpolate buttons (Sizing and Color)
@@ -1129,31 +1196,21 @@ public class InGameShopManager : MonoBehaviour
                 LayoutRebuilder.ForceRebuildLayoutImmediate(tabsParentRect);
             }
 
-            // 2. Interpolate Panels (Fade-out old, Fade-in & Pop new)
-            float easeOut = Mathf.Sin(t * Mathf.PI * 0.5f); // Smooth ease-out
-            float popScale = Mathf.Lerp(0.9f, 1.02f, easeOut); // Overshoot for juicy pop
-            if (t > 0.8f)
-            {
-                float settleT = (t - 0.8f) / 0.2f;
-                popScale = Mathf.Lerp(1.02f, 1.0f, settleT); // Settle back to 1.0
-            }
+            // 2. Cross-fade the panels while they swipe: the old one leaves the way the new one arrives.
+            float easeOut = 1f - (1f - t) * (1f - t) * (1f - t); // OutCubic
 
-            if (oldPanelCG != null)
+            if (oldPanelCG != null && oldTab != newTab)
             {
-                oldPanelCG.alpha = Mathf.Lerp(1f, 0f, t);
-                if (oldTab != null && oldTab.categoryPanel != null)
-                {
-                    oldTab.categoryPanel.transform.localScale = new Vector3(Mathf.Lerp(1f, 0.95f, t), Mathf.Lerp(1f, 0.95f, t), 1f);
-                }
+                oldPanelCG.alpha = Mathf.Lerp(1f, 0f, Mathf.Clamp01(t * 1.6f));
+                if (slide && oldPanelRect != null)
+                    oldPanelRect.anchoredPosition = oldRest - new Vector2(direction * CategorySlideDistance * 0.6f * easeOut, 0f);
             }
 
             if (newTab != null && newTab.categoryPanel != null)
             {
-                newTab.categoryPanel.transform.localScale = new Vector3(popScale, popScale, 1f);
-                if (newPanelCG != null)
-                {
-                    newPanelCG.alpha = Mathf.Lerp(0f, 1f, t);
-                }
+                if (newPanelCG != null) newPanelCG.alpha = Mathf.Lerp(0f, 1f, easeOut);
+                if (slide && newPanelRect != null)
+                    newPanelRect.anchoredPosition = newRest + new Vector2(direction * CategorySlideDistance * (1f - easeOut), 0f);
             }
 
             yield return null;
@@ -1169,6 +1226,85 @@ public class InGameShopManager : MonoBehaviour
         }
 
         categoryTransitionCoroutine = null;
+    }
+
+    // ── Motion helpers ────────────────────────────────────────────────────────
+
+    private const float CategorySlideDistance = 40f;
+    private readonly Dictionary<RectTransform, Vector2> panelRestPositions = new Dictionary<RectTransform, Vector2>();
+
+    private int TabIndex(ShopItemCategory category)
+    {
+        if (categoryTabs == null) return 0;
+        for (int i = 0; i < categoryTabs.Count; i++)
+            if (categoryTabs[i] != null && categoryTabs[i].category == category) return i;
+        return 0;
+    }
+
+    /// <summary>The panel's RectTransform when it is free to move (a layout group would fight the slide).</summary>
+    private static RectTransform CanSlide(GameObject panel)
+    {
+        var rect = panel.transform as RectTransform;
+        if (rect == null) return null;
+        if (rect.parent != null && rect.parent.GetComponent<LayoutGroup>() != null) return null;
+        return rect;
+    }
+
+    /// <summary>The panel's authored position, recorded the first time it is seen at rest.</summary>
+    private Vector2 PanelRestPosition(RectTransform rect)
+    {
+        if (!panelRestPositions.TryGetValue(rect, out Vector2 rest))
+        {
+            rest = rect.anchoredPosition;
+            panelRestPositions[rect] = rest;
+        }
+        return rest;
+    }
+
+    /// <summary>Pops the visible category tabs in one after another. Returns how many it animated.</summary>
+    private int CascadeTabs()
+    {
+        if (categoryTabs == null || UIMotion.ReduceMotion) return 0;
+        int index = 0;
+        foreach (var tab in categoryTabs)
+        {
+            if (tab == null || tab.tabButton == null || !tab.tabButton.gameObject.activeInHierarchy) continue;
+            UIMotion.PopIn(tab.tabButton.transform, UIMotion.StaggerDelay(index++));
+        }
+        return index;
+    }
+
+    /// <summary>
+    /// Cascades the cards of <paramref name="tab"/> that are inside the scroll viewport, row by row (they
+    /// are already in reading order). Cards scrolled out of view are left alone: nobody sees them, and
+    /// animating them would only cost frames.
+    /// </summary>
+    private void CascadeCards(CategoryTab tab, float delay)
+    {
+        if (tab == null || tab.contentParent == null || UIMotion.ReduceMotion) return;
+        if (!tab.contentParent.gameObject.activeInHierarchy) return;
+
+        var content = tab.contentParent as RectTransform;
+        if (content != null) LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+
+        ScrollRect scroll = tab.contentParent.GetComponentInParent<ScrollRect>(true);
+        RectTransform viewport = scroll != null ? (scroll.viewport != null ? scroll.viewport : scroll.transform as RectTransform) : null;
+        Rect viewRect = viewport != null ? WorldRect(viewport) : default;
+
+        int index = 0;
+        foreach (Transform child in tab.contentParent)
+        {
+            if (!child.gameObject.activeSelf) continue;
+            if (viewport != null && child is RectTransform cr && !viewRect.Overlaps(WorldRect(cr))) continue;
+            UIMotion.PopIn(child, delay + UIMotion.StaggerDelay(index++));
+        }
+    }
+
+    private static Rect WorldRect(RectTransform rect)
+    {
+        var corners = new Vector3[4];
+        rect.GetWorldCorners(corners);
+        return Rect.MinMaxRect(corners[0].x, corners[0].y, corners[2].x, corners[2].y);
     }
 
     /// <summary>

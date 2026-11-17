@@ -69,7 +69,11 @@ public class NoorCoinStorePopup : MonoBehaviour
     private bool hasSpawnedCards;
     private Coroutine autoCloseRoutine;
 
-    public bool IsOpen => Root.activeSelf;
+    // True while the close animation plays: the popup is still on screen but already "closed".
+    private bool closing;
+    private Sequence closeSequence;
+
+    public bool IsOpen => Root.activeSelf && !closing;
 
     private GameObject Root => panelRoot != null ? panelRoot : gameObject;
 
@@ -164,27 +168,86 @@ public class NoorCoinStorePopup : MonoBehaviour
 
         NoorCoinManager.OnBalanceChanged -= OnBalanceChanged;
 
+        blockedItem = null;
+        PlayCloseAnimation();
+    }
+
+    /// <summary>Shrinks and fades the window, then deactivates the root. Instant when nothing is on screen.</summary>
+    private void PlayCloseAnimation()
+    {
         if (window != null) window.DOKill();
         if (canvasGroup != null) canvasGroup.DOKill();
 
-        blockedItem = null;
+        if (!Root.activeInHierarchy || (canvasGroup == null && window == null))
+        {
+            FinishClose();
+            return;
+        }
+
+        closing = true;
+        UIMotionTokens t = UIMotion.Tokens;
+        bool reduced = UIMotion.ReduceMotion;
+        closeSequence?.Kill();
+        Sequence s = closeSequence = DOTween.Sequence().SetUpdate(true).SetLink(Root);
+        if (canvasGroup != null)
+        {
+            canvasGroup.blocksRaycasts = false;
+            s.Insert(0f, canvasGroup.DOFade(0f, reduced ? t.reducedFade.duration : t.disappear.duration));
+        }
+        if (window != null && !reduced)
+            s.Insert(0f, window.DOScale(t.popFromScale, t.disappear.duration).WithEase(t.disappear));
+        s.OnComplete(FinishClose);
+    }
+
+    private void FinishClose()
+    {
+        closeSequence = null;
+        closing = false;
+        if (window != null) window.localScale = Vector3.one;
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.blocksRaycasts = true;
+        }
         Root.SetActive(false);
     }
 
     private void PlayOpenAnimation()
     {
+        // Reopened mid-close: stop the close before it deactivates the popup under us.
+        closeSequence?.Kill();
+        closeSequence = null;
+        closing = false;
+        UIMotionTokens t = UIMotion.Tokens;
+        bool reduced = UIMotion.ReduceMotion;
+
         if (canvasGroup != null)
         {
             canvasGroup.DOKill();
+            canvasGroup.blocksRaycasts = true;
             canvasGroup.alpha = 0f;
-            canvasGroup.DOFade(1f, openDuration * 0.6f).SetUpdate(true);
+            canvasGroup.DOFade(1f, reduced ? t.reducedFade.duration : openDuration * 0.6f).SetUpdate(true).SetLink(Root);
         }
 
         if (window != null)
         {
             window.DOKill();
-            window.localScale = Vector3.one * 0.85f;
-            window.DOScale(1f, openDuration).SetEase(Ease.OutBack).SetUpdate(true);
+            if (reduced)
+            {
+                window.localScale = Vector3.one;
+            }
+            else
+            {
+                window.localScale = Vector3.one * t.popFromScale;
+                window.DOScale(1f, openDuration).WithEase(t.appear).SetUpdate(true).SetLink(Root);
+            }
+        }
+
+        // Offer cards cascade in once the window is landing.
+        for (int i = 0; i < spawnedCards.Count; i++)
+        {
+            if (spawnedCards[i] == null || !spawnedCards[i].gameObject.activeSelf) continue;
+            UIMotion.PopIn(spawnedCards[i].transform, openDuration * 0.4f + UIMotion.StaggerDelay(i));
         }
     }
 
@@ -254,6 +317,26 @@ public class NoorCoinStorePopup : MonoBehaviour
                     + $"'{data.itemName}'; skipping it: {e}");
             }
         }
+
+        HighlightBestValue();
+    }
+
+    /// <summary>The offer that pays the most breathes gently and shimmers: the one worth a look.</summary>
+    private void HighlightBestValue()
+    {
+        ShopItemUI best = null;
+        foreach (ShopItemUI card in spawnedCards)
+        {
+            if (card == null || card.ItemData == null) continue;
+            if (best == null || card.ItemData.noorCoinReward > best.ItemData.noorCoinReward) best = card;
+        }
+        if (best == null) return;
+
+        // Configured before the effects are switched on: the shimmer material reads these once.
+        if (!best.TryGetComponent(out UIIdle idle)) idle = best.gameObject.AddComponent<UIIdle>();
+        idle.breatheAmount = 0.015f;
+        idle.shimmerGraphic = best.itemBackgroundImg;
+        idle.SetEffects(UIIdle.Effect.Breathe | UIIdle.Effect.Shimmer);
     }
 
     private void OnBalanceChanged(int balance)
@@ -278,6 +361,14 @@ public class NoorCoinStorePopup : MonoBehaviour
         }
 
         yield return new WaitForSecondsRealtime(affordableCloseDelay);
+
+        // Let the coins that just paid out finish landing on the counter before the popup goes.
+        float waited = 0f;
+        while (UIRewardHold.IsHeld(RewardChannel.Coins) && waited < 3f)
+        {
+            waited += Time.unscaledDeltaTime;
+            yield return null;
+        }
 
         autoCloseRoutine = null;
         Close();

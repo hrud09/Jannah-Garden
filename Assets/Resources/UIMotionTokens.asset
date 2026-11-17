@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2d70b30ba1cd942af327b13e8ced10, type: 3}
+  m_Name: UIMotionTokens
+  m_EditorClassIdentifier: Assembly-CSharp::UIMotionTokens
+  appear:
+    duration: 0.32
+    ease: 27
+    overshoot: 1.3
+  appearSoft:
+    duration: 0.25
+    ease: 9
+    overshoot: 1.70158
+  disappear:
+    duration: 0.18
+    ease: 26
+    overshoot: 1.2
+  disappearSoft:
+    duration: 0.16
+    ease: 5
+    overshoot: 1.70158
+  popFromScale: 0.85
+  slideDistance: 120
+  backdropAlpha: 0.55
+  staggerStep: 0.035
+  staggerMax: 0.3
+  staggerFromScale: 0.6
+  staggerChild:
+    duration: 0.28
+    ease: 27
+    overshoot: 1.5
+  pressScale: 0.92
+  pressDown:
+    duration: 0.07
+    ease: 6
+    overshoot: 1.70158
+  pressRelease:
+    duration: 0.22
+    ease: 27
+    overshoot: 2.2
+  enabledPopScale: 1.08
+  enabledPop:
+    duration: 0.3
+    ease: 6
+    overshoot: 1.70158
+  punch:
+    duration: 0.35
+    ease: 0
+    overshoot: 1.70158
+  punchStrength: 0.12
+  punchVibrato: 8
+  countDuration: 0.6
+  gainFlash: {r: 1, g: 0.84, b: 0.3, a: 1}
+  spendFlash: {r: 1, g: 0.45, b: 0.4, a: 1}
+  idleBreathPeriod: 2.4
+  idleBreathAmount: 0.025
+  reducedFade:
+    duration: 0.15
+    ease: 1
+    overshoot: 1.70158

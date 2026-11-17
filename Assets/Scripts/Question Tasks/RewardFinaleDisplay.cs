@@ -53,6 +53,12 @@ public class RewardFinaleDisplay : MonoBehaviour
     private CanvasGroup cachedGroup;
     private CanvasGroup cachedHintGroup;
 
+    // HUD holds taken before the reward was granted (see HoldHud), handed to the flight on LaunchToHud.
+    private UIRewardHold.Hold coinHold;
+    private UIRewardHold.Hold xpHold;
+    private int shownCoins;
+    private int shownXP;
+
     // Resolved lazily rather than in Awake: the row starts inactive in the scene, so Awake hasn't run
     // by the time the first Show call arrives.
     private CanvasGroup Group
@@ -80,6 +86,8 @@ public class RewardFinaleDisplay : MonoBehaviour
 
         bool showCoins = coins > 0;
         bool showXP = xp > 0f;
+        shownCoins = coins;
+        shownXP = Mathf.RoundToInt(xp);
 
         if (coinText != null) coinText.gameObject.SetActive(showCoins);
         if (xpText != null) xpText.gameObject.SetActive(showXP);
@@ -106,9 +114,59 @@ public class RewardFinaleDisplay : MonoBehaviour
         ShowHint(chipIndex);
     }
 
+    /// <summary>
+    /// Freezes the HUD coin counter and XP bar so they don't jump while the panel still covers them.
+    /// Call it just <b>before</b> granting the reward; <see cref="LaunchToHud"/> then flies the reward
+    /// into them. If the launch never happens, hiding/disabling the row (or the hold timeout) lets go.
+    /// </summary>
+    public void HoldHud()
+    {
+        ReleaseHolds();
+        coinHold = UIRewardHold.Begin(RewardChannel.Coins, 12f);
+        xpHold = UIRewardHold.Begin(RewardChannel.XP, 12f);
+        shownCoins = 0;
+        shownXP = 0;
+    }
+
+    /// <summary>
+    /// Sends the shown rewards flying from their chips to the HUD — call it as the panel starts to
+    /// close, so they land on a HUD the player can see. Releases the holds when the last icon lands.
+    /// </summary>
+    public void LaunchToHud(float delay = 0.1f)
+    {
+        UIRewardHold.Hold coins = coinHold ?? UIRewardHold.Begin(RewardChannel.Coins, delay + 4f);
+        UIRewardHold.Hold xp = xpHold ?? UIRewardHold.Begin(RewardChannel.XP, delay + 4f);
+        coinHold = null;
+        xpHold = null;
+
+        bool visible = isActiveAndEnabled;
+        UIFlyToTarget.Coins(visible ? shownCoins : 0, ChipPoint(coinText), delay, coins);
+        // XP leaves a beat after the coins, so the two streams don't cross as one blob.
+        UIFlyToTarget.XP(visible ? shownXP : 0, ChipPoint(xpText), delay + 0.15f, xp);
+        shownCoins = 0;
+        shownXP = 0;
+    }
+
+    private Vector2 ChipPoint(TextMeshProUGUI chip)
+    {
+        RectTransform rect = chip != null && chip.gameObject.activeInHierarchy ? chip.rectTransform : transform as RectTransform;
+        return UIFlyToTarget.ScreenPoint(rect);
+    }
+
+    private void ReleaseHolds()
+    {
+        coinHold?.Release();
+        xpHold?.Release();
+        coinHold = null;
+        xpHold = null;
+    }
+
+    private void OnDisable() => ReleaseHolds();
+
     /// <summary>Takes the row back down, so a panel reopened for a fresh question/dhikr starts clean.</summary>
     public void Hide()
     {
+        ReleaseHolds();
         if (Group != null) Group.DOKill();
         transform.DOKill();
 

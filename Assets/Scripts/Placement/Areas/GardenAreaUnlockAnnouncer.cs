@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Celebrates a garden area opening.
@@ -45,6 +46,13 @@ public class GardenAreaUnlockAnnouncer : MonoBehaviour
     [Tooltip("Optional: the area banner, asked to name the new area right after the card closes so " +
              "the player has something to walk towards.")]
     public GardenAreaBanner banner;
+
+    [Header("Motion")]
+    [Tooltip("Colour of the rays that turn slowly behind the card.")]
+    public Color raysColor = new Color(1f, 0.86f, 0.45f, 0.55f);
+
+    private Image _rays;
+    private Tween _raysSpin;
 
     private readonly Queue<GardenAreaDefinition> _pending = new Queue<GardenAreaDefinition>();
     private Coroutine _running;
@@ -89,6 +97,26 @@ public class GardenAreaUnlockAnnouncer : MonoBehaviour
         if (area.unlockedFromStart) return;
 
         _pending.Enqueue(area);
+        _running ??= StartCoroutine(DrainQueue());
+    }
+
+    /// <summary>Plays the celebration for the first area that isn't open from the start, without
+    /// unlocking anything — for checking the look in Play mode.</summary>
+    [ContextMenu("Preview Celebration")]
+    public void PreviewCelebration()
+    {
+        if (!Application.isPlaying) return;
+
+        // Without an area manager (a test scene) the card still plays, just with no area name.
+        GardenAreaDefinition pick = null;
+        if (_subscribed != null && _subscribed.map != null)
+        {
+            foreach (GardenAreaDefinition area in _subscribed.map.areas)
+            {
+                if (area != null && !area.unlockedFromStart) { pick = area; break; }
+            }
+        }
+        _pending.Enqueue(pick);
         _running ??= StartCoroutine(DrainQueue());
     }
 
@@ -149,15 +177,100 @@ public class GardenAreaUnlockAnnouncer : MonoBehaviour
             punch.DOPunchScale(new Vector3(0.25f, 0.25f, 0.25f), 0.5f, 8, 1f).SetUpdate(true);
         }
 
+        PlayEntranceExtras(punch);
+
         GameSfx.Play(SoundEffect.AreaUnlockFanfare);
 
         yield return FadeTo(1f);
         yield return new WaitForSecondsRealtime(Mathf.Max(0f, holdSeconds));
+
+        // Leaving: the card settles back a touch as it fades, rather than just dissolving.
+        if (punch != null && !UIMotion.ReduceMotion)
+            punch.DOScale(0.94f, Mathf.Max(0.01f, fadeSeconds)).SetEase(Ease.InQuad).SetUpdate(true).SetLink(punch.gameObject);
         yield return FadeTo(0f);
 
+        StopEntranceExtras(punch);
         if (content != null) content.SetActive(false);
 
-        if (banner != null) banner.Announce(area);
+        if (banner != null && area != null) banner.Announce(area);
+    }
+
+    /// <summary>
+    /// The rest of the celebration on top of the card's punch: rays bloom and turn slowly behind it, the
+    /// title stamps down, the body fades in after it, and sparkles burst from the card.
+    /// </summary>
+    private void PlayEntranceExtras(RectTransform card)
+    {
+        if (UIMotion.ReduceMotion) return;
+
+        EnsureRays(card);
+        if (_rays != null)
+        {
+            RectTransform rt = _rays.rectTransform;
+            _rays.gameObject.SetActive(true);
+            rt.localScale = Vector3.one * 0.5f;
+            rt.localRotation = Quaternion.identity;
+            rt.DOScale(1f, 0.6f).SetEase(Ease.OutBack, 1.4f).SetUpdate(true).SetLink(rt.gameObject);
+            _raysSpin?.Kill();
+            _raysSpin = rt.DOLocalRotate(new Vector3(0f, 0f, -360f), 16f, RotateMode.FastBeyond360)
+                .SetEase(Ease.Linear).SetLoops(-1).SetUpdate(true).SetLink(rt.gameObject);
+        }
+
+        if (titleText != null) UIMotion.Stamp(titleText.transform, 0.1f);
+
+        if (bodyText != null)
+        {
+            // Through a CanvasGroup so the Bengali shaped renderer (a child graphic) fades with it.
+            CanvasGroup body = bodyText.GetComponent<CanvasGroup>();
+            if (body == null) body = bodyText.gameObject.AddComponent<CanvasGroup>();
+            body.alpha = 0f;
+            body.DOFade(1f, 0.35f).SetDelay(0.3f).SetUpdate(true).SetLink(bodyText.gameObject);
+        }
+
+        if (card != null)
+        {
+            Vector2 at = UIFlyToTarget.ScreenPoint(card);
+            float radius = Screen.height * 0.18f;
+            DOVirtual.DelayedCall(0.12f, () =>
+            {
+                UIFlyToTarget.Burst(at, new Color(1f, 0.9f, 0.55f, 1f), 14, radius);
+                UIFlyToTarget.Burst(at, new Color(0.75f, 1f, 0.78f, 1f), 8, radius * 0.7f);
+            }, true);
+        }
+    }
+
+    private void StopEntranceExtras(RectTransform card)
+    {
+        _raysSpin?.Kill();
+        _raysSpin = null;
+        if (_rays != null) _rays.gameObject.SetActive(false);
+        if (card != null) card.localScale = Vector3.one;
+        if (titleText != null) titleText.transform.localScale = Vector3.one;
+        CanvasGroup body = bodyText != null ? bodyText.GetComponent<CanvasGroup>() : null;
+        if (body != null) body.alpha = 1f;
+    }
+
+    /// <summary>Builds the ray burst once, behind everything in the card, centred on it.</summary>
+    private void EnsureRays(RectTransform card)
+    {
+        if (_rays != null || content == null || card == null) return;
+
+        var go = new GameObject("Unlock Rays", typeof(RectTransform));
+        go.layer = content.layer;
+        var rt = (RectTransform)go.transform;
+        rt.SetParent(content.transform, false);
+        rt.SetAsFirstSibling();
+        go.AddComponent<LayoutElement>().ignoreLayout = true;
+
+        _rays = go.AddComponent<Image>();
+        _rays.sprite = UIFxSprites.Rays;
+        _rays.color = raysColor;
+        _rays.raycastTarget = false;
+
+        float size = Mathf.Max(card.rect.width, card.rect.height) * 1.6f;
+        rt.sizeDelta = new Vector2(size, size);
+        rt.position = card.TransformPoint(card.rect.center);
+        go.SetActive(false);
     }
 
     private IEnumerator FadeTo(float target)

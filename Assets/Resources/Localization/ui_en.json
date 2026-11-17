@@ -533,6 +533,14 @@
             "value": "Vibration"
         },
         {
+            "key": "hud.level_up",
+            "value": "Level Up!"
+        },
+        {
+            "key": "settings.reduce_motion_label",
+            "value": "Reduce Motion"
+        },
+        {
             "key": "settings.normal_speed_label",
             "value": "NORMAL SPEED"
         },

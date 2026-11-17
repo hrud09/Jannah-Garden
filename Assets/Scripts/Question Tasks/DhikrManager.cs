@@ -122,7 +122,7 @@ public class DhikrManager : MonoBehaviour
     {
         ReportDhikrAbandonedIfActive();
         currentOrb = orb;
-        if (blurredBG != null) blurredBG.SetActive(true);
+        UIMotion.SetBackdrop(blurredBG, true);
 
         // Undo the "Mash'Allah" finale's cleanup (see ShowMashallahAndAutoClose) so a fresh dhikr
         // session starts with every panel element back in view.
@@ -141,13 +141,8 @@ public class DhikrManager : MonoBehaviour
         if (plusButton != null) plusButton.interactable = true;
         if (minusButton != null) minusButton.interactable = true;
 
-        if (dhikrPanel != null) 
-        {
-            dhikrPanel.SetActive(true);
-            dhikrPanel.transform.DOKill();
-            dhikrPanel.transform.localScale = Vector3.zero;
-            dhikrPanel.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
-        }
+        // Shared dialog entrance (UIMotionTokens): pop from 0.85 with a fade, on unscaled time.
+        if (dhikrPanel != null) UIMotion.PanelIn(dhikrPanel);
 
         if (allDhikrs != null)
         {
@@ -173,12 +168,11 @@ public class DhikrManager : MonoBehaviour
                 if (dhikrTextUI != null)
                 {
                     dhikrTextUI.transform.DOKill();
-                    dhikrTextUI.transform.localScale = Vector3.zero;
-                    dhikrTextUI.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack).SetDelay(0.2f);
+                    UIMotion.PopIn(dhikrTextUI.transform, 0.15f);
                 }
             }
         }
-        
+
         CheckSubmitCondition();
     }
 
@@ -204,12 +198,14 @@ public class DhikrManager : MonoBehaviour
         currentCount++;
         UpdateCountUI();
         CheckSubmitCondition();
-        
+
         if (countTextUI != null)
         {
             countTextUI.transform.DOKill();
             countTextUI.transform.localScale = Vector3.one;
-            countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+            UIMotion.Punch(countTextUI.transform, 0.9f);
+            // Each tasbih ripples out from the counter, like a bead dropping.
+            UIMotion.Ripple(countTextBackground != null ? countTextBackground.transform as RectTransform : countTextUI.rectTransform);
         }
 
         if (currentCount >= targetCount)
@@ -237,12 +233,12 @@ public class DhikrManager : MonoBehaviour
             currentCount--;
             UpdateCountUI();
             CheckSubmitCondition();
-            
+
             if (countTextUI != null)
             {
                 countTextUI.transform.DOKill();
                 countTextUI.transform.localScale = Vector3.one;
-                countTextUI.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+                UIMotion.Punch(countTextUI.transform, 0.5f);
             }
         }
     }
@@ -284,6 +280,9 @@ public class DhikrManager : MonoBehaviour
             int coinsEarned = 0;
             float xpEarned = 0f;
 
+            // The HUD waits under the panel; the finale flies the reward into it on close.
+            if (rewardFinale != null) rewardFinale.HoldHud();
+
             if (NoorCoinManager.Instance != null && QuestionMarkOrbManager.Instance != null)
             {
                 coinsEarned = QuestionMarkOrbManager.Instance.rewardCoins;
@@ -318,7 +317,8 @@ public class DhikrManager : MonoBehaviour
         {
             dhikrPanel.transform.DOKill();
             dhikrPanel.transform.localScale = Vector3.one;
-            dhikrPanel.transform.DOScale(mashallahPanelScale, 0.35f).SetEase(Ease.OutBack);
+            UIMotionTokens tokens = UIMotion.Tokens;
+            dhikrPanel.transform.DOScale(mashallahPanelScale, tokens.appear.duration * 1.1f).Apply(tokens.appear, dhikrPanel);
         }
 
         if (countTextUI != null) countTextUI.gameObject.SetActive(false);
@@ -338,7 +338,7 @@ public class DhikrManager : MonoBehaviour
             LocalizedRendering.SetText(mashallahTextUI, loc != null ? loc.Get("reward.mashallah") : "Mash'Allah");
             mashallahTextUI.transform.DOKill();
             mashallahTextUI.transform.localScale = Vector3.one;
-            mashallahTextUI.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), 0.5f, 10, 1f);
+            UIMotion.Punch(mashallahTextUI.transform, 1.25f);
 
             if (rewardFinale != null) rewardFinale.Show(coinsEarned, xpEarned);
         }
@@ -371,21 +371,20 @@ public class DhikrManager : MonoBehaviour
 
     private void CloseDhikrDramaticallyInternal()
     {
-        if (dhikrPanel != null) 
+        if (rewardFinale != null) rewardFinale.LaunchToHud();
+
+        // The backdrop fades with the panel rather than vanishing after it.
+        UIMotion.SetBackdrop(blurredBG, false);
+        if (dhikrPanel != null)
         {
-            dhikrPanel.transform.DOKill();
-            dhikrPanel.transform.DOPunchScale(new Vector3(0.05f, 0.05f, 0.05f), 0.2f, 5, 1).OnComplete(() => {
-                dhikrPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.InBack).OnComplete(() => {
-                    dhikrPanel.SetActive(false);
-                    if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
-                    if (blurredBG != null) blurredBG.SetActive(false);
-                    currentOrb = null;
-                });
+            UIMotion.PanelOut(dhikrPanel, () => {
+                dhikrPanel.SetActive(false);
+                if (mashallahTextUI != null) mashallahTextUI.gameObject.SetActive(false);
+                currentOrb = null;
             });
         }
-        else if (blurredBG != null)
+        else
         {
-            blurredBG.SetActive(false);
             currentOrb = null;
         }
     }

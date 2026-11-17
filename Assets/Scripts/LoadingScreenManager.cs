@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 /// <summary>
 /// A persistent, self-contained loading screen system.
@@ -146,6 +147,12 @@ public class LoadingScreenManager : MonoBehaviour
     // ─────────────────────────────────────────────
     /// <summary>True while a scene load is in progress.</summary>
     public bool IsLoading { get; private set; }
+
+    /// <summary>
+    /// Raised when a finished load starts fading the loading screen out, so the new scene's HUD can
+    /// make its entrance as it is revealed rather than already sitting there.
+    /// </summary>
+    public static event System.Action Revealing;
 
     // ─────────────────────────────────────────────
     //  Inspector — Canvas Setup
@@ -405,6 +412,110 @@ public class LoadingScreenManager : MonoBehaviour
 
         // Animate spinner dots
         AnimateSpinner();
+
+        UpdateFillSparkle();
+        RotateTips();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  Motion (UI motion plan, Phase 5)
+    // ═══════════════════════════════════════════════════════════════════════
+
+    [Header("Motion")]
+    [Tooltip("Seconds each loading tip stays before the next one fades in (when there is more than one).")]
+    public float tipRotateSeconds = 4.5f;
+
+    private float _tipTimer;
+    private int _tipIndex = -1;
+    private Sequence _tipFade;
+    private Image _fillSparkle;
+    private Vector3 _logoRestScale = Vector3.zero;
+
+    /// <summary>The logo eases up from slightly small, then breathes and catches the light while loading.</summary>
+    private void PlayLogoEntrance()
+    {
+        if (logoImage == null) return;
+        Transform logo = logoImage.transform;
+        if (_logoRestScale == Vector3.zero) _logoRestScale = logo.localScale == Vector3.zero ? Vector3.one : logo.localScale;
+
+        UIIdle idle = UIIdle.Ensure(logoImage.gameObject, UIIdle.Effect.Breathe | UIIdle.Effect.Shimmer);
+        idle.breatheAmount = 0.015f;
+        idle.breathePeriod = 3f;
+
+        logo.DOKill();
+        logo.localScale = _logoRestScale;
+        if (UIMotion.ReduceMotion) return;
+        logo.localScale = _logoRestScale * 0.92f;
+        logo.DOScale(_logoRestScale, 0.7f).SetEase(Ease.OutBack, 1.4f).SetDelay(0.1f).SetUpdate(true).SetLink(logo.gameObject);
+    }
+
+    /// <summary>A sparkle rides the leading edge of the progress fill, turning as it goes.</summary>
+    private void UpdateFillSparkle()
+    {
+        if (progressBar == null || progressBar.fillRect == null) return;
+
+        if (_fillSparkle == null)
+        {
+            RectTransform area = progressBar.fillRect.parent as RectTransform;
+            if (area == null) return;
+            var go = new GameObject("Fill Sparkle", typeof(RectTransform));
+            go.layer = area.gameObject.layer;
+            go.transform.SetParent(area, false);
+            go.AddComponent<LayoutElement>().ignoreLayout = true;
+            _fillSparkle = go.AddComponent<Image>();
+            _fillSparkle.sprite = UIFxSprites.Sparkle;
+            _fillSparkle.color = new Color(1f, 0.95f, 0.7f, 0.95f);
+            _fillSparkle.raycastTarget = false;
+            RectTransform srt = _fillSparkle.rectTransform;
+            float size = Mathf.Max(24f, area.rect.height * 1.8f);
+            srt.sizeDelta = new Vector2(size, size);
+        }
+
+        float v = progressBar.normalizedValue;
+        bool show = v > 0.01f && v < 0.995f && !UIMotion.ReduceMotion;
+        if (_fillSparkle.gameObject.activeSelf != show) _fillSparkle.gameObject.SetActive(show);
+        if (!show) return;
+
+        bool reversed = progressBar.direction == Slider.Direction.RightToLeft;
+        float x = reversed ? 1f - v : v;
+        RectTransform rt = _fillSparkle.rectTransform;
+        rt.anchorMin = rt.anchorMax = new Vector2(x, 0.5f);
+        rt.anchoredPosition = Vector2.zero;
+        rt.localRotation = Quaternion.Euler(0f, 0f, Time.unscaledTime * 160f);
+        float pulse = 1f + Mathf.Sin(Time.unscaledTime * 9f) * 0.12f;
+        rt.localScale = new Vector3(pulse, pulse, 1f);
+    }
+
+    /// <summary>With several tips, a new one fades in every few seconds while the load runs.</summary>
+    private void RotateTips()
+    {
+        if (tipsText == null || loadingTips == null || loadingTips.Length < 2) return;
+
+        _tipTimer += Time.unscaledDeltaTime;
+        if (_tipTimer < Mathf.Max(1.5f, tipRotateSeconds)) return;
+        _tipTimer = 0f;
+
+        int next = Random.Range(0, loadingTips.Length - 1);
+        if (next >= _tipIndex && _tipIndex >= 0) next++; // never the same tip twice in a row
+        _tipIndex = Mathf.Clamp(next, 0, loadingTips.Length - 1);
+        string tip = loadingTips[_tipIndex];
+
+        // Through a CanvasGroup so the Bengali shaped renderer (a child graphic) fades with it.
+        CanvasGroup group = tipsText.GetComponent<CanvasGroup>();
+        if (group == null) group = tipsText.gameObject.AddComponent<CanvasGroup>();
+        _tipFade?.Kill();
+        RectTransform trt = tipsText.rectTransform;
+        Vector2 rest = trt.anchoredPosition;
+        _tipFade = DOTween.Sequence().SetUpdate(true).SetLink(tipsText.gameObject)
+            .Append(group.DOFade(0f, 0.25f))
+            .AppendCallback(() =>
+            {
+                SafeSetText(tipsText, tip);
+                if (!UIMotion.ReduceMotion) trt.anchoredPosition = rest + new Vector2(0f, -10f);
+            })
+            .Append(group.DOFade(1f, 0.3f))
+            .Join(trt.DOAnchorPos(rest, 0.3f).SetEase(Ease.OutCubic))
+            .OnKill(() => { if (group != null) group.alpha = 1f; if (trt != null) trt.anchoredPosition = rest; });
     }
 
     // ─────────────────────────────────────────────
@@ -481,6 +592,8 @@ public class LoadingScreenManager : MonoBehaviour
 
         // Show the logo that matches the scene being loaded
         ApplyLogoForScene(sceneName);
+        PlayLogoEntrance();
+        _tipTimer = 0f;
 
         // Show the background that matches the scene being loaded
         ApplyBackgroundForScene(sceneName);
@@ -669,6 +782,7 @@ public class LoadingScreenManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(hideDelay);
 
         // Fade out
+        Revealing?.Invoke();
         yield return StartCoroutine(FadeOut());
 
         IsLoading = false;

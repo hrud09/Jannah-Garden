@@ -45,6 +45,7 @@ public class ReturnToBaseUI : MonoBehaviour
     public IdyllicFantasyNature.PlayerMovement playerMovement;
 
     private PlayerAutoWalker _walker;
+    private bool _wasWalking;
 
     private void Start()
     {
@@ -125,6 +126,10 @@ public class ReturnToBaseUI : MonoBehaviour
     private void RefreshUI()
     {
         bool walking = _walker != null && _walker.Current == PlayerAutoWalker.Destination.Base;
+
+        // The button flips between "go" and "stop": give the flip a punch so it reads as a state change.
+        if (walking != _wasWalking) UIMotion.Punch(transform, 1.5f);
+        _wasWalking = walking;
         string text = Localize(walking ? StopKey : LabelKey);
 
         if (buttonLabel != null)
@@ -134,7 +139,8 @@ public class ReturnToBaseUI : MonoBehaviour
 
         if (activeWalkLabel != null)
         {
-            activeWalkLabel.SetActive(walking);
+            // Pops in under the button while walking, and shrinks away when the walk ends.
+            UIToggleMotion.SetActive(activeWalkLabel, walking, 0f, new Vector2(0f, -14f));
         }
     }
 

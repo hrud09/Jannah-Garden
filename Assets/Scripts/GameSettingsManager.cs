@@ -9,6 +9,8 @@ public class GameSettingsManager : MonoBehaviour
     public Toggle sfxToggle;
     public Toggle musicToggle;
     public Toggle vibrationToggle;
+    [Tooltip("Reduce Motion: swaps UI scale/slide animations for short fades and stops idle loops.")]
+    public Toggle reduceMotionToggle;
 
     [Header("UI Sliders")]
     public Slider normalSpeedSlider;
@@ -36,6 +38,7 @@ public class GameSettingsManager : MonoBehaviour
     public RectTransform[] settingsOptions;
 
     [Header("Animation Settings")]
+    [Tooltip("Unused: the panel's timings now come from Resources/UIMotionTokens so every panel feels the same. Kept so the scene's serialized values aren't lost.")]
     public float fadeDuration = 0.25f;
     public float scaleDuration = 0.35f;
     public float itemStaggerDelay = 0.05f;
@@ -126,6 +129,11 @@ public class GameSettingsManager : MonoBehaviour
             vibrationToggle.isOn = vibrationEnabled;
             vibrationToggle.onValueChanged.AddListener(SetVibration);
         }
+        if (reduceMotionToggle != null)
+        {
+            reduceMotionToggle.isOn = UIMotion.ReduceMotion;
+            reduceMotionToggle.onValueChanged.AddListener(SetReduceMotion);
+        }
 
         // Set up Slider components
         if (normalSpeedSlider != null)
@@ -185,62 +193,235 @@ public class GameSettingsManager : MonoBehaviour
         }
     }
 
+    // ---------------------------------------------------------------- open / close motion
+    //
+    // Open: the dim fades up while the window springs in from below with a squash-and-stretch
+    // landing and a small tilt that rights itself; the rows then cascade in with an alternating
+    // wobble, and the close button spins in last. Close: a quick anticipation swell, then the
+    // window tips and shrinks away while the rows collapse in reverse. Everything runs on
+    // unscaled time and collapses to plain fades under Reduce Motion.
+
+    private Sequence _panelSequence;
+    private Vector2 _mainBgRestPos;
+    private bool _mainBgRestCaptured;
+    private Vector3 _closeButtonRestScale = Vector3.one;
+    private bool _closeButtonRestCaptured;
+
+    private CanvasGroup MainBgGroup
+    {
+        get
+        {
+            if (mainBg == null) return null;
+            CanvasGroup g = mainBg.GetComponent<CanvasGroup>();
+            return g != null ? g : mainBg.gameObject.AddComponent<CanvasGroup>();
+        }
+    }
+
+    /// <summary>The close button, unless it is already one of the cascading rows.</summary>
+    private Transform CloseButtonTransform
+    {
+        get
+        {
+            if (closeButton == null) return null;
+            if (settingsOptions != null && System.Array.IndexOf(settingsOptions, closeButton.transform as RectTransform) >= 0) return null;
+            return closeButton.transform;
+        }
+    }
+
+    private void CaptureRestPose()
+    {
+        // Only capture while nothing is mid-flight, so an interrupted tween can't become the new rest.
+        if (_panelSequence != null && _panelSequence.IsActive()) return;
+        if (mainBg != null && !_mainBgRestCaptured)
+        {
+            _mainBgRestPos = mainBg.anchoredPosition;
+            _mainBgRestCaptured = true;
+        }
+        Transform cb = CloseButtonTransform;
+        if (cb != null && !_closeButtonRestCaptured)
+        {
+            _closeButtonRestScale = cb.localScale == Vector3.zero ? Vector3.one : cb.localScale;
+            _closeButtonRestCaptured = true;
+        }
+    }
+
+    private void KillPanelSequence()
+    {
+        if (_panelSequence != null && _panelSequence.IsActive()) _panelSequence.Kill();
+        _panelSequence = null;
+        if (mainBg != null) mainBg.DOKill();
+        if (darkBg != null) darkBg.DOKill();
+        if (settingsOptions != null)
+            foreach (var o in settingsOptions) if (o != null) o.DOKill();
+        Transform cb = CloseButtonTransform;
+        if (cb != null) cb.DOKill();
+    }
+
+    private void ResetToRestPose()
+    {
+        if (mainBg != null)
+        {
+            mainBg.localScale = Vector3.one;
+            mainBg.localRotation = Quaternion.identity;
+            if (_mainBgRestCaptured) mainBg.anchoredPosition = _mainBgRestPos;
+            CanvasGroup g = mainBg.GetComponent<CanvasGroup>();
+            if (g != null) g.alpha = 1f;
+        }
+        if (settingsOptions != null)
+            foreach (var o in settingsOptions)
+                if (o != null) { o.localScale = Vector3.one; o.localRotation = Quaternion.identity; }
+        Transform cb = CloseButtonTransform;
+        if (cb != null) { cb.localScale = _closeButtonRestScale; cb.localRotation = Quaternion.identity; }
+    }
+
+    private Sequence NewPanelSequence()
+    {
+        GameObject link = settingsPanel != null ? settingsPanel : gameObject;
+        _panelSequence = DOTween.Sequence().SetUpdate(true).SetLink(link);
+        return _panelSequence;
+    }
+
     private void AnimateOpen()
     {
-        _isAnimating = true;
+        CaptureRestPose();
+        KillPanelSequence();
+        ResetToRestPose();
 
-        // Reset scales and alpha
-        if (settingsOptions != null && settingsOptions.Length > 0)
+        Sequence seq = NewPanelSequence();
+        CanvasGroup windowGroup = MainBgGroup;
+
+        if (darkBg != null)
+        {
+            darkBg.alpha = 0f;
+            seq.Insert(0f, darkBg.DOFade(1f, 0.22f).SetEase(Ease.OutQuad));
+        }
+
+        if (UIMotion.ReduceMotion)
+        {
+            if (windowGroup != null)
+            {
+                windowGroup.alpha = 0f;
+                seq.Insert(0f, windowGroup.DOFade(1f, UIMotion.Tokens.reducedFade.duration).SetEase(Ease.Linear));
+            }
+            seq.OnComplete(() => _panelSequence = null);
+            return;
+        }
+
+        float landAt = 0f;
+        if (mainBg != null)
+        {
+            // Start small, low and tilted, then spring up.
+            mainBg.localScale = new Vector3(0.55f, 0.45f, 1f);
+            mainBg.localRotation = Quaternion.Euler(0f, 0f, UIMotion.IsRightToLeft ? 6f : -6f);
+            mainBg.anchoredPosition = _mainBgRestPos + new Vector2(0f, -70f);
+            if (windowGroup != null)
+            {
+                windowGroup.alpha = 0f;
+                seq.Insert(0f, windowGroup.DOFade(1f, 0.12f).SetEase(Ease.OutQuad));
+            }
+
+            seq.Insert(0f, mainBg.DOAnchorPos(_mainBgRestPos, 0.34f).SetEase(Ease.OutBack, 1.6f));
+            seq.Insert(0f, mainBg.DOLocalRotate(Vector3.zero, 0.5f).SetEase(Ease.OutElastic, 1.1f, 0.35f));
+
+            // Stretch tall on the way up, squash wide on landing, rebound, settle.
+            Sequence squash = DOTween.Sequence()
+                .Append(mainBg.DOScale(new Vector3(0.96f, 1.08f, 1f), 0.16f).SetEase(Ease.OutQuad))
+                .Append(mainBg.DOScale(new Vector3(1.08f, 0.93f, 1f), 0.09f).SetEase(Ease.InOutSine))
+                .Append(mainBg.DOScale(new Vector3(0.98f, 1.03f, 1f), 0.09f).SetEase(Ease.InOutSine))
+                .Append(mainBg.DOScale(Vector3.one, 0.14f).SetEase(Ease.OutBack, 2f));
+            seq.Insert(0f, squash);
+            landAt = 0.16f;
+        }
+
+        // Rows cascade in with an alternating wobble once the window has landed.
+        int shown = 0;
+        if (settingsOptions != null)
         {
             for (int i = 0; i < settingsOptions.Length; i++)
             {
-                if (settingsOptions[i] != null)
-                {
-                    settingsOptions[i].localScale = Vector3.zero;
-                }
+                RectTransform option = settingsOptions[i];
+                if (option == null || !option.gameObject.activeSelf) continue;
+
+                float at = landAt + 0.05f + shown * 0.045f;
+                float tilt = (shown % 2 == 0 ? -1f : 1f) * 9f;
+                option.localScale = Vector3.zero;
+                option.localRotation = Quaternion.Euler(0f, 0f, tilt);
+                seq.Insert(at, option.DOScale(Vector3.one, 0.32f).SetEase(Ease.OutBack, 2.2f));
+                seq.Insert(at, option.DOLocalRotate(Vector3.zero, 0.4f).SetEase(Ease.OutBack, 2.5f));
+                shown++;
+            }
+        }
+
+        // The close button spins in last, like a seal on the window.
+        Transform cb = CloseButtonTransform;
+        if (cb != null)
+        {
+            float at = landAt + 0.1f + shown * 0.045f;
+            cb.localScale = Vector3.zero;
+            cb.localRotation = Quaternion.Euler(0f, 0f, -120f);
+            seq.Insert(at, cb.DOScale(_closeButtonRestScale, 0.3f).SetEase(Ease.OutBack, 2.6f));
+            seq.Insert(at, cb.DOLocalRotate(Vector3.zero, 0.35f).SetEase(Ease.OutBack, 1.8f));
+        }
+
+        seq.OnComplete(() => _panelSequence = null);
+    }
+
+    private void AnimateClose(TweenCallback onDone)
+    {
+        CaptureRestPose();
+        KillPanelSequence();
+
+        Sequence seq = NewPanelSequence();
+        CanvasGroup windowGroup = MainBgGroup;
+
+        if (UIMotion.ReduceMotion)
+        {
+            float d = UIMotion.Tokens.reducedFade.duration;
+            if (windowGroup != null) seq.Insert(0f, windowGroup.DOFade(0f, d).SetEase(Ease.Linear));
+            if (darkBg != null) seq.Insert(0f, darkBg.DOFade(0f, d).SetEase(Ease.Linear));
+            seq.OnComplete(() => { _panelSequence = null; onDone(); ResetToRestPose(); });
+            return;
+        }
+
+        // Close button and rows collapse in reverse order, quickly.
+        int count = 0;
+        Transform cb = CloseButtonTransform;
+        if (cb != null)
+        {
+            seq.Insert(0f, cb.DOScale(Vector3.zero, 0.12f).SetEase(Ease.InBack, 2f));
+            seq.Insert(0f, cb.DOLocalRotate(new Vector3(0f, 0f, 90f), 0.12f).SetEase(Ease.InQuad));
+            count++;
+        }
+        if (settingsOptions != null)
+        {
+            for (int i = settingsOptions.Length - 1; i >= 0; i--)
+            {
+                RectTransform option = settingsOptions[i];
+                if (option == null || !option.gameObject.activeSelf) continue;
+                seq.Insert(Mathf.Min(count * 0.015f, 0.08f), option.DOScale(Vector3.zero, 0.13f).SetEase(Ease.InBack, 1.8f));
+                count++;
             }
         }
 
         if (mainBg != null)
         {
-            mainBg.localScale = Vector3.one;
+            // Anticipation: a quick swell, then tip over and shrink away.
+            float tip = UIMotion.IsRightToLeft ? -5f : 5f;
+            seq.Insert(0f, mainBg.DOScale(new Vector3(1.05f, 1.05f, 1f), 0.07f).SetEase(Ease.OutQuad));
+            seq.Insert(0.07f, mainBg.DOScale(new Vector3(0.6f, 0.55f, 1f), 0.18f).SetEase(Ease.InBack, 1.6f));
+            seq.Insert(0.07f, mainBg.DOLocalRotate(new Vector3(0f, 0f, tip), 0.18f).SetEase(Ease.InQuad));
+            seq.Insert(0.07f, mainBg.DOAnchorPos(_mainBgRestPos + new Vector2(0f, -40f), 0.18f).SetEase(Ease.InQuad));
+            if (windowGroup != null) seq.Insert(0.13f, windowGroup.DOFade(0f, 0.12f).SetEase(Ease.InQuad));
         }
 
-        if (darkBg != null)
-        {
-            darkBg.alpha = 0f;
-            darkBg.DOKill();
-            darkBg.DOFade(1f, fadeDuration)
-                .SetUpdate(true)
-                .OnComplete(() =>
-                {
-                    _isAnimating = false;
-                    AnimateOptions();
-                });
-        }
-        else
-        {
-            _isAnimating = false;
-            AnimateOptions();
-        }
-    }
+        if (darkBg != null) seq.Insert(0.06f, darkBg.DOFade(0f, 0.22f).SetEase(Ease.InQuad));
 
-    private void AnimateOptions()
-    {
-        if (settingsOptions != null && settingsOptions.Length > 0)
+        seq.OnComplete(() =>
         {
-            for (int i = 0; i < settingsOptions.Length; i++)
-            {
-                var option = settingsOptions[i];
-                if (option == null) continue;
-
-                option.DOKill();
-                option.DOScale(Vector3.one, itemScaleDuration)
-                    .SetEase(Ease.OutBack)
-                    .SetDelay(i * itemStaggerDelay)
-                    .SetUpdate(true);
-            }
-        }
+            _panelSequence = null;
+            onDone();
+            ResetToRestPose(); // hidden now; leave everything at rest for the next open
+        });
     }
 
     // Direct Set Methods
@@ -282,6 +463,15 @@ public class GameSettingsManager : MonoBehaviour
 
         PlayToggleSound(enabled);
         TriggerVibrationFeedback();
+        UpdateVisuals();
+    }
+
+    public void SetReduceMotion(bool enabled)
+    {
+        UIMotion.ReduceMotion = enabled;
+        GameEvents.SettingChanged("ReduceMotion", enabled ? "On" : "Off");
+
+        PlayToggleSound(enabled);
         UpdateVisuals();
     }
 
@@ -363,6 +553,7 @@ public class GameSettingsManager : MonoBehaviour
         if (sfxToggle != null) sfxToggle.SetIsOnWithoutNotify(sfxEnabled);
         if (musicToggle != null) musicToggle.SetIsOnWithoutNotify(musicEnabled);
         if (vibrationToggle != null) vibrationToggle.SetIsOnWithoutNotify(vibrationEnabled);
+        if (reduceMotionToggle != null) reduceMotionToggle.SetIsOnWithoutNotify(UIMotion.ReduceMotion);
 
         if (normalSpeedSlider != null) UpdateNormalSpeedText(normalSpeedSlider.value);
         else UpdateNormalSpeedText(PlayerPrefs.GetFloat("NormalMovementSpeed", 8f));
@@ -402,7 +593,7 @@ public class GameSettingsManager : MonoBehaviour
     {
         _settingsOpenedAt = Time.realtimeSinceStartup;
         GameEvents.Design(new[] { "Settings", "Opened" });
-        _isAnimating = false; // Reset animation state to ensure the show animation always plays
+        _isAnimating = false; // An open interrupts a close in progress; AnimateOpen kills its sequence
         GameSfx.Play(SoundEffect.PanelOpen);
         if (darkBg != null)
         {
@@ -411,6 +602,10 @@ public class GameSettingsManager : MonoBehaviour
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(true);
+            // This component lives on the always-active holder, so its OnEnable does not fire when
+            // only the child panel switches on: run the entrance here, or the dim stays at the 0
+            // alpha set above and nothing animates in.
+            if (settingsPanel != gameObject && isActiveAndEnabled) AnimateOpen();
         }
         else
         {
@@ -431,32 +626,9 @@ public class GameSettingsManager : MonoBehaviour
 
         GameSfx.Play(SoundEffect.PanelClose);
 
-        // Stagger hide options
-        if (settingsOptions != null && settingsOptions.Length > 0)
-        {
-            for (int i = 0; i < settingsOptions.Length; i++)
-            {
-                var option = settingsOptions[i];
-                if (option == null) continue;
-
-                option.DOKill();
-                option.DOScale(Vector3.zero, itemScaleDuration)
-                    .SetEase(Ease.InBack)
-                    .SetUpdate(true);
-            }
-        }
-
-        if (darkBg != null)
-        {
-            darkBg.DOKill();
-            darkBg.DOFade(0f, fadeDuration)
-                .SetUpdate(true)
-                .OnComplete(FinishClose);
-        }
-        else
-        {
-            FinishClose();
-        }
+        GameObject panel = settingsPanel != null ? settingsPanel : gameObject;
+        if (panel.activeInHierarchy) AnimateClose(FinishClose);
+        else FinishClose();
     }
 
     private void FinishClose()

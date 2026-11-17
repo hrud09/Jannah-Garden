@@ -796,7 +796,7 @@ public class TreasureBoxManager : MonoBehaviour
                             {
                                 TreasureBox tb = _spawnedBoxes[j].boxScript;
                                 if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
-                                Objectpool.Instance.Despawn(_spawnedBoxes[j].gameObject, 2f);
+                                Objectpool.Instance.Despawn(_spawnedBoxes[j].gameObject, 2f + TreasureBox.RattleDuration);
                             }
                             _spawnedBoxes.RemoveAt(j);
                             break;
@@ -861,6 +861,10 @@ public class TreasureBoxManager : MonoBehaviour
         // Grant per-box NC reward
         if (rewardData != null && rewardData.noorCoinPerBox > 0 && NoorCoinManager.Instance != null)
         {
+            // The coins burst out of the box as its lid flies open and stream into the HUD counter,
+            // which holds its old value until they land. Started before Earn so it can't jump ahead.
+            UIFlyToTarget.Coins(rewardData.noorCoinPerBox, CoinBurstScreenPoint(tier, slotIndex),
+                TreasureBox.RattleDuration + 0.45f);
             NoorCoinManager.Instance.Earn(rewardData.noorCoinPerBox, true, GameEvents.CoinSource.TreasureBox, tier.ToString());
             Debug.Log($"[TreasureBoxManager] Earned {rewardData.noorCoinPerBox} NC from {tier} box {slotIndex}.");
         }
@@ -887,7 +891,7 @@ public class TreasureBoxManager : MonoBehaviour
                     TreasureBox tb = _spawnedBoxes[i].boxScript;
                     if (tb != null) tb.StartCoroutine(tb.PlayOpenAnimation(puzzlePiecePrefab));
                     GameSfx.PlayAt(SoundEffect.TreasureBoxLidOpen, _spawnedBoxes[i].gameObject.transform.position);
-                    Objectpool.Instance.Despawn(_spawnedBoxes[i].gameObject, 2f);
+                    Objectpool.Instance.Despawn(_spawnedBoxes[i].gameObject, 2f + TreasureBox.RattleDuration);
                 }
                 _spawnedBoxes.RemoveAt(i);
                 break;
@@ -937,6 +941,20 @@ public class TreasureBoxManager : MonoBehaviour
     /// Awards the set-completion reward: either unlocks the exclusive item
     /// (by setting its ShopItemState to Unlocked) or grants NC if already owned.
     /// </summary>
+    /// <summary>
+    /// Where a box's coins burst from on screen: a little above the spawned box (it rises as it opens),
+    /// or the screen centre when the box isn't in the world.
+    /// </summary>
+    private Vector2 CoinBurstScreenPoint(TreasureBoxTier tier, int slotIndex)
+    {
+        foreach (SpawnedBoxInfo info in _spawnedBoxes)
+        {
+            if (info.tier == tier && info.slotIndex == slotIndex && info.gameObject != null)
+                return UIFlyToTarget.ScreenPoint(info.gameObject.transform.position + Vector3.up * 1.5f);
+        }
+        return new Vector2(Screen.width, Screen.height) * 0.5f;
+    }
+
     private void GrantSetCompletionReward(TreasureBoxTier tier)
     {
         TreasureBoxData rewardData = GetBoxData(tier);

@@ -41,6 +41,11 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     private TreasureBoxTier _tier;
     private int _slotIndex;
 
+    // Pops the window in over a fading dim; the reward icon and rarity badge land a beat later.
+    private UIPanelMotion _motion;
+    private Vector3? _iconRestScale;
+    private Vector3? _rarityRestScale;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -92,10 +97,63 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
     /// Shows/hides only the panel's visual children. The panel GameObject itself is
     /// never deactivated, so <see cref="Instance"/> and any coroutines on it survive.
     /// </summary>
-    private void SetVisualsActive(bool active)
+    private void SetVisualsActive(bool active, bool animate = false)
     {
-        if (darkBgImage != null) darkBgImage.SetActive(active);
-        if (bgImage != null) bgImage.SetActive(active);
+        if (!animate || bgImage == null || !Application.isPlaying)
+        {
+            if (_motion != null) _motion.SetVisibleImmediate(active);
+            else if (bgImage != null) bgImage.SetActive(active);
+            if (darkBgImage != null) darkBgImage.SetActive(active);
+            return;
+        }
+
+        EnsureMotion();
+        if (active)
+        {
+            if (darkBgImage != null) darkBgImage.SetActive(true);
+            _motion.Show();
+        }
+        else if (_motion.IsVisible)
+        {
+            _motion.Hide(() => { if (darkBgImage != null) darkBgImage.SetActive(false); });
+        }
+    }
+
+    private void EnsureMotion()
+    {
+        if (_motion != null) return;
+        if (!bgImage.TryGetComponent(out _motion)) _motion = bgImage.AddComponent<UIPanelMotion>();
+        _motion.preset = UIPanelMotion.Preset.Pop;
+        if (darkBgImage != null)
+        {
+            if (!darkBgImage.TryGetComponent(out CanvasGroup dim)) dim = darkBgImage.AddComponent<CanvasGroup>();
+            _motion.backdrop = dim;
+            _motion.backdropAlphaOverride = 1f; // the dim image already carries its designed darkness
+        }
+        _motion.CaptureRest();
+
+        // The way to open the box catches the light now and then.
+        if (watchAdButton != null)
+        {
+            if (!watchAdButton.TryGetComponent(out UIIdle idle)) idle = watchAdButton.gameObject.AddComponent<UIIdle>();
+            idle.shimmerGraphic = watchAdButton.image;
+            idle.SetEffects(UIIdle.Effect.Shimmer);
+        }
+    }
+
+    /// <summary>The reward icon pops in, then the rarity badge is stamped on.</summary>
+    private void PlayContentEntrance()
+    {
+        if (rewardIcon != null && rewardIcon.gameObject.activeSelf)
+        {
+            if (!_iconRestScale.HasValue) _iconRestScale = rewardIcon.transform.localScale;
+            UIMotion.PopIn(rewardIcon.transform, 0.15f, _iconRestScale);
+        }
+        if (rarityBgImage != null && rarityBgImage.gameObject.activeSelf)
+        {
+            if (!_rarityRestScale.HasValue) _rarityRestScale = rarityBgImage.transform.localScale;
+            UIMotion.Stamp(rarityBgImage.transform, 0.3f, _rarityRestScale);
+        }
     }
 
     public void Show(TreasureBoxTier tier, int slotIndex)
@@ -140,12 +198,13 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
         }
 
         ResolveVisualRoots();
-        SetVisualsActive(true);
+        SetVisualsActive(true, animate: true);
+        PlayContentEntrance();
     }
 
     private void OnWatchAdClicked()
     {
-        SetVisualsActive(false);
+        SetVisualsActive(false, animate: true);
 
         // Do not show an ad here. TryOpenBox runs the rewarded-ad gate itself, through whichever
         // IAdService AdServiceBootstrap registered, and only opens the box if the player earns the
@@ -170,7 +229,7 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     private void OnSubscribeClicked()
     {
-        SetVisualsActive(false);
+        SetVisualsActive(false, animate: true);
 
         // Subscriptions are owned by the Flutter app, not the game. Ask Flutter to leave Unity and open
         // its subscribe page — Flutter pops the Unity widget and handles navigation on its side.
@@ -198,6 +257,6 @@ public class TreasureBoxConfirmationPanel : MonoBehaviour
 
     private void OnCloseClickedInternal()
     {
-        SetVisualsActive(false);
+        SetVisualsActive(false, animate: true);
     }
 }

@@ -1189,6 +1189,14 @@
             "value": "الاهتزاز"
         },
         {
+            "key": "hud.level_up",
+            "value": "مستوى جديد!"
+        },
+        {
+            "key": "settings.reduce_motion_label",
+            "value": "تقليل الحركة"
+        },
+        {
             "key": "settings.normal_speed_label",
             "value": "السرعة العادية"
         },

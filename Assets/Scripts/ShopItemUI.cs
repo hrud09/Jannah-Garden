@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -183,8 +184,6 @@ public class ShopItemUI : MonoBehaviour
 
         ApplyNameAndDescription(data.LocalizedName, data.LocalizedDescription);
 
-        bool isLevelLocked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < data.requiredXPLevel;
-
         if (itemBackgroundImg != null && customBackground != null)
         {
             itemBackgroundImg.sprite = customBackground;
@@ -195,26 +194,30 @@ public class ShopItemUI : MonoBehaviour
             itemIconBackgroundImg.sprite = customIconBackground;
         }
 
-        // Keep locked visuals active when locked, inactive otherwise
-        bool isLocked = isLevelLocked;
-        if (lockedVisuals != null)
-        {
-            foreach (var go in lockedVisuals)
-            {
-                if (go != null) go.SetActive(isLocked);
-            }
-        }
-        // Keep unlocked visuals active when unlocked, inactive otherwise
-        bool isUnlocked = !isLocked;
-        if (unlockedVisuals != null)
-        {
-            foreach (var go in unlockedVisuals)
-            {
-                if (go != null) go.SetActive(isUnlocked);
-            }
-        }
+        // Locked visuals while the level gate holds, unlocked ones otherwise. Re-synced on every refresh
+        // (see SyncLockVisuals), so a level-up while the shop is closed is reflected when it reopens.
+        lockState = -1;
+        SyncLockVisuals();
 
         ApplyTaxonomyVisuals(data.itemCategory, data.itemTier, tierVisuals);
+
+        // The two premium tiers catch the light now and then: on their tier badge or frame when the card
+        // prefab has one, otherwise across the whole card.
+        Image gleam = itemTierBadgeImg != null ? itemTierBadgeImg : itemTierFrameImg != null ? itemTierFrameImg : itemBackgroundImg;
+        if (gleam != null)
+        {
+            bool premium = data.itemTier >= ShopItemTier.Tier3;
+            if (premium)
+            {
+                // Configured before the effect is switched on: the shimmer material reads these once.
+                if (!gleam.TryGetComponent(out UIIdle gleamIdle)) gleamIdle = gleam.gameObject.AddComponent<UIIdle>();
+                gleamIdle.shimmerGraphic = gleam;
+                gleamIdle.shimmerColor = new Color(1f, 0.96f, 0.82f, 0.35f);
+                gleamIdle.shimmerPeriod = 4.5f;
+                gleamIdle.SetEffects(UIIdle.Effect.Shimmer);
+            }
+            else if (gleam.TryGetComponent(out UIIdle gleamIdle)) gleamIdle.SetEffects(UIIdle.Effect.None);
+        }
         ApplyBackgroundTint(data.itemCategory, data.itemTier);
 
         // Price label + affordability tint (both derived from the acquisition type)
@@ -329,6 +332,128 @@ public class ShopItemUI : MonoBehaviour
         Color tint = Color.Lerp(backgroundBaseColor, source, Mathf.Clamp01(strength));
         tint.a = img.color.a;
         img.color = tint;
+    }
+
+    // Motion
+
+    // -1 unknown (fresh card), 0 unlocked, 1 level-locked. Lets a refresh tell "just unlocked" apart.
+    private int lockState = -1;
+    private Sequence unlockSequence;
+
+    /// <summary>
+    /// Shows the locked or unlocked visuals for the current level. When a card the player already saw
+    /// locked turns out to be unlocked (they levelled up since), the padlock pops off instead of
+    /// vanishing.
+    /// </summary>
+    private void SyncLockVisuals()
+    {
+        if (ItemData == null || RewardItemData != null) return;
+
+        bool locked = PlayerXPManager.Instance != null && PlayerXPManager.Instance.xpLevel < ItemData.requiredXPLevel;
+        int state = locked ? 1 : 0;
+        if (state == lockState) return;
+
+        bool justUnlocked = lockState == 1 && !locked;
+        lockState = state;
+
+        KillUnlockSequence();
+        if (justUnlocked && isActiveAndEnabled && Application.isPlaying && !UIMotion.ReduceMotion)
+        {
+            // Wait for the shop panel to open and the card to settle before celebrating.
+            PlayUnlock(0.45f + Mathf.Min(transform.GetSiblingIndex(), 8) * 0.06f);
+            return;
+        }
+        SetLockObjects(locked);
+    }
+
+    private void SetLockObjects(bool locked)
+    {
+        if (lockedVisuals != null)
+            foreach (var go in lockedVisuals) if (go != null) go.SetActive(locked);
+        if (unlockedVisuals != null)
+            foreach (var go in unlockedVisuals) if (go != null) go.SetActive(!locked);
+    }
+
+    /// <summary>The padlock lifts, spins and fades off, the card punches and sparkles, and the unlocked visuals pop in.</summary>
+    private void PlayUnlock(float delay)
+    {
+        unlockSequence = DOTween.Sequence().SetUpdate(true).SetLink(gameObject).SetDelay(delay);
+
+        var restore = new System.Collections.Generic.List<System.Action>();
+        if (lockedVisuals != null)
+        {
+            foreach (var go in lockedVisuals)
+            {
+                if (go == null || !go.activeSelf) continue;
+                Transform t = go.transform;
+                CanvasGroup g = go.GetComponent<CanvasGroup>();
+                if (g == null) g = go.AddComponent<CanvasGroup>();
+                Vector3 restScale = t.localScale;
+                Quaternion restRot = t.localRotation;
+
+                unlockSequence.Insert(0f, t.DOScale(restScale * 1.35f, 0.32f).SetEase(Ease.OutBack, 2f));
+                unlockSequence.Insert(0f, t.DOLocalRotate(new Vector3(0f, 0f, UIMotion.IsRightToLeft ? -28f : 28f), 0.32f).SetEase(Ease.OutCubic));
+                unlockSequence.Insert(0.12f, g.DOFade(0f, 0.22f).SetEase(Ease.InQuad));
+                restore.Add(() =>
+                {
+                    if (t == null) return;
+                    t.localScale = restScale;
+                    t.localRotation = restRot;
+                    g.alpha = 1f;
+                });
+            }
+        }
+        // Whatever ends the sequence, each padlock goes back to its authored pose (just hidden).
+        unlockSequence.OnKill(() => { foreach (var r in restore) r(); });
+
+        unlockSequence.InsertCallback(0.3f, () =>
+        {
+            if (lockedVisuals != null)
+                foreach (var go in lockedVisuals) if (go != null) go.SetActive(false);
+            if (unlockedVisuals != null)
+                for (int i = 0; i < unlockedVisuals.Length; i++)
+                    if (unlockedVisuals[i] != null) UIToggleMotion.SetActive(unlockedVisuals[i], true, i * 0.04f);
+
+            UIMotion.Punch(transform, 1.4f);
+            if (itemIcon != null)
+                UIFlyToTarget.Burst(UIFlyToTarget.ScreenPoint(itemIcon.rectTransform), new Color(1f, 0.92f, 0.6f, 1f), 10);
+        });
+        unlockSequence.OnComplete(() => unlockSequence = null);
+    }
+
+    private void KillUnlockSequence()
+    {
+        if (unlockSequence != null && unlockSequence.IsActive()) unlockSequence.Kill();
+        unlockSequence = null;
+    }
+
+    /// <summary>The tap was refused (can't afford it, level too low): the card wobbles and the price flashes.</summary>
+    public void PlayDenied()
+    {
+        UIMotionTokens t = UIMotion.Tokens;
+        if (itemPriceText != null) UIMotion.Flash(itemPriceText, t.spendFlash, 0.5f);
+        if (UIMotion.ReduceMotion) return;
+
+        // Rotation, not position: the card sits in a layout group that owns its position.
+        if (!DOTween.IsTweening(transform))
+            transform.DOPunchRotation(new Vector3(0f, 0f, 5f), 0.4f, 12, 0.6f).SetUpdate(true).SetLink(gameObject);
+
+        if (lockedVisuals != null)
+        {
+            foreach (var go in lockedVisuals)
+            {
+                if (go == null || !go.activeInHierarchy || DOTween.IsTweening(go.transform)) continue;
+                go.transform.DOPunchRotation(new Vector3(0f, 0f, 18f), 0.45f, 10, 0.5f).SetUpdate(true).SetLink(go);
+            }
+        }
+    }
+
+    /// <summary>The item was bought: the card punches and sparkles from its icon.</summary>
+    public void PlayPurchased()
+    {
+        UIMotion.Punch(transform, 1.3f);
+        RectTransform from = itemIcon != null ? itemIcon.rectTransform : transform as RectTransform;
+        UIFlyToTarget.Burst(UIFlyToTarget.ScreenPoint(from), new Color(1f, 0.9f, 0.55f, 1f), 12);
     }
 
     // Affordability Visuals
@@ -488,6 +613,8 @@ public class ShopItemUI : MonoBehaviour
     /// </summary>
     public void RefreshAffordabilityVisual()
     {
+        SyncLockVisuals();
+
         // ── Pending states: they take over the BUTTON, not the price ──────────
         if (isDownloadPending)
         {

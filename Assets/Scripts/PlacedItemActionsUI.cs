@@ -76,8 +76,14 @@ public class PlacedItemActionsUI : MonoBehaviour
     /// <summary>The item the open panel is acting on.</summary>
     private PlaceableItem _target;
 
-    /// <summary>True while the panel is open.</summary>
-    public bool IsOpen => panel != null && panel.activeSelf;
+    /// <summary>Pops the panel in and out; added in Start so the runtime-built panel gets it too.</summary>
+    private UIPanelMotion _motion;
+
+    /// <summary>
+    /// True while the panel is open. Goes false the moment Hide is called, even though the panel stays
+    /// on screen for its short exit — otherwise <see cref="Update"/> would keep re-closing it.
+    /// </summary>
+    public bool IsOpen => panel != null && panel.activeSelf && (_motion == null || _motion.IsVisible);
 
     private void Awake()
     {
@@ -101,7 +107,31 @@ public class PlacedItemActionsUI : MonoBehaviour
         if (returnButton != null) returnButton.onClick.AddListener(OnReturnClicked);
         if (closeButton != null) closeButton.onClick.AddListener(Hide);
 
-        if (panel != null) panel.SetActive(false);
+        if (panel != null)
+        {
+            panel.SetActive(false);
+            SetUpMotion();
+        }
+    }
+
+    private void SetUpMotion()
+    {
+        if (!panel.TryGetComponent(out _motion)) _motion = panel.AddComponent<UIPanelMotion>();
+        _motion.preset = UIPanelMotion.Preset.Pop;
+        // The three choices cascade in after the window lands.
+        var cascade = new System.Collections.Generic.List<RectTransform>();
+        foreach (Button b in new[] { relocateButton, returnButton, closeButton })
+            if (b != null) cascade.Add((RectTransform)b.transform);
+        _motion.staggerChildren = cascade.ToArray();
+        _motion.CaptureRest();
+    }
+
+    private void SetPanelVisible(bool visible)
+    {
+        if (panel == null) return;
+        if (_motion == null) { panel.SetActive(visible); return; }
+        if (visible) _motion.Show();
+        else if (_motion.IsVisible) _motion.Hide();
     }
 
     private void OnDestroy()
@@ -139,7 +169,8 @@ public class PlacedItemActionsUI : MonoBehaviour
 
         if (titleText != null) titleText.text = BuildTitle(item);
 
-        if (panel != null) panel.SetActive(true);
+        // Re-targeting while already open just swaps the title; only a fresh open plays the entry.
+        if (!IsOpen) SetPanelVisible(true);
 
         GameSfx.PlayAt(SoundEffect.ItemSelect, item.transform);
     }
@@ -164,7 +195,7 @@ public class PlacedItemActionsUI : MonoBehaviour
             _target = null;
         }
 
-        if (panel != null) panel.SetActive(false);
+        SetPanelVisible(false);
 
         if (hadSelection) GameSfx.Play(SoundEffect.ItemDeselect);
     }

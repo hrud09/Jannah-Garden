@@ -152,12 +152,29 @@ public class TreasureBox : MonoBehaviour
         }
     }
 
+    /// <summary>Seconds the box rattles before it bursts open (callers delay despawn and coins by it).</summary>
+    public const float RattleDuration = 0.35f;
+
     public IEnumerator PlayOpenAnimation(GameObject puzzlePiecePrefab = null)
     {
         if (vfxObject != null)
         {
             vfxObject.SetActive(false);
         }
+
+        // Anticipation: the box rattles harder and harder for a moment before it bursts open.
+        Quaternion rattleRest = transform.rotation;
+        float rattle = 0f;
+        while (rattle < RattleDuration)
+        {
+            rattle += Time.deltaTime;
+            float k = Mathf.Clamp01(rattle / RattleDuration);
+            float amplitude = Mathf.Lerp(3f, 12f, k * k);
+            transform.rotation = rattleRest * Quaternion.Euler(
+                Mathf.Sin(rattle * 70f) * amplitude * 0.4f, 0f, Mathf.Sin(rattle * 55f) * amplitude);
+            yield return null;
+        }
+        transform.rotation = rattleRest;
 
         if (openingVFXPrefab != null)
         {

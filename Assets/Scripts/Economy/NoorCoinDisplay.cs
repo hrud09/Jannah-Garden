@@ -23,6 +23,31 @@ public class NoorCoinDisplay : MonoBehaviour
              "progress, so the player never sees an unsynced 0 and mistakes it for their real balance.")]
     [SerializeField] private string loadingText = "...";
 
+    [Header("Motion")]
+    [Tooltip("What punches when the balance changes (usually the whole coin pill). Defaults to the label.")]
+    public Transform punchTarget;
+
+    [Tooltip("Where the floating +N / -N text appears. Defaults to the label's parent.")]
+    public RectTransform floatingTextAnchor;
+
+    [Tooltip("Show a floating +N / -N beside the balance when it changes.")]
+    public bool showFloatingDelta = true;
+
+    [Tooltip("Where reward coins fly into (UIFlyToTarget) - a rect over the coin on the pill art. Leave " +
+             "empty on displays that shouldn't receive flying coins; only one display should set it.")]
+    public RectTransform flyTarget;
+
+    [Tooltip("Sprite the flying coins use.")]
+    public Sprite flySprite;
+
+    // Balance shown when a reward hold began; the final +N is measured from here, not from the last
+    // landing, so the floating text reports the whole reward.
+    private int? _heldFrom;
+
+    // Last balance painted as a real number; null while the label shows the loading text, so the
+    // first real balance appears instantly instead of rolling up from 0.
+    private int? _lastShown;
+
     /// <summary>The live balance, or 0 when no manager exists yet — never the label's authored text.</summary>
     private static int CurrentBalance =>
         NoorCoinManager.Instance != null ? NoorCoinManager.Instance.Balance : 0;
@@ -37,6 +62,10 @@ public class NoorCoinDisplay : MonoBehaviour
         }
 
         NoorCoinManager.OnBalanceChanged += Refresh;
+        UIRewardHold.Landed += OnRewardLanded;
+        UIRewardHold.Released += OnRewardReleased;
+        if (flyTarget != null)
+            UIFlyToTarget.RegisterTarget(RewardChannel.Coins, flyTarget, flySprite);
 
         // Paint a real number straight away once synced. Without this the label keeps whatever
         // placeholder the designer typed (the HUD one says "200"), so a player with no coins appears to
@@ -55,6 +84,9 @@ public class NoorCoinDisplay : MonoBehaviour
     private void OnDestroy()
     {
         NoorCoinManager.OnBalanceChanged -= Refresh;
+        UIRewardHold.Landed -= OnRewardLanded;
+        UIRewardHold.Released -= OnRewardReleased;
+        if (flyTarget != null) UIFlyToTarget.UnregisterTarget(RewardChannel.Coins, flyTarget);
     }
 
     // ─── Internal ─────────────────────────────────────────────────────────────
@@ -69,6 +101,7 @@ public class NoorCoinDisplay : MonoBehaviour
         else if (balanceLabel != null)
         {
             balanceLabel.text = loadingText;
+            _lastShown = null;
         }
     }
 
@@ -76,7 +109,69 @@ public class NoorCoinDisplay : MonoBehaviour
     {
         if (balanceLabel == null) return;
 
-        balanceLabel.text = FormatCoins(newBalance);
+        UICountTo counter = Counter();
+        bool canAnimate = _lastShown.HasValue && balanceLabel.isActiveAndEnabled;
+
+        // A reward is flying in: leave the number where it is and let the landings move it.
+        if (canAnimate && UIRewardHold.IsHeld(RewardChannel.Coins))
+        {
+            _heldFrom ??= _lastShown;
+            return;
+        }
+
+        int previous = _heldFrom ?? _lastShown ?? newBalance;
+        _heldFrom = null;
+        _lastShown = newBalance;
+
+        if (!canAnimate)
+        {
+            counter.SetImmediate(newBalance, FormatCoins);
+            return;
+        }
+
+        int delta = newBalance - previous;
+        counter.RollTo(newBalance, FormatCoins);
+
+        if (delta != 0 && showFloatingDelta)
+        {
+            UIMotionTokens t = UIMotion.Tokens;
+            RectTransform anchor = floatingTextAnchor != null ? floatingTextAnchor : balanceLabel.rectTransform.parent as RectTransform;
+            UIFloatingText.Spawn(anchor, (delta > 0 ? "+" : "") + delta, delta > 0 ? t.gainFlash : t.spendFlash,
+                // The pill sits right under the XP bar, so the delta drifts down into open space.
+                balanceLabel, new Vector2(-30f, -55f), -35f);
+        }
+    }
+
+    /// <summary>One flying coin landed: tick towards the real balance by its share, never past it.</summary>
+    private void OnRewardLanded(RewardChannel channel, int amount)
+    {
+        if (channel != RewardChannel.Coins || balanceLabel == null || !_lastShown.HasValue) return;
+        if (!balanceLabel.isActiveAndEnabled) return;
+
+        _heldFrom ??= _lastShown;
+        int target = CurrentBalance;
+        int shown = _lastShown.Value;
+        int next = target >= shown ? Mathf.Min(shown + amount, target) : Mathf.Max(shown - amount, target);
+        if (next == shown) return;
+
+        _lastShown = next;
+        Counter().RollTo(next, FormatCoins);
+    }
+
+    private void OnRewardReleased(RewardChannel channel)
+    {
+        if (channel != RewardChannel.Coins) return;
+        if (_heldFrom.HasValue || _lastShown != CurrentBalance) Refresh(CurrentBalance);
+    }
+
+    private UICountTo Counter()
+    {
+        if (!balanceLabel.TryGetComponent(out UICountTo counter))
+        {
+            counter = balanceLabel.gameObject.AddComponent<UICountTo>();
+            counter.punchTarget = punchTarget;
+        }
+        return counter;
     }
 
     /// <summary>

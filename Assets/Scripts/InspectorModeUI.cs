@@ -118,17 +118,17 @@ public class InspectorModeUI : MonoBehaviour
         // Show/hide active mode label
         if (activeModeLabel != null)
         {
-            activeModeLabel.SetActive(isInspectorMode);
+            UIToggleMotion.SetActive(activeModeLabel, isInspectorMode, 0f, new Vector2(0f, -14f));
         }
 
-        // Show/hide vertical control buttons
+        // Show/hide vertical control buttons: up rises into place, down drops into place, a beat apart.
         if (flyUpButton != null)
         {
-            flyUpButton.gameObject.SetActive(isInspectorMode);
+            UIToggleMotion.SetActive(flyUpButton.gameObject, isInspectorMode, 0.05f, new Vector2(0f, -40f));
         }
         if (flyDownButton != null)
         {
-            flyDownButton.gameObject.SetActive(isInspectorMode);
+            UIToggleMotion.SetActive(flyDownButton.gameObject, isInspectorMode, 0.1f, new Vector2(0f, 40f));
         }
     }
 
