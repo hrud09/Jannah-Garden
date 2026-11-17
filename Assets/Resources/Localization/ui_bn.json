@@ -1285,6 +1285,14 @@
             "value": "পরিচালনা"
         },
         {
+            "key": "interaction.ride_button",
+            "value": "চড়ুন"
+        },
+        {
+            "key": "interaction.dismount_button",
+            "value": "নামুন"
+        },
+        {
             "key": "placed_item.relocate_button",
             "value": "নতুন জায়গায় সরান"
         },

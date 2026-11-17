@@ -1285,6 +1285,14 @@
             "value": "إدارة"
         },
         {
+            "key": "interaction.ride_button",
+            "value": "اركب"
+        },
+        {
+            "key": "interaction.dismount_button",
+            "value": "انزل"
+        },
+        {
             "key": "placed_item.relocate_button",
             "value": "انقل إلى مكان جديد"
         },

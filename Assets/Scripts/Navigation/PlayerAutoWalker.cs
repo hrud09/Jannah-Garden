@@ -334,6 +334,9 @@ public class PlayerAutoWalker : MonoBehaviour
         // Routes follow the ground, so the walk happens on foot.
         if (_movement.IsInspectorMode) _movement.ExitInspectorMode();
 
+        AnimalRider rider = GetComponent<AnimalRider>();
+        if (rider != null && rider.IsRiding) rider.Dismount(instant: true);
+
         return true;
     }
 

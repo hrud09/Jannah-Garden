@@ -1285,6 +1285,14 @@
             "value": "منظم کریں"
         },
         {
+            "key": "interaction.ride_button",
+            "value": "سوار ہوں"
+        },
+        {
+            "key": "interaction.dismount_button",
+            "value": "اتریں"
+        },
+        {
             "key": "placed_item.relocate_button",
             "value": "نئی جگہ منتقل کریں"
         },

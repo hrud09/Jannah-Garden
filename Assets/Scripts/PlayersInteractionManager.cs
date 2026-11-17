@@ -15,7 +15,8 @@ public enum InteractionTargetType
     None,
     TreasureBox,
     QuestionOrb,
-    PlacedItem
+    PlacedItem,
+    Rideable
 }
 
 public class PlayersInteractionManager : MonoBehaviour
@@ -55,9 +56,24 @@ public class PlayersInteractionManager : MonoBehaviour
              "button behaves exactly as it did before the per-kind buttons existed.")]
     public Button itemInteractButton;
 
+    [Header("Riding")]
+    [Tooltip("Offer to ride the camels (and any other GrazingAnimal marked rideable) when the player is " +
+             "close to one and facing it.")]
+    public bool allowRiding = true;
+
+    [Tooltip("Shown near a rideable animal. Climbs on. Left empty, one is copied from the other " +
+             "interaction buttons at start so it matches them.")]
+    public Button rideInteractButton;
+
+    [Tooltip("Shown while riding. Climbs off. Left empty, one is copied from the other interaction " +
+             "buttons at start and placed just above them.")]
+    public Button dismountButton;
+
     public TreasureBox currentTargetBox = null;
     public QuestionMarkOrb currentTargetOrb = null;
     public PlaceableItem currentTargetPlaceable = null;
+    public GrazingAnimal currentTargetAnimal = null;
+    private AnimalRider rider;
     private Camera mainCam;
 
     private bool isInteracting = false;
@@ -73,6 +89,7 @@ public class PlayersInteractionManager : MonoBehaviour
             if (currentTargetBox != null) return InteractionTargetType.TreasureBox;
             if (currentTargetOrb != null) return InteractionTargetType.QuestionOrb;
             if (currentTargetPlaceable != null) return InteractionTargetType.PlacedItem;
+            if (currentTargetAnimal != null) return InteractionTargetType.Rideable;
             return InteractionTargetType.None;
         }
     }
@@ -102,6 +119,10 @@ public class PlayersInteractionManager : MonoBehaviour
         RegisterButton(placedItemInteractButton, OnPlacedItemButtonClicked);
         RegisterButton(itemInteractButton, OnSharedButtonClicked);
 
+        EnsureRideButtons();
+        RegisterButton(rideInteractButton, OnRideButtonClicked);
+        RegisterButton(dismountButton, OnDismountButtonClicked);
+
         EnsurePlacedItemActionsUI();
     }
 
@@ -111,6 +132,8 @@ public class PlayersInteractionManager : MonoBehaviour
         UnregisterButton(orbInteractButton, OnOrbButtonClicked);
         UnregisterButton(placedItemInteractButton, OnPlacedItemButtonClicked);
         UnregisterButton(itemInteractButton, OnSharedButtonClicked);
+        UnregisterButton(rideInteractButton, OnRideButtonClicked);
+        UnregisterButton(dismountButton, OnDismountButtonClicked);
 
         if (Instance == this) Instance = null;
     }
@@ -162,6 +185,98 @@ public class PlayersInteractionManager : MonoBehaviour
     /// <summary>The fallback button, standing in for whichever kind has no button of its own.</summary>
     private void OnSharedButtonClicked() => BeginInteraction(CurrentTargetType);
 
+    private void OnRideButtonClicked() => BeginInteraction(InteractionTargetType.Rideable);
+
+    private void OnDismountButtonClicked()
+    {
+        if (rider != null && rider.IsRiding) rider.Dismount();
+    }
+
+    // ─── Riding ───────────────────────────────────────────────────────────────
+
+    /// <summary>The player's rider, added on first use. Null until a player exists.</summary>
+    private AnimalRider ResolveRider()
+    {
+        if (rider != null) return rider;
+
+        var movement = FindFirstObjectByType<IdyllicFantasyNature.PlayerMovement>();
+        rider = AnimalRider.GetOrCreate(movement);
+        return rider;
+    }
+
+    /// <summary>
+    /// Fills in the Ride and Dismount buttons when the scene doesn't have its own, by copying an
+    /// existing interaction button — same canvas, sprite and size, so they look like the rest. Ride
+    /// shares the others' spot (only one of those shows at a time); Dismount sits just above, because
+    /// it stays up while the player rides past orbs and treasure boxes and their buttons come and go.
+    /// </summary>
+    private void EnsureRideButtons()
+    {
+        if (!allowRiding) return;
+
+        Button template = placedItemInteractButton != null ? placedItemInteractButton
+            : treasureBoxInteractButton != null ? treasureBoxInteractButton
+            : orbInteractButton != null ? orbInteractButton
+            : itemInteractButton;
+        if (template == null) return;
+
+        if (rideInteractButton == null)
+        {
+            rideInteractButton = CopyButton(template, "Ride Button", "interaction.ride_button", "ride", 0f);
+        }
+
+        if (dismountButton == null)
+        {
+            float height = ((RectTransform)template.transform).rect.height;
+            if (height <= 0f) height = ((RectTransform)template.transform).sizeDelta.y;
+            dismountButton = CopyButton(template, "Dismount Button", "interaction.dismount_button", "dismount",
+                                        height * 1.2f);
+        }
+    }
+
+    private static Button CopyButton(Button template, string objectName, string labelKey, string fallbackLabel,
+                                     float raiseBy)
+    {
+        GameObject copy = Instantiate(template.gameObject, template.transform.parent);
+        copy.name = objectName;
+        copy.SetActive(false);
+
+        RectTransform rect = (RectTransform)copy.transform;
+        rect.anchoredPosition += new Vector2(0f, raiseBy);
+
+        Button button = copy.GetComponent<Button>();
+
+        // Inspector-wired clicks belong to the interaction the template was made for, not this one.
+        for (int i = 0; i < button.onClick.GetPersistentEventCount(); i++)
+        {
+            button.onClick.SetPersistentListenerState(i, UnityEventCallState.Off);
+        }
+
+        LocalizedText localized = copy.GetComponentInChildren<LocalizedText>(true);
+        if (localized != null)
+        {
+            localized.SetKey(labelKey);
+        }
+        else
+        {
+            TMPro.TMP_Text label = copy.GetComponentInChildren<TMPro.TMP_Text>(true);
+            if (label != null) label.text = fallbackLabel;
+        }
+
+        return button;
+    }
+
+    /// <summary>The animal the Ride button should offer, when nothing more specific is targeted.</summary>
+    private GrazingAnimal FindTargetedAnimal()
+    {
+        if (!allowRiding) return null;
+        if (currentTargetBox != null || currentTargetOrb != null || currentTargetPlaceable != null) return null;
+        if (ItemPlacementManager.Instance != null && ItemPlacementManager.Instance.IsPlacing) return null;
+
+        AnimalRider r = ResolveRider();
+        return r != null ? r.FindMountable() : null;
+    }
+
     /// <summary>
     /// Runs the interaction for <paramref name="type"/> against whatever is currently targeted. The
     /// buttons are hidden first: the panel that opens is the player's next step, not another prompt.
@@ -194,6 +309,11 @@ public class PlayersInteractionManager : MonoBehaviour
                 {
                     PlacedItemActionsUI.Instance.Show(currentTargetPlaceable);
                 }
+                break;
+
+            case InteractionTargetType.Rideable:
+                AnimalRider r = ResolveRider();
+                if (r != null && currentTargetAnimal != null) r.TryMount(currentTargetAnimal);
                 break;
         }
     }
@@ -328,6 +448,14 @@ public class PlayersInteractionManager : MonoBehaviour
             }
         }
 
+        // Lowest priority of all: an animal is offered only when nothing more specific is targeted.
+        GrazingAnimal detectedAnimal = FindTargetedAnimal();
+        if (detectedAnimal != currentTargetAnimal)
+        {
+            isInteracting = false;
+            currentTargetAnimal = detectedAnimal;
+        }
+
         UpdateInteractionButtons();
     }
 
@@ -352,6 +480,11 @@ public class PlayersInteractionManager : MonoBehaviour
         ShowOnly(orbInteractButton, wanted);
         ShowOnly(placedItemInteractButton, wanted);
         ShowOnly(itemInteractButton, wanted);
+        ShowOnly(rideInteractButton, wanted);
+
+        // Getting off is always on offer while riding, whatever else is targeted.
+        bool canDismount = rider != null && rider.IsRiding && !rider.IsTransitioning;
+        ShowOnly(dismountButton, canDismount ? dismountButton : null);
     }
 
     /// <summary>
@@ -370,6 +503,9 @@ public class PlayersInteractionManager : MonoBehaviour
 
             case InteractionTargetType.PlacedItem:
                 return placedItemInteractButton != null ? placedItemInteractButton : itemInteractButton;
+
+            case InteractionTargetType.Rideable:
+                return rideInteractButton != null ? rideInteractButton : itemInteractButton;
 
             default:
                 return null;
@@ -393,6 +529,7 @@ public class PlayersInteractionManager : MonoBehaviour
         ShowOnly(orbInteractButton, null);
         ShowOnly(placedItemInteractButton, null);
         ShowOnly(itemInteractButton, null);
+        ShowOnly(rideInteractButton, null);
     }
 
     /// <summary>
@@ -517,6 +654,8 @@ public class PlayersInteractionManager : MonoBehaviour
             currentTargetPlaceable = null;
         }
 
+        currentTargetAnimal = null;
         HideAllButtons();
+        ShowOnly(dismountButton, null);
     }
 }

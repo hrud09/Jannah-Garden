@@ -629,6 +629,14 @@
             "value": "manage"
         },
         {
+            "key": "interaction.ride_button",
+            "value": "ride"
+        },
+        {
+            "key": "interaction.dismount_button",
+            "value": "dismount"
+        },
+        {
             "key": "placed_item.relocate_button",
             "value": "Move to a new spot"
         },

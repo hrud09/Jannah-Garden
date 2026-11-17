@@ -210,3 +210,19 @@ MonoBehaviour:
   maxSlope: 25
   personalSpace: 4
   placedItemClearance: 1.5
+  rideable: 1
+  seatOffset: {x: 0, y: 0, z: 0}
+  autoSeatHeight: 0.96
+  autoSeatBack: 0.2
+  seatBone: {fileID: 0}
+  rideWalkSpeed: 2
+  rideRunSpeed: 4.5
+  rideReverseSpeed: 0.8
+  rideTurnSpeed: 80
+  maxRideAnimationSpeed: 2.2
+  rideMoveState: RideMove
+  rideBackState: RideBack
+  rideIdleState: RideIdle
+  rideGaitParameter: RideGait
+  runStrideScale: 1.45
+  shuffleStrideScale: 0.5

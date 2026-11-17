@@ -190,6 +190,13 @@ namespace IdyllicFantasyNature
         // Update is called once per frame
         void Update()
         {
+            // Riding: the AnimalRider carries the player and reads the controls through ReadMoveInput.
+            if (_isMounted)
+            {
+                HasManualMoveInput = ReadMoveInput(out _) != Vector2.zero;
+                return;
+            }
+
             if (_isInspectorMode || _isTransitioning)
             {
                 UpdateInspectorMode();
@@ -220,36 +227,9 @@ namespace IdyllicFantasyNature
             }
 
             // get the movement input (joystick with keyboard fallback)
-            float moveX = 0f;
-            float moveZ = 0f;
-
-            if (_joystick != null && _joystick.Direction != Vector2.zero)
-            {
-                moveX = _joystick.Horizontal;
-                moveZ = _joystick.Vertical;
-            }
-            else
-            {
-#if ENABLE_INPUT_SYSTEM
-                if (Keyboard.current != null)
-                {
-                    if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveX = -1f;
-                    else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveX = 1f;
-
-                    if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveZ = -1f;
-                    else if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveZ = 1f;
-                }
-                if (Gamepad.current != null && moveX == 0f && moveZ == 0f)
-                {
-                    Vector2 stick = Gamepad.current.leftStick.ReadValue();
-                    moveX = stick.x;
-                    moveZ = stick.y;
-                }
-#else
-                moveX = Input.GetAxis("Horizontal");
-                moveZ = Input.GetAxis("Vertical");
-#endif
-            }
+            Vector2 moveInput = ReadMoveInput(out _);
+            float moveX = moveInput.x;
+            float moveZ = moveInput.y;
 
             HasManualMoveInput = moveX != 0f || moveZ != 0f;
 
@@ -271,15 +251,7 @@ namespace IdyllicFantasyNature
             }
 
             // the controller is able to run
-            bool runPressed = false;
-#if ENABLE_INPUT_SYSTEM
-            if (Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed)
-            {
-                runPressed = true;
-            }
-#else
-            runPressed = Input.GetKey(KeyCode.LeftShift);
-#endif
+            bool runPressed = IsRunPressed();
 
             if (autoMoving) runPressed = _autoMoveRun;
 
@@ -393,36 +365,9 @@ namespace IdyllicFantasyNature
             if (!_isInspectorMode) return;
 
             // ── Read movement input ──────────────────────────────────
-            float moveX = 0f;
-            float moveZ = 0f;
-
-            if (_joystick != null && _joystick.Direction != Vector2.zero)
-            {
-                moveX = _joystick.Horizontal;
-                moveZ = _joystick.Vertical;
-            }
-            else
-            {
-#if ENABLE_INPUT_SYSTEM
-                if (Keyboard.current != null)
-                {
-                    if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveX = -1f;
-                    else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveX = 1f;
-
-                    if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveZ = -1f;
-                    else if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveZ = 1f;
-                }
-                if (Gamepad.current != null && moveX == 0f && moveZ == 0f)
-                {
-                    Vector2 stick = Gamepad.current.leftStick.ReadValue();
-                    moveX = stick.x;
-                    moveZ = stick.y;
-                }
-#else
-                moveX = Input.GetAxis("Horizontal");
-                moveZ = Input.GetAxis("Vertical");
-#endif
-            }
+            Vector2 moveInput = ReadMoveInput(out _);
+            float moveX = moveInput.x;
+            float moveZ = moveInput.y;
 
             HasManualMoveInput = moveX != 0f || moveZ != 0f;
 
@@ -746,6 +691,97 @@ namespace IdyllicFantasyNature
         {
             _autoMoveDirection = Vector3.zero;
             _autoMoveRun = false;
+        }
+
+        // ═════════════════════════════════════════════════════════════
+        //  INPUT + RIDING API (used by AnimalRider)
+        // ═════════════════════════════════════════════════════════════
+
+        private bool _isMounted;
+
+        /// <summary>True while the player is sitting on an animal; walking is suspended.</summary>
+        public bool IsMounted => _isMounted;
+
+        /// <summary>
+        /// The movement input this frame: joystick first, then keyboard (WASD / arrows), then gamepad.
+        /// x is strafe/turn, y is forward/back, each -1..1. <paramref name="fromJoystick"/> says whether
+        /// the on-screen joystick supplied it, since only that one has a meaningful "how far" pushed.
+        /// </summary>
+        public Vector2 ReadMoveInput(out bool fromJoystick)
+        {
+            fromJoystick = false;
+
+            if (_joystick != null && _joystick.Direction != Vector2.zero)
+            {
+                fromJoystick = true;
+                return new Vector2(_joystick.Horizontal, _joystick.Vertical);
+            }
+
+            float moveX = 0f;
+            float moveZ = 0f;
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveX = -1f;
+                else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveX = 1f;
+
+                if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveZ = -1f;
+                else if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveZ = 1f;
+            }
+            if (Gamepad.current != null && moveX == 0f && moveZ == 0f)
+            {
+                Vector2 stick = Gamepad.current.leftStick.ReadValue();
+                moveX = stick.x;
+                moveZ = stick.y;
+            }
+#else
+            moveX = Input.GetAxis("Horizontal");
+            moveZ = Input.GetAxis("Vertical");
+#endif
+            return new Vector2(moveX, moveZ);
+        }
+
+        /// <summary>Whether the run key is held (left shift).</summary>
+        public bool IsRunPressed()
+        {
+#if ENABLE_INPUT_SYSTEM
+            return Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed;
+#else
+            return Input.GetKey(KeyCode.LeftShift);
+#endif
+        }
+
+        /// <summary>
+        /// Puts the player on (true) or off (false) a mount. While mounted the CharacterController is off,
+        /// so the rider can move the transform freely, and walking, climbing and footsteps all stop.
+        /// Getting off hands the controller back unless Inspector Mode has since taken it.
+        /// </summary>
+        public void SetMounted(bool mounted)
+        {
+            if (_isMounted == mounted) return;
+            _isMounted = mounted;
+
+            _controllerVelocity = Vector3.zero;
+            _isTrackingStuck = false;
+            _stuckTimer = 0f;
+
+            if (mounted)
+            {
+                if (_isClimbing)
+                {
+                    _isClimbing = false;
+                    _climbTimer = 0f;
+                    OnClimbStateChanged?.Invoke(false);
+                }
+
+                ClearAutoMove();
+                StopAllMovementAudio();
+                if (characterController != null) characterController.enabled = false;
+            }
+            else if (!_isInspectorMode && !_isTransitioning && characterController != null)
+            {
+                characterController.enabled = true;
+            }
         }
 
         // ═════════════════════════════════════════════════════════════
