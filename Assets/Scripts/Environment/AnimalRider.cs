@@ -12,8 +12,9 @@ using IdyllicFantasyNature;
 /// <para><b>Riding.</b> The usual movement controls steer the animal instead of the player: forward and
 /// back set the pace (shift, or the joystick pushed all the way, breaks into a run), left and right turn
 /// it and the view with it. Riding forward also eases the animal toward wherever the player is looking,
-/// so dragging to look is a second way to steer, as it is on foot. The animal keeps to dry, not-too-steep
-/// ground and stops at anything solid in front of its chest; it has no collider of its own.</para>
+/// so dragging to look is a second way to steer, as it is on foot. The animal keeps to not-too-steep
+/// ground and stops at anything solid in front of its chest; it has no collider of its own. It can wade
+/// into the lake and swims where the water is deep, keeping the rider above the surface.</para>
 ///
 /// <para><b>Getting off.</b> <see cref="Dismount"/> sets the player down beside the animal on whichever
 /// side has room, and gives the animal back its own idling. Entering Inspector Mode or starting an
@@ -63,13 +64,21 @@ public class AnimalRider : MonoBehaviour
     public float lookSteeringMaxAngle = 70f;
 
     [Header("Where It Can Go")]
-    [Tooltip("Ground inside the lake at or below this height is water (lake surface 3.94 plus its shore " +
-             "margin, as the autopilot uses). Low ground outside the lake is dry garden, not water.")]
-    public float waterLevel = 4.39f;
-
-    [Tooltip("The lake surface renderer, whose footprint bounds the water. Auto-detected under " +
-             "Environment/Water if empty.")]
+    [Tooltip("The lake surface renderer: its height is the water line and its footprint bounds the water. " +
+             "Auto-detected under Environment/Water if empty.")]
     public Renderer lakeSurface;
+
+    [Tooltip("Water line used when no lake surface is found (the lake surface sits at ~3.94).")]
+    public float waterLevel = 3.94f;
+
+    [Tooltip("The animal can walk into the lake. Where the water is deeper than this (metres) it stops " +
+             "sinking and swims instead, with its body this far under the surface, so the rider stays dry.")]
+    [Range(0.5f, 3f)]
+    public float swimDepth = 1.7f;
+
+    [Tooltip("How far (metres) to look for dry shore when the rider gets off in the water.")]
+    [Range(5f, 60f)]
+    public float shoreSearchRadius = 30f;
 
     [Tooltip("Steepest ground the animal will walk onto, in degrees.")]
     [Range(10f, 60f)]
@@ -315,10 +324,35 @@ public class AnimalRider : MonoBehaviour
             Vector3 pivot = PivotForFeet(feet);
             if (i == 0) fallback = pivot;
 
-            if (IsWalkable(feet, ignoreSlope: true) && HasRoomFor(pivot)) return pivot;
+            if (IsDryLand(feet) && HasRoomFor(pivot)) return pivot;
         }
 
+        // In the lake, nowhere beside the animal is dry: set the player down on the nearest shore instead.
+        Vector3 shore;
+        if (TryFindShore(centre, out shore)) return PivotForFeet(shore);
+
         return fallback;
+    }
+
+    private bool IsDryLand(Vector3 feet) => IsWalkable(feet, ignoreSlope: true) && !IsWater(feet);
+
+    /// <summary>The nearest dry, roomy ground within <see cref="shoreSearchRadius"/>, searched in rings.</summary>
+    private bool TryFindShore(Vector3 from, out Vector3 feet)
+    {
+        const int directions = 16;
+        for (float radius = 2f; radius <= shoreSearchRadius; radius += 1.5f)
+        {
+            for (int i = 0; i < directions; i++)
+            {
+                float a = i * Mathf.PI * 2f / directions;
+                feet = from + new Vector3(Mathf.Cos(a), 0f, Mathf.Sin(a)) * radius;
+                feet.y = GroundHeight(feet);
+                if (IsDryLand(feet) && HasRoomFor(PivotForFeet(feet))) return true;
+            }
+        }
+
+        feet = from;
+        return false;
     }
 
     private float PlayerRadius => _controller != null ? _controller.radius : 0.4f;
@@ -460,8 +494,32 @@ public class AnimalRider : MonoBehaviour
     {
         Vector3 from = Mount.transform.position;
         next = from + direction * step;
-        next.y = GroundHeight(next);
-        return IsWalkable(next, ignoreSlope: next.y <= from.y) && !IsBlocked(direction, step);
+        next.y = RideHeight(next);
+        // Slopes don't matter in the water (the lake bed is hidden and the animal wades or swims), and
+        // going downhill is always allowed so the animal can never be trapped in a hollow.
+        bool ignoreSlope = next.y <= from.y || IsWater(from) || IsWater(next);
+        return IsWalkable(next, ignoreSlope) && !IsBlocked(direction, step);
+    }
+
+    /// <summary>
+    /// Height of the animal's feet at <paramref name="p"/>: the ground, except in deep water, where it
+    /// swims <see cref="swimDepth"/> under the surface instead of walking along the lake bed.
+    /// </summary>
+    private float RideHeight(Vector3 p)
+    {
+        float ground = GroundHeight(p);
+        if (!InLakeFootprint(p)) return ground;
+        return Mathf.Max(ground, WaterSurface - swimDepth);
+    }
+
+    /// <summary>True while the animal is in water deep enough to swim; hooves are silent then.</summary>
+    private bool IsSwimming
+    {
+        get
+        {
+            Vector3 p = Mount.transform.position;
+            return InLakeFootprint(p) && GroundHeight(p) < WaterSurface - swimDepth * 0.5f;
+        }
     }
 
     /// <summary>
@@ -521,6 +579,7 @@ public class AnimalRider : MonoBehaviour
     {
         AudioManager audio = AudioManager.Instance;
         if (audio == null || _hoofSource == null) return;
+        if (IsSwimming) return; // No hoof falls when the legs aren't touching anything.
 
         AudioClip clip = audio.NextClip(SoundEffect.Walk);
         if (clip == null) return;
@@ -571,8 +630,6 @@ public class AnimalRider : MonoBehaviour
         if (_terrain == null) _terrain = Terrain.activeTerrain;
         if (_terrain == null) return true;
 
-        if (IsWater(p)) return false;
-
         TerrainData data = _terrain.terrainData;
         Vector3 local = p - _terrain.transform.position;
         float nx = local.x / data.size.x;
@@ -585,23 +642,38 @@ public class AnimalRider : MonoBehaviour
 
     private bool _lakeResolved;
     private Rect _lakeFootprint;
+    private float _waterSurface;
+
+    /// <summary>World height of the lake's surface.</summary>
+    private float WaterSurface
+    {
+        get { ResolveLake(); return _waterSurface; }
+    }
+
+    /// <summary>Inside the lake surface's rectangle (or anywhere, if no lake surface was found).</summary>
+    private bool InLakeFootprint(Vector3 p)
+    {
+        ResolveLake();
+        return _lakeFootprint.width <= 0f || _lakeFootprint.Contains(new Vector2(p.x, p.z));
+    }
 
     /// <summary>
-    /// Inside the lake's footprint and low enough to be under its surface or on its shore margin. Height
-    /// alone isn't enough: parts of the garden lie lower than the shore line and are perfectly dry.
+    /// Ground at <paramref name="p"/> lies under the lake's surface. Judged from the ground, not from the
+    /// shore line plus a margin: the lake's rectangle also covers low, dry jungle ground along its edge
+    /// that sits between the surface and that margin, and counting it as water walled riders out of the
+    /// jungle.
     /// </summary>
     private bool IsWater(Vector3 p)
     {
-        if (!_lakeResolved)
-        {
-            _lakeResolved = true;
-            _lakeFootprint = ResolveLakeFootprint();
-        }
+        return InLakeFootprint(p) && GroundHeight(p) < WaterSurface;
+    }
 
-        // No lake found: only ground under the lake's own surface (shore margin removed) counts as water.
-        if (_lakeFootprint.width <= 0f) return p.y <= waterLevel - 0.45f;
-
-        return p.y <= waterLevel && _lakeFootprint.Contains(new Vector2(p.x, p.z));
+    private void ResolveLake()
+    {
+        if (_lakeResolved) return;
+        _lakeResolved = true;
+        _lakeFootprint = ResolveLakeFootprint();
+        _waterSurface = lakeSurface != null ? lakeSurface.bounds.center.y : waterLevel;
     }
 
     /// <summary>The lake's XZ footprint — the same lookup PlayerAutoWalker uses, so both agree on the water.</summary>

@@ -500,7 +500,9 @@ public class GrazingAnimal : MonoBehaviour
 
         Vector3 flat = transform.position - _home;
         flat.y = 0f;
-        wanderRadius = flat.magnitude <= _homeRadius ? _homeRadius : 0f;
+        // Left swimming in the lake, the wander code would snap it down onto the lake bed: just idle there.
+        bool afloat = transform.position.y > GroundHeight(transform.position) + 0.1f;
+        wanderRadius = flat.magnitude <= _homeRadius && !afloat ? _homeRadius : 0f;
 
         _animator.speed = Random.Range(animationSpeedRange.x, animationSpeedRange.y);
         StartIdle(instant: false);
