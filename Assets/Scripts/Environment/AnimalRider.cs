@@ -20,6 +20,13 @@ using IdyllicFantasyNature;
 /// side has room, and gives the animal back its own idling. Entering Inspector Mode or starting an
 /// autopilot walk also gets the player off first.</para>
 ///
+/// <para><b>Flying.</b> Animals with <see cref="GrazingAnimal.canFly"/> (the pegasus) take off when the
+/// up control is held (Space, or the on-screen up button) and sink with the down control (left Ctrl, or
+/// the down button). In the air, forward sets the airspeed, left/right banks round, and looking well up or
+/// down while flying forward climbs or dives. Flight stays inside the garden's boundary walls and under
+/// their tops, and stops short of anything solid. Sinking to the ground lands it. Getting off in the air
+/// first glides down and lands, then climbs off as usual.</para>
+///
 /// <para>Lives on the player next to <see cref="PlayerMovement"/>, which it suspends while riding. Added
 /// on demand through <see cref="GetOrCreate"/>, so it needs no scene wiring.</para>
 /// </summary>
@@ -101,6 +108,20 @@ public class AnimalRider : MonoBehaviour
     [Tooltip("Layers that block the animal. Terrain is ignored here; ground is handled separately.")]
     public LayerMask obstacleMask = ~0;
 
+    [Header("Flying")]
+    [Tooltip("While flying forward, looking further up or down than this (degrees) climbs or dives. " +
+             "0 turns look-to-climb off, leaving it to the up/down controls.")]
+    [Range(0f, 45f)]
+    public float lookClimbDeadZone = 14f;
+
+    [Tooltip("How quickly airspeed and climb rate change (m/s per second).")]
+    [Range(1f, 20f)]
+    public float flightAcceleration = 5f;
+
+    [Tooltip("Room kept between the flying animal and the garden's boundary walls (metres).")]
+    [Range(0f, 20f)]
+    public float boundaryMargin = 4f;
+
     [Header("Audio")]
     [Range(0f, 1f)]
     public float hoofVolume = 0.6f;
@@ -114,7 +135,19 @@ public class AnimalRider : MonoBehaviour
     public bool IsRiding => Mount != null;
 
     /// <summary>True while climbing on or off; the Dismount button waits for this.</summary>
-    public bool IsTransitioning => _phase == Phase.Mounting || _phase == Phase.Dismounting;
+    public bool IsTransitioning => _phase == Phase.Mounting || _phase == Phase.Dismounting || _landingToDismount;
+
+    /// <summary>True while the mount is in the air.</summary>
+    public bool IsFlying => IsRiding && _flying;
+
+    /// <summary>
+    /// Something steering the mount in place of the player's controls (Auto Travel). Cleared when it
+    /// reports it is done, when the player gets off, or when the ride ends any other way.
+    /// </summary>
+    public IRideDriver Driver { get; set; }
+
+    /// <summary>Raised when <see cref="Driver"/> lets go of the mount, however that happened.</summary>
+    public event Action DriverReleased;
 
     private enum Phase { None, Mounting, Riding, Dismounting }
 
@@ -132,6 +165,14 @@ public class AnimalRider : MonoBehaviour
     private float _cameraHeight; // Camera height above the player's pivot, captured on mounting.
     private float _speed;
     private float _lastStridePhase = -1f;
+
+    private bool _flying;
+    private bool _landingToDismount;
+    private float _airSpeed;
+    private float _climbRate;
+    private float _pitch, _bank;
+    private bool _flightAreaResolved;
+    private Bounds _flightArea;
 
     private static readonly RaycastHit[] ProbeHits = new RaycastHit[16];
 
@@ -242,6 +283,7 @@ public class AnimalRider : MonoBehaviour
 
         _speed = 0f;
         _lastStridePhase = -1f;
+        ResetFlight();
         StartPhase(Phase.Mounting, transform.position);
 
         GameSfx.PlayAt(SoundEffect.ItemInteract, animal.transform);
@@ -260,6 +302,16 @@ public class AnimalRider : MonoBehaviour
     public void Dismount(bool instant = false)
     {
         if (!IsRiding || _phase == Phase.Dismounting) return;
+
+        ReleaseDriver();
+
+        if (_flying && !instant)
+        {
+            // Can't climb down from the sky: glide down and land first; Steer climbs off once grounded.
+            _landingToDismount = true;
+            return;
+        }
+        if (_flying) LandMount();
 
         _speed = 0f;
         Mount.SetRideGait(0f, 0f);
@@ -290,9 +342,11 @@ public class AnimalRider : MonoBehaviour
 
         if (placePlayer) transform.position = FindLandingSpot();
 
+        ReleaseDriver();
         Mount = null;
         _phase = Phase.None;
         _speed = 0f;
+        ResetFlight();
 
         animal.EndRide();
         if (_movement != null) _movement.SetMounted(false);
@@ -395,8 +449,10 @@ public class AnimalRider : MonoBehaviour
         // The animal was switched off or taken away under us (scene change, optimiser, pooling).
         if (!Mount.isActiveAndEnabled || !Mount.IsRidden)
         {
+            ReleaseDriver();
             Mount = null;
             _phase = Phase.None;
+            ResetFlight();
             if (_movement != null) _movement.SetMounted(false);
             RideStateChanged?.Invoke(false);
             return;
@@ -405,19 +461,72 @@ public class AnimalRider : MonoBehaviour
         if (_phase == Phase.Riding) Steer();
     }
 
+    /// <summary>
+    /// This frame's controls: the <see cref="Driver"/>'s while one is steering, the player's otherwise.
+    /// <paramref name="vertical"/> is up/down (-1..1) for flying mounts.
+    /// </summary>
+    private Vector2 ReadControls(out bool fromJoystick, out bool runHeld, out float vertical)
+    {
+        if (Driver != null)
+        {
+            if (Driver.Drive(this, out Vector2 move, out runHeld, out vertical))
+            {
+                fromJoystick = false;
+                return move;
+            }
+            ReleaseDriver();
+        }
+
+        Vector2 input = _movement.ReadMoveInput(out fromJoystick);
+        runHeld = _movement.IsRunPressed();
+        vertical = _movement.ReadVerticalInput();
+        return input;
+    }
+
+    private void ReleaseDriver()
+    {
+        if (Driver == null) return;
+        Driver = null;
+        DriverReleased?.Invoke();
+    }
+
     /// <summary>Turns and moves the animal from the movement controls.</summary>
     private void Steer()
     {
         float dt = Time.deltaTime;
-        Vector2 input = _movement.ReadMoveInput(out bool fromJoystick);
+        Vector2 input = ReadControls(out bool fromJoystick, out bool runHeld, out float vertical);
         GrazingAnimal animal = Mount;
         Transform t = animal.transform;
+
+        if (animal.canFly)
+        {
+            if (_flying)
+            {
+                SteerFlight(input, fromJoystick, runHeld, vertical);
+                return;
+            }
+
+            if (_landingToDismount)
+            {
+                // Landed on the way to getting off.
+                _landingToDismount = false;
+                Dismount();
+                return;
+            }
+
+            if (vertical > 0.1f)
+            {
+                TakeOff();
+                SteerFlight(input, fromJoystick, runHeld, vertical);
+                return;
+            }
+        }
 
         // ── Pace ──
         float target;
         if (input.y > 0.05f)
         {
-            bool run = _movement.IsRunPressed() || (fromJoystick && input.magnitude > 0.95f);
+            bool run = runHeld || (fromJoystick && input.magnitude > 0.95f);
             target = run ? animal.rideRunSpeed : animal.rideWalkSpeed * Mathf.Clamp01(input.y / 0.9f);
         }
         else if (input.y < -0.3f)
@@ -438,7 +547,7 @@ public class AnimalRider : MonoBehaviour
         if (_speed < -0.05f) manualTurn = -manualTurn; // Reversing steers like reversing a cart.
 
         float lookTurn = 0f;
-        if (lookSteering > 0f && _camera != null && _speed > 0.3f && Mathf.Abs(input.x) < 0.2f)
+        if (Driver == null && lookSteering > 0f && _camera != null && _speed > 0.3f && Mathf.Abs(input.x) < 0.2f)
         {
             float off = Mathf.DeltaAngle(t.eulerAngles.y, _camera.Yaw);
             if (Mathf.Abs(off) < lookSteeringMaxAngle)
@@ -587,6 +696,253 @@ public class AnimalRider : MonoBehaviour
         _hoofSource.mute = audio.IsSfxMuted;
         _hoofSource.pitch = UnityEngine.Random.Range(0.6f, 0.7f); // Heavier and slower than a person's step.
         _hoofSource.PlayOneShot(clip, hoofVolume);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  FLYING
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    private void ResetFlight()
+    {
+        _flying = false;
+        _landingToDismount = false;
+        _airSpeed = 0f;
+        _climbRate = 0f;
+        _pitch = 0f;
+        _bank = 0f;
+    }
+
+    /// <summary>Leaves the ground, carrying the ground speed on as airspeed.</summary>
+    private void TakeOff()
+    {
+        _flying = true;
+        _airSpeed = Mathf.Max(0f, _speed);
+        _climbRate = Mount.rideClimbSpeed * 0.5f; // A spring off the ground rather than a slow float.
+        _pitch = 0f;
+        _bank = 0f;
+    }
+
+    /// <summary>Touches down: levels out and hands the airspeed back to the ground gait.</summary>
+    private void LandMount()
+    {
+        Transform t = Mount.transform;
+        _flying = false;
+        _speed = Mathf.Min(_airSpeed, Mount.rideRunSpeed);
+        _airSpeed = 0f;
+        _climbRate = 0f;
+        _pitch = 0f;
+        _bank = 0f;
+        t.rotation = Quaternion.Euler(0f, t.eulerAngles.y, 0f);
+        Mount.SetRideGait(_speed, 0f);
+    }
+
+    /// <summary>Flies the animal from the movement, up/down and look controls.</summary>
+    private void SteerFlight(Vector2 input, bool fromJoystick, bool runHeld, float vertical)
+    {
+        float dt = Time.deltaTime;
+        GrazingAnimal animal = Mount;
+        Transform t = animal.transform;
+
+        // ── Airspeed ──
+        float targetSpeed;
+        if (_landingToDismount)
+        {
+            targetSpeed = Mathf.Min(_airSpeed, animal.rideWalkSpeed * 1.5f);
+        }
+        else if (input.y > 0.05f)
+        {
+            bool boost = runHeld || (fromJoystick && input.magnitude > 0.95f);
+            targetSpeed = boost ? animal.rideFlyBoostSpeed : animal.rideFlySpeed * Mathf.Clamp01(input.y / 0.9f);
+        }
+        else
+        {
+            targetSpeed = 0f; // Let go, or pulling back: slow to a hover.
+        }
+        float accel = targetSpeed < _airSpeed && input.y < -0.3f ? flightAcceleration * 1.8f : flightAcceleration;
+        _airSpeed = Mathf.MoveTowards(_airSpeed, targetSpeed, accel * dt);
+
+        // ── Climb and dive ──
+        float targetClimb;
+        if (_landingToDismount)
+        {
+            targetClimb = -animal.rideDiveSpeed * 0.6f;
+        }
+        else if (Mathf.Abs(vertical) > 0.1f)
+        {
+            targetClimb = vertical > 0f ? vertical * animal.rideClimbSpeed : vertical * animal.rideDiveSpeed;
+        }
+        else
+        {
+            targetClimb = 0f;
+            // Looking well up or down while flying forward climbs or dives along the view.
+            if (Driver == null && lookClimbDeadZone > 0f && _camera != null && _airSpeed > 2f && input.y > 0.05f)
+            {
+                float pitch = -_camera.Pitch; // Positive looks up.
+                float beyond = Mathf.Sign(pitch) * Mathf.Max(0f, Mathf.Abs(pitch) - lookClimbDeadZone);
+                targetClimb = Mathf.Sin(beyond * Mathf.Deg2Rad) * _airSpeed;
+            }
+            targetClimb = Mathf.Clamp(targetClimb, -animal.rideDiveSpeed, animal.rideClimbSpeed);
+        }
+        _climbRate = Mathf.MoveTowards(_climbRate, targetClimb, flightAcceleration * 1.5f * dt);
+
+        // ── Turning ──
+        float yaw = t.eulerAngles.y;
+        float manualTurn = input.x * animal.rideTurnSpeed * dt;
+        float lookTurn = 0f;
+        if (Driver == null && lookSteering > 0f && _camera != null && _airSpeed > 0.3f && Mathf.Abs(input.x) < 0.2f)
+        {
+            float off = Mathf.DeltaAngle(yaw, _camera.Yaw);
+            if (Mathf.Abs(off) < lookSteeringMaxAngle)
+            {
+                lookTurn = Mathf.Clamp(off, -lookSteering * dt, lookSteering * dt);
+            }
+        }
+        yaw += manualTurn + lookTurn;
+        if (manualTurn != 0f && _camera != null) _camera.SetLookAngles(_camera.Yaw + manualTurn, _camera.Pitch);
+
+        // ── Moving ──
+        Vector3 from = t.position;
+        Vector3 heading = Quaternion.Euler(0f, yaw, 0f) * Vector3.forward;
+        Vector3 horizontal = heading * (_airSpeed * dt);
+        if (horizontal.sqrMagnitude > 0f && IsBlockedInFlight(horizontal.normalized, horizontal.magnitude))
+        {
+            horizontal = Vector3.zero;
+            _airSpeed = Mathf.Min(_airSpeed, 1f);
+        }
+
+        Vector3 next = from + horizontal + Vector3.up * (_climbRate * dt);
+        if (_climbRate > 0f && IsBlockedInFlight(Vector3.up, _climbRate * dt)) next.y = from.y;
+        next = ClampToFlightArea(next);
+
+        float floor = RideHeight(next);
+        float ceiling = Mathf.Min(GroundHeight(next) + animal.maxFlightAltitude, FlightCeiling);
+        next.y = Mathf.Min(next.y, Mathf.Max(ceiling, floor));
+        if (next.y >= ceiling - 0.05f && _climbRate > 0f) _climbRate = 0f;
+
+        if (next.y <= floor + 0.02f && _climbRate <= 0.01f)
+        {
+            // Touched down (or settled onto the water to swim).
+            next.y = floor;
+            t.position = next;
+            t.rotation = Quaternion.Euler(0f, yaw, 0f);
+            LandMount();
+            return;
+        }
+        next.y = Mathf.Max(next.y, floor);
+        t.position = next;
+
+        // ── Attitude: nose up into a climb, down into a dive, lean into turns ──
+        float turnRate = dt > 0f ? (manualTurn + lookTurn) / dt : 0f;
+        // Rising or sinking on the spot only tips the nose a little; it takes airspeed to really climb or dive.
+        float wantPitch = -Mathf.Clamp(_climbRate / Mathf.Max(1f, Mathf.Max(_airSpeed, 3f)), -1f, 1f) * animal.flightPitchAngle
+                          * Mathf.Lerp(0.4f, 1f, _airSpeed / 6f);
+        float wantBank = -Mathf.Clamp(turnRate / Mathf.Max(1f, animal.rideTurnSpeed), -1f, 1f) * animal.flightBankAngle
+                         * Mathf.Clamp01(_airSpeed / 4f);
+        _pitch = Mathf.MoveTowards(_pitch, wantPitch, 40f * dt);
+        _bank = Mathf.MoveTowards(_bank, wantBank, 50f * dt);
+        t.rotation = Quaternion.Euler(_pitch, yaw, _bank);
+
+        animal.SetFlightGait(_airSpeed, _climbRate, next.y - GroundHeight(next));
+    }
+
+    /// <summary>Is anything solid within <paramref name="step"/> of the flying body along <paramref name="direction"/>?</summary>
+    private bool IsBlockedInFlight(Vector3 direction, float step)
+    {
+        Transform t = Mount.transform;
+        Vector3 origin = Mount.SeatPosition;
+        float reach = Vector3.Dot(direction, Vector3.up) > 0.7f ? 0.6f : Mount.BodyLength * 0.5f;
+
+        int count = Physics.SphereCastNonAlloc(origin, obstacleProbeRadius, direction, ProbeHits, reach + step + 0.1f,
+                                               obstacleMask, QueryTriggerInteraction.Ignore);
+        for (int i = 0; i < count; i++)
+        {
+            Collider c = ProbeHits[i].collider;
+            if (c == null || c is TerrainCollider) continue; // The ground is handled by the height floor.
+            if (c.transform.IsChildOf(transform) || c.transform.IsChildOf(t)) continue;
+            if (ProbeHits[i].distance <= 0f) continue;
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>Keeps a flying position inside the boundary walls, <see cref="boundaryMargin"/> in from them.</summary>
+    private Vector3 ClampToFlightArea(Vector3 p)
+    {
+        ResolveFlightArea();
+        if (_flightArea.size == Vector3.zero) return p;
+
+        float margin = boundaryMargin + Mount.BodyLength * 0.5f;
+        p.x = Mathf.Clamp(p.x, _flightArea.min.x + margin, Mathf.Max(_flightArea.min.x + margin, _flightArea.max.x - margin));
+        p.z = Mathf.Clamp(p.z, _flightArea.min.z + margin, Mathf.Max(_flightArea.min.z + margin, _flightArea.max.z - margin));
+        return p;
+    }
+
+    /// <summary>Highest the mount may fly: a little under the tops of the boundary walls, so it can't hop over them.</summary>
+    private float FlightCeiling
+    {
+        get
+        {
+            ResolveFlightArea();
+            return _flightArea.size == Vector3.zero ? float.MaxValue : _flightArea.max.y - 3f;
+        }
+    }
+
+    /// <summary>
+    /// The box enclosed by the "Boundary" walls: each wall is a thin slab, so the inner faces of the four
+    /// make the area. Empty when the scene has no such walls (then only the terrain's edge limits flight).
+    /// </summary>
+    private void ResolveFlightArea()
+    {
+        if (_flightAreaResolved) return;
+        _flightAreaResolved = true;
+
+        GameObject[] walls;
+        try { walls = GameObject.FindGameObjectsWithTag("Boundary"); }
+        catch (UnityException) { walls = Array.Empty<GameObject>(); }
+
+        float minX = float.MinValue, maxX = float.MaxValue, minZ = float.MinValue, maxZ = float.MaxValue;
+        float top = float.MaxValue;
+        Vector3 centre = Vector3.zero;
+        int found = 0;
+        var boxes = new System.Collections.Generic.List<Bounds>();
+        foreach (GameObject w in walls)
+        {
+            if (!w.TryGetComponent(out Collider c)) continue;
+            boxes.Add(c.bounds);
+            centre += c.bounds.center;
+            found++;
+        }
+        if (found < 2)
+        {
+            if (_terrain == null) _terrain = Terrain.activeTerrain;
+            if (_terrain != null)
+            {
+                // Heights kept finite: a Bounds stores centre and extents, so huge limits would swallow the real ones.
+                Vector3 o = _terrain.transform.position, s = _terrain.terrainData.size;
+                _flightArea.SetMinMax(new Vector3(o.x, o.y - 1000f, o.z), new Vector3(o.x + s.x, o.y + s.y + 1000f, o.z + s.z));
+            }
+            return;
+        }
+
+        centre /= found;
+        foreach (Bounds b in boxes)
+        {
+            // A wall is long on one axis and thin on the other; its inner face is the side toward the middle.
+            top = Mathf.Min(top, b.max.y);
+            if (b.size.x < b.size.z)
+            {
+                if (b.center.x < centre.x) minX = Mathf.Max(minX, b.max.x);
+                else maxX = Mathf.Min(maxX, b.min.x);
+            }
+            else
+            {
+                if (b.center.z < centre.z) minZ = Mathf.Max(minZ, b.max.z);
+                else maxZ = Mathf.Min(maxZ, b.min.z);
+            }
+        }
+
+        if (minX == float.MinValue || maxX == float.MaxValue || minZ == float.MinValue || maxZ == float.MaxValue) return;
+        _flightArea.SetMinMax(new Vector3(minX, top - 2000f, minZ), new Vector3(maxX, top, maxZ));
     }
 
     /// <summary>Is there something solid in front of the animal's chest within <paramref name="step"/>?</summary>
@@ -766,4 +1122,15 @@ public class AnimalRider : MonoBehaviour
         p.y += Mathf.Sin(k * Mathf.PI) * mountArcHeight;
         return p;
     }
+}
+
+/// <summary>Steers a ridden animal in place of the player's controls (see <see cref="AnimalRider.Driver"/>).</summary>
+public interface IRideDriver
+{
+    /// <summary>
+    /// Fills in this frame's controls, exactly as the player's would read: <paramref name="move"/> is the
+    /// stick (x turns, y paces), <paramref name="run"/> the run key, <paramref name="vertical"/> up/down
+    /// for flying mounts. Return false to hand the mount back to the player.
+    /// </summary>
+    bool Drive(AnimalRider rider, out Vector2 move, out bool run, out float vertical);
 }

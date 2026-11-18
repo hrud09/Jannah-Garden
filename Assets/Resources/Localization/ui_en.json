@@ -93,6 +93,10 @@
             "value": "This item cannot be moved"
         },
         {
+            "key": "placement.move_ad_not_finished",
+            "value": "Watch the full ad to move this item"
+        },
+        {
             "key": "placement.aim_move_here",
             "value": "Aim where you want it, then tap Move Here"
         },
@@ -637,8 +641,152 @@
             "value": "dismount"
         },
         {
+            "key": "interaction.auto_travel_button",
+            "value": "auto travel"
+        },
+        {
+            "key": "interaction.auto_travel_stop",
+            "value": "stop travel"
+        },
+        {
+            "key": "interaction.orb_run_button",
+            "value": "orb run"
+        },
+        {
+            "key": "ride.camel",
+            "value": "camel"
+        },
+        {
+            "key": "ride.pegasus",
+            "value": "pegasus"
+        },
+        {
+            "key": "ride.watch_ad",
+            "value": "Watch Ad"
+        },
+        {
+            "key": "ride.ride_now",
+            "value": "Ride Now"
+        },
+        {
+            "key": "ride.ad_optional_title",
+            "value": "Enjoy Your Ride"
+        },
+        {
+            "key": "ride.ad_optional_body",
+            "value": "Your {0} is ready to ride."
+        },
+        {
+            "key": "ride.ad_optional_note",
+            "value": "Watch a short ad to support Jannah Garden, or ride right away"
+        },
+        {
+            "key": "ride.ad_required_title",
+            "value": "Ride Time"
+        },
+        {
+            "key": "ride.ad_required_body",
+            "value": "Watch a short ad to ride the {0}."
+        },
+        {
+            "key": "ride.ad_required_note",
+            "value": "Your next few rides are free"
+        },
+        {
+            "key": "ride.ad_failed",
+            "value": "The ad didn't finish. Please try again."
+        },
+        {
+            "key": "auto_travel.title",
+            "value": "Auto Travel"
+        },
+        {
+            "key": "auto_travel.body",
+            "value": "Sit back for a {0}-minute ride along the garden roads and into the jungle."
+        },
+        {
+            "key": "auto_travel.body_fly",
+            "value": "Soar for {0} minutes above the garden roads and over the jungle."
+        },
+        {
+            "key": "auto_travel.note",
+            "value": "Watch an ad to start the tour"
+        },
+        {
+            "key": "auto_travel.started",
+            "value": "Auto Travel started. Enjoy the view!"
+        },
+        {
+            "key": "auto_travel.finished",
+            "value": "Auto Travel finished."
+        },
+        {
+            "key": "auto_travel.no_route",
+            "value": "No route found from here."
+        },
+        {
+            "key": "orb_run.title",
+            "value": "Jungle Orb Run"
+        },
+        {
+            "key": "orb_run.body",
+            "value": "Collect all {0} orbs along the jungle path within {1} minutes to earn {2} Noor Coins."
+        },
+        {
+            "key": "orb_run.note",
+            "value": "Ride through an orb to collect it"
+        },
+        {
+            "key": "orb_run.start",
+            "value": "Start"
+        },
+        {
+            "key": "orb_run.not_now",
+            "value": "Not Now"
+        },
+        {
+            "key": "orb_run.go",
+            "value": "Orb Run started! Follow the jungle path."
+        },
+        {
+            "key": "orb_run.complete_title",
+            "value": "Run Complete!"
+        },
+        {
+            "key": "orb_run.complete_body",
+            "value": "You collected all {0} orbs and earned {1} Noor Coins."
+        },
+        {
+            "key": "orb_run.double_note",
+            "value": "Watch an ad to get {0} instead"
+        },
+        {
+            "key": "orb_run.double",
+            "value": "Get {0}"
+        },
+        {
+            "key": "orb_run.collect",
+            "value": "Collect {0}"
+        },
+        {
+            "key": "orb_run.double_failed",
+            "value": "The ad didn't finish, so here is your regular reward."
+        },
+        {
+            "key": "orb_run.time_up",
+            "value": "Time's up! Try the Orb Run again."
+        },
+        {
+            "key": "orb_run.abandoned",
+            "value": "Orb Run ended."
+        },
+        {
+            "key": "orb_run.no_spots",
+            "value": "No room for an Orb Run here. Try the jungle path."
+        },
+        {
             "key": "placed_item.relocate_button",
-            "value": "Move to a new spot"
+            "value": "Watch ad to move"
         },
         {
             "key": "placed_item.return_button",

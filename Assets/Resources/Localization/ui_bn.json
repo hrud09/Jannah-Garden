@@ -93,6 +93,10 @@
             "value": "এই আইটেমটি সরানো যাবে না"
         },
         {
+            "key": "placement.move_ad_not_finished",
+            "value": "আইটেমটি সরাতে পুরো অ্যাডটি দেখুন"
+        },
+        {
             "key": "placement.aim_move_here",
             "value": "আপনি যেখানে চান সেদিকে লক্ষ্য করুন, তারপর \"এখানে সরান\"-এ চাপুন"
         },
@@ -1293,8 +1297,152 @@
             "value": "নামুন"
         },
         {
+            "key": "interaction.auto_travel_button",
+            "value": "স্বয়ংক্রিয় ভ্রমণ"
+        },
+        {
+            "key": "interaction.auto_travel_stop",
+            "value": "ভ্রমণ থামান"
+        },
+        {
+            "key": "interaction.orb_run_button",
+            "value": "অর্ব দৌড়"
+        },
+        {
+            "key": "ride.camel",
+            "value": "উট"
+        },
+        {
+            "key": "ride.pegasus",
+            "value": "পেগাসাস"
+        },
+        {
+            "key": "ride.watch_ad",
+            "value": "বিজ্ঞাপন দেখুন"
+        },
+        {
+            "key": "ride.ride_now",
+            "value": "এখনই চড়ুন"
+        },
+        {
+            "key": "ride.ad_optional_title",
+            "value": "যাত্রা উপভোগ করুন"
+        },
+        {
+            "key": "ride.ad_optional_body",
+            "value": "আপনার {0} চড়ার জন্য প্রস্তুত।"
+        },
+        {
+            "key": "ride.ad_optional_note",
+            "value": "জান্নাহ গার্ডেনকে সমর্থন করতে একটি ছোট বিজ্ঞাপন দেখুন, অথবা এখনই চড়ুন"
+        },
+        {
+            "key": "ride.ad_required_title",
+            "value": "চড়ার সময়"
+        },
+        {
+            "key": "ride.ad_required_body",
+            "value": "{0} চড়তে একটি ছোট বিজ্ঞাপন দেখুন।"
+        },
+        {
+            "key": "ride.ad_required_note",
+            "value": "আপনার পরের কয়েকটি যাত্রা বিনামূল্যে"
+        },
+        {
+            "key": "ride.ad_failed",
+            "value": "বিজ্ঞাপনটি শেষ হয়নি। আবার চেষ্টা করুন।"
+        },
+        {
+            "key": "auto_travel.title",
+            "value": "স্বয়ংক্রিয় ভ্রমণ"
+        },
+        {
+            "key": "auto_travel.body",
+            "value": "বাগানের পথ ধরে জঙ্গলে {0} মিনিটের যাত্রায় আরাম করুন।"
+        },
+        {
+            "key": "auto_travel.body_fly",
+            "value": "বাগানের পথ ও জঙ্গলের উপর দিয়ে {0} মিনিট উড়ে বেড়ান।"
+        },
+        {
+            "key": "auto_travel.note",
+            "value": "ভ্রমণ শুরু করতে একটি বিজ্ঞাপন দেখুন"
+        },
+        {
+            "key": "auto_travel.started",
+            "value": "স্বয়ংক্রিয় ভ্রমণ শুরু হয়েছে। দৃশ্য উপভোগ করুন!"
+        },
+        {
+            "key": "auto_travel.finished",
+            "value": "স্বয়ংক্রিয় ভ্রমণ শেষ হয়েছে।"
+        },
+        {
+            "key": "auto_travel.no_route",
+            "value": "এখান থেকে কোনো পথ পাওয়া যায়নি।"
+        },
+        {
+            "key": "orb_run.title",
+            "value": "জঙ্গল অর্ব দৌড়"
+        },
+        {
+            "key": "orb_run.body",
+            "value": "{1} মিনিটের মধ্যে জঙ্গলের পথে সব {0}টি অর্ব সংগ্রহ করুন এবং {2} নূর কয়েন জিতুন।"
+        },
+        {
+            "key": "orb_run.note",
+            "value": "অর্ব সংগ্রহ করতে তার মধ্য দিয়ে চলুন"
+        },
+        {
+            "key": "orb_run.start",
+            "value": "শুরু"
+        },
+        {
+            "key": "orb_run.not_now",
+            "value": "এখন নয়"
+        },
+        {
+            "key": "orb_run.go",
+            "value": "অর্ব দৌড় শুরু! জঙ্গলের পথ ধরুন।"
+        },
+        {
+            "key": "orb_run.complete_title",
+            "value": "দৌড় সম্পূর্ণ!"
+        },
+        {
+            "key": "orb_run.complete_body",
+            "value": "আপনি সব {0}টি অর্ব সংগ্রহ করে {1} নূর কয়েন অর্জন করেছেন।"
+        },
+        {
+            "key": "orb_run.double_note",
+            "value": "বিজ্ঞাপন দেখে এর বদলে {0} পান"
+        },
+        {
+            "key": "orb_run.double",
+            "value": "{0} নিন"
+        },
+        {
+            "key": "orb_run.collect",
+            "value": "{0} সংগ্রহ করুন"
+        },
+        {
+            "key": "orb_run.double_failed",
+            "value": "বিজ্ঞাপনটি শেষ হয়নি, তাই আপনার সাধারণ পুরস্কার দেওয়া হলো।"
+        },
+        {
+            "key": "orb_run.time_up",
+            "value": "সময় শেষ! আবার অর্ব দৌড় চেষ্টা করুন।"
+        },
+        {
+            "key": "orb_run.abandoned",
+            "value": "অর্ব দৌড় শেষ হয়েছে।"
+        },
+        {
+            "key": "orb_run.no_spots",
+            "value": "এখানে অর্ব দৌড়ের জায়গা নেই। জঙ্গলের পথে চেষ্টা করুন।"
+        },
+        {
             "key": "placed_item.relocate_button",
-            "value": "নতুন জায়গায় সরান"
+            "value": "অ্যাড দেখে সরান"
         },
         {
             "key": "placed_item.return_button",

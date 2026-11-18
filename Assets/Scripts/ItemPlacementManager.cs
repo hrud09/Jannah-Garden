@@ -1272,32 +1272,9 @@ public class ItemPlacementManager : MonoBehaviour
     /// <returns>False when the item cannot be moved (its prefab is missing, or a placement is already running).</returns>
     public bool BeginRelocate(PlaceableItem item)
     {
-        if (item == null) return false;
-
-        if (IsPlacing)
-        {
-            if (ToastMessageManager.Instance != null)
-            {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
-            }
-            return false;
-        }
+        if (!CanRelocate(item, showToast: true)) return false;
 
         AssetReferenceGameObject prefabRef = ResolveItemPrefabRef(item.sourceKind, item.sourceItemId);
-
-        // The prefab standing in as `item` right now was already downloaded to spawn it, so this is
-        // always a cache hit in v1 (nothing evicts AddressableItemLoader's cache) — checked rather than
-        // assumed so a hypothetical miss fails safely, leaving the live item exactly where it is instead
-        // of despawning it ahead of a load that might not succeed.
-        if (prefabRef == null || !prefabRef.RuntimeKeyIsValid() || !AddressableItemLoader.TryGetCached(prefabRef, out _))
-        {
-            Debug.LogWarning($"[ItemPlacementManager] Cannot relocate item (sourceItemId='{item.sourceItemId}') — its prefab is not reachable.");
-            if (ToastMessageManager.Instance != null)
-            {
-                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.cannot_move"));
-            }
-            return false;
-        }
 
         // Remember everything needed to put it back before the object goes away.
         _isRelocating = true;
@@ -1328,6 +1305,45 @@ public class ItemPlacementManager : MonoBehaviour
         if (ToastMessageManager.Instance != null)
         {
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.aim_move_here"));
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Whether <paramref name="item"/> could be picked up and moved right now. Asked before the
+    /// relocate rewarded ad is shown, so a player never watches an ad only to be told the move is
+    /// impossible — and asked again by <see cref="BeginRelocate"/>, because the world can change while
+    /// the ad plays (the item returned to the store, a garden rebuild, another placement started).
+    /// </summary>
+    public bool CanRelocate(PlaceableItem item, bool showToast)
+    {
+        // Membership, not activeInHierarchy: occlusion culling deactivates placed items that are out of view.
+        if (item == null || !activePlacedItems.Contains(item)) return false;
+
+        if (IsPlacing)
+        {
+            if (showToast && ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("shop.finish_placing_first"));
+            }
+            return false;
+        }
+
+        AssetReferenceGameObject prefabRef = ResolveItemPrefabRef(item.sourceKind, item.sourceItemId);
+
+        // The prefab standing in as `item` right now was already downloaded to spawn it, so this is
+        // always a cache hit in v1 (nothing evicts AddressableItemLoader's cache) — checked rather than
+        // assumed so a hypothetical miss fails safely, leaving the live item exactly where it is instead
+        // of despawning it ahead of a load that might not succeed.
+        if (prefabRef == null || !prefabRef.RuntimeKeyIsValid() || !AddressableItemLoader.TryGetCached(prefabRef, out _))
+        {
+            Debug.LogWarning($"[ItemPlacementManager] Cannot relocate item (sourceItemId='{item.sourceItemId}') — its prefab is not reachable.");
+            if (showToast && ToastMessageManager.Instance != null)
+            {
+                ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.cannot_move"));
+            }
+            return false;
         }
 
         return true;

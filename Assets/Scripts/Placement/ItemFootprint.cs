@@ -27,11 +27,12 @@ public static class ItemFootprint
     private const float DefaultSizeMetres = 0.5f;
 
     /// <summary>
-    /// Geometry-derived footprints are shrunk to this fraction of the model's measured body before
-    /// rounding to cells — the raw collision/render bounds claim far more ground than an item actually
-    /// needs breathing room for. An item's own <c>footprintScale</c> multiplies on top of this.
+    /// Fraction of the model's measured body a geometry-derived footprint claims. 1 means an item
+    /// reserves exactly the ground it physically covers (Clash-of-Clans style) so nothing else can be
+    /// placed inside it. An item's own <c>footprintScale</c> multiplies on top of this, and
+    /// <c>gridFootprintOverride</c> replaces it outright for models whose bounds mislead (wide canopies).
     /// </summary>
-    private const float DefaultFootprintScale = 1f / 3f;
+    private const float DefaultFootprintScale = 1f;
 
     /// <summary>
     /// Cells claimed by <paramref name="prefab"/> when yawed by <paramref name="rotationSteps"/>

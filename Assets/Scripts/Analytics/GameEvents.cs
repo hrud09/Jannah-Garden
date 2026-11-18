@@ -61,6 +61,7 @@ public static class GameEvents
     {
         public const string TreasureBox = "treasure_box";
         public const string ShopItem = "shop_item";
+        public const string RelocateItem = "relocate_item";
         public const string Unknown = "unknown";
     }
 

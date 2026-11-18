@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Ambient behaviour for herd animals (the camels): cycles through the model's idle animations and,
+/// Ambient behaviour for herd animals (the camels and the pegasi): cycles through the model's idle animations and,
 /// when <see cref="wanderRadius"/> is above zero, occasionally strolls to a nearby spot around where it
 /// was placed in the scene.
 ///
@@ -70,8 +70,10 @@ public class GrazingAnimal : MonoBehaviour
              "push the mesh's centre well forward of the hump.")]
     public float autoSeatBack = 0.2f;
     [Tooltip("Joint the seat is carried on while ridden, so the rider sways and bounces with the gait. Found " +
-             "by name (Back.002) if empty; without one the seat is fixed to the body.")]
+             "by name (Seat Bone Name) if empty; without one the seat is fixed to the body.")]
     public Transform seatBone;
+    [Tooltip("Name of the joint looked up when Seat Bone is empty (Back.002 on the camel, spine_02 on the pegasus).")]
+    public string seatBoneName = "Back.002";
     [Tooltip("Ridden walking speed (m/s).")]
     public float rideWalkSpeed = 2f;
     [Tooltip("Ridden running speed (m/s) - shift, or the joystick pushed all the way.")]
@@ -97,6 +99,35 @@ public class GrazingAnimal : MonoBehaviour
     public float runStrideScale = 1.45f;
     [Tooltip("How much shorter the shuffle clip's stride is than the walk's.")]
     public float shuffleStrideScale = 0.5f;
+
+    [Header("Flying")]
+    [Tooltip("Whether this animal can take off with a rider (the pegasus). Up/down controls climb and sink.")]
+    public bool canFly;
+    [Tooltip("Cruising airspeed (m/s).")]
+    public float rideFlySpeed = 11f;
+    [Tooltip("Airspeed with the run key held, or the joystick pushed all the way (m/s).")]
+    public float rideFlyBoostSpeed = 18f;
+    [Tooltip("Fastest climb (m/s).")]
+    public float rideClimbSpeed = 5f;
+    [Tooltip("Fastest descent (m/s).")]
+    public float rideDiveSpeed = 7f;
+    [Tooltip("Highest the animal may fly above the ground under it (metres).")]
+    public float maxFlightAltitude = 35f;
+    [Tooltip("Nose up/down tilt at a full climb or dive (degrees).")]
+    public float flightPitchAngle = 18f;
+    [Tooltip("Lean into turns at full turning rate (degrees).")]
+    public float flightBankAngle = 22f;
+    [Tooltip("Below this height above the ground, moving forward plays the take-off gallop instead of flight (metres).")]
+    public float takeOffHeight = 2f;
+    [Tooltip("Galloping with wings flapping, as it leaves and meets the ground.")]
+    public string takeOffState = "TakeOff";
+    [Tooltip("Blend tree of hover (0) / flapping flight (1) / glide (2) on the float below.")]
+    public string flyState = "FlyMove";
+    public string flyBlendParameter = "FlyBlend";
+    [Tooltip("While cruising level, seconds of flapping and then of gliding, alternating.")]
+    public Vector2 cruiseFlapGlide = new Vector2(3.5f, 2.5f);
+    [Tooltip("Left in the air by a rider (e.g. entering Inspector Mode), how fast it floats down to land (m/s).")]
+    public float ambientDescentSpeed = 3f;
 
     private static readonly List<GrazingAnimal> All = new List<GrazingAnimal>();
 
@@ -136,7 +167,7 @@ public class GrazingAnimal : MonoBehaviour
     private Bounds _bodyBounds;
     private float _homeRadius;
 
-    private enum RideGait { None, Stand, Move, Back }
+    private enum RideGait { None, Stand, Move, Back, TakeOff, Fly }
     private RideGait _rideGait;
     private float _gaitValue;
     private bool _hasRideStates;
@@ -144,6 +175,12 @@ public class GrazingAnimal : MonoBehaviour
     private Transform _rideSeatBone;
     private Vector3 _seatInBone;
     private AnimatorCullingMode _cullingBeforeRide;
+    private int _flyHash, _takeOffHash, _flyBlendHash;
+    private float _flyBlend, _cruiseTimer;
+    private bool _descending;
+
+    /// <summary>True while airborne (ridden in flight, or floating down after the rider let go).</summary>
+    public bool IsFlying { get; private set; }
 
     private enum Mode { Idle, Turning, Walking }
 
@@ -183,11 +220,23 @@ public class GrazingAnimal : MonoBehaviour
             _rideGait = RideGait.None;
             _animator.cullingMode = _cullingBeforeRide;
         }
+
+        if (_descending || IsFlying)
+        {
+            // Switched off in mid-air: put it back on the ground so it doesn't wake up hanging there.
+            _descending = false;
+            IsFlying = false;
+            Vector3 p = transform.position;
+            p.y = GroundHeight(p);
+            transform.position = p;
+            transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+        }
     }
 
     private void Update()
     {
         if (IsRidden) return; // The rider drives the transform and animator.
+        if (_descending) { UpdateDescent(); return; }
 
         _timer -= Time.deltaTime;
 
@@ -360,6 +409,12 @@ public class GrazingAnimal : MonoBehaviour
         _cullingBeforeRide = _animator.cullingMode;
         _animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
 
+        _flyHash = Animator.StringToHash(flyState);
+        _takeOffHash = Animator.StringToHash(takeOffState);
+        _flyBlendHash = Animator.StringToHash(flyBlendParameter);
+        _descending = false;
+        IsFlying = false;
+
         _rideSeatBone = ResolveSeatBone();
         if (_rideSeatBone != null) _seatInBone = _rideSeatBone.InverseTransformPoint(restSeat);
 
@@ -377,6 +432,7 @@ public class GrazingAnimal : MonoBehaviour
     public void SetRideGait(float groundSpeed, float turnInput)
     {
         _target = transform.position; // Keeps other animals' personal-space checks honest.
+        IsFlying = false;
 
         float speed = Mathf.Abs(groundSpeed);
         bool turning = Mathf.Abs(turnInput) > 0.1f;
@@ -445,6 +501,15 @@ public class GrazingAnimal : MonoBehaviour
     private void SwitchRideState(RideGait gait)
     {
         bool wasMoving = _rideGait == RideGait.Move || _rideGait == RideGait.Back;
+        if (_rideGait == RideGait.TakeOff || _rideGait == RideGait.Fly)
+        {
+            // Touching down: no stride to carry over, and a slightly longer fade so the legs reach down.
+            _rideGait = gait;
+            int land = gait == RideGait.Stand ? _rideIdleHash : gait == RideGait.Back ? _rideBackHash : _rideMoveHash;
+            if (!_hasRideStates) land = Animator.StringToHash(walkState);
+            _animator.CrossFadeInFixedTime(land, crossFade);
+            return;
+        }
         _rideGait = gait;
 
         float phase = wasMoving ? Mathf.Repeat(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1f) : 0f;
@@ -474,13 +539,90 @@ public class GrazingAnimal : MonoBehaviour
         }
     }
 
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  FLYING (driven by AnimalRider, for animals with canFly)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    /// <summary>
+    /// Plays the flight animation for an airspeed (m/s), a climb rate (m/s, negative sinks) and a height
+    /// above the ground (metres). Near the ground and moving, it gallops with its wings beating, which
+    /// covers both the run-up of a take-off and the touch-down. In the air it blends hover → flap → glide:
+    /// hovering when slow, flapping to climb, gliding to come down, and alternating flaps with glides
+    /// while cruising level.
+    /// </summary>
+    public void SetFlightGait(float airSpeed, float climbRate, float heightAboveGround)
+    {
+        _target = transform.position;
+        IsFlying = true;
+        StridePhase = -1f; // No hoof falls in the air.
+
+        bool galloping = heightAboveGround < takeOffHeight && airSpeed > 2f && climbRate > -rideDiveSpeed * 0.6f;
+        RideGait gait = galloping ? RideGait.TakeOff : RideGait.Fly;
+
+        if (gait != _rideGait)
+        {
+            bool fromGround = _rideGait != RideGait.TakeOff && _rideGait != RideGait.Fly;
+            _rideGait = gait;
+            if (fromGround) _flyBlend = 0f; // Lifting off from standing: start with the full beat.
+            _cruiseTimer = 0f;
+            _animator.CrossFadeInFixedTime(gait == RideGait.TakeOff ? _takeOffHash : _flyHash, crossFade * 0.75f);
+        }
+
+        if (gait == RideGait.TakeOff)
+        {
+            // The gallop clip covers ~7.2 m/s per cycle at the model's size (walk speed × run stride).
+            float natural = Mathf.Max(0.1f, walkSpeed * runStrideScale);
+            _animator.speed = Mathf.Clamp(airSpeed / natural, 0.6f, maxRideAnimationSpeed);
+            return;
+        }
+
+        float target;
+        if (airSpeed < 2.5f) target = 0f;                                  // Hanging in the air.
+        else if (climbRate > 0.8f) target = 1f;                            // Working to climb.
+        else if (climbRate < -0.8f) target = 2f;                           // Gliding down.
+        else
+        {
+            // Level cruise: a few beats, then a glide, and round again.
+            _cruiseTimer += Time.deltaTime;
+            float cycle = cruiseFlapGlide.x + cruiseFlapGlide.y;
+            target = Mathf.Repeat(_cruiseTimer, cycle) < cruiseFlapGlide.x ? 1f : 2f;
+        }
+
+        _flyBlend = Mathf.MoveTowards(_flyBlend, target, Time.deltaTime * 1.5f);
+        _animator.SetFloat(_flyBlendHash, _flyBlend);
+
+        // Beat harder when climbing or hovering, ease off when fast and level.
+        float effort = Mathf.Clamp01(climbRate / Mathf.Max(0.1f, rideClimbSpeed));
+        _animator.speed = Mathf.Lerp(0.85f, 1.25f, Mathf.Max(effort, airSpeed < 2.5f ? 0.5f : 0f));
+    }
+
+    /// <summary>Unridden and still in the air: sink to the ground under it, then carry on as normal.</summary>
+    private void UpdateDescent()
+    {
+        Vector3 p = transform.position;
+        float ground = GroundHeight(p);
+        p.y = Mathf.MoveTowards(p.y, ground, ambientDescentSpeed * Time.deltaTime);
+        transform.position = p;
+
+        // Level out from any climb, dive or bank the rider left it in.
+        Vector3 e = transform.eulerAngles;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, e.y, 0f), 60f * Time.deltaTime);
+
+        if (p.y - ground > 0.02f) return;
+
+        _descending = false;
+        IsFlying = false;
+        transform.rotation = Quaternion.Euler(0f, e.y, 0f);
+        ResumeAfterRide();
+    }
+
     private Transform ResolveSeatBone()
     {
         if (seatBone != null) return seatBone;
 
         foreach (Transform t in GetComponentsInChildren<Transform>(true))
         {
-            if (t.name.StartsWith("Back.002")) return t;
+            if (!string.IsNullOrEmpty(seatBoneName) && t.name.StartsWith(seatBoneName)) return t;
         }
         return null;
     }
@@ -498,6 +640,21 @@ public class GrazingAnimal : MonoBehaviour
         _rideGait = RideGait.None;
         _animator.cullingMode = _cullingBeforeRide;
 
+        if (IsFlying)
+        {
+            // Let go of in mid-air: float down and land before going back to grazing.
+            _descending = true;
+            _animator.speed = 1f;
+            _animator.SetFloat(_flyBlendHash, 0f);
+            _animator.CrossFadeInFixedTime(_flyHash, crossFade);
+            return;
+        }
+
+        ResumeAfterRide();
+    }
+
+    private void ResumeAfterRide()
+    {
         Vector3 flat = transform.position - _home;
         flat.y = 0f;
         // Left swimming in the lake, the wander code would snap it down onto the lake bed: just idle there.

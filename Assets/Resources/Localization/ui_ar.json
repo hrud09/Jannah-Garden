@@ -93,6 +93,10 @@
             "value": "لا يمكن نقل هذا العنصر"
         },
         {
+            "key": "placement.move_ad_not_finished",
+            "value": "شاهد الإعلان كاملًا لنقل هذا العنصر"
+        },
+        {
             "key": "placement.aim_move_here",
             "value": "وجّهه إلى المكان الذي تريده، ثم اضغط على \"انقل هنا\""
         },
@@ -1293,8 +1297,152 @@
             "value": "انزل"
         },
         {
+            "key": "interaction.auto_travel_button",
+            "value": "سفر تلقائي"
+        },
+        {
+            "key": "interaction.auto_travel_stop",
+            "value": "أوقف السفر"
+        },
+        {
+            "key": "interaction.orb_run_button",
+            "value": "سباق الكرات"
+        },
+        {
+            "key": "ride.camel",
+            "value": "الجمل"
+        },
+        {
+            "key": "ride.pegasus",
+            "value": "البيغاسوس"
+        },
+        {
+            "key": "ride.watch_ad",
+            "value": "شاهد إعلانًا"
+        },
+        {
+            "key": "ride.ride_now",
+            "value": "اركب الآن"
+        },
+        {
+            "key": "ride.ad_optional_title",
+            "value": "استمتع بركوبك"
+        },
+        {
+            "key": "ride.ad_optional_body",
+            "value": "{0} جاهز للركوب."
+        },
+        {
+            "key": "ride.ad_optional_note",
+            "value": "شاهد إعلانًا قصيرًا لدعم حديقة الجنة، أو اركب فورًا"
+        },
+        {
+            "key": "ride.ad_required_title",
+            "value": "وقت الركوب"
+        },
+        {
+            "key": "ride.ad_required_body",
+            "value": "شاهد إعلانًا قصيرًا لركوب {0}."
+        },
+        {
+            "key": "ride.ad_required_note",
+            "value": "رحلاتك القليلة القادمة مجانية"
+        },
+        {
+            "key": "ride.ad_failed",
+            "value": "لم يكتمل الإعلان. يرجى المحاولة مرة أخرى."
+        },
+        {
+            "key": "auto_travel.title",
+            "value": "السفر التلقائي"
+        },
+        {
+            "key": "auto_travel.body",
+            "value": "استرخِ في جولة مدتها {0} دقائق على طرق الحديقة وداخل الغابة."
+        },
+        {
+            "key": "auto_travel.body_fly",
+            "value": "حلّق {0} دقائق فوق طرق الحديقة والغابة."
+        },
+        {
+            "key": "auto_travel.note",
+            "value": "شاهد إعلانًا لبدء الجولة"
+        },
+        {
+            "key": "auto_travel.started",
+            "value": "بدأ السفر التلقائي. استمتع بالمنظر!"
+        },
+        {
+            "key": "auto_travel.finished",
+            "value": "انتهى السفر التلقائي."
+        },
+        {
+            "key": "auto_travel.no_route",
+            "value": "لم يتم العثور على طريق من هنا."
+        },
+        {
+            "key": "orb_run.title",
+            "value": "سباق كرات الغابة"
+        },
+        {
+            "key": "orb_run.body",
+            "value": "اجمع كل الكرات الـ{0} على طريق الغابة خلال {1} دقائق لتربح {2} من عملات النور."
+        },
+        {
+            "key": "orb_run.note",
+            "value": "مُرّ عبر الكرة لجمعها"
+        },
+        {
+            "key": "orb_run.start",
+            "value": "ابدأ"
+        },
+        {
+            "key": "orb_run.not_now",
+            "value": "ليس الآن"
+        },
+        {
+            "key": "orb_run.go",
+            "value": "بدأ السباق! اتبع طريق الغابة."
+        },
+        {
+            "key": "orb_run.complete_title",
+            "value": "اكتمل السباق!"
+        },
+        {
+            "key": "orb_run.complete_body",
+            "value": "جمعت كل الكرات الـ{0} وربحت {1} من عملات النور."
+        },
+        {
+            "key": "orb_run.double_note",
+            "value": "شاهد إعلانًا لتحصل على {0} بدلًا من ذلك"
+        },
+        {
+            "key": "orb_run.double",
+            "value": "احصل على {0}"
+        },
+        {
+            "key": "orb_run.collect",
+            "value": "اجمع {0}"
+        },
+        {
+            "key": "orb_run.double_failed",
+            "value": "لم يكتمل الإعلان، إليك مكافأتك العادية."
+        },
+        {
+            "key": "orb_run.time_up",
+            "value": "انتهى الوقت! حاول السباق مرة أخرى."
+        },
+        {
+            "key": "orb_run.abandoned",
+            "value": "انتهى سباق الكرات."
+        },
+        {
+            "key": "orb_run.no_spots",
+            "value": "لا مكان لسباق الكرات هنا. جرّب طريق الغابة."
+        },
+        {
             "key": "placed_item.relocate_button",
-            "value": "انقل إلى مكان جديد"
+            "value": "شاهد إعلانًا للنقل"
         },
         {
             "key": "placed_item.return_button",

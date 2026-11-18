@@ -207,10 +207,48 @@ public class PlacedItemActionsUI : MonoBehaviour
         PlaceableItem item = _target;
         Hide(silent: true); // Clears the outline before the object is pooled away.
 
-        if (item == null || ItemPlacementManager.Instance == null) return;
+        ItemPlacementManager placement = ItemPlacementManager.Instance;
+        if (item == null || placement == null) return;
 
-        GameSfx.PlayAt(SoundEffect.ItemPickUp, item.transform);
-        ItemPlacementManager.Instance.BeginRelocate(item);
+        // Moving a placed item costs a rewarded ad. Everything that could refuse the move is checked
+        // first, so the player never sits through an ad for nothing.
+        if (!placement.CanRelocate(item, showToast: true)) return;
+
+        IAdService ads = AdServiceBootstrap.Service;
+        if (ads == null || !ads.IsAdReady)
+        {
+            Debug.Log("[PlacedItemActionsUI] No rewarded ad ready — relocation refused.");
+            GameEvents.AdFailedToShow(GameEvents.AdSdk.LevelPlay, GameAnalyticsSDK.GAAdError.NoFill, "relocate_not_ready");
+            Toast("shop.ads_unavailable");
+            return;
+        }
+
+        GameEvents.AdRequested(GameEvents.AdPlacement.RelocateItem);
+        string uniqueId = item.uniqueId;
+
+        ads.ShowRewardedAd(earned =>
+        {
+            if (!earned)
+            {
+                Toast("placement.move_ad_not_finished");
+                return;
+            }
+
+            // The world may have moved on while the ad played: the item returned to the store, the
+            // garden rebuilt from the cloud (pooled objects reused under a new id), or a placement begun.
+            if (item == null || item.uniqueId != uniqueId || ItemPlacementManager.Instance == null) return;
+
+            GameSfx.PlayAt(SoundEffect.ItemPickUp, item.transform);
+            ItemPlacementManager.Instance.BeginRelocate(item);
+        });
+    }
+
+    private static void Toast(string key)
+    {
+        if (ToastMessageManager.Instance != null && LocalizationManager.Instance != null)
+        {
+            ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get(key));
+        }
     }
 
     private void OnReturnClicked()

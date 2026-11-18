@@ -69,6 +69,18 @@ public class PlayersInteractionManager : MonoBehaviour
              "buttons at start and placed just above them.")]
     public Button dismountButton;
 
+    [Tooltip("Shown beside Dismount while riding. Watch an ad, then the animal tours the garden roads and the " +
+             "jungle on its own for a few minutes; pressed again, stops the tour. Left empty, one is copied " +
+             "from the ad-carrying interaction button at start.")]
+    public Button autoTravelButton;
+
+    [Tooltip("Shown beside Dismount while riding a camel in the jungle. Starts the Jungle Orb Run. Left empty, " +
+             "one is copied from the other interaction buttons at start.")]
+    public Button orbRunButton;
+
+    [Tooltip("Gap between the riding buttons in their row (canvas units).")]
+    public float rideButtonSpacing = 24f;
+
     public TreasureBox currentTargetBox = null;
     public QuestionMarkOrb currentTargetOrb = null;
     public PlaceableItem currentTargetPlaceable = null;
@@ -122,6 +134,8 @@ public class PlayersInteractionManager : MonoBehaviour
         EnsureRideButtons();
         RegisterButton(rideInteractButton, OnRideButtonClicked);
         RegisterButton(dismountButton, OnDismountButtonClicked);
+        RegisterButton(autoTravelButton, OnAutoTravelButtonClicked);
+        RegisterButton(orbRunButton, OnOrbRunButtonClicked);
 
         EnsurePlacedItemActionsUI();
     }
@@ -134,6 +148,8 @@ public class PlayersInteractionManager : MonoBehaviour
         UnregisterButton(itemInteractButton, OnSharedButtonClicked);
         UnregisterButton(rideInteractButton, OnRideButtonClicked);
         UnregisterButton(dismountButton, OnDismountButtonClicked);
+        UnregisterButton(autoTravelButton, OnAutoTravelButtonClicked);
+        UnregisterButton(orbRunButton, OnOrbRunButtonClicked);
 
         if (Instance == this) Instance = null;
     }
@@ -192,6 +208,61 @@ public class PlayersInteractionManager : MonoBehaviour
         if (rider != null && rider.IsRiding) rider.Dismount();
     }
 
+    /// <summary>
+    /// Auto Travel: while a tour runs, stops it. Otherwise asks for an ad (it is a paid-for extra), then
+    /// plans the tour from where the animal stands and hands it the reins.
+    /// </summary>
+    private void OnAutoTravelButtonClicked()
+    {
+        if (rider == null || !rider.IsRiding) return;
+        RideAutoTravel travel = RideAutoTravel.GetOrCreate(rider);
+
+        if (travel.IsTravelling)
+        {
+            travel.Stop();
+            return;
+        }
+
+        GrazingAnimal animal = rider.Mount;
+        int minutes = Mathf.Max(1, Mathf.RoundToInt(travel.duration / 60f));
+
+        void StartTour()
+        {
+            if (rider == null || !rider.IsRiding) return;
+            if (JungleOrbRun.Instance != null) JungleOrbRun.Instance.Cancel();
+            if (travel.Begin(rider))
+                RideFeatures.Toast(RideFeatures.Loc("auto_travel.started"), ToastTone.Success);
+            else
+                RideFeatures.Toast(RideFeatures.Loc("auto_travel.no_route"), ToastTone.Warning);
+        }
+
+        RidePromptPanel panel = RidePromptPanel.Instance;
+        if (panel == null)
+        {
+            RideAdGate.ShowAd(earned => { if (earned) StartTour(); });
+            return;
+        }
+
+        panel.Show(
+            RideFeatures.Loc("auto_travel.title"),
+            RideFeatures.Loc(animal != null && animal.canFly ? "auto_travel.body_fly" : "auto_travel.body", minutes),
+            RideFeatures.Loc("auto_travel.note"),
+            RideFeatures.Instance != null ? RideFeatures.Instance.IconFor(animal) : null,
+            RideFeatures.Loc("ride.watch_ad"), true,
+            () => RideAdGate.ShowAd(earned =>
+            {
+                if (earned) StartTour();
+                else RideFeatures.Toast(RideFeatures.Loc("ride.ad_failed"), ToastTone.Warning);
+            }),
+            null, null,
+            null);
+    }
+
+    private void OnOrbRunButtonClicked()
+    {
+        if (rider != null && JungleOrbRun.Instance != null) JungleOrbRun.Instance.Offer(rider);
+    }
+
     // ─── Riding ───────────────────────────────────────────────────────────────
 
     /// <summary>The player's rider, added on first use. Null until a player exists.</summary>
@@ -232,6 +303,72 @@ public class PlayersInteractionManager : MonoBehaviour
             dismountButton = CopyButton(template, "Dismount Button", "interaction.dismount_button", "dismount",
                                         height * 1.2f);
         }
+
+        float step = ((RectTransform)template.transform).rect.height;
+        if (step <= 0f) step = ((RectTransform)template.transform).sizeDelta.y;
+
+        if (autoTravelButton == null)
+        {
+            // The treasure box's Open button carries the little TV that marks "this plays an ad".
+            Button adTemplate = treasureBoxInteractButton != null ? treasureBoxInteractButton : template;
+            autoTravelButton = CopyButton(adTemplate, "Auto Travel Button", "interaction.auto_travel_button",
+                                          "auto travel", step * 1.2f);
+            _autoTravelLabel = autoTravelButton.GetComponentInChildren<LocalizedText>(true);
+            Transform adIcon = autoTravelButton.transform.Find("Ad Icon");
+            _autoTravelAdIcon = adIcon != null ? adIcon.gameObject : null;
+        }
+
+        if (orbRunButton == null)
+        {
+            orbRunButton = CopyButton(template, "Orb Run Button", "interaction.orb_run_button", "orb run",
+                                      step * 1.2f);
+        }
+
+        _rideRowBaseY = ((RectTransform)dismountButton.transform).anchoredPosition.y;
+        _rideRowBaseX = ((RectTransform)template.transform).anchoredPosition.x;
+    }
+
+    private LocalizedText _autoTravelLabel;
+    private GameObject _autoTravelAdIcon;
+    private bool _autoTravelShowsStop;
+    private float _rideRowBaseX, _rideRowBaseY;
+    private readonly System.Collections.Generic.List<Button> _rideRow = new System.Collections.Generic.List<Button>(3);
+
+    /// <summary>
+    /// Lines up whichever riding buttons are showing (Orb Run, Dismount, Auto Travel) side by side,
+    /// centred where Dismount sits, so none overlaps whatever else is on screen.
+    /// </summary>
+    private void LayoutRideRow()
+    {
+        _rideRow.Clear();
+        if (orbRunButton != null && orbRunButton.gameObject.activeSelf) _rideRow.Add(orbRunButton);
+        if (dismountButton != null && dismountButton.gameObject.activeSelf) _rideRow.Add(dismountButton);
+        if (autoTravelButton != null && autoTravelButton.gameObject.activeSelf) _rideRow.Add(autoTravelButton);
+        if (_rideRow.Count == 0) return;
+
+        float total = -rideButtonSpacing;
+        foreach (Button b in _rideRow) total += ((RectTransform)b.transform).rect.width + rideButtonSpacing;
+
+        float x = _rideRowBaseX - total * 0.5f;
+        foreach (Button b in _rideRow)
+        {
+            var rt = (RectTransform)b.transform;
+            float w = rt.rect.width;
+            rt.anchoredPosition = new Vector2(x + w * rt.pivot.x, _rideRowBaseY);
+            x += w + rideButtonSpacing;
+        }
+    }
+
+    /// <summary>Auto Travel's label reads "stop" while a tour runs, and loses its ad mark (stopping is free).</summary>
+    private void UpdateAutoTravelLabel(bool travelling)
+    {
+        if (autoTravelButton == null || travelling == _autoTravelShowsStop) return;
+        _autoTravelShowsStop = travelling;
+        if (_autoTravelLabel != null)
+        {
+            _autoTravelLabel.SetKey(travelling ? "interaction.auto_travel_stop" : "interaction.auto_travel_button");
+        }
+        if (_autoTravelAdIcon != null) _autoTravelAdIcon.SetActive(!travelling);
     }
 
     private static Button CopyButton(Button template, string objectName, string labelKey, string fallbackLabel,
@@ -313,7 +450,12 @@ public class PlayersInteractionManager : MonoBehaviour
 
             case InteractionTargetType.Rideable:
                 AnimalRider r = ResolveRider();
-                if (r != null && currentTargetAnimal != null) r.TryMount(currentTargetAnimal);
+                if (r != null && currentTargetAnimal != null)
+                {
+                    GrazingAnimal animal = currentTargetAnimal;
+                    // Every few rides ask for (or offer) an ad first; see RideAdGate for the cycle.
+                    RideAdGate.Request(animal, () => r.TryMount(animal));
+                }
                 break;
         }
     }
@@ -485,6 +627,24 @@ public class PlayersInteractionManager : MonoBehaviour
         // Getting off is always on offer while riding, whatever else is targeted.
         bool canDismount = rider != null && rider.IsRiding && !rider.IsTransitioning;
         ShowOnly(dismountButton, canDismount ? dismountButton : null);
+
+        bool riding = rider != null && rider.IsRiding;
+        RideAutoTravel travel = riding ? rider.GetComponent<RideAutoTravel>() : null;
+        bool travelling = travel != null && travel.IsTravelling;
+
+        // Auto Travel stays on offer all ride long; it turns into Stop while a tour runs.
+        ShowOnly(autoTravelButton, canDismount || travelling ? autoTravelButton : null);
+        UpdateAutoTravelLabel(travelling);
+
+        bool canOrbRun = canDismount && JungleOrbRun.Instance != null && JungleOrbRun.Instance.CanOffer(rider);
+        ShowOnly(orbRunButton, canOrbRun ? orbRunButton : null);
+
+        LayoutRideRow();
+
+        // The altitude stick stays up for as long as the player rides something that flies, unless a
+        // tour is flying it for them.
+        bool canFly = canDismount && rider.Mount != null && rider.Mount.canFly && !travelling;
+        SetAltitudeStick(canFly);
     }
 
     /// <summary>
@@ -657,5 +817,20 @@ public class PlayersInteractionManager : MonoBehaviour
         currentTargetAnimal = null;
         HideAllButtons();
         ShowOnly(dismountButton, null);
+        ShowOnly(autoTravelButton, null);
+        ShowOnly(orbRunButton, null);
+        SetAltitudeStick(false);
+    }
+
+    private bool _altitudeStickShown;
+
+    /// <summary>Shows or hides the flying up/down stick, sliding it in from the right like the HUD.</summary>
+    private void SetAltitudeStick(bool show)
+    {
+        if (show == _altitudeStickShown) return;
+        RideFeatures features = RideFeatures.Instance;
+        if (features == null || features.altitudeStick == null) return;
+        _altitudeStickShown = show;
+        UIToggleMotion.SetActive(features.altitudeStick.gameObject, show, 0f, new Vector2(80f, 0f));
     }
 }

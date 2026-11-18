@@ -741,6 +741,30 @@ namespace IdyllicFantasyNature
             return new Vector2(moveX, moveZ);
         }
 
+        /// <summary>
+        /// Up/down input this frame, -1..1: Space / left Ctrl on the keyboard, else the on-screen up and
+        /// down buttons (see <see cref="SetInspectorVerticalInput"/>). Used for flying mounts.
+        /// </summary>
+        public float ReadVerticalInput()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.spaceKey.isPressed) return 1f;
+                if (Keyboard.current.leftCtrlKey.isPressed) return -1f;
+            }
+            if (Gamepad.current != null)
+            {
+                if (Gamepad.current.buttonSouth.isPressed) return 1f;
+                if (Gamepad.current.buttonEast.isPressed) return -1f;
+            }
+#else
+            if (Input.GetKey(KeyCode.Space)) return 1f;
+            if (Input.GetKey(KeyCode.LeftControl)) return -1f;
+#endif
+            return _inspectorVerticalInput;
+        }
+
         /// <summary>Whether the run key is held (left shift).</summary>
         public bool IsRunPressed()
         {
