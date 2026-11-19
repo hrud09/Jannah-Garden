@@ -140800,6 +140800,8 @@ MonoBehaviour:
   aspectRatioFitter: {fileID: 1865022748}
   doorImage: {fileID: 1856835414}
   openButton: {fileID: 747197435}
+  skipIntroButton: {fileID: 0}
+  skipLabelKey: tutorial.skip_button
   canvasGroup: {fileID: 804719157}
   playOncePerSession: 1
   playbackSpeed: 1.5
@@ -210422,12 +210424,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0767086d3f1d64d68a7a3c20973c4de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JungleOrbRun
-  orbCount: 10
-  timeLimit: 240
+  orbCount: 20
+  timeLimit: 60
   rewardCoins: 50
-  collectRadius: 3
-  orbHeight: 3.3
-  minSpacing: 12
+  collectRadius: 2.5
+  collectHeight: 3
+  orbHeight: 1.8
+  minSpacing: 8
+  fieldRadius: 40
+  clearance: 1.5
+  respawnDelay: 8
+  leaveJungleGrace: 3
   orbPrefab: {fileID: 5029477310905836048, guid: f1bc75bd894e648ddb330409ad4785f5, type: 3}
   hud: {fileID: 210140094}
   countText: {fileID: 56728170}
