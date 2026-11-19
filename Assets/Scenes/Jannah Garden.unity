@@ -90718,7 +90718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _mouseSensity
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _touchDragSensitivity
@@ -90726,7 +90726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2531667858752797861, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: _sensitivityMultiplier
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2531667859275332615, guid: a3af83311772f6f42825f33d87641a66, type: 3}
       propertyPath: m_Name
