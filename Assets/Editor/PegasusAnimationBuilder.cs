@@ -85,6 +85,11 @@ public static class PegasusAnimationBuilder
         }
 
         AssetDatabase.SaveAssets();
+
+        // The controller is deleted and recreated at the same path (same GUID). When the prefab's saved
+        // reference doesn't change, the prefab in memory can keep pointing at the deleted controller,
+        // leaving every Pegasus with "Animator does not have an AnimatorController". Reimport to re-resolve.
+        AssetDatabase.ImportAsset(PrefabPath, ImportAssetOptions.ForceUpdate);
     }
 
     // ─── Import ─────────────────────────────────────────────────────────────────
@@ -180,8 +185,13 @@ public static class PegasusAnimationBuilder
 
     private static AnimationClip LoadClip(string name)
     {
-        return AssetDatabase.LoadAllAssetsAtPath(ModelPath).OfType<AnimationClip>()
-            .FirstOrDefault(c => c.name == name || c.name.EndsWith("|" + name));
+        // Skip Unity's hidden "__preview__<take>" clips: they also end in "|<name>" but are the raw takes,
+        // without the import settings: not looping and, for the gallops, twice the clip's real length
+        // (half a second of motion, then half a second frozen). States built on them play once and stall.
+        AnimationClip[] clips = AssetDatabase.LoadAllAssetsAtPath(ModelPath).OfType<AnimationClip>()
+            .Where(c => !c.name.StartsWith("__preview__")).ToArray();
+        return clips.FirstOrDefault(c => c.name == name) ??
+               clips.FirstOrDefault(c => c.name.EndsWith("|" + name));
     }
 
     // ─── Key moments in the flapping gallop ─────────────────────────────────────

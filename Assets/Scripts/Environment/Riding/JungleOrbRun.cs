@@ -5,14 +5,16 @@ using UnityEngine;
 /// <summary>
 /// The Jungle Orb Run: a mini-game played on camelback in the jungle.
 ///
-/// <para>Riding a camel in the jungle puts an "Orb Run" button beside Dismount. Starting it scatters
-/// <see cref="orbCount"/> glowing orbs along the jungle path, each at camel-back height, and starts a
-/// timer. Riding through an orb collects it. Collecting every one before time runs out wins
-/// <see cref="rewardCoins"/> Noor Coins, with the offer to double them by watching an ad. Running out of
-/// time, getting off, or swapping onto a pegasus ends the run with nothing.</para>
+/// <para>Whenever the player is in the jungle (on foot or riding) a field of <see cref="orbCount"/>
+/// glowing orbs is laid out around them. Walking or riding through an orb collects it; the first one
+/// collected starts a <see cref="timeLimit"/>-second timer. Collecting every orb in time wins
+/// <see cref="rewardCoins"/> Noor Coins, with the offer to double them by watching an ad. When time runs
+/// out the field is cleared and, after a short pause, a fresh one is laid out. Riding a camel also puts an
+/// "Orb Run" button beside Dismount that lays out a fresh field and starts the clock straight away.</para>
 ///
-/// <para>Orbs are placed on the jungle's painted road (so a camel can always reach them), spread as far
-/// apart as possible, with room around them and a route from the camel's start.</para>
+/// <para>Orbs are placed among the trees (not only on the road) within <see cref="fieldRadius"/> of the
+/// player, never inside a tree, rock or any other collider, off water and steep slopes, spread apart and
+/// reachable from where the player stands.</para>
 /// </summary>
 public class JungleOrbRun : MonoBehaviour
 {
@@ -29,23 +31,39 @@ public class JungleOrbRun : MonoBehaviour
 
     [Header("Game")]
     [Tooltip("Orbs to collect in one run.")]
-    [Range(3, 30)]
-    public int orbCount = 10;
+    [Range(3, 40)]
+    public int orbCount = 20;
 
-    [Tooltip("Time allowed for one run (seconds).")]
-    public float timeLimit = 240f;
+    [Tooltip("Time allowed for one run (seconds), counted from the first orb collected.")]
+    public float timeLimit = 60f;
 
     [Tooltip("Noor Coins for collecting every orb (doubled by watching an ad).")]
     public int rewardCoins = 50;
 
-    [Tooltip("How close (metres, measured flat) the camel's back must pass to collect an orb.")]
-    public float collectRadius = 3f;
+    [Tooltip("How close (metres, measured flat) the player, or their mount's back, must pass to collect an orb.")]
+    public float collectRadius = 2.5f;
 
-    [Tooltip("Orb height above the ground (metres): about the rider's chest on a camel.")]
-    public float orbHeight = 3.3f;
+    [Tooltip("How far above or below the orb (metres) still counts, so it works on foot and on a camel.")]
+    public float collectHeight = 3f;
+
+    [Tooltip("Orb height above the ground (metres): reachable on foot and from a camel's back.")]
+    public float orbHeight = 1.8f;
 
     [Tooltip("Orbs keep at least this far apart (metres).")]
-    public float minSpacing = 12f;
+    public float minSpacing = 8f;
+
+    [Tooltip("Orbs are laid out within this distance of the player (metres). Keeps a full field " +
+             "collectable inside the time limit.")]
+    public float fieldRadius = 40f;
+
+    [Tooltip("Free space needed around an orb (metres) — keeps orbs out of trees, rocks and props.")]
+    public float clearance = 1.5f;
+
+    [Tooltip("Seconds after a run ends (won or timed out) before a fresh field is laid out.")]
+    public float respawnDelay = 8f;
+
+    [Tooltip("An untouched field is cleared once the player has been out of the jungle this long (seconds).")]
+    public float leaveJungleGrace = 3f;
 
     [Header("Art")]
     [Tooltip("What an orb looks like. Built from the question-mark orb's glow by the ride features builder.")]
@@ -56,15 +74,22 @@ public class JungleOrbRun : MonoBehaviour
     public TMP_Text countText;
     public TMP_Text timerText;
 
-    /// <summary>True while a run is on.</summary>
+    /// <summary>True while the clock is running.</summary>
     public bool IsRunning { get; private set; }
+
+    /// <summary>True while a field of orbs is out (waiting for the first pick-up, or mid-run).</summary>
+    public bool HasField => _orbs.Count > 0 || IsRunning;
 
     private readonly List<GameObject> _orbs = new List<GameObject>();
     private AnimalRider _rider;
+    private Transform _player;
     private float _endTime;
     private int _collected;
     private int _total;
     private int _lastSecond = -1;
+    private float _nextFieldTime;
+    private float _outOfJungleSince = -1f;
+    private float _nextPlayerLookup;
 
     private void Awake()
     {
@@ -81,6 +106,7 @@ public class JungleOrbRun : MonoBehaviour
     public bool CanOffer(AnimalRider rider)
     {
         if (IsRunning || rider == null || !rider.IsRiding || rider.IsTransitioning) return false;
+        if (_collected > 0) return false; // A field is mid-collection (the clock starts on the first orb).
         if (rider.Mount == null || rider.Mount.canFly) return false;
         if (rider.Driver != null) return false; // Not during Auto Travel.
         return RideRoutes.InJungle(rider.Mount.transform.position);
@@ -101,7 +127,7 @@ public class JungleOrbRun : MonoBehaviour
         RideFeatures features = RideFeatures.Instance;
         panel.Show(
             RideFeatures.Loc("orb_run.title"),
-            RideFeatures.Loc("orb_run.body", orbCount, Mathf.RoundToInt(timeLimit / 60f), rewardCoins),
+            RideFeatures.Loc("orb_run.body", orbCount, Mathf.RoundToInt(timeLimit), rewardCoins),
             RideFeatures.Loc("orb_run.note"),
             features != null ? features.orbIcon : null,
             RideFeatures.Loc("orb_run.start"), false, () => Begin(rider),
@@ -109,69 +135,145 @@ public class JungleOrbRun : MonoBehaviour
             null);
     }
 
-    /// <summary>Places the orbs and starts the clock.</summary>
+    /// <summary>Lays out a fresh field around the camel and starts the clock straight away.</summary>
     public void Begin(AnimalRider rider)
     {
         if (!CanOffer(rider)) return;
+        _rider = rider;
+        if (!LayField(rider.Mount.transform.position, false)) return;
+        StartClock();
+        RideFeatures.Toast(RideFeatures.Loc("orb_run.go"), ToastTone.Info);
+    }
 
-        List<Vector3> spots = PickSpots(rider.Mount.transform.position);
+    /// <summary>
+    /// Places <see cref="orbCount"/> orbs around <paramref name="centre"/> and shows the HUD with the full
+    /// time still on it. False (with a toast unless <paramref name="quiet"/>) when there was no room.
+    /// </summary>
+    private bool LayField(Vector3 centre, bool quiet)
+    {
+        List<Vector3> spots = PickSpots(centre);
         if (spots.Count < 3)
         {
-            RideFeatures.Toast(RideFeatures.Loc("orb_run.no_spots"), ToastTone.Warning);
-            return;
+            if (!quiet) RideFeatures.Toast(RideFeatures.Loc("orb_run.no_spots"), ToastTone.Warning);
+            return false;
         }
 
         ClearOrbs();
         foreach (Vector3 spot in spots) _orbs.Add(SpawnOrb(spot + Vector3.up * orbHeight));
 
-        _rider = rider;
         _total = _orbs.Count;
         _collected = 0;
-        _endTime = Time.time + timeLimit;
         _lastSecond = -1;
-        IsRunning = true;
+        IsRunning = false;
+        _outOfJungleSince = -1f;
 
         if (hud != null) UIToggleMotion.SetActive(hud, true, 0f, new Vector2(0f, 40f));
         RefreshHud(true);
         GameSfx.Play(SoundEffect.OrbAppear);
-        RideFeatures.Toast(RideFeatures.Loc("orb_run.go"), ToastTone.Info);
+        return true;
+    }
+
+    private void StartClock()
+    {
+        _endTime = Time.time + timeLimit;
+        _lastSecond = -1;
+        IsRunning = true;
+        RefreshHud(true);
     }
 
     private void Update()
     {
-        if (!IsRunning) return;
+        if (!ResolveCollector(out Vector3 collector, out bool autoDriven)) return;
 
-        // Off the camel, onto something else, or the camel taken away: the run is over.
-        if (_rider == null || !_rider.IsRiding || _rider.Mount == null || _rider.Mount.canFly)
+        bool inJungle = RideRoutes.InJungle(collector);
+
+        // No field out: lay one when the player is in the jungle and the pause after the last run is over.
+        if (!HasField)
         {
-            End(RideFeatures.Loc("orb_run.abandoned"));
+            if (inJungle && !autoDriven && Time.time >= _nextFieldTime)
+            {
+                if (LayField(collector, true))
+                    RideFeatures.Toast(RideFeatures.Loc("orb_run.field_hint", _total, Mathf.RoundToInt(timeLimit)), ToastTone.Info);
+                else
+                    _nextFieldTime = Time.time + respawnDelay; // No room here; try again in a bit.
+            }
             return;
         }
 
-        if (Time.time >= _endTime)
+        if (IsRunning && Time.time >= _endTime)
         {
             End(RideFeatures.Loc("orb_run.time_up"));
             return;
         }
 
-        Vector3 seat = _rider.Mount.SeatPosition;
-        for (int i = _orbs.Count - 1; i >= 0; i--)
+        // An untouched field is tidied away once the player has left the jungle for a moment.
+        if (!IsRunning)
         {
-            GameObject orb = _orbs[i];
-            if (orb == null) { _orbs.RemoveAt(i); continue; }
+            if (inJungle) _outOfJungleSince = -1f;
+            else if (_outOfJungleSince < 0f) _outOfJungleSince = Time.time;
+            else if (Time.time - _outOfJungleSince > leaveJungleGrace)
+            {
+                ClearField();
+                return;
+            }
+        }
 
-            Vector3 d = orb.transform.position - seat;
-            float vertical = Mathf.Abs(d.y);
-            d.y = 0f;
-            if (d.magnitude > collectRadius || vertical > 2.5f) continue;
+        // Auto Travel steers on its own: it doesn't get to pick orbs up for the player.
+        if (!autoDriven)
+        {
+            for (int i = _orbs.Count - 1; i >= 0; i--)
+            {
+                GameObject orb = _orbs[i];
+                if (orb == null) { _orbs.RemoveAt(i); continue; }
 
-            Collect(orb);
-            _orbs.RemoveAt(i);
+                Vector3 d = orb.transform.position - collector;
+                float vertical = Mathf.Abs(d.y);
+                d.y = 0f;
+                if (d.magnitude > collectRadius || vertical > collectHeight) continue;
+
+                Collect(orb);
+                _orbs.RemoveAt(i);
+                if (!IsRunning) StartClock(); // The first orb starts the clock.
+            }
         }
 
         RefreshHud(false);
 
         if (_collected >= _total) Win();
+    }
+
+    /// <summary>
+    /// Where pick-ups are measured from: the mount's back while riding, otherwise the player's body.
+    /// <paramref name="autoDriven"/> is true while Auto Travel is steering.
+    /// </summary>
+    private bool ResolveCollector(out Vector3 collector, out bool autoDriven)
+    {
+        collector = default;
+        autoDriven = false;
+
+        if ((_player == null || _rider == null) && Time.unscaledTime >= _nextPlayerLookup)
+        {
+            _nextPlayerLookup = Time.unscaledTime + 1f;
+            if (_rider == null) _rider = FindFirstObjectByType<AnimalRider>();
+            if (_player == null)
+            {
+                GameObject tagged = null;
+                try { tagged = GameObject.FindGameObjectWithTag("Player"); }
+                catch (UnityException) { }
+                _player = tagged != null ? tagged.transform : _rider != null ? _rider.transform : null;
+            }
+        }
+
+        if (_rider != null && _rider.IsRiding && _rider.Mount != null)
+        {
+            collector = _rider.Mount.SeatPosition;
+            autoDriven = _rider.Driver != null;
+            return true;
+        }
+
+        if (_player == null) return false;
+        collector = _player.position + Vector3.up * 1f;
+        return true;
     }
 
     private void Collect(GameObject orb)
@@ -184,9 +286,7 @@ public class JungleOrbRun : MonoBehaviour
 
     private void Win()
     {
-        IsRunning = false;
-        ClearOrbs();
-        HideHud();
+        ClearField();
         GameSfx.Play(SoundEffect.TreasureBoxSetComplete);
 
         int coins = rewardCoins;
@@ -224,19 +324,28 @@ public class JungleOrbRun : MonoBehaviour
 
     private void End(string message)
     {
-        IsRunning = false;
-        ClearOrbs();
-        HideHud();
+        ClearField();
         RideFeatures.Toast(message, ToastTone.Warning);
     }
 
-    /// <summary>Stops a run without a message (scene teardown, tests).</summary>
+    /// <summary>
+    /// Clears the field without a message (Auto Travel starting, scene teardown, tests). A fresh one is
+    /// laid out after <see cref="respawnDelay"/> if the player is still in the jungle.
+    /// </summary>
     public void Cancel()
     {
-        if (!IsRunning) return;
+        if (!HasField) return;
+        ClearField();
+    }
+
+    private void ClearField()
+    {
         IsRunning = false;
+        _collected = 0;
         ClearOrbs();
         HideHud();
+        _nextFieldTime = Time.time + respawnDelay;
+        _outOfJungleSince = -1f;
     }
 
     private void OnDisable() => Cancel();
@@ -250,13 +359,15 @@ public class JungleOrbRun : MonoBehaviour
             LocalizedRendering.SetPlainText(countText, _collected + " / " + _total);
         }
 
-        int left = Mathf.CeilToInt(Mathf.Max(0f, _endTime - Time.time));
+        // Before the first pick-up the clock shows the full time it will start from.
+        float remaining = IsRunning ? _endTime - Time.time : timeLimit;
+        int left = Mathf.CeilToInt(Mathf.Max(0f, remaining));
         if (timerText != null && (force || left != _lastSecond))
         {
             _lastSecond = left;
             LocalizedRendering.SetPlainText(timerText, (left / 60) + ":" + (left % 60).ToString("00"));
-            // The last half-minute reads in warm red.
-            timerText.color = left <= 30 ? new Color(0.96f, 0.55f, 0.45f) : new Color(0.98f, 0.96f, 0.93f);
+            // The last ten seconds read in warm red.
+            timerText.color = IsRunning && left <= 10 ? new Color(0.96f, 0.55f, 0.45f) : new Color(0.98f, 0.96f, 0.93f);
         }
     }
 
@@ -268,21 +379,60 @@ public class JungleOrbRun : MonoBehaviour
     // ─── Orbs ───────────────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Jungle road points with room for a camel, reachable from <paramref name="start"/>, spread apart and
-    /// not right where the camel already stands.
+    /// Up to <see cref="orbCount"/> spots around <paramref name="centre"/>. Thick jungle can leave too
+    /// little open ground at the full spacing, so each pass that falls short reaches a bit further out and
+    /// packs the orbs a bit closer, until the full count fits.
     /// </summary>
-    private List<Vector3> PickSpots(Vector3 start)
+    private List<Vector3> PickSpots(Vector3 centre)
+    {
+        // (radius, spacing, clearance) multipliers, loosest last.
+        Vector3[] passes =
+        {
+            new Vector3(1f, 1f, 1f),
+            new Vector3(1.3f, 0.85f, 0.85f),
+            new Vector3(1.6f, 0.7f, 0.7f),
+            new Vector3(2f, 0.55f, 0.6f),
+        };
+
+        List<Vector3> best = new List<Vector3>();
+        foreach (Vector3 k in passes)
+        {
+            List<Vector3> spots = PickSpots(centre, fieldRadius * k.x, minSpacing * k.y, clearance * k.z);
+            if (spots.Count > best.Count) best = spots;
+            if (best.Count >= orbCount) break;
+        }
+        return best;
+    }
+
+    /// <summary>
+    /// Jungle ground within <paramref name="radius"/> of <paramref name="centre"/>: off water and steep
+    /// slopes, clear of every collider (trees, rocks, lanterns, props) by <paramref name="clear"/>,
+    /// reachable from the centre, <paramref name="spacing"/> apart and not right where the player stands.
+    /// </summary>
+    private List<Vector3> PickSpots(Vector3 centre, float radius, float spacing, float clear)
     {
         var candidates = new List<Vector3>();
         GardenPathfinder pf = RideRoutes.Pathfinder;
-        foreach (Vector3 p in RideRoutes.RoadPoints(true, 3f))
+        Terrain terrain = RideRoutes.Terrain;
+        const float step = 2.5f;
+
+        for (float x = -radius; x <= radius; x += step)
         {
-            if (Vector3.Distance(p, start) < 8f) continue;
-            if (!RideRoutes.IsClear(p, 1.2f, orbHeight + 1f)) continue;
-            candidates.Add(p);
+            for (float z = -radius; z <= radius; z += step)
+            {
+                if (x * x + z * z > radius * radius) continue;
+                // A little jitter so the field doesn't read as a grid.
+                var p = new Vector3(centre.x + x + Random.Range(-1f, 1f), 0f, centre.z + z + Random.Range(-1f, 1f));
+                if (!RideRoutes.InJungle(p) || !RideRoutes.InPlayArea(p, 6f)) continue;
+                p.y = RideRoutes.GroundHeight(p);
+                if (FlatDistance(p, centre) < 6f) continue;
+                if (terrain != null && Steepness(terrain, p) > 30f) continue;
+                if (!RideRoutes.IsClear(p, clear, orbHeight + 1f)) continue;
+                candidates.Add(p);
+            }
         }
 
-        List<Vector3> spread = RideRoutes.Spread(candidates, orbCount * 2, start);
+        List<Vector3> spread = RideRoutes.Spread(candidates, orbCount * 3, centre);
         var picked = new List<Vector3>();
         foreach (Vector3 p in spread)
         {
@@ -290,13 +440,27 @@ public class JungleOrbRun : MonoBehaviour
             bool tooClose = false;
             foreach (Vector3 q in picked)
             {
-                if (Vector3.Distance(p, q) < minSpacing) { tooClose = true; break; }
+                if (FlatDistance(p, q) < spacing) { tooClose = true; break; }
             }
             if (tooClose) continue;
-            if (pf != null && pf.FindPath(start, p) == null) continue;
+            // Water, cliffs and the lake: skip anything the player can't actually get to.
+            if (pf != null && pf.FindPath(centre, p) == null) continue;
             picked.Add(p);
         }
         return picked;
+    }
+
+    private static float Steepness(Terrain terrain, Vector3 world)
+    {
+        TerrainData data = terrain.terrainData;
+        Vector3 local = world - terrain.transform.position;
+        return data.GetSteepness(local.x / data.size.x, local.z / data.size.z);
+    }
+
+    private static float FlatDistance(Vector3 a, Vector3 b)
+    {
+        float dx = a.x - b.x, dz = a.z - b.z;
+        return Mathf.Sqrt(dx * dx + dz * dz);
     }
 
     private GameObject SpawnOrb(Vector3 at)

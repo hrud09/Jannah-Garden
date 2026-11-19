@@ -730,11 +730,11 @@
         },
         {
             "key": "orb_run.body",
-            "value": "Collect all {0} orbs along the jungle path within {1} minutes to earn {2} Noor Coins."
+            "value": "Collect all {0} orbs in the jungle within {1} seconds to earn {2} Noor Coins."
         },
         {
             "key": "orb_run.note",
-            "value": "Ride through an orb to collect it"
+            "value": "Walk or ride through an orb to collect it"
         },
         {
             "key": "orb_run.start",
@@ -746,7 +746,7 @@
         },
         {
             "key": "orb_run.go",
-            "value": "Orb Run started! Follow the jungle path."
+            "value": "Orb Run started! Grab every orb before time runs out."
         },
         {
             "key": "orb_run.complete_title",
@@ -783,6 +783,10 @@
         {
             "key": "orb_run.no_spots",
             "value": "No room for an Orb Run here. Try the jungle path."
+        },
+        {
+            "key": "orb_run.field_hint",
+            "value": "Glowing orbs nearby! Collect all {0} within {1} seconds — the timer starts with the first one."
         },
         {
             "key": "placed_item.relocate_button",

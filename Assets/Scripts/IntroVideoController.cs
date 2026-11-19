@@ -7,8 +7,8 @@ using UnityEngine.Video;
 /// <summary>
 /// Drives the Jannah Garden opening the first time the scene is entered in a given app session:
 /// the closed door artwork is shown with an "Open" button in the middle of the screen, and only
-/// when the player presses it does the door-opening cinematic play. When the video ends the panel
-/// fades out on its own and the player is in the garden — there is no skip step any more.
+/// when the player presses it does the door-opening cinematic play. While it plays a Skip button sits
+/// in the top-right corner; pressing it (or the video ending) fades the panel out into the garden.
 ///
 /// Attach to the "Opening Canvas" root; <see cref="OpenDoor"/> can also be wired to a UI button
 /// directly from the inspector (the button referenced by <see cref="openButton"/> is wired in code).
@@ -34,6 +34,13 @@ public class IntroVideoController : MonoBehaviour
     [FormerlySerializedAs("skipButton")]
     public Button openButton;
 
+    [Tooltip("Top-right button shown while the cinematic plays; jumps straight into the garden. " +
+             "Optional: if left empty one is made at runtime by cloning the Open button's style.")]
+    public Button skipIntroButton;
+
+    [Tooltip("Localization key for the Skip button's label.")]
+    public string skipLabelKey = "tutorial.skip_button";
+
     public CanvasGroup canvasGroup;
 
     [Header("Behaviour")]
@@ -52,8 +59,7 @@ public class IntroVideoController : MonoBehaviour
     public float fadeOutDuration = 0.6f;
 
     [Tooltip("Safety net: if the video hasn't started playing this many seconds after Open is " +
-             "pressed, go straight into the garden. Without a skip button this is the only way " +
-             "out of a video that fails to prepare on a given device.")]
+             "pressed, go straight into the garden (the Skip button is also always available).")]
     public float playbackStartTimeout = 8f;
 
     private static bool s_hasPlayedThisSession;
@@ -116,6 +122,9 @@ public class IntroVideoController : MonoBehaviour
             openButton.interactable = true;
             openButton.onClick.AddListener(OpenDoor);
         }
+
+        EnsureSkipButton();
+        if (skipIntroButton != null) skipIntroButton.gameObject.SetActive(false);
 
         if (videoPlayer == null) return;
 
@@ -186,6 +195,8 @@ public class IntroVideoController : MonoBehaviour
             openButton.onClick.RemoveListener(OpenDoor);
             openButton.gameObject.SetActive(false);
         }
+
+        ShowSkipButton();
 
         // No video to play (missing reference or a load failure) — go straight into the garden.
         if (videoPlayer == null)
@@ -292,8 +303,61 @@ public class IntroVideoController : MonoBehaviour
         }
 
         if (openButton != null) openButton.onClick.RemoveListener(OpenDoor);
+        if (skipIntroButton != null)
+        {
+            skipIntroButton.onClick.RemoveListener(SkipIntro);
+            skipIntroButton.interactable = false;
+        }
 
         StartCoroutine(FadeOutAndDisable());
+    }
+
+    /// <summary>Wired to the Skip button: stops the cinematic and goes straight into the garden.</summary>
+    public void SkipIntro()
+    {
+        if (_ending) return;
+        GameEvents.IntroVideo("Skipped");
+        EndIntro();
+    }
+
+    /// <summary>
+    /// Makes sure there is a Skip button: uses the inspector one if set, otherwise clones the Open
+    /// button (so it matches the panel's look) and pins the copy to the top-right corner.
+    /// </summary>
+    private void EnsureSkipButton()
+    {
+        if (skipIntroButton == null && openButton != null)
+        {
+            Transform parent = openingSceneContents != null ? openingSceneContents.transform : transform;
+            GameObject clone = Instantiate(openButton.gameObject, parent, false);
+            clone.name = "Skip Button";
+            clone.transform.SetAsLastSibling(); // Above the video.
+
+            var rt = (RectTransform)clone.transform;
+            rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(1f, 1f);
+            rt.sizeDelta = new Vector2(220f, 80f);
+            rt.anchoredPosition = new Vector2(-48f, -48f);
+
+            skipIntroButton = clone.GetComponent<Button>();
+            skipIntroButton.onClick = new Button.ButtonClickedEvent(); // Drop anything copied from Open.
+
+            var localized = clone.GetComponentInChildren<LocalizedText>(true);
+            if (localized != null) localized.SetKey(skipLabelKey);
+        }
+
+        if (skipIntroButton != null)
+        {
+            skipIntroButton.onClick.RemoveListener(SkipIntro);
+            skipIntroButton.onClick.AddListener(SkipIntro);
+        }
+    }
+
+    private void ShowSkipButton()
+    {
+        if (skipIntroButton == null) return;
+        skipIntroButton.transform.SetAsLastSibling();
+        skipIntroButton.interactable = true;
+        skipIntroButton.gameObject.SetActive(true);
     }
 
     private IEnumerator FadeOutAndDisable()
@@ -359,6 +423,10 @@ public class IntroVideoController : MonoBehaviour
         if (openButton != null)
         {
             openButton.onClick.RemoveListener(OpenDoor);
+        }
+        if (skipIntroButton != null)
+        {
+            skipIntroButton.onClick.RemoveListener(SkipIntro);
         }
 
         ReleaseRuntimeTexture();
