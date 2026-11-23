@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 4518090244822660568}
   - component: {fileID: 8712605500442755753}
   - component: {fileID: -7196924104467520205}
-  - component: {fileID: 5591133708225106703}
   m_Layer: 0
   m_Name: Rock_Small_01
   m_TagString: Untagged
@@ -176,27 +175,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -128571533498573613, guid: 6295aa84103d65641823e355f15208d5, type: 3}
---- !u!114 &5591133708225106703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3889046910303973218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}
 --- !u!1 &5481094551019837031
 GameObject:
   m_ObjectHideFlags: 0

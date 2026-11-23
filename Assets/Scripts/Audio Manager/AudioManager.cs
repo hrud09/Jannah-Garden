@@ -206,6 +206,15 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)]
     public float bgmVolume = 1f;
 
+    [Header("Majlis Music")]
+    [Tooltip("Played instead of the garden music while the player is seated in the majlis. " +
+             "Leave empty to keep the garden music playing there.")]
+    public AudioClip[] majlisMusics;
+
+    [Tooltip("Seconds to fade between the garden music and the majlis music.")]
+    [Range(0f, 5f)]
+    public float musicCrossfadeDuration = 1.2f;
+
     [Header("Mixing")]
     [Range(0f, 1f)] public float masterVolume = 1f;
     [Range(0f, 1f)] public float uiVolume = 1f;
@@ -363,7 +372,11 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        if (backgroundMusics == null || backgroundMusics.Length == 0) return;
+        // A fade owns the source until it finishes; don't start a track underneath it.
+        if (_musicFade != null) return;
+
+        AudioClip[] playlist = ActivePlaylist();
+        if (playlist == null || playlist.Length == 0) return;
 
         if (!IsOwnSource(bgmSource))
         {
@@ -379,13 +392,119 @@ public class AudioManager : MonoBehaviour
 
     private void PlayRandomBGM()
     {
-        if (backgroundMusics == null || backgroundMusics.Length == 0) return;
+        AudioClip[] playlist = ActivePlaylist();
+        if (playlist == null || playlist.Length == 0) return;
 
         EnsureSources();
 
-        int randomIndex = Random.Range(0, backgroundMusics.Length);
-        bgmSource.clip = backgroundMusics[randomIndex];
+        int randomIndex = Random.Range(0, playlist.Length);
+        bgmSource.clip = playlist[randomIndex];
+        bgmSource.time = 0f;
+        bgmSource.volume = bgmVolume;
         bgmSource.Play();
+    }
+
+    // ── Majlis music ────────────────────────────────────────────────────────────
+
+    /// <summary>True while the player is seated in the majlis (see <see cref="SetInMajlis"/>).</summary>
+    public bool IsInMajlis { get; private set; }
+
+    private Coroutine _musicFade;
+    private AudioClip _resumeGardenClip;
+    private float _resumeGardenTime;
+
+    private static bool HasClips(AudioClip[] clips)
+    {
+        if (clips == null) return false;
+        for (int i = 0; i < clips.Length; i++)
+            if (clips[i] != null) return true;
+        return false;
+    }
+
+    /// <summary>The list the music loop draws from: majlis tracks while seated (if any are assigned),
+    /// otherwise the garden tracks.</summary>
+    private AudioClip[] ActivePlaylist()
+    {
+        return IsInMajlis && HasClips(majlisMusics) ? majlisMusics : backgroundMusics;
+    }
+
+    /// <summary>
+    /// Switches the background music between the garden and the majlis. Called by
+    /// <see cref="MajlisSeating"/> when the player sits down and stands up. With no majlis
+    /// tracks assigned this is a no-op and the garden music carries on.
+    /// </summary>
+    public void SetInMajlis(bool inMajlis)
+    {
+        if (IsInMajlis == inMajlis) return;
+        IsInMajlis = inMajlis;
+
+        if (!HasClips(majlisMusics)) return;
+
+        EnsureSources();
+
+        if (inMajlis)
+        {
+            // Remember where the garden track was so standing up picks it back up mid-song.
+            _resumeGardenClip = bgmSource.clip;
+            _resumeGardenTime = bgmSource.isPlaying ? bgmSource.time : 0f;
+            StartMusicFade(PickRandom(majlisMusics), 0f);
+        }
+        else
+        {
+            AudioClip garden = _resumeGardenClip != null ? _resumeGardenClip : PickRandom(backgroundMusics);
+            float time = _resumeGardenClip != null ? _resumeGardenTime : 0f;
+            _resumeGardenClip = null;
+            StartMusicFade(garden, time);
+        }
+    }
+
+    private static AudioClip PickRandom(AudioClip[] clips)
+    {
+        if (clips == null || clips.Length == 0) return null;
+        int start = Random.Range(0, clips.Length);
+        for (int i = 0; i < clips.Length; i++)
+        {
+            AudioClip c = clips[(start + i) % clips.Length];
+            if (c != null) return c;
+        }
+        return null;
+    }
+
+    private void StartMusicFade(AudioClip next, float startTime)
+    {
+        if (_musicFade != null) StopCoroutine(_musicFade);
+        _musicFade = StartCoroutine(FadeMusicTo(next, startTime));
+    }
+
+    private System.Collections.IEnumerator FadeMusicTo(AudioClip next, float startTime)
+    {
+        float half = Mathf.Max(0f, musicCrossfadeDuration) * 0.5f;
+
+        // Fade out whatever is playing now.
+        float from = bgmSource.volume;
+        for (float t = 0f; t < half && bgmSource.isPlaying; t += Time.unscaledDeltaTime)
+        {
+            bgmSource.volume = Mathf.Lerp(from, 0f, t / half);
+            yield return null;
+        }
+
+        bgmSource.Stop();
+        bgmSource.clip = next;
+        if (next != null)
+        {
+            bgmSource.time = Mathf.Clamp(startTime, 0f, Mathf.Max(0f, next.length - 0.05f));
+            bgmSource.volume = 0f;
+            bgmSource.Play();
+
+            for (float t = 0f; t < half; t += Time.unscaledDeltaTime)
+            {
+                bgmSource.volume = Mathf.Lerp(0f, bgmVolume, t / half);
+                yield return null;
+            }
+        }
+
+        bgmSource.volume = bgmVolume;
+        _musicFade = null;
     }
 
     private float VolumeFor(SoundCategory category)

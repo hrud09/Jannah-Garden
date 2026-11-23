@@ -77,9 +77,6 @@ public class GameSettingsManager : MonoBehaviour
         bool sfxEnabled = PlayerPrefs.GetInt("SFXEnabled", 1) == 1;
         bool musicEnabled = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;
         bool vibrationEnabled = PlayerPrefs.GetInt("VibrationEnabled", 1) == 1;
-        float normalSpeed = PlayerPrefs.GetFloat("NormalMovementSpeed", 8f);
-        float inspectorSpeed = PlayerPrefs.GetFloat("InspectorMovementSpeed", 25f);
-
         // Apply audio settings to AudioManager
         if (AudioManager.Instance != null)
         {
@@ -87,15 +84,24 @@ public class GameSettingsManager : MonoBehaviour
             AudioManager.Instance.IsMusicMuted = !musicEnabled;
         }
 
-        // Apply movement speed settings to PlayerMovement
+        // Movement speeds: only override PlayerMovement when the player has actually
+        // saved a value from the sliders. Otherwise keep the speeds set on the
+        // PlayerMovement component in the scene rather than forcing hardcoded defaults.
         if (_playerMovement == null)
         {
             _playerMovement = FindObjectOfType<IdyllicFantasyNature.PlayerMovement>();
         }
-        if (_playerMovement != null)
+        float normalSpeed = _playerMovement != null ? _playerMovement.MovementSpeed : 8f;
+        float inspectorSpeed = _playerMovement != null ? _playerMovement.inspectorModeSpeed : 25f;
+        if (PlayerPrefs.HasKey("NormalMovementSpeed"))
         {
-            _playerMovement.SetMovementSpeed(normalSpeed);
-            _playerMovement.SetInspectorModeSpeed(inspectorSpeed);
+            normalSpeed = PlayerPrefs.GetFloat("NormalMovementSpeed");
+            if (_playerMovement != null) _playerMovement.SetMovementSpeed(normalSpeed);
+        }
+        if (PlayerPrefs.HasKey("InspectorMovementSpeed"))
+        {
+            inspectorSpeed = PlayerPrefs.GetFloat("InspectorMovementSpeed");
+            if (_playerMovement != null) _playerMovement.SetInspectorModeSpeed(inspectorSpeed);
         }
 
         // Apply look around speed setting to CameraMovement
@@ -556,10 +562,10 @@ public class GameSettingsManager : MonoBehaviour
         if (reduceMotionToggle != null) reduceMotionToggle.SetIsOnWithoutNotify(UIMotion.ReduceMotion);
 
         if (normalSpeedSlider != null) UpdateNormalSpeedText(normalSpeedSlider.value);
-        else UpdateNormalSpeedText(PlayerPrefs.GetFloat("NormalMovementSpeed", 8f));
+        else UpdateNormalSpeedText(PlayerPrefs.GetFloat("NormalMovementSpeed", _playerMovement != null ? _playerMovement.MovementSpeed : 8f));
 
         if (inspectorSpeedSlider != null) UpdateInspectorSpeedText(inspectorSpeedSlider.value);
-        else UpdateInspectorSpeedText(PlayerPrefs.GetFloat("InspectorMovementSpeed", 25f));
+        else UpdateInspectorSpeedText(PlayerPrefs.GetFloat("InspectorMovementSpeed", _playerMovement != null ? _playerMovement.inspectorModeSpeed : 25f));
 
         if (lookAroundSpeedSlider != null) UpdateLookAroundSpeedText(lookAroundSpeedSlider.value);
         else UpdateLookAroundSpeedText(PlayerPrefs.GetFloat("LookAroundSpeed", 1f));

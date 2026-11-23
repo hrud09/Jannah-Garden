@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 4965904336739352169}
   - component: {fileID: 193777956393650456}
   - component: {fileID: -2284021374974217972}
-  - component: {fileID: 7157623744961492944}
   m_Layer: 0
   m_Name: Stone_Big_02
   m_TagString: Untagged
@@ -171,27 +170,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5861783593225536099, guid: da8409f9a46275c4ea0dc7f0dd8644ae, type: 3}
---- !u!114 &7157623744961492944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5738077422291248339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}
 --- !u!1 &6821231535172279398
 GameObject:
   m_ObjectHideFlags: 0

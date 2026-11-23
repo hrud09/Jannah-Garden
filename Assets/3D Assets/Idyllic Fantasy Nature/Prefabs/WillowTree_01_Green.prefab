@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 13982906599030212}
   - component: {fileID: 5074345979357792949}
   - component: {fileID: 2352095319967433355}
-  - component: {fileID: 6325793645487454853}
   m_Layer: 0
   m_Name: WillowTree_01_Green
   m_TagString: Untagged
@@ -87,27 +86,6 @@ CapsuleCollider:
   m_Height: 7.39
   m_Direction: 1
   m_Center: {x: 0, y: 3.7, z: 0}
---- !u!114 &6325793645487454853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827111804192909182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}
 --- !u!1 &1630821779929513783
 GameObject:
   m_ObjectHideFlags: 0

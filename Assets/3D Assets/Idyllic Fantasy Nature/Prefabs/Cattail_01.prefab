@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1424654990913452651}
   - component: {fileID: 6169785820836039962}
-  - component: {fileID: -6996028255732646467}
   m_Layer: 0
   m_Name: Cattail_01
   m_TagString: Untagged
@@ -58,27 +57,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1665904992614907651}
   m_Enabled: 1
---- !u!114 &-6996028255732646467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769550191730516177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}
 --- !u!1 &8286787675385835767
 GameObject:
   m_ObjectHideFlags: 0

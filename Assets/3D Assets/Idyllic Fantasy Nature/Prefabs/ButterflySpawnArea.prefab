@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3171154537923913093}
   - component: {fileID: 3171154537923913092}
   - component: {fileID: 6223930730623758173}
-  - component: {fileID: 2611928813953574066}
   m_Layer: 0
   m_Name: ButterflySpawnArea
   m_TagString: Untagged
@@ -72,27 +71,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 2, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2611928813953574066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171154537923913090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}
 --- !u!1001 &1348658206426768750
 PrefabInstance:
   m_ObjectHideFlags: 0

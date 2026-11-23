@@ -285,7 +285,6 @@ GameObject:
   - component: {fileID: 4286858591585796297}
   - component: {fileID: 6442205492465566679}
   - component: {fileID: 3885260906792066857}
-  - component: {fileID: -2039628599005310362}
   m_Layer: 0
   m_Name: BroadleafTree_05_Blue
   m_TagString: Untagged
@@ -384,24 +383,3 @@ CapsuleCollider:
   m_Height: 2.41
   m_Direction: 1
   m_Center: {x: -0.3, y: 2.38, z: 0}
---- !u!114 &-2039628599005310362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8533252744133438722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}

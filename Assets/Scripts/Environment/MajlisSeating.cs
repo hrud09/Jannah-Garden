@@ -346,6 +346,7 @@ public class MajlisSeating : MonoBehaviour
 
         GameSfx.PlayAt(SoundEffect.ItemInteract, transform);
         if (showToast) RideFeatures.Toast(RideFeatures.Loc("majlis.joined"), ToastTone.Info);
+        if (AudioManager.Instance != null) AudioManager.Instance.SetInMajlis(true);
         SeatedChanged?.Invoke(true);
     }
 
@@ -367,6 +368,7 @@ public class MajlisSeating : MonoBehaviour
         _phase = Phase.None;
         _seatIndex = -1;
         if (handBack && _movement != null && !(_rider != null && _rider.IsRiding)) _movement.SetMounted(false);
+        if (AudioManager.Instance != null) AudioManager.Instance.SetInMajlis(false);
         SeatedChanged?.Invoke(false);
     }
 

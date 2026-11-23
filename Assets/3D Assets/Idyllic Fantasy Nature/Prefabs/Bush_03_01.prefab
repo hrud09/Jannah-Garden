@@ -5093,7 +5093,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7915993163180168968}
   - component: {fileID: 3134890711087374457}
-  - component: {fileID: 5837880696311475245}
   m_Layer: 0
   m_Name: Bush_03_01
   m_TagString: Untagged
@@ -5147,27 +5146,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8827638006060073058}
   m_Enabled: 1
---- !u!114 &5837880696311475245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7390566949429054898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
-  placementDuration: 60
-  remainingDuration: 60
-  uniqueId: 
-  prefabName: 
-  timerText: {fileID: 0}
-  timerHolder: {fileID: 0}
-  itemRenderers: []
-  isTree: 0
-  itemGFX: {fileID: 0}
 --- !u!1 &7486108536532557335
 GameObject:
   m_ObjectHideFlags: 0
