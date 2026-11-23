@@ -1147,6 +1147,10 @@
         {
             "key": "shop.coin_popup_close",
             "value": "Close"
+        },
+        {
+            "key": "majlis.joined",
+            "value": "You joined the majlis. Move to stand up."
         }
     ]
 }

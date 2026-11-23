@@ -1835,6 +1835,10 @@
         {
             "key": "shop.coin_popup_close",
             "value": "বন্ধ করুন"
+        },
+        {
+            "key": "majlis.joined",
+            "value": "আপনি মজলিসে যোগ দিয়েছেন। উঠতে নড়াচড়া করুন।"
         }
     ]
 }

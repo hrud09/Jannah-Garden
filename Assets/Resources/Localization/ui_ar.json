@@ -1835,6 +1835,10 @@
         {
             "key": "shop.coin_popup_close",
             "value": "إغلاق"
+        },
+        {
+            "key": "majlis.joined",
+            "value": "انضممت إلى المجلس. تحرّك للنهوض."
         }
     ]
 }

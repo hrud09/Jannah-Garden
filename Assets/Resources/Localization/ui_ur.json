@@ -1835,6 +1835,10 @@
         {
             "key": "shop.coin_popup_close",
             "value": "بند کریں"
+        },
+        {
+            "key": "majlis.joined",
+            "value": "آپ مجلس میں شامل ہو گئے۔ اٹھنے کے لیے حرکت کریں۔"
         }
     ]
 }
