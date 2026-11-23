@@ -23,6 +23,8 @@ public class DayNightCycle : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI timeText;
 
+    private long _lastSecond = long.MinValue;
+
     void Start()
     {
         // Always render as full daytime - no time-based lighting/skybox changes.
@@ -49,6 +51,12 @@ public class DayNightCycle : MonoBehaviour
     void UpdateTimeText()
     {
         DateTime now = DateTime.Now;
+        // The display only has second resolution: skip the string allocation and the TMP
+        // mesh rebuild on the ~59 of every 60 frames where nothing visible changed.
+        long second = now.Ticks / TimeSpan.TicksPerSecond;
+        if (second == _lastSecond) return;
+        _lastSecond = second;
+
         int hours = now.Hour;
         int minutes = now.Minute;
         int seconds = now.Second;

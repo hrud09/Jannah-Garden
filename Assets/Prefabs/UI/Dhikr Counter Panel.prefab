@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 1815833520337945535}
   - component: {fileID: 4190282572155860505}
   - component: {fileID: 6735278169948554148}
+  - component: {fileID: 8096097510854577261}
   m_Layer: 5
   m_Name: BG Image Blur
   m_TagString: Untagged
@@ -663,6 +664,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.53
+--- !u!114 &8096097510854577261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233022725427979234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de8af5be2d162b42a2d0131971b1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpaqueTextureRequest
 --- !u!1 &2453151125825328111
 GameObject:
   m_ObjectHideFlags: 0

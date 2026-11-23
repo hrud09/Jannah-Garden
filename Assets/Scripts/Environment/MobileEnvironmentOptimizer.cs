@@ -22,6 +22,9 @@ using UnityEngine.Rendering.Universal;
 ///  - Cuts the Brute Force geometry-shader shell grass down (or off) - geometry shaders are
 ///    extremely slow on mobile GPUs.
 ///  - Renders the minimap camera every Nth frame while collapsed, without the opaque/depth copies.
+///  - Skips the main camera's opaque-colour copy unless a UI blur panel (OpaqueTextureRequest) is open.
+///  - Stops decorative animators (butterflies, controller-less tree/flower animators) from animating
+///    while their renderers are off-screen or culled.
 /// </summary>
 [DisallowMultipleComponent]
 [DefaultExecutionOrder(100)] // after BF_Terrain.Start has pushed its textures into the grass material
@@ -88,6 +91,17 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
     [Range(1, 10)] public int minimapRenderInterval = 2;
     public float minimapFarClip = 80f;
 
+    [Header("Opaque texture")]
+    [Tooltip("Turn the main camera's _CameraOpaqueTexture copy off while no OpaqueTextureRequest is active. " +
+             "The copy is a full-screen blit plus an extra render pass every frame.")]
+    public bool gateOpaqueTexture = true;
+
+    [Header("Animators")]
+    [Tooltip("Animators under the cull roots and these extra roots stop writing transforms while invisible; " +
+             "ones with no controller (they do nothing) are switched off.")]
+    public bool cullDecorativeAnimators = true;
+    public Transform[] extraAnimatorRoots;
+
     [Header("Misc")]
     [Tooltip("Objects that are deactivated while the optimizer is active (e.g. leftover demo objects).")]
     public GameObject[] disableObjects;
@@ -152,6 +166,13 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
 
     private readonly List<GameObject> deactivated = new List<GameObject>();
 
+    private UniversalAdditionalCameraData mainCameraData;
+    private CameraOverrideOption originalMainColor;
+    private bool opaqueGated;
+
+    private readonly List<KeyValuePair<Animator, AnimatorCullingMode>> changedAnimatorModes = new List<KeyValuePair<Animator, AnimatorCullingMode>>();
+    private readonly List<Animator> disabledAnimators = new List<Animator>();
+
     // =================================================================================
 
     private bool ShouldApply()
@@ -210,6 +231,8 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
         ApplyCameraAndFog();
         ApplyShellGrass();
         ApplyMinimap();
+        ApplyOpaqueTextureGate();
+        ApplyAnimatorCulling();
         CollectLightsAndParticles();
         BuildCullingGroup();
 
@@ -279,6 +302,78 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
 
         foreach (GameObject go in deactivated) if (go != null) go.SetActive(true);
         deactivated.Clear();
+
+        if (opaqueGated)
+        {
+            OpaqueTextureRequest.Changed -= RefreshOpaqueTexture;
+            if (mainCameraData != null) mainCameraData.requiresColorOption = originalMainColor;
+            opaqueGated = false;
+        }
+
+        foreach (var kv in changedAnimatorModes) if (kv.Key != null) kv.Key.cullingMode = kv.Value;
+        changedAnimatorModes.Clear();
+        foreach (Animator a in disabledAnimators) if (a != null) a.enabled = true;
+        disabledAnimators.Clear();
+    }
+
+    // ---------------------------------------------------------------- opaque texture
+
+    private void ApplyOpaqueTextureGate()
+    {
+        if (!gateOpaqueTexture || mainCamera == null) return;
+        mainCameraData = mainCamera.GetComponent<UniversalAdditionalCameraData>();
+        if (mainCameraData == null) return;
+
+        originalMainColor = mainCameraData.requiresColorOption;
+        opaqueGated = true;
+        OpaqueTextureRequest.Changed += RefreshOpaqueTexture;
+        RefreshOpaqueTexture();
+    }
+
+    private void RefreshOpaqueTexture()
+    {
+        if (!opaqueGated || mainCameraData == null) return;
+        mainCameraData.requiresColorOption = OpaqueTextureRequest.ActiveCount > 0
+            ? CameraOverrideOption.On
+            : CameraOverrideOption.Off;
+    }
+
+    // ---------------------------------------------------------------- animators
+
+    private void ApplyAnimatorCulling()
+    {
+        if (!cullDecorativeAnimators) return;
+
+        var seen = new HashSet<Animator>();
+        CullAnimatorsUnder(cullRoots, seen);
+        CullAnimatorsUnder(extraAnimatorRoots, seen);
+    }
+
+    private void CullAnimatorsUnder(Transform[] roots, HashSet<Animator> seen)
+    {
+        if (roots == null) return;
+        foreach (Transform root in roots)
+        {
+            if (root == null) continue;
+            // Include inactive: e.g. butterflies keep their Animator disabled between flights.
+            foreach (Animator a in root.GetComponentsInChildren<Animator>(true))
+            {
+                if (!seen.Add(a)) continue;
+
+                if (a.runtimeAnimatorController == null)
+                {
+                    // An Animator with no controller only costs a slot in the animation update.
+                    if (a.enabled) { a.enabled = false; disabledAnimators.Add(a); }
+                    continue;
+                }
+
+                if (a.cullingMode != AnimatorCullingMode.AlwaysAnimate) continue;
+                // State machines keep running (so animation events such as the butterfly's
+                // AnimationEnded still fire); only the transform/skinning writes stop off-screen.
+                changedAnimatorModes.Add(new KeyValuePair<Animator, AnimatorCullingMode>(a, a.cullingMode));
+                a.cullingMode = AnimatorCullingMode.CullUpdateTransforms;
+            }
+        }
     }
 
     // ---------------------------------------------------------------- camera / fog
