@@ -715,6 +715,9 @@ public class PlayersInteractionManager : MonoBehaviour
         // Searches the hit object itself before walking up, so this covers both.
         PlaceableItem hitPlaceable = hit.collider.GetComponentInParent<PlaceableItem>();
 
+        // Animals are never "managed": looking at one offers the ride button instead (FindTargetedAnimal).
+        if (hitPlaceable != null && hitPlaceable.GetComponent<PlacedAnimal>() != null) return null;
+
         // A ghost being positioned has its PlaceableItem disabled, and an item whose placement timer is
         // still counting down isn't manageable yet — neither is a valid target.
         return (hitPlaceable != null && hitPlaceable.enabled && hitPlaceable.IsFullyPlaced) ? hitPlaceable : null;

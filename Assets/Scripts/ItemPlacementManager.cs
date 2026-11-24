@@ -104,6 +104,14 @@ public class ItemPlacementManager : MonoBehaviour
     [Header("Shop/Prefab References")]
     public InGameShopManager shopManager;
 
+    [Header("Animals")]
+    [Tooltip("One-shot effect played where a shop animal appears. Animals skip the placement timer and " +
+             "the fence barrier: they arrive at once, ready to ride.")]
+    public GameObject animalSpawnVfx;
+
+    [Tooltip("Seconds before the animal spawn effect is returned to the pool.")]
+    public float animalSpawnVfxLifetime = 3f;
+
     [Header("Memory")]
     [Tooltip("How many distinct downloaded item prefabs AddressableItemLoader keeps cached beyond " +
              "what the garden/current placement actually needs. Item meshes run tens of MB each, and " +
@@ -565,7 +573,9 @@ public class ItemPlacementManager : MonoBehaviour
             }
         }
         _pendingItemPrefab = prefab;
-        _pendingDuration = duration;
+        // Animals arrive at once - no growing timer, no fence (see IsInstantItem).
+        _pendingDuration = IsInstantItem(prefab) ? 0f : duration;
+        duration = _pendingDuration;
 
         currentPlacedObject = Objectpool.Instance.Spawn(previewPrefab);
 
@@ -1051,6 +1061,14 @@ public class ItemPlacementManager : MonoBehaviour
         string uniqueId = _isRelocating ? _relocateUniqueId : System.Guid.NewGuid().ToString();
         float remainingDuration = _isRelocating ? _relocateRemainingDuration : totalDuration;
 
+        bool instant = IsInstantItem(_pendingItemPrefab);
+        if (instant)
+        {
+            totalDuration = 0f;
+            remainingDuration = 0f;
+            PlayAnimalSpawnVfx(confirmedPosition);
+        }
+
         // Must happen before Initialize: it feeds the fence barrier's signboard reference X/Z into the
         // item so its plant-in animation (which Initialize can trigger immediately on a pooled instance)
         // targets the right spot from the start. See SpawnFenceBarrierFor.
@@ -1211,6 +1229,26 @@ public class ItemPlacementManager : MonoBehaviour
         {
             ToastMessageManager.Instance.ShowToast(LocalizationManager.Instance.Get("placement.placement_cancelled"));
         }
+    }
+
+    /// <summary>
+    /// Items that skip the placement timer and fence barrier and are usable the moment they are placed:
+    /// the shop animals (anything carrying a <see cref="PlacedAnimal"/>).
+    /// </summary>
+    public static bool IsInstantItem(GameObject prefab) =>
+        prefab != null && prefab.GetComponent<PlacedAnimal>() != null;
+
+    private void PlayAnimalSpawnVfx(Vector3 position)
+    {
+        if (animalSpawnVfx == null || Objectpool.Instance == null) return;
+        GameObject vfx = Objectpool.Instance.Spawn(animalSpawnVfx, position, Quaternion.identity);
+        if (vfx == null) return;
+        foreach (ParticleSystem ps in vfx.GetComponentsInChildren<ParticleSystem>(true))
+        {
+            ps.Clear(true);
+            ps.Play(true); // A pooled instance has already played through once.
+        }
+        Objectpool.Instance.Despawn(vfx, animalSpawnVfxLifetime);
     }
 
     private void ClearPendingPlacement()
@@ -1710,7 +1748,7 @@ public class ItemPlacementManager : MonoBehaviour
 
             // Deduct the elapsed offline time from the remaining duration
             float newRemaining = itemData.remainingDuration - (float)elapsedOffline;
-            if (newRemaining < 0) newRemaining = 0;
+            if (newRemaining < 0 || IsInstantItem(prefab)) newRemaining = 0; // Animals saved mid-timer by older builds.
 
             placeable.Initialize(itemData.uniqueId, itemData.totalDuration, newRemaining);
             placeable.SetSource(itemData.sourceKind, itemData.sourceItemId);

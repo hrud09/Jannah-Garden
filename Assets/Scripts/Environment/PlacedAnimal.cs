@@ -19,8 +19,15 @@ public class PlacedAnimal : MonoBehaviour
     [Tooltip("The animal child. Found automatically if left empty.")]
     public GrazingAnimal animal;
 
+    [Tooltip("After a rider gets off away from home, the animal waits a random time in this range " +
+             "(seconds) where it was left, then walks back to its placed spot.")]
+    public Vector2 returnHomeDelay = new Vector2(60f, 120f);
+
     private PlaceableItem _placeable;
     private bool _heldOutOfStreamer;
+    private bool _wasRidden;
+    private bool _returnPending;
+    private float _returnAt;
 
     private void Awake()
     {
@@ -39,12 +46,38 @@ public class PlacedAnimal : MonoBehaviour
         // animal wherever a rider last left it.
         if (animal != null) animal.enabled = false;
         _heldOutOfStreamer = false;
+        _wasRidden = false;
+        _returnPending = false;
     }
 
     private void LateUpdate()
     {
         Sync();
-        KeepRiddenAnimalStreamedIn();
+        ScheduleReturnHome();
+        KeepAwayAnimalStreamedIn();
+    }
+
+    /// <summary>
+    /// Once the rider gets off, the animal stays where it was left for a minute or two, then walks home.
+    /// Climbing back on cancels the wait; the next dismount starts it again.
+    /// </summary>
+    private void ScheduleReturnHome()
+    {
+        if (animal == null || !IsLive) return;
+
+        bool ridden = animal.IsRidden;
+        if (_wasRidden && !ridden)
+        {
+            _returnPending = true;
+            _returnAt = Time.time + Random.Range(returnHomeDelay.x, Mathf.Max(returnHomeDelay.x, returnHomeDelay.y));
+        }
+        _wasRidden = ridden;
+
+        if (ridden) { _returnPending = false; return; }
+        if (!_returnPending || Time.time < _returnAt) return;
+
+        if (!animal.IsAwayFromHome) _returnPending = false; // Left at home: just carries on grazing.
+        else if (animal.WalkHome()) _returnPending = false;
     }
 
     /// <summary>Placed for real and finished arriving: the animal may wander and be ridden.</summary>
@@ -83,21 +116,21 @@ public class PlacedAnimal : MonoBehaviour
     /// The distance streamer switches placed items off by the distance from the player to their root.
     /// A ridden animal travels with the player and can easily be carried (or flown) beyond that radius,
     /// which would switch the mount off from under its rider — so it is held out of the streamer for the
-    /// ride. Handing it back re-syncs it at once: an animal left far from home is switched off, and walks
-    /// home (via Sync) the next time the player comes near its spot.
+    /// ride, and afterwards for as long as it is away from home (waiting where it was left, then walking
+    /// back), so it never vanishes from where the player left it. Back home, it is handed back.
     /// </summary>
-    private void KeepRiddenAnimalStreamedIn()
+    private void KeepAwayAnimalStreamedIn()
     {
         RuntimeEnvironmentGenerator streamer = RuntimeEnvironmentGenerator.Instance;
         if (streamer == null || animal == null) return;
 
-        bool ridden = animal.IsRidden;
-        if (ridden && !_heldOutOfStreamer)
+        bool away = animal.IsRidden || (IsLive && animal.enabled && (_returnPending || animal.IsReturningHome || animal.IsAwayFromHome));
+        if (away && !_heldOutOfStreamer)
         {
             streamer.UnregisterObject(gameObject);
             _heldOutOfStreamer = true;
         }
-        else if (!ridden && _heldOutOfStreamer)
+        else if (!away && _heldOutOfStreamer)
         {
             _heldOutOfStreamer = false;
             streamer.RegisterObject(gameObject);

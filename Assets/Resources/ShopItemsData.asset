@@ -2107,7 +2107,7 @@ MonoBehaviour:
         m_SubObjectType: 
         m_SubObjectGUID: 
         m_EditorAssetChanged: 0
-      placementTimerDuration: 60
+      placementTimerDuration: 0
       gridFootprintOverride: {x: 7, y: 24}
       footprintScale: 1
       itemPrice: 
@@ -2139,7 +2139,7 @@ MonoBehaviour:
         m_SubObjectType: 
         m_SubObjectGUID: 
         m_EditorAssetChanged: 0
-      placementTimerDuration: 60
+      placementTimerDuration: 0
       gridFootprintOverride: {x: 14, y: 25}
       footprintScale: 1
       itemPrice: 

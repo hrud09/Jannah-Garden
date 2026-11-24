@@ -614,6 +614,9 @@ public class AnimalRider : MonoBehaviour
     /// Height of the animal's feet at <paramref name="p"/>: the ground, except in deep water, where it
     /// swims <see cref="swimDepth"/> under the surface instead of walking along the lake bed.
     /// </summary>
+    /// <summary>Same as the ride height, for a riderless animal wading home (see GrazingAnimal.WalkHome).</summary>
+    public float FootHeight(Vector3 p) => RideHeight(p);
+
     private float RideHeight(Vector3 p)
     {
         float ground = GroundHeight(p);

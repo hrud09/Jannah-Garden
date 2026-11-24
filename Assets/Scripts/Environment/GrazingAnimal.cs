@@ -213,7 +213,64 @@ public class GrazingAnimal : MonoBehaviour
         _target = _home;
         wanderRadius = _homeRadius;
         _mode = Mode.Idle;
+        IsReturningHome = false;
     }
+
+    /// <summary>True while walking back to its home spot after a rider left it somewhere else.</summary>
+    public bool IsReturningHome { get; private set; }
+
+    /// <summary>Outside the range it normally wanders around its home (e.g. where a rider got off).</summary>
+    public bool IsAwayFromHome
+    {
+        get
+        {
+            Vector3 flat = transform.position - _home;
+            flat.y = 0f;
+            return flat.magnitude > _homeRadius + 1f;
+        }
+    }
+
+    /// <summary>
+    /// Sets off on foot straight back to the home spot, wading through any water on the way, and takes up
+    /// wandering there again on arrival. False while it can't start yet (ridden, or a flyer still landing).
+    /// </summary>
+    public bool WalkHome()
+    {
+        if (_animator == null || !isActiveAndEnabled || IsRidden || _descending || IsFlying) return false;
+
+        IsReturningHome = true;
+        wanderRadius = 0f; // No side trips until it is back.
+        _target = _home;
+        _mode = Mode.Walking;
+        // Generous: the walk itself never gets stuck (nothing collides), this only guards against oddities.
+        _timer = Vector3.Distance(transform.position, _home) / Mathf.Max(0.1f, walkSpeed) * 2f + 20f;
+        _animator.speed = 1f;
+        _animator.CrossFadeInFixedTime(walkState, crossFade);
+        return true;
+    }
+
+    private void FinishReturnHome(bool snap)
+    {
+        IsReturningHome = false;
+        if (snap)
+        {
+            transform.position = _home;
+        }
+        wanderRadius = _homeRadius;
+        _animator.speed = Random.Range(animationSpeedRange.x, animationSpeedRange.y);
+    }
+
+    /// <summary>Foot height on the way home: the ground, or swimming height where the lake is deep.</summary>
+    private float HomewardHeight(Vector3 p)
+    {
+        // The rider (on the player) already knows where the lake is; only a ridden animal walks home,
+        // so it exists by now. The jungle floor lies below the lake surface too, so water can't be
+        // judged by height alone.
+        if (_lakeOracle == null) _lakeOracle = FindFirstObjectByType<AnimalRider>();
+        return _lakeOracle != null ? _lakeOracle.FootHeight(p) : GroundHeight(p);
+    }
+
+    private static AnimalRider _lakeOracle;
 
     private void OnEnable()
     {
@@ -307,6 +364,7 @@ public class GrazingAnimal : MonoBehaviour
 
         if (dist < 0.3f || _timer <= 0f)
         {
+            if (IsReturningHome) FinishReturnHome(snap: dist >= 0.3f);
             StartIdle(instant: false);
             return;
         }
@@ -318,7 +376,7 @@ public class GrazingAnimal : MonoBehaviour
         float facing = Vector3.Dot(transform.forward, to / dist);
         float speed = walkSpeed * Mathf.Clamp01((facing - 0.3f) / 0.5f);
         Vector3 next = pos + transform.forward * (speed * Time.deltaTime);
-        next.y = GroundHeight(next);
+        next.y = IsReturningHome ? HomewardHeight(next) : GroundHeight(next);
         transform.position = next;
     }
 
@@ -399,6 +457,7 @@ public class GrazingAnimal : MonoBehaviour
     public void BeginRide()
     {
         if (IsRidden) return;
+        IsReturningHome = false; // Climbed on mid-way home: the next dismount starts the wait over.
 
         // Work out the seat on the body first: SeatPosition switches to the bone once IsRidden is set.
         Vector3 restSeat = transform.TransformPoint(LocalSeat);
