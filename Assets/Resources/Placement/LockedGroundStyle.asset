@@ -15,6 +15,6 @@ MonoBehaviour:
   fill: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.29803923}
   gridLine: {r: 0.2688679, g: 0.2688679, b: 1, a: 0.5529412}
   gridMajorLine: {r: 0, g: 0, b: 0, a: 0.85}
-  majorEvery: 4
+  majorEvery: 12
   lineWidth: 1.1
   majorLineWidth: 1.8

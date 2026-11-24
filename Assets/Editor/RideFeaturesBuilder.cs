@@ -302,9 +302,15 @@ public static class RideFeaturesBuilder
 
     // ─── Orb prefab ─────────────────────────────────────────────────────────────
 
-    /// <summary>The question-mark orb's sphere and glow, without its question mark, quiz or collider.</summary>
+    /// <summary>
+    /// The jungle orb (blue glow + stone sphere). Built once from the question-mark orb; that orb has
+    /// since become a gold scroll, so an existing jungle orb is kept rather than rebuilt from it.
+    /// </summary>
     private static GameObject BuildOrbPrefab()
     {
+        var existing = AssetDatabase.LoadAssetAtPath<GameObject>(OrbPrefabPath);
+        if (existing != null) return existing;
+
         var source = AssetDatabase.LoadAssetAtPath<GameObject>(QuestionOrbPath);
         GameObject orb = Object.Instantiate(source);
         orb.name = "Jungle Orb";

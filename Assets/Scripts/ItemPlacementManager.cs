@@ -590,8 +590,10 @@ public class ItemPlacementManager : MonoBehaviour
 
             // Make sure the preview starts unsaturated
             placeable.UpdateSaturation(0f, -1);
-            // Apply starting scale of 0.2x to the preview model to match the initial placement scale
-            placeable.SetScaleMultiplier(0.2f);
+            // The ghost shows the item at its full grown size, so the player positions it against the
+            // space it will actually take up once it finishes growing (the placed item still grows in
+            // from 0.2x — that is the timer's animation, not the size it ends at).
+            placeable.SetScaleMultiplier(1f);
 
             // Show the timer label immediately so the player can see the
             // duration before confirming placement.

@@ -29,7 +29,7 @@ Material:
     - _FadeStart: 0.55
     - _GlobalAlpha: 1
     - _LineWidth: 1.1
-    - _MajorEvery: 4
+    - _MajorEvery: 12
     - _Radius: 15
     m_Colors:
     - _Center: {r: 0, g: 0, b: 0, a: 0}

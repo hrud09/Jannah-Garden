@@ -268,6 +268,10 @@ public class PlacementGridView : MonoBehaviour
     private MeshRenderer CreateChild(string childName, Mesh mesh, Material material)
     {
         var go = new GameObject(childName);
+        // Inherit this object's layer. The overlay should sit on 'Culling Layer' (18): the main
+        // camera draws it, while the minimap camera skips it, because at minimap scale the hatch
+        // turns into a dark slab that looks like the map is cut open.
+        go.layer = gameObject.layer;
         go.transform.SetParent(transform, false);
         go.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
         go.transform.localScale = Vector3.one;

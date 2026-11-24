@@ -39,9 +39,9 @@ public class GardenGrid : MonoBehaviour
     [Header("Lattice")]
     [Tooltip("Edge length of one cell in metres. Smaller means finer control and tighter packing; the " +
              "cost is only in how many cells each item claims, never in memory for the terrain itself " +
-             "(occupancy is sparse). 0.25 lets decorations sit essentially flush while still snapping.")]
+             "(occupancy is sparse). 1/12 m (a third of the original 0.25) keeps every old 0.25 boundary on the lattice.")]
     [Range(0.05f, 2f)]
-    public float cellSize = 0.25f;
+    public float cellSize = 1f / 12f;
 
     [Tooltip("The terrain the lattice is anchored to and heights are sampled from. Left empty, the one " +
              "on ItemPlacementManager.terrainCollider is used.")]

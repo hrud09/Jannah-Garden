@@ -74,9 +74,7 @@ namespace JannahGarden.EditorTools
 
                 var popup = all.Find("Pop Up Canvas");
                 var tutorial = all.Find("TutorialCanvas");
-                var opening = all.Find("Opening Canvas");
                 if (tutorial != null) tutorial.gameObject.SetActive(false);
-                if (opening != null) opening.gameObject.SetActive(false);
 
                 // HUD on its own first.
                 foreach (Transform p in popup) p.gameObject.SetActive(false);

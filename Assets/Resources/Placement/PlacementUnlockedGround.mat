@@ -27,7 +27,7 @@ Material:
     m_Floats:
     - _GlobalAlpha: 0
     - _LineWidth: 1
-    - _MajorEvery: 4
+    - _MajorEvery: 12
     - _MajorLineWidth: 1.6
     - _Pulse: 0.35
     - _PulseSpeed: 0.5

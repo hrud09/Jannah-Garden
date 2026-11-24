@@ -497,8 +497,6 @@ public static class GameEvents
 
     public static void FellowsShown(int count) => Design(new[] { "Fellowship", "Shown" }, count);
 
-    public static void IntroVideo(string outcome) => Design(new[] { "Intro", outcome });
-
     // ═════════════════════════════════════════════════════════════════════════
     //  Core
     // ═════════════════════════════════════════════════════════════════════════

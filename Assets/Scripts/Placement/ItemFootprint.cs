@@ -4,15 +4,14 @@ using UnityEngine;
 /// <summary>
 /// Works out how many grid cells an item takes up.
 ///
-/// <para><b>Measured from the prefab, never from the ghost.</b> The preview is spawned at
-/// <c>SetScaleMultiplier(0.2f)</c> and items keep growing toward full size for as long as their
-/// placement timer runs. A footprint taken from the ghost would have a sapling claim a patch a fifth
-/// of the size it eventually needs, and the fully grown tree would then be intersecting whatever the
-/// player tucked in beside it. The prefab asset sits at its authored — that is, fully grown — scale,
-/// so that is what gets measured.</para>
+/// <para><b>Measured from the prefab, never from the ghost.</b> The ghost may be a separate, lighter
+/// preview prefab, and a placed item keeps growing from 0.2x toward full size for as long as its
+/// placement timer runs, so neither is a reliable thing to measure. The real prefab asset sits at its
+/// authored — that is, fully grown — scale, so that is what gets measured (and the ghost is shown at
+/// that same full size).</para>
 ///
 /// <para>Sizes round <em>up</em> to whole cells, so nothing ever claims less ground than it physically
-/// covers. At a 0.25 m lattice the rounding waste is under a quarter-metre per axis.</para>
+/// covers. At a 1/12 m lattice the rounding waste is under 9 cm per axis.</para>
 /// </summary>
 public static class ItemFootprint
 {

@@ -39,6 +39,7 @@ public class QuestionMarkOrb : MonoBehaviour
     {
         if (questionMark == null || !_markRestCaptured) return;
         Transform mark = questionMark.transform;
+        FaceCamera(mark);
         if (UIMotion.ReduceMotion || DOTween.IsTweening(mark)) return;
 
         float t = Time.time + _idlePhase;
@@ -47,6 +48,20 @@ public class QuestionMarkOrb : MonoBehaviour
         // The pulse runs at a different rate from the bob, so the two never lock into one rhythm.
         float pulse = 1f + Mathf.Sin(t * Mathf.PI * 2f / (bobPeriod * 0.77f)) * pulseAmount;
         mark.localScale = _markRestScale * pulse;
+    }
+
+    /// <summary>
+    /// The scroll is flat, so it turns (yaw only) to keep its question mark toward the camera;
+    /// edge-on it would vanish into a thin line.
+    /// </summary>
+    private static void FaceCamera(Transform mark)
+    {
+        Camera cam = Camera.main;
+        if (cam == null) return;
+        Vector3 away = mark.position - cam.transform.position;
+        away.y = 0f;
+        if (away.sqrMagnitude < 0.0001f) return;
+        mark.rotation = Quaternion.LookRotation(away, Vector3.up);
     }
 
     private void OnEnable()
