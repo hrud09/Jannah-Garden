@@ -12,7 +12,7 @@ namespace FlutterIntegration.Editor
             FlutterCommands.UpdateUserProfile,
             FlutterCommands.UpdateCoins,
             FlutterCommands.UpdateFellowshipProfiles,
-            FlutterCommands.UpdateGardenState,
+            FlutterCommands.UpdateAuthToken,
             FlutterCommands.PhotoActionResult,
             FlutterCommands.SetLocale,
             "CUSTOM"
@@ -132,28 +132,10 @@ namespace FlutterIntegration.Editor
                         "  ]\n" +
                         "}";
                     break;
-                case FlutterCommands.UpdateGardenState:
-                    // savedAtUnix is intentionally 0 here: the placement manager only adopts a snapshot
-                    // that is newer than the device's, so replace it with a current Unix timestamp to
-                    // watch the garden actually rebuild.
-                    jsonPayloadInput =
-                        "{\n" +
-                        "  \"hasData\": true,\n" +
-                        "  \"savedAtUnix\": 0,\n" +
-                        "  \"revision\": 1,\n" +
-                        "  \"items\": [\n" +
-                        "    {\n" +
-                        "      \"uniqueId\": \"11111111-1111-1111-1111-111111111111\",\n" +
-                        "      \"prefabName\": \"Date Palm Tree\",\n" +
-                        "      \"posX\": 0, \"posY\": 0, \"posZ\": 0,\n" +
-                        "      \"rotX\": 0, \"rotY\": 0, \"rotZ\": 0, \"rotW\": 1,\n" +
-                        "      \"remainingDuration\": 0,\n" +
-                        "      \"totalDuration\": 360,\n" +
-                        "      \"sourceItemId\": \"\",\n" +
-                        "      \"sourceKind\": 1\n" +
-                        "    }\n" +
-                        "  ]\n" +
-                        "}";
+                case FlutterCommands.UpdateAuthToken:
+                    // Paste a real ID token for a test account (FirebaseAuth user.getIdToken() in the app,
+                    // or turn on anonymous sign-in in CloudSaveSettings instead). Empty fields = signed out.
+                    jsonPayloadInput = "{\n  \"uid\": \"\",\n  \"idToken\": \"\"\n}";
                     break;
                 case FlutterCommands.PhotoActionResult:
                     jsonPayloadInput =

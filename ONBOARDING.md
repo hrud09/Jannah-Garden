@@ -128,7 +128,7 @@ Everything lives under `Assets/Scripts/`. Runtime code is mostly in the **global
 - **Self-bootstrapping** via `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]`
   — `FlutterBridge` and `LocalizationManager` create themselves, so you never place them per scene.
 - **Static events** for cross-system comms (`NoorCoinManager.OnBalanceChanged`,
-  `FlutterBridge.OnGardenStateReceived`, …). Static so listeners can subscribe before the producer
+  `FlutterBridge.OnAuthTokenReceived`, …). Static so listeners can subscribe before the producer
   exists and survive scene loads. **Always unsubscribe in `OnDestroy`.**
 - **Last-payload caching**: Flutter data often arrives before the scene that needs it, so the bridge
   caches the latest of each payload. Consumers read the cache in `Start` *and* subscribe for updates.

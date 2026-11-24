@@ -92,6 +92,9 @@ public class GardenAreaManager : MonoBehaviour
         }
 
         Instance = this;
+
+        // Before loading, so a cloud copy that lands from here on is handed to us rather than missed.
+        CloudSave.Register(SaveKey, HandleCloudData);
         Load();
         EnsureVisualsFlagLoaded();
     }
@@ -115,7 +118,11 @@ public class GardenAreaManager : MonoBehaviour
         if (_subscribedXp != null) _subscribedXp.OnXPChanged -= HandleXpChanged;
         _subscribedXp = null;
 
-        if (Instance == this) Instance = null;
+        if (Instance == this)
+        {
+            CloudSave.Unregister(SaveKey, HandleCloudData);
+            Instance = null;
+        }
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -426,7 +433,40 @@ public class GardenAreaManager : MonoBehaviour
         if (changed) Save();
     }
 
-    private void Save() => SaveSystem.Save(SaveKey, new List<string>(_unlocked));
+    private void Save()
+    {
+        // Sorted: a HashSet enumerates in no fixed order, and CloudSave compares the text to skip
+        // uploads that change nothing.
+        var ids = new List<string>(_unlocked);
+        ids.Sort(StringComparer.Ordinal);
+        CloudSave.Save(SaveKey, ids);
+    }
+
+    /// <summary>
+    /// A newer unlock set arrived from Firebase — or null, meaning the account that just signed in has
+    /// none, so start over from the starting ground.
+    /// </summary>
+    private void HandleCloudData(string json)
+    {
+        _unlocked.Clear();
+
+        List<string> saved = json != null ? SaveSystem.FromJson<List<string>>(json, SaveKey) : null;
+        if (saved != null)
+        {
+            for (int i = 0; i < saved.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(saved[i])) _unlocked.Add(saved[i]);
+            }
+        }
+
+        ApplyStartingUnlocks();
+
+        // Whatever the player's level has already earned stays open, whichever copy this came from.
+        if (_subscribedXp != null) SyncUnlocksToLevel(_subscribedXp.xpLevel);
+
+        Debug.Log($"[GardenAreaManager] Area unlocks replaced from the cloud — {_unlocked.Count} open.");
+        UnlocksChanged?.Invoke();
+    }
 
     /// <summary>Relocks everything but the starting ground. For a save wipe or a testing reset.</summary>
     public void ResetToStart()

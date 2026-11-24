@@ -135,6 +135,8 @@ public class PlayerXPManager : MonoBehaviour
             return;
         }
 
+        // Before loading, so a cloud copy that lands from here on is handed to us rather than missed.
+        CloudSave.Register(SaveKey, HandleCloudData);
         Load();
         UpdateUI();
         PopulateXPGainChart();
@@ -186,6 +188,8 @@ public class PlayerXPManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        CloudSave.Unregister(SaveKey, HandleCloudData);
+
         if (xpGainChartToggleButton != null)
         {
             xpGainChartToggleButton.onClick.RemoveListener(ToggleXPGainChart);
@@ -429,7 +433,23 @@ public class PlayerXPManager : MonoBehaviour
             currentXP = currentXP
         };
 
-        SaveSystem.Save(SaveKey, data);
+        CloudSave.Save(SaveKey, data);
+    }
+
+    /// <summary>
+    /// Newer XP arrived from Firebase — or null, meaning the account that just signed in has none.
+    /// Applied without animation; <see cref="UpdateUI"/> raises <see cref="OnXPChanged"/>, which also
+    /// brings the area unlocks up to the restored level.
+    /// </summary>
+    private void HandleCloudData(string json)
+    {
+        PlayerXPData data = json != null ? SaveSystem.FromJson<PlayerXPData>(json, SaveKey) : null;
+
+        xpLevel = data != null ? Mathf.Max(1, data.level) : 1;
+        currentXP = data != null ? Mathf.Max(0f, data.currentXP) : 0f;
+
+        Debug.Log($"[PlayerXPManager] XP replaced from the cloud — level {xpLevel}, {currentXP} xp.");
+        UpdateUI();
     }
 
     private void Load()

@@ -119,16 +119,6 @@ public class ItemPlacementManager : MonoBehaviour
     [Range(0f, 1f)]
     public float storeRefundRate = 1f;
 
-    [Header("Cloud Save")]
-    [Tooltip("Mirror every change to Firebase through the Flutter bridge, so the garden follows the " +
-             "player onto a new device. Turn off to keep the garden device-local.")]
-    public bool syncToCloud = true;
-
-    [Tooltip("Seconds to wait after a change before pushing to Firebase. Collapses a burst of edits " +
-             "(placing three trees in a row) into a single write.")]
-    [Range(0.5f, 30f)]
-    public float cloudPushDelay = 3f;
-
     private GameObject currentPlacedObject;
     private GameObject _pendingItemPrefab;
     private float _pendingDuration;
@@ -215,12 +205,12 @@ public class ItemPlacementManager : MonoBehaviour
     private List<PlaceableItem> activePlacedItems = new List<PlaceableItem>();
     private const string SAVE_KEY = "PlacedItemsData";
 
-    // ── Cloud state ───────────────────────────────────────────────────────────
+    // ── Save state ────────────────────────────────────────────────────────────
     private int _revision;
     private double _lastSavedAtUnix;
-    private Coroutine _cloudPushRoutine;
-    private bool _cloudPushPending;
-    private GardenStatePayload _deferredCloudState;
+
+    /// <summary>A garden from the cloud that arrived mid-placement, waiting for the player to finish.</summary>
+    private SaveStateCollection _deferredCloudState;
 
     //Fencing Management
     public FenceBarrier fenceBarrierPrefab;
@@ -304,15 +294,16 @@ public class ItemPlacementManager : MonoBehaviour
         // Before LoadPlacedItems: the rebuild claims cells as it goes, so the lattice has to exist first.
         SetupGrid();
 
+        // Before loading, so a cloud copy that lands from here on is handed to us rather than missed.
+        CloudSave.Register(SAVE_KEY, HandleCloudGarden);
+
         // Load previously placed items on startup
         LoadPlacedItems();
-
-        BeginCloudSync();
     }
 
     private void OnDestroy()
     {
-        FlutterBridge.OnGardenStateReceived -= HandleCloudGardenState;
+        if (Instance == this) CloudSave.Unregister(SAVE_KEY, HandleCloudGarden);
 
         if (placeButton != null) placeButton.onClick.RemoveListener(HandlePlaceButtonClick);
         if (cancelPlacementButton != null) cancelPlacementButton.onClick.RemoveListener(CancelPlacement);
@@ -381,7 +372,6 @@ public class ItemPlacementManager : MonoBehaviour
         if (_isRelocating) CancelPlacement();
 
         SavePlacedItems();
-        FlushCloudPush();
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -1564,17 +1554,19 @@ public class ItemPlacementManager : MonoBehaviour
     // ═══════════════════════════════════════════════════════════════════════════
 
     /// <summary>
-    /// Saves the current list of placed items and the shutdown timestamp to binary save file,
-    /// then queues the same state for Firebase.
+    /// Saves the current list of placed items and the shutdown timestamp locally, and (through
+    /// <see cref="CloudSave"/>) to the player's account in Firebase.
     /// </summary>
     public void SavePlacedItems()
     {
         SaveStateCollection state = BuildCurrentState();
 
-        SaveSystem.Save(SAVE_KEY, state);
-        Debug.Log("Placed items successfully saved to binary using SaveSystem.");
+        // The player has just changed the garden, so it is now newer than anything held back from the
+        // cloud — keep their edit rather than overwrite it when the placement ends.
+        _deferredCloudState = null;
 
-        QueueCloudPush();
+        CloudSave.Save(SAVE_KEY, state);
+        Debug.Log($"[ItemPlacementManager] Garden saved — {state.items.Count} item(s).");
     }
 
     /// <summary>Snapshots the garden as it stands right now.</summary>
@@ -1779,254 +1771,58 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
-    //  CLOUD SAVE (Firebase, via the Flutter bridge)
+    //  CLOUD SAVE
     //
-    //  Unity has no Firebase SDK — Flutter owns the wallet, the profile and now the
-    //  garden. The local binary save stays the fast path so the garden appears on the
-    //  first frame; the cloud snapshot arrives a moment later and wins if it is newer,
-    //  which is what carries the garden across to a new device.
+    //  CloudSave carries the garden to and from Firebase (through Flutter) and decides which copy is
+    //  newer. The local save stays the fast path so the garden appears on the first frame; when a newer
+    //  copy arrives from the account — another device, a reinstall — it is handed here to rebuild from.
     // ═══════════════════════════════════════════════════════════════════════════
 
-    private void BeginCloudSync()
-    {
-        if (!syncToCloud) return;
-
-        FlutterBridge.OnGardenStateReceived += HandleCloudGardenState;
-
-        // Flutter may have pushed the garden while a loading scene was up.
-        if (FlutterBridge.LatestGardenState != null)
-        {
-            HandleCloudGardenState(FlutterBridge.LatestGardenState);
-        }
-        else if (FlutterBridge.Instance != null)
-        {
-            FlutterBridge.Instance.RequestGardenState();
-        }
-    }
-
     /// <summary>
-    /// Flutter answered with the garden stored in Firebase. Adopt it when it is newer than what this
-    /// device has; otherwise push what we have, so the account ends up holding the latest garden either way.
+    /// A newer garden arrived from Firebase — or null, meaning the account that just signed in has no
+    /// garden, so this one is emptied.
     /// </summary>
-    private void HandleCloudGardenState(GardenStatePayload payload)
+    private void HandleCloudGarden(string json)
     {
-        if (!syncToCloud || payload == null) return;
-
-        // hasData=false is the only "nothing stored for this account" signal. An empty items array with
-        // hasData=true is a real, deliberately empty garden — the player cleared it on another device —
-        // and has to be able to win the comparison below, or clearing a garden could never sync.
-        if (!payload.hasData)
-        {
-            if (activePlacedItems.Count > 0)
-            {
-                Debug.Log("[ItemPlacementManager] No garden in Firebase yet — seeding it from this device.");
-                QueueCloudPush();
-            }
-            return;
-        }
-
-        if (!IsCloudStateNewer(payload))
-        {
-            Debug.Log("[ItemPlacementManager] Local garden is at least as new as Firebase — pushing it up.");
-            QueueCloudPush();
-            return;
-        }
+        SaveStateCollection state = json != null ? SaveSystem.FromJson<SaveStateCollection>(json, SAVE_KEY) : null;
+        if (state == null) state = new SaveStateCollection();
+        if (state.items == null) state.items = new List<PlacedItemSaveData>();
 
         // Rebuilding mid-placement would yank the preview out from under the player. Hold it until they
         // have finished putting the current item down.
         if (IsPlacing)
         {
             Debug.Log("[ItemPlacementManager] Cloud garden held back until the current placement finishes.");
-            _deferredCloudState = payload;
+            _deferredCloudState = state;
             return;
         }
 
-        AdoptCloudState(payload);
+        AdoptCloudState(state);
     }
 
-    private void AdoptCloudState(GardenStatePayload payload)
+    private void AdoptCloudState(SaveStateCollection state)
     {
-        SaveStateCollection state = ToSaveState(payload);
+        _revision = state.revision;
+        _lastSavedAtUnix = state.gameClosedTimeUnix;
 
-        _revision = payload.revision;
-        _lastSavedAtUnix = payload.savedAtUnix;
-
+        // CloudSave has already written this state to the local file, so the next cold start shows it
+        // before the cloud answers.
         StartCoroutine(RebuildGardenAsync(state));
 
-        // Mirror it locally so the next cold start shows the right garden before Flutter answers. This
-        // persists the incoming state itself, not activePlacedItems, so it doesn't need to wait for the
-        // (now async) rebuild above to finish spawning anything.
-        SaveSystem.Save(SAVE_KEY, state);
-
-        Debug.Log($"[ItemPlacementManager] Restoring garden from Firebase — {state.items.Count} item(s).");
+        Debug.Log($"[ItemPlacementManager] Restoring garden from the cloud — {state.items.Count} item(s).");
     }
 
+    /// <summary>
+    /// Called when a placement ends. Adopts a cloud garden that arrived mid-placement — unless the
+    /// placement was confirmed, in which case <see cref="SavePlacedItems"/> already discarded it in
+    /// favour of the player's newer edit.
+    /// </summary>
     private void ApplyDeferredCloudState()
     {
         if (_deferredCloudState == null || IsPlacing) return;
 
-        GardenStatePayload payload = _deferredCloudState;
+        SaveStateCollection state = _deferredCloudState;
         _deferredCloudState = null;
-
-        // The player changed the garden while the cloud copy was waiting, so their edit is now the
-        // newest thing there is — keep it and push it instead of overwriting it.
-        if (!IsCloudStateNewer(payload))
-        {
-            QueueCloudPush();
-            return;
-        }
-
-        AdoptCloudState(payload);
-    }
-
-    /// <summary>
-    /// Whether the snapshot from Firebase is more recent than what this device holds. Both sides stamp
-    /// their own wall clock, so a tie falls back to the revision counter.
-    /// </summary>
-    private bool IsCloudStateNewer(GardenStatePayload payload)
-    {
-        if (payload.savedAtUnix > _lastSavedAtUnix) return true;
-        if (payload.savedAtUnix < _lastSavedAtUnix) return false;
-        return payload.revision > _revision;
-    }
-
-    /// <summary>Schedules a push to Firebase, collapsing a burst of edits into one write.</summary>
-    private void QueueCloudPush()
-    {
-        if (!syncToCloud) return;
-
-        _cloudPushPending = true;
-
-        // A disabled manager cannot run coroutines; the pending flag makes sure the push still happens
-        // on the next pause/quit flush rather than being lost.
-        if (!isActiveAndEnabled) return;
-
-        if (_cloudPushRoutine != null) StopCoroutine(_cloudPushRoutine);
-        _cloudPushRoutine = StartCoroutine(PushToCloudAfterDelay());
-    }
-
-    private IEnumerator PushToCloudAfterDelay()
-    {
-        // Realtime: the game sits at timeScale 0 behind panels and during ads, and the garden still
-        // needs to reach Firebase.
-        yield return new WaitForSecondsRealtime(cloudPushDelay);
-        _cloudPushRoutine = null;
-        PushToCloud();
-    }
-
-    /// <summary>Sends any pending push right now. Called when the game is being paused or closed.</summary>
-    private void FlushCloudPush()
-    {
-        if (_cloudPushRoutine != null)
-        {
-            StopCoroutine(_cloudPushRoutine);
-            _cloudPushRoutine = null;
-        }
-
-        if (_cloudPushPending) PushToCloud();
-    }
-
-    private void PushToCloud()
-    {
-        if (!syncToCloud) return;
-
-        if (FlutterBridge.Instance == null)
-        {
-            Debug.LogWarning("[ItemPlacementManager] No FlutterBridge — the garden was saved locally only.");
-            return;
-        }
-
-        FlutterBridge.Instance.SaveGardenState(ToPayload());
-        _cloudPushPending = false;
-    }
-
-    /// <summary>The garden as Flutter expects it: flat, JsonUtility-friendly, ready for Firestore.</summary>
-    private GardenStatePayload ToPayload()
-    {
-        activePlacedItems.RemoveAll(item => item == null);
-
-        var items = new List<GardenItemPayload>(activePlacedItems.Count + _unresolvedItems.Count);
-        foreach (var item in activePlacedItems)
-        {
-            Vector3 position = item.transform.position;
-            Quaternion rotation = item.transform.rotation;
-
-            items.Add(new GardenItemPayload
-            {
-                uniqueId = item.uniqueId,
-                prefabName = item.prefabName,
-                posX = position.x,
-                posY = position.y,
-                posZ = position.z,
-                rotX = rotation.x,
-                rotY = rotation.y,
-                rotZ = rotation.z,
-                rotW = rotation.w,
-                remainingDuration = item.remainingDuration,
-                totalDuration = item.placementDuration,
-                sourceItemId = item.sourceItemId,
-                sourceKind = (int)item.sourceKind
-            });
-        }
-
-        // Items whose bundle failed to download during the last rebuild — keep them in the payload too
-        // (as they last stood) so a cloud sync doesn't erase them for good; see RebuildGardenAsync.
-        foreach (var pending in _unresolvedItems)
-        {
-            items.Add(new GardenItemPayload
-            {
-                uniqueId = pending.uniqueId,
-                prefabName = pending.prefabName,
-                posX = pending.position.x,
-                posY = pending.position.y,
-                posZ = pending.position.z,
-                rotX = pending.rotation.x,
-                rotY = pending.rotation.y,
-                rotZ = pending.rotation.z,
-                rotW = pending.rotation.w,
-                remainingDuration = pending.remainingDuration,
-                totalDuration = pending.totalDuration,
-                sourceItemId = pending.sourceItemId,
-                sourceKind = (int)pending.sourceKind
-            });
-        }
-
-        return new GardenStatePayload
-        {
-            hasData = true,
-            savedAtUnix = (long)_lastSavedAtUnix,
-            revision = _revision,
-            items = items.ToArray()
-        };
-    }
-
-    private static SaveStateCollection ToSaveState(GardenStatePayload payload)
-    {
-        SaveStateCollection state = new SaveStateCollection
-        {
-            gameClosedTimeUnix = payload.savedAtUnix,
-            revision = payload.revision
-        };
-
-        if (payload.items == null) return state;
-
-        foreach (var item in payload.items)
-        {
-            if (item == null) continue;
-
-            state.items.Add(new PlacedItemSaveData
-            {
-                uniqueId = item.uniqueId,
-                prefabName = item.prefabName,
-                position = new Vector3(item.posX, item.posY, item.posZ),
-                rotation = new Quaternion(item.rotX, item.rotY, item.rotZ, item.rotW),
-                remainingDuration = item.remainingDuration,
-                totalDuration = item.totalDuration,
-                sourceItemId = item.sourceItemId,
-                sourceKind = (PlacedItemSource)item.sourceKind
-            });
-        }
-
-        return state;
+        AdoptCloudState(state);
     }
 }

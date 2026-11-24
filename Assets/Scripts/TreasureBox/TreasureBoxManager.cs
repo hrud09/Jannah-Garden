@@ -228,6 +228,8 @@ public class TreasureBoxManager : MonoBehaviour
 
         CollectSpawnPoints();
 
+        // Before loading, so a cloud copy that lands from here on is handed to us rather than missed.
+        CloudSave.Register(SAVE_KEY, HandleCloudData);
         LoadState();
         TickCycleResets();
         OnStateChanged += CheckAndSpawnNewBoxes;
@@ -1932,8 +1934,9 @@ public class TreasureBoxManager : MonoBehaviour
 
     private void SaveState()
     {
-        SaveSystem.Save(SAVE_KEY, _saveData);
-        Debug.Log("[TreasureBoxManager] State saved.");
+        // CloudSave skips the write (and the upload) when nothing changed, so the many defensive calls
+        // to this cost a JSON encode and a string compare.
+        CloudSave.Save(SAVE_KEY, _saveData);
     }
 
     private void LoadState()
@@ -1943,12 +1946,45 @@ public class TreasureBoxManager : MonoBehaviour
             _saveData = SaveSystem.Load<TreasureBoxSaveData>(SAVE_KEY);
             Debug.Log("[TreasureBoxManager] Save data loaded.");
         }
-        else
+
+        if (_saveData == null)
         {
             _saveData = new TreasureBoxSaveData();
             Debug.Log("[TreasureBoxManager] No save found. Starting fresh.");
         }
 
+        NormalizeSaveData();
+    }
+
+    /// <summary>
+    /// The treasure box state from another device (or null: the account that just signed in has none).
+    /// Takes down every box standing for the old state and lets the regular spawn check put up the
+    /// right ones.
+    /// </summary>
+    private void HandleCloudData(string json)
+    {
+        for (int i = _spawnedBoxes.Count - 1; i >= 0; i--)
+        {
+            SpawnedBoxInfo info = _spawnedBoxes[i];
+            ReleaseGridReservation(info.tier, info.slotIndex);
+            if (info.gameObject != null && Objectpool.Instance != null) Objectpool.Instance.Despawn(info.gameObject);
+        }
+        _spawnedBoxes.Clear();
+        _unplacedSlotsReported.Clear();
+
+        _saveData = json != null ? SaveSystem.FromJson<TreasureBoxSaveData>(json, SAVE_KEY) : null;
+        if (_saveData == null) _saveData = new TreasureBoxSaveData();
+        NormalizeSaveData();
+
+        TickCycleResets();
+        InvalidateHudCache();
+
+        Debug.Log("[TreasureBoxManager] Treasure box state replaced from the cloud.");
+        OnStateChanged?.Invoke();
+    }
+
+    private void NormalizeSaveData()
+    {
         // Guard: ensure per-slot arrays are initialized (handles saves from older versions)
         foreach (TreasureBoxTier tier in AllTiers)
         {

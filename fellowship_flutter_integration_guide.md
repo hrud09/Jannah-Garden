@@ -531,9 +531,10 @@ nested object. Your `_send()` already does this correctly; just don't "simplify"
 
 ## Also worth a ticket (not fellowship)
 
-- **Gardens are never saved to Firebase.** Unity sends `SAVE_GARDEN_STATE` on every placement and
-  asks `REQUEST_GARDEN_STATE` on cold start. Neither is handled — **a player who changes phone loses
-  their entire garden.** Payload shape: `GardenStatePayload` in `FlutterDataModels.cs`.
+- **Game progress only reaches Firebase once Flutter hands over the login.** The game saves to Firestore
+  itself but asks `REQUEST_AUTH_TOKEN` for the player's uid + ID token; until that is answered, **a player
+  who changes phone loses everything.** ~15 lines of Dart: `flutter_bridge_guide.md` §5 and §6
+  ("Login for cloud saves").
 - `REQUEST_REWARDED_AD` unhandled → "Watch Ad" buttons do nothing.
 - `REQUEST_IAP_PURCHASE` unhandled → coin packs cannot be bought.
 - `REQUEST_SHARE_PHOTO` / `REQUEST_SAVE_PHOTO` unhandled → photo mode writes a PNG and hands you the

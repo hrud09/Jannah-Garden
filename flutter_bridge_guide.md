@@ -5,10 +5,25 @@ implement on your side.
 
 Two things carry most of the traffic:
 
-- **The garden state** (§5) — every asset the player has placed. Unity has no Firebase SDK, so this bridge
-  is the only way a player's Jannah Garden survives a reinstall or a change of device.
+- **The player's login** (§5) — the game saves progress (garden, areas, treasure boxes, inventory, XP)
+  to Firestore itself, but needs the signed-in user's uid and ID token from you to do it.
 - **The fellowship roster** (§4) — a list of other users, pushed from Flutter into Unity so the game can
   spawn their profile cards around the Outer Garden map.
+
+---
+
+## 🆕 Required: hand the game the player's login (`REQUEST_AUTH_TOKEN` / `UPDATE_AUTH_TOKEN`)
+
+**The game now saves the player's progress to Firestore itself** — garden, area unlocks, treasure boxes,
+inventory, XP — under `users/{uid}/gameSaves/{key}` in `amal-app-production`. It talks to Firestore's REST
+API directly; Flutter does not read or write any of it.
+
+The one thing it needs from you is **who is signed in**: the Firebase uid and a current ID token. Until
+Flutter answers `REQUEST_AUTH_TOKEN`, saves stay on the device only. About 15 lines of Dart plus one
+Firestore security rule — see **§5** and **§6, "Login for cloud saves"**.
+
+(This replaces the `REQUEST_GAME_DATA` / `SAVE_GAME_DATA` contract from an earlier draft of this guide, and
+the old `REQUEST_GARDEN_STATE` / `SAVE_GARDEN_STATE` pair. The game sends none of those any more.)
 
 ---
 
@@ -127,7 +142,7 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 | `UPDATE_FELLOWSHIP_PROFILES` | `{ fellows: [...] }` — the roster of *other* users |
 | `UPDATE_AD_AVAILABILITY` | `{ rewardedReady }` — whether you have a rewarded ad loaded right now |
 | `REWARDED_AD_RESULT` | `{ status, source }` — how the ad you were asked for ended |
-| `UPDATE_GARDEN_STATE` | `{ hasData, savedAtUnix, revision, items: [...] }` — the player's garden, out of Firebase |
+| `UPDATE_AUTH_TOKEN` 🆕 | `{ uid, idToken }` — the signed-in Firebase user and a current ID token. Empty strings = signed out. See §5 |
 | `PHOTO_ACTION_RESULT` | `{ action, success, message }` — how a photo share or gallery save ended. Optional |
 | `SET_LOCALE` 🆕 | `{ localeCode }` — the app's active language. **Not yet implemented on the Flutter side — see below.** |
 
@@ -141,8 +156,7 @@ Getting this wrong fails silently — Unity logs `Error parsing Flutter message`
 | `REQUEST_SUBSCRIBE` | The player tapped **Subscribe** on the treasure box panel. Payload: `{ source }`. | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and navigate to your app's subscribe page. |
 | `REQUEST_EXIT_GAME` | The player confirmed **Exit** on the exit panel. Payload: `{ source }` (currently `"exit_panel"`). | **Leave the Unity game** (pop/dismiss the `UnityWidget`) and show your app's home screen. Do *not* close the app. |
 | `REQUEST_REWARDED_AD` | The player asked for something that costs an ad. Payload: `{ source }` (`"treasure_box"`, `"shop_item"`). | Show a rewarded ad **over** the Unity view, then answer with `REWARDED_AD_RESULT`. |
-| `REQUEST_GARDEN_STATE` | The garden loaded and needs the player's saved assets. Payload: `{}`. | Read the garden from Firestore and answer with `UPDATE_GARDEN_STATE`. Answer **even when there is nothing saved** — send `hasData: false`. |
-| `SAVE_GARDEN_STATE` | The player placed, moved or returned something. Payload: the same garden shape. | Write it to Firestore under the signed-in user. |
+| `REQUEST_AUTH_TOKEN` 🆕 | The game needs the player's login to read or write their saves — on start, on resume, and when the token is about to expire. Payload: `{}`. | Answer with `UPDATE_AUTH_TOKEN` (`user.getIdToken()`). See §5. |
 | `REQUEST_SHARE_PHOTO` | **No longer sent on a phone** — see below. Payload: `{ filePath, caption, source, width, height }`. | Nothing. Implement only if you want to override the game's own share sheet. |
 | `REQUEST_SAVE_PHOTO` | **No longer sent at all** — see below. Same payload. | Nothing. |
 
@@ -386,81 +400,72 @@ Two things worth knowing about current content coverage (as of this writing):
 
 ---
 
-## 5. The garden payload (what keeps a player's garden across devices)
+## 5. Cloud saves: what the game does, and the login it needs from you
 
-Everything the player places — trees, buildings, decorations, treasure box rewards — lives in the garden
-state. Unity has no Firebase SDK, so **this is the only route the garden has off the device**. Without it
-a player who reinstalls, or signs in on a new phone, starts from bare terrain.
+The game keeps the player's progress — the assets they placed and where, unlocked garden areas, which
+treasure boxes they opened today, treasure box rewards in their inventory, XP — in Firestore, one document
+per save:
 
-Same shape in both directions: Unity sends it as `SAVE_GARDEN_STATE`, you send it back as
-`UPDATE_GARDEN_STATE`.
+```
+users/{uid}/gameSaves/{key}          (project: amal-app-production)
+    json:       string   // the save itself
+    savedAtMs:  number   // when the game saved it (device clock)
+    revision:   number   // save counter
+```
 
-```json
-{
-  "hasData": true,
-  "savedAtUnix": 1754380800,
-  "revision": 12,
-  "items": [
-    {
-      "uniqueId": "3f2a…",
-      "prefabName": "Date Palm Tree",
-      "posX": 118.4, "posY": 3.02, "posZ": -44.9,
-      "rotX": 0, "rotY": 0.7071, "rotZ": 0, "rotW": 0.7071,
-      "remainingDuration": 214.5,
-      "totalDuration": 360,
-      "sourceItemId": "shop_date_palm",
-      "sourceKind": 1
-    }
-  ]
+Today's keys: `PlacedItemsData` (garden), `garden_area_unlocks`, `TreasureBoxState`, `PlayerInventory`,
+`player_xp`. Unity reads and writes these **directly, over Firestore's REST API**. Your app never touches
+them.
+
+### What you provide: the login
+
+Firestore's security rules need to know who is asking, so every request the game makes carries the
+player's **Firebase ID token**. Only the app can produce one, because the player signed in in the app.
+
+- **`REQUEST_AUTH_TOKEN`** (Unity → Flutter, payload `{}`) — sent on start, on resume, and whenever the
+  current token is within two minutes of expiring (ID tokens last an hour).
+- **`UPDATE_AUTH_TOKEN`** (Flutter → Unity) — answer with:
+
+  ```json
+  { "uid": "Xy12…", "idToken": "eyJhbGciOi…" }
+  ```
+
+  Also **push it unprompted whenever the token refreshes or the account changes** — listening to
+  `FirebaseAuth.instance.idTokenChanges()` does both. Send empty strings when nobody is signed in; the
+  game then keeps saves on the device only.
+
+The token is a credential: don't log it, and only send it through this bridge.
+
+### Security rule (required)
+
+Add to the Firestore rules of `amal-app-production`, so each player can read and write only their own
+saves:
+
+```
+match /users/{uid}/gameSaves/{key} {
+  allow read, write: if request.auth != null && request.auth.uid == uid;
 }
 ```
 
-### Field rules
+Without it every request from the game is refused with `403 PERMISSION_DENIED`, and the game logs
+`[CloudSave] Reading saves failed … 403`.
 
-| Field | Type | Rules |
-|---|---|---|
-| `hasData` | bool | **On the way back to Unity**, `false` means "this account has no garden stored yet" — Unity then keeps whatever is on the device and seeds Firestore from it. An account whose garden is genuinely empty must send `true` with `items: []`, otherwise deleting your last tree can never sync. |
-| `savedAtUnix` | int | Unix **seconds**, UTC. Drives both how much growth to fast-forward and which copy wins. See the warning below. |
-| `revision` | int | Save counter. Only used to break a tie when both copies report the same second. Store and return it unchanged. |
-| `items` | array | May be empty. Never null. |
-| `uniqueId` | string | Stable per placement. Moving an item keeps its id — treat the array as a full replacement, not a merge. |
-| `prefabName` | string | The prefab Unity respawns. **Store and return it byte-for-byte**; an item whose name does not match a prefab in the build is dropped with a warning. |
-| `posX/Y/Z`, `rotX/Y/Z/W` | number | World position and rotation quaternion. Flat floats on purpose, so they map onto a Firestore document with no converter. Must be JSON **numbers**, not quoted strings. |
-| `remainingDuration` | number | Seconds of growth left at `savedAtUnix`. Unity ages it by the time since — do not adjust it yourself. |
-| `totalDuration` | number | How long this item takes to fully grow. |
-| `sourceItemId` | string | Which shop/inventory item it was bought from, so returning it refunds the right thing. May be `""`. |
-| `sourceKind` | int | `0` unknown, `1` shop item, `2` inventory (treasure box) item. |
+### What the game does with it (for your understanding — nothing to implement)
 
-### ⚠️ `savedAtUnix` is a device clock
-
-Unity stamps it from the phone it is running on, and the newer of the two copies wins. A phone with a
-badly-set clock therefore wins every comparison, forever — including against a garden the player built on
-another device.
-
-**Overwrite it with a server timestamp on write, and return that value on read.** In Firestore:
-
-```dart
-await doc.set({
-  ...garden,
-  'savedAtUnix': FieldValue.serverTimestamp(),   // then read it back as epoch seconds
-});
-```
-
-That one change makes the comparison authoritative rather than best-effort. Everything else works either
-way.
-
-### When Unity sends and asks
-
-- **Asks once per cold start.** `REQUEST_GARDEN_STATE` goes out when the placement manager loads and has
-  nothing cached. Answer it even when there is nothing stored (`hasData: false`) — a dropped answer means
-  the player's other-device garden never arrives.
-- **Sends a few seconds after any change.** Placing, moving or returning an item queues a
-  `SAVE_GARDEN_STATE` about 3s later, so a player planting five things in a row costs one write, not five.
-- **Sends immediately on pause and quit.** Leaving the garden flushes whatever is pending. This is the
-  save that matters — treat it as the durable one.
-
-Unity keeps its own local copy too, so the garden is on screen from the first frame; your snapshot arrives
-a moment later and replaces it only if it is newer. Nothing is lost if Firestore is slow or unreachable.
+- **Local first.** The game keeps its own copy, so the garden is on screen from the first frame and the
+  game works offline.
+- **Newest wins, per save.** On start and on every resume, it reads all the player's saves. For each one,
+  the copy with the later `savedAtMs` wins: a newer cloud copy replaces the device's, a newer device copy
+  is uploaded.
+- **First contact, the cloud wins.** The first time a device sees an account (fresh install, reinstall,
+  new sign-in), the cloud copy wins every save it has, so a fresh install can never overwrite real
+  progress.
+- **Nothing is uploaded until the account's saves have been read.** A failed or offline read never looks
+  like an empty account.
+- **Uploads retry until Firestore confirms them**, including ones cut off by the app going to the
+  background.
+- **Account switch.** When a different uid arrives, the previous player's progress is dropped from the
+  device rather than uploaded into the new account.
 
 ---
 
@@ -561,14 +566,9 @@ EmbedUnity(
         UnityBridge.sendFellowshipProfiles(await fetchFellows());
         break;
 
-      case 'REQUEST_GARDEN_STATE':
-        // Without this the player's garden never follows them to a new device.
-        UnityBridge.sendGardenState(await fetchGarden());
-        break;
-
-      case 'SAVE_GARDEN_STATE':
-        // `data` is the garden, already a JSON string — store it as-is.
-        await saveGarden(jsonDecode(envelope['data'] as String) as Map<String, dynamic>);
+      case 'REQUEST_AUTH_TOKEN':
+        // 🆕 Without this the game can't reach the player's cloud saves.
+        await UnityBridge.sendAuthToken();
         break;
 
       case 'REQUEST_EXIT_GAME':
@@ -581,47 +581,30 @@ EmbedUnity(
 )
 ```
 
-### Store and return the garden
+### 🆕 Login for cloud saves
 
-The garden is opaque to your side — it is Unity's own scene data. Store the fields you were given and hand
-them back unchanged; the only value worth rewriting is `savedAtUnix` (see §5).
+Add to `UnityBridge`:
 
 ```dart
-// Unity → Firestore
-Future<void> saveGarden(Map<String, dynamic> garden) async {
-  await FirebaseFirestore.instance
-      .collection('users').doc(uid)
-      .collection('game').doc('jannah_garden')
-      .set({
-        ...garden,
-        // Overwrite the device clock so the newest-copy-wins comparison is trustworthy.
-        'savedAtUnix': DateTime.now().toUtc().millisecondsSinceEpoch ~/ 1000,
-      });
-}
+import 'package:firebase_auth/firebase_auth.dart';
 
-// Firestore → Unity
-Future<Map<String, dynamic>> fetchGarden() async {
-  final snap = await FirebaseFirestore.instance
-      .collection('users').doc(uid)
-      .collection('game').doc('jannah_garden')
-      .get();
-
-  // No document yet: say so explicitly. Unity keeps the on-device garden and seeds Firestore from it.
-  if (!snap.exists) return {'hasData': false, 'items': <dynamic>[], 'savedAtUnix': 0, 'revision': 0};
-
-  return {...snap.data()!, 'hasData': true};
+static Future<void> sendAuthToken() async {
+  final user = FirebaseAuth.instance.currentUser;
+  final token = await user?.getIdToken();
+  _send('UPDATE_AUTH_TOKEN', {'uid': user?.uid ?? '', 'idToken': token ?? ''});
 }
 ```
 
-Add `sendGardenState` alongside the other senders in `UnityBridge`:
+And keep the game up to date when the token refreshes or the player signs in/out — once, wherever the Unity
+screen is set up:
 
 ```dart
-static const String cmdUpdateGardenState = 'UPDATE_GARDEN_STATE';
-
-static void sendGardenState(Map<String, dynamic> garden) {
-  _send(cmdUpdateGardenState, garden);
-}
+final authSub = FirebaseAuth.instance.idTokenChanges().listen((_) => UnityBridge.sendAuthToken());
+// authSub.cancel() when the Unity screen is disposed.
 ```
+
+That's the whole Flutter side for saves. Delete any handlers for `REQUEST_GAME_DATA`, `SAVE_GAME_DATA`,
+`REQUEST_GARDEN_STATE` or `SAVE_GARDEN_STATE` — the game no longer sends them.
 
 > **Note on the legacy coin message.** Unity's `NoorCoinManager` currently sends the *plain string*
 > `CoinUpdate:{amount}` back to Flutter when the player earns or spends, rather than the JSON envelope.
@@ -652,11 +635,8 @@ that loads in a later scene still gets it.
 If Unity gets no roster within 3 seconds of asking, it falls back to placeholder dummy profiles (this is a
 development convenience and can be turned off for release).
 
-The garden works like coins — **Unity asks, then keeps you updated.** Answer `REQUEST_GARDEN_STATE` once
-per session (including with `hasData: false`), and write every `SAVE_GARDEN_STATE` you receive. You never
-need to push `UPDATE_GARDEN_STATE` unprompted; if you do — say the player's garden changed elsewhere —
-Unity adopts it only when its `savedAtUnix` is newer than what the device holds, and never while an item is
-mid-placement.
+The login works like coins — **Unity asks, and you also push changes.** Answer every
+`REQUEST_AUTH_TOKEN`, and send `UPDATE_AUTH_TOKEN` whenever `idTokenChanges()` fires.
 
 ---
 
@@ -666,7 +646,10 @@ Unity has a built-in simulator: **Window → Flutter Bridge Manager**. In Play M
 `UPDATE_FELLOWSHIP_PROFILES`, click *Load Default Template for Selection*, edit the JSON, and hit *Simulate
 Receive From Flutter*. It runs the exact same code path as a real message from Flutter.
 
-Use it to confirm the payload shape before wiring up the Flutter side.
+Use it to confirm the payload shape before wiring up the Flutter side. To test cloud saves without the
+app, either paste a real test account's uid and ID token into the `UPDATE_AUTH_TOKEN` template, or turn on
+anonymous sign-in in `Resources/CloudSaveSettings` (needs the project's Web API key and Anonymous sign-in
+enabled in Firebase Auth).
 
 ---
 
@@ -683,10 +666,11 @@ Use it to confirm the payload shape before wiring up the Flutter side.
 | Coins are stale after returning to the garden | Your `UNITY_READY` / `REQUEST_COIN_BALANCE` handler replies from a cached user object that was not refreshed. Unity re-asks on every resume; answer with the current balance. |
 | All cards show "Member since —" | `memberSince` is not `YYYY-MM-DD`. |
 | Avatars never appear | `profileImagePath` is not a reachable `http(s)` URL, or the device has no network. Unity logs the failure and keeps the default avatar. |
-| Garden is empty on a new device | `REQUEST_GARDEN_STATE` was never answered, or was answered with `hasData: false` when a garden did exist. |
-| Some placed items are missing after a restore | `Failed to find placeable prefab named: X` in the log — `prefabName` was altered in storage, or the item's prefab is not reachable from the loaded scene. |
-| Firebase keeps losing the newest garden | Both copies are being compared on device clocks. Stamp `savedAtUnix` server-side on write and return that value on read (§5). |
-| The garden reverts to an old state | You answered `REQUEST_GARDEN_STATE` with a stale cached document whose `savedAtUnix` was newer than the device's. Read through to Firestore. |
+| 🆕 Progress is gone on a new device / after reinstall | The game never got a login: `REQUEST_AUTH_TOKEN` unanswered. Look for `[CloudSave] No login token yet` in the device log. |
+| 🆕 `[CloudSave] Reading saves failed … 403` | The security rule in §5 is missing, or the token is for a different Firebase project than `amal-app-production`. |
+| 🆕 Saves stop uploading after about an hour | The token expired and `REQUEST_AUTH_TOKEN` was answered with a cached token. Always call `getIdToken()`, which refreshes as needed. |
+| 🆕 One player's progress showed up in another account | `UPDATE_AUTH_TOKEN` wasn't sent when the account changed. Listen to `idTokenChanges()` (§6). |
+| Some placed items are missing after a restore | Their asset bundle failed to download. The game keeps them in the save and retries on the next launch. |
 | The app dies when the player taps **Save** on iOS | `NSPhotoLibraryAddUsageDescription` is missing from the host app's `Info.plist`. iOS terminates rather than refuses. |
 | Sharing a photo does nothing | The game handles this itself now; look for `[NativePhoto]` in the device log rather than for a bridge message. |
 | The shared photo file is missing | You held the path and used it later. The game keeps only the most recent photos and deletes the rest as new ones are taken. |

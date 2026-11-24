@@ -48,10 +48,10 @@ namespace FlutterIntegration
         public static event Action<bool> OnAdSdkStateChanged;
 
         /// <summary>
-        /// Fires when Flutter hands over the garden stored in Firebase. <see cref="ItemPlacementManager"/>
-        /// listens for this and rebuilds the garden when the stored copy is newer than the device's.
+        /// Fires when Flutter hands over the player's Firebase login. <c>FirebaseSession</c> listens for
+        /// this; <c>CloudSave</c> then talks to Firestore with it directly.
         /// </summary>
-        public static event Action<GardenStatePayload> OnGardenStateReceived;
+        public static event Action<AuthTokenPayload> OnAuthTokenReceived;
 
         /// <summary>Fires when Flutter reports how a photo share or gallery save ended.</summary>
         public static event Action<PhotoActionResultPayload> OnPhotoActionResult;
@@ -62,13 +62,6 @@ namespace FlutterIntegration
 
         public static UserProfilePayload LatestUserProfile { get; private set; }
         public static FellowshipProfilesPayload LatestFellowshipProfiles { get; private set; }
-
-        /// <summary>
-        /// The last garden Flutter pushed, or null if none yet. Cached for the same reason as the coin
-        /// balance: the garden usually arrives while a loading scene is up, long before the
-        /// <see cref="ItemPlacementManager"/> that wants it exists.
-        /// </summary>
-        public static GardenStatePayload LatestGardenState { get; private set; }
 
         /// <summary>
         /// The last authoritative Noor Coin balance Flutter pushed, or null if none yet. Cached so a
@@ -218,7 +211,13 @@ namespace FlutterIntegration
         /// <param name="jsonMessage">A JSON <see cref="FlutterMessage"/> whose `data` is a JSON *string*.</param>
         public void ReceiveMessageFromFlutter(string jsonMessage)
         {
-            Debug.Log($"[FlutterBridge] Received Raw Message: {jsonMessage}");
+            // Login tokens are credentials — keep them out of the device log.
+            if (jsonMessage != null && jsonMessage.Contains(FlutterCommands.UpdateAuthToken))
+                Debug.Log($"[FlutterBridge] Received {FlutterCommands.UpdateAuthToken} ({jsonMessage.Length} chars).");
+            else
+                Debug.Log(jsonMessage == null || jsonMessage.Length <= 600
+                    ? $"[FlutterBridge] Received Raw Message: {jsonMessage}"
+                    : $"[FlutterBridge] Received Raw Message ({jsonMessage.Length} chars): {jsonMessage.Substring(0, 600)}…");
 
             try
             {
@@ -355,28 +354,16 @@ namespace FlutterIntegration
                     break;
                 }
 
-                case FlutterCommands.UpdateGardenState:
+                case FlutterCommands.UpdateAuthToken:
                 {
-                    GardenStatePayload garden = JsonUtility.FromJson<GardenStatePayload>(dataJson);
+                    AuthTokenPayload auth = JsonUtility.FromJson<AuthTokenPayload>(dataJson);
+                    if (auth == null) break;
 
-                    if (garden == null)
-                    {
-                        Debug.LogWarning("[FlutterBridge] UPDATE_GARDEN_STATE had no payload — ignoring.");
-                        break;
-                    }
+                    // Never log the token itself.
+                    Debug.Log($"[FlutterBridge] Auth -> signed in: {!string.IsNullOrEmpty(auth.uid)}, " +
+                              $"token: {(string.IsNullOrEmpty(auth.idToken) ? "none" : auth.idToken.Length + " chars")}");
 
-                    // A null items array and an empty one mean different things to the placement manager
-                    // ("nothing stored yet" vs "the player emptied their garden"), so normalise only the
-                    // former, and only when Flutter says it has data.
-                    if (garden.hasData && garden.items == null) garden.items = new GardenItemPayload[0];
-
-                    LatestGardenState = garden;
-                    Debug.Log($"[FlutterBridge] Garden -> hasData: {garden.hasData}, " +
-                              $"items: {garden.items?.Length ?? 0}, savedAt: {garden.savedAtUnix}");
-
-                    // Fires only if a listener exists; otherwise the garden waits in the cache for the
-                    // scene that wants it.
-                    OnGardenStateReceived?.Invoke(garden);
+                    OnAuthTokenReceived?.Invoke(auth);
                     break;
                 }
 
@@ -485,32 +472,12 @@ namespace FlutterIntegration
         }
 
         /// <summary>
-        /// Asks Flutter for the garden stored in Firebase. Called by <see cref="ItemPlacementManager"/>
-        /// when it loads with nothing cached — which is every cold start, and the reason a player's
-        /// garden survives a change of device.
+        /// Asks Flutter for the signed-in player's uid and a fresh Firebase ID token. Called by
+        /// <c>FirebaseSession</c>.
         /// </summary>
-        public void RequestGardenState()
+        public void RequestAuthToken()
         {
-            SendMessageToFlutterApp(FlutterCommands.RequestGardenState, new EmptyPayload());
-        }
-
-        /// <summary>
-        /// Hands the player's garden to Flutter to be written to Firebase. Unity has no Firebase SDK, so
-        /// this is the only route the garden has off the device.
-        /// </summary>
-        public void SaveGardenState(GardenStatePayload garden)
-        {
-            if (garden == null)
-            {
-                Debug.LogWarning("[FlutterBridge] SaveGardenState called with no payload — nothing sent.");
-                return;
-            }
-
-            // Keep the cache in step with what we just wrote, so a scene loading straight after this
-            // does not adopt a stale copy of the garden.
-            LatestGardenState = garden;
-
-            SendMessageToFlutterApp(FlutterCommands.SaveGardenState, garden);
+            SendMessageToFlutterApp(FlutterCommands.RequestAuthToken, new EmptyPayload());
         }
 
         /// <summary>
@@ -564,7 +531,11 @@ namespace FlutterIntegration
 
                 SendToFlutter.Send(finalJson);
 
-                Debug.Log($"[FlutterBridge] Sent to Flutter: {finalJson}");
+                // Capped: a garden save can be tens of kilobytes, and on device every log line is a
+                // native write.
+                Debug.Log(finalJson.Length <= 600
+                    ? $"[FlutterBridge] Sent to Flutter: {finalJson}"
+                    : $"[FlutterBridge] Sent to Flutter ({finalJson.Length} chars): {finalJson.Substring(0, 600)}…");
             }
             catch (Exception e)
             {

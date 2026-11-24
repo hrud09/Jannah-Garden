@@ -61,13 +61,13 @@ namespace FlutterIntegration
         public const string UpdateAdSdkState = "UPDATE_AD_SDK_STATE";
 
         /// <summary>
-        /// Flutter hands over the garden it has stored in Firebase — every asset the player has placed,
-        /// where it stands and how far along its growth timer is. Sent in answer to
-        /// <see cref="RequestGardenState"/>, and again whenever the stored garden changes.
-        /// Payload: <see cref="GardenStatePayload"/>. This is what carries a player's Jannah Garden onto
-        /// a new device.
+        /// Flutter hands over the signed-in player's Firebase login — uid and ID token — so the game can
+        /// read and write their saves in Firestore itself (see <c>CloudSave</c>). Send it in answer to
+        /// <see cref="RequestAuthToken"/>, and push it unprompted whenever the token refreshes or the
+        /// account changes (FirebaseAuth's <c>idTokenChanges()</c> stream does both). Empty fields mean
+        /// nobody is signed in. Payload: <see cref="AuthTokenPayload"/>.
         /// </summary>
-        public const string UpdateGardenState = "UPDATE_GARDEN_STATE";
+        public const string UpdateAuthToken = "UPDATE_AUTH_TOKEN";
 
         /// <summary>
         /// Flutter's answer to <see cref="RequestSharePhoto"/> / <see cref="RequestSavePhoto"/>, sent once
@@ -134,21 +134,11 @@ namespace FlutterIntegration
         public const string RequestAdSdkState = "REQUEST_AD_SDK_STATE";
 
         /// <summary>
-        /// Asks Flutter for the garden stored in Firebase. Sent once when the placement manager comes up
-        /// with nothing cached. Payload: <see cref="EmptyPayload"/>. Answered with
-        /// <see cref="UpdateGardenState"/> — including when the account has no garden yet, in which case
-        /// <see cref="GardenStatePayload.hasData"/> is false and the game seeds Firebase from this device.
+        /// Asks Flutter for the signed-in player's Firebase uid and a fresh ID token. Sent when the game
+        /// starts or resumes, and whenever the current token is about to expire (they last an hour).
+        /// Payload: <see cref="EmptyPayload"/>. Answered with <see cref="UpdateAuthToken"/>.
         /// </summary>
-        public const string RequestGardenState = "REQUEST_GARDEN_STATE";
-
-        /// <summary>
-        /// The player's garden changed — write it to Firebase under their account. Sent a few seconds
-        /// after any placement, move or return (so a burst of edits is one write), and immediately when
-        /// the game is paused or closed. Payload: <see cref="GardenStatePayload"/>, always with
-        /// <see cref="GardenStatePayload.hasData"/> true; an empty <c>items</c> array means the player
-        /// really has emptied their garden and Firebase should record that.
-        /// </summary>
-        public const string SaveGardenState = "SAVE_GARDEN_STATE";
+        public const string RequestAuthToken = "REQUEST_AUTH_TOKEN";
 
         /// <summary>
         /// The player tapped Share on a photo they took of their garden — open the native share sheet.
@@ -319,70 +309,19 @@ namespace FlutterIntegration
     }
 
     /// <summary>
-    /// One asset standing in the player's garden.
-    ///
-    /// Position and rotation are flat floats rather than nested Vector3/Quaternion objects: this maps
-    /// straight onto a Firestore document without a custom converter on the Flutter side, and it keeps
-    /// JsonUtility (which is fussy about nesting) out of trouble in both directions.
+    /// Flutter → Unity: who is signed in. See <see cref="FlutterCommands.UpdateAuthToken"/>.
     /// </summary>
     [Serializable]
-    public class GardenItemPayload
+    public class AuthTokenPayload
     {
-        /// <summary>Stable id for this placement, so a move updates a row instead of adding one.</summary>
-        public string uniqueId;
-
-        /// <summary>Name of the prefab to respawn. Must match a prefab the game can reach — do not rewrite it.</summary>
-        public string prefabName;
-
-        public float posX;
-        public float posY;
-        public float posZ;
-
-        public float rotX;
-        public float rotY;
-        public float rotZ;
-        public float rotW;
-
-        /// <summary>Seconds of growth left when the snapshot was taken. The game ages it by the time since.</summary>
-        public float remainingDuration;
-
-        /// <summary>How long this item takes to fully grow, start to finish.</summary>
-        public float totalDuration;
-
-        /// <summary>The shop/inventory item this was placed from, used when the player returns it.</summary>
-        public string sourceItemId;
-
-        /// <summary>0 = unknown, 1 = shop item, 2 = inventory (treasure box) item. See <c>PlacedItemSource</c>.</summary>
-        public int sourceKind;
-    }
-
-    /// <summary>
-    /// The whole garden, in both directions: Unity → Flutter to be written to Firebase
-    /// (<see cref="FlutterCommands.SaveGardenState"/>), and Flutter → Unity to be restored
-    /// (<see cref="FlutterCommands.UpdateGardenState"/>).
-    /// </summary>
-    [Serializable]
-    public class GardenStatePayload
-    {
-        /// <summary>
-        /// False only from Flutter, meaning "this account has no garden stored yet". The game then keeps
-        /// whatever is on the device and seeds Firebase from it. An account whose garden is genuinely
-        /// empty should send true with an empty <see cref="items"/> array instead.
-        /// </summary>
-        public bool hasData;
+        /// <summary>Firebase Auth uid. Empty when nobody is signed in.</summary>
+        public string uid;
 
         /// <summary>
-        /// When this snapshot was taken (Unix seconds, UTC). Drives two things: how much growth to
-        /// fast-forward while the player was away, and which of the device's and Firebase's copies is
-        /// newer. Flutter should replace it with a server timestamp when it can — the value written here
-        /// is the device's own clock, and a badly-set clock otherwise always wins the comparison.
+        /// A current Firebase ID token for that user (<c>user.getIdToken()</c>). The game sends it with
+        /// every Firestore request, so the database's security rules see the player as themselves.
         /// </summary>
-        public long savedAtUnix;
-
-        /// <summary>Save counter, used only to break a tie when both copies report the same second.</summary>
-        public int revision;
-
-        public GardenItemPayload[] items;
+        public string idToken;
     }
 
     /// <summary>
