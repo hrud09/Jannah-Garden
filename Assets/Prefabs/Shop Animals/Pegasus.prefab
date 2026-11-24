@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5302345742279465092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3441502023696848909}
+  - component: {fileID: 3816354287879659363}
+  - component: {fileID: 8700383321386416866}
+  - component: {fileID: 5141323648717773073}
+  m_Layer: 0
+  m_Name: Pegasus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3441502023696848909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302345742279465092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 727311360841560035}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3816354287879659363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302345742279465092}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &8700383321386416866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302345742279465092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
+  placementDuration: 60
+  remainingDuration: 60
+  uniqueId: 
+  prefabName: Pegasus
+  sourceKind: 0
+  sourceItemId: 
+  timerHolder: {fileID: 0}
+  timerPlantDropHeight: 4
+  timerPlantSwingDistance: 0.6
+  timerPlantFallDuration: 0.35
+  timerPlantImpactDuration: 0.18
+  timerPlantImpactStrength: 0.35
+  itemRenderers: []
+  isTree: 0
+  isBuilding: 0
+  itemGFX: {fileID: 0}
+  alignGfxToGround: 0
+  alignUsingRenderersIfNoCollider: 1
+--- !u!114 &5141323648717773073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302345742279465092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7923c7ab9d7384b82d273573d39243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlacedAnimal
+  animal: {fileID: 6243648103755838155}
+--- !u!1001 &2554345399589184288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3441502023696848909}
+    m_Modifications:
+    - target: {fileID: 2463159910235100793, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_Name
+      value: Pegasus
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.77799994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.778
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.77799994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491325189068607979, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491325189068607979, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      propertyPath: wanderRadius
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2463159910235100793, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 623121826291250877}
+  m_SourcePrefab: {fileID: 100100000, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+--- !u!1 &98020881034474841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2463159910235100793, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+  m_PrefabInstance: {fileID: 2554345399589184288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &623121826291250877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98020881034474841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6645519, y: 2.8334007, z: 3.1441536}
+  m_Center: {x: -0.000009536743, y: 1.5502752, z: -0.13945639}
+--- !u!4 &727311360841560035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2982850044492483779, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+  m_PrefabInstance: {fileID: 2554345399589184288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6243648103755838155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8491325189068607979, guid: e98efc3ed8f5246b4ba02675a1c74e3c, type: 3}
+  m_PrefabInstance: {fileID: 2554345399589184288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98020881034474841}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bb00e954e3fe244aca3b41fac5fabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrazingAnimal

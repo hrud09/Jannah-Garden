@@ -1151,6 +1151,10 @@
         {
             "key": "majlis.joined",
             "value": "You joined the majlis. Move to stand up."
+        },
+        {
+            "key": "shop.category.animals",
+            "value": "Animals"
         }
     ]
 }

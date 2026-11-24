@@ -2076,6 +2076,73 @@ MonoBehaviour:
       gridFootprintOverride: {x: 0, y: 0}
       footprintScale: 1
       itemPrice: 
+  - category: 10
+    maxVisibleItems: 0
+    items:
+    - itemIcon: {fileID: 21300000, guid: 125d7720cf27e6349bec43e424b6c4cd, type: 3}
+      itemName: Camel
+      itemDescription: A gentle camel in a hand-woven coat. It grazes and strolls
+        near where you place it. Walk up to it to ride, even across the lake.
+      itemID: animal_camel
+      acquisitionType: 1
+      noorCoinCost: 0
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 10
+      itemTier: 1
+      sortOrder: 0
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: 0236b50bcb393c24598a7a5388b7fd82
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 7, y: 24}
+      footprintScale: 1
+      itemPrice: 
+    - itemIcon: {fileID: 21300000, guid: b42f5a3ce6720bc4ab67b5cd0eba658a, type: 3}
+      itemName: Pegasus
+      itemDescription: A winged horse that grazes near where you place it. Climb
+        on to gallop, take off and fly over the garden.
+      itemID: animal_pegasus
+      acquisitionType: 1
+      noorCoinCost: 0
+      isDailyOffer: 0
+      offerCooldownHours: 24
+      iapProductId: 
+      realMoneyPriceLabel: $0.99
+      noorCoinReward: 0
+      itemCategory: 10
+      itemTier: 4
+      sortOrder: 10
+      requiredXPLevel: 1
+      itemPrefabRef:
+        m_AssetGUID: fdcb14fc207298549b798e710a253e29
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+      itemPlacementModelPrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+      placementTimerDuration: 60
+      gridFootprintOverride: {x: 14, y: 25}
+      footprintScale: 1
+      itemPrice: 
   - category: 8
     maxVisibleItems: 4
     items:

@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0236b50bcb393c24598a7a5388b7fd82
+    m_Address: Assets/Prefabs/Shop Animals/Camel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 061b2bdb0b505404ab381eed6f75c1ba
     m_Address: Assets/Prefabs/Shop Items/WaterOfGarden/Tiered_Cascade.prefab
     m_ReadOnly: 0
@@ -412,6 +417,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd5ab67aa510888499f842d51f660a4a
     m_Address: Assets/Prefabs/Treasurebox Reward Items/BlossomTree_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdcb14fc207298549b798e710a253e29
+    m_Address: Assets/Prefabs/Shop Animals/Pegasus.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

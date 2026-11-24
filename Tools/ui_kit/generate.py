@@ -656,12 +656,68 @@ def icon_celestial():
     return _finish(img)
 
 
+def icon_animals():
+    """A dromedary in profile, facing left: ivory body, a gold saddle cloth on the hump, a teal gem."""
+    s = ICON * SS
+    img = Image.new("RGBA", (s, s), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    iv, far = IVORY + (255,), IVORY_LO + (255,)
+    lw = 0.075 * s
+
+    def leg(x, top, bottom, fill):
+        d.rounded_rectangle([(x - lw / 2), top * s, (x + lw / 2), bottom * s], radius=lw / 2, fill=fill)
+
+    # far legs first, a shade darker so the near pair reads in front of them
+    leg(0.42 * s, 0.56, 0.90, far)
+    leg(0.76 * s, 0.56, 0.90, far)
+    # tail
+    d.line([(0.86 * s, 0.46 * s), (0.91 * s, 0.62 * s)], fill=far, width=int(0.035 * s))
+
+    body = Image.new("L", (s, s), 0)
+    b = ImageDraw.Draw(body)
+    b.ellipse([0.30 * s, 0.40 * s, 0.88 * s, 0.68 * s], fill=255)         # barrel
+    b.ellipse([0.39 * s, 0.25 * s, 0.81 * s, 0.60 * s], fill=255)         # hump
+    b.line([(0.38 * s, 0.54 * s), (0.27 * s, 0.38 * s), (0.22 * s, 0.24 * s)],
+           fill=255, width=int(0.12 * s), joint="curve")                  # neck
+    b.ellipse([0.32 * s, 0.46 * s, 0.44 * s, 0.60 * s], fill=255)         # chest
+    b.ellipse([0.11 * s, 0.13 * s, 0.31 * s, 0.29 * s], fill=255)         # skull
+    b.ellipse([0.04 * s, 0.17 * s, 0.19 * s, 0.30 * s], fill=255)         # muzzle
+    b.polygon([(0.24 * s, 0.15 * s), (0.27 * s, 0.07 * s), (0.30 * s, 0.16 * s)], fill=255)  # ear
+    img.paste(Image.new("RGBA", (s, s), iv), (0, 0), body)
+
+    leg(0.36 * s, 0.58, 0.92, iv)
+    leg(0.70 * s, 0.58, 0.92, iv)
+
+    # gold saddle cloth draped over the hump, kept inside the silhouette
+    cloth = Image.new("L", (s, s), 0)
+    ImageDraw.Draw(cloth).rounded_rectangle([0.47 * s, 0.30 * s, 0.73 * s, 0.60 * s],
+                                            radius=0.05 * s, fill=255)
+    inner = body.filter(ImageFilter.MinFilter(int(0.03 * s) | 1))
+    cloth = ImageChops.multiply(cloth, inner)
+    img.paste(Image.new("RGBA", (s, s), GOLD_MID + (255,)), (0, 0), cloth)
+    # tassel fringe under the cloth
+    for x in (0.51, 0.58, 0.65, 0.72):
+        d.polygon([((x - 0.018) * s, 0.585 * s), ((x + 0.018) * s, 0.585 * s), (x * s, 0.64 * s)],
+                  fill=GOLD_MID + (255,))
+    # the eye, cut out of the ivory so the jade plate shows through
+    d.ellipse([0.165 * s, 0.175 * s, 0.205 * s, 0.215 * s], fill=(0, 0, 0, 0))
+
+    img = img.resize((ICON, ICON), Image.LANCZOS)
+    gem(img, 0.60 * ICON, 0.44 * ICON, ICON * 0.055)
+    a = img.getchannel("A").filter(ImageFilter.MaxFilter(3))
+    out = Image.new("RGBA", img.size, BRONZE + (0,))
+    out.putalpha(scale_mask(a, 0.8))
+    out.alpha_composite(img)
+    return out
+
+
 CATEGORY_ICONS = {
     "jg_cat_plants": icon_plants,
     "jg_cat_water": icon_water,
     "jg_cat_architecture": icon_architecture,
     "jg_cat_decor": icon_decor,
     "jg_cat_celestial": icon_celestial,
+    "jg_cat_animals": icon_animals,
 }
 
 

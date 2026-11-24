@@ -1839,6 +1839,26 @@
         {
             "key": "majlis.joined",
             "value": "انضممت إلى المجلس. تحرّك للنهوض."
+        },
+        {
+            "key": "shop.category.animals",
+            "value": "الحيوانات"
+        },
+        {
+            "key": "item.animal_camel.name",
+            "value": "الجمل"
+        },
+        {
+            "key": "item.animal_camel.desc",
+            "value": "جمل وديع يرتدي غطاءً منسوجًا يدويًا. يرعى ويتجول قرب المكان الذي تضعه فيه. اقترب منه لتركبه، حتى عبر البحيرة."
+        },
+        {
+            "key": "item.animal_pegasus.name",
+            "value": "البيغاسوس"
+        },
+        {
+            "key": "item.animal_pegasus.desc",
+            "value": "حصان مجنح يرعى قرب المكان الذي تضعه فيه. اركبه لتعدو ثم تحلق فوق الحديقة."
         }
     ]
 }

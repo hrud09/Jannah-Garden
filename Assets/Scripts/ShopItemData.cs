@@ -183,6 +183,9 @@ public enum ShopItemCategory
     /// <summary>Lanterns, stars, light effects and floating landscape pieces.</summary>
     CelestialAndLight = 9,      // appended: 4-8 were already taken by the tabs below
 
+    /// <summary>Camels, pegasi and other living companions. Acquired only by watching a rewarded ad.</summary>
+    Animals = 10,               // appended
+
     // ── Inventory (treasure box) rarity tabs ──────────────────────────────
     Silver = 4,
     Gold = 5,
@@ -215,14 +218,15 @@ public enum ShopItemTier
 /// </summary>
 public static class ShopTaxonomy
 {
-    /// <summary>The five collections a placeable item can belong to, in shop order.</summary>
+    /// <summary>The collections a placeable item can belong to, in shop order.</summary>
     public static readonly ShopItemCategory[] ShopCategories =
     {
         ShopItemCategory.PlantsAndGardens,
         ShopItemCategory.WaterOfGarden,
         ShopItemCategory.Architecture,
         ShopItemCategory.DecorAndSacredObjects,
-        ShopItemCategory.CelestialAndLight
+        ShopItemCategory.CelestialAndLight,
+        ShopItemCategory.Animals
     };
 
     /// <summary>The rarity tabs on the inventory side of the panel.</summary>
@@ -244,6 +248,7 @@ public static class ShopTaxonomy
             case ShopItemCategory.Architecture:
             case ShopItemCategory.DecorAndSacredObjects:
             case ShopItemCategory.CelestialAndLight:
+            case ShopItemCategory.Animals:
             case ShopItemCategory.NoorCoins:
                 return true;
             default:
@@ -263,6 +268,7 @@ public static class ShopTaxonomy
             case ShopItemCategory.Architecture: return Localized("shop.category.architecture", "Architecture");
             case ShopItemCategory.DecorAndSacredObjects: return Localized("shop.category.decor_sacred", "Decor & Sacred");
             case ShopItemCategory.CelestialAndLight: return Localized("shop.category.celestial_light", "Celestial & Light");
+            case ShopItemCategory.Animals: return Localized("shop.category.animals", "Animals");
             case ShopItemCategory.NoorCoins: return Localized("shop.category.noor_coins", "Noor Coins");
             default: return category.ToString();
         }
@@ -295,6 +301,7 @@ public static class ShopTaxonomy
             case ShopItemCategory.Architecture: return new Color(0.83f, 0.70f, 0.47f);     // sandstone
             case ShopItemCategory.DecorAndSacredObjects: return new Color(0.75f, 0.45f, 0.78f); // mosaic violet
             case ShopItemCategory.CelestialAndLight: return new Color(0.99f, 0.83f, 0.36f); // lantern gold
+            case ShopItemCategory.Animals: return new Color(0.86f, 0.55f, 0.32f);           // camel tan
             case ShopItemCategory.NoorCoins: return new Color(1.00f, 0.76f, 0.20f);        // coin amber
             default: return Color.white;
         }

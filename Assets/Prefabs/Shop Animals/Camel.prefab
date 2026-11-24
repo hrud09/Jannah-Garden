@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7058039236722022772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3343131823075575265}
+  - component: {fileID: 6320899098482537927}
+  - component: {fileID: 1532569048208318057}
+  - component: {fileID: 7339681994204186067}
+  m_Layer: 0
+  m_Name: Camel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3343131823075575265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058039236722022772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2516128243759422659}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6320899098482537927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058039236722022772}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &1532569048208318057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058039236722022772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104b4e05a9a2784418e250e760720e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceableItem
+  placementDuration: 60
+  remainingDuration: 60
+  uniqueId: 
+  prefabName: Camel
+  sourceKind: 0
+  sourceItemId: 
+  timerHolder: {fileID: 0}
+  timerPlantDropHeight: 4
+  timerPlantSwingDistance: 0.6
+  timerPlantFallDuration: 0.35
+  timerPlantImpactDuration: 0.18
+  timerPlantImpactStrength: 0.35
+  itemRenderers: []
+  isTree: 0
+  isBuilding: 0
+  itemGFX: {fileID: 0}
+  alignGfxToGround: 0
+  alignUsingRenderersIfNoCollider: 1
+--- !u!114 &7339681994204186067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058039236722022772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7923c7ab9d7384b82d273573d39243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlacedAnimal
+  animal: {fileID: 2881732261048934574}
+--- !u!1001 &1382879391903616601
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3343131823075575265}
+    m_Modifications:
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.578
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.578
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.578
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804698650761064183, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804698650761064183, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: wanderRadius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219939478433974304, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      propertyPath: m_Name
+      value: Camel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4219939478433974304, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2806892815715866428}
+  m_SourcePrefab: {fileID: 100100000, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+--- !u!4 &2516128243759422659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3592724837635986074, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+  m_PrefabInstance: {fileID: 1382879391903616601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2881732261048934574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3804698650761064183, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+  m_PrefabInstance: {fileID: 1382879391903616601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2999614926687553145}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bb00e954e3fe244aca3b41fac5fabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrazingAnimal
+--- !u!1 &2999614926687553145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4219939478433974304, guid: 7206d71e3b4e1d049922a20a159c08ef, type: 3}
+  m_PrefabInstance: {fileID: 1382879391903616601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2806892815715866428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2999614926687553145}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1175917, y: 3.4898453, z: 4.0344577}
+  m_Center: {x: -0.0020112991, y: 1.9289337, z: 0.86391425}

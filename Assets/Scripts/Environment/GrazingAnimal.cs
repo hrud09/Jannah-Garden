@@ -201,6 +201,20 @@ public class GrazingAnimal : MonoBehaviour
         _homeRadius = wanderRadius;
     }
 
+    /// <summary>
+    /// Makes the animal's current position its new home and restores its authored wander radius. Used by
+    /// <see cref="PlacedAnimal"/> when a shop-bought animal is placed, moved, or reused from the pool —
+    /// Awake only captures the home once, which is wrong for a pooled, relocatable item.
+    /// </summary>
+    public void ResetHome()
+    {
+        if (_animator == null) return; // Not awake yet — Awake takes the home itself.
+        _home = transform.position;
+        _target = _home;
+        wanderRadius = _homeRadius;
+        _mode = Mode.Idle;
+    }
+
     private void OnEnable()
     {
         All.Add(this);

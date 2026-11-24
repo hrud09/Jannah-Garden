@@ -1839,6 +1839,26 @@
         {
             "key": "majlis.joined",
             "value": "আপনি মজলিসে যোগ দিয়েছেন। উঠতে নড়াচড়া করুন।"
+        },
+        {
+            "key": "shop.category.animals",
+            "value": "প্রাণী"
+        },
+        {
+            "key": "item.animal_camel.name",
+            "value": "উট"
+        },
+        {
+            "key": "item.animal_camel.desc",
+            "value": "হাতে বোনা চাদর পরা এক শান্ত উট। যেখানে রাখবে তার কাছেই চরে বেড়ায়। কাছে গিয়ে চড়ে বসো, এমনকি হ্রদ পেরিয়েও।"
+        },
+        {
+            "key": "item.animal_pegasus.name",
+            "value": "পেগাসাস"
+        },
+        {
+            "key": "item.animal_pegasus.desc",
+            "value": "ডানাওয়ালা ঘোড়া, যেখানে রাখবে তার কাছেই চরে। চড়ে বসে ছুটে চলো, তারপর উড়ে যাও বাগানের ওপর দিয়ে।"
         }
     ]
 }

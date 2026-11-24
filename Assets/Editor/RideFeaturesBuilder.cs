@@ -53,7 +53,7 @@ public static class RideFeaturesBuilder
 
         GameObject orbPrefab = BuildOrbPrefab();
         Sprite camelIcon = RenderIcon(CamelPrefabPath, "Ride_Camel", "Idle_01", 0.3f, 35f);
-        Sprite pegasusIcon = RenderIcon(PegasusPrefabPath, "Ride_Pegasus", "Pegasus_Idle_Wings", 0.5f, 35f);
+        Sprite pegasusIcon = RenderIcon(PegasusPrefabPath, "Ride_Pegasus", null, 0f, 35f); // rest pose: the spread-wing idle clipped off the frame
         Sprite orbIcon = RenderIcon(OrbPrefabPath, "Ride_Orb", null, 0f, 10f);
         Sprite coinIcon = AssetDatabase.LoadAssetAtPath<Sprite>(UiFolder + "/jg_noor_coin_fly.png");
 
