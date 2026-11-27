@@ -205,8 +205,14 @@ public class UIButtonJuiceBootstrap : MonoBehaviour
         go.AddComponent<UIButtonJuiceBootstrap>();
     }
 
+    private float _nextScan;
+
     private void LateUpdate()
     {
+        // New buttons only appear when panels open; a 0.2 s scan catches them before a thumb can reach them.
+        if (Time.unscaledTime < _nextScan) return;
+        _nextScan = Time.unscaledTime + 0.2f;
+
         int count = Selectable.allSelectableCount;
         if (_buffer.Length < count) _buffer = new Selectable[Mathf.NextPowerOfTwo(count)];
 

@@ -287,6 +287,9 @@ public class PlaceableItem : MonoBehaviour
 
     private void OnDestroy()
     {
+        // Instanced copies are not freed with the renderer; without this every placed item leaked them.
+        ReleaseInstancedMaterials();
+
         if (RuntimeEnvironmentGenerator.Instance != null)
         {
             RuntimeEnvironmentGenerator.Instance.UnregisterObject(gameObject);
@@ -548,9 +551,30 @@ public class PlaceableItem : MonoBehaviour
         // animation it inherits from.
         if (timerHolder == null || _isPlantingTimerHolder) return;
 
-        timerHolder.transform.position = TimerHolderGroundPosition;
-        timerHolder.transform.rotation = Quaternion.LookRotation(TimerHolderOutwardDirection, Vector3.up);
+        // Re-pinning costs two terrain height samples plus a transform write that re-dirties the
+        // signboard's renderers and TMP text, and every placed item in the garden does this. Once the
+        // item has stopped growing and nothing has moved it, the result is identical every frame - skip it.
+        Transform holder = timerHolder.transform;
+        if (!isTracking && _timerPinValid
+            && transform.position == _pinnedItemPosition
+            && transform.rotation == _pinnedItemRotation
+            && holder.position == _pinnedHolderPosition)
+        {
+            return;
+        }
+
+        holder.position = TimerHolderGroundPosition;
+        holder.rotation = Quaternion.LookRotation(TimerHolderOutwardDirection, Vector3.up);
+
+        _pinnedItemPosition = transform.position;
+        _pinnedItemRotation = transform.rotation;
+        _pinnedHolderPosition = holder.position;
+        _timerPinValid = true;
     }
+
+    private bool _timerPinValid;
+    private Vector3 _pinnedItemPosition, _pinnedHolderPosition;
+    private Quaternion _pinnedItemRotation;
 
     /// <summary>(Re)starts the drop-and-plant animation for <see cref="timerHolder"/>, activating it first
     /// if needed. Called every time tracking begins — a fresh placement or a relocate drop — so the
@@ -643,18 +667,24 @@ public class PlaceableItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Per-renderer instanced material arrays, indexed the same as <see cref="itemRenderers"/>.
-    /// Populated once in <see cref="Awake"/>: <c>Renderer.materials</c> allocates a new array
-    /// (and instantiates materials) on every call, and this is read every frame while a placed
-    /// item's saturation/scale animation is ticking, so the cached copy avoids re-allocating.
+    /// Per-renderer material arrays currently on the renderers, indexed like <see cref="itemRenderers"/>.
+    /// Null while the item draws with its shared (asset) materials.
+    ///
+    /// <para>Every placed item used to clone all of its materials in Awake and keep them forever. A clone
+    /// is a different material to the renderer, so a garden of identical trees could never share
+    /// draw state, every clone carried the BASE_SATURATION keyword (a separate shader variant), and the
+    /// clones were never destroyed. Now clones exist only while the item looks different from its asset -
+    /// growing (desaturated) or highlighted - and the shared materials go back on as soon as it is fully
+    /// grown and unselected. A finished garden draws entirely with shared materials.</para>
     /// </summary>
     private Material[][] _cachedMaterials;
 
-    /// <summary>
-    /// Shader property ids resolved once. The string overloads of <c>HasProperty</c>/<c>SetFloat</c>
-    /// hash the name on every call, and the saturation ones are hit for every material of every
-    /// growing item, every frame.
-    /// </summary>
+    /// <summary>The asset materials, captured once, restored when the clones are released.</summary>
+    private Material[][] _sharedMaterials;
+
+    /// <summary>True when every material is at full saturation, i.e. looks exactly like its asset.</summary>
+    private bool _atFullSaturation = true;
+
     private static readonly int SaturationPropertyId = Shader.PropertyToID("_Saturation");
     private static readonly int OutlinePropertyId = Shader.PropertyToID("_Outline");
 
@@ -686,29 +716,105 @@ public class PlaceableItem : MonoBehaviour
         _lastSaturationFromStart = int.MinValue;
     }
 
+    /// <summary>Captures the renderers' shared materials. Called from Awake; nothing is cloned here.</summary>
     private void CacheInstancedMaterials()
     {
-        // The materials this was tracking are gone, so what was written to them says nothing about
-        // what the new ones hold.
+        ReleaseInstancedMaterials();
         ClearSaturationWriteCache();
 
         if (itemRenderers == null)
         {
-            _cachedMaterials = null;
+            _sharedMaterials = null;
             return;
         }
 
-        _cachedMaterials = new Material[itemRenderers.Length][];
+        _sharedMaterials = new Material[itemRenderers.Length][];
         for (int i = 0; i < itemRenderers.Length; i++)
         {
-            _cachedMaterials[i] = itemRenderers[i] != null ? itemRenderers[i].materials : null;
+            _sharedMaterials[i] = itemRenderers[i] != null ? itemRenderers[i].sharedMaterials : null;
         }
+    }
+
+    private bool SharedCacheStale => _sharedMaterials == null || _sharedMaterials.Length != itemRenderers.Length;
+
+    /// <summary>Puts private copies on the renderers so saturation / outline can be changed per item.</summary>
+    private void EnsureInstancedMaterials()
+    {
+        if (_cachedMaterials != null) return;
+        if (SharedCacheStale) CacheInstancedMaterials();
+
+        // Fresh copies start from the asset values, so nothing previously written still holds.
+        ClearSaturationWriteCache();
+
+        _cachedMaterials = new Material[itemRenderers.Length][];
+        for (int r = 0; r < itemRenderers.Length; r++)
+        {
+            Renderer renderer = itemRenderers[r];
+            Material[] shared = _sharedMaterials[r];
+            if (renderer == null || shared == null) continue;
+
+            var copies = new Material[shared.Length];
+            for (int i = 0; i < shared.Length; i++)
+            {
+                Material source = shared[i];
+                copies[i] = source != null
+                    ? new Material(source) { name = source.name + " (Placed)" }
+                    : null;
+            }
+            renderer.sharedMaterials = copies;
+            _cachedMaterials[r] = copies;
+        }
+    }
+
+    /// <summary>Puts the shared asset materials back and destroys the private copies.</summary>
+    private void ReleaseInstancedMaterials()
+    {
+        if (_cachedMaterials == null) return;
+
+        for (int r = 0; r < _cachedMaterials.Length; r++)
+        {
+            Material[] copies = _cachedMaterials[r];
+            if (copies == null) continue;
+
+            if (itemRenderers != null && r < itemRenderers.Length && itemRenderers[r] != null
+                && _sharedMaterials != null && r < _sharedMaterials.Length && _sharedMaterials[r] != null)
+            {
+                itemRenderers[r].sharedMaterials = _sharedMaterials[r];
+            }
+
+            foreach (Material m in copies)
+            {
+                if (m != null) Destroy(m);
+            }
+        }
+
+        _cachedMaterials = null;
+        ClearSaturationWriteCache();
+    }
+
+    /// <summary>Drops the copies once the item looks exactly like its assets again.</summary>
+    private void ReleaseIfPristine()
+    {
+        if (_atFullSaturation && !isHighlighted) ReleaseInstancedMaterials();
     }
 
     public void UpdateSaturation(float saturationValue, int materialIndex = -1)
     {
         if (itemRenderers == null || itemRenderers.Length == 0) return;
-        if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
+
+        if (materialIndex == -1 && saturationValue >= 1f)
+        {
+            // Full colour everywhere is what the asset materials already show (saturation 1 is the
+            // identity in OmniShade), so go back to them rather than writing 1 into private copies.
+            _atFullSaturation = true;
+            ReleaseIfPristine();
+            if (_cachedMaterials == null) return;
+        }
+        else
+        {
+            _atFullSaturation = false;
+            EnsureInstancedMaterials();
+        }
 
         // Already written, and nothing has touched these materials since.
         if (_lastSaturationIndex == materialIndex && _lastSaturation == saturationValue) return;
@@ -753,7 +859,14 @@ public class PlaceableItem : MonoBehaviour
         isHighlighted = enable;
 
         if (itemRenderers == null || itemRenderers.Length == 0) return;
-        if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
+
+        if (!enable && _cachedMaterials == null) return; // shared materials never carry the outline
+        if (!enable && _atFullSaturation)
+        {
+            ReleaseInstancedMaterials(); // back to the shared, outline-free asset materials
+            return;
+        }
+        EnsureInstancedMaterials();
 
         // Reads the cached arrays rather than Renderer.materials, which allocates a fresh array on
         // every access - and this runs for every material on every selection and deselection.
@@ -793,7 +906,9 @@ public class PlaceableItem : MonoBehaviour
     public void UpdateSaturationForIndices(float saturationValue, int startIndex)
     {
         if (itemRenderers == null || itemRenderers.Length == 0) return;
-        if (_cachedMaterials == null || _cachedMaterials.Length != itemRenderers.Length) CacheInstancedMaterials();
+        if (saturationValue >= 1f && _cachedMaterials == null) return; // shared materials already show full colour
+        if (saturationValue < 1f) _atFullSaturation = false;
+        EnsureInstancedMaterials();
 
         if (_lastSaturationFromStart == startIndex && _lastSaturationFromValue == saturationValue) return;
 

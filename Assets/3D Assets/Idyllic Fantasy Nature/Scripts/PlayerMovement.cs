@@ -101,6 +101,15 @@ namespace IdyllicFantasyNature
         [Tooltip("Smoothing time for Inspector Mode movement. Lower = snappier, higher = more cinematic.")]
         [Range(0.02f, 0.5f)]
         public float inspectorModeSmoothTime = 0.15f;
+        private Vector3 _inspectorFlyVelocity, _inspectorFlyAccel;
+
+        // The old position-SmoothDamp only delivered ~10% (60 fps) to ~20% (30 fps) of inspectorModeSpeed, and the
+        // speed slider / serialized values were tuned against that. 0.2 keeps the speed phones actually had.
+        private const float InspectorFlightSpeedScale = 0.2f;
+
+        [Tooltip("How far the on-screen joystick must be pushed (0-1) before walking starts blending into running. " +
+                 "At the rim the player moves at full run speed.")]
+        [Range(0.5f, 1f)] public float joystickRunStart = 0.75f;
 
         [Tooltip("How fast the player rises/descends when entering/exiting Inspector Mode.")]
         [Range(1f, 10f)]
@@ -227,7 +236,7 @@ namespace IdyllicFantasyNature
             }
 
             // get the movement input (joystick with keyboard fallback)
-            Vector2 moveInput = ReadMoveInput(out _);
+            Vector2 moveInput = ReadMoveInput(out bool fromJoystick);
             float moveX = moveInput.x;
             float moveZ = moveInput.y;
 
@@ -253,9 +262,18 @@ namespace IdyllicFantasyNature
             // the controller is able to run
             bool runPressed = IsRunPressed();
 
-            if (autoMoving) runPressed = _autoMoveRun;
+            // Touch players have no run key: pushing the stick out towards its rim blends walk into run,
+            // so speed stays continuous with how far the thumb travels instead of capping at walking pace.
+            float runBlend = runPressed ? 1f : 0f;
+            if (!runPressed && fromJoystick && !autoMoving)
+            {
+                runBlend = Mathf.InverseLerp(joystickRunStart, 1f, moveInput.magnitude);
+                runPressed = runBlend >= 0.5f;
+            }
 
-            float currentSpeed = runPressed ? (_movementSpeed + _runMultiplier) : _movementSpeed;
+            if (autoMoving) { runPressed = _autoMoveRun; runBlend = runPressed ? 1f : 0f; }
+
+            float currentSpeed = _movementSpeed + _runMultiplier * runBlend;
             Vector3 totalVelocity = movement * currentSpeed;
 
             // gravity affects the controller on the y-axis
@@ -415,16 +433,18 @@ namespace IdyllicFantasyNature
             // Add explicit vertical input
             desiredMove.y += verticalInput;
 
-            desiredMove *= inspectorModeSpeed * speedMul;
+            desiredMove *= inspectorModeSpeed * InspectorFlightSpeedScale * speedMul;
 
             // ── Apply smooth damping ─────────────────────────────────
-            Vector3 targetPosition = transform.position + desiredMove * Time.deltaTime;
-            transform.position = Vector3.SmoothDamp(
-                transform.position,
-                targetPosition,
-                ref _inspectorSmoothVelocity,
+            // Smooth the velocity, not the position: damping towards a target one frame ahead made the
+            // flight speed a fraction of inspectorModeSpeed and frame-rate dependent (faster at low FPS).
+            _inspectorFlyVelocity = Vector3.SmoothDamp(
+                _inspectorFlyVelocity,
+                desiredMove,
+                ref _inspectorFlyAccel,
                 inspectorModeSmoothTime
             );
+            transform.position += _inspectorFlyVelocity * Time.deltaTime;
         }
 
         // ═════════════════════════════════════════════════════════════
@@ -618,6 +638,7 @@ namespace IdyllicFantasyNature
             _isInspectorMode = true;
             _isTransitioning = true;
             _inspectorSmoothVelocity = Vector3.zero;
+            _inspectorFlyVelocity = _inspectorFlyAccel = Vector3.zero;
 
             // Save current ground position to return to later
             _savedGroundPosition = transform.position;
@@ -647,6 +668,7 @@ namespace IdyllicFantasyNature
             // No downward transition — we just let gravity pull them down realistically!
             _isTransitioning = false;
             _inspectorSmoothVelocity = Vector3.zero;
+            _inspectorFlyVelocity = _inspectorFlyAccel = Vector3.zero;
 
             // Re-enable CharacterController immediately so gravity in UpdateNormalMode takes over
             characterController.enabled = true;
@@ -839,6 +861,9 @@ namespace IdyllicFantasyNature
             }
         }
 
+        private AudioClip _cachedBreathingClip;
+        private bool _breathingLookedUp;
+
         private void HandleMovementAudio(bool isMoving, bool isRunning)
         {
             if (AudioManager.Instance == null) return;
@@ -847,8 +872,13 @@ namespace IdyllicFantasyNature
 
             if (AudioManager.Instance.sounds != null)
             {
-                var breathingSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Breathing);
-                if (breathingSound != null) breathingClip = breathingSound.clip;
+                if (!_breathingLookedUp)
+                {
+                    var breathingSound = System.Array.Find(AudioManager.Instance.sounds, s => s.effect == SoundEffect.Breathing);
+                    _cachedBreathingClip = breathingSound != null ? breathingSound.clip : null;
+                    _breathingLookedUp = true;
+                }
+                breathingClip = _cachedBreathingClip;
             }
 
             if (isMoving)

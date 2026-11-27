@@ -11,6 +11,8 @@ using UnityEngine.InputSystem;
 
 namespace IdyllicFantasyNature
 {
+    // Look runs before PlayerMovement so walking uses this frame's yaw, not last frame's (one frame of steering lag).
+    [DefaultExecutionOrder(-10)]
     public class CameraMovement : MonoBehaviour
     {
         [Range(1f, 10f)]

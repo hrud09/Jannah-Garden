@@ -31,8 +31,14 @@ public class ButtonClickSfx : MonoBehaviour
         go.AddComponent<ButtonClickSfx>();
     }
 
+    private float _nextScan;
+
     private void LateUpdate()
     {
+        // New buttons only appear when panels open; scanning every Selectable every frame was pure overhead.
+        if (Time.unscaledTime < _nextScan) return;
+        _nextScan = Time.unscaledTime + 0.2f;
+
         int count = Selectable.allSelectableCount;
         if (_buffer.Length < count) _buffer = new Selectable[Mathf.NextPowerOfTwo(count)];
 
@@ -43,8 +49,11 @@ public class ButtonClickSfx : MonoBehaviour
             _buffer[i] = null;
 
             if (button == null) continue;
+            int id = button.GetInstanceID();
+            if (_hooked.Contains(id)) continue;
+            // Scene.name allocates a new string per call, so it is only read for buttons not yet seen.
             if (button.gameObject.scene.name != GardenSceneName) continue;
-            if (!_hooked.Add(button.GetInstanceID())) continue;
+            _hooked.Add(id);
 
             button.onClick.AddListener(PlayClick);
         }

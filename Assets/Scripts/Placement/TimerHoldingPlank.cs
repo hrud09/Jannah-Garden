@@ -3,18 +3,7 @@ using UnityEngine;
 
 public class TimerHoldingPlank : MonoBehaviour
 {
-
     public TMP_Text signBoardText;
     public GameObject timerIcon;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // No Start/Update: empty Unity messages still cost a native-to-managed call per planted item per frame.
 }

@@ -113,6 +113,21 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     private readonly List<int> _candidates = new List<int>();
     private readonly List<Rect> _claimed = new List<Rect>();
 
+    // Measured label sizes (padded), indexed like _roots. Text only changes in WriteText (unlock or locale
+    // change), so measuring - a full TMP layout pass per label, twice for locked ones - once per change is
+    // enough; it used to run for every visible label on every frame.
+    private readonly List<Vector2> _claimSizes = new List<Vector2>();
+    private bool _claimSizesValid;
+
+    // Last inputs Reposition laid out against; when none changed the labels are already where they belong.
+    private Vector3 _lastCamPos;
+    private float _lastOrthoSize = -1f;
+    private Vector2 _lastAreaSize;
+    private GardenAreaDefinition _lastHere;
+    private bool _layoutValid;
+    private float _nextMinimapSearch;
+    private int _remeasureFrames;
+
     /// <summary>
     /// The outlined copy of the font's material, created once and shared by every label.
     ///
@@ -200,7 +215,13 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     private void Reposition()
     {
         GardenAreaManager areas = GardenAreaManager.Instance;
-        MinimapBehaviour map = minimap != null ? minimap : (minimap = FindFirstObjectByType<MinimapBehaviour>());
+        if (minimap == null && Time.unscaledTime >= _nextMinimapSearch)
+        {
+            // A scene search is far too heavy to repeat every frame while the minimap is missing.
+            _nextMinimapSearch = Time.unscaledTime + 1f;
+            minimap = FindFirstObjectByType<MinimapBehaviour>();
+        }
+        MinimapBehaviour map = minimap;
 
         Camera cam = map != null ? map.MinimapCamera : null;
         RectTransform area = labelArea != null ? labelArea : transform as RectTransform;
@@ -213,6 +234,31 @@ public class GardenAreaMinimapLabels : MonoBehaviour
 
         EnsureLabels(areas);
         if (_textDirty) WriteText(areas);
+
+        if (_remeasureFrames > 0)
+        {
+            _remeasureFrames--;
+            _claimSizesValid = false;
+            _layoutValid = false;
+        }
+
+        GardenAreaDefinition here = null;
+        TargetDirectionController player = TargetDirectionController.Instance;
+        if (player != null) here = areas.AreaAt(player.transform.position);
+
+        Vector3 camPos = cam.transform.position;
+        Vector2 areaSize = area.rect.size;
+        if (_layoutValid && _claimSizesValid
+            && camPos == _lastCamPos && cam.orthographicSize == _lastOrthoSize
+            && areaSize == _lastAreaSize && ReferenceEquals(here, _lastHere))
+        {
+            return;
+        }
+        _lastCamPos = camPos;
+        _lastOrthoSize = cam.orthographicSize;
+        _lastAreaSize = areaSize;
+        _lastHere = here;
+        _layoutValid = true;
 
         // The map's height in metres: two orthographic half-heights. What the "too far out to read"
         // test is measured against, so it responds to expanding the map as well as to zooming it.
@@ -260,7 +306,7 @@ public class GardenAreaMinimapLabels : MonoBehaviour
             _candidates.Add(i);
         }
 
-        SortByPriority(areas);
+        SortByPriority(here);
 
         // Pass two: hand out the space. A map with fifteen names printed over each other answers
         // nothing - it is strictly worse than a map with four names on it - so a name that would
@@ -305,13 +351,8 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     /// nearly ordered from the frame before, which is the case insertion sort is best at and the one
     /// a comparison sort allocates a delegate for.</para>
     /// </summary>
-    private void SortByPriority(GardenAreaManager areas)
+    private void SortByPriority(GardenAreaDefinition here)
     {
-        GardenAreaDefinition here = null;
-
-        TargetDirectionController player = TargetDirectionController.Instance;
-        if (player != null) here = areas.AreaAt(player.transform.position);
-
         for (int i = 1; i < _candidates.Count; i++)
         {
             int value = _candidates[i];
@@ -351,6 +392,20 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     {
         Vector2 centre = _roots[index].anchoredPosition;
 
+        if (!_claimSizesValid)
+        {
+            _claimSizes.Clear();
+            for (int i = 0; i < _roots.Count; i++) _claimSizes.Add(MeasureClaimSize(i));
+            _claimSizesValid = true;
+        }
+
+        Vector2 claim = index < _claimSizes.Count ? _claimSizes[index] : MeasureClaimSize(index);
+        return new Rect(centre.x - claim.x * 0.5f, centre.y - claim.y * 0.5f, claim.x, claim.y);
+    }
+
+    /// <summary>The padded size a label occupies: the name plus, when showing, the unlock line under it.</summary>
+    private Vector2 MeasureClaimSize(int index)
+    {
         TMP_Text name = _names[index];
         TMP_Text level = _levels[index];
 
@@ -374,11 +429,12 @@ public class GardenAreaMinimapLabels : MonoBehaviour
         width += declutterPadding * 2f;
         height += declutterPadding * 2f;
 
-        return new Rect(centre.x - width * 0.5f, centre.y - height * 0.5f, width, height);
+        return new Vector2(width, height);
     }
 
     private void HideAll()
     {
+        _layoutValid = false;
         for (int i = 0; i < _roots.Count; i++)
         {
             if (_roots[i] != null && _roots[i].gameObject.activeSelf) _roots[i].gameObject.SetActive(false);
@@ -498,6 +554,11 @@ public class GardenAreaMinimapLabels : MonoBehaviour
     private void WriteText(GardenAreaManager areas)
     {
         _textDirty = false;
+        _claimSizesValid = false;
+        _layoutValid = false;
+        // Re-measure for a few frames: a freshly set (especially shaped Bengali) string may not report its
+        // final size until its renderer has been laid out once.
+        _remeasureFrames = 3;
 
         LocalizationManager loc = LocalizationManager.Instance;
         if (loc == null) return;

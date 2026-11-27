@@ -487,9 +487,19 @@ public class PlayersInteractionManager : MonoBehaviour
             if (mainCam == null) return;
         }
 
-        PerformInteractionRaycast();
+        // Target detection (two raycasts, parent-component walks, the mount search and the button
+        // layout) at ~15 Hz: a 66 ms delay in a highlight appearing is invisible, the per-frame cost on a
+        // phone is not. Taps are still handled every frame.
+        if (Time.unscaledTime >= _nextTargetScan)
+        {
+            _nextTargetScan = Time.unscaledTime + TargetScanInterval;
+            PerformInteractionRaycast();
+        }
         DetectOrbClick();
     }
+
+    private const float TargetScanInterval = 1f / 15f;
+    private float _nextTargetScan;
 
     /// <summary>
     /// Casts a ray from the camera through the crosshair (or center screen) to detect TreasureBox colliders.
@@ -516,8 +526,10 @@ public class PlayersInteractionManager : MonoBehaviour
 
         // Draw the ray in the Editor/Scene view (and Game view if Gizmos are enabled)
         // Colors the ray green when it hits an object, and red when it hits nothing
+#if UNITY_EDITOR
         Color rayColor = didHit ? Color.green : Color.red;
         Debug.DrawRay(ray.origin, ray.direction * maxInteractionDistance, rayColor);
+#endif
 
         // Perform raycast check
         if (didHit)

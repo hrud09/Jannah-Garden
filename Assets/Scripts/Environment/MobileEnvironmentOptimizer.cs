@@ -235,6 +235,10 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
         ApplyAnimatorCulling();
         CollectLightsAndParticles();
         BuildCullingGroup();
+        ApplyTerrainShadows();
+        ApplyLodFade();
+        BuildDensityGrid();
+        if (DistanceScale < 1f) SetDistanceScale(DistanceScale);
 
         nextSlowTick = 0f;
         nextMovingRefresh = Time.unscaledTime + movingObjectRefreshInterval;
@@ -310,10 +314,120 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
             opaqueGated = false;
         }
 
+        foreach (var kv in changedTerrainShadows) if (kv.Key != null) kv.Key.shadowCastingMode = kv.Value;
+        changedTerrainShadows.Clear();
+
+        foreach (var kv in changedLodFades) if (kv.Key != null) kv.Key.fadeMode = kv.Value;
+        changedLodFades.Clear();
+
+        if (occlusionOverridden && mainCamera != null) mainCamera.useOcclusionCulling = originalOcclusion;
+        occlusionOverridden = false;
+        densityCells.Clear();
+
         foreach (var kv in changedAnimatorModes) if (kv.Key != null) kv.Key.cullingMode = kv.Value;
         changedAnimatorModes.Clear();
         foreach (Animator a in disabledAnimators) if (a != null) a.enabled = true;
         disabledAnimators.Clear();
+    }
+
+    // ---------------------------------------------------------------- LOD cross-fade
+
+    [Header("LOD transitions")]
+    [Tooltip("Switch LOD groups under the cull roots from cross-fade to an instant switch. A dithered " +
+             "cross-fade draws both LOD levels for the whole transition, and with hundreds of trees some are " +
+             "always mid-fade while the player walks.")]
+    public bool disableLodCrossFade = true;
+
+    private readonly List<KeyValuePair<LODGroup, LODFadeMode>> changedLodFades = new List<KeyValuePair<LODGroup, LODFadeMode>>();
+
+    private void ApplyLodFade()
+    {
+        if (!disableLodCrossFade || cullRoots == null) return;
+        foreach (Transform root in cullRoots)
+        {
+            if (root == null) continue;
+            foreach (LODGroup g in root.GetComponentsInChildren<LODGroup>(true))
+            {
+                if (g.fadeMode == LODFadeMode.None) continue;
+                changedLodFades.Add(new KeyValuePair<LODGroup, LODFadeMode>(g, g.fadeMode));
+                g.fadeMode = LODFadeMode.None;
+            }
+        }
+    }
+
+    // ---------------------------------------------------------------- occlusion culling
+
+    [Header("Occlusion culling")]
+    [Tooltip("Only run Umbra occlusion culling while the camera is inside dense forest. Measured in this scene: " +
+             "it cuts draws by more than half among the jungle trees but costs 10-20% extra elsewhere.")]
+    public bool adaptiveOcclusion = true;
+    [Tooltip("Medium/large culling units (trees, bushes, rocks) within this many metres of the camera...")]
+    public float occlusionDensityRadius = 30f;
+    [Tooltip("...at or above which the camera counts as being in dense forest.")]
+    public int occlusionDensityThreshold = 40;
+
+    private const float DensityCellSize = 10f;
+    private readonly Dictionary<long, int> densityCells = new Dictionary<long, int>();
+    private bool originalOcclusion, occlusionOverridden;
+
+    private static long CellKey(int x, int z) => ((long)x << 32) ^ (uint)z;
+
+    private void BuildDensityGrid()
+    {
+        densityCells.Clear();
+        if (!adaptiveOcclusion || mainCamera == null) return;
+
+        foreach (Unit u in units)
+        {
+            if (u.maxBand == SmallBand || u.moving || u.anchor == null) continue;
+            Vector3 p = u.anchor.TransformPoint(u.localCenter);
+            long key = CellKey(Mathf.FloorToInt(p.x / DensityCellSize), Mathf.FloorToInt(p.z / DensityCellSize));
+            densityCells.TryGetValue(key, out int n);
+            densityCells[key] = n + 1;
+        }
+
+        originalOcclusion = mainCamera.useOcclusionCulling;
+        occlusionOverridden = true;
+    }
+
+    private void UpdateOcclusion(Vector3 eye)
+    {
+        if (!occlusionOverridden || mainCamera == null || !originalOcclusion) return;
+
+        int cx = Mathf.FloorToInt(eye.x / DensityCellSize), cz = Mathf.FloorToInt(eye.z / DensityCellSize);
+        int reach = Mathf.CeilToInt(occlusionDensityRadius / DensityCellSize);
+        int count = 0;
+        for (int x = cx - reach; x <= cx + reach && count < occlusionDensityThreshold; x++)
+        for (int z = cz - reach; z <= cz + reach; z++)
+        {
+            if (densityCells.TryGetValue(CellKey(x, z), out int n)) count += n;
+        }
+
+        bool dense = count >= occlusionDensityThreshold;
+        if (mainCamera.useOcclusionCulling != dense) mainCamera.useOcclusionCulling = dense;
+    }
+
+    /// <summary>Whether occlusion culling is currently on for the main camera (for probes / debugging).</summary>
+    public bool OcclusionActive => mainCamera != null && mainCamera.useOcclusionCulling;
+
+    // ---------------------------------------------------------------- terrain shadows
+
+    [Header("Terrain")]
+    [Tooltip("Stop terrains casting into the main-light shadow map. The ground is gentle, so its self-shadowing is " +
+             "invisible, but drawing every terrain patch a second time into the shadow map is not free on phones.")]
+    public bool disableTerrainShadows = true;
+
+    private readonly List<KeyValuePair<Terrain, ShadowCastingMode>> changedTerrainShadows = new List<KeyValuePair<Terrain, ShadowCastingMode>>();
+
+    private void ApplyTerrainShadows()
+    {
+        if (!disableTerrainShadows) return;
+        foreach (Terrain t in Terrain.activeTerrains)
+        {
+            if (t == null || t == shellGrassTerrain || t.shadowCastingMode == ShadowCastingMode.Off) continue;
+            changedTerrainShadows.Add(new KeyValuePair<Terrain, ShadowCastingMode>(t, t.shadowCastingMode));
+            t.shadowCastingMode = ShadowCastingMode.Off;
+        }
     }
 
     // ---------------------------------------------------------------- opaque texture
@@ -518,7 +632,8 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
         // Nearest-N lanterns within range stay lit, everything else is switched off.
         if (lights.Length > 0)
         {
-            float maxSqr = lightDistance * lightDistance;
+            float ld = lightDistanceScaled > 0f ? lightDistanceScaled : lightDistance;
+            float maxSqr = ld * ld;
             for (int i = 0; i < lights.Length; i++)
             {
                 lightOrder[i] = i;
@@ -536,7 +651,8 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
             }
         }
 
-        float particleSqr = particleDistance * particleDistance;
+        float pd = particleDistanceScaled > 0f ? particleDistanceScaled : particleDistance;
+        float particleSqr = pd * pd;
         foreach (Ambient a in ambients)
         {
             if (a.system == null) continue;
@@ -678,6 +794,47 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
         foreach (Renderer r in u.renderers) if (r != null) r.enabled = visible;
     }
 
+    // ---------------------------------------------------------------- adaptive quality hooks
+
+    /// <summary>Current multiplier applied to the cull distances, far plane and fog (1 = tuned values).</summary>
+    public float DistanceScale { get; private set; } = 1f;
+
+    /// <summary>
+    /// Scales every view distance this component owns (cull bands, camera far plane, fog) together, so
+    /// the fog always hides the culling edge. Called by <see cref="AdaptivePerformanceController"/> when a
+    /// device can't hold its frame rate. Values are only ever pulled in from the tuned ones, never pushed out.
+    /// </summary>
+    public void SetDistanceScale(float scale)
+    {
+        scale = Mathf.Clamp(scale, 0.3f, 1f);
+        DistanceScale = scale;
+        if (!IsActive) return;
+
+        float far = cameraFarClip * scale;
+        if (cameraOverridden && mainCamera != null) mainCamera.farClipPlane = Mathf.Min(originalFarClip, far);
+
+        if (fogOverridden)
+        {
+            RenderSettings.fogStartDistance = Mathf.Min(originalFogStart, fogStart * scale);
+            RenderSettings.fogEndDistance = Mathf.Min(originalFogEnd, fogEnd * scale);
+        }
+
+        if (group != null)
+        {
+            group.SetBoundingDistances(new[]
+            {
+                smallObjectDistance * scale,
+                mediumObjectDistance * scale,
+                Mathf.Min(largeObjectDistance, cameraFarClip) * scale,
+            });
+        }
+
+        lightDistanceScaled = lightDistance * scale;
+        particleDistanceScaled = particleDistance * scale;
+    }
+
+    private float lightDistanceScaled = -1f, particleDistanceScaled = -1f;
+
     // ---------------------------------------------------------------- per frame
 
     private void LateUpdate()
@@ -702,6 +859,7 @@ public class MobileEnvironmentOptimizer : MonoBehaviour
         {
             nextSlowTick = now + 0.25f;
             UpdateLightsAndParticles(mainCamera.transform.position);
+            UpdateOcclusion(mainCamera.transform.position);
         }
     }
 }

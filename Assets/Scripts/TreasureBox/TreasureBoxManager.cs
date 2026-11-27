@@ -369,8 +369,17 @@ public class TreasureBoxManager : MonoBehaviour
             }
         }
 
-        UpdateTierUiData();
+        // The HUD shows a whole-second countdown; refreshing it 4x a second (instead of every frame, which
+        // formatted a fresh time string per frame while waiting on the daily reset) loses nothing visible.
+        _hudRefreshTimer -= Time.unscaledDeltaTime;
+        if (_hudRefreshTimer <= 0f)
+        {
+            _hudRefreshTimer = 0.25f;
+            UpdateTierUiData();
+        }
     }
+
+    private float _hudRefreshTimer;
 
     /// <summary>
     /// Every tier in progression order — the same order and contents

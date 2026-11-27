@@ -352,10 +352,15 @@ public class JungleOrbRun : MonoBehaviour
 
     // ─── HUD ────────────────────────────────────────────────────────────────────
 
+    private int _lastCollected = -1, _lastTotal = -1;
+
     private void RefreshHud(bool force)
     {
-        if (countText != null)
+        // Only rebuild the count string when it changes: this runs every frame while an orb field exists.
+        if (countText != null && (force || _collected != _lastCollected || _total != _lastTotal))
         {
+            _lastCollected = _collected;
+            _lastTotal = _total;
             LocalizedRendering.SetPlainText(countText, _collected + " / " + _total);
         }
 

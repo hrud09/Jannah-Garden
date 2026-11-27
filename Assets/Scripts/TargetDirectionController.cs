@@ -47,6 +47,7 @@ public class TargetDirectionController : MonoBehaviour
     {
         _targetPosition = targetPos;
         _isPointing = true;
+        _nextPathSolve = 0f; // new target: solve on the next frame
         
         if (arrowTransform != null)
             arrowTransform.gameObject.SetActive(true);
@@ -87,25 +88,41 @@ public class TargetDirectionController : MonoBehaviour
 
             if (pathLineRenderer != null)
             {
-                NavMesh.CalculatePath(transform.position, _targetPosition, NavMesh.AllAreas, _path);
-                
-                if (_path.corners.Length > 0)
+                // A path solve per frame is wasted work at walking pace: re-solve ~5x a second, or as soon as
+                // the player has moved a metre, and read the corners into a reused buffer (path.corners
+                // allocates a fresh array on every read).
+                Vector3 here = transform.position;
+                if (Time.time >= _nextPathSolve || (here - _lastSolveFrom).sqrMagnitude > 1f)
                 {
-                    pathLineRenderer.positionCount = _path.corners.Length;
-                    // Offset corners upward for minimap
-                    for(int i = 0; i < _path.corners.Length; i++)
+                    _nextPathSolve = Time.time + 0.2f;
+                    _lastSolveFrom = here;
+
+                    NavMesh.CalculatePath(here, _targetPosition, NavMesh.AllAreas, _path);
+                    int n = _path.GetCornersNonAlloc(_corners);
+                    if (n == _corners.Length)
                     {
-                        pathLineRenderer.SetPosition(i, _path.corners[i] + Vector3.up * pathYOffset);
+                        _corners = new Vector3[_corners.Length * 4];
+                        n = _path.GetCornersNonAlloc(_corners);
                     }
-                }
-                else
-                {
-                    // Fallback to straight line if no navmesh path found
-                    pathLineRenderer.positionCount = 2;
-                    pathLineRenderer.SetPosition(0, transform.position + Vector3.up * pathYOffset);
-                    pathLineRenderer.SetPosition(1, _targetPosition + Vector3.up * pathYOffset);
+
+                    if (n > 0)
+                    {
+                        pathLineRenderer.positionCount = n;
+                        for (int i = 0; i < n; i++) pathLineRenderer.SetPosition(i, _corners[i] + Vector3.up * pathYOffset);
+                    }
+                    else
+                    {
+                        // Fallback to straight line if no navmesh path found
+                        pathLineRenderer.positionCount = 2;
+                        pathLineRenderer.SetPosition(0, here + Vector3.up * pathYOffset);
+                        pathLineRenderer.SetPosition(1, _targetPosition + Vector3.up * pathYOffset);
+                    }
                 }
             }
         }
     }
+
+    private Vector3[] _corners = new Vector3[64];
+    private float _nextPathSolve;
+    private Vector3 _lastSolveFrom = new Vector3(float.MaxValue, 0f, 0f);
 }

@@ -465,7 +465,7 @@ public class GardenAreaBanner : MonoBehaviour
         var parent = self != null ? self.parent as RectTransform : null;
         if (self == null || parent == null) return;
 
-        var corners = new Vector3[4];
+        Vector3[] corners = s_corners;
         anchorUnder.GetWorldCorners(corners); // 0 = bottom-left, 3 = bottom-right
 
         // Local space of our own parent, so the result is valid whatever either object is anchored to.
@@ -474,7 +474,9 @@ public class GardenAreaBanner : MonoBehaviour
 
         float width = Mathf.Abs(bottomRight.x - bottomLeft.x);
         float height = _card != null ? Mathf.Max(cardHeight, MinimumCardHeight()) : self.sizeDelta.y;
-        self.sizeDelta = new Vector2(width, height);
+        var size = new Vector2(width, height);
+        // Writing an unchanged rect still dirties the canvas, which then re-batches every frame.
+        if (self.sizeDelta != size) self.sizeDelta = size;
 
         // Pivot-independent: place by the rect's own top-left, then convert back to anchoredPosition.
         Vector2 topLeft = new Vector2(Mathf.Min(bottomLeft.x, bottomRight.x), bottomLeft.y - gapUnderAnchor);
@@ -492,8 +494,11 @@ public class GardenAreaBanner : MonoBehaviour
             Mathf.Lerp(-parent.rect.height * parent.pivot.y, parent.rect.height * (1f - parent.pivot.y),
                 (self.anchorMin.y + self.anchorMax.y) * 0.5f));
 
-        self.anchoredPosition = target - anchorReference;
+        Vector2 anchored = target - anchorReference;
+        if (self.anchoredPosition != anchored) self.anchoredPosition = anchored;
     }
+
+    private static readonly Vector3[] s_corners = new Vector3[4];
 
     /// <summary>
     /// The height the two lines and their padding actually need.

@@ -35,10 +35,17 @@ public class QuestionMarkOrb : MonoBehaviour
     }
 
     /// <summary>The question mark floats and pulses gently, so orbs read as alive from across the garden.</summary>
+    private Renderer _markRenderer;
+
     private void Update()
     {
         if (questionMark == null || !_markRestCaptured) return;
         Transform mark = questionMark.transform;
+
+        // Nobody can see an orb that is off screen bob, so skip the transform writes (and the tween scan).
+        if (_markRenderer == null) _markRenderer = questionMark.GetComponentInChildren<Renderer>();
+        if (_markRenderer != null && !_markRenderer.isVisible) return;
+
         FaceCamera(mark);
         if (UIMotion.ReduceMotion || DOTween.IsTweening(mark)) return;
 
